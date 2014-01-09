@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Eremo" script="Eremo.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="130" head="0" body="71" legs="128" feet="128" />
+  <parameters>
+    <parameter key="message_greet" value="Welcome to my little garden, adventurer |PLAYERNAME|!" />
+    <parameter key="message_farewell" value="It was a pleasure to help you, |PLAYERNAME|." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="job;name" />
+    <parameter key="keyword_reply1" value="I teach some spells, provide one of the five blessings, and sell some amulets. Ask me for a trade if you like." />
+    <parameter key="keyword_reply2" value="I am Eremo, an old man who has seen many things." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="amulet of loss,2173,50000;protection amulet,2200,700;broken amulet,2196,1000000;" />
+    <parameter key="shop_sellable" value="amulet of loss,2173,45000;broken amulet,2196,100000;" />
+  </parameters>
+</npc>

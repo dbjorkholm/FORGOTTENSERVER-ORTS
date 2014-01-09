@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Crawler" nameDescription="a crawler" race="blood" experience="1000" speed="210" manacost="390">
+	<health now="1450" max="1450"/>
+	<look type="456" corpse="15293"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element physicalPercent="-8"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<loot>
+		<item id="2148" countmax="200" chance="23000"/><!-- gold coin -->
+		<item id="2152" countmax="2" chance="55500"/><!-- platinium coin -->
+		<item id="15482" chance="81000"/><!-- crawler head plating -->
+		<item id="15486" chance="43000"/><!-- compound eye -->
+		<item id="8912" chance="26000"/><!-- springsprout rod -->
+		<item id="7883" chance="22000"/><!-- war hammer -->
+		<item id="2154" chance="7000"/><!-- yellow gem -->
+		<item id="15490" chance="5000"/><!-- grasshopper legs -->
+		<item id="7590" chance="500"/><!-- GMP -->
+		<item id="7591" chance="200"/><!-- GHP -->
+	</loot>
+</monster>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="" nameDescription="" race="undead" experience="" speed="" manacost="">
+	<health now="" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="3000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="" defense="">
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence=""/>
+	</voices>
+	<loot>
+	<item id="2148" countmax="100" chance="95110" /> <!-- Gold Coin -->
+<item id="2148" countmax="29" chance="100000" /> <!-- Gold Coin -->
+<item id="2747" chance="69950" /> <!-- Grave Flower -->
+<item id="7620" chance="20870" /> <!-- Mana Potion -->
+<item id="7618" chance="18820" /> <!-- Health Potion -->
+<item id="2159" chance="4430" /> <!-- Scarab Coin -->
+<item id="6301" chance="1650" /> <!-- Death Ring -->
+<item id="2440" chance="1390" /> <!-- Daramian Waraxe -->
+	</loot>
+</monster>

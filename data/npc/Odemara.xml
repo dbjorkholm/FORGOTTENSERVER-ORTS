@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Odemara" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="138" head="22" body="99" legs="5" feet="76" addons="0" />
+<voices>
+<voice text="This is a good day for buying gems! Come and see how they sparkle!" interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+    <parameter key="message_greet" value="Be greeted, dear |PLAYERNAME|. Have a look at our gems." />
+    <parameter key="message_farewell" value="Farewell, |PLAYERNAME|." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="job;" />
+    <parameter key="keyword_reply1" value="I am responsible for buying and selling gems, pearls, and the like." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="black pearl,2144,560;golden amulet,2130,6600;ruby necklace,2133,3560;small amethyst,2150,400;small diamond,2145,600;small sapphire,2146,500;wedding ring,2121,990;white pearl,2143,320;small ruby,2147,500;small emerald,2149,500;bronze goblet,5807,2000;golden goblet,5805,5000;silver goblet,5806,3000;" />
+    <parameter key="shop_sellable" value="black pearl,2144,280;giant shimmering pearl,7633,3000;giant shimmering pearl,7632,3000;small amethyst,2150,200;small diamond,2145,300;small sapphire,2146,250;white pearl,2143,160;small ruby,2147,250;small emerald,2149,250;" />
+  </parameters>
+</npc>

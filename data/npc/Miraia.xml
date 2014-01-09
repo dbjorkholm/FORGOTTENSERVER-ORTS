@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Miraia" script="Miraia.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="150" head="114" body="84" legs="0" feet="132" addons="3" />
+  <parameters>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="meat,2666,5;ham,2671,8;bread,2689,4;scarab cheese,8112,100;cheese,2696,6" />
+  </parameters>
+</npc>

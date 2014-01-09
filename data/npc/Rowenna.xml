@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rowenna" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="139" head="115" body="38" legs="76" feet="57" addons="0" />
+<voices>
+<voice text="Selling and buying fine weapons!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="carlin,2395,473;morning star,2394,430;club,2382,5;battle axe,2378,235;battle hammer,2417,350;mace,2398,90;dagger,2379,1;rapier,2384,3;sabre,2385,5;sword,2376,15;spear,2389,10;two handed sword,2377,950;two handed sword,2410,25;" />
+		<parameter key="shop_sellable" value="battle axe,2378,75;halberd,2381,310;battle hammer,2417,50;mace,2398,23;morning star,2394,100;dagger,2379,1;rapier,2384,3;short sword,2406,8;sabre,2385,5;sword,2376,15;two handed sword,2377,190;spear,2389,3;double axe,2387,260;spear,2391,470;spear,2395,118;spear,2397,51;" />
+        <parameter key="message_greet" value="Welcome to the finest weaponshop in the land, |PLAYERNAME|! Tell me if you're looking for a good {trade}."/>
+        <parameter key="message_farewell" value="Good bye. Come back soon."/>
+		<parameter key="message_walkaway" value="Good bye. Come back soon." />
+		<parameter key="message_sendtrade" value="Of course, just browse through my wares." />
+</parameters>
+</npc>

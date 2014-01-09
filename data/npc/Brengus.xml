@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Brengus" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="132" head="79" body="76" legs="76" feet="114" addons="0" />
+<voices>
+<voice text="Best weapons and armors in town!" interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+        <parameter key="message_greet" value="Be greeted, |PLAYERNAME|. If you want to buy or sell weapons and armors, ask me for a {trade}."/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="chain helmet,2458,52;leather helmet,2461,12;chain legs,2648,80;chain armor,2464,200;brass armor,2465,450;leather armor,2467,35;steel shield,2509,240;wooden shield,2512,15;dagger,2379,5;rapier,2384,15;sabre,2385,35;mace,2398,90;battle hammer,2417,350;hand axe,2380,8;axe,2386,20" />
+    <parameter key="shop_sellable" value="steel helmet,2457,190;chain helmet,2458,17;beholder helmet,3972,2200;charmer's tiara,3971,900;feather headdress,3970,850;horseman helmet,3969,280;leather helmet,2461,4;tribal mask,3967,250;chain legs,2648,25;bast skirt,3983,750;plate armor,2463,400;chain armor,2464,70;brass armor,2465,150;leather armor,2467,12;leopard armor,3968,300;steel shield,2509,80;wooden shield,2512,5;battle shield,2513,95;salamander shield,3975,280;sentinel shield,3974,120;tusk shield,3973,850;two handed sword,2377,450;dagger,2379,2;templar scytheblade,3963,200;rapier,2384,5;sabre,2385,12;short sword,2406,10;morning star,2394,90;mace,2398,30;battle hammer,2417,120;banana staff,3966,1000;battle axe,2378,80;hand axe,2380,4;halberd,2381,400;ripper lance,3964,500;hunting spear,3965,25;spear,2389,3" />
+  </parameters>
+</npc>

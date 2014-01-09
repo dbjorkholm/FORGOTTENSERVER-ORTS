@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Elite" nameDescription="a deepling elite" race="blood" experience="3000" speed="240" manacost="0">
+	<health now="3200" max="3200"/>
+	<look type="441" corpse="15175"/>
+	<targetchange interval="2000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="130" attack="60"/>
+		<attack name="physical" interval="2000" chance="15" range="4" min="-140" max="-320">
+			<attribute key="shootEffect" value="largerock"/>
+		</attack>
+	</attacks>
+	<defenses armor="70" defense="55">
+		<defense name="healing" interval="2000" chance="10" min="50" max="190">
+				<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="-20"/>
+		<element energyPercent="-20"/>
+		<element deathPercent="10"/>
+	</elements>
+	<immunities>
+		<immunity ice="1"/>
+		<immunity fire="1"/>
+		<immunity drown="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="" yell="1"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="80" chance="100000"/> <!-- Gold Coin -->
+		<item id="2148" countmax="80" chance="100000"/> <!-- Gold Coin -->
+		<item id="15451" chance="1300"/> <!-- Warriors Axe -->
+		<item id="15453" chance="600"/> <!-- Warriors Shield -->
+		<item id="13838" chance="4000"/> <!-- Heavy Trident -->
+		<item id="2168" chance="5000"/> <!-- Life Ring -->
+		<item id="15488" countmax="1" chance="24000"/> <!-- Deepling Filet -->
+		<item id="15426" countmax="1" chance="22000"/> <!-- Deeptags -->
+		<item id="15452" countmax="1" chance="18000"/> <!-- Deepling Ridge -->
+		<item id="7591" countmax="1" chance="25000"/> <!-- GHP -->
+		<item id="7590" countmax="1" chance="25000"/> <!-- GMP -->
+		<item id="15425" countmax="1" chance="24000"/> <!-- Deepling Warts -->
+		<item id="15649" countmax="5" chance="4000"/> <!-- Vortex Bolt -->
+		<item id="2149" countmax="1" chance="3000"/> <!-- Small Emerald -->
+		<item id="5895" countmax="1" chance="1800"/> <!-- Fish Fin -->
+		<item id="13870" countmax="1" chance="26000"/> <!-- Eye Of Deeplings -->
+	</loot>
+</monster>

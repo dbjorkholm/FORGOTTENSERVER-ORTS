@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Grave Guard" nameDescription="a Grave Guard" race="blood" experience="485" speed="285" manacost="0">
+	<health now="720" max="720"/>
+	<look type="234" corpse="6328"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="52" attack="46"/>
+		<attack name="death" interval="1000" chance="12" length="8" spread="4" min="0" max="0">
+			<attribute key="areaEffect" value="purplenote"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="22" range="7" min="-90" max="-120">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="50" defense="60">
+	<defense name="healing" interval="1000" min="0" max="100">
+	         <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    </defenses>
+	<elements>		
+		<element icePercent="+10"/>		
+	</elements>
+	<immunities>
+		<immunity fire="1"/>
+		<immunity invisible="0"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="You like it, don't you?"/>
+		<voice sentence="IahaEhheAie!"/>
+		<voice sentence="It's party time!"/>
+		<voice sentence="Harrr, Harrr!"/>
+		<voice sentence="The torturer is in!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="96" chance1="33333" chancemax="0"/> 
+		<item id="2747" chance="30000"/>
+                <item id="2159" countmax="4" chance1="33333" chancemax="0"/>  
+                <item id="7620" chance="40000"/>
+		<item id="7618" chance="25000"/> 
+                <item id="6300" chance="5000"/>
+		<item id="2440" chance="909"/>
+	</loot>
+</monster>

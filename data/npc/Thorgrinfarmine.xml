@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Thorgrin" script="Thorgrinfarmine.lua" walkinterval="2000" floorchange="0">
+	<health now="185" max="185"/>
+    <look type="66" head="0" body="0" legs="0" feet="0" addons="0"/>
+<voices>
+<voice text="Ask me for a passage..." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="message_farewell" value="Good bye." />
+<parameter key="message_walkaway" value="Good bye then." />
+ <parameter key="module_keywords" value="1" />
+  <parameter key="keywords" value="passage;" />
+ <parameter key="keyword_reply1" value="Do you want me take you to {Cormaya} or {Kazordoon}?" />
+ <parameter key="message_greet" value="Welcome, |PLAYERNAME|! May earth protect you on the rocky grounds. If you need a {passage} back, I can help you."/>
+</parameters>
+</npc>

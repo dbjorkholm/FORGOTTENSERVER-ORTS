@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Dixi" script="default.lua" walkinterval="1000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="136" head="96" body="99" legs="76" feet="115" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_farewell" value="Good bye, Sir."/>
+        <parameter key="message_sendtrade" value="Here, take a look and choose something nice for you!"/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="hi;helmet;armor;obi;weapons;cipfried;temple;potions;lily;potions;information;hints;citizens;Obi;Hyacinth;Willie;Billy;food;Norma;blueberries;monsters;money;equipment;money;shield;monsters;merchants;Dallheim;Rookgaard;Tibia;Mainland;profession;oracle;profession;academy;Seymour;bank;king;Island of Destiny;Al Dee;ropes;shovels;Lee'Delle;premium;Paulie;Loui;Santiago;Zirella;Tom;name;Dixi;amber;Zerbrus;" />
+        <parameter key="keyword_reply1" value="Good day, Sir. How may I help you, |PLAYERNAME|? If you like to see my offers, simply ask me for a {trade}!" />
+        <parameter key="keyword_reply2" value="Yes, I can sell that to you. Just ask me for a {trade} to see what I buy from you." />
+        <parameter key="keyword_reply3" value="Yes, I can sell that to you. Just ask me for a {trade} to see what I buy from you." />
+        <parameter key="keyword_reply4" value="Obi is my beloved grandfather. He sells {weapons}, most of them forged by himself!" />
+        <parameter key="keyword_reply5" value="Oh, I'm sorry, but my grandfather {Obi} doesn't like seeing me waving around with pointy things. He sells weapons himself, just go downstairs!" />
+        <parameter key="keyword_reply6" value="He can heal you if you're injured or poisoned." />
+        <parameter key="keyword_reply7" value="The monk {Cipfried} takes care of our temple. He can heal you if you're badly injured or poisoned." />
+        <parameter key="keyword_reply8" value="{Lily} sells effective health potions and antidote potions against poison." />
+        <parameter key="keyword_reply9" value="I always give my cookies and blueberries to Lily. She loves them! Also, she sells {potions}." />
+        <parameter key="keyword_reply10" value="{Lily} sells effective health potions and antidote potions against poison." />
+        <parameter key="keyword_reply11" value="How can I help you? I can give you general {hints}, information about {citizens} or talk about many other topics. Just ask me!" />
+        <parameter key="keyword_reply12" value="When you are on low health and need to run away from a monster, switch to 'Defensive Fighting' and the monster will hit you less severely." />
+        <parameter key="keyword_reply13" value="<giggles> I love gossiping - err, I mean providing valuable information of course, just tell me a name! <winks>" />
+        <parameter key="keyword_reply14" value="Obi is my beloved grandfather. He sells {weapons}, most of them forged by himself!" />
+        <parameter key="keyword_reply15" value="I think he's a bit strange, living alone outside this village. How can he dislike to chat with everybody here?" />
+        <parameter key="keyword_reply16" value="Uncle Willie and {Billy} are farmers, which means they are a good place to sell and buy {food}." />
+        <parameter key="keyword_reply17" value="Billy can be kind of scary. He swears a lot and doesn't talk to everybody." />
+        <parameter key="keyword_reply18" value="Are you hungry? Then you should visit {Willie} or {Billy} in the West of town. {Norma} also has yummy stuff! Oh, and you could pick {blueberries} or eat the food some {monsters} carry with them." />
+        <parameter key="keyword_reply19" value="Norma used to sell {equipment}, but she finally earned enough {money} to fulfil one of her dreams - her own bar!" />
+        <parameter key="keyword_reply20" value="There are many blueberry bushes in and around this village. Just use them to your liking!" />
+        <parameter key="keyword_reply21" value="If you want to fight monsters in {dungeons}, you definitely need some good {equipment} such as a {weapon}, an {armor} and a {shield}." />
+        <parameter key="keyword_reply22" value="I'm sorry honey, but I can't lend you gold. Earn it yourself by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
+        <parameter key="keyword_reply23" value="As an adventurer, you should always have at least a {backpack}, a {rope}, a {shovel}, a {weapon}, an {armor} and a {shield}." />
+        <parameter key="keyword_reply24" value="I'm sorry honey, but I can't lend you gold. Earn it yourself by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
+        <parameter key="keyword_reply25" value="Yes, I can sell that to you. Just ask me for a {trade} to see what I buy from you." />
+        <parameter key="keyword_reply26" value="If you want to fight monsters in {dungeons}, you definitely need some good {equipment} such as a {weapon}, an {armor} and a {shield}." />
+        <parameter key="keyword_reply27" value="To view the offers of a merchant, simply talk to him or her and ask for a {trade}." />
+        <parameter key="keyword_reply28" value="He's one of our reliable guardsmen. Without them, many {monsters} would roam the village of {Rookgaard}!" />
+        <parameter key="keyword_reply29" value="Our lovely village will provide shelter for you. Once you are level 8, you can travel to {mainland} and choose a {profession}." />
+        <parameter key="keyword_reply30" value="I love Tibia. I always meet friendly new people such as you!" />
+        <parameter key="keyword_reply31" value="The main continent provides so many adventures! Once you've reached level 8, you should talk to the {oracle}. You can choose a {profession} and explore much more of Tibia." />
+        <parameter key="keyword_reply32" value="You will learn everything you need to know about professions once you reach the {Island} {of} {Destiny}." />
+        <parameter key="keyword_reply33" value="You can find the oracle on the top floor of the {academy}, just above {Seymour}. Go there when you are level 8 to find your {destiny}." />
+        <parameter key="keyword_reply34" value="You will learn everything you need to know about professions once you reach the {Island} {of} {Destiny}." />
+        <parameter key="keyword_reply35" value="The big building in the centre of Rookgaard. They have a library, a training centre, a {bank} and the room of the {oracle}. {Seymore} is the teacher there." />
+        <parameter key="keyword_reply36" value="Seymour is a loyal follower of the {king} and a teacher in the {academy}." />
+        <parameter key="keyword_reply37" value="You can deposit your {money} there to keep it safe. However, you still need cash to buy something here." />
+        <parameter key="keyword_reply38" value="King Tibianus is a wise and noble monarch. This island of {Rookgaard} belongs to his kingdom." />
+        <parameter key="keyword_reply39" value="The Island of Destiny can be reached via the {oracle} once you are level 8. This trip will help you choose your {profession}!" />
+        <parameter key="keyword_reply40" value="In Al Dee's shop you will find important general equipment such as {ropes}, {shovels} and torches." />
+        <parameter key="keyword_reply41" value="You should never embark on an adventure without it. Ask {Al} {Dee} or {Lee'Delle} for it!" />
+        <parameter key="keyword_reply42" value="You should never embark on an adventure without it. Ask {Al} {Dee} or {Lee'Delle} for it!" />
+        <parameter key="keyword_reply43" value="Lee'Delle's shop is on the {premium} side of the village. You should visit it!" />
+        <parameter key="keyword_reply44" value="As a premium adventurer you can visit different regions on this island, trade with {Lee'Delle} and much more." />
+        <parameter key="keyword_reply45" value="He is the local {bank} clerk." />
+        <parameter key="keyword_reply46" value="I never understand what he's talking about." />
+        <parameter key="keyword_reply47" value="I'm glad that he's here. He does a great job!" />
+        <parameter key="keyword_reply48" value="Sometimes, I help Zirella collecting wood. Her old back aches all the time. It's a shame her son {Tom} doesn't help her." />
+        <parameter key="keyword_reply49" value="I wish he would talk to his mother {Zirella} again. I feel so sorry for her. Anyway, as Tom is a tanner, you can sell leather and fresh corpses to him." />
+        <parameter key="keyword_reply50" value="I'm Dixi." />
+        <parameter key="keyword_reply51" value="Did I hear my name somewhere?" />
+        <parameter key="keyword_reply52" value="One day, I want to become a brave adventurer like her and leave this town!" />
+        <parameter key="keyword_reply53" value="He's one of our reliable guardsmen. Without them, many {monsters} would roam the village of {Rookgaard}!" />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="chain helmet,2458,52;coat,2651,8;doublet,2485,16;jacket,2650,10;leather armor,2467,25;leather helmet,2461,12;leather legs,2649,10;studded helmet,2482,63;studded shield,2526,50;wooden shield,2512,15;" />
+        <parameter key="shop_sellable" value="brass helmet,2460,22;brass shield,2511,25;chain armor,2464,40;chain helmet,2458,12;copper shield,2530,50;doublet,2485,3;leather armor,2467,5;leather boots,2643,2;leather helmet,2461,3;leather legs,2649,2;legion helmet,2480,22;plate shield,2510,40;studded armor,2484,10;studded helmet,2482,20;studded legs,2468,15;studded shield,2526,16;viking helmet,2473,25;wooden shield,2512,3;" />
+    </parameters>
+</npc>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lokur" script="Lokur.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="69" head="57" body="79" legs="60" feet="114" corpse="6007" />
+<voices>
+<voice text="If you need help with letters or parcels, just ask me. I can explain everything." interval2="100" margin="1" yell="no"/>
+<voice text="Also selling weekly tickets for the ore wagon service!" interval2="120" margin="1" yell="no"/>
+<voice text="Welcome to the post office!" interval2="90" margin="1" yell="no"/>
+</voices>
+  <parameters>
+        <parameter key="message_greet" value="How may I help you |PLAYERNAME|? Ask me for a {trade} if you want to buy something. I can also explain the {mail} system, sell {tickets} for the ore wagon service or give you access to your {bank} account."/>
+        <parameter key="message_farewell" value="Come back if you need my services, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Come back if you need my services, |PLAYERNAME|." />
+		<parameter key="message_sendtrade" value="Here. Don't forget that you need to buy a label too if you want to send a parcel. Always write the name of the {receiver} in the first line and the name of the {city} in the second line." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="parcel,2595,15;letter,2597,8;label,2599,1;" />
+  </parameters>
+</npc>

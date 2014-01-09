@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Partos" script="Partos.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="116" body="56" legs="76" feet="124" addons="0" />
+    <parameters>
+        <parameter key="message_greet" value="Welcome to my little kingdom, |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Good bye, visit me again. I will be here, promised."/>
+    </parameters>
+</npc>

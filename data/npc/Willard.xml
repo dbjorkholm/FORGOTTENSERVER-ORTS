@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Willard" script="Willard.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="39" body="85" legs="0" feet="115" addons="0" />
+<voices>
+<voice text="Selling weapons, ammunition and armor. Special offers only available here, have a look!" interval2="120" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_shop" value="1" />
+<parameter key="shop_buyable" value="axe,2386,20;hand axe,2380,8;battle hammer,2417,350;mace,2398,90;dagger,2379,5;rapier,2384,15;sabre,2385,35;sword,2376,85;bow,2456,400;crossbow,2455,500;royal spear,7378,15;spear,2389,10;throwing star,2399,42;arrow,2544,3;bolt,2543,4;earth arrow,7850,5;flaming arrow,7840,5;flash arrow,7838,5;onyx arrow,7365,7;piercing bolt,7363,5;power bolt,2547,7;shiver arrow,7839,5;sniper arrow,7364,5;chain helmet,2458,52;leather helmet,2461,12;brass armor,2465,450;chain armor,2464,200;leather armor,2467,35;chain legs,2648,80;steel shield,2509,240;wooden shield,2512,15;barbarian axe,2429,590;clerical mace,2423,540;crimson sword,7385,610;viking shield,2531,260;" />
+		<parameter key="shop_sellable" value="axe,2386,7;battle axe,2378,80;halberd,2381,400;hand axe,2380,4;battle hammer,2417,120;mace,2398,30;morning star,2394,90;dagger,2379,2;rapier,2384,5;sabre,2385,15;short sword,2406,10;sword,2376,25;two handed sword,2377,450;bow,2456,100;crossbow,2455,120;spear,2389,3;chain helmet,2458,17;leather helmet,2461,4;steel helmet,2457,190;brass armor,2465,150;chain armor,2464,70;leather armor,2467,12;plate armor,2463,400;chain legs,2648,25;battle shield,2513,95;steel shield,2509,80;wooden shield,2512,5;barbarian axe,2429,185;clerical mace,2423,170;club,2382,1;spike sword,2383,240;iron helmet,2459,150;viking shield,2531,85;" />
+        <parameter key="message_greet" value="Greetings and Banor be with you, |PLAYERNAME|! May I interest you in a {trade} for weapons, ammunition or armor?"/>
+        <parameter key="message_farewell" value="Farewell, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Farewell, |PLAYERNAME|." />
+		<parameter key="message_sendtrade" value="Of course, just browse through my wares. If you're only interested in {distance} equipment, let me know." />
+</parameters>
+</npc>

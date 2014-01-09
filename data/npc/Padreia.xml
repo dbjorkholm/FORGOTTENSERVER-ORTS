@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Padreia" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="138" head="0" body="87" legs="86" feet="95" addons="0" />
+<parameters>
+    <parameter key="message_greet" value="Welcome to our humble guild, wanderer. May I be of any assistance to you?" />
+    <parameter key="message_farewell" value="Farewell." />
+  </parameters>
+</npc>

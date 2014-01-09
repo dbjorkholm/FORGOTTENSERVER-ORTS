@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalevents>
+	<!-- Blooming Griffinclaw -->
+	<globalevent name="bloomingGriffinclaw" type="start" script="blooming griffinclaw/bloomingGriffinclaw.lua"/>
+	
+	<!-- Wrath Of The Emperor Quest -->
+	<globalevent name="wrathOfTheEmeperorQuestDoors" interval="5000" script="wrath of the emperor quest/wrathOfTheEmeperorQuestDoors.lua"/>
+
+	<!-- Demon Oak Quest -->
+	<globalevent name="OakThink" interval="15000" script="demon oak quest/oakthink.lua"/>
+
+	<!-- Others -->
+	<globalevent type="startup" name="RashidServerStartup" script="others/RashidStartUp.lua"/>
+	
+	<globalevent type="startup" name="ServerStartup" script="startup.lua"/>
+	
+	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
+	<globalevent name="Server Save" time="09:55:00" script="serversave.lua"/>
+</globalevents>

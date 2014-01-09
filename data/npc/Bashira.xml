@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bashira" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="58" body="62" legs="87" feet="39" addons="1" />
+  <parameters>
+		 <parameter key="message_farewell" value="Good Bye, |PLAYERNAME|."/>
+		 <parameter key="message_walkaway" value="May God show you the path, |PLAYERNAME|." />
+		<parameter key="message_sendtrade" value="Of course, just browse through my offers." />
+		<parameter key="message_greet" value="Welcome, |PLAYERNAME|." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="fishing rod,2580,150;green backpack,1998,20;green bag,1991,4;pick,2553,50;rope,2120,50;scythe,2550,50;shovel,2554,50;worm,3976,1" />
+    <parameter key="shop_sellable" value="rope,2120,8;vial,2006,5" />
+  </parameters>
+</npc>

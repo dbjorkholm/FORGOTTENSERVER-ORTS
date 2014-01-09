@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Tanjis" nameDescription="a tanjis" race="blood" experience="20000" speed="210" manacost="390">
+	<health now="80000" max="80000"/>
+	<look type="446" corpse="15229"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element physicalPercent="-8"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="JAU QJELL, JAKHN JEH KENH!!"/>
+	</voices>
+	<loot>
+		<item id="15413" chance="81000"/><!-- ornate shield -->
+		<item id="15409" chance="43000"/><!-- depth ocrea -->
+		<item id="15414" chance="26000"/><!-- ornate mace -->
+	</loot>
+</monster>

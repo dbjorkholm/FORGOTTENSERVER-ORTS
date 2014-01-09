@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Zurak" script="default.lua" walkinterval="0" floorchange="0">
+	<health now="150" max="150"/>
+	 	<look type="114" corpse="6040"/>
+    <parameters>
+        <parameter key="module_travel" value="1"/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. If you don't know where to flow, say {travel}."/>
+        <parameter key="travel_destinations" value="isle of strife,33081,30990,7,0;"/>
+    </parameters>
+</npc>

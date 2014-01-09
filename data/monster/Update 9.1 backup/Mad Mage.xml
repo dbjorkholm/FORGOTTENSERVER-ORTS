@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="" nameDescription="" race="blood" experience="" speed="" manacost="">
+	<health now="" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="3000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="" defense="">
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence=""/>
+	</voices>
+	<loot>
+	<item id="2148" countmax="100" chance="99600" /> <!-- Gold Coin -->
+<item id="2148" countmax="100" chance="99600" /> <!-- Gold Coin -->
+<item id="2148" countmax="100" chance="99600" /> <!-- Gold Coin -->
+<item id="2152" countmax="5" chance="48620" /> <!-- Platinum Coin -->
+<item id="7589" countmax="5" chance="20950" /> <!-- Strong Mana Potion -->
+<item id="7588" countmax="5" chance="18180" /> <!-- Strong Health Potion -->
+<item id="2202" chance="5140" /> <!-- Stealth Ring -->
+<item id="2792" countmax="3" chance="4740" /> <!-- Dark Mushroom -->
+<item id="2178" chance="4740" /> <!-- Mind Stone -->
+<item id="7368" countmax="4" chance="3950" /> <!-- Assassin Star -->
+<item id="5911" chance="3950" /> <!-- Red Piece of Cloth -->
+<item id="13756" chance="1580" /> <!-- Mage's Cap -->
+<item id="2150" countmax="3" chance="1580" /> <!-- Small Amethyst -->
+<item id="7443" chance="1190" /> <!-- Bullseye Potion -->
+<item id="9941" chance="790" /> <!-- Crystal of Focus -->
+<item id="2195" chance="400" /> <!-- Boots of Haste -->
+<item id="12410" chance="400" /> <!-- Luminous Orb -->
+<item id="2114" chance="400" /> <!-- Piggy Bank -->
+<item id="2123" chance="400" /> <!-- Ring of the Sky -->
+<item id="8901" chance="400" /> <!-- Spellbook of Warding -->
+	</loot>
+</monster>

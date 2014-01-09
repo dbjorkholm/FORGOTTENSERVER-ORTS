@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Captain Max" script="Captain Max.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="134" head="95" body="10" legs="56" feet="77" addons="0"/>
+<parameters>
+<parameter key="module_shop" value="1" />
+<parameter key="shop_buyable" value="helmet of the deep,5461,5000;" />
+<parameter key="message_farewell" value="Good bye." />
+<parameter key="message_walkaway" value="Good bye." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="passage;" />
+ <parameter key="keyword_reply1" value="Welcome on board, noble |PLAYERNAME|. I can bring you to {Calassa} or {Yalahar}, but only if you have the according mission from {Berenice} or {Wyrdin}." />
+ <parameter key="message_greet" value="Ahoy, |PLAYERNAME|. On a mission for the explorer society, eh?"/>
+</parameters>
+</npc>

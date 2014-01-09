@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<npc name="Bron" script="Bron.lua" walkinterval="2000">
+  <mana now="800" max="800" />
+  <health now="200" max="200" />
+  <look type="143" head="95" body="94" legs="132" feet="2" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="Welcome to my humble hut, |PLAYERNAME|." />
+    <parameter key="message_farewell" value="Take care, |PLAYERNAME|!" />
+    <parameter key="message_walkaway" value="Take care!" />
+  </parameters>
+</npc>

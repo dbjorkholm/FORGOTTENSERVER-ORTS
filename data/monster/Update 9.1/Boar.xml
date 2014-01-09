@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Boar" nameDescription="a boar" race="blood" experience="60" speed="180">
+	<health now="198" max="198"/>
+	<look type="380" corpse="13309"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="300"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="30"/>
+	</attacks>
+	<defenses armor="8" defense="14"/>
+	<elements>
+		<element holyPercent="10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+	</immunities>
+	<voices interval="5000" chance="15">
+		<voice sentence="Grunt Grunt" yell="1"/>
+		<voice sentence="Grunt" yell="1"/>
+	</voices>
+	<loot>
+    <item id="2148" countmax="20" chance="32800" /><!-- gold coin -->
+    <item id="2148" countmax="35" chance="32800" /><!-- gold coin -->
+</loot>
+</monster>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Muzir" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="146" head="114" body="3" legs="67" feet="95" addons="0" />
+<voices>
+<voice text="Leave your money in the bank during your hunt - trust me, it's safer that way." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="message_greet" value="Welcome to the Tibian Bank, |PLAYERNAME|! Daraman's blessings."/>
+        <parameter key="message_farewell" value="Daraman's blessings."/>
+		<parameter key="message_walkaway" value="Daraman's blessings." />
+    </parameters>
+</npc>

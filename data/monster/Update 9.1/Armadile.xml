@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Armadile" nameDescription="armadile" race="blood" experience="2900" speed="670" manacost="0">
+  <health now="3800" max="3800"/>
+  <look type="487" corpse="18378"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="90" attack="90"/>
+		<attack name="manadrain" interval="2800" chance="100" range="7" min="-340" max="-340">
+		</attack>	
+  </attacks>
+  <defenses armor="55" defense="55">    
+  </defenses>
+	<elements>		
+		<element energyPercent="-10"/>		
+		<element icePercent="-10"/>		
+		<element firePercent="+30"/>
+	</elements>
+  <immunities>
+    <immunity earth="100"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="100"/>
+    <immunity invisible="100"/>
+  </immunities>   
+	<voices interval="2500" chance="10">
+		<voice sentence="Creak!"/>
+		<voice sentence="Crunch!"/>
+	</voices>
+  <loot>
+ 	<item id="2148" countmax="100" chance="30000"/> 
+ 	<item id="2148" countmax="100" chance="33333"/> 
+	<item id="2152" countmax="2" chance="33333"/> 
+ 	<item id="2149" countmax="4" chance="33333"/>
+         <item id="7436" chance="8080"/>             
+        <item id="13757" chance="4600"/>
+        <item id="8878" chance="500"/>
+        <item id="2528" chance="500"/>
+        <item id="2206" chance="1450"/>
+        <item id="5913" chance="900"/>
+        <item id="5912" chance="450"/>
+        <item id="7886" chance="400"/>
+        <item id="7413" chance="5332"/>  -- SHP       
+  	
+</loot>
+</monster>

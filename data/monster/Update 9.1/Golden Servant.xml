@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Golden Servant" nameDescription="a golden servant" race="undead" experience="450" speed="180" manacost="0">
+  <health now="550" max="550"/>
+  <look type="396" corpse="13484"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="40" attack="30"/>    
+	<attack name="energy" interval="3000" chance="10" range="3" target="1" min="-100" max="-200">
+		<attribute key="areaEffect" value="explosion"/>
+	</attack>
+  </attacks>
+  <defenses armor="15" defense="15">
+    <defense name="healing" interval="2000" chance="15" min="130" max="240">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>	
+  </defenses>
+	<elements>		
+		<element earthPercent="-80"/>
+		<element icePercent="+5"/>		
+		<element deathPercent="+5"/>                
+	</elements> 
+  <immunities>
+    <immunity holy="1"/>    
+  </immunities>  
+  <voices interval="5000" chance="10">    
+    <voice sentence="Error. LOAD 'PROGRAM',8,1"/>
+    <voice sentence="Remain. Obedient."/>
+  </voices>
+  <loot>
+ 	<item id="2148" countmax="100" chance1="30000" chancemax="0"/> 
+ 	<item id="2148" countmax="100" chance1="33333" chancemax="0"/> 
+	<item id="2148" countmax="32" chance1="33333" chancemax="2000"/> 
+        <item id="2381" chance="10000"/> 
+        <item id="2796" chance="40000"/> 
+	<item id="7618" chance="21000"/> 
+        <item id="7620" chance="20000"/> 
+        <item id="9690" chance="4000"/> 
+        <item id="2202" chance="21000"/> 
+        <item id="8900" chance="3000"/>        
+        <item id="2179" chance="909"/> 
+        <item id="2466" chance="833"/> 
+        <item id="13938" chance="700"/> 
+</loot>
+</monster>

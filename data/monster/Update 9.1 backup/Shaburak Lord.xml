@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="" nameDescription="" race="blood" experience="" speed="" manacost="">
+	<health now="" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="3000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="" defense="">
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence=""/>
+	</voices>
+	<loot>
+	<item id="2148" countmax="100" chance="95900" /> <!-- Gold Coin -->
+<item id="2148" countmax="78" chance="100000" /> <!-- Gold Coin -->
+<item id="2152" countmax="2" chance="33650" /> <!-- Platinum Coin -->
+<item id="7589" chance="6710" /> <!-- Strong Mana Potion -->
+<item id="7588" chance="6660" /> <!-- Strong Health Potion -->
+<item id="2147" countmax="5" chance="6120" /> <!-- Small Ruby -->
+<item id="2789" chance="5380" /> <!-- Brown Mushroom -->
+<item id="2204" chance="1490" /> <!-- Energy Ring -->
+<item id="2187" chance="850" /> <!-- Wand of Inferno -->
+<item id="5904" chance="640" /> <!-- Magic Sulphur -->
+<item id="7443" chance="370" /> <!-- Bullseye Potion -->
+<item id="2645" chance="160" /> <!-- Steel Boots -->
+<item id="7899" chance="110" /> <!-- Magma Coat -->
+	</loot>
+</monster>

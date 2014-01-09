@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Xelvar" script="Xelvar.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="70" />
+  <parameters>
+    <parameter key="message_greet" value="Greetings. Are you interested in {adventures?}" />
+  </parameters>
+</npc>

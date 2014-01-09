@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Stutch" script="default.lua" walkinterval="0" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="79" body="79" legs="79" feet="79" addons="0" />
+<parameters>
+	<parameter key="message_farewell" value="LONG LIVE THE KING! You may leave now!"/>
+	<parameter key="message_greet" value="MIND YOUR MANNERS COMMONER! To address the king greet with his title!" />
+	<parameter key="message_walkaway" value="HAIL TO THE KING!" />
+</parameters>
+</npc>

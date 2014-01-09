@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Murim" script="bank.lua" walkinterval="2000" floorchange="0">
+	<health now="185" max="185"/>
+<look type="160" head="95" body="23" legs="22" feet="116" addons="0"/>
+	<voices>
+<voice text="If you need help with letters or parcels, just ask me. I can explain everything." interval2="100" margin="1" yell="no"/>
+<voice text="Hey, send a letter to your friend now and then. Keep in touch, you know." interval2="120" margin="1" yell="no"/>
+<voice text="Welcome to the post office!" interval2="90" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="label,2599,1;parcel,2595,15;letter,2597,8;" />
+        <parameter key="message_greet" value="Be greeted, noble |PLAYERNAME| and welcome to the post office."/>
+        <parameter key="message_farewell" value="Come back soon, noble |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Come back soon, noble." />
+		<parameter key="message_sendtrade" value="Here. Don't forget that you need to buy a label too if you want to send a parcel. Always write the name of the {receiver} in the first line and the name of the {city} in the second line." />
+</parameters>
+</npc>

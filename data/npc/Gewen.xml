@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc name="Gewen" script="Gewen.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="139" head="96" body="0" legs="100" feet="95" addons="0" />
+<voices>
+<voice text="Nothing beats the feeling of flying with a carpet!" interval2="120" margin="1" yell="no"/>
+</voices>
+  <parameters>
+    <parameter key="message_greet" value="Greetings, traveller |PLAYERNAME|. Where do you want me to {fly} you? Or do you need a weekly ticket for the Kazordoon public lorry transport?" />
+    <parameter key="message_farewell" value="Good bye!" />
+	<parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="fly" />
+    <parameter key="keyword_reply1" value="I'm a carpet pilot. I can give you a passage to many places." />
+  </parameters>
+</npc>

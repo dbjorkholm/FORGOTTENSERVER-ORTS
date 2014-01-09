@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Habdel" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="146" head="95" body="3" legs="19" feet="58" addons="1" />
+<voices>
+<voice text="Check out my good and sturdy weapons!" interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+        <parameter key="message_greet" value="I welcome thee, |PLAYERNAME|! I suppose you are looking for a trade in fine weapons!"/>
+        <parameter key="message_farewell" value="Goodbye and please bring more gold next time. I mean, it would be nice to see you again."/>
+		<parameter key="message_walkaway" value="Goodbye and please bring more gold next time. I mean, it would be nice to see you again." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="battle axe,2378,235;battle hammer,2417,350;club,2382,5;dagger,2379,5;mace,2398,90;morning star,2394,430;rapier,2384,15;sabre,2385,25;spear,2389,10;sword,2376,85;two handed sword,2377,950;" />
+    <parameter key="shop_sellable" value="battle axe,2378,75;battle hammer,2417,50;carlin sword,2395,118;club,2382,1;dagger,2379,1;double axe,2387,260;halberd,2381,310;mace,2398,23;morning star,2394,100;rapier,2384,3;sabre,2385,5;short sword,2406,8;spear,2389,1;sword,2376,15;two handed sword,2377,190;war hammer,2391,470;" />
+  </parameters>
+</npc>
+

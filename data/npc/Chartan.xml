@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Chartan" script="Chartan.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="338" />
+  <parameters>
+    <parameter key="message_greet" value="Great Znake forgive me to converze wiz ziz unworzy blankzkin." />
+  </parameters>
+</npc>

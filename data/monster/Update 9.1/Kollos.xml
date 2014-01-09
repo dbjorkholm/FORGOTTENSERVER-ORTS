@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Kollos" nameDescription="a kollos" race="blood" experience="2400" speed="210" manacost="390">
+	<health now="3800" max="3800"/>
+	<look type="458" corpse="15354"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element firePercent="-30"/>
+		<element energyPercent="-1"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Zopp!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="207" chance="23000"/><!-- gold coin -->
+		<item id="2152" countmax="3" chance="55500"/><!-- platinum coin -->
+		<item id="9971" chance="81000"/><!-- gold ingot -->
+		<item id="15480" chance="43000"/><!-- kollos shell -->
+		<item id="15486" chance="26000"/><!-- compound eye -->
+		<item id="2147" chance="22000"/><!-- small ruby -->
+		<item id="7590" chance="26000"/><!-- GMP -->
+		<item id="8473" chance="22000"/><!-- UHP -->
+		<item id="15648" countmax="15" chance="7000"/><!-- studded shield -->
+		<item id="2216" chance="5000"/><!-- ring of healing -->
+		<item id="7632" chance="500"/><!-- giant shimmering pearl -->
+		<item id="15489" chance="200"/><!-- calopteryx cape -->
+		<item id="15492" chance="200"/><!-- hive scythe -->
+		<item id="2645" chance="200"/><!-- steel boots -->
+		<item id="15491" chance="200"/><!-- carapace shield -->
+		<item id="15646" chance="200"/><!-- buggy backpack -->
+	</loot>
+</monster>

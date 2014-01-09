@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lily" script="default.lua" walkinterval="1000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="138" head="78" body="101" legs="86" feet="115" addons="0" />
+  <parameters>
+    <parameter key="message_farewell" value="Take care, |PLAYERNAME|." />
+    <parameter key="message_sendtrade" value="Of course, just browse through my offers. If you buy a potion, don't forget that there's a {deposit} of 5 gold on the empty flask." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="hi;potions;antidote;health;blueberry;temple;antidote potion;obi;weapons;lee'delle;lee'delle's;tom;cookies;vial;empty potion flask;blueberry;yes;cipfried;al dee;hyacinth;dixi;billy;monsters;rookgaard;dungeons;train;oracle;main;guards;fighting;Seymour;Tibia;Dallheim;Zerbrus;equipment;merchants;guards;information;druid;crunor;torch;rope;shovel;Tibia;hints;" />
+    <parameter key="keyword_reply1" value="Welcome, |PLAYERNAME|! You look a little stressed today. If you like to view my offers of potions, just ask me for a {trade}. In case you're looking for the marketplace and dungeons, just follow the path to the east!" />
+    <parameter key="keyword_reply2" value="I can offer you homemade {antidote} potions and small {health} potions. Ask me for a {trade} if you like to see them." />
+    <parameter key="keyword_reply3" value="Antidote potions will cure {poisoning}. They also have a lovely {blueberry} taste. You only need them when you get poisoned deep down in a dungeon, else just go to the {temple} for a free heal!" />
+    <parameter key="keyword_reply4" value="Health potions will heal you for about 75 hit points. It can't hurt to carry one with you just in case." />
+    <parameter key="keyword_reply5" value="Oh, do you have blueberries for sale? I need them for my {antidote} {potion}. I give you 1 gold for 5 of them, yes?" />
+    <parameter key="keyword_reply6" value="The temple is just to the right. You can get a healing for free there if you are badly injured or poisoned." />
+    <parameter key="keyword_reply7" value="I can offer you homemade {antidote} potions and small {health} potions. Ask me for a {trade} if you like to see them." />
+    <parameter key="keyword_reply8" value="He sells {weapons}. His shop is east of here." />
+    <parameter key="keyword_reply9" value="If you are looking for weapons, you should visit {Obi}'s shop east of here. Or, if you have a {premium} account, go to {Lee'Delle} for better offers." />
+    <parameter key="keyword_reply10" value="If you are a {premium} adventurer, you should check out {Lee'Delle's} shop. She lives in the western part of town, just across the bridge." />
+    <parameter key="keyword_reply11" value="If you are a {premium} adventurer, you should check out {Lee'Delle's} shop. She lives in the western part of town, just across the bridge." />
+    <parameter key="keyword_reply12" value="He's the local tanner. You could try selling fresh corpses or leather to him." />
+    <parameter key="keyword_reply13" value="Yum, cookies! If you have some for me, just ask me for a {trade}." />
+    <parameter key="keyword_reply14" value="I will pay you 5 gold for every empty vial and potion flask. Just ask me for a {trade}." />
+    <parameter key="keyword_reply15" value="I can offer you homemade {antidote} potions and small {health} potions. Ask me for a {trade} if you like to see them." />
+    <parameter key="keyword_reply16" value="Oh, do you have blueberries for sale? I need them for my {antidote} {potion}. I give you 1 gold for 5 of them, yes?" />
+    <parameter key="keyword_reply17" value="Oh, I'm sorry. I'm not buying less than 5 blueberries." />
+    <parameter key="keyword_reply18" value="Visiting Cipfried in the {temple} is a good idea if you are injured or poisoned. He can heal you." />
+    <parameter key="keyword_reply19" value="I don't know what to think about all this new party stuff. {Rookgaard} needs a little peace!" />
+    <parameter key="keyword_reply20" value="Hyacinth also sells small health potions. He lives outside the village, in a hidden place." />
+    <parameter key="keyword_reply21" value="She's {Obi}'s granddaughter and deals with {armors} and {shields}, just upstairs from Obi's shop." />
+    <parameter key="keyword_reply22" value="He's a farmer and sells {food}. Food will help you regain health when you are injured. Many {monsters} also carry food with them." />
+    <parameter key="keyword_reply23" value="Sadly, our little village of {Rookgaard} is invaded by monsters. From the {dungeons} they creep to the surface and attack the city. We always need adventurers helping us to {fight} them." />
+    <parameter key="keyword_reply24" value="Well, in this village and its surroundings you can {train} your skills until you are level 8. Then you should see the {oracle} and head to the {main} continent." />
+    <parameter key="keyword_reply25" value="If you need information about the dungeons here, you should talk to one of the bridge {guards}. They will show you where to go." />
+    <parameter key="keyword_reply26" value="To train your skills, simply help us {fighting} monsters." />
+    <parameter key="keyword_reply27" value="You can find the oracle on the top floor of the {academy}, just above {Seymour}. Go there when you are level 8 to reach more areas of {Tibia}." />
+    <parameter key="keyword_reply28" value="The main continent is huge! The gods of Tibia created everything from great seas, deep jungles and large deserts." />
+    <parameter key="keyword_reply29" value="Our bridge guards are {Dallheim} and {Zerbrus}. You can find Dallheim if you follow the path to the right, then turn north at the {temple}." />
+    <parameter key="keyword_reply30" value="If you want to fight monsters, you should get better {equipment} from the {merchants}. You should also talk to one of the bridge {guards} to find suitable monsters for you." />
+    <parameter key="keyword_reply31" value="Seymour is a teacher running the {academy}. He has many important {information} about Tibia." />
+    <parameter key="keyword_reply32" value="Tibia is our beautiful world, created by the gods. Being a {druid}, I'm a worshipper of {Crunor}." />
+    <parameter key="keyword_reply33" value="He is a great warrior. He can also tell you much about {monsters} and {dungeons} on this island." />
+    <parameter key="keyword_reply34" value="He is a great warrior. He can also tell you much about {monsters} and {dungeons} on this island." />
+    <parameter key="keyword_reply35" value="You definitely need a good {weapon}, an {armor} and a {shield}. Also, you should never leave for a {dungeon} without {rope}, {shovel} and {torch}." />
+    <parameter key="keyword_reply36" value="To view the offers of a merchant, simply talk to him or her and ask for a {trade}. They will gladly show you their offers and also the things they buy from you." />
+    <parameter key="keyword_reply37" value="Our bridge guards are {Dallheim} and {Zerbrus}. You can find Dallheim if you follow the path to the right, then turn north at the {temple}." />
+    <parameter key="keyword_reply38" value="How can I help you? If you like to buy something, just ask me for a {trade}. We can also chat about {Tibia}. Or, I could give you general {hints} about the game." />
+    <parameter key="keyword_reply39" value="Being a druid is a wonderful profession. You control the forces of nature and can heal others." />
+    <parameter key="keyword_reply40" value="Crunor is the great lord of trees and the creator of all plants. Despite what some people believe, he didn't create the {monsters}, though." />
+    <parameter key="keyword_reply41" value="You best buy such equipment at {Al} {Dee}'s store in the North of the village. Or, if you have a {premium} account, go to {Lee'Delle} for better offers." />
+    <parameter key="keyword_reply42" value="You best buy such equipment at {Al} {Dee}'s store in the North of the village. Or, if you have a {premium} account, go to {Lee'Delle} for better offers." />
+    <parameter key="keyword_reply43" value="You best buy such equipment at {Al} {Dee}'s store in the North of the village. Or, if you have a {premium} account, go to {Lee'Delle} for better offers." />
+    <parameter key="keyword_reply44" value="Tibia is our beautiful world, created by the gods. Being a {druid}, I'm a worshipper of {Crunor}." />
+    <parameter key="keyword_reply45" value="When you switch to 'Offensive Fighting', you deal out more damage but you also get hurt more easily." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="antidote potion,8474,50;small health potion,8704,20;" />
+    <parameter key="shop_sellable" value="cookie,8111,1;empty potion flask,7636,5;vial,2006,5;" />
+  </parameters>
+</npc>

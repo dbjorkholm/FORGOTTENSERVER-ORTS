@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Billy" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="153" head="78" body="63" legs="58" feet="115" addons="1" />
+  <parameters>
+    <parameter key="message_greet" value="Howdy |PLAYERNAME|. I'm a farmer and cook, maybe I can interest you in a trade with food? You can also ask me for generalhints about the game." />
+    <parameter key="message_sendtrade" value="Sure." />
+    <parameter key="message_farewell" value="Bye." />
+    <parameter key="message_walkaway" value="HOW RUDE!" />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="bread,2689,3;cheese,2696,5;ham,2671,8;meat,2666,5" />
+    <parameter key="shop_sellable" value="bread,2689,1;cheese,2696,2;ham,2671,4;meat,2666,2;carrot,2684,1;cherry,2679,1;egg,2695,1;salmon,2668,2;dead rat,2813,2" />
+  </parameters>
+</npc>

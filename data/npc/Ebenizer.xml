@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Ebenizer" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="59" body="95" legs="87" feet="76" addons="0" />
+<voices>
+<voice text="Don't forget to deposit your money here in the Tibian Bank before you head out for adventure." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="message_greet" value="Yes? What may I do for you, |PLAYERNAME|? Bank business, perhaps?"/>
+        <parameter key="message_farewell" value="Have a nice day."/>
+		<parameter key="message_walkaway" value="Have a nice day." />
+    </parameters>
+</npc>

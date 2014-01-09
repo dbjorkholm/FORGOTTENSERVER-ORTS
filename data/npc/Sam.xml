@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Sam" script="Sam.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="38" body="113" legs="67" feet="95" addons="0" />
+    <parameters>
+        <parameter key="message_greet" value="Welcome to my shop, adventurer |PLAYERNAME|! I {trade} with weapons and armor."/>
+        <parameter key="message_farewell" value="Good bye and come again, |PLAYERNAME|."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I am the blacksmith. If you need weapons or armor - just ask me." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="axe,2386,20;battle hammer,2417,350;brass armor,2465,450;chain armor,2464,200;chain helmet,2458,52;chain legs,2648,80;dagger,2379,5;hand axe,2380,8;leather armor,2467,35;leather helmet,2461,12;mace,2398,90;rapier,2384,15;sabre,2385,35;spear,2389,10;steel shield,2509,240;sword,2376,85;throwing knife,2410,25;wooden shield,2512,15;" />
+        <parameter key="shop_sellable" value="axe,2386,7;battle axe,2378,80;battle hammer,2417,120;battle shield,2513,95;brass armor,2465,150;chain armor,2464,70;chain helmet,2458,17;chain legs,2648,25;dagger,2379,2;halberd,2381,400;hand axe,2380,4;leather armor,2467,12;leather helmet,2461,4;mace,2398,30;morning star,2394,90;plate armor,2463,400;rapier,2384,5;sabre,2385,12;short sword,2406,10;spear,2389,3;steel helmet,2457,190;steel shield,2509,80;sword,2376,25;two handed sword,2377,450;wooden shield,2512,5;" />
+    </parameters>
+</npc>

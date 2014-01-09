@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Eclesius" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="130" head="0" body="91" legs="29" feet="95" addons="3" />
+	<voices>
+		<voice text="Err, what was it again that I wanted...?" interval2="100" margin="1" yell="no"/>
+		<voice text="Do come in! Don't burn your feet in the teleporter flame, though." interval2="100" margin="1" yell="no"/>
+		<voice text="So much to do, so much to do... uh... where should I start?" interval2="100" margin="1" yell="no"/>
+		<voice text="I'm so sorry... I promise it won't happen again. Problem is, I can't remember where I made the error..." interval2="100" margin="1" yell="no"/>
+	</voices>
+	<parameters>
+        <parameter key="message_greet" value="Who are you? What do you want? You seem too experienced to become my assistant. Please leave.."/>
+    </parameters>
+</npc>

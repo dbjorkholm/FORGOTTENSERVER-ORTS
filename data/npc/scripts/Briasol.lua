@@ -1,0 +1,50 @@
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+local talkState = {}
+ 
+function onCreatureAppear(cid)
+	npcHandler:onCreatureAppear(cid)			
+end
+function onCreatureDisappear(cid)
+	npcHandler:onCreatureDisappear(cid)			
+end
+function onCreatureSay(cid, type, msg)
+	npcHandler:onCreatureSay(cid, type, msg)		
+end
+function onThink()
+	npcHandler:onThink()					
+end
+
+function creatureSayCallback(cid, type, msg)
+	if(not npcHandler:isFocused(cid)) then
+		return false
+	end
+	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+
+	if(msgcontains(msg, "fine vase")) then
+		if(getPlayerStorageValue(cid, 85) == 11) then
+			npcHandler:say("Rashid sent you, I suppose. Before I sell you that vase, one word of advice. ...", cid)
+			npcHandler:say("Make room in your backpack so that I can place the vase carefully inside it. If it falls to the floor, it will most likely shatter or break if you try to pick it up again. ...", cid)
+			npcHandler:say("This vase it not meant to be touched by human hands, so just keep your hands off it. Are you ready to buy that vase for 1000 gold?", cid)
+			talkState[talkUser] = 1
+		end
+	elseif(msgcontains(msg, "yes")) then
+		if(talkState[talkUser] == 1) then
+			if(getPlayerMoney(cid) >= 1000) then
+				npcHandler:say("Here it is.", cid)
+				setPlayerStorageValue(cid, 85, 12)
+				doPlayerAddItem(cid, 8760, 1)
+				doPlayerRemoveMoney(cid, 1000)
+				talkState[talkUser] = 0
+			else
+				npcHandler:say("You don't have enought money.", cid)
+				talkState[talkUser] = 0
+			end
+		end
+	end
+	return true
+end
+ 
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deathspawn" nameDescription="a deathspawn" race="undead" experience="0" speed="100" manacost="0">
+	<health now="225" max="225"/>
+	<look type="226" head="114" body="79" legs="97" feet="114" corpse="2220"/>
+	<targetchange interval="5000" chance="20"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="95"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="30"/>
+		<attack name="death" interval="2000" chance="10" range="1" min="-400" max="-700">
+			<attribute key="shootEffect" value="suddendeath"/>
+			<attribute key="areaEffect" value="smallclouds"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="25" range="1" min="-200" max="-450">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+	</attacks>
+</monster>

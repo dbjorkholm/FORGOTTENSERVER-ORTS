@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gnomillion" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="493" head="78" body="98" legs="98" feet="60" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="Welcome to the Tibian {bank}, |PLAYERNAME|! What can I do for you?" />
+    <parameter key="message_farewell" value="Good bye." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="bank;job;" />
+    <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+    <parameter key="keyword_reply2" value="I work in this bank. I can change money for you and help you with your bank account." />
+  </parameters>
+</npc>

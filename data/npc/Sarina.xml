@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Sarina" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="21" body="71" legs="95" feet="132" addons="0" />
+<voices>
+<voice text="General equipment and all sorts of goods. Visit my store!" interval2="120" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="equipment" />
+        <parameter key="keyword_reply1" value="I sell equipment for your adventure! Just ask me for a {trade} to see my wares." />
+<parameter key="module_shop" value="1" />
+<parameter key="shop_buyable" value="candelaburm,2041,8;candlestick,2047,3;cup,2013,3,1;document,1952,12;rod,2580,150;parchment,1948,8;pick,2553,50;plate,2035,6;carrot,2001,20;cherry,1994,5;cookie,2120,50;roll,1949,5;roll,2550,50;roll,2554,50;roll,2050,2;roll,1949,5;roll,2036,20;roll,3976,1;" />
+        <parameter key="message_greet" value="Oh, please come in, |PLAYERNAME|. What can I do for you? If you need adventure equipment, ask me for a {trade}."/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|." />
+		<parameter key="message_sendtrade" value="Of course, just browse through my wares. {Footballs} have to be purchased separately." />
+</parameters>
+</npc>

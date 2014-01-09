@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gelagos" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="114" body="91" legs="85" feet="0" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="Hehehe." />
+    <parameter key="message_farewell" value="Hope you die and lose it." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="job;name;outfit;gelagos;brother;savage;yes;no;cyclops" />
+    <parameter key="keyword_reply1" value="Barbarians are stupid." />
+    <parameter key="keyword_reply2" value="Bronbronbronbronbron. Bronnnn!" />
+    <parameter key="keyword_reply3" value="Can I have free outfits?" />
+    <parameter key="keyword_reply4" value="That's me." />
+    <parameter key="keyword_reply5" value="Ajax is even more stupid." />
+    <parameter key="keyword_reply6" value="You are as stupid as Bron." />
+    <parameter key="keyword_reply7" value="Can I get something from you?" />
+    <parameter key="keyword_reply8" value="I think that's wrong." />
+    <parameter key="keyword_reply9" value="You are as stupid as Bron." />
+    <parameter key="keyword_reply10" value="Any cyclops is smarter than Bron." />
+  </parameters>
+</npc>

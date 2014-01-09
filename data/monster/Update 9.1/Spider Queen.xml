@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Spider Queen" nameDescription="a spider queen" race="venom" experience="0" speed="280" manacost="0">
+  <health now="1" max="1"/>
+  <look type="219" corpse="6060"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="1"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="0" attack="0" poison="0"/>
+    <attack name="outfit" interval="1000" chance="12" length="8" spread="10" item="7554" duration="70000">
+  <attribute key="areaEffect" value="blueshimmer"/>
+</attack>
+	
+  </attacks>
+  <defenses armor="15" defense="17">
+    <defense name="speed" interval="1000" chance="13" speedchange="314" duration="5000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>     
+</monster>

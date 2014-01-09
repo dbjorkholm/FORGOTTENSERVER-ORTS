@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Finarfin" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="63" head="20" body="30" legs="40" feet="50" addons="1" />
+<voices>
+<voice text="It's a wise idea to store your money on your bank account." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="message_greet" value="Ashari and welcome to the Tibian {bank}, |PLAYERNAME|! What can I do for you?"/>
+        <parameter key="message_farewell" value="Asha Thrazi, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Asha Thrazi, |PLAYERNAME|." />
+    </parameters>
+
+</npc>

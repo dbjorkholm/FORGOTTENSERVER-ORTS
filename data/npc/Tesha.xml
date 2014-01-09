@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Tesha" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="140" head="3" body="91" legs="77" feet="2" addons="0" />
+<voices>
+<voice text="mumbling Smelled like fish anyway." interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+        <parameter key="message_greet" value="Be mourned pilgrim in flesh, |PLAYERNAME|. Welcome to the jewel store."/>
+            <parameter key="message_farewell" value="May enlightenment be your path, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="May enlightenment be your path." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_sellable" value="white pearl,2143,160;black pearl,2144,280;small topaz,9970,200;small diamond,2145,300;small sapphire,2146,250;small ruby,2147,250;small emerald,2149,250;small amethyst,2150,200;gold ingot,9971,5000;wedding ring,2121,100;scarab coin,2159,100" />
+    <parameter key="shop_buyable" value="white pearl,2143,320;black pearl,2144,560;small diamond,2145,600;small sapphire,2146,500;small ruby,2147,500;small emerald,2149,500;small amethyst,2150,400;ruby necklace,2133,3560;wedding ring,2121,990;golden amulet,2130,6600;golden goblet,5805,5000;silver goblet,5806,3000;bronze goblet,5807,2000" />
+  </parameters>
+</npc>

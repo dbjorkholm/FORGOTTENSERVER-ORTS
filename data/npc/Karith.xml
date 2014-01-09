@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Karith" script="Karith.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="159" head="79" body="3" legs="93" feet="12" addons="0" />
+<voices>
+<voice text="This weather is killing me. If I only had enough money to retire." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="message_farewell" value="Good bye." />
+<parameter key="message_walkaway" value="Good bye." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="name;yalahar;" />
+ <parameter key="keyword_reply1" value="I'm Karith. I don't belong to a caste any longer, and only serve the Yalahari." />
+ <parameter key="keyword_reply2" value="The city was a marvel to behold. It is certain that it have been the many foreigners that ruined it." />
+    <parameter key="message_greet" value="Hello! Tell me what's on your mind. Time is money." />
+  </parameters>
+</npc>
+

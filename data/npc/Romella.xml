@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Romella" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="139" head="79" body="39" legs="77" feet="115" addons="1" />
+<voices>
+<voice text="Check out my good and sturdy weapons!" interval2="100" margin="1" yell="no"/>
+</voices>  
+<parameters>
+    <parameter key="message_greet" value="I welcome thee, |PLAYERNAME|. I suppose you are looking for a {trade} in fine weapons!" />
+    <parameter key="message_farewell" value="Goodbye and please bring more gold next time. I mean, it would be nice to see you again" />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="job;" />
+    <parameter key="keyword_reply1" value="I am Romella and I will be serving you today." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_sellable" value="axe,2386,20;battle hammer,2417,350;dagger,2379,5;hand axe,2380,8;mace,2398,90;machete,2420,35;rapier,2384,15;sabre,2385,35;spear,2389,10;sword,2376,85;throwing knife,2410,25;" />
+    <parameter key="shop_buyable" value="axe,2386,7;battle axe,2378,80;battle hammer,2417,120;dagger,2379,2;halberd,2381,400;hand axe,2380,4;mace,2398,30;morning star,2394,90;rapier,2384,5;sabre,2385,12;short sword,2406,10;spear,2389,3;sword,2376,25;two handed sword,2377,450;" />
+  </parameters>
+</npc>

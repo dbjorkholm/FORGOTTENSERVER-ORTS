@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Askarak Lord" nameDescription="askarak lord" race="fire" experience="1200" speed="270" manacost="0">
+  <health now="2100" max="2100"/>
+  <look type="410" corpse="13957"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="50" attack="70"/>	
+  </attacks>
+  <defenses armor="55" defense="55">    
+  </defenses>
+	<elements>		
+		<element energyPercent="-50"/>		
+		<element icePercent="-50"/>		
+		<element firePercent="+10"/>
+	</elements>
+  <immunities>
+    <immunity earth="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity invisible="0"/>
+  </immunities>  
+	<loot>
+	<item id="2148" countmax="100" chance="95780" /> <!-- Gold Coin -->
+<item id="2148" countmax="90" chance="100000" /> <!-- Gold Coin -->
+<item id="2152" countmax="2" chance="35500" /> <!-- Platinum Coin -->
+<item id="7589" chance="7660" /> <!-- Strong Mana Potion -->
+<item id="2149" countmax="5" chance="5860" /> <!-- Small Emerald -->
+<item id="7588" chance="5790" /> <!-- Strong Health Potion -->
+<item id="2789" countmax="5" chance="4690" /> <!-- Brown Mushroom -->
+<item id="8912" chance="940" /> <!-- Springsprout Rod -->
+<item id="7440" chance="630" /> <!-- Mastermind Potion -->
+<item id="2204" chance="550" /> <!-- Energy Ring -->
+<item id="5904" chance="550" /> <!-- Magic Sulphur -->
+<item id="7884" chance="80" /> <!-- Terra Mantle -->
+	</loot>
+</monster>

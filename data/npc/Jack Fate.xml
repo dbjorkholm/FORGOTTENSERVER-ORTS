@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Jack Fate" script="Jack Fate.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="129" head="19" body="69" legs="107" feet="50" addons="0"/>
+<voices>
+<voice text="Passages to Edron, Thais, Venore, Darashia, Ankrahmun, Yalahar, Port Hope and Goroma." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="message_farewell" value="Good bye. Recommend us if you were satisfied with our service." />
+<parameter key="message_walkaway" value="Good bye. Recommend us if you were satisfied with our service." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="name;" />
+ <parameter key="keyword_reply1" value="My name is Jack Fate from the Royal Tibia Line." />
+ <parameter key="message_greet" value="Welcome on board, |PLAYERNAME|. Where may I sail you today?"/>
+</parameters>
+</npc>

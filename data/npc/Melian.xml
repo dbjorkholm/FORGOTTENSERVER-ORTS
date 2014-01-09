@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Melian" script="Melian.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="130" head="95" body="3" legs="14" feet="76" addons="0"/>
+<voices>
+<voice text="Ask me if you need letters or parcels. I'll deliver them via airmail, of course!" interval2="120" margin="1" yell="no"/>
+<voice text="Feel the wind in your hair during one of my carpet rides!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="fly;" />
+        <parameter key="keyword_reply1" value="I can fly you to the Femor Hills, to Edron and to Svargrond if you like. Where do you want to go?" />
+<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="label,2599,1;parcel,2595,15;letter,2597,8;" />
+        <parameter key="message_greet" value="Ah, the wind brings in another visitor. Feel welcome |PLAYERNAME|. Where do you want me to {fly} you? Or do you need my {mail} service?"/>
+        <parameter key="message_farewell" value="Daraman's blessings!"/>
+		<parameter key="message_walkaway" value="Daraman's blessings!" />
+			<parameter key="message_sendtrade" value="Here. Don't forget that you need to buy a label too if you want to send a parcel. Always write the name of the {receiver} in the first line and the name of the {city} in the second line." />
+</parameters>
+</npc>

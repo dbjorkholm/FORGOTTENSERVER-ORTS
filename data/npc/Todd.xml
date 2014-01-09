@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Todd" script="Todd.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="115" body="0" legs="48" feet="114" addons="0" />
+<parameters>
+        <parameter key="module_shop" value="1" />
+	<parameter key="message_greet" value="Uhm oh hello |PLAYERNAME|... not so loud please... my {head}... What ... do you {want}?"/>
+        <parameter key="message_farewell" value="Yes, goodbye |PLAYERNAME|, just leave me alone."/>
+	<parameter key="message_walkaway" value="Silence at last." />
+        <parameter key="shop_buyable" value="scroll of heroic deeds,12466,230;small notebook,12406,480" />
+	<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="head;want;name;hugo" />
+        <parameter key="keyword_reply1" value="Uhhh ohhhh one of the beers yesterday must have been bad." />
+	<parameter key="keyword_reply2" value="I am... a traveller. Just leave me alone if you have nothing {interesting} to talk about." />
+	<parameter key="keyword_reply3" value="My Name? I am To... ahm... hum... My name is {Hugo}." />
+	<parameter key="keyword_reply4" value="Yes, that's my name of course." />
+    </parameters>
+</npc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Znozel" script="bank.lua" walkinterval="2000">
+  <health now="150" max="150" />
+  <look type="297" head="78" body="86" legs="114" feet="116" addons="0" />
+<voices>
+<voice text="You gold safe at here! snickers!" interval2="100" margin="1" yell="no"/>
+<voice text="Me take all gold! Good care! Give! Give!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="message_greet" value="Hi there. Welcome to me gold storage called bank."/>
+        <parameter key="message_farewell" value="Bye, bye. You gold safe at here, |PLAYERNAME|. snickers!"/>
+		<parameter key="message_walkaway" value="Yeah, bye." />
+    </parameters>
+</npc>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Eighty" script="bank.lua" walkinterval="0" floorchange="0">
+<health now="100" max="100"/>
+<look typeex="13573" head="7825" body="0" legs="0" feet="0" addons="0"/>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="message_greet" value="beep beep Welcome to the.... crank Tibian {Bank}."/>
+        <parameter key="message_farewell" value="Come again if you need something. beep"/>
+		<parameter key="message_walkaway" value="beep" />
+</parameters>
+</npc>

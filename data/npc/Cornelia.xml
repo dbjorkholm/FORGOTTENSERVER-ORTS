@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Cornelia" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="139" head="95" body="76" legs="100" feet="115" addons="0" />
+    <parameters>
+        <parameter key="message_greet" value="Welcome to the finest {armor} shop in the land, |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="Good bye. Come back soon."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="armor;job;" />
+        <parameter key="keyword_reply1" value="I'm selling leather armor, chain armor, and brass armor. Ask me for a {trade} if you like to take a look." />
+        <parameter key="keyword_reply2" value="I run this armoury. If you want to protect your life, you better buy my wares." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="brass armor,2465,450;brass helmet,2460,120;brass legs,2478,195;brass shield,2511,65;chain armor,2464,200;chain helmet,2458,52;chain legs,2648,80;leather armor,2467,35;leather helmet,2461,12;plate shield,2510,125;viking helmet,2473,265;wooden shield,2512,15;" />
+        <parameter key="shop_sellable" value="battle shield,2513,60;brass armor,2465,112;brass helmet,2460,30;brass legs,2478,49;brass shield,2511,16;chain armor,2464,40;chain helmet,2458,12;chain legs,2648,20;leather armor,2467,5;leather helmet,2461,3;plate armor,2463,240;plate shield,2510,45;steel helmet,2457,293;viking helmet,2473,66;wooden shield,2512,3;" />
+    </parameters>
+</npc>

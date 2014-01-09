@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Naji" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="129" head="76" body="113" legs="95" feet="113" addons="0" />
+<voices>
+	<voice text="It's a wise idea to store your money in your bank account." interval2="100" margin="1" yell="no"/>
+</voices>
+ <parameters>
+        <parameter key="message_greet" value="Welcome to the Tibian bank, |PLAYERNAME|! What can I do for you?"/>
+        <parameter key="message_farewell" value="Good Bye."/>
+	<parameter key="message_walkaway" value="Good Bye." />
+ 	<parameter key="keywords" value="name;paw and fur;money;bank" />
+ 	<parameter key="keyword_reply1" value="My name is Naji. My mother gave me that name because she knew a Paladin with that name. I'm a spare timer hunter by myself, you know! I want to join the {Paw and Fur - hunting elite!}" />
+ 	<parameter key="keyword_reply2" value="The Paw and Fur - Hunting Elite is a newly founded hunting society in Port Hope. It is said that they sent you on hunting mission. Sounds great if you ask me." />
+ 	<parameter key="keyword_reply3" value="We can {change} money for you. You can also access your {bank account}." />
+	<parameter key="keyword_reply4" value="We can {change} money for you. You can also access your {bank account}." />
+        <parameter key="module_keywords" value="1" />
+    </parameters>
+</npc>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Malunga" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="149" head="114" body="97" legs="19" feet="0" addons="0" />
+<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="i,10583,200;i,11212,28;i,10550,15;i,11217,360;i,11360,700;i,11194,55;i,10575,85;i,10599,115;i,10553,500;i,11219,50;i,10584,150;i,11331,250;i,10579,420;i,10557,45;i,10609,10;i,10556,50;i,11202,30;i,10567,25;i,11220,600;i,11192,80;i,10559,100;i,11361,200;i,11322,110;i,11224,800" />
+        <parameter key="message_greet" value="Welcome to my house, |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|." />
+		<parameter key="message_sendtrade" value="I'm currently interested in these materials." />
+    </parameters>
+</npc>

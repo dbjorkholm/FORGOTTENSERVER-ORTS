@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Daniel Steelsoul" script="default.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="73" head="0" body="0" legs="0" feet="0" addons="0"/>
+<parameters>
+       <parameter key="message_greet" value="Greetings and Banor be with you, |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="PRAISE TO BANOR!"/>
+		<parameter key="message_walkaway" value="PRAISE TO BANOR!" />
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;king;" />
+        <parameter key="keyword_reply1" value="I am the governor of this isle, Edron, and grandmaster of the Knights of Banor's Blood." />
+		 <parameter key="keyword_reply2" value="LONG LIVE THE KING!" />
+    </parameters>
+</npc>
