@@ -29,5 +29,6 @@ function onLogin(cid)
 	player:registerEvent("masterVoiceQuest")
 	player:registerEvent("elementalspheresquestOverlords")
 	player:registerEvent("SvargrondArenaKill")
+	player:registerEvent("AdvanceSave")
 	return true
 end
