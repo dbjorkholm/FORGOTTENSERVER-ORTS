@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Gnomevil" nameDescription="the Gnomevil" race="blood" experience="45000" speed="220" manacost="0">
+	<health now="250000" max="250000"/>
+	<look type="504" corpse="18443"/>
+	<targetchange interval="2000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	
+	<attacks>
+	</attacks>
+	
+	<defenses armor="" defense="">
+	</defenses>
+	
+	<elements>
+		<element firePercent=""/>
+		<element physicalPercent=""/>
+		<element earthPercent=""/>
+		<element energyPercent=""/>
+		<element deathPercent=""/>
+		<element icePercent=""/>
+		<element holyPercent=""/>
+	</elements>
+	
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	
+	<summons maxSummons="">
+	</summons>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="" yell="1"/>
+	</voices>
+	
+	<loot>
+		<item id="18450" chance="14090" /> <!-- Crystalline Sword -->
+		<item id="18451" chance="10000" /> <!-- Crystalline Axe -->
+		<item id="18454" chance="10000" /> <!-- Mycological Bow -->
+		<item id="18453" chance="8180" /> <!-- Crystal Crossbow -->
+		<item id="18452" chance="8180" /> <!-- Mycological Mace -->
+		<item id="18465" chance="8180" /> <!-- Shiny Blade -->
+		<item id="18449" chance="1820" /> <!-- Decorative Ribbon -->
+	</loot>
+</monster>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Elvith" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="19" body="86" legs="87" feet="76" addons="1" />
+  <parameters>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="lyre,2071,120;lute,2072,195;drum,2073,140;simple fanfare,2075,150;love poem,5952,200" />
+  </parameters>
+</npc>

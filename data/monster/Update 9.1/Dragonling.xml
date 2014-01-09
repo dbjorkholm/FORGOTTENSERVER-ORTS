@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dragonling" nameDescription="dragonling" race="blood" experience="2200" speed="670" manacost="0">
+  <health now="2600" max="2600"/>
+  <look type="505" corpse="18438"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="100" attack="80"/>
+		<attack name="fire" interval="2000" chance="17" range="7" radius="4" target="1" min="-60" max="-280">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="firefield" interval="1000" chance="15" range="7" radius="4" target="1">
+			<attribute key="shootEffect" value="fire"/>
+		</attack>
+		<attack name="fire" interval="3000" chance="17" length="8" spread="3" min="-70" max="-350">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+  <defenses armor="55" defense="55">    
+  </defenses>
+	<elements>		
+		<element energyPercent="-50"/>		
+		<element icePercent="-50"/>		
+		<element firePercent="+10"/>
+	</elements>
+  <immunities>
+    <immunity fire="100"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="100"/>
+    <immunity invisible="100"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Deeestructiooon!"/>
+		<voice sentence="Maaahhhrrr!"/>
+		<voice sentence="You are nothing!"/>
+		<voice sentence="Taaake ... this!"/>
+	</voices>     
+  <loot>
+ 	 <item id="2148" countmax="135" chance="30000"/>  
+        <item id="7589" chance="2000"/>             
+</loot>
+</monster>

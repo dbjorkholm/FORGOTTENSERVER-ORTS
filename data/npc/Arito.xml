@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Arito" script="Arito.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="132" head="59" body="93" legs="120" feet="116" addons="0" />
+<voices>
+<voice text="Come have a drink in the Hard Rock Racing Track." interval2="120" margin="1" yell="no"/>
+</voices>
+<parameters>
+        <parameter key="message_greet" value="Be mourned, pilgrim in flesh. Be mourned in my tavern."/>
+        <parameter key="message_farewell" value="Do visit us again."/>
+		<parameter key="message_walkaway" value="Do visit us again." />
+		<parameter key="message_sendtrade" value="Sure, browse through my offers." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="meat,2666,10;ham,2671,16;bread,2689,8;cheese,2696,12;fish,2667,6" />
+  </parameters>
+</npc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Suzy" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="78" body="10" legs="115" feet="95" addons="0" />
+<voices>
+<voice text="Yes indeed, it's a wise idea to store your money in your bank account." interval2="100" margin="1" yell="no"/>
+</voices>
+ <parameters>
+        <parameter key="message_greet" value="Welcome to the Tibian {bank}, |PLAYERNAME|! What can I do for you?"/>
+        <parameter key="message_farewell" value="Good Bye."/>
+		<parameter key="message_walkaway" value="Good Bye." />
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;bank;" />
+        <parameter key="keyword_reply1" value="I work in this bank. I can change money for you and help you with your bank account." />
+		<parameter key="keyword_reply2" value="We can change money for you. You can also access your bank account." />
+    </parameters>
+</npc>

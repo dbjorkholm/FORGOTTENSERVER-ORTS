@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Orewalker" nameDescription="orewalker" race="blood" experience="4800" speed="570" manacost="0">
+  <health now="7200" max="7200"/>
+  <look type="490" corpse="17256"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    	<attack name="melee" interval="2000" skill="50" attack="80"/>
+    		<attack name="physical" interval="1000" chance="40" radius="2" target="0" min="-300" max="-675">
+			<attribute key="shootEffect" value="smallearth"/>
+		</attack>	
+  </attacks>
+  <defenses armor="55" defense="55">    
+  </defenses>
+	<elements>		
+		<element energyPercent="+10"/>	
+		<element firePercent="-10"/>	
+		<element deathPercent="-10"/>	
+		<element physicalPercent="-10"/>
+		<element icePercent="-10"/>		
+	</elements>
+  <immunities>
+    <immunity earth="100"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="100"/>
+    <immunity invisible="100"/>
+  </immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Sizzle!"/>
+		<voice sentence="CLONK!"/>
+	</voices>     
+  <loot>
+ 	 <item id="2148" countmax="182" chance="30000"/>  
+ 	 <item id="2152" countmax="10" chance="33333"/>
+ 	 <item id="18435" countmax="5" chance="2500"/>
+ 	 <item id="7590" countmax="2" chance="2063"/>
+ 	 <item id="7588" countmax="2" chance="1379"/>
+ 	 <item id="9970" countmax="3" chance="1293"/>
+ 	 <item id="7589" countmax="2" chance="1293"/>
+ 	 <item id="7620" countmax="4" chance="862"/>
+ 	 <item id="8473" countmax="2" chance="862"/>
+        <item id="5880" chance="1207"/>             
+        <item id="11227" chance="1121"/>
+        <item id="2213" chance="1303"/>
+        <item id="2487" chance="845"/>
+        <item id="18453" chance="759"/>
+        <item id="7454" chance="859"/>
+        <item id="2154" chance="859"/>
+        <item id="5904" chance="672"/>
+        <item id="7413" chance="650"/>
+        <item id="2477" chance="640"/>
+        <item id="18390" chance="630"/>
+</loot>
+</monster>

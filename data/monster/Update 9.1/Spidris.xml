@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Spidris" nameDescription="a spidris" race="blood" experience="2600" speed="210" manacost="390">
+	<health now="3700" max="3700"/>
+	<look type="457" corpse="15299"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element physicalPercent="-8"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Eeeeeeyyyyh!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="198" chance="23000"/><!-- gold coin -->
+		<item id="2152" countmax="6" chance="55500"/><!-- platinum -->
+		<item id="15486" chance="81000"/><!-- compound eye -->
+		<item id="6301" chance="43000"/><!-- death ring -->
+		<item id="7632" chance="26000"/><!-- giant shimmering pearl -->
+		<item id="2153" chance="22000"/><!-- violet gem -->
+		<item id="15492" chance="7000"/><!-- hive scythe -->
+		<item id="7413" chance="5000"/><!-- titan axe -->
+		<item id="15489" chance="500"/><!-- calopteryx cape -->
+		<item id="15491" chance="200"/><!-- carapace shield -->
+	</loot>
+</monster>

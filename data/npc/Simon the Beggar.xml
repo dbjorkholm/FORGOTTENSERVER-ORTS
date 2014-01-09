@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<npc name="Simon the Beggar" script="default.lua" walkinterval="2000">
+  <health now="200" max="200" />
+  <look type="153" head="116" body="123" legs="123" feet="40" addons="3" />
+  <parameters>
+    <parameter key="message_greet" value="Hello |PLAYERNAME|. I am a poor man. Please help me." />
+    <parameter key="message_farewell" value="Have a nice day." />
+  </parameters>
+</npc>

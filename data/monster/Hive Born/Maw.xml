@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Maw" nameDescription="the maw" race="venom" experience="" speed="" manacost="0">
+	<health now="458" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="2000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="50" defense="55">
+	</defenses>
+	<elements>
+		<element firePercent=""/>
+		<element physicalPercent=""/>
+		<element earthPercent=""/>
+		<element energyPercent=""/>
+		<element deathPercent=""/>
+		<element icePercent=""/>
+		<element holyPercent=""/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="">
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="" yell="1"/>
+	</voices>
+	<loot>
+	<item id="15486" chance="100000" /> <!-- Compound Eye -->
+<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+<item id="2148" countmax="25" chance="100000" /> <!-- Gold Coin -->
+<item id="15480" chance="100000" /> <!-- Kollos Shell -->
+<item id="2152" countmax="6" chance="78570" /> <!-- Platinum Coin -->
+<item id="7590" countmax="2" chance="57140" /> <!-- Great Mana Potion -->
+<item id="2147" countmax="4" chance="42860" /> <!-- Small Ruby -->
+<item id="8473" chance="42860" /> <!-- Ultimate Health Potion -->
+<item id="2144" countmax="3" chance="21430" /> <!-- Black Pearl -->
+<item id="2156" chance="21430" /> <!-- Red Gem -->
+<item id="15572" countmax="2" chance="14290" /> <!-- Gooey Mass -->
+<item id="9971" chance="7140" /> <!-- Gold Ingot -->
+<item id="15643" chance="7140" /> <!-- Hive Bow -->
+	</loot>
+</monster>

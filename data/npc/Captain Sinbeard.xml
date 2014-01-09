@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Captain Sinbeard" script="Captain Sinbeard.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="134" head="95" body="10" legs="56" feet="77" addons="0" />
+<parameters>
+<parameter key="message_farewell" value="Good bye. Recommend us if you were satisfied with our service." />
+<parameter key="message_walkaway" value="Good bye. Recommend us if you were satisfied with our service." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="name;ankrahmun;" />
+ <parameter key="keyword_reply1" value="I'm known all over the world as Captain Sinbeard." />
+ <parameter key="keyword_reply2" value="That's where we are." />
+ <parameter key="message_greet" value="Welcome on board, |PLAYERNAME|. Where may I {sail} you today?"/>
+</parameters>
+</npc>

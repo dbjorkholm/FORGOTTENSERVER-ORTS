@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Servant Sentry" script="default.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="396" head="115" body="63" legs="95" feet="38" addons="0"/>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="master;sentry;slime;help" />
+        <parameter key="keyword_reply1" value="Our. Master. Is. Gone. You. Can. Not. Visit. Him! We. Stand. {Sentry}!" />
+	<parameter key="keyword_reply2" value="{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!" />
+	<parameter key="keyword_reply3" value="{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!" />
+	<parameter key="keyword_reply4" value="{Slime}. Dangerous. We. Have. It. Under. Control. ... We. Will. Stand. {Sentry}." />
+        <parameter key="message_greet" value="The. Slime. Has. Entered. Our. Master. Has. Left! We. Must. Help."/>
+        <parameter key="message_farewell" value="Goodbye. Human. Being!"/>
+</parameters>
+</npc>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Spellsinger" nameDescription="a deepling spellsinger" race="blood" experience="1000" speed="210" manacost="390">
+	<health now="850" max="850"/>
+	<look type="443" corpse="15211"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element physicalPercent="-8"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Yeeee ha!Jey Obu giotja!!"/>
+		<voice sentence="Mmmmmoooaaaaaahaaa!!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="107" chance="23000"/><!-- gold coin -->
+		<item id="2152" countmax="2" chance="55500"/><!-- platinum -->
+		<item id="6984" chance="81000"/><!-- fish -->
+		<item id="15488" chance="43000"/><!-- deepling filet -->
+		<item id="13870" chance="26000"/><!-- eye of a deepling -->
+		<item id="2146" chance="22000"/><!-- small sapphire -->
+		<item id="15421" chance="7000"/><!-- spellsinger's seal -->
+		<item id="15422" chance="5000"/><!-- key to the drowned library -->
+		<item id="15400" chance="500"/><!-- deepling staff -->
+		<item id="5895" chance="200"/><!-- fish fin -->
+		<item id="15403" chance="200"/><!-- necklace of the deep -->
+        <item id="15644" chance="200"/><!-- ornate crossbow -->
+
+	</loot>
+</monster>

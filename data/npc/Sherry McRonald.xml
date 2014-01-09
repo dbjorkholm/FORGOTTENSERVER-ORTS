@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Sherry McRonald" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="78" body="94" legs="19" feet="97" addons="0" />
+<voices>
+<voice text="Isn't this a beautiful day? Perfect for farming." interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+		 <parameter key="message_farewell" value="Grace our home with another visit soon, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="What a strange person." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="			Cheese,8368,5;			Cherry,2679,1;			Melon,2682,8;			Pumpkin,2683,10		" />
+    <parameter key="shop_sellable" value="			Bread,2689,2		" />
+  </parameters>
+</npc>

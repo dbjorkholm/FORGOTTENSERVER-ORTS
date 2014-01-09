@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Latrivan" nameDescription="the latrivan" race="fire" experience="10000" speed="140" manacost="0">
+	<health now="40000" max="40000"/>
+	<look type="12" head="120" body="128" legs="121" feet="111" corpse="6068"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="80" defense="20"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="120" attack="135"/>
+		<attack name="death" interval="2000" chance="15" length="6" spread="4" min="-100" max="-300">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>	
+		<attack name="death" interval="2000" chance="15" length="8" spread="0" min="-200" max="-500">
+			<attribute key="areaEffect" value="teleport"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="15" radius="3" target="0" min="-200" max="-850">
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>		
+		<attack name="fire" interval="2000" chance="15" length="6" spread="4" min="-100" max="-200">
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="15" length="6" spread="4">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="15" length="6" spread="4" min="-30" max="-30">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="death" interval="2000" chance="15" range="5" min="-300" max="-600">
+			<attribute key="shootEffect" value="death"/>
+		</attack>
+	</attacks>
+	<defenses armor="48" defense="46">
+		<defense name="healing" interval="2000" chance="15" min="200" max="400">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element icePercent="-10"/>
+		<element energyPercent="10"/>
+	</elements>
+	<immunities>
+		<immunity fire="1"/>
+		<immunity death="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="I might reward you for killing my brother ~ with a swift dead!" yell="1"/>
+		<voice sentence="Colateral damage is so fun!" yell="1"/>
+		<voice sentence="Golgordan you fool!" yell="1"/>
+		<voice sentence="We are the brothers of fear!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+		<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+		<item id="7591" chance="66670" /> <!-- Great Health Potion -->
+		<item id="6301" chance="26670" /> <!-- Death Ring -->
+		<item id="2163" chance="20000" /> <!-- Magic Light Wand -->
+		<item id="2216" chance="20000" /> <!-- Ring of Healing -->
+		<item id="2149" countmax="10" chance="20000" /> <!-- Small Emerald -->
+		<item id="2146" countmax="10" chance="20000" /> <!-- Small Sapphire -->
+		<item id="2144" countmax="11" chance="13330" /> <!-- Black Pearl -->
+		<item id="6500" chance="13330" /> <!-- Demonic Essence -->
+		<item id="2387" chance="13330" /> <!-- Double Axe -->
+		<item id="2393" chance="13330" /> <!-- Giant Sword -->
+		<item id="9971" chance="13330" /> <!-- Gold Ingot -->
+		<item id="2470" chance="13330" /> <!-- Golden Legs -->
+		<item id="2396" chance="13330" /> <!-- Ice Rapier -->
+		<item id="2143" countmax="13" chance="13330" /> <!-- White Pearl -->
+		<item id="2158" chance="6670" /> <!-- Blue Gem -->
+		<item id="2462" chance="6670" /> <!-- Devil Helmet -->
+		<item id="2204" chance="6670" /> <!-- Energy Ring -->
+		<item id="2432" chance="6670" /> <!-- Fire Axe -->
+		<item id="2179" chance="6670" /> <!-- Gold Ring -->
+		<item id="2155" chance="6670" /> <!-- Green Gem -->
+		<item id="2164" chance="6670" /> <!-- Might Ring -->
+		<item id="2170" chance="6670" /> <!-- Silver Amulet -->
+		<item id="2402" chance="6670" /> <!-- Silver Dagger -->
+		<item id="2182" chance="6670" /> <!-- Snakebite Rod -->
+		<item id="2202" chance="6670" /> <!-- Stealth Ring -->
+		<item id="2197" chance="6670" /> <!-- Stone Skin Amulet -->
+		<item id="2471" chance="500" /> <!-- Golden Helmet -->
+	</loot>
+</monster>

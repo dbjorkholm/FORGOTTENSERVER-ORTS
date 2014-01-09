@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gurbasch" script="Gurbasch.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="66" head="0" body="0" legs="0" feet="0" addons="0" />
+<voices>
+<voice text="Passages to Kazordoon! Gotta try the beer there." interval2="120" margin="1" yell="no"/>
+</voices>
+  <parameters>
+    <parameter key="message_greet" value="Welcome, |PLAYERNAME|! May Earth protect you, even whilst sailing!" />
+        <parameter key="message_farewell" value="Until next time."/>
+		<parameter key="message_walkaway" value="Until next time." />
+  </parameters>
+</npc>

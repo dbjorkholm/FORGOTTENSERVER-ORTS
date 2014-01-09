@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Death Priest" nameDescription="death priest" race="undead" experience="750" speed="265" manacost="0">
+  <health now="800" max="800"/>
+  <look type="99" head="95" body="116" legs="119" feet="115" corpse="6028"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-30" max="-100"/>
+    <attack name="lifedrain" interval="3000" chance="9" range="1" min="-50" max="-250">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </attack>
+    <attack name="speed" interval="2000" chance="15" range="7" speedchange="-800" duration="30000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="lifedrain" interval="1000" chance="11" radius="3" target="0" min="-120" max="-200">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="9" length="8" spread="0" min="-100" max="-200">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="poisoncondition" interval="3000" chance="9" length="8" spread="0" min="-300" max="-400">
+      <attribute key="areaEffect" value="greenspark"/>
+    </attack>
+  </attacks>
+  <defenses armor="20" defense="20">
+    <defense name="healing" interval="1000" chance="17" min="50" max="150">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>  
+  <immunities>
+    <immunity death="0"/>
+    <immunity earth="0"/>
+    <immunity paralyze="0"/>
+    <immunity invisible="0"/>
+  </immunities>  
+	<item id="2148" countmax="100" chance="71590" /> <!-- Gold Coin -->
+<item id="2148" countmax="44" chance="100000" /> <!-- Gold Coin -->
+<item id="13739" chance="26670" /> <!-- Hieroglyph Banner -->
+<item id="7620" chance="15630" /> <!-- Mana Potion -->
+<item id="7618" chance="15260" /> <!-- Health Potion -->
+<item id="2159" countmax="3" chance="10300" /> <!-- Scarab Coin -->
+<item id="2217" chance="6080" /> <!-- Spellbook -->
+<item id="5022" countmax="4" chance="5830" /> <!-- Orichalcum Pearl -->
+<item id="2143" chance="3350" /> <!-- White Pearl -->
+<item id="2216" chance="1120" /> <!-- Ring of Healing -->
+	</loot>
+</monster>

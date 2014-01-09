@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Golgordan" nameDescription="the golgordan" race="fire" experience="10000" speed="140" manacost="0">
+	<health now="40000" max="40000"/>
+	<look type="12" head="108" body="100" legs="105" feet="114" corpse="6068"/> 
+	<targetchange interval="7000" chance="10"/>
+	<strategy attack="90" defense="10"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="120" attack="135"/>
+		<attack name="death" interval="2000" chance="15" length="6" spread="4" min="-100" max="-300">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>	
+		<attack name="death" interval="2000" chance="15" length="8" spread="0" min="-200" max="-500">
+			<attribute key="areaEffect" value="teleport"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="15" radius="3" target="0" min="-200" max="-850">
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>		
+		<attack name="fire" interval="2000" chance="15" length="6" spread="4" min="-100" max="-200">
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="15" length="6" spread="4">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="15" length="6" spread="4" min="-30" max="-30">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+		<attack name="death" interval="2000" chance="15" range="5" min="-300" max="-600">
+			<attribute key="shootEffect" value="death"/>
+		</attack>
+	</attacks>
+	<defenses armor="48" defense="54"/>
+	<elements>
+		<element icePercent="-10"/>
+		<element holyPercent="15"/>
+		<element physicalPercent="20"/>
+		<element firePercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity death="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Latrivan your fool" yell="1"/>
+		<voice sentence="We are the right hand and the left hand of the seven!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+		<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+		<item id="2179" chance="58820" /> <!-- Gold Ring -->
+		<item id="7591" chance="52940" /> <!-- Great Health Potion -->
+		<item id="2216" chance="29410" /> <!-- Ring of Healing -->
+		<item id="2150" countmax="18" chance="29410" /> <!-- Small Amethyst -->
+		<item id="2462" chance="23530" /> <!-- Devil Helmet -->
+		<item id="2163" chance="23530" /> <!-- Magic Light Wand -->
+		<item id="2144" countmax="10" chance="17650" /> <!-- Black Pearl -->
+		<item id="7365" countmax="7" chance="17650" /> <!-- Onyx Arrow -->
+		<item id="2200" chance="17650" /> <!-- Protection Amulet -->
+		<item id="2402" chance="17650" /> <!-- Silver Dagger -->
+		<item id="2387" chance="11760" /> <!-- Double Axe -->
+		<item id="2204" chance="11760" /> <!-- Energy Ring -->
+		<item id="2432" chance="11760" /> <!-- Fire Axe -->
+		<item id="9971" chance="11760" /> <!-- Gold Ingot -->
+		<item id="2178" chance="11760" /> <!-- Mind Stone -->
+		<item id="2170" chance="11760" /> <!-- Silver Amulet -->
+		<item id="2146" countmax="7" chance="11760" /> <!-- Small Sapphire -->
+		<item id="2197" chance="11760" /> <!-- Stone Skin Amulet -->
+		<item id="2520" chance="5880" /> <!-- Demon Shield -->
+		<item id="6500" chance="5880" /> <!-- Demonic Essence -->
+		<item id="2393" chance="5880" /> <!-- Giant Sword -->
+		<item id="2436" chance="5880" /> <!-- Skull Staff -->
+	</loot>
+</monster>

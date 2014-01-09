@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Baxter" script="Baxter.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="96" body="10" legs="0" feet="115" addons="0" />
+<voices>
+<voice text="The orcs are preparing for war!!!" interval2="90" margin="1" yell="no"/>
+<voice text="People of Thais, bring honour to your king by fighting in the orc war!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="Bricklayers' Kit,8613,100;" />
+		<parameter key="shop_sellable" value="dead rat,5964,1;orc tooth,11109,150;" />
+        <parameter key="message_greet" value="LONG LIVE KING TIBIANUS!"/>
+        <parameter key="message_farewell" value="LONG LIVE THE KING!"/>
+		<parameter key="message_walkaway" value="LONG LIVE THE KING!" />
+		<parameter key="message_sendtrade" value="You need one bricklayer kit for each wall you want to repair or do you want to sell me fresh rats?" />
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;king;" />
+        <parameter key="keyword_reply1" value="I'm a proud member of the king's army. It's my duty to guard the castle." />
+		 <parameter key="keyword_reply2" value="King Tibianus III is our wise and just leader!" />
+    </parameters>
+</npc>

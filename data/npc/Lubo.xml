@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lubo" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="115" body="39" legs="96" feet="118" addons="3" />
+<voices>
+<voice text="Stop by and rest a while, tired adventurer! Have a look at my wares!" interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+        <parameter key="message_greet" value="Welcome to my adventurer shop, |PLAYERNAME|! What do you need? Ask me for a {trade} to look at my wares."/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Good bye." />
+		<parameter key="message_sendtrade" value="Of course, just browse through my offers." />
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;dog;offer;name" />
+        <parameter key="keyword_reply1" value="I am selling equipment for adventurers. If you need anything, let me know." />
+		 <parameter key="keyword_reply2" value="This is Ruffy my dog, please don't do him any harm." />
+		  <parameter key="keyword_reply3" value=" I sell torches, fishing rods, worms, ropes, water hoses, backpacks, apples, and maps." />
+		  <parameter key="keyword_reply4" value="I am Lubo, the owner of this shop." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="			Backpack,1988,25;			Basket,15556,6;			Bottle,2007,3,0;			Bucket,7142,4;			Candelabrum,2057,8;			Candlestick,2047,2;			Closed Trap,2578,280;			Crowbar,2416,260;			Fishing Rod,2580,150;			Machete,2420,35;			Pick,2553,50;			Present,9074,10;			Red Apple,2674,3;			Rope,8723,50;			Scythe,2550,50;			Shovel,18210,50;			Watch,2036,20;			Waterskin,2031,10,1;			Worm,3976,1		" />
+    <parameter key="shop_sellable" value="			Closed Trap,2578,75;			Crowbar,2416,50;			Fishing Rod,2580,40;			Machete,2420,6;			Pick,2553,15;			Rope,8723,15;			Scythe,2550,10;			Shovel,18210,8;			Watch,2036,6;			Wooden Hammer,2556,15		" />
+  </parameters>
+</npc>

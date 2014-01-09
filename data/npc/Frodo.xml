@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Frodo" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="58" body="68" legs="109" feet="115" addons="0" />
+<voices>
+	<voice text="Come into my tavern and share some stories!" interval2="100" margin="1" yell="no"/>
+</voices>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+        	<parameter key="message_farewell" value="Please come back from time to time."/>
+		<parameter key="message_walkaway" value="Please come back from time to time." />
+		<parameter key="message_greet" value="Welcome to Frodo's Hut. You heard about the news?" />
+		<parameter key="shop_buyable" value="bread,2689,4;ham,2671,8;cheese,2696,6;meat,2666,5" />
+	</parameters>
+</npc>

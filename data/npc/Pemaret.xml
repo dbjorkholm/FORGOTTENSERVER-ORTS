@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Pemaret" script="Pemaret.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="128" head="79" body="10" legs="126" feet="126" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="Greetings, young man. Looking for a passage or some fish, |PLAYERNAME|?" />
+  </parameters>
+</npc>

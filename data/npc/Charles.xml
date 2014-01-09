@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Charles" script="Charles.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="134" head="57" body="67" legs="95" feet="60" addons="0" />
+<voices>
+<voice text="Passages to Thais, Darashia, Edron, Venore, Ankrahmun, Liberty Bay and Yalahar." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="message_farewell" value="Bye." />
+<parameter key="message_walkaway" value="Bye." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="name;svargrond;" />
+ <parameter key="keyword_reply1" value="It's Charles." />
+ <parameter key="keyword_reply2" value="I'm sorry, but we don't serve the routes to the Ice Islands." />
+ <parameter key="message_greet" value="Ahoy. Where can I sail you today?"/>
+</parameters>
+</npc>

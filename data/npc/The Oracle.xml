@@ -1,0 +1,6 @@
+<npc name="The Oracle" script="default.lua" walkinterval="0" floorchange="0">
+  <health now="150" max="150" />
+  <look typeex="1448" corpse="3128" />
+  <parameters>
+  </parameters>
+</npc>

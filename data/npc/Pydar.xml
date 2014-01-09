@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Pydar" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="69" head="95" body="94" legs="58" feet="121" corpse="6007" />
+<parameters>
+<parameter key="message_greet" value="Welcome, noble |PLAYERNAME|."/>
+ <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="offer;help;" />
+        <parameter key="keyword_reply1" value="I can bless you with The {Spark} {of} {the} {Phoenix}" />
+		<parameter key="keyword_reply2" value="I can bless you with The {Spark} {of} {the} {Phoenix}" />
+        <parameter key="message_farewell" value="Good Bye, noble |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Good Bye, noble |PLAYERNAME|." />
+		</parameters>
+</npc>

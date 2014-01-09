@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Harkath Bloodblade" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="19" body="19" legs="38" feet="38" addons="0" />
+<parameters>
+        <parameter key="message_greet" value="Address me with my title, commoner |PLAYERNAME|!"/>
+    </parameters>
+</npc>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Guard" nameDescription="a deepling guard" race="blood" experience="2100" speed="210" manacost="390">
+	<health now="1900" max="1900"/>
+	<look type="442" corpse="15208"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="10"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element physicalPercent="-8"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="QJELL NETA NA!!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="150" chance="23000"/><!-- gold coin -->
+		<item id="2152" countmax="2" chance="55500"/><!-- platinum coin -->
+		<item id="7590" chance="500"/><!-- GMP -->
+		<item id="7591" chance="200"/><!-- GHP -->
+		<item id="15455" chance="81000"/><!-- deepling claw -->
+		<item id="15424" chance="43000"/><!-- deepling breaktime snack -->
+		<item id="15423" chance="26000"/><!-- deepling guard belt buckle -->
+		<item id="13870" chance="22000"/><!-- eye of a deepling -->
+		<item id="15454" chance="7000"/><!-- guardian axe -->
+		<item id="13838" chance="5000"/><!-- heavy trident -->
+		<item id="2146" chance="500"/><!-- small sapphire -->
+		<item id="15645" chance="200"/><!-- deepling backpack -->
+		<item id="15644" chance="200"/><!-- ornate crossbow -->
+		<item id="15647" chance="200"/><!-- deepling squelcher -->
+		<item id="15645" chance="200"/><!-- deepling backpack -->
+	</loot>
+</monster>

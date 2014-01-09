@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Kraknaknork" nameDescription="a Kraknaknork" race="blood" experience="300" speed="180" manacost="0">
+  <health now="80" max="80"/>
+  <look type="6" head="0" body="0" legs="0" feet="0" corpse="5978"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="0"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="4"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="23"/>
+  </flags>
+ <attacks>
+    <attack name="melee" interval="2000" skill="20" attack="13" poison="5"/>
+    <attack name="earth" interval="1000" chance="13" range="7" min="-1" max="-10">
+      <attribute key="shootEffect" value="earth"/>
+      <attribute key="areaEffect" value="smallplants"/>
+    </attack>
+    <attack name="ice" interval="1000" chance="8" range="7" radius="1" target="1" min="-5" max="-15">
+      <attribute key="shootEffect" value="ice"/>
+      <attribute key="areaEffect" value="icearea"/>
+    </attack>
+   <attack name="outfit" interval="1000" chance="12" length="8" spread="10" monster="sheep" duration="2000">
+  <attribute key="areaEffect" value="blueshimmer"/>
+  </attack>
+  </attacks>  
+    <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="0"/>
+    <immunity drunk="0"/>
+    <immunity invisible="0"/>
+  </immunities>
+  <voices interval="5000" chance="10">    
+    <voice sentence="KRAK ORC DEMON" yell="1"/>    
+    <voice sentence="Grak brrretz gulu"/> 
+  </voices>
+  <summons maxSummons="1">
+    <summon name="Weakened Demon" interval="1000" chance="8"/>
+  </summons>
+  <loot>
+    <item id="2148" countmax="15" chance="100000"/>    
+  </loot>
+</monster>

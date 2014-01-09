@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Madareth" nameDescription="the madareth" race="fire" experience="10000" speed="130" manacost="0">
+	<health now="75000" max="75000"/>
+	<look type="12" head="77" body="116" legs="82" feet="79" corpse="6068"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="200" attack="200"/>
+		<attack name="death" interval="2000" chance="15" length="8" spread="0" min="-600" max="-850">
+			<attribute key="areaEffect" value="smallclouds"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" radius="4" target="1" min="-180" max="-660">
+			<attribute key="shootEffect" value="energyball"/>
+			<attribute key="areaEffect" value="energy"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="15" range="7" radius="4" target="1" min="-180" max="-200">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" length="8" spread="3">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+	</attacks>
+	<defenses armor="48" defense="46">
+		<defense name="healing" interval="2000" chance="20" min="200" max="400">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element icePercent="5"/>
+		<element energyPercent="99"/>
+		<element deathPercent="99"/>
+		<element firePercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="3000" chance="5">
+		<voice sentence="I am going to play with yourself!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+		<item id="7443" chance="30300" /> <!-- Bullseye Potion -->
+		<item id="7591" chance="30300" /> <!-- Great Health Potion -->
+		<item id="7440" chance="30300" /> <!-- Mastermind Potion -->
+		<item id="8472" chance="27270" /> <!-- Great Spirit Potion -->
+		<item id="7439" chance="24240" /> <!-- Berserk Potion -->
+		<item id="6301" chance="24240" /> <!-- Death Ring -->
+		<item id="2152" countmax="26" chance="24240" /> <!-- Platinum Coin -->
+		<item id="7590" chance="21210" /> <!-- Great Mana Potion -->
+		<item id="2183" chance="21210" /> <!-- Hailstorm Rod -->
+		<item id="2370" chance="21210" /> <!-- Lute -->
+		<item id="2377" chance="21210" /> <!-- Two Handed Sword -->
+		<item id="8473" chance="21210" /> <!-- Ultimate Health Potion -->
+		<item id="7418" chance="18180" /> <!-- Nightmare Blade -->
+		<item id="2211" chance="15150" /> <!-- Axe Ring -->
+		<item id="6500" chance="15150" /> <!-- Demonic Essence -->
+		<item id="7407" chance="15150" /> <!-- Haunted Blade -->
+		<item id="2372" chance="15150" /> <!-- Lyre -->
+		<item id="3953" chance="15150" /> <!-- War Drum -->
+		<item id="7416" chance="12120" /> <!-- Bloody Edge -->
+		<item id="7449" chance="12120" /> <!-- Crystal Sword -->
+		<item id="8912" chance="12120" /> <!-- Springsprout Rod -->
+		<item id="8910" chance="12120" /> <!-- Underworld Rod -->
+		<item id="2187" chance="12120" /> <!-- Wand of Inferno -->
+		<item id="8922" chance="12120" /> <!-- Wand of Voodoo -->
+		<item id="7404" chance="9090" /> <!-- Assassin Dagger -->
+		<item id="2212" chance="9090" /> <!-- Club Ring -->
+		<item id="5954" countmax="2" chance="9090" /> <!-- Demon Horn -->
+		<item id="2206" chance="9090" /> <!-- Time Ring -->
+		<item id="8920" chance="9090" /> <!-- Wand of Starstorm -->
+		<item id="3957" chance="9090" /> <!-- War Horn -->
+		<item id="3952" chance="6060" /> <!-- Didgeridoo -->
+		<item id="2215" chance="6060" /> <!-- Dwarven Ring -->
+		<item id="2396" chance="6060" /> <!-- Ice Rapier -->
+		<item id="2205" chance="6060" /> <!-- Life Ring -->
+		<item id="7386" chance="6060" /> <!-- Mercenary Sword -->
+		<item id="2216" chance="6060" /> <!-- Ring of Healing -->
+		<item id="2210" chance="3030" /> <!-- Sword Ring -->
+		<item id="2374" chance="3030" /> <!-- Wooden Flute -->
+	</loot>
+</monster>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rock in a Hard Place" script="default.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100"/>
+	<look typeex="14896"/>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="gray beach temple" />
+        <parameter key="keyword_reply1" value="I am the keeper of the Gray Beach temple and destined to protect whoever would dare venturing to this remote island." />
+        <parameter key="message_greet" value="Welcome, this is the {Gray Beach temple}, Sorcius. Whether you are wounded, poisoned - or wait, don't tell me - yes, this is probably a case of being more emotionally hurt, I will do my best to heal you."/>
+        <parameter key="message_farewell" value="Goodby then, |PLAYERNAME|!"/>
+		<parameter key="message_walkaway" value="Only the best for you." />
+</parameters>
+</npc>

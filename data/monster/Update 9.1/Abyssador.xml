@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Abyssador" nameDescription="abyssador" race="blood" experience="50000" speed="470" manacost="0">
+  <health now="330000" max="330000"/>
+  <look type="495" corpse="17413"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="90" defense="10"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="0"/>
+		<flag staticattack="50"/>
+		<flag runonhealth="100"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="1300" skill="110" attack="160"/>
+		<attack name="speed" interval="2000" chance="20" range="7" speedchange="-400" duration="2500">
+			<attribute key="shootEffect" value="earth"/>
+		</attack>
+		<attack name="fire" interval="800" chance="10" radius="10" range="7" min="-820" max="-1250">
+			<attribute key="areaEffect" value="greenspark"/>
+		</attack>
+		<attack name="energy" interval="750" chance="10" radius="12" range="3" target="1" min="-650" max="-1300">
+			<attribute key="areaEffect" value="greenspark"/>			
+		</attack>
+      		<attack name="lifedrain" interval="700" chance="10" range="3" radius="4" target="1" min="-600" max="-1230">
+      		<attribute key="shootEffect" value="poison"/>
+      		</attack>
+		<attack name="poison" interval="700" chance="12" radius="3" target="0" min="-40" max="-130">
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="35">
+		<defense name="healing" interval="2500" chance="25" min="8000" max="35000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="10"/>
+		<element deathPercent="-20"/>
+		<element energyPercent="-20"/>
+	</elements>
+	<immunities>
+		<immunity outfit="1"/>
+		<immunity earthPercent="100"/>
+		<immunity drown="1"/>
+		<immunity paralyze="100"/>
+		<immunity invisible="100"/>
+	</immunities>
+	<voices interval="3000" chance="10">
+		<voice sentence="*** BRAINS *** SMALL ***"/>
+		<voice sentence="*** LIVE *** DRY ***"/>
+		<voice sentence="*** IMPORTANT ***"/>
+		<voice sentence="*** FIRE *** HOME *** VICTORY ***"/>
+		<voice sentence="*** EXISTENCE *** FUTILE ***"/>
+		<voice sentence="*** TIME ***"/>
+	</voices>     
+  <loot>
+ 	 <item id="2148" countmax="100" chance="30000"/>  
+ 	 <item id="2149" countmax="4" chance="33333"/>
+        <item id="18453" chance="7800"/>             
+        <item id="18496" chance="8000"/>
+        <item id="18465" chance="5000"/>
+        <item id="18451" chance="5000"/>
+        <item id="18454" chance="8000"/>
+        <item id="18452" chance="6000"/>
+        <item id="18450" chance="10000"/>
+        <item id="18449" chance="9000"/>
+</loot>
+</monster>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Amber" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="136" head="59" body="113" legs="132" feet="76" addons="1" />
+  <parameters>
+    <parameter key="message_greet" value="Oh hello, nice to see you |PLAYERNAME|. Are you here to hear some stories of my adventures or do you need help?" />
+    <parameter key="message_farewell" value="See you later, |PLAYERNAME|." />
+    <parameter key="message_walkaway" value="Yeah, see you later." />
+  </parameters>
+</npc>

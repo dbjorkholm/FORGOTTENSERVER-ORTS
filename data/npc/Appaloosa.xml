@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Appaloosa" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="140" head="114" body="0" legs="114" feet="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Hello |PLAYERNAME|. You want to rent a {horse} or go to {palomino}?"/>
+        <parameter key="message_farewell" value="Good bye."/>
+		<parameter key="travel_destinations" value="palomino,32449,32226,7,125"/>
+    </parameters>
+</npc>

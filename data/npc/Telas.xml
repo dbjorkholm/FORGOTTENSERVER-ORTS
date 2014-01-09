@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Telas" script="Telas.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="133" head="39" body="0" legs="0" feet="76" addons="1" />
+<parameters>
+<parameter key="module_shop" value="1" />
+<parameter key="shop_sellable" value="acorn,10548,200;acorn,10572,180;acorn,9942,1000;acorn,9941,2000;acorn,9980,3000;acorn,9978,500;acorn,10571,200;acorn,5892,15000;acorn,11209,320;acorn,10580,550;acorn,5889,3000;acorn,5888,500;acorn,5887,10000;acorn,11221,500;acorn,11226,100;acorn,10570,460;" />
+        <parameter key="message_greet" value="Greetings |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Farewell."/>
+		<parameter key="message_walkaway" value="Farewell." />
+		<parameter key="message_sendtrade" value="Here, take a look at my offer." />
+    </parameters>
+</npc>

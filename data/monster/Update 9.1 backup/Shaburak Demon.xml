@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="" nameDescription="" race="blood" experience="" speed="" manacost="">
+	<health now="" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="3000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="" defense="">
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence=""/>
+	</voices>
+	<loot>
+	<item id="2148" countmax="100" chance="96980" /> <!-- Gold Coin -->
+<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+<item id="2148" countmax="50" chance="100000" /> <!-- Gold Coin -->
+<item id="7378" countmax="6" chance="10200" /> <!-- Royal Spear -->
+<item id="7588" chance="5220" /> <!-- Strong Health Potion -->
+<item id="7589" chance="4920" /> <!-- Strong Mana Potion -->
+<item id="2147" countmax="5" chance="4780" /> <!-- Small Ruby -->
+<item id="2789" chance="3900" /> <!-- Brown Mushroom -->
+<item id="2204" chance="1110" /> <!-- Energy Ring -->
+<item id="2114" chance="990" /> <!-- Piggy Bank -->
+<item id="7443" chance="660" /> <!-- Bullseye Potion -->
+<item id="2187" chance="570" /> <!-- Wand of Inferno -->
+<item id="7894" chance="150" /> <!-- Magma Legs -->
+<item id="5904" chance="90" /> <!-- Magic Sulphur -->
+	</loot>
+</monster>

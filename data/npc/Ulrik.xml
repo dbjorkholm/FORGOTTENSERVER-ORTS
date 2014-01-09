@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Ulrik" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="131" head="97" body="104" legs="0" feet="116" addons="0" />
+  <parameters>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="chain helmet,2458,52;leather helmet,2461,12;chain legs,2648,80;chain armor,2464,200;brass armor,2465,450;leather armor,2467,35;steel shield,2509,240;wooden shield,2512,15;viking shield,2531,260;dagger,2379,5;rapier,2384,15;sabre,2385,35;crimson sword,7385,610;mace,2398,90;battle hammer,2417,350;clerical mace,2423,540;barbarian axe,2429,590;bow,2456,400;crossbow,2455,500;royal spear,7378,15;spear,2389,10;throwing star,2399,42;arrow,2544,3;earth arrow,7850,5;flaming arrow,7840,5;flash arrow,7838,5;onyx arrow,7365,7;shiver arrow,7839,5;sniper arrow,7364,5;bolt,2543,4;piercing bolt,7363,5;power bolt,2547,7" />
+    <parameter key="shop_sellable" value="steel helmet,2457,190;chain helmet,2458,17;iron helmet,2459,150;leather helmet,2461,4;chain legs,2648,25;plate armor,2463,400;chain armor,2464,70;brass armor,2465,150;leather armor,2467,12;steel shield,2509,80;wooden shield,2512,5;battle shield,2513,95;viking shield,2531,85;two handed sword,2377,450;dagger,2379,2;spike sword,2383,240;rapier,2384,5;sabre,2385,12;short sword,2406,10;morning star,2394,90;mace,2398,30;battle hammer,2417,120;clerical mace,2423,170;battle axe,2378,80;hand axe,2380,4;halberd,2381,400;barbarian axe,2429,185;bow,2456,100;crossbow,2455,120;spear,2389,3" />
+  </parameters>
+</npc>

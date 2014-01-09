@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bozo" script="default.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="273" head="0" body="77" legs="80" feet="79" addons="3"/>
+<voices>
+<voice text="Do you know the one with the dragon? Where - and then ... hahahaha! Oh no, I guess I ruined it." interval2="100" margin="1" yell="no"/>
+<voice text="The fools' guild? Are you serious? No, of course not! Hahaha!" interval2="120" margin="1" yell="no"/>
+<voice text="Welcome, welcome, step closer!" interval2="90" margin="1" yell="no"/>
+</voices>
+<parameters>
+        <parameter key="message_greet" value="Hi there, how's it hanging, |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="A joke a day keeps the ghouls away!"/>
+		<parameter key="message_walkaway" value="A joke a day keeps the ghouls away!" />
+    </parameters>
+</npc>

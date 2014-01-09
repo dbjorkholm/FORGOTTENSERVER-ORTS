@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Elane" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="137" head="115" body="120" legs="120" feet="120" addons="3" />
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="elane;" />
+        <parameter key="keyword_reply1" value="Yes?" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="sniper gloves,5875,2000;" />
+        <parameter key="message_greet" value="Hi, |PLAYERNAME|, fellow paladin! What can I do for you? If you want to learn {spells}, let me know."/>
+        <parameter key="message_farewell" value="Bye, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Bye, |PLAYERNAME|." />
+    </parameters>
+</npc>

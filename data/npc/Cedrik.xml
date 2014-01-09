@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Cedrik" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="134" head="116" body="57" legs="97" feet="59" addons="0" />
+<voices>
+<voice text="Support your local weapon dealer!" interval2="100" margin="1" yell="no"/>
+</voices>  
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="wares;" />
+        <parameter key="keyword_reply1" value="My offers are weapons, ammunition, armors, helmets, legs, and shields. If you'd like to see my offers, ask me for a {trade}." />
+       <parameter key="message_greet" value="Hello |PLAYERNAME|. Have a look at my {wares}."/>
+        <parameter key="message_farewell" value="Bye |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="However." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="chain helmet,2458,52;leather helmet,2461,12;chain legs,2648,80;chain armor,2464,200;brass armor,2465,450;leather armor,2467,35;steel shield,2509,240;wooden shield,2512,15;dagger,2379,5;rapier,2384,15;sabre,2385,35;mace,2398,90;battle hammer,2417,350;bow,2456,400;crossbow,2455,500;royal spear,7378,15;spear,2389,10;throwing star,2399,42;arrow,2544,3;earth arrow,7850,5;flaming arrow,7840,5;flash arrow,7838,5;onyx arrow,7365,7;shiver arrow,7839,5;sniper arrow,7364,5;bolt,2543,4;piercing bolt,7363,5;power bolt,2547,7" />
+    <parameter key="shop_sellable" value="steel helmet,2457,190;chain helmet,2458,17;leather helmet,2461,4;chain legs,2648,25;plate armor,2463,400;chain armor,2464,70;brass armor,2465,150;leather armor,2467,12;magic plate armor,2472,1600;steel shield,2509,80;wooden shield,2512,5;battle shield,2513,95;two handed sword,2377,450;dagger,2379,2;rapier,2384,5;sabre,2385,12;short sword,2406,10;morning star,2394,90;mace,2398,30;battle hammer,2417,120;battle axe,2378,80;hand axe,2380,4;halberd,2381,400;bow,2456,100;crossbow,2455,120;spear,2389,3" />
+  </parameters>
+</npc>

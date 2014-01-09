@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gnominus" script="Gnominus.lua" walkinterval="2000" floorchange="0">
+  <health now="150" max="150" />
+  <look type="493" head="0" body="85" legs="85" feet="0" addons="0" />
+  <parameters>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="			Fresh Mushroom Beer,18305,10		" />
+  </parameters>
+</npc>

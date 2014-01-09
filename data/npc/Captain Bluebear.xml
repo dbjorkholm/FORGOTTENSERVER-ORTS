@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Captain Bluebear" script="Captain Bluebear.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="129" head="38" body="50" legs="87" feet="68" addons="0" />
+<parameters>
+<parameter key="message_farewell" value="Good bye. Recommend us if you were satisfied with our service." />
+<parameter key="message_walkaway" value="Good bye. Recommend us if you were satisfied with our service." />
+ <parameter key="module_keywords" value="1" />
+ <parameter key="keywords" value="name;thais;darashia;" />
+ <parameter key="keyword_reply1" value="My name is Captain Bluebear from the Royal Tibia Line." />
+ <parameter key="keyword_reply2" value="This is Thais. Where do you want to go?" />
+ <parameter key="keyword_reply3" value="I'm not sailing there. This route is afflicted by a ghost ship! However, I heard that Captain Fearless sails there from Venore." />
+ <parameter key="message_greet" value="Welcome on board, |PLAYERNAME|. Where may I {sail} you today?"/>
+</parameters>
+</npc>

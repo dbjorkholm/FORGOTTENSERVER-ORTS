@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Chemar" script="Chemar.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="130" head="76" body="14" legs="4" feet="114" addons="0" />
+<voices>
+<voice text="Ask me if you need letters or parcels. I'll deliver them via airmail, of course!" interval2="120" margin="1" yell="no"/>
+<voice text="Feel the wind in your hair during one of my carpet rides!" interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+    <parameter key="message_greet" value="Daraman's blessings, traveller |PLAYERNAME|." />
+    <parameter key="message_farewell" value="It was a pleasure to help you, |PLAYERNAME|." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="mail;letters;parcels;help;" />
+    <parameter key="keyword_reply1" value="With our mail system you can send {letters} and {parcels} to other Tibians. I can either explain how {letters} and {parcels} work or sell them to you if you ask me for a {trade}." />
+    <parameter key="keyword_reply2" value="If you want to buy a letter, ask me for a {trade}. Or do you want me to {explain} how letters work?" />
+    <parameter key="keyword_reply3" value="Well, you can always ask me for {help} if you need information." />
+    <parameter key="keyword_reply4" value="With our mail system you can send {letters} and {parcels} to other Tibians. I can either explain how {letters} and {parcels} work or sell them to you if you ask me for a {trade}." />
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="parcel,2595,15;letter,2597,8;label,2599,1;" />
+  </parameters>
+</npc>

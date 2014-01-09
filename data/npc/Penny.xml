@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Penny" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="137" head="58" body="116" legs="117" feet="59" addons="0" />
+    <parameters>
+        <parameter key="message_greet" value="Welcome home, Sir |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Good Bye, Sir |PLAYERNAME|."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I'm a Secretary here at the Island of Solitude." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="letter,2597,1;cake,6278,1;" />
+    </parameters>
+</npc>

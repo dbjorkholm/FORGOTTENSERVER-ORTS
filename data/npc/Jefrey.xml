@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Jefrey" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="132" head="95" body="63" legs="38" feet="82" addons="2" />
+<voices>
+<voice text="You'll sleep much better after a hunt once you have sold your loot and brought your money to our bank." interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+        <parameter key="message_greet" value="Hello, what can I do for you? Welcome to the Tibian {Bank}."/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="What else should I have expected other than that?" />
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+    </parameters>
+</npc>

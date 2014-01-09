@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Maris" script="default.lua" walkinterval="2000">
+  <health now="100" max="100" />
+  <look type="151" head="78" body="70" legs="66" feet="126" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="Oh, you're still alive. Hello, |PLAYERNAME|." />
+    <parameter key="message_farewell" value="Yeah, bye or whatever." />
+    <parameter key="message_needmoremoney" value="You don't have enough money!" />
+    <parameter key="message_decline" value="Alright then!" />
+  </parameters>
+</npc>

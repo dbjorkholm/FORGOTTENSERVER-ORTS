@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Fiona" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="137" head="115" body="100" legs="95" feet="38" addons="0" />
+<voices>
+<voice text="The Edron academy is always in need of magical ingredients!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="magical ingredients;" />
+        <parameter key="keyword_reply1" value="Oof, there are too many to list. Magical ingredients can sometimes be found when you defeat a monster, for example bat wings. I buy many of these things if you don't want to use them for quests, just ask me for a {trade}."/>
+<parameter key="module_shop" value="1" />
+<parameter key="shop_sellable" value="ape fur,5883,120;bat wing,5894,50;behemoth claw,5930,2000;beholder eye,5898,80;chicken feather,5890,30;demon dust,5906,300;demon horn,5954,1000;enchanted chicken wing,5891,20000;fish fin,5895,150;warriors sweat,5885,10000;slime,9967,25;glob of mercury,9966,20;glob of tar,9968,30;green dragon scale,5920,100;hardened bone,5925,70;heaven blossom,5921,50;holy orchid,5922,90;honeycomb,5902,40;lizard scale,5881,120;magic sulphur,5904,8000;perfect behemoth fang,5893,250;red dragon scale,5882,200;spider silk,5879,100;turtle shell,5899,90;vampire dust,5905,100;i,11188,210;i,11186,35;i,10563,80;i,11355,175;i,11187,150;i,10552,375;i,10577,280;i,10565,90;i,11191,380;i,11215,475;i,10576,700;i,11223,450;i,10582,520;i,10558,95;i,11189,120;i,11308,250;i,10581,400;i,10560,265;"/>
+        <parameter key="message_greet" value="Good day, |PLAYERNAME|. I hope you bring a lot of {magical} {ingredients} with you."/>
+        <parameter key="message_farewell" value="Good bye and please come back soon."/>
+		<parameter key="message_walkaway" value="Good bye and please come back soon." />
+		<parameter key="message_sendtrade" value="Sure, take a look. Apart from those, I also buy some of the possessions from famous demonlords and bosses. Ask me about it if you found anything interesting." />
+</parameters>
+</npc>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="" nameDescription="" race="blood" experience="" speed="" manacost="">
+	<health now="" max=""/>
+	<look type="" corpse=""/>
+	<targetchange interval="3000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+	</attacks>
+	<defenses armor="" defense="">
+	</defenses>
+	<elements>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence=""/>
+	</voices>
+	<loot>
+	<item id="2148" countmax="100" chance="99800" /> <!-- Gold Coin -->
+<item id="2148" countmax="100" chance="100000" /> <!-- Gold Coin -->
+<item id="7589" chance="19940" /> <!-- Strong Mana Potion -->
+<item id="7588" chance="19910" /> <!-- Strong Health Potion -->
+<item id="2789" countmax="3" chance="9930" /> <!-- Brown Mushroom -->
+<item id="2145" countmax="5" chance="4860" /> <!-- Small Diamond -->
+<item id="2164" chance="3930" /> <!-- Might Ring -->
+<item id="2151" chance="940" /> <!-- Talon -->
+<item id="7889" chance="850" /> <!-- Lightning Pendant -->
+<item id="10221" chance="550" /> <!-- Shockwave Amulet -->
+<item id="2438" chance="540" /> <!-- Epee -->
+<item id="2189" chance="540" /> <!-- Wand of Cosmic Energy -->
+<item id="7440" chance="520" /> <!-- Mastermind Potion -->
+<item id="7895" chance="470" /> <!-- Lightning Legs -->
+<item id="13942" chance="310" /> <!-- Yielocks -->
+<item id="13881" chance="290" /> <!-- Yielowax -->
+<item id="13877" chance="250" /> <!-- Broken Ring of Ending -->
+	</loot>
+</monster>

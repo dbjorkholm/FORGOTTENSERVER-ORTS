@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Magistratus" nameDescription="a lizard magistratus" race="blood" experience="2000" speed="140" manacost="0">
+	<health now="8000" max="8000"/>
+	<look type="115" corpse="6041"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="15"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="50"/>
+	</attacks>
+	<defenses armor="17" defense="15">
+		<defense name="healing" interval="2000" chance="25" min="50" max="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="100"/>
+		<element energyPercent="20"/>
+		<element icePercent="10"/>
+		<element physicalPercent="-16"/>
+		<element firePercent="10"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="cobra" interval="1000" chance="3000"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="I ssssmell warm blood!"/>
+		<voice sentence="Shhhhhhhh"/>
+	</voices>
+	<loot>
+<item id="2148" countmax="50" chance="77350" /> <!-- Gold Coin -->
+<item id="2152" countmax="19" chance="13230" /> <!-- Platinum Coin -->
+<item id="2147" countmax="5" chance="8910" /> <!-- Small Ruby -->
+<item id="7589" chance="6110" /> <!-- Strong Mana Potion -->
+<item id="7590" chance="4830" /> <!-- Great Mana Potion -->
+<item id="5881" chance="510" /> <!-- Lizard Scale -->
+	</loot>
+</monster>

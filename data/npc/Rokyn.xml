@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rokyn" script="bank.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="160" head="58" body="87" legs="57" feet="95" addons="0" />
+<voices>
+<voice text="Don't run into the mines with too much money in your pockets. Better leave it here." interval2="100" margin="1" yell="no"/>
+</voices>
+  <parameters>
+    <parameter key="message_greet" value="Hiho, hiho, |PLAYERNAME|! Welcome to the {bank}! What can I do for you?" />
+    <parameter key="message_farewell" value="Good bye." />
+    <parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="bank;" />
+    <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+  </parameters>
+</npc>

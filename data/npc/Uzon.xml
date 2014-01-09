@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Uzon" script="Uzon.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="130" head="76" body="5" legs="17" feet="76" addons="0" />
+<voices>
+<voice text="Feel the wind in your hair during one of my carpet rides!" interval2="120" margin="1" yell="no"/>
+</voices>
+<parameters>
+        <parameter key="message_greet" value="Greetings, traveller |PLAYERNAME|. Where do you want me to fly you?"/>
+        <parameter key="message_farewell" value="Good bye!"/>
+		<parameter key="message_walkaway" value="Good bye!" />
+</parameters>
+</npc>

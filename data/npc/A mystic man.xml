@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="A mystic man" script="AncientOne.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="153" head="38" body="114" legs="39" feet="39" addons="3"/>
+  <parameters>
+    <parameter key="message_greet" value="I have waited for you |PLAYERNAME|." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="help;quest;test of the ancients" />
+		<parameter key="keyword_reply1" value="I can not offer you much help." />
+		<parameter key="keyword_reply2" value="You've always been looking for new adventures, ever since your childhood. I wonder if you are ready for the test of the ancients now." />
+		<parameter key="keyword_reply3" value="The test of the ancients is a mind test, but its impossible to get there unless you get a teleport." />
+  </parameters>
+</npc>
