@@ -33,7 +33,7 @@
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
-	<event type="login" name="FirstItems" script="others/advance_save.lua"/>
+	<event type="login" name="AdvanceSave" script="others/advance_save.lua"/>
 
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
 
