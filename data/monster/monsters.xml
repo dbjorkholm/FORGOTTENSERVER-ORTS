@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<!-- Wild Nature -->
+	<monster name="Wild Fire Magic" file="Pyro-Elementals/Wild Fire Magic.xml"/>
+	<monster name="Wild Fury Magic" file="Pyro-Elementals/Wild Fury Magic.xml"/>
+	<monster name="Wild Nature Magic" file="Pyro-Elementals/Wild Nature Magic.xml"/>
+	<monster name="Wild Water Magic" file="Pyro-Elementals/Wild Water Magic.xml"/>
+	
+	<!-- Wrath -->
+	<monster name="wrath of the emperor" file="Bosses/wrath of the emperor.xml"/>
+	<monster name="Spite of the Emperor" file="Bosses/spite of the emperor.xml"/>
+	<monster name="fury of the Emperor" file="Bosses/fury of the emperor.xml"/>
+	<monster name="scorn of the Emperor" file="Bosses/scorn of the emperor.xml"/>
+	
 	<!-- Amphibians -->
 	<monster name="Target Dummy" file="Train/targetdummy.xml"/>
 	
@@ -320,6 +332,7 @@
 	<monster name="Shaburak Prince" file="Demons/shaburak prince.xml"/>
 	<monster name="Shadow Hound" file="Demons/shadow hound.xml"/>
 	<monster name="Yielothax" file="Demons/yielothax.xml"/>
+	<monster name="demon (goblin)" file="Goblins/demon (goblin).xml"/>
 
 	<!-- Djinn -->
 	<monster name="Blue Djinn" file="Djinn/blue djinn.xml"/>
@@ -565,6 +578,18 @@
 		<monster name="Drillworm" file="Misc/Misc Others/drillworm.xml"/>
 		<monster name="Marsh Stalker" file="Misc/Misc Others/marsh stalker.xml"/>
 		<monster name="Pigeon" file="Misc/Misc Others/pigeon.xml"/>
+		<monster name="Brown Horse" file="Misc/Misc Others/horse(brown).xml"/>
+		<monster name="Grey Horse" file="Misc/Misc Others/horse(grey).xml"/>
+		<monster name="Fire Horse" file="Misc/Misc Others/horse(fire).xml"/>
+		<monster name="Diseased Dan" file="Misc/Misc Others/diseased dan.xml"/>
+		<monster name="Diseased Fred" file="Misc/Misc Others/diseased fred.xml"/>
+		<monster name="Diseased Bill" file="Misc/Misc Others/diseased bill.xml"/>
+		<monster name="Nightfiend" file="Misc/Misc Others/Nightfiend.xml"/>
+		<monster name="Vicious Manbat" file="Misc/Misc Others/Vicious Manbat.xml"/>
+		<monster name="Kraknaknork's Demon" file="Misc/Misc Others/Kraknaknork's Demon.xml"/>
+		<monster name="Enraged White Deer" file="Misc/Misc Others/Enraged White Deer.xml"/>
+		<monster name="Energized Raging Mage" file="Misc/Misc Others/Energized Raging Mage.xml"/>
+		<monster name="The Pale Count" file="Misc/Misc Others/The Pale Count.xml"/>
 
 	<!-- Mollusks -->
 	<monster name="Calamary" file="Mollusks/calamary.xml"/>
