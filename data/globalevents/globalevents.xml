@@ -27,10 +27,6 @@
 	<globalevent name="necropharus" interval="3600000" script="random spawns/bosses/necropharus.lua"/>
 	<globalevent name="demodras" interval="3600000" script="random spawns/bosses/demodras.lua"/>
 	
-	<!-- World Changes -->
-	<globalevent name="furygates" type="startup" script="world changes/gates.lua"/>
-	<globalevent name="resetfurygates" type="shutdown" script="world changes/resetgates.lua"/>
-	
 	<!-- Blooming Griffinclaw -->
 	<globalevent name="bloomingGriffinclaw" type="start" script="blooming griffinclaw/bloomingGriffinclaw.lua"/>
 	
