@@ -37,6 +37,8 @@
 		<item id="2148" countmax="30" chance="22500"/><!-- gold coin -->
 		<item id="3976" countmax="3" chance="15000"/><!-- worm -->
 		<item id="2148" countmax="3" chance="11000"/><!-- meat -->
+		<item id="11190" chance="10000"/><!-- terrorbird beak -->
+		<item id="12470" chance="3000"/><!-- colourful feather -->
 		<item id="3970" chance="2000"/><!-- health potion -->
 		<item id="3970" chance="750"/><!-- feather headdress -->
 		<item id="3970" chance="2500"/><!-- seeds -->

@@ -53,7 +53,6 @@
 	<loot>
 		<item id="2148" countmax="70" chance="31500"/><!-- gold coin -->
 		<item id="2654" chance="13000"/><!-- cape -->
-		<item id="2817" chance="40000"/><!-- dead snake -->
 		<item id="2237" chance="22500"/><!-- dirty cape -->
 		<item id="5876" chance="3000"/><!-- lizard leather -->
 		<item id="2150" chance="500"/><!-- small amethyst -->

@@ -32,7 +32,6 @@
 		<voice sentence="Yoooohhuuuu!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2666" countmax="4" chance="25000"/><!-- meat -->
 		<item id="2671" countmax="2" chance="20000"/><!-- ham -->
 		<item id="5897" chance="2000"/><!-- wolf paw -->
 		<item id="3976" chance="250"/><!-- wolf trophy -->

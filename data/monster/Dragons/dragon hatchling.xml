@@ -48,5 +48,6 @@
 		<item id="2148" countmax="55" chance="37500"/><!-- gold coin -->
 		<item id="2672" chance="25000"/><!-- dragon ham -->
 		<item id="7618" chance="5000"/><!-- health potion -->
+		<item id="12413" chance="4000"/><!-- dragon's tail -->
 	</loot>
 </monster>

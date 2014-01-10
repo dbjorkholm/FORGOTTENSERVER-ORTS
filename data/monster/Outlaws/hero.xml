@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Hero" nameDescription="a hero" race="blood" experience="1200" speed="268" manacost="0">
 	<health now="1400" max="1400"/>
-	<look type="73" corpse="20418"/>
+	<look type="73" corpse="20415"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -48,9 +48,10 @@
 		<voice sentence="I will sing a tune at your grave."/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="55" chance="42500"/><!-- gold coin -->
-		<item id="2148" countmax="45" chance="42500"/><!-- gold coin -->
+		<item id="2148" countmax="100" chance="42500"/><!-- gold coin -->
 		<item id="2544" countmax="15" chance="21000"/><!-- arrow -->
+		<item id="12466" chance="5000"/><!-- Scroll of heroic deeds -->
+		<item id="12406" chance="980"/><!-- small notebook -->
 		<item id="2120" chance="20000"/><!-- rope -->
 		<item id="1949" chance="50000"/><!-- scroll -->
 		<item id="2071" chance="25000"/><!-- lyre -->

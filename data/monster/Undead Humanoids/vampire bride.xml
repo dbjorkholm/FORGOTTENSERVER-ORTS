@@ -62,5 +62,10 @@
 		<item id="7589" chance="9750"/><!-- strong mana potion -->
 		<item id="7588" chance="4800"/><!-- strong health potion -->
 		<item id="9837" chance="925"/><!-- velvet tapestry -->
+		<item id="13293" chance="20"/><!-- leather whip -->
+		<item id="12405" chance="7850"/><!-- blood preservation -->
+		<item id="10602" chance="10300"/><!-- vampire teeth -->
+		<item id="9447" chance="1300"/><!-- blood goblet -->
+		<item id="7733" chance="10300"/><!-- flower bouquet -->
 	</loot>
 </monster>

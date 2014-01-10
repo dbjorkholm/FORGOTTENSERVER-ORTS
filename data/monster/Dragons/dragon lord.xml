@@ -55,7 +55,7 @@
 		<item id="2148" countmax="60" chance="33750"/><!-- gold coin -->
 		<item id="1976" chance="10000"/><!-- gemmed book -->
 		<item id="2672" countmax="5" chance="11500"/><!-- dragon ham -->
-		<item id="7399" chance="200"/><!-- dragon lord trophy -->
+		<item id="7399" chance="100"/><!-- dragon lord trophy -->
 		<item id="2167" chance="5250"/><!-- energy ring -->
 		<item id="2392" chance="750"/><!-- fire sword -->
 		<item id="2033" chance="2650"/><!-- golden mug -->

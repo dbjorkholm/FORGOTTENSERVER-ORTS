@@ -47,5 +47,9 @@
 		<item id="2425" chance="1075"/> <!-- obsidian lance -->
 		<item id="11324" chance="9475"/> <!-- shaggy tail -->
 		<item id="11113" chance="4150"/> <!-- orc tooth -->
+		<item id="2428" chance="26250"/><!-- orcish axe -->
+		<item id="12435" chance="4000"/><!-- orc leather -->
+		<item id="8857" chance="4150"/> <!-- silkweaver bow -->
+		<item id="12407" chance="4150"/> <!-- broken crossbow -->
 	</loot>
 </monster>

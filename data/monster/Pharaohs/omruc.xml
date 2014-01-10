@@ -73,5 +73,6 @@
 		<item id="2195" chance="1500"/><!-- boots of haste -->
 		<item id="2444" chance="300"/><!-- hammer of wrath -->
 		<item id="2352" chance="100000"/><!-- crystal arrow -->
+		<item id="11207" chance="5000"/><!-- mini mummy -->
 	</loot>
 </monster>

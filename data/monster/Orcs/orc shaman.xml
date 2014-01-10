@@ -51,11 +51,13 @@
 	<loot>
 		<item id="2148" countmax="5" chance="61000"/><!-- gold coin -->
 		<item id="2686" countmax="2" chance="10000"/><!-- corncob -->
-		<item id="2458" chance="9500"/><!-- chain helmet -->
 		<item id="2464" chance="8000"/><!-- chain armor -->
 		<item id="2389" chance="6350"/><!-- spear -->
 		<item id="1958"  chance="3500"/><!-- book -->
 		<item id="2188" chance="1500"/><!-- wand of decay -->
-		<item id="2401" chance="3000"/><!-- staff -->
+		<item id="12435" chance="4000"/><!-- orc leather -->
+		<item id="11113" chance="3000"/><!-- orc tooth -->
+		<item id="12434" chance="3000"/><!-- shamantic hood -->
+		<item id="12408" chance="3000"/><!-- broken shamantic staff -->
 	</loot>
 </monster>

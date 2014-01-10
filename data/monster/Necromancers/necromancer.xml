@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Necromancer" nameDescription="a necromancer" race="blood" experience="580" speed="200" manacost="0">
 	<health now="580" max="580"/>
-	<look type="9" corpse="20458"/>
+	<look type="9" corpse="20455"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -44,7 +44,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<summons maxSummons="4">
+	<summons maxSummons="2">
 		<summon name="Ghoul" interval="1000" chance="17" max="2"/>
 		<summon name="Ghost" interval="1000" chance="15" max="1"/>
 		<summon name="Mummy" interval="1000" chance="13" max="1"/>
@@ -54,18 +54,17 @@
 		<voice sentence="Taste the sweetness of death!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="60" chance="8250"/><!-- gold coin -->
-		<item id="2148" countmax="30" chance="8250"/><!-- gold coin -->
+		<item id="2148" countmax="90" chance="8250"/><!-- gold coin -->
 		<item id="2545" countmax="5" chance="4000"/><!-- poison arrow -->
-		<item id="2406" chance="14000"/><!-- short sword -->
-		<item id="2483" chance="10500"/><!-- scale armor -->
 		<item id="2796" chance="3000"/><!-- green mushroom -->
 		<item id="2423" chance="1700"/><!-- clerical mace -->
 		<item id="7589" chance="1250"/><!-- strong mana potion -->
 		<item id="2663" chance="375"/><!-- mystic turban -->
-		<item id="2436" chance="125"/><!-- skull staff -->
-		<item id="7456" chance="50"/><!-- noble axe -->
-		<item id="8901" chance="125"/><!-- spellbook of warding -->
-		<item id="2195" chance="275"/><!-- boots of haste -->
+		<item id="2436" chance="110"/><!-- skull staff -->
+		<item id="7456" chance="10"/><!-- noble axe -->
+		<item id="8901" chance="90"/><!-- spellbook of warding -->
+		<item id="2195" chance="230"/><!-- boots of haste -->
+		<item id="11237" chance="10"/><!-- Book of Necromantic Rituals -->
+		<item id="12431" chance="10"/><!-- Necromantic Robe -->
 	</loot>
 </monster>

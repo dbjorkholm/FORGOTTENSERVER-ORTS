@@ -45,5 +45,6 @@
 		<item id="2512" chance="15000"/><!-- wooden shield -->
 		<item id="2448" chance="4500"/><!-- studded club -->
 		<item id="2170" chance="50"/><!-- silver amulet -->
+		<item id="10606" chance="940"/><!-- Bunch of Troll Hair -->
 	</loot>
 </monster>
