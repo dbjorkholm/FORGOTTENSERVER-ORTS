@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Shadow Pupil" nameDescription="a shadow pupil" race="blood" experience="410" speed="200" manacost="0">
+	<health now="450" max="450"/>
+	<look type="551" corpse="21254"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="100"/>
+		<attack name="lifedrain" interval="1000" chance="20" range="1" min="-40" max="-60">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20"/>
+	<elements>
+		<element energyPercent="1"/>
+		<element icePercent="1"/>
+		<element deathPercent="1"/>
+		<element physicalPercent="-1"/>
+		<element firePercent="-1"/>
+		<element holyPercent="-1"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<summons maxSummons="4">
+		<summon name="Skeleton" interval="1000" chance="17" max="2"/>
+		<summon name="Ghost" interval="1000" chance="15" max="1"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="When I'm finished with you, you'll be a shadow of your former self."/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="63" chance="100000"/><!-- gold coin -->
+		<item id="21246" chance="10120"/><!-- Incantation Notes -->
+		<item id="21243" chance="13650"/><!-- horoscope -->
+		<item id="11237" chance="8470"/><!--  Book of Necromantic Rituals -->
+		<item id="2789" chance="11070"/><!-- brown mushroom -->
+		<item id="21247" chance="3290"/><!-- Pieces of Magic Chalk -->
+		<item id="7589" chance="470"/><!-- Strong Mana Potion -->
+		<item id="2663" chance="470"/><!-- Mystic Turban -->
+	</loot>
+</monster>
