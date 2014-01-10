@@ -82,5 +82,7 @@
 		<item id="11307" chance="550" /><!-- zaoan sword -->
 		<item id="11303" chance="1550" /><!-- zaoan shoes -->
 		<item id="11302" chance="650" /><!-- zaoan helmet -->
+		<item id="7885" chance="1125" /><!-- terra legs -->
+		<item id="7886" chance="1125" /><!-- terra boots -->
 	</loot>
 </monster>

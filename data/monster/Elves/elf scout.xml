@@ -44,10 +44,9 @@
 		<item id="2545" countmax="6" chance="7000"/><!-- poison arrow -->
 		<item id="2681" chance="17750"/><!-- grape -->
 		<item id="2031" chance="14250"/><!-- waterskin -->
-		<item id="2484" chance="19750"/><!-- studded armor -->
+		<item id="12420" chance="19750"/><!-- Elven Scouting Glass -->
 		<item id="2642" chance="9370"/><!-- sandals -->
-		<item id="2397" chance="6500"/><!-- longsword -->
-		<item id="2482" chance="7000"/><!-- studded helmet -->
+		<item id="10552" chance="13500"/><!-- elvish talisman -->
 		<item id="2456" chance="4000"/><!-- bow -->
 		<item id="5921" chance="250"/><!-- heaven blossom -->
 		<item id="7438" chance="50"/><!-- elvish bow -->

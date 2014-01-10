@@ -46,5 +46,6 @@
 		<item id="2672" chance="25000"/><!-- dragon ham -->
 		<item id="8900" chance="200"/><!-- spellbook of enlightenment -->
 		<item id="7618" chance="5000"/><!-- health potion -->
+		<item id="10578" chance="5000"/><!-- frosty heart -->
 	</loot>
 </monster>

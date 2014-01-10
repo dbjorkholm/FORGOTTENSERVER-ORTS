@@ -13,7 +13,7 @@
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
-		<flag targetdistance="3"/>
+		<flag targetdistance="0"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
 	</flags>
@@ -56,7 +56,7 @@
 		<item id="2147" countmax="5" chance="1725" /><!-- small ruby -->
 		<item id="8871" chance="1450" /><!-- focus cape -->
 		<item id="2666" chance="30400" /><!-- meat -->
-		<item id="13294" chance="200"/> <!-- harness -->
+		<item id="13294" chance="20"/> <!-- harness -->
 		<item id="11303" chance="2550" /><!-- zaoan shoes -->
 		<item id="2187" chance="2225" /><!-- wand of inferno -->
 		<item id="11314" chance="15525" /><!-- weaver's wandtip -->

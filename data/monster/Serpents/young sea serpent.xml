@@ -54,17 +54,15 @@
 		<item id="2148" countmax="65" chance="31000"/><!-- gold coin -->
 		<item id="2148" countmax="55" chance="31000"/><!-- gold coin -->
 		<item id="2148" countmax="45" chance="31000"/><!-- gold coin -->
-		<item id="2666" countmax="4" chance="20000"/><!-- meat -->
 		<item id="2146" chance="1500" countmax="2"/><!-- small saphire -->
 		<item id="2165" chance="750"/><!--stealth ring -->
 		<item id="7589" chance="1000"/><!-- strong mana potion -->
-		<item id="2489" chance="2500"/><!-- dark armor -->
-		<item id="9808" chance="1000"/><!-- rusty armor -->
 		<item id="2672" countmax="2" chance="16000"/><!-- dragon ham -->
 		<item id="9808" chance="1000"/><!-- rusty armor -->
 		<item id="2394" chance="8000"/><!-- morningstar -->
 		<item id="2177" chance="800"/><!-- life crystal -->
 		<item id="2417" chance="5000"/><!-- battle hammer -->
 		<item id="2378" chance="3000"/><!-- battle axe -->
+		<item id="10583" chance="26000"/><!-- Sea Serpent Scale -->
 	</loot>
 </monster>

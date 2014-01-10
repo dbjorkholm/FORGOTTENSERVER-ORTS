@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Assassin" nameDescription="an assassin" race="blood" experience="105" speed="224" manacost="450">
 	<health now="175" max="175"/>
-	<look type="129" head="95" body="95" legs="95" feet="95" corpse="20327"/>
+	<look type="152" head="114" body="95" legs="95" feet="95" addons="3" corpse="20327"/>
 	<targetchange interval="2000" chance="5"/>
 	<strategy attack="70" defense="20"/>
 	<flags>
@@ -51,7 +51,6 @@
 		<item id="7366" chance="15500"/><!-- viper star -->
 		<item id="2403" chance="7500"/><!-- knife -->
 		<item id="2404" chance="4750"/><!-- combat knife -->
-		<item id="2050" chance="22500"/><!-- torch -->
 		<item id="2457" chance="4350"/><!-- steel helmet -->
 		<item id="2510" chance="1600"/><!-- plate shield -->
 		<item id="3968" chance="400"/><!-- leopard armor -->

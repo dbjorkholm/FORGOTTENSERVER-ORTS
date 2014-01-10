@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Monk" nameDescription="a monk" race="blood" experience="200" speed="220" manacost="600">
 	<health now="240" max="240"/>
-	<look type="57" corpse="20371"/>
+	<look type="57" corpse="20559"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -42,11 +42,14 @@
 		<voice sentence="I will punish the sinners!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="20" chance="24000"/><!-- gold coin -->
+		<item id="2148" countmax="18" chance="24000"/><!-- gold coin -->
 		<item id="2689" chance="20000"/><!-- bread -->
 		<item id="1949" chance="18000"/><!-- scroll -->
 		<item id="2044" chance="12000"/><!-- lamp -->
+		<item id="10563" chance="12000"/><!-- Book of Prayers -->
 		<item id="2015" chance="6666"/><!-- brown flask -->
+		<item id="12448" chance="6666"/><!-- rope belt -->
+		<item id="12449" chance="6666"/><!-- safety pins -->
 		<item id="2642" chance="6666"/><!-- sandals -->
 		<item id="2467" chance="4000"/><!-- leather armor -->
 		<item id="2401" chance="20000"/><!-- staff -->

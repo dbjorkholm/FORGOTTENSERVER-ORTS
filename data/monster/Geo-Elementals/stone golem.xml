@@ -35,10 +35,12 @@
 	<loot>
 		<item id="2148" countmax="15" chance="9000"/><!-- gold coin -->
 		<item id="1294" countmax="4" chance="8250"/><!-- small stone -->
-		<item id="2509" chance="9750"/><!-- steel shield -->
-		<item id="2050" chance="7250"/><!-- torch -->
-		<item id="2166" chance="5000"/><!-- power ring-->
-		<item id="2483" chance="3250"/><!-- scale armor -->
+		<item id="11232" chance="9750"/><!-- sulphurus stone -->
+		<item id="10549" chance="7250"/><!-- ancient stone -->
+		<item id="11227" chance="7250"/><!-- shiny stone -->
+		<item id="11343" chance="7250"/><!-- piece of marble rock -->
+		<item id="2209" chance="5000"/><!-- power ring-->
+		<item id="13757" chance="3250"/><!-- coal -->
 		<item id="2395" chance="1100"/><!-- carlin sword -->
 		<item id="5880" chance="2500"/><!-- iron ore -->
 		<item id="2124" chance="200"/><!-- crystal ring -->

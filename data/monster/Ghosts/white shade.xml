@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="White Shade" nameDescription="a white shade" race="blood" experience="120" speed="220" manacost="0">
+	<health now="260" max="260"/>
+	<look type="560" corpse="21367"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="5"/>
+		<attack name="lifedrain" interval="2000" chance="20" range="1" min="-4" max="-6">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="17" defense="23">
+		<defense name="invisible" interval="1000" chance="25" duration="9000">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="-1"/>
+	</elements>
+	<immunities>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<voices interval="5000" chance="100">
+		<voice sentence="Leave this place... save yourself..." yell="1"/>
+		<voice sentence="The dark ones.. must be stopped... unholy, twisted, EVIL!"/>
+		<voice sentence="No... don't go further stranger... danger lies in every step..."/>
+	</voices>
+	<loot>
+		<item id="5909" chance="3800"/><!-- white piece of cloth -->
+	</loot>
+</monster>

@@ -50,7 +50,7 @@
 		<item id="2467" chance="10000"/><!-- leather armor -->
 		<item id="2559" chance="8750"/><!-- small axe -->
 		<item id="1294" countmax="4" chance="9000"/><!-- small stone -->
-		<item id="2235" chance="9000"/><!-- moldy cheese -->
+		<item id="2235" chance="9000"/><!-- mouldy cheese -->
 		<item id="2461" chance="13000"/><!-- leather helmet -->
 	</loot>
 </monster>

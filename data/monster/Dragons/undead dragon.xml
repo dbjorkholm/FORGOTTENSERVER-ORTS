@@ -18,16 +18,16 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="150" attack="60"/>
+		<attack name="melee" interval="2000" skill="70" attack="60"/>
 		<attack name="melee" interval="2000" chance="20" range="7" radius="4" target="1" min="-300" max="-395">
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="redspark"/>
 		</attack>
-		<attack name="physical" interval="3000" chance="10" range="7" min="-0" max="-500">
+		<attack name="physical" interval="3000" chance="10" range="7" min="-0" max="-300">
 			<attribute key="shootEffect" value="suddendeath"/>
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="poison" interval="2000" chance="20" range="7" radius="4" target="1" min="-120" max="-390">
+		<attack name="poison" interval="2000" chance="20" range="7" radius="4" target="1" min="-120" max="-250">
 			<attribute key="shootEffect" value="poison"/>
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
@@ -35,13 +35,13 @@
 			<attribute key="shootEffect" value="poison"/>
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="fire" interval="4000" chance="20" length="8" spread="3" min="-500" max="-600">
+		<attack name="fire" interval="4000" chance="20" length="8" spread="3" min="-500" max="-350">
 			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="poison" interval="2000" chance="20" length="8" spread="3" min="-200" max="-685">
+		<attack name="poison" interval="2000" chance="20" length="8" spread="3" min="-200" max="-400">
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="lifedrain" interval="3000" chance="20" length="8" spread="3" min="-300" max="-600">
+		<attack name="lifedrain" interval="3000" chance="20" length="8" spread="3" min="-300" max="-300">
 			<attribute key="areaEffect" value="greenshimmer"/>
 		</attack>
 		<attack name="drowncondition" interval="1000" chance="20" length="8" spread="3">
@@ -66,10 +66,8 @@
 		<voice sentence="I SENSE LIFE" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="90" chance="35500"/><!-- gold coin -->
-		<item id="2148" countmax="80" chance="35500"/><!-- gold coin -->
-		<item id="2148" countmax="70" chance="35500"/><!-- gold coin -->
-		<item id="2148" countmax="60" chance="35500"/><!-- gold coin -->
+		<item id="2148" countmax="100" chance="35500"/><!-- gold coin -->
+		<item id="2148" countmax="100" chance="35500"/><!-- gold coin -->
 		<item id="2236" chance="15000"/><!-- torn book -->
 		<item id="2413" chance="26750"/><!-- broad sword -->
 		<item id="6500" chance="16750"/><!-- demonic essence -->

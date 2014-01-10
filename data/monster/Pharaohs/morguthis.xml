@@ -76,5 +76,6 @@
 		<item id="7368" countmax="3" chance="500"/><!-- assassin star -->
 		<item id="2645" chance="500"/><!-- steel boots -->
 		<item id="2350" chance="100000"/><!-- sword hilt -->
+		<item id="11207" chance="500"/><!-- mini mummy -->
 	</loot>
 </monster>
