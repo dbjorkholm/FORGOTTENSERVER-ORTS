@@ -39,14 +39,13 @@
 		<item id="2671" chance="33333"/><!-- ham -->
 		<item id="2406" chance="25000"/><!-- short sword -->
 		<item id="7441" chance="3444"/><!-- ice cube -->
-		<item id="2510" chance="5333"/><!-- plate shield -->
 		<item id="2513" chance="2500"/><!-- battle shield -->
 		<item id="2381" chance="1955"/><!-- halberd -->
 		<item id="7460" chance="2500"/><!-- norse shield -->
 		<item id="2490" chance="2777"/><!-- dark helmet -->
-		<item id="2129" chance="1666"/><!-- wolf tooth chain -->
 		<item id="7618" chance="1666"/><!-- health potion -->
 		<item id="7290" chance="1666"/><!-- shard -->
 		<item id="2209" chance="2055"/><!-- club ring -->
+		<item id="10575" chance="500"/><!-- Frost Giant Pelt -->
 	</loot>
 </monster>

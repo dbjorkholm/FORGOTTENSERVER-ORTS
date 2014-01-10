@@ -68,5 +68,6 @@
 		<item id="6300" chance="100"/><!-- death ring -->
 		<item id="9971" chance="150"/><!-- gold ingot -->
 		<item id="2436" chance="500"/><!-- skull staff -->
+		<item id="7632" chance="1550"/><!-- Giant Shimmering Pearl -->
 	</loot>
 </monster>

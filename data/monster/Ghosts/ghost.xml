@@ -43,9 +43,10 @@
 		<item id="2404" chance="7000"/><!-- combat knife -->
 		<item id="2804" chance="5000"/><!-- shadow herb -->
 		<item id="2654" chance="5000"/><!-- cape -->
-		<item id="1962" chance="3600"/><!-- book -->
+		<item id="1962" chance="3600"/><!-- orange book -->
 		<item id="5909" chance="1800"/><!-- white piece of cloth -->
 		<item id="2532" chance="1700"/><!-- ancient shield -->
 		<item id="2165" chance="500"/><!-- stealth ring -->
+		<item id="10607" chance="1800"/><!-- ghostly tissue -->
 	</loot>
 </monster>

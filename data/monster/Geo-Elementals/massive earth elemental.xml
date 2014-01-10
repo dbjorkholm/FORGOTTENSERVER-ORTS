@@ -53,7 +53,7 @@
 		<item id="2666" chance="9000"/><!-- meat -->
 		<item id="2200" chance="9000"/><!-- protection amulet -->
 		<item id="2145" countmax="2" chance="1000"/><!-- small diamond -->
-		<item id="2436" chance="10000"/><!-- plate armor -->
+		<item id="2463" chance="10000"/><!-- plate armor -->
 		<item id="9809" chance="3500"/><!-- rusty armor -->
 		<item id="2213" chance="3500"/><!-- dwarven ring -->
 		<item id="9970" countmax="2" chance="3500"/><!-- small topaz-->

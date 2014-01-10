@@ -27,14 +27,13 @@
 	<defenses armor="30" defense="30"/>
 	<elements>
 		<element icePercent="50"/>
-		<element holyPercent="10"/>
+		<element holyPercent="20"/>
 		<element energyPercent="20"/>
-		<element earthPercent="-10"/>
-		<element deathPercent="-10"/>
+		<element earthPercent="-13"/>
+		<element deathPercent="-7"/>
 	</elements>
 	<immunities>
 		<immunity paralyze="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
 		<voice sentence="I will regain my honor with your blood!"/>
@@ -53,7 +52,6 @@
 		<item id="7618" chance="2000"/><!-- health potion -->
 		<item id="2168" chance="750"/><!-- life ring-->
 		<item id="7461" chance="500"/><!-- krimhorn helmet -->
-		<item id="7449" chance="650"/><!-- crystal sword -->
 		<item id="7457" chance="300"/><!-- fur boots -->
 	</loot>
 </monster>

@@ -40,7 +40,6 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="29" chance="20000"/><!-- gold coin -->
-		<item id="2666" chance="22500"/><!-- meat -->
 		<item id="2667" countmax="2" chance="10000"/><!-- fish -->
 		<item id="2398" chance="9000"/><!-- mace-->
 		<item id="2553" chance="7500"/><!-- pick -->

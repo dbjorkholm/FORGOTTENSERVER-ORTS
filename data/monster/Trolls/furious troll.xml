@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Furious Troll" nameDescription="a furious troll" race="blood" experience="185" speed="120" manacost="0">
-	<health now="245" max="245"/>
-	<look type="281" corpse="7926"/>
+<monster name="Furious Troll" nameDescription="a furious troll" race="blood" experience="20" speed="126" manacost="290">
+	<health now="50" max="50"/>
+	<look type="15" corpse="5960"/>
 	<targetchange interval="2000" chance="0"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
-		<flag summonable="0"/>
+		<flag summonable="1"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
 		<flag illusionable="1"/>
@@ -14,30 +14,30 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag runonhealth="20"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="15"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="45" attack="40"/>
+		<attack name="melee" interval="1500" skill="20" attack="16"/>
 	</attacks>
-	<defenses armor="16" defense="18"/>
-	<immunities>
-		<immunity invisible="1"/>
-	</immunities>
+	<defenses armor="6" defense="8"/>
+	<elements>
+		<element energyPercent="20"/>
+		<element holyPercent="10"/>
+		<element earthPercent="-4"/>
+		<element deathPercent="-5"/>
+	</elements>
 	<voices interval="5000" chance="10">
-		<voice sentence="Slice! Slice!"/>
-		<voice sentence="Die!!!"/>
+		<voice sentence="Grrrr"/>
+		<voice sentence="Groar"/>
+		<voice sentence="Gruntz!"/>
+		<voice sentence="Hmmm, bugs."/>
+		<voice sentence="Hmmm, dogs."/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="12" chance="24250"/><!-- gold coin -->
-		<item id="2544" countmax="5" chance="2000"/><!-- arrow -->
-		<item id="2643" chance="15250"/><!-- leather boots -->
-		<item id="2666" chance="11500"/><!-- meat -->
-		<item id="2389" chance="27000"/><!-- spear -->
-		<item id="2448" chance="5000"/><!-- studded club -->
-		<item id="2512" chance="20000"/><!-- wooden shield -->
-		<item id="2380" chance="20000"/><!-- hand axe -->
-		<item id="2461" chance="10000"/><!-- leather helmet -->
-		<item id="2120" chance="9000"/><!-- rope -->
-		<item id="2170" chance="100"/><!-- silver amulet -->
+		<item id="2148" countmax="12" chance="26750"/><!-- gold coin -->
+		<item id="2152" chance="6200"/><!-- platinum coin -->
+		<item id="10606" chance="4300"/><!-- Bunch of Troll Hair -->
+		<item id="2391" chance="750"/><!-- war hammer -->
 	</loot>
 </monster>

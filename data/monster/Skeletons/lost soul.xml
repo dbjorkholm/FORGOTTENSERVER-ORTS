@@ -56,7 +56,6 @@
 		<item id="2148" countmax="90" chance="40000"/><!-- gold coin -->
 		<item id="2148" countmax="80" chance="40000"/><!-- gold coin -->
 		<item id="2148" countmax="70" chance="40000"/><!-- gold coin -->
-		<item id="2050" chance="20000"/><!-- torch -->
 		<item id="2260" chance="25250"/><!-- blank rune -->
 		<item id="2230" chance="3000"/><!-- bone -->
 		<item id="6500" chance="7500"/><!-- demonic essence -->
@@ -79,5 +78,7 @@
 		<item id="2436" chance="650"/><!-- skull staff -->
 		<item id="2173" chance="50"/><!-- amulet of loss -->
 		<item id="8903" chance="100"/><!-- spellbook of lost souls -->
+		<item id="2480" chance="50"/><!-- legion helmet -->
+		<item id="7407" chance="900"/><!-- haunted blade -->
 	</loot>
 </monster>

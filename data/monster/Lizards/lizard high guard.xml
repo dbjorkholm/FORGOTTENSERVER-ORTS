@@ -59,5 +59,7 @@
 		<item id="2148" countmax="100" chance="33725" /><!-- gold coin -->
 		<item id="2148" countmax="27" chance="33725" /><!-- gold coin -->
 		<item id="11206" chance="1650" /><!-- red lantern -->
+		<item id="11304" chance="2625"/> <!-- zaoan legs -->
+		<item id="11301" chance="1050"/> <!-- zaoan armor -->
 	</loot>
 </monster>

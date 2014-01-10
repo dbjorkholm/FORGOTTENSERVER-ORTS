@@ -34,12 +34,9 @@
 		<item id="2386" chance="48000"/><!-- axe -->
 		<item id="2511" chance="33700"/><!-- brass shield -->
 		<item id="2649" chance="26000"/><!-- leather legs -->
-		<item id="2666" countmax="2" chance="9000"/><!-- meat -->
 		<item id="2398" chance="11500"/><!-- mace -->
 		<item id="2458" chance="8250"/><!-- chain helmet -->
 		<item id="2465" chance="2200"/><!-- brass armor -->
-		<item id="2509" chance="1500"/><!-- steel shield -->
 		<item id="2459" chance="1000"/><!-- iron helmet -->
-		<item id="2391" chance="750"/><!-- war hammer -->
 	</loot>
 </monster>

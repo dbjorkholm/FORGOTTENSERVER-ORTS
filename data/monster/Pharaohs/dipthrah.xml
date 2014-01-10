@@ -65,5 +65,6 @@
 		<item id="2436" chance="500"/><!-- skull staff -->
 		<item id="2446" chance="300"/><!-- pharaoh sword -->
 		<item id="2354" chance="100000"/><!-- ornamented ankh -->
+		<item id="11207" chance="500"/><!-- mini mummy -->
 	</loot>
 </monster>

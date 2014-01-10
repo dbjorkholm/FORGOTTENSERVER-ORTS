@@ -30,7 +30,6 @@
 		<element icePercent="-8"/>
 	</elements>
 	<loot>
-		<item id="2671" countmax="4" chance="8500"/><!-- ham -->
 		<item id="2666" countmax="4" chance="16750"/><!-- meat -->
 		<item id="11210" chance="12400"/> <!-- striped fur -->
 	</loot>

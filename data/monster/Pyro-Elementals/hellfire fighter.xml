@@ -59,5 +59,6 @@
 		<item id="2187" chance="8000"/><!-- wand of inferno -->
 		<item id="2432" chance="800"/><!-- fire axe -->
 		<item id="2136" chance="300"/><!-- demonbone amulet -->
+		<item id="13757" chance="1475"/> <!-- coal -->
 	</loot>
 </monster>
