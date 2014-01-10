@@ -76,5 +76,6 @@
 		<item id="7893" chance="600"/><!-- lightning boots -->
 		<item id="2656" chance="200"/><!-- blue robe -->
 		<item id="2535" chance="100"/><!-- castle shield -->
+		<item id="13291" chance="60"/><!-- maximila maximus -->
 	</loot>
 </monster>

@@ -33,5 +33,6 @@
 		<item id="2376" chance="7000"/><!-- sword -->
 		<item id="2449" chance="7000"/><!-- bone club -->
 		<item id="2229" countmax="2" chance="2000"/><!-- skull -->
+		<item id="10559" countmax="1" chance="5270"/><!-- Spooky Blue Eye -->
 	</loot>
 </monster>

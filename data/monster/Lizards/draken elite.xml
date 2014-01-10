@@ -73,5 +73,12 @@
 		<item id="12646" chance="735" /><!-- draken boots -->
 		<item id="12649" chance="200" /><!-- blade of corruption -->
 		<item id="12630" chance="200" /><!-- cobra crown -->
+		<item id="11302" chance="1050"/> <!-- zaoan helmet -->
+		<item id="11304" chance="2625"/> <!-- zaoan legs -->
+		<item id="11301" chance="1050"/> <!-- zaoan armor -->
+		<item id="12647" chance="1025" /><!-- snake god's wristguard -->
+		<item id="12607" chance="1025" /><!-- elite draken mail -->
+		
+		
 	</loot>
 </monster>

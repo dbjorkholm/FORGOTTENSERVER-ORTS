@@ -57,5 +57,6 @@
 		<item id="2489" chance="750"/><!-- dark armor -->
 		<item id="2129" chance="500"/><!-- wolf tooth chain -->
 		<item id="2209" chance="300"/><!-- club ring -->
+		<item id="11227" chance="400"/><!-- shiny stone -->
 	</loot>
 </monster>

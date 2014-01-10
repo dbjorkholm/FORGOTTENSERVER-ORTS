@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blood Priest" nameDescription="a blood priest" race="blood" experience="900" speed="200" manacost="0">
+	<health now="820" max="820"/>
+	<look type="553" corpse="21262"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="30" attack="80"/>
+		<attack name="lifedrain" interval="1000" chance="20" range="1" min="-40" max="-60">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="healing" interval="5000" chance="25" min="42" max="68">
+		</defense>
+	</defenses>
+	<elements>
+		<element energyPercent="1"/>
+		<element icePercent="1"/>
+		<element deathPercent="1"/>
+		<element physicalPercent="-1"/>
+		<element firePercent="-10"/>
+		<element holyPercent="-1"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<immunity drown="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Blood for the dark god!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="171" chance="99880"/><!-- gold coin -->
+		<item id="21245" chance="16460"/><!-- Blood Tincture in a Vial -->
+		<item id="21242" chance="14610"/><!-- Lancet -->
+		<item id="21246" chance="13660"/><!-- Incantation Notes -->
+		<item id="11237" chance="13550"/><!--  Book of Necromantic Rituals -->
+		<item id="21243" chance="11070"/><!-- Horoscope -->
+		<item id="21245" chance="13310"/><!-- Blood Tincture in a Vial -->
+		<item id="21247" chance="8130"/><!-- Pieces of Magic Chalk -->
+		<item id="7589" chance="6950"/><!-- Strong Mana Potion -->
+		<item id="2147" countmax="2" chance="4120"/><!-- Smaill Rubies -->
+		<item id="8910" chance="2900"/><!--  Underworld Rod -->
+		<item id="8902" chance="240"/><!-- Spellbook of Mind Control -->
+		<item id="15565" chance="1180"/><!-- Red Gem -->
+		<item id="5909" chance="3060"/><!-- White Piece of Cloth -->
+		<item id="2663" chance="2470"/><!-- Mystic Turban -->
+		<item id="2195" chance="120"/><!-- Boots of Haste -->
+		<item id="5911" chance="350"/><!-- Red Piece of Cloth -->
+		<item id="2436" chance="240"/><!-- Skull Staff -->
+		<item id="8901" chance="240"/><!-- Spellbook of Warding -->
+	</loot>
+</monster>

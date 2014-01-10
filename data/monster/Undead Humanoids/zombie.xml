@@ -42,7 +42,7 @@
 	<loot>
 		<item id="2148" countmax="64" chance="24000"/><!-- gold coin -->
 		<item id="2227" chance="45000"/><!-- rotten meat -->
-		<item id="2050" chance="46250"/><!-- torch -->
+		<item id="10576" chance="46250"/><!-- half-eaten brain -->
 		<item id="2460" chance="8700"/><!-- brass helmet -->
 		<item id="2457" chance="8700"/><!-- steel helmet -->
 		<item id="2398" chance="7250"/><!-- mace -->

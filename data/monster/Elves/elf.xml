@@ -41,12 +41,13 @@
 	<loot>
 		<item id="2148" countmax="30" chance="25000"/><!-- gold coin -->
 		<item id="2544" countmax="6" chance="2250"/><!-- arrow -->
-		<item id="2674" countmax="2" chance="15000"/><!-- red apple -->
+		<item id="8839" countmax="2" chance="15000"/><!-- plum -->
 		<item id="2397" chance="12000"/><!-- longsword -->
 		<item id="2643" chance="12500"/><!-- leather boots -->
 		<item id="2510" chance="9000"/><!-- plate shield -->
 		<item id="2484" chance="9000"/><!-- studded armor -->
 		<item id="2482" chance="13500"/><!-- studded helmet -->
-		<item id="5921" chance="1000"/><!-- heaven blossom -->
+		<item id="5921" chance="900"/><!-- heaven blossom -->
+		<item id="10552" chance="13500"/><!-- elvish talisman -->
 	</loot>
 </monster>

@@ -27,6 +27,6 @@
 		<item id="2667" countmax="2" chance="5000"/><!-- fish -->
 		<item id="7159" chance="5000"/><!-- green perch -->
 		<item id="7158" chance="2000"/><!-- rainbow trout -->
-		<item id="2669" chance="3000"/><!-- northern pike -->
+		<item id="2669" chance="30000"/><!-- northern pike -->
 	</loot>
 </monster>

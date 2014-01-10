@@ -32,13 +32,11 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="23" chance="22500"/><!-- gold coin -->
-		<item id="2666" chance="20450"/><!-- meat -->
 		<item id="2389" chance="20500"/><!-- mace -->
 		<item id="2050" chance="3500"/><!-- torch -->
 		<item id="2649" chance="2270"/><!-- leather legs -->
 		<item id="2468" chance="9000"/><!-- studded legs -->
 		<item id="2689" chance="7500"/><!-- bread -->
-		<item id="2050" chance="3500"/><!-- torch -->
 		<item id="2209" chance="1000"/><!-- club ring -->
 	</loot>
 </monster>

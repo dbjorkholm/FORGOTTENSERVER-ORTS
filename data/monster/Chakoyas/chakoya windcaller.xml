@@ -45,10 +45,8 @@
 	<loot>
 		<item id="2148" countmax="36" chance="20000"/><!-- gold coin -->
 		<item id="2667" countmax="4" chance="9000"/><!-- fish -->
-		<item id="2666" chance="20000"/><!-- meat -->
-		<item id="2398" chance="7500"/><!-- mace-->
 		<item id="2541" chance="2000"/><!-- bone shield -->
-		<item id="7441" chance="1000"/><!-- ice cube -->
+		<item id="7159" chance="700"/><!-- green perch -->
 		<item id="7158" chance="750"/><!-- rainbow trout -->
 		<item id="2669" chance="700"/><!-- northern pike -->
 	</loot>

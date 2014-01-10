@@ -40,14 +40,13 @@
 	</immunities>
 	<loot>
 		<item id="2148" countmax="30" chance="34750"/><!-- gold coin -->
-		<item id="2460" chance="19250"/><!-- brass helmet -->
-		<item id="5913" chance="1000"/><!-- brown piece of cloth -->
-		<item id="2403" chance="15250"/><!-- knife -->
 		<item id="2168" chance="200"/><!-- life ring -->
 		<item id="2483" chance="2900"/><!-- scale armor -->
-		<item id="2229" countmax="2" chance="1500"/><!-- skull -->
+		<item id="5913" chance="1000"/><!-- brown piece of cloth -->
 		<item id="2050" chance="57850"/><!-- torch -->
-		<item id="2473" chance="5800"/><!-- viking helmet -->
 		<item id="3976" countmax="6" chance="47500"/><!-- worm -->
+		<item id="11208" chance="200"/><!-- rotten piece of cloth -->
+		<item id="12423" chance="2900"/><!-- ghoul snack -->
+		<item id="12440" chance="1000"/><!-- pile of grave earth -->
 	</loot>
 </monster>

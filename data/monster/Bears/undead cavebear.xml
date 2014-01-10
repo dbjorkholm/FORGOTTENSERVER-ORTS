@@ -22,22 +22,18 @@
 	</attacks>
 	<defenses armor="23" defense="27"/>
 	<elements>
-		<element holyPercent="-12"/>
+		<element deathPercent="100"/>
+		<element earthPercent="100"/>
+		<element holyPercent="-15"/>
 	</elements>
 	<immunities>
-		<immunity death="1"/>
-		<immunity earth="1"/>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Grrrrrrrrrrrr"/>
-		<voice sentence="Groooowl"/>
-	</voices>
 	<loot>
 		<item id="2148" countmax="80" chance="9750"/> <!-- gold coin -->
 		<item id="13303" chance="3150"/> <!-- cavebear skull -->
+		<item id="7618" chance="2270"/> <!-- HP -->
 		<item id="13302" chance="2350"/> <!-- maxilla -->
-		<item id="13291" chance="900"/> <!-- maxilla maximus -->
 	</loot>
 </monster>

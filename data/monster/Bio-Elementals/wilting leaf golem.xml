@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Wilting Leaf Golem" nameDescription="a wilting leaf golem" race="blood" experience="145" speed="100" manacost="390">
+	<health now="380" max="380"/>
+	<look type="573" corpse="21434"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag staticattack="90"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="70"/>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element earthPercent="40"/>
+		<element firePercent="-5"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="*crackle*"/>
+		<voice sentence="*swwwwishhhh*"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="45" chance="97050"/><!-- gold coin -->
+		<item id="21427" chance="11080"/><!-- dowser -->
+		<item id="21428" chance="17130"/><!-- fir cone -->
+		<item id="2787" countmax="3" chance="4860"/><!-- white mushrooms -->
+		<item id="20104" chance="3430"/><!-- swampling club -->
+		<item id="2149" chance="1040"/><!-- small emerald -->
+	</loot>
+</monster>

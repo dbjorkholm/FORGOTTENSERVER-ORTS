@@ -28,7 +28,7 @@
 		<element energyPercent="20"/>
 		<element physicalPercent="5"/>
 		<element earthPercent="-10"/>
-		<element deathPercent="-10"/>
+		<element deathPercent="-7"/>
 	</elements>
 	<immunities>
 		<immunity drunk="1"/>
@@ -48,6 +48,7 @@
 		<item id="2483" chance="3850"/><!-- scale armor -->
 		<item id="2229" chance="1300"/><!-- skull -->
 		<item id="7449" chance="450"/><!-- crystal sword -->
+		<item id="7618" chance="890"/><!-- HP -->
 		<item id="5913" chance="2500"/><!-- brown piece of cloth -->
 		<item id="2168" chance="750"/><!-- life ring -->
 		<item id="7462" chance="400"/><!-- ragnir helmet -->

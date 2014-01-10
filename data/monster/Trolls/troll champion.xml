@@ -44,5 +44,6 @@
 		<item id="2461" chance="10000"/><!-- leather helmet -->
 		<item id="2120" chance="9000"/><!-- rope -->
 		<item id="2170" chance="100"/><!-- silver amulet -->
+		<item id="12471" chance="820"/><!-- Trollroot -->
 	</loot>
 </monster>

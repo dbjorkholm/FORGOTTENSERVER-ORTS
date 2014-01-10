@@ -58,5 +58,7 @@
 		<item id="2170" chance="110"/><!-- silver amulet -->
 		<item id="5914" chance="250"/><!-- yellow piece of cloth -->
 		<item id="2529" chance="110"/><!-- black shield -->
+		<item id="12422" chance="4650"/><!-- flask of embalming fluid -->
+		<item id="10566" chance="2222"/><!-- gauze bandage -->
 	</loot>
 </monster>

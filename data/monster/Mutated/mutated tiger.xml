@@ -24,10 +24,10 @@
 		</attack>
 	</attacks>
 	<defenses armor="30" defense="30">
-		<defense name="invisible" interval="1000" chance="25" duration="9000">
+		<defense name="invisible" interval="5000" chance="25" duration="2000">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="healing" interval="1000" chance="25" min="150" max="300">
+		<defense name="healing" interval="5000" chance="25" min="150" max="300">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -49,13 +49,14 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="96" chance="20000"/><!-- gold coin -->
-		<item id="2671" countmax="2" chance="22500"/><!-- ham -->
+		<item id="11210" chance="22500"/><!-- striped fur -->
 		<item id="2666" countmax="4" chance="15000"/><!-- meat -->
-		<item id="2509" chance="7000"/><!-- steel shield -->
+		<item id="11228" chance="7000"/><!-- sabretooth -->
 		<item id="2168" chance="2000"/><!-- life ring -->
 		<item id="7588" chance="900"/><!-- strong health potion -->
 		<item id="2515" chance="500"/><!-- guardian shield -->
 		<item id="7454" chance="300"/><!-- glorius axe -->
 		<item id="7436" chance="200"/><!-- angelic axe -->
+		<item id="9959" chance="200"/><!-- Silky Tapestry -->
 	</loot>
 </monster>

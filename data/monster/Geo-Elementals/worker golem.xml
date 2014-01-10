@@ -67,5 +67,6 @@
 		<item id="2164" chance="650"/><!-- might ring -->
 		<item id="7428" chance="200"/><!-- bonebreaker -->
 		<item id="7590" chance="1500"/><!-- great mana potion -->
+		<item id="10572" chance="1500"/><!-- gear crystal -->
 	</loot>
 </monster>

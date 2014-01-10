@@ -54,8 +54,7 @@
 		<item id="2148" countmax="80" chance="31000"/><!-- gold coin -->
 		<item id="2148" countmax="75" chance="31000"/><!-- gold coin -->
 		<item id="2672" countmax="3" chance="35000"/><!-- dragon ham -->
-		<item id="2473" chance="26000"/><!-- viking helmet -->
-		<item id="2376" chance="16000"/><!-- sword -->
+		<item id="10583" chance="26000"/><!-- Sea Serpent Scale -->
 		<item id="2647" chance="11350"/><!-- plate legs -->
 		<item id="2146" countmax="3" chance="3500"/><!-- small saphire -->
 		<item id="7588" chance="5500"/><!-- strong health potion -->

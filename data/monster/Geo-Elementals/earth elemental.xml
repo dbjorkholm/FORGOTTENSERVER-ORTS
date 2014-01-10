@@ -50,12 +50,11 @@
 		<item id="2260" chance="7850"/><!-- blank rune -->
 		<item id="7850" countmax="30" chance="9200"/><!-- earth arrow -->
 		<item id="2398" chance="8500"/><!-- mace -->
-		<item id="2394" chance="4250"/><!-- morning star -->
+		<item id="11222" chance="4250"/><!-- lump of earth -->
 		<item id="9808" chance="5600"/><!-- rusty armor -->
 		<item id="1294" countmax="10" chance="4250"/><!-- small stone -->
 		<item id="9970" chance="1300"/><!-- small topaz -->
-		<item id="2509" chance="8000"/><!-- steel shield -->
+		<item id="13757" chance="8000"/><!-- coal -->
 		<item id="7589" chance="2600"/><!-- strong mana potion -->
-		<item id="2150" countmax="2" chance="300"/><!-- small amethyst -->
 	</loot>
 </monster>

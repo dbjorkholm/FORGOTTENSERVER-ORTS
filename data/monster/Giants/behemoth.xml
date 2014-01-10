@@ -70,5 +70,7 @@
 		<item id="7396" chance="100"/><!-- behemoth trophy -->
 		<item id="2125" chance="450"/><!-- crystal necklace -->
 		<item id="7413" chance="150"/><!-- titan axe-->
+		<item id="2152" countmax="5" chance="5800"/><!-- platinum coin-->
+		<item id="12403" chance="1400"/><!-- battle stone-->
 	</loot>
 </monster>
