@@ -42,5 +42,6 @@
 		<item id="7840" countmax="4" chance="5000"/><!-- flaming arrow -->
 		<item id="8299" chance="2500"/><!-- glimmering soil -->
 		<item id="10553" chance="5475"/> <!-- fiery heart -->
+		<item id="13757" chance="1475"/> <!-- coal -->
 	</loot>
 </monster>

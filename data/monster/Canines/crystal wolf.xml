@@ -50,7 +50,11 @@
 		<voice sentence="Raaarrr!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="40" chance="46000"/><!-- gold coin -->
+		<item id="2148" countmax="50" chance="46000"/><!-- gold coin -->
 		<item id="2666" countmax="4" chance="25000"/><!-- meat -->
+		<item id="7839" countmax="10" chance="11000"/><!-- shiver arrow -->
+		<item id="8878" chance="3000"/><!-- crystalline armor -->
+		<item id="2183" chance="7000"/><!-- hailstorm rod -->
+		<item id="5897" chance="3000"/><!-- wolf paw -->
 	</loot>
 </monster>

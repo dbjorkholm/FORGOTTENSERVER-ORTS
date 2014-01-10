@@ -34,13 +34,13 @@
 		<item id="2389" chance="23000"/><!-- spear -->
 		<item id="2380" chance="17000"/><!-- hand axe -->
 		<item id="2512" chance="15000"/><!-- wooden shield -->
-		<item id="2666" chance="15000"/><!-- meat -->
-		<item id="5901" chance="15000"/><!-- wood -->
+		<item id="5097" chance="5200"/><!-- mango -->
 		<item id="2643" chance="11500"/><!-- leather boots -->
 		<item id="2461" chance="10000"/><!-- leather helmet -->
 		<item id="2120" chance="7250"/><!-- rope -->
 		<item id="2448" chance="6000"/><!-- studded club -->
 		<item id="2170" chance="50"/><!-- silver amulet -->
 		<item id="7963" chance="150"/><!-- marlin -->
+		<item id="2666" chance="11500"/><!-- meat -->
 	</loot>
 </monster>

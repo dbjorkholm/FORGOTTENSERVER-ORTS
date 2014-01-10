@@ -31,13 +31,9 @@
 		<element holyPercent="20"/>
 		<element energyPercent="10"/>
 		<element icePercent="50"/>
-		<element deathPercent="-8"/>
+		<element deathPercent="-7"/>
 		<element earthPercent="-5"/>
 	</elements>
-	<immunities>
-		<immunity drunk="1"/>
-		<immunity outfit="1"/>
-	</immunities>
 	<voices interval="2000" chance="20">
 		<voice sentence="YAAAHEEE!"/>
 		<voice sentence="SLAUGHTER!"/>

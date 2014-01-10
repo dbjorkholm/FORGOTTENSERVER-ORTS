@@ -37,7 +37,9 @@ local teleports = {
 
 function onStepIn(cid, item, position, lastPosition)
 	if (item.uid == 2150) then
-		setPlayerStorageValue(cid, 1050, teleports2[item.uid].storage)
+		if(getPlayerStorageValue(cid,1050) <= teleports2[item.uid].storage) then
+			setPlayerStorageValue(cid, 1050, teleports2[item.uid].storage)
+		end
 		doTeleportThing(cid, teleports2[item.uid].newPos)
 		doSendMagicEffect(teleports2[item.uid].newPos, CONST_ME_TELEPORT)
 		doCreatureSay(cid, teleports2[item.uid].text, TALKTYPE_ORANGE_1)
@@ -45,7 +47,9 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 	if(teleports[item.uid].boss) then
 		if(getGlobalStorageValue(teleports[item.uid].bossStorage) == 2) then
-			setPlayerStorageValue(cid, 1050, teleports[item.uid].storage)
+			if(getPlayerStorageValue(cid,1050) <= teleports[item.uid].storage) then
+				setPlayerStorageValue(cid, 1050, teleports[item.uid].storage)
+			end
 			doTeleportThing(cid, teleports[item.uid].newPos)
 			doSendMagicEffect(teleports[item.uid].newPos, CONST_ME_TELEPORT)
 			doCreatureSay(cid, teleports[item.uid].text, TALKTYPE_ORANGE_1)

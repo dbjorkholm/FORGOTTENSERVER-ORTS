@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Mad Scientist" nameDescription="a mad scientist" race="blood" experience="205" speed="220" manacost="0">
 	<health now="325" max="325"/>
-	<look type="133" head="97" body="0" legs="38" feet="97" addons="1" corpse="6080"/>
+	<look type="133" head="97" body="0" legs="38" feet="97" addons="1" corpse="20439"/>
 	<targetchange interval="5000" chance="30"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -62,7 +62,6 @@
 		<item id="7762" chance="700"/><!-- small enchanted amethyst -->
 		<item id="6324" chance="350"/><!-- cream cake -->
 		<item id="2687" countmax="5" chance="500"/><!-- cookie -->
-		<item id="2190" chance="200"/><!-- wand of vortex -->
 		<item id="7440" chance="1500"/><!-- mastermind potion -->
 	</loot>
 </monster>

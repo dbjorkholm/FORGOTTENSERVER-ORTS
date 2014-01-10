@@ -71,6 +71,9 @@
 		<item id="12646" chance="1025" /><!-- draken boots -->
 		<item id="12644" chance="200" /><!-- shield of corruption -->
 		<item id="12647" chance="200" /><!-- snake god's wristguard -->
-		<item id="13538" chance="400" /><!-- bamboo leaves -->
+		<item id="13538" chance="350" /><!-- bamboo leaves -->
+		<item id="11304" chance="2625"/> <!-- zaoan legs -->
+		<item id="11301" chance="1050"/> <!-- zaoan armor -->
+		<item id="11302" chance="1050"/> <!-- zaoan helmet -->
 	</loot>
 </monster>

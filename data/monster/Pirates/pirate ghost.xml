@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Pirate Ghost" nameDescription="a pirate ghost" race="undead" experience="250" speed="230" manacost="0">
 	<health now="275" max="275"/>
-	<look type="196" corpse="6071"/>
+	<look type="196" corpse="5566"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -49,7 +49,7 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="69" chance="18000"/><!-- gold coin -->
-		<item id="2237" chance="9000"/><!-- dirty cape -->
+		<item id="10601" chance="8500"/><!-- Tattered Piece of Robe -->
 		<item id="2236" chance="6000"/><!-- torn book -->
 		<item id="2165" chance="800"/><!-- stealth ring -->
 		<item id="1951" chance="1250"/><!-- parchment -->

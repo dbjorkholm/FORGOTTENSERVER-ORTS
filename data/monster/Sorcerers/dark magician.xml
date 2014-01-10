@@ -19,18 +19,15 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="30" attack="20"/>
-		<attack name="fire" interval="1000" chance="35" range="7" min="-5" max="-40">
+		<attack name="fire" interval="1000" chance="35" range="7" min="-5" max="-38">
 			<attribute key="shootEffect" value="fire"/>
-		</attack>
-		<attack name="energy" interval="2000" chance="25" length="8" spread="0" min="-20" max="-30">
-			<attribute key="areaEffect" value="energy"/>
 		</attack>
 	</attacks>
 	<defenses armor="15" defense="20">
 		<defense name="healing" interval="1000" chance="25" min="60" max="100">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="5000" chance="50" duration="5000">
+		<defense name="invisible" interval="5000" chance="20" duration="1000">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
@@ -59,5 +56,6 @@
 		<item id="7589" chance="2750"/><!-- strong mana potion -->
 		<item id="7761" chance="650"/><!-- small enchanted amethyst -->
 		<item id="2188" chance="200"/><!-- necrotic rod -->
+		<item id="13295" chance="20"/><!-- reins -->
 	</loot>
 </monster>

@@ -43,8 +43,7 @@
 		<item id="2467" chance="9000"/><!-- leather armor -->
 		<item id="2379" chance="17500"/><!-- dagger -->
 		<item id="2667" chance="20000"/><!-- fish -->
-		<item id="2235" chance="9000"/><!-- moldy cheese -->
-		<item id="1294" countmax="4" chance="10000"/><!-- small stone -->
+		<item id="2235" chance="9000"/><!-- mouldy cheese -->
 		<item id="2559" chance="10500"/><!-- small axe -->
 		<item id="2406" chance="12500"/><!-- short sword -->
 		<item id="2449" chance="6000"/><!-- bone club -->

@@ -52,7 +52,6 @@
 		<item id="2387" chance="1500"/><!-- double axe -->
 		<item id="2150" chance="100"/><!-- small amethyst -->
 		<item id="2515" chance="700"/><!-- guardian shield -->
-		<item id="2191" chance="450"/><!-- wand of dragonbreath -->
 		<item id="2185" chance="400"/><!-- necrotic rod -->
 	</loot>
 </monster>

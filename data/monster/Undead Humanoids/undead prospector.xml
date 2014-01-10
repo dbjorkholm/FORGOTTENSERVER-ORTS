@@ -43,5 +43,10 @@
 		<item id="2403" chance="33825" /><!-- knife -->
 		<item id="2050" chance="58825" /><!-- torch -->
 		<item id="2460" chance="17175" /><!-- brass helmet -->
+		<item id="2168" chance="200"/><!-- life ring -->
+		<item id="2483" chance="2900"/><!-- scale armor -->
+		<item id="2229" countmax="2" chance="1500"/><!-- skull -->
+		<item id="2473" chance="5800"/><!-- viking helmet -->
+		<item id="5913" chance="1000"/><!-- brown piece of cloth -->
 	</loot>
 </monster>

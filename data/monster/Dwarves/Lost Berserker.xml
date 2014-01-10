@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lost Berserker" nameDescription="a lost berserker" race="blood" experience="4400" speed="268" manacost="0">
+	<health now="5900" max="5900"/>
+	<look type="496" corpse="17416"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="1700" skill="100" attack="75"/>
+		<attack name="physical" interval="2000" chance="20" range="7" min="-100" max="-300">
+			<attribute key="shootEffect" value="Whirlwindaxe"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="20" length="4" spread="0" min="-100" max="-250"/>
+	</attacks>
+	<defenses armor="30" defense="20">
+		<defense name="healing" interval="1000" chance="10" min="0" max="770">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="invisible" interval="2000" chance="25" duration="100">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="-30"/>
+		<element physicalPercent="-30"/>
+		<element holyPercent="-50"/>
+		<element deathPercent="-25"/>
+		<element earthPercent="-50"/>
+		<element energyPercent="-25"/>
+		<element icePercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Kill! Kill! Kill!"/>
+		<voice sentence="Death! Death! Death!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="30000"/> <!-- Gold Coin -->
+		<item id="2152" countmax="9" chance="30000"/> <!-- Platinum Coin -->
+		<item id="2789" countmax="2" chance="3000"/> <!-- Brown Mushroom -->
+		<item id="18417" countmax="2" chance="3000"/> <!-- Brown crystal splinter -->
+		<item id="9970" countmax="2" chance="3000"/> <!-- small topaz -->
+		<item id="18436" countmax="10" chance="3000"/> <!-- drill bolts -->
+		<item id="7591" chance="880"/> <!-- GHP -->
+		<item id="7590" chance="450"/> <!-- GMP -->
+		<item id="18421" chance="410"/> <!-- green crystal fragment -->
+		<item id="5880" chance="300"/> <!-- iron ore -->
+		<item id="2114" chance="450"/> <!-- piggy bank -->
+		<item id="18418" chance="410"/> <!-- blue crystal splinter -->
+		<item id="18414" chance="300"/> <!-- violet crystal shard -->
+		<item id="13757" chance="410"/> <!-- coal -->
+		<item id="2529" chance="300"/> <!-- black shield -->
+		<item id="5904" chance="410"/> <!-- magic sulphur -->
+		<item id="7452" chance="300"/> <!-- spicked squelcher -->
+		<item id="2515" chance="210"/> <!-- guardian shield -->
+		<item id="2213" chance="300"/> <!-- dwarven ring -->
+		<item id="2430" chance="250"/> <!-- knight axe -->
+		<item id="11339" chance="410"/> <!-- clay lump -->
+		<item id="7427" chance="200"/> <!-- chaos mace -->
+		<item id="2528" chance="250"/> <!-- tower shield -->
+		<item id="7886" chance="410"/> <!-- terra boots -->
+		<item id="2432" chance="90"/> <!-- fire axe -->
+		<item id="2498" chance="70"/> <!-- Royal helmet -->
+	</loot>
+</monster>

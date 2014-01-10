@@ -66,11 +66,11 @@
 		<item id="2050" chance="7000"/><!-- torch -->
 		<item id="2230" chance="12500"/><!-- bone -->
 		<item id="2467" chance="13000"/><!-- leather armor -->
-		<item id="2172" chance="200"/><!--  bronze amulet -->
 		<item id="2411" chance="1000"/><!-- poison dagger -->
 		<item id="3967" chance="550"/><!-- tribal mask -->
 		<item id="2174" chance="350"/><!-- strange symbol-->
 		<item id="7618" chance="700"/><!-- health potion -->
 		<item id="3955" chance="100"/><!-- voodoo doll-->
+		<item id="2231" chance="100"/><!-- big bone-->
 	</loot>
 </monster>

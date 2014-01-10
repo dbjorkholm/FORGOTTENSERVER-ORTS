@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Deepling Master Librarian" nameDescription="a deepling master librarian" race="blood" experience="1900" speed="240" manacost="0">
-	<health now="1700" max="1700"/>
-	<look type="443" corpse="15208"/>
-	<targetchange interval="2000" chance="8"/>
+<monster name="Deepling Master Librarian" nameDescription="a deepling master librarian" race="blood" experience="1900" speed="560" manacost="0">
+	<health now="240" max="240"/>
+	<look type="443" corpse="13839"/>
+	<targetchange interval="2000" chance="50"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
@@ -10,68 +10,39 @@
 		<flag hostile="1"/>
 		<flag illusionable="0"/>
 		<flag convinceable="0"/>
-		<flag pushable="0"/>
+		<flag pushable="1"/>
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="95"/>
-		<flag runonhealth="0"/>
+		<flag targetdistance="0"/>
+		<flag runonhealth="60"/>
 	</flags>
-	<attacks>
-		<attack name="melee" interval="2000" skill="80" attack="60"/>
-		<attack name="ice" interval="2000" chance="15" range="6" radius="4" target="1" min="-10" max="-230">
-			<attribute key="shootEffect" value="ice"/>
-			<attribute key="areaEffect" value="bubbles"/>
-		</attack>
-		<attack name="ice" interval="2000" chance="15" length="5" spread="2" min="-200" max="-450">
-			<attribute key="areaEffect" value="icetornado"/>
-		</attack>
-		<attack name="manadrain" interval="2000" chance="15" range="5" min="-160" max="-240">
-			<attribute key="shootEffect" value="smallearth"/>
-		</attack>
-		<attack name="lifedrain" interval="2000" chance="15" range="5" min="-160" max="-240">
-			<attribute key="shootEffect" value="smallearth"/>
-		</attack>
-		<attack name="physical" interval="2000" chance="10" range="7" min="-120" max="-150">
-			<attribute key="shootEffect" value="suddendeath"/>
-			<attribute key="areaEffect" value="stun"/>
-		</attack>
-	</attacks>
-	<defenses armor="15" defense="10">
-		<defense name="healing" interval="2000" chance="10" min="50" max="250">
-				<attribute key="areaEffect" value="blueshimmer"/>
-		</defense>
-	</defenses>
-	<elements>
-		<element earthPercent="-20"/>
-		<element energyPercent="-20"/>
-		<element deathPercent="10"/>
-	</elements>
-	<immunities>
-		<immunity ice="1"/>
-		<immunity fire="1"/>
-		<immunity drown="1"/>
-		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
+		<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Mmmmmoooaaaaaahaaa!!"/>
-		<voice sentence="Jey obu giotja!!"/>
-	</voices>  
+	<attacks>
+		<attack name="melee" interval="2000" skill="34" attack="45"/>
+		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-15" max="-100">
+			<attribute key="shootEffect" value="spear"/>
+			<attribute key="areaEffect" value="bluebubble"/>
+		</attack>
+	</attacks>
+	<defenses armor="12" defense="20"/>
+	<voices interval="3000" chance="200">
+		<voice sentence="Mmmmmoooaaaaaahaaa!!!"/>
+	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="100000"/> <!-- Gold Coin -->
-		<item id="2152" countmax="3" chance="900000"/> <!-- Platinum Coin -->
-		<item id="15644" chance="480"/> <!-- Ornate Crossbow -->
-		<item id="15403" chance="1400"/> <!--  	Necklace of the Deep -->
-		<item id="15400" chance="2800"/> <!--  	Deepling Staff -->
-		<item id="2168" chance="3800"/> <!--  	Life Ring -->
-		<item id="15421" countmax="1" chance="25000"/> <!-- Spellsinger's Seal -->
-		<item id="15488" countmax="1" chance="20000"/> <!--  	Deepling Filet -->
-		<item id="15422" countmax="1" chance="19000"/> <!-- Key to the Drowned Library -->
-		<item id="2667" countmax="2" chance="10000"/> <!--   	Fish-->
-		<item id="2146" countmax="3" chance="8000"/> <!--  	Small Sapphire -->
-		<item id="13870" countmax="1" chance="9200"/> <!-- 	Eye of a Deepling  -->
-		<item id="5895" countmax="1" chance="1900"/> <!-- Fish Fin -->
+		<item id="2148" countmax="100" chance="100000"/> <!-- gold coin -->
+		<item id="2152" countmax="3" chance="50000"/> <!-- platinum coin -->
+		<item id="15488" chance="25000"/><!-- deepling filet -->
+		<item id="15421" chance="25000"/><!-- spellsinger's seal -->
+		<item id="15422" chance="20000"/><!-- key to the drowned library -->
+		<item id="2667" countmax="2" chance="9090"/> <!-- fish -->
+		<item id="2146" countmax="3" chance="7692"/><!-- small sapphire -->
+		<item id="13870" chance="6250"/><!-- eye of a deepling -->
+		<item id="2168" chance="6250"/> <!-- life ring -->
+		<item id="15400" chance="4000"/> <!-- deepling staff -->
+		<item id="5895" chance="2564"/><!-- fish fin -->
+		<item id="15403" chance="2173"/> <!-- necklace of the deep -->
+		<item id="15644" chance="735"/> <!-- ornate crossbow -->
 	</loot>
 </monster>
