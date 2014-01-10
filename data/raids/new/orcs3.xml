@@ -1,0 +1,12 @@
+<raid>
+	 <!--Announcements-->
+	<announce delay="1000" type="event" message="Some Orcs are assembling in the woods between Carlin and Northport." />
+	<announce delay="20000" type="event" message="Orcs attacking Carlin from the north-east!" />
+	 <!--Single Spawns-->
+	 <areaspawn delay="20000" fromx="32404" fromy="31604" fromz="7" tox="32436" toy="31642" toz="7">
+	    <monster name="Orc" amount="20" />
+		<monster name="Orc Rider" amount="5" />
+		<monster name="Orc Spearman" amount="15" />
+		<monster name="Orc Warrior" amount="10" />
+	 </areaspawn>
+</raid>
