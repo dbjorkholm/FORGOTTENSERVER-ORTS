@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Forest Fury" nameDescription="a forest fory" race="blood" experience="235" speed="210" manacost="390">
+	<health now="480" max="480"/>
+	<look type="569" corpse="21359"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="4"/>
+		<flag staticattack="90"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-100">
+			<attribute key="shootEffect" value="spear"/>
+		</attack>
+	</attacks>
+	<defenses armor="11" defense="11"/>
+	<elements>
+		<element holyPercent="10"/>
+		<element firePercent="-5"/>
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="To arms, sisters!"/>
+		<voice sentence="Feel the wrath of mother forest!"/>
+		<voice sentence="By the power of Greenskull!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="53" chance="87250"/><!-- gold coin -->
+		<item id="2543" countmax="15" chance="48270"/><!-- bolts -->
+		<item id="2666" chance="24930"/><!-- meat -->
+		<item id="7363" countmax="5" chance="14900"/><!-- piercing bolts -->
+		<item id="21312" chance="13210"/><!-- venison -->
+		<item id="21311" chance="7030"/><!-- elven hoof -->
+		<item id="2455" chance="2340"/><!-- crossbow -->
+		<item id="9970" chance="470"/><!-- small topaz -->
+		<item id="7438" chance="90"/><!-- elvish bow -->
+	</loot>
+</monster>

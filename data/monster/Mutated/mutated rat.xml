@@ -28,7 +28,7 @@
 		<attack name="speed" interval="3000" chance="10" range="7" target="1" duration="30000" speedchange="-600">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack> 
-		<attack name="lifedrain" interval="1000" chance="10" range="7" radius="3" target="0" min="-5" max="-70">
+		<attack name="lifedrain" interval="1000" chance="10" range="7" radius="3" target="0" min="-0" max="-50">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
@@ -54,7 +54,7 @@
 		<item id="2148" countmax="65" chance="23000"/><!-- gold coin -->
 		<item id="2148" countmax="65" chance="23000"/><!-- gold coin -->
 		<item id="2320" chance="18500"/><!-- skull -->
-		<item id="2235" chance="11500"/><!-- moldy cheese -->
+		<item id="2235" chance="11500"/><!-- mouldy cheese -->
 		<item id="2799" chance="4500"/><!-- stone herb -->
 		<item id="2796" chance="1300"/><!-- green mushroom -->
 		<item id="2510" chance="5500"/><!-- plate shield -->
@@ -63,5 +63,6 @@
 		<item id="8900" chance="325"/><!-- spellbook of enlightenment -->
 		<item id="7618" chance="800"/><!-- health potion -->
 		<item id="2528" chance="150"/><!-- tower shield -->
+		<item id="10585" chance="150"/><!-- Mutated Rat Tail -->
 	</loot>
 </monster>

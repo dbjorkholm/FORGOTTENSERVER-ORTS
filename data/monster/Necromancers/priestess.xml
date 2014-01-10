@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Priestess" nameDescription="a priestess" race="blood" experience="420" speed="220" manacost="0">
 	<health now="390" max="390"/>
-	<look type="58" corpse="20494"/>
+	<look type="58" corpse="20491"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -51,12 +51,10 @@
 	</voices>
 	<loot>
 		<item id="2529" chance="500"/><!-- black shield -->
-		<item id="1977" chance="7150"/><!-- book -->
-		<item id="2032" chance="23200"/><!-- bowl -->
+		<item id="1962" chance="7150"/><!-- orange book -->
 		<item id="2423" chance="1700"/><!-- clerical mace -->
 		<item id="2192" chance="1200"/><!-- crystal ball -->
 		<item id="2125" chance="400"/><!-- crystal necklace -->
-		<item id="2379" chance="22750"/><!-- dagger -->
 		<item id="2760" chance="14250"/><!-- goat grass -->
 		<item id="2183" chance="1100"/><!-- hailstorm rod -->
 		<item id="7620" chance="1300"/><!-- mana potion -->
@@ -67,5 +65,8 @@
 		<item id="2791" chance="2600"/><!-- wood mushroom -->
 		<item id="2070" chance="1800"/><!-- flute -->
 		<item id="2114" chance="200"/><!-- piggy bank -->
+		<item id="11220" chance="1800"/><!-- dark rosary -->
+		<item id="10556" chance="1800"/><!-- cultish robe -->
+		<item id="10562" chance="1800"/><!-- Black Hood -->
 	</loot>
 </monster>

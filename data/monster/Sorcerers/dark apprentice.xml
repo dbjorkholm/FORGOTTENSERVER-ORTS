@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Dark Apprentice" nameDescription="a dark apprentice" race="blood" experience="100" speed="220" manacost="0">
 	<health now="225" max="225"/>
-	<look type="134" head="78" body="88" legs="0" feet="88" addons="1" corpse="20363"/>
+	<look type="133" head="78" body="57" legs="95" feet="115" addons="1" corpse="20363"/>
 	<targetchange interval="5000" chance="30"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -27,10 +27,10 @@
 		</attack>
 	</attacks>
 	<defenses armor="15" defense="20">
-		<defense name="healing" interval="1000" chance="25" min="60" max="100">
+		<defense name="healing" interval="5000" chance="25" min="60" max="100">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="invisible" interval="5000" chance="50" duration="5000">
+		<defense name="invisible" interval="5000" chance="20" duration="1000">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
@@ -50,12 +50,10 @@
 		<item id="2148" countmax="50" chance="33500"/><!-- gold coin -->
 		<item id="2260" chance="4125"/><!-- blank rune -->
 		<item id="7620" chance="1500"/><!-- mana potion -->
-		<item id="2260" chance="4125"/><!-- blank rune -->
 		<item id="6079" chance="10500"/><!-- dead frog -->
-		<item id="2260" chance="4125"/><!-- blank rune -->
 		<item id="2191" chance="2200"/><!-- wand of dragonbreath -->
-		<item id="7620" chance="1500"/><!-- mana potion -->
 		<item id="7618" chance="3400"/><!-- health potion -->
 		<item id="2188" chance="100"/><!-- wand of decay -->
+		<item id="13295" chance="10"/><!-- reins -->
 	</loot>
 </monster>

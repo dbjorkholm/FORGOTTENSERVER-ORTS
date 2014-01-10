@@ -18,7 +18,7 @@
 		<flag runonhealth="500"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="30" attack="50" poison="150"/>
+		<attack name="melee" interval="2000" skill="30" attack="50" poison="50"/>
 		<attack name="speed" interval="1000" chance="10" range="7" speedchange="-600" duration="20000">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
@@ -27,7 +27,7 @@
 		</attack>
 	</attacks>
 	<defenses armor="15" defense="20">
-		<defense name="healing" interval="1000" chance="25" min="113" max="187">
+		<defense name="healing" interval="1500" chance="25" min="113" max="187">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -74,5 +74,7 @@
 		<item id="7884" chance="240"/><!-- terra mantle -->
 		<item id="2121" chance="410"/><!-- wedding ring -->
 		<item id="2124" chance="100"/><!-- crystal ring -->
+		<item id="11337" chance="800"/><!-- petrified scream -->
+		<item id="12402" chance="860"/><!-- hair of a banshee -->
 	</loot>
 </monster>

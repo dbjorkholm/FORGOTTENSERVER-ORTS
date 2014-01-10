@@ -38,5 +38,10 @@
 		<item id="2389" chance="14700"/><!-- spear -->
 		<item id="2643" chance="9500"/><!-- leather boots -->
 		<item id="2580" chance="150"/><!-- fishing rod -->
+		<item id="2805" chance="1100"/><!-- Troll Green -->
+		<item id="5901" chance="1800"/><!-- wood -->
+		<item id="13506" chance="1800"/><!-- Medicine Pouch -->
+		<item id="10603" chance="2870"/><!-- Swamp Grass -->
+		<item id="2235" chance="10000"/><!-- Mouldy Cheese -->
 	</loot>
 </monster>

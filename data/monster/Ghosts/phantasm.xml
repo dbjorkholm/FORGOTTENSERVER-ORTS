@@ -73,5 +73,9 @@
 		<item id="2487" chance="600" /><!-- crown armor -->
 		<item id="2165" chance="600" /><!-- stealth ring -->
 		<item id="6300" chance="200" /><!-- death ring -->
+		<item id="7451" chance="710" /><!-- Shadow Sceptre -->
+		<item id="2147" chance="6600" /><!-- small ruby -->
+		<item id="9970" chance="8500" /><!-- small topaz -->
+		<item id="2150" chance="8200" /><!-- small amethyst -->
 	</loot>
 </monster>

@@ -49,5 +49,6 @@
 		<item id="2399" countmax="3" chance="700"/><!-- throwing star -->
 		<item id="2459" chance="1500"/><!-- two handed sword -->
 		<item id="3976" countmax="10" chance="50000"/><!-- worm -->
+		<item id="11200" chance="1200"/><!-- Half-Digested Piece of Meat -->
 	</loot>
 </monster>

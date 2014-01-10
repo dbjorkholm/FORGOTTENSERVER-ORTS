@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Deepling Worker" nameDescription="a deepling worker" race="blood" experience="130" speed="200" manacost="0">
+<monster name="Deepling Worker" nameDescription="a deepling worker" race="blood" experience="130 " speed="560" manacost="0">
 	<health now="190" max="190"/>
-	<look type="413" corpse="13839"/>
-	<targetchange interval="2000" chance="8"/>
+	<look type="470" corpse="15497"/>
+	<targetchange interval="2000" chance="50"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
@@ -10,44 +10,44 @@
 		<flag hostile="1"/>
 		<flag illusionable="0"/>
 		<flag convinceable="0"/>
-		<flag pushable="0"/>
+		<flag pushable="1"/>
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="95"/>
-		<flag runonhealth="0"/>
+		<flag targetdistance="0"/>
+		<flag runonhealth="60"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="20" attack="60"/>
+		<attack name="melee" interval="2000" skill="20" attack="30"/>
+		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
 	</attacks>
-	<defenses armor="50" defense="55">
-		<defense name="healing" interval="2000" chance="10" min="50" max="250">
-				<attribute key="areaEffect" value="blueshimmer"/>
-		</defense>
-	</defenses>
+	<defenses armor="11" defense="11"/>
+	<immunities>
+			<immunity invisible="1"/>
+		<immunity ice="1" />
+		<immunity paralyze="1" />
+		<immunity drown="1" />
+		<immunity fire="1" />
+	</immunities>
+	<voices interval="3000" chance="200">
+		<voice sentence="Njaaarh!!"/>
+		<voice sentence="Begjone, intrjuder!!"/>
+		<voice sentence="Djon't djare stjare injo the eyes of the djeep!"/>
+		<voice sentence="Ljeave this sjacred pljace while you cjan"/>
+	</voices>
 	<elements>
 		<element earthPercent="-20"/>
 		<element energyPercent="-20"/>
-		<element deathPercent="10"/>
+		<element physicalPercent="-20"/>
+		<element deathPercent="-20"/>
 	</elements>
-	<immunities>
-		<immunity ice="1"/>
-		<immunity fire="1"/>
-		<immunity drown="1"/>
-		<immunity lifedrain="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
-	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Qjell afar gou jey!" yell="1"/>
-	</voices>
 	<loot>
-		<item id="2148" countmax="24" chance="100000"/> <!-- Gold Coin -->
-		<item id="2667" countmax="3" chance="15000"/> <!--  	Fish -->
-		<item id="15430" countmax="1" chance="7000"/> <!--  	Deepling Scales -->
-		<item id="5895" countmax="1" chance="340"/> <!--  	Fish Fin -->
-		<item id="13870" countmax="1" chance="210"/> <!--  	Eye of a Deepling -->
-		<item id="2149" countmax="1" chance="90"/> <!-- Small Emerald -->
-		<item id="13838" chance="560"/> <!--  	Heavy Trident -->
+		<item id="2148" countmax="25" chance="100000"/> <!-- gold coin -->
+		<item id="2667" countmax="3" chance="12500"/> <!-- hunting spear -->
+		<item id="15430" chance="6250"/> <!-- deepling scales -->
+		<item id="13838" chance="787"/> <!-- heavy trident -->
+		<item id="5895" chance="393"/><!-- fish fin -->
+		<item id="13870" chance="263"/><!-- eye of a deepling -->
 	</loot>
 </monster>

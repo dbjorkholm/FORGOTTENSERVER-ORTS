@@ -50,5 +50,7 @@
 		<item id="2123" chance="700" /><!-- ring of the sky -->
 		<item id="2147" countmax="5" chance="1425" /><!-- small ruby -->
 		<item id="11305" chance="1175" /><!-- drakinata -->
+		<item id="11304" chance="2625"/> <!-- zaoan legs -->
+		<item id="11301" chance="1050"/> <!-- zaoan armor -->
 	</loot>
 </monster>

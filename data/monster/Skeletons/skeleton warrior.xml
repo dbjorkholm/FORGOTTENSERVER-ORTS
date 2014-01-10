@@ -33,7 +33,6 @@
 	<loot>
 		<item id="2148" countmax="15" chance="24500"/><!-- gold coin -->
 		<item id="2230" chance="50000"/><!-- bone -->
-		<item id="2050" chance="25000"/><!-- torch -->
 		<item id="2376" chance="3000"/><!-- sword -->
 		<item id="2398" chance="20000"/><!-- mace -->
 		<item id="2511" chance="15000"/><!-- brass shield -->

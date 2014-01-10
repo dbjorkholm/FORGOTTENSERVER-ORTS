@@ -46,6 +46,5 @@
 		<item id="2525" chance="2500"/><!-- dwarven shield -->
 		<item id="2208" chance="360"/><!-- axe ring -->
 		<item id="5880" chance="300"/><!-- iron ore -->
-		<item id="2213" chance="500"/><!-- dwarven ring -->
 	</loot>
 </monster>

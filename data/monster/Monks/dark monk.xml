@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Dark Monk" nameDescription="a dark monk" race="blood" experience="145" speed="210" manacost="0">
 	<health now="190" max="190"/>
-	<look type="225" corpse="20562"/>
+	<look type="225" corpse="20371"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -49,11 +49,15 @@
 		<item id="2193" chance="1400"/><!-- ankh -->
 		<item id="2689" chance="20000"/><!-- bread -->
 		<item id="2015" chance="10000"/><!-- brown flask -->
+		<item id="10563" chance="12000"/><!-- Book of Prayers -->
 		<item id="2044" chance="11750"/><!-- lamp -->
 		<item id="2467" chance="3500"/><!-- leather armor -->
+		<item id="12448" chance="6666"/><!-- rope belt -->
+		<item id="12449" chance="6666"/><!-- safety pins -->
 		<item id="2177" chance="2750"/><!-- life crystal -->
 		<item id="7620" chance="700"/><!-- mana potion -->
 		<item id="2166" chance="500"/><!-- power ring -->
+		<item id="11220" chance="500"/><!-- dark rosary -->
 		<item id="1949" chance="18000"/><!-- scroll -->
 		<item id="2401" chance="20000"/><!-- staff -->
 		<item id="2642" chance="8250"/><!-- sandals -->

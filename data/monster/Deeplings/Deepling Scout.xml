@@ -17,16 +17,16 @@
 		<flag runonhealth="60"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="34" attack="45"/>
-		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-15" max="-100">
-			<attribute key="shootEffect" value="spear"/> <!-- TODO: Add spear deepling speed effect? -->
+		<attack name="melee" interval="2000" skill="34" attack="70"/>
+		<attack name="drown" interval="1000" chance="11" range="5" target="1" min ="-15" max="-50">
+			<attribute key="shootEffect" value="spear"/>
 			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
 	</attacks>
 	<defenses armor="12" defense="20"/>
 	<immunities>
+			<immunity invisible="1"/>
 		<immunity ice="1" />
-		<immunity paralyze="1" />
 		<immunity drown="1" />
 		<immunity fire="1" />
 	</immunities>
@@ -43,14 +43,14 @@
 		<element deathPercent="-20"/>
 	</elements>
 	<loot>
-		<item id="2148" countmax="50" chance="31000"/> <!-- gold coin -->
-		<item id="3965" countmax="3" chance="18000"/> <!-- hunting spear -->
-		<item id="2168" chance="6000"/> <!-- life ring -->
-		<item id="13838" chance="4500"/> <!-- heavy trident -->
-		<item id="2149" chance="3000"/> <!-- small emerald -->
-		<item id="9808" chance="5000"/><!-- rusty armor -->
-		<item id="13870" chance="5500"/><!-- eye of a deepling -->
-		<item id="9930" chance="1600"/><!-- rust remover -->
-		<item id="5895" chance="700"/><!-- fish fin -->
+		<item id="2148" countmax="50" chance="50000"/> <!-- gold coin -->
+		<item id="3965" countmax="3" chance="14285"/> <!-- hunting spear -->
+		<item id="2168" chance="2127"/> <!-- life ring -->
+		<item id="9808" chance="925"/><!-- rusty armor -->
+		<item id="13838" chance="505"/> <!-- heavy trident -->
+		<item id="13870" chance="310"/><!-- eye of a deepling -->
+		<item id="5895" chance="310"/><!-- fish fin -->
+		<item id="2149" chance="121"/> <!-- small emerald -->
+		<item id="9930" chance="111"/><!-- flask of rust remover -->
 	</loot>
 </monster>

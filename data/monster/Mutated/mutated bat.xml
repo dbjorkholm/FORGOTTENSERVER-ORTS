@@ -49,12 +49,12 @@
 		<item id="2167" chance="900"/><!-- energy ring -->
 		<item id="2800" chance="10000"/><!-- longsword -->
 		<item id="2800" chance="7400"/><!-- obsidian lance -->
-		<item id="2800" chance="7950"/><!-- rusty armor -->
 		<item id="2800" chance="9900"/><!-- short sword -->
 		<item id="2800" chance="5000"/><!-- rusty armor -->
 		<item id="2150" countmax="2" chance="500"/><!-- small amethyst -->
 		<item id="2800" chance="5200"/><!-- star herb -->
 		<item id="7386" chance="100"/><!-- mercenary sword -->
 		<item id="10016" chance="100"/><!-- batwing hat -->
+		<item id="10579" chance="100"/><!-- Mutated Bat Ear -->
 	</loot>
 </monster>
