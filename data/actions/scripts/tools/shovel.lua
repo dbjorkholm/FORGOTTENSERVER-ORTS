@@ -18,6 +18,19 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doSummonCreature("Scarab", toPosition)
 		end
 		doSendMagicEffect(toPosition, CONST_ME_POFF)
+	elseif (itemEx.aid == 4654) and (getPlayerStorageValue(cid, 9925) == 1) and (getPlayerStorageValue(cid, 9926) < 1) then
+		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
+		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
+		doPlayerAddItem(cid,21250,1)
+		setPlayerStorageValue(cid,9926,1)
+	elseif (itemEx.aid == 4668) and (getPlayerStorageValue(cid, 9943) == 1) and (getPlayerStorageValue(cid, 9944) < 1) then
+		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, 'A torn scroll piece emerges. Probably gnawed off by rats.')
+		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
+		doPlayerAddItem(cid,21250,1)
+		setPlayerStorageValue(cid,9944,1)
+	elseif isInArray(holes, itemEx.itemid) == TRUE then
+		doTransformItem(itemEx.uid, itemEx.itemid + 1)
+        doDecayItem(itemEx.uid)
 	else
 		return FALSE
 	end

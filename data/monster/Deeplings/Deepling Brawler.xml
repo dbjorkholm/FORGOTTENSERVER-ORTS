@@ -22,10 +22,10 @@
 			<attribute key="shootEffect" value="spear"/>
 			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
-			<immunities>
+	</attacks>
+	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	</attacks>
 	<defenses armor="12" defense="20"/>
 	<loot>
 		<item id="2148" countmax="24" chance="31000"/> <!-- gold coin -->

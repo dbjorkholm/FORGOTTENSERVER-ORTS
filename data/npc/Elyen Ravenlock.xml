@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<npc name="Elyen Ravenlock" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="58" head="0" body="0" legs="0" feet="0" addons="0" />
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Elyen Ravenlock" script="Elyen Ravenlock.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="58"/>
+<parameters>
+    <parameter key="message_greet" value="A shadow preceded you. You wish a {scroll} or a {mission}?" />
+</parameters>
 </npc>
