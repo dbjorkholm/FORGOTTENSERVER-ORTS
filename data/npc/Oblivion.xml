@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Elyen Ravenlock" script="Elyen Ravenlock.lua" walkinterval="2000" floorchange="0">
+<npc name="Oblivion" script="Oblivion.lua" walkinterval="2000" floorchange="0">
 <health now="100" max="100"/>
-<look type="58"/>
+<look type="552"/>
 <parameters>
     <parameter key="message_greet" value="A shadow preceded you. You wish a {scroll} or a {mission}?" />
 </parameters>
