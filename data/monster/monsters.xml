@@ -498,6 +498,7 @@
 
 	<!-- Insects -->
 	<monster name="Ancient Scarab" file="Insects/ancient scarab.xml"/>
+	<monster name="Armenius" file="Insects/armenius.xml"/>
 	<monster name="Blue Butterfly" file="Insects/blue butterfly.xml"/>
 	<monster name="Brimstone Bug" file="Insects/brimstone bug.xml"/>
 	<monster name="Bug" file="Insects/bug.xml"/>
