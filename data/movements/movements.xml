@@ -7,6 +7,9 @@
 		<movevent event="AddItem" tileitem="1" itemid="5024" script="others/notrash.lua"/>
 		<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
 		<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
+		<!-- Teleports -->
+		<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
+		<movevent event="StepIn" fromaid="9710" toaid="9716" script="others/furygates.lua"/>
 		<!--- Ankrahmun Tomb Mystic Fires -->
 		<movevent event="StepIn" uniqueid="9033" script="others/tombcoalbasin.lua"/>
 		<movevent event="StepIn" uniqueid="9034" script="others/tombcoalbasin.lua"/>
@@ -75,6 +78,12 @@
 		<movevent event="StepIn" uniqueid="9116" script="others/shrinesportal.lua"/>
 		<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua"/>
 		
+	<!-- Gravedigger -->
+	<movement type="StepIn" fromaid="4530" toaid="4531" script="gravedigger quest/tps.lua" />
+	<movement type="StepIn" fromaid="4532" toaid="4533" script="gravedigger quest/tps2.lua" />
+	<movement type="StepIn" fromaid="4534" toaid="4535" script="gravedigger quest/tps3.lua" />
+	<movement type="StepIn" fromaid="4541" toaid="4542" script="gravedigger quest/tps4.lua" />
+	<movement type="StepIn" actionid="4536" script="gravedigger quest/necro.lua" />
 
 	<!-- Elemental Spheres Quest -->
 	<movevent event="AddItem" tileitem="1" itemid="8568" script="elemental spheres quest/ElementalSpheresQuestSummonOverlord.lua"/>
