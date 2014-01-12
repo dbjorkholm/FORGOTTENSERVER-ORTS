@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
+	<quest name="Paw and Fur">
+		<mission name="Trolls Task" storageid="1501" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
+		<mission name="Goblins Task" storageid="1502" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 goblins." />
+	</quest>
 	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
 		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Example description 1"/>

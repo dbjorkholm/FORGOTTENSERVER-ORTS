@@ -412,6 +412,15 @@
 	<action uniqueid="2052" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
 	<action uniqueid="2051" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
 	<action uniqueid="2050" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
+	<action uniqueid="10552" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10544" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10545" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10546" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10547" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10549" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10550" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10559" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
+	<action uniqueid="10548" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
 	<action uniqueid="1021" script="pits of inferno quest/pitsOfInfernoQuestOil.lua"/>
 	<action uniqueid="3300" script="pits of inferno quest/pitsOfInfernoQuestStoneLever.lua"/>
 	<action uniqueid="2025" script="pits of inferno quest/pitsOfInfernoQuestWalls.lua"/>
