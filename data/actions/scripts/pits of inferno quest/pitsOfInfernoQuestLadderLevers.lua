@@ -4,7 +4,7 @@ local pos = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
+	if(item.itemid == 1945) or (item.itemid == 1946) then
 		if(item.uid == 3301) then
 			doTransformItem(getThingfromPos(pos[1]).uid, 1284)
 			for i = 1, 2 do
