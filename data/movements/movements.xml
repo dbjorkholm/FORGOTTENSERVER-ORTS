@@ -79,12 +79,12 @@
 		<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua"/>
 		
 	<!-- Gravedigger -->
-	<movement type="StepIn" fromaid="4530" toaid="4531" script="gravedigger quest/tps.lua" />
-	<movement type="StepIn" fromaid="4532" toaid="4533" script="gravedigger quest/tps2.lua" />
-	<movement type="StepIn" fromaid="4534" toaid="4535" script="gravedigger quest/tps3.lua" />
-	<movement type="StepIn" fromaid="4541" toaid="4542" script="gravedigger quest/tps4.lua" />
-	<movement type="StepIn" actionid="4536" script="gravedigger quest/necro.lua" />
-
+	<movevent event="StepIn" fromaid="4530" toaid="4531" script="gravedigger quest/tps.lua"/>
+	<movevent event="StepIn" fromaid="4532" toaid="4533" script="gravedigger quest/tps2.lua"/>
+	<movevent event="StepIn" fromaid="4534" toaid="4535" script="gravedigger quest/tps3.lua"/>
+	<movevent event="StepIn" fromaid="4541" toaid="4542" script="gravedigger quest/tps4.lua"/>
+	<movevent event="StepIn" actionid="4536" script="gravedigger quest/necro.lua"/>
+	
 	<!-- Elemental Spheres Quest -->
 	<movevent event="AddItem" tileitem="1" itemid="8568" script="elemental spheres quest/ElementalSpheresQuestSummonOverlord.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="8569" script="elemental spheres quest/ElementalSpheresQuestSummonOverlord.lua"/>
@@ -275,16 +275,23 @@
 	<movevent event="StepIn" uniqueid="2086" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
 	<movevent event="StepIn" uniqueid="2001" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
 	<movevent event="StepIn" uniqueid="2000" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
-	<movevent event="StepIn" uniqueid="2100" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2101" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2102" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2103" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2104" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2105" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2106" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2107" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2108" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2109" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28810" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28811" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28812" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28813" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28814" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28815" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28816" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28817" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28818" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28819" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28820" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28821" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28822" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28823" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28824" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28825" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" actionid="28826" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/pitsOfInfernoQuestSecondTrap.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
 	
