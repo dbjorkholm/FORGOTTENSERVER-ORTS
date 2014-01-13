@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<npc name="Palomino" script="default.lua" walkinterval="50000" floorchange="0">
-<health now="1000" max="1000"/>
-<look type="128" head="116" body="39" legs="48" feet="97" addons="2"/>
-<parameters>
-<parameter key="message_greet" value="Hello |PLAYERNAME|. You want to {rent} a {mount}?"/>
-</parameters>
+<npc name="Palomino" script="Palomino.lua" walkinterval="50000" floorchange="0">
+	<health now="1000" max="1000"/>
+	<look type="128" head="116" body="39" legs="48" feet="97" addons="2"/>
+	<parameters>
+		<parameter key="message_greet" value="Salutations, |PLAYERNAME| I guess you are for the {horses}. You want to {rent} a {mount}?"/>
+	</parameters>
 </npc>
