@@ -497,6 +497,7 @@
 	<action itemid="2553" script="tools/pick.lua"/>
 	<action itemid="5908" script="tools/skinning.lua"/>
 	<action itemid="5942" script="tools/skinning.lua"/>
+	<action itemid="9930" script="tools/rustremover.lua"/>
 
 	<!-- Increase/Decrease ItemId -->
 	<action itemid="1873" function="increaseItemId"/>
