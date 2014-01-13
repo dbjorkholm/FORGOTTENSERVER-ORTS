@@ -2,73 +2,68 @@
 <raids>
 
 	<!-- Bosses -->
-	<raid name="Sir Valorcrest" file="bosses/Sir Valorcrest.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Zevelong Duskbringer" file="bosses/Zevelong Duskbringer.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Diblis The Fair" file="bosses/Diblis The Fair.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Arachir the Ancient One" file="bosses/Arachir the Ancient One.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Zulazza the Corruptor" file="bosses/Zulazza the Corruptor.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 
-	<raid name="Morgaroth" file="bosses/Morgaroth.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 
-	<raid name="Ferumbras" file="bosses/Ferumbras.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 
-	<raid name="Ghazbaran" file="bosses/Ghazbaran.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 
-	<raid name="Old Widow" file="bosses/The Old Widow.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Orshabaal" file="bosses/Orshabaal.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 
-	<raid name="Old Widow" file="bosses/The Old Widow.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Necropharus" file="bosses/Necropharus.xml" interval2="1440" chance="5" margin="30" enabled="yes"/>
-	<raid name="Horned Fox" file="bosses/horned.xml" interval2="1440" chance="5" margin="30" enabled="yes"/> 	
-	<raid name="Halloween Hare" file="bosses/halloween.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
+	<raid name="Sir Valorcrest" file="bosses/Sir Valorcrest.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Zevelong Duskbringer" file="bosses/Zevelong Duskbringer.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Diblis The Fair" file="bosses/Diblis The Fair.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Arachir the Ancient One" file="bosses/Arachir the Ancient One.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Zulazza the Corruptor" file="bosses/Zulazza the Corruptor.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Morgaroth" file="bosses/Morgaroth.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Ferumbras" file="bosses/Ferumbras.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Ghazbaran" file="bosses/Ghazbaran.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Old Widow" file="bosses/The Old Widow.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Orshabaal" file="bosses/Orshabaal.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Necropharus" file="bosses/Necropharus.xml" interval2="1440" chance="5" margin="60" enabled="yes"/>
+	<raid name="Horned Fox" file="bosses/horned.xml" interval2="1440" chance="5" margin="60" enabled="yes"/> 	
+
+	<!-- Special events (not active) -->
+	<raid name="Halloween Hare" file="bosses/halloween.xml" interval2="30" chance="5" margin="60" enabled="no"/>
 
 	<!-- Raids Normals -->	
-	<raid name="citizen" file="normal/feverish citizen.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="RatsThais" file="normal/ratsthais.xml" interval2="30" chance="1" margin="30" enabled="yes"/> 
-	<raid name="OrcsThais" file="normal/OrcsThais.xml" interval2="30" chance="2" margin="30" enabled="yes"/> 
-	<raid name="Barbarian" file="normal/Barbarian.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Elfos" file="normal/Elfos.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Nomads" file="normal/nomads.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Pirates" file="normal/Pirates.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Quaras" file="normal/quaras.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Scarabs" file="normal/Scarabs.xml" interval2="30" chance="25" margin="30" enabled="yes"/> 
-	<raid name="Undead Army" file="normal/undead army.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Undead Darashia" file="normal/undead darashia.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Wolves" file="normal/WolfsRaid.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-
+	<raid name="citizen" file="normal/feverish citizen.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="RatsThais" file="normal/ratsthais.xml" interval2="30" chance="1" margin="60" enabled="yes"/> 
+	<raid name="OrcsThais" file="normal/OrcsThais.xml" interval2="30" chance="2" margin="60" enabled="yes"/> 
+	<raid name="Barbarian" file="normal/Barbarian.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Elfos" file="normal/Elfos.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Nomads" file="normal/nomads.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Pirates" file="normal/Pirates.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Quaras" file="normal/quaras.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Scarabs" file="normal/Scarabs.xml" interval2="30" chance="5" margin="60" enabled="yes"/> 
+	<raid name="Undead Army" file="normal/undead army.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Undead Darashia" file="normal/undead darashia.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Wolves" file="normal/WolfsRaid.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
 	
 	<!-- 10.10 raids -->
-	<raid name="BarbaBitter" file="new/barba_bittermor.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="BarbaSvar" file="new/barba_svar.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Beetles" file="new/beetles.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Bonebeasts" file="new/bonebeast.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Cyclops" file="new/cyc.xml" interval2="30" chance="10" margin="30" enabled="yes"/>
-	<raid name="Dragons" file="new/dragons.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Gargoyle" file="new/gargoyle.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Gnarlhounds" file="new/gnarlhounds.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="GoEdron" file="new/goblins_edron.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="GoFemor" file="new/goblins_femor.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Hunters" file="new/hunters.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="IceGolems" file="new/icegolems.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Kongras" file="new/kongras.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Liches" file="new/liches.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Lions" file="new/lions.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Lizards" file="new/lizards.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Minos" file="new/minotaurs.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="MNW" file="new/mnw.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Necromacer" file="new/necromacer.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Nomads" file="new/nomads.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Orcs" file="new/orcs.xml" interval2="30" chance="10" margin="30" enabled="yes"/>
-	<raid name="Orcss" file="new/orcs2.xml" interval2="30" chance="10" margin="30" enabled="yes"/>
-	<raid name="Orcsss" file="new/orcs3.xml" interval2="30" chance="10" margin="30" enabled="yes"/>
-	<raid name="Pirates" file="new/pirates.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Priestesses" file="new/priestesses.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Skeletons" file="new/skeletons.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Slime" file="new/slimes.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Sspawn" file="new/sspawn.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Terror" file="new/tbird.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Terramites" file="new/terramites.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Tigers" file="new/tigers.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	<raid name="Tortoise" file="new/tortoises.xml" interval2="30" chance="25" margin="30" enabled="yes"/>
-	
-	
-	
-	
-	
+	<raid name="BarbaBitter" file="new/barba_bittermor.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="BarbaSvar" file="new/barba_svar.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Beetles" file="new/beetles.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Bonebeasts" file="new/bonebeast.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Cyclops" file="new/cyc.xml" interval2="30" chance="10" margin="60" enabled="yes"/>
+	<raid name="Dragons" file="new/dragons.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Gargoyle" file="new/gargoyle.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Gnarlhounds" file="new/gnarlhounds.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="GoEdron" file="new/goblins_edron.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="GoFemor" file="new/goblins_femor.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Hunters" file="new/hunters.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="IceGolems" file="new/icegolems.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Kongras" file="new/kongras.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Liches" file="new/liches.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Lions" file="new/lions.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Lizards" file="new/lizards.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Minos" file="new/minotaurs.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="MNW" file="new/mnw.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Necromacer" file="new/necromacer.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Nomads" file="new/nomads.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Orcs" file="new/orcs.xml" interval2="30" chance="10" margin="60" enabled="yes"/>
+	<raid name="Orcss" file="new/orcs2.xml" interval2="30" chance="10" margin="60" enabled="yes"/>
+	<raid name="Orcsss" file="new/orcs3.xml" interval2="30" chance="10" margin="60" enabled="yes"/>
+	<raid name="Pirates" file="new/pirates.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Priestesses" file="new/priestesses.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Skeletons" file="new/skeletons.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Slime" file="new/slimes.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Sspawn" file="new/sspawn.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Terror" file="new/tbird.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Terramites" file="new/terramites.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Tigers" file="new/tigers.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
+	<raid name="Tortoise" file="new/tortoises.xml" interval2="30" chance="5" margin="60" enabled="yes"/>
 	
 </raids>
