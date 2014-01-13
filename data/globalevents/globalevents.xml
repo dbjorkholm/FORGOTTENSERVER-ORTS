@@ -9,6 +9,9 @@
 	<!-- Demon Oak Quest -->
 	<globalevent name="OakThink" interval="15000" script="demon oak quest/oakthink.lua"/>
 
+	<!-- Rent Horses -->
+	<globalevent name="RentThink" interval="15000" script="others/checkmount.lua"/>
+
 	<!-- Random Spawns -->
 		<!-- Mounts -->
 	<globalevent name="crustacea" interval="3600000" script="random spawns/mounts/crustacea gigantica.lua"/>
