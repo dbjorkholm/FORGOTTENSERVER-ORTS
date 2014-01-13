@@ -25553,7 +25553,7 @@
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
-	<item id="18534" name="stairs">
+	<item fromid="18529" toid="18536" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
 
