@@ -44,24 +44,27 @@ local SKINS = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-        if itemEx.itemid == 9010 then
-                if getPlayerStorageValue(cid, 10003) < 1 then
-                        doPlayerAddItem(cid, 8310, 1)
-                        doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
-                        setPlayerStorageValue(cid, 10003, 1)
-                else
-                        doCreatureSay(cid, "You cannot skin the corpse more than once.", TALKTYPE_ORANGE_1)
-                end
-                return true
-        end
-        local skin = SKINS[item.itemid][itemEx.itemid]
-        if skin == nil then
+	if (itemEx.itemid == 9010) then
+		if (getPlayerStorageValue(cid, 10003) < 1) then
+			doPlayerAddItem(cid, 8310, 1)
+			doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
+			setPlayerStorageValue(cid, 10003, 1)
+		else
+			doCreatureSay(cid, "You cannot skin the corpse more than once.", TALKTYPE_ORANGE_1)
+		end
+		return true
+	else
+		doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
+		return true
+	end
+	local skin = SKINS[item.itemid][itemEx.itemid]
+        if(skin == nil) then
                 doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
                 return true
         end
 
         local random, effect, transform = math.random(1, 100000), CONST_ME_MAGIC_GREEN, true
-        if type(skin[1]) == 'table' then
+        if(type(skin[1]) == 'table') then
                 local added = false
                 for _, _skin in ipairs(skin) do
                         if(random <= _skin[1]) then
@@ -71,19 +74,20 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
                         end
                 end
 
-                if not added and itemEx.itemid == 8961 then
+                if(not added and itemEx.itemid == 8961) then
                         effect = CONST_ME_POFF
                         transform = false
                 end
-        elseif random <= skin[1] then
+        elseif(random <= skin[1]) then
                 doPlayerAddItem(cid, skin[2], skin[3] or 1)
         else
                 effect = CONST_ME_POFF
         end
 
         doSendMagicEffect(toPosition, effect)
-        if transform then
+        if(transform) then
                 doTransformItem(itemEx.uid, itemEx.itemid + 1)
         end
+
         return true
 end
