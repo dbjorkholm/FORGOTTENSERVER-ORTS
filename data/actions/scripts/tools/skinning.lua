@@ -21,6 +21,18 @@ local cube = {7441, 7444, 7445}
 local cube2 = {7442}
 local marble = {11343}
 local ashes = {9010}
+local pumpkin = {8962}
+
+local pumpkin_items = {
+	[1] = {2683},
+	[2] = {2688, 50},
+	[3] = {6571},
+	[4] = {6492},
+	[5] = {6574},
+	[6] = {6526},
+	[7] = {2096},
+	[8] = {9005, 20}
+}
 
 local random = math.random(1,10)
         if isInArray(minotaurs, itemEx.itemid) then
@@ -45,12 +57,23 @@ local random = math.random(1,10)
                 skinMonster(cid, itemEx, 5925)
         return true
         elseif isInArray(ashes, itemEx.itemid) then
-                if (getPlayerStorageValue(cid, 10003) < 1) then
+                if (getPlayerStorageValue(cid, 100003) < 1) then
                         doPlayerAddItem(cid, 8310, 1)
                         doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
-                        setPlayerStorageValue(cid, 10003, 1)
+                        setPlayerStorageValue(cid, 100003, 1)
                 else
                         doCreatureSay(cid, "You cannot skin the corpse more than once.", TALKTYPE_ORANGE_1)
+                end
+        return true
+        elseif isInArray(pumpkin, itemEx.itemid) then
+                if (getPlayerStorageValue(cid, 81279) <= 0) then
+        		doCreatureSay(cid, "Happy Halloween!", TALKTYPE_ORANGE_1)
+        		doSendMagicEffect(getCreaturePosition(cid), math.random(28,30))
+        		setPlayerStorageValue(cid, 81279, 1)
+        		local v = pumpkin_items[math.random(#pumpkin_items)]
+        		doPlayerAddItem(cid, v[1], v[2] or 1)
+                else
+			doCreatureSay(cid, "You already used your knife on the corpse.", TALKTYPE_ORANGE_1)
                 end
         return true
         elseif isInArray(marble, itemEx.itemid) then
@@ -79,7 +102,7 @@ local random = math.random(1,10)
                 else
                         doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_HITAREA)
                         doRemoveItem(itemEx.uid)
-                        doCreatureSay(cid, "The attempt of sculpting failed miserably.", TALKTYPE_MONSTER)
+                        doCreatureSay(cid, "The attempt of sculpting failed miserably.", TALKTYPE_ORANGE_1)
                 return true
                 end
         end
