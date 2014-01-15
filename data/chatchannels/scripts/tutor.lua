@@ -8,7 +8,7 @@ function onSpeak(cid, type, message)
                         type = TALKTYPE_CHANNEL_O
                 end
         elseif(type == TALKTYPE_CHANNEL_O) then
-                if(Player(cid):getAccountType() < ACCOUNT_TYPE_SENIORTUTOR then
+                if(Player(cid):getAccountType() < ACCOUNT_TYPE_SENIORTUTOR) then
                         type = TALKTYPE_CHANNEL_Y
                 end
         elseif(type == TALKTYPE_CHANNEL_R1) then
