@@ -469,7 +469,7 @@
   <house name="The Farms 3" houseid="866" entryx="32645" entryy="31908" entryz="2" rent="1530" townid="3" size="21"/>
   <house name="The Farms 2" houseid="867" entryx="32641" entryy="31918" entryz="2" rent="1530" townid="3" size="21"/>
   <house name="The Farms 1" houseid="868" entryx="32627" entryy="31921" entryz="2" rent="2510" townid="3" size="34"/>
-  <house name="Outlaw Castle" houseid="886" entryx="32660" entryy="32236" entryz="7" rent="8000" guildhall="1" townid="3" size="150"/>
+  <house name="Outlaw Castle" houseid="886" entryx="32660" entryy="32236" entryz="7" rent="8000" guildhall="1" townid="3" size="149"/>
   <house name="Tunnel Gardens 3" houseid="889" entryx="32603" entryy="31908" entryz="11" rent="2000" townid="3" size="5"/>
   <house name="Tunnel Gardens 4" houseid="890" entryx="32602" entryy="31909" entryz="11" rent="2000" townid="3" size="1"/>
   <house name="Tunnel Gardens 5" houseid="892" entryx="32594" entryy="31905" entryz="11" rent="1360" townid="3" size="16"/>
