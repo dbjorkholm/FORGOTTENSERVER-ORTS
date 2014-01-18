@@ -8,6 +8,17 @@
 	<action actionid="8037" script="kazordoon/kazordoonOreWagons.lua"/>
 	<action actionid="8038" script="kazordoon/kazordoonOreWagons.lua"/>
 	
+	<!-- Addons -->
+	<action itemid="13926"  script="addons/addons.lua"/>
+	<action itemid="13925"  script="addons/addons.lua"/>
+	<action itemid="18521"  script="addons/addons.lua"/>
+	<action itemid="18522"  script="addons/addons.lua"/>
+	<action itemid="18518"  script="addons/addons.lua"/>
+	<action itemid="18519"  script="addons/addons.lua"/>
+
+	<!-- Ghost Ship (Plate armor quest) -->
+	<action actionid="5556"  script="other/ghostship.lua"/>
+
 	<!-- Venore -->
 	<action actionid="9743"  script="other/venorelever.lua"/>
 	<action actionid="9744"  script="other/venorelever.lua"/>
