@@ -13,32 +13,8 @@
 	<globalevent name="RentThink" interval="15000" script="others/checkmount.lua"/>
 
 	<!-- Random Spawns -->
-		<!-- Mounts -->
-	<globalevent name="crustacea" interval="3600000" script="random spawns/mounts/crustacea gigantica.lua"/>
-	<globalevent name="cavebear" interval="7200000" script="random spawns/mounts/undead cavebear.lua"/>
-	<globalevent name="midnight" interval="3600000" script="random spawns/mounts/midnight panter.lua"/>
-	<globalevent name="draptor" interval="3600000" script="random spawns/mounts/draptor.lua"/>
-		<!-- Vampire Lords -->
-	<globalevent name="arachir" interval="3600000" script="random spawns/vampire lords/arachir the ancient one.lua"/>
-	<globalevent name="diblis" interval="3600000" script="random spawns/vampire lords/diblis the fair.lua"/>
-	<globalevent name="valorcrest" interval="3600000" script="random spawns/vampire lords/sir valorcrest.lua"/>
-	<globalevent name="zebelon" interval="3600000" script="random spawns/vampire lords/zevelon duskbringer.lua"/>
-		<!-- PoI Bosses -->
-	<globalevent name="handmaiden" interval="3600000" script="random spawns/poi/the handmaiden.lua"/>
-	<globalevent name="plasmother" interval="3600000" script="random spawns/poi/the plasmother.lua"/>
-	<globalevent name="punish" interval="3600000" script="random spawns/poi/mr punish.lua"/>
-	<globalevent name="dracola" interval="3600000" script="random spawns/poi/dracola.lua"/>
-	<globalevent name="sorrow" interval="3600000" script="random spawns/poi/countess sorrow.lua"/>
-	<globalevent name="massacre" interval="3600000" script="random spawns/poi/massacre.lua"/>
-		<!-- Bosses -->
-	<globalevent name="hornedfox" interval="3600000" script="random spawns/bosses/the horned fox.lua"/>
-	<globalevent name="yeti" interval="3600000" script="random spawns/bosses/yeti.lua"/>
-	<globalevent name="dharalion" interval="3600000" script="random spawns/bosses/dharalion.lua"/>
-	<globalevent name="fernfang" interval="3600000" script="random spawns/bosses/fernfang.lua"/>
-	<globalevent name="mancave" interval="3600000" script="random spawns/bosses/man in the cave.lua"/>
-	<globalevent name="necropharus" interval="3600000" script="random spawns/bosses/necropharus.lua"/>
-	<globalevent name="demodras" interval="3600000" script="random spawns/bosses/demodras.lua"/>
-
+	<globalevent name="random" interval="3600000" script="random spawns/random.lua"/>
+	
 	<!-- World Changes -->
 	<globalevent name="furygates" type="startup" script="worldchanges/gates.lua"/>
 	<globalevent name="resetfurygates" type="shutdown" script="worldchanges/resetgates.lua"/>
