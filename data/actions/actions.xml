@@ -9,12 +9,12 @@
 	<action actionid="8038" script="kazordoon/kazordoonOreWagons.lua"/>
 	
 	<!-- Addons -->
-	<action itemid="13926"  script="addons/afflicted.lua"/>
-	<action itemid="13925"  script="addons/afflicted2.lua"/>
-	<action itemid="18521"  script="addons/crystal.lua"/>
-	<action itemid="18522"  script="addons/crystal1.lua"/>
-	<action itemid="18518"  script="addons/soil.lua"/>
-	<action itemid="18519"  script="addons/soil1.lua"/>
+	<action itemid="13926"  script="addons/addons.lua"/>
+	<action itemid="13925"  script="addons/addons.lua"/>
+	<action itemid="18521"  script="addons/addons.lua"/>
+	<action itemid="18522"  script="addons/addons.lua"/>
+	<action itemid="18518"  script="addons/addons.lua"/>
+	<action itemid="18519"  script="addons/addons.lua"/>
 
 	<!-- Ghost Ship (Plate armor quest) -->
 	<action actionid="5556"  script="other/ghostship.lua"/>
