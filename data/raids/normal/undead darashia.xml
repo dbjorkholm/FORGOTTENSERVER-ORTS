@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <raid>
-    <!-- 
-	// Raid System by 5mok3
-	// DO NOT CHANGE INTERVAL UNLESS YOU ARE SURE WHAT YOU ARE DOING!!
-	-->
 
 <announce delay="1000" type="event" message="Sightings of undead, west of Darashia! Imminent invasion is suspected!" />
 <announce delay="10000" type="event" message="The undead are attacking Darashia!" />
 
-  <!--Area Spawns-->
   <areaspawn delay="11000" fromx="33156" fromy="32414" fromz="7" tox="33182" toy="32458" toz="7">
     <monster name="Vampire" amount="25" />
     <monster name="Stalker" amount="30" />

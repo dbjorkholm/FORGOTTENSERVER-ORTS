@@ -1,19 +1,21 @@
 function onStepIn(cid, item, pos)
 
-local sacrifici = {x = 33021, y = 32419, z = 11}
-local sacrifici2 = {x = 33015, y = 32422, z = 11}
+local sacrifice = {x = 33021, y = 32419, z = 11}
+local sacrifice2 = {x = 33015, y = 32422, z = 11}
+local player = Player(cid)
+local creature = Creature(cid)
 
-	if item.actionid == 4541 and (getPlayerStorageValue(cid,9948) == 1) then
-		doTeleportThing(cid,sacrifici2)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
+	if item.actionid == 4541 and (player:getStorageValue(9948) == 1) then
+		creature:teleportTo(sacrifice2)
+		Position(sacrifice2):sendMagicEffect(CONST_ME_POFF)
 	else
-		doTeleportThing(cid,sacrifici)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
+		creature:teleportTo(sacrifice)
+		Position(sacrifice):sendMagicEffect(CONST_ME_POFF)
 	end
 	
 	if item.actionid == 4542 then
-		doTeleportThing(cid,sacrifici)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
+		creature:teleportTo(sacrifice)
+		Position(sacrifice):sendMagicEffect(CONST_ME_POFF)
 	end
 	
 
