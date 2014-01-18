@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <raid>
-    <!-- 
-	// Raid System by 5mok3
-	// DO NOT CHANGE INTERVAL UNLESS YOU ARE SURE WHAT YOU ARE DOING!!
-	-->
 
-  <!--Announcements-->
   <announce delay="1000" type="Event" message="Orc activity near Thais reported! Beware!" />
   <announce delay="60000" type="Event" message="Thais is under attack!" />
-  <!--Single Spawns-->
   <singlespawn delay="120000" name="Orchelmet" x="32368" y="32162" z="7" />
   <singlespawn delay="120000" name="Orcshield" x="32344" y="32287" z="7" />
   <singlespawn delay="120000" name="Orcarmor" x="32271" y="32282" z="7" />
-  <!--Area Spawns-->
   <areaspawn delay="60000" fromx="32358" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
     <monster name="Orc Shaman" amount="3" />
   </areaspawn>

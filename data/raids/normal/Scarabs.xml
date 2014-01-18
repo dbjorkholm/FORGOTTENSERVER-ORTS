@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <raid>
-    <!-- 
-	// Raid System by 5mok3
-	// DO NOT CHANGE INTERVAL UNLESS YOU ARE SURE WHAT YOU ARE DOING!!
-	-->
 
 <announce delay="1000" type="event" message="Unusual frequent scarab sightings at the gates of Ankrahmun" />
 <announce delay="60000" type="event" message="Ancient scarabs are leading an attack on Ankrahmun." />
 
-  <!--Area Spawns-->
   <areaspawn delay="60000" fromx="33254" fromy="32752" fromz="7" tox="33073" toy="32765" toz="7">
       <monster name="larva" amount="180" />
       <monster name="scarab" amount="70" />

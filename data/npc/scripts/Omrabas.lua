@@ -59,13 +59,13 @@ function creatureSayCallback(cid, type, msg)
     local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
 
-    if(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9990) < 1) then
+    if(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9990) < 1) then
         selfSay('Hmm. You could be of assistance, I presume. I need several body parts. I will reward you adequately. Interested?', cid)
-        setPlayerStorageValue(cid, 9990, 1)
+        Player(cid):setStorageValue( 9990, 1)
 		talkState[talkUser] = 1
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 1 and (getPlayerStorageValue(cid,9990) == 1) then
-        setPlayerStorageValue(cid, 9991, 1)
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 1 and (Player(cid):getStorageValue(9990) == 1) then
+        Player(cid):setStorageValue( 9991, 1)
 		talkState[talkUser] = 0
 		local msgs={
             "Very sensible of you. I will pay you handsomely for your help. ...",
@@ -74,13 +74,13 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 	
-    elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9991) == 1) and (getPlayerStorageValue(cid,9992) < 1) then
+    elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9991) == 1) and (Player(cid):getStorageValue(9992) < 1) then
         selfSay('Ah hello, young friend! Did you bring me two ghoul snacks as requested?', cid)
         talkState[talkUser] = 2
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 2 and (getPlayerStorageValue(cid,9991) == 1) then
-		if getPlayerItemCount(cid, 12423) >= 2 then
-			setPlayerStorageValue(cid, 9992, 1)
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 2 and (Player(cid):getStorageValue(9991) == 1) then
+		if Player(cid):getItemCount(12423) >= 2 then
+			Player(cid):setStorageValue( 9992, 1)
 			doPlayerRemoveItem(cid,12423,2)
 			talkState[talkUser] = 0
 			selfSay('Splendid! What? They\'re half gnawed! There are no hands! Hrmmm. Let me think of a solution. Ask me for a new {mission}.', cid)
@@ -89,30 +89,30 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9992) == 1) and (getPlayerStorageValue(cid,9993) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9992) == 1) and (Player(cid):getStorageValue(9993) < 1) then
         selfSay('Ah, young friend, I found a solution! Find me two {demonic skeletal hands}. That should do it. Now run along! Ask me for {mission} when you\'re done.', cid)
-		setPlayerStorageValue(cid, 9993, 1)
+		Player(cid):setStorageValue( 9993, 1)
 		
 	elseif(msgcontains(msg, 'demonic skeletal hands') or msgcontains(msg, 'demonic skeletal hand')) then
 		selfSay('What? Hack some off from a demon skeleton, of course! Now get moving.', cid)	
 		
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9993) == 1) and (getPlayerStorageValue(cid,9994) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9993) == 1) and (Player(cid):getStorageValue(9994) < 1) then
         selfSay('Ah hello again! You look as if you could, er, lend me a hand or two? Yes?', cid)
         talkState[talkUser] = 3
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 3 and (getPlayerStorageValue(cid,9993) == 1) then
-		if getPlayerItemCount(cid, 10564) >= 2 then
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 3 and (Player(cid):getStorageValue(9993) == 1) then
+		if Player(cid):getItemCount(10564) >= 2 then
 			selfSay('Yes. Those will be adequate. Talk to me again if you want to continue with your next {mission}.', cid)
 			doPlayerRemoveItem(cid,10564,2)
-			setPlayerStorageValue(cid, 9994, 1)
+			Player(cid):setStorageValue( 9994, 1)
 			talkState[talkUser] = 0
 		else
 			selfSay('You don\'t have two demonic skeletal hands.', cid)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9994) == 1) and (getPlayerStorageValue(cid,9995) < 1) then
-        setPlayerStorageValue(cid, 9995, 1)
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9994) == 1) and (Player(cid):getStorageValue(9995) < 1) then
+        Player(cid):setStorageValue( 9995, 1)
 		local msgs={
             "I need my heart back. I know where they have hidden it. Too afraid to destroy my beating heart, hah! ...",
             "It is in a dusty amphora in a sealed mass grave in the downmost cellar of my ancient home. The ruins lie to the north at the beach. ...",
@@ -120,7 +120,7 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 		
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9996) == 1) and (getPlayerStorageValue(cid,9997) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9996) == 1) and (Player(cid):getStorageValue(9997) < 1) then
         talkState[talkUser] = 4       
 	    local msgs={
             "Yes? You have it? You what? Not in the amphoras? You picked it off someone else?!? ...",
@@ -128,57 +128,57 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 		
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'give')) and talkState[talkUser] == 4 and (getPlayerStorageValue(cid,9996) == 1) then
-		if getPlayerItemCount(cid, 21394) >= 1 then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'give')) and talkState[talkUser] == 4 and (Player(cid):getStorageValue(9996) == 1) then
+		if Player(cid):getItemCount(21394) >= 1 then
 			selfSay('Ah... <sighs> Very good. Just say the word when you are ready for the next {mission}.', cid)
 			doPlayerRemoveItem(cid,21394,1)
-			setPlayerStorageValue(cid, 9997, 1)
+			Player(cid):setStorageValue( 9997, 1)
 			talkState[talkUser] = 0
 		else
 			selfSay('You don\'t have my heart.', cid)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9997) == 1) and (getPlayerStorageValue(cid,9998) < 1) then
-		setPlayerStorageValue(cid, 9998, 1)
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9997) == 1) and (Player(cid):getStorageValue(9998) < 1) then
+		Player(cid):setStorageValue( 9998, 1)
 	    local msgs={
             "I will need brains - don't laugh! Ahem. I will need a stimulated brain, to be precise. ...",
             "Use two half-eaten brains with the Brain Heater Machine in the Necromancer halls and bring me the fused, stimulated brain. Now go!",
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9999) == 1) and (getPlayerStorageValue(cid,9950) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9999) == 1) and (Player(cid):getStorageValue(9950) < 1) then
         talkState[talkUser] = 5     
 	    selfSay('Yes, yes, hello. Tell me if you lost something. If not, do you have that stimulated brain with you?', cid)
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 5 and (getPlayerStorageValue(cid,9999) == 1) then
-		if getPlayerItemCount(cid, 21395) >= 1 then
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 5 and (Player(cid):getStorageValue(9999) == 1) then
+		if Player(cid):getItemCount(21395) >= 1 then
 			selfSay('Ah... <sighs> Very good. Just say the word when you are ready for the next {mission}.', cid)
 			doPlayerRemoveItem(cid,21395,1)
-			setPlayerStorageValue(cid, 9950, 1)
+			Player(cid):setStorageValue( 9950, 1)
 			talkState[talkUser] = 0
 		else
 			selfSay('You don\'t have the brain.', cid)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9950) == 1) and (getPlayerStorageValue(cid,9951) < 1) then
-		setPlayerStorageValue(cid, 9951,1)
-		doPlayerAddItem(cid,21402,1)
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9950) == 1) and (Player(cid):getStorageValue(9951) < 1) then
+		Player(cid):setStorageValue( 9951,1)
+		Player(cid):addItem(21402,1)
 	    local msgs={
             "Now that you have shown you've got the brains, I need you to show initiative. ...",
             "I will need something that can be adequately used as intestines. Something alive. Stuff it into this storage flask and return it to me!",
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9952) == 1) and (getPlayerStorageValue(cid,9953) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9952) == 1) and (Player(cid):getStorageValue(9953) < 1) then
         talkState[talkUser] = 6     
 	    selfSay('Hello, hello. Let\'s come to the point - did you find me some intestines?', cid)
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 6 and (getPlayerStorageValue(cid,9952) == 1) then
-		if getPlayerItemCount(cid, 21403) >= 1 then
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 6 and (Player(cid):getStorageValue(9952) == 1) then
+		if Player(cid):getItemCount(21403) >= 1 then
 			doPlayerRemoveItem(cid,21403,1)
-			setPlayerStorageValue(cid, 9953, 1)
+			Player(cid):setStorageValue( 9953, 1)
 			talkState[talkUser] = 0
 			local msgs={
 				"Ah... interesting. A snake? Not bad, not bad at all. ...",
@@ -190,7 +190,7 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9953) == 1) and (getPlayerStorageValue(cid,9954) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9953) == 1) and (Player(cid):getStorageValue(9954) < 1) then
 	    talkState[talkUser] = 7
 		local msgs={
             "Good. As you may have gathered, the body parts you brought need to be assembled to form a whole body. ...",
@@ -201,9 +201,9 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif msgcontains(msg, 'undertake') and talkState[talkUser] == 7 and (getPlayerStorageValue(cid,9953) == 1) then
-		setPlayerStorageValue(cid, 9954,1)
-		doPlayerAddItem(cid,21401,3)
+	elseif msgcontains(msg, 'undertake') and talkState[talkUser] == 7 and (Player(cid):getStorageValue(9953) == 1) then
+		Player(cid):setStorageValue( 9954,1)
+		Player(cid):addItem(21401,3)
 		talkState[talkUser] = 0
 		local msgs={
             "Good! Let's not waste time. The first altar you must hallow is the Dragonsoul Altar, at the eastern side of the room. ...",
@@ -213,12 +213,12 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9955) == 1) and (getPlayerStorageValue(cid,9956) < 1) then 
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9955) == 1) and (Player(cid):getStorageValue(9956) < 1) then 
 	    selfSay('Ah hello! Well done there, I felt the old powers settling down. Now, {ready} to hallow the next altar?', cid)
-		setPlayerStorageValue(cid, 9956,1)
+		Player(cid):setStorageValue( 9956,1)
 	
-	elseif(msgcontains(msg, 'ready') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9956) == 1) and (getPlayerStorageValue(cid,9957) < 1) then
-		setPlayerStorageValue(cid, 9957,1)
+	elseif(msgcontains(msg, 'ready') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9956) == 1) and (Player(cid):getStorageValue(9957) < 1) then
+		Player(cid):setStorageValue( 9957,1)
 		local msgs={
             "I expected no less. Next is the Bonemarrow Altar, where the Dark Lord feasts upon the hallowed bones of...err. ...",
             "Ahem. Just take a yellowed bone or big bone, and hallow it - you don't know how? ...",
@@ -227,7 +227,7 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9957) == 1) and (getPlayerStorageValue(cid,9958) < 1) then
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9957) == 1) and (Player(cid):getStorageValue(9958) < 1) then
 		talkState[talkUser] = 8
 		local msgs={
             "Are you still here? Come on, let's not laze about, go to the Gardens of Night - where? ...",
@@ -236,30 +236,30 @@ function creatureSayCallback(cid, type, msg)
              }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif msgcontains(msg, 'problem') and talkState[talkUser] == 8 and (getPlayerStorageValue(cid,9957) == 1) then
-		setPlayerStorageValue(cid, 9958,1)
-		doPlayerAddItem(cid,21407,3)
+	elseif msgcontains(msg, 'problem') and talkState[talkUser] == 8 and (Player(cid):getStorageValue(9957) == 1) then
+		Player(cid):setStorageValue( 9958,1)
+		Player(cid):addItem(21407,3)
 		talkState[talkUser] = 0
 		selfSay('What? No bones around you say? Hrmmm. Wait. Check the skull heap here - that\'s right - hah! There! Now get to work!', cid)
 	
-	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9960) == 1) and (getPlayerStorageValue(cid,9961) < 1) then
-		setPlayerStorageValue(cid,9961,1)
+	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9960) == 1) and (Player(cid):getStorageValue(9961) < 1) then
+		Player(cid):setStorageValue(9961,1)
 		local msgs={
             "Ah, welcome, welcome! I felt that one! The Dark Lord is pleased with the gift you brought, so now we can proceed with everything as planned. ...",
             "If it had gone wrong though, he would have had your guts for gart... er... well, here you are, so - ready to get some {blood} flowing?",
             }
 		doNPCTalkALot(msgs,6500)
 		
-	elseif(msgcontains(msg, 'blood') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9961) == 1) and (getPlayerStorageValue(cid,9962) < 1) then
-		setPlayerStorageValue(cid, 9962,1)
+	elseif(msgcontains(msg, 'blood') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9961) == 1) and (Player(cid):getStorageValue(9962) < 1) then
+		Player(cid):setStorageValue( 9962,1)
 		local msgs={
             "Yes, I said blood. Important ingredient in necromantic rituals, usually. ...",
             "You need to spill some vials of blood tincture for this task. Probably means killing blood priests to get those vials. Ready to do this?",
            }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'ready') or msgcontains(msg, 'mission') or msgcontains(msg, 'yes')) and (getPlayerStorageValue(cid,9962) == 1) and (getPlayerStorageValue(cid,9963) < 1) then
-		setPlayerStorageValue(cid, 9963,1)
+	elseif(msgcontains(msg, 'ready') or msgcontains(msg, 'mission') or msgcontains(msg, 'yes')) and (Player(cid):getStorageValue(9962) == 1) and (Player(cid):getStorageValue(9963) < 1) then
+		Player(cid):setStorageValue( 9963,1)
 		local msgs={
             "Ah, I knew you were a sturdy fellow! Necromancer material if ever I saw one! ...",
             "Well then, the next task is to anoint the Bloodgong Altar. This will animate the dark flows we need for the ritual. ...",
@@ -268,8 +268,8 @@ function creatureSayCallback(cid, type, msg)
            }
 		doNPCTalkALot(msgs,6500)
 	
-	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9965) == 1) and (getPlayerStorageValue(cid,9966) < 1) then
-		setPlayerStorageValue(cid,9966,1)
+	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9965) == 1) and (Player(cid):getStorageValue(9966) < 1) then
+		Player(cid):setStorageValue(9966,1)
 		talkState[talkUser] = 9
 		local msgs={
             "Ah, it is invigorating to fell the dark flows, rushing through Drefia, once again! Capital. This has earned you a reward. ...",
@@ -277,8 +277,8 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and talkState[talkUser] == 9 and (getPlayerStorageValue(cid,9966) == 1) and (getPlayerStorageValue(cid,9967) < 1) then
-		setPlayerStorageValue(cid,9967,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and talkState[talkUser] == 9 and (Player(cid):getStorageValue(9966) == 1) and (Player(cid):getStorageValue(9967) < 1) then
+		Player(cid):setStorageValue(9967,1)
 		talkState[talkUser] = 0
 		local msgs={
             "Excellent. To bind the earthly powers, we, I mean you, must worship at the Fireglass Altar. ...",
@@ -288,18 +288,18 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 		
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9969) == 1) and (getPlayerStorageValue(cid,9970) < 1) then
-		setPlayerStorageValue(cid,9970,1)
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9969) == 1) and (Player(cid):getStorageValue(9970) < 1) then
+		Player(cid):setStorageValue(9970,1)
 		local msgs={
             "Ah, finally. Exceptional! Don't you feel the earth awakening to our call? No? Oh. ...",
             "Anyway, you succeeded in hallowing the Fireglass Altar! Only one altar remains to be hallowed! Shall we {proceed}?",
          }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'proceed') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9970) == 1) and (getPlayerStorageValue(cid,9971) < 1) then
-		setPlayerStorageValue(cid,9971,1)
-		doPlayerAddItem(cid,21448,1)
-		doPlayerAddItem(cid,21482,1)
+	elseif(msgcontains(msg, 'proceed') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9970) == 1) and (Player(cid):getStorageValue(9971) < 1) then
+		Player(cid):setStorageValue(9971,1)
+		Player(cid):addItem(21448,1)
+		Player(cid):addItem(21482,1)
 		local msgs={
             "<reverential> The final altar that remains to be hallowed... the Shadowthrone. ...",
             "Only a candle made of human tallow placed before each shadow statue in the right order, will awaken it. ...",
@@ -309,15 +309,15 @@ function creatureSayCallback(cid, type, msg)
          }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9975) == 1) and (getPlayerStorageValue(cid,9976) < 1) then
-		setPlayerStorageValue(cid,9976,1)
+	elseif(msgcontains(msg, 'Mission') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9975) == 1) and (Player(cid):getStorageValue(9976) < 1) then
+		Player(cid):setStorageValue(9976,1)
 		local msgs={
             "Yes! YES! I have felt that! The altars are alive again! Well done! ...",
             "We are close now. Only one important thing remains: the incantation itself. We need the {scroll} for that.",
          }
 		doNPCTalkALot(msgs,4500)
 		
-	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9976) == 1) and (getPlayerStorageValue(cid,9977) < 1) then
+	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9976) == 1) and (Player(cid):getStorageValue(9977) < 1) then
 		talkState[talkUser] = 10
 		local msgs={
             "Well, it is a rather long story. The short version: I had friends - no need to snigger. ...",
@@ -328,8 +328,8 @@ function creatureSayCallback(cid, type, msg)
          }
 		doNPCTalkALot(msgs,4500)
 		
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and talkState[talkUser] == 10 and (getPlayerStorageValue(cid,9976) == 1) and (getPlayerStorageValue(cid,9977) < 1) then
-		setPlayerStorageValue(cid,9977,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and talkState[talkUser] == 10 and (Player(cid):getStorageValue(9976) == 1) and (Player(cid):getStorageValue(9977) < 1) then
+		Player(cid):setStorageValue(9977,1)
 		talkState[talkUser] = 0
 		local msgs={
             "Superb! You won't regret this. I will reward you beyond your wildest dreams! ...",
@@ -338,23 +338,23 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9988) == 1) and (getPlayerStorageValue(cid,9989) < 1) then
+	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9988) == 1) and (Player(cid):getStorageValue(9989) < 1) then
 		talkState[talkUser] = 11
 		selfSay('Yes? Do you have the scroll piece? ', cid)
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 11 and (getPlayerStorageValue(cid,9988) == 1) then
-		if getPlayerItemCount(cid, 21250) >= 1 then
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 11 and (Player(cid):getStorageValue(9988) == 1) then
+		if Player(cid):getItemCount(21250) >= 1 then
 			selfSay('This is it! This is it! Well done, well done! And now, on to the next scroll piece, yes? ', cid)
 			doPlayerRemoveItem(cid,21250,1)
-			setPlayerStorageValue(cid, 9989, 1)
+			Player(cid):setStorageValue( 9989, 1)
 			talkState[talkUser] = 0
 		else
 			selfSay('You don\'t have my scroll.', cid)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9989) == 1) and (getPlayerStorageValue(cid,9920) < 1) then
-		setPlayerStorageValue(cid,9920,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9989) == 1) and (Player(cid):getStorageValue(9920) < 1) then
+		Player(cid):setStorageValue(9920,1)
 		local msgs={
             "Hah, developed a taste for it, have you? I believe the next scroll piece was hidden somewhere, my old friend being of a somewhat distrustful nature. ...",
             "The scent may not be lost, though - ask a shadow pupil if he can help - but be careful. ...",
@@ -362,24 +362,24 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9926) == 1) and (getPlayerStorageValue(cid,9927) < 1) then
+	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9926) == 1) and (Player(cid):getStorageValue(9927) < 1) then
 		talkState[talkUser] = 12
 		selfSay('Ah, hello! I take it you have the next scroll piece for me, {yes}?', cid)
 	
-	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 12 and (getPlayerStorageValue(cid,9926) == 1) then
-		if getPlayerItemCount(cid, 21250) >= 1 then
+	elseif msgcontains(msg, 'yes') and talkState[talkUser] == 12 and (Player(cid):getStorageValue(9926) == 1) then
+		if Player(cid):getItemCount(21250) >= 1 then
 			selfSay('Indeed it is! The second scroll piece! Splendid! Here you go - for your trouble. And now, on to the {next} scroll piece, yes? ', cid)
 			doPlayerRemoveItem(cid,21250,1)
-			setPlayerStorageValue(cid, 9927, 1)
+			Player(cid):setStorageValue( 9927, 1)
 			talkState[talkUser] = 0
 		else
 			selfSay('You don\'t have my scroll.', cid)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'next')) and (getPlayerStorageValue(cid,9927) == 1) and (getPlayerStorageValue(cid,9928) < 1) then
-		doPlayerAddItem(cid,21489,1)
-		setPlayerStorageValue(cid,9928,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'next')) and (Player(cid):getStorageValue(9927) == 1) and (Player(cid):getStorageValue(9928) < 1) then
+		Player(cid):addItem(21489,1)
+		Player(cid):setStorageValue(9928,1)
 		local msgs={
             "Good! As you can imagine, I had a scroll piece, too. I hid it in my old quarters, northwest of the library. ...",
             "The door is magically sealed. Use this copper key with it to get inside. ...",
@@ -387,14 +387,14 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (getPlayerStorageValue(cid,9933) == 1) and (getPlayerStorageValue(cid,9934) < 1) then
+	elseif(msgcontains(msg, 'scroll') or msgcontains(msg, 'mission')) and (Player(cid):getStorageValue(9933) == 1) and (Player(cid):getStorageValue(9934) < 1) then
 		talkState[talkUser] = 13
 		selfSay('Hello - what? You have the {scroll} piece, you say?', cid)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 13 and (getPlayerStorageValue(cid,9933) == 1) and (getPlayerStorageValue(cid,9934) < 1) then
-		if getPlayerItemCount(cid, 21250) >= 1 then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 13 and (Player(cid):getStorageValue(9933) == 1) and (Player(cid):getStorageValue(9934) < 1) then
+		if Player(cid):getItemCount(21250) >= 1 then
 			doPlayerRemoveItem(cid,21250,1)
-			setPlayerStorageValue(cid,9934,1)
+			Player(cid):setStorageValue(9934,1)
 			talkState[talkUser] = 0
 			local msgs={
 				"Oh, praise the Dark Lord! It is my scroll piece! Give it here! You can have this instead. ...",
@@ -406,9 +406,9 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'next')) and (getPlayerStorageValue(cid,9934) == 1) and (getPlayerStorageValue(cid,9935) < 1) then
-		doPlayerAddItem(cid,21464,1)
-		setPlayerStorageValue(cid,9935,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'next')) and (Player(cid):getStorageValue(9934) == 1) and (Player(cid):getStorageValue(9935) < 1) then
+		Player(cid):addItem(21464,1)
+		Player(cid):setStorageValue(9935,1)
 		local msgs={
             "Hahah, eager for it, I like that! ...",
             "One piece stayed in the hands of a beautiful priestess. ...",
@@ -417,18 +417,18 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (getPlayerStorageValue(cid,9940) == 1) and (getPlayerStorageValue(cid,9941) < 1) then
-		doPlayerAddItem(cid,21464,1)
+	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (Player(cid):getStorageValue(9940) == 1) and (Player(cid):getStorageValue(9941) < 1) then
+		Player(cid):addItem(21464,1)
 		talkState[talkUser] = 14
 		local msgs={
             "Hello, young apprentice. Do you have that scroll piece from the priestess?",
         }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 14 and (getPlayerStorageValue(cid,9940) == 1) and (getPlayerStorageValue(cid,9941) < 1) then
-		if getPlayerItemCount(cid, 21250) >= 1 then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 14 and (Player(cid):getStorageValue(9940) == 1) and (Player(cid):getStorageValue(9941) < 1) then
+		if Player(cid):getItemCount(21250) >= 1 then
 			doPlayerRemoveItem(cid,21250,1)
-			setPlayerStorageValue(cid,9941,1)
+			Player(cid):setStorageValue(9941,1)
 			talkState[talkUser] = 0
 			local msgs={
 				"Ahhh, capital, capital. Good girl for keeping it for me. I'll take back my cape now, thank you. ...",
@@ -440,9 +440,9 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (getPlayerStorageValue(cid,9941) == 1) and (getPlayerStorageValue(cid,9942) < 1) then
-		doPlayerAddItem(cid,21464,1)
-		setPlayerStorageValue(cid,9942,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (Player(cid):getStorageValue(9941) == 1) and (Player(cid):getStorageValue(9942) < 1) then
+		Player(cid):addItem(21464,1)
+		Player(cid):setStorageValue(9942,1)
 		local msgs={
             "That's the spirit! Speaking of which, you will have to look for a White Shade ...",
             "That's a ghost, in case you don't know. Goes by name of... Zarifan, if I recall correctly. ...",
@@ -453,17 +453,17 @@ function creatureSayCallback(cid, type, msg)
           }
 		doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (getPlayerStorageValue(cid,9944) == 1) and (getPlayerStorageValue(cid,9945) < 1) then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (Player(cid):getStorageValue(9944) == 1) and (Player(cid):getStorageValue(9945) < 1) then
 		talkState[talkUser] = 15
 		local msgs={
 			"Welcome, welcome! Finally! The last scroll piece.... you do have it, haven't you?",
 		}
 			doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 15 and (getPlayerStorageValue(cid,9944) == 1) and (getPlayerStorageValue(cid,9945) < 1) then
-		if getPlayerItemCount(cid, 21250) >= 1 then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 15 and (Player(cid):getStorageValue(9944) == 1) and (Player(cid):getStorageValue(9945) < 1) then
+		if Player(cid):getItemCount(21250) >= 1 then
 			doPlayerRemoveItem(cid,21250,1)
-			setPlayerStorageValue(cid,9945,1)
+			Player(cid):setStorageValue(9945,1)
 			talkState[talkUser] = 0
 			local msgs={
 				"I am so excited! Finally, we - wait. What is this? That... is not the complete scroll piece. ...",
@@ -477,17 +477,17 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (getPlayerStorageValue(cid,9946) == 1) and (getPlayerStorageValue(cid,9947) < 1) then
+	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (Player(cid):getStorageValue(9946) == 1) and (Player(cid):getStorageValue(9947) < 1) then
 		talkState[talkUser] = 16
 		local msgs={
 			"Don't keep me waiting. The last scroll piece - were you able to {restore} it?",
 		}
 			doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'restore')) and talkState[talkUser] == 16 and (getPlayerStorageValue(cid,9946) == 1) and (getPlayerStorageValue(cid,9947) < 1) then
-		if getPlayerItemCount(cid, 21474) >= 1 then
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'restore')) and talkState[talkUser] == 16 and (Player(cid):getStorageValue(9946) == 1) and (Player(cid):getStorageValue(9947) < 1) then
+		if Player(cid):getItemCount(21474) >= 1 then
 			doPlayerRemoveItem(cid,21474,1)
-			setPlayerStorageValue(cid,9947,1)
+			Player(cid):setStorageValue(9947,1)
 			talkState[talkUser] = 17
 			local msgs={
 				"I knew it! I knew I had made a copy! Oh, I am so clever! ...",
@@ -500,10 +500,10 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	
-	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 17 and (getPlayerStorageValue(cid,9947) == 1) and (getPlayerStorageValue(cid,9948) < 1) then
-		setPlayerStorageValue(cid,9948,1)
-		doPlayerAddItem(cid,21251,1)
-		doPlayerAddItem(cid,21476,1)
+	elseif(msgcontains(msg, 'yes') or msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and talkState[talkUser] == 17 and (Player(cid):getStorageValue(9947) == 1) and (Player(cid):getStorageValue(9948) < 1) then
+		Player(cid):setStorageValue(9948,1)
+		Player(cid):addItem(21251,1)
+		Player(cid):addItem(21476,1)
 		talkState[talkUser] = 0
 		local msgs={
 			"Then let's go. Take my skull and the incantation scroll to the working station in the fiveserrated room ...",
@@ -512,9 +512,9 @@ function creatureSayCallback(cid, type, msg)
 		}
 			doNPCTalkALot(msgs,4500)
 	
-	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (getPlayerStorageValue(cid,9949) == 1) and (getPlayerStorageValue(cid,9876) < 1) then
-		setPlayerStorageValue(cid,9876,1)
-		doPlayerAddItem(cid,21452,1)
+	elseif(msgcontains(msg, 'mission') or msgcontains(msg, 'scroll')) and (Player(cid):getStorageValue(9949) == 1) and (Player(cid):getStorageValue(9876) < 1) then
+		Player(cid):setStorageValue(9876,1)
+		Player(cid):addItem(21452,1)
 		local msgs={
 			"It failed! IT FAILED! WHY? What have you done! This must be your fault! ...",
 			"You... did... that was a recipe for chicken soup! No wonder the scroll failed! Now... all is lost ...",
