@@ -1,15 +1,22 @@
 local boss = {
-	["deathstrike"] = 2,
-	["gnomevil"] = 3,
-	["abyssador"] = 4,
+    ["deathstrike"] = 2,
+    ["gnomevil"] = 3,
+    ["abyssador"] = 4
 }
 
-function onKill(cid, target)
-	if(boss[string.lower(getCreatureName(target))]) then
-		if(getPlayerStorageValue(cid, 954) < boss[string.lower(getCreatureName(target))]) then
-			setPlayerStorageValue(cid, 954, boss[string.lower(getCreatureName(target))])
+function onDeath(cid, corpse, lastHitKiller, mostDamageKiller, lastHitUnjustified, mostDamageUnjustified)
+	local creature = Creature(cid)
+	local damageMap = creature:getDamageMap()
+	local v = boss[creature:getName():lower()]
+ 
+	for id, damage in pairs(damageMap) do
+		local player = Player(id)
+		if v then
+			if player:getStorageValue(945) < v then
+				player:setStorageValue(954, v)
+			end
+		
+			player:setStorageValue(956 + v, 1)
 		end
-		setPlayerStorageValue(cid, 957 + boss[string.lower(getCreatureName(target))], 1)
 	end
-	return true
 end
