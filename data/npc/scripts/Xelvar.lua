@@ -29,7 +29,7 @@ function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "recruiting")) then
 		if(talkState[talkUser] == 1) then
-			npcHandler:say("Ok, so listen. Your help is needed. That is if you're the hero type. Our ... partners need some help in urgent matters.", cid)
+			npcHandler:say("Ok, so listen. Your help is needed. That is if you're the hero type. Our ... {partners} need some help in urgent matters.", cid)
 			talkState[talkUser] = 2
 		end
 	elseif(msgcontains(msg, "partners")) then
@@ -58,6 +58,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("There you will meet Gnomerik, the recruitment officer of the Gnomes. If you are lost, Gnomette in the teleport chamber might be able to help you with directions. ...", cid)
 			npcHandler:say("Good luck to you and don't embarrass your race down there! Keep in mind that you are a representative of the big people.", cid)
 			setPlayerStorageValue(cid, 900, 1)
+			Player(cid):addItem(18457, 4)
 			talkState[talkUser] = 0
 		end
 	end

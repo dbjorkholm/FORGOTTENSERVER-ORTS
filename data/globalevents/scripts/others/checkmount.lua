@@ -10,9 +10,11 @@ end
 
 local function CheckRentMount(cid)
         for var, ret in pairs(mounts) do
-                if Player(cid):hasMount(ret.mountid) and Player(cid):getStorageValue(ret.storage) ~= -1 and Player(cid):getStorageValue(ret.storage) <= os.time() then
-                        doRemovePlayerMount(cid, ret.mountid)
-                        Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "The time of your mount " .. var .. " has ended, to get it again back to the NPC.")
+                if Player(cid):getGroup() >= 3 then
+                        if Player(cid):hasMount(ret.mountid) and Player(cid):getStorageValue(ret.storage) ~= -1 and Player(cid):getStorageValue(ret.storage) <= os.time() then
+                                doRemovePlayerMount(cid, ret.mountid)
+                                Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "The time of your mount " .. var .. " has ended, to get it again back to the NPC.")
+                        end
                 end
         end
 end
