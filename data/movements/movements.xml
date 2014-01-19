@@ -97,24 +97,24 @@
 	<movevent event="StepIn" actionid="7816" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
 	<movevent event="StepIn" actionid="7817" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
 	<movevent event="StepIn" actionid="7818" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
-	<movevent event="StepIn" uniqueid="3121" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3215" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3216" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3217" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3218" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3219" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3220" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3128" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3129" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3130" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3131" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3132" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3133" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3134" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3135" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3136" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="3137" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" uniqueid="35669" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="4121" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3215" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3216" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3217" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3218" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3219" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3220" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3128" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3129" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3130" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3131" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3132" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3133" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3134" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3135" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3136" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="3137" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" actionid="35669" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
 	<movevent event="StepIn" actionid="8030" script="bigfoot burden quest/bigfootBurdenQuestShooting.lua"/>
 	<movevent event="StepIn" itemid="18340" script="bigfoot burden quest/bigfootBurdenQuestTruffles.lua"/>
 	<movevent event="StepIn" uniqueid="3144" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
