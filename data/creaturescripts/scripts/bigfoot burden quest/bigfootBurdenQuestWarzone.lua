@@ -7,7 +7,7 @@ local boss = {
 function onDeath(cid, corpse, lastHitKiller, mostDamageKiller, lastHitUnjustified, mostDamageUnjustified)
 	local creature = Creature(cid)
 	local damageMap = creature:getDamageMap()
-	local v = boss[getCreatureName(cid):lower()]
+	local v = boss[creature:getName():lower()]
  
 	for id, damage in pairs(damageMap) do
 		local player = Player(id)
