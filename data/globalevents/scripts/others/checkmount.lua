@@ -1,28 +1,28 @@
 local mounts = {
-        ["brown rented horse"] = {price = 500, days = 2, mountid = 22, level = 10, premium = false, storage = 50561},
-        ["grey rented horse"] = {price = 500, days = 1, mountid = 25, level = 20, premium = false, storage = 50562}
+    ["brown rented horse"] = {price = 500, days = 1, mountid = 22, level = 10, premium = false, storage = 50561},
+    ["grey rented horse"] = {price = 500, days = 1, mountid = 25, level = 20, premium = false, storage = 50562}
 }
 
 local function doRemovePlayerMount(cid, mountId)
-        Player(cid):removeMount(mountId)
-        return Player(cid):setOutfit({lookType = Player(cid):getOutfit().lookType, lookHead = Player(cid):getOutfit().lookHead, lookBody = Player(cid):getOutfit().lookBody, lookLegs = Player(cid):getOutfit().lookLegs, lookFeet = Player(cid):getOutfit().lookFeet, lookAddons = Player(cid):getOutfit().lookAddons})
+    local player = Player(cid)
+    player:removeMount(mountId)
+    return player:setOutfit({lookType = player:getOutfit().lookType, lookHead = player:getOutfit().lookHead, lookBody = player:getOutfit().lookBody, lookLegs = player:getOutfit().lookLegs, lookFeet = player:getOutfit().lookFeet, lookAddons = player:getOutfit().lookAddons})
 end
 
 local function CheckRentMount(cid)
-        for var, ret in pairs(mounts) do
-                if Player(cid):getGroup() >= 3 then
-                        if Player(cid):hasMount(ret.mountid) and Player(cid):getStorageValue(ret.storage) ~= -1 and Player(cid):getStorageValue(ret.storage) <= os.time() then
-                                doRemovePlayerMount(cid, ret.mountid)
-                                Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "The time of your mount " .. var .. " has ended, to get it again back to the NPC.")
-                        end
-                end
+    local player = Player(cid)
+    for var, ret in pairs(mounts) do
+        if player:hasMount(ret.mountid) and player:getStorageValue(ret.storage) ~= -1 and player:getStorageValue(ret.storage) <= os.time() then
+            doRemovePlayerMount(cid, ret.mountid)
+            player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The time of your mount " .. var .. " has ended, to get it again back to the NPC.")
         end
+    end
 end
 
 function onThink(interval)
-        for _, cid in ipairs(getOnlinePlayers()) do
-                CheckRentMount(cid)
-        end
+    for _, cid in ipairs(getOnlinePlayers()) do
+        CheckRentMount(cid)
+    end
 
-        return true
+    return true
 end
