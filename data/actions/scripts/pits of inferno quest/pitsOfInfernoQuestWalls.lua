@@ -13,5 +13,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		doCreateItem(6289, 1, pos[item.uid])
 		doSendMagicEffect(pos[item.uid], CONST_ME_FIRE)
 	end
+	
+	if (item.itemid == 1945) then
+		doTransformItem(item.uid, item.itemid + 1)
+	else
+		doTransformItem(item.uid, item.itemid - 1)
+	end
+	
 	return true
 end
