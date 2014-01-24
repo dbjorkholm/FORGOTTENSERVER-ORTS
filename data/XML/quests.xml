@@ -4,6 +4,68 @@
 		<mission name="Trolls Task" storageid="1501" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
 		<mission name="Goblins Task" storageid="1502" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 goblins." />
 	</quest>
+	<quest name="Paw and Fur - Elite Hunting" startstorageid="100157" startstoragevalue="1">
+        <!-- Tasks for level 6 to 49 -->
+        <mission name="Trolls Task" storageid="65001" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
+        <mission name="Globins Task" storageid="65002" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 globins." />
+        <mission name="Crocodiles Task" storageid="65003" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 crocodiles." />
+        <mission name="Badgers Task" storageid="65004" startvalue="0" endvalue="3" description="You've already slained |STATE|/3 badgers." />
+        <mission name="Tarantulas Task" storageid="65005" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 tarantulas." />
+        <mission name="Carniphilas Task" storageid="65006" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 carniphilas." />
+        <mission name="Stone Golems Task" storageid="65007" startvalue="0" endvalue="200" description="You've already slained |STATE|/200 stone golems." />
+        <mission name="Mammoths Task" storageid="65008" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 mammoths." />
+        <mission name="Gnarlhounds Task" storageid="65009" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 gnarlhounds." />
+        <mission name="Terramites Task" storageid="65010" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 terramites." />
+        <mission name="Apes Task" storageid="65011" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 apes." />
+        <mission name="Thornback Tortoises Task" storageid="65012" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 thornback tortoises." />
+        <mission name="Gargoyles Task" storageid="65013" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 gargoyles." />
+       
+        <!--Tasks for level 50 to 79 -->
+        <mission name="Ice Golems Task" storageid="65014" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 ice golems." />
+        <mission name="Quara Scouts Task" storageid="65015" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 quara scouts." />
+        <mission name="Mutated Rats Task" storageid="65016" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 mutated rats." />
+        <mission name="Ancient Scarabs Task" storageid="65017" startvalue="0" endvalue="250" description="You've already slained |STATE|/250 ancient scarabs." />
+        <mission name="Wyverns Task" storageid="65018" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 wyverns." />
+        <mission name="Lancer Beetles Task" storageid="65019" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 lancer beetles." />
+        <mission name="Wailing Widows Task" storageid="65020" startvalue="0" endvalue="400" description="You've already slained |STATE|/300 wailing widows." />
+        <mission name="Killer Caimans Task" storageid="65021" startvalue="0" endvalue="250" description="You've already slained |STATE|/300 killer caimans." />
+        <mission name="Bonebeasts Task" storageid="65022" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 bonebeasts." />
+        <mission name="Crystal Spiders Task" storageid="65023" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 crystal spiders." />
+        <mission name="Mutated Tigers Task" storageid="65024" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 mutated tigers." />
+       
+        <!-- Tasks for level 80 to 129 -->
+        <mission name="Underwater Quara Task" storageid="65025" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 underwater quara." />
+        <mission name="Giant Spiders Task" storageid="65026" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 giant spiders." />
+        <mission name="Werewolves Task" storageid="65027" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 werewolves." />   
+        <mission name="Nightmares Task" storageid="65028" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 nightmares." />   
+        <mission name="Hellspawns Task" storageid="65029" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 hellspawns." />   
+        <mission name="High Class Lizards Task" storageid="65030" startvalue="0" endvalue="800" description="You've already slained |STATE|/800 high class lizards." />   
+        <mission name="Stampors Task" storageid="65031" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 stampors." />   
+        <mission name="Brimstone Bugs Task" storageid="65032" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 brimstone bugs." />   
+        <mission name="Mutated Bats Task" storageid="65033" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 mutated bats." />   
+       
+        <!-- Tasks for level 130+ -->       
+        <mission name="Hydras Task" storageid="65034" startvalue="0" endvalue="650" description="You've already slained |STATE|/650 hydras." />
+        <mission name="Serpent Spawns Task" storageid="65035" startvalue="0" endvalue="800" description="You've already slained |STATE|/800 serpent spawns." />
+        <mission name="Medusas Task" storageid="65036" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 medusas." />       
+        <mission name="Behemoths Task" storageid="65037" startvalue="0" endvalue="700" description="You've already slained |STATE|/700 behemoths." />
+        <mission name="Sea Serpents and Young Sea Serpents Task" storageid="65038" startvalue="0" endvalue="900" description="You've already slained |STATE|/900 sea serpents and young sea serpents." />       
+        <mission name="Hellhounds Task" storageid="65039" startvalue="0" endvalue="250" description="You've already slained |STATE|/250 hellhounds." />
+        <mission name="Ghastly Dragons Task" storageid="65040" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 ghastly dragons." />
+        <mission name="Drakens Task" storageid="65041" startvalue="0" endvalue="900" description="You've already slained |STATE|/900 drakens." />
+        <mission name="Destroyers Task" storageid="65042" startvalue="0" endvalue="650" description="You've already slained |STATE|/650 destroyers." />
+        <mission name="Undead Dragons Task" storageid="65043" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 undead dragons." />
+       
+        <!-- Special tasks -->
+        <mission name="Demons Task" storageid="65044" startvalue="0" endvalue="6666" description="You've already slained |STATE|/6666 demons." />
+        <mission name="Green Djinns or Efreets Task" storageid="65045" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 green djinns or efreets." />
+        <mission name="Blue Djinns or Marids Task" storageid="65046" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 blue djinns or marids." />
+        <mission name="Pirates Task" storageid="65047" startvalue="0" endvalue="3000" description="You've already slained |STATE|/3000 pirates." />
+        <mission name="Pirates Second Task" storageid="65048" startvalue="0" endvalue="3000" description="You've already slained |STATE|/3000 pirates." />
+        <mission name="Minotaurs Task" storageid="65049" startvalue="0" endvalue="5000" description="You've already slained |STATE|/5000 minotaurs." />
+        <mission name="Necromancers and Priestess Task" storageid="65050" startvalue="0" endvalue="4000" description="You've already slained |STATE|/4000 necromancers and priestess." />
+        <mission name="Necromancers and Priestess Second Task" storageid="65050" startvalue="0" endvalue="1000" description="You've already slained |STATE|/1000 necromancers and priestess." />
+	</quest>
 	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
 		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Example description 1"/>
