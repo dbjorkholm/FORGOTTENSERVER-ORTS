@@ -67,7 +67,7 @@ function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, 200, 15)
 		elseif(getPlayerStorageValue(cid, 200) == 15) then
 			if(getPlayerItemCount(cid, 6500) >= 20) then
-				npcHandler:say({"You're indeed a dedicated protector of the true believers. Don't stop now. Kill as many of these creatures as you can. ...","I also have a reward for your great efforts. Talk to me about your demon hunter outfit anytime from now on. Afterwards, let's talk about the next mission that's awaiting you."}, cid, 0, 1, 3000)
+				npcHandler:say({"You're indeed a dedicated protector of the true believers. Don't stop now. Kill as many of these creatures as you can. ...","I also have a reward for your great efforts. Talk to me about your {demon hunter outfit} anytime from now on. Afterwards, let's talk about the next mission that's awaiting you."}, cid, 0, 1, 3000)
 				setPlayerStorageValue(cid, 200, 16)
 				doPlayerRemoveItem(cid, 6500, 20)
 			else
