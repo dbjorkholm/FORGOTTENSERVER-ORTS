@@ -6,7 +6,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(itemEx.itemid == 7932) then
 		Item(itemEx.uid):transform(7933)
 		Item(itemEx.uid):decay()
-	elseif(itemEx.itemid == 231 or 9059) then
+	elseif(itemEx.itemid == 231 or itemEx.itemid == 9059) then
 		local rand = math.random(1, 100)
 		if(itemEx.actionid  == 100 and rand <= 20) then
 			Item(itemEx.uid):transform(489)
