@@ -15,7 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if(v > 4) then
 				v = v - 4
 			end
-			Player(cid):setStorageValue(10002, Player(cid)::getStorageValue(key)(10002) - 20)
+			Player(cid):setStorageValue(10002, Player(cid):getStorageValue(key)(10002) - 20)
 			Position(getThingPos(cid)):sendMagicEffect(CONST_ME_TELEPORT)
 			Position(t[v]):sendMagicEffect(CONST_ME_TELEPORT)
 		end
