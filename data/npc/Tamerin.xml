@@ -3,6 +3,6 @@
   <health now="100" max="100" />
   <look type="153" head="58" body="119" legs="120" feet="121" addons="3" />
   <parameters>
-        <parameter key="message_greet" value="Hello, what brings you here?"/>
+        <parameter key="message_greet" value="Hello, what brings you here? Would you like to talk about {Morik} or the {animal cure}?"/>
   </parameters>
 </npc>
