@@ -3,7 +3,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(item.itemid == 1258) then 
 			return false 
 		end
-		Creature(uid):teleportTo(toPosition, true)
+		Creature(cid):teleportTo(toPosition, true)
 		Item(item.uid):transform(1258)
 	else
 		Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "This door seems to be sealed against unwanted intruders.")
