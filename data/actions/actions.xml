@@ -360,7 +360,7 @@
 	<action uniqueid="3090" script="in service of yalahar quest/inServiceOfYalaharQuestReward.lua"/>
 	<action actionid="7811" script="in service of yalahar quest/inServiceOfYalaharQuestRewardDoor.lua"/>
 	<action uniqueid="9012" script="in service of yalahar quest/inServiceOfYalaharQuestTamerinDoor.lua"/>
-	<action uniqueid="9013" script="in service of yalahar quest/inServiceOfYalaharQuestMorikSummon.lua"/>
+	<action uniqueid="9031" script="in service of yalahar quest/inServiceOfYalaharQuestMorikSummon.lua"/>
 	<action uniqueid="3083" script="in service of yalahar quest/inServiceOfYalaharQuestMorikDoor.lua"/>
 	
 	<!-- Inquisition Quest -->
