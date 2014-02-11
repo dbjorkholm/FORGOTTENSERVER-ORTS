@@ -462,6 +462,7 @@
 	</melee>
 	<melee id="7422" level="75" unproperly="1" function="default"/>
 	<melee id="7429" level="75" unproperly="1" function="default"/>
+	<melee id="2437" level="80" unproperly="1" function="default"/>
 	<melee id="2453" level="75" unproperly="1" function="default"/>
 	<melee id="7431" level="80" unproperly="1" function="default"/>
 	<melee id="7409" level="50" unproperly="1" function="default"/>
