@@ -328,7 +328,7 @@
 	<action uniqueid="3075" script="in service of yalahar quest/inServiceOfYalaharQuestDoorPalimuth.lua"/>
 	<action itemid="9733" script="in service of yalahar quest/inServiceOfYalaharQuestFormula.lua"/>
 	<action itemid="9741" script="in service of yalahar quest/inServiceOfYalaharQuestGhost.lua"/>
-	<action actionid="7807" script="in service of yalahar quest/inServiceOfYalaharQuestLastDoor.lua"/>
+	<action uniqueid="7807" script="in service of yalahar quest/inServiceOfYalaharQuestLastDoor.lua"/>
 	<action uniqueid="3086" script="in service of yalahar quest/inServiceOfYalaharQuestLastFight.lua"/>
 	<action actionid="7806" script="in service of yalahar quest/inServiceOfYalaharQuestMachineDoor.lua"/>
 	<action itemid="9744" script="in service of yalahar quest/inServiceOfYalaharQuestMatrix.lua"/>
