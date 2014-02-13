@@ -460,8 +460,8 @@
 	<!--<action uniqueid="3031;3032;3033;3034;3035;3036;3037;3038;3039;3040;3041;3042;3043;3044;3045" script="rookgaard/rookgaardQuests.lua"/>-->
 
 	<!-- Sams Old Backpack Quest -->
-	<action uniqueid="2234" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
-	<action uniqueid="2236" script="sam old backpack/samOldBackpackQuestReward.lua"/>
+	<action uniqueid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
+	<action uniqueid="9226" script="sam old backpack/samOldBackpackQuestReward.lua"/>
 	
 	<!-- The Travelling Trader Quest -->
 	<action itemid="5928" script="the travelling trader quest/rashidQuestFish.lua"/>
