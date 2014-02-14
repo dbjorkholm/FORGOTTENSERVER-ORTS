@@ -21,16 +21,17 @@ local mobs = {
 	[15] = {x = 31914, y = 32559, z = 10, mob="Undead Cavebear"},
 		
 	-- PoI bosses
-	[16] = {x = 32801, y = 32351, z = 15, mob="Countess Sorrow"},
-	[17] = {x = 32875, y = 32231, z = 15, mob="Dracola"},
-	[18] = {x = 32874, y = 32278, z = 15, mob="Massacre"},
-	[19] = {x = 32771, y = 32248, z = 15, mob="Mr. Punish"},
-	[20] = {x = 32785, y = 32290, z = 15, mob="The Handmaiden"},
-	[21] = {x = 32845, y = 32344, z = 15, mob="The Plasmother"}
+	[16] = {x = 32794, y = 32372, z = 15, mob="Countess Sorrow"},
+	[17] = {x = 32840, y = 32310, z = 15, mob="Dracola"},
+	[18] = {x = 32869, y = 32267, z = 15, mob="Massacre"},
+	[19] = {x = 32759, y = 32243, z = 15, mob="Mr. Punish"},
+	[20] = {x = 32785, y = 32276, z = 15, mob="The Handmaiden"},
+	[21] = {x = 32845, y = 32325, z = 15, mob="The Plasmother"},
+	[22] = {x = 32913, y = 32212, z = 15, mob="The Imperor"}
 }
  
 function onThink(interval, lastExecution, thinkInterval)
-	spawn = mobs[math.random(21)]
+	spawn = mobs[math.random(22)]
 	if(math.random(1000) <= 50) then
 		doSummonCreature(spawn.mob, {x=spawn.x, y=spawn.y, z=spawn.z})
 	end
