@@ -683,6 +683,9 @@
 	<action itemid="8473" script="other/potions.lua"/>
 	<action itemid="8474" script="other/potions.lua"/>
 	<action itemid="8704" script="other/potions.lua"/>
+	<action itemid="7439" script="other/strengthening_potions.lua" />
+	<action itemid="7440" script="other/strengthening_potions.lua" />
+	<action itemid="7443" script="other/strengthening_potions.lua" />	
 	<action itemid="2692" script="other/createbread.lua"/>
 	<action itemid="2694" script="other/createbread.lua"/>
 	<action fromid="6436" toid="6447" script="other/windows.lua"/>
