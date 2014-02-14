@@ -1,6 +1,6 @@
 local combat = createCombatObject()
 setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
 
 function onGetFormulaValues(cid, level, maglevel)
 min = -((level*0.2) + (maglevel*4.623) + 20)
