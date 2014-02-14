@@ -1,5 +1,5 @@
 local destination = {
-	[4121] = {pos = {x = 32801, y = 31766, z = 9}, storage = 2, crystal = true},
+	[4121] = {pos = {x = 32801, y = 31766, z = 9}, storage = 1, crystal = true},
 	[3220] = {pos = {x = 32627, y = 31863, z = 11}, storage = 1, crystal = true},
 	[3128] = {pos = {x = 33000, y = 31870, z = 13}, storage = 14},
 	[3129] = {pos = {x = 32795, y = 31762, z = 10}, storage = 14},
@@ -11,7 +11,7 @@ local destination = {
 	[3135] = {pos = {x = 33001, y = 31915, z = 9}, storage = 16}, -- Gnomebase Alpha
 	[3136] = {pos = {x = 32904, y = 31894, z = 13}, storage = 16},
 	[3137] = {pos = {x = 32979, y = 31907, z = 9}, storage = 16},
-	[35669] = {pos = {x = 32986, y = 31864, z = 9}},
+	[35669] = {pos = {x = 32986, y = 31864, z = 9}, storage = 1}, -- leave warzone 3 
 	[3215] = {pos = {x = 32369, y = 32241, z = 7}, storage = 1, crystal = true},
 	[3216] = {pos = {x = 32212, y = 31133, z = 7}, storage = 1, crystal = true},
 	[3217] = {pos = {x = 32317, y = 32825, z = 7}, storage = 1, crystal = true},
@@ -21,31 +21,34 @@ local destination = {
 
 function onStepIn(cid, item, position, lastPosition)
 	local v = destination[item.actionid]
-	local player = Player(cid)
-	local creature = Creature(cid)
-	local storage = 900 -- Gnome mission storage id
-	local crystal = 18457 -- Teleport crystal id
-	if Player(cid) then
-		if v then
-			if player:getStorageValue(storage) >= v.storage then
-				if v.crystal == true then
-					if player:getItemCount(crystal) >= 1 then
-						creature:teleportTo(v.pos)
-						doPlayerRemoveItem(cid, crystal, 1)
+	local p = Player(cid)
+	local c = Creature(cid)
+	local i = Item(item.uid)
+	local crystalID = 18457 -- Teleport crystal id
+	if(p) then
+		if(v) then
+			if(p:getStorageValue(900) >= v.storage) then
+				if(v.crystal == true) then
+					if(p:getItemCount(crystalID) >= 1) then
+						c:teleportTo(v.pos)
+						c:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+						i:remove(crystalId, 1)
 					else
-						player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need a teleport crystal to use this device.")
+						p:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need a teleport crystal to use this device.")
 					end
 				else
-					creature:teleportTo(v.pos)
+					c:teleportTo(v.pos)
+					c:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 				end
 			else
-				if v.storage == 2 then
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have no idea on how to use this device. Xelvar in Kazordoon might tell you more about it.")	
+				if(v.storage == 2) then
+					p:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have no idea on how to use this device. Xelvar in Kazordoon might tell you more about it.")	
 				else
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Sorry, you haven't got acces to use this teleport!")
+					c:teleportTo(lastPosition)
+					p:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Sorry, you haven't got access to use this teleport!")
 				end
 			end
 		end
 	end
-	return true
+return true
 end
