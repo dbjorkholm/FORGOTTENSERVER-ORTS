@@ -1,5 +1,4 @@
 local text = '--Addon List--\n!addon "citizen\n!addon "hunter\n!addon "mage\n!addon "knight\n!addon "summoner\n!addon "warrior\n!addon "barbarian\n!addon "druid\n!addon "wizard\n!addon "oriental\n!addon "pirate\n!addon "assassin\n!addon "beggar\n!addon "beggar\n!addon "shaman\n!addon "norseman\n!addon "nightmare\n!addon "jester\n!addon "brotherhood\n!addon "warmaster\n--Addon List End--'
-
 function onSay(cid, words, param)
         local cfg = {
                 ["citizen"] = {
@@ -201,42 +200,44 @@ function onSay(cid, words, param)
                         }
                 }
         }
+		local p = Player(cid)
         local v, removeItems = cfg[param], 0, 0
               if(param == "") then
-                Player(cid):sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Please type !addon "outfit')
-                Player(cid):showTextDialog(5914, text)
+                p:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Please type !addon "outfit')
+                p:showTextDialog(5914, text)
         return false
         end
         if(v == nil) then
-                Player(cid):sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "There is no such as outfit named "..param..", here is the list of available outfit.")
-                Player(cid):showTextDialog(5914, text)
+                p:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "There is no such as outfit named "..param..", here is the list of available outfit.")
+                p:showTextDialog(5914, text)
         return false
         end        
-        if(Player(cid):getStorageValue(v.outfit.storage) < 1) then
+        if(p:getStorageValue(v.outfit.storage) < 1) then
                 for i = 1, #v.items do
-                        if(Player(cid):getItemCount(v.items[i][1]) >= v.items[i][2]) then
+                        if(p:getItemCount(v.items[i][1]) >= v.items[i][2]) then
                                 removeItems = removeItems+1
                         end
                 end
                 if(removeItems == #v.items) then
-                        if(getPlayerSex(cid) == 1) then
-                                doPlayerAddOutfit(cid, v.outfit.male, v.outfit.addon)
-                        elseif(getPlayerSex(cid) == 0) then
-                                doPlayerAddOutfit(cid, v.outfit.female, v.outfit.addon)
+                        if(p:getSex() == 1) then
+                                p:addOutfitAddon(v.outfit.male, v.outfit.addon)
+                        elseif(p:getSex() == 0) then
+                                p:addOutfitAddon(v.outfit.female, v.outfit.addon)
                         end
                         for i = 1, #v.items do
-                                doPlayerRemoveItem(cid, v.items[i][1], v.items[i][2])
+                                local i1, i2 = Item(v.items[i][1]), v.items[i][2]
+								i1:remove(i2)
                         end
-                        Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "Enjoy your new addons to your "..param.." outfit!")
-						Player(getThingPos(cid)):sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
-                        Player(cid):setStorageValue(v.outfit.storage, 1)
+                        p:sendTextMessage(MESSAGE_INFO_DESCR, "Enjoy your new addons to your "..param.." outfit!")
+						p:getPosition():sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
+                        p:setStorageValue(v.outfit.storage, 1)
                 else
                         for i = 1, #v.items do
-                                Player(cid):sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You need " .. v.items[i][2] .. "x " .. ItemType(v.items[i][1]):getName() .. " for the whole "..param.." addon.")
+                                p:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You need " .. v.items[i][2] .. "x " .. ItemType(v.items[i][1]):getName() .. " for the whole "..param.." addon.")
                         end
                 end
         else
-                Player(cid):sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You have already obtained addons to your "..param..".")
+                p:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You have already obtained addons to your "..param..".")
         end
         return false
 end
