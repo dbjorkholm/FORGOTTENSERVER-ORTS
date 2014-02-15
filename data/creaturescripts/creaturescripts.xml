@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
+	<!-- test -->
 	<!-- Elemental Spheres Quest -->
 	<event type="kill" name="elementalspheresquestOverlords" script="elemental spheres quest/ElementalSpheresQuestKillOverlords.lua"/>
 
