@@ -318,7 +318,7 @@ function getTopItem(p)
 		v = getThingfromPos(p)
 	until v.itemid == 0
 	p.stackpos = p.stackpos - 1
-	return getThingfromPos(p)
+return getThingfromPos(p)
 end
  
 function getCreaturesOnPit(pitid)
@@ -326,58 +326,61 @@ function getCreaturesOnPit(pitid)
 	local tmp = {}
 	local pos
 	local thing
-	if PITS[pitid] then
+	if(PITS[pitid]) then
 		for x = PITS[pitid].fromPos.x, PITS[pitid].toPos.x do
 			for y = PITS[pitid].fromPos.y, PITS[pitid].toPos.y do
 				for z = PITS[pitid].fromPos.z, PITS[pitid].toPos.z do
 					pos = {x = x, y = y, z = z}
 					thing = getTopCreature(pos)
-					if isCreature(thing.uid) then
+					if(isCreature(thing.uid)) then
 						table.insert(tmp, thing.uid)
 					end
 				end
 			end
 		end
 	end
-	return tmp
+return tmp
 end
  
 function resetPit(pitid)
- 
-	if PITS[pitid] then
+	if(PITS[pitid]) then
 		for x = PITS[pitid].fromPos.x, PITS[pitid].toPos.x do
 			for y = PITS[pitid].fromPos.y, PITS[pitid].toPos.y do
 				for z = PITS[pitid].fromPos.z, PITS[pitid].toPos.z do
 					local position = {x = x, y = y, z = z}
 					local thing = getTopItem(position)
-					if thing.itemid > 0 and not isInArray(ITEM_NOTERASABLE, thing.itemid) and not isCreature(thing.uid) and isMoveable(thing.uid) then
-						doRemoveItem(thing.uid)
+					if(thing.itemid > 0 and not(isInArray(ITEM_NOTERASABLE, thing.itemid)) and not(isCreature(thing.uid)) and isMoveable(thing.uid)) then
+						local ir = Item(thing.uid)
+						ir:remove()
 					end
 					thing = getTopCreature(position)
-					if isMonster(thing.uid) then
-						doRemoveCreature(thing.uid)
+					if(isMonster(thing.uid)) then
+						local tu = Creature(thing.uid)
+						tu:remove()
 					end
 				end
 			end
 		end
 	end
-	return true
+return true
 end
  
 function startTimer(pitid)
-	if not isInArray(ITEM_FIREFIELD_TIMER, getTopItem(PITS[pitid].fromPos).itemid) then
-		doDecayItem(doCreateItem(ITEM_FIREFIELD_TIMER[1], 1, PITS[pitid].fromPos))
+	if(not(isInArray(ITEM_FIREFIELD_TIMER, getTopItem(PITS[pitid].fromPos).itemid))) then
+		local id = Item(doCreateItem(ITEM_FIREFIELD_TIMER[1], 1, PITS[pitid].fromPos))
+		id:decay()
 		addEvent(decayTimer, timePerPit * 1000, pitid, PITS[pitid].fromPos)
 	end
-	return true
+return true
 end
  
 function decayTimer(pitid)
 	local field = getTopItem(PITS[pitid].fromPos)
-	if field.itemid == ITEM_FIREFIELD_TIMER[1] then
-		doRemoveItem(field.uid)
-	elseif isInArray(ITEM_FIREFIELD_TIMER, field.itemid) then
+	if(field.itemid == ITEM_FIREFIELD_TIMER[1]) then
+		local fu = Item(field.uid)
+		fu:remove()
+	elseif(isInArray(ITEM_FIREFIELD_TIMER, field.itemid)) then
 		addEvent(decayTimer, timePerPit * 1000, pitid, PITS[pitid].fromPos)
 	end
-	return true
+return true
 end
