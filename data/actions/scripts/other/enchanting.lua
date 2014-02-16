@@ -11,35 +11,21 @@ local spheres = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if (isInArray({33268, 33269}, toPosition.x) == TRUE and toPosition.y == 31830 and toPosition.z == 10 and getPlayerStorageValue(cid, 10000) >= 1) then
-		if isInArray(spheres[item.itemid], getPlayerVocation(cid)) ~= TRUE then
-			return FALSE
-		elseif isInArray({7915, 7916}, itemEx.itemid) == TRUE then
-			doCreatureSay(cid, 'Turn off the machine first.', TALKTYPE_ORANGE_1)
-			return TRUE
-		elseif (getPlayerStorageValue(cid, 10002) >= 20) then
-			return (doCreatureSay(cid, 'You can now use the machine!', TALKTYPE_ORANGE_1))		
-		else
-			setPlayerStorageValue(cid, 10002, math.max(1, getPlayerStorageValue(cid, 10002) + 1))
-			doSendMagicEffect(toPosition, CONST_ME_PURPLEENERGY)
-			doRemoveItem(item.uid, 1)
-			return TRUE
-		end
-	end
-
-	if(item.itemid == 7760 and isInArray({9934, 10022}, itemEx.itemid)) then
-		doTransformItem(itemEx.uid, 9933)
-		doRemoveItem(item.uid, 1)
-
-		doSendMagicEffect(toPosition, CONST_ME_MAGIC_RED)
+	local iex = Item(itemEx.uid)
+	local iuid = Item(item.uid)
+	local p = Player(cid)
+	if(item.itemid == 2147 and itemEx.itemid == 2342) then
+		iex:transform(2343)
+		iex:decay()
+		iuid:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
 		return true
 	end
 
-	if(item.itemid == 7761 and isInArray({9949, 9954}, itemEx.itemid)) then
-		doTransformItem(itemEx.uid, itemEx.itemid - 1)
-		doRemoveItem(item.uid, 1)
-
-		doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
+	if(item.itemid == 7760 and isInArray({9934, 10022}, itemEx.itemid)) then
+		iex:transform(9933)
+		iuid:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
 		return true
 	end
 
@@ -50,37 +36,33 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		local mana = config.manaCost * subtype
-		if(getPlayerMana(cid) < mana) then
-			doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTENOUGHMANA)
+		if(p:getMana() < mana) then
+			p:sendCancelMessage(RETURNVALUE_NOTENOUGHMANA)
 			return true
 		end
 
 		local soul = config.soulCost * subtype
-		if(getPlayerSoul(cid) < soul) then
-			doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTENOUGHSOUL)
+		if(p:getSoul() < soul) then
+			p:sendCancelMessage(RETURNVALUE_NOTENOUGHSOUL)
 			return true
 		end
 
 		local a = table.find(enchantableGems, item.itemid)
-		if(a == nil or not isInArray(enchantingAltars[a], itemEx.itemid)) then
+		if(a == nil or not(isInArray(enchantingAltars[a], itemEx.itemid))) then
 			return false
 		end
 
-		doPlayerAddMana(cid, -mana)
-		doPlayerAddSoul(cid, -soul)
-
-		doTransformItem(item.uid, enchantedGems[a])
-		if(not getPlayerFlagValue(cid, PlayerFlag_NotGainMana)) then
-			doPlayerAddMana(cid, -mana)
-		end
-
-		doSendMagicEffect(fromPosition, CONST_ME_HOLYDAMAGE)
+		p:addMana(-mana)
+		p:addSoul(-soul)
+		iuid:transform(enchantedGems[a])
+		p:addManaSpent(mana * configManager.getNumber(configKeys.RATE_MAGIC))
+		fromPosition:sendMagicEffect(CONST_ME_HOLYDAMAGE)
 		return true
 	end
  
 	if(isInArray(enchantedGems, item.itemid)) then
-		if(not isInArray(enchantableItems, itemEx.itemid)) then
-			doSendMagicEffect(fromPosition, CONST_ME_POFF)
+		if(not(isInArray(enchantableItems, itemEx.itemid))) then
+			fromPosition:sendMagicEffect(CONST_ME_POFF)
 			return false
 		end
 
@@ -90,17 +72,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		local subtype = itemEx.type
-		if(not isInArray({2544, 8905}, itemEx.itemid)) then
+		if(not(isInArray({2544, 8905}, itemEx.itemid))) then
 			subtype = 1000
 		end
 
-		doTransformItem(itemEx.uid, enchantedItems[itemEx.itemid][b], subtype)
-		doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_HOLYDAMAGE)
-		doDecayItem(itemEx.uid)
-
-		doRemoveItem(item.uid, 1)
+		iex:transform(enchantedItems[itemEx.itemid][b], subtype)
+		getThingPos(itemEx.uid):sendMagicEffect(CONST_ME_HOLYDAMAGE)
+		iuid:remove(1)
 		return true
 	end
-
-	return false
+return false
 end
