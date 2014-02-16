@@ -30,7 +30,6 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("For the irony of this I ask you, " .. getCreatureName(cid) ..": Do you want to join the Brotherhood of Bones? ", cid)
 			talkState[talkUser] = 1
 		end
-		end
 	elseif(msgcontains(msg, "advancement")) then
 		if(getPlayerStorageValue(cid, 67) == 1) then
 			npcHandler:say("So you want to advance to a {Hyaena} rank? Did you bring 500 demonic essences with you?", cid)

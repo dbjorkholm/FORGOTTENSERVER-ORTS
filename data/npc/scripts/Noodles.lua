@@ -32,21 +32,21 @@ function creatureSayCallback(cid, type, msg)
 
 	if(msgcontains(msg, "banana skin")) then
 		if(getPlayerStorageValue(cid, 250) == 19) then
-			if(getPlayerItemCount(cid, ) >= 1) then
+			if(getPlayerItemCount(cid, 2219) >= 1) then
 				npcHandler:say("<sniff><sniff> ", cid)
 				talkState[talkUser] = 1
 			end
 		end
 	elseif(msgcontains(msg, "dirty fur")) then
 		if(getPlayerStorageValue(cid, 250) == 20) then
-			if(getPlayerItemCount(cid, ) >= 1) then
+			if(getPlayerItemCount(cid, 2220) >= 1) then
 				npcHandler:say("<sniff><sniff> ", cid)
 				talkState[talkUser] = 2
 			end
 		end
 	elseif(msgcontains(msg, "mouldy cheese")) then
 		if(getPlayerStorageValue(cid, 250) == 21) then
-			if(getPlayerItemCount(cid, ) >= 1) then
+			if(getPlayerItemCount(cid, 2235) >= 1) then
 				npcHandler:say("<sniff><sniff> ", cid)
 				talkState[talkUser] = 3
 			end
