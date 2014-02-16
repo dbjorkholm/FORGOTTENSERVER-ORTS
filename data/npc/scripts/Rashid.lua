@@ -144,8 +144,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Have you managed to obtain a rare deer trophy for my customer?", cid)
 				talkState[talkUser] = 3
 			end
-		end
-
 		elseif(os.date("%A") == "Tuesday") then
 			if(getPlayerStorageValue(cid, 85) == 2) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
@@ -154,8 +152,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Did you bring me the package?", cid)
 				talkState[talkUser] = 6
 			end
-		end
-
 		elseif(os.date("%A") == "Wednesday") then
 			if(getPlayerStorageValue(cid, 85) == 7) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
@@ -164,8 +160,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Have you brought the cheese?", cid)
 				talkState[talkUser] = 9
 			end
-		end
-
 		elseif(os.date("%A") == "Thursday") then
 			if(getPlayerStorageValue(cid, 85) == 10) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
@@ -174,8 +168,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Have you brought the vase?", cid)
 				talkState[talkUser] = 12
 			end
-		end
-
 		elseif(os.date("%A") == "Friday") then
 			if(getPlayerStorageValue(cid, 85) == 13) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
@@ -184,8 +176,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Have you brought a cheap but good crimson sword?", cid)
 				talkState[talkUser] = 15
 			end
-		end
-
 		elseif(os.date("%A") == "Saturday") then
 			if(getPlayerStorageValue(cid, 85) == 17) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
@@ -194,8 +184,6 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Have you brought me a gold fish??", cid)
 				talkState[talkUser] = 18
 			end
-		end
-
 		elseif(os.date("%A") == "Sunday") then
 			if(getPlayerStorageValue(cid, 85) == 19) then
 				npcHandler:say("Ah, right. <ahem> I hereby declare you - one of my recognised traders! Feel free to offer me your wares!", cid)

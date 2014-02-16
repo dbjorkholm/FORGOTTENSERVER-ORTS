@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<npc name="The Bone Master" script="default.lua" walkinterval="2000">
+<npc name="The Bone Master" script="Bone Master.lua" walkinterval="2000">
   <mana now="800" max="800" />
   <health now="200" max="200" />
   <look type="136" head="0" body="0" legs="114" feet="0" addons="3" />
