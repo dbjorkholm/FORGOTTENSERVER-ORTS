@@ -56,7 +56,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		p:addSoul(-soul)
 		iuid:transform(enchantedGems[a])
 		p:addManaSpent(mana * configManager.getNumber(configKeys.RATE_MAGIC))
-		fromPosition:sendMagicEffect(CONST_ME_HOLYDAMAGE)
+		fromPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
 		return true
 	end
  
@@ -77,7 +77,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		iex:transform(enchantedItems[itemEx.itemid][b], subtype)
-		getThingPos(itemEx.uid):sendMagicEffect(CONST_ME_HOLYDAMAGE)
+		getThingPos(itemEx.uid):sendMagicEffect(CONST_ME_MAGIC_RED)
 		iuid:remove(1)
 		return true
 	end
