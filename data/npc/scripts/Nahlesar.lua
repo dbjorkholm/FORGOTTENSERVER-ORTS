@@ -18,8 +18,7 @@ function onThink()
 	else 
      		doCreatureChangeOutfit(npc, {lookType = 80})  
 	end
-	npcHandler:onThink()	
-	return true				
+	npcHandler:onThink()			
 end
 
 npcHandler:addModule(FocusModule:new())

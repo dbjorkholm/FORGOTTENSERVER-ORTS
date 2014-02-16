@@ -1,4 +1,5 @@
-<npc name="Jagran" script="default.lua" floorchange="0" access="5">
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Jagran" script="default.lua" walkinterval="0" floorchange="0" access="5">
 <health now="150" max="150"/>
 <look type="143" head="2" body="112" legs="78" feet="116" addons="2" corpse="2212"/>
 </npc>
