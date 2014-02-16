@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Rashid" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Rashid" script="Rashid.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="146" head="100" body="100" legs="119" feet="115" addons="2" />
   <parameters>
