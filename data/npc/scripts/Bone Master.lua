@@ -30,7 +30,6 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("For the irony of this I ask you, " .. getCreatureName(cid) ..": Do you want to join the Brotherhood of Bones? ", cid)
 			talkState[talkUser] = 1
 		end
-		end
 	elseif(msgcontains(msg, "advancement")) then
 		if(getPlayerStorageValue(cid, 67) == 1) then
 			npcHandler:say("So you want to advance to a {Hyaena} rank? Did you bring 500 demonic essences with you?", cid)
@@ -62,7 +61,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 4) then
 			if(getPlayerItemCount(cid, 6500) >= 1000) then
 				doPlayerRemoveItem(cid, 6500, 1000)
@@ -73,7 +72,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 5) then
 			if(getPlayerItemCount(cid, 6500) >= 1500) then
 				doPlayerRemoveItem(cid, 6500, 1500)
@@ -83,7 +82,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		end
 	end
 	return true
