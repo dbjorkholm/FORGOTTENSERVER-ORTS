@@ -61,7 +61,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 4) then
 			if(getPlayerItemCount(cid, 6500) >= 1000) then
 				doPlayerRemoveItem(cid, 6500, 1000)
@@ -72,7 +72,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 5) then
 			if(getPlayerItemCount(cid, 6500) >= 1500) then
 				doPlayerRemoveItem(cid, 6500, 1500)
@@ -82,7 +82,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
-			talkState[talkUser] == 0
+			talkState[talkUser] = 0
 		end
 	end
 	return true
