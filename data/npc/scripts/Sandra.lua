@@ -7,6 +7,7 @@ function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)    
 function onCreatureSay(cid, type, msg)    npcHandler:onCreatureSay(cid, type, msg)    end
 function onThink()                        npcHandler:onThink()    end
 
+local shopModule = ShopModule:new()
 
 shopModule:addBuyableItem({'health potion'}, 7618, 45, 1, 'health potion')
 shopModule:addBuyableItem({'mana potion'}, 7620, 50, 1, 'mana potion')
