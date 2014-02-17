@@ -10,8 +10,35 @@
 <parameter key="module_keywords" value="1" />
         <parameter key="keywords" value="offers;" />
         <parameter key="keyword_reply1" value="I'm selling various herbs, mushrooms, and flowers. If you'd like to see my offers, ask me for a {trade}."/>
-<parameter key="shop_buyable" value="star herb,2800,21;fern,2801,24;stone herb,2799,28;white mushroom,2787,6;brown mushroom,2789,10;red mushroom,2788,12;tulip,2754,9;red rose,2744,11;"/>
-<parameter key="shop_sellable" value="i,10604,800;i,11211,50;i,10608,10;i,11216,130;i,11225,75;i,10602,20;"/>
+<parameter key="shop_buyable" value="star herb,2800,21;
+fern,2801,24;
+stone herb,2799,28;
+white mushroom,2787,6;
+brown mushroom,2789,10;
+red mushroom,2788,12;
+tulip,2754,9;
+red rose,2744,11;"/>
+<parameter key="shop_sellable" value="bamboo stick,12401,30;
+bundle of cursed straw,10605,800;
+Carniphila Seeds,11217,50;
+Dark Mushroom,2792,100;
+fire mushroom,2795,200;
+Goat Grass,2760,50;
+Grave Flower,2747,25;
+green mushroom,2796,100;
+lump of dirt,10609,10;
+lump of earth,11222,130;
+nettle blossom,11231,75;
+Nettle Spit,12432,25;
+orange mushroom,2790,150;
+Powder Herb,2803,10;
+Seeds,7732,150;
+shadow herb,2804,20;
+sling herb,2802,10;
+Swamp Grass,10603,20;
+Troll Green,2805,25;
+trollroot,12471,50;
+Wood Mushroom,2791,15;"/>
         <parameter key="message_greet" value="Greetings, traveller. Maybe you'd like to take a look at my {offers}..."/>
         <parameter key="message_farewell" value="Goodbye, traveller."/>
 		<parameter key="message_walkaway" value="Goodbye, traveller." />
