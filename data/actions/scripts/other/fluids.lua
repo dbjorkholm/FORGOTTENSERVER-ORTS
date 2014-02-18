@@ -14,6 +14,18 @@ addDamageCondition(poison, 20, 6000, -1)
 local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19}
 local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!"}
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if(isItemFluidContainer(itemEx.itemid) and itemEx.type == 0) then
+		doChangeTypeItem(itemEx.uid, item.type)
+		doChangeTypeItem(item.uid, 0)
+		return true
+	end
+
+	if(isItemFluidContainer(itemEx.itemid) and item.type == 0) then
+		doChangeTypeItem(itemEx.uid, 0)
+		doChangeTypeItem(item.uid, itemEx.type)
+		return true
+	end
+
 	if itemEx.itemid == 1 then
 		if item.type == 0 then
 			doPlayerSendCancel(cid, "It is empty.")
@@ -30,7 +42,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				doCreatureAddHealth(cid, 60)
 				doSendMagicEffect(fromPosition, CONST_ME_MAGIC_BLUE)
 			end
-			for i = 0, table.maxn(fluidType) do
+			for i = 0, #fluidType do
 				if item.type == fluidType[i] then
 					doCreatureSay(cid, fluidMessage[i], TALKTYPE_ORANGE_1)
 					return TRUE
@@ -57,5 +69,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doDecayItem(splash)
 		end
 	end
-	return TRUE
+	return true
 end
