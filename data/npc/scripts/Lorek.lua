@@ -61,7 +61,7 @@ function creatureSayCallback(cid, type, msg)
 		end
 	 
 	else
-	npcHandler:say('Sorry, you are not a Hunters.', cid)
+	npcHandler:say('Sorry, you are not a Ranger.', cid)
 	end
 	return true
 end      
