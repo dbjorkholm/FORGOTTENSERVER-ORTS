@@ -10,7 +10,7 @@
     <parameter key="keyword_reply1" value="I teach some spells, provide one of the five blessings, and sell some amulets. Ask me for a trade if you like." />
     <parameter key="keyword_reply2" value="I am Eremo, an old man who has seen many things." />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="amulet of loss,2173,50000;protection amulet,2200,700;broken amulet,2196,1000000;" />
-    <parameter key="shop_sellable" value="amulet of loss,2173,45000;broken amulet,2196,100000;" />
+    <parameter key="shop_buyable" value="amulet of loss,2173,50000;protection amulet,2200,700;" />
+    <parameter key="shop_sellable" value="amulet of loss,2173,45000;broken amulet,2196,50000;" />
   </parameters>
 </npc>
