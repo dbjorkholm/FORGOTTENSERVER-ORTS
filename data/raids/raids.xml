@@ -16,7 +16,7 @@
 	<raid name="Horned Fox" file="bosses/horned.xml" interval2="1440" chance="1" margin="60" enabled="yes"/> 	
 
 	<!-- Special events (not active) -->
-	<raid name="Halloween Hare" file="bosses/halloween.xml" interval2="150" chance="1" margin="60" enabled="no"/>
+	<!--raid name="Halloween Hare" file="bosses/halloween.xml" interval2="150" chance="1" margin="60" enabled="no"/-->
 
 	<!-- Raids Normals -->	
 	<raid name="citizen" file="normal/feverish citizen.xml" interval2="150" chance="1" margin="60" enabled="yes"/> 
