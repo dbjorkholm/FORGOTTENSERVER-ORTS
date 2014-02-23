@@ -12,7 +12,7 @@
     <parameter key="module_shop" value="1" />
     <parameter key="shop_buyable" value="
 	axe,2386,20;
-	battle axe,2429,235;
+	battle axe,2378,235;
 	battle hammer,2417,350;
 	bone sword,2450,75;
 	carlin sword,2395,473;
@@ -36,7 +36,7 @@
 	war hammer,2391,10000;" />
     <parameter key="shop_sellable" value="
 	axe,2386,7;
-	battle axe,2429,80;
+	battle axe,2378,80;
 	battle hammer,2417,120;
 	bone club,2449,5;
 	bone sword,2450,20;
