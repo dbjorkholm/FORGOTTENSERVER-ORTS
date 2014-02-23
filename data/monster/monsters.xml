@@ -626,6 +626,7 @@
 	<monster name="Orc Warrior" file="Orcs/orc warrior.xml"/>
 	<monster name="Orc" file="Orcs/orc.xml"/>
 	<monster name="Orc Marauder" file="Orcs/orc marauder.xml"/>
+	<monster name="Orc Sambackpack" file="Orcs/orc sambackpack.xml"/>
 
 	<!-- Outlaws -->
 	<monster name="Asassin" file="Outlaws/assassin.xml"/>
