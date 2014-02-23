@@ -735,7 +735,7 @@
 	<monster name="Plaguethrower" file="Traps/plaguethrower.xml"/>
 	<monster name="Shredderthrower" file="Traps/shredderthrower.xml"/>
 	<monster name="Deaththrower" file="Traps/Deaththrower.xml"/>
-	<monster name="a carved stone tile" file="traps/a carved stone tile.xml"/>
+	<monster name="a carved stone tile" file="Traps/a carved stone tile.xml"/>
 	<monster name="Lava hole" file="Traps/lava hole.xml"/>
 
 	<!-- Trolls -->
