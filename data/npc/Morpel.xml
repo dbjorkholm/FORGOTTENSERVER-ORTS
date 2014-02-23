@@ -9,7 +9,7 @@
     <parameter key="shop_buyable" value="
 	axe,2386,20;
 	barbarian axe,2429,590;
-	battle axe,2429,235;
+	battle axe,2378,235;
 	battle hammer,2417,350;
 	bone sword,2450,75;
 	brass armor,2465,450;
@@ -63,7 +63,7 @@
     <parameter key="shop_sellable" value="
 	axe,2386,7;
 	barbarian axe,2429,185;
-	battle axe,2429,80;
+	battle axe,2378,80;
 	battle hammer,2417,120;
 	battle shield,2513,95;
 	bone club,2449,5;
