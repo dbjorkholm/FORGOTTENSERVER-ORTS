@@ -577,6 +577,8 @@
 		<monster name="Tortoise" file="Misc/Misc Reptiles/tortoise.xml"/>
 
 		<!-- Misc Other -->
+		<monster name="Tormented Ghost" file="Misc/Misc Others/Tormented Ghost.xml"/>
+		<monster name="Morik the Gladiator" file="Misc/Misc Others/Morik the Gladiator.xml"/>
 		<monster name="Drillworm" file="Misc/Misc Others/drillworm.xml"/>
 		<monster name="Marsh Stalker" file="Misc/Misc Others/marsh stalker.xml"/>
 		<monster name="Pigeon" file="Misc/Misc Others/pigeon.xml"/>
