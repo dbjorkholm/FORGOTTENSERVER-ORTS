@@ -35,7 +35,7 @@ function creatureSayCallback(cid, type, msg)
 		if(getPlayerStorageValue(cid, 30) == 30 and getPlayerItemCount(cid, 9734) >= 1) then
 			doPlayerRemoveItem(cid, 9734, 1)
 			setPlayerStorageValue(cid, 30, 31)
-			npcHandler:say("Thank you very much. As I said, as soon as you have helped me to solve both of my problems, we will talk about your mission.", cid)
+			npcHandler:say("Thank you very much. As I said, as soon as you have helped me to solve both of my problems, we will talk about your {mission}.", cid)
 			talkState[talkUser] = 0
 		else
 			npcHandler:say("Come back when you have the cure.", cid)
