@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Orc Marauder" nameDescription="a orc marauder" race="blood" experience="220" speed="390" manacost="0">
 	<health now="235" max="235"/>
-	<look type="342" corpse="11245"/>
+	<look type="342" corpse="11251"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
