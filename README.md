@@ -1,6 +1,6 @@
 FORGOTTENSERVER-ORTS
 ====================
-Client Version: 10.31
+Client Version: 10.35
 Try to make the perfect open real tibia server based on forgottenserver by Mark Samman!
 Here you can find the sources and also some compile tutorials: https://github.com/otland/forgottenserver
 
