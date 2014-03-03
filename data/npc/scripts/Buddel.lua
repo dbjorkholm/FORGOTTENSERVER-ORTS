@@ -25,7 +25,7 @@ local keywordHandler = KeywordHandler:new()
         	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 0, destination = {x=32333, y=31227, z=7} })
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 			
-			local travelNode = keywordHandler:addKeyword({'raider camp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Give me 0 gold and I bring you to the south of Hrodmir where the camps of the barbarians are located. kay?'})
+			local travelNode = keywordHandler:addKeyword({'camp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Give me 0 gold and I bring you to the south of Hrodmir where the camps of the barbarians are located. kay?'})
         	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 0, destination = {x=32154, y=31375, z=7} })
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
        
