@@ -87,9 +87,10 @@ local bosses = {
 
 function onStepIn(cid, item, position, lastPosition)
 	B = bosses[item.uid]
-	if(getPlayerStorageValue(cid, 4000) == 0) then
+	if(getPlayerStorageValue(cid, 4000) == 1) then
 		if(getPlayerStorageValue(cid, 4008) == B.storage) then
 			if(doCheckArea(B.fromPos, B.toPos) == false) then
+				setPlayerStorageValue(cid, 4008, 0)
 				setPlayerStorageValue(cid, 4000, 0)
 				doTeleportThing(cid, B.playerPos)
 				doSendMagicEffect(B.playerPos, CONST_ME_TELEPORT)
