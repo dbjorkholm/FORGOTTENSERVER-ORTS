@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
 
-	<!--- Others -->
+		<!--- Others -->
 		<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>
 		<movevent event="AddItem" tileitem="1" itemid="5023" script="others/notrash.lua"/>
 		<movevent event="AddItem" tileitem="1" itemid="5024" script="others/notrash.lua"/>
 		<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
 		<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
+		
+		<!--- KillingOfTheNameOf -->
+		<movevent event="StepIn" uniqueid="3230" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3231" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3232" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3233" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3234" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3235" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3236" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3237" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3238" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3239" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3240" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3241" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3242" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3243" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3244" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3245" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3246" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3247" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3248" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3249" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3250" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3251" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3252" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3253" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3254" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3255" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3256" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		<movevent event="StepIn" uniqueid="3257" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+		
+		
 		<!-- Teleports -->
 		<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
 		<movevent event="StepIn" actionid="5555" script="others/sorcererthais.lua"/>
