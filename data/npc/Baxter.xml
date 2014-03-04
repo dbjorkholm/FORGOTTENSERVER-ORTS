@@ -9,7 +9,15 @@
 <parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="Bricklayers' Kit,8613,100;" />
-		<parameter key="shop_sellable" value="dead rat,5964,1;orc tooth,11109,150;" />
+		<parameter key="shop_sellable" value="
+		broken helmet,12409,20;
+		broken shamanic staff,12408,35;
+		dead rat,5964,1;
+		orc leather,12435,30;
+		orc tooth,11113,150;
+		orcish gear,12433,85;
+		shamanic hood,12434,45;
+		skull belt,12436,80;" />
         <parameter key="message_greet" value="LONG LIVE KING TIBIANUS!"/>
         <parameter key="message_farewell" value="LONG LIVE THE KING!"/>
 		<parameter key="message_walkaway" value="LONG LIVE THE KING!" />
