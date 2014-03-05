@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Sight of Surrender" nameDescription="Sight of Surrender" race="blood" experience="17000" speed="270" manacost="0">
   <health now="28000" max="28000"/>
-  <look type="583" corpse="17421"/>
+  <look type="583" corpse="22478"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>

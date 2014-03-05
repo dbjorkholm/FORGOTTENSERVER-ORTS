@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Silencer" nameDescription="Silencer" race="blood" experience="3800" speed="270" manacost="0">
-  <health now="4900" max="4900"/>
-  <look type="585" corpse="17421"/>
+<monster name="Silencer" nameDescription="Silencer" race="blood" experience="4700" speed="270" manacost="0">
+  <health now="5400" max="5400"/>
+  <look type="585" corpse="22489"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>

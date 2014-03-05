@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Feversleep" nameDescription="Feversleep" race="blood" experience="2400" speed="270" manacost="0">
+<monster name="Feversleep" nameDescription="Feversleep" race="blood" experience="4400" speed="270" manacost="0">
   <health now="5900" max="5900"/>
-  <look type="592" corpse="17421"/>
+  <look type="592" corpse="22497"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>

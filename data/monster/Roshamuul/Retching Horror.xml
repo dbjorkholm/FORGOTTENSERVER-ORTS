@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Retching Horror" nameDescription="Retching Horror" race="blood" experience="3900" speed="270" manacost="0">
+<monster name="Retching Horror" nameDescription="Retching Horror" race="blood" experience="4100" speed="270" manacost="0">
   <health now="5300" max="5300"/>
-  <look type="588" corpse="17421"/>
+  <look type="588" corpse="22508"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>
