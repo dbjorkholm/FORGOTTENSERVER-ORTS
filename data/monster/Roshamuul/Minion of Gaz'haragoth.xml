@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Minion of Gaz'haragoth" nameDescription="Minion of Gaz'haragoth" race="blood" experience="5700" speed="270" manacost="0">
   <health now="9400" max="9400"/>
-  <look type="590" corpse="17421"/>
+  <look type="590" corpse="22549"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>

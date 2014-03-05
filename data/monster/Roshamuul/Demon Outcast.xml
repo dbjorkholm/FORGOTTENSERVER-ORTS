@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Demon Outcast" nameDescription="Demon Outcast" race="blood" experience="4800" speed="270" manacost="0">
+<monster name="Demon Outcast" nameDescription="Demon Outcast" race="blood" experience="6200" speed="270" manacost="0">
   <health now="6900" max="6900"/>
-  <look type="590" corpse="17421"/>
+  <look type="590" corpse="22549"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="90" defense="10"/>
   <flags>
