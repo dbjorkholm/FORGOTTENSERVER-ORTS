@@ -804,7 +804,7 @@
 	<monster name="wild dog" file="Canines/wild dog.xml"/>
 	<monster name="furious troll" file="Trolls/furious troll.xml"/>
 	<monster name="troll legionnaire" file="Trolls/troll legionnaire.xml"/>
-	<monster name="Rift Brood" file="Rifts/rift nrood.xml"/>
+	<monster name="Rift Brood" file="Rifts/rift brood.xml"/>
 	<monster name="Azerus" file="yalahar/Azerus.xml"/>
 	<monster name="Azerus1" file="yalahar/Azerus1.xml"/>
     <monster name="Azerus2" file="yalahar/Azerus2.xml"/>
