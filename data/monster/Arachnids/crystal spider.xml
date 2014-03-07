@@ -20,7 +20,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="40" attack="100" poison="8"/>
-		<attack name="speed" interval="2000" chance="20" range="7" radius="7" target="0" speedchange="-850" duration="8000">
+		<attack name="speed" interval="2000" chance="17" range="7" radius="7" target="0" speedchange="-450" duration="8000">
 		<attribute key="areaEffect" value="poff"/>
 		</attack>
 		<attack name="energy" interval="1000" chance="25" range="7" target="1" min="-60" max="-150">
@@ -34,8 +34,6 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="100"/>
-		<element icePercent="100"/>
 		<element earthPercent="20"/>
 		<element energyPercent="-20"/>
 	</elements>
@@ -44,6 +42,8 @@
 		<immunity outfit="1"/>
 		<immunity drunk="1"/>
 		<immunity invisible="1"/>
+		<immunity fire="1"/>
+		<immunity ice="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
 		<voice sentence="Screeech!"/>

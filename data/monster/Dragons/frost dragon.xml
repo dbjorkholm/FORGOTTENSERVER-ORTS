@@ -37,20 +37,21 @@
 		</attack>
 	</attacks>
 	<defenses armor="22" defense="35">
-		<defense name="healing" interval="1000" chance="25" min="80" max="120">
+		<defense name="healing" interval="1000" chance="25" min="80" max="200">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="100"/>
-		<element icePercent="100"/>
-		<element earthPercent="100"/>
-		<element physicalPercent="15"/>
+		<element physicalPercent="10"/>
+		<element deathPercent="10"/>
 	</elements>
 	<immunities>
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
+		<immunity fire="1"/>
+		<immunity ice="1"/>
+		<immunity earth="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="YOU WILL FREEZE!" yell="1"/>
