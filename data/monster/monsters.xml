@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<!-- Need Update -->
+	<monster name="Kraknaknork" file="Need Update/Kraknaknork.xml"/>
+	<monster name="Young Troll" file="Need Update/Young Troll.xml"/>
+	<monster name="Furious Orc Berserker" file="Need Update/Furious Orc Berserker.xml"/>
+	<monster name="Troll Guard" file="Need Update/Troll Guard.xml"/>
+	<monster name="Terofar" file="Need Update/Terofar.xml"/>
+	<monster name="Zavarash" file="Need Update/Zavarash.xml"/>
+	
+	<!-- sland of destiny -->
+	<monster name="Party Skeleton" file="Island of destiny/Party Skeleton.xml"/>
+	<!-- Roshamuul -->
+	<monster name="Bad Dream" file="Roshamuul/bad dream.xml"/>
+	<monster name="Choking Fear" file="Roshamuul/Choking Fear.xml"/>
+	<monster name="Demon Outcast" file="Roshamuul/Demon Outcast.xml"/>
+	<monster name="Feversleep" file="Roshamuul/Feversleep.xml"/>
+	<monster name="Frazzlemaw" file="Roshamuul/Frazzlemaw.xml"/>
+	<monster name="Gaz'haragoth" file="Roshamuul/Gaz'haragoth.xml"/>
+	<monster name="Guzzlemaw" file="Roshamuul/Guzzlemaw.xml"/>
+	<monster name="Mawhawk" file="Roshamuul/Mawhawk.xml"/>
+	<monster name="Minion of Gaz'haragoth" file="Roshamuul/Minion of Gaz'haragoth.xml"/>
+	<monster name="Nightmare of Gaz'haragoth" file="Roshamuul/Nightmare of Gaz'haragoth.xml"/>
+	<monster name="Retching Horror" file="Roshamuul/Retching Horror.xml"/>
+	<monster name="Shiversleep" file="Roshamuul/Shiversleep.xml"/>
+	<monster name="Shock Head" file="Roshamuul/Shock Head.xml"/>
+	<monster name="Sight of Surrender" file="Roshamuul/Sight of Surrender.xml"/>
+	<monster name="Silencer" file="Roshamuul/Silencer.xml"/>
+	<monster name="Terrorsleep" file="Roshamuul/Terrorsleep.xml"/>
+
 	<!-- Wild Nature -->
 	<monster name="Wild Fire Magic" file="Pyro-Elementals/Wild Fire Magic.xml"/>
 	<monster name="Wild Fury Magic" file="Pyro-Elementals/Wild Fury Magic.xml"/>
@@ -355,6 +383,7 @@
 
 	<!-- Dwarves -->
 	<monster name="Dwarf Geomancer" file="Dwarves/dwarf geomancer.xml"/>
+	<monster name="Dwarf Miner" file="Dwarves/dwarf miner.xml"/>
 	<monster name="Dwarf Guard" file="Dwarves/dwarf guard.xml"/>
 	<monster name="Dwarf Soldier" file="Dwarves/dwarf soldier.xml"/>
 	<monster name="Dwarf" file="Dwarves/dwarf.xml"/>
