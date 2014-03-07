@@ -294,14 +294,14 @@
 	<monster name="The Collector" file="Cryo-Elementals/the collector.xml"/>
 
 	<!-- Deeplings -->
-	<monster name="Deepling Brawler" file="Deeplings/deepling brawler.xml"/>
-	<monster name="Deepling Elite" file="Deeplings/deepling elite.xml"/>
+	<monster name="Deepling Brawler" file="Deeplings/Deepling Brawler.xml"/>
+	<monster name="Deepling Elite" file="Deeplings/Deepling Elite.xml"/>
 	<monster name="Deepling Guard" file="Deeplings/Deepling Guard.xml"/>
 	<monster name="Deepling Master Librarian" file="Deeplings/Deepling Master Librarian.xml"/>
-	<monster name="Deepling Scout" file="Deeplings/deepling scout.xml"/>
+	<monster name="Deepling Scout" file="Deeplings/Deepling Scout.xml"/>
 	<monster name="Deepling Spellsinger" file="Deeplings/Deepling Spellsinger.xml"/>
 	<monster name="Deepling Tyrant" file="Deeplings/Deepling Tyrant.xml"/>
-	<monster name="Deepling Warrior" file="Deeplings/deepling warrior.xml"/>
+	<monster name="Deepling Warrior" file="Deeplings/Deepling Warrior.xml"/>
 	<monster name="Deepling worker" file="Deeplings/Deepling Worker.xml"/>
 
 	<!-- Demonlord -->
@@ -359,7 +359,7 @@
 	<monster name="Dwarf Soldier" file="Dwarves/dwarf soldier.xml"/>
 	<monster name="Dwarf" file="Dwarves/dwarf.xml"/>
 	<monster name="Enslaved Dwarf" file="Dwarves/enslaved dwarf.xml"/>
-	<monster name="Lost Berserker" file="Dwarves/lost berserker.xml"/>
+	<monster name="Lost Berserker" file="Dwarves/Lost Berserker.xml"/>
 	<monster name="Lost Basher" file="Dwarves/lost basher.xml"/>
 	<monster name="Lost Husher" file="Dwarves/lost husher.xml"/>
 	<monster name="Lost Thrower" file="Dwarves/lost thrower.xml"/>
@@ -612,7 +612,7 @@
 	<!-- Myriapods -->
 	<monster name="Centipede" file="Myriapods/centipede.xml"/>
 	<monster name="Crawler" file="Myriapods/crawler.xml"/>
-	<monster name="Wiggler" file="Myriapods/wiggler.xml"/>
+	<monster name="Wiggler" file="Myriapods/Wiggler.xml"/>
 
 	<!-- Necromancers -->
 	<monster name="Necromancer" file="Necromancers/necromancer.xml"/>
@@ -802,9 +802,9 @@
 	<monster name="Vulcongra" file="Magma-Elementals/Vulcongra.xml"/>
 	<monster name="weakened demon" file="Demons/weakened demon.xml"/>
 	<monster name="wild dog" file="Canines/wild dog.xml"/>
-	<monster name="furious troll" file="Trolls/Furious Troll.xml"/>
+	<monster name="furious troll" file="Trolls/furious troll.xml"/>
 	<monster name="troll legionnaire" file="Trolls/troll legionnaire.xml"/>
-	<monster name="Rift Brood" file="Rifts/Rift Brood.xml"/>
+	<monster name="Rift Brood" file="Rifts/rift brood.xml"/>
 	<monster name="Azerus" file="yalahar/Azerus.xml"/>
 	<monster name="Azerus1" file="yalahar/Azerus1.xml"/>
     <monster name="Azerus2" file="yalahar/Azerus2.xml"/>
