@@ -18,7 +18,7 @@
 		<flag runonhealth="30"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="130" poison="1"/>
+		<attack name="melee" interval="2000" skill="65" attack="50" poison="1"/>
 		<attack name="lifedrain" interval="2000" chance="11" radius="3" target="0" min="-50" max="-90">
 			<attribute key="areaEffect" value="blackspark"/>
 		</attack>
