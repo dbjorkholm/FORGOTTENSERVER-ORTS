@@ -24,8 +24,7 @@ function creatureSayCallback(cid, type, msg)
  
 	if(msgcontains(msg, "sam send me")) then
 		if(getPlayerStorageValue(cid, 330) == 1) then
-			npcHandler:say("Oh, so its you, he wrote me about? Sadly I have no dwarven armor in stock. But I give you the permission to retrive one from the mines. ...", cid)
-			npcHandler:say("The problem is, some giant spiders made the tunnels where the storage is their new home. Good luck. ", cid)
+			npcHandler:say({"Oh, so its you, he wrote me about? Sadly I have no dwarven armor in stock. But I give you the permission to retrive one from the mines. ...","The problem is, some giant spiders made the tunnels where the storage is their new home. Good luck. "}, cid, 0, 1, 3000)
 			setPlayerStorageValue(cid, 330, 2)
 		end
 	elseif(msgcontains(msg, "measurements")) then
