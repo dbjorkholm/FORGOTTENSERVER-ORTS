@@ -56,12 +56,14 @@
 		<item id="2147" countmax="5" chance="1725" /><!-- small ruby -->
 		<item id="8871" chance="1450" /><!-- focus cape -->
 		<item id="2666" chance="30400" /><!-- meat -->
-		<item id="13294" chance="20"/> <!-- harness -->
+		<item id="13294" chance="20" /> <!-- harness -->
 		<item id="11303" chance="2550" /><!-- zaoan shoes -->
 		<item id="2187" chance="2225" /><!-- wand of inferno -->
 		<item id="11314" chance="15525" /><!-- weaver's wandtip -->
 		<item id="7590" chance="2500" /><!-- great mana potion -->
 		<item id="2123" chance="950" /><!-- ring of the sky -->
 		<item id="13538" chance="100" /><!-- bamboo leaves -->
+		<item id="11315" chance="20" /> <!-- draken trophy -->
+
 	</loot>
 </monster>
