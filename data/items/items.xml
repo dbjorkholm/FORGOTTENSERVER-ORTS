@@ -30088,6 +30088,26 @@
 		<attribute key="floorchange" value="down" />
 	</item>
 	
+	<item id="22667" article="a" name="ramp">
+		<attribute key="floorchange" value="south"/>
+	</item>
+	
+	<item id="22668" article="a" name="ramp">
+		<attribute key="floorchange" value="south"/>
+	</item>
+	
+	<item id="22669" article="a" name="ramp">
+		<attribute key="floorchange" value="south"/>
+	</item>
+	
+	<item id="22670" article="a" name="ramp">
+		<attribute key="floorchange" value="south"/>
+	</item>
+	
+	<item id="22458" article="a" name="ramp">
+		<attribute key="floorchange" value="south"/>
+	</item>
+	
 	<item id="30001" name="water" />
 	<item id="30002" name="blood" />
 	<item id="30003" name="beer" />
