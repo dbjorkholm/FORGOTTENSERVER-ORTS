@@ -43,23 +43,22 @@
 		<voice sentence="Knorrrr!"/>
 	</voices>     
   <loot>
- 	 <item id="2148" countmax="100" chance="30000"/>  
- 	 <item id="2152" countmax="10" chance="33333"/>
- 	 <item id="7590" countmax="4" chance="3100"/>
- 	 <item id="5880" countmax="2" chance="2195"/>
- 	 <item id="8473" countmax="2" chance="2195"/>
- 	 <item id="18435" countmax="8" chance="366"/>
- 	 <item id="2144" countmax="1" chance="866"/>
- 	 <item id="2143" countmax="1" chance="866"/>
-        <item id="18390" chance="1766"/>     
-        <item id="18412" chance="1066"/>          
-        <item id="2477" chance="444"/>
-        <item id="9980" chance="1066"/>
-        <item id="2393" chance="422"/>
-        <item id="11227" chance="1032"/>
-        <item id="5904" chance="632"/>
-        <item id="2487" chance="632"/>
-        <item id="18453" chance="603"/>
-        <item id="18450" chance="603"/>
+	<item id="2148"  countmax="100"  chance="10000"/> <!-- gold coin -->
+	<item id="2152"  countmax="8"  chance="10000"/> <!-- platinum coin -->
+	<item id="2165"  chance="4000"/> <!-- stealth ring -->
+	<item id="2195"  chance="70"/> <!-- boots of haste -->
+	<item id="2521"  chance="4000"/> <!-- dark shield -->
+	<item id="7368"  countmax="10"  chance="10000"/> <!-- assassin star -->
+	<item id="7387"  chance="350"/> <!-- diamond sceptre -->
+	<item id="7407"  chance="4000"/> <!-- haunted blade -->
+	<item id="7413"  chance="4000"/> <!-- titan axe -->
+	<item id="7451"  chance="350"/> <!-- shadow sceptre -->
+	<item id="7454"  chance="4000"/> <!-- glorious axe -->
+	<item id="7591"  chance="10000"/> <!-- great health potion -->
+	<item id="7885"  chance="70"/> <!-- terra legs -->
+	<item id="7886"  chance="4000"/> <!-- terra boots -->
+	<item id="22396"  chance="4000"/> <!-- cluster of solace -->
+	<item id="22534"  chance="10000"/> <!-- silencer claws -->
+	<item id="22535"  chance="350"/> <!-- silencer resonating chamber -->
 </loot>
 </monster>
