@@ -20,7 +20,7 @@
 	<attacks>
 		<attack name="melee" interval="2000" skill="30" attack="80"/>
 		<attack name="poison" interval="2000" chance="50" range="1" target="1" min="-60" max="-80">
-			<attribute key="shootEffect" value="posion"/>
+			<attribute key="shootEffect" value="poison"/>
 		</attack>
 		<attack name="poisoncondition" interval="1000" chance="30" range="3"  target="0" min="-100" max="-260">
 			<attribute key="shootEffect" value="poison"/>
@@ -30,7 +30,8 @@
 			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
 		<attack name="ice" interval="2000" chance="30" range="7" radius="3" target="1" min="85" max="150">
-			<attribute key="areaEffect" value="ice"/>
+			<attribute key="areaEffect" value="icearea"/>
+			<attribute key="shootEffect" value="ice"/>
 		</attack>
 	</attacks>
 	<defenses armor="20" defense="22">
