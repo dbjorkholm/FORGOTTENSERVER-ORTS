@@ -5,17 +5,29 @@ local teleport = {
 	[3106] = {action = 0, {x = 32894, y = 31046, z = 9}},
 }
 
+local soil = {8302, 8303, 8298, 8299}
+local count = 0
+
 function onStepIn(cid, item, position, lastPosition)
 	if(teleport[item.uid].action == 1) then
-		if(getTileItemById(teleport[item.uid][3], 8303).uid > 0) then
-			doRemoveItem(getTileItemById(teleport[item.uid][3], 8303).uid, 1)
-			doTeleportThing(cid, teleport[item.uid][2])
-			doSendMagicEffect(teleport[item.uid][2], CONST_ME_TELEPORT)
+		for _, i in pairs(soil) do
+			count = getTileItemById(teleport[item.uid][2], i).uid
+			if(count > 0) then
+				break
+			end
+		end
+		if(count > 0) then
+			doRemoveItem(count, 1)
+			doTeleportThing(cid, teleport[item.uid][1])
+			doSendMagicEffect(teleport[item.uid][1], CONST_ME_TELEPORT)
 		else
 			doTeleportThing(cid, lastPosition)
 			doSendMagicEffect(lastPosition, CONST_ME_ENERGY)
-			doCreatureSay(cid, "You may not enter without a sacrifice of a energy soil.", TALKTYPE_ORANGE_1)
+			doCreatureSay(cid, "You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
 		end
+	else
+		doTeleportThing(cid, teleport[item.uid][1])
+		doSendMagicEffect(teleport[item.uid][1], CONST_ME_ENERGY)
 	end
 	return true
 end
