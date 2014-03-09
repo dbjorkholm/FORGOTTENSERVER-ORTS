@@ -43,23 +43,24 @@
 		<voice sentence="Knorrrr!"/>
 	</voices>     
   <loot>
- 	 <item id="2148" countmax="100" chance="30000"/>  
- 	 <item id="2152" countmax="10" chance="33333"/>
- 	 <item id="7590" countmax="4" chance="3100"/>
- 	 <item id="5880" countmax="2" chance="2195"/>
- 	 <item id="8473" countmax="2" chance="2195"/>
- 	 <item id="18435" countmax="8" chance="366"/>
- 	 <item id="2144" countmax="1" chance="866"/>
- 	 <item id="2143" countmax="1" chance="866"/>
-        <item id="18390" chance="1766"/>     
-        <item id="18412" chance="1066"/>          
-        <item id="2477" chance="444"/>
-        <item id="9980" chance="1066"/>
-        <item id="2393" chance="422"/>
-        <item id="11227" chance="1032"/>
-        <item id="5904" chance="632"/>
-        <item id="2487" chance="632"/>
-        <item id="18453" chance="603"/>
-        <item id="18450" chance="603"/>
+	<item id="2148"  countmax="85"  chance="10000"/> <!-- gold coin -->
+	<item id="2152"  countmax="8"  chance="10000"/> <!-- platinum coin -->
+	<item id="2167"  chance="10000"/> <!-- energy ring -->
+	<item id="2168"  chance="10000"/> <!-- life ring -->
+	<item id="2214"  chance="10000"/> <!-- ring of healing -->
+	<item id="5911"  chance="350"/> <!-- red piece of cloth -->
+	<item id="5913"  chance="10000"/> <!-- brown piece of cloth -->
+	<item id="5914"  chance="10000"/> <!-- yellow piece of cloth -->
+	<item id="7590"  countmax="3"  chance="10000"/> <!-- great mana potion -->
+	<item id="7886"  chance="10000"/> <!-- terra boots -->
+	<item id="8472"  countmax="2"  chance="10000"/> <!-- great spirit potion -->
+	<item id="8473"  countmax="3"  chance="10000"/> <!-- ultimate health potion -->
+	<item id="8902"  chance="10000"/> <!-- spellbook of mind control -->
+	<item id="18415"  chance="10000"/> <!-- green crystal shard -->
+	<item id="18417"  countmax="2"  chance="10000"/> <!-- brown crystal splinter -->
+	<item id="18418"  chance="10000"/> <!-- blue crystal splinter -->
+	<item id="22396"  chance="70"/> <!-- cluster of solace -->
+	<item id="22536"  chance="10000"/> <!-- dead weight -->
+	<item id="22540"  chance="10000"/> <!-- hemp rope -->
 </loot>
 </monster>
