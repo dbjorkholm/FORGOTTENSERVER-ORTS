@@ -13,7 +13,7 @@ local t = {
 	[9067] = {id = 13},
 	[9068] = {id = 14},
 	[9240] = {id = 28},
-	[9241] = {id = 29}
+	[9500] = {id = 29}
 }
 function onStepIn(cid, item, position, fromPosition)
 	local town = t[item.uid]
