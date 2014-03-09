@@ -213,3 +213,12 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+config.lua
+iconv.dll
+libeay32.dll
+libmysql.dll
+libxml2.dll
+lua51.dll
+sqlite.dll
+tfs.exe
+zlib1.dll
