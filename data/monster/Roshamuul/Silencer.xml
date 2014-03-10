@@ -43,7 +43,7 @@
 		<voice sentence="Knorrrr!"/>
 	</voices>     
   <loot>
-	<item id="2148"  countmax="100"  chance="10000"/> <!-- gold coin -->
+	<item id="2148"  countmax="100"  chance="20000"/> <!-- gold coin -->
 	<item id="2152"  countmax="8"  chance="10000"/> <!-- platinum coin -->
 	<item id="2165"  chance="4000"/> <!-- stealth ring -->
 	<item id="2195"  chance="70"/> <!-- boots of haste -->
