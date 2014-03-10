@@ -43,18 +43,18 @@
 		<voice sentence="Knorrrr!"/>
 	</voices>     
 	<loot>
-		<item id="2148"  countmax="100"  chance="10000"/> <!-- gold coin -->
+		<item id="2148"  countmax="100"  chance="20000"/> <!-- gold coin -->
 		<item id="2152"  countmax="7"  chance="10000"/> <!-- platinum coin -->
-		<item id="2392"  chance="10000"/> <!-- fire sword -->
-		<item id="2519"  chance="10000"/> <!-- crown shield -->
-		<item id="2528"  chance="10000"/> <!-- tower shield -->
+		<item id="2392"  chance="7000"/> <!-- fire sword -->
+		<item id="2519"  chance="7000"/> <!-- crown shield -->
+		<item id="2528"  chance="7000"/> <!-- tower shield -->
 		<item id="2789"  countmax="2"  chance="10000"/> <!-- brown mushroom -->
-		<item id="3962"  chance="10000"/> <!-- beastslayer axe -->
-		<item id="7386"  chance="10000"/> <!-- mercenary sword -->
+		<item id="3962"  chance="7000"/> <!-- beastslayer axe -->
+		<item id="7386"  chance="6000"/> <!-- mercenary sword -->
 		<item id="7590"  chance="10000"/> <!-- great mana potion -->
 		<item id="7591"  chance="10000"/> <!-- great health potion -->
-		<item id="8910"  chance="10000"/> <!-- underworld rod -->
-		<item id="8920"  chance="10000"/> <!-- wand of starstorm -->
+		<item id="8910"  chance="7000"/> <!-- underworld rod -->
+		<item id="8920"  chance="7000"/> <!-- wand of starstorm -->
 		<item id="22396"  chance="70"/> <!-- cluster of solace -->
 		<item id="22539"  chance="10000"/> <!-- goosebump leather -->
 		<item id="22541"  chance="10000"/> <!-- pool of chitinous glue -->
