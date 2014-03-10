@@ -30108,6 +30108,18 @@
 		<attribute key="floorchange" value="south"/>
 	</item>
 	
+	<item id="22134" article="a" name="instable vortex">
+		<attribute key="description" value="This vortex seems suck you right in.." />
+	</item>
+	
+	<item id="22133" article="a" name="instable vortex">
+		<attribute key="description" value="This vortex seems suck you right in.." />
+	</item>
+	
+	<item id="22137" article="a" name="large vortex"/>
+	<item id="22138" article="a" name="strange vortex"/>
+	<item id="22139" article="a" name="tiny vortex"/>
+	
 	<item id="30001" name="water" />
 	<item id="30002" name="blood" />
 	<item id="30003" name="beer" />
