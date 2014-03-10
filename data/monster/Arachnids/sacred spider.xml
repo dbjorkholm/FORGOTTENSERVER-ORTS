@@ -29,10 +29,11 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element energyPercent="10"/>
-		<element firePercent="-15"/>
-		<element icePercent="-10"/>
+		<element firePercent="-5"/>
 	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
 	<loot>
 		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
 		<item id="2148" countmax="19" chance="100000"/><!-- gold coin -->

@@ -50,16 +50,17 @@
 	</attacks>
 	<defenses armor="5" defense="35"/>
 	<elements>
-		<element deathPercent="100"/>
-		<element earthPercent="100"/>
-		<element firePercent="100"/>
-		<element physicalPercent="10"/>
-		<element icePercent="8"/>
-		<element holyPercent="-20"/>
+		<element physicalPercent="5"/>
+		<element icePercent="50"/>
+		<element holyPercent="-25"/>
 	</elements>
 	<immunities>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
+		<immunity death="1"/>
+		<immunity earth="1"/>
+		<immunity fire="1"/>
+		<immunity lifedrain="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="FEEEED MY ETERNAL HUNGER!" yell="1"/>
@@ -92,5 +93,6 @@
 		<item id="2466" chance="650"/><!-- golden armor -->
 		<item id="5741" chance="300"/><!-- skull helmet -->
 		<item id="8885" chance="200"/><!-- divine plate -->
+		<item id="8889" chance="120"/><!-- Skullcracker Armor -->
 	</loot>
 </monster>
