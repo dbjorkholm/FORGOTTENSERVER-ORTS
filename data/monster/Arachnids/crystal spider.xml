@@ -34,8 +34,6 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="100"/>
-		<element icePercent="100"/>
 		<element earthPercent="20"/>
 		<element energyPercent="-20"/>
 	</elements>
@@ -44,6 +42,8 @@
 		<immunity outfit="1"/>
 		<immunity drunk="1"/>
 		<immunity invisible="1"/>
+		<immunity fire="1"/>
+		<immunity ice="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
 		<voice sentence="Screeech!"/>

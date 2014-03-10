@@ -38,13 +38,13 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element energyPercent="100"/>
 		<element physicalPercent="-10"/>
 		<element earthPercent="-10"/>
 	</elements>
 	<immunities>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
+		<immunity energy="1"/>
 	</immunities>
 	<loot>
 		<item id="2148" countmax="90" chance="33750"/><!-- gold coin -->
