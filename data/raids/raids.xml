@@ -51,7 +51,7 @@
 	<raid name="Lizards" file="new/lizards.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
 	<raid name="Minos" file="new/minotaurs.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
 	<raid name="MNW" file="new/mnw.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
-	<raid name="Necromacer" file="new/necromacer.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
+	<raid name="Necromancer" file="new/necromancer.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
 	<raid name="Nomads" file="new/nomads.xml" interval2="150" chance="1" margin="60" enabled="yes"/>
 	<raid name="Orcs" file="new/orcs.xml" interval2="150" chance="10" margin="60" enabled="yes"/>
 	<raid name="Orcss" file="new/orcs2.xml" interval2="150" chance="10" margin="60" enabled="yes"/>
