@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local p = Player(cid)
 	local c = Creature(cid)
 	local i = Item(item.uid)
-	if(item.uid == 2215) then
+	if(item.uid == 2216) then
 		if(p:getStorageValue(2216) < 1) then
 			if(item.itemid == 5114) then
 				c:teleportTo(toPosition, true)
