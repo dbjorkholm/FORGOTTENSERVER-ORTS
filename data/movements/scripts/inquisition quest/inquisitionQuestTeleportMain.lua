@@ -1,5 +1,5 @@
 local teleports2 = {
-	[2150] = {text = "Entering Ushuriel's ward.", newPos = {x = 33158, y = 31728, z = 11}}, -- to ushuriel ward
+	[2150] = {text = "Entering Ushuriel's ward.", newPos = {x = 33158, y = 31728, z = 11}, storage = 1}, -- to ushuriel ward
 }
 
 local teleports = {
