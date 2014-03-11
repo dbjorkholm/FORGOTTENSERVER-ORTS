@@ -19,17 +19,21 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-100"/>
-		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-150" max="-250">
+		<attack name="melee" interval="2000" min="-0" max="-60"/>
+		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-0" max="-80">
 			<attribute key="areaEffect" value="yellowenergy"/>
 			<attribute key="shootEffect" value="suddendeath"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-150" max="-250">
+		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-0" max="-90">
 			<attribute key="areaEffect" value="purpleenergy"/>
 			<attribute key="shootEffect" value="suddendeath"/>
 		</attack>
 	</attacks>
-	<defenses armor="34" defense="36"/>
+	<defenses armor="34" defense="36">
+		<defense name="healing" interval="1000" chance="10" min="35" max="65">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
 		<element firePercent="70"/>
 		<element physicalPercent="-25"/>
