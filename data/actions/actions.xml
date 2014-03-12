@@ -144,11 +144,11 @@
 	<action actionid="26100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="27100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="28100" script="svargrond arena quest/arena_door.lua"/>
+	
 	<action uniqueid="26300" script="svargrond arena quest/arena_reward.lua"/>
 	<action uniqueid="26400" script="svargrond arena quest/arena_reward.lua"/>
 	<action uniqueid="26500" script="svargrond arena quest/arena_reward.lua"/>
 	<action uniqueid="26600" script="svargrond arena quest/arena_reward.lua"/>
-
 	<action uniqueid="26700" script="svargrond arena quest/arena_reward.lua"/>
 	<action uniqueid="27000" script="svargrond arena quest/arena_reward.lua"/>
 	<action uniqueid="27300" script="svargrond arena quest/arena_reward.lua"/>
