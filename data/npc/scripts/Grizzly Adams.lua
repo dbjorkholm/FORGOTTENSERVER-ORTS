@@ -1,4 +1,5 @@
 dofile('data/lib/killingInTheNameOfQuest.lua')
+--dofile('data/lib/StorageList.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -60,60 +61,60 @@ function greetCallback(cid)
 end
 
 local function setNewTradeTable(table)
-local items = {}
-for _, v in ipairs(table) do
-	items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
-end
-return items
+	local items = {}
+	for _, v in ipairs(table) do
+		items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
+	end
+	return items
 end
 
 local function setNewLineTable(oldTable, newTable)
-for k, v in pairs(oldTable) do
-	table.insert(newTable, k, v)
-end
-return true
+	for k, v in pairs(oldTable) do
+		table.insert(newTable, k, v)
+	end
+	return true
 end
 
 function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_PRIVATE and 0 or cid
-if (msgcontains(msg, "hi") or msgcontains(msg, "hello")) and (not npcHandler:isFocused(cid)) then
-if (getPlayerStorageValue(cid, 100157) == -1) then
-        npcHandler:say("Welcome "..getCreatureName(cid)..". Would you like to join the 'Paw and Fur - Hunting Elite'?", cid)
-		npcHandler:addFocus(cid)
-		talkState[talkUser] = 5
-  else
-        npcHandler:say("Welcome back old chap. What brings you here this time?", cid)
-        npcHandler:addFocus(cid)
-        talkState[talkUser] = 0
+	if (msgcontains(msg, "hi") or msgcontains(msg, "hello")) and (not npcHandler:isFocused(cid)) then
+		if (getPlayerStorageValue(cid, JOIN_STOR) == -1) then
+			npcHandler:say("Welcome "..getCreatureName(cid)..". Would you like to join the 'Paw and Fur - Hunting Elite'?", cid)
+			npcHandler:addFocus(cid)
+			talkState[talkUser] = 5
+		else
+			npcHandler:say("Welcome back old chap. What brings you here this time?", cid)
+			npcHandler:addFocus(cid)
+			talkState[talkUser] = 0
+			end
+			return true
 		end
-		return true
-	end
- 
-	if(not npcHandler:isFocused(cid)) then
-		return false
-	end
-	
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		selfSay("Happy hunting, old chap!", cid, TRUE)
-		Topic[talkUser] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
-	
-	if (isInArray({"yes", "join"}, msg:lower()) and talkState[talkUser] == 5) then 
-	    setPlayerStorageValue(cid, 100157, 1)
-	    npcHandler:say("Great! A warm welcome to our newest member: "..getCreatureName(cid).."! Ask me for a {task} if you want to go on a hunt.", cid)
-	    talkState[talkUser] = 0
-   elseif (msg:lower() == "no" and talkState[talkUser] == 5) then
-        npcHandler:say("No problem old chap. Come back if you change your mind.", cid)  
-   end
+	 
+		if(not npcHandler:isFocused(cid)) then
+			return false
+		end
+		
+		if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+			selfSay("Happy hunting, old chap!", cid, TRUE)
+			Topic[talkUser] = 0
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
+		end
+		
+		if (isInArray({"yes", "join"}, msg:lower()) and talkState[talkUser] == 5) then 
+			setPlayerStorageValue(cid, JOIN_STOR, 1)
+			npcHandler:say("Great! A warm welcome to our newest member: "..getCreatureName(cid).."! Ask me for a {task} if you want to go on a hunt.", cid)
+			talkState[talkUser] = 0
+		elseif (msg:lower() == "no" and talkState[talkUser] == 5) then
+			npcHandler:say("No problem old chap. Come back if you change your mind.", cid)  
+		end
 
-if (getPlayerStorageValue(cid, 100157) == -1) then
-	npcHandler:say("You'll have to {join} us to get more information.",cid)
+		if (getPlayerStorageValue(cid, JOIN_STOR) == -1) then
+				npcHandler:say("You'll have to {join} us to get more information.",cid)
 	return false
 end
 if isInArray({"offer", "trade"}, msg:lower()) then
-if getPlayerRank(cid) >= 2 then 
+	if getPlayerRank(cid) >= 2 then 
 		if getPlayerRank(cid) == 2 or getPlayerRank(cid) == 3 then
 			tradeRank = grizzlyAdamsConfig.ranks.huntsMan_rank
 		elseif getPlayerRank(cid) == 4 then
@@ -125,7 +126,7 @@ if getPlayerRank(cid) >= 2 then
 			setNewLineTable(grizzlyAdamsConfig.ranks.huntsMan_rank, grizzlyAdamsConfig.ranks.trophyHunter_rank)
 		end
 		local items = setNewTradeTable(tradeRank)
-			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeightById(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeightById(items[item].itemId, amount) + getItemWeightById(1988, 1))) then
 				return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You don\'t have enough cap.')
 			end
@@ -144,14 +145,14 @@ if getPlayerRank(cid) >= 2 then
 			return true
 			end
 			 
-			local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
+		local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if items[item].sellPrice then
 				doPlayerAddMoney(cid, items[item].sellPrice * amount)
 				doPlayerRemoveItem(cid, items[item].itemId, amount)
 				return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
 			end
 			return true
-			end
+		end
 		openShopWindow(cid, tradeRank, onBuy, onSell)
 		return selfSay('It\'s my offer.', cid)
 	else
@@ -161,7 +162,7 @@ end
  
 	if isInArray({"tasks", "task", "mission"}, msg:lower()) then
 		local can = getTasksByPlayer(cid)
-		if (getPlayerStorageValue(cid, 100157) == -1) then
+		if (getPlayerStorageValue(cid, JOIN_STOR) == -1) then
  	        return (npcHandler:say("You'll have to {join}, to get any {tasks}.",cid))
         end
 		if #can > 0 then
@@ -197,6 +198,7 @@ end
 		talkState[talkUser] = 1
 	elseif msg:lower() == "yes" and talkState[talkUser] == 1 then
 		setPlayerStorageValue(cid, QUESTSTORAGE_BASE + choose[cid], 1)
+		setPlayerStorageValue(cid, KILLSSTORAGE_BASE + choose[cid], 0)
 		selfSay("Excellent! You can check the {status} of your task saying {report} to me. Also you can {cancel} tasks to.", cid)
 		choose[cid] = nil
 		talkState[talkUser] = 0	
