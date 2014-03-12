@@ -1,4 +1,4 @@
--- Script by Nottinghster
+-- Script by Viperthepala
 function onUse(cid, item, frompos, item2, topos)
 
 local event = 0
