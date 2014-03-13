@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Skjaar" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Skjaar" script="Skjaar.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="9" head="20" body="30" legs="40" feet="50" addons="0" />
+  <parameters>
+    <parameter key="message_greet" value="It's good to see somebody who has chosen the path of wisdom. What do you want?" />
+    <parameter key="message_farewell" value="Well, bye.." />
+    <parameter key="message_walkaway" value="Run away, unworthy player!" />
+  </parameters>
 </npc>
