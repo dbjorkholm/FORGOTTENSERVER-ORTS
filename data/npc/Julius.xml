@@ -4,7 +4,7 @@
   <look type="289" head="114" body="114" legs="114" feet="113" addons="3" />
 <parameters>
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="i,10601,275;" />
+		<parameter key="shop_sellable" value="blood preservation,12405,320;vampire teeth,10602,275;" />
         <parameter key="message_greet" value="Ohh Welcome |PLAYERNAME|!"/>
         <parameter key="message_farewell" value="Take care, |PLAYERNAME|."/>
 		<parameter key="message_walkaway" value="Take care, |PLAYERNAME|." />
