@@ -1,11 +1,14 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
+	local orig = Position(fromPosition)
+	local item = Item(item.uid)
 	if math.random(1, 6) == 1 then
-		doSendMagicEffect(fromPosition, CONST_ME_POFF)
-		doPlayerAddItem(cid, ITEM_GOLD_COIN, 1)
-		doTransformItem(item.uid, 2115)
+		orig:sendMagicEffect(CONST_ME_POFF)
+		player:addItem(ITEM_GOLD_COIN, 1)
+		item:transform( 2115)
 	else
-		doSendMagicEffect(fromPosition, CONST_ME_SOUND_YELLOW)
-		doPlayerAddItem(cid, ITEM_PLATINUM_COIN, 1)
+		orig:sendMagicEffect(CONST_ME_SOUND_YELLOW)
+		player:addItem(ITEM_PLATINUM_COIN, 1)
 	end
-	return TRUE
+	return true
 end
