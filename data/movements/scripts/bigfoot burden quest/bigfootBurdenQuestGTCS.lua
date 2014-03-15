@@ -23,7 +23,6 @@ function onStepIn(cid, item, position, lastPosition)
 	local v = destination[item.actionid]
 	local p = Player(cid)
 	local c = Creature(cid)
-	local i = Item(item.uid)
 	local crystalID = 18457 -- Teleport crystal id
 	if(p) then
 		if(v) then
@@ -32,8 +31,9 @@ function onStepIn(cid, item, position, lastPosition)
 					if(p:getItemCount(crystalID) >= 1) then
 						c:teleportTo(v.pos)
 						c:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-						i:remove(crystalId, 1)
+						doPlayerRemoveItem(cid, crystalID, 1)
 					else
+						c:teleportTo(lastPosition)
 						p:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need a teleport crystal to use this device.")
 					end
 				else
