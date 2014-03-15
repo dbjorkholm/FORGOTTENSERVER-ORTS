@@ -31,7 +31,7 @@ function onStepIn(cid, item, position, lastPosition)
 						player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 						player:teleportTo(v.pos)
 						player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-						doPlayerRemoveItem(cid, crystalID, 1)
+						player:removeItem(crystalID, 1)
 					else
 						player:teleportTo(lastPosition)
 						player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
@@ -39,7 +39,7 @@ function onStepIn(cid, item, position, lastPosition)
 					end
 				else
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					player:teleportTo(v.pos)
+					player:teleportTo(aid.pos)
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 				end
 			else
