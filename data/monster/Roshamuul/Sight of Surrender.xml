@@ -43,28 +43,29 @@
 		<voice sentence="Knorrrr!"/>
 	</voices>     
   <loot>
-	<item id="2152"  countmax="15"  chance="10000"/> <!-- platinum coin -->
-	<item id="2164"  chance="10000"/> <!-- might ring -->
-	<item id="2197"  chance="10000"/> <!-- stone skin amulet -->
-	<item id="2444"  chance="350"/> <!-- hammer of wrath -->
-	<item id="2445"  chance="350"/> <!-- crystal mace -->
-	<item id="2472"  chance="350"/> <!-- magic plate armor -->
-	<item id="2497"  chance="350"/> <!-- crusader helmet -->
-	<item id="2528"  chance="350"/> <!-- tower shield -->
-	<item id="2645"  chance="350"/> <!-- steel boots -->
-	<item id="7421"  chance="350"/> <!-- onyx flail -->
-	<item id="7422"  chance="350"/> <!-- jade hammer -->
-	<item id="7590"  countmax="5"  chance="10000"/> <!-- great mana potion -->
-	<item id="8472"  countmax="5"  chance="10000"/> <!-- great spirit potion -->
-	<item id="8473"  countmax="5"  chance="10000"/> <!-- ultimate health potion -->
-	<item id="18413"  chance="10000"/> <!-- blue crystal shard -->
-	<item id="18414"  chance="10000"/> <!-- violet crystal shard -->
-	<item id="18415"  chance="10000"/> <!-- green crystal shard -->
-	<item id="18416"  countmax="3"  chance="10000"/> <!-- green crystal splinter -->
-	<item id="18417"  chance="10000"/> <!-- brown crystal splinter -->
-	<item id="18418"  chance="10000"/> <!-- blue crystal splinter -->
-	<item id="22396"  chance="10000"/> <!-- cluster of solace -->
-	<item id="22517"  chance="30000"/> <!-- sight of surrender's eye -->
-	<item id="22518"  chance="30000"/> <!-- broken visor -->
+		<item id="22518" 	chance="100000"/> 	<!-- broken visor -->
+		<item id="8472" 	countmax="5" 	chance="100000"/> 	<!-- great spirit potion -->
+		<item id="2152" 	countmax="20" 	chance="100000"/> 	<!-- platinum coin -->
+		<item id="22517" 	chance="100000"/> 	<!-- sight of surrender's eye -->
+		<item id="8473" 	countmax="5" 	chance="100000"/> 	<!-- ultimate health potion -->
+		<item id="18417" 	countmax="5" 	chance="76740"/> 	<!-- brown crystal splinter -->
+		<item id="18415" 	countmax="3" 	chance="57670"/> 	<!-- green crystal shard -->
+		<item id="7590" 	countmax="5" 	chance="100000"/> 	<!-- great mana potion -->
+		<item id="18413" 	countmax="3" 	chance="51160"/> 	<!-- blue crystal shard -->
+		<item id="2197" 	chance="13950"/> 	<!-- stone skin amulet -->
+		<item id="18416" 	countmax="5" 	chance="100000"/> 	<!-- green crystal splinter -->
+		<item id="18418" 	countmax="5" 	chance="100000"/> 	<!-- blue crystal splinter -->
+		<item id="18414" 	countmax="3" 	chance="54879"/> 	<!-- violet crystal shard -->
+		<item id="2645" 	chance="1859"/> 	<!-- steel boots -->
+		<item id="2445" 	chance="6980"/> 	<!-- crystal mace -->
+		<item id="22396" 	chance="3259"/> 	<!-- cluster of solace -->
+		<item id="7422" 	chance="470"/> 	<!-- jade hammer -->
+		<item id="2164" 	chance="5580"/> 	<!-- might ring -->
+		<item id="2488" 	chance="470"/> 	<!-- crown legs -->
+		<item id="2497" 	chance="470"/> 	<!-- crusader helmet -->
+		<item id="2472" 	chance="470"/> 	<!-- magic plate armor -->
+		<item id="7421" 	chance="1859"/> 	<!-- onyx flail -->
+		<item id="2528" 	chance="929"/> 	<!-- tower shield -->
+		<item id="2444" 	chance="929"/> 	<!-- hammer of wrath -->
 </loot>
 </monster>
