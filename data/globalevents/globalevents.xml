@@ -26,4 +26,9 @@
 	
 	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
 	<globalevent name="Server Save" time="09:55:00" script="serversave.lua"/>
+	
+	<!-- Site -->
+<!--	
+	<globalevent name="website_shop_item_delivery" interval="30000" script="shop.lua"/>
+-->
 </globalevents>
