@@ -648,6 +648,10 @@
 	<monster name="Priestess" file="Necromancers/priestess.xml"/>
 
 	<!-- Orcs -->
+		<!-- Raid -->
+		<monster name="Orcarmor" file="Orcs/Raid/Orcarmor.xml"/>
+		<monster name="Orchelmet" file="Orcs/Raid/Orchelmet.xml"/>
+		<monster name="Orcshield" file="Orcs/Raid/Orcshield.xml"/>
 	<monster name="Orc Berserker" file="Orcs/orc berserker.xml"/>
 	<monster name="Orc Leader" file="Orcs/orc leader.xml"/>
 	<monster name="Orc Rider" file="Orcs/orc rider.xml"/>
