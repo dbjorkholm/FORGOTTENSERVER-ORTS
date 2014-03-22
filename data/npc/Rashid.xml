@@ -4,215 +4,36 @@
   <look type="146" head="100" body="100" legs="119" feet="115" addons="2" />
   <parameters>
     <parameter key="message_greet" value="Ah, a customer! Be greeted, |PLAYERNAME|!" />
-<parameter key="message_sendtrade" value="Take all the time you need to decide what you want!" />
-<parameter key="message_needmoremoney" value="You dont have not enough of gold." />
-<parameter key="message_decline" value="|TOTALCOST| is a very good price |PLAYERNAME|." />
-<parameter key="message_farewell" value="Farewell, |PLAYERNAME|, may the winds guide your way." />
-<parameter key="message_walkaway" value="Come back soon!" />
-<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|!" />
+	<parameter key="message_sendtrade" value="Take all the time you need to decide what you want!" />
+	<parameter key="message_needmoremoney" value="You dont have not enough of gold." />
+	<parameter key="message_decline" value="|TOTALCOST| is a very good price |PLAYERNAME|." />
+	<parameter key="message_farewell" value="Farewell, |PLAYERNAME|, may the winds guide your way." />
+	<parameter key="message_walkaway" value="Come back soon!" />
+	<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|!" />
 
-<parameter key="module_keywords" value="1" />
-<parameter key="keywords" value="job;name;offers;ab\'dendriel;desert;karmia;cormaya;darashia;premy island;bibula;greenshore;moria;blood bay;northport;port hope;senja;svargrond;thalia;vega;venore;time;king" />
-<parameter key="keyword_reply1" value="I am a travelling trader. I don't buy everything, though. And not from everyone, for that matter." />
-<parameter key="keyword_reply2" value="I am Rashid, son of the desert." />
-<parameter key="keyword_reply3" value="Of course, old friend. You can also browse only armor, legs, shields, helmets, boots, weapons, enchanted weapons, jewelry or miscellaneous stuff." />
-<parameter key="keyword_reply4" value="Elves... I don't really trust them. All this talk about nature and flowers and treehugging... I'm sure there's some wicked scheme behind all this." />
-<parameter key="keyword_reply5" value="My beloved hometown! Ah, the sweet scent of the desert sands, the perfect shape of the pyramids... stunningly beautiful." />
-<parameter key="keyword_reply6" value="I have to go to Karmia once in a while, since the queen wishes to see my exclusive wares in regular intervals." />
-<parameter key="keyword_reply7" value="Cormaya? Not a good place to make business, it's way too far and small." />
-<parameter key="keyword_reply8" value="It's not the real thing, but almost as good. The merchants there claim ridiculous prices, which is fine for my own business." />
-<parameter key="keyword_reply9" value="Ah yes, Premy Island! Such a lovely and quiet island! I usually make some nice business there." />
-<parameter key="keyword_reply10" value="Too few customers there, it's not worth the trip." />
-<parameter key="keyword_reply11" value="Um... I don't think so." />
-<parameter key="keyword_reply12" value="I don't like being underground much. I also tend to get lost in these labyrinthine dwarven tunnels, so I rather avoid them." />
-<parameter key="keyword_reply13" value="When you avoid the slums, it's a really pretty city. Almost as pretty as the governor's daughter." />
-<parameter key="keyword_reply14" value="Um... I don't think so." />
-<parameter key="keyword_reply15" value="I like the settlement itself, but I don't set my foot into the jungle. Have you seen the size of these centipedes??" />
-<parameter key="keyword_reply16" value="Um... I don't think so." />
-<parameter key="keyword_reply17" value="I wish it was a little bit warmer there, but with a good mug of barbarian mead in your tummy everything gets a lot cosier." />
-<parameter key="keyword_reply18" value="I feel uncomfortable and rather unsafe in Thalia, so I don't really travel there." />
-<parameter key="keyword_reply19" value="Um... I don't think so." />
-<parameter key="keyword_reply20" value="Although it's the flourishing trade centre of Tibia, I don't like going there. Too much competition for my taste." />
-<parameter key="keyword_reply21" value="It's almost time to journey on." />
-<parameter key="keyword_reply22" value="Kings, queens, emperors and kaliphs... everyone claims to be different and unique, but actually it's the same thing everywhere." />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="Abyss Hammer,7414,20000;
-Amber Staff,7426,8000;
-Ancient Amulet,2142,200;
-Assassin Dagger,7404,20000;
-Royal Helmet,2498,30000;
-Bandana,5917,150;
-Beastslayer axe,3962,1500;
-Beetle Necklace,11374,1500;
-Berserker,7403,40000;
-Blacksteel Sword,7406,6000;
-Blessed Sceptre,7429,40000;
-Bone Shield,2541,80;
-Bonelord Helmet,3972,7500;
-Brutetamer's Staff,7379,1500;
-Buckle,20109,7000;
-Castle Shield,2535,5000;
-Chain Bolter,8850,40000;
-Chaos Mace,7427,9000;
-Cobra Crown,12630,50000;
-Coconut Shoes,9931,500;
-Composite Hornbow,8855,25000;
-Cranial Basher,7415,30000;
-Crocodile Boots,3982,1000;
-Crystal Crossbow,18453,35000;
-Crystal Mace,2445,12000;
-Crystal Necklace,2125,400;
-Crystal Ring,2124,250;
-Crystal Sword,7449,600;
-Crystalline Armor,8878,16000;
-Daramian Mace,2439,110;
-Daramian Waraxe,2440,1000;
-Dark Shield,2521,400;
-Death Ring,6300,1000;
-Demon Shield,2520,30000;
-Demonbone Amulet,2136,32000;
-Demonrage Sword,7382,36000;
-Devil Helmet,2462,1000;
-Diamond Sceptre,7387,3000;
-Divine Plate,8885,55000;
-Djinn Blade,2451,15000;
-Doll,2110,200;
-Dragon Scale Mail,2492,40000;
-Dragon Slayer,7402,15000;
-Dragonbone Staff,7430,3000;
-Dreaded Cleaver,7419,10000;
-Dwarven Armor,2503,30000;
-Earth Cranial Basher,7866,30000;
-Earth Dragon Slayer,7858,15000;
-Earth Headchopper,7862,6000;
-Earth Heroic axe,7861,30000;
-Earth Mystic Blade,7856,30000;
-Earth Orcish Maul,7867,6000;
-Earth Relic Sword,7855,25000;
-Earth War axe,7863,12000;
-Elvish Bow,7438,2000;
-Emerald Bangle,2127,800;
-Energy Cranial Basher,7881,30000;
-Energy Dragon Slayer,7873,15000;
-Energy Headchopper,7877,6000;
-Energy Heroic axe,7876,30000;
-Energy Mystic Blade,7871,30000;
-Energy Orcish Maul,7882,6000;
-Energy Relic Sword,7870,25000;
-Energy War axe,7878,12000;
-Epee,2438,8000;
-Fiery Cranial Basher,7756,30000;
-Fiery Dragon Slayer,7748,15000;
-Fiery Headchopper,7752,6000;
-Fiery Heroic axe,7751,30000;
-Fiery Mystic Blade,7746,30000;
-Fiery Orcish Maul,7757,6000;
-Fiery Relic Sword,7745,25000;
-Fiery War axe,7753,12000;
-Flower Dress,9929,1000;
-Flower Wreath,9927,500;
-Fur Boots,7457,2000;
-Furry Club,7432,1000;
-Glacier Amulet,7888,1500;
-Glacier Kilt,7896,11000;
-Glacier Mask,7902,2500;
-Glacier Robe,7897,11000;
-Glacier Shoes,7892,2500;
-Gold Ring,2179,8000;
-Golden Armor,2466,20000;
-Golden Legs,2470,30000;
-Guardian Halberd,2427,11000;
-Hammer of Wrath,2444,30000;
-Headchopper,7380,6000;
-Heavy Mace,2452,50000;
-Heavy Machete,2442,90;
-Heavy Trident,13838,2000;
-Helmet of the Lost,20132,2000;
-Heroic axe,7389,30000;
-Hibiscus Dress,8873,3000;
-Icy Blacksteel Sword,7766,6000;
-Icy Cranial Basher,7775,30000;
-Icy Dragon Slayer,7767,15000;
-Icy Headchopper,7771,6000;
-Icy Heroic axe,7770,30000;
-Icy Mystic Blade,7765,30000;
-Icy Orcish Maul,7776,6000;
-Icy Relic Sword,7764,25000;
-Icy War axe,7772,12000;
-Jade Hammer,7422,25000;
-Krimhorn Helmet,7461,200;
-Lavos Armor,8877,16000;
-Leaf Legs,9928,500;
-Leopard Armor,3968,1000;
-Leviathan's Amulet,10220,3000;
-Light Shovel,5710,300;
-Lightning Boots,7893,2500;
-Lightning Headband,7901,2500;
-Lightning Legs,7895,11000;
-Lightning Pendant,7889,1500;
-Lightning Robe,7898,11000;
-Lunar Staff,7424,5000;
-Magic Plate Armor,2472,90000;
-Magma Amulet,7890,1500;
-Magma Boots,7891,2500;
-Magma Coat,7899,11000;
-Magma Legs,7894,11000;
-Magma Monocle,7900,2500;
-Mammoth Fur Cape,7463,6000;
-Mammoth Fur Shorts,7464,850;
-Mammoth Whopper,7381,300;
-Mastermind Shield,2514,50000;
-Medusa Shield,2536,9000;
-Mercenary Sword,7386,12000;
-Mycological Bow,18454,35000;
-Mystic Blade,7384,30000;
-Naginata,2426,2000;
-Nightmare Blade,7418,35000;
-Noble axe,7456,10000;
-Norse Shield,7460,1500;
-Orcish Maul,7392,6000;
-Pair of Iron Fists,20108,4000;
-Paladin Armor,8891,15000;
-Patched Boots,2641,2000;
-Pharaoh Sword,2446,23000;
-Pirate Boots,5462,3000;
-Pirate Hat,6096,1000;
-Pirate Knee Breeches,5918,200;
-Pirate Shirt,6095,500;
-Pirate Voodoo Doll,5810,500;
-Platinum Amulet,2171,2500;
-Ragnir Helmet,7462,400;
-Relic Sword,7383,25000;
-Ring of the Sky,2123,30000;
-Royal axe,7434,40000;
-Ruby Necklace,2133,2000;
-Ruthless axe,6553,45000;
-Sacred Tree Amulet,10219,3000;
-Sapphire Hammer,7437,7000;
-Scarab Amulet,2135,200;
-Scarab Shield,2540,2000;
-Shockwave Amulet,10221,3000;
-Silver Brooch,2134,150;
-Silver Dagger,2402,500;
-Skull Helmet,5741,40000;
-Skullcracker Armor,8889,18000;
-Spiked Squelcher,7452,5000;
-Steel Boots,2645,30000;
-Swamplair Armor,8880,16000;
-Taurus Mace,7425,500;
-Tempest Shield,2542,35000;
-Terra Amulet,7887,1500;
-Terra Boots,7886,2500;
-Terra Hood,7903,2500;
-Terra Legs,7885,11000;
-Terra Mantle,7884,11000;
-The Justice Seeker,7390,40000;
-Tortoise Shield,6131,150;
-Vile axe,7388,30000;
-Voodoo Doll,2322,400;
-War axe,2454,12000;
-War Horn,2079,8000;
-Witch Hat,10570,5000;
-Wyvern Fang,7408,1500"/>
-  </parameters>
+	<parameter key="module_keywords" value="1" />
+	<parameter key="keywords" value="job;name;offers;ab\'dendriel;desert;karmia;cormaya;darashia;premy island;bibula;greenshore;moria;blood bay;northport;port hope;senja;svargrond;thalia;vega;venore;time;king" />
+	<parameter key="keyword_reply1" value="I am a travelling trader. I don't buy everything, though. And not from everyone, for that matter." />
+	<parameter key="keyword_reply2" value="I am Rashid, son of the desert." />
+	<parameter key="keyword_reply3" value="Of course, old friend. You can also browse only armor, legs, shields, helmets, boots, weapons, enchanted weapons, jewelry or miscellaneous stuff." />
+	<parameter key="keyword_reply4" value="Elves... I don't really trust them. All this talk about nature and flowers and treehugging... I'm sure there's some wicked scheme behind all this." />
+	<parameter key="keyword_reply5" value="My beloved hometown! Ah, the sweet scent of the desert sands, the perfect shape of the pyramids... stunningly beautiful." />
+	<parameter key="keyword_reply6" value="I have to go to Karmia once in a while, since the queen wishes to see my exclusive wares in regular intervals." />
+	<parameter key="keyword_reply7" value="Cormaya? Not a good place to make business, it's way too far and small." />
+	<parameter key="keyword_reply8" value="It's not the real thing, but almost as good. The merchants there claim ridiculous prices, which is fine for my own business." />
+	<parameter key="keyword_reply9" value="Ah yes, Premy Island! Such a lovely and quiet island! I usually make some nice business there." />
+	<parameter key="keyword_reply10" value="Too few customers there, it's not worth the trip." />
+	<parameter key="keyword_reply11" value="Um... I don't think so." />
+	<parameter key="keyword_reply12" value="I don't like being underground much. I also tend to get lost in these labyrinthine dwarven tunnels, so I rather avoid them." />
+	<parameter key="keyword_reply13" value="When you avoid the slums, it's a really pretty city. Almost as pretty as the governor's daughter." />
+	<parameter key="keyword_reply14" value="Um... I don't think so." />
+	<parameter key="keyword_reply15" value="I like the settlement itself, but I don't set my foot into the jungle. Have you seen the size of these centipedes??" />
+	<parameter key="keyword_reply16" value="Um... I don't think so." />
+	<parameter key="keyword_reply17" value="I wish it was a little bit warmer there, but with a good mug of barbarian mead in your tummy everything gets a lot cosier." />
+	<parameter key="keyword_reply18" value="I feel uncomfortable and rather unsafe in Thalia, so I don't really travel there." />
+	<parameter key="keyword_reply19" value="Um... I don't think so." />
+	<parameter key="keyword_reply20" value="Although it's the flourishing trade centre of Tibia, I don't like going there. Too much competition for my taste." />
+	<parameter key="keyword_reply21" value="It's almost time to journey on." />
+	<parameter key="keyword_reply22" value="Kings, queens, emperors and kaliphs... everyone claims to be different and unique, but actually it's the same thing everywhere." />
+ </parameters>
 </npc>

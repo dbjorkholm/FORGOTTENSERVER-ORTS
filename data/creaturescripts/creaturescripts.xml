@@ -28,12 +28,16 @@
 	<event type="kill" name="killingInTheNameOfQuestKills" script="killing in the name of quest/killingInTheNameOfQuestKills.lua"/>
 	
 	<!-- The Masters Voice Quest -->
-	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
+	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua
+	
+	<!-- Storage Conversion -->
+	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua"/>
+
 
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
 

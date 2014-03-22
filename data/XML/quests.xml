@@ -64,6 +64,43 @@
         <mission name="Paw and Fur - Elite Hunting: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000" description="You've already slained |STATE|/4000 necromancers and priestess." />
         <mission name="Paw and Fur - Elite Hunting: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You've already slained |STATE|/1000 necromancers and priestess." />
 	</quest>
+	
+	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
+		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
+				<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
+				<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission> 
+		<mission name="Mission 2: Delivery" storageid="102" endvalue="5">
+				<missionstate id="1" description="Your mission is to get the package from Willard the weapon dealer at Edron."/>
+				<missionstate id="2" description="Willard forgot to pick it up from Snake Eye at Outlaw Camp. So he wants you to go and pick it up from Snake Eye."/>
+				<missionstate id="3" description="Take the package just next door."/>
+				<missionstate id="4" description="Now bring back the package to Rashid."/>
+				<missionstate id="5" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission> 
+		<mission name="Mission 3: Cheese" storageid="103" startvalue="1" endvalue="3">
+				<missionstate id="1" description="Rashid wants you to pick his special order from Miraia in Darashia. But you have to be quick, Scarab cheese can rot really fast in high temperature."/>
+				<missionstate id="2" description="Now quickly bring back the Scarab cheese to Rashid."/>
+				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission>
+		<mission name="Mission 4: Vase" storageid="104" startvalue="1" endvalue="3">
+				<missionstate id="1" description="Rashid have ordered a special elven vase from Briasol in Ab'Dendriel. He asks you to buy it from Briasol and bring it back.\nBut you should be carefully, since the vase is very fragile."/>
+				<missionstate id="2" description="Now carefully bring the vase back to Rashid."/>
+				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission> 
+		<mission name="Mission 5: Make a deal" storageid="105" startvalue="1" endvalue="3">
+				<missionstate id="1" description="This time, Rashid is testing your trading skills to buy a Crimson Sword from Uzgod. But it have to be less than 400 gold coins and the quality has to be perfect."/>
+				<missionstate id="2" description="Now bring the sword back to Rashid."/>
+				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission>  
+		<mission name="Mission 6: Goldfish" storageid="106" startvalue="1" endvalue="2">
+				<missionstate id="1" description="Rashid wants you to bring him a Goldfish Bowl."/>
+				<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
+		</mission> 
+		<mission name="Mission 7: Declare" storageid="107" startvalue="1" endvalue="1">
+				<missionstate id="1" description="Rashid has declare you as one of his recognized traders, and now you are able to trade with him anytime.."/>
+		</mission>
+	</quest>
+	
 	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
 		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Example description 1"/>
