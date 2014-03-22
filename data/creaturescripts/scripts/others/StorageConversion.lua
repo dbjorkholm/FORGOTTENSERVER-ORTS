@@ -5,6 +5,7 @@ dofile('data/lib/MissionSelect.lua')
 
 function onLogin(cid)
 	RashidConversion(cid)
+	return true
 end
 
 function RashidConversion(cid)
@@ -38,10 +39,10 @@ local list = {
 			[20] = {107, 1}
 }
 	local Old = 85
-	local Old.value = getPlayerStorageValue(cid, 85)
+	local OldValue = getPlayerStorageValue(cid, 85)
 	
-	if(Old.value > 0 and getPlayerStorageValue(cid, 107) < 0) then	
-		for i = 1, Old.value do
+	if(OldValue > 0 and getPlayerStorageValue(cid, 107) < 0) then	
+		for i = 1, OldValue do
 			setPlayerStorageValue(cid, list[i][1], list[i][2])
 		end
 	end

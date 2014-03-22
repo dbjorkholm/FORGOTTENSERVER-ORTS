@@ -28,7 +28,7 @@
 	<event type="kill" name="killingInTheNameOfQuestKills" script="killing in the name of quest/killingInTheNameOfQuestKills.lua"/>
 	
 	<!-- The Masters Voice Quest -->
-	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua
+	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
 	
 	<!-- Storage Conversion -->
 	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
@@ -40,5 +40,4 @@
 
 
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
-
 </creaturescripts>
