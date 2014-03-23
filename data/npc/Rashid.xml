@@ -10,7 +10,11 @@
 	<parameter key="message_farewell" value="Farewell, |PLAYERNAME|, may the winds guide your way." />
 	<parameter key="message_walkaway" value="Come back soon!" />
 	<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|!" />
-
+	
+		<parameter key="module_shop" value="1" /> <!-- added shop module to show the icon in npc (10:36 +) -->
+		<parameter key="shop_sellable" value="0,0,0;"/>
+		<parameter key="shop_buyable" value="0,0,0;"/>
+		
 	<parameter key="module_keywords" value="1" />
 	<parameter key="keywords" value="job;name;offers;ab\'dendriel;desert;karmia;cormaya;darashia;premy island;bibula;greenshore;moria;blood bay;northport;port hope;senja;svargrond;thalia;vega;venore;time;king" />
 	<parameter key="keyword_reply1" value="I am a travelling trader. I don't buy everything, though. And not from everyone, for that matter." />

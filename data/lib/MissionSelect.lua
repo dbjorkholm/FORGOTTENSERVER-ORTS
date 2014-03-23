@@ -59,6 +59,8 @@ descrip
 		}
 ]]		
 
+BlueOrGreen = false
+
 BlueDjinn = {	-- NOT IMPLEMENTED YET
 				NeedMission = false,
 				MissionStart = 111,
