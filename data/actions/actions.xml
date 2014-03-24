@@ -474,7 +474,6 @@
 	<action uniqueid="9226" script="sam old backpack/samOldBackpackQuestReward.lua"/>
 	
 	<!-- The Travelling Trader Quest -->
-	<action itemid="5928" script="the travelling trader quest/rashidQuestFish.lua"/>
 	<action uniqueid="3019" script="the travelling trader quest/rashidQuestPackage.lua"/>
 	<action uniqueid="3020" script="the travelling trader quest/rashidQuestPackageDoor.lua"/>
 	
@@ -697,6 +696,7 @@
 	<action itemid="8918" script="other/spellbook.lua"/>
 
 	<!-- Other -->
+	<action itemid="5928" script="other/catchFish.lua"/>
 	<action itemid="13670" script="other/belongings.lua"/>
 	<action itemid="16101" script="other/premiumscroll.lua"/>
 	<action itemid="6578" script="other/partyhat.lua"/>

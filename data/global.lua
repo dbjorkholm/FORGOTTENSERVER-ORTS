@@ -889,7 +889,7 @@ function doPlayerGnomishRank(cid)
         return true
 end
                 
-local function teleportAllPlayersFromArea(fromArea, toPos)
+function teleportAllPlayersFromArea(fromArea, toPos)
         for x = fromArea[1].x, fromArea[2].x do
                 for y = fromArea[1].y, fromArea[2].y do
                         for z = fromArea[1].z, fromArea[2].z do

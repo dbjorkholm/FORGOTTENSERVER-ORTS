@@ -3,7 +3,7 @@
 
 	<!-- Bosses -->
 	<raid name="Sir Valorcrest" file="bosses/Sir Valorcrest.xml" interval2="1440" chance="1" margin="60" enabled="yes"/>
-	<raid name="Zevelon Duskbringer" file="bosses/Zevelong Duskbringer.xml" interval2="1440" chance="1" margin="60" enabled="yes"/>
+	<raid name="Zevelon Duskbringer" file="bosses/Zevelon Duskbringer.xml" interval2="1440" chance="1" margin="60" enabled="yes"/>
 	<raid name="Diblis The Fair" file="bosses/Diblis The Fair.xml" interval2="1440" chance="1" margin="60" enabled="yes"/>
 	<raid name="Arachir the Ancient One" file="bosses/Arachir the Ancient One.xml" interval2="1440" chance="1" margin="60" enabled="yes"/>
 	<raid name="Zulazza the Corruptor" file="bosses/Zulazza the Corruptor.xml" interval2="1440" chance="1" margin="60" enabled="yes"/> 
