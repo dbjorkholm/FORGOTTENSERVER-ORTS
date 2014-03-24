@@ -1,6 +1,6 @@
 function onCreatureSay(cid, speak, talktype, text)
 	local DoomText ="Gaz'haragoth begins to channel DEATH AND DOOM into the area! RUN!"
-	if (text == DoomText and talktype == 35) then
+	if (text == DoomText and talktype == 36) then
 			addEvent(DOOM, 4000, cid)
 			
 	end
