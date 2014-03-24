@@ -29,6 +29,9 @@
 	
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
+	
+	<!-- Storage Conversion -->
+	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>

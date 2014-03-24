@@ -1,58 +1,47 @@
+dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
  
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()                                      npcHandler:onThink() end
 
-local buyList = 
-{
-	{itemId = 2532, price = 5000}, -- Ancient Shield
-	{itemId = 2489, price = 1500}, -- Dark Armor
-	{itemId = 2490, price = 1000}, -- Dark Helmet
-	{itemId = 2396, price = 5000}, -- Ice Rapier
+local function getTable()
+local list = {
+	{id = 2532,		buy = 5000,		sell = 900,		name='Ancient Shield'},
+	{id = 2489,		buy = 1500,		sell = 400,		name='Dark Armor'},
+	{id = 2490,		buy = 1000,		sell = 250,		name='Dark Helmet'},
+	{id = 2396,		buy = 5000,		sell = 0,		name='Ice Rapier'},
+	{id = 2409,		buy = 6000,		sell = 900,		name='Serpent Sword'},
+	{id = 2529,		buy = 0,		sell = 800,		name='Black Shield'},
+	{id = 7428,		buy = 0,		sell = 10000,	name='Bonebreaker'},
+	{id = 2434,		buy = 0,		sell = 2000,	name='Dragon Hammer'},
+	{id = 7419,		buy = 0,		sell = 15000,	name='Dreaded Cleaver'},
+	{id = 7860,		buy = 0,		sell = 2000,	name='Earth Knight Axe'},
+	{id = 7875,		buy = 0,		sell = 2000,	name='Energy Knight Axe'},
+	{id = 7750,		buy = 0,		sell = 2000,	name='Fiery Knight Axe'},
+	{id = 2393,		buy = 0,		sell = 17000,	name='Giant Sword'},
+	{id = 7407,		buy = 0,		sell = 8000,	name='Haunted Blade'},
+	{id = 7769,		buy = 0,		sell = 2000,	name='Icy Knight Axe'},
+	{id = 2476,		buy = 0,		sell = 5000,	name='Knight Armor'},
+	{id = 2430,		buy = 0,		sell = 2000,	name='Knight Axe'},
+	{id = 2477,		buy = 0,		sell = 5000,	name='Knight Legs'},
+	{id = 2663,		buy = 0,		sell = 150,		name='Mystic Turban'},
+	{id = 7421,		buy = 0,		sell = 22000,	name='Onyx Flail'},
+	{id = 7411,		buy = 0,		sell = 20000,	name='Ornamented Axe'},
+	{id = 2411,		buy = 0,		sell = 50,		name='Poison Dagger'},
+	{id = 2436,		buy = 0,		sell = 6000,	name='Skull Staff'},
+	{id = 2479,		buy = 0,		sell = 500,		name='Strange Helmet'},
+	{id = 7413,		buy = 0,		sell = 4000,	name='Titan Axe'},
+	{id = 2528,		buy = 0,		sell = 8000,	name='Tower Shield'},
+	{id = 2534,		buy = 0,		sell = 15000,	name='Vampire Shield'},
+	{id = 2475,		buy = 0,		sell = 5000,	name='Warrior Helmet'}
 }
-local sellList = 
-{
-	{itemId = 2532, price = 900}, -- Ancient Shield
-	{itemId = 2529, price = 800}, -- Black Shield
-	{itemId = 7428, price = 10000}, -- Bonebreaker
-	{itemId = 2489, price = 400}, -- Dark Armor
-	{itemId = 2490, price = 250}, -- Dark Helmet
-	{itemId = 2434, price = 2000}, -- Dragon Hammer
-	{itemId = 7419, price = 15000}, -- Dreaded Cleaver
-	{itemId = 7860, price = 2000}, -- Earth Knight Axe
-	{itemId = 7875, price = 2000}, -- Energy Knight Axe
-	{itemId = 7750, price = 2000}, -- Fiery Knight Axe
-	{itemId = 2393, price = 17000}, -- Giant Sword
-	{itemId = 7407, price = 8000}, -- Haunted Blade
-	{itemId = 7769, price = 2000}, -- Icy Knight Axe
-	{itemId = 2476, price = 5000}, -- Knight Armor
-	{itemId = 2430, price = 2000}, -- Knight Axe
-	{itemId = 2477, price = 5000}, -- Knight Legs
-	{itemId = 2663, price = 150}, -- Mystic Turban
-	{itemId = 7421, price = 22000}, -- Onyx Flail
-	{itemId = 7411, price = 20000}, -- Ornamented Axe
-	{itemId = 2411, price = 50}, -- Poison Dagger
-	{itemId = 2409, price = 900}, -- Serpent Sword
-	{itemId = 2436, price = 6000}, -- Skull Staff
-	{itemId = 2479, price = 500}, -- Strange Helmet
-	{itemId = 7413, price = 4000}, -- Titan Axe
-	{itemId = 2528, price = 8000}, -- Tower Shield
-	{itemId = 2534, price = 15000}, -- Vampire Shield
-	{itemId = 2475, price = 5000}, -- Warrior Helmet
-}
+return list
+end
 
 function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
@@ -102,5 +91,50 @@ function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+local function onTradeRequest(cid)
+	if(getPlayerStorageValue(cid, 81) >= 12 or GreenDjinn.NeedMission ~= true) then
+		local items = {}
+		items = setNewTradeTable(sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice))
+		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
+			end
+			if items[item].buyPrice <= getPlayerMoney(cid) then
+				if inBackpacks then
+					broadcastMessage("",4)
+					local itembp = doCreateItemEx(1988, 1)
+					local bp = doPlayerAddItemEx(cid, itembp)
+					if(bp ~= 1) then
+						return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+					end
+					doAddContainerItem(itembp, items[item].itemId, amount)	
+				else
+					return 
+					doPlayerAddItem(cid, items[item].itemId, amount, false) and
+					doPlayerRemoveMoney(cid, amount * items[item].buyPrice) and
+					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+				end
+				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+				doPlayerRemoveMoney(cid, amount * items[item].buyPrice)
+			else
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You do not have enough money.')
+			end
+			return true
+			end
+			 
+		local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
+			if items[item].sellPrice then
+				doPlayerAddMoney(cid, items[item].sellPrice * amount)
+				doPlayerRemoveItem(cid, items[item].itemId, amount)
+				return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
+			end
+			return true
+		end
+		openShopWindow(cid, sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice), onBuy, onSell)
+		return npcHandler:say('It\'s my offer.', cid)	
+	end
+end
  
+npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

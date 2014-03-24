@@ -30,5 +30,6 @@ function onLogin(cid)
 	player:registerEvent("elementalspheresquestOverlords")
 	player:registerEvent("SvargrondArenaKill")
 	player:registerEvent("AdvanceSave")
+	player:registerEvent("StorageConversion")
 	return true
 end

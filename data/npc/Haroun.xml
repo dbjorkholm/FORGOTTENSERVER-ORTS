@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<npc name="Haroun" script="default.lua" walkinterval="2000">
+<npc name="Haroun" script="Haroun.lua" walkinterval="2000">
   <health now="100" max="100" />
   <look type="80" head="20" body="30" legs="40" feet="50" />
   <parameters>
@@ -14,8 +14,10 @@
     <parameter key="module_keywords" value="1" />
     <parameter key="keywords" value="job" />
     <parameter key="keyword_reply1" value="I'm an old djinn, I buy several items, and sell a few myself." />
-    <parameter key="module_shop" value="3" />
-    <parameter key="shop_buyable" value="Axe ring,2208,500;Club ring,2209,500;Power ring,2166,100;Stealth ring,2165,5000;Sword ring,2207,500;Bronze amulet,2172,100;Garlic necklace,2199,100;elven amulet,2198,500;stone skin amulet,2197,5000,5;magic light wand,2162,120" />
-    <parameter key="shop_sellable" value="Axe ring,2208,100;Club ring,2209,100;Power ring,2166,50;Stealth ring,2165,200;Sword ring,2207,100;Bronze amulet,2172,50;Garlic necklace,2199,50;elven amulet,2198,100;Stone skin amulet,2197,500;Wand of cosmic energy,2189,2000;Wand of decay,2188,1000;Wand of dragonbreath,2191,200;Wand of inferno,2187,3000;Wand of vortex,2190,100;Wand of Draconia,8921,1500;Wand of Starstorm,8920,3600;Wand of Voodoo,8922,4400;Magic Light Wand,2162,35;Life Crystal,4851,50;Mind Stone,2178,100;Orb,7493,750" />
-  </parameters>
+	
+	<parameter key="module_shop" value="1" /> <!-- added shop module to show the icon in npc (10:36 +) -->
+		<parameter key="shop_sellable" value="0,0,0;"/>
+		<parameter key="shop_buyable" value="0,0,0;"/>
+		
+</parameters>
 </npc>
