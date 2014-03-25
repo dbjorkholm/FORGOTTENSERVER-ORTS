@@ -1,4 +1,5 @@
 dofile('data/compat.lua')
+dofile('data/lib/001_04_compat.lua')
 
 TRUE = true
 FALSE = false
