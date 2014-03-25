@@ -32,47 +32,47 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "test")) then
 		if(getPlayerStorageValue(cid, 900) == 2) then
 			if(talkState[talkUser] ~= 1 and talkState[talkUser] < 2) then
-				npcHandler:say("Imagine, during your travels you come upon a rare and unknown mushroom. Would you {A}) note down its specifics and location and look for a gnome to take care of it. ...", cid)
-				npcHandler:say("Or would you {B}) smash it to an unrecognisable pulp. Or would you {C}) pluck it to take it with you for further examination. Or would you {D}) try to become friends with the mushroom by singing questionable bar-room songs?", cid)
+				npcHandler:say({"Imagine, during your travels you come upon a rare and unknown mushroom. Would you {A}) note down its specifics and location and look for a gnome to take care of it. ...",
+								"Or would you {B}) smash it to an unrecognisable pulp. Or would you {C}) pluck it to take it with you for further examination. Or would you {D}) try to become friends with the mushroom by singing questionable bar-room songs?"}, cid)
 				setPlayerStorageValue(cid, 900, 0)
 				talkState[talkUser] = 2
 			elseif(talkState[talkUser] == 3) then
-				npcHandler:say("Imagine you wake up one morning and discover you have forgotten how to knot your shoelaces. Would you {A}) admit defeat and go to bed once more. ...", cid)
-				npcHandler:say("{B}) look for a gnome that can remind you how to do it. {C}) Despite the risk of injuring yourself, try to figure it out on your own. {D}) Use some pottery instead of shoes.", cid)
+				npcHandler:say({"Imagine you wake up one morning and discover you have forgotten how to knot your shoelaces. Would you {A}) admit defeat and go to bed once more. ...",
+								"{B}) look for a gnome that can remind you how to do it. {C}) Despite the risk of injuring yourself, try to figure it out on your own. {D}) Use some pottery instead of shoes."}, cid)
 				talkState[talkUser] = 4
 			elseif(talkState[talkUser] == 5) then
-				npcHandler:say("Now let us assume you see a gnome in danger. Would you {A}) not care because you must be imagining things. {B}) Save the gnome despite all odds and risk to your own life. ...", cid)
-				npcHandler:say("{C}) Inspire the gnome by singing the gnomish national anthem. {D}) Hide and loot his corpse if he dies.", cid)
+				npcHandler:say({"Now let us assume you see a gnome in danger. Would you {A}) not care because you must be imagining things. {B}) Save the gnome despite all odds and risk to your own life. ...",
+								"{C}) Inspire the gnome by singing the gnomish national anthem. {D}) Hide and loot his corpse if he dies."}, cid)
 				talkState[talkUser] = 6
 			elseif(talkState[talkUser] == 7) then
-				npcHandler:say("Imagine you were participating in a gnome-throwing competition. Would you {A}) do some physical calculations in advance to increase your chances of winning. ...", cid)
-				npcHandler:say("{B}) throw the gnome as safely as you can to ensure his safety. {C}) Sabotage the throwing gnomes of your competitors. {D}) Never participate in such an abominable competition.", cid)
+				npcHandler:say({"Imagine you were participating in a gnome-throwing competition. Would you {A}) do some physical calculations in advance to increase your chances of winning. ...",
+								"{B}) throw the gnome as safely as you can to ensure his safety. {C}) Sabotage the throwing gnomes of your competitors. {D}) Never participate in such an abominable competition."}, cid)
 				talkState[talkUser] = 8
 			elseif(talkState[talkUser] == 9) then
-				npcHandler:say("Now imagine you were given the order to guard a valuable and unique mushroom. You guard it for days and no one shows up to release you and you grow hungry. ...", cid)
-				npcHandler:say("Would you {A}) eat your boots. {B}) eat the mushroom. {C}) eat a bit of the mushroom. {D}) stick to your duty and continue starving.", cid)
+				npcHandler:say({"Now imagine you were given the order to guard a valuable and unique mushroom. You guard it for days and no one shows up to release you and you grow hungry. ...",
+								"Would you {A}) eat your boots. {B}) eat the mushroom. {C}) eat a bit of the mushroom. {D}) stick to your duty and continue starving."}, cid)
 				talkState[talkUser] = 10
 			elseif(talkState[talkUser] == 11) then
 				npcHandler:say("What do you think describes gnomish society best? {A}) Ingenuity {B}) Bravery {C}) Humility {D}) All of the above.", cid)
 				talkState[talkUser] = 12
 			elseif(talkState[talkUser] == 13) then
-				npcHandler:say("How many bigfoot does it take to change a light crystal? {A}) Only one since it's a piece of mushroom cake. {B}) Light crystals are delicate products of gnomish science and should only be handled by certified gnomish experts. ...", cid)
-				npcHandler:say("{C}) Three. One to hold the crystal and two to turn him around. {D}) Five. A light crystal turner, a light crystal picker, a light crystal exchanger, a light crystal changing manager and finally a light crystal changing manager assistant.", cid)
+				npcHandler:say({"How many bigfoot does it take to change a light crystal? {A}) Only one since it's a piece of mushroom cake. {B}) Light crystals are delicate products of gnomish science and should only be handled by certified gnomish experts. ...",
+								"{C}) Three. One to hold the crystal and two to turn him around. {D}) Five. A light crystal turner, a light crystal picker, a light crystal exchanger, a light crystal changing manager and finally a light crystal changing manager assistant."}, cid)
 				talkState[talkUser] = 14
 			elseif(talkState[talkUser] == 15) then
-				npcHandler:say("What is a pollyfluxed quantumresonator? {A}) Something funny. {B}) Something important. {C}) Something to be destroyed. ...", cid)
-				npcHandler:say("{D}) Sadly I am not a gnome and lack the intelligence and education to know about even the simplest of gnomish inventions.", cid)
+				npcHandler:say({"What is a pollyfluxed quantumresonator? {A}) Something funny. {B}) Something important. {C}) Something to be destroyed. ...",
+								"{D}) Sadly I am not a gnome and lack the intelligence and education to know about even the simplest of gnomish inventions."}, cid)
 				talkState[talkUser] = 16
 			elseif(talkState[talkUser] == 17) then
-				npcHandler:say("If your mushroom patch is infested with cave worms, would you {A}) place some green light crystals to drive them away. {B}) place some disharmonic crystals to drive them away. ...", cid)
-				npcHandler:say("{C}) burn everything down. {D}) switch your diet to cave worms.", cid)
+				npcHandler:say({"If your mushroom patch is infested with cave worms, would you {A}) place some green light crystals to drive them away. {B}) place some disharmonic crystals to drive them away. ...",
+								"{C}) burn everything down. {D}) switch your diet to cave worms."}, cid)
 				talkState[talkUser] = 18
 			elseif(talkState[talkUser] == 19) then
 				npcHandler:say("What is the front part of a spear? Is it {A}) the pointed one. {B}) The blunt one. {C}) Whatever causes the most damage {D}) A spear is no weapon but a fruit that grows on surface trees.", cid)
 				talkState[talkUser] = 20
 			elseif(talkState[talkUser] == 21) then
-				npcHandler:say("On a military campaign what piece of equipment would you need most? ...", cid)
-				npcHandler:say("Is it {A}) some tasty mushroom beer to keep the morale high. {B}) A large backpack to carry all the loot. {C}) A mighty weapon to vanquish the foes. {D}) Mushroom earplugs to be spared of the cries of agony of your opponents?", cid)
+				npcHandler:say({"On a military campaign what piece of equipment would you need most? ...",
+								"Is it {A}) some tasty mushroom beer to keep the morale high. {B}) A large backpack to carry all the loot. {C}) A mighty weapon to vanquish the foes. {D}) Mushroom earplugs to be spared of the cries of agony of your opponents?"}, cid)
 				talkState[talkUser] = 22
 			elseif(talkState[talkUser] == 23) then
 				npcHandler:say("What comes first? {A}) safety {B}) I {C}) duty {D}) George", cid)
@@ -180,8 +180,8 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "result")) then
 		if(talkState[talkUser] == 33) then
 			if(getPlayerStorageValue(cid, 901) < 100) then
-				npcHandler:say("You have failed the test with " .. getPlayerStorageValue(cid, 901) .. " of 112 possible points. You probably were just too nervous. ...", cid)
-				npcHandler:say("I suggest you relax a bit with a fresh mushroom beer and we'll start over after that. Gnominus sells some beer. You should find him somewhere in the central chamber.", cid)
+				npcHandler:say({"You have failed the test with " .. getPlayerStorageValue(cid, 901) .. " of 112 possible points. You probably were just too nervous. ...",
+								"I suggest you relax a bit with a fresh mushroom beer and we'll start over after that. Gnominus sells some beer. You should find him somewhere in the central chamber."}, cid)
 			else
 				npcHandler:say("You have passed the test with " .. getPlayerStorageValue(cid, 901) .. " of 112 possible points. Congratulations. You are ready to proceed with the more physical parts of your examination! Go and talk to Gnomespector about it.", cid)
 				setPlayerStorageValue(cid, 900, 3)
