@@ -34,6 +34,8 @@
 	<talkaction words="/clean" script="clean.lua" />
 	<talkaction words="/hide" script="hide.lua" />
 	<talkaction words="/save" script="save.lua" />
+	<talkaction words="/mounts" separator=" " script="allmounts.lua"/>
+	<talkaction words="/addons" separator=" " script="alladdons.lua"/>
 
 	<!-- player talkactions -->
 	<talkaction words="!buypremium" script="buyprem.lua"/>
