@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Tarnished Spirit" nameDescription="a tarnished spirit" race="blood" experience="120" speed="220" manacost="0">
+<monster name="Tarnished Spirit" nameDescription="a tarnished spirit" race="undead" experience="120" speed="180" manacost="0">
 	<health now="150" max="150"/>
 	<look type="566" corpse="21366"/>
-	<targetchange interval="5000" chance="8"/>
+	<targetchange interval="4000" chance="10"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
@@ -13,39 +13,36 @@
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
-		<flag targetdistance="4"/>
+		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="30" attack="60"/>
-		<attack name="lifedrain" interval="2000" chance="20" range="1" min="-20" max="-45">
+		<attack name="melee" interval="2000" skill="30" attack="40"/>
+		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-20" max="-45">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
-	<defenses armor="17" defense="23">
-	</defenses>
 	<immunities>
+		<immunity physical="1"/>
+		<immunity drown="1"/>
+		<immunity earth="1"/>
+		<immunity death="1"/>
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
-		<immunity earth="1"/>
-		<immunity drown="1"/>
-		<immunity death="1"/>
-		<immunity physical="1"/>
 	</immunities>
-	<voices interval="5000" chance="100">
+		<voices interval="5000" chance="10">
 		<voice sentence="Huh!"/>
 	</voices>
 	<loot>
-		<item id="2804" chance="14170"/><!-- shadow herb -->
-		<item id="2394" chance="12500"/><!-- morning star -->
-		<item id="2654" chance="10670"/><!-- cape -->
-		<item id="2404" chance="7670"/><!-- combat knife -->
-		<item id="5909" chance="3170"/><!-- white piece of cloth -->
-		<item id="10607" chance="10670"/><!-- ghostly tissue -->
-		<item id="1950" chance="2000"/><!-- orange book -->
-		<item id="2165" chance="330"/><!-- stealth ring -->
-		<item id="2532" chance="170"/><!-- ancient shield -->
+		<item id="2394" chance="10610"/><!-- morning star -->
+		<item id="2404" chance="7002"/><!-- combat knife -->
+		<item id="2804" chance="14400"/><!-- shadow herb -->
+		<item id="2654" chance="8800"/><!-- cape -->
+		<item id="1962" chance="1310"/><!-- orange book -->
+		<item id="5909" chance="1940"/><!-- white piece of cloth -->
+		<item id="2532" chance="860"/><!-- ancient shield -->
+		<item id="2165" chance="180"/><!-- stealth ring -->
+		<item id="10607" chance="1870"/><!-- ghostly tissue -->
 	</loot>
 </monster>

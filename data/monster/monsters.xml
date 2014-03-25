@@ -682,6 +682,7 @@
 	<monster name="Feverish Citizen" file="Outlaws/feverish citizen.xml"/>
 	<monster name="Adventurer" file="Outlaws/adventurer.xml"/>
 	<monster name="Angry Adventurer" file="Outlaws/angry adventurer.xml"/>
+	<monster name="Crypt Defiler" file="Outlaws\crypt defiler.xml"/>
 
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="Pharaohs/ashmunrah.xml"/>
