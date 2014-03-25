@@ -34,6 +34,12 @@ local pos = {
 	{x = 33347, y = 31889, z = 9},
 }
 
+local creatures = {
+					"iron servant",
+					"golden servant",
+					"diamond servant"
+				}
+
 local function fillWithFungus(fromPos, toPos)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
@@ -52,7 +58,7 @@ function onKill(cid, target)
 			setGlobalStorageValue(985, 0)
 			setGlobalStorageValue(984, getGlobalStorageValue(984) + 1)
 			for i = 1, #pos do
-				addEvent(doSummonCrature, 5 * 1000, creatures[math.random(1, 3)], pos[i])
+				addEvent(doSummonCreature, 5 * 1000, creatures[math.random(1, 3)], pos[i])
 				addEvent(doSendMagicEffect, 5 * 1000, pos[i], CONST_ME_TELEPORT)
 			end
 		elseif(getGlobalStorageValue(985) < #pos and getGlobalStorageValue(984) < 25) then

@@ -21,14 +21,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 		toPosition.x = toPosition.x + (item.itemid == 7911 and 1 or -1)
 		local get = getTileItemById(toPosition, item.itemid == 7911 and 7912 or 7911)
-		Item(uid):transform(get.uid, get.itemid + 4)
-		Item(uid):transform(item.uid, item.itemid + 4)
+		doTransformItem(get.uid, get.itemid + 4) -- need to pass to the metatable functions
+		doTransformItem(item.uid, item.itemid + 4) -- need to pass to the metatable functions
 		Creature(cid):say("ON", TALKTYPE_ORANGE_1, false, cid, (toPosition or getCreaturePosition(cid)))
 	else
 		toPosition.x = toPosition.x + (item.itemid == 7915 and 1 or -1)
 		local get = getTileItemById(toPosition, item.itemid == 7915 and 7916 or 7915)
-		Item(uid):transform(get.uid, get.itemid - 4)
-		Item(uid):transform(item.uid, item.itemid - 4)
+		doTransformItem(get.uid, get.itemid - 4) -- need to pass to the metatable functions
+		doTransformItem(item.uid, item.itemid - 4) -- need to pass to the metatable functions
 		Creature(cid):say("OFF", TALKTYPE_ORANGE_1, false, cid, (toPosition or getCreaturePosition(cid)))
 	end	
 return true
