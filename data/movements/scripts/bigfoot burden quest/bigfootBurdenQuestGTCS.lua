@@ -25,11 +25,11 @@ function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
 	if player ~= nil then
 		if aid then
-			if player:getStorageValue(900) >= v.storage then
+			if player:getStorageValue(900) >= aid.storage then
 				if aid.crystal == true then
 					if player:getItemCount(crystalID) >= 1 then
 						player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-						player:teleportTo(v.pos)
+						player:teleportTo(aid.pos)
 						player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 						player:removeItem(crystalID, 1)
 					else
