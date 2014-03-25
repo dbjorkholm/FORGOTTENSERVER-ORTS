@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Damaged Crystal Golem" nameDescription="damaged crystal golem" race="blood" experience="1600" speed="470" manacost="0">
-  <health now="1200" max="1200"/>
-  <look type="508" corpse="18466"/>
-  <targetchange interval="5000" chance="8"/>
-  <strategy attack="90" defense="10"/>
+<monster name="Damaged Crystal Golem" nameDescription="a damaged crystal golem" race="energy" experience="0" speed="180" manacost="0">
+	<health now="500" max="500"/>
+	<look type="508" corpse="18466"/>
+	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,40 +13,8 @@
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
-		<flag targetdistance="4"/>
-		<flag staticattack="50"/>
-		<flag runonhealth="10000"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="500"/>
 	</flags>
-	<attacks>
-		<attack name="melee" interval="2000" skill="100" attack="100"/>
-		<attack name="speed" interval="2000" chance="20" range="7" speedchange="-400" duration="2500">
-			<attribute key="shootEffect" value="whirlwindaxe"/>
-		</attack>
-		<attack name="physical" interval="2000" chance="100" range="7" min="-120" max="-250">
-			<attribute key="shootEffect" value="etherealspear"/>
-		</attack>
-		<attack name="physical" interval="2300" chance="100" range="7" target="1" radius="1" min="-180" max="-290">
-			<attribute key="shootEffect" value="shiverarrow"/>
-			<attribute key="areaEffect" value="bluenote"/>			
-		</attack>
-	</attacks>
-  <defenses armor="75" defense="75">    
-  </defenses>
-	<elements>
-		<element firePercent="100"/>
-		<element physicalPercent="10"/>
-		<element earthPercent="100"/>
-		<element deathPercent="-20"/>
-		<element energyPercent="-20"/>
-	</elements>
-	<immunities>
-		<immunity outfit="1"/>
-		<immunity drown="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
-	</immunities>
-	<voices interval="5000" chance="10">
-		<voice sentence="Ljeave this sjacred pljace while you cjan!"/>
-		<voice sentence="Jou wjil ajll djie!"/>
-	</voices>     
 </monster>
