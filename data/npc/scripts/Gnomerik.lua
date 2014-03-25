@@ -109,6 +109,10 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Fear not. We don't expect too much of you anyway. But let us continue with the test.", cid)
 			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
+		elseif(talkState[talkUser] == 30) then
+			npcHandler:say("Ha! A Krazzelzak would for sure fit someone like you! But let us continue with the test.", cid)
+			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			talkState[talkUser] = talkState[talkUser] + 1
 		else
 			npcHandler:say("Wrong answer!", cid)
 			talkState[talkUser] = talkState[talkUser] + 1
@@ -164,8 +168,8 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("That's just what I'd do - if I weren't a gnome already, that is. But let us continue with the test.", cid)
 			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
-		elseif(talkState[talkUser] == 30) then
-			npcHandler:say("Ha! A Krazzelzak would for sure fit someone like you! But let us continue with the test.", cid)
+		elseif(talkState[talkUser] == 32) then
+			npcHandler:say("Excellent! Well this concludes the test. Now let us see your result.", cid)
 			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		else
