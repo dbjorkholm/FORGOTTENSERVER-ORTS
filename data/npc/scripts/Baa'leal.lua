@@ -23,7 +23,7 @@ function creatureSayCallback(cid, type, msg)
 	if(msg == "DJANNI'HAH") and (not npcHandler:isFocused(cid)) then
 		if(getPlayerStorageValue(cid, Factions) > 0) then
 			npcHandler:addFocus(cid)
-			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1) then
+			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1 or not BlueOrGreen) then
 				npcHandler:say("You know the code human! Very well then... What do you want, " .. getCreatureName(cid) .."?", cid)
 				npcHandler:addFocus(cid)
 			end
