@@ -114,13 +114,25 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
-	<quest name="Outfit and Addon Quests" startstorageid="12055" startstoragevalue="1">
+	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
 		<mission name="Hunter Outfits Quest" storageid="12055" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Elane sends you to Liberty Bay to bring her the Crossbow from the Cult."/>
 			<missionstate id="2" description="Bring Elane 100 pieces of lizard leather and 100 pieces of red dragon leather."/>
 			<missionstate id="3" description="Bring Elane 5 enchanted chicken wings."/>
 			<missionstate id="4" description="Bring Elane one piece of royal steel, draconian steel and hell steel each."/>
 			<missionstate id="5" description="You got the Outfit!"/>
+		</mission>
+		<mission name="Druid Outfits Quest" storageid="1004" startvalue="1" endvalue="10">
+			<missionstate id="1" description="Ceiron sends you to collect a sample of the blooming Griffinclaw."/>
+			<missionstate id="2" description="Ask Ceiron for task."/>
+			<missionstate id="3" description="take Ceirons waterskin and try to fill it with water from this special trickle. In the mountains between Ankrahmun and Tiquanda are two hydra lairs. It is important that you take the water directly from the trickle, not from the pond"/>
+			<missionstate id="4" description="Ask Ceiron for task."/>
+			<missionstate id="5" description="Bring Ceiron 100 ounces of demon dust."/>
+			<missionstate id="6" description="Ask Ceiron for task."/>
+			<missionstate id="7" description="The last mission is to find and retrieve Ceiron's Wolf Tooth Chain lost inside the Orc Fortress."/>
+			<missionstate id="8" description="Ask Ceiron for Faolan."/>
+			<missionstate id="9" description="Head over to Cormaya, find A Majestic Warwolf's Cave and ask her about an addon."/>
+			<missionstate id="10" description="You got the Outfit!"/>
 		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">

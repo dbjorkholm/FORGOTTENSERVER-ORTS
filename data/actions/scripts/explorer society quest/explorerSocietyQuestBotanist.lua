@@ -15,10 +15,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doSendMagicEffect(toPosition, CONST_ME_MAGIC_BLUE)
 			doTransformItem(item.uid, 4872)
 			doRemoveItem(itemEx.uid, 1)
-		elseif(itemEx.itemid == 5659 and itemEx.uid == 3151) then
+		elseif(itemEx.itemid == 5659) then
 			setPlayerStorageValue(cid, 93, 25)
 			doSendMagicEffect(toPosition, CONST_ME_MAGIC_RED)
-			doRemoveItem(item.uid, 1)
 			doTransformItem(item.uid, 5937)
 		end
 	end
