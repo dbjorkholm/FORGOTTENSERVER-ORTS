@@ -1,4 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local p = Player(cid)
 	if(item.itemid == 6087) then
 		if(p:getStorageValue(12050) < 1) then
 				p:setStorageValue(12050, 1)
