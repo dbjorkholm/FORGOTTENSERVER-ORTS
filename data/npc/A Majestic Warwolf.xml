@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="A Majestic Warwolf" script="default.lua" walkinterval="2000" floorchange="0">
-<health now="100" max="100"/>
-<look type="3" head="0" body="0" legs="0" feet="0" addons="0"/>
+<?xml version="1.0"?>
+<npc name="A Majestic Warwolf" script="A Majestic Warwolf.lua" walkinterval="2000">
+	<health now="100" max="100"/>
+	<look type="3" head="0" body="0" legs="0" feet="0" addons="0"/>
+	<parameters>
+		<parameter key="message_greet" value="Interesting. A human who can speak the language of wolves." />
+		<parameter key="message_walkaway" value="YOOOOUHHOOOUU!" />
+		<parameter key="message_farewell" value="YOOOOUHHOOOUU!" />
+	</parameters>
 </npc>
