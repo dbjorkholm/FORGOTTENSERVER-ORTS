@@ -199,8 +199,7 @@
 			<missionstate id="54" description="You have Complete the Quest!"/>
 			<missionstate id="55" description="You have Complete the Quest!"/>
 		</mission>
-	</quest>
-	
+	</quest>	
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
 		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
 				<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
@@ -236,7 +235,6 @@
 				<missionstate id="1" description="Rashid has declare you as one of his recognized traders, and now you are able to trade with him anytime.."/>
 		</mission>
 	</quest>
-	
 	<quest name="Factions" startstorageid="110" startstoragevalue="1">
         <mission name="Djinn leader: Secret Greeting" storageid="110" startvalue="2" endvalue="2">
             <missionstate id="2" description="Now you are ready to meet one of the Djinn leaders. Remeber they only answer, if you greet them with the secret word: DJANNI'HAH"/>
@@ -281,7 +279,6 @@
 			<missionstate id="4" description="You have completed all missions. Gabel allows you now to trade with his people."/>
 	</mission>
 	</quest>
-	
 	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
 		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Example description 1"/>

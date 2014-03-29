@@ -49,7 +49,7 @@ function creatureSayCallback(cid, type, msg)
 	if(msg == "DJANNI'HAH" or (getPlayerStorageValue(cid,GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
 		if(getPlayerStorageValue(cid, Factions) > 0) then
 			npcHandler:addFocus(cid)
-			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1) then
+			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1 or not BlueOrGreen) then
 				npcHandler:say("What do you want from me, " .. getCreatureName(cid) .."?", cid)
 				npcHandler:addFocus(cid)
 			end
