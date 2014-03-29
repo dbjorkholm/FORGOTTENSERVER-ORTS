@@ -94,7 +94,7 @@ end
 local function onTradeRequest(cid)
 	if(getPlayerStorageValue(cid, GreenDjinn.MissionEnd) >= 4 or GreenDjinn.NeedMission ~= true) then
 		local items = {}
-		items = setNewTradeTable(sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice))
+		items = setNewTradeTable(sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice, 4))
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
 				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
@@ -129,7 +129,7 @@ local function onTradeRequest(cid)
 			end
 			return true
 		end
-		openShopWindow(cid, sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice), onBuy, onSell)
+		openShopWindow(cid, sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice, 4), onBuy, onSell)
 		return npcHandler:say('It\'s my offer.', cid)	
 	end
 end

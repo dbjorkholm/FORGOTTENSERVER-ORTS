@@ -393,7 +393,7 @@ end
 
 local function onTradeRequest(cid)
 	if(getPlayerStorageValue(cid, Rashid.MissionEnd) >= 1 or Rashid.NeedMission ~= true) then
-		local items = setNewTradeTable(sendTable(cid, getTable(), Rashid.MissionEnd, Rashid.WithoutMissionPrice))
+		local items = setNewTradeTable(sendTable(cid, getTable(), Rashid.MissionEnd, Rashid.WithoutMissionPrice, 1))
 		function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
 				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
@@ -430,7 +430,7 @@ local function onTradeRequest(cid)
 		return true
 		end
 		
-		openShopWindow(cid, sendTable(cid, getTable(), Rashid.MissionEnd, Rashid.WithoutMissionPrice), onBuy, onSell)
+		openShopWindow(cid, sendTable(cid, getTable(), Rashid.MissionEnd, Rashid.WithoutMissionPrice, 1), onBuy, onSell)
 		return npcHandler:say('It\'s my offer.', cid)	
 		
 	else
