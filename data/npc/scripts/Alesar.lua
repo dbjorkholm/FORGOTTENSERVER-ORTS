@@ -1,4 +1,3 @@
-dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -47,10 +46,10 @@ function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
 	-- GREET
-	if(msg == "DJANNI'HAH") then
-		if(getPlayerStorageValue(cid, 80) > 0) then
+	if(msg == "DJANNI'HAH" or (getPlayerStorageValue(cid,GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
+		if(getPlayerStorageValue(cid, Factions) > 0) then
 			npcHandler:addFocus(cid)
-			if(getPlayerStorageValue(cid, 82) < 1) then
+			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1) then
 				npcHandler:say("What do you want from me, " .. getCreatureName(cid) .."?", cid)
 				npcHandler:addFocus(cid)
 			end
@@ -63,10 +62,10 @@ function creatureSayCallback(cid, type, msg)
 
 	-- Mission 2 - The Tear of Daraman
 	if(msgcontains(msg, "mission")) then
-		if(getPlayerStorageValue(cid, 81) == 5) then
+		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+1) == 4 and getPlayerStorageValue(cid, GreenDjinn.MissionStart+2) < 1) then
 			npcHandler:say({"So Baa'leal thinks you are up to do a mission for us? ...", "I think he is getting old, entrusting human scum such as you are with an important mission like that. ...", "Personally, I don't understand why you haven't been slaughtered right at the gates. ...", "Anyway. Are you prepared to embark on a dangerous mission for us?"}, cid, 0, 1, 3500)
 			talkState[talkUser] = 1
-		elseif(getPlayerStorageValue(cid, 81) == 7) then
+		elseif(getPlayerStorageValue(cid, GreenDjinn.MissionStart+2) == 2) then
 			npcHandler:say("Did you find the tear of Daraman?", cid)
 			talkState[talkUser] = 2
 		end
@@ -75,12 +74,12 @@ function creatureSayCallback(cid, type, msg)
 		if(talkState[talkUser] == 1) then
 			npcHandler:say({"All right then, human. Have you ever heard of the {'Tears of Daraman'}? ...", "They are precious gemstones made of some unknown blue mineral and possess enormous magical power. ...", "If you want to learn more about these gemstones don't forget to visit our library. ...", "Anyway, one of them is enough to create thousands of our mighty djinn blades. ...", "Unfortunately my last gemstone broke and therefore I'm not able to create new blades anymore. ...", "To my knowledge there is only one place where you can find these gemstones - I know for a fact that the Marid have at least one of them. ...", "Well... to cut a long story short, your mission is to sneak into Ashta'daramai and to steal it. ...", "Needless to say, the Marid won't be too eager to part with it. Try not to get killed until you have delivered the stone to me."}, cid, 0, 1, 4500)
 			talkState[talkUser] = 0
-			setPlayerStorageValue(cid, 81, 6)
+			setPlayerStorageValue(cid, GreenDjinn.MissionStart+2, 1)
 		elseif(talkState[talkUser] == 2) then
 			if(doPlayerRemoveItem(cid, 2346, 1)) then
 				npcHandler:say({"So you have made it? You have really managed to steal a Tear of Daraman? ...", "Amazing how you humans are just impossible to get rid of. Incidentally, you have this character trait in common with many insects and with other vermin. ...", "Nevermind. I hate to say it, but it you have done us a favour, human. That gemstone will serve us well. ...", "Baa'leal, wants you to talk to Malor concerning some new mission. ...", "Looks like you have managed to extended your life expectancy - for just a bit longer."}, cid, 0, 1, 4000)
 				talkState[talkUser] = 0
-				setPlayerStorageValue(cid, 81, 8)
+				setPlayerStorageValue(cid, GreenDjinn.MissionStart+2, 3)
 			end
 		end
 	end
@@ -93,7 +92,7 @@ function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	if(getPlayerStorageValue(cid, 81) >= 12 or GreenDjinn.NeedMission ~= true) then
+	if(getPlayerStorageValue(cid, GreenDjinn.MissionEnd) >= 4 or GreenDjinn.NeedMission ~= true) then
 		local items = {}
 		items = setNewTradeTable(sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice))
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
@@ -102,7 +101,6 @@ local function onTradeRequest(cid)
 			end
 			if items[item].buyPrice <= getPlayerMoney(cid) then
 				if inBackpacks then
-					broadcastMessage("",4)
 					local itembp = doCreateItemEx(1988, 1)
 					local bp = doPlayerAddItemEx(cid, itembp)
 					if(bp ~= 1) then

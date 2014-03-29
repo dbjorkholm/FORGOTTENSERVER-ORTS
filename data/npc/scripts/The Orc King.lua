@@ -41,17 +41,17 @@ function creatureSayCallback(cid, type, msg)
 
 	-- Mission 3 - Orc Fortress
 	if(msgcontains(msg, "lamp")) then
-		if(getPlayerStorageValue(cid, 81) == 9 or getPlayerStorageValue(cid, 82) == 8) then
+		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+3) == 1 or getPlayerStorageValue(cid, BlueDjinn.MissionStart+3) == 1) then
 			npcHandler:say({"King: I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...","Who do you want to trap in this cursed lamp?"}, cid, 0, 1, 2200)
 			talkState[talkUser] = 1
 		end
 	-- Mission 3 - Orc Fortress
 	elseif(msgcontains(msg, "malor")) then
 		if(talkState[talkUser] == 1) then
-			if(getPlayerStorageValue(cid, 81) == 9) then
-				setPlayerStorageValue(cid, 81, 10)
-			elseif(getPlayerStorageValue(cid, 82) == 8) then
-				setPlayerStorageValue(cid, 82, 9)
+			if(getPlayerStorageValue(cid,  GreenDjinn.MissionStart+3) == 1) then
+				setPlayerStorageValue(cid,  GreenDjinn.MissionStart+3, 2)
+			elseif(getPlayerStorageValue(cid, BlueDjinn.MissionStart+3) == 1) then
+				setPlayerStorageValue(cid, BlueDjinn.MissionStart+3, 2)
 			end
 			npcHandler:say("I was waiting for this day! Take the lamp and let Malor feel my wrath!", cid)
 			talkState[talkUser] = 0

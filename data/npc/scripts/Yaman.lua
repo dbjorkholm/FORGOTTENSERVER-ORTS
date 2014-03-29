@@ -1,4 +1,3 @@
-dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -40,11 +39,9 @@ end
 
 function creatureSayCallback(cid, type, msg)
 local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	if(msg == "DJANNI'HAH") then
-		if(getPlayerStorageValue(cid, 81) >= 12) then
-			npcHandler:addFocus(cid)
-			npcHandler:say("Be greeted, human " .. getPlayerName(cid) .. ". How can a humble djinn be of service?", cid)
-		end
+	if(msg == "DJANNI'HAH" or (getPlayerStorageValue(cid,GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
+		npcHandler:addFocus(cid)
+		npcHandler:say("Be greeted, human " .. getPlayerName(cid) .. ". How can a humble djinn be of service?", cid)
 	end
 	
 	if(not npcHandler:isFocused(cid)) then
@@ -61,7 +58,7 @@ local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 end
 
 local function onTradeRequest(cid)
-	if(getPlayerStorageValue(cid, 81) >= 12 or GreenDjinn.NeedMission ~= true) then
+	if(getPlayerStorageValue(cid, GreenDjinn.MissionEnd) >= 4 or GreenDjinn.NeedMission ~= true) then
 
 		local items = setNewTradeTable(sendTable(cid, getTable(), GreenDjinn.MissionEnd, GreenDjinn.WithoutMissionPrice))
 		
