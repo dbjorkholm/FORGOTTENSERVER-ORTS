@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-        <!-- outlaw camp -->
+
+	<!-- Hunter Outfits Quest -->
+	<action itemid="6087"  script="hunter outfit quest/MusicSheet.lua"/>
+	<action itemid="6088"  script="hunter outfit quest/MusicSheet.lua"/>
+	<action itemid="6089"  script="hunter outfit quest/MusicSheet.lua"/>
+	<action itemid="6090"  script="hunter outfit quest/MusicSheet.lua"/>
+	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
+
+    <!-- outlaw camp -->
 	<action uniqueid="3313" script="The-outlaw-quest/3303.lua" />
 	<action uniqueid="3314" script="The-outlaw-quest/3304.lua" />
 	<action uniqueid="3311" script="The-outlaw-quest/3301.lua" />
