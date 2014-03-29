@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Elane" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Elane" script="Elane.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="137" head="115" body="120" legs="120" feet="120" addons="3" />
 <parameters>
