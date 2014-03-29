@@ -61,7 +61,7 @@ local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 end
 
 local function onTradeRequest(cid)
-	if(getPlayerStorageValue(cid, BlueDjinn.MissionEnd) >= 1 or BlueDjinn.NeedMission ~= true) then
+	if(getPlayerStorageValue(cid, BlueDjinn.MissionEnd) >= 4 or BlueDjinn.NeedMission ~= true) then
 		local items = setNewTradeTable(sendTable(cid, getTable(), BlueDjinn.MissionEnd, BlueDjinn.WithoutMissionPrice))
 		function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then

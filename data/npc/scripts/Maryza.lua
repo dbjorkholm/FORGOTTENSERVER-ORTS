@@ -23,7 +23,7 @@ function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
 	if(msgcontains(msg, "cookbook")) then
-		if(getPlayerStorageValue(cid, 82) == 2) then
+		if(getPlayerStorageValue(cid, BlueDjinn.MissionStart+1) == 1) then
 			npcHandler:say("Would you like to buy a cookbook for 150 gold?", cid)
 			talkState[talkUser] = 1
 		end
@@ -31,7 +31,7 @@ function creatureSayCallback(cid, type, msg)
 		if(talkState[talkUser] == 1) then
 			if(getPlayerMoney(cid) >= 150) then
 				npcHandler:say("Here it is.", cid)
-				setPlayerStorageValue(cid, 82, 3)
+				setPlayerStorageValue(cid, BlueDjinn.MissionStart+1, 2)
 				doPlayerAddItem(cid, 2347, 1)
 				doPlayerRemoveMoney(cid, 150)
 				talkState[talkUser] = 0

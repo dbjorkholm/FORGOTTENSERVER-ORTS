@@ -1,10 +1,10 @@
 -- By Vinioliveirasilva --
 -- contact: vinioliveirasilva@hotmail.com --
 
-dofile('data/lib/MissionSelect.lua')
-
 function onLogin(cid)
 	RashidConversion(cid)
+	GreenDjinnConversion(cid)
+	BlueDjinnConversion(cid)
 	return true
 end
 
@@ -45,6 +45,74 @@ local list = {
 		for i = 1, OldValue do
 			setPlayerStorageValue(cid, list[i][1], list[i][2])
 		end
+	end
+	if(OldValue == 20) then
+		setPlayerStorageValue(cid, Old, -1)
+	end
+	return true
+end
+
+function GreenDjinnConversion(cid)
+
+local list = {
+			[1] = {121, 1},
+			
+			[2] = {122, 1},
+			[3] = {122, 2},
+			[4] = {122, 3},
+			[5] = {122, 4},
+			
+			[6] = {123, 1},
+			[7] = {123, 2},
+			[8] = {123, 3},
+			
+			[9] = {124, 1},
+			[10] = {124, 2},
+			[11] = {124, 3},
+			[12] = {124, 4}
+}
+	local Old = 81
+	local OldValue = getPlayerStorageValue(cid, 81)
+	
+	if(OldValue > 0 and getPlayerStorageValue(cid, 124) <= 4) then	
+		for i = 1, OldValue do
+			setPlayerStorageValue(cid, list[i][1], list[i][2])
+		end
+	end
+	if(OldValue == 12) then
+		setPlayerStorageValue(cid, Old, -1)
+	end
+	return true
+end
+
+function BlueDjinnConversion(cid)
+
+local list = {
+			[1] = {111, 1},
+			
+			[2] = {112, 1},
+			[3] = {112, 2},
+			[4] = {112, 3},
+			
+			[5] = {113, 1},
+			[6] = {113, 2},
+			[7] = {113, 3},
+
+			[8] = {114, 1},
+			[9] = {114, 2},
+			[10] = {114, 3},
+			[11] = {114, 4}
+}
+	local Old = 82
+	local OldValue = getPlayerStorageValue(cid, 82)
+	
+	if(OldValue > 0 and getPlayerStorageValue(cid, 114) <= 3) then	
+		for i = 1, OldValue do
+			setPlayerStorageValue(cid, list[i][1], list[i][2])
+		end
+	end
+	if(OldValue == 11) then
+		setPlayerStorageValue(cid, Old, -1)
 	end
 	return true
 end

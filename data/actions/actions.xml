@@ -216,6 +216,7 @@
 	<action uniqueid="3030" script="black knight quest/blackKnightQuestReward.lua"/>
 
 	<!-- Blue Djinn Quest -->
+	<action uniqueid="9022" script="blue djinn quest/blueDjinnQuestDoor.lua"/>
 	<action uniqueid="3022" script="blue djinn quest/blueDjinnQuestBackDoor.lua"/>
 	<action uniqueid="3024" script="blue djinn quest/blueDjinnQuestLamp.lua"/>
 	<action uniqueid="3023" script="blue djinn quest/blueDjinnQuestLampDoor.lua"/>
@@ -313,6 +314,7 @@
 	<action uniqueid="2239" script="giant smithhammer quest/giantSmithhammerQuestReward.lua"/>
 	
 	<!-- Green Djinn Quest -->
+	<action uniqueid="9023" script="green djinn quest/greenDjinnQuestDoor.lua"/>
 	<action uniqueid="3025" script="green djinn quest/greenDjinnQuestBackDoor.lua"/>
 	<action uniqueid="3026" script="green djinn quest/greenDjinnQuestLampDoor.lua"/>
 	<action uniqueid="2285" script="green djinn quest/greenDjinnQuestLamp.lua"/>
