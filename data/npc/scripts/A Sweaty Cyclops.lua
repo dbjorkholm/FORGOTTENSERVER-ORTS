@@ -25,10 +25,7 @@ function creatureSayCallback(cid, type, msg)
 	if (msgcontains(msg, "melt")) then
 		npcHandler:say("Can melt gold ingot for lil' one. You want?", cid)
 		talkState[talkUser] = 10
-	elseif (msgcontains(msg, "yes") and talkState[talkUser] == 10) then	
-		npcHandler:say("Can melt gold ingot for lil' one. You want?", cid)
-		talkState[talkUser] = 11
-	elseif (msgcontains(msg, "yes") and talkState[talkUser] == 11) then
+	elseif (msgcontains(msg, "yes") and talkState[talkUser] == 10) then
 		if doPlayerRemoveItem(cid, 9971,1) then
 			npcHandler:say("whoooosh There!", cid)
 			doPlayerAddItem(cid, 13941, 1)
@@ -38,15 +35,8 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		end
 	end
-	if(msg == "uth'lokr") then
-		if(getPlayerStorageValue(cid, 79) < 1) then
-			npcHandler:say("Firy steel it is. Need green ones' breath to melt. Or red even better. Me can make from shield. Lil' one want to trade?", cid)
-			talkState[talkUser] = 1
-		elseif(getPlayerStorageValue(cid, 79) == 1) then
-			npcHandler:say("Lil' one bring three bast skirts?", cid)
-			talkState[talkUser] = 3
-		end
-	elseif(msgcontains(msg, "amulet")) then
+
+	if(msgcontains(msg, "amulet")) then
 		if(getPlayerStorageValue(cid, 49) < 1) then
 			npcHandler:say("Me can do unbroken but Big Ben want gold 5000 and Big Ben need a lil' time to make it unbroken. Yes or no??", cid)
 			talkState[talkUser] = 9
@@ -111,7 +101,7 @@ function creatureSayCallback(cid, type, msg)
 		-- Soul Orb
 		elseif(talkState[talkUser] == 8) then
 			if(getPlayerItemCount(cid, 5944) >= 1) then
-				doPlayerAddItem(cid, 6529, getPlayerItemCount(cid, 5944) * 2)
+				doPlayerAddItem(cid, 6529, getPlayerItemCount(cid, 5944) * 3)
 				doPlayerRemoveItem(cid, 5944, getPlayerItemCount(cid, 5944))
 				npcHandler:say("Cling clang! ", cid)
 				talkState[talkUser] = 0
@@ -129,33 +119,65 @@ function creatureSayCallback(cid, type, msg)
 				talkState[talkUser] = 0
 			end	
 		end
+	
+	
 	-- Crown Armor
 	elseif(msg == "uth'kean") then
-		if(getPlayerStorageValue(cid, 79) == 2) then
+		if(getPlayerStorageValue(cid, 79) < 1) then
+			npcHandler:say("Very noble. Shiny. Me like. But breaks so fast. Me can make from shiny armour. Lil' one want to trade?", cid)
+			talkState[talkUser] = 1
+		elseif(getPlayerStorageValue(cid, 79) == 1) then
+			npcHandler:say("Lil' one bring three bast skirts?", cid)
+			talkState[talkUser] = 3
+		elseif(getPlayerStorageValue(cid, 79) == 2) then
 			npcHandler:say("Very noble. Shiny. Me like. But breaks so fast. Me can make from shiny armour. Lil' one want to trade?", cid)
 			talkState[talkUser] = 4
 		end
 	-- Dragon Shield
 	elseif(msg == "uth'lokr") then
-		if(getPlayerStorageValue(cid, 79) == 2) then
+		if(getPlayerStorageValue(cid, 79) < 1) then
+			npcHandler:say("Firy steel it is. Need green ones' breath to melt. Or red even better. Me can make from shield. Lil' one want to trade?", cid)
+			talkState[talkUser] = 1
+		elseif(getPlayerStorageValue(cid, 79) == 1) then
+			npcHandler:say("Lil' one bring three bast skirts?", cid)
+			talkState[talkUser] = 3
+		elseif(getPlayerStorageValue(cid, 79) == 2) then
 			npcHandler:say("Firy steel it is. Need green ones' breath to melt. Or red even better. Me can make from shield. Lil' one want to trade?", cid)
 			talkState[talkUser] = 5
 		end
 	-- Devil Helmet
 	elseif(msg == "za'ralator") then
-		if(getPlayerStorageValue(cid, 79) == 2) then
+		if(getPlayerStorageValue(cid, 79) < 1) then
+			npcHandler:say("Hellsteel is. Cursed and evil. Dangerous to work with. Me can make from evil helmet. Lil' one want to trade?", cid)
+			talkState[talkUser] = 1
+		elseif(getPlayerStorageValue(cid, 79) == 1) then
+			npcHandler:say("Lil' one bring three bast skirts?", cid)
+			talkState[talkUser] = 3
+		elseif(getPlayerStorageValue(cid, 79) == 2) then
 			npcHandler:say("Hellsteel is. Cursed and evil. Dangerous to work with. Me can make from evil helmet. Lil' one want to trade?", cid)
 			talkState[talkUser] = 6
 		end
 	-- Giant Sword
 	elseif(msg == "uth'prta") then
-		if(getPlayerStorageValue(cid, 79) == 2) then
+		if(getPlayerStorageValue(cid, 79) < 1) then
+			npcHandler:say("Good iron is. Me friends use it much for fight. Me can make from weapon. Lil' one want to trade?", cid)
+			talkState[talkUser] = 1
+		elseif(getPlayerStorageValue(cid, 79) == 1) then
+			npcHandler:say("Lil' one bring three bast skirts?", cid)
+			talkState[talkUser] = 3
+		elseif(getPlayerStorageValue(cid, 79) == 2) then
 			npcHandler:say("Good iron is. Me friends use it much for fight. Me can make from weapon. Lil' one want to trade?", cid)
 			talkState[talkUser] = 7
 		end
 	-- Soul Orb
 	elseif(msgcontains(msg, "soul orb")) then
-		if(getPlayerStorageValue(cid, 79) == 2) then
+		if(getPlayerStorageValue(cid, 79) < 1) then
+			npcHandler:say("Uh. Me can make some nasty lil' bolt from soul orbs. Lil' one want to trade all?", cid)
+			talkState[talkUser] = 1
+		elseif(getPlayerStorageValue(cid, 79) == 1) then
+			npcHandler:say("Lil' one bring three bast skirts?", cid)
+			talkState[talkUser] = 3
+		elseif(getPlayerStorageValue(cid, 79) == 2) then
 			npcHandler:say("Uh. Me can make some nasty lil' bolt from soul orbs. Lil' one want to trade all?", cid)
 			talkState[talkUser] = 8
 		end		
