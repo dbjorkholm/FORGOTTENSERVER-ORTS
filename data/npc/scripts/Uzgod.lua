@@ -14,6 +14,22 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+	if (msgcontains(msg, "piece of draconian steel")) then
+		npcHandler:say("You bringing me draconian steel and obsidian lance in exchange for obsidian knife?", cid)
+		talkState[talkUser] = 15
+	elseif (msgcontains(msg, "yes") and talkState[talkUser] == 15) then
+		if (getPlayerItemCount(cid, 5889) >= 1 and getPlayerItemCount(cid, 2425) >= 1) then
+			local p = Player(cid)
+			npcHandler:say("Here you have it.", cid)
+			p:removeItem(5889, 1)
+			p:removeItem(2425, 1)
+			p:addItem(5908, 1)
+			talkState[talkUser] = 0
+		else
+			npcHandler:say("You dont have these items.", cid)	
+			talkState[talkUser] = 0
+		end
+	end
  
 	if(msgcontains(msg, "pickaxe")) then
 		if(getPlayerStorageValue(cid, 90) == 1) then
