@@ -22,7 +22,7 @@ function creatureSayCallback(cid, type, msg)
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
-	if(msgcontains(msg, "outfit")) then
+	if(msgcontains(msg, "addon") or msgcontains(msg, "outfit")) then
 		if(Player(cid):getStorageValue(12055) < 1) then
 			npcHandler:say("Oh, my winged tiara? Those are traditionally awarded after having completed a difficult {task} for our guild, only to female aspirants though. Male warriors will receive a hooded cloak.", cid)
 			talkState[talkUser] = 1
@@ -70,6 +70,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif(talkState[talkUser] == 3) then	
 			npcHandler:say("That's the spirit! I hope you will find my crossbow, " .. getPlayerName(cid) .. "!", cid)
 			Player(cid):setStorageValue(12055, 1)
+			Player(cid):setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
 			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 4) then
 			if(getPlayerItemCount(cid, 5947) >= 1) then
