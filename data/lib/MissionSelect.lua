@@ -56,7 +56,7 @@ descrip
 BlueOrGreen = false		-- blue djinn or green djinn quest, true = only one. -- NOT IMPLEMENTED YET
 Factions = 110	-- shared storage between blue and green djinn quest and others.
 
-BlueDjinn = {	-- NOT IMPLEMENTED YET
+BlueDjinn = {
 				NeedMission = false,
 				MissionStart = 111,
 				MissionEnd = 114,
@@ -64,7 +64,7 @@ BlueDjinn = {	-- NOT IMPLEMENTED YET
 			}
 			
 --[[
-	STORAGE VALIE = STORAGE VALUE
+	STORAGE VALUE = STORAGE VALUE
 	Factions 2 = 80 1
 	BlueDjinn.MissionStart 1 = 82 1
 	BlueDjinn.MissionStart+1 1 = 82 2
@@ -88,7 +88,7 @@ GreenDjinn = {
 			}
 			
 --[[
-	STORAGE VALIE = STORAGE VALUE
+	STORAGE VALUE = STORAGE VALUE
 	Factions 2 = 80 1
 	GreenDjinn.MissionStart 1 = 81 1
 	GreenDjinn.MissionStart+1 1 = 81 2
@@ -106,9 +106,9 @@ GreenDjinn = {
 
 
 -- Function used on this script and npcs system --
-function sendTable(cid, table, storage, factor)
+function sendTable(cid, table, storage, factor, endValue)
 local mission = getPlayerStorageValue(cid, storage)
-	if(mission < 1) then
+	if(mission < endValue) then
 		for i = 1, #table do
 			table[i].buy = table[i].buy / factor
 			table[i].sell = table[i].sell * factor
