@@ -21,6 +21,14 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+	
+	if(msgcontains(msg, "adorn") or msgcontains(msg, "helmet") or msgcontains(msg, "outfit") or msgcontains(msg, "addon")) then
+		if(getPlayerStorageValue(cid, 12060) == 5) then
+			npcHandler:say("Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Your helmet is finished, I hope you like it.", cid)
+			Player(cid):setStorageValue(12060, 6)
+			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 139 or 131, 2)
+		end
+	end
  
 	if(msgcontains(msg, "old backpack")) then
 		if(getPlayerStorageValue(cid, 330) < 1) then

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Gregor" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Gregor" script="gregor.lua" walkinterval="2000" floorchange="0" speechbubble="3">
   <health now="100" max="100" />
   <look type="131" head="38" body="38" legs="38" feet="38" addons="3" />
+	<parameters>
+		<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;heroes;king;name;gregor" />
+        <parameter key="keyword_reply1" value="I am the first knight. I trained some of the greatest heroes of Tibia." />
+        <parameter key="keyword_reply2" value="Of course, you heard of them. Knights are the best fighters in Tibia." />
+		<parameter key="keyword_reply3" value="Hail to our King!" />
+		<parameter key="keyword_reply4" value="ou are joking, eh? Of course, you know me. I am Gregor, the first knight." />
+		<parameter key="keyword_reply5" value="A great name, isn't it?" />
+        <parameter key="message_greet" value="Greetings, |PLAYERNAME|. What do you want?"/>
+        <parameter key="message_farewell" value="Be careful on your journeys."/>
+		<parameter key="message_walkaway" value="Be careful on your journeys." />
+    </parameters>
+
 </npc>
