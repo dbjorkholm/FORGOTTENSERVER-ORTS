@@ -21,9 +21,10 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-
+	
+	local p = Player(cid)
 	if(msgcontains(msg, "addon") or msgcontains(msg, "outfit")) then
-		if(Player(cid):getStorageValue(12055) < 1) then
+		if(p:getStorageValue(12055) < 1) then
 			npcHandler:say("Oh, my winged tiara? Those are traditionally awarded after having completed a difficult {task} for our guild, only to female aspirants though. Male warriors will receive a hooded cloak.", cid)
 			talkState[talkUser] = 1
 		end
@@ -33,27 +34,27 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 2
 		end
 	elseif(msgcontains(msg, "crossbow")) then
-		if(Player(cid):getStorageValue(12055) == 1) then
+		if(p:getStorageValue(12055) == 1) then
 			npcHandler:say("I'm so excited! Have you really found my crossbow?", cid)
 			talkState[talkUser] = 4
 		end
 	elseif(msgcontains(msg, "leather")) then
-		if(Player(cid):getStorageValue(12055) == 2) then
+		if(p:getStorageValue(12055) == 2) then
 			npcHandler:say("Did you bring me 100 pieces of lizard leather and 100 pieces of red dragon leather?", cid)
 			talkState[talkUser] = 5
 		end
 	elseif(msgcontains(msg, "chicken wing")) then
-		if(Player(cid):getStorageValue(12055) == 3) then
+		if(p:getStorageValue(12055) == 3) then
 			npcHandler:say("Were you able to get hold of 5 enchanted chicken wings?", cid)
 			talkState[talkUser] = 6
 		end
 	elseif(msgcontains(msg, "steel")) then
-		if(Player(cid):getStorageValue(12055) == 4) then
+		if(p:getStorageValue(12055) == 4) then
 			npcHandler:say("Ah, have you brought one piece of royal steel, draconian steel and hell steel each?", cid)
 			talkState[talkUser] = 7
 		end
 	elseif(msgcontains(msg, "Sniper Gloves")) then
-		if(Player(cid):getStorageValue(12056) < 1) then
+		if(p:getStorageValue(12056) < 1) then
 			npcHandler:say("You found sniper gloves?! Incredible! Listen, if you give them to me, I will grant you the right to wear the sniper gloves accessory. How about it?", cid)
 			talkState[talkUser] = 8
 		end
@@ -68,47 +69,47 @@ function creatureSayCallback(cid, type, msg)
 							"Did you understand everything I told you and are willing to handle this task?"}, cid)
 			talkState[talkUser] = 3
 		elseif(talkState[talkUser] == 3) then	
-			npcHandler:say("That's the spirit! I hope you will find my crossbow, " .. getPlayerName(cid) .. "!", cid)
-			Player(cid):setStorageValue(12055, 1)
-			Player(cid):setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
+			npcHandler:say("That's the spirit! I hope you will find my crossbow, " .. p:getName() .. "!", cid)
+			p:setStorageValue(12055, 1)
+			p:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
 			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 4) then
 			if(getPlayerItemCount(cid, 5947) >= 1) then
 				npcHandler:say("Yeah! I could kiss you right here and there! Besides, you're a handsome one. <giggles> Please bring me 100 pieces of lizard leather and 100 pieces of red dragon leather now!", cid)
-				Player(cid):removeItem(5947, 1)
-				Player(cid):setStorageValue(12055, 2)
+				p:removeItem(5947, 1)
+				p:setStorageValue(12055, 2)
 				talkState[talkUser] = 0	
 			end
 		elseif(talkState[talkUser] == 5) then
 			if(getPlayerItemCount(cid, 5876) >= 100 and getPlayerItemCount(cid, 5948) >= 100 ) then
-				npcHandler:say("Good work, " .. getPlayerName(cid) .. "! That is enough leather for a lot of sturdy quivers. Now, please bring me 5 enchanted chicken wings.", cid)
-				Player(cid):removeItem(5876, 100)
-				Player(cid):removeItem(5948, 100)
-				Player(cid):setStorageValue(12055, 3)
+				npcHandler:say("Good work, " .. p:getName() .. "! That is enough leather for a lot of sturdy quivers. Now, please bring me 5 enchanted chicken wings.", cid)
+				p:removeItem(5876, 100)
+				p:removeItem(5948, 100)
+				p:setStorageValue(12055, 3)
 				talkState[talkUser] = 0	
 			end
 		elseif(talkState[talkUser] == 6) then
 			if(getPlayerItemCount(cid, 5891) >= 5) then
 				npcHandler:say("Great! Now we can create a few more Tiaras. If only they weren't that expensive... Well anyway, please obtain one piece of royal steel, draconian steel and hell steel each.", cid)
-				Player(cid):removeItem(5891, 5)
-				Player(cid):setStorageValue(12055, 4)
+				p:removeItem(5891, 5)
+				p:setStorageValue(12055, 4)
 				talkState[talkUser] = 0	
 			end
 		elseif(talkState[talkUser] == 7) then
 			if(getPlayerItemCount(cid, 5887) >= 1 and getPlayerItemCount(cid, 5888) >= 1 and getPlayerItemCount(cid, 5889) >= 1 ) then
-				npcHandler:say("Wow, I'm impressed, " .. getPlayerName(cid) .. ". Your really are a valuable member of our paladin guild. I shall grant you your reward now. Wear it proudly!", cid)
-				Player(cid):removeItem(5887, 1)
-				Player(cid):removeItem(5888, 1)
-				Player(cid):removeItem(5889, 1)
-				Player(cid):setStorageValue(12055, 5)
+				npcHandler:say("Wow, I'm impressed, " .. p:getName() .. ". Your really are a valuable member of our paladin guild. I shall grant you your reward now. Wear it proudly!", cid)
+				p:removeItem(5887, 1)
+				p:removeItem(5888, 1)
+				p:removeItem(5889, 1)
+				p:setStorageValue(12055, 5)
 				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 137 or 129, 1)
 				talkState[talkUser] = 0	
 			end
 		elseif(talkState[talkUser] == 8) then
 			if(getPlayerItemCount(cid, 5875) >= 1) then
 				npcHandler:say("Great! I hereby grant you the right to wear the sniper gloves as accessory. Congratulations!", cid)
-				Player(cid):removeItem(5875, 1)
-				Player(cid):setStorageValue(12056, 1)
+				p:removeItem(5875, 1)
+				p:setStorageValue(12056, 1)
 				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 137 or 129, 2)
 				talkState[talkUser] = 0	
 			end
