@@ -11,6 +11,7 @@ function onKill(cid, target)
 			doCreatureSay(cid, "You slained " .. getCreatureName(target) .. ".", TALKTYPE_ORANGE_1)
 			setPlayerStorageValue(cid, 14, 2)
 			setPlayerStorageValue(cid, 30, 41)
+			Player(cid):setStorageValue(12018, 4) -- StorageValue for Questlog "Mission 07: A Fishy Mission"
 		end
 	end
 	return true

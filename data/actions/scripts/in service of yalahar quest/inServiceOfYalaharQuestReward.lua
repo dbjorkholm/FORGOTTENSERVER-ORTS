@@ -6,6 +6,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3088) then
 		if(getPlayerStorageValue(cid, 30) == 53) then
 			setPlayerStorageValue(cid, 30, 54)
+			Player(cid):setStorageValue(12021, 5) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			doPlayerAddItem(cid, 9776, 1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a yalahari armor.")
 		else
@@ -14,6 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.uid == 3089) then
 		if(getPlayerStorageValue(cid, 30) == 53) then
 			setPlayerStorageValue(cid, 30, 54)
+			Player(cid):setStorageValue(12021, 5) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			doPlayerAddItem(cid, 9778, 1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a yalahari mask.")
 		else
@@ -22,6 +24,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.uid == 3090) then
 		if(getPlayerStorageValue(cid, 30) == 53) then
 			setPlayerStorageValue(cid, 30, 54)
+			Player(cid):setStorageValue(12021, 5) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			doPlayerAddItem(cid, 9777, 1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a yalahari leg piece.")
 		else

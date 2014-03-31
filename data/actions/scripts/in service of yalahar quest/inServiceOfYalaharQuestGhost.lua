@@ -34,6 +34,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
           	doSendMagicEffect(toPosition,65)
           	doRemoveItem(item.uid, 1)
 	  	setPlayerStorageValue(cid, 30, 37)
+		Player(cid):setStorageValue(12017, 3) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
 	  	doPlayerRemoveItem(cid, 9737, 1)
 	  	setPlayerStorageValue(cid, 15, 3)
 	  	doCreatureSay(cid, "The ghost charm is charged.", TALKTYPE_ORANGE_1)
