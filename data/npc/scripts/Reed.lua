@@ -26,6 +26,7 @@ function creatureSayCallback(cid, type, msg)
 		if(getPlayerStorageValue(cid, 30) == 10 or getPlayerStorageValue(cid, 30) == 11) then
 			npcHandler:say("You have NO idea what we have to endure each day .. <gives a shocking and disturbing report>. ", cid)
 			setPlayerStorageValue(cid, 30, getPlayerStorageValue(cid, 30) + 1)
+			Player(cid):setStorageValue(12013, Player(cid):getStorageValue(12013) + 1) -- StorageValue for Questlog "Mission 02: Watching the Watchmen"
 			talkState[talkUser] = 0
 		end
 	elseif(msgcontains(msg, "pass")) then
