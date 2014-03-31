@@ -1,4 +1,3 @@
-dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -93,7 +92,7 @@ local function onTradeRequest(cid)
 		function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
 				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
-			end
+			end			
 			if items[item].buyPrice <= getPlayerMoney(cid) then
 				if inBackpacks then
 					local itembp = doCreateItemEx(1988, 1)
@@ -101,10 +100,12 @@ local function onTradeRequest(cid)
 					if(bp ~= 1) then
 						return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
 					end
-					doAddContainerItem(itembp, items[item].itemId, amount)	
+					for i = 1, amount do
+						doAddContainerItem(itembp, items[item].itemId, items[item])
+					end
 				else
 					return 
-					doPlayerAddItem(cid, items[item].itemId, amount, false) and
+					doPlayerAddItem(cid, items[item].itemId, amount, false, items[item]) and
 					doPlayerRemoveMoney(cid, amount * items[item].buyPrice) and
 					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
 				end
