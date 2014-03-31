@@ -26,6 +26,9 @@
 	<action itemid="7760" script="other/enchanting.lua"/>
 	<action itemid="7761" script="other/enchanting.lua"/>
 	<action itemid="7762" script="other/enchanting.lua"/>
+	
+	<action itemid="12424" script="other/checkbless.lua"/>
+	<action itemid="6561" script="other/checkbless.lua"/>
 
 	<!-- Elemental -->
 	<action uniqueid="9024" script="elemental spheres quest/ElementalSpheresQuestLever.lua"/>
