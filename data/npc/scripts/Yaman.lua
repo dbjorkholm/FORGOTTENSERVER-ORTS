@@ -73,10 +73,12 @@ local function onTradeRequest(cid)
 					if(bp ~= 1) then
 						return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
 					end
-					doAddContainerItem(itembp, items[item].itemId, amount)	
+					for i = 1, amount do
+						doAddContainerItem(itembp, items[item].itemId, items[item])
+					end
 				else
 					return 
-					doPlayerAddItem(cid, items[item].itemId, amount, false) and
+					doPlayerAddItem(cid, items[item].itemId, amount, false, items[item]) and
 					doPlayerRemoveMoney(cid, amount * items[item].buyPrice) and
 					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
 				end
@@ -88,7 +90,7 @@ local function onTradeRequest(cid)
 			return true
 			end
 			 
-		local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
+		function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if items[item].sellPrice then
 				return 
 				doPlayerRemoveItem(cid, items[item].itemId, amount) and

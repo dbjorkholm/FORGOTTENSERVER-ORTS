@@ -1,4 +1,3 @@
-dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -405,10 +404,12 @@ local function onTradeRequest(cid)
 					if(bp ~= 1) then
 						return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
 					end
-					doAddContainerItem(itembp, items[item].itemId, amount)	
+					for i = 1, amount do
+						doAddContainerItem(itembp, items[item].itemId, items[item])
+					end
 				else
 					return 
-					doPlayerAddItem(cid, items[item].itemId, amount, false) and
+					doPlayerAddItem(cid, items[item].itemId, amount, false, items[item]) and
 					doPlayerRemoveMoney(cid, amount * items[item].buyPrice) and
 					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
 				end
