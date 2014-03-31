@@ -58,6 +58,9 @@
 	<action itemid="7760" script="other/enchanting.lua"/>
 	<action itemid="7761" script="other/enchanting.lua"/>
 	<action itemid="7762" script="other/enchanting.lua"/>
+	
+	<action itemid="12424" script="other/checkbless.lua"/>
+	<action itemid="6561" script="other/checkbless.lua"/>
 
 	<!-- Gravedigger -->
 	<action actionid="4630" script="gravedigger quest/amforas.lua"/> 
