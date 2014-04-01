@@ -107,7 +107,8 @@ GreenDjinn = {
 
 -- Function used on this script and npcs system --
 function sendTable(cid, table, storage, factor, endValue)
-local mission = getPlayerStorageValue(cid, storage)
+local player = Player(cid)
+local mission = player:getStorageValue(storage)
 	if(mission < endValue) then
 		for i = 1, #table do
 			table[i].buy = table[i].buy / factor
@@ -123,4 +124,56 @@ function setNewTradeTable(table)
 			items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
 	end
 	return items
+end
+
+function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
+	local player = Player(cid)
+	if(player:getStorageValue(STORAGE.MissionEnd) >= Fvalue or STORAGE.NeedMission ~= true) then
+	
+		local ItemTable = sendTable(cid, table, STORAGE.MissionEnd, STORAGE.WithoutMissionPrice, Fvalue)
+		local items = setNewTradeTable(ItemTable)
+		
+		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+			if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+				return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
+			end
+			if items[item].buyPrice <= player:getMoney() then
+				if inBackpacks then
+					local itembp = doCreateItemEx(1988, 1)
+					local bp = player:addItemEx(itembp)
+					if(bp ~= 1) then
+						return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+					end
+					for i = 1, amount do
+						doAddContainerItem(itembp, items[item].itemId, items[item])
+					end
+				else
+					return 
+					player:addItem(items[item].itemId, amount, false, items[item]) and
+					player:removeMoney(amount * items[item].buyPrice) and
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+				end
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+				player:removeMoney(amount * items[item].buyPrice)
+			else
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
+			end
+			return true
+			end
+			 
+		local function onSell(cid, item, subType, amount, ignoreEquipped)
+			if items[item].sellPrice then
+				return
+				player:addMoney(items[item].sellPrice * amount) and
+				player:removeItem(items[item].itemId, amount, 1, ignoreEquipped) and
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
+			end
+			return true
+		end
+		openShopWindow(cid, ItemTable, onBuy, onSell)
+		return npc:say('It\'s my offer.', player)
+	else
+		npcHandler:say("I don't trade with not recognized traders.", player)
+		return false
+	end
 end

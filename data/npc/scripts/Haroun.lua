@@ -39,7 +39,7 @@ return list
 end
 
 function creatureSayCallback(cid, type, msg)
-
+	local player = Player(cid)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	if(not npcHandler:isFocused(cid)) then
 			return false
@@ -70,16 +70,16 @@ function creatureSayCallback(cid, type, msg)
 				{NeedItem = 2392, Ncount = 3, GiveItem = 5904, Gcount = 1}, -- Magic Sulphur
 				}
 
-        if getPlayerItemCount(cid,trade[talk_state].NeedItem) >= trade[talk_state].Ncount then
-			doPlayerRemoveItem(cid, trade[talk_state].NeedItem, trade[talk_state].Ncount)
-			doPlayerAddItem(cid, trade[talk_state].GiveItem, trade[talk_state].Gcount)
+        if player:getItemCount(trade[talk_state].NeedItem) >= trade[talk_state].Ncount then
+			player:removeItem(trade[talk_state].NeedItem, trade[talk_state].Ncount)
+			player:addItem(trade[talk_state].GiveItem, trade[talk_state].Gcount)
 			return npcHandler:say(msg,'Here you are')						
         else
-            npcHandler:say('Sorry but you don\'t have the item', cid)
+            npcHandler:say('Sorry but you don\'t have the item', player)
         end
  
 	elseif msgcontains(msg,'no') and (talk_state >= 1 and talk_state <= 5) then
-		 npcHandler:say(msg,'Ok then', cid)
+		 npcHandler:say(msg,'Ok then', player)
 		 talk_state = 0
 		 npcHandler:releaseFocus(cid)
 	end
@@ -87,53 +87,7 @@ function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	if(getPlayerStorageValue(cid, BlueDjinn.MissionEnd) >= 4 or BlueDjinn.NeedMission ~= true) then
-		local items = setNewTradeTable(sendTable(cid, getTable(), BlueDjinn.MissionEnd, BlueDjinn.WithoutMissionPrice, 4))
-		function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-			if (ignoreCap == false and (getPlayerFreeCap(cid) < getItemWeight(items[item].itemId, amount) or inBackpacks and getPlayerFreeCap(cid) < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
-				return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
-			end			
-			if items[item].buyPrice <= getPlayerMoney(cid) then
-				if inBackpacks then
-					local itembp = doCreateItemEx(1988, 1)
-					local bp = doPlayerAddItemEx(cid, itembp)
-					if(bp ~= 1) then
-						return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
-					end
-					for i = 1, amount do
-						doAddContainerItem(itembp, items[item].itemId, items[item])
-					end
-				else
-					return 
-					doPlayerAddItem(cid, items[item].itemId, amount, false, items[item]) and
-					doPlayerRemoveMoney(cid, amount * items[item].buyPrice) and
-					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
-				end
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
-				doPlayerRemoveMoney(cid, amount * items[item].buyPrice)
-			else
-				doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You do not have enough money.')
-			end
-		return true
-		end
-		
-		local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
-			if items[item].sellPrice then
-				return 
-				doPlayerRemoveItem(cid, items[item].itemId, amount) and
-				doPlayerAddMoney(cid, items[item].sellPrice * amount) and
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
-			end
-		return true
-		end
-		
-		openShopWindow(cid, sendTable(cid, getTable(), BlueDjinn.MissionEnd, BlueDjinn.WithoutMissionPrice, 4), onBuy, onSell)
-		return npcHandler:say('It\'s my offer.', cid)	
-		
-	else
-		npcHandler:say("I don't trade with not recognized traders.", cid)
-		return false
-	end
+	TradeRequest(cid, npcHandler, getTable(), BlueDjinn, 4)
 end
 
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
