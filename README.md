@@ -10,6 +10,7 @@ https://github.com/edubart/otclient
 Also you can use the forum to discuss and report:
 http://otland.net/threads/best-released-real-map-10-31-based-1-0.204514/
 
+```
 If you want to contribute by sending pull request, here is some tips.
 Try to use metatables on your script. Ex.
 function metaExample(cid)
@@ -503,3 +504,4 @@ vocation:getPromotion()
 vocation:getRequiredManaSpent(magicLevel)
 vocation:getRequiredSkillTries(skillType, skillLevel)
 vocation:getSoulGainTicks()
+```
