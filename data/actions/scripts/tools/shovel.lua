@@ -1,13 +1,16 @@
-local holes = {468, 481, 483, 7932, 9059}
+local holes = {468, 481, 483, 7932}
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
+	local iEx = Item(itemEx.uid)
 	if isInArray(holes, itemEx.itemid) then
-		local iEx = Item(itemEx.uid)
 		iEx:transform(itemEx.itemid + 1)
 		iEx:decay()
-	elseif itemEx.itemid == 231 then
+	elseif itemEx.itemid == 231 or itemEx.itemid == 9059 then
 		local rand = math.random(1, 100)
-		if rand == 1 then
+		if(itemEx.actionid  == 100 and rand <= 20) then
+		iEx:transform(489)
+		iEx:decay()
+		elseif rand == 1 then
 			Game.createItem(2159, 1, toPosition)
 		elseif rand > 95 then
 			Game.createMonster("Scarab", toPosition)
