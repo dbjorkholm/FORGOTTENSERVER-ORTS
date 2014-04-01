@@ -101,7 +101,7 @@ local food = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 
-	local food = FOODS[item.itemid]
+	local food = food[item.itemid]
 	if food == nil then
 		return false
 	end
