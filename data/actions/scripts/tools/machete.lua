@@ -4,37 +4,38 @@ local BAMBOO_FENCE = { 3798, 3799 }
 local WILD_GROWTH = { 1499, 11099 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local iEx = Item(itemEx.uid)
 	if(isInArray(JUNGLE_GRASS, itemEx.itemid)) then
-		doTransformItem(itemEx.uid, itemEx.itemid - 1)
-		doDecayItem(itemEx.uid)
+		iEx:transform(itemEx.itemid - 1)
+		iEx:decay()
 		return true
 	end
 
 	if(isInArray(SPIDER_WEB, itemEx.itemid)) then
 		if math.random(3) == 1 then
-			doTransformItem(itemEx.uid, (itemEx.itemid + 6))
-			doDecayItem(itemEx.uid)
+			iEx:transform(itemEx.itemid + 6)
+			iEx:decay()
 		end
-		doSendMagicEffect(toPosition, CONST_ME_POFF)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
 
 	if(isInArray(BAMBOO_FENCE, itemEx.itemid)) then
 		if math.random(3) == 1 then
 			if(itemEx.itemid == BAMBOO_FENCE[1]) then
-				doTransformItem(itemEx.uid, (itemEx.itemid + 161))
+				iEx:transform(itemEx.itemid + 161)
 			elseif(itemEx.itemid == BAMBOO_FENCE[2]) then
-				doTransformItem(itemEx.uid, (itemEx.itemid + 159))
+				iEx:transform(itemEx.itemid + 159)
 			end
-			doDecayItem(itemEx.uid)
+			iEx:decay()
 		end
-		doSendMagicEffect(toPosition, CONST_ME_POFF)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
 
 	if(isInArray(WILD_GROWTH, itemEx.itemid)) then
-		doSendMagicEffect(toPosition, CONST_ME_POFF)
-		doRemoveItem(itemEx.uid)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		iEx:remove()
 		return true
 	end
 	
