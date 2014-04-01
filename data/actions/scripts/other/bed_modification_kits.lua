@@ -6,43 +6,36 @@ local BEDS = {
 	[20252] = {{20197, 20198}, {20199, 20200}} -- canopy kit
 }
 
-local function internalBedTransform(item, itemEx, fromPosition, toPosition, ids)
-	toPosition:getTile():getItemByType(ITEM_TYPE_BED):transform(ids[2])
-	Item(itemEx.uid):transform(ids[1])
-	toPosition:sendMagicEffect(CONST_ME_POFF)
-	local kit = Item(item.uid)
-	kit:getPosition():sendMagicEffect(CONST_ME_POFF)
-	kit:remove()
+local function internalBedTransform(item, itemEx, toPosition, ids)
+	doTransformItem(itemEx.uid, ids[1])
+	doTransformItem(getTileItemByType(toPosition, ITEM_TYPE_BED).uid, ids[2])
+
+	doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_POFF)
+	doSendMagicEffect(toPosition, CONST_ME_POFF)
+
+	doRemoveItem(item.uid)
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local newBed = BEDS[item.itemid]
-	if not newBed then
-		return false
-	end
-	local tile = toPosition:getTile()
-	if not tile or not tile:getHouse() then
+	if not newBed or not getTileHouseInfo(getPlayerPosition(cid)) then
 		return false
 	end
 
 	if itemEx.itemid == newBed[1][1] or itemEx.itemid == newBed[2][1] then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "You already have this bed modification.")
-		return true
+		return false
 	end
 
 	for kit, bed in pairs(BEDS) do
-		if bed[1][1] == itemEx.itemid or isInArray({1758, 5502, 18027}, itemEx.itemid) then
-			toPosition:sendMagicEffect(CONST_ME_POFF)
+		if(bed[1][1] == itemEx.itemid) then
 			toPosition.y = toPosition.y + 1
 			internalBedTransform(item, itemEx, toPosition, newBed[1])
 			break
-		elseif bed[2][1] == itemEx.itemid or isInArray({1756, 5500, 18029}, itemEx.itemid) then
-			toPosition:sendMagicEffect(CONST_ME_POFF)
+		elseif(bed[2][1] == itemEx.itemid) then
 			toPosition.x = toPosition.x + 1
 			internalBedTransform(item, itemEx, toPosition, newBed[2])
 			break
 		end
 	end
-
 	return true
 end
