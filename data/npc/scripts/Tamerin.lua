@@ -19,11 +19,11 @@ end
 function greetCallback(cid)
 	local p = Player(cid)
 	if(p:getStorageValue(30) == 30) then
-		npcHandler:say("Have you the {animal cure}?", cid)
-		return true
+		npcHandler:setMessage(MESSAGE_GREET, "Have you the {animal cure}?")
 	elseif(p:getStorageValue(30) == 31) then
-		npcHandler:say("Have you killed {morik}?", cid)
-		return true
+		npcHandler:setMessage(MESSAGE_GREET, "Have you killed {morik}?")
+	else
+		npcHandler:setMessage(MESSAGE_GREET, "Hello, what brings you here?")
 	end
 	return true
 end
@@ -49,7 +49,7 @@ function creatureSayCallback(cid, type, msg)
 			doPlayerRemoveItem(cid, 9734, 1)
 			p:setStorageValue( 30, 31)
 			p:setStorageValue(12016, 4) -- StorageValue for Questlog "Mission 05: Food or Fight"
-			npcHandler:say("Thank you very much. As I said, as soon as you have helped me to solve both of my problems, we will talk about your {mission}.", cid)
+			npcHandler:say("Thank you very much. As I said, as soon as you have helped me to solve both of my problems, we will talk about your mission. Have you killed {morik}? ", cid)
 			talkState[talkUser] = 0
 		else
 			npcHandler:say("Come back when you have the cure.", cid)
@@ -75,7 +75,7 @@ function creatureSayCallback(cid, type, msg)
 			doPlayerRemoveItem(cid, 9735, 1)
 			p:setStorageValue( 30, 32)
 			p:setStorageValue(12016, 5) -- StorageValue for Questlog "Mission 05: Food or Fight"
-			npcHandler:say("So he finally got what he deserved. As I said, as soon as you have helped me to solve both of my problems, we will talk about your mission. ", cid)
+			npcHandler:say("So he finally got what he deserved. As I said, as soon as you have helped me to solve both of my problems, we will talk about your {mission}. ", cid)
 			talkState[talkUser] = 0
 		else
 			npcHandler:say("Come back when you got rid with Morik.", cid)
