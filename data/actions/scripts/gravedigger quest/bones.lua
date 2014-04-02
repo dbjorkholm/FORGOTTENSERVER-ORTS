@@ -1,9 +1,10 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if (getPlayerStorageValue(cid, 9957) == 1) and (getPlayerStorageValue(cid, 9959) < 1) then
-		if(itemEx.aid == 4633) then
-			setPlayerStorageValue(cid,9959,1)
-			doRemoveItem(item.uid)
-			doPlayerAddItem(cid,21406,1)
+	if itemEx.actionid == 4633 then
+		local player = Player(cid)
+		if player:getStorageValue(9957) == 1 and player:getStorageValue(9959) < 1 then
+			player:setStorageValue(9959, 1)
+			player:addItem(21406, 1)
+			Item(item.uid):remove()
 		end
 	end
 	return true
