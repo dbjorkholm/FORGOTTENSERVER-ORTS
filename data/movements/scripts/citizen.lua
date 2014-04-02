@@ -16,13 +16,14 @@ local t = {
 	[9500] = {id = 29}
 }
 function onStepIn(cid, item, position, fromPosition)
-	local town = t[item.uid]
-	if Player(cid) then
-		if town then
-			Player(cid):setTown(Town(town.id))
-			doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)))
+	local town = Town(t[item.uid].id)
+	local player = Player(cid)
+	if player then
+		if t[item.uid] then
+			player:setTown(town)
+			doTeleportThing(cid, town:getTemplePosition())
 			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You are now a citizen of "..getTownName(getPlayerTown(cid))..".")	
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are now a citizen of "..town:getName()..".")	
 		end
 	end
 	return true
