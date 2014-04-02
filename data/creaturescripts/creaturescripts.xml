@@ -5,7 +5,7 @@
 
 	<!-- Bigfoot Burden Quest -->
 	<event type="kill" name="bigfootBurdenQuestVesperoth" script="bigfoot burden quest/bigfootBurdenQuestVesperoth.lua"/>
-	<event type="death" name="bigfootBurdenQuestWarzone" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
+	<event type="kill" name="bigfootBurdenQuestWarzone" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
 	<event type="kill" name="bigfootBurdenQuestWeeper" script="bigfoot burden quest/bigfootBurdenQuestWeeper.lua"/>
 	<event type="kill" name="bigfootBurdenQuestWiggler" script="bigfoot burden quest/bigfootBurdenQuestWiggler.lua"/>
 
