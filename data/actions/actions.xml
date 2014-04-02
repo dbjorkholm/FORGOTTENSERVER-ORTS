@@ -2,10 +2,7 @@
 <actions>
 
 	<!-- Hunter Outfits Quest -->
-	<action itemid="6087"  script="hunter outfit quest/MusicSheet.lua"/>
-	<action itemid="6088"  script="hunter outfit quest/MusicSheet.lua"/>
-	<action itemid="6089"  script="hunter outfit quest/MusicSheet.lua"/>
-	<action itemid="6090"  script="hunter outfit quest/MusicSheet.lua"/>
+	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
 
     <!-- outlaw camp -->
@@ -19,45 +16,29 @@
 	<action uniqueid="3402" script="The-outlaw-quest/powerburn.lua" />
 
 	<!-- Kazordoon -->
-	<action actionid="8034" script="kazordoon/kazordoonOreWagons.lua"/>
-	<action actionid="8035" script="kazordoon/kazordoonOreWagons.lua"/>
-	<action actionid="8036" script="kazordoon/kazordoonOreWagons.lua"/>
-	<action actionid="8037" script="kazordoon/kazordoonOreWagons.lua"/>
-	<action actionid="8038" script="kazordoon/kazordoonOreWagons.lua"/>
-	
+	<action fromaid="8034" toaid="8038" script="kazordoon/kazordoonOreWagons.lua"/>
+
 	<!-- Addons -->
-	<action itemid="13926"  script="addons/addons.lua"/>
-	<action itemid="13925"  script="addons/addons.lua"/>
-	<action itemid="18521"  script="addons/addons.lua"/>
-	<action itemid="18522"  script="addons/addons.lua"/>
-	<action itemid="18518"  script="addons/addons.lua"/>
-	<action itemid="18519"  script="addons/addons.lua"/>
+	<action fromid="13925" toid="13926" script="addons/addons.lua"/>
+	<action fromid="18521" toid="18522" script="addons/addons.lua"/>
+	<action fromid="18518" toid="18519" script="addons/addons.lua"/>
 
 	<!-- Ghost Ship (Plate armor quest) -->
-	<action actionid="5556"  script="other/ghostship.lua"/>
+	<action actionid="5556" script="other/ghostship.lua"/>
 
 	<!-- Venore -->
-	<action actionid="9743"  script="other/venorelever.lua"/>
-	<action actionid="9744"  script="other/venorelever.lua"/>
+	<action fromaid="9743" toaid="9744" script="other/venorelever.lua"/>
 
 	<!-- Farmine -->
-	<action actionid="9118" script="farmine/FarmineElevatorLever.lua"/>
-	<action actionid="9119" script="farmine/FarmineElevatorLever.lua"/>
-	<action actionid="9120" script="farmine/FarmineElevatorLever.lua"/>
-	<action actionid="9121" script="farmine/FarmineElevatorLever.lua"/>
-	
+	<action fromaid="9118" toaid="9121" script="farmine/FarmineElevatorLever.lua"/>
+
 	<!-- Adorned UH Quest -->
 	<action uniqueid="2240" script="adorned uh quest/adornedUHRuneQuestReward.lua"/>
 
 	<!-- Weapons enchanting (Gems) -->
-	<action itemid="2146" script="other/enchanting.lua"/>
-	<action itemid="2147" script="other/enchanting.lua"/>
-	<action itemid="2150" script="other/enchanting.lua"/>
-	<action itemid="2149" script="other/enchanting.lua"/>
-	<action itemid="7759" script="other/enchanting.lua"/>
-	<action itemid="7760" script="other/enchanting.lua"/>
-	<action itemid="7761" script="other/enchanting.lua"/>
-	<action itemid="7762" script="other/enchanting.lua"/>
+	<action fromid="2146" toid="2147" script="other/enchanting.lua"/>
+	<action fromid="2149" toid="2150" script="other/enchanting.lua"/>
+	<action fromid="7759" toid="7762" script="other/enchanting.lua"/>
 	
 	<action itemid="12424" script="other/checkbless.lua"/>
 	<action itemid="6561" script="other/checkbless.lua"/>
