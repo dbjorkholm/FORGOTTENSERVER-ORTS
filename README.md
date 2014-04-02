@@ -37,4 +37,4 @@ if (player:getStorageValue(1000) == 1) then
 
 LUA METATABLE LIST
 
-http://pastebin.com/r882V0qe
+http://pastebin.com/XpTSL8Sf

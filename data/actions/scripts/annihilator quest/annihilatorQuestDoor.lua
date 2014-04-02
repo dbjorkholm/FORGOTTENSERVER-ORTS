@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	if player:getStorageValue(2216) < 1 then
 		if item.itemid == 5114 then
-			Creature(cid):teleportTo(toPosition, true)
+			player:teleportTo(toPosition, true)
 			Item(item.uid):transform(5115)
 		end
 	else
