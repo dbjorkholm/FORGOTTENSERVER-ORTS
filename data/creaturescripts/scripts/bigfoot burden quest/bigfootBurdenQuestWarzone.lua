@@ -14,7 +14,7 @@ function onKill(cid, target, lastHit)
 	
 	for id, damage in pairs(creature:getDamageMap()) do
 		local player = Player(id)
-		if player and targetName then
+		if player then
 			if player:getStorageValue(945) < targetName[1] then
 				player:setStorageValue(945, targetName[1])
 			end
