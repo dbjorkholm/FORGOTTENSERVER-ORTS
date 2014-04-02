@@ -72,7 +72,4 @@
 		<item id="18450" chance="5500"/><!-- crystalline sword -->
 		<item id="18452" chance="4500"/><!-- mace -->
 	</loot>
-	<script>
-		<event name="bigfootBurdenQuestWarzone"/>
-	</script>
 </monster>
