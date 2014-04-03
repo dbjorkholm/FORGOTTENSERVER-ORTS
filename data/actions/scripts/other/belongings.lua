@@ -5,8 +5,8 @@ function onUse(cid, item, frompos, item2, topos)
 	local count = {1,1,1,1,1,1,10,10,10,1,1}
 	local present = math.random(#items)
 
-	p:getPosition():sndMagicEffect(27)
-	p:additem(items[present],count[present])
+	p:getPosition():sendMagicEffect(27)
+	p:addItem(items[present],count[present])
 	i:remove(1)
 return true
 end
