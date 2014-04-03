@@ -7,13 +7,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif player:getStorageValue(9938) == 1 and player:getStorageValue(9939) < 1 then
 			player:setStorageValue(9939, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<screeeech> <squeak> <squeaaaaal>')
-		elseif getPlayerStorageValue(cid, 9939) == 1 and player:getStorageValue(9940) < 1 then
+		elseif player:getStorageValue(9939) == 1 and player:getStorageValue(9940) < 1 then
 			player:setStorageValue(9940, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<screeeech> <squeak> <squeaaaaal>')
-		elseif getPlayerStorageValue(cid, 9940) == 1 and player:getStorageValue(9941) < 1 then
+		elseif player:getStorageValue(9940) == 1 and player:getStorageValue(9941) < 1 then
 			player:setStorageValue(9941, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<screeeech> <squeak> <squeaaaaal>')
-		elseif getPlayerStorageValue(cid, 9941) == 1 and player:getStorageValue(9942) < 1 then
+		elseif player:getStorageValue(9941) == 1 and player:getStorageValue(9942) < 1 then
 			player:setStorageValue(9942, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<screeeech> <squeak> <squeaaaaal>')
 		end
