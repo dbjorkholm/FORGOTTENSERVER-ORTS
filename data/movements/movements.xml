@@ -1,115 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
 
-		<!--- Others -->
-		<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>
-		<movevent event="AddItem" tileitem="1" itemid="5023" script="others/notrash.lua"/>
-		<movevent event="AddItem" tileitem="1" itemid="5024" script="others/notrash.lua"/>
-		<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
-		<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
+	<!--- Others -->
+	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="5023" script="others/notrash.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="5024" script="others/notrash.lua"/>
+	<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
+	<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
 		
-		<!--- KillingOfTheNameOf -->
-		<movevent event="StepIn" uniqueid="3230" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3231" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3232" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3233" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3234" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3235" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3236" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3237" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3238" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3239" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3240" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3241" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3242" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3243" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3244" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3245" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3246" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3247" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3248" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3249" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3250" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3251" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3252" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3253" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3254" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3255" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3256" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
-		<movevent event="StepIn" uniqueid="3257" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+	<!--- KillingOfTheNameOf -->
+	<movevent event="StepIn" fromuid="3230" touid="3257" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
+
+	<!-- Teleports -->
+	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
+	<movevent event="StepIn" actionid="5555" script="others/sorcererthais.lua"/>
+	<movevent event="StepIn" fromaid="9710" toaid="9716" script="others/furygates.lua"/>
 		
-		
-		<!-- Teleports -->
-		<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
-		<movevent event="StepIn" actionid="5555" script="others/sorcererthais.lua"/>
-		<movevent event="StepIn" fromaid="9710" toaid="9716" script="others/furygates.lua"/>
-		<!--- Ankrahmun Tomb Mystic Fires -->
-		<movevent event="StepIn" uniqueid="9033" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9034" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9035" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9036" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9037" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9038" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9039" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9040" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9041" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9042" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9043" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9044" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9045" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9046" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9047" script="others/tombcoalbasin.lua"/>
-		<movevent event="StepIn" uniqueid="9048" script="others/tombcoalbasin.lua"/>
-		<!--- Shrines Portals -->
-		<movevent event="StepIn" uniqueid="9069" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9070" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9071" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9072" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9073" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9074" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9075" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9076" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9077" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9078" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9079" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9080" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9081" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9082" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9083" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9084" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9085" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9086" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9087" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9088" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9089" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9090" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9091" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9092" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9093" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9094" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9095" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9096" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9097" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9098" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9099" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9100" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9101" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9102" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9103" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9104" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9105" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9106" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9107" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9108" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9109" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9110" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9111" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9112" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9113" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9114" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9115" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" uniqueid="9116" script="others/shrinesportal.lua"/>
-		<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua"/>
+	<!--- Ankrahmun Tomb Mystic Fires -->
+	<movevent event="StepIn" fromuid="9033" touid="9048" script="others/tombcoalbasin.lua"/>
+
+	<!--- Shrines Portals -->
+	<movevent event="StepIn" fromuid="9069" touid="9116" script="others/shrinesportal.lua"/>
+	<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua"/>
 		
 	<!-- Gravedigger -->
 	<movevent event="StepIn" fromaid="4530" toaid="4531" script="gravedigger quest/tps.lua"/>
@@ -126,37 +38,16 @@
 	<movevent event="StepIn" actionid="9029" script="elemental spheres quest/ElementalSpheresQuestAOETeleportOut.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<movevent event="StepIn" actionid="7816" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
-	<movevent event="StepIn" actionid="7817" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
-	<movevent event="StepIn" actionid="7818" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
+	<movevent event="StepIn" fromaid="7816" toaid="7818" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
 	<movevent event="StepIn" actionid="4121" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3215" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3216" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3217" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3218" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3219" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3220" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3128" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3129" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3130" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3131" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3132" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3133" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3134" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3135" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3136" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="3137" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" fromaid="3215" toaid="3220" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
+	<movevent event="StepIn" fromaid="3128" toaid="3137" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
 	<movevent event="StepIn" actionid="35669" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
 	<movevent event="StepIn" actionid="8030" script="bigfoot burden quest/bigfootBurdenQuestShooting.lua"/>
 	<movevent event="StepIn" itemid="18340" script="bigfoot burden quest/bigfootBurdenQuestTruffles.lua"/>
-	<movevent event="StepIn" uniqueid="3144" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
-	<movevent event="StepIn" uniqueid="3145" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
-	<movevent event="StepIn" uniqueid="3146" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
-	<movevent event="StepIn" uniqueid="3140" script="bigfoot burden quest/bigfootBurdenQuestWarzoneTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="3141" script="bigfoot burden quest/bigfootBurdenQuestWarzoneTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="3142" script="bigfoot burden quest/bigfootBurdenQuestWarzoneTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="3122" script="bigfoot burden quest/bigfootBurdenQuestXray.lua"/>
-	<movevent event="StepIn" uniqueid="3123" script="bigfoot burden quest/bigfootBurdenQuestXray.lua"/>
+	<movevent event="StepIn" fromuid="3144" touid="3146" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
+	<movevent event="StepIn" fromuid="3140" touid="3142" script="bigfoot burden quest/bigfootBurdenQuestWarzoneTeleports.lua"/>
+	<movevent event="StepIn" fromuid="3122" touid="3123" script="bigfoot burden quest/bigfootBurdenQuestXray.lua"/>
 
 	<!-- Demon Oak Quest -->
 	<movevent event="StepIn" uniqueid="9000" script="demon oak quest/demonOakTreeEnter.lua" />
@@ -170,37 +61,19 @@
  	<movevent event="StepIn" actionid="25100" script="svargrond arena quest/arena_enter.lua"/>
 	<movevent event="StepIn" actionid="25200" script="svargrond arena quest/arena_pit.lua"/>
 	<movevent event="StepIn" actionid="25300" script="svargrond arena quest/arena_pit.lua"/>
-	<movevent event="StepIn" uniqueid="23201" script="svargrond arena quest/arena_trophy.lua"/>
-	<movevent event="StepIn" uniqueid="23202" script="svargrond arena quest/arena_trophy.lua"/>
-	<movevent event="StepIn" uniqueid="23203" script="svargrond arena quest/arena_trophy.lua"/>
+	<movevent event="StepIn" fromuid="23201" touid="23203" script="svargrond arena quest/arena_trophy.lua"/>
 	
 	<!-- Dreamer Challenge Quest -->
 	<movevent event="StepIn" actionid="8031" script="dreamer challenge quest/dreamerChallengeQuestAchievement.lua"/>
-	<movevent event="StepIn" uniqueid="2241" script="dreamer challenge quest/dreamerChallengeQuestCarrot.lua"/>
-	<movevent event="StepIn" uniqueid="2242" script="dreamer challenge quest/dreamerChallengeQuestCarrot.lua"/>
+	<movevent event="StepIn" fromuid="2241" touid="2242" script="dreamer challenge quest/dreamerChallengeQuestCarrot.lua"/>
 	<movevent event="StepIn" uniqueid="2243" script="dreamer challenge quest/dreamerChallengeQuestFireBugTeleport.lua"/>
-	<movevent event="StepIn" actionid="2245" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
-	<movevent event="StepIn" actionid="2246" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
-	<movevent event="StepOut" actionid="2245" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
-	<movevent event="StepOut" actionid="2246" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
+	<movevent event="StepIn" fromaid="2245" toaid="2246" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
+	<movevent event="StepOut" fromaid="2245" toaid="2246" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
 	<movevent event="StepIn" actionid="8033" script="dreamer challenge quest/dreamerChallengeQuestRiddleTeleport.lua"/>
 	<movevent event="StepIn" actionid="9031" script="dreamer challenge quest/dreamerChallengeQuestStoneTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="2250" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2251" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2252" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2253" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2254" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="2255" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
+	<movevent event="StepIn" fromuid="2250" touid="2255" script="dreamer challenge quest/dreamerChallengeQuestTeleports.lua"/>
 	<movevent event="StepIn" actionid="9032" script="dreamer challenge quest/dreamerChallengeQuestTicTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="3048" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3049" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3050" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3051" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3052" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3053" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3054" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3055" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
-	<movevent event="StepIn" uniqueid="3056" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
+	<movevent event="StepIn" fromuid="3048" touid="3056" script="dreamer challenge quest/dreamerChallengeQuestTower.lua"/>
 	<movevent event="StepIn" uniqueid="9030" script="dreamer challenge quest/dreamerChallengeQuestWallsTeleport.lua"/>
 	<movevent event="AddItem" tileitem="1" uniqueid="2244" script="dreamer challenge quest/dreamerChallengeQuestDeathRing.lua"/>
 	<movevent event="StepIn" actionid="9049" script="dreamer challenge quest/dreamerChallengeQuestClockTile.lua"/>
@@ -213,121 +86,31 @@
 	<!--<movevent event="StepIn" uniqueid="" script="formorgar mines hoist/formorgarMinesHoist.lua"/>-->
 	
 	<!-- Ice Islands Quest -->
-	<movevent event="StepIn" uniqueid="3059" script="ice islands quest/iceIslandsQuestBody.lua"/>
-	<movevent event="StepIn" uniqueid="3060" script="ice islands quest/iceIslandsQuestBody.lua"/>
-	<movevent event="StepIn" uniqueid="3061" script="ice islands quest/iceIslandsQuestBody.lua"/>
-	
+	<movevent event="StepIn" fromuid="3059" touid="3061" script="ice islands quest/iceIslandsQuestBody.lua"/>
+
 	<!-- In Service Of Yalahar Quest -->
-	<movevent event="StepIn" uniqueid="3103" script="in service of yalahar quest/demonTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="3104" script="in service of yalahar quest/demonTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="3105" script="in service of yalahar quest/demonTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="3106" script="in service of yalahar quest/demonTeleport.lua"/>
-	<movevent event="StepIn" uniqueid="7809" script="in service of yalahar quest/inServiceOfYalaharQuestLastFightTeleports.lua"/>
-	<movevent event="StepIn" uniqueid="7810" script="in service of yalahar quest/inServiceOfYalaharQuestLastFightTeleports.lua"/>
+	<movevent event="StepIn" fromuid="3103" touid="3106" script="in service of yalahar quest/demonTeleport.lua"/>
+	<movevent event="StepIn" fromuid="7809" touid="7810" script="in service of yalahar quest/inServiceOfYalaharQuestLastFightTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3087" script="in service of yalahar quest/inServiceOfYalaharQuestMorik.lua"/>
 	<movevent event="StepIn" actionid="7812" script="in service of yalahar quest/quaraVortex.lua"/>
 	<movevent event="StepIn" actionid="7813" script="in service of yalahar quest/warlocksPass.lua"/>
 	<movevent event="StepIn" actionid="7814" script="in service of yalahar quest/warlocksPass.lua"/>
 	
 	<!-- Inquisition Quest -->
-	<movevent event="StepIn" uniqueid="2150" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2151" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2152" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2153" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2154" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2155" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2156" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2157" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2158" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2159" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2160" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2161" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2162" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2163" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2164" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2165" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2166" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2167" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2168" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2169" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2170" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2171" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2172" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2173" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2174" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2175" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2176" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2177" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2178" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2179" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
-	<movevent event="StepIn" uniqueid="2180" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
+	<movevent event="StepIn" fromuid="2150" touid="2180" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
 	<movevent event="StepIn" uniqueid="9014" script="inquisition quest/inquisitionQuestEnterInq.lua"/>
 	
 	<!-- Pits Of Inferno Quest -->
-	<movevent event="StepIn" uniqueid="2090" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2091" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2092" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2093" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2094" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2095" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2096" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
-	<movevent event="StepIn" actionid="2040" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2041" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2042" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2043" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2044" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2045" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2046" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2047" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2048" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2049" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2050" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2051" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2052" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2053" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2054" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2055" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2056" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2057" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2058" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2059" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2060" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2061" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2062" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
-	<movevent event="StepIn" actionid="2063" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
+	<movevent event="StepIn" fromuid="2090" touid="2096" script="pits of inferno quest/pitsOfInfernoQuestCheckThrones.lua"/>
+	<movevent event="StepIn" fromaid="2040" toaid="2063" script="pits of inferno quest/pitsOfInfernoQuestFireTiles.lua"/>
 	<movevent event="StepIn" uniqueid="2002" script="pits of inferno quest/pitsOfInfernoQuestLadder.lua"/>
 	<movevent event="StepOut" uniqueid="2002" script="pits of inferno quest/pitsOfInfernoQuestLadder.lua"/>
-	<movevent event="StepIn" actionid="8816" script="pits of inferno quest/pitsOfInfernoQuestShortcuts.lua"/>
-	<movevent event="StepIn" actionid="8817" script="pits of inferno quest/pitsOfInfernoQuestShortcuts.lua"/>
-	<movevent event="StepIn" uniqueid="2080" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2081" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2082" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2083" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2084" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2085" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2086" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
-	<movevent event="StepIn" uniqueid="2001" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
-	<movevent event="StepIn" uniqueid="2000" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
-	<movevent event="StepIn" actionid="28810" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28811" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28812" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28813" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28814" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28815" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28816" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28817" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28818" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28819" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28820" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28821" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28822" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28823" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28824" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28825" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
-	<movevent event="StepIn" actionid="28826" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" fromaid="8816" toaid="8817" script="pits of inferno quest/pitsOfInfernoQuestShortcuts.lua"/>
+	<movevent event="StepIn" fromuid="2080" touid="2086" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
+	<movevent event="StepIn" fromuid="2000" touid="2001" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
+	<movevent event="StepIn" fromaid="28810" toaid="28826" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/pitsOfInfernoQuestSecondTrap.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
-	
 	
 	<!-- Rookgaard Quests -->
 	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>
@@ -358,19 +141,7 @@
 	<movevent event="RemoveItem" itemid="2579" script="trap.lua"/>
 
 	<!-- Citizen teleport -->
-	<movevent event="StepIn" uniqueid="9056" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9057" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9058" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9059" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9060" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9061" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9062" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9063" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9064" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9065" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9066" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9067" script="citizen.lua"/>
-	<movevent event="StepIn" uniqueid="9068" script="citizen.lua"/>
+	<movevent event="StepIn" fromuid="9056" touid="9068" script="citizen.lua"/>
 	<movevent event="StepIn" uniqueid="9240" script="citizen.lua"/>
 	<movevent event="StepIn" uniqueid="9500" script="citizen.lua"/>
 
