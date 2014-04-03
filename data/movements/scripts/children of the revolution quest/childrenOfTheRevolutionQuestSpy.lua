@@ -1,19 +1,23 @@
+local config = {
+	[8009] = {1055, "An impressive ammount of fish is stored here."},
+	[8010] = {1056, "A seemingly endless array of weapon stretches before you into the darkness."},
+	[8011] = {1057, "These barracks seem to be home for quite a lot of soldiers."}
+}
+
 function onStepIn(cid, item, position, lastPosition)
-	if(item.actionid == 8009) then
-		if(getPlayerStorageValue(cid, 1055) < 1) then
-			setPlayerStorageValue(cid, 1055, 1)
-			doCreatureSay(cid, "An impressive ammount of fish is stored here.", TALKTYPE_ORANGE_1)
-		end
-	elseif(item.actionid == 8010) then
-		if(getPlayerStorageValue(cid, 1056) < 1) then
-			setPlayerStorageValue(cid, 1056, 1)
-			doCreatureSay(cid, "A seemingly endless array of weapon stretches before you into the darkness.", TALKTYPE_ORANGE_1)
-		end
-	elseif(item.actionid == 8011) then
-		if(getPlayerStorageValue(cid, 1057) < 1) then
-			setPlayerStorageValue(cid, 1057, 1)
-			doCreatureSay(cid, "These barracks seem to be home for quite a lot of soldiers.", TALKTYPE_ORANGE_1)
-		end
+	local player = Player(cid)
+	local targetTile = config[item.actionid]
+	if not player then 
+		return true
+	end
+
+	if not targetTile then
+		return true
+	end
+	
+	if player:getStorageValue(targetTile[1]) < 1 then
+		player:setStorageValue(targetTile[1], 1)
+		player:say(string.format("%s", targetTile[2]), TALKTYPE_ORANGE_1)
 	end
 	return true
 end
