@@ -136,10 +136,18 @@
 		</mission>
 		<mission name="Knight Outfits Quest" storageid="12060" startvalue="1" endvalue="6">
 			<missionstate id="1" description="First you must collect 100 Behemoth Fangs by looting or Skinning Behemoth's. Bring them to Gregor in Thais."/>
-			<missionstate id="2" description="Gregor sent you to retrieve the helmet of Ramsay the Reckless found in deeper Banuta"/>
+			<missionstate id="2" description="Gregor send you to retrieve the helmet of Ramsay the Reckless found in deeper Banuta"/>
 			<missionstate id="3" description="Bring Gregor a Flask of Warrior's Sweat."/>
 			<missionstate id="4" description="Bring Gregor one piece of royal steel."/>
 			<missionstate id="5" description="Gregor send you to Sam to adorn your helmet."/>
+			<missionstate id="6" description="You got the Outfit!"/>
+		</mission>
+		<mission name="Mage Outfits Quest (Wand)" storageid="12061" startvalue="1" endvalue="6">
+			<missionstate id="1" description="You found Angelina in a Prison. She told you a secret: Lynda in Thais can create a blessed wand. Greet her from Angelina, maybe she will aid you."/>
+			<missionstate id="2" description="Lynda send you to bring her a sample of all five wands and five rods (Snakebite, Moonlight, Necrotic, Terra, Hailstorm, Vortex, Dragonbreath, Decay, Cosmic Energy and Inferno)"/>
+			<missionstate id="3" description="Bring Lynda 10 ounces of magic sulphur"/>
+			<missionstate id="4" description="Bring Lynda the Necromancer's soul stone"/>
+			<missionstate id="5" description="Bring Lynda 20 ankhs now to complete the ritual."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
 	</quest>
