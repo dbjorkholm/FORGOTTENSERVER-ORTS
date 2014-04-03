@@ -102,7 +102,7 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5888, 1)
 				player:removeItem(5889, 1)
 				player:setStorageValue(12055, 5)
-				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 137 or 129, 1)
+				player:addOutfitAddon(player:getSex() == 0 and 137 or 129, 1)
 				talkState[talkUser] = 0	
 			end
 		elseif talkState[talkUser] == 8 then
@@ -110,7 +110,8 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Great! I hereby grant you the right to wear the sniper gloves as accessory. Congratulations!", player)
 				player:removeItem(5875, 1)
 				player:setStorageValue(12056, 1)
-				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 137 or 129, 2)
+				player:addOutfitAddon(player:getSex() == 0 and 137 or 129, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
 			end
 		end

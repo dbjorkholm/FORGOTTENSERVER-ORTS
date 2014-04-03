@@ -85,7 +85,7 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		elseif player:getStorageValue( 30) == 37 then
 			if player:getItemCount(9742) >= 1 then
-				doPlayerRemoveItem(cid, 9742, 1)
+				player:removeItem( 9742, 1)
 				npcHandler:say({"Ah, what an unexpected sight. I can almost feel the energy of the charm. It will help to recover some of the past wealth. ...","You did quite an impressive job. I'm considering to introduce you to my ma.. to my direct superior one day. But there are still other missions to fulfil."}, player, 0, 1, 3000)
 				player:setStorageValue( 30, 39)
 				player:setStorageValue(12017, 5) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
@@ -139,14 +139,14 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Great work, take this outfit and you are able to open the door to the reward room.", player)
 			player:setStorageValue( 30, 53)
 			player:setStorageValue(12021, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 324 or 325, 0)
+			player:addOutfit(player:getSex() == 0 and 324 or 325, 0)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "yes") then
 		if talkState[talkUser] == 1 then
 			if player:getItemCount(9733) >= 1 then
-				doPlayerRemoveItem(cid, 9733, 1)
+				player:removeItem( 9733, 1)
 				player:setStorageValue( 20, 1)
 				player:setStorageValue( 30, 22)
 				player:setStorageValue(12014, 6) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"

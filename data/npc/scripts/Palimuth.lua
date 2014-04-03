@@ -102,7 +102,7 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 		elseif player:getStorageValue( 30) == 37 then
 			if player:getItemCount(9742) >= 1 then
-				doPlayerRemoveItem(cid, 9742, 1)
+				player:removeItem( 9742, 1)
 				npcHandler:say({"I thank you also in the name of these poor lost souls. I will send the charm to a priest who is able to release them. ...","Tell the Yalahari that the charm was destroyed by the energy it contained."}, player, 0, 1, 3500)
 				player:setStorageValue( 30, 38)
 				player:setStorageValue(12017, 4) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
@@ -143,7 +143,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say({"So the Yalahari that opposed us are dead or fled from the city. This should bring us more stability and perhaps a true chance to rebuild the city. ...","Still, I wonder from where they gained some of the Yalahari secrets. Did they find some source of knowledge? ...","And if so, is this source still around so that we can use it for the benefit of our city? What really troubles me is that none of those false Yalahari had the personality of agreat leader. ...","Quite the opposite, they were opportunistic and not exactly bold. Perhaps they were led by some greater power which stayed behind the scenes. ...","I'm afraid we have not seen the last chapter of Yalahar's drama. But anyhow, I wish to thank you for putting your life at stake for our cause. ...","I allow you to enter the Yalaharian treasure room. I'm sure that you can put what you find inside to better use than them. Choose one chest, but think before takingone! ...","Also, take this Yalaharian outfit. Depending on which side you chose previously, you can also acquire one specific addon. Thank you again for your help."}, player, 0, 1, 5000)
 			player:setStorageValue( 30, 53)
 			player:setStorageValue(12021, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 324 or 325, 0)
+			player:addOutfit(player:getSex() == 0 and 324 or 325, 0)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			talkState[talkUser] = 0
 		end
@@ -186,7 +186,8 @@ function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(9956) >= 1 and player:getStorageValue( 30) == 54 then
 				player:setStorageValue( 30, 55)
 				npcHandler:say("Great! Here, take this yalaharian addon in a return.", player)
-				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 324 or 325, player:getStorageValue( 8) == 1 and 1 or 2)
+				player:addOutfitAddon(player:getSex() == 0 and 324 or 325, player:getStorageValue( 8) == 1 and 1 or 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0
 			else
 				npcHandler:say("Come back when you do.", player)
