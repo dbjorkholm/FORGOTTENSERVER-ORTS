@@ -6,6 +6,7 @@ local mounts = {
 local function doRemovePlayerMount(cid, mountId)
     local player = Player(cid)
     player:removeMount(mountId)
+    
     return player:setOutfit({lookType = player:getOutfit().lookType, lookHead = player:getOutfit().lookHead, lookBody = player:getOutfit().lookBody, lookLegs = player:getOutfit().lookLegs, lookFeet = player:getOutfit().lookFeet, lookAddons = player:getOutfit().lookAddons})
 end
 
@@ -14,6 +15,7 @@ local function CheckRentMount(cid)
     for var, ret in pairs(mounts) do
         if player:hasMount(ret.mountid) and player:getStorageValue(ret.storage) ~= -1 and player:getStorageValue(ret.storage) <= os.time() then
             doRemovePlayerMount(cid, ret.mountid)
+	    player:setStorageValue(ret.storage, -1) 
             player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The time of your mount " .. var .. " has ended, to get it again back to the NPC.")
         end
     end
