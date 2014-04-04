@@ -6788,7 +6788,9 @@
 		<attribute key="type" value="door" />
 	</item>
 	<item fromid="3569" toid="3574" article="a" name="waterfall" />
-	<item id="3587" article="a" name="small boat" />
+	<item id="3587" article="a" name="small boat">
+		<attribute key="type" value="teleport" />
+	</item>
 	<item fromid="3588" toid="3590" article="a" name="small boat">
 		<attribute key="type" value="teleport" />
 	</item>
