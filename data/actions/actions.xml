@@ -4,8 +4,23 @@
 	<!-- Hunter Outfits Quest -->
 	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
+	
+	<!-- The New Frontier Quest -->
+	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
+	<action itemid="11100" script="the new frontier quest/theNewFrontierQuestBeaver.lua"/>
+	<action actionid="8001" script="the new frontier quest/theNewFrontierQuestLever.lua"/>
+	<action actionid="8006" script="the new frontier quest/theNewFrontierQuestLever.lua"/>
+	<action actionid="8005" script="the new frontier quest/theNewFrontierQuestMineDoor.lua"/>
+	<action actionid="8008" script="the new frontier quest/theNewFrontierQuestTrapDoor.lua"/>
+	<action uniqueid="3153" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
+	<action uniqueid="3154" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
+	<action uniqueid="3156" script="the new frontier quest/theNewFrontierQuestRetreat.lua"/>
+	<action uniqueid="3158" script="the new frontier quest/theNewFrontierQuestReward.lua"/>
+	<action uniqueid="3159" script="the new frontier quest/theNewFrontierQuestReward.lua"/>
+	<action uniqueid="3160" script="the new frontier quest/theNewFrontierQuestReward.lua"/>
+	<action uniqueid="3161" script="the new frontier quest/theNewFrontierQuestRewardDoor.lua"/>
 
-    <!-- outlaw camp -->
+	<!-- outlaw camp -->
 	<action uniqueid="3313" script="The-outlaw-quest/3303.lua" />
 	<action uniqueid="3314" script="The-outlaw-quest/3304.lua" />
 	<action uniqueid="3311" script="The-outlaw-quest/3301.lua" />
@@ -248,8 +263,8 @@
 	<action actionid="9054" script="dreamer challenge quest/dreamerChallengeQuestTeleportsDoor.lua"/>
 	
 	<!-- Druid Outfit Quest -->
-	<action uniqueid="3154" script="druid outfit quest/druidOutfitQuestAmulet.lua"/>
-	<action uniqueid="3153" script="druid outfit quest/druidOutfitQuestAmuletDoor.lua"/>
+	<action uniqueid="8000" script="druid outfit quest/druidOutfitQuestAmulet.lua"/>
+	<action uniqueid="8001" script="druid outfit quest/druidOutfitQuestAmuletDoor.lua"/>
 	<action itemid="5938" script="druid outfit quest/druidOutfitQuestWaterskin.lua"/>
 
 	<!-- Elephant Tusk Quest -->
