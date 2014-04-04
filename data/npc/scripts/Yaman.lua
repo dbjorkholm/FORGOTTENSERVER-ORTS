@@ -53,7 +53,7 @@ local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 		npcHandler:say("Finally.", player)
 		talkState[talkUser] = 0
 		npcHandler:releaseFocus(cid)
-	elseif isInArray({"enchanted chicken wind", "boots of haste"}, msg:lower()) then
+	elseif isInArray({"enchanted chicken wing", "boots of haste"}, msg:lower()) then
         npcHandler:say('Do you want to trade Boots of haste for Enchanted Chicken Wind?', cid)
         talk_state = 1 
 	elseif isInArray({"warrior Sweat", "warrior helmet"}, msg:lower()) then
@@ -66,7 +66,7 @@ local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
         npcHandler:say('Do you want to trade 3 Fire Sword for Magic Sulphur', cid) 
         talk_state = 4
 	elseif isInArray({"job", "items"}, msg:lower()) then
-        npcHandler:say('I trade Enchanted Chicken Wind  for Boots of Haste ,Warrior Sweat for 4 Warrior Helmets ,Fighting Spirit for 2 Royal Helmet Magic Sulphur for 3 Fire Swords', cid)
+        npcHandler:say('I trade Enchanted Chicken Wing for Boots of Haste ,Warrior Sweat for 4 Warrior Helmets ,Fighting Spirit for 2 Royal Helmet Magic Sulphur for 3 Fire Swords', cid)
 		talk_state = 0
 		
 	elseif msgcontains(msg,'yes') and talk_state <= 4 and talk_state >= 1 then
