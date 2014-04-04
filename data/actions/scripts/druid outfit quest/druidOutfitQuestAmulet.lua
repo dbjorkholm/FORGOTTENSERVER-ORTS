@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3154) then
+	if(item.uid == 8000) then
 		if(getPlayerStorageValue(cid, 1006) < 1) then
 			setPlayerStorageValue(cid, 1006, 1)
 			doPlayerAddItem(cid, 5940, 1)
