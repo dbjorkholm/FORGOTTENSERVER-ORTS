@@ -58,7 +58,7 @@ function creatureSayCallback(cid, type, msg)
         npcHandler:say('Do you want to trade 3 Fire Sword for Magic Sulphur', cid) 
         talk_state = 4
 	elseif isInArray({"job", "items"}, msg:lower()) then
-        npcHandler:say('I trade Enchanted Chicken Wing for Boots of Haste ,Warrior Sweat for 4 Warrior Helmets ,Fighting Spirit for 2 Royal Helmet Magic Sulphur for 3 Fire Swords', cid)
+        npcHandler:say('I trade Enchanted Chicken Wing for Boots of Haste, Warrior Sweat for 4 Warrior Helmets, Fighting Spirit for 2 Royal Helmet Magic Sulphur for 3 Fire Swords', cid)
 		talk_state = 0
 		
 	elseif msgcontains(msg,'yes') and talk_state <= 4 and talk_state >= 1 then
