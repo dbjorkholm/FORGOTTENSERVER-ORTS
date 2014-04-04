@@ -39,7 +39,8 @@ LUA METATABLE LISTS:
 
 http://pastebin.com/XpTSL8Sf
 
-NOTE: Due to that the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dirr/data/compat.lua), use ctrl+f and enter the old function then press enter. 
+NOTE: 
+Due to that the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dirr/data/compat.lua), use ctrl+f and enter the old function then press enter. 
 
 https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua
 
