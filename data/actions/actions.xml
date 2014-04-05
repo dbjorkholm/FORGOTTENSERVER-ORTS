@@ -145,7 +145,7 @@
 	
 	<!-- Barbarian Test Quest -->
 	<action fromid="7174" toid="7176" script="barbarian test quest/barbarianTestQuestHorn.lua"/>
-	<action itemid="7140" script="barbarian test quest/barbarianTestQuestHorn.lua"/>
+	<action fromid="7140" toid="7141" script="barbarian test quest/barbarianTestQuestHorn.lua"/>
 	<action uniqueid="3110" script="barbarian test quest/barbarianTestQuestMead.lua"/>
 	
 	<!-- Behemoth Quest -->
