@@ -72,7 +72,7 @@ local tomes = {
 			},
 		}
 
-if player:getStorageValue(85300) >= 1 or 1 == 1 then
+if player:getStorageValue(85300) >= 1 then
 	-- 1 tome
 	for i = 1, #tomes[1] do
 		table.insert(itemsList, tomes[1][i])
