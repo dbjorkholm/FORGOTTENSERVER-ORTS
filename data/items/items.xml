@@ -8154,6 +8154,7 @@
 	<item fromid="5020" toid="5021" article="a" name="burning skull" />
 	<item id="5022" article="an" name="orichalcum pearl">
 		<attribute key="weight" value="30" />
+		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="5023" toid="5024" article="a" name="magic forcefield">
 		<attribute key="type" value="teleport" />
@@ -25541,7 +25542,7 @@
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
-	<item id="18534" name="stairs">
+	<item fromid="18531" toid="18534" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="18550" article="a" name="noble sword">
