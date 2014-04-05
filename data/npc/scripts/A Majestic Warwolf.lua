@@ -18,31 +18,32 @@ function onThink()
 end
 
 function greetCallback(cid)
-	local p = Player(cid)
-	if(p:getStorageValue(1004) < 9) then
-		npcHandler:say("GRRRRRRRRRRRRR", cid)
+	local player = Player(cid)
+	if player:getStorageValue(1004) < 9 then
+		npcHandler:say("GRRRRRRRRRRRRR", player)
 		return false
 	end
 	return true
 end
 
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
-	local p = Player(cid)
-	if(msgcontains(msg, "addon") or msgcontains(msg, "outfit")) then
-		if(p:getStorageValue(1004) == 9) then
-			npcHandler:say("I can see in your eyes that you are a honest and friendly person, Player. You were patient enough to learn our language and I will grant you a special gift. Will you accept it?", cid)
+	local player = Player(cid)
+	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
+		if player:getStorageValue(1004) == 9 then
+			npcHandler:say("I can see in your eyes that you are a honest and friendly person, Player. You were patient enough to learn our language and I will grant you a special gift. Will you accept it?", player)
 			talkState[talkUser] = 2
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 2) then	
-			npcHandler:say("From now on, you shall be known as Player, the bear warrior. You shall be strong and proud as Angros, the great dark bear. He shall guide your path.", cid)
-			p:setStorageValue(1004, 10)
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 148 or 144, 2)
+	elseif msgcontains(msg, "yes") then
+		if talkState[talkUser] == 2 then	
+			npcHandler:say("From now on, you shall be known as Player, the bear warrior. You shall be strong and proud as Angros, the great dark bear. He shall guide your path.", player)
+			player:setStorageValue(1004, 10)
+			player:addOutfitAddon(player:getSex() == 0 and 148 or 144, 2)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			talkState[talkUser] = 0
 		end
 	end

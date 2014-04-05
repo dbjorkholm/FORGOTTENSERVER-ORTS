@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Hanna" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Hanna" script="Hanna.lua" walkinterval="2000" floorchange="0" speechbubble="3">
   <health now="100" max="100" />
   <look type="136" head="78" body="64" legs="0" feet="96" addons="2" />
  <voices>

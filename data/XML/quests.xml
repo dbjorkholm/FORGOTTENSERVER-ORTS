@@ -115,14 +115,14 @@
 		</mission>
 	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
-		<mission name="Hunter Outfits Quest" storageid="12055" startvalue="1" endvalue="5">
+		<mission name="Hunter Outfit Quest" storageid="12055" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Elane sends you to Liberty Bay to bring her the Crossbow from the Cult."/>
 			<missionstate id="2" description="Bring Elane 100 pieces of lizard leather and 100 pieces of red dragon leather."/>
 			<missionstate id="3" description="Bring Elane 5 enchanted chicken wings."/>
 			<missionstate id="4" description="Bring Elane one piece of royal steel, draconian steel and hell steel each."/>
 			<missionstate id="5" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Druid Outfits Quest" storageid="1004" startvalue="1" endvalue="10">
+		<mission name="Druid Outfit Quest" storageid="1004" startvalue="1" endvalue="10">
 			<missionstate id="1" description="Ceiron sends you to collect a sample of the blooming Griffinclaw."/>
 			<missionstate id="2" description="Ask Ceiron for task."/>
 			<missionstate id="3" description="take Ceirons waterskin and try to fill it with water from this special trickle. In the mountains between Ankrahmun and Tiquanda are two hydra lairs. It is important that you take the water directly from the trickle, not from the pond"/>
@@ -134,7 +134,7 @@
 			<missionstate id="9" description="Head over to Cormaya, find A Majestic Warwolf's Cave and ask her about an addon."/>
 			<missionstate id="10" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Knight Outfits Quest" storageid="12060" startvalue="1" endvalue="6">
+		<mission name="Knight Outfit Quest" storageid="12060" startvalue="1" endvalue="6">
 			<missionstate id="1" description="First you must collect 100 Behemoth Fangs by looting or Skinning Behemoth's. Bring them to Gregor in Thais."/>
 			<missionstate id="2" description="Gregor send you to retrieve the helmet of Ramsay the Reckless found in deeper Banuta"/>
 			<missionstate id="3" description="Bring Gregor a Flask of Warrior's Sweat."/>
@@ -142,13 +142,17 @@
 			<missionstate id="5" description="Gregor send you to Sam to adorn your helmet."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Mage Outfits Quest (Wand)" storageid="12061" startvalue="1" endvalue="6">
+		<mission name="Mage Outfit Quest (Wand)" storageid="12061" startvalue="1" endvalue="6">
 			<missionstate id="1" description="You found Angelina in a Prison. She told you a secret: Lynda in Thais can create a blessed wand. Greet her from Angelina, maybe she will aid you."/>
 			<missionstate id="2" description="Lynda send you to bring her a sample of all five wands and five rods (Snakebite, Moonlight, Necrotic, Terra, Hailstorm, Vortex, Dragonbreath, Decay, Cosmic Energy and Inferno)"/>
 			<missionstate id="3" description="Bring Lynda 10 ounces of magic sulphur"/>
 			<missionstate id="4" description="Bring Lynda the Necromancer's soul stone"/>
 			<missionstate id="5" description="Bring Lynda 20 ankhs now to complete the ritual."/>
 			<missionstate id="6" description="You got the Outfit!"/>
+		</mission>
+		<mission name="Citizen Outfit Quest (Feather Hat)" storageid="12062" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
+			<missionstate id="2" description="You got the Outfit!"/>
 		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">

@@ -79,6 +79,8 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5947, 1)
 				player:setStorageValue(12055, 2)
 				talkState[talkUser] = 0	
+			else
+				npcHandler:say("You don't have it...", player)
 			end
 		elseif talkState[talkUser] == 5 then
 			if player:getItemCount( 5876) >= 100 and player:getItemCount( 5948) >= 100  then
@@ -87,6 +89,8 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5948, 100)
 				player:setStorageValue(12055, 3)
 				talkState[talkUser] = 0	
+			else
+				npcHandler:say("You don't have it...", player)
 			end
 		elseif talkState[talkUser] == 6 then
 			if player:getItemCount( 5891) >= 5 then
@@ -94,6 +98,8 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5891, 5)
 				player:setStorageValue(12055, 4)
 				talkState[talkUser] = 0	
+			else
+				npcHandler:say("You don't have it...", player)
 			end
 		elseif talkState[talkUser] == 7 then
 			if player:getItemCount( 5887) >= 1 and player:getItemCount( 5888) >= 1 and player:getItemCount( 5889) >= 1  then
@@ -103,7 +109,10 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5889, 1)
 				player:setStorageValue(12055, 5)
 				player:addOutfitAddon(player:getSex() == 0 and 137 or 129, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
+			else
+				npcHandler:say("You don't have it...", player)
 			end
 		elseif talkState[talkUser] == 8 then
 			if player:getItemCount( 5875) >= 1 then
@@ -112,7 +121,9 @@ function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(12056, 1)
 				player:addOutfitAddon(player:getSex() == 0 and 137 or 129, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				talkState[talkUser] = 0	
+				talkState[talkUser] = 0				
+			else
+				npcHandler:say("You don't have it...", player)
 			end
 		end
 	return true
