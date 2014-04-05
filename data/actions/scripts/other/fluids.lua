@@ -12,8 +12,8 @@ local poison = Condition(CONDITION_POISON)
     poison:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000) -- Delay between damages
     poison:setParameter(CONDITION_PARAM_FORCEUPDATE, true) -- Re-update condition when adding it(ie. min/max value)
 
-local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19}
-local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!"}
+local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19, 43}
+local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!", "Aaaah..."}
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local iex = Item(itemEx.uid)
@@ -36,10 +36,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
             p:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
         elseif itemEx.uid == cid then
             i:transform(item.itemid, 0)
-            if item.type == 3 or item.type == 15 then
-                doTargetCombatCondition(0, cid, drunk, CONST_ME_NONE)
+            if item.type == 3 or item.type == 15 or item.type == 43 then
+				p:addCondition(drunk)
             elseif item.type == 4 then
-                doTargetCombatCondition(0, cid, poison, CONST_ME_NONE)
+                p:addCondition(poison)
             elseif item.type == 7 then
                 p:addMana(math.random(50, 150))
                 fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

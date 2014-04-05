@@ -114,6 +114,23 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
+	<quest name="Barbarian Test Quest" startstorageid="120" startstoragevalue="1">
+		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Give Sven a honeycomb. For each honeycomb you will be allowed 20 sips."/>
+			<missionstate id="2" description="Now drink from the bucket until you drink 10 sips in a row without passing out"/>
+			<missionstate id="3" description="You have Complete this Test!"/>
+		</mission>
+		<mission name="Barbarian Test 2: The Bear Hugging" storageid="12023" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Sven gave you a Mead Horn. Fill it with mead from the bucket behind Sven (brown contents) and then proceed to the sleeping bear. The bear is inside a small ice cave in the north. Use the full mead horn on the bear so it becomes unconscious, then use the bear to hug it."/>
+			<missionstate id="2" description="You hugging the bear! Go tell Sven that you hugged the bear!"/>
+			<missionstate id="3" description="You have Complete this Test!"/>
+		</mission>
+		<mission name="Barbarian Test 3: The Mammoth Pushing" storageid="12024" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Go to the north-west of Svargrond and find the Mammoth. Drink your three mugs of mead, stand in front of the Mammoth and push it. Just use it..."/>
+			<missionstate id="2" description="You pushed the Mammoth! Go tell Sven that you pushed the Mammoth!"/>
+			<missionstate id="3" description="You have Complete this Test! You can now become a citizen of Svargrond!"/>
+		</mission>
+	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
 		<mission name="Hunter Outfit Quest" storageid="12055" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Elane sends you to Liberty Bay to bring her the Crossbow from the Cult."/>
