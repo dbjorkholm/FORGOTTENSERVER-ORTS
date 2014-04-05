@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Lubo" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Lubo" script="Lubo.lua" walkinterval="2000" floorchange="0" speechbubble="3">
   <health now="100" max="100" />
   <look type="128" head="115" body="39" legs="96" feet="118" addons="3" />
 <voices>
@@ -17,7 +17,7 @@
 		  <parameter key="keyword_reply3" value=" I sell torches, fishing rods, worms, ropes, water hoses, backpacks, apples, and maps." />
 		  <parameter key="keyword_reply4" value="I am Lubo, the owner of this shop." />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="			Backpack,1988,25;			Basket,15556,6;			Bottle,2007,3,0;			Bucket,7142,4;			Candelabrum,2057,8;			Candlestick,2047,2;			Closed Trap,2578,280;			Crowbar,2416,260;			Fishing Rod,2580,150;			Machete,2420,35;			Pick,2553,50;			Present,9074,10;			Red Apple,2674,3;			Rope,8723,50;			Scythe,2550,50;			Shovel,18210,50;			Watch,2036,20;			Waterskin,2031,10,1;			Worm,3976,1		" />
-    <parameter key="shop_sellable" value="			Closed Trap,2578,75;			Crowbar,2416,50;			Fishing Rod,2580,40;			Machete,2420,6;			Pick,2553,15;			Rope,8723,15;			Scythe,2550,10;			Shovel,18210,8;			Watch,2036,6;			Wooden Hammer,2556,15		" />
+    <parameter key="shop_buyable" value="			Backpack,1988,25;			Basket,15556,6;			Bottle,2007,3,0;			Bucket,7142,4;			Candelabrum,2057,8;			Candlestick,2047,2;			Closed Trap,2578,280;			Crowbar,2416,260;			Fishing Rod,2580,150;			Machete,2420,35;			Pick,2553,50;			Present,9074,10;			Red Apple,2674,3;			Rope,2120,50;			Scythe,2550,50;			Shovel,18210,50;			Watch,2036,20;			Waterskin,2031,10,1;			Worm,3976,1		" />
+    <parameter key="shop_sellable" value="			Closed Trap,2578,75;			Crowbar,2416,50;			Fishing Rod,2580,40;			Machete,2420,6;			Pick,2553,15;			Rope,2120,15;			Scythe,2550,10;			Shovel,18210,8;			Watch,2036,6;			Wooden Hammer,2556,15		" />
   </parameters>
 </npc>
