@@ -21,20 +21,21 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+	
+	local player = Player(cid)
 
 	if(msgcontains(msg, "recruitment")) then
-		if(getPlayerStorageValue(cid, 900) == 1) then
+		if(player:getStorageValue(900) == 1) then
 			npcHandler:say("We are hiring people to fight in our so called Bigfoot company against the foes of gnomekind. Are you interested in joining?", cid)
 			talkState[talkUser] = 1
 		end
 		
 	-- TEST
 	elseif(msgcontains(msg, "test")) then
-		if(getPlayerStorageValue(cid, 900) == 2) then
-			if(talkState[talkUser] ~= 1 and talkState[talkUser] < 2) then
+		if(player:getStorageValue(900) == 2) then
+			if(talkState[talkUser] < 1) then
 				npcHandler:say({"Imagine, during your travels you come upon a rare and unknown mushroom. Would you {A}) note down its specifics and location and look for a gnome to take care of it. ...",
 								"Or would you {B}) smash it to an unrecognisable pulp. Or would you {C}) pluck it to take it with you for further examination. Or would you {D}) try to become friends with the mushroom by singing questionable bar-room songs?"}, cid)
-				setPlayerStorageValue(cid, 900, 0)
 				talkState[talkUser] = 2
 			elseif(talkState[talkUser] == 3) then
 				npcHandler:say({"Imagine you wake up one morning and discover you have forgotten how to knot your shoelaces. Would you {A}) admit defeat and go to bed once more. ...",
@@ -95,23 +96,23 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "A")) then
 		if(talkState[talkUser] == 2) then
 			npcHandler:say("Indeed an excellent and smart decision for an ungnomish lifeform. But let us continue with the {test}.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 18) then
 			npcHandler:say("A well thought out answer I have to admit. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 20) then
 			npcHandler:say("Ah, we have a true warrior here I guess. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 28) then
 			npcHandler:say("Fear not. We don't expect too much of you anyway. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 30) then
 			npcHandler:say("Ha! A Krazzelzak would for sure fit someone like you! But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		else
 			npcHandler:say("Wrong answer!", cid)
@@ -120,11 +121,11 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "B")) then
 		if(talkState[talkUser] == 6) then
 			npcHandler:say("Although chances are the gnome will end up rescuing you instead, it is the attempt that counts. But let us continue with the {test}.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 14) then
 			npcHandler:say("I knew this question was too easy. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		else
 			npcHandler:say("Wrong answer!", cid)
@@ -133,15 +134,15 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "C")) then
 		if(talkState[talkUser] == 4) then
 			npcHandler:say("That's the spirit! Initiative is always a good thing. Well most of the time. But let us continue with the {test}.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 22) then
 			npcHandler:say("You have no idea how many answer this question wrong. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 24) then
 			npcHandler:say("That's the spirit! But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		else
 			npcHandler:say("Wrong answer!", cid)
@@ -150,27 +151,27 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "D")) then
 		if(talkState[talkUser] == 8) then
 			npcHandler:say("Of COURSE you wouldn't! NO ONE would! But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 10) then
 			npcHandler:say("I can only hope that is your honest opinion. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 12) then
 			npcHandler:say("Oh, you silver tongued devil almost made me blush. But of course you're right. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 16) then
 			npcHandler:say("How true. How true. *sigh* But fear not! We gnomes are here to help! But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 26) then
 			npcHandler:say("That's just what I'd do - if I weren't a gnome already, that is. But let us continue with the test.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		elseif(talkState[talkUser] == 32) then
 			npcHandler:say("Excellent! Well this concludes the test. Now let us see your result.", cid)
-			setPlayerStorageValue(cid, 901, getPlayerStorageValue(cid, 901) + 7)
+			player:setStorageValue(901, player:getStorageValue(901) + 7)
 			talkState[talkUser] = talkState[talkUser] + 1
 		else
 			npcHandler:say("Wrong answer!", cid)
@@ -179,18 +180,18 @@ function creatureSayCallback(cid, type, msg)
 	-- TEST
 	elseif(msgcontains(msg, "result")) then
 		if(talkState[talkUser] == 33) then
-			if(getPlayerStorageValue(cid, 901) < 100) then
-				npcHandler:say({"You have failed the test with " .. getPlayerStorageValue(cid, 901) .. " of 112 possible points. You probably were just too nervous. ...",
+			if(player:getStorageValue(901) < 100) then
+				npcHandler:say({"You have failed the test with " .. player:getStorageValue(901) .. " of 112 possible points. You probably were just too nervous. ...",
 								"I suggest you relax a bit with a fresh mushroom beer and we'll start over after that. Gnominus sells some beer. You should find him somewhere in the central chamber."}, cid)
 			else
-				npcHandler:say("You have passed the test with " .. getPlayerStorageValue(cid, 901) .. " of 112 possible points. Congratulations. You are ready to proceed with the more physical parts of your examination! Go and talk to Gnomespector about it.", cid)
-				setPlayerStorageValue(cid, 900, 3)
+				npcHandler:say("You have passed the test with " .. player:getStorageValue(901) .. " of 112 possible points. Congratulations. You are ready to proceed with the more physical parts of your examination! Go and talk to Gnomespector about it.", cid)
+				player:setStorageValue(900, 3)
 			end
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(talkState[talkUser] == 1) then
 			npcHandler:say("Excellent! Now let us begin with the gnomish aptitude test. Just tell me when you feel ready for the {test}!", cid)
-			setPlayerStorageValue(cid, 900, 2)
+			player:setStorageValue(900, 2)
 			talkState[talkUser] = 0
 		end
 	end
