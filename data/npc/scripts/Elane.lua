@@ -126,6 +126,11 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", player)
 			end
 		end
+	elseif msgcontains(msg, "no") then
+		if talkState[talkUser] > 1 then
+			npcHandler:say("Then no.", player)
+			talkState[talkUser] = 0
+		end
 	return true
 	end
 end

@@ -24,31 +24,32 @@ function creatureSayCallback(cid, type, msg)
 	
 	local player = Player(cid)
 	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
-		if player:getStorageValue(12062) < 1 then
-			npcHandler:say("Pretty, isn't it? My friend Amber taught me how to make it, but I could help you with one if you like. What do you say?", player)
+		if player:getStorageValue(12063) < 1 then
+			npcHandler:say("Sorry, the backpack I wear is not for sale. It's handmade from rare {minotaur leather}.", player)
 			talkState[talkUser] = 1
 		end
-	elseif msgcontains(msg, "hat") then
-		if player:getStorageValue(12062) == 1 then
-			npcHandler:say("Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?", player)
+	elseif msgcontains(msg, "minotaur leather") then
+		if talkState[talkUser] == 1 then
+			npcHandler:say("Well, if you really like this backpack, I could make one for you, but minotaur leather is hard to come by these days. Are you willing to put some work into this?", player)
 			talkState[talkUser] = 2
 		end
+	elseif msgcontains(msg, "backpack") then
+		if player:getStorageValue(12063) == 1 then
+			npcHandler:say("Ah, right, almost forgot about the backpack! Have you brought me 100 pieces of minotaur leather as requested?", player)
+			talkState[talkUser] = 3
+		end
 	elseif msgcontains(msg, "yes") then
-		if talkState[talkUser] == 1 then	
-			npcHandler:say({"Okay, here we go, listen closely! I need a few things...",
-							"a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers...",
-							"and 50 honeycombs as glue. That's it, come back to me once you gathered it!"}, player, 0, 1, 3500)
+		if talkState[talkUser] == 2 then	
+			npcHandler:say("Alright then, if you bring me 100 pieces of fine minotaur leather I will see what I can do for you. You probably have to kill really many minotaurs though... so good luck!", player)			
 			talkState[talkUser] = 0
-			player:setStorageValue(12062, 1)
+			player:setStorageValue(12063, 1)
 			player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
-		elseif talkState[talkUser] == 2 then
-			if player:getItemCount( 5890) >= 100 and player:getItemCount( 5902) >= 50 and player:getItemCount( 2480) >= 1  then
-				npcHandler:say("Great job! That must have taken a lot of work. Okay, you put it like this... then glue like this... here!", player)
-				player:removeItem(5890, 100)
-				player:removeItem(5902, 50)
-				player:removeItem(2480, 1)
-				player:setStorageValue(12062, 2)
-				player:addOutfitAddon(player:getSex() == 0 and 136 or 128, 2)
+		elseif talkState[talkUser] == 3 then
+			if player:getItemCount( 5878) >= 100 then
+				npcHandler:say("Your backpack is finished. Here you go, I hope you like it.", player)
+				player:removeItem(5878, 100)
+				player:setStorageValue(12063, 2)
+				player:addOutfitAddon(player:getSex() == 0 and 136 or 128, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
 			else
@@ -56,7 +57,7 @@ function creatureSayCallback(cid, type, msg)
 			end
 		end
 	elseif msgcontains(msg, "no") then
-		if talkState[talkUser] > 0 then
+		if talkState[talkUser] > 1 then
 			npcHandler:say("Then no.", player)
 			talkState[talkUser] = 0
 		end

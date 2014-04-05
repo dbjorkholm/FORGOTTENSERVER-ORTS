@@ -154,6 +154,10 @@
 			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
 			<missionstate id="2" description="You got the Outfit!"/>
 		</mission>
+		<mission name="Citizen Outfit Quest (Backpack)" storageid="12063" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Bring Lubo in northeast of Thais 100 minotaur leather to get the Backpack"/>
+			<missionstate id="2" description="You got the Outfit!"/>
+		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">
 		<mission name="Ask for Mission" storageid="12011" startvalue="1" endvalue="2">
