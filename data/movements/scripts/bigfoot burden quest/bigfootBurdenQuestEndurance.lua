@@ -19,8 +19,8 @@ function onStepIn(cid, item, position, lastPosition)
 		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You passed endurance test.")
 	elseif(item.actionid == 7818) then
 		if(getPlayerStorageValue(cid, 900) == 10) then
-			doTeleportThing(cid, {x = 32759, y = 31811, z = 10})
-			doSendMagicEffect({x = 32759, y = 31811, z = 10}, CONST_ME_TELEPORT)
+			doTeleportThing(cid, {x = 32759, y = 31811, z = 9})
+			doSendMagicEffect({x = 32759, y = 31811, z = 9}, CONST_ME_TELEPORT)
 		else
 			doTeleportThing(cid, lastPosition)
 		end

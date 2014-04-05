@@ -27,7 +27,7 @@ function onStepIn(cid, item, position, lastPosition)
 			end
 			doSendMagicEffect(position, CONST_ME_STUN)
 			setPlayerStorageValue(cid, 900, 7)
-			addEvent(doSummonCreature, 14 * 1000, "strange slime", {x = getPlayerPosition(cid).x, y = getPlayerPosition(cid).y - 1, z = getPlayerPosition(cid).z})
+			addEvent(doSummonCreature, 14 * 1000, "strange slime", {x = getPlayerPosition(cid).x, y = getPlayerPosition(cid).y + 1, z = getPlayerPosition(cid).z})
 		end
 	end
 	return true
