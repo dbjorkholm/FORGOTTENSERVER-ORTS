@@ -164,8 +164,8 @@ function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
 			if items[item].sellPrice then
 				return
-				player:addMoney(items[item].sellPrice * amount) and
-				player:removeItem(items[item].itemId, amount, 1, ignoreEquipped) and
+				player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
+				player:addMoney(items[item].sellPrice * amount)	and
 				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
 			end
 			return true
