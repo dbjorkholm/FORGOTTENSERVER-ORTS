@@ -16,40 +16,52 @@ function onThink()
 	npcHandler:onThink()					
 end
 
+
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
-	if(getPlayerStorageValue(cid, 120) ~= 7) then -- Check if true barbarian
-		return true
-	end
+	local player = Player(cid)
 	
-	if(msgcontains(msg, "mission")) then
-		if(getPlayerStorageValue(cid, 121) < 1) then
-			npcHandler:say("Well, one of the boys has run away. I think he got the scent of some beast. He's young and inexperienced so I can't blame the cub ...", cid)
-			npcHandler:say("I would like you to see after him. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Are you willing to do that?", cid)
-			npcHandler:say("", cid)
-			talkState[talkUser] = 1
-		elseif(getPlayerStorageValue(cid, 121) == 2) then
-			npcHandler:say("You are a friend of mine and the boys now. I tell you something. If you ever need to go to the isle of Nibelor, just ask me for a passage.", cid)
-			setPlayerStorageValue(cid, 121, 3)
-			talkState[talkUser] = 0
-		elseif(getPlayerStorageValue(cid, 121) == 3) then
-			npcHandler:say("We could indeed need some help. These are very cold times. The ice is growing and becoming thicker everywhere ...", cid)
-			npcHandler:say("The problem is that the chakoyas may use the ice for a passage to the west and attack Svargrond ...", cid)
-			npcHandler:say("We need you to get a pick and to destroy the ice at certain places to the east. You will quickly recognise those spots by their unstable look ...", cid)
-			npcHandler:say("Use the pickaxe on at least three of these places and the chakoyas probably won't be able to pass the ice. Once you are done, return here and report about your mission. ", cid)
-			setPlayerStorageValue(cid, 121, 4)
-			talkState[talkUser] = 0
+	if msgcontains(msg, "do for you") then
+			npcHandler:say("I run the dog sled service from this city to {Nibelor}.", player)
+	elseif msgcontains(msg, "Nibelor") or msgcontains(msg, "passage") then
+			npcHandler:say("Do you want to Nibelor?", player)
+			talkState[talkUser] = 2
+	elseif msgcontains(msg, "mission") then
+		if player:getStorageValue( 120) >= 8 then -- if Barbarian Test absolved 
+			if player:getStorageValue( 121) < 1 then
+				npcHandler:say({"Well, one of the boys has run away. I think he got the scent of some beast. He's young and inexperienced so I can't blame the cub ...",
+								"I would like you to see after him. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Are you willing to do that?"}, player, 0, 1, 4000)
+				talkState[talkUser] = 1
+			elseif player:getStorageValue( 121) == 2 then
+				npcHandler:say("You are a friend of mine and the boys now. I tell you something. If you ever need to go to the isle of Nibelor, just ask me for a {passage}.", player)
+				player:setStorageValue( 121, 3)
+				player:setStorageValue( 12025, 3) -- Questlog The Ice Islands Quest, Befriending the Musher
+				talkState[talkUser] = 0
+			end
+		else
+			npcHandler:say( "Sorry but I only give missions to those who are considered a true Barbarian. ", player)
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
-			npcHandler:say("That's surprising. Take a piece of meat. If you find the boy, feed it to him. That will give him enough strength and incentive to return to his pack ...", cid)
-			npcHandler:say("Talk to him by calling his name 'Sniffler' and tell him you got meat for him. After he has eaten the meat, return here to talk to me about your mission.", cid)
-			setPlayerStorageValue(cid, 121, 1)
+	elseif msgcontains(msg, "yes") then
+		if talkState[talkUser] == 1 then
+			npcHandler:say({"That's surprising. Take a piece of meat. If you find the boy, feed it to him. That will give him enough strength and incentive to return to his pack ...",
+							"Talk to him by calling his name 'Sniffler' and tell him you got meat for him. After he has eaten the meat, return here to talk to me about your mission."}, player, 0, 1, 3500)
+			player:setStorageValue( 121, 1)
+			player:setStorageValue( 12025, 1) -- Questlog The Ice Islands Quest, Befriending the Musher
 			talkState[talkUser] = 0
+		elseif talkState[talkUser] == 2 then
+			if player:getStorageValue( 121) == 3 then
+			local port = {x = 32325, y = 31049, z = 7}
+			player:teleportTo(port)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			talkState[talkUser] = 0
+			else
+			npcHandler:say("Sorry, first time you have to do a mission for me.", player)
+			talkState[talkUser] = 0
+			end
 		end
 	end
 	return true

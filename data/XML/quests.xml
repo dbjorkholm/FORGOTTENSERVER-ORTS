@@ -131,6 +131,20 @@
 			<missionstate id="3" description="You have Complete this Test! You can now become a citizen of Svargrond!"/>
 		</mission>
 	</quest>
+	<quest name="The Ice Islands Quest" startstorageid="121" startstoragevalue="1">
+		<mission name="Befriending the Musher" storageid="12025" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Find Sniffler the husky of Iskan. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Call him sniffler and feed him with meat."/>
+			<missionstate id="2" description="Tell Iskan that you found and feed Sniffler"/>
+			<missionstate id="3" description="You are now a friend of Iskan and can ask him for a passage to Nibelor. You should ask Hjaern in Nibelor if you can help him."/>
+		</mission>
+		<mission name="Nibelor 1: Breaking the Ice" storageid="12026" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Chakoyas may use the ice for a passage to the west and attack Svargrond. Use the rocks at east of nibelor on at least three of these places and the chakoyas probably won't be able to pass the ice."/>
+			<missionstate id="2" description="You have broke 1 of 3 icepassages"/>
+			<missionstate id="3" description="You have broke 2 of 3 icepassages"/>
+			<missionstate id="4" description="You have broke 3 of 3 icepassages! Tell Hjaern your mission!"/>
+			<missionstate id="5" description="You should ask Silfind if you can help her in some matters."/>
+		</mission>
+	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
 		<mission name="Hunter Outfit Quest" storageid="12055" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Elane sends you to Liberty Bay to bring her the Crossbow from the Cult."/>

@@ -4,6 +4,7 @@
 	<!-- Hunter Outfits Quest -->
 	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
+	<action actionid="12055" script="hunter outfit quest/ElaneCrossbowQuestDoor.lua"/>
 	
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
@@ -263,6 +264,7 @@
 	<action uniqueid="2225" script="hydra egg quest/hydraEggQuestRewards.lua"/>
 	
 	<!-- Ice Islands Quest -->
+	<action actionid="12026" script="ice islands quest/iceIslandsQuestPick.lua"/>
 	<action fromid="7243" toid="7244" script="ice islands quest/iceIslandsQuestAnthill.lua"/>
 	<action itemid="7289" script="ice islands quest/iceIslandsQuestCharm.lua"/>
 	<action itemid="7246" script="ice islands quest/iceIslandsQuestCure.lua"/>
