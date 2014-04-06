@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<npc name="Hjaern" script="Hjaern.lua" walkinterval="2000">
+<npc name="Hjaern" script="Hjaern.lua" walkinterval="2000" speechbubble="3">
   <health now="200" max="200" />
   <look type="154" head="0" body="94" legs="95" feet="114" addons="3" />
   <parameters>
     <parameter key="message_greet" value="Be greeted, |PLAYERNAME|. The spiritual world looks upon you and your deeds." />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="shard,7290,2000" />
+    <parameter key="shop_sellable" value="shard,7290,2000" />
   </parameters>
 </npc>
 
