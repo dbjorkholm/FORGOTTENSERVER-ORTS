@@ -53,7 +53,7 @@ function creatureSayCallback(cid, type, msg)
 			player:setStorageValue( 12025, 1) -- Questlog The Ice Islands Quest, Befriending the Musher
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 2 then
-			if player:getStorageValue( 121) == 3 then
+			if player:getStorageValue( 121) >= 3 then
 			local port = {x = 32325, y = 31049, z = 7}
 			player:teleportTo(port)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
