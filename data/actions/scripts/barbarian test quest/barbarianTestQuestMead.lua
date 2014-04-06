@@ -8,7 +8,7 @@ local player = Player(cid)
 				if player:getStorageValue(119) == 10 then
 					player:say("10 sips in a row. Yeah!", TALKTYPE_ORANGE_1)
 					player:setStorageValue(120, 3)
-					player:setStorageValue( 12022, 3) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze
+					player:setStorageValue(12022, 3) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze
 					return true
 				end
 			else
@@ -19,7 +19,7 @@ local player = Player(cid)
 		elseif player:getStorageValue(118) > 20 then
 			player:say("Ask Sven for another round.", TALKTYPE_ORANGE_1)
 			player:setStorageValue(120, 1)
-			player:setStorageValue( 12022, 1) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze
+			player:setStorageValue(12022, 1) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze
 		elseif player:getStorageValue(120) >= 3 then
 			player:say("You already passed the test, no need to torture yourself anymore.", TALKTYPE_ORANGE_1)
 		end
