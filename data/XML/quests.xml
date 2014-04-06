@@ -114,7 +114,7 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
-	<quest name="Barbarian Test Quest" startstorageid="120" startstoragevalue="1">
+	<quest name="Barbarian Test Quest" startstorageid="12022" startstoragevalue="1">
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Give Sven a honeycomb. For each honeycomb you will be allowed 20 sips."/>
 			<missionstate id="2" description="Now drink from the bucket until you drink 10 sips in a row without passing out"/>
@@ -131,7 +131,7 @@
 			<missionstate id="3" description="You have Complete this Test! You can now become a citizen of Svargrond!"/>
 		</mission>
 	</quest>
-	<quest name="The Ice Islands Quest" startstorageid="121" startstoragevalue="1">
+	<quest name="The Ice Islands Quest" startstorageid="12025" startstoragevalue="1">
 		<mission name="Befriending the Musher" storageid="12025" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Find Sniffler the husky of Iskan. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Call him sniffler and feed him with meat."/>
 			<missionstate id="2" description="Tell Iskan that you found and feed Sniffler"/>
@@ -143,6 +143,37 @@
 			<missionstate id="3" description="You have broke 2 of 3 icepassages"/>
 			<missionstate id="4" description="You have broke 3 of 3 icepassages! Tell Hjaern your mission!"/>
 			<missionstate id="5" description="You should ask Silfind if you can help her in some matters."/>
+		</mission>
+		<mission name="Nibelor 2: Ecological Terrorism" storageid="12027" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Siflind will ask you to travel to Port Hope to get ants from an Ant-Hill to perform ecological terrorism on some pirates on Tyrsung."/>
+			<missionstate id="2" description="Work in processing"/>
+		</mission>
+		<mission name="Nibelor 3: Artful Sabotage" storageid="12028" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Nibelor 4: Berserk Brewery" storageid="12029" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Nibelor 5: Cure the Dogs" storageid="12030" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="The Secret of Helheim" storageid="12031" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="The Contact" storageid="12032" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Formorgar Mines 1: The Mission" storageid="12033" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Formorgar Mines 2: Ghostwhisperer" storageid="12034" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Formorgar Mines 3: The Secret" storageid="12035" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
+		</mission>
+		<mission name="Formorgar Mines 4: Retaliation" storageid="12036" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Work in processing"/>
 		</mission>
 	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
@@ -232,7 +263,7 @@
 		<mission name="Mission 05: Food or Fight" storageid="12016" startvalue="1" endvalue="8">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="On this mission you are asked to find a druid by the name of Tamerin, on the Arena Quarter. You now have permission to use the gates mechanism."/>
-			<missionstate id="3" description="The first is to bring Tamerin a flask of Animal Cure, you can buy this from Siflind on Nibelor."/>
+			<missionstate id="3" description="The first is to bring Tamerin a flask of Animal Cure, you can buy this from Siflind on Nibelor (northeast of Svargrond)."/>
 			<missionstate id="4" description="now you have to kill Morik the Gladiator and bring his helmet to Tamerin as proof."/>
 			<missionstate id="5" description="Report back to Tamerin as he will listen to your request and you can now make your choice: Cattle for Palimuth (good side), Warbeasts for Yalahari (Azerus) (bad side). Then report the one you decided your mission."/>
 			<missionstate id="6" description="You decided to help Palimuth, report him your mission."/>
