@@ -5,7 +5,7 @@
   <parameters>
     <parameter key="message_greet" value="Be greeted, |PLAYERNAME|. The spiritual world looks upon you and your deeds." />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="shard,7290,2000" />
+    <parameter key="shop_sellable" value="shard,7290,2000" />
   </parameters>
 </npc>
 
