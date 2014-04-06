@@ -22,6 +22,19 @@ function creatureSayCallback(cid, type, msg)
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
+	local player = Player(cid)
+	if msgcontains(msg, "Svargrond") or msgcontains(msg, "passage") then
+		npcHandler:say("Do you want to Svargrond?", player)
+		talkState[talkUser] = 10
+	elseif msgcontains(msg, "yes") then
+		if talkState[talkUser] == 10 then
+			local port = {x = 32306, y = 31082, z = 7}
+			player:teleportTo(port)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			talkState[talkUser] = 0
+		end
+	end
+	
 	if(msgcontains(msg, "mission")) then
 		if(getPlayerStorageValue(cid, 121) == 20) then
 			npcHandler:say("I am in dire need of help. A plague has befallen my dogs. I even called a druid of Carlin for help but all he could do was to recommend some strong medicine ...", cid)

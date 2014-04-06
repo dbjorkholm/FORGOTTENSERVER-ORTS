@@ -14,7 +14,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:say("You hug the unconcious bear.", TALKTYPE_ORANGE_1)
 			player:setStorageValue(120, 5)
 			player:setStorageValue( 12023, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
-			addEvent(doTransformItem, 60*1000, itemEx.uid, 7174)
+			Item(itemEx.uid):transform(7174)
+			Item(itemEx.uid):decay()
 			Position(toPosition):sendMagicEffect(CONST_ME_SLEEP)
 		else
 			player:say("You don't feel like hugging an unconcious bear.", TALKTYPE_ORANGE_1)
@@ -30,7 +31,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(120, 7)
 				player:setStorageValue( 12024, 2) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
 				Item(itemEx.uid):transform(7177)
-				addEvent(doTransformItem, 60*1000, itemEx.uid, 7176)
+				Item(itemEx.uid):decay()
 				addEvent(doSendMagicEffect, 60*1000, toPosition, CONST_ME_SLEEP)
 				Position(toPosition):sendMagicEffect(CONST_ME_SLEEP)
 			else

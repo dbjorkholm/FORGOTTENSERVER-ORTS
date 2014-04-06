@@ -5,15 +5,19 @@ local chakoyas = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(itemEx.actionid == 100 and itemEx.itemid == 7185 and item.itemid == 2553) then
-		if(getPlayerStorageValue(cid, 121) == 4) then
-			setPlayerStorageValue(cid, 122, getPlayerStorageValue(cid, 122) < 1 and 1 or getPlayerStorageValue(cid, 122) + 1)
+local player = Player(cid)
+local iEx = Item(itemEx.uid)
+	if itemEx.itemid == 3621 then
+		if player:getStorageValue(12026) > 0 and player:getStorageValue(122) < 3  then
+			player:setStorageValue(122, player:getStorageValue(122) + 1)
+			player:setStorageValue(12026, player:getStorageValue(12026) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			doSummonCreature(chakoyas[math.random(1, 3)], toPosition)
-			doSendMagicEffect(toPosition, CONST_ME_TELEPORT)
-			addEvent(doTransformItem, 5 * 60 * 1000, itemEx.uid, 7185)
-			doTransformItem(itemEx.uid, 7186)
-			if(getPlayerStorageValue(cid, 122) >= 3) then
-				setPlayerStorageValue(cid, 121, 5)
+			Position(toPosition):sendMagicEffect(CONST_ME_TELEPORT)
+			iEx:transform(7186)
+			iEx:decay()
+			if player:getStorageValue( 122) >= 3 then
+				player:setStorageValue( 121, 4)
+				player:setStorageValue( 12026, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			end
 		end
 	end
