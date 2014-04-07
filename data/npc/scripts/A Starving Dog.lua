@@ -24,17 +24,17 @@ function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "sniffler") then
-		if player:getStorageValue( 121) == 1 then
+		if player:getStorageValue(12001) == 1 then
 			npcHandler:say("!", player)
 			talkState[talkUser] = 1
 		end
 	elseif msgcontains(msg, "meat") then
 		if talkState[talkUser] == 1 then
-			if player:getItemCount( 2666) >= 1 then
-				player:removeItem( 2666, 1)
+			if player:getItemCount(2666) >= 1 then
+				player:removeItem(2666, 1)
 				npcHandler:say("<munch>", player)
-				player:setStorageValue( 121, 2)
-				player:setStorageValue( 12025, 2) -- Questlog The Ice Islands Quest, Befriending the Musher
+				player:setStorageValue(12001, 2)
+				player:setStorageValue(12025, 2) -- Questlog The Ice Islands Quest, Befriending the Musher
 				talkState[talkUser] = 0
 			end
 		end
