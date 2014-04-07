@@ -128,7 +128,7 @@
 		<mission name="Barbarian Test 3: The Mammoth Pushing" storageid="12024" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Go to the north-west of Svargrond and find the Mammoth. Drink your three mugs of mead, stand in front of the Mammoth and push it. Just use it..."/>
 			<missionstate id="2" description="You pushed the Mammoth! Go tell Sven that you pushed the Mammoth!"/>
-			<missionstate id="3" description="You have Complete this Test! You can now become a citizen of Svargrond!"/>
+			<missionstate id="3" description="You have Complete this Test! You can now be a citizen of Svargrond!"/>
 		</mission>
 	</quest>
 	<quest name="The Ice Islands Quest" startstorageid="12025" startstoragevalue="1">
@@ -144,9 +144,10 @@
 			<missionstate id="4" description="You have broke 3 of 3 icepassages! Tell Hjaern your mission!"/>
 			<missionstate id="5" description="You should ask Silfind if you can help her in some matters."/>
 		</mission>
-		<mission name="Nibelor 2: Ecological Terrorism" storageid="12027" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Siflind will ask you to travel to Port Hope to get ants from an Ant-Hill to perform ecological terrorism on some pirates on Tyrsung."/>
-			<missionstate id="2" description="Work in processing"/>
+		<mission name="Nibelor 2: Ecological Terrorism" storageid="12027" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Siflind asked you to travel to Port Hope to get ants from an Ant-Hill to perform ecological terrorism on some pirates on Tyrsung. Just use the jug on an anthill."/>
+			<missionstate id="2" description="Now head back to Svargrond and go to Buddel, the drunk sailor in southern Svargrond, and ask him to take you to Tyrsung. Now go all the way to the southern shores where you find a outpost. Go to the bottom deck and use the jug with the western mast"/>
+			<missionstate id="3" description="Go tell Siflind that you released the ants and aks him for mission!"/>
 		</mission>
 		<mission name="Nibelor 3: Artful Sabotage" storageid="12028" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Work in processing"/>
