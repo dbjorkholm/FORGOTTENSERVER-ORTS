@@ -94,6 +94,7 @@ function creatureSayCallback(cid, type, msg)
 							"I need a part of the sun adorer cactus, a vial of geyser water, sulphur of a lava hole, a frostbite herb, a blossom of a purple kiss, a hydra tongue and spores of a giant glimmercap mushroom ...",
 							"Turn them in individually by talking about them to me. As soon as I obtained them all, talk to me about the medicine. "}, player, 0, 1, 3500)
 			player:setStorageValue(12001, 21)
+			player:setStorageValue(12030, 1) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 2 then
 			if getPlayerMoney(cid) >= 25 then
