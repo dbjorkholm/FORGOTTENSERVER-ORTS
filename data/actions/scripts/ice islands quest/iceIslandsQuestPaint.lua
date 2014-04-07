@@ -1,15 +1,18 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(itemEx.itemid == 7178 and item.itemid == 7253) then
-		if(getPlayerStorageValue(cid, 121) == 8) then
-			doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
-			setPlayerStorageValue(cid, 123, getPlayerStorageValue(cid, 123) < 1 and 1 or getPlayerStorageValue(cid, 123) + 1)
-			if(getPlayerStorageValue(cid, 123) == 3) then
-				setPlayerStorageValue(cid, 121, 9)
+local player = Player(cid)
+local targetItem = Item(itemEx.uid)
+	if itemEx.itemid == 7178 and item.itemid == 7253 then
+		if player:getStorageValue(12001) == 8 then
+			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			player:setStorageValue(12003, player:getStorageValue(12003) + 1)
+			if player:getStorageValue(12003) == 2 then
+				player:setStorageValue(12001, 9)
+				player:setStorageValue(12028, 2) -- Questlog The Ice Islands Quest, Nibelor 3: Artful Sabotage
 			end
-			doCreatureSay(cid, "You painted a baby seal.", TALKTYPE_ORANGE_1)
-			doTransformItem(itemEx.uid, 7252)
-			addEvent(doSendMagicEffect, 30 * 1000, toPosition, CONST_ME_MAGIC_GREEN)
-			addEvent(doTransformItem, 30 * 1000, itemEx.uid, 7178)
+			player:say("You painted a baby seal.", TALKTYPE_ORANGE_1)
+			targetItem:transform(7252)
+			addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN) end, 30 * 1000, toPosition)
+			addEvent(function () local tile = toPosition:getTile() if tile then local thing = tile:getTopVisibleThing() if thing and thing:isItem() then thing:transform(7178) end end end, 30 * 1000)			
 		end
 	end
 	return true

@@ -145,18 +145,24 @@
 			<missionstate id="5" description="You should ask Silfind if you can help her in some matters."/>
 		</mission>
 		<mission name="Nibelor 2: Ecological Terrorism" storageid="12027" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Siflind asked you to travel to Port Hope to get ants from an Ant-Hill to perform ecological terrorism on some pirates on Tyrsung. Just use the jug on an anthill."/>
+			<missionstate id="1" description="Siflind send you to travel to a distant land to get ants from an Ant-Hill to perform ecological terrorism on some pirates on Tyrsung. Just use the jug on an anthill."/>
 			<missionstate id="2" description="Now head back to Svargrond and go to Buddel, the drunk sailor in southern Svargrond, and ask him to take you to Tyrsung. Now go all the way to the southern shores where you find a outpost. Go to the bottom deck and use the jug with the western mast"/>
-			<missionstate id="3" description="Go tell Siflind that you released the ants and aks him for mission!"/>
+			<missionstate id="3" description="Go tell Siflind that you released the ants and aks her for mission!"/>
 		</mission>
-		<mission name="Nibelor 3: Artful Sabotage" storageid="12028" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Work in processing"/>
+		<mission name="Nibelor 3: Artful Sabotage" storageid="12028" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Siflind gave you a Vial of Paint to use on some Baby Seals. Go back to Tyrsung and follow the shore from Buddel south. Use the Vial of Paint on three of these seals."/>
+			<missionstate id="2" description="Go tell Siflind that you painted the seals and aks her for mission!"/>
 		</mission>
-		<mission name="Nibelor 4: Berserk Brewery" storageid="12029" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Work in processing"/>
+		<mission name="Nibelor 4: Berserk Brewery" storageid="12029" startvalue="1" endvalue="6">
+			<missionstate id="1" description="The first things needed are 5 bat wings to brew a berserker elixir. Bring her them!"/>
+			<missionstate id="2" description="The next items Siflind need are 4 bear paws. Bring her them!"/>
+			<missionstate id="3" description="The next items Siflind need are 3 bonelord eyes. Bring her them!"/>
+			<missionstate id="4" description="The next items Siflind need are 2 fish fins. Bring her them!"/>
+			<missionstate id="5" description="The next item Siflind need is a green dragon scale. Bring her that!"/>
+			<missionstate id="6" description="You helped Siflind to defend Svargrond. Now Nilsor need help, go ask him for mission."/>
 		</mission>
 		<mission name="Nibelor 5: Cure the Dogs" storageid="12030" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Work in processing"/>
+			<missionstate id="1" description="To cure Nilsor dogs, bring him the 1 of 7 ingredients: a part of the Sun Adorer Cactus."/>
 		</mission>
 		<mission name="The Secret of Helheim" storageid="12031" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Work in processing"/>

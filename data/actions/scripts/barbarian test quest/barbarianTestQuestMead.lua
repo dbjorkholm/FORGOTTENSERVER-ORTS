@@ -5,7 +5,7 @@ local player = Player(cid)
 			if math.random(1, 5) > 1 then
 				player:say("The world seems to spin but you manage to stay on your feet.", TALKTYPE_ORANGE_1)
 				player:setStorageValue(119, player:getStorageValue(119) + 1)
-				if player:getStorageValue(119) == 10 then
+				if player:getStorageValue(119) == 9 then -- 9 sips here cause local player at start
 					player:say("10 sips in a row. Yeah!", TALKTYPE_ORANGE_1)
 					player:setStorageValue(120, 3)
 					player:setStorageValue(12022, 3) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze

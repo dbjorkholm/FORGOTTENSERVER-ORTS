@@ -37,6 +37,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 10 then
 			npcHandler:say("Our warriors need a more potent yet more secure berserker elixir to fight our enemies. To brew it, I need several ingredients. The first things needed are 5 bat wings. Bring them to me and Ill tell you the next ingredients we need.", player)
 			player:setStorageValue(12001, 11)
+			player:setStorageValue(12029, 1) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 11 then
 			npcHandler:say("Do you have the 5 bat wings I requested?", player)
@@ -44,6 +45,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 12 then
 			npcHandler:say("The second things needed are 4 bear paws. Bring them to me and Ill tell you the next ingredients we need.", player)
 			player:setStorageValue(12001, 13)
+			player:setStorageValue(12029, 2) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 13 then
 			npcHandler:say("Do you have the 4 bear paws I requested?", player)
@@ -51,6 +53,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 14 then
 			npcHandler:say("The next things needed are 3 bonelord eyes. Bring them to me and Ill tell you the next ingredients we need.", player)
 			player:setStorageValue(12001, 15)
+			player:setStorageValue(12029, 3) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 15 then
 			npcHandler:say("Do you have the 3 bonelord eyes I requested?", player)
@@ -58,6 +61,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 16 then
 			npcHandler:say("The next things needed are 2 fish fins. Bring them to me and Ill tell you the next ingredients we need.", player)
 			player:setStorageValue(12001, 17)
+			player:setStorageValue(12029, 4) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 17 then
 			npcHandler:say("Do you have the 2 fish fins I requested?", player)
@@ -65,6 +69,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 18 then
 			npcHandler:say("The last thing needed is a green dragon scale. Bring them to me and Ill tell you the next ingredients we need.", player)
 			player:setStorageValue(12001, 19)
+			player:setStorageValue(12029, 5) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 19 then
 			npcHandler:say("Do you have the green dragon scale I requested?", player)
@@ -143,6 +148,7 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5920, 1)
 				npcHandler:say("Thank you very much. This will help us to defend Svargrond. But I heard young Nilsor is in dire need of help. Please contact him immediately.", player)
 				player:setStorageValue(12001, 20)
+				player:setStorageValue(12029, 6) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery
 				talkState[talkUser] = 0
 			else
 				npcHandler:say("Come back when you do.", player)
