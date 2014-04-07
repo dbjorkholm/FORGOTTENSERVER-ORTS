@@ -1,12 +1,11 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-        if(item.uid == 2227) then
-                if(Player(cid):getStorageValue(322) < 1) then
-                        Player(cid):setStorageValue(322, 1)
-                        Player(cid):addItem(2168, 1)
-                        Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "You've found a life ring.")
-                else
-                        Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
-                end
-        end
-        return true
+	local player = Player(cid)
+	if player:getStorageValue(322) < 1 then
+		player:setStorageValue(322, 1)
+		player:addItem(2168, 1)
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a life ring.")
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+	end
+	return true
 end

@@ -382,11 +382,9 @@
 	<action fromuid="2209" touid="2211" script="vampire shield quest/vampireShieldQuest.lua"/>
 	
 	<!-- Quests -->
-	<action uniqueid="9172" script="quests/abyssador.lua"/>
 	<action uniqueid="9196" script="quests/bkkey.lua"/>
 	<action uniqueid="9155" script="quests/dcq_dead.lua"/>
-	<action uniqueid="9173" script="quests/deathstrike.lua"/>
-	<action uniqueid="9174" script="quests/gnomevil.lua"/>
+	<action fromuid="9172" touid="9174" script="quests/warzone_rewards.lua"/>
 	<action uniqueid="9177" script="quests/iron_helmet.lua"/>
 	<action uniqueid="9136" script="quests/key3980.lua"/>
 	<action uniqueid="9185" script="quests/mummy.lua"/>

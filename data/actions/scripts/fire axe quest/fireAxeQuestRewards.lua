@@ -1,16 +1,17 @@
+local rewards = {2432, 2214, 2201, 2145}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-        if(item.uid == 2224) then
-                if(Player(cid):getStorageValue(319) < 1) then
-                        Player(cid):setStorageValue(319, 1)
-                        bag = Player(cid):addItem(1987, 1)
-                        Container(bag.uid):addItemEx(2432, 1)
-                        Container(bag.uid):addItemEx(2214, 1)
-                        Container(bag.uid):addItemEx(2201, 1)
-                        Container(bag.uid):addItemEx(2145, 7)
-                        Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "You've found a bag.")
-                else
-                        Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
-                end
-        end
-        return true
+	local player = Player(cid)
+	if player:getStorageValue(319) < 1 then
+		player:setStorageValue(319, 1)
+		local bag = player:addItem(1987, 1)
+		local container = Container(bag:getUniqueId())
+		for i = 1, #rewards do
+			container:addItem(rewards[i], 1)
+		end
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a bag.")
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+	end
+	return true
 end
