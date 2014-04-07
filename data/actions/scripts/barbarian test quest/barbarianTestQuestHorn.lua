@@ -1,22 +1,23 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
+	local targetItem = Item(itemEx.uid)
 	if(itemEx.uid == 3110 and item.itemid == 7140) then
 		player:say("You fill your horn with ale.", TALKTYPE_ORANGE_1)
 		Item(item.uid):transform(7141)
-		Position(toPosition):sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	elseif(itemEx.itemid == 7174 and item.itemid == 7141) then
 			player:say("The bear is now unconcious.", TALKTYPE_ORANGE_1)
 			Item(item.uid):transform(7140)
 			Item(itemEx.uid):transform(7175)
-			Position(toPosition):sendMagicEffect(CONST_ME_STUN)
+			toPosition:sendMagicEffect(CONST_ME_STUN)
 	elseif(item.itemid == 7175) then
 		if(player:getStorageValue(120) == 4) then
 			player:say("You hug the unconcious bear.", TALKTYPE_ORANGE_1)
 			player:setStorageValue(120, 5)
 			player:setStorageValue(12023, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
-			Item(itemEx.uid):transform(7174)
-			Item(itemEx.uid):decay()
-			Position(toPosition):sendMagicEffect(CONST_ME_SLEEP)
+			targetItem:transform(7174)
+			targetItem:decay()
+			toPosition:sendMagicEffect(CONST_ME_SLEEP)
 		else
 			player:say("You don't feel like hugging an unconcious bear.", TALKTYPE_ORANGE_1)
 		end
@@ -30,10 +31,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:say("You hustle the mammoth. What a fun. *hicks*.", TALKTYPE_ORANGE_1)
 				player:setStorageValue(120, 7)
 				player:setStorageValue(12024, 2) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
-				Item(itemEx.uid):transform(7177)
-				Item(itemEx.uid):decay()
-				addEvent(doSendMagicEffect, 60*1000, toPosition, CONST_ME_SLEEP)
-				Position(toPosition):sendMagicEffect(CONST_ME_SLEEP)
+				targetItem:transform(7177)
+				targetItem:decay()
+				addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_SLEEP) end, 60 * 1000, toPosition)
+				toPosition:sendMagicEffect(CONST_ME_SLEEP)
 			else
 				player:say("You are not drunk enought to hustle a mammoth.", TALKTYPE_ORANGE_1)
 			end
