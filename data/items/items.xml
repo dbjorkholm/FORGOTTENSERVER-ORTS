@@ -11916,8 +11916,6 @@
 	</item>
 		<item id="7186" article="a" name="big crack in the ice">
 		<attribute key="description" value="Now the ice passage are destroyed." />
-		<attribute key="decayTo" value="3621" />
-		<attribute key="duration" value="300" />
 	</item>
 
 	<item fromid="7187" toid="7188" article="a" name="raft" />
@@ -11960,7 +11958,7 @@
 		<attribute key="weight" value="100" />
 	</item>
 	<item id="7246" name="Nilsor's waterskin">
-		<attribute key="description" value="It is empty." />
+		<attribute key="description" value="It is filled with warm geyser water." />
 		<attribute key="weight" value="700" />
 	</item>
 	<item id="7247" name="fine sulphur">
@@ -12054,7 +12052,7 @@
 		<attribute key="corpseType" value="undead" />
 	</item>
 	<item id="7286" name="Nilsor's waterskin">
-		<attribute key="description" value="It is filled with warm geyser water." />
+		<attribute key="description" value="It is empty." />
 		<attribute key="weight" value="700" />
 	</item>
 	<item fromid="7287" toid="7288" name="" />
