@@ -45,7 +45,14 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say({"Thank you. Now I have all necessary ingredients. As a reward I grant you the use of our dog sled, which is located to the east of here. ...",
 							"The dogs can be a bit moody, but if you always carry some ham with you there shouldnt be any problems. Oh, and Hjaern might have a mission for you. So maybe you go and talk to him."}, player, 0, 1, 3500)
 			player:setStorageValue(12001, 29)
+			player:setStorageValue(12031, 1) -- Questlog The Ice Islands Quest, The Secret of Helheim
 			talkState[talkUser] = 0
+		elseif player:getStorageValue(12001) > 20 and player:getStorageValue(12001) < 28 then
+		npcHandler:say("What for ingredient do you have?", player)
+		talkState[talkUser] = 0
+		else 
+		npcHandler:say("I have now no mission for you.", player)
+		talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "waterskin") then
 		npcHandler:say("Do you want to buy a waterskin for 25 gold?", player)
@@ -59,7 +66,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "water") then
 		if player:getStorageValue(12001) == 22 then
 			npcHandler:say({"You will need a specially prepared waterskin to collect the water. You can buy one from me ...",
-							"Use it on a geyser that is NOT active. The water of active geysers is far too hot. You can find inactive geysers on Okolnir. Do you have somegeyser water with you?"}, player, 0, 1, 3500)
+							"Use it on a geyser that is NOT active. The water of active geysers is far too hot. You can find inactive geysers on Okolnir. Do you have some geyser water with you?"}, player, 0, 1, 2500)
 			talkState[talkUser] = 4
 		end
 	elseif msgcontains(msg, "sulphur") then
@@ -92,83 +99,94 @@ function creatureSayCallback(cid, type, msg)
 		if talkState[talkUser] == 1 then
 			npcHandler:say({"A thousand thanks in advance. I need no less than 7 ingredients for the cure. You can ask me about each specifically ...",
 							"I need a part of the sun adorer cactus, a vial of geyser water, sulphur of a lava hole, a frostbite herb, a blossom of a purple kiss, a hydra tongue and spores of a giant glimmercap mushroom ...",
-							"Turn them in individually by talking about them to me. As soon as I obtained them all, talk to me about the medicine. "}, player, 0, 1, 3500)
+							"Turn them in individually by talking about them to me. As soon as I obtained them all, talk to me about the medicine. First time bring a Part of the Sun Adorer {Cactus}. "}, player, 0, 1, 3500)
 			player:setStorageValue(12001, 21)
 			player:setStorageValue(12030, 1) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 2 then
-			if getPlayerMoney(cid) >= 25 then
-				doPlayerRemoveMoney(cid, 25)
+			if player:getMoney() >= 25 then
+				player:removeMoney(25)
 				npcHandler:say("Here you are. A waterskin!", player)
-				doPlayerAddItem(cid, 7246, 1)
+				player:addItem(7286, 1)
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("You don't have enough money.", player)
 			end
 			talkState[talkUser] = 0
 			
 		elseif talkState[talkUser] == 3 then
 			if player:getItemCount(7245) >= 1 then
 				player:removeItem(7245, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient. Now bring me Geyser {Water} in a Waterskin. ", player)
 				player:setStorageValue(12001, 22)
+				player:setStorageValue(12030, 2) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 4 then
 			if player:getItemCount(7246) >= 1 then
 				player:removeItem(7246, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient. Now bring me Fine {Sulphur}.", player)
 				player:setStorageValue(12001, 23)
+				player:setStorageValue(12030, 3) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 5 then
 			if player:getItemCount(8301) >= 1 then
 				player:removeItem(8301, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient. Now bring me the Frostbite {Herb}", player)
 				player:setStorageValue(12001, 24)
+				player:setStorageValue(12030, 4) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 6 then
 			if player:getItemCount(7248) >= 1 then
 				player:removeItem(7248, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient Now bring me Purple Kiss {Blossom}.", player)
 				player:setStorageValue(12001, 25)
+				player:setStorageValue(12030, 5) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 7 then
 			if player:getItemCount(7249) >= 1 then
 				player:removeItem(7249, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient. Now bring me the {Hydra Tongue}", player)
 				player:setStorageValue(12001, 26)
+				player:setStorageValue(12030, 6) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient. ", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 8 then
 			if player:getItemCount(7250) >= 1 then
 				player:removeItem(7250, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+				npcHandler:say("Thank you for this ingredient. Now bring me {Spores} of a Giant Glimmercap Mushroom.", player)
 				player:setStorageValue(12001, 27)
+				player:setStorageValue(12030, 7) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
 		elseif talkState[talkUser] == 9 then
-			if player:getItemCount(7247) >= 1 then
-				player:removeItem(7247, 1)
-				npcHandler:say("Thank you for this ingredient.", player)
+			if player:getItemCount(7251) >= 1 then
+				player:removeItem(7251, 1)
+				npcHandler:say("Thank you for this ingredient. Now you finish your {mission}", player)
 				player:setStorageValue(12001, 28)
+				player:setStorageValue(12030, 8) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			else
-				npcHandler:say("Come back when you have the money.", player)
+				npcHandler:say("Come back when you have the ingredient.", player)
 			end
 			talkState[talkUser] = 0
+		end
+	elseif msgcontains(msg, "no") then
+		if talkState[talkUser] >= 2 then
+			npcHandler:say("Then come back when you have the ingredient.", player)
 		end
 	end
 	return true
