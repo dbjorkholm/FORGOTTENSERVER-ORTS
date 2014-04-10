@@ -57,6 +57,8 @@ function creatureSayCallback(cid, type, msg)
 							"Report about your mission when you are done. Then we can begin with the great ritual of summoning the children of Chyll ...",
 							"I will also inform Lurik about the events. Now go, fast!"}, player, 0, 1, 3500)
 			player:setStorageValue(12001, 39)
+			player:setStorageValue(12035, 2) -- Questlog The Ice Islands Quest, Formorgar Mines 3: The Secret
+			player:setStorageValue(12036, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
 			player:addItem(7289, 1)
 			talkState[talkUser] = 0
 		elseif player:getStorageValue(12001) == 39 then
@@ -103,10 +105,11 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 4
 		end
 	elseif msgcontains(msg, "tylaf") then
-		if player:getStorageValue(12001) == 37 then
+		if player:getStorageValue(12001) == 36 then
 			npcHandler:say({"You encountered the restless ghost of my apprentice Tylaf in the old mines? We must find out what has happened to him. I enable you to talk to his spirit ...",
 							"Talk to him and then report to me about your mission."}, player, 0, 1, 3500)
-			player:setStorageValue(12001, 38)
+			player:setStorageValue(12001, 37)
+			player:setStorageValue(12034, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 2: Ghostwhisperer
 			talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "yes") then
