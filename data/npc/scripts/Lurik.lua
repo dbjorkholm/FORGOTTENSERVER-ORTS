@@ -38,26 +38,30 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 33 then
 			npcHandler:say("Have you retrieved the memory crystal?", player)
 			talkState[talkUser] = 2
-		elseif player:getStorageValue(12001) == 34 and player:getStorageValue(129) > os.time() then
+		elseif player:getStorageValue(12001) == 34 and player:getStorageValue(12009) > os.time() then
 			npcHandler:say("Give me some more time!", player)
 			talkState[talkUser] = 0
-		elseif player:getStorageValue(12001) == 34 and player:getStorageValue(129) < os.time() then
+		elseif player:getStorageValue(12001) == 34 and player:getStorageValue(12009) < os.time() then
 			npcHandler:say({"The information was quite useful. What worries me most are not the raiders but those that have driven them from the old mines...",
 							"We need to investigate the mines. Most entrances collapsed due to the lack of maintenance but there should be some possibilities to get in ...",
 							"In case you find a door, Ill tell you the old trick of the Carlin mining company to open it <whisper> <whisper>. Find some hint or someone who is willing to talk about what is going on there."}, player, 0, 1, 3500)
 			talkState[talkUser] = 0
 			player:setStorageValue(12001, 35)
+			player:setStorageValue(12033, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 1: The Mission
 		end
 	elseif msgcontains(msg, "yes") then
 		if talkState[talkUser] == 1 then
 			npcHandler:say("Excellent. Just report about your mission when you got the memory crystal.", player)
 			player:setStorageValue(12001, 33)
+			player:setStorageValue(12032, 2) -- Questlog The Ice Islands Quest, The Contact
 			talkState[talkUser] = 0
-		elseif talkState[talkUser] == 1 then
-			if player:getItemCount(9744) >= 1 then
+		elseif talkState[talkUser] == 2 then
+			if player:getItemCount(7281) >= 1 then
 				npcHandler:say("Ah, great. Please give me some time to evaluate the information. Then talk to me again about your mission. ", player)
 				player:setStorageValue(12001, 34)
-				player:setStorageValue(129, os.time() + 5 * 60 * 1000)
+				player:removeItem(7281, 1)
+				player:setStorageValue(12032, 4) -- Questlog The Ice Islands Quest, The Contact
+				player:setStorageValue(12009, os.time() + 5 * 60)
 				talkState[talkUser] = 0
 			end
 		end
