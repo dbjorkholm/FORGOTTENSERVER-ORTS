@@ -16,6 +16,16 @@ function onThink()
 	npcHandler:onThink()					
 end
 
+function greetCallback(cid)
+	local player = Player(cid)
+	if player:getStorageValue(12001) < 37 then
+		npcHandler:say("Uhhhh...", player)
+		return false
+	end
+	return true
+end
+
+
 function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -30,10 +40,13 @@ function creatureSayCallback(cid, type, msg)
 							"Their plan is to create a new demon army for their master to conquer the world. Hjaern and the other shamans must learn about it! Hurry before its too late."}, player, 0, 1, 3500)
 			talkState[talkUser] = 0
 			player:setStorageValue(12001, 38)
+			player:setStorageValue(12034, 2) -- Questlog The Ice Islands Quest, Formorgar Mines 2: Ghostwhisperer
+			player:setStorageValue(12035, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 3: The Secret
 		end
 	end
 	return true
 end
  
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
