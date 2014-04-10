@@ -171,12 +171,16 @@
 			<missionstate id="7" description="To cure Nilsor dogs, bring him the 7th of 7 ingredients: Spores of a Giant Glimmercap Mushroom. The giant glimmercap mushroom exists in caves and other preferably warm and humid places. Use an ordinary kitchen spoon on a mushroom to collectits spores."/>
 			<missionstate id="8" description="You found all ingredients to cure Nilsor dogs, ask him for mission."/>
 		</mission>
-		<mission name="The Secret of Helheim" storageid="12031" startvalue="1" endvalue="5">
+		<mission name="The Secret of Helheim" storageid="12031" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Hjaern might have a mission for you. So maybe you go and talk to him."/>
-			<missionstate id="2" description="Hjaern might have a mission for you. So maybe you go and talk to him."/>
+			<missionstate id="2" description="Hjaern send you to find someone in Svargrond who can give you a passage to Helheim and seek the reason for the unrest there."/>
+			<missionstate id="3" description="You discovered the necromantic altar and should report Hjaern about it."/>
 		</mission>
-		<mission name="The Contact" storageid="12032" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Work in processing"/>
+		<mission name="The Contact" storageid="12032" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Get out of Nibelor and go to the Svargrond Explorer's Society. Ask Lurik for the mission."/>
+			<missionstate id="2" description="Get to the raider camp, then follow to the extreme south where you find lots of barbarians. Near the southern most coastline, try looking for the NPC Nor. Ask him about Memory Crystal."/>
+			<missionstate id="3" description="Go back to Lurik and deliver him the memory crystal."/>
+			<missionstate id="4" description="Give Lurik some time to evaluate the information (ca. 5min). Then talk to him again about your mission."/>
 		</mission>
 		<mission name="Formorgar Mines 1: The Mission" storageid="12033" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Work in processing"/>

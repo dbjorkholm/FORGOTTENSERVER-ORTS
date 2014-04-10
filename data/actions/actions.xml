@@ -268,6 +268,7 @@
 	<action fromid="7243" toid="7244" script="ice islands quest/iceIslandsQuestAnthill.lua"/>
 	<action itemid="7289" script="ice islands quest/iceIslandsQuestCharm.lua"/>
 	<action itemid="7286" script="ice islands quest/iceIslandsQuestCure.lua"/>
+	<action uniqueid="3111" script="ice islands quest/iceIslandsQuestHelheim.lua"/>
 	<action fromid="2565" toid="2566" script="ice islands quest/iceIslandsQuestCure.lua"/>
 	<action actionid="7813" script="ice islands quest/iceIslandsQuestMinesDoor.lua"/>
 	<action uniqueid="3112" script="ice islands quest/iceIslandsQuestMinesSkeleton.lua"/>
