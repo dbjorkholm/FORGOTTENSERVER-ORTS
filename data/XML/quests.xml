@@ -194,8 +194,13 @@
 			<missionstate id="1" description="The Cultists plan is to create a new demon army for their master to conquer the world. Hjaern and the other shamans must learn about it! Hurry before its too late."/>
 			<missionstate id="2" description="The Cultists plan is to create a new demon army for their master to conquer the world. Hjaern and the other shamans are already informed!"/>
 		</mission>
-		<mission name="Formorgar Mines 4: Retaliation" storageid="12036" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Work in processing"/>
+		<mission name="Formorgar Mines 4: Retaliation" storageid="12036" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Hjaern gave you a spirit charm of cold. Travel to the mines and find four special obelisks to mark them with the charm."/>
+			<missionstate id="2" description="1 of 4 obelisks are marked."/>
+			<missionstate id="3" description="2 of 4 obelisks are marked."/>
+			<missionstate id="4" description="3 of 4 obelisks are marked."/>
+			<missionstate id="5" description="Once all 4 obelisks are marked report back to Hjaern."/>
+			<missionstate id="6" description="You got the Norseman outfit and you have access to the Yakchal room deep in the Formorgar Mines."/>
 		</mission>
 	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
@@ -241,6 +246,11 @@
 		<mission name="Citizen Outfit Quest (Backpack)" storageid="12063" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Bring Lubo in northeast of Thais 100 minotaur leather to get the Backpack"/>
 			<missionstate id="2" description="You got the Outfit!"/>
+		</mission>
+		<mission name="Norseman Outfit Quest" storageid="12037" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Bring Hjaern 5 frostheart shards to get the first Addon. Ask him for shard!"/>
+			<missionstate id="2" description="Bring Hjaern 10 frostheart shards to get the second Addon. Ask him for shard!"/>
+			<missionstate id="3" description="You got the Outfit Addons! You can trade the rest shards to Hjaern for 2000 gold each!"/>
 		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">

@@ -61,15 +61,13 @@ function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(12036, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
 			player:addItem(7289, 1)
 			talkState[talkUser] = 0
-		elseif player:getStorageValue(12001) == 39 then
-			for i = 100, 103 do
-				if player:getStorageValue(i + 40) < 1 then
-					return true
-				end
-			end
+		elseif player:getStorageValue(12001) == 39 and player:getStorageValue(12004) == 5 and player:getStorageValue(12005) == 5 and player:getStorageValue(12006) == 5 and player:getStorageValue(12007) == 5 then
 			if player:getItemCount(7289) >= 1 then
 				player:removeItem(7289, 1)
 				player:setStorageValue(12001, 40)
+				player:setStorageValue(12036, 6) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
+				player:setStorageValue(12037, 1) -- Questlog Norseman Outfit Quest
+				player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
 				player:addOutfit(player:getSex() == 0 and 252 or 251, 0)
 				npcHandler:say({"Yes, I can feel it! The spirits are in touch with the obelisks. We will begin to channel a spell of ice on the caves. That will prevent the melting of the ice there ...",
 								"If you would like to help us, you can turn in frostheart shards from now on. We use them to fuel our spell with the power of ice. ...",
@@ -97,11 +95,13 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Take this. It might suit your Nordic outfit fine. ", player)
 			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 252 or 251, 1)
 			player:setStorageValue(12001, 42)
+			player:setStorageValue(12037, 2) -- Questlog Norseman Outfit Quest
 			talkState[talkUser] = 3
 		elseif player:getStorageValue(12001) == 43 then
 			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 252 or 251, 2)
 			npcHandler:say("Take this. It might suit your Nordic outfit fine. From now on we only can give you 2000 gold pieces for each shard. ", player)
 			player:setStorageValue(12001, 44)
+			player:setStorageValue(12037, 3) -- Questlog Norseman Outfit Quest
 			talkState[talkUser] = 4
 		end
 	elseif msgcontains(msg, "tylaf") then
@@ -128,14 +128,14 @@ function creatureSayCallback(cid, type, msg)
 		elseif talkState[talkUser] == 3 then
 			if player:getItemCount(7290) >= 5 then
 				player:removeItem(7290, 5)
-				npcHandler:say("Excellent, you collected 5 of them. If you have collected 5 or more, talk to me about your reward. ", player)
+				npcHandler:say("Excellent, you collected 5 of them. If you have collected 5 or more, talk to me about your {reward}. ", player)
 				player:setStorageValue(12001, 41)
 				talkState[talkUser] = 0
 			end
 		elseif talkState[talkUser] == 4 then
-			if player:getItemCount(7290) >= 15 then
-				player:removeItem(7290, 15)
-				npcHandler:say("Excellent, you collected 15 of them. If you have collected 15 or more, talk to me about your reward. ", player)
+			if player:getItemCount(7290) >= 10 then
+				player:removeItem(7290, 10)
+				npcHandler:say("Excellent, you collected 10 of them. If you have collected 15 or more, talk to me about your {reward}. ", player)
 				player:setStorageValue(12001, 43)
 				talkState[talkUser] = 0
 			end
