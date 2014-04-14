@@ -76,11 +76,11 @@ function creatureSayCallback(cid, type, msg)
 	elseif (talkState[talkUser] == 2) then
 		if (msgcontains(msg, 'yes')) then
 			if(math.random(1, 10) == 1) then
-				doSendMagicEffect({x = 33324, y = 32173, z = 6}, CONST_ME_TELEPORT)
 				doTeleportThing(cid, {x = 33324, y = 32173, z = 6})
+				doSendMagicEffect({x = 33324, y = 32173, z = 6}, CONST_ME_TELEPORT)
 			else
-				doSendMagicEffect({x = 33289, y = 32481, z = 6}, CONST_ME_TELEPORT)
 				doTeleportThing(cid, {x = 33289, y = 32481, z = 6})
+				doSendMagicEffect({x = 33289, y = 32481, z = 6}, CONST_ME_TELEPORT)
 			end
     		end
   	end

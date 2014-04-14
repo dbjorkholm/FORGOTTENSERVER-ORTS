@@ -19,8 +19,27 @@ function creatureSayCallback(cid, type, msg)
 	end
 	
 	local talkUser = NPCHANDLER_CONVbehavior == CONVERSATION_DEFAULT and 0 or cid
+	
+	local player = Player(cid)
+	if msgcontains(msg, "transport") then
+		npcHandler:say("We can bring you to Thais with one of our coaches for 125 gold. Are you interested?", player)
+		talkState[talkUser] = 5
+	elseif(msgcontains(msg, 'yes') and talkState[talkUser] == 5) then
+		if player:getMoney() >= 125 then
+			player:removeMoney(125)
+			npcHandler:say("Have a nice trip!", player)
+			local port = {x = 32449, y = 32226, z = 7}
+			player:teleportTo(port)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			talkState[talkUser] = 0
+		else
+			npcHandler:say("You don't have enough money.", player)
+		end
+	end
+	
 	local msg = string.lower(msg)
-	if isInArray({"rent", "mounts", "mount"}, msg) then
+	
+	if isInArray({"rent", "mounts", "mount", "horses"}, msg) then
 		selfSay("You can buy {brown rented horse} and {grey rented horse}!", cid)
 		talkState[talkUser] = 1
 	elseif talkState[talkUser] == 1 then
