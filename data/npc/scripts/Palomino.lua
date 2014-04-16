@@ -57,8 +57,7 @@ function creatureSayCallback(cid, type, msg)
 			selfSay('Sorry, I do not rent this mount.', cid)
 		end
 	elseif(msgcontains(msg, 'yes') and talkState[talkUser] == 2) then
-		if doPlayerRemoveMoney(cid, price) then
-			doPlayerAddMount(cid, mountid)
+		if player:removeMoney(price) then
 			player:addMount(mountid)
 			player:setStorageValue(stor, os.time()+days*86400)
 			selfSay('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", player:getStorageValue(stor))..'.', cid)
