@@ -29,12 +29,6 @@ function nonMetaExample(cid)
 	end
 end
 
-Try to use redundant parentheses, when its needed. E.g:
-if player:getStorageValue(1000) == 1 then
-
-instead of:
-if (player:getStorageValue(1000) == 1) then
-
 LUA METATABLE LISTS:
 
 http://pastebin.com/XpTSL8Sf
