@@ -6,13 +6,13 @@ local area = createCombatArea(AREA_CROSS6X6)
 setCombatArea(combat, area)
 
 function onGetFormulaValues(cid, level, maglevel)
-min = -((level*0.2) + (maglevel*5))
-max = -((level*0.2) + (maglevel*12))
-return min, max
+	min = -((level / 5) + (maglevel * 4) + 75)
+	max = -((level / 5) + (maglevel * 10) + 150)
+	return min, max
 end
 
 setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
 function onCastSpell(cid, var)
-        return doCombat(cid, combat, var)
+	return doCombat(cid, combat, var)
 end
