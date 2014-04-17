@@ -13,7 +13,7 @@
 	<event type="kill" name="SvargrondArenaKill" script="svargrond arena quest/arena_kill.lua"/>
 	
 	<!-- Boss Summoning -->
-	<!--<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>-->
+	<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>
 	
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>

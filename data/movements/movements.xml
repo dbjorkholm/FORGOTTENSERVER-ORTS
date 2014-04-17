@@ -24,6 +24,10 @@
 	<!--- Ankrahmun Tomb Mystic Fires -->
 	<movevent event="StepIn" fromuid="9033" touid="9048" script="others/tombcoalbasin.lua"/>
 
+	<!--- The Ancient Tombs Quest -->
+	<movevent event="StepIn" actionid="12101" script="the ancient tombs quest/PeninsulaTombmaze.lua"/>
+	<movevent event="StepIn" fromaid="3950" toaid="3956" script="the ancient tombs quest/TombTeleports.lua"/>
+	
 	<!--- Shrines Portals -->
 	<movevent event="StepIn" fromuid="9069" touid="9116" script="others/shrinesportal.lua"/>
 	<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua"/>
