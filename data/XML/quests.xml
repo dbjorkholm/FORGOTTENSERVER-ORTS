@@ -114,6 +114,32 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
+	<quest name="The Ancient Tombs Quest" startstorageid="12100" startstoragevalue="1">
+		<mission name="Peninsula Tomb - Helmet Adornment" storageid="12101" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Omruc and found a Helmet piece: Helmet Adornment"/>
+		</mission>
+		<mission name="Stone Tomb - Gem Holder" storageid="12102" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Thalas and found a Helmet piece: Gem Holder"/>
+		</mission>
+		<mission name="Mountain Tomb - Damaged Helmet" storageid="12103" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Dipthrah and found a Helmet piece: Damaged Helmet"/>
+		</mission>
+		<mission name="Shadow Tomb - Helmet Ornament" storageid="12104" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Mahrdis and found a Helmet piece: Helmet Ornament"/>
+		</mission>
+		<mission name="Ancient Ruins Tomb - Left Horn" storageid="12105" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Vashresamun and found a Helmet piece: Left Horn"/>
+		</mission>
+		<mission name="Tarpit Tomb - Right Horn" storageid="12106" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Morguthis and found a Helmet piece: Right Horn"/>
+		</mission>
+		<mission name="Oasis Tomb - Helmet Piece" storageid="12107" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You defeated the Pharaoh Rahemos and found a Helmet piece: Helmet Piece"/>
+		</mission>
+		<mission name="Ashmunrah - Work in process" storageid="12108" startvalue="1" endvalue="1">
+			<missionstate id="1" description="To find Ashmunrah enter in the Ankrahmun Library Tomb"/>
+		</mission>
+	</quest>
 	<quest name="Barbarian Test Quest" startstorageid="12022" startstoragevalue="1">
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Give Sven a honeycomb. For each honeycomb you will be allowed 20 sips."/>
