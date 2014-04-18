@@ -12,7 +12,7 @@ http://otland.net/threads/best-released-real-map-10-31-based-1-0.204514/
 
 ```
 If you want to contribute by sending pull request, here is some tips.
-Try to use metatables on your script. Ex.
+Try to use metatables in your script. Ex.
 function metaExample(cid)
 	local player = Player(cid)
 	if player ~= nil then
