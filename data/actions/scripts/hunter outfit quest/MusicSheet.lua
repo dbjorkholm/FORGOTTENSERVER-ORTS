@@ -14,7 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 	if player:getStorageValue(targetItem[1]) < 1 then
 		player:setStorageValue(targetItem[1], 1)
-		player:removeItem(targetItem[2], 1)
+		Item(item.uid):remove(1)
 		player:sendTextMessage(MESSAGE_STATUS_WARNING, string.format("You have learned the %s part of a hymn.", targetItem[3]))
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 	else
