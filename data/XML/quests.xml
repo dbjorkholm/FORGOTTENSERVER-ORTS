@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
 	<quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
+        <!--s for level 6 to 49 -->
 		<mission name="Edron City: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
 		<mission name="Edron City: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 goblins." />
-        <!--s for level 6 to 49 -->
         <mission name="Paw and Fur - Elite Hunting: Trolls" storageid="65001" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
         <mission name="Paw and Fur - Elite Hunting: Globins" storageid="65002" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 globins." />
         <mission name="Paw and Fur - Elite Hunting: Crocodiles" storageid="65003" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 crocodiles." />
@@ -362,47 +362,47 @@
 	</quest>	
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
 		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
-				<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
-				<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
+			<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission> 
 		<mission name="Mission 2: Delivery" storageid="102" endvalue="5">
-				<missionstate id="1" description="Your mission is to get the package from Willard the weapon dealer at Edron."/>
-				<missionstate id="2" description="Willard forgot to pick it up from Snake Eye at Outlaw Camp. So he wants you to go and pick it up from Snake Eye."/>
-				<missionstate id="3" description="Take the package just next door."/>
-				<missionstate id="4" description="Now bring back the package to Rashid."/>
-				<missionstate id="5" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="Your mission is to get the package from Willard the weapon dealer at Edron."/>
+			<missionstate id="2" description="Willard forgot to pick it up from Snake Eye at Outlaw Camp. So he wants you to go and pick it up from Snake Eye."/>
+			<missionstate id="3" description="Take the package just next door."/>
+			<missionstate id="4" description="Now bring back the package to Rashid."/>
+			<missionstate id="5" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission> 
 		<mission name="Mission 3: Cheese" storageid="103" startvalue="1" endvalue="3">
-				<missionstate id="1" description="Rashid wants you to pick his special order from Miraia in Darashia. But you have to be quick, Scarab cheese can rot really fast in high temperature."/>
-				<missionstate id="2" description="Now quickly bring back the Scarab cheese to Rashid."/>
-				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="Rashid wants you to pick his special order from Miraia in Darashia. But you have to be quick, Scarab cheese can rot really fast in high temperature."/>
+			<missionstate id="2" description="Now quickly bring back the Scarab cheese to Rashid."/>
+			<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission>
 		<mission name="Mission 4: Vase" storageid="104" startvalue="1" endvalue="3">
-				<missionstate id="1" description="Rashid have ordered a special elven vase from Briasol in Ab'Dendriel. He asks you to buy it from Briasol and bring it back.\nBut you should be carefully, since the vase is very fragile."/>
-				<missionstate id="2" description="Now carefully bring the vase back to Rashid."/>
-				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="Rashid have ordered a special elven vase from Briasol in Ab'Dendriel. He asks you to buy it from Briasol and bring it back.\nBut you should be carefully, since the vase is very fragile."/>
+			<missionstate id="2" description="Now carefully bring the vase back to Rashid."/>
+			<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission> 
 		<mission name="Mission 5: Make a deal" storageid="105" startvalue="1" endvalue="3">
-				<missionstate id="1" description="This time, Rashid is testing your trading skills to buy a Crimson Sword from Uzgod. But it have to be less than 400 gold coins and the quality has to be perfect."/>
-				<missionstate id="2" description="Now bring the sword back to Rashid."/>
-				<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="This time, Rashid is testing your trading skills to buy a Crimson Sword from Uzgod. But it have to be less than 400 gold coins and the quality has to be perfect."/>
+			<missionstate id="2" description="Now bring the sword back to Rashid."/>
+			<missionstate id="3" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission>  
 		<mission name="Mission 6: Goldfish" storageid="106" startvalue="1" endvalue="2">
-				<missionstate id="1" description="Rashid wants you to bring him a Goldfish Bowl."/>
-				<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
+			<missionstate id="1" description="Rashid wants you to bring him a Goldfish Bowl."/>
+			<missionstate id="2" description="You have completed this mission. Talk with Rashid to continue."/>
 		</mission> 
 		<mission name="Mission 7: Declare" storageid="107" startvalue="1" endvalue="1">
-				<missionstate id="1" description="Rashid has declare you as one of his recognized traders, and now you are able to trade with him anytime.."/>
+			<missionstate id="1" description="Rashid has declare you as one of his recognized traders, and now you are able to trade with him anytime.."/>
 		</mission>
 	</quest>
 	<quest name="Factions" startstorageid="110" startstoragevalue="1">
-        <mission name="Djinn leader: Secret Greeting" storageid="110" startvalue="2" endvalue="2">
-            <missionstate id="2" description="Now you are ready to meet one of the Djinn leaders. Remeber they only answer, if you greet them with the secret word: DJANNI'HAH"/>
+		<mission name="Djinn leader: Secret Greeting" storageid="110" startvalue="2" endvalue="2">
+			<missionstate id="2" description="Now you are ready to meet one of the Djinn leaders. Remeber they only answer, if you greet them with the secret word: DJANNI'HAH"/>
 		</mission>
 		<mission name="Efreet: Method - Joined" storageid="121" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You have joined the Efreet Faction. Ubaid wants you to meet with their general Baa'leal."/>
 		</mission>
-        <mission name="Efreet: Mission 1 - The Supply Thief" storageid="122" startvalue="1" endvalue="4">
+		<mission name="Efreet: Mission 1 - The Supply Thief" storageid="122" startvalue="1" endvalue="4">
 			<missionstate id="1" description="Baa'leal want you find the supply thief in Carlin."/>
 			<missionstate id="2" description="Find Partos in Thais and ask about Prison, Ankrahmun and Supplies."/>
 			<missionstate id="3" description="Head back to Baa'leal and report about the supply thief."/>
@@ -418,26 +418,26 @@
 			<missionstate id="2" description="Now you need to, sneak into the Blue Djinn fortress, and place it in Gabel's personal bedchamber. Go to the secret entrance to the Blue Djinn fortress, and take the stairs all the way to the top."/>
 			<missionstate id="3" description="You successfully changed the lamp, now sneak out and report to Malor."/>
 			<missionstate id="4" description="You have completed all missions. Malor allows you now to trade with his people."/>
-	</mission>
+		</mission>
 		<mission name="Marid: Method - Joined" storageid="111" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You have joined the Marid Faction. Ubaid wants you to meet with Bo'ques."/>
 		</mission>
-        <mission name="Marid: Mission 1 - Cookbook" storageid="112" startvalue="1" endvalue="3">
+		<mission name="Marid: Mission 1 - Cookbook" storageid="112" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Bo'ques wants you to find a cookbook with exotic recipes."/>
 			<missionstate id="2" description="Bring the cookbook to Bo'ques and he will reward you for your help."/>
 			<missionstate id="3" description="Continue your mission with Fa'hradin."/>
-	</mission>
-        <mission name="Marid: Mission 2 - Spy Report" storageid="113" startvalue="1" endvalue="3">
+		</mission>
+		<mission name="Marid: Mission 2 - Spy Report" storageid="113" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Fa'hradin wants you retrive a spy report from their spy which like cheese in the Green Djinn fortress. Also he clearly said to remeber this word: PIEDPIPER"/>
 			<missionstate id="2" description="Bring the spy report back to Fa'hradin."/>
 			<missionstate id="3" description="Continue your mission with Gabel."/>
-	</mission>
-        <mission name="Marid: Mission 3 - Orc Fortress" storageid="114" startvalue="1" endvalue="4">
+		</mission>
+		<mission name="Marid: Mission 3 - Orc Fortress" storageid="114" startvalue="1" endvalue="4">
 			<missionstate id="1" description="Gabel wants you travel to Ulderek's Rock and talk with the King of Orcs."/>
 			<missionstate id="2" description="Now you need to, sneak into the Green Djinn fortress, and place it in Malor's personal bedchamber. Go to the secret entrance to the Green Djinn fortress, and take the stairs all the way to the top."/>
 			<missionstate id="3" description="You successfully changed the lamp, now sneak out and report to Gabel."/>
 			<missionstate id="4" description="You have completed all missions. Gabel allows you now to trade with his people."/>
-	</mission>
+		</mission>
 	</quest>
 	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
 		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
