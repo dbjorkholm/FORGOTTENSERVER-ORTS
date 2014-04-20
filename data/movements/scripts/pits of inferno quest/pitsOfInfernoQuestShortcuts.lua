@@ -1,5 +1,9 @@
 function onStepIn(cid, item, position, lastPosition)
 	local p = Player(cid)
+	if not p then
+		return true
+	end
+	
 	if(item.actionid == 8816) then
 		if(p:getStorageValue(8816) ~= 1) then
 			p:setStorageValue(8816, 1)

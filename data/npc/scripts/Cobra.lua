@@ -20,11 +20,10 @@ end
 function greetCallback(cid)
 	local player = Player(cid)
 	if player:getCondition(CONDITION_POISON) then
-		local port = {x = 33396, y = 32836, z = 14}
 		player:sendTextMessage(MESSAGE_STATUS_WARNING, "Venture the path of decay!")
-		Position(port):sendMagicEffect(CONST_ME_TELEPORT)
-		player:teleportTo(port)
-		Position(port):sendMagicEffect(CONST_ME_TELEPORT)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(Position({x = 33396, y = 32836, z = 14}))
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return false
 	else
 		npcHandler:say("Begone! Hissssss! You bear not the mark of the cobra!", player)

@@ -1,32 +1,25 @@
+local config = {
+	[3041] = {Position({x = 32836, y = 32221, z = 14}), 7844},
+	[3042] = {Position({x = 32837, y = 32229, z = 14}), 7846},
+	[3043] = {Position({x = 32833, y = 32225, z = 14}), 7845}
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3041) then
-		if(item.itemid == 1945) then
-			if(getTileItemById({x = 32836, y = 32221, z = 14}, 2145).uid) then
-				doTransformItem(item.uid, 1946)
-				doSendMagicEffect({x = 32836, y = 32221, z = 14}, CONST_ME_TELEPORT)
-				doCreateItem(7844, 1, {x = 32836, y = 32221, z = 14})
-				doRemoveItem(getTileItemById({x = 32836, y = 32221, z = 14}, 2145).uid, 1)
-				addEvent(doTransformItem, 4 * 1000, item.uid, 1945)
-			end
-		end
-	elseif(item.uid == 3042) then
-		if(item.itemid == 1945) then
-			if(getTileItemById({x = 32837, y = 32229, z = 14}, 2145).uid) then
-				doTransformItem(item.uid, 1946)
-				doSendMagicEffect({x = 32837, y = 32229, z = 14}, CONST_ME_TELEPORT)
-				doCreateItem(7846, 1, {x = 32837, y = 32229, z = 14})
-				doRemoveItem(getTileItemById({x = 32837, y = 32229, z = 14}, 2145).uid, 1)
-				addEvent(doTransformItem, 4 * 1000, item.uid, 1945)
-			end
-		end
-	elseif(item.uid == 3043) then
-		if(item.itemid == 1945) then
-			if(getTileItemById({x = 32833, y = 32225, z = 14}, 2145).uid) then
-				doTransformItem(item.uid, 1946)
-				doSendMagicEffect({x = 32833, y = 32225, z = 14}, CONST_ME_TELEPORT)
-				doCreateItem(7845, 1, {x = 32833, y = 32225, z = 14})
-				doRemoveItem(getTileItemById({x = 32833, y = 32225, z = 14}, 2145).uid, 1)
-				addEvent(doTransformItem, 4 * 1000, item.uid, 1945)
+	local targetItem = config[item.uid]
+	if not targetItem then
+		return true
+	end
+	
+	if item.itemid == 1945 then
+		local tile = Tile(targetItem[1])
+		if tile then
+			local thing = tile:getItemById(2145)
+			if thing and thing:isItem() then
+				Item(item.uid):transform(1946)
+				targetItem[1]:sendMagicEffect(CONST_ME_TELEPORT)
+				Game.createItem(targetItem[2], 1, targetItem[1])
+				thing:remove()
+				addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing and thing:isItem() then thing:transform(1945) end end end, 4 * 1000, toPosition)
 			end
 		end
 	end
