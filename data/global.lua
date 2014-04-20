@@ -741,7 +741,3 @@ end
 function table.unserialize(str)
 	return loadstring("return " .. str)()
 end
-
-function Player.getDepotItems(self, depotId)
-    return self:getDepotChest(depotId, true):getItemHoldingCount()
-end
