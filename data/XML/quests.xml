@@ -114,7 +114,7 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
-	<quest name="The Ancient Tombs Quest" startstorageid="12100" startstoragevalue="1">
+	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Peninsula Tomb - Helmet Adornment" storageid="12101" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Omruc and found a Helmet piece: Helmet Adornment"/>
 		</mission>
@@ -127,8 +127,8 @@
 		<mission name="Shadow Tomb - Helmet Ornament" storageid="12104" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Mahrdis and found a Helmet piece: Helmet Ornament"/>
 		</mission>
-		<mission name="Ancient Ruins Tomb - Left Horn" storageid="12105" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Vashresamun and found a Helmet piece: Left Horn"/>
+		<mission name="Vashresamun's Treasure" storageid="12105" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You solved the musical riddles of Vashresamun's Tomb and reterived a left horn."/>
 		</mission>
 		<mission name="Tarpit Tomb - Right Horn" storageid="12106" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Morguthis and found a Helmet piece: Right Horn"/>
