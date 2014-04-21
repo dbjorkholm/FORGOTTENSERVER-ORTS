@@ -30,6 +30,8 @@
 
 	<!--- The Ancient Tombs Quest -->
 	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
+	<action actionid="12107" script="the ancient tombs quest/OasisTombLeverDoor.lua" />
+	<action actionid="12105" script="the ancient tombs quest/AncientRuinsTombInstruments.lua" />
 	
 	<!-- Kazordoon -->
 	<action fromaid="8034" toaid="8038" script="kazordoon/kazordoonOreWagons.lua"/>
