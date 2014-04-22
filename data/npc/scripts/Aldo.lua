@@ -19,7 +19,7 @@ function creatureSayCallback(cid, type, msg)
 		selfSay('Do you want to repair your worn soft boots for 10000 gold coins?', cid)
 		talkState[talkUser] = 1
 	elseif(msgcontains(msg, 'yes') and talkState[talkUser] == 1) then
-		if(getPlayerItemCount(cid, 10021, 1)) then
+		if(getPlayerItemCount(cid, 10021) == 1) then
 			if(doPlayerRemoveMoney(cid, 10000)) then
 				doPlayerRemoveItem(cid, 10021, 1)
 				doPlayerAddItem(cid, 6132, 1)
@@ -27,7 +27,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				selfSay('Sorry, you don\'t have enough gold.', cid)
 			end
-		elseif(getPlayerItemCount(cid, 10021, 1)) then
+		elseif(getPlayerItemCount(cid, 10021) == 1) then
 			if(doPlayerRemoveMoney(cid, 10000)) then
 				doPlayerRemoveItem(cid, 10021, 1)
 				doPlayerAddItem(cid, 6132, 1)
@@ -35,7 +35,7 @@ function creatureSayCallback(cid, type, msg)
 			else
 				selfSay('Sorry, you don\'t have enough gold.', cid)
 			end
-		elseif(getPlayerItemCount(cid,6132, 1)) then
+		elseif(getPlayerItemCount(cid,6132) == 1) then
 			if(doPlayerRemoveMoney(cid, 10000)) then
 				doPlayerRemoveItem(cid,6132, 1)
 				doPlayerAddItem(cid, 6132, 1)
