@@ -11,6 +11,8 @@ function onStepIn(cid, item, position, lastPosition)
 		if(p:getStorageValue(missionStorageKey) == missionStorageValue) then
 			p:teleportTo(v.newPos)
 			p:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		else
+			p:teleportTo(lastPosition)
 		end
 	end
 return true
