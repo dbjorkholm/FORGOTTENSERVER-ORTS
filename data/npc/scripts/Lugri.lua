@@ -27,22 +27,22 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("This skull shows that you are a true follower of Zathroth and the glorious gods of darkness. Are you willing to prove your loyalty?", cid)
 			talkState[talkUser] = 1
 		end
-	elseif(msgcontains(msg, "shield")) then
+	elseif(msgcontains(msg, "shield") or msgcontains(msg, "medusa shield")) then
 		if(getPlayerStorageValue(cid, 1003) == 1) then
 			npcHandler:say("Is it your true wish to sacrifice a medusa shield to Zathroth?", cid)
 			talkState[talkUser] = 3
 		end
-	elseif(msgcontains(msg, "mail")) then
+	elseif(msgcontains(msg, "mail") or msgcontains(msg, "dragon scale mail")) then
 		if(getPlayerStorageValue(cid, 1003) == 2) then
 			npcHandler:say("Is it your true wish to sacrifice a dragon scale mail to Zathroth?", cid)
 			talkState[talkUser] = 4
 		end	
-	elseif(msgcontains(msg, "legs")) then
+	elseif(msgcontains(msg, "legs") or msgcontains(msg, "crown legs")) then
 		if(getPlayerStorageValue(cid, 1003) == 3) then
 			npcHandler:say("Is it your true wish to sacrifice crown legs to Zathroth?", cid)
 			talkState[talkUser] = 5
 		end	
-	elseif(msgcontains(msg, "ring")) then
+	elseif(msgcontains(msg, "ring") or msgcontains(msg, "ring of the sky")) then
 		if(getPlayerStorageValue(cid, 1003) == 4) then
 			npcHandler:say("Is it your true wish to sacrifice a ring of the sky to Zathroth?", cid)
 			talkState[talkUser] = 6
@@ -55,33 +55,33 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Good decision, <name>. Your first sacrifice will be a medusa shield. Bring it to me and do give it happily.", cid)
 			setPlayerStorageValue(cid, 1003, 1)
 			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 2) then
+		elseif(talkState[talkUser] == 3) then
 			if(getPlayerItemCount(cid, 2536) >= 1) then
 				npcHandler:say("Good. I accept your sacrifice. The second sacrifice I require from you is a dragon scale mail. Bring it to me and do give it happily.", cid)
 				doPlayerRemoveItem(cid, 2536, 1)
 				setPlayerStorageValue(cid, 1003, 2)
 				talkState[talkUser] = 0	
 			end
-		elseif(talkState[talkUser] == 3) then
+		elseif(talkState[talkUser] == 4) then
 			if(getPlayerItemCount(cid, 2492) >= 1) then
 				npcHandler:say("Good. I accept your sacrifice. The third sacrifice I require from you are crown legs. Bring them to me and do give them happily.", cid)
 				doPlayerRemoveItem(cid, 2492, 1)
 				setPlayerStorageValue(cid, 1003, 3)
 				talkState[talkUser] = 0	
 			end
-		elseif(talkState[talkUser] == 4) then
+		elseif(talkState[talkUser] == 5) then
 			if(getPlayerItemCount(cid, 2488) >= 1) then
 				npcHandler:say("Good. I accept your sacrifice. The last sacrifice I require from you is a ring of the sky. Bring it to me and do give it happily.", cid)
 				doPlayerRemoveItem(cid, 2488, 1)
 				setPlayerStorageValue(cid, 1003, 4)
 				talkState[talkUser] = 0	
 			end
-		elseif(talkState[talkUser] == 5) then
+		elseif(talkState[talkUser] == 6) then
 			if(getPlayerItemCount(cid, 2123) >= 1) then
 				npcHandler:say("Good. I accept your sacrifice. You have proven that you are a true follower of Zathroth and do not hesitate to sacrifice worldly goods. Thus, I will reward you with this headgear. ", cid)
 				doPlayerRemoveItem(cid, 2123, 1)
 				setPlayerStorageValue(cid, 1003, 5)
-				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 149 or 145, 1)
+				doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 149 or 145, 2)
 				talkState[talkUser] = 0	
 			end
 		end
