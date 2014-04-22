@@ -49,7 +49,8 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Your backpack is finished. Here you go, I hope you like it.", player)
 				player:removeItem(5878, 100)
 				player:setStorageValue(12063, 2)
-				player:addOutfitAddon(player:getSex() == 0 and 136 or 128, 1)
+				player:addOutfitAddon(136, 1)
+				player:addOutfitAddon(128, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
 			else

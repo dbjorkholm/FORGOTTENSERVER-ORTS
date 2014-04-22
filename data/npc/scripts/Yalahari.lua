@@ -139,7 +139,8 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Great work, take this outfit and you are able to open the door to the reward room.", player)
 			player:setStorageValue( 30, 53)
 			player:setStorageValue(12021, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
-			player:addOutfit(player:getSex() == 0 and 324 or 325, 0)
+			player:addOutfit(324, 0)
+			player:addOutfit(325, 0)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			talkState[talkUser] = 0
 		end

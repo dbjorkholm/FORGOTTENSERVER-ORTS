@@ -55,6 +55,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif(talkState[talkUser] == 2) then	
 			npcHandler:say("Good decision, " .. player:getName() .. ". Your first sacrifice will be a medusa shield. Bring it to me and do give it happily.", cid)
 			player:setStorageValue(1003, 1)
+			player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
 			talkState[talkUser] = 0
 		elseif(talkState[talkUser] == 3) then
 			if(player:getItemCount(2536) >= 1) then

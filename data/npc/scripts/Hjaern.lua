@@ -68,7 +68,9 @@ function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(12036, 6) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
 				player:setStorageValue(12037, 1) -- Questlog Norseman Outfit Quest
 				player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
-				player:addOutfit(player:getSex() == 0 and 252 or 251, 0)
+				player:addOutfit(251, 0)
+				player:addOutfit(252, 0)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say({"Yes, I can feel it! The spirits are in touch with the obelisks. We will begin to channel a spell of ice on the caves. That will prevent the melting of the ice there ...",
 								"If you would like to help us, you can turn in frostheart shards from now on. We use them to fuel our spell with the power of ice. ...",
 								"Oh, and before I forget it - since you have done a lot to help us and spent such a long time in this everlasting winter, I have a special present for you. ...",
@@ -93,12 +95,16 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "reward") then
 		if player:getStorageValue(12001) == 41 then
 			npcHandler:say("Take this. It might suit your Nordic outfit fine. ", player)
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 252 or 251, 1)
+			player:addOutfitAddon(252, 1)
+			player:addOutfitAddon(251, 1)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(12001, 42)
 			player:setStorageValue(12037, 2) -- Questlog Norseman Outfit Quest
 			talkState[talkUser] = 3
 		elseif player:getStorageValue(12001) == 43 then
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 252 or 251, 2)
+			player:addOutfitAddon(252, 2)
+			player:addOutfitAddon(251, 2)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			npcHandler:say("Take this. It might suit your Nordic outfit fine. From now on we only can give you 2000 gold pieces for each shard. ", player)
 			player:setStorageValue(12001, 44)
 			player:setStorageValue(12037, 3) -- Questlog Norseman Outfit Quest
