@@ -5,19 +5,13 @@ local destination = {
 }
 
 function onStepIn(cid, item, position, lastPosition)
-	if(isPlayer(cid)) then
-		if item.uid == 3140 then
-			doTeleportThing(cid, {x = 32996, y = 31922, z = 10})
-			doSendMagicEffect({x = 32996, y = 31922, z = 10}, CONST_ME_TELEPORT)
-		elseif item.uid == 3141 then
-			doTeleportThing(cid, {x = 33011, y = 31943, z = 11})
-			doSendMagicEffect({x = 33011, y = 31943, z = 11}, CONST_ME_TELEPORT)
-		elseif item.uid == 3142 then
-			doTeleportThing(cid, {x = 32989, y = 31909, z = 12})
-			doSendMagicEffect({x = 32989, y = 31909, z = 12}, CONST_ME_TELEPORT)
-		end				
-		--doTeleportThing(cid, destination[item.uid])
-		--doSendMagicEffect(destination[item.uid], CONST_ME_TELEPORT)
+	local v = destination[item.uid]
+	if(v) then
+		local p = Player(cid)
+		if(p:getStorageValue(missionStorageKey) == missionStorageValue) then
+			p:teleportTo(v.newPos)
+			p:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		end
 	end
-	return true
+return true
 end
