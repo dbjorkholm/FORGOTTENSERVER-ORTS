@@ -265,6 +265,11 @@
 			<missionstate id="5" description="Bring Lynda 20 ankhs now to complete the ritual."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
+		<mission name="Mage Outfit Quest (Fluid Belt)" storageid="12064" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Now you can get a lottery ticket at Sandra for 100 empty vials."/>
+			<missionstate id="2" description="You got the Outfit! Now you can get for a lottery prize 50000 gold!"/>
+		</mission>
+
 		<mission name="Citizen Outfit Quest (Feather Hat)" storageid="12062" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
 			<missionstate id="2" description="You got the Outfit!"/>
