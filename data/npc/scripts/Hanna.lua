@@ -48,7 +48,8 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5902, 50)
 				player:removeItem(2480, 1)
 				player:setStorageValue(12062, 2)
-				player:addOutfitAddon(player:getSex() == 0 and 136 or 128, 2)
+				player:addOutfitAddon(136, 2)
+				player:addOutfitAddon(128, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
 			else

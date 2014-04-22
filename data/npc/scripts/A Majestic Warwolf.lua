@@ -42,7 +42,8 @@ function creatureSayCallback(cid, type, msg)
 		if talkState[talkUser] == 2 then	
 			npcHandler:say("From now on, you shall be known as Player, the bear warrior. You shall be strong and proud as Angros, the great dark bear. He shall guide your path.", player)
 			player:setStorageValue(1004, 10)
-			player:addOutfitAddon(player:getSex() == 0 and 148 or 144, 2)
+			player:addOutfitAddon(148, 2)
+			player:addOutfitAddon(144, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			talkState[talkUser] = 0
 		end

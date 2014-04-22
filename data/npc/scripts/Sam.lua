@@ -27,7 +27,8 @@ function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue( 12060) == 5 then
 			npcHandler:say("Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Your helmet is finished, I hope you like it.", cid)
 			player:setStorageValue(12060, 6)
-			player:addOutfitAddon(player:getSex() == 0 and 139 or 131, 2)
+			player:addOutfitAddon(139, 2)
+			player:addOutfitAddon(131, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
 	end
