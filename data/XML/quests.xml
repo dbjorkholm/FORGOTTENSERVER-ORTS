@@ -278,6 +278,13 @@
 			<missionstate id="2" description="Bring Hjaern 10 frostheart shards to get the second Addon. Ask him for shard!"/>
 			<missionstate id="3" description="You got the Outfit Addons! You can trade the rest shards to Hjaern for 2000 gold each!"/>
 		</mission>
+		<mission name="Wizard Outfits Quest" storageid="1003" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Bring Lugri the Medusa shield!"/>
+			<missionstate id="2" description="Bring Lugri the Dragon Scale Mail!"/>
+			<missionstate id="3" description="Bring Lugri the Crown Legs!"/>
+			<missionstate id="4" description="Bring Lugri the Ring of the Sky!"/>
+			<missionstate id="5" description="You got the Outfit Addon!"/>
+		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">
 		<mission name="Ask for Mission" storageid="12011" startvalue="1" endvalue="2">
