@@ -19,16 +19,19 @@ local mechanisms2 = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+local player = Player(cid)
 	if(mechanisms[item.uid]) then
-		if(getPlayerStorageValue(cid, 30) >= mechanisms[item.uid].value) then
-			doTeleportThing(cid, mechanisms[item.uid].pos)
-			doSendMagicEffect(mechanisms[item.uid].pos, CONST_ME_TELEPORT)
+		if(player:getStorageValue(30) >= mechanisms[item.uid].value) then
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(mechanisms[item.uid].pos)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "The gate mechanism won't move. You probably have to find a way around until you figure out how to operate the gate.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The gate mechanism won't move. You probably have to find a way around until you figure out how to operate the gate.")
 		end
 	elseif(mechanisms2[item.uid]) then
-		doTeleportThing(cid, mechanisms2[item.uid].pos)
-		doSendMagicEffect(mechanisms2[item.uid].pos, CONST_ME_TELEPORT)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(mechanisms2[item.uid].pos)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
 end
