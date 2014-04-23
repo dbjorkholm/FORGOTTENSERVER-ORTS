@@ -24,8 +24,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doTeleportThing(cid, mechanisms[item.uid].pos)
 			doSendMagicEffect(mechanisms[item.uid].pos, CONST_ME_TELEPORT)
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You can't use this mechanism.")
-			doSendMagicEffect(toPosition, CONST_ME_POFF)
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "The gate mechanism won't move. You probably have to find a way around until you figure out how to operate the gate.")
 		end
 	elseif(mechanisms2[item.uid]) then
 		doTeleportThing(cid, mechanisms2[item.uid].pos)
