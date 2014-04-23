@@ -5,7 +5,8 @@ local pharaoh = {
 	["mahrdis"] = 12104,
 	["vashresamun"] = 12105,
 	["morguthis"] = 12106,
-	["rahemos"] = 12107
+	["rahemos"] = 12107,
+	["ashmunrah"] = 12108
 }
 
 function onKill(cid, target)

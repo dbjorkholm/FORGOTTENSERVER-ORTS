@@ -27,6 +27,8 @@
 	<!--- The Ancient Tombs Quest -->
 	<movevent event="StepIn" actionid="12101" script="the ancient tombs quest/PeninsulaTombmaze.lua"/>
 	<movevent event="StepIn" fromaid="3950" toaid="3956" script="the ancient tombs quest/TombTeleports.lua"/>
+	<movevent event="StepIn" actionid="12108" script="the ancient tombs quest/TombTeleports.lua"/>
+	<movevent event="AddItem" tileitem="1" actionid="60626" script="the ancient tombs quest/CraftHelmet.lua"/>
 	
 	<!--- Shrines Portals -->
 	<movevent event="StepIn" fromuid="9069" touid="9116" script="others/shrinesportal.lua"/>
