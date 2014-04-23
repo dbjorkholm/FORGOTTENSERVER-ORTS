@@ -1,11 +1,11 @@
 local config = {
-	[12101] = {12101, 2341, "Helmet Adornment"}, -- Peninsula 	Omruc 	 Crystal Arrow 	 Helmet Adornment
-	[12102] = {12102, 2336, "Gem Holder"},-- Stone 	Thalas 	 Cobrafang Dagger 	 Gem Holder
-	[12103] = {12103, 2339, "Damaged Helmet"},-- Mountain 	Dipthrah 	 Ornamented Ankh 	 Damaged Helmet
-	[12104] = {12104, 2335, "Helmet Ornament"},-- Shadow 	Mahrdis 	 Burning Heart 	 Helmet Ornament
-	[12105] = {12105, 2338, "Left Horn"},-- Ancient Ruins 	Vashresamun 	 Blue Note 	 Left Horn
-	[12106] = {12106, 2337, "Right Horn"},-- Tarpit 	Morguthis 	 Sword Hilt 	 Right Horn
-	[12107] = {12107, 2340, "Helmet Piece"}-- Oasis 	Rahemos 	 Ancient Rune 	 Helmet Piece
+	[12101] = {12101, 2341, 2352, "Helmet Adornment"}, -- Peninsula 	Omruc 	 Crystal Arrow 	 Helmet Adornment
+	[12102] = {12102, 2336, 2351, "Gem Holder"},-- Stone 	Thalas 	 Cobrafang Dagger 	 Gem Holder
+	[12103] = {12103, 2339, 2354, "Damaged Helmet"},-- Mountain 	Dipthrah 	 Ornamented Ankh 	 Damaged Helmet
+	[12104] = {12104, 2335, 2353, "Helmet Ornament"},-- Shadow 	Mahrdis 	 Burning Heart 	 Helmet Ornament
+	[12105] = {12105, 2338, 2349, "Left Horn"},-- Ancient Ruins 	Vashresamun 	 Blue Note 	 Left Horn
+	[12106] = {12106, 2337, 2350, "Right Horn"},-- Tarpit 	Morguthis 	 Sword Hilt 	 Right Horn
+	[12107] = {12107, 2340, 2348, "Helmet Piece"}-- Oasis 	Rahemos 	 Ancient Rune 	 Helmet Piece
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -15,13 +15,19 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 		
-	if player:getStorageValue(targetItem[1]) < 1 then
+	if player:removeItem(targetItem[3], 1) then
 		player:setStorageValue(targetItem[1], 1) 
 		player:setStorageValue(12100, 1) -- default start of The Ancient Tombs Quest
 		player:addItem(targetItem[2], 1)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You've found a %s.", targetItem[3]))
+		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You've found a %s.", targetItem[4]))
+		local player = Player(cid)
+		if player:getStorageValue(12101) == 1 and player:getStorageValue(12102) == 1 and player:getStorageValue(12103) == 1 and player:getStorageValue(12104) == 1 and player:getStorageValue(12105) == 1 and player:getStorageValue(12106) == 1 and player:getStorageValue(12107) == 1 then
+			if player:getStorageValue(12108) < 2 then
+			player:setStorageValue(12108, 1) -- Questlog for Ankrahmun Library Tomb
+			end
+		end
 	else
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't have the pass item to get this helmet piece.")
 	end
 	return true
 end

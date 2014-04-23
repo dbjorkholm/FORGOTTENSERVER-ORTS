@@ -5,7 +5,8 @@ local config = {
 	[3952] = {12104, {x = 33126, y = 32591, z = 15}}, -- from Mahrdis Boss
 	[3956] = {12105, {x = 33186, y = 33012, z = 14}}, -- from Vashresamun Boss
 	[3950] = {12106, {x = 33182, y = 32714, z = 14}}, -- from Morguthis Boss
-	[3954] = {12107, {x = 33041, y = 32774, z = 14}} -- from Rahemos Boss
+	[3954] = {12107, {x = 33041, y = 32774, z = 14}}, -- from Rahemos Boss
+	[12108] = {12108, {x = 33198, y = 32880, z = 11}} -- from Ashmunrah Boss
 }
 
 function onStepIn(cid, item, position, lastPosition)
