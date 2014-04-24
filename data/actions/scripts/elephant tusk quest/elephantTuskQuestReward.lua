@@ -1,12 +1,11 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 2280) then
-		if(getPlayerStorageValue(cid, 360) < 1) then
-			setPlayerStorageValue(cid, 360, 1)
-			doPlayerAddItem(cid, 3956, 2)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found two elephant tusks.")
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end
+	local player = Player(cid)
+	if player:getStorageValue(360) < 1 then
+		player:setStorageValue(360, 1)
+		player:addItem(3956, 2)
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found two elephant tusks.")
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
 	end
 	return true
 end

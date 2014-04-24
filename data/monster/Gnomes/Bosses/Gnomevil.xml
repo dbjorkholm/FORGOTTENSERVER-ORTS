@@ -55,7 +55,7 @@
 		<voice sentence="Muhahaha!"/>
 		<voice sentence="I'm feeling grrrreat!"/>
 	</voices>     
-  <loot> 
+	<loot> 
 		<item id="18451" chance="9830"/><!-- crystalline axe  -->
         <item id="18453" chance="8120"/><!-- crystal crossbow -->             
         <item id="18495" chance="99150"/><!-- gnomevil´s hat -->
@@ -64,5 +64,5 @@
         <item id="18452" chance="8120"/><!-- mycological mace -->
         <item id="18450" chance="14100"/><!-- crystalline sword -->
         <item id="18449" chance="1710"/><!-- decorative ribbon -->
-</loot>
+	</loot>
 </monster>

@@ -1,3 +1,8 @@
+COMBAT_POISONDAMAGE = COMBAT_EARTHDAMAGE
+CONDITION_EXHAUST = CONDITION_EXHAUST_WEAPON
+TALKTYPE_ORANGE_1 = TALKTYPE_MONSTER_SAY
+TALKTYPE_ORANGE_2 = TALKTYPE_MONSTER_YELL
+
 function pushThing(thing)
 	local t = {uid = 0, itemid = 0, type = 0, actionid = 0}
 	if thing ~= nil then
@@ -423,6 +428,12 @@ function doMonsterChangeTarget(cid)
 	monster:searchTarget(1)
 	return true
 end
+function doCreateNpc(name, pos, ...)
+	local npc = Game.createNpc(name, pos, ...) return npc ~= nil and npc:setMasterPos(pos) or false
+end
+function doSummonCreature(name, pos, ...)
+	local m = Game.createMonster(name, pos, ...) return m ~= nil and m:getId() or false
+end
 function doConvinceCreature(cid, target)
 	local creature = Creature(cid)
 	if creature == nil then
@@ -444,6 +455,7 @@ function getTownTemplePosition(townId) local t = Town(townId) return t ~= nil an
 
 function doSetItemActionId(uid, actionId) local i = Item(uid) return i ~= nil and i:setActionId(actionId) or false end
 function doTransformItem(uid, newItemId, ...) local i = Item(uid) return i ~= nil and i:transform(newItemId, ...) or false end
+function doChangeTypeItem(uid, newType) local i = Item(uid) return i ~= nil and i:transform(i:getId(), newType) or false end
 function doRemoveItem(uid, ...) local i = Item(uid) return i ~= nil and i:remove(...) or false end
 
 function getContainerSize(uid) local c = Container(uid) return c ~= nil and c:getSize() or false end
@@ -487,7 +499,7 @@ function getPromotedVocation(vocationId)
 end
 
 function getGuildId(guildName)
-	local resultId = db.query("SELECT `id` FROM `guilds` WHERE `name` = " .. db.escapeString(guildName))
+	local resultId = db.storeQuery("SELECT `id` FROM `guilds` WHERE `name` = " .. db.escapeString(guildName))
 	if resultId == false then
 		return false
 	end
@@ -594,6 +606,15 @@ function getHouseRent(id) local h = House(id) return h ~= nil and h:getRent() or
 function getHouseAccessList(id, listId) local h = House(id) return h ~= nil and h:getAccessList(listId) or nil end
 function setHouseAccessList(id, listId, listText) local h = House(id) return h ~= nil and h:setAccessList(listId, listText) or false end
 
+function getTileHouseInfo(pos)
+	local t = Tile(pos)
+	if t == nil then
+		return false
+	end
+	local h = t:getHouse()
+	return h ~= nil and h:getId() or false
+end
+
 function getTilePzInfo(position)
 	local t = Tile(position)
 	if t == nil then
@@ -675,15 +696,23 @@ end
 function queryTileAddThing(thing, position, ...) local t = Tile(position) return t ~= nil and t:queryAdd(thing, ...) or false end
 
 function doTeleportThing(uid, dest, pushMovement)
-	if uid >= 0x10000000 then
-		local creature = Creature(uid)
-		if creature ~= nil then
-			return creature:teleportTo(dest, pushMovement or false)
+	if type(uid) == "userdata" then
+		if uid:isCreature() then
+			return uid:teleportTo(dest, pushMovement or false)
+		else
+			return uid:moveTo(dest)
 		end
 	else
-		local item = Item(uid)
-		if item ~= nil then
-			return item:moveTo(dest)
+		if uid >= 0x10000000 then
+			local creature = Creature(uid)
+			if creature ~= nil then
+				return creature:teleportTo(dest, pushMovement or false)
+			end
+		else
+			local item = Item(uid)
+			if item ~= nil then
+				return item:moveTo(dest)
+			end
 		end
 	end
 	return false
@@ -724,3 +753,55 @@ function setGlobalStorageValue(key, value)
 end
 
 getWorldType = Game.getWorldType
+
+--Custom Functions
+
+-- BANK SYSTEM --
+
+function doPlayerWithdrawMoney(cid, amount)
+	local balance = getPlayerBalance(cid)
+	if(amount > balance or not doPlayerAddMoney(cid, amount)) then
+	 return false
+	end
+
+	doPlayerSetBalance(cid, balance - amount)
+	return true
+end
+
+function doPlayerDepositMoney(cid, amount)
+   if(not doPlayerRemoveMoney(cid, amount)) then
+	 return false
+   end
+
+	doPlayerSetBalance(cid, getPlayerBalance(cid) + amount)
+	return true
+end
+  
+function playerExists(name)
+	local a = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = "' .. name .. '" LIMIT 1')
+	  if a then
+	   return true
+	  end
+	  return false
+end
+  
+function doPlayerTransferMoneyTo(cid, target, amount)
+	 local balance = getPlayerBalance(cid)
+	 if(amount > balance) then
+	   return false
+	 end
+
+	 local tid = getPlayerByName(target)
+	 if(tid) then
+	   doPlayerSetBalance(tid, getPlayerBalance(tid) + amount)
+	 else
+	   if(playerExists(target) == false) then
+		 return false
+	   end
+
+	   db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = '" .. target .. "'")
+	 end
+
+	 doPlayerSetBalance(cid, getPlayerBalance(cid) - amount)
+	 return true
+end

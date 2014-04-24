@@ -1,12 +1,13 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 2236) then
-		if(getPlayerStorageValue(cid, 330) == 2) then
-			setPlayerStorageValue(cid, 330, 3)
-			doPlayerAddItem(cid, 2503, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a dwarven armor.")
+	local p = Player(cid)
+	if(item.uid == 9226) then
+		if(p:getStorageValue(330) == 2) then
+			p:setStorageValue(330, 3)
+			p:addItem(2503, 1)
+			p:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a dwarven armor.")
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
+			p:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
 		end
 	end
-	return true
+return true
 end

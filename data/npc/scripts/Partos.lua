@@ -3,18 +3,10 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
  
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()                                      npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
@@ -24,7 +16,7 @@ function creatureSayCallback(cid, type, msg)
 
 	-- Mission 1 - The Supply Thief 
 	if(msgcontains(msg, "prison")) then
-		if(getPlayerStorageValue(cid, 81) == 3) then
+		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+1) == 2) then
 			npcHandler:say("You mean that's a JAIL? They told me it's the finest hotel in town! THAT explains the lousy roomservice!", cid)
 			talkState[talkUser] = 1
 		end
@@ -36,7 +28,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "supplies")) then
 		if(talkState[talkUser] == 2) then
 			npcHandler:say({"What!? I bet, Baa'leal sent you! ...", "I won't tell you anything! Shove off!"}, cid, 0, 1, 2000)
-			setPlayerStorageValue(cid, 81, 4)
+			setPlayerStorageValue(cid, GreenDjinn.MissionStart+1, 3)
 			talkState[talkUser] = 0
 		end
 	end

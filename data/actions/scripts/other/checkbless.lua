@@ -1,9 +1,11 @@
-local blessings = {"\nWisdom of Solitude", "\nSpark of the Phoenix", "\nFire of the Suns", "\nSpiritual Shielding", "\nEmbrace of Tibia", "\nTwist of Fate"}
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local str = {"\nWisdom of Solitude", "\nSpark of the Phoenix", "\nFire of the Suns", "\nSpiritual Shielding", "\nEmbrace of Tibia", "\nTwist of Fate"}
 	local result = "Received blessings:"
+	local p = Player(cid)
 	for i = 1, 6 do
-		result = getPlayerBlessing(cid, i) and result .. blessings[i] or result
+		result = p:hasBlessing(i) and result .. str[i] or result
 	end
-	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 20 > result:len() and "No blessings received." or result)
-	return TRUE
+	
+	p:sendTextMessage(MESSAGE_EVENT_ADVANCE, 20 > result:len() and "No blessings received." or result)
+return true
 end

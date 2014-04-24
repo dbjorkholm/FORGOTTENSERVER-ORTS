@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Wild Horse" nameDescription="a Wild horse" race="blood" experience="0" speed="180" manacost="0">
+<monster name="Horse" nameDescription="a horse" race="undead" experience="0" speed="190" manacost="0">
   <health now="75" max="75"/>
-  <look type="435" corpse="2247"/>
-  <targetchange interval="5000" chance="8"/>
+  <look type="435" corpse="0"/>
+  <targetchange interval="4000" chance="10"/>
   <strategy attack="100" defense="0"/>
   <flags>
     <flag summonable="1"/>
@@ -17,10 +17,9 @@
     <flag staticattack="90"/>
     <flag runonhealth="75"/>
   </flags>
-  <attacks>
-    <attack name="melee" interval="2000" skill="0" attack="0"/>	
-  </attacks>
-<voices interval="5000" chance="10">
-		<voice sentence="Weeeeheeeeeee snort Weeeeheeeeaaa"/>					
-	</voices>   
+  <voices interval="5000" chance="10">
+		<voice sentence="Weeeeheeeeeee"/>	
+		<voice sentence="*snort*" />	
+		<voice sentence="Weeeeheeeeaaa"/>					
+   </voices>   
 </monster>

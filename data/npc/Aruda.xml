@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Aruda" script="Aruda.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="140" head="77" body="81" legs="79" feet="95" addons="0" />
-<voices>
-	<voice text="Hey there, up for a chat?" interval2="100" margin="1" yell="no"/>
-</voices>
-<parameters>
-        <parameter key="message_greet" value="Oh, hello, handsome! It's a pleasure to meet you, |PLAYERNAME|."/>
-        <parameter key="message_farewell" value="Oh, sorry, I was distracted, what did you say?"/>
-        <parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="job;" />
-        <parameter key="keyword_reply1" value="I do some work now and then. Nothing unusual, though." />
-    </parameters>
+	<health now="100" max="100" />
+	<look type="140" head="77" body="81" legs="79" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="news;" />
+		<parameter key="keyword_reply1" value="You should ask Oswald about news. He loves them." />
+	</parameters>
 </npc>

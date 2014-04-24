@@ -2,6 +2,7 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
+local Topic = {}
  
 function onCreatureAppear(cid)
 	npcHandler:onCreatureAppear(cid)			

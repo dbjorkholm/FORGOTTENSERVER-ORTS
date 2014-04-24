@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<!-- Need Update -->
+	<monster name="Kraknaknork" file="Need Update/Kraknaknork.xml"/>
+	<monster name="Young Troll" file="Need Update/Young Troll.xml"/>
+	<monster name="Furious Orc Berserker" file="Need Update/Furious Orc Berserker.xml"/>
+	<monster name="Troll Guard" file="Need Update/Troll Guard.xml"/>
+	<monster name="Terofar" file="Need Update/Terofar.xml"/>
+	<monster name="Zavarash" file="Need Update/Zavarash.xml"/>
+	
+	<!-- sland of destiny -->
+	<monster name="Party Skeleton" file="Island of destiny/Party Skeleton.xml"/>
+	<!-- Roshamuul -->
+	<monster name="Bad Dream" file="Roshamuul/bad dream.xml"/>
+	<monster name="Choking Fear" file="Roshamuul/Choking Fear.xml"/>
+	<monster name="Demon Outcast" file="Roshamuul/Demon Outcast.xml"/>
+	<monster name="Feversleep" file="Roshamuul/Feversleep.xml"/>
+	<monster name="Frazzlemaw" file="Roshamuul/Frazzlemaw.xml"/>
+	<monster name="Gaz'haragoth" file="Roshamuul/Gaz'haragoth.xml"/>
+	<monster name="Guzzlemaw" file="Roshamuul/Guzzlemaw.xml"/>
+	<monster name="Mawhawk" file="Roshamuul/Mawhawk.xml"/>
+	<monster name="Minion of Gaz'haragoth" file="Roshamuul/Minion of Gaz'haragoth.xml"/>
+	<monster name="Nightmare of Gaz'haragoth" file="Roshamuul/Nightmare of Gaz'haragoth.xml"/>
+	<monster name="Retching Horror" file="Roshamuul/Retching Horror.xml"/>
+	<monster name="Shiversleep" file="Roshamuul/Shiversleep.xml"/>
+	<monster name="Shock Head" file="Roshamuul/Shock Head.xml"/>
+	<monster name="Sight of Surrender" file="Roshamuul/Sight of Surrender.xml"/>
+	<monster name="Silencer" file="Roshamuul/Silencer.xml"/>
+	<monster name="Terrorsleep" file="Roshamuul/Terrorsleep.xml"/>
+
+	<!-- Wild Nature -->
+	<monster name="Wild Fire Magic" file="Pyro-Elementals/Wild Fire Magic.xml"/>
+	<monster name="Wild Fury Magic" file="Pyro-Elementals/Wild Fury Magic.xml"/>
+	<monster name="Wild Nature Magic" file="Pyro-Elementals/Wild Nature Magic.xml"/>
+	<monster name="Wild Water Magic" file="Pyro-Elementals/Wild Water Magic.xml"/>
+	
+	<!-- Wrath -->
+	<monster name="wrath of the emperor" file="Bosses/wrath of the emperor.xml"/>
+	<monster name="Spite of the Emperor" file="Bosses/spite of the emperor.xml"/>
+	<monster name="fury of the Emperor" file="Bosses/fury of the emperor.xml"/>
+	<monster name="scorn of the Emperor" file="Bosses/scorn of the emperor.xml"/>
+	
 	<!-- Amphibians -->
 	<monster name="Target Dummy" file="Train/targetdummy.xml"/>
 	
@@ -282,14 +322,14 @@
 	<monster name="The Collector" file="Cryo-Elementals/the collector.xml"/>
 
 	<!-- Deeplings -->
-	<monster name="Deepling Brawler" file="Deeplings/deepling brawler.xml"/>
-	<monster name="Deepling Elite" file="Deeplings/deepling elite.xml"/>
+	<monster name="Deepling Brawler" file="Deeplings/Deepling Brawler.xml"/>
+	<monster name="Deepling Elite" file="Deeplings/Deepling Elite.xml"/>
 	<monster name="Deepling Guard" file="Deeplings/Deepling Guard.xml"/>
 	<monster name="Deepling Master Librarian" file="Deeplings/Deepling Master Librarian.xml"/>
-	<monster name="Deepling Scout" file="Deeplings/deepling scout.xml"/>
+	<monster name="Deepling Scout" file="Deeplings/Deepling Scout.xml"/>
 	<monster name="Deepling Spellsinger" file="Deeplings/Deepling Spellsinger.xml"/>
 	<monster name="Deepling Tyrant" file="Deeplings/Deepling Tyrant.xml"/>
-	<monster name="Deepling Warrior" file="Deeplings/deepling warrior.xml"/>
+	<monster name="Deepling Warrior" file="Deeplings/Deepling Warrior.xml"/>
 	<monster name="Deepling worker" file="Deeplings/Deepling Worker.xml"/>
 
 	<!-- Demonlord -->
@@ -320,6 +360,7 @@
 	<monster name="Shaburak Prince" file="Demons/shaburak prince.xml"/>
 	<monster name="Shadow Hound" file="Demons/shadow hound.xml"/>
 	<monster name="Yielothax" file="Demons/yielothax.xml"/>
+	<monster name="demon (goblin)" file="Goblins/demon (goblin).xml"/>
 
 	<!-- Djinn -->
 	<monster name="Blue Djinn" file="Djinn/blue djinn.xml"/>
@@ -342,11 +383,12 @@
 
 	<!-- Dwarves -->
 	<monster name="Dwarf Geomancer" file="Dwarves/dwarf geomancer.xml"/>
+	<monster name="Dwarf Miner" file="Dwarves/dwarf miner.xml"/>
 	<monster name="Dwarf Guard" file="Dwarves/dwarf guard.xml"/>
 	<monster name="Dwarf Soldier" file="Dwarves/dwarf soldier.xml"/>
 	<monster name="Dwarf" file="Dwarves/dwarf.xml"/>
 	<monster name="Enslaved Dwarf" file="Dwarves/enslaved dwarf.xml"/>
-	<monster name="Lost Berserker" file="Dwarves/lost berserker.xml"/>
+	<monster name="Lost Berserker" file="Dwarves/Lost Berserker.xml"/>
 	<monster name="Lost Basher" file="Dwarves/lost basher.xml"/>
 	<monster name="Lost Husher" file="Dwarves/lost husher.xml"/>
 	<monster name="Lost Thrower" file="Dwarves/lost thrower.xml"/>
@@ -399,6 +441,7 @@
 	<!-- Felines -->
 	<monster name="Cat" file="Felines/cat.xml"/>
 	<monster name="Lion" file="Felines/lion.xml"/>
+	<monster name="Zomba" file="Felines/zomba.xml"/>
 	<monster name="Tiger" file="Felines/tiger.xml"/>
 	<monster name="Midnight Panther" file="Felines/midnight panther.xml"/>
 
@@ -485,6 +528,7 @@
 
 	<!-- Insects -->
 	<monster name="Ancient Scarab" file="Insects/ancient scarab.xml"/>
+	<monster name="Armenius" file="Insects/armenius.xml"/>
 	<monster name="Blue Butterfly" file="Insects/blue butterfly.xml"/>
 	<monster name="Brimstone Bug" file="Insects/brimstone bug.xml"/>
 	<monster name="Bug" file="Insects/bug.xml"/>
@@ -562,9 +606,23 @@
 		<monster name="Tortoise" file="Misc/Misc Reptiles/tortoise.xml"/>
 
 		<!-- Misc Other -->
+		<monster name="Tormented Ghost" file="Misc/Misc Others/Tormented Ghost.xml"/>
+		<monster name="Morik the Gladiator" file="Misc/Misc Others/Morik the Gladiator.xml"/>
 		<monster name="Drillworm" file="Misc/Misc Others/drillworm.xml"/>
 		<monster name="Marsh Stalker" file="Misc/Misc Others/marsh stalker.xml"/>
 		<monster name="Pigeon" file="Misc/Misc Others/pigeon.xml"/>
+		<monster name="Brown Horse" file="Misc/Misc Others/horse(brown).xml"/>
+		<monster name="Grey Horse" file="Misc/Misc Others/horse(grey).xml"/>
+		<monster name="Fire Horse" file="Misc/Misc Others/horse(fire).xml"/>
+		<monster name="Diseased Dan" file="Misc/Misc Others/diseased dan.xml"/>
+		<monster name="Diseased Fred" file="Misc/Misc Others/diseased fred.xml"/>
+		<monster name="Diseased Bill" file="Misc/Misc Others/diseased bill.xml"/>
+		<monster name="Nightfiend" file="Misc/Misc Others/Nightfiend.xml"/>
+		<monster name="Vicious Manbat" file="Misc/Misc Others/Vicious Manbat.xml"/>
+		<monster name="Kraknaknork's Demon" file="Misc/Misc Others/Kraknaknork's Demon.xml"/>
+		<monster name="Enraged White Deer" file="Misc/Misc Others/Enraged White Deer.xml"/>
+		<monster name="Energized Raging Mage" file="Misc/Misc Others/Energized Raging Mage.xml"/>
+		<monster name="The Pale Count" file="Misc/Misc Others/The Pale Count.xml"/>
 
 	<!-- Mollusks -->
 	<monster name="Calamary" file="Mollusks/calamary.xml"/>
@@ -583,13 +641,17 @@
 	<!-- Myriapods -->
 	<monster name="Centipede" file="Myriapods/centipede.xml"/>
 	<monster name="Crawler" file="Myriapods/crawler.xml"/>
-	<monster name="Wiggler" file="Myriapods/wiggler.xml"/>
+	<monster name="Wiggler" file="Myriapods/Wiggler.xml"/>
 
 	<!-- Necromancers -->
 	<monster name="Necromancer" file="Necromancers/necromancer.xml"/>
 	<monster name="Priestess" file="Necromancers/priestess.xml"/>
 
 	<!-- Orcs -->
+		<!-- Raid -->
+		<monster name="Orcarmor" file="Orcs/Raid/Orcarmor.xml"/>
+		<monster name="Orchelmet" file="Orcs/Raid/Orchelmet.xml"/>
+		<monster name="Orcshield" file="Orcs/Raid/Orcshield.xml"/>
 	<monster name="Orc Berserker" file="Orcs/orc berserker.xml"/>
 	<monster name="Orc Leader" file="Orcs/orc leader.xml"/>
 	<monster name="Orc Rider" file="Orcs/orc rider.xml"/>
@@ -599,6 +661,7 @@
 	<monster name="Orc Warrior" file="Orcs/orc warrior.xml"/>
 	<monster name="Orc" file="Orcs/orc.xml"/>
 	<monster name="Orc Marauder" file="Orcs/orc marauder.xml"/>
+	<monster name="Orc Sambackpack" file="Orcs/orc sambackpack.xml"/>
 
 	<!-- Outlaws -->
 	<monster name="Asassin" file="Outlaws/assassin.xml"/>
@@ -619,6 +682,7 @@
 	<monster name="Feverish Citizen" file="Outlaws/feverish citizen.xml"/>
 	<monster name="Adventurer" file="Outlaws/adventurer.xml"/>
 	<monster name="Angry Adventurer" file="Outlaws/angry adventurer.xml"/>
+	<monster name="Crypt Defiler" file="Outlaws/crypt defiler.xml"/>
 
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="Pharaohs/ashmunrah.xml"/>
@@ -707,7 +771,7 @@
 	<monster name="Plaguethrower" file="Traps/plaguethrower.xml"/>
 	<monster name="Shredderthrower" file="Traps/shredderthrower.xml"/>
 	<monster name="Deaththrower" file="Traps/Deaththrower.xml"/>
-	<monster name="a carved stone tile" file="traps/a carved stone tile.xml"/>
+	<monster name="a carved stone tile" file="Traps/a carved stone tile.xml"/>
 	<monster name="Lava hole" file="Traps/lava hole.xml"/>
 
 	<!-- Trolls -->
@@ -772,9 +836,9 @@
 	<monster name="Vulcongra" file="Magma-Elementals/Vulcongra.xml"/>
 	<monster name="weakened demon" file="Demons/weakened demon.xml"/>
 	<monster name="wild dog" file="Canines/wild dog.xml"/>
-	<monster name="furious troll" file="Trolls/Furious Troll.xml"/>
+	<monster name="furious troll" file="Trolls/furious troll.xml"/>
 	<monster name="troll legionnaire" file="Trolls/troll legionnaire.xml"/>
-	<monster name="Rift Brood" file="Rifts/Rift Brood.xml"/>
+	<monster name="Rift Brood" file="Rifts/rift brood.xml"/>
 	<monster name="Azerus" file="yalahar/Azerus.xml"/>
 	<monster name="Azerus1" file="yalahar/Azerus1.xml"/>
     <monster name="Azerus2" file="yalahar/Azerus2.xml"/>

@@ -17,21 +17,24 @@ function onThink()
 end
 
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
-	if(msgcontains(msg, "sniffler")) then
-		if(getPlayerStorageValue(cid, 121) == 1) then
+	local player = Player(cid)
+	if msgcontains(msg, "sniffler") then
+		if player:getStorageValue(12001) == 1 then
+			npcHandler:say("!", player)
 			talkState[talkUser] = 1
 		end
-	elseif(msgcontains(msg, "meat")) then
-		if(talkState[talkUser] == 1) then
-			if(getPlayerItemCount(cid, 2666) >= 1) then
-				doPlayerRemoveItem(cid, 2666, 1)
-				npcHandler:say("<munch>", cid)
-				setPlayerStorageValue(cid, 121, 2)
+	elseif msgcontains(msg, "meat") then
+		if talkState[talkUser] == 1 then
+			if player:getItemCount(2666) >= 1 then
+				player:removeItem(2666, 1)
+				npcHandler:say("<munch>", player)
+				player:setStorageValue(12001, 2)
+				player:setStorageValue(12025, 2) -- Questlog The Ice Islands Quest, Befriending the Musher
 				talkState[talkUser] = 0
 			end
 		end

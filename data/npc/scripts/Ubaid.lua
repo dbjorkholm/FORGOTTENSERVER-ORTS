@@ -20,10 +20,10 @@ function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
 	-- GREET
-	if(msg == "DJANNI'HAH" and getPlayerStorageValue(cid, 82) < 1) and (not npcHandler:isFocused(cid)) then
-		if(getPlayerStorageValue(cid, 80) > 0) then
+	if(msg == "DJANNI'HAH" and getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1) and (not npcHandler:isFocused(cid)) then
+		if(getPlayerStorageValue(cid, Factions) > 0) then
 			npcHandler:addFocus(cid)
-			if(getPlayerStorageValue(cid, 82) < 1) then
+			if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1 or not BlueOrGreen) then
 				npcHandler:say("What? You know the word, Player? All right then - I won't kill you. At least, not now.", cid)
 				npcHandler:addFocus(cid)
 			end
@@ -37,7 +37,7 @@ function creatureSayCallback(cid, type, msg)
 
 	-- JOINING
 	if(msgcontains(msg, "passage")) then
-		if(getPlayerStorageValue(cid, 81) < 1) then
+		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart) < 1) then
 			npcHandler:say({"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...","All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"}, cid, 0, 1, 3000)
 			talkState[talkUser] = 1
 		end
@@ -50,8 +50,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif(talkState[talkUser] == 3) then
 			npcHandler:say({"Well then - welcome to Mal'ouquah. ...", "Go now to general Baa'leal and don't forget to greet him correctly! ...", "And don't touch anything!"}, cid, 0, 1, 2500)
 			talkState[talkUser] = 0
-			setPlayerStorageValue(cid, 81, 1)
-			setPlayerStorageValue(cid, 9023, 1)
+			setPlayerStorageValue(cid, GreenDjinn.MissionStart, 1)
 		end
 	elseif(msgcontains(msg, "no")) then
 		if(talkState[talkUser] == 1) then

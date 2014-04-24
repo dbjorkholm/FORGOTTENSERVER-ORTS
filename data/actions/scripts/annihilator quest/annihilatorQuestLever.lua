@@ -1,18 +1,6 @@
-local Area_fromPos, Area_toPos = {x = 33219, y = 31657, z = 13}, {x = 33222, y = 31661, z = 13}
-local room = { -- room with demons
-    	fromX = 33219,
-	fromY = 31657,
-	fromZ = 13,
-	--------------
-   	toX = 33224,
-    	toY = 31661,
-	toZ = 13
-}
-local players_pos =  {
-	{x = 33225, y = 31671, z = 13, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33224, y = 31671, z = 13, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33223, y = 31671, z = 13, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33222, y = 31671, z = 13, stackpos = STACKPOS_TOP_CREATURE}
+local players_area =  {
+	{x = 33225, y = 31671, z = 13},
+	{x = 33222, y = 31671, z = 13}
 }
 local new_player_pos = {
 	{x = 33222, y = 31659, z = 13},
@@ -29,63 +17,79 @@ local demonPos = {
 	{x = 33222, y = 31661, z = 13}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = {}
-	summon_demons = true
-	failed = true
-	if (item.itemid == 1946) then
+function getPlayerCountInArea(toPos, fromPos)
+
+	local count = 0
+	local cid = {}
+
+	for x = fromPos.x, toPos.x do
+		for y = fromPos.y, toPos.y do
+			for z = toPos.z, toPos.z do
+				local creature = getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid
+				if(creature > 0) then
+					if(isPlayer(creature)) then
+						table.insert(cid, creature)
+						count = count + 1
+						if(getPlayerLevel(creature) < 100) then
+							return "All players must be above level 100."
+						end
+					elseif(isMonster(creature)) then
+						return "Players are allowed only."
+					end
+				end
+			end
+		end
+	end
+
+	if(count < 4) then
+		return "You need 4 players."
+	else
 		for i = 1,4 do
-			player[i] = getThingfromPos(players_pos[i])
-			if player[i].itemid > 0 then
-				if isPlayer(player[i].uid) == TRUE then
-					if(getPlayerLevel(player[i].uid) >= 100) then
-						if (not isPlayerInArea(Area_fromPos, Area_toPos)) then
-							table.insert(player, i)
-							failed = false
-						else
-							return (doPlayerSendCancel(cid, "A team is already inside the quest room."))
-						end
-					else
-						return (doPlayerSendCancel(cid, "All players must be above level 100."))
-					end
-				else
-					return (doPlayerSendCancel(cid, "You need 4 players."))
-				end
-			else
-				return (doPlayerSendCancel(cid, "You need 4 players."))
-			end
+			Player(cid[5-i]):teleportTo(new_player_pos[i])
+			Player(cid[5-i]):getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
-		if failed == true then
-			doPlayerSendCancel(cid, "Sorry, not possible.")
-		return TRUE
-		end
-		for i = 1, 4 do
-			if failed == false then
-				doTeleportThing(player[i].uid, new_player_pos[i], FALSE)
-				doSendMagicEffect(new_player_pos[i], CONST_ME_TELEPORT)
-				doSendMagicEffect(players_pos[i], CONST_ME_POFF)
-				doSetCreatureDirection(player[i], EAST)
-			end
-		end
-		if(summon_demons) then	
-			for _x = room.fromX, room.toX do
-				for _y = room.fromY, room.toY do
-					for _z = room.fromZ, room.toZ do
-						local creature = getTopCreature({x = _x, y = _y, z = _z})
-						if (isMonster(creature.uid)) then
-							doRemoveCreature(creature.uid)
-						end
+	end
+	return true
+end
+
+function SummonDemon(Pos)
+local count = 0
+local cid = {}
+	for x = Pos[1].x, Pos[4].x do
+		for y = Pos[1].y, Pos[6].y do
+			for z = Pos[1].z, Pos[6].z do
+				local creature = getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid
+				if(creature > 0) then
+					if(isPlayer(creature)) then
+						return "A team is already inside the quest room."
+					elseif(isMonster(creature)) then
+						table.insert(cid, creature)
+						count = count + 1
 					end
 				end
 			end
-			for d = 1, 6 do
-				doSummonCreature("Demon", demonPos[d])
-			end
 		end
-		summon_demons = false
-		doTransformItem(item.uid, 1945)
-	elseif (item.itemid == 1945) then
-		doTransformItem(item.uid, 1946)
+	end
+	
+	for i = 1, #cid do
+		doRemoveCreature(cid[i])
+	end
+
+	for i = 1, #Pos do
+		doSummonCreature("Demon", Pos[i])
+	end
+	
+	return getPlayerCountInArea(players_area[1], players_area[2])
+end
+
+function onUse(cid, item)
+	if(item.itemid == 1946) then
+		local condition = SummonDemon(demonPos)
+		if(condition ~= true) then
+			doPlayerSendCancel(cid, condition)
+		end
+	else
+		Item(item.uid):transform(1946)
 	end
 	return true
 end

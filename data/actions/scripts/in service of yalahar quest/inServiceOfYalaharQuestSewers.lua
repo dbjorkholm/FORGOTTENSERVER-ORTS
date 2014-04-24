@@ -9,7 +9,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						doSendMagicEffect({x = getPlayerPosition(cid).x + x, y = getPlayerPosition(cid).y + y, z = getPlayerPosition(cid).z}, CONST_ME_YELLOWENERGY)
 					end
 				end
-				setPlayerStorageValue(cid, 26, 1)
+				Player(cid):setStorageValue(26, 1)
+				Player(cid):setStorageValue(12012, Player(cid):getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif(itemEx.uid == 3072) then
 			if(getPlayerStorageValue(cid, 27) < 1) then
@@ -21,18 +22,21 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						end
 					end
 				end
-				setPlayerStorageValue(cid, 27, 1)
+				Player(cid):setStorageValue(27, 1)
+				Player(cid):setStorageValue(12012, Player(cid):getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif(itemEx.uid == 3073) then
 			if(getPlayerStorageValue(cid, 28) < 1) then
 				doCreatureSay(cid, "You have used the crowbar on a grate.", TALKTYPE_ORANGE_1)
-				setPlayerStorageValue(cid, 28, 1)
+				Player(cid):setStorageValue(28, 1)
+				Player(cid):setStorageValue(12012, Player(cid):getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif(itemEx.uid == 3074) then
 			if(getPlayerStorageValue(cid, 29) < 1) then
 				doSetMonsterOutfit(cid, "bog raider", 5 * 1000)
 				doCreatureSay(cid, "You have used the crowbar on a knot.", TALKTYPE_ORANGE_1)
-				setPlayerStorageValue(cid, 29, 1)
+				Player(cid):setStorageValue(29, 1)
+				Player(cid):setStorageValue(12012, Player(cid):getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		end
 	end

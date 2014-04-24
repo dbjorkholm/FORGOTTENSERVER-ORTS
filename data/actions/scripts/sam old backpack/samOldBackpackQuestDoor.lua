@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 2234) then
+	if(item.actionid == 42535) then
 		if(getPlayerStorageValue(cid, 330) == 2) then
 			if(item.itemid == 1225) then
 				doTeleportThing(cid, toPosition, true)

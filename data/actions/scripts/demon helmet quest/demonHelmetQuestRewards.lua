@@ -1,37 +1,36 @@
+local config = {
+	[2212] = {306, 2520},
+	[2213] = {305, 2493},
+	[2214] = {304, 2645}
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if (getPlayerStorageValue(cid, 2217) < 1) then
-		doPlayerAddExp(cid, 250000, true, true)
-		setPlayerStorageValue(cid, 2217, 1)
-		if (getSex == 0) then
-			doPlayerAddOutfit(cid,542,1)
-		else
-			doPlayerAddOutfit(cid,541,1)
-		end
+	local player = Player(cid)
+	if player:getStorageValue(2217) < 1 then
+		player:addExperience(250000, true)
+		player:setStorageValue(2217, 1)
+		player:addOutfitAddon(player:getSex() == 0 and 542 or 541, 1)
 	end
-	if(item.uid == 2212) then
-		if(getPlayerStorageValue(cid, 306) < 1) then
-			setPlayerStorageValue(cid, 306, 1)
-			doPlayerAddItem(cid, 2520, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a demon shield.")
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end
-	elseif(item.uid == 2213) then
-		if(getPlayerStorageValue(cid, 305) < 1) then
-			setPlayerStorageValue(cid, 305, 1)
-			doPlayerAddItem(cid, 2493, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a demon helmet.")
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end
-	elseif(item.uid == 2214) then
-		if(getPlayerStorageValue(cid, 304) < 1) then
-			setPlayerStorageValue(cid, 304, 1)
-			doPlayerAddItem(cid, 2645, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a steel boots.")
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end
+	
+	local targetItem = config[item.uid]
+	if not targetItem then
+		return true
 	end
+	
+	if player:getStorageValue(targetItem[1]) > 0 then
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+		return true
+	end
+	
+	local itemType = ItemType(targetItem[2])
+	if itemType:getArticle() ~= "" then
+		text = itemType:getArticle() .. " " .. itemType:getName()
+	else
+		text = itemType:getName()
+	end
+
+	player:setStorageValue(targetItem[1], 1)
+	player:addItem(targetItem[2], 1)
+	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You've found %s.", text))
 	return true
 end

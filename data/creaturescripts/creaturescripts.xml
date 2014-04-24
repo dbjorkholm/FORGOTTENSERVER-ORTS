@@ -13,7 +13,7 @@
 	<event type="kill" name="SvargrondArenaKill" script="svargrond arena quest/arena_kill.lua"/>
 	
 	<!-- Boss Summoning -->
-	<!--<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>-->
+	<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>
 	
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>
@@ -29,12 +29,15 @@
 	
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
+	
+	<!-- Storage Conversion -->
+	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua"/>
-
+	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
 
 </creaturescripts>

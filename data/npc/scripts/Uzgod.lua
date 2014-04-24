@@ -1,26 +1,35 @@
+dofile('data/lib/MissionSelect.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
  
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()                                      npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+	if (msgcontains(msg, "piece of draconian steel")) then
+		npcHandler:say("You bringing me draconian steel and obsidian lance in exchange for obsidian knife?", cid)
+		talkState[talkUser] = 15
+	elseif (msgcontains(msg, "yes") and talkState[talkUser] == 15) then
+		if (getPlayerItemCount(cid, 5889) >= 1 and getPlayerItemCount(cid, 2425) >= 1) then
+			local p = Player(cid)
+			npcHandler:say("Here you have it.", cid)
+			p:removeItem(5889, 1)
+			p:removeItem(2425, 1)
+			p:addItem(5908, 1)
+			talkState[talkUser] = 0
+		else
+			npcHandler:say("You dont have these items.", cid)	
+			talkState[talkUser] = 0
+		end
+	end
  
 	if(msgcontains(msg, "pickaxe")) then
 		if(getPlayerStorageValue(cid, 90) == 1) then
@@ -28,7 +37,7 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 1
 		end
 	elseif(msgcontains(msg, "crimson sword")) then
-		if(getPlayerStorageValue(cid, 85) == 14) then
+		if(getPlayerStorageValue(cid, Rashid.MissionStart + 4) == 1) then
 			npcHandler:say("Me don't sell crimson sword.", cid)
 			talkState[talkUser] = 5
 		end
@@ -71,7 +80,7 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Ah, that's how me like me customers. Ok, me do this... <pling pling> ... another fine swing of the hammer here and there... <ploing>... here you have it!", cid)
 				talkState[talkUser] = 0
 				doPlayerAddItem(cid, 7385, 1)
-				setPlayerStorageValue(cid, 85, 15)
+				setPlayerStorageValue(cid, Rashid.MissionStart + 4, 2)
 			end
 		end
 	elseif(msgcontains(msg, "no")) then

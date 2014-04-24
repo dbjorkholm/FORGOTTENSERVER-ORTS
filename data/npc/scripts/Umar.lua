@@ -20,10 +20,10 @@ function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
 	-- GREET
-	if(msg == "DJANNI'HAH" and getPlayerStorageValue(cid, 81) < 1) and (not npcHandler:isFocused(cid)) then
-		if(getPlayerStorageValue(cid, 80) > 0) then
+	if(msg == "DJANNI'HAH" and (getPlayerStorageValue(cid, GreenDjinn.MissionStart) < 1) or not BlueOrGreen) and (not npcHandler:isFocused(cid)) then
+		if(getPlayerStorageValue(cid, Factions) > 0) then
 			npcHandler:addFocus(cid)
-			if(getPlayerStorageValue(cid, 81) < 1) then
+			if(getPlayerStorageValue(cid, GreenDjinn.MissionStart) < 1 or not BlueOrGreen) then
 				npcHandler:say({"Whoa? You know the word! Amazing, " .. getCreatureName(cid) .. "!...","I should go and tell Fa'hradin. ...","Well. Why are you here anyway, " .. getCreatureName(cid) .. "?"}, cid, 0, 1, 3000)
 				npcHandler:addFocus(cid)
 			end
@@ -36,7 +36,7 @@ function creatureSayCallback(cid, type, msg)
 	end
 	-- JOINING
 	if(msgcontains(msg, "passage")) then
-		if(getPlayerStorageValue(cid, 82) < 1) then
+		if(getPlayerStorageValue(cid, BlueDjinn.MissionStart) < 1) then
 			npcHandler:say({"If you want to enter our fortress you have to become one of us and fight the Efreet. ...","So, are you willing to do so?"}, cid, 0, 1, 3000)
 			talkState[talkUser] = 1
 		end
@@ -49,8 +49,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif(talkState[talkUser] == 2) then
 			npcHandler:say({"Oh. Ok. Welcome then. You may pass. ...","And don't forget to kill some Efreets, now and then."}, cid, 0, 1, 2000)
 			talkState[talkUser] = 3
-			setPlayerStorageValue(cid, 82, 1)
-			setPlayerStorageValue(cid, 9022, 1)
+			setPlayerStorageValue(cid, BlueDjinn.MissionStart, 1)
 		end
 	end
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then

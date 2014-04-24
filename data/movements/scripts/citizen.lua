@@ -1,41 +1,36 @@
+local t = {
+	[9056] = {id = 4},
+	[9057] = {id = 2},
+	[9058] = {id = 1},
+	[9059] = {id = 5},
+	[9060] = {id = 3},
+	[9061] = {id = 10},
+	[9062] = {id = 9},
+	[9063] = {id = 11},
+	[9064] = {id = 7},
+	[9065] = {id = 8},
+	[9066] = {id = 12},
+	[9067] = {id = 13},
+	[9068] = {id = 14},
+	[9240] = {id = 28},
+	[9500] = {id = 29}
+}
 function onStepIn(cid, item, position, fromPosition)
-	if (isPlayer(cid)) then
-		if (item.uid == 9056) then
-			doPlayerSetTown(cid, 4)
-		elseif (item.uid == 9057) then
-			doPlayerSetTown(cid, 2)
-		elseif (item.uid == 9058) then
-			doPlayerSetTown(cid, 1)
-		elseif (item.uid == 9059) then
-			doPlayerSetTown(cid, 5)
-		elseif (item.uid == 9060) then
-			doPlayerSetTown(cid, 3)
-		elseif (item.uid == 9061) then
-			doPlayerSetTown(cid, 10)
-		elseif (item.uid == 9062) then
-			doPlayerSetTown(cid, 9)
-		elseif (item.uid == 9063) then
-			doPlayerSetTown(cid, 11)
-		elseif (item.uid == 9064) then
-			doPlayerSetTown(cid, 7)
-		elseif (item.uid == 9065) then
-			doPlayerSetTown(cid, 8)
-		elseif (item.uid == 9066) then
-			doPlayerSetTown(cid, 12)
-		elseif (item.uid == 9067) then
-			doPlayerSetTown(cid, 13)
-		elseif (item.uid == 9068) then
-			doPlayerSetTown(cid, 14)
-			doTeleportThing(cid, {x=33023,y=31522,z=11})
-			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You are now a citizen of "..getTownName(getPlayerTown(cid))..".")	
-		return true
-		elseif (item.uid == 9240) then
-			doPlayerSetTown(cid, 28)
+	local town = Town(t[item.uid].id)
+	local player = Player(cid)
+	if player then
+		if t[item.uid] then
+			if town:getId() == 12 and player:getStorageValue(120) < 8 then
+				player:sendTextMessage(MESSAGE_STATUS_WARNING, "You first need to absolve the Barbarian Test Quest to become citizen!")
+				player:teleportTo(town:getTemplePosition())
+				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				return false
+			end
+			player:setTown(town)
+			player:teleportTo(town:getTemplePosition())
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are now a citizen of "..town:getName()..".")	
 		end
-	doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)))
-	doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-	doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You are now a citizen of "..getTownName(getPlayerTown(cid))..".")	
 	end
 	return true
 end

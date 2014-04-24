@@ -1,4 +1,3 @@
-
 function Player:onLook(thing, position, distance)
 	local description = "You see " .. thing:getDescription(distance)
 	if self:getGroup():getAccess() then
@@ -43,6 +42,12 @@ function Player:onLook(thing, position, distance)
 			"%s\nPosition: [X: %d] [Y: %d] [Z: %d].",
 			description, position.x, position.y, position.z
 		)
+		
+		if thing:isCreature() then
+			if thing:isPlayer() then
+				description = string.format("%s\nIP: [%s].", description, Game.convertIpToString(thing:getIp()))
+			end
+		end
 	end
 	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 end
@@ -61,6 +66,10 @@ function Player:onLookInBattleList(creature, distance)
 			"%s\nPosition: [X: %d] [Y: %d] [Z: %d].",
 			description, position.x, position.y, position.z
 		)
+		
+		if creature:isPlayer() then
+			description = string.format("%s\nIP: [%s].", description, Game.convertIpToString(creature:getIp()))
+		end
 	end
 	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 end
@@ -82,5 +91,9 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 end
 
 function Player:onTurn(direction)
+	return true
+end
+
+function Player:onTradeRequest(target, item)
 	return true
 end

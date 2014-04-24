@@ -4,6 +4,8 @@ local cleanMapAtServerSave = false
 local function serverSave()
         if shutdownAtServerSave then
                 Game.setGameState(GAME_STATE_SHUTDOWN)
+	else
+		Game.setGameState(GAME_STATE_NORMAL)
         end
         if cleanMapAtServerSave then
                 cleanMap()

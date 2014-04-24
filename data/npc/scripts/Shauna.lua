@@ -3,18 +3,10 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
  
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()                                      npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
@@ -24,7 +16,7 @@ function creatureSayCallback(cid, type, msg)
 
 	-- Mission 1 - The Supply Thief 
 	if(msgcontains(msg, "job")) then
-		if(getPlayerStorageValue(cid, 81) == 2) then
+		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+1) == 1) then
 			npcHandler:say("What do you think? I am the sheriff of Carlin.", cid)
 			talkState[talkUser] = 1
 		end
@@ -36,7 +28,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "prisoner")) then
 		if(talkState[talkUser] == 2) then
 			npcHandler:say({"My last prisoner? Hmm. ...", "I think he was some guy from Darama. Can't remember his name. ...", "He was here just for one night, because he got drunk and annoyed our citizens. ...", "Obviously he wasn't pleased with this place, because he headed for Thais the next day. ...", "Something tells me that he won't stay out of trouble for too long."}, cid, 0, 1, 3500)
-			setPlayerStorageValue(cid, 81, 3)
+			setPlayerStorageValue(cid, GreenDjinn.MissionStart+1, 2)
 			talkState[talkUser] = 0
 		end
 	end

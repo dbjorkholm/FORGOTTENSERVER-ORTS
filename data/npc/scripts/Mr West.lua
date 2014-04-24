@@ -31,17 +31,20 @@ function creatureSayCallback(cid, type, msg)
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
+	local p = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if(getPlayerStorageValue(cid, 30) == 24) then
-			if(getPlayerStorageValue(cid, 19) == 1) then
+		if(p:getStorageValue( 30) == 24) then
+			if(p:getStorageValue( 19) == 1) then
 				npcHandler:say("Indeed, I can see the benefits of a mutual agreement. I will later read the details and send a letter to your superior. ", cid)
-				setPlayerStorageValue(cid, 30, 25)
-				setPlayerStorageValue(cid, 18, 1)
+				p:setStorageValue( 30, 25)
+				p:setStorageValue(12015, 3) -- StorageValue for Questlog "Mission 04: Good to be Kingpin"
+				p:setStorageValue( 18, 1)
 				talkState[talkUser] = 0
-			elseif(getPlayerStorageValue(cid, 19) == 2) then
+			elseif(p:getStorageValue( 19) == 2) then
 				npcHandler:say("Yes, for the sake of my life I'll accept those terms. I know when I have lost. Tell your master I will comply with his orders. ", cid)
-				setPlayerStorageValue(cid, 30, 25)
-				setPlayerStorageValue(cid, 18, 2)
+				p:setStorageValue( 30, 25)
+				p:setStorageValue(12015, 4) -- StorageValue for Questlog "Mission 04: Good to be Kingpin"
+				p:setStorageValue( 18, 2)
 				talkState[talkUser] = 0
 			end
 		end

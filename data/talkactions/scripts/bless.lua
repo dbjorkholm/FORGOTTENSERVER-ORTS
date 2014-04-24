@@ -1,23 +1,22 @@
 function onSay(cid, words, param)
+	local p = Player(cid)
 	local cost = getBlessingsCost(getPlayerLevel(cid))
-	if (isPlayerPzLocked(cid) == FALSE) then
-		if (getPlayerBlessing(cid, 1) and getPlayerBlessing(cid, 2) and getPlayerBlessing(cid, 3) and getPlayerBlessing(cid, 4) and getPlayerBlessing(cid, 5)) then
-			doPlayerSendCancel(cid,"You have already been blessed by the gods.")
+	if(not(isPlayerPzLocked(cid))) then
+		if(p:hasBlessing(1) and p:hasBlessing(2) and p:hasBlessing(3) and p:hasBlessing(4) and p:hasBlessing(5)) then
+			p:sendCancelMessage("You have already been blessed by the gods.")
 			return false
 		end
-		if (doPlayerRemoveMoney(cid,cost)) then
-			doPlayerAddBlessing(cid, 1)
-			doPlayerAddBlessing(cid, 2)
-			doPlayerAddBlessing(cid, 3)
-			doPlayerAddBlessing(cid, 4)
-			doPlayerAddBlessing(cid, 5)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You have been blessed by the 5 gods!")
+		if(p:removeMoney(cost)) then
+			for b = 1,5 do
+				p:addBlessing(b)
+			end
+			p:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
+			p:sendTextMessage(MESSAGE_INFO_DESCR, "You have been blessed by the 5 gods!")
 		else
-			doPlayerSendCancel(cid,"You need "..cost.." gold coins to buy all 5 bless.")
+			p:sendCancelMessage("You need "..cost.." gold coins to buy all 5 bless.")
 		end
 	else
-		doPlayerSendCancel(cid,"You can't buy bless, when you are in a battle.")
+		p:sendCancelMessage("You can't buy bless, when you are in a battle.")
 	end
-	return false
+return false
 end

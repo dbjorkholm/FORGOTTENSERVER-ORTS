@@ -1,11 +1,12 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 2216) then
-		if(getPlayerStorageValue(cid, 2215) < 1) then
-			if(item.itemid == 5114) then
-				doTeleportThing(cid, toPosition, true)
-				doTransformItem(item.uid, 5115)
-			end
+	local player = Player(cid)
+	if player:getStorageValue(2216) < 1 then
+		if item.itemid == 5114 then
+			player:teleportTo(toPosition, true)
+			Item(item.uid):transform(5115)
 		end
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "This door seems to be sealed against unwanted intruders.")
 	end
 	return true
 end

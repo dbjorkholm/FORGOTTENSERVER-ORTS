@@ -17,19 +17,18 @@ function onThink()
 end
 
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
-	if(msgcontains(msg, "crystal")) then
-		if(getPlayerStorageValue(cid, 121) == 32) then
-			npcHandler:say("Ah! You did it! I can't wait to hear the sound... but I will do that in a silent moment. ...", cid)
-			npcHandler:say("You helped as much in our research here. As a reward, you may use our astral portal in the upper room from now on. ...", cid)
-			npcHandler:say("For just one orichalcum pearl, you can travel between Liberty Bay and Svargrond. Thank you again!", cid)
+	local player = Player(cid)
+	if msgcontains(msg, "crystal") then
+		if player:getStorageValue(12032) == 2 then
+			npcHandler:say("Here, take the memory crystal and leave immediately.", player)			
 			talkState[talkUser] = 0
-			doPlayerAddItem(cid, 9744, 1)
-			setPlayerStorageValue(cid, 121, 33)
+			player:addItem(7281, 1)
+			player:setStorageValue(12032, 3) -- Questlog The Ice Islands Quest, The Contact
 		end
 	end
 	return true

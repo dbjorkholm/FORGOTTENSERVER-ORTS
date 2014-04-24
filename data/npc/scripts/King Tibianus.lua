@@ -14,40 +14,8 @@ end
 function onThink()
 	npcHandler:onThink()
 end
-function creatureSayCallback(cid, type, msg)
-	if(not(npcHandler:isFocused(cid))) then
-		return false
-	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	
-	if(msgcontains(msg, "farmine")) then
-		if(getPlayerStorageValue(cid, 1015) == 15) then
-			npcHandler:say("Ah, I vaguely remember that our little allies were eager to build some base. So speak up, what do you want?", cid)
-			talkState[talkUser] = 1
-		end
-	elseif(msgcontains(msg, "flatter")) then
-		if(talkState[talkUser] == 1) then
-			if(getPlayerStorageValue(cid, 1022) < 1) then
-				npcHandler:say("Indeed, indeed. Without the help of Thais, our allies stand no chance! Well, I'll send some money to support their cause.", cid)
-				setPlayerStorageValue(cid, 1022, 1)
-			end
-		end
-	end
-	return true
-end
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:addModule(FocusModule:new())
-
-local keywordHandler = KeywordHandler:new()
-local npcHandler = NpcHandler:new(keywordHandler)
-NpcSystem.parseParameters(npcHandler)
 
 local Topic = {}
-
-function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() 						npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
@@ -269,3 +237,4 @@ end
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, "How rude!")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

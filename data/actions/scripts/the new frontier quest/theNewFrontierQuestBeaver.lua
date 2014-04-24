@@ -5,6 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				doSummonCreature("thieving squirrel", toPosition)
 				doSendMagicEffect(toPosition, CONST_ME_TELEPORT)
 				setPlayerStorageValue(cid, 1017, 1)
+				doSummonCreature("thieving squirrel", pos)
 				doCreatureSay(cid, "You've marked the tree, but its former inhabitant has stolen your bait! Get it before it runs away!", TALKTYPE_ORANGE_1)
 				doRemoveItem(item.uid)
 			end
