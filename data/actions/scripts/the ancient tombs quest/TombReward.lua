@@ -21,11 +21,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:addItem(targetItem[2], 1)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You've found a %s.", targetItem[4]))
 		local player = Player(cid)
-		if player:getStorageValue(12101) == 1 and player:getStorageValue(12102) == 1 and player:getStorageValue(12103) == 1 and player:getStorageValue(12104) == 1 and player:getStorageValue(12105) == 1 and player:getStorageValue(12106) == 1 and player:getStorageValue(12107) == 1 then
-			if player:getStorageValue(12108) < 2 then
-			player:setStorageValue(12108, 1) -- Questlog for Ankrahmun Library Tomb
-			end
-		end
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't have the pass item to get this helmet piece.")
 	end
