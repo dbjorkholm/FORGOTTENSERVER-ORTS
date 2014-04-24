@@ -24,7 +24,7 @@ function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if(msgcontains(msg, "stampor") or msgcontains(msg, "mount")) then
-		if(player:getStorageValue(1005) < 1) then
+		if(player:hasMount() == 11) then
 			if(player:getItemCount(13299) >= 50) and (player:getItemCount(13301) >= 30) and (player:getItemCount(13300) >= 100) then
 				npcHandler:say("You did bring all the items I requqested, cuild. Good. Shall I travel to the spirit realm and try finding a stampor compasion for you?", player)
 				talkState[talkUser] = 1
