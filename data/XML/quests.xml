@@ -115,25 +115,25 @@
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
-		<mission name="Omruc's Lookout" storageid="12101" startvalue="1" endvalue="1">
+		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Omruc and found a Helmet piece: Helmet Adornment"/>
 		</mission>
-		<mission name="Thalas' Venomous Pit" storageid="12102" startvalue="1" endvalue="1">
+		<mission name="Thalas' Treasure" storageid="12102" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Thalas and found a Helmet piece: Gem Holder"/>
 		</mission>
-		<mission name="Dipthrah's Sanctuary" storageid="12103" startvalue="1" endvalue="1">
+		<mission name="Diphtrah's Treasure" storageid="12103" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Dipthrah and found a Helmet piece: Damaged Helmet"/>
 		</mission>
-		<mission name="Mahrdis' Cauldron" storageid="12104" startvalue="1" endvalue="1">
+		<mission name="Mahrdis' Treasure" storageid="12104" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Mahrdis and found a Helmet piece: Helmet Ornament"/>
 		</mission>
 		<mission name="Vashresamun's Treasure" storageid="12105" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You solved the musical riddles of Vashresamun's Tomb and reterived a left horn."/>
 		</mission>
-		<mission name="Morguthis' Arena" storageid="12106" startvalue="1" endvalue="1">
+		<mission name="Morguthis' Treasure" storageid="12106" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Morguthis and found a Helmet piece: Right Horn"/>
 		</mission>
-		<mission name="Rahemos' Hall of Illusions" storageid="12107" startvalue="1" endvalue="1">
+		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Rahemos and found a Helmet piece: Helmet Piece"/>
 		</mission>
 		<mission name="Ankrahmun Library" storageid="12108" startvalue="1" endvalue="1">
