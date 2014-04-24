@@ -46,6 +46,7 @@ function getPlayerCountInArea(toPos, fromPos)
 	else
 		for i = 1,4 do
 			Player(cid[5-i]):teleportTo(new_player_pos[i])
+			Player(cid[5-i]):getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	end
 	return true
