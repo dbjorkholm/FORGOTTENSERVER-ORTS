@@ -136,9 +136,6 @@
 		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Rahemos and found a Helmet piece: Helmet Piece"/>
 		</mission>
-		<mission name="Ankrahmun Library" storageid="12108" startvalue="1" endvalue="1">
-			<missionstate id="1" description="Now you got all the helmet pieces. To craft the helmet of the ancients enter the deep tomb of Ankrahmun Library."/>
-		</mission>
 	</quest>
 	<quest name="Barbarian Test Quest" startstorageid="12022" startstoragevalue="1">
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
