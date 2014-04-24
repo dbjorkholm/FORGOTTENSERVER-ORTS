@@ -17315,8 +17315,9 @@
 		<attribute key="weight" value="500" />
 	</item>
 	<item id="9928" article="a" name="leaf legs">
-		<attribute key="weight" value="1200" />
-	</item>
+        <attribute key="slotType" value="legs" />
+        <attribute key="weight" value="1200" />
+    </item>
 	<item id="9929" article="a" name="flower dress">
 		<attribute key="slotType" value="body" />
 		<attribute key="weight" value="1900" />
@@ -17326,8 +17327,9 @@
 		<attribute key="weight" value="90" />
 	</item>
 	<item id="9931" article="a" name="coconut shoes">
-		<attribute key="weight" value="600" />
-	</item>
+        <attribute key="slotType" value="feet" />
+        <attribute key="weight" value="600" />
+    </item>
 	<item id="9932" article="a" name="firewalker boots">
 		<attribute key="description" value="Wearing these boots reduces the damage gotten from fiery ground." />
 		<attribute key="weight" value="950" />
