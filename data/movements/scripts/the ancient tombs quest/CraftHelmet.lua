@@ -10,7 +10,7 @@ function onAddItem(moveitem, tileitem, position)
 			tile:getItemById(2339):remove(1)
 			tile:getItemById(2340):remove(1)
 			tile:getItemById(2341):remove(1)
-			position:sendMagicEffect(CONST_ME_HITBYFIRE)
+			position:sendMagicEffect(CONST_ME_FIREAREA)
 		end
 	end
 	return true

@@ -4,7 +4,7 @@ end
 
 function onStepIn(cid, item, position, lastPosition)
 	doTeleportThing(cid, {x = 32826, y = 32273, z = 12})
-	doSendMagicEffect({x = 32826, y = 32273, z = 12}, CONST_ME_EXPLOSION)
+	doSendMagicEffect({x = 32826, y = 32273, z = 12}, CONST_ME_EXPLOSIONAREA)
 	doCreateItem(1285, 1, {x = lastPosition.x, y = lastPosition.y, z = lastPosition.z})
 	addEvent(removeStone, 10 * 1000, lastPosition)
 	return true
