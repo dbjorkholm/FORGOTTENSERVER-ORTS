@@ -1,11 +1,11 @@
 local thrones = {
-	[2080] = {text = "You have touched Infernatil's throne and absorbed some of his spirit.", animation = CONST_ME_FIRE},
-	[2081] = {text = "You have touched Tafariel's throne and absorbed some of his spirit.'", animation = CONST_ME_DEATH},
-	[2082] = {text = "You have touched Verminor's throne and absorbed some of his spirit.", animation = CONST_ME_POISON},
-	[2083] = {text = "You have touched Apocalypse's throne and absorbed some of his spirit.", animation = CONST_ME_EXPLOSION},
+	[2080] = {text = "You have touched Infernatil's throne and absorbed some of his spirit.", animation = CONST_ME_FIREAREA},
+	[2081] = {text = "You have touched Tafariel's throne and absorbed some of his spirit.'", animation = CONST_ME_MORTAREA},
+	[2082] = {text = "You have touched Verminor's throne and absorbed some of his spirit.", animation = CONST_ME_POISONAREA},
+	[2083] = {text = "You have touched Apocalypse's throne and absorbed some of his spirit.", animation = CONST_ME_EXPLOSIONAREA},
 	[2084] = {text = "You have touched Bazir's throne and absorbed some of his spirit.", animation = CONST_ME_MAGIC_GREEN},
-	[2085] = {text = "You have touched Ashfalor's throne and absorbed some of his spirit.", animation = CONST_ME_FIRE},
-	[2086] = {text = "You have touched Pumin's throne and absorbed some of his spirit.", animation = CONST_ME_DEATH}
+	[2085] = {text = "You have touched Ashfalor's throne and absorbed some of his spirit.", animation = CONST_ME_FIREAREA},
+	[2086] = {text = "You have touched Pumin's throne and absorbed some of his spirit.", animation = CONST_ME_MORTAREA}
 }
 
 function onStepIn(cid, item, position, lastPosition)

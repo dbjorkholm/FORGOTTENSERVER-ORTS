@@ -37,9 +37,9 @@ function onStepIn(cid, item, position, lastPosition)
 			if(tiles[item.actionid].damage > 300) then
 				damage = COMBAT_PHYSICALDAMAGE
 			end
-			doTargetCombatHealth(0, cid, damage, -tiles[item.actionid].damage, -tiles[item.actionid].damage, CONST_ME_FIRE)
+			doTargetCombatHealth(0, cid, damage, -tiles[item.actionid].damage, -tiles[item.actionid].damage, CONST_ME_FIREATTACK)
 		else
-			doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -300, -300, CONST_ME_FIRE)
+			doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -300, -300, CONST_ME_HITBYFIRE)
 		end
 	end
 	return true
