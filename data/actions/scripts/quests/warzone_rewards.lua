@@ -16,8 +16,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 	
-	local backpack = player:addItem(targetItem[2], 1)
-	local container = Container(backpack:getUniqueId())
+	local container = player:addItem(targetItem[2])
 	for i = 1, #targetItem[3] do
 		container:addItem(targetItem[3][i][1], targetItem[3][i][2])
 	end
