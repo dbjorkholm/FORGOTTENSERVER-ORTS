@@ -5,7 +5,14 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)            npcHandler:onCreatureAppear(cid)            end
 function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)            end
 function onCreatureSay(cid, type, msg)    npcHandler:onCreatureSay(cid, type, msg)    end
-function onThink()                        npcHandler:onThink()    end
+function onThink() 
+    local config = {delay = 20, frequency = 25, message = "Have a drink in Meriana's only tavern!"} 
+    if (os.time() - config["delay"]) >= config["frequency"] then
+        config["delay"] = os.time()
+        Npc():say(config["message"], TALKTYPE_SAY)
+    end
+    npcHandler:onThink()    
+end
 
 function PirateSecond(cid, message, keywords, parameters, node)
     if(not npcHandler:isFocused(cid)) then
