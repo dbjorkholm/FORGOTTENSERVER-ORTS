@@ -41,6 +41,7 @@ function creatureSayCallback(cid, type, msg)
 			talkState[talkUser] = 0
 			if(getPlayerStorageValue(cid, 205) < 1) then
 				setPlayerStorageValue(cid, 205, 1)
+				Player(cid):setStorageValue(12111, Player(cid):getStorageValue(12111) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
 				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
 			end
 		end
