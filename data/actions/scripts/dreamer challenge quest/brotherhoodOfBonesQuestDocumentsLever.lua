@@ -14,12 +14,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		local tile = Tile(targetItem[1])
 		if tile then
 			local thing = tile:getItemById(2145)
-			if thing:isItem() then
+			if thing and thing:isItem() then
 				Item(item.uid):transform(1946)
 				targetItem[1]:sendMagicEffect(CONST_ME_TELEPORT)
 				Game.createItem(targetItem[2], 1, targetItem[1])
 				thing:remove()
-				addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing:isItem() then thing:transform(1945) end end end, 4 * 1000, toPosition)
+				addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing and thing:isItem() then thing:transform(1945) end end end, 4 * 1000, toPosition)
 			end
 		end
 	end
