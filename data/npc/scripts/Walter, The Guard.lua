@@ -35,12 +35,13 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You can't tell by a person's appearance who is a pickpocket and who isn't. You simply can't close the city gates for everyone.", cid)
 			talkState[talkUser] = 3
 		end
-	elseif(msgcontains(msg, "gods would allow")) then
+	elseif(msgcontains(msg, "gods allow")) then
 		if(talkState[talkUser] == 3) then
 			npcHandler:say("If the gods had created the world a paradise, no one had to steal at all.", cid)
 			talkState[talkUser] = 0
 			if(getPlayerStorageValue(cid, 201) < 1) then
 				setPlayerStorageValue(cid, 201, 1)
+				Player(cid):setStorageValue(12111, Player(cid):getStorageValue(12111) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
 				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
 			end
 		end

@@ -248,6 +248,7 @@
 	<monster name="The Noxious Spawn" file="Bosses/the noxious spawn.xml"/>
 	<monster name="The Abomination" file="Bosses/the abomination.xml"/>
 	<monster name="The Count" file="Bosses/the count.xml"/>
+	<monster name="The Weakened Count" file="Bosses/the weakened count.xml"/>
 	<monster name="The Evil Eye" file="Bosses/the evil eye.xml"/>
 	<monster name="The Frog Prince" file="Bosses/the frog prince.xml"/>
 	<monster name="The Handmaiden" file="Bosses/the handmaiden.xml"/>
