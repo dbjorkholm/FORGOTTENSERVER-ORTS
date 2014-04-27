@@ -24,7 +24,7 @@ function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if(msgcontains(msg, "stampor") or msgcontains(msg, "mount")) then
-		if(if not player:hasMount(11) then) then
+		if not player:hasMount(11) then
 			if(player:getItemCount(13299) >= 50) and (player:getItemCount(13301) >= 30) and (player:getItemCount(13300) >= 100) then
 				npcHandler:say("You did bring all the items I requqested, cuild. Good. Shall I travel to the spirit realm and try finding a stampor compasion for you?", player)
 				talkState[talkUser] = 1
@@ -39,7 +39,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "yes")) then
 		if(talkState[talkUser] == 1) then	
 			npcHandler:say({"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...","Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...","Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...","So, since me are done here... I need to prepare another ritual, so please let me work, cuild."}, player, 0, 1, 4000)
-			doPlayerAddMount(cid, 11)
+			player:addMount(11)
 			player:setStorageValue(1005, 1)
 			player:removeItem(13299,50)
 			player:removeItem(13301,30)
