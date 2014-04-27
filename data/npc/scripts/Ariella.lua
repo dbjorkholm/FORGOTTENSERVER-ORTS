@@ -21,14 +21,14 @@ function PirateSecond(cid, message, keywords, parameters, node)
     end
 	
 	local p = Player(cid) 
-	if(p:getStorageValue(22034) ~= -1) then
+	if(p:getStorageValue(22034) == -1) then
 		if(p:getItemCount(6101) >= 1 and p:getItemCount(6102) >= 1 and p:getItemCount(6100) >= 1 and p:getItemCount(6099) >= 1) then
 			if(p:removeItem(6101, 1) and p:removeItem(6102, 1) and p:removeItem(6100, 1) and p:removeItem(6099, 1)) then
 				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)             
 				p:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 				p:setStorageValue(22034, 1)
 				local outfit = p:getSex() == 0 and 155 or 151
-				p:addOutfitAddon(addon, 2)
+				p:addOutfitAddon(outfit, 2)
 				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)
 			end
 		else
