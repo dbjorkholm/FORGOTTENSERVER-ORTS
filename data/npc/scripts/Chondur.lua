@@ -39,11 +39,11 @@ function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "yes")) then
 		if(talkState[talkUser] == 1) then	
 			npcHandler:say({"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...","Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...","Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...","So, since me are done here... I need to prepare another ritual, so please let me work, cuild."}, player, 0, 1, 4000)
-			player:addMount(11)
-			player:setStorageValue(1005, 1)
 			player:removeItem(13299,50)
 			player:removeItem(13301,30)
 			player:removeItem(13300,100)
+			player:addMount(11)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 			talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "no") then
