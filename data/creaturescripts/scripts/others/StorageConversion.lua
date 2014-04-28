@@ -9,7 +9,6 @@ function onLogin(cid)
 end
 
 function RashidConversion(cid)
-
 local list = {
 			[1] = {101, 1},
 			[2] = {101, 2},
@@ -38,16 +37,17 @@ local list = {
 			
 			[20] = {107, 1}
 }
+	local player = Player(cid)
 	local Old = 85
-	local OldValue = getPlayerStorageValue(cid, 85)
+	local OldValue = player:getStorageValue(85)
 	
-	if(OldValue > 0 and getPlayerStorageValue(cid, 107) < 0) then	
+	if(OldValue > 0 and player:getStorageValue(107) < 0) then	
 		for i = 1, OldValue do
-			setPlayerStorageValue(cid, list[i][1], list[i][2])
+			player:setStorageValue(list[i][1], list[i][2])
 		end
 	end
 	if(OldValue == 20) then
-		setPlayerStorageValue(cid, Old, -1)
+		player:setStorageValue(Old, -1)
 	end
 	return true
 end
@@ -71,16 +71,17 @@ local list = {
 			[11] = {124, 3},
 			[12] = {124, 4}
 }
+	local player = Player(cid)
 	local Old = 81
-	local OldValue = getPlayerStorageValue(cid, 81)
+	local OldValue = player:getStorageValue(81)
 	
-	if(OldValue > 0 and getPlayerStorageValue(cid, 124) <= 4) then	
+	if(OldValue > 0 and player:getStorageValue(124) <= 4) then	
 		for i = 1, OldValue do
-			setPlayerStorageValue(cid, list[i][1], list[i][2])
+			player:setStorageValue(list[i][1], list[i][2])
 		end
 	end
 	if(OldValue == 12) then
-		setPlayerStorageValue(cid, Old, -1)
+		player:setStorageValue(Old, -1)
 	end
 	return true
 end
@@ -103,16 +104,17 @@ local list = {
 			[10] = {114, 3},
 			[11] = {114, 4}
 }
+	local player = Player(cid)
 	local Old = 82
-	local OldValue = getPlayerStorageValue(cid, 82)
+	local OldValue = player:getStorageValue( 82)
 	
-	if(OldValue > 0 and getPlayerStorageValue(cid, 114) <= 3) then	
+	if(OldValue > 0 and player:getStorageValue(114) <= 3) then	
 		for i = 1, OldValue do
-			setPlayerStorageValue(cid, list[i][1], list[i][2])
+			player:setStorageValue(list[i][1], list[i][2])
 		end
 	end
 	if(OldValue == 11) then
-		setPlayerStorageValue(cid, Old, -1)
+		player:setStorageValue(Old, -1)
 	end
 	return true
 end

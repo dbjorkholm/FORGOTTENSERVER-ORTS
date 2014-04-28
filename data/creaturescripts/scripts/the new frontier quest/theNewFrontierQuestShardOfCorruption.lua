@@ -1,8 +1,10 @@
 function onKill(cid, target)
-	if(isMonster(target)) then
-		if(string.lower(getCreatureName(target)) == "shard of corruption") then
-			if(getPlayerStorageValue(cid, 1015) == 12) then
-				setPlayerStorageValue(cid, 1015, 13)
+	local monster = Monster(target)
+	local player = Player(cid)
+	if monster then
+		if string.lower(monster:getName()) == "shard of corruption" then
+			if player:getStorageValue(1015) == 12 then
+				player:setStorageValue(1015, 13)
 			end
 		end
 	end

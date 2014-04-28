@@ -14,10 +14,13 @@ local boss = {
 }
 
 function onKill(cid, target)
-	bossTmp = boss[string.lower(getCreatureName(target))]
-	if(bossTmp) then	
-		doSummonCreature(bossTmp.newForm, getCreaturePosition(target))
-		doCreatureSay(cid, bossTmp.text, TALKTYPE_ORANGE_1) 
+	local monster = Monster(target)
+	bossTmp = boss[string.lower(monster:getName())]	
+	if monster then
+		if bossTmp then
+			Game.createMonster(bossTmp.newForm, monster:getPosition())
+			Player(cid):say(bossTmp.text, TALKTYPE_ORANGE_1)
+		end
 	end
 	return true
 end
