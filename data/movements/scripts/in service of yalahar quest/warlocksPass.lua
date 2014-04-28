@@ -7,11 +7,11 @@ function onStepIn(cid, item, position, lastPosition)
 			else
 				doTeleportThing(cid, lastPosition)
 				doCreatureSay(cid, "You may not enter without a sacrifice of a glimmering soil.", TALKTYPE_ORANGE_1)
-				doSendMagicEffect(position, CONST_ME_ENERGY)
+				doSendMagicEffect(position, CONST_ME_ENERGYHIT)
 			end
 		else
 			doTeleportThing(cid, {x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z})	
-			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z}, CONST_ME_ENERGY)
+			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z}, CONST_ME_ENERGYHIT)
 		end
 	elseif(item.actionid == 7814) then
 		if (lastPosition.y == 31080) then
@@ -21,7 +21,7 @@ function onStepIn(cid, item, position, lastPosition)
 			else
 				doTeleportThing(cid, lastPosition)
 				doCreatureSay(cid, "You may not enter without a sacrifice of a energy soil.", TALKTYPE_ORANGE_1)
-				doSendMagicEffect(position, CONST_ME_ENERGY)
+				doSendMagicEffect(position, CONST_ME_ENERGYHIT)
 			end
 		elseif (lastPosition.y == 31023) then --ice island Yakchal room
 			if(getPlayerStorageValue(cid, 12001) >= 40) then
@@ -29,11 +29,11 @@ function onStepIn(cid, item, position, lastPosition)
 			else
 			doCreatureSay(cid, "You may not enter without absolve the ice island quest.", TALKTYPE_ORANGE_1)
 			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(position, CONST_ME_ENERGY)
+			doSendMagicEffect(position, CONST_ME_ENERGYHIT)
 			end
 		else
 			doTeleportThing(cid, {x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z})	
-			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z}, CONST_ME_ENERGY)			
+			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z}, CONST_ME_ENERGYHIT)			
 		end
 	end
 	return true
