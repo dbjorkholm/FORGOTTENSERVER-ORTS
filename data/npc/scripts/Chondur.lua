@@ -44,7 +44,7 @@ function creatureSayCallback(cid, type, msg)
 			player:removeItem(13300,100)
 			player:addMount(11)
 			player:setStorageValue(1005, 1)
-			p:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 			talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "no") then
