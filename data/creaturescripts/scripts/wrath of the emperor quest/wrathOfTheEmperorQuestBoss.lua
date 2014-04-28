@@ -6,10 +6,16 @@ local boss = {
 }
 
 function onKill(cid, target)
-	bossTmp = boss[string.lower(getCreatureName(target))]
-	if(bossTmp) then	
-		setGlobalStorageValue(bossTmp.storage, 0)
-		doTransformItem(getTileItemById(bossTmp.pos, 11753).uid, 12383)
+	local monster = Monster(target)
+	bossTmp = boss[string.lower(monster:getName())]
+	if monster then
+		if bossTmp then
+			Game.setStorageValue(bossTmp.storage, 0)
+			local tile = Tile(Position(bossTmp.pos))
+			if tile:getItemById(11753) then
+				tile:getItemById(11753):transform(12383)
+			end
+		end
 	end
 	return true
 end

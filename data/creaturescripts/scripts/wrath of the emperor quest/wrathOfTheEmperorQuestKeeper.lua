@@ -1,6 +1,9 @@
 function onKill(cid, target)
-	if(string.lower(getCreatureName(target)) == "the keeper") then	
-		setGlobalStorageValue(8026, 0)
+	local monster = Monster(target)
+	if monster then
+		if string.lower(monster:getName()) == "the keeper" then
+			Game.setStorageValue(8026, 0)
+		end
 	end
 	return true
 end
