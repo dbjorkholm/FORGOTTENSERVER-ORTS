@@ -121,6 +121,30 @@
 			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
+	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
+		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Hairycles wants for you to infiltrate the Dworc Caves and steal some Whisper Moss which is said to be a cure. Find the Dworc Caves anywhere in Trapwood, the southern part of Tiquanda."/>
+			<missionstate id="2" description="You found the Whisper Moss! Bring it to Hairycles."/>
+			<missionstate id="3" description="You brought Hairycles the Whisper Moss. Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 2: The Cure" storageid="12122" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Hairycles now needs Cough Syrup that humans use. He sends you to a local healer in Port hope to ask him for cough syrup."/>
+			<missionstate id="2" description="You now have to find the druid Ustan to ask him about the cough syrup, you will find him in a tavern in port hope."/>
+			<missionstate id="3" description="Ustan fear said I will have to buy Cough Syrup in the druids guild in carlin."/>
+			<missionstate id="4" description="You bought the Cough Syrup from Padreia, bring it to Hairycles."/>
+			<missionstate id="5" description="You brought Hairycles the Cough Syrup. Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 3: Lizard Parchment" storageid="12123" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 4: Parchment Decyphering" storageid="12123" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1">
 			<missionstate id="1" description="You defeated the Pharaoh Omruc and found a Helmet piece: Helmet Adornment"/>

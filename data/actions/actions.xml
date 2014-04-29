@@ -28,6 +28,9 @@
 	<action uniqueid="3401" script="The-outlaw-quest/powerswitch.lua" />
 	<action uniqueid="3402" script="The-outlaw-quest/powerburn.lua" />
 
+	<!--- The Ape City Quest -->
+	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
+	
 	<!--- The Ancient Tombs Quest -->
 	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
 	<action actionid="12107" script="the ancient tombs quest/OasisTombLeverDoor.lua" />
