@@ -1,47 +1,33 @@
 local combat = {}
 
 for i = 40, 170 do
-combat[i] = createCombatObject()
-setCombatParam(combat[i], COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
-setCombatParam(combat[i], COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
-setCombatParam(combat[i], COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH)
+	for j = 1, 3 do
+		local index = ((i - 40) * 3) + j
+		combat[index] = Combat()
+		combat[index]:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
+		combat[index]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
+		combat[index]:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH)
 
-local condition = createConditionObject(CONDITION_CURSED)
-setConditionParam(condition, CONDITION_PARAM_DELAYED, 1)
+		local condition = Condition(CONDITION_CURSED)
+		condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 
-local z = math.random(5,7)
-local p = 1.2
-
-if z == 5 then
-addDamageCondition(condition, 1, 4000, -i)
-addDamageCondition(condition, 1, 4000, -(i*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p))
+		local damage = i
+		condition:addDamage(1, 4000, -damage)
+		for k = 1, 4 do
+			damage = damage * 1.2
+			condition:addDamage(1, 4000, -damage)
+		end
+		if j > 1 then
+			damage = damage * 1.2
+			condition:addDamage(1, 4000, -damage)
+			if j > 2 then
+				condition:addDamage(1, 4000, -(damage * 1.2))
+			end
+		end
+		combat[index]:setCondition(condition)
+	end
 end
 
-if z == 6 then
-addDamageCondition(condition, 1, 4000, -i)
-addDamageCondition(condition, 1, 4000, -(i*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p))
-end
-
-if z == 7 then
-addDamageCondition(condition, 1, 4000, -i)
-addDamageCondition(condition, 1, 4000, -(i*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p))
-addDamageCondition(condition, 1, 4000, -((i*p*p*p)))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p*p))
-end
-
-setCombatCondition(combat[i], condition)
-end
-
-function onCastSpell(cid, var)
-	return doCombat(cid, combat[math.random(40,170)], var)
+function onCastSpell(creature, var)
+	return combat[math.random(#combat)]:execute(creature, var)
 end
