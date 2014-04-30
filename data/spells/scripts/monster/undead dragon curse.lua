@@ -1,46 +1,38 @@
 local combat = {}
 
 for i = 30, 50 do
-combat[i] = createCombatObject()
-setCombatParam(combat[i], COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
-setCombatParam(combat[i], COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
+	combat[i] = Combat()
+	combat[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
+	combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
+	combat[i]:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH)
 
-local condition = createConditionObject(CONDITION_CURSED)
-setConditionParam(condition, CONDITION_PARAM_DELAYED, 1)
+	local condition = Condition(CONDITION_CURSED)
+	condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 
-local p = 1.2
+	local damage = i
+	condition:addDamage(1, 4000, -damage)
+	for j = 1, 9 do
+		damage = damage * 1.2
+		condition:addDamage(1, 4000, -damage)
+	end
 
-addDamageCondition(condition, 1, 4000, -i)
-addDamageCondition(condition, 1, 4000, -(i*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p*p*p*p))
-addDamageCondition(condition, 1, 4000, -(i*p*p*p*p*p*p*p*p*p))
-
-
-local arr1 = {
-{0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-{0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
-{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
-{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
-{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-{0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0}
-}
-
-local area = createCombatArea(arr1)
-setCombatArea(combat[i], area)
-setCombatCondition(combat[i], condition)
+	local area = createCombatArea({
+		{0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+		{0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+		{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+		{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+		{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0}
+	})
+	combat[i]:setArea(area)
+	combat[i]:setCondition(condition)
 end
 
-function onCastSpell(cid, var)
-	return doCombat(cid, combat[math.random(30,50)], var)
+function onCastSpell(creature, var)
+	return combat[math.random(30, 50)]:execute(creature, var)
 end
