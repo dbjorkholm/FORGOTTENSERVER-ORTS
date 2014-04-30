@@ -22,7 +22,7 @@ local config = {
         [13508] =       {NAME = 'Slug',                                 ID = 14,        TYPE = TYPE_MONSTER,    CHANCE = 40,    FAIL_MSG = { {1, "The slug has run away."}, {3, "The drug had no effect."} }, SUCCESS_MSG = "You have tamed the slug."},
         [13939] =       {NAME = 'War Horse',                    ID = 23,        TYPE = TYPE_MONSTER,    CHANCE = 15,    FAIL_MSG = { {1, "The horse runs away."}, {2, "The horse ate the oats."} }, SUCCESS_MSG = "You have tamed the horse."},
         [15545] =       {NAME = 'Manta Ray',                    ID = 28,        TYPE = TYPE_MONSTER,    CHANCE = 30,    FAIL_MSG = { {1, "The manta ray fled."}, {3, "The manta ray is trying to escape."} }, SUCCESS_MSG = "You have tamed the manta ray."},
-        [15546] =       {NAME = 'Ladybug',                      ID = 27,        TYPE = TYPE_MONSTER,    CHANCE = 30,    FAIL_MSG = { {1, "The ladybug got scared and ran away."}, {3, "The ladybug is trying to nibble."} }, SUCCESS_MSG = "You tame a ladybug."},
+        [15546] =       {NAME = 'Lady Bug',                      ID = 27,        TYPE = TYPE_MONSTER,    CHANCE = 30,    FAIL_MSG = { {1, "The ladybug got scared and ran away."}, {3, "The ladybug is trying to nibble."} }, SUCCESS_MSG = "You tame a ladybug."},
         [20138] =       {NAME = 'Water Buffalo',                ID = 35,        TYPE = TYPE_MONSTER,    CHANCE = 30,    FAIL_MSG = { {1, "The water buffalo got scared and ran away."}, {3, "The water buffalo is trying to nibble."} }, SUCCESS_MSG = "You tamed a water buffalo."}
 }
 
