@@ -20,6 +20,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			local itemType = thing and thing:getType():isMovable()
 			if thing:isItem() and thing:getType():isMovable() then
 				return thing:moveTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1})
+			elseif thing:isCreature() and thing:isPlayer() then
+                		return thing:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1})
 			end
 		end
 		return player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
