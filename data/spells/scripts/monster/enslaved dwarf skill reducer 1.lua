@@ -1,18 +1,14 @@
-local combat = {}
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
 
-for i = 13, 50 do
-combat[i] = createCombatObject()
-setCombatParam(combat[i], COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_RED)
+local condition = Condition(CONDITION_ATTRIBUTES)
+condition:setParameter(CONDITION_PARAM_TICKS, 6000)
+condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, 45)
 
-local condition = createConditionObject(CONDITION_ATTRIBUTES)
-setConditionParam(condition, CONDITION_PARAM_TICKS, 6000)
-setConditionParam(condition, CONDITION_PARAM_SKILL_SHIELDPERCENT, i)
+local area = createCombatArea(AREA_CROSS1X1)
+combat:setArea(area)
+combat:setCondition(condition)
 
-local area = createCombatArea(AREA_CIRCLE2X2)
-setCombatArea(combat[i], area)
-setCombatCondition(combat[i], condition)
-end
-
-function onCastSpell(cid, var)
-	return doCombat(cid, combat[math.random(13,50)], var)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end
