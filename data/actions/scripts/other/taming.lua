@@ -29,98 +29,100 @@ local config = {
 local function doFailAction(cid, mount, pos, item, itemEx)
         local action, effect = mount.FAIL_MSG[math.random(1, table.maxn(mount.FAIL_MSG))], CONST_ME_POFF
         if(action[1] == ACTION_RUN) then
-                doRemoveCreature(itemEx.uid)
+		Creature(itemEx.uid):remove()
         elseif(action[1] == ACTION_BREAK) then
                 effect = CONST_ME_BLOCKHIT
-                doRemoveItem(item.uid, 1)
+		Item(item.uid):remove(1)
         elseif(action[1] == ACTION_ALL) then
-                doRemoveCreature(itemEx.uid)
-                doRemoveItem(item.uid, 1)
+                Creature(itemEx.uid):remove()
+		Item(item.uid):remove(1)
         end
 
-        doSendMagicEffect(pos, effect)
-        doCreatureSay(cid, action[2], TALKTYPE_ORANGE_1)
+	Position(pos):sendMagicEffect(effect)
+	Player(cid):say(action[2], TALKTYPE_ORANGE_1)
         return action
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
+	local monster = Monster(itemEx.uid)
+	local npc = Npc(itemEx.uid)
         local mount = config[item.itemid]
-        if(mount == nil or getPlayerMount(cid, mount.ID)) then
+        if mount == nil or player:hasMount(mount.ID) then
                 return false
         end
 
         local rand = math.random(1, 100)
-	if isSummon(itemEx.uid) then
-		doCreatureSay(cid, "You cant tame your own summon!", TALKTYPE_ORANGE_1)
-		return true
-	end
         --Monster Mount
-        if(isMonster(itemEx.uid) and mount.TYPE == TYPE_MONSTER) then
-                if(mount.NAME == getCreatureName(itemEx.uid)) then
-                        if(rand > mount.CHANCE) then
+        if monster ~= nil and mount.TYPE == TYPE_MONSTER then
+		if Creature(itemEx.uid):getMaster() then
+			player:say("You cant tame a summon!", TALKTYPE_ORANGE_1)
+			return true
+		end
+                if mount.NAME == monster:getName() then
+                        if rand > mount.CHANCE then
                                 doFailAction(cid, mount, toPosition, item, itemEx)
                                 return true
                         end
 
-                        doPlayerAddMount(cid, mount.ID)
-                        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
+			player:addMount(mount.ID)
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-                        doCreatureSay(cid, mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
-                        doRemoveCreature(itemEx.uid)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			monster:remove()
 
-                        doSendMagicEffect(toPosition, CONST_ME_POFF)
-                        doRemoveItem(item.uid, 1)
+			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			Item(item.uid):remove(1)
                         return true
                 end
         --NPC Mount
-        elseif(isNpc(itemEx.uid) and mount.TYPE == TYPE_NPC) then
-                if(mount.NAME == getCreatureName(itemEx.uid)) then
-                        if(rand > mount.CHANCE) then
+        elseif npc ~= nil and mount.TYPE == TYPE_NPC then
+                if mount.NAME == npc:getName() then
+                        if rand > mount.CHANCE then
                                 doFailAction(cid, mount, toPosition, item, itemEx)
                                 return true
                         end
 
-                        doPlayerAddMount(cid, mount.ID)
-                        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
+			player:addMount(mount.ID)
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-                        doCreatureSay(cid, mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
 
-                        doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
-                        doRemoveItem(item.uid, 1)
+			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			Item(item.uid):remove(1)
                         return true
                 end
         --Action Mount
-        elseif(itemEx.actionid > 0 and mount.TYPE == TYPE_ACTION) then
+        elseif itemEx.actionid > 0 and mount.TYPE == TYPE_ACTION then
                 if(mount.NAME == itemEx.actionid) then
-                        if(rand > mount.CHANCE) then
+                        if rand > mount.CHANCE then
                                 doFailAction(cid, mount, toPosition, item, itemEx)
                                 return true
                         end
+			player:addMount(mount.ID)
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-                        doPlayerAddMount(cid, mount.ID)
-                        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
 
-                        doCreatureSay(cid, mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
-                        doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
-
-                        doRemoveItem(item.uid, 1)
+			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			Item(item.uid):remove(1)
                         return true
                 end
         --Unique Mount
-        elseif(itemEx.uid <= 65535 and mount.TYPE == TYPE_UNIQUE) then
-                if(mount.NAME == itemEx.uid) then
-                        if(rand > mount.CHANCE) then
+        elseif itemEx.uid <= 65535 and mount.TYPE == TYPE_UNIQUE then
+                if mount.NAME == itemEx.uid then
+                        if rand > mount.CHANCE then
                                 doFailAction(cid, mount, toPosition, item, itemEx)
                                 return true
                         end
 
-                        doPlayerAddMount(cid, mount.ID)
-                        doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
+			player:addMount(mount.ID)
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-                        doCreatureSay(cid, mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
-                        doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
 
-                        doRemoveItem(item.uid, 1)
+			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			Item(item.uid):remove(1)
                         return true
                 end
         end
