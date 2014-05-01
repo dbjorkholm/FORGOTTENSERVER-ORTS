@@ -40,6 +40,3 @@ http://pastebin.com/XpTSL8Sf
 Due to that the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dir/data/compat.lua), use ctrl+f and enter the old function then press enter. 
 
 https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua
-
-Also since most scripts on this github page uses if() then insted of if then alot of the users would like it if you use them. 
-And no its not gonna slow your server down etc, it will only make the code look cleaner and easier to read (Atleast that's what I think // WibbenZ)
