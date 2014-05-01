@@ -21,26 +21,26 @@ end
 
 local config = {
     [1] = {
-        --equipment spellbook, wand of vortex, magician's robe, mage hat
-        {{2175, 1}, {2190, 1}, {8819, 1}, {8820, 1}},
+        --equipment spellbook, wand of vortex, magician's robe, mage hat, studded legs, leather boots, scarf
+        {{2175, 1}, {2190, 1}, {8819, 1}, {8820, 1}, {2468, 1}, {2643, 1}, {2661, 1}},
         --container rope, shovel, mana potion
         {{2120, 1}, {2554, 1}, {7620, 1}}
     },
     [2] = {
-        --equipment spellbook, snakebite rod, magician's robe, mage hat
-        {{2175, 1}, {2182, 1}, {8819, 1}, {8820, 1}},
+        --equipment spellbook, snakebite rod, magician's robe, mage hat, studded legs, leather boots scarf
+        {{2175, 1}, {2182, 1}, {8819, 1}, {8820, 1}, {2468, 1}, {2643, 1}, {2661, 1}},
         --container rope, shovel, mana potion
         {{2120, 1}, {2554, 1}, {7620, 1}}
     },
     [3] = {
-        --equipment steel shield, 5 spear, ranger's cloak, ranger legs
-        {{2509, 1}, {2389, 5}, {2660, 1}, {8923, 1}},
+        --equipment steel shield, 5 spear, ranger's cloak, ranger legs scarf, legion helmet
+        {{2509, 1}, {2389, 5}, {2660, 1}, {8923, 1}, {2643, 1}, {2661, 1}, {2480, 1}},
         --container rope, shovel, health potion, bow, 50 arrow
         {{2120, 1}, {2554, 1}, {7618, 1}, {2456, 1}, {2544, 50}}
     },
     [4] = {
-        --equipment steel shield, steel axe, brass armor, soldier helmet, brass legs
-        {{2509, 1}, {8601, 1}, {2465, 1}, {2481, 1}, {2478, 1}},
+        --equipment steel shield, steel axe, brass armor, soldier helmet, brass legs scarf
+        {{2509, 1}, {8601, 1}, {2465, 1}, {2481, 1}, {2478, 1}, {2643, 1}, {2661, 1}},
         --container jagged sword, daramian mace, rope, shovel, health potion
         {{8602, 1}, {2439, 1}, {2120, 1}, {2554, 1}, {7618, 1}}
     }
