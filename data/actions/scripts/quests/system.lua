@@ -1,120 +1,111 @@
 local specialQuests = {
-        [2215] = 2215 --New quest
+	[2215] = 2215 --New quest
 }
 
 local questsExperience = {
-        [100000] = 2215
+	[1296] = 80000,
+	[2215] = 100000,
+	[9170] = 20000,
+	[9050] = 20000
 }
- 
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local storage = specialQuests[item.actionid]
-	if(not storage) then
+	if not storage then
 		storage = item.uid
-		if(storage > 65535) then
+		if storage > 65535 then
 			return false
 		end
 	end
 
-	if(item.uid == 1296) then --behemoth quest
-		if (getPlayerStorageValue(cid, 9244) < 1) then
-			doPlayerAddExp(cid, 80000, true, true)
-			setPlayerStorageValue(cid,9244, 1) 
-		end
-	end
- 
-	if(getPlayerStorageValue(cid, storage) > 0) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The " .. getItemName(item.itemid) .. " is empty.")
+	local player = Player(cid)
+	if player:getStorageValue(storage) > 0 then
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The " .. ItemType(item.itemid):getName() .. " is empty.")
 		return true
 	end
 
-	if(item.actionid == 2215 and getPlayerStorageValue(cid, 2215) < 1) then --anni
-		doPlayerAddExp(cid, 100000, true, true)
-		setPlayerStorageValue(cid,2215, 1) 
-	end
-	if(item.uid == 9170 and getPlayerStorageValue(cid, 9170) < 1) then --banshee
-		doPlayerAddExp(cid, 20000, true, true)
-	end
-	if(item.uid == 9050 or item.uniqueid == 9051 or item.uniqueid == 9052 or item.uniqueid == 9053) then --dream challenge q
-		if (getPlayerStorageValue(cid, 9050) < 1 or getPlayerStorageValue(cid, 9051) < 1 or getPlayerStorageValue(cid, 9052) < 1 or getPlayerStorageValue(cid, 9053) < 1) then
-			doPlayerAddExp(cid, 20000, true, true)
-		end
-	end
- 
+	local targetItem = Item(item.uid)
 	local items = {}
-	local reward = 0
- 
-	local size = isContainer(item.uid) and getContainerSize(item.uid) or 0
-	if(size == 0) then
-		reward = doCopyItem(item, false)
+	local reward = nil
+
+	local size = targetItem:isContainer() and Container(item.uid):getSize() or 0
+	if size == 0 then
+		reward = targetItem:clone()
 	else
-		for i = 0, size do
-			local tmp = getContainerItem(item.uid, i)
-			if(tmp.itemid > 0) then
-				table.insert(items, tmp)
-			end
+		local container = Container(item.uid)
+		for i = 0, container:getSize() - 1 do
+			table.insert(items, container:getItem(i):clone())
 		end
 	end
- 
-	size = table.maxn(items)
-	if(size == 1) then
-		reward = doCopyItem(items[1], true)
+
+	size = #items
+	if size == 1 then
+		reward = items[1]:clone()
 	end
- 
+
 	local result = ""
-	if(reward ~= 0) then
-		local ret = getItemDescriptions(reward.itemid)
-		if(reward.type > 1 and isItemRune(reward.itemid)) then
-			result = reward.type .. " charges " .. ret.name
-		elseif(reward.type > 1 and isItemStackable(reward.itemid)) then
-			result = reward.type .. " " .. ret.plural
+	local weight = 0
+	if reward then
+		local ret = ItemType(reward:getId())
+		if ret:isRune() then
+			result = ret:getArticle() .. " " ..  ret:getName() .. " (" .. reward:getSubType() .. " charges)"
+		elseif ret:isStackable() and reward:getCount() > 1 then
+			result = reward:getCount() .. " " .. ret:getPluralName()
 		else
-			result = ret.article .. " " .. ret.name
+			result = ret:getArticle() .. " " .. ret:getName()
 		end
+		weight = weight + ret:getWeight(reward:getCount())
 	else
-		if(size > 20) then
-			reward = doCopyItem(item, false)
-		elseif(size > 8) then
-			reward = getThing(doCreateItemEx(1988, 1))
+		if size > 20 then
+			reward = Container(item.itemid, {})
+		elseif size > 8 then
+			reward = Container(1988, {})
 		else
-			reward = getThing(doCreateItemEx(1987, 1))
+			reward = Container(1987, {})
 		end
- 
+
 		for i = 1, size do
-			local tmp = doCopyItem(items[i], true)
-			if(doAddContainerItemEx(reward.uid, tmp.uid) ~= RETURNVALUE_NOERROR) then
-				print("[Warning] QuestSystem:", "Could not add quest reward")
+		local tmp = items[i]
+			if reward:addItemEx(tmp) ~= RETURNVALUE_NOERROR then
+				print("[Warning] QuestSystem:", "Could not add quest reward to container")
 			else
 				local ret = ", "
-				if(i == 2) then
+				if i == size then
 					ret = " and "
-				elseif(i == 1) then
+				elseif i == 1 then
 					ret = ""
 				end
- 
+				
 				result = result .. ret
-				ret = getItemDescriptions(tmp.itemid)
-				if(tmp.type > 1 and isItemRune(tmp.itemid)) then
-					result = result .. tmp.type .. " charges " .. ret.name
-				elseif(tmp.type > 1 and isItemStackable(tmp.itemid)) then
-					result = result .. tmp.type .. " " .. ret.plural
+				
+				local ret = ItemType(tmp:getId())
+				if ret:isRune() then
+					result = result .. ret:getArticle() .. " " .. ret:getName() .. " (" .. tmp:getSubType() .. " charges)"
+				elseif ret:isStackable() and tmp:getCount() > 1 then
+					result = result .. tmp:getCount() .. " " .. ret:getPluralName()
 				else
-					result = result .. ret.article .. " " .. ret.name
+					result = result .. ret:getArticle() .. " " .. ret:getName()
 				end
+				weight = weight + ret:getWeight(tmp:getCount())
 			end
 		end
+		weight = weight + ItemType(reward:getId()):getWeight()
 	end
- 
-	if(doPlayerAddItemEx(cid, reward.uid, false) ~= RETURNVALUE_NOERROR) then
-		if getPlayerFreeCap(cid) < getItemWeightByUID(reward.uid) then
-			result = "You have found " .. result .. " weighing " .. string.format("%.2f", getItemWeightByUID(reward.uid)) .. " oz. You have no capacity."
+	
+	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
+		if player:getFreeCapacity() < weight then
+			player:sendCancelMessage("You have found " .. result .. " weighing " .. string.format("%.2f", weight) .. " oz. You have no capacity.")
 		else
-			result = "You have found " .. result .. ", but you have no room to take it."
+			player:sendCancelMessage("You have found " .. result .. ", but you have no room to take it.")
 		end
-	else
-		result = "You have found " .. result .. "."
-		setPlayerStorageValue(cid, storage, 1)
+		return true
 	end
- 
-	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, result)
+
+	if questsExperience[storage] ~= nil then
+		player:addExperience(questsExperience[storage], true)
+	end
+
+	player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found " .. result .. ".")
+	player:setStorageValue(storage, 1)
 	return true
 end
