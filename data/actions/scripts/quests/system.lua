@@ -27,15 +27,24 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	if(item.actionid == 2215 and getPlayerStorageValue(cid, 2215) < 1) then --anni
-		doPlayerAddExp(cid, 100000, true, true)
+	if(item.actionid == 2215 
+		if (getPlayerStorageValue(cid, 2215) < 1) then --anni
+	 		doPlayerAddExp(cid, 100000, true, true)
+	 		setPlayerStorageValue(cid,2215, 1) 
+		end
 	end
-	if(item.uid == 9170 and getPlayerStorageValue(cid, 9170) < 1) then --banshee
-		doPlayerAddExp(cid, 20000, true, true)
+	if(item.uid == 9170 
+		if getPlayerStorageValue(cid, 9170) < 1) then --banshee
+			doPlayerAddExp(cid, 20000, true, true)
+			setPlayerStorageValue(cid,9170, 1) 
+		end
 	end
 	if(item.uid == 9050 or item.uniqueid == 9051 or item.uniqueid == 9052 or item.uniqueid == 9053) then --dream challenge q
 		if (getPlayerStorageValue(cid, 9050) < 1 or getPlayerStorageValue(cid, 9051) < 1 or getPlayerStorageValue(cid, 9052) < 1 or getPlayerStorageValue(cid, 9053) < 1) then
-			doPlayerAddExp(cid, 20000, true, true)
+				if getPlayerStorageValue(cid, 3145) < 1) then --dream challenge
+					doPlayerAddExp(cid, 20000, true, true)
+					setPlayerStorageValue(cid,3145, 1)
+				end
 		end
 	end
  
