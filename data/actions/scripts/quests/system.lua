@@ -18,7 +18,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 1296) then --behemoth quest
 		if (getPlayerStorageValue(cid, 9244) < 1) then
 			doPlayerAddExp(cid, 80000, true, true)
-			setPlayerStorageValue(cid,9244, 1) 
+			setPlayerStorageValue(cid,9244, 1)
 		end
 	end
  
