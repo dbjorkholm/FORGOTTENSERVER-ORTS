@@ -29,6 +29,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if(item.actionid == 2215 and getPlayerStorageValue(cid, 2215) < 1) then --anni
 		doPlayerAddExp(cid, 100000, true, true)
+		setPlayerStorageValue(cid,2215, 1) 
 	end
 	if(item.uid == 9170 and getPlayerStorageValue(cid, 9170) < 1) then --banshee
 		doPlayerAddExp(cid, 20000, true, true)
