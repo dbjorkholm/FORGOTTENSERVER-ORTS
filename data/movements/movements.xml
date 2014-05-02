@@ -20,7 +20,10 @@
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
 	<movevent event="StepIn" actionid="5555" script="others/sorcererthais.lua"/>
 	<movevent event="StepIn" fromaid="9710" toaid="9716" script="others/furygates.lua"/>
-		
+	
+	<!--- The Ape City Quest -->
+	<movevent event="StepIn" actionid="12124" script="the ape city/Mission4ParchmentDecyphering.lua" />
+	
 	<!--- Ankrahmun Tomb Mystic Fires -->
 	<movevent event="StepIn" fromuid="9033" touid="9048" script="others/tombcoalbasin.lua"/>
 
@@ -97,7 +100,7 @@
 	<!--<movevent event="StepIn" uniqueid="" script="formorgar mines hoist/formorgarMinesHoist.lua"/>-->
 	
 	<!-- Ice Islands Quest -->
-	<movevent event="StepIn" fromuid="3059" touid="3061" script="ice islands quest/iceIslandsQuestBody.lua"/>
+	<movevent event="StepIn" uniqueid="12031" script="ice islands quest/iceIslandsQuestHelheim.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
 	<movevent event="StepIn" fromuid="3103" touid="3106" script="in service of yalahar quest/demonTeleport.lua"/>
