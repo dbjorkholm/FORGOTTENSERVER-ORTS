@@ -16,37 +16,40 @@ local config = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(item.actionid) > os.time() then
-		player:say("You are too afraid to destroy this object", TALKTYPE_ORANGE_1)
-		return true
-	end
-
-	player:setStorageValue(item.actionid, os.time() + config["time"])
-
-	local rand = math.random(100)
-	if rand > config["chance"] then
-		player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
-		return true
-	end
-
-	Item(item.uid):transform(config["brokenJarId"])
-
-	for i = 1, #config["jarPositions"] do
-		local tile = Tile(config["jarPositions"][i])
-		if tile then
-			local thing = tile:getItemById(config["brokenJarId"])
-			if thing and thing:isItem() then
-				broken = 1
-			else
-				broken = 0
-				break
+	if itemEx.itemid == 13500 then
+		if player:getStorageValue(item.actionid) > os.time() then
+			player:say("You are too afraid to destroy this object", TALKTYPE_ORANGE_1)
+			return true
+		end
+	
+		player:setStorageValue(item.actionid, os.time() + config["time"])
+	
+		local rand = math.random(100)
+		if rand > config["chance"] then
+			player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
+			return true
+		end
+	
+		Item(item.uid):transform(config["brokenJarId"])
+	
+		for i = 1, #config["jarPositions"] do
+			local tile = Tile(config["jarPositions"][i])
+			if tile then
+				local thing = tile:getItemById(config["brokenJarId"])
+				if thing and thing:isItem() then
+					broken = 1
+				else
+					broken = 0
+					break
+				end
 			end
 		end
+	
+		if broken > 0 then
+			Game.createMonster(config["bossName"], config["bossPosition"])
+		end
+	else
+		player:say("This jar is already broken!", TALKTYPE_ORANGE_1)
 	end
-
-	if broken > 0 then
-		Game.createMonster(config["bossName"], config["bossPosition"])
-	end
-
 	return true
 end

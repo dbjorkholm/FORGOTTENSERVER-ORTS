@@ -5,23 +5,25 @@ Last Used Uid = ?
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
-Default Start Outfits Quest:	12010
-in service of yalahar storage:	12011-12021
+Default Start Outfits Quest:		12010
+in service of yalahar storage:		12011-12021
 barbarian test quest:			12022-12024
 ice islands quest storage:		12025-12036
 Norseman Outfits Quest:			12037
-hunter outfit quest storage:	12050-12056
+hunter outfit quest storage:		12050-12056
 Knight Outfits storage:			12060
 mage Outfits (wand):			12061
-citizen Outfits (Feather Hat):	12062
+citizen Outfits (Feather Hat):		12062
 citizen Outfits (Backpack):		12063
-mage Outfits Quest(Fluid Belt):	12064
+mage Outfits Quest(Fluid Belt):		12064
 the ancient tombs storage:		12100-12109
 inquisition storage:			12110-12117
 The Ape City storage:			12120-12130
 
-Lugri necromancer task storage: 50000/50001
-The Pirate Outfits (Sabre): 50002
+Lugri necromancer task storage: 	50000/50001
+The Pirate Outfits (Sabre): 		50002
+horestisjars (Aid=storage)		50006-50010
 
 ---/////////////////////Aid/Uid/////////////////////----
 The Ape City Aid/Uid:			12120-12130???
+horestisjars				50006-50010
