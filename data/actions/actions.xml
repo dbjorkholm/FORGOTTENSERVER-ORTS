@@ -30,6 +30,7 @@
 
 	<!--- The Ape City Quest -->
 	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
+	<action actionid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
 	
 	<!--- The Ancient Tombs Quest -->
 	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
@@ -276,7 +277,6 @@
 	<action fromid="7243" toid="7244" script="ice islands quest/iceIslandsQuestAnthill.lua"/>
 	<action itemid="7289" script="ice islands quest/iceIslandsQuestCharm.lua"/>
 	<action itemid="7286" script="ice islands quest/iceIslandsQuestCure.lua"/>
-	<action uniqueid="3111" script="ice islands quest/iceIslandsQuestHelheim.lua"/>
 	<action fromid="2565" toid="2566" script="ice islands quest/iceIslandsQuestCure.lua"/>
 	<action uniqueid="7813" script="ice islands quest/iceIslandsQuestMinesDoor.lua"/>
 	<action uniqueid="3112" script="ice islands quest/iceIslandsQuestMinesSkeleton.lua"/>

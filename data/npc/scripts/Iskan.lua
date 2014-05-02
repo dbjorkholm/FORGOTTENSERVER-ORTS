@@ -41,6 +41,9 @@ function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(12001, 3)
 				player:setStorageValue(12025, 3) -- Questlog The Ice Islands Quest, Befriending the Musher
 				talkState[talkUser] = 0
+			else 
+			npcHandler:say("I have now no mission for you.", player)
+			talkState[talkUser] = 0
 			end
 		else
 			npcHandler:say("Sorry but I only give missions to those who are considered a true Barbarian. ", player)

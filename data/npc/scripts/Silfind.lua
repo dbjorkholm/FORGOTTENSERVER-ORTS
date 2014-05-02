@@ -74,6 +74,9 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12001) == 19 then
 			npcHandler:say("Do you have the green dragon scale I requested?", player)
 			talkState[talkUser] = 9
+		else 
+		npcHandler:say("I have now no mission for you.", player)
+		talkState[talkUser] = 0
 		end
 	elseif msgcontains(msg, "jug") then
 		npcHandler:say("Do you want to buy a jug for 1000 gold?", player)
