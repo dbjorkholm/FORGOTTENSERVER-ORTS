@@ -40,6 +40,13 @@ function creatureSayCallback(cid, type, msg)
 	if(msgcontains(msg, 'addon')) then
 		selfSay('I can forge the finest weapons for knights and warriors. They may wear them proudly and visible to everyone.', cid)
 		talkState[talkUser] = 1
+	elseif msgcontains(msg, "firebird") then
+		if player:getStorageValue(50002) == 4 then
+			selfSay("Ahh. So Duncan sent you, eh? You must have done something really impressive. Okay, take this fine sabre from me, mate.", cid)
+			player:setStorageValue(50002, 5)
+			player:addOutfitAddon(151, 1)
+			player:addOutfitAddon(155, 1)
+		end
 	elseif(msgcontains(msg, 'weapons') and talkState[talkUser] == 1) then
 		selfSay('Would you rather be interested in a knight\'s sword or in a warrior\'s sword?', cid)
 		talkState[talkUser] = 2
