@@ -3,7 +3,7 @@ local healOnAdvance = true
 
 function onAdvance(cid, skill, oldLevel, newLevel)
 	local player = Player(cid)
-        if skill == SKILL_LEVEL and oldLevel > newLevel then
+        if skill == 8 and oldLevel > newLevel then
 		player:getPosition():sendMagicEffect(math.random(CONST_ME_FIREWORK_YELLOW, CONST_ME_FIREWORK_BLUE))
 		player:say("LEVEL UP!", TALKTYPE_ORANGE_1)
 		if healOnAdvance then
