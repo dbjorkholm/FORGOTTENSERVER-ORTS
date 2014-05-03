@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="A Ghostly Woman" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="140" head="9" body="85" legs="10" feet="85" addons="1" />
+	<npc name="A Ghostly Woman" script="A Ghostly Woman.lua" walkinterval="2000" floorchange="0">
+  	<health now="100" max="100" />
+  	<look type="140" head="9" body="85" legs="10" feet="85" addons="1" />
+	<parameters>
+        	<parameter key="message_greet" value="I feel you. I hear your thoughts. You are ... alive"/>
+        	<parameter key="message_farewell" value="Alone ... so alone. So cold."/>
+    	</parameters>
 </npc>
