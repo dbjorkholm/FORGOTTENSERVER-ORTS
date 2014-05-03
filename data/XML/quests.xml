@@ -323,6 +323,13 @@
 			<missionstate id="4" description="Bring Lugri the Ring of the Sky!"/>
 			<missionstate id="5" description="You got the Outfit Addon!"/>
 		</mission>
+		<mission name="Pirate Outfit Quest (Sabre)" storageid="50002" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Bring Duncan 100 Eye Patches from pirates!"/>
+			<missionstate id="2" description="Bring Duncan 100 peg legs from pirates!"/>
+			<missionstate id="3" description="Bring Duncan 100 pirate hooks from pirates!"/>
+			<missionstate id="4" description="Go to Morgan and tell him this codeword: 'firebird' to get the outfit addon!"/>
+			<missionstate id="5" description="You got the Outfit Addon!"/>
+		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">
 		<mission name="Ask for Mission" storageid="12011" startvalue="1" endvalue="2">
