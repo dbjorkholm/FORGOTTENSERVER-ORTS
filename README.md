@@ -34,7 +34,7 @@ end
 ```
 **LUA METATABLE LISTS:**
 
-http://pastebin.com/XpTSL8Sf
+http://pastebin.com/UPKLCSsi
 
 **NOTE:**
 Due to that the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dir/data/compat.lua), use ctrl+f and enter the old function then press enter. 
