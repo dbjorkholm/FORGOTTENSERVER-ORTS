@@ -17,7 +17,7 @@ local config = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if itemEx.itemid == 1945 then
 		for i = 1, #config["WallPositions"] do
-			local tile = Tile(config["WallPositions"][i])
+			local tile = config["WallPositions"][i]:getTile()
 			if tile then
 				local thing = tile:getItemById(config["walldown"])
 				if thing and thing:isItem() then
@@ -28,7 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end	
 	elseif itemEx.itemid == 1946 then
 		for i = 1, #config["WallPositions"] do
-			local tile = Tile(config["WallPositions"][i])
+			local tile = config["WallPositions"][i]:getTile()
 			if tile then
 				local thing = tile:getItemById(config["wallup"])
 				if thing and thing:isItem() then
@@ -38,7 +38,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	else
-		doPlayerSendCancel(cid,"Sorry, not possible.")
+		Player(cid):sendCancelMessage("Sorry, not possible.")
 	end
 	return true
 end
