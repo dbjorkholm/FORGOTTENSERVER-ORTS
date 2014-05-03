@@ -33,7 +33,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Item(item.uid):transform(config["brokenJarId"])
 	
 		for i = 1, #config["jarPositions"] do
-			local tile = Tile(config["jarPositions"][i])
+			local tile = config["jarPositions"][i]:getTile()
 			if tile then
 				local thing = tile:getItemById(config["brokenJarId"])
 				if thing and thing:isItem() then

@@ -11,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	
 	if item.itemid == 1945 then
-		local tile = Tile(targetItem[1])
+		local tile = targetItem[1]:getTile()
 		if tile then
 			local thing = tile:getItemById(2145)
 			if thing and thing:isItem() then
