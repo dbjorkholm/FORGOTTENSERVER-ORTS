@@ -9,7 +9,7 @@ function onKill(cid, target)
 	if arena < 1 then return true end
  
 	if isInArray(ARENA[arena].creatures, Monster(target):getName():lower()) then
-		local pillar = Tile(Position(PITS[pit].pillar))
+		local pillar = getTopItem(PITS[pit].pillar)
   		local pos = PITS[pit].pillar
 		local effectpos = { 
 			{x=pos.x-1,y=pos.y,z=pos.z},
@@ -22,7 +22,7 @@ function onKill(cid, target)
 			for i = 1, table.maxn(effectpos) do 
 				Position(effectpos[i]):sendMagicEffect(12)
 		    	end 
-			tile:getItemById(ITEM_STONEPILLAR):remove()		
+			Item(pillar.uid):remove()	
 			local tpaid = Game.createItem(ITEM_TELEPORT, 1, PITS[pit].tp)
 			tpaid:setActionId(25200)
 		else
