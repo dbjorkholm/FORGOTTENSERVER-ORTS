@@ -14,7 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			for _, v in ipairs(altars) do
 				local tmp = getTileItemById(v, 2199).uid
 				if (tmp == 0) then
-					doSummonCreature("The Count", toPosition)
+					Game.createMonster("The Count", toPosition)
 					return true
 				else
 					table.insert(k, tmp)
@@ -23,7 +23,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			for i = 1, #k do
 				doRemoveItem(k[i])
 			end
-			doSummonCreature("The Weakened Count", toPosition)
+			Game.createMonster("The Weakened Count", toPosition)
 			return true
 		end
 	end
