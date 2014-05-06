@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
 	if item.actionid == 12121 then
+	local player = Player(cid)
 		if item.itemid == 3551 then --door
 			if player:getStorageValue (12120) > 0 then
 				player:teleportTo(toPosition, true)

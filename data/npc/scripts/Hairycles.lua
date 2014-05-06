@@ -43,6 +43,21 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ah yes, you read the signs in tomb? Good! May me look into your mind to see what you saw?", cid)
 			npcHandler.topic[cid] = 9
 		elseif player:getStorageValue(12120) == 11 then
+			npcHandler:say({"So much there is to do for Hairycles to prepare charm that will protect all ape people ...",
+							"You can help more. To create charm of life me need mighty token of life! Best is egg of a regenerating beast as a hydra is ...",
+							"Bring me egg of hydra please. You may fight it in lair of Hydra at little lake south east of our lovely city Banuta! You think you can do?"}, cid, 0, 1, 4000)
+			npcHandler.topic[cid] = 10
+		elseif player:getStorageValue(12120) == 12 then
+			npcHandler:say("You bring Hairycles egg of hydra?", cid)
+			npcHandler.topic[cid] = 11
+		elseif player:getStorageValue(12120) == 13 then
+			npcHandler:say({"Last ingredient for charm of life is thing to lure magic. Only thing me know like that is mushroom called witches cap. Me was told it be found in isle called Fibula, where humans live ...",
+							"Hidden under Fibula is a secret dungeon. There you will find witches cap. Are you willing to go there for good ape people?"}, cid, 0, 1, 4000)
+			npcHandler.topic[cid] = 12
+		elseif player:getStorageValue(12120) == 14 then
+			npcHandler:say("You brought Hairycles witches cap from Fibula?", cid)
+			npcHandler.topic[cid] = 13
+		elseif player:getStorageValue(12120) == 15 then
 			npcHandler:say("Quest Work in process", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -109,6 +124,36 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Oh, so clear is all now! Easy it will be to read the signs now! Soon we will know what to do! Thank you again! Ask for {mission} if you feel ready.", cid)
 				player:setStorageValue(12120, 11)
 				player:setStorageValue(12124, 3) -- The Ape City Questlog - Mission 4: Parchment Decyphering
+				npcHandler.topic[cid] = 0	
+			else
+				npcHandler:say("You don't have it...", cid)
+			end
+		elseif npcHandler.topic[cid] == 10 then	
+			npcHandler:say("You brave hairless ape! Get me hydra egg. If you lose egg, you probably have to fight many, many hydras to get another.", cid)
+			player:setStorageValue(12120, 12)
+			player:setStorageValue(12125, 1) -- The Ape City Questlog - Mission 5: Hydra Egg
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 11 then
+			if player:getItemCount(4850) >= 1 then
+				player:removeItem(4850, 1)
+				npcHandler:say("Ah, the egg! Mighty warrior you be! Thank you. Hairycles will put it at safe place immediately.", cid)
+				player:setStorageValue(12120, 13)
+				player:setStorageValue(12125, 3) -- The Ape City Questlog - Mission 5: Hydra Egg
+				npcHandler.topic[cid] = 0	
+			else
+				npcHandler:say("You don't have it...", cid)
+			end
+		elseif npcHandler.topic[cid] == 12 then	
+			npcHandler:say("Long journey it will take, good luck to you.", cid)
+			player:setStorageValue(12120, 14)
+			player:setStorageValue(12126, 1) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 13 then
+			if player:getItemCount(4840) >= 1 then
+				player:removeItem(4840, 1)
+				npcHandler:say("Incredible, you brought a witches cap! Now me can prepare mighty charm of life. Yet still other missions will await you,friend.", cid)
+				player:setStorageValue(12120, 15)
+				player:setStorageValue(12126, 3) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
 				npcHandler.topic[cid] = 0	
 			else
 				npcHandler:say("You don't have it...", cid)
