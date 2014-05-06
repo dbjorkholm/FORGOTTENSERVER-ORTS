@@ -145,6 +145,16 @@
 			<missionstate id="3" description="You reported Hairycles the signs. Ask Hairycles for new mission!."/>
 		</mission>
 		<mission name="Mission 5: Hydra Egg" storageid="12125" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Hairycles needs a Hydra Egg to prepare his charm. Your mission is to bring him one."/>
+			<missionstate id="2" description="You found a Hydraegg! Bring it to Hairycles."/>
+			<missionstate id="3" description="You brought Hairycles a Hydra Egg. Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 6: Witches' Cap Spot" storageid="12126" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Hairycles needs a sample of the Witches' Cap Spot for his Charm of Life. This can only be found in the Fibula Dungeon. Bring it to Hairycles!"/>
+			<missionstate id="2" description="You found a witches cap spot! Bring it to Hairycles."/>
+			<missionstate id="3" description="You brought Hairycles a witches cap spot. Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 7: Destroying Casks With Crowbar" storageid="12127" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>

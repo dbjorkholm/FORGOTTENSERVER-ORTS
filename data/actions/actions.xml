@@ -31,6 +31,8 @@
 	<!--- The Ape City Quest -->
 	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
 	<action actionid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
+	<action actionid="12125" script="the ape city/Mission5HydraEggReward.lua" />
+	<action actionid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
 	
 	<!--- The Ancient Tombs Quest -->
 	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
