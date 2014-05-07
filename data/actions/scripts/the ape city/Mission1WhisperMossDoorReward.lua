@@ -18,7 +18,7 @@ end
 and this is the Mission1WhisperMossReward.lua
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if item.uniqueid == 12121 then
+	if item.uid == 12121 then
 	local player = Player(cid)
 		if item.itemid == 1738 then --chest reward
 			if player:getStorageValue(12121) == 1 then
