@@ -19,14 +19,6 @@
 	
 	<!-- Gamemasters -->
 	<talkaction words="/save" script="save.lua" />
-	
-	<!-- Senior Tutors -->
-	<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
-	<talkaction words="/removetutor" separator=" " script="remove_tutor.lua" />
-	
-	<!-- Tutors -->
-	
-	<!-- other commands -->
 	<talkaction words="/ban" separator=" " script="ban.lua" />
 	<talkaction words="/ipban" separator=" " script="ipban.lua" />
 	<talkaction words="/unban" separator=" " script="unban.lua" />
@@ -46,6 +38,13 @@
 	<talkaction words="/looktype" separator=" " script="looktype.lua" />
 	<talkaction words="/mounts" separator=" " script="allmounts.lua"/>
 	<talkaction words="/addons" separator=" " script="alladdons.lua"/>
+	
+	<!-- Senior Tutors -->
+	<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
+	<talkaction words="/removetutor" separator=" " script="remove_tutor.lua" />
+	
+	<!-- Tutors -->
+	
 
 	<!-- player talkactions -->
 	<talkaction words="!buypremium" script="buyprem.lua"/>
