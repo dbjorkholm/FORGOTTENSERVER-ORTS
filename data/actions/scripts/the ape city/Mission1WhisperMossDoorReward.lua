@@ -1,4 +1,4 @@
-this is the Mission1WhisperMossDoorReward.lua
+--this is the Mission1WhisperMossDoorReward.lua
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.actionid == 12121 then
@@ -15,7 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	return true
 end
 
-and this is the Mission1WhisperMossReward.lua
+-- and this is the Mission1WhisperMossReward.lua
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.uid == 12121 then
@@ -33,7 +33,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	return true
 end
 
-there are the action.xml new lines
+-- there are the action.xml new lines
 
 	<!--- The Ape City Quest -->
 	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
