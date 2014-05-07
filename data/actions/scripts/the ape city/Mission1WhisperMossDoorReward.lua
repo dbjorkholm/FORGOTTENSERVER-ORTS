@@ -32,9 +32,3 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	return true
 end
-
--- there are the action.xml new lines
-
-	<!--- The Ape City Quest -->
-	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
-	<action uniqueid="12121" script="the ape city/Mission1WhisperMossReward.lua" />
