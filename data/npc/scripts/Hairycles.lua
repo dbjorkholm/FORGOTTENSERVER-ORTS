@@ -7,6 +7,34 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
+local function getTable(player)
+local itemsList = {
+		{name="Banana", id=2676, buy=2},
+		}
+local statues = {	
+		{{name="Monkey Statue (No Seeing)", id=5086, buy=65},
+		{name="Monkey Statue (No Hearing)", id=5087, buy=65},
+		{name="Monkey Statue (No Speaking)", id=5088, buy=65}}
+		}
+
+if player:getStorageValue(12120) >= 18 then
+	for i = 1, #statues[1] do
+		table.insert(itemsList, statues[1][i])
+	end
+end
+return itemsList
+end
+
+function greetCallback(cid)
+	local player = Player(cid)
+	if(player:getStorageValue(12120) <= 14) then
+		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello! Did not notice!")
+	elseif(player:getStorageValue(12120) >= 15) then
+		npcHandler:setMessage(MESSAGE_GREET, "Be greeted, friend of the ape people. If you want to trade, just ask for my offers. If you are injured, ask for healing.")
+	end
+	return true
+end
+
 function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
@@ -58,6 +86,17 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You brought Hairycles witches cap from Fibula?", cid)
 			npcHandler.topic[cid] = 13
 		elseif player:getStorageValue(12120) == 15 then
+			npcHandler:say({"Mighty life charm is protecting us now! But my people are still in danger. Danger from within ...",
+							"Some of my people try to mimic lizards to become strong. Like lizards did before, this cult drinks strange fluid that lizardsleft when fled ...",
+							"Under the city still the underground temple of lizards is. There you find casks with red fluid. Take crowbar and destroy three of them to stop this madness. Are you willing to do that?"}, cid, 0, 1, 4000)
+			npcHandler.topic[cid] = 14
+		elseif player:getStorageValue(12120) == 16 then
+			npcHandler:say("Your mission is to take crowbar and destroy three of them casks to stop this madness.", cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(12120) == 17 then
+			npcHandler:say("Quest Work in process", cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(12120) == 18 then
 			npcHandler:say("Quest Work in process", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -158,15 +197,69 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("You don't have it...", cid)
 			end
+		elseif npcHandler.topic[cid] == 14 then	
+			npcHandler:say("Hairycles sure you will make it. Good luck, friend.", cid)
+			player:setStorageValue(12120, 16)
+			player:setStorageValue(12127, 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] > 1 then
 			npcHandler:say("Then no.", cid)
 			npcHandler.topic[cid] = 0
 		end
+	elseif msgcontains(msg, "trade") then
+		if player:getStorageValue(12120) >= 15 then
+			local player = Player(cid)
+			local items = setNewTradeTable(getTable(player))
+			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+				if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
+				end
+				if items[item].buyPrice <= player:getMoney() then
+					if inBackpacks then
+						local container = Game.createItem(1988, 1)
+						local bp = player:addItemEx(container)
+						if(bp ~= 1) then
+							return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+						end
+						for i = 1, amount do
+							container:addItem(items[item].itemId, items[item])
+						end
+					else
+						return 
+						player:addItem(items[item].itemId, amount, false, items[item]) and
+						player:removeMoney(amount * items[item].buyPrice) and
+						player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+					end
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+					player:removeMoney(amount * items[item].buyPrice)
+				else
+					player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
+				end
+				return true
+			end
+				
+			local function onSell(cid, item, subType, amount, ignoreEquipped)
+				if items[item].sellPrice then
+					return
+					player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
+					player:addMoney(items[item].sellPrice * amount) and
+			
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
+				end
+				return true
+			end
+				openShopWindow(cid, getTable(player), onBuy, onSell)
+				
+				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
+			end
+		else
+			npcHandler:say("I only trade with friends of ape...", cid)
+		end
 	return true
-	end
 end
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

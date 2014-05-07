@@ -152,13 +152,21 @@
 		<mission name="Mission 6: Witches' Cap Spot" storageid="12126" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Hairycles needs a sample of the Witches' Cap Spot for his Charm of Life. This can only be found in the Fibula Dungeon. Bring it to Hairycles!"/>
 			<missionstate id="2" description="You found a witches cap spot! Bring it to Hairycles."/>
-			<missionstate id="3" description="You brought Hairycles a witches cap spot. Ask Hairycles for new mission!"/>
+			<missionstate id="3" description="You are now a friend of the apes and can purchase Bananas for 2gp. Ask Hairycles for new mission!"/>
 		</mission>
-		<mission name="Mission 7: Destroying Casks With Crowbar" storageid="12127" startvalue="1" endvalue="3">
+		<mission name="Mission 7: Destroying Casks With Crowbar" storageid="12127" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Hairycles wants you to destroy the Casks below the city left by the Lizard ancestors so that the Apes cannot drink from them."/>
+			<missionstate id="2" description="You destroyed 1 of 3 Casks in Banuta"/>
+			<missionstate id="3" description="You destroyed 2 of 3 Casks in Banuta"/>
+			<missionstate id="4" description="You destroyed 3 of 3 Casks in Banuta! Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 8: Looking for a hair of holy ape" storageid="12128" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
 		</mission>
+
+		
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1">
@@ -348,10 +356,10 @@
 		</mission>
 		<mission name="Mission 01: Something Rotten" storageid="12012" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Palimuth asked you to help with some sewer malfunctions. You will need a Crowbar, there are 4 places where you need to go marked with an X on your map."/>
-			<missionstate id="2" description="You cleaned 1 pipe from the garbage."/>
-			<missionstate id="3" description="You cleaned 2 pipes from the garbage."/>
-			<missionstate id="4" description="You cleaned 3 pipes from the garbage."/>
-			<missionstate id="5" description="You cleaned 4 pipes from the garbage."/>
+			<missionstate id="2" description="You cleaned 1 pipe of 4 from the garbage."/>
+			<missionstate id="3" description="You cleaned 2 pipes of 4 from the garbage."/>
+			<missionstate id="4" description="You cleaned 3 pipes of 4 from the garbage."/>
+			<missionstate id="5" description="You cleaned 4 pipes of 4 from the garbage. Go back to Palimuth and report your mission"/>
 			<missionstate id="6" description="You cleaned all pipes from the garbage! Go back to Palimuth and ask for mission."/>
 		</mission>
 		<mission name="Mission 02: Watching the Watchmen" storageid="12013" startvalue="1" endvalue="8">

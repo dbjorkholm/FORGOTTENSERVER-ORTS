@@ -17,7 +17,7 @@ function creatureSayCallback(cid, type, msg)
 	if player:getLevel() < 30 then --calculate prize for blessing
 		blessprize = 2000*5*1.1
 	elseif player:getLevel() >= 30 and player:getLevel() <= 120 then
-		blessprize = 200*(player:getLevel()-20)*1.1
+		blessprize = 200*(player:getLevel()-20)*5*1.1
 	elseif player:getLevel() > 120 then
 		blessprize = 20000*5*1.1
 	end
