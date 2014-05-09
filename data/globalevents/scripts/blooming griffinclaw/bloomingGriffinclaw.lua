@@ -16,7 +16,7 @@ local function bloom()
 	end
 end
 
-function onSay(cid, words, param)
+function onStartup()
 	bloom()
-	return false
+	return true
 end
