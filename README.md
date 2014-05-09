@@ -40,3 +40,6 @@ http://pastebin.com/UPKLCSsi
 Due to that the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dir/data/compat.lua), use ctrl+f and enter the old function then press enter. 
 
 https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua
+
+Actual map (with marked missing areas):
+![minimap_floor](https://cloud.githubusercontent.com/assets/6708725/2932230/7519de00-d7ad-11e3-8cad-fe610b7912f9.png)
