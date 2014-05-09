@@ -22,8 +22,8 @@ local function CheckRentMount(cid)
 end
 
 function onThink(interval)
-    for _, cid in ipairs(getOnlinePlayers()) do
-        CheckRentMount(cid)
+    for _, player in ipairs(Game.getPlayers()) do
+        CheckRentMount(player:getId())
     end
 
     return true

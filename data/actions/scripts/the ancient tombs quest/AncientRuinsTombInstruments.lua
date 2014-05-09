@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
+	local player = Player(cid)
 	if item.itemid == 2367 and player:getStorageValue(12109) < 1 then
 		player:setStorageValue(12109, 1)
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_BLUE)

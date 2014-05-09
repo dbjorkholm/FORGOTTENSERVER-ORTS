@@ -15,8 +15,6 @@
 	<talkaction words="/s" separator=" " script="place_npc.lua" />
 	<talkaction words="/summon" separator=" " script="place_summon.lua" />
 	
-	<!-- Community Managers -->
-	
 	<!-- Gamemasters -->
 	<talkaction words="/save" script="save.lua" />
 	<talkaction words="/ban" separator=" " script="ban.lua" />
@@ -43,9 +41,6 @@
 	<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
 	<talkaction words="/removetutor" separator=" " script="remove_tutor.lua" />
 	
-	<!-- Tutors -->
-	
-
 	<!-- player talkactions -->
 	<talkaction words="!buypremium" script="buyprem.lua"/>
 	<talkaction words="!buyhouse" script="buyhouse.lua"/>
