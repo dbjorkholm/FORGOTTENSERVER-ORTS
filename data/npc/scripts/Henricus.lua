@@ -11,7 +11,6 @@ function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)
 	
 	if player:getLevel() < 30 then --calculate prize for blessing
@@ -159,7 +158,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 7) then
 			if player:hasBlessing(1) or player:hasBlessing(2) or player:hasBlessing(3) or player:hasBlessing(4) or player:hasBlessing(5) then
-				npcHandler:say("You have been blessed!", cid)
+				npcHandler:say("You already have been blessed!", cid)
 			else
 				if player:removeMoney(blessprize) then
 					npcHandler:say("You have been blessed by all of five gods!, " .. player:getName() .. ".", cid)

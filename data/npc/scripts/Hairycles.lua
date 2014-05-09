@@ -94,9 +94,22 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Your mission is to take crowbar and destroy three of them casks to stop this madness.", cid)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(12120) == 17 then
-			npcHandler:say("Quest Work in process", cid)
+			npcHandler:say("You do please Hairycles again, friend. Me hope madness will not spread further now. Perhaps you are ready for other {mission}.", cid)
+			player:setStorageValue(12120, 18)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(12120) == 18 then
+			npcHandler:say({"Now that the false cult was stopped, we need to strengthen the spirit of my people. We need a symbol of our faith that apepeople can see and touch ...",
+							"Since you have proven a friend of the ape people I will grant you permission to enter the forbidden land ...",
+							"To enter the forbidden land in the north-east of the jungle, look for a cave in the mountains east of it. There you will find theblind prophet ...",
+							"Tell him Hairycles you sent and he will grant you entrance ...",
+							"Forbidden land is home of Bong. Holy giant ape big as mountain. Don't annoy him in any way but look for a hair of holy ape ...",
+							"You might find at places he has been, should be easy to see them since Bong is big ...",
+							"Return a hair of the holy ape to me. Will you do this for Hairycles?"}, cid, 0, 1, 3000)
+			npcHandler.topic[cid] = 15
+		elseif player:getStorageValue(12120) == 19 then
+			npcHandler:say("You brought hair of holy ape?", cid)
+			npcHandler.topic[cid] = 16
+		else
 			npcHandler:say("Quest Work in process", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -202,6 +215,21 @@ function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(12120, 16)
 			player:setStorageValue(12127, 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 15 then	
+			npcHandler:say("Hairycles proud of you. Go and find holy hair. Good luck, friend.", cid)
+			player:setStorageValue(12120, 19)
+			player:setStorageValue(12128, 1) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 16 then
+			if player:getItemCount(4843) >= 1 then
+				player:removeItem(4843, 1)
+				npcHandler:say("Incredible! You got a hair of holy Bong! This will raise the spirit of my people. You are truly a friend. But one last mission awaits you.", cid)
+				player:setStorageValue(12120, 20)
+				player:setStorageValue(12128, 3) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape
+				npcHandler.topic[cid] = 0	
+			else
+				npcHandler:say("You don't have it...", cid)
+			end
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] > 1 then
@@ -253,10 +281,10 @@ function creatureSayCallback(cid, type, msg)
 				openShopWindow(cid, getTable(player), onBuy, onSell)
 				
 				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
-			end
 		else
 			npcHandler:say("I only trade with friends of ape...", cid)
 		end
+	end
 	return true
 end
 

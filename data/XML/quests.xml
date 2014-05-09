@@ -161,12 +161,15 @@
 			<missionstate id="4" description="You destroyed 3 of 3 Casks in Banuta! Ask Hairycles for new mission!"/>
 		</mission>
 		<mission name="Mission 8: Looking for a hair of holy ape" storageid="12128" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Hairycles aims to strengthen the spirit of the apes. He wants for you to find evidence of the holy ape figure Bong existing within the Forbidden Lands. Find and ask the Blind Prophet in North-east of Tiquanda for transport."/>
+			<missionstate id="2" description="You found the Giant Ape's Hair! Bring it to Hairycles."/>
+			<missionstate id="3" description="You brought Hairycles the Giant Ape's Hair! You have now still access to the Forbidden lands. Ask Hairycles for new mission!"/>
+		</mission>
+		<mission name="Mission 9: The Deepest Catacombs" storageid="12129" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
 		</mission>
-
-		
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1">
