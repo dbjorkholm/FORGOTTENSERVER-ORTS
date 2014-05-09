@@ -1,6 +1,6 @@
 local function bloom()
 	if math.random(7) == 1 then
-		local tile = Position():getTile({x = 32024, y = 32830, z = 4})
+		local tile = Position({x = 32024, y = 32830, z = 4}):getTile()
 		if tile then
 			local thing = tile:getItemById(5687)
 			if thing and thing:isItem() then
