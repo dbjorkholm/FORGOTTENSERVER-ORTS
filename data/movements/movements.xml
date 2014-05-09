@@ -94,7 +94,7 @@
 	<movevent event="StepIn" uniqueid="9234" script="dreamer challenge quest/dreamerChallengeQuestDeathRingTeleport.lua"/>
 	
 	<!-- Explorer Society Quest -->
-	<!--<movevent event="StepIn" uniqueid="" script="explorer society quest/explorerSocietyQuestCalassa.lua"/>-->
+	<movevent event="StepIn" actionid="2070" script="explorer society quest/explorerSocietyQuestCalassa.lua"/>
 	
 	<!-- Formorgar Mines Hoist -->
 	<!--<movevent event="StepIn" uniqueid="" script="formorgar mines hoist/formorgarMinesHoist.lua"/>-->
