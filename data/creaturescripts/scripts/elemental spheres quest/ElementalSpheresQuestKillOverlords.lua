@@ -15,7 +15,6 @@ function onKill(cid, target)
 		if (t.storage ~= nil) then
 			if (getPlayerStorageValue(cid, t.storage) < 1) then
 				setPlayerStorageValue(cid, t.storage, 1)
-				print("1")
 			end
 		end
 		doCreatureSay(cid, "You slained " .. getCreatureName(target) .. ".", TALKTYPE_ORANGE_1)

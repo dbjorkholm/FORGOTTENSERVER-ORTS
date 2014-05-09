@@ -10,12 +10,12 @@ local config = {
 
 local day = true --Should it spawn as real tibia?
 function onStartup()
-	if(day) then
-		doCreateNpc("Rashid", config[os.date("%A")])
+	if day then
+		Game.createNpc("Rashid", config[os.date("%A")])
 	else
 		for _, i in pairs(config) do
-			doCreateNpc("Rashid", i)
+			Game.createNpc("Rashid", i)
 		end
 	end
-return true
+	return true
 end

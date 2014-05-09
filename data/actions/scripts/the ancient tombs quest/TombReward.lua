@@ -9,18 +9,17 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
 	local targetItem = config[itemEx.uid]
 	if not targetItem then
 		return true
 	end
 		
+	local player = Player(cid)
 	if player:removeItem(targetItem[3], 1) then
 		player:setStorageValue(targetItem[1], 1) 
 		player:setStorageValue(12100, 1) -- default start of The Ancient Tombs Quest
 		player:addItem(targetItem[2], 1)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You've found a %s.", targetItem[4]))
-		local player = Player(cid)
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't have the pass item to get this helmet piece.")
 	end

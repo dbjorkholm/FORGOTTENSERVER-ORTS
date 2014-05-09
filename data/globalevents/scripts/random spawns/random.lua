@@ -33,7 +33,7 @@ local mobs = {
 function onThink(interval, lastExecution, thinkInterval)
 	spawn = mobs[math.random(22)]
 	if(math.random(1000) <= 50) then
-		doSummonCreature(spawn.mob, {x=spawn.x, y=spawn.y, z=spawn.z})
+		Game.createMonster(spawn.mob, {x=spawn.x, y=spawn.y, z=spawn.z})
 	end
-return true
+	return true
 end
