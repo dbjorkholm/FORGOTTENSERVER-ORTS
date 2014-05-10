@@ -12,6 +12,12 @@ https://github.com/edubart/otclient
 Also you can use the forum to discuss and report:
 http://otland.net/threads/best-released-real-map-10-31-based-1-0.204514/
 
+If you edit the map, report your status here:
+https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/issues/447
+with [- [X] Working now on map] when you edit the map
+with [- [ ] Working now on map] you finish your pull request
+Make only one post and edit it every time you start working on the map.
+
 **If you want to contribute by sending pull request, here is some tips.
 Try to use metatables in your script. Ex.**
 ```
