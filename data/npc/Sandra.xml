@@ -21,6 +21,7 @@
 	strong health potion,7588,100;
 	strong mana potion,7589,80;
 	ultimate health potion,8473,310;
+	vial of blood,2006,15,2,vial of blood;
 	vial of oil,2006,12,11,vial of oil;
 	vial of water,2006,8,1,vial of water" />
 	<parameter key="shop_sellable" value="
