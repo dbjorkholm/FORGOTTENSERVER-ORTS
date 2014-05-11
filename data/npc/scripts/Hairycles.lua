@@ -17,7 +17,7 @@ local statues = {
 		{name="Monkey Statue (No Speaking)", id=5088, buy=65}}
 		}
 
-if player:getStorageValue(12120) >= 18 then
+if player:getStorageValue(12120) >= 23 then
 	for i = 1, #statues[1] do
 		table.insert(itemsList, statues[1][i])
 	end
@@ -109,9 +109,28 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(12120) == 19 then
 			npcHandler:say("You brought hair of holy ape?", cid)
 			npcHandler.topic[cid] = 16
-		else
-			npcHandler:say("Quest Work in process", cid)
+		elseif player:getStorageValue(12120) == 20 then
+			npcHandler:say({"You have proven yourself a friend, me will grant you permission to enter the deepest catacombs under Banuta which we havesealed in the past ...",
+							"Me still can sense the evil presence there. We did not dare to go deeper and fight creatures of evil there ...",
+							"You may go there, fight the evil and find the monument of the serpent god and destroy it with hammer me give to you ...",
+							"Only then my people will be safe. Please tell Hairycles, will you go there?"}, cid, 0, 1, 4000)
+			npcHandler.topic[cid] = 17
+		elseif player:getStorageValue(12120) == 21 then
+			npcHandler:say("Your mission is to destroy the Cobra Statue in deep Banuta.", cid)
 			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(12120) == 22 then
+			npcHandler:say({"Finally my people are safe! You have done incredible good for ape people and one day even me brethren will recognise that ...",
+							"I wish I could speak for all when me call you true friend but my people need time to get accustomed to change ...",
+							"Let us hope one day whole Banuta will greet you as a friend. Perhaps you want to check me offers for special friends... or {shamanic powers}."}, cid, 0, 1, 4000)
+			npcHandler.topic[cid] = 18
+		else
+			npcHandler:say("I have now no mission for you!", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "shamanic powers") then
+		if npcHandler.topic[cid] == 18 then	
+			npcHandler:say("Me truly proud of you, friend. You learn many about plants, charms and ape people. Me want grant you shamanic power now. You ready?", cid)
+			npcHandler.topic[cid] = 19
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then	
@@ -230,6 +249,20 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("You don't have it...", cid)
 			end
+		elseif npcHandler.topic[cid] == 17 then	
+			player:addItem(4846, 1)
+			npcHandler:say("Hairycles sure you will make it. Just use hammer on all that looks like snake or lizard. Tell Hairycles if you succeed with mission.", cid)
+			player:setStorageValue(12120, 21)
+			player:setStorageValue(12129, 1) -- The Ape City Questlog - Mission 9: The Deepest Catacombs
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 19 then	
+			player:addOutfit(158, 0)
+			player:addOutfit(154, 0)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+			npcHandler:say("Friend of the ape people! Take my gift and become me apprentice! Here is shaman clothing for you!", cid)
+			player:setStorageValue(12120, 23)
+			player:setStorageValue(12129, 3) -- The Ape City Questlog - Mission 9: The Deepest Catacombs
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] > 1 then

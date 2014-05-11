@@ -166,9 +166,9 @@
 			<missionstate id="3" description="You brought Hairycles the Giant Ape's Hair! You have now still access to the Forbidden lands. Ask Hairycles for new mission!"/>
 		</mission>
 		<mission name="Mission 9: The Deepest Catacombs" storageid="12129" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Hairycles wants you to go deep under Banuta and find the Lizards' serpent god monument and destroy it. On accepting this mission you will receive a Snake Destroyer (you will need this) and gain entry to Deeper Banuta."/>
+			<missionstate id="2" description="You destroyed the Statue of the Snake God. Return to Hairycles and report your mission."/>
+			<missionstate id="3" description="You Complete the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
