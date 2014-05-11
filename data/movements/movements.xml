@@ -23,6 +23,8 @@
 	
 	<!--- The Ape City Quest -->
 	<movevent event="StepIn" actionid="12124" script="the ape city/Mission4ParchmentDecyphering.lua" />
+	<movevent event="StepIn" uniqueid="12129" script="the ape city/Mission9TheDeepestCatacombsteleport1.lua" />
+	<movevent event="StepIn" uniqueid="12130" script="the ape city/Mission9TheDeepestCatacombsteleport2.lua" />
 	
 	<!--- Ankrahmun Tomb Mystic Fires -->
 	<movevent event="StepIn" fromuid="9033" touid="9048" script="others/tombcoalbasin.lua"/>

@@ -8021,7 +8021,10 @@
 	</item>
 	<item id="4860" name="wooden trash" />
 	<item id="4861" article="a" name="cobra statue" />
-	<item id="4862" name="metal trash" />
+	<item id="4862" name="destroyed cobra statue" >
+		<attribute key="decayTo" value="4861" />
+		<attribute key="duration" value="30" />
+	</item>
 	<item id="4863" article="an" name="ectoplasm container">
 		<attribute key="description" value="It is empty." />
 		<attribute key="weight" value="600" />
@@ -8128,12 +8131,12 @@
 		<attribute key="duration" value="60" />
 	</item>
 	<item id="4995" name="sharp icicles" article="some" />
-	<item id="4996" name="canopic jar">
+	<item id="4996" name="Large Amphora">
 		<attribute key="description" value="You feel an eerie presence." />
 	</item>
-	<item id="4997" name="wooden trash">
+	<item id="4997" name="destroyed Amphora">
 		<attribute key="decayTo" value="4996" />
-		<attribute key="duration" value="120" />
+		<attribute key="duration" value="1800" />
 	</item>
 	<item fromid="4998" toid="5001" article="a" name="hawser" />
 	<item id="5002" article="a" name="ship railing" />
