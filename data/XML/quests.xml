@@ -111,14 +111,14 @@
 			<missionstate id="2" description="You destroyed the shadow nexus! Get back to Thais and report your mission to Henricus."/>
 			<missionstate id="3" description="Now ask to Henricus for a outfit. He will give you the 2nd addon of the Demon Hunter Outfits."/>
 			<missionstate id="4" description="You got the the second addon of Demon Hunter Outfit! Go now to the reward room and choose one wisely!"/>
-			<missionstate id="5" description="You have Complete The Inquisition Quest! You can now buy the Blessing of the Inquisition!"/>
+			<missionstate id="5" description="You have completed The Inquisition Quest! You can now buy the Blessing of the Inquisition!"/>
 		</mission>
 	</quest>
 	<quest name="Sam's Old Backpack" startstorageid="330" startstoragevalue="1">
 		<mission name="Dwarven Armor Quest" storageid="330" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Sam sends you to see Kroox in Kazordoon to get a special dwarven armor. Just tell him, his old buddy Sam is sending you."/>
 			<missionstate id="2" description="You have the permission to retrive a dwarven armor from the mines. The problem is, some giant spiders made the tunnels where the storage is their new home."/>
-			<missionstate id="3" description="You have Complete Dwarven Armor Quest!"/>
+			<missionstate id="3" description="You have completed Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
@@ -168,7 +168,7 @@
 		<mission name="Mission 9: The Deepest Catacombs" storageid="12129" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Hairycles wants you to go deep under Banuta and find the Lizards' serpent god monument and destroy it. On accepting this mission you will receive a Snake Destroyer (you will need this) and gain entry to Deeper Banuta."/>
 			<missionstate id="2" description="You destroyed the Statue of the Snake God. Return to Hairycles and report your mission."/>
-			<missionstate id="3" description="You Complete the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
+			<missionstate id="3" description="You completed the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
@@ -198,17 +198,17 @@
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Talk to Sven about mead and give him a honeycomb. For each honeycomb you will be allowed 20 sips."/>
 			<missionstate id="2" description="Now drink from the bucket until you drink 10 sips in a row without passing out"/>
-			<missionstate id="3" description="You have Complete this Test! Talk to Sven about the mead."/>
+			<missionstate id="3" description="You have completed this Test! Talk to Sven about the mead."/>
 		</mission>
 		<mission name="Barbarian Test 2: The Bear Hugging" storageid="12023" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Sven gave you a Mead Horn. Fill it with mead from the bucket behind Sven (brown contents) and then proceed to the sleeping bear. The bear is inside a small ice cave in the north. Use the full mead horn on the bear so it becomes unconscious, then use the bear to hug it."/>
 			<missionstate id="2" description="You hugging the bear! Go tell Sven that you hugged the bear!"/>
-			<missionstate id="3" description="You have Complete this Test!"/>
+			<missionstate id="3" description="You have completed this Test!"/>
 		</mission>
 		<mission name="Barbarian Test 3: The Mammoth Pushing" storageid="12024" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Go to the north-west of Svargrond and find the Mammoth. Drink your three mugs of mead, stand in front of the Mammoth and push it. Just use it..."/>
 			<missionstate id="2" description="You pushed the Mammoth! Go tell Sven that you pushed the Mammoth!"/>
-			<missionstate id="3" description="You have Complete this Test! You can now be a citizen of Svargrond!"/>
+			<missionstate id="3" description="You have completed this Test! You can now be a citizen of Svargrond!"/>
 		</mission>
 	</quest>
 	<quest name="The Ice Islands Quest" startstorageid="12025" startstoragevalue="1">
@@ -430,7 +430,7 @@
 			<missionstate id="2" description="The entrance to their inner sanctum has been opened for you. Be prepared for a HARD battle! Better gather some friends to assist you."/>
 			<missionstate id="3" description="Report back to whichever principal you have chosen to help and you will receive Yalaharian Outfits."/>
 			<missionstate id="4" description="You got the access to the reward room. Choose carefully which reward you pick as you can only take one item."/>
-			<missionstate id="5" description="You have Complete the Quest!"/>
+			<missionstate id="5" description="You have completed the Quest!"/>
 		</mission>
 	</quest>	
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		

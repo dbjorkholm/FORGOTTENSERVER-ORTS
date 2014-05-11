@@ -8131,10 +8131,10 @@
 		<attribute key="duration" value="60" />
 	</item>
 	<item id="4995" name="sharp icicles" article="some" />
-	<item id="4996" name="Large Amphora">
+	<item id="4996" name="large amphora">
 		<attribute key="description" value="You feel an eerie presence." />
 	</item>
-	<item id="4997" name="destroyed Amphora">
+	<item id="4997" name="destroyed amphora">
 		<attribute key="decayTo" value="4996" />
 		<attribute key="duration" value="1800" />
 	</item>
