@@ -975,4 +975,18 @@
 	<house name="Theater Avenue 5b" houseid="2389" entryx="32359" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
 	<house name="Theater Avenue 5c" houseid="2390" entryx="32359" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
 	<house name="Theater Avenue 5d" houseid="2391" entryx="32361" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
+	<house name="Outlaw Camp 1" houseid="2392" entryx="32644" entryy="32204" entryz="7" rent="1660" townid="3" size="41" />
+	<house name="Outlaw Camp 2" houseid="2393" entryx="32650" entryy="32212" entryz="7" rent="280" townid="3" size="4" />
+	<house name="Outlaw Camp 3" houseid="2394" entryx="32648" entryy="32212" entryz="6" rent="740" townid="3" size="11" />
+	<house name="Outlaw Camp 4" houseid="2395" entryx="32657" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 5" houseid="2396" entryx="32660" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 6" houseid="2397" entryx="32663" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 7" houseid="2398" entryx="32647" entryy="32212" entryz="8" rent="780" townid="3" size="12" />
+	<house name="Outlaw Camp 8" houseid="2399" entryx="32650" entryy="32212" entryz="8" rent="280" townid="3" size="4" />
+	<house name="Outlaw Camp 9" houseid="2400" entryx="32657" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 10" houseid="2401" entryx="32660" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 11" houseid="2402" entryx="32663" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 12 (Shop)" houseid="2404" entryx="32661" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
+	<house name="Outlaw Camp 13 (Shop)" houseid="2405" entryx="32666" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
+	<house name="Outlaw Camp 14 (Shop)" houseid="2406" entryx="32665" entryy="32198" entryz="8" rent="640" townid="3" size="15" />
 </houses>
