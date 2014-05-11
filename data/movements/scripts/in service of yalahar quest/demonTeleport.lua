@@ -22,12 +22,12 @@ function onStepIn(cid, item, position, lastPosition)
 			doSendMagicEffect(teleport[item.uid][1], CONST_ME_TELEPORT)
 		else
 			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(lastPosition, CONST_ME_ENERGY)
+			doSendMagicEffect(lastPosition, CONST_ME_ENERGYHIT)
 			doCreatureSay(cid, "You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
 		end
 	else
 		doTeleportThing(cid, teleport[item.uid][1])
-		doSendMagicEffect(teleport[item.uid][1], CONST_ME_ENERGY)
+		doSendMagicEffect(teleport[item.uid][1], CONST_ME_ENERGYHIT)
 	end
 	return true
 end
