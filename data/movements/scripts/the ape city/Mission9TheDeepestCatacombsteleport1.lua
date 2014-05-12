@@ -7,7 +7,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 32838, y = 32532, z = 9})
+			player:teleportTo(lastPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have access to this area.")
 		end

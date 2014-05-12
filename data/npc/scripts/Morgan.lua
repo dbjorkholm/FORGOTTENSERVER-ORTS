@@ -27,7 +27,7 @@ newaddon = 'Ah, right! The knight sword! Here you go.'
 newaddon1 = 'Ah, right! The warrior sword! Here you go.'
 noitems = 'You do not have all the required items.'
 noitems2 = 'You do not have all the required items or you do not have the outfit, which by the way, is a requirement for this addon.'
-already = 'Alright! As a matter of fact, I have one in store. Here you go!'
+already = 'You already have this outfit!'
 
 function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
@@ -38,7 +38,7 @@ function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	
 	if(msgcontains(msg, 'addon')) then
-		selfSay('I can forge the finest weapons for knights and warriors. They may wear them proudly and visible to everyone.', cid)
+		selfSay('I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.', cid)
 		talkState[talkUser] = 1
 	elseif msgcontains(msg, "firebird") then
 		if player:getStorageValue(50002) == 4 then
@@ -48,58 +48,51 @@ function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(155, 1)
 		end
 	elseif(msgcontains(msg, 'weapons') and talkState[talkUser] == 1) then
-		selfSay('Would you rather be interested in a knight\'s sword or in a warrior\'s sword?', cid)
+		selfSay('Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?', cid)
 		talkState[talkUser] = 2
-	elseif(msgcontains(msg, 'warrior\'s sword') or msgcontains(msg, 'warriors sword') and talkState[talkUser] == 2 and getPlayerStorageValue(cid, swarrior) <= 0) then
-        if player:getItemCount(5887) >= 1 and player:getItemCount(5880) >= 100 then
-			selfSay('Great! Simply bring me 100 iron ore and one royal steel and I will happily forge it for you.', cid)
+	elseif (msgcontains(msg, 'warrior\'s sword') or msgcontains(msg, 'warriors sword')) then
+		if talkState[talkUser] == 2 and getPlayerStorageValue(cid, swarrior) < 1 then 
+			selfSay('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', cid)
 			talkState[talkUser] = 3
-		else
-			selfSay('You dont have items', cid)
-			talkState[talkUser] = 0
-		end
-	elseif(msgcontains(msg, 'knights sword') or msgcontains(msg, 'knight\'s sword') and talkState[talkUser] == 2 and getPlayerStorageValue(cid, swarrior) <= 0) then
-	    if player:getItemCount(5892) >= 1 and player:getItemCount(5880) >= 100 then
-			selfSay('Great! Simply bring me 100 iron ore and one royal steel and I will happily forge it for you.', cid)
-			talkState[talkUser] = 3
-		else
-			selfSay('You dont have items', cid)
-			talkState[talkUser] = 0
-		end
-	elseif(msgcontains(msg, 'forge') or msgcontains(msg, 'forge weapon') and talkState[talkUser] == 3) then
-		selfSay('What would you like me to forge for you? A knight\'s sword or a warrior\'s sword?', cid)
-		talkState[talkUser] = 4
-	elseif(msgcontains(msg, 'warrior\'s sword') or msgcontains(msg, 'warriors sword') and talkState[talkUser] == 4) then
-		if player:getItemCount(5887) >= 1 and player:getItemCount(5880) >= 100 then
+		elseif talkState[talkUser] == 4  and player:getStorageValue(swarrior) < 1 then
 			if player:removeItem(5887,1) and player:removeItem(5880,100) then
 				selfSay('Alright! As a matter of fact, I have one in store. Here you go!', cid)             
 				player:getPosition():sendMagicEffect(13)
 				player:setStorageValue(swarrior,1) 
 				player:addOutfitAddon(134, 2)
 				player:addOutfitAddon(142, 2)   
+				talkState[talkUser] = 0
 			else
 				selfSay(noitems, cid)
 				talkState[talkUser] = 0
 			end
-		else
+		elseif talkState[talkUser] > 1 then 
 			selfSay(already, cid)
 			talkState[talkUser] = 0
 		end
-	elseif(msgcontains(msg, 'knight\'s sword') or msgcontains(msg, 'knights sword') and talkState[talkUser] == 4) then
-		if player:getItemCount(5892) >= 1 and player:getItemCount(5880) >= 100 then
+	elseif (msgcontains(msg, 'knights sword') or msgcontains(msg, 'knight\'s sword')) then
+		if talkState[talkUser] == 2 and player:getStorageValue(fknight) < 1 then
+			selfSay('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', cid)
+			talkState[talkUser] = 3
+		elseif talkState[talkUser] == 4 and player:getStorageValue(fknight) < 1 then
 			if player:removeItem(5892,1) and player:removeItem(5880,100) then
 				selfSay('Alright! As a matter of fact, I have one in store. Here you go!', cid)             
 				player:getPosition():sendMagicEffect(13)
 				player:setStorageValue(fknight,1)
 				player:addOutfitAddon(131, 1)
 				player:addOutfitAddon(139, 1)
+				talkState[talkUser] = 0
+			else
 				selfSay(noitems, cid)
 				talkState[talkUser] = 0
 			end
-		else
+		elseif talkState[talkUser] > 1 then 
 			selfSay(already, cid)
 			talkState[talkUser] = 0
 		end
+	elseif(msgcontains(msg, 'forge') or msgcontains(msg, 'forge weapon')) then
+		selfSay('What would you like me to forge for you? A {knight\'s sword} or a {warrior\'s sword}?', cid)
+		talkState[talkUser] = 4
 	end
 	
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
