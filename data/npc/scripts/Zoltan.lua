@@ -13,8 +13,8 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "myra") then
 		local player, storage = Player(cid), 50011
 		if player:getStorageValue(storage) == 10 then
-			player:addOutfitAddon(141, 2)
-			player:addOutfitAddon(130, 2)
+			player:addOutfitAddon(138, 2)
+			player:addOutfitAddon(133, 2)
 			player:setStorageValue(storage, 11)
 			npcHandler:say({"Bah, I know. I received some sort of 'nomination' from our outpost in Port Hope. ...", "Usually it takes a little more than that for an award though. However, I honour Myra's word. ..."}, cid)
 		end
