@@ -23,6 +23,7 @@ The Ape City storage:			12120-12130
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
 horestisjars (Aid=storage)		50006-50010
+Second mage/summoner addon (tiara/cloak): 50011
 
 ---/////////////////////Aid/Uid/////////////////////----
 The Ape City Aid/Uid:			12120-12130???
