@@ -19,10 +19,10 @@ function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(storage) < 1 then
 			npcHandler:say("Well... maybe, if you help me a little, I could convince the academy of Edron that you are a valuable help here and deserve an award too. How about it?", cid)
 			npcHandler.topic[cid] = 1
+		elseif player:getStorageValue(storage) >= 1 and player:getStorageValue(storage) < 10 then
+			npcHandler:say("Before I can nominate you for an award, please complete your task.", cid)
 		elseif player:getStorageValue(storage) == 10 then
 			npcHandler:say("Go to the academy in Edron and tell Zoltan that I sent you, player.", cid)
-		else
-			npcHandler:say("Before I can nominate you for an award, please complete your task.", cid)
 		end
 	elseif msgcontains(msg, "bat wings") then
 		if player:getStorageValue(storage) == 1 then
