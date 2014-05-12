@@ -1,0 +1,362 @@
+local config = {
+	-- onw  or  regular, if 'own' then script will check chance from taming_tbl, if 'regular' then script will check chance from regular_mount_tbl
+	OwnChanceOrRegular = "own", -- "own" lub "regular"   <- own to czyta z tablicy taming_tbl szanse, a regular to czyta z regular_mount_tbl badz tbl_szans_gdy_nil gdy w tablicy tamingu nie ma regular mount chance
+	ALLOW_SUMMON_TO_ALL_MOUNTS = false,
+	BLOCK_ALLOW_SUMMON_TO_ALL_MONSTER = false,
+	EFFECT_WHEN_MOUNT_RUN = 1, -- poprawic efekt
+	EFFECT_WHEN_ITEM_BROKE = CONST_ME_BLOCKHIT, 
+	EFFECT_WHEN_MOUNT_ATTACK = 2, -- poprawic efekt
+	EFFECT_WHEN_MOUNT_CATCH = CONST_ME_POFF, 
+	IF_MOUNT_IS_ITEM_REMOVE_ITEM_IF_RUN = false,
+	IF_MOUNT_IS_ITEM_REMOVE_ITEM_IF_CATCH = false,
+	IF_MOUNT_IS_CREATURE_REMOVE_CREATURE_IF_RUN = true,
+	IF_MOUNT_IS_CREATURE_REMOVE_CREATURE_IF_CATCH = true,
+	IF_MOUNT_IS_NPC_REMOVE_CREATURE_IF_RUN = false,
+	IF_MOUNT_IS_NPC_REMOVE_CREATURE_IF_CATCH = false,
+	IF_MOUNT_IS_OUTFIT_REMOVE_CREATURE_IF_RUN = true,
+	IF_MOUNT_IS_OUTFIT_REMOVE_CREATURE_IF_CATCH = true,
+ 
+	IF_MOUNT_IS_OUTFIT_ALLOW_TO_CREATURE_CAN_BE_PLAYER = false,
+ 
+	}
+local regular_mount_tbl = {
+	["regular"] = {succes = 10, broke = 5, run = 50, attack = 35}, --regularne z polskiej wikii // regular chance for mount (from polish wiki)
+	["other"] = {succes = 10, broke = 5, run = 30, attack = 55}, -- nieregularne z polskiej wikii //nonregular chance for mount (from polish wiki)
+	}
+local tbl_szans_gdy_nil = {
+	succes = 10,
+	broke = 5, 
+	run = 50, 
+	attack = 35,
+	}
+local taming_tbl = {
+	[5907] = {MOUNT_NAME = "War Bear", MOUNT_ID = 3, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "bear", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 10, run = 40, attack = 35},
+	TEXT = {succes = "You tamed the wild bear.", broke = "Oh no! The slingshot broke.", run = "The bear ran away.", attack = "The bear is trying to hit you with its claws."}
+		},
+	[13295] = {MOUNT_NAME = "Black Sheep", MOUNT_ID = 4, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "black sheep", ALLOW_SUMMON = false,
+	CHANCE = {succes = 25, broke = 5, run = 30, attack = 40},
+	TEXT = {succes = "You tamed the black sheep.", broke = "Oh no! The reins were torn.", run = "The black sheep ran away.", attack = "The black sheep is trying to run away."},
+		},
+	[13293] = {MOUNT_NAME = "Midnight Panther", MOUNT_ID = 5, REGULAR_MOUNT_CHANCE = "other",
+	TYPE = "MONSTER", TYPE_ID = "midnight panther", ALLOW_SUMMON = false,
+	CHANCE = {succes = 30, broke = 5, run = 15, attack = 50},
+	TEXT = {succes = "You tamed the wild panther.", broke = "The whip broke. ?", run = "The midnight panther ran away.", attack = "The midnight panther is growling at you."},
+		},
+	[13298] = {MOUNT_NAME = "Racing Bird", MOUNT_ID = 2, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "terror bird", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 5, run = 35, attack = 45},
+	TEXT = {succes = "You tamed the bird.", broke = "Oh no, the bird ate the carrot.", run = "The bird ran away.", attack = "The terror bird is pecking you."},
+		},
+	[13247] = {MOUNT_NAME = "Rapid Boar", MOUNT_ID = 10, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "boar", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 5, run = 35, attack = 45},
+	TEXT = {succes = "You tamed the wild boar", broke = "The horn broke. ?", run = "The boar ran away.", attack = "The boar is refusing to obey the hunting horn."},
+		},
+	[13305] = {MOUNT_NAME = "Titanica", MOUNT_ID = 7, REGULAR_MOUNT_CHANCE = "other",
+	TYPE = "MONSTER", TYPE_ID = "crustacea gigantica", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 5, run = 30, attack = 45},
+	TEXT = {succes = "You tamed the gigantic creature.", broke = "Gigantica ate shrimp. ?", run = "The gigantic creature ran away.", attack = "The gigantic creature is trying to pinch you."},
+		},
+	[13291] = {MOUNT_NAME = "Undead Cavebear", MOUNT_ID = 12, REGULAR_MOUNT_CHANCE = "other",
+	TYPE = "MONSTER", TYPE_ID = "undead cavebear", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 5, run = 25, attack = 50},
+	TEXT = {succes = "You tamed the undead cavebear.", broke = "Maxilla broke. ?", run = "The undead cavebear ran away.", attack = "The undead cavebear is growling at you."},
+		},
+	[13307] = {MOUNT_NAME = "Widow Queen", MOUNT_ID = 1, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "wailing widow", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 5, run = 55, attack = 25},
+	TEXT = {succes = "You have tamed the widow.", broke = "The widow has eaten the sweet bait.", run = "The widow ran away.?", attack = "The widow tryed to hit you.?"},
+		},
+	[13292] = {MOUNT_NAME = "Tin Lizzard", MOUNT_ID = 8, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "ITEM", TYPE_ID = 13306, ALLOW_SUMMON = true,
+	CHANCE = {succes = 50, broke = 10, run = 20, attack = 45},
+	TEXT = {succes = "You wind up the tin lizzard", msg_creature_speak = "Krkrkrkrk", broke = "The key broke inside.?", run = "Try again.?", attack = "Try again.?"},
+		},
+	[13294] = {MOUNT_NAME = "Draptor", MOUNT_ID = 6, REGULAR_MOUNT_CHANCE = "other",
+	TYPE = "MONSTER", TYPE_ID = "draptor", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 5, run = 20, attack = 55},
+	TEXT = {succes = "You tamed the wild draptor.", msg_creature_speak = "Screeeeeeeeech", broke = "Harness broke.?", run = "The draptor has fled.?", attack = "The wild draptor is struggling."},
+		},
+	[13536] = {MOUNT_NAME = "Crystal Wolf", MOUNT_ID = 16, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "crystal wolf", ALLOW_SUMMON = false,
+	CHANCE = {succes = 30, broke = 5, run = 30, attack = 35},
+	TEXT = {succes = "The smooth sound of the diapason tamed the crystal wolf.", 
+	broke = "Clashing on the hard crystalline surface of the wolf, the fragile diapason breaks.", 
+	run = "The crystal wolf vanished into thin air.", attack = "The Crystal wolf is startled by the wrong sound of the diapason.",
+	msg_creature_speak_succes = "*kliiiiiiiiiiing* Aooooouuuuu!!",
+	msg_creature_speak_run = "*zwiiiish*",
+	msg_creature_speak_attack = "*klaaaaaang* Rrrrooooaaaarrrgh!"},
+		},
+	[13539] = {MOUNT_NAME = "Kingly Deer", MOUNT_ID = 18, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "white deer", ALLOW_SUMMON = false,
+	CHANCE = {succes = 10, broke = 5, run = 50, attack = 35},
+	TEXT = {succes = "You tamed the white deer.", broke = "Oh no... the enraged deer angrily ripped the fir cone from your hands!", run = "The white deer flees.", attack = "The white deer sniffs and wheezes, trying to withstand the taming.",
+	msg_creature_speak_succes = "*bell*",
+	msg_creature_speak_run = "*sniff*",
+	msg_creature_speak_attack = "*wheeze*"},
+		},
+	[13538] = {MOUNT_NAME = "Tamed Panda", MOUNT_ID = 19, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "panda", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 10, run = 40, attack = 35},
+	TEXT = {succes = "You tamed the panda.", broke = "While you were trying to soothe the panda, it ate all the remaining bamboo behind your back. ", 
+	run = "The panda flees.", attack = "The panda refuses to follow any of your orders. "},
+		},	
+	[13535] = {MOUNT_NAME = "Dromedary", MOUNT_ID = 20, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "dromedary", ALLOW_SUMMON = false,
+	CHANCE = {succes = 15, broke = 10, run = 40, attack = 35},
+	TEXT = {succes = "", broke = "", run = "", attack = ""},
+		},
+	[13498] = {MOUNT_NAME = "King Scorpion", MOUNT_ID = 21, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "sandstone scorpion", ALLOW_SUMMON = false,
+	CHANCE = {succes = 25, broke = 5, run = 40, attack = 30},
+	TEXT = {succes = "You tamed the sandstone scorpion.", broke = "The sandstone scorpion eludes the influence of the scepter.", 
+	run = "The sandstone scorpion flees.", attack = "attack xD"},
+		},
+	[13537] = {MOUNT_NAME = "Donkey", MOUNT_ID = 13, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "OUTFIT", TYPE_ID = 399, ALLOW_SUMMON = true,
+	CHANCE = {succes = 10, broke = 30, run = 60, attack = 0},
+	TEXT = {succes = "Munching a large pile of apple slices tamed the donkey.", broke = "You did not manage to feed the donkey enough apple slices.", run = "The donkey transformation suddenly wears off.", attack = "Donkey attack! xD?"},
+		},
+	[13938] = {MOUNT_NAME = "Uniwheel", MOUNT_ID = 15, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "ITEM", TYPE_ID = 13937, ALLOW_SUMMON = true,
+	CHANCE = {succes = 40, broke = 60, run = 0, attack = 0},
+	TEXT = {succes = "The strange wheel seems to vibrate and slowly starts turning continuously.",
+	broke = "It looks like most of the special oil this can was holding was spilt without any effect.", run = ".", attack = ".",
+	msg_creature_speak_succes = "Vroooomratatatatatatat.",
+	msg_creature_speak_broke = "Splosh!"},
+		},
+	[13508] = {MOUNT_NAME = "Tiger Slug", MOUNT_ID = 14, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "slug", ALLOW_SUMMON = false,
+	CHANCE = {succes = 10, broke = 25, run = 40, attack = 25},
+	TEXT = {succes = "You drugged the slug.", broke = "This slug drug didn't seem to have any effect.", run = "The slug flees.", attack = "The slug slips trough your grasp.",
+	msg_creature_speak_succes = "Sluuuuurp!",
+	msg_creature_speak_run = "Slurp!",
+	msg_creature_speak_attack = "*shlorp*"},
+		},
+	[13939] = {MOUNT_NAME = "War Horse", MOUNT_ID = 17, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "wild horse", ALLOW_SUMMON = false,
+	CHANCE = {succes = 10, broke = 10, run = 50, attack = 30},
+	TEXT = {succes = "The horse eats the sugar oat and accepts you as its new master.", broke = "The wild horse happily munches the sugar oat and runs on.",
+	run = "With its last strength the horse the horse runs to safety.", attack = "Weeeheeeehee."},
+		},
+	[18449] = {MOUNT_NAME = "Dragonling", MOUNT_ID = 31, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "dragonling", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 0, run = 40, attack = 20},
+	TEXT = {succes = "The wild dragonling will accompany you as a friend from now on.", broke = "You Broke It.?",
+	run = "The dragonling fled.", attack = "The dragonling is trying to escape."},
+		},
+	[18447] = {MOUNT_NAME = "Ironblight", MOUNT_ID = 29, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "ironblight", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 20, run = 40, attack = 0},
+	TEXT = {succes = "The ironblight will accompany you as a friend from now on.", broke = "Oh no. The magnet lost his power!",
+	run = "The ironblight managed to run away.", attack = "The dragonling is trying to escape."},
+		},
+	[18448] = {MOUNT_NAME = "Magma Crawler", MOUNT_ID = 30, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "magma crawler", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 20, run = 40, attack = 0},
+	TEXT = {succes = "The magma crawler will accompany you as a friend from now on.", broke = "The magma crawler is smelling the glow wine suspicious.",
+	run = "Argh! The magma crawler pushed you and you spilled the glow wine !", attack = "The dragonling is trying to escape."},
+		},
+	[20138] = {MOUNT_NAME = "Water Buffalo", MOUNT_ID = 35, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "water buffalo", ALLOW_SUMMON = false,
+	CHANCE = {succes = 30, broke = 0, run = 40, attack = 20},
+	TEXT = {succes = "The leech appeased the water buffalo and your taming was successful.", broke = "The leech slipped through your fingers and is now following the call of nature.",
+	run = "The water buffalo flees.", attack = "The water buffalo ignores you."},
+		},
+	[18516] = {MOUNT_NAME = "Gnarlhound", MOUNT_ID = 32, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "modified gnarlhound", ALLOW_SUMMON = false,
+	CHANCE = {succes = 100, broke = 0, run = 0, attack = 0},
+	TEXT = {succes = "You now own a modified gnarlhound.", broke = "",
+	run = "", attack = ""},
+		},
+	[15545] = {MOUNT_NAME = "Manta", MOUNT_ID = 28, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "manta ray", ALLOW_SUMMON = false,
+	CHANCE = {succes = 10, broke = 5, run = 50, attack = 35},
+	TEXT = {succes = "You have tamed the manta ray.", broke = "zjadla", run = "The manta ray fled.", attack = "The manta ray is trying to escape."},
+		},
+	[15546] = {MOUNT_NAME = "Lady Bug", MOUNT_ID = 27, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "lady bug", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 1, run = 40, attack = 39},
+	TEXT = {succes = "You have tamed the ladybug.", broke = "You broke it.?", run = "The ladybug got scared and ran away.", attack = "The ladybug is trying to nibble."},
+		},
+	[21452] = {MOUNT_NAME = "The Hellgrip", MOUNT_ID = 39, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "gravedigger", ALLOW_SUMMON = false,
+	CHANCE = {succes = 40, broke = 1, run = 20, attack = 39},
+	TEXT = {succes = "", broke = "", run = "", attack = ""},
+		},
+	[22608] = {MOUNT_NAME = "Shock Head", MOUNT_ID = 42, REGULAR_MOUNT_CHANCE = "regular",
+	TYPE = "MONSTER", TYPE_ID = "shock head", ALLOW_SUMMON = false,
+	CHANCE = {succes = 20, broke = 1, run = 40, attack = 39},
+	TEXT = {succes = "", broke = "", run = "", attack = ""},
+		},
+	}
+ 
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+local v = taming_tbl[item.itemid]	
+ 
+local szansa_sukces = 0
+local szansa_broke = 0
+local szansa_run = 0
+local szansa_attack = 0
+ 
+if v then
+	--- tutaj dac sprawdzanie exhausteda
+ 
+ 
+	-- koniec sprawdzania exhaausteda 
+	-- sprawdzanie czy gracz ma mounta, jesli ma juz go to wysle mu wiadomosc, ze go ma i zakonczy dzialanie skryptu
+	if getPlayerMount(cid, v.MOUNT_ID) then
+		return doPlayerSendCancel(cid, "You allready have this mount!")
+	end
+	-- sprawdzanie czy w tablicy mountsow, danego mounta mozna summonowac, lub czy w configu jest, ze mounty moga byc summonami oraz sprawdzenie czy nie ma blokady na summony do wszystkich mountow
+	if ((not(v.ALLOW_SUMMON)) and (not(config.ALLOW_SUMMON_TO_ALL_MOUNTS))) or (config.BLOCK_ALLOW_SUMMON_TO_ALL_MONSTER) then
+		if isSummon(itemEx.uid) then
+			return doPlayerSendCancel(cid, "This mount can't be a summon!")
+		end
+	end
+	-- sprawdzanie czy itemu uzywamy na dobrym stworku/outfitcie itd.
+	if v.TYPE == "MONSTER" then
+		if not(isMonster(itemEx.uid)) then
+			return doPlayerSendCancel(cid, "This item you can only use on monsters.")
+		end
+		if v.TYPE_ID ~= (getCreatureName(itemEx.uid):lower()) then
+			return doPlayerSendCancel(cid, "With this item you cannot tame this monster.")
+		end
+	elseif v.TYPE == "NPC" then
+		if not(isNpc(itemEx.uid)) then
+			return doPlayerSendCancel(cid, "This item you can only use on NPCs.")
+		end
+		if v.TYPE_ID ~= (getCreatureName(itemEx.uid):lower()) then
+			return doPlayerSendCancel(cid, "With this item you cannot tame this NPC.")
+		end
+	elseif v.TYPE == "ITEM" then
+		if not(itemEx.itemid ~= nil) then
+			return doPlayerSendCancel(cid, "This item you can only use on items.")
+		end
+		if v.TYPE_ID ~= itemEx.itemid then
+			return doPlayerSendCancel(cid, "With this item you cannot tame this item.")
+		end
+	elseif v.TYPE == "OUTFIT" then
+		if not(isCreature(itemEx.uid)) then
+			return doPlayerSendCancel(cid, "You can only use it on creatures.")
+		end
+		if (isPlayer(itemEx.uid) and (not(config.IF_MOUNT_IS_OUTFIT_ALLOW_TO_CREATURE_CAN_BE_PLAYER))) then
+			return doPlayerSendCancel(cid, "You cannot use this item on players.")
+		end
+		if v.TYPE_ID ~= (getCreatureOutfit(itemEx.uid).lookType) then
+			return doPlayerSendCancel(cid, "With this item you cannot tame creature with this outfit.")
+		end
+	end
+ 
+	--
+ 
+ 
+	if (v.CHANCE.succes ~= nil) and (config.OwnChanceOrRegular ~= "own") then
+		szansa_sukces = v.CHANCE.succes
+	else
+		if v.REGULAR_MOUNT_CHANCE ~= nil then
+			szansa_sukces = regular_mount_tbl[v.REGULAR_MOUNT_CHANCE].succes
+		else
+			szansa_sukces = tbl_szans_gdy_nil.succes
+		end
+	end
+	if v.CHANCE.broke ~= nil and (config.OwnChanceOrRegular ~= "own") then
+		szansa_broke = v.CHANCE.broke
+	else
+		if v.REGULAR_MOUNT_CHANCE ~= nil then
+			szansa_broke = regular_mount_tbl[v.REGULAR_MOUNT_CHANCE].broke
+		else
+			szansa_broke = tbl_szans_gdy_nil.broke
+		end
+	end
+	if v.CHANCE.run ~= nil and (config.OwnChanceOrRegular ~= "own") then
+		szansa_run = v.CHANCE.run
+	else
+		if v.REGULAR_MOUNT_CHANCE ~= nil then
+			szansa_run = regular_mount_tbl[v.REGULAR_MOUNT_CHANCE].run
+		else
+			szansa_run = tbl_szans_gdy_nil.run
+		end
+	end
+	if v.CHANCE.attack ~= nil and (config.OwnChanceOrRegular ~= "own") then
+		szansa_attack = v.CHANCE.attack
+	else
+		if v.REGULAR_MOUNT_CHANCE ~= nil then
+			szansa_attack = regular_mount_tbl[v.REGULAR_MOUNT_CHANCE].attack
+		else
+			szansa_attack = tbl_szans_gdy_nil.attack
+		end
+	end
+ 
+ 
+ 
+	losowanie = math.random(1,100)
+	if losowanie <= szansa_sukces then
+		if (v.TYPE == "MONSTER") and (config.IF_MOUNT_IS_CREATURE_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		elseif (v.TYPE == "NPC") and (config.IF_MOUNT_IS_NPC_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		elseif (v.TYPE == "ITEM") and (config.IF_MOUNT_IS_ITEM_REMOVE_ITEM_IF_RUN) then
+			doRemoveItem(itemEx.uid, 1)
+		elseif (v.TYPE == "OUTFIT") and (config.IF_MOUNT_IS_OUTFIT_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		end
+		doPlayerAddMount(cid, v.MOUNT_ID)
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, v.TEXT.succes)
+		doCreatureSay(cid, v.TEXT.succes, MESSAGE_STATUS_CONSOLE_ORANGE)
+		doSendMagicEffect(toPosition, config.EFFECT_WHEN_MOUNT_CATCH)
+		doRemoveItem(item.uid, 1)	
+		if v.TEXT.msg_creature_speak_succes ~= nil then
+			doCreatureSay(itemEx.uid,v.TEXT.msg_creature_speak_succes, MESSAGE_STATUS_CONSOLE_ORANGE)
+		elseif v.TEXT.msg_creature_speak ~= nil then
+			doCreatureSay(itemEx.uid, v.TEXT.msg_creature_speak, MESSAGE_STATUS_CONSOLE_ORANGE)
+		end
+	elseif losowanie <= (szansa_sukces + szansa_broke) then
+		-- item break
+		doSendMagicEffect(toPosition, config.EFFECT_WHEN_ITEM_BROKE)
+		doCreatureSay(cid, v.TEXT.broke, MESSAGE_STATUS_CONSOLE_ORANGE)
+		doRemoveItem(item.uid, 1)
+		if v.TEXT.msg_creature_speak ~= nil then
+			doCreatureSay(itemEx.uid, v.TEXT.msg_creature_speak, MESSAGE_STATUS_CONSOLE_ORANGE)
+		end
+		if v.TEXT.msg_creature_speak_broke ~= nil then
+			doCreatureSay(itemEx.uid,v.TEXT.msg_creature_speak_broke, MESSAGE_STATUS_CONSOLE_ORANGE)
+		end
+	elseif losowanie <= (szansa_sukces + szansa_broke + szansa_run) then
+		-- mount run
+		if (v.TYPE == "MONSTER") and (config.IF_MOUNT_IS_CREATURE_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		elseif (v.TYPE == "NPC") and (config.IF_MOUNT_IS_NPC_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		elseif (v.TYPE == "ITEM") and (config.IF_MOUNT_IS_ITEM_REMOVE_ITEM_IF_RUN) then
+			doRemoveItem(itemEx.uid, 1)
+		elseif (v.TYPE == "OUTFIT") and (config.IF_MOUNT_IS_OUTFIT_REMOVE_CREATURE_IF_RUN) then
+			doRemoveCreature(itemEx.uid)
+		end
+		if v.TEXT.msg_creature_speak_run ~= nil then
+			doCreatureSay(itemEx.uid,v.TEXT.msg_creature_speak_run, MESSAGE_STATUS_CONSOLE_ORANGE)
+		end
+		doSendMagicEffect(toPosition, config.EFFECT_WHEN_MOUNT_RUN)
+		doCreatureSay(cid, v.TEXT.run, MESSAGE_STATUS_CONSOLE_ORANGE)
+	else
+		-- mount attack
+		doSendMagicEffect(toPosition, config.EFFECT_WHEN_MOUNT_ATTACK)
+		doCreatureSay(cid, v.TEXT.attack, MESSAGE_STATUS_CONSOLE_ORANGE)
+		if v.TEXT.msg_creature_speak_attack ~= nil then
+			doCreatureSay(itemEx.uid,v.TEXT.msg_creature_speak_attack, MESSAGE_STATUS_CONSOLE_ORANGE)
+		elseif v.TEXT.msg_creature_speak ~= nil then
+			doCreatureSay(itemEx.uid, v.TEXT.msg_creature_speak, MESSAGE_STATUS_CONSOLE_ORANGE)
+		end
+	end
+ 
+ 
+ 
+ 
+ 
+end
+ 
+return true
+end
