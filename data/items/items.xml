@@ -13090,7 +13090,14 @@
 	<item id="7536" name="the remains of a spider egg" />
 	<item id="7537" article="a" name="spider egg" />
 	<item fromid="7538" toid="7543" article="a" name="spider web" />
-	<item fromid="7544" toid="7545" name="the remains of a spider web" />
+	<item id="7544" name="the remains of a spider web" >
+		<attribute key="decayTo" value="7538" />
+		<attribute key="duration" value="60" />
+	</item>
+	<item id="7545" name="the remains of a spider web" >
+		<attribute key="decayTo" value="7539" />
+		<attribute key="duration" value="60" />
+	</item>
 	<item fromid="7546" toid="7548" article="a" name="spider web" />
 	<item fromid="7549" toid="7550" name="something crawling" />
 	<item id="7551" article="a" name="seashell" />
