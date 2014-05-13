@@ -12,10 +12,12 @@ https://github.com/edubart/otclient
 Also you can use the forum to discuss and report:
 http://otland.net/threads/best-released-real-map-10-31-based-1-0.204514/
 
-If you edit the map, report your status here: * [Map Edit Status](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/issues/447)
-- with [- [X] Working now on map] when you edit the map
-- with [- [ ] Working now on map] you finish your pull request
-- Make only one post and edit it every time you start working on the map.
+**If you want to edit the map, here some rules to report your status:**
+- report your status here [Map Edit Status](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/issues/447)
+- post a Checkbox |- [X] Working now on map| which you can click when you want work on it
+- check if other user already have a X in his controllbox
+- if nobody have one, so you can check your box and start editing the map
+- if you finish your map edit pull it and uncheck you box
 
 **If you want to contribute by sending pull request, here is some tips.
 Try to use metatables in your script. Ex.**
