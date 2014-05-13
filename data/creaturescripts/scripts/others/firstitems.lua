@@ -33,14 +33,14 @@ local config = {
         {{2120, 1}, {2554, 1}, {7620, 1}}
     },
     [3] = {
-        --equipment steel shield, 5 spear, ranger's cloak, ranger legs scarf, legion helmet
-        {{2509, 1}, {2389, 5}, {2660, 1}, {8923, 1}, {2643, 1}, {2661, 1}, {2480, 1}},
+        --equipment dwrven shield, 5 spear, ranger's cloak, ranger legs scarf, legion helmet
+        {{2525, 1}, {2389, 5}, {2660, 1}, {8923, 1}, {2643, 1}, {2661, 1}, {2480, 1}},
         --container rope, shovel, health potion, bow, 50 arrow
         {{2120, 1}, {2554, 1}, {7618, 1}, {2456, 1}, {2544, 50}}
     },
     [4] = {
-        --equipment steel shield, steel axe, brass armor, soldier helmet, brass legs scarf
-        {{2509, 1}, {8601, 1}, {2465, 1}, {2481, 1}, {2478, 1}, {2643, 1}, {2661, 1}},
+        --equipment dwarven shield, steel axe, brass armor, brass helmet, brass legs scarf
+        {{2525, 1}, {8601, 1}, {2465, 1}, {2460, 1}, {2478, 1}, {2643, 1}, {2661, 1}},
         --container jagged sword, daramian mace, rope, shovel, health potion
         {{8602, 1}, {2439, 1}, {2120, 1}, {2554, 1}, {7618, 1}}
     }
