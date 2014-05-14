@@ -989,4 +989,6 @@
 	<house name="Outlaw Camp 12 (Shop)" houseid="2404" entryx="32661" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
 	<house name="Outlaw Camp 13 (Shop)" houseid="2405" entryx="32666" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
 	<house name="Outlaw Camp 14 (Shop)" houseid="2406" entryx="32665" entryy="32198" entryz="8" rent="640" townid="3" size="15" />
+	<house name="Open-Air Theatre" houseid="2407" entryx="32262" entryy="32237" entryz="7" rent="2700" townid="2" size="55" />
+	<house name="The Lair" houseid="2408" entryx="32993" entryy="32153" entryz="7" rent="7625" townid="1" size="154" />
 </houses>
