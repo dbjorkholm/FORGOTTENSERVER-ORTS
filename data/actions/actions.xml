@@ -504,9 +504,10 @@
 	<action itemid="19692" function="decreaseItemId"/>
 
 	<!-- Food -->
+	<action itemid="2328" script="other/food.lua"/>
 	<action itemid="2362" script="other/food.lua"/>
 	<action fromid="2666" toid="2691" script="other/food.lua"/>
-	<action fromid="2695" toid="2696" script="other/food.lua"/>
+	<action itemid="2696" script="other/food.lua"/>
 	<action fromid="2787" toid="2796" script="other/food.lua"/>
 	<action itemid="5097" script="other/food.lua"/>
 	<action itemid="6125" script="other/food.lua"/>

@@ -1,4 +1,5 @@
 local food = {
+	[2328] = {6, "Gulp."}, -- egg
 	[2362] = {5, "Crunch."}, -- carrot
 	[2666] = {15, "Munch."}, -- meat
 	[2667] = {12, "Munch."}, -- fish
@@ -26,7 +27,6 @@ local food = {
 	[2689] = {10, "Crunch."}, -- bread
 	[2690] = {3, "Crunch."}, -- roll
 	[2691] = {8, "Crunch."}, -- brown bread
-	[2695] = {6, "Gulp."}, -- egg
 	[2696] = {9, "Smack."}, -- cheese
 	[2787] = {9, "Munch."}, -- white mushroom
 	[2788] = {4, "Munch."}, -- red mushroom
