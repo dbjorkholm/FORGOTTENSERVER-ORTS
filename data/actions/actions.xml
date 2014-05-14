@@ -116,7 +116,7 @@
 
  	<!-- Taming Items -->
 	<action itemid="13941" script="other/cup of molten gold.lua"/>
-    <action itemid="5907" script="other/taming.lua"/>
+    	<action itemid="5907" script="other/taming.lua"/>
 	<action itemid="13247" script="other/taming.lua"/>
 	<action fromid="13291" toid="13295" script="other/taming.lua"/>
 	<action itemid="13298" script="other/taming.lua"/>
@@ -215,7 +215,6 @@
 	<action fromuid="3045" touid="3047" script="dreamer challenge quest/brotherhoodOfBonesQuestDocumentsLever.lua"/>
 	<action uniqueid="3044" script="dreamer challenge quest/brotherhoodOfBonesQuestDoor.lua"/>
 	<action fromid="7844" toid="7846" script="dreamer challenge quest/dreamerChallengeQuestDocuments.lua"/>
-	<action itemid="5468" script="dreamer challenge quest/dreamerChallengeQuestFireBug.lua"/>
 	<action uniqueid="2004" script="dreamer challenge quest/dreamerChallengeQuestStoneTeleport.lua"/>
 	<action uniqueid="2772" script="dreamer challenge quest/dreamerChallengeQuestTicTac.lua"/>
 	<action uniqueid="2003" script="dreamer challenge quest/dreamerChallengeQuestTicTacTeleport.lua"/>
@@ -548,6 +547,7 @@
 	<action itemid="8918" script="other/spellbook.lua"/>
 
 	<!-- Other -->
+	<action itemid="5468" script="other/firebug.lua"/>
 	<action itemid="5928" script="other/catchFish.lua"/>
 	<action itemid="13670" script="other/belongings.lua"/>
 	<action itemid="16101" script="other/premiumscroll.lua"/>
