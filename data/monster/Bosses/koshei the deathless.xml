@@ -63,10 +63,10 @@
 	<loot>
 		<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
 		<item id="2401" chance="10000"/>
-		<item id="2171" chance="1666"/> 
-		<item id="2656" chance="709"/> 
-		<item id="7893" chance="688"/> 
-		<item id="2535" chance="588"/> 
+		<item id="2171" chance="1666"/>
+		<item id="2656" chance="709"/>
+		<item id="7893" chance="688"/>
+		<item id="2535" chance="588"/>
 		<item id="2165" chance="888"/>
 		<item id="2237" chance="10000"/>
 		<item id="2148" countmax="12" chance1="80000" chancemax="0"/>

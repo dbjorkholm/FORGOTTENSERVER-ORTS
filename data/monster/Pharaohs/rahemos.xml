@@ -48,14 +48,14 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element icePercent="100"/>
-		<element earthPercent="100"/>
-		<element deathPercent="100"/>
 		<element firePercent="94"/>
 		<element energyPercent="92"/>
 		<element holyPercent="-25"/>
 	</elements>
 	<immunities>
+		<immunity ice="1"/>
+		<immunity earth="1"/>
+		<immunity death="1"/>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>
@@ -81,7 +81,7 @@
 		<item id="2176" chance="500"/><!-- orb -->
 		<item id="2185" chance="500"/><!-- necrotic rod -->
 		<item id="2153" chance="500"/><!-- violet gem -->
-		<item id="2184" chance="200"/><!-- crystal wand -->
+		<item id="2184" chance="500"/><!-- crystal wand -->
 		<item id="2447" chance="200"/><!-- twin axe -->
 		<item id="2348" chance="100000"/><!-- ancient rune -->
 	</loot>
