@@ -64,7 +64,7 @@
 		<item id="2687" countmax="5" chance="7000"/><!-- cookie -->
 		<item id="2679" countmax="4" chance="7000"/><!-- cherry -->
 		<item id="2674" countmax="3" chance="700"/><!-- apple -->
-		<item id="2695" countmax="2" chance="5000"/><!-- egg -->
+		<item id="2328" countmax="2" chance="5000"/><!-- egg -->
 		<item id="2688" countmax="3" chance="5000"/><!-- candy cane -->
 		<item id="2072" chance="5000"/><!-- lute -->
 		<item id="2260" chance="5000"/><!-- blank rune -->
