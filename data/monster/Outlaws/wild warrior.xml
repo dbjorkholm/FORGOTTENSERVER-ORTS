@@ -36,7 +36,7 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="30" chance="49070"/><!-- gold coin -->
-		<item id="2695" countmax="2" chance="9730"/><!-- eggs -->
+		<item id="2328" countmax="2" chance="9730"/><!-- eggs -->
 		<item id="2649" chance="27500"/><!-- leather legs -->
 		<item id="2110" chance="520"/><!-- doll -->
 		<item id="2465" chance="2540"/><!-- brass armor -->
