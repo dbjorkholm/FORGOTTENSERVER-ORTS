@@ -30,7 +30,7 @@
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="fire" interval="2000" chance="34" radius="3" target="0" min="-80" max="-800">
-			<attribute key="areaEffect" value="firearea"/>
+			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
 		<attack name="firefield" interval="1000" chance="12" radius="4" target="0">
 			<attribute key="areaEffect" value="yellowspark"/>
@@ -41,6 +41,7 @@
 	</attacks>
 	<defenses armor="20" defense="30">
 		<defense name="healing" interval="1000" chance="20" min="20" max="800">
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>
@@ -75,6 +76,5 @@
 		<item id="2141" chance="500"/><!-- holy falcon -->
 		<item id="2539" chance="300"/><!-- phoenix shield -->
 		<item id="2353" chance="100000"/><!-- burning heart -->
-		<item id="11207" chance="500"/><!-- mini mummy -->
 	</loot>
 </monster>

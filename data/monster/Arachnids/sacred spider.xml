@@ -18,16 +18,16 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="47" attack="38" poison="80"/>
-		<attack name="earth" interval="2000" chance="20" range="7" min="-60" max="-100">
+		<attack name="melee" interval="2000" min="-0" max="-160" poison="80"/>
+		<attack name="earth" interval="2000" chance="20" range="7" min="-50" max="-80">
 			<attribute key="shootEffect" value="poison"/>
-		</attack>	
+		</attack>
 	</attacks>
 	<defenses armor="25" defense="25"/>
 	<elements>
 		<element firePercent="-5"/>
 	</elements>
-		<immunities>
+	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
 	<loot>

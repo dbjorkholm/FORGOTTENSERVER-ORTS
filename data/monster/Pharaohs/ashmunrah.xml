@@ -72,7 +72,5 @@
 		<item id="2164" chance="1000"/><!-- might ring -->
 		<item id="2487" chance="80000"/><!-- crown armor-->
 		<item id="2140" chance="400"/><!-- holy scarab -->
-		<item id="11207" chance="500"/><!-- mini mummy -->
-		<item id="2444" chance="500"/><!-- Hammer of Wrath -->
 	</loot>
 </monster>
