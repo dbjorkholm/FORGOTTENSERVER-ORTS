@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Floor Blob" nameDescription="a floor blob" race="venom" experience="0" speed="0" manacost="355">
+<monster name="Floor Blob" nameDescription="a floor blob" race="venom" experience="0" speed="0" manacost="0">
 	<health now="550" max="550"/>
 	<look type="459" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>
@@ -8,7 +8,7 @@
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
-		<flag illusionable="1"/>
+		<flag illusionable="0"/>
 		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="0"/>
@@ -21,9 +21,6 @@
 		<attack name="melee" interval="2000" skill="0" attack="0"/>
 	</attacks>
 	<defenses armor="5" defense="11"/>
-	<summons maxSummons="4">
-		<summon name="Lesser Swarmer" interval="2000" chance="16" max="4"/>
-	</summons>
 	<immunities>
 		<immunity physical="1"/>
 		<immunity energy="1"/>
