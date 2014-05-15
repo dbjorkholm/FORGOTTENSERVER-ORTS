@@ -43,11 +43,11 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="90"/>
-		<element energyPercent="60"/>
-		<element deathPercent="30"/>
-		<element icePercent="-10"/>
-		<element holyPercent="-10"/>
+		<element deathPercent="15"/>
+		<element firePercent="15"/>
+		<element energyPercent="15"/>
+		<element icePercent="15"/>
+		<element physicalPercent="10"/>
 	</elements>
 	<immunities>
 		<immunity paralyze="1"/>
@@ -58,18 +58,18 @@
 		<voice sentence="*** BRAINS *** SMALL ***"/>
 		<voice sentence="*** LIVE *** DRY ***"/>
 		<voice sentence="*** IMPORTANT ***"/>
-		<voice sentence="** FIRE *** HOME *** VICTORY ***"/>
+		<voice sentence="*** FIRE *** HOME *** VICTORY ***"/>
 		<voice sentence="*** EXISTENCE *** FUTILE ***"/>
-		<voice sentence="** TIME ***"/>
+		<voice sentence="*** TIME ***"/>
 	</voices>
 	<loot>
-		<item id="18496" chance="100000"/><!-- Abyssador's Lash -->
-		<item id="18454" chance="10000"/><!-- mycological bow -->
-		<item id="18465" chance="8000"/><!-- shiny sword -->
-		<item id="18449" chance="10000"/>
-		<item id="18453" chance="4500"/><!-- crystal crossbow -->
-		<item id="18451" chance="5500"/><!-- crystalline axe -->
-		<item id="18450" chance="5500"/><!-- crystalline sword -->
-		<item id="18452" chance="4500"/><!-- mace -->
+		<item id="18496" chance="100000"/><!-- abyssador's lash -->
+		<item id="18453" chance="8333"/><!-- crystal crossbow -->
+		<item id="18451" chance="8333"/><!-- crystalline axe -->
+		<item id="18465" chance="8333"/><!-- shiny blade -->
+		<item id="18450" chance="6666"/><!-- crystalline sword -->
+		<item id="18454" chance="5263"/><!-- mycological bow -->
+		<item id="18449" chance="1754"/><!-- decorative ribbon -->
+		<item id="18452" chance="1754"/><!-- mycological mace -->
 	</loot>
 </monster>

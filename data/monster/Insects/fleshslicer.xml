@@ -27,19 +27,5 @@
 	<elements>
 	</elements>
 	<loot>
-		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
-		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
-		<item id="2152" countmax="5" chance="100000"/> <!-- platinum coin -->
-		<item id="2147" countmax="5" chance="20000"/> <!-- small ruby -->
-		<item id="2143" countmax="5" chance="40000"/> <!-- white pearl -->
-		<item id="15486" countmax="5" chance="100000"/> <!-- compound eye -->
-		<item id="8473" chance="30000"/> <!-- UHP -->
-		<item id="7590" chance="70000"/> <!-- GMP -->
-		<item id="15485" chance="100000"/> <!-- spidris mandible -->
-		<item id="15622" chance="70000"/> <!-- Dung Ball -->
-		<item id="2156" chance="40000"/> <!-- Red gem -->
-		<item id="3964" chance="30000"/> <!-- ripper lance -->
-		<item id="7413" chance="10000"/> <!-- titan axe -->
-		<item id="6300" chance="10000"/> <!-- death ring -->
 	</loot>
 </monster>

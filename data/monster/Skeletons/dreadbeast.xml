@@ -19,21 +19,17 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-60"/>
-		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-0" max="-80">
+		<attack name="melee" interval="2000" min="-0" max="-100"/>
+		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-150" max="-250">
 			<attribute key="areaEffect" value="yellowenergy"/>
 			<attribute key="shootEffect" value="suddendeath"/>
 		</attack>
-		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-0" max="-90">
+		<attack name="lifedrain" interval="2000" chance="20" radius="1" target ="1" min="-150" max="-250">
 			<attribute key="areaEffect" value="purpleenergy"/>
 			<attribute key="shootEffect" value="suddendeath"/>
 		</attack>
 	</attacks>
-	<defenses armor="34" defense="36">
-		<defense name="healing" interval="1000" chance="10" min="35" max="65">
-			<attribute key="areaEffect" value="blueshimmer"/>
-		</defense>
-	</defenses>
+	<defenses armor="34" defense="36"/>
 	<elements>
 		<element firePercent="70"/>
 		<element physicalPercent="-25"/>
@@ -42,17 +38,4 @@
 		<immunity poison="1"/>
 		<immunity paralyze="1"/>
 	</immunities>
-	<loot>
-		<item id="2148" countmax="55" chance="15000"/><!-- gold coin -->
-		<item id="2148" countmax="35" chance="15000"/><!-- gold coin -->
-		<item id="2231" chance="11000"/><!-- big bone -->
-		<item id="2230" chance="47750"/><!-- bone -->
-		<item id="2449" chance="3250"/><!-- bone club -->
-		<item id="2541" chance="2600"/><!-- bone shield -->
-		<item id="2796" chance="1750"/><!-- green mushroom -->
-		<item id="5925" chance="900"/><!-- hardened bone -->
-		<item id="2463" chance="5650"/><!-- plate armor -->
-		<item id="7618" chance="900"/><!-- health potion -->
-		<item id="2229" chance="21000"/><!-- skull -->
-	</loot>
 </monster>
