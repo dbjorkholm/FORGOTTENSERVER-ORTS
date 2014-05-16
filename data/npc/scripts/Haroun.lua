@@ -33,7 +33,7 @@ local function getTable()
 		{name = 'Magic Light Wand',		id = 2162,			sell = 35,			buy = 120},
 		{name = 'Life Crystal',			id = 4851,			sell = 50,			buy = 0},
 		{name = 'Mind Stone',			id = 2178,			sell = 100,			buy = 0},
-		{name = 'Orb',					id = 7493,			sell = 750,			buy = 0}
+		{name = 'Orb',					id = 2176,			sell = 750,			buy = 0}
 	}
 return list
 end
