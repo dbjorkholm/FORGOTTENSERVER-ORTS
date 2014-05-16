@@ -583,6 +583,9 @@
 	<monster name="Incredibly Old Witch" file="Misc/Misc Mounts/Incredibly Old Witch.xml"/>
 	<monster name="Modified Gnarlhound" file="Misc/Misc Mounts/modified gnarlhound.xml"/>
 
+	<!-- Misc Others -->
+	<monster name="Minion of Vesperoth" file="Misc/Misc Others/Minion of Vesperoth.xml"/>
+
 	<!-- Misc Reptiles -->
 	<monster name="Crocodile" file="Misc/Misc Reptiles/crocodile.xml"/>
 	<monster name="Hydra" file="Misc/Misc Reptiles/hydra.xml"/>
@@ -622,6 +625,7 @@
 	<monster name="Orc Berserker" file="Orcs/orc berserker.xml"/>
 	<monster name="Orc Leader" file="Orcs/orc leader.xml"/>
 	<monster name="Orc Rider" file="Orcs/orc rider.xml"/>
+	<monster name="Orc Sambackpack" file="Orcs/orc sambackpack.xml"/>
 	<monster name="Orc Shaman" file="Orcs/orc shaman.xml"/>
 	<monster name="Orc Spearman" file="Orcs/orc spearman.xml"/>
 	<monster name="Orc Warlord" file="Orcs/orc warlord.xml"/>
@@ -745,7 +749,9 @@
 	<monster name="Yalahari" file="Sorcerers/yalahari.xml"/>
 
 	<!-- Traps -->
+	<monster name="a carved stone tile" file="Traps/a carved stone tile.xml"/>
 	<monster name="Deathslicer" file="Traps/deathslicer.xml"/>
+	<monster name="Deaththrower" file="Traps/deaththrower.xml"/>
 	<monster name="Flamethrower" file="Traps/flamethrower.xml"/>
 	<monster name="Hive Pore" file="Traps/hive pore.xml"/>
 	<monster name="Lavahole" file="Traps/lavahole.xml"/>
