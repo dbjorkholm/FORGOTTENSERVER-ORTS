@@ -128,7 +128,7 @@ if isInArray({"offer", "trade"}, msg:lower()) then
 		end
 		local items = setNewTradeTable(tradeRank)
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-			if ignoreCap == false and (player:getFreeCapacity() < getItemWeightById(items[item].itemId, amount) or inBackpacks and player:getFreeCap() < (getItemWeightById(items[item].itemId, amount) + getItemWeightById(1988, 1))) then
+			if ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCap() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1))) then
 				return player:sendTextMessage(MESSAGE_INFO_DESCR, 'You don\'t have enough cap.')
 			end
 			if items[item].buyPrice then
