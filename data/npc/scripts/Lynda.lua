@@ -101,6 +101,7 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("The ingredients for the ritual are complete! I will start to prepare your blessed wand,... I'm glad to tell you that I have finished the ritual, " .. player:getName() .. ". Here is your new wand. I hope you carry it proudly for everyone to see.", player)
 				player:removeItem(2193, 20)
 				player:setStorageValue(12061, 6)
+				player:addOutfitAddon(141, 1)
 				player:addOutfitAddon(130, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				talkState[talkUser] = 0	
