@@ -27,10 +27,10 @@ function creatureSayCallback(cid, type, msg)
 	if(msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand')) then
 		if(isSorcerer(cid) or isDruid(cid)) then
 			if(getPlayerStorageValue(cid, 30002) == -1) then
-				selfSay('So you ask me for a {' .. getItemNameById(items[getPlayerVocation(cid)]) .. '} to begin your advanture?', cid)
+				selfSay('So you ask me for a {' .. getItemName(items[getPlayerVocation(cid)]) .. '} to begin your advanture?', cid)
 				talkState[talkUser] = 1
 			else
-				selfSay('What? I have already gave you one {' .. getItemNameById(items[getPlayerVocation(cid)]) .. '}!', cid)
+				selfSay('What? I have already gave you one {' .. getItemName(items[getPlayerVocation(cid)]) .. '}!', cid)
 			end
 		else
 			selfSay('Sorry, you aren\'t a druid either a sorcerer.', cid)
