@@ -19,7 +19,8 @@ local cfg_raids =
 			alreadyExecuted = false
 		},
 	},
-	--Month.y
+	--Monthly
+	--month/day
 	["31/10"] = 
 	{
 		["16:00"] = {
