@@ -11,21 +11,21 @@
 
 	<!-- Rent Horses -->
 	<globalevent name="RentThink" interval="15000" script="others/checkmount.lua"/>
-
-	<!-- Random Spawns -->
-	<globalevent name="random" interval="3600000" script="random spawns/random.lua"/>
 	
 	<!-- World Changes -->
 	<globalevent name="furygates" type="startup" script="worldchanges/gates.lua"/>
 	<globalevent name="resetfurygates" type="shutdown" script="worldchanges/resetgates.lua"/>
 
 	<!-- Others -->
-	<globalevent type="startup" name="RashidServerStartup" script="others/RashidStartUp.lua"/>
-	
 	<globalevent type="startup" name="ServerStartup" script="startup.lua"/>
 	
 	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
 	<globalevent name="Server Save" time="09:55:00" script="serversave.lua"/>
+
+	<!-- Spawn -->
+	<globalevent name="RaidSystem" interval="10000" script="spawn/raids.lua"/>
+	<globalevent name="RandomSummon" interval="3600000" script="spawn/randomSummon.lua"/>
+	<globalevent type="startup" name="RashidServerStartup" script="spawn/RashidStartUp.lua"/>
 	
 	<!-- Site -->
 <!--	
