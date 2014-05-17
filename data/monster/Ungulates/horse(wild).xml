@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Horse" nameDescription="a horse" race="blood" experience="0" speed="190" manacost="0">
+<monster name="Wild Horse" nameDescription="a wild horse" race="blood" experience="0" speed="190" manacost="0">
 	<health now="75" max="75"/>
-	<look type="434" corpse="0"/>
+	<look type="393" corpse="0"/>
 	<targetchange interval="4000" chance="20"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
