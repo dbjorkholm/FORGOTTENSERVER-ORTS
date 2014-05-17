@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50001
-Last Used Aid = ?
-Last Used Uid = ?
+Last Used Storage = 50011
+Last Used Aid = 50012
+Last Used Uid = 50000
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -26,5 +26,8 @@ horestisjars (Aid=storage)		50006-50010
 Second mage/summoner addon (tiara/cloak): 50011
 
 ---/////////////////////Aid/Uid/////////////////////----
-The Ape City Aid/Uid:			12120-12130???
-horestisjars				50006-50010
+the ancient tombs storage Uid:		12100-12109
+The Ape City Aid/Uid:			12120-12130
+
+horestisjars Aid:			50006-50010
+kazordoonElevatorLever Aid:		50011-50012
