@@ -459,6 +459,32 @@ enchantedItems = {
         [8905] = {8906, 8907, 8909, 8908}
 }
 
+function getRealTime()
+	local hours = tonumber(os.date("%H", os.time()))
+	local minutes = tonumber(os.date("%M", os.time()))
+	
+	if hours < 10 then
+		hours = '0' .. hours
+	end
+	if minutes < 10 then
+		minutes = '0' .. minutes
+	end
+	return hours .. ':' .. minutes
+end
+
+function getRealDate()
+	local month = tonumber(os.date("%m", os.time()))
+	local day = tonumber(os.date("%d", os.time()))
+	
+	if month < 10 then
+		month = '0' .. month
+	end
+	if day < 10 then
+		day = '0' .. day
+	end
+	return day .. '/' .. month
+end
+
 function isPlayerInArea(fromPos, toPos)
         for _x = fromPos.x, toPos.x do
                 for _y = fromPos.y, toPos.y do
