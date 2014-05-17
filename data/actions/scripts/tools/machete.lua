@@ -1,5 +1,4 @@
 local JUNGLE_GRASS = { 2782, 3985, 19433 }
-local BAMBOO_FENCE = { 3798, 3799 }
 local WILD_GROWTH = { 1499, 11099 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -7,19 +6,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(isInArray(JUNGLE_GRASS, itemEx.itemid)) then
 		targetItem:transform(itemEx.itemid == 19433 and 19431 or itemEx.itemid - 1)
 		targetItem:decay()
-		return true
-	end
-
-	if(isInArray(BAMBOO_FENCE, itemEx.itemid)) then
-		if math.random(3) == 1 then
-			if(itemEx.itemid == BAMBOO_FENCE[1]) then
-				targetItem:transform(itemEx.itemid + 161)
-			elseif(itemEx.itemid == BAMBOO_FENCE[2]) then
-				targetItem:transform(itemEx.itemid + 159)
-			end
-			targetItem:decay()
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
 
