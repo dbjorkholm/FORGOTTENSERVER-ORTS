@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50011
+Last Used Storage = 50012
 Last Used Aid = 50012
-Last Used Uid = 50000
+Last Used Uid = 50004
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -31,3 +31,11 @@ The Ape City Aid/Uid:			12120-12130
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
+
+The Queen of banshee Quest:
+First Seal: The Hidden Seal:
+	2 magic wall lever uid:			50000/50001/50002
+	Human dead body "quest" aid/uid:	2000/50003
+	firstSeal FlameTp uid: 			50004
+
+Second Seal:	
