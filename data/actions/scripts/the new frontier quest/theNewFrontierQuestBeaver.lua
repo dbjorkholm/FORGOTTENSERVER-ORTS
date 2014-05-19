@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 				player:setStorageValue(12141, 1)
 				player:setStorageValue(12132, player:getStorageValue(12132) + 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
-				Game.createMonster("thieving squirrel", pos)
+				Game.createMonster("thieving squirrel", toPosition)
 				player:say("You've marked the tree, but its former inhabitant has stolen your bait! Get it before it runs away!", TALKTYPE_ORANGE_1)
 				Item(item.uid):remove()
 			end
