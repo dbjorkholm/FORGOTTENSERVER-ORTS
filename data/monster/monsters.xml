@@ -236,6 +236,7 @@
 	<monster name="The Old Widow" file="bosses/the old widow.xml"/>
 	<monster name="The Plasmother" file="bosses/the plasmother.xml"/>
 	<monster name="The Snapper" file="bosses/the snapper.xml"/>
+	<monster name="The weakened Count" file="bosses/the weakened count.xml"/>
 	<monster name="Thul" file="bosses/thul.xml"/>
 	<monster name="Tibia Bug" file="bosses/tibia bug.xml"/>
 	<monster name="Tiquandas Revenge" file="bosses/tiquandas revenge.xml"/>
@@ -366,7 +367,6 @@
 	<monster name="Demon Outcast" file="dreamhaunters/demon outcast.xml"/>
 	<monster name="Feversleep" file="dreamhaunters/feversleep.xml"/>
 	<monster name="Frazzlemaw" file="dreamhaunters/frazzlemaw.xml"/>
-	<monster name="Gaz'haragoth" file="dreamhaunters/gaz'haragoth.xml"/>
 	<monster name="Guzzlemaw" file="dreamhaunters/guzzlemaw.xml"/>
 	<monster name="Mawhawk" file="dreamhaunters/mawhawk.xml"/>
 	<monster name="Minion of Gaz'haragoth" file="dreamhaunters/minion of gaz'haragoth.xml"/>
