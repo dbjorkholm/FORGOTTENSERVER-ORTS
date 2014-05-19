@@ -1,45 +1,39 @@
 local function doTransformCampFire(cpPos, itemid, itemid2)
-	local Tile = Position(cpPos):getTile()
-	if Tile then
-		local thing = Tile:getItemById(itemid)
-		if thing and thing:isItem() then
-			thing:transform(itemid2)
-		end
-	end
+        local tile = Position(cpPos):getTile()
+        if tile then
+                local thing = tile:getItemById(itemid)
+                if thing and thing:isItem() then
+                        thing:transform(itemid2)
+                end
+        end
 end
-
+ 
+local config = {
+        [1945] = {
+                [50005] = {pos = {x = 32309, y = 31975, z = 13}, cpId = 1423, cpId2 = 1421},
+                [50006] = {pos = {x = 32309, y = 31976, z = 13}, cpId = 1423, cpId2 = 1421},
+                [50007] = {pos = {x = 32311, y = 31975, z = 13}, cpId = 1423, cpId2 = 1421},
+                [50008] = {pos = {x = 32311, y = 31976, z = 13}, cpId = 1423, cpId2 = 1421},
+                [50009] = {pos = {x = 32313, y = 31975, z = 13}, cpId = 1423, cpId2 = 1421},
+                [50010] = {pos = {x = 32313, y = 31976, z = 13}, cpId = 1423, cpId2 = 1421}
+        },
+        [1946] = {
+                [50005] = {pos = {x = 32309, y = 31975, z = 13}, cpId = 1421, cpId2 = 1423},
+                [50006] = {pos = {x = 32309, y = 31976, z = 13}, cpId = 1421, cpId2 = 1423},
+                [50007] = {pos = {x = 32311, y = 31975, z = 13}, cpId = 1421, cpId2 = 1423},
+                [50008] = {pos = {x = 32311, y = 31976, z = 13}, cpId = 1421, cpId2 = 1423},
+                [50009] = {pos = {x = 32313, y = 31975, z = 13}, cpId = 1421, cpId2 = 1423},
+                [50010] = {pos = {x = 32313, y = 31976, z = 13}, cpId = 1421, cpId2 = 1423}
+        }
+}
+ 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local iteml = Item(item.uid)
-	if item.itemid == 1945 then
-		if item.uid == 50005 then
-			doTransformCampFire({x = 32309, y = 31975, z = 13}, 1423, 1421)
-		elseif item.uid == 50006 then
-			doTransformCampFire({x = 32309, y = 31976, z = 13}, 1423, 1421)
-		elseif item.uid == 50007 then
-			doTransformCampFire({x = 32311, y = 31975, z = 13}, 1423, 1421)
-		elseif item.uid == 50008 then
-			doTransformCampFire({x = 32311, y = 31976, z = 13}, 1423, 1421)
-		elseif item.uid == 50009 then
-			doTransformCampFire({x = 32313, y = 31975, z = 13}, 1423, 1421)
-		elseif item.uid == 50010 then
-			doTransformCampFire({x = 32313, y = 31976, z = 13}, 1423, 1421)
-		end		
-		iteml:transform(1946)
-	else
-		if item.uid == 50005 then
-			doTransformCampFire({x = 32309, y = 31975, z = 13}, 1421, 1423)
-		elseif item.uid == 50006 then
-			doTransformCampFire({x = 32309, y = 31976, z = 13}, 1421, 1423)
-		elseif item.uid == 50007 then
-			doTransformCampFire({x = 32311, y = 31975, z = 13}, 1421, 1423)
-		elseif item.uid == 50008 then
-			doTransformCampFire({x = 32311, y = 31976, z = 13}, 1421, 1423)
-		elseif item.uid == 50009 then
-			doTransformCampFire({x = 32313, y = 31975, z = 13}, 1421, 1423)
-		elseif item.uid == 50010 then
-			doTransformCampFire({x = 32313, y = 31976, z = 13}, 1421, 1423)
-		end
-		iteml:transform(1945)
-	end
-	return true
+        local targetItem = config[item.itemid]
+        if not targetItem then
+                return true
+        end
+       
+        doTransformCampFire(targetItem[item.uid]["pos"], targetItem[item.uid]["cpId"], targetItem[item.uid]["cpId2"])
+        Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+        return true
 end
