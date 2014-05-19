@@ -1,5 +1,5 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50015
+Last Used Storage = 50016
 Last Used Aid = 50015
 Last Used Uid = 50012
 ---//////////////////////////////////////////----
@@ -48,3 +48,8 @@ Fifth Seal:
 	fifthSeal Flame uid = 			50012
 	fifthSeal storage = 			50015
 	Tiles Path aids =			50014/50015
+
+Fourth Seal:
+	sacrifice tile uid = 			50013
+	fourthSeal Flame uid = 			50014
+	fourthSeal storage =			50016
