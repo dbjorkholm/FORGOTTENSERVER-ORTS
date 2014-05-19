@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50012
+Last Used Storage = 50014
 Last Used Aid = 50012
-Last Used Uid = 50004
+Last Used Uid = 50005
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -37,5 +37,9 @@ First Seal: The Hidden Seal:
 	2 magic wall lever uid:			50000/50001/50002
 	Human dead body "quest" aid/uid:	2000/50003
 	firstSeal FlameTp uid: 			50004
+	firstSeal Flame storage:		50013
 
-Second Seal:	
+Sixth Seal:
+	Switches campfire uid = 		50005-50010
+	secondSeal Flame uid = 			50011
+	secondSeal Flame storage =		50014

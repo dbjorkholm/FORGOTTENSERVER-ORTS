@@ -512,15 +512,8 @@
 			<missionstate id="4" description="You have completed all missions. Gabel allows you now to trade with his people."/>
 		</mission>
 	</quest>
-	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
-		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Example description 1"/>
-			<missionstate id="2" description="Example description 2"/>
-			<missionstate id="3" description="Example description 3"/>
-		</mission>
-		<mission name="Example Mission 2" storageid="1001" startvalue="4" endvalue="5">
-			<missionstate id="4" description="Example description 1"/>
-			<missionstate id="5" description="Example description 2"/>
-		</mission>
+	<quest name="The Queen of the Banshees" startstorageid="50013" startstoragevalue="1">
+		<mission name="The Hidden Seal" storageid="50013" startvalue="1" endvalue="1" description="You broke the first seal."/>
+		<mission name="The Seal of Logic" storageid="50014" startvalue="1" endvalue="1" description="You broke the sixth seal."/>
 	</quest>
 </quests>

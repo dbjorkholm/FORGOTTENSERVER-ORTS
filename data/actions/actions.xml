@@ -3,6 +3,7 @@
 
 	<!-- The Queen of the Banshees Quest -->
 	<action fromuid="50000" touid="50002" script="the queen of the banshees quest/theFirstSeal.lua"/>
+	<action fromuid="50005" touid="50010" script="the queen of the banshees quest/theSixthSeal.lua"/>
 
 	<!-- Hunter Outfits Quest -->
 	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
