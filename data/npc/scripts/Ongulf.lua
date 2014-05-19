@@ -1,40 +1,27 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
 
-function creatureSayCallback(cid, type, msg)
-	if(not(npcHandler:isFocused(cid))) then
-		return false
-	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	
+function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() npcHandler:onThink() end
+
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	
-	if(msgcontains(msg, "project")) then
-		if(talkState[talkUser] == 0) then
+	if not npcHandler:isFocused(cid) then
+		return false
+	elseif(msgcontains(msg, "project")) then
+		if(npcHandler.topic[cid] == 0) then
 			npcHandler:say(
 						{
 							"Well, it's a long story but you really should listen to understand what is going on here. You can also hear a short version of the story, but then don't blame me if you mess something up due to your undwarfish impatience. ...",
-							"So what would you like to hear, the long story or the short version?"
+							"So what would you like to hear, the {long} story or the {short} version?"
 						}, player)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "long")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say(
 						{
 							"After centuries the resources beneath and around the Big Old One became alarmingly short. Some decades ago, the imperial mining guild financed a project to search and establish new mines far away from Kazordoon. ...",
@@ -52,10 +39,24 @@ function creatureSayCallback(cid, type, msg)
 							"It became painfully obvious that the number of workers needed there could not easily be supplied by the ships alone. Also such a base would require an amount of money, expertise and manpower that the guild could not provide. ...",
 							"We would need help and additional resources. That's were you come into play. If you are interested, let's talk about possible missions."
 						}, player)
-			talkState[talkUser] = 2
+			npcHandler.topic[cid] = 2
+		end
+	elseif(msgcontains(msg, "short")) then
+		if(npcHandler.topic[cid] == 1) then
+			npcHandler:say(
+						{
+							"<grumbles> Well, we have found this place here full of promising resources and plan to create a new mining outpost. Of course this takes a lot of effort and organisation. ...",
+							"For some of the tasks at hand we need help, even from outsiders like you. So if you are interested in some missions, let me know.",
+							"Listen, I can handle the organisation down here and my boys will handle the construction of the base fine enough. Actually, all you do down here is to stand in the workers' way. ...",
+							"But there might be something for you to do outside the base. We need to learn more about the land up there. Take the lift and do some exploring. Find a passage leading out of the mountains. ...",
+							"Do not explore any further though. You never know whom you might be messing with."
+						}, player)
+			player:setStorageValue(1015, 1)
+			player:setStorageValue(12131, 1) --Questlog, The New Frontier Quest "Mission 01: New Land"
+			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "mission")) then
-		if(player:getStorageValue(1015) < 1 and talkState[talkUser] == 2) then
+		if(player:getStorageValue(1015) < 1 and npcHandler.topic[cid] == 2) then
 			npcHandler:say(
 						{
 							"Listen, I can handle the organisation down here and my boys will handle the construction of the base fine enough. Actually, all you do down here is to stand in the workers' way. ...",
@@ -64,11 +65,13 @@ function creatureSayCallback(cid, type, msg)
 						}, player)
 						
 			player:setStorageValue(1015, 1)
-			talkState[talkUser] = 0
+			player:setStorageValue(12131, 1) --Questlog, The New Frontier Quest "Mission 01: New Land"
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 2) then
 			npcHandler:say("Excellent. Although we have no idea what awaits us in this foreign land, it is always good to know something more about our surroundings. ", player)
 			player:setStorageValue(1015, 3)
-			talkState[talkUser] = 0
+			player:setStorageValue(12131, 3) --Questlog, The New Frontier Quest "Mission 01: New Land"
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 3) then
 			npcHandler:say(	
 						{
@@ -76,11 +79,12 @@ function creatureSayCallback(cid, type, msg)
 							"So please travel back to Kazordoon. In the western mines outside of The Big Old One, you'll find Melfar of the imperial mining guild. Ask him to send some more miners and wood. When you return, I might have some more interesting missions for you."
 						}, player)
 			player:setStorageValue(1015, 4)
-			talkState[talkUser] = 0	
+			player:setStorageValue(12132, 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
+			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(1015) == 7) then
-			npcHandler:say("That's good news for sure. It will give our operation a new impulse. However, only if there is not some unexpected trouble ahead. Well, we'll talk about that when we discuss your next mission. ", player)
+			npcHandler:say("That's good news for sure. It will give our operation a new impulse. However, only if there is not some unexpected trouble ahead. Well, we'll talk about that when we discuss your next {mission}. ", player)
 			player:setStorageValue(1015, 8)
-			talkState[talkUser] = 0	
+			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(1015) == 8) then
 			npcHandler:say(
 						{
@@ -90,7 +94,8 @@ function creatureSayCallback(cid, type, msg)
 							"If they are too powerful, just retreat and we will have to re-evaluate the situation. If they are harmless, all the better."
 						}, player)
 			player:setStorageValue(1015, 9)
-			talkState[talkUser] = 0	
+			player:setStorageValue(12133, 1) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
+			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(1015) == 10) then
 			npcHandler:say(
 						{
@@ -98,7 +103,7 @@ function creatureSayCallback(cid, type, msg)
 							"However, our miners encountered another problem in the meantime. I'm afraid this will be your next mission"
 						}, player)
 			player:setStorageValue(1015, 11)
-			talkState[talkUser] = 0	
+			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(1015) == 11) then
 			npcHandler:say(
 						{	
@@ -107,11 +112,11 @@ function creatureSayCallback(cid, type, msg)
 							"So I reserved you the privilege to slay the leader! Use the mining lift to reach mine A07. The more stone creatures you kill, the better. Your mission, however, is to slay their leader, most likely some special stone beast."
 						}, player)
 			player:setStorageValue(1015, 12)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 13) then
 			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other missions to accomplish. ", player)
 			player:setStorageValue(1015, 14)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 14) then
 			npcHandler:say(
 						{
@@ -132,12 +137,12 @@ function creatureSayCallback(cid, type, msg)
 							"Well, I hope you understand the importance of this mission and got what it takes to fulfil it. So hurry up and get us the needed support. "
 						}, player)
 			player:setStorageValue(1015, 15)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 15) then
 			if(player:getStorageValue(1020) == 1 and player:getStorageValue(1021) == 1 and player:getStorageValue(1022) == 1 and player:getStorageValue(1023) == 1 and player:getStorageValue(1024) == 1 and player:getStorageValue(1025) == 1) then
 				npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other missions to accomplish. ", player)
 				player:setStorageValue(1015, 16)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		elseif(player:getStorageValue(1015) == 16) then
 			npcHandler:say(
@@ -148,7 +153,7 @@ function creatureSayCallback(cid, type, msg)
 							"Scare them, bribe them, give them another target or whatever. As futile as it may sound: Try to talk to their leaders in some way and make them stop their attack plans. This is our only hope."
 						}, player)	
 			player:setStorageValue(1015, 17)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 20) then
 			npcHandler:say(
 						{
@@ -156,7 +161,7 @@ function creatureSayCallback(cid, type, msg)
 							"Of course all those revelations lead to new problems and a new mission for you. "
 						}, player)
 			player:setStorageValue(1015, 21)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 21) then
 			npcHandler:say(
 						{
@@ -165,7 +170,7 @@ function creatureSayCallback(cid, type, msg)
 							"If the orcs are right, they are somewhere in or behind those mountains in the north. I doubt you can reason with them in any way, but you'll have to try for the sake of Farmine."
 						}, player)
 			player:setStorageValue(1015, 22)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 27) then
 			npcHandler:say(
 						{
@@ -179,7 +184,7 @@ function creatureSayCallback(cid, type, msg)
 						}, player)
 			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 366 or 367, 0)
 			player:setStorageValue(1015, 28)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
