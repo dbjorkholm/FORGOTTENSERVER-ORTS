@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50014
-Last Used Aid = 50012
-Last Used Uid = 50005
+Last Used Storage = 50015
+Last Used Aid = 50015
+Last Used Uid = 50012
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -43,3 +43,8 @@ Sixth Seal:
 	Switches campfire uid = 		50005-50010
 	secondSeal Flame uid = 			50011
 	secondSeal Flame storage =		50014
+
+Fifth Seal:
+	fifthSeal Flame uid = 			50012
+	fifthSeal storage = 			50015
+	Tiles Path aids =			50014/50015

@@ -515,5 +515,6 @@
 	<quest name="The Queen of the Banshees" startstorageid="50013" startstoragevalue="1">
 		<mission name="The Hidden Seal" storageid="50013" startvalue="1" endvalue="1" description="You broke the first seal."/>
 		<mission name="The Seal of Logic" storageid="50014" startvalue="1" endvalue="1" description="You broke the sixth seal."/>
+		<mission name="The Seal of True Path" storageid="50015" startvalue="1" endvalue="1" description="You broke the fifth seal."/>
 	</quest>
 </quests>

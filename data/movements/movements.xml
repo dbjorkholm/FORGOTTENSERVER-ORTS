@@ -4,6 +4,8 @@
 	<!-- The Queen of the Banshees Quest -->
 	<movevent event="StepIn" uniqueid="50004" script="the queen of the banshees quest/theFirstSealFlame.lua" />
 	<movevent event="StepIn" uniqueid="50011" script="the queen of the banshees quest/theSixthSealFlame.lua" />
+	<movevent event="StepIn" uniqueid="50012" script="the queen of the banshees quest/theFifthSealFlame.lua" />
+	<movevent event="StepIn" fromaid="50014" toaid="50015" script="the queen of the banshees quest/theFifthSealPath.lua" />
 
 	<!--- Others -->
 	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>
