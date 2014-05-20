@@ -100,9 +100,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say(
 						{
 							"Primitive humans you say? These are most startling news, that's for sure. Well, I guess I'll send some victuals we can spare as a sign of our good will. ...",
-							"However, our miners encountered another problem in the meantime. I'm afraid this will be your next mission"
+							"However, our miners encountered another problem in the meantime. I'm afraid this will be your next {mission}"
 						}, player)
 			player:setStorageValue(1015, 11)
+			player:setStorageValue(12133, 3) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
 			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(1015) == 11) then
 			npcHandler:say(
@@ -112,6 +113,7 @@ local function creatureSayCallback(cid, type, msg)
 							"So I reserved you the privilege to slay the leader! Use the mining lift to reach mine A07. The more stone creatures you kill, the better. Your mission, however, is to slay their leader, most likely some special stone beast."
 						}, player)
 			player:setStorageValue(1015, 12)
+			player:setStorageValue(12134, 1) --Questlog, The New Frontier Quest "Mission 04: The Mine Is Mine"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 13) then
 			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other missions to accomplish. ", player)
