@@ -134,6 +134,7 @@
 	<monster name="Apocalypse" file="bosses/Apocalypse.xml"/>
 	<monster name="Apprentice Sheng" file="bosses/apprentice sheng.xml"/>
 	<monster name="Arachir the Ancient One" file="bosses/arachir the ancient one.xml"/>
+	<monster name="Armenius" file="bosses/armenius.xml"/>
 	<monster name="Barbaria" file="bosses/barbaria.xml"/>
 	<monster name="Baron Brute" file="bosses/baron brute.xml"/>
 	<monster name="Bazir" file="bosses/bazir.xml"/>
@@ -444,14 +445,14 @@
 
 	<!-- Glires -->
 	<monster name="Cave Rat" file="glires/cave rat.xml"/>
+	<monster name="Enraged Squirrel" file="glires/enraged squirrel.xml"/>
 	<monster name="The Halloween Hare" file="glires/halloweenhare.xml"/>
 	<monster name="Rabbit" file="glires/rabbit.xml"/>
 	<monster name="Rat" file="glires/rat.xml"/>
 	<monster name="Silver Rabbit" file="glires/silver rabbit.xml"/>
 	<monster name="Squirrel" file="glires/squirrel.xml"/>
-	<monster name="enraged Squirrel" file="glires/enraged squirrel.xml"/>
-	<monster name="thieving Squirrel" file="glires/thieving squirrel.xml"/>
 	<monster name="Killer Rabbit" file="glires/killer rabbit.xml"/>
+	<monster name="Thieving Squirrel" file="glires/thieving squirrel.xml"/>
 
 	<!-- Geo-Elementals -->
 	<monster name="Armadile" file="geo-elementals/armadile.xml"/>
@@ -778,7 +779,6 @@
 	<monster name="Young Troll" file="trolls/young troll.xml"/>
 
 	<!-- Undead Humanoids -->
-	<monster name="Armenius" file="undead humanoids/armenius.xml"/>
 	<monster name="Banshee" file="undead humanoids/banshee.xml"/>
 	<monster name="Blightwalker" file="undead humanoids/blightwalker.xml"/>
 	<monster name="Crypt Shambler" file="undead humanoids/crypt shambler.xml"/>

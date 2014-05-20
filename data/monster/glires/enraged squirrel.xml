@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="enraged Squirrel" nameDescription="a enraged squirrel" race="blood" experience="10" speed="300" manacost="220">
+<monster name="Enraged Squirrel" nameDescription="an enraged squirrel" race="blood" experience="10" speed="300" manacost="220">
 	<health now="20" max="20"/>
 	<look type="274" corpse="7628"/>
 	<targetchange interval="4000" chance="0"/>
@@ -29,7 +29,5 @@
 	</voices>
 	<loot>
 		<item id="7909" chance="1140"/><!-- walnut -->
-		<item id="11213" chance="50410"/><!-- acorn -->
-		<item id="7910" chance="980"/><!-- peanut -->
 	</loot>
 </monster>
