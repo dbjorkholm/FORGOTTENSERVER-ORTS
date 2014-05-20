@@ -1,4 +1,6 @@
 function onAddItem(moveitem, tileitem, position)
-	Item(moveitem.uid):remove()
-	position:sendMagicEffect(CONST_ME_POFF)
+	if tileitem.actionid > 0 or tileitem.uid > 0 then
+		Item(moveitem.uid):remove()
+		Position(moveitem.uid):sendMagicEffect(CONST_ME_POFF)
+	end
 end
