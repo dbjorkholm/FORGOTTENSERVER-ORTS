@@ -572,5 +572,6 @@
 		<mission name="The Seal of Logic" storageid="50014" startvalue="1" endvalue="1" description="You broke the sixth seal."/>
 		<mission name="The Seal of True Path" storageid="50015" startvalue="1" endvalue="1" description="You broke the fifth seal."/>
 		<mission name="The Seal of Sacrifice" storageid="50016" startvalue="1" endvalue="1" description="You broke the fourth seal."/>
+		<mission name="The Seal of Demonrage" storageid="50018" startvalue="1" endvalue="1" description="You broke the third seal."/>
 	</quest>
 </quests>
