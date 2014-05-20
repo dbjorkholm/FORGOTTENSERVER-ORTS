@@ -8,6 +8,8 @@
 	<movevent event="StepIn" fromaid="50014" toaid="50015" script="the queen of the banshees quest/theFifthSealPath.lua" />
 	<movevent event="AddItem" tileitem="1" uniqueid="50013" script="the queen of the banshees quest/theFourthSealSacrifice.lua" />
 	<movevent event="StepIn" uniqueid="50014" script="the queen of the banshees quest/theFourthSealFlame.lua" />
+	<movevent event="StepIn" actionid="50016" script="the queen of the banshees quest/theThirdSealWarlockTile.lua" />
+	<movevent event="StepIn" uniqueid="50020" script="the queen of the banshees quest/theThirdSealFlame.lua" />
 
 	<!--- Others -->
 	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>

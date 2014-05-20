@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50016
-Last Used Aid = 50015
-Last Used Uid = 50012
+Last Used Storage = 50018
+Last Used Aid = 50016
+Last Used Uid = 50020
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -54,3 +54,9 @@ Fourth Seal:
 	sacrifice tile uid = 			50013
 	fourthSeal Flame uid = 			50014
 	fourthSeal storage =			50016
+
+Third Seal:
+	warlockSummon Tile aid/stor =		50016/50017
+	switchesToAccess uids =			50015-50019
+	thirdSeal Flame uid =			50020
+	thirdSeal storage =			50018
