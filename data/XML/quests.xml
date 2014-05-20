@@ -186,13 +186,13 @@
 			<missionstate id="6" description="Return to Ongulf and report your mission!"/>
 		</mission>
 		<mission name="Mission 03: Strangers in the Night" storageid="12133" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="You need to find the tribe which lives in the mountains. Find some vines in this mountain, climb up there and find out who is spying on us!"/>
+			<missionstate id="2" description="Return to Ongulf and report your mission about primitive humans."/>
+			<missionstate id="3" description="You already reported Ongulf about primitive humans! Ask Ongulf for new mission!"/>
 		</mission>
 		<mission name="Mission 04: The Mine Is Mine" storageid="12134" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
+			<missionstate id="1" description="Head back to the levers and this time use the left one. Go North through the tunnel of Stone Golems. Kill the boss, Shard of Corruption at the end of the tunnel."/>
+			<missionstate id="2" description="You killed the Shard of Corruption. Return to Ongulf and report your mission!"/>
 			<missionstate id="3" description="..."/>
 		</mission>
 		<mission name="Mission 05: Getting Things Busy" storageid="12135" startvalue="1" endvalue="3">
