@@ -452,7 +452,7 @@
 	<monster name="Silver Rabbit" file="glires/silver rabbit.xml"/>
 	<monster name="Squirrel" file="glires/squirrel.xml"/>
 	<monster name="Killer Rabbit" file="glires/killer rabbit.xml"/>
-	<monster name="Ehieving Squirrel" file="glires/thieving squirrel.xml"/>
+	<monster name="Thieving Squirrel" file="glires/thieving squirrel.xml"/>
 
 	<!-- Geo-Elementals -->
 	<monster name="Armadile" file="geo-elementals/armadile.xml"/>
