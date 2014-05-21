@@ -1,18 +1,21 @@
 function onCastSpell(creature, var)
-	local pos = creature:getPosition()
-	pos.stackpos = STACKPOS_GROUND
-	local tile = pos:getTile()
-	if tile then
-		local thing = tile:getGround()
-		if thing and thing:isItem() and not isInArray(ropeSpots, thing:getType():getId()) then
-			creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-			pos:sendMagicEffect(CONST_ME_POFF)
-			return false
+	local position = creature:getPosition()
+	position:sendMagicEffect(CONST_ME_POFF)
+	local tile = position:getTile()
+
+	if isInArray(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
+		position.z = position.z - 1
+		position.y = position.y + 1
+		tile = position:getTile()
+		if tile then
+			creature:teleportTo(position, false)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+		else
+			creature:sendCancelMessage(RETURNVALUE_NOTENOUGHROOM)
 		end
+	else
+		creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 	end
-	
-	local destination = {x = pos.x, y = pos.y + 1, z = pos.z - 1}
-	creature:teleportTo(destination, false)
-	creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+
 	return true
 end
