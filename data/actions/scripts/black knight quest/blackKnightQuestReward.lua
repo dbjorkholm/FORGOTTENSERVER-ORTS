@@ -12,7 +12,7 @@ local player = Player(cid)
                 if(player:getStorageValue(491) < 1) then
                         player:setStorageValue(491, 1)
                         player:addItem(2488, 1)
-                        player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a crown legs.")
+                        player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found crown legs.")
                 else
                         player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
                 end
