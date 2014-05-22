@@ -16,5 +16,6 @@ local player = Player(cid)
                 else
                         player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
                 end
+				end
         return true
 end
