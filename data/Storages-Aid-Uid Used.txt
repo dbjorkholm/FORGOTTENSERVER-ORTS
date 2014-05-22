@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50018
-Last Used Aid = 50016
-Last Used Uid = 50020
+Last Used Storage = 50020
+Last Used Aid = 50019
+Last Used Uid = 50021
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -34,7 +34,9 @@ horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
 
 The Queen of banshee Quest:
-First Seal: The Hidden Seal:
+Kiss storage =					50020
+
+First Seal:
 	2 magic wall lever uid:			50000/50001/50002
 	Human dead body "quest" aid/uid:	2000/50003
 	firstSeal FlameTp uid: 			50004
@@ -60,3 +62,8 @@ Third Seal:
 	switchesToAccess uids =			50015-50019
 	thirdSeal Flame uid =			50020
 	thirdSeal storage =			50018
+
+Second Seal:
+	pearlsTeleport aid =			50019
+	secondSeal Flame uid =			50021
+	secondSeal Flame storage =		50019
