@@ -169,6 +169,7 @@
 	<monster name="Gnomevil" file="bosses/gnomevil.xml"/>
 	<monster name="Golgordan" file="bosses/golgordan.xml"/>
 	<monster name="Grand Mother Foulscale" file="bosses/grand mother foulscale.xml"/>
+	<monster name="Gorgo" file="bosses/gorgo.xml"/>
 	<monster name="Groam" file="bosses/groam.xml"/>
 	<monster name="Grorlam" file="bosses/grorlam.xml"/>
 	<monster name="Hairman the Huge" file="bosses/hairman the huge.xml"/>
