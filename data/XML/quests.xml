@@ -171,7 +171,7 @@
 			<missionstate id="3" description="You completed the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
 		</mission>
 	</quest>
-	<quest name="The New Frontier Quest" startstorageid="1015" startstoragevalue="1">
+	<quest name="The New Frontier" startstorageid="1015" startstoragevalue="1">
 		<mission name="Mission 01: New Land" storageid="12131" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Ongulf sends you to explore the passage to the east of farmine."/>
 			<missionstate id="2" description="You have found the passage through the mountains and can report Ongulf about your success."/>
@@ -190,10 +190,9 @@
 			<missionstate id="2" description="Return to Ongulf and report your mission about primitive humans."/>
 			<missionstate id="3" description="You already reported Ongulf about primitive humans! Ask Ongulf for new mission!"/>
 		</mission>
-		<mission name="Mission 04: The Mine Is Mine" storageid="12134" startvalue="1" endvalue="3">
+		<mission name="Mission 04: The Mine Is Mine" storageid="12134" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Head back to the levers and this time use the left one. Go North through the tunnel of Stone Golems. Kill the boss, Shard of Corruption at the end of the tunnel."/>
 			<missionstate id="2" description="You killed the Shard of Corruption. Return to Ongulf and report your mission!"/>
-			<missionstate id="3" description="..."/>
 		</mission>
 		<mission name="Mission 05: Getting Things Busy" storageid="12135" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

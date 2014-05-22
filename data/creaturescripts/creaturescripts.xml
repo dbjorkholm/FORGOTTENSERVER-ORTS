@@ -15,6 +15,9 @@
 	<!-- Boss Summoning -->
 	<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>
 	
+	<!-- The new Frontier Quest -->
+	<event type="kill" name="theNewFrontierQuestShardOfCorruption" script="the new frontier quest/theNewFrontierQuestShardOfCorruption.lua"/>
+	
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>
 	<event type="kill" name="inServiceOfYalaharQuestsMorik" script="in service of yalahar quest/inServiceOfYalaharQuestsMorik.lua"/>

@@ -116,7 +116,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(12134, 1) --Questlog, The New Frontier Quest "Mission 04: The Mine Is Mine"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 13) then
-			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other missions to accomplish. ", player)
+			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other {missions} to accomplish. ", player)
 			player:setStorageValue(1015, 14)
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(1015) == 14) then
