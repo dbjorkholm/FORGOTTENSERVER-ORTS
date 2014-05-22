@@ -9,6 +9,9 @@ You can download TFS 1.0 Windows Binaries from: http://nightlies.otland.net
 To login you can use otclient by Edubart!
 https://github.com/edubart/otclient
 
+To edit the map you can use the map editor from this link:
+http://otland.net/threads/10-35-remeres-map-editor.211040/
+
 Also you can use the forum to discuss and report:
 http://otland.net/threads/best-released-real-map-10-31-based-1-0.204514/
 

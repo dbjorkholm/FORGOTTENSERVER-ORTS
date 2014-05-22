@@ -1,7 +1,6 @@
 dofile('data/lib/SvargrondArenaQuest.lua')
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local toPos = {x = fromPosition.x + 2, y = fromPosition.y, z = fromPosition.z}
 	if getPlayerStorageValue(cid, STORAGE_ARENA) < 1 then
 		return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "This door seems to be sealed against unwanted intruders.")
 	end
