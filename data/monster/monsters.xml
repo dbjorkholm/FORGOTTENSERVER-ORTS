@@ -169,6 +169,7 @@
 	<monster name="Gnomevil" file="bosses/gnomevil.xml"/>
 	<monster name="Golgordan" file="bosses/golgordan.xml"/>
 	<monster name="Grand Mother Foulscale" file="bosses/grand mother foulscale.xml"/>
+	<monster name="Grandfather Tridian" file="bosses/grandfather tridian.xml"/>
 	<monster name="Gorgo" file="bosses/gorgo.xml"/>
 	<monster name="Groam" file="bosses/groam.xml"/>
 	<monster name="Grorlam" file="bosses/grorlam.xml"/>
@@ -827,6 +828,7 @@
 	<!-- Voodoo Cultists -->
 	<monster name="Acolyte of the Cult" file="voodoo cultists/acolyte of the cult.xml"/>
 	<monster name="Adept of the Cult" file="voodoo cultists/adept of the cult.xml"/>
+	<monster name="Doomsday Cultist" file="voodoo cultists/doomsday cultist.xml"/>
 	<monster name="Enlightened of the Cult" file="voodoo cultists/enlightened of the cult.xml"/>
 	<monster name="Novice of the Cult" file="voodoo cultists/novice of the cult.xml"/>
 
