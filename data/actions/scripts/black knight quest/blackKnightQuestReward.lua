@@ -14,7 +14,7 @@ local player = Player(cid)
                         player:addItem(2487, 1)
                         player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a crown armor.")
                 else
-                        player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+                        player:sendTextMessage(MESSAGE_INFO_DESCR, "The tree is empty.")
                 end
 				end
         return true
