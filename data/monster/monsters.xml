@@ -205,6 +205,7 @@
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>
 	<monster name="Obujos" file="bosses/obujos.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
+	<monster name="Ribstride" file="bosses/ribstride.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron the Ripper" file="bosses/ron the ripper.xml"/>
 	<monster name="Rottie the Rotworm" file="bosses/rottie the rotworm.xml"/>
@@ -244,7 +245,9 @@
 	<monster name="Tibia Bug" file="bosses/tibia bug.xml"/>
 	<monster name="Tiquandas Revenge" file="bosses/tiquandas revenge.xml"/>
 	<monster name="Tirecz" file="bosses/tirecz.xml"/>
+	<monster name="Tormentor" file="bosses/tormentor.xml"/>
 	<monster name="Tremorak" file="bosses/tremorak.xml"/>
+	<monster name="Tromphonyte" file="bosses/tromphonyte.xml"/>
 	<monster name="Ungreez" file="bosses/ungreez.xml"/>
 	<monster name="Ushuriel" file="bosses/ushuriel.xml"/>
 	<monster name="Verminor" file="bosses/verminor.xml"/>
