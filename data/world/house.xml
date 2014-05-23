@@ -105,8 +105,8 @@
 	<house name="Shadow Caves 24" houseid="248" entryx="32656" entryy="31668" entryz="10" rent="300" townid="5" size="7" />
 	<house name="Shadow Caves 21" houseid="249" entryx="32654" entryy="31664" entryz="10" rent="300" townid="5" size="7" />
 	<house name="Shadow Caves 22" houseid="250" entryx="32656" entryy="31664" entryz="10" rent="300" townid="5" size="7" />
-	<house name="Underwood 9" houseid="251" entryx="32712" entryy="31665" entryz="7" rent="585" townid="5" size="8" />
-	<house name="Treetop 13" houseid="252" entryx="32713" entryy="31665" entryz="6" rent="1400" townid="5" size="18" />
+	<house name="Underwood 9" houseid="251" entryx="32712" entryy="31665" entryz="7" rent="585" townid="5" size="10" />
+	<house name="Treetop 13" houseid="252" entryx="32713" entryy="31665" entryz="6" rent="1400" townid="5" size="24" />
 	<house name="Underwood 8" houseid="254" entryx="32690" entryy="31647" entryz="7" rent="865" townid="5" size="12" />
 	<house name="Mangrove 4" houseid="255" entryx="32717" entryy="31621" entryz="7" rent="950" townid="5" size="12" />
 	<house name="Coastwood 10" houseid="256" entryx="32717" entryy="31621" entryz="6" rent="1630" townid="5" size="19" />
@@ -453,7 +453,7 @@
 	<house name="The Market 2 (Shop)" houseid="835" entryx="32634" entryy="31930" entryz="8" rent="1100" townid="3" size="16" />
 	<house name="The Market 4 (Shop)" houseid="836" entryx="32635" entryy="31933" entryz="8" rent="1800" townid="3" size="28" />
 	<house name="Granite Guildhall" houseid="837" entryx="32599" entryy="31949" entryz="5" rent="17845" townid="3" size="297" />
-	<house name="Upper Barracks 1" houseid="838" entryx="32605" entryy="31923" entryz="5" rent="210" townid="3" size="1" />
+	<house name="Upper Barracks 1" houseid="838" entryx="32605" entryy="31923" entryz="5" rent="210" townid="3" size="4" />
 	<house name="Upper Barracks 13" houseid="850" entryx="32615" entryy="31923" entryz="5" rent="580" townid="3" size="11" />
 	<house name="Nobility Quarter 4" houseid="851" entryx="32607" entryy="31921" entryz="4" rent="765" townid="3" size="14" />
 	<house name="Nobility Quarter 5" houseid="852" entryx="32612" entryy="31921" entryz="4" rent="765" townid="3" size="14" />
@@ -630,21 +630,21 @@
 	<house name="Litter Promenade 4" houseid="2034" entryx="32288" entryy="32865" entryz="7" rent="390" townid="7" size="10" />
 	<house name="Litter Promenade 3" houseid="2035" entryx="32286" entryy="32865" entryz="7" rent="450" townid="7" size="12" />
 	<house name="Litter Promenade 2" houseid="2036" entryx="32277" entryy="32861" entryz="7" rent="300" townid="7" size="7" />
-	<house name="Litter Promenade 1" houseid="2037" entryx="32271" entryy="32862" entryz="7" rent="400" townid="7" size="6" />
-	<house name="The Shelter" houseid="2038" entryx="32267" entryy="32860" entryz="7" rent="13590" townid="7" size="282" />
+	<house name="Litter Promenade 1" houseid="2037" entryx="32271" entryy="32862" entryz="7" rent="400" townid="7" size="5" />
+	<house name="The Shelter" houseid="2038" entryx="32267" entryy="32860" entryz="7" rent="13590" townid="7" size="280" />
 	<house name="Straycat's Corner 6" houseid="2039" entryx="32281" entryy="32858" entryz="7" rent="300" townid="7" size="7" />
 	<house name="Straycat's Corner 5" houseid="2040" entryx="32281" entryy="32853" entryz="7" rent="760" townid="7" size="16" />
-	<house name="Rum Alley 3" houseid="2042" entryx="32272" entryy="32854" entryz="7" rent="330" townid="7" size="9" />
+	<house name="Rum Alley 3" houseid="2042" entryx="32272" entryy="32854" entryz="7" rent="330" townid="7" size="8" />
 	<house name="Straycat's Corner 1" houseid="2043" entryx="32280" entryy="32843" entryz="7" rent="300" townid="7" size="7" />
 	<house name="Rum Alley 2" houseid="2044" entryx="32260" entryy="32846" entryz="7" rent="300" townid="7" size="7" />
 	<house name="Rum Alley 1" houseid="2045" entryx="32257" entryy="32839" entryz="7" rent="510" townid="7" size="14" />
-	<house name="Smuggler Backyard 3" houseid="2046" entryx="32263" entryy="32838" entryz="7" rent="700" townid="7" size="15" />
+	<house name="Smuggler Backyard 3" houseid="2046" entryx="32263" entryy="32838" entryz="7" rent="700" townid="7" size="14" />
 	<house name="Shady Trail 3" houseid="2048" entryx="32274" entryy="32835" entryz="7" rent="300" townid="7" size="7" />
 	<house name="Shady Trail 1" houseid="2049" entryx="32283" entryy="32834" entryz="7" rent="1150" townid="7" size="14" />
 	<house name="Shady Trail 2" houseid="2050" entryx="32274" entryy="32830" entryz="7" rent="490" townid="7" size="8" />
 	<house name="Smuggler Backyard 5" houseid="2051" entryx="32266" entryy="32823" entryz="7" rent="610" townid="7" size="11" />
 	<house name="Smuggler Backyard 4" houseid="2052" entryx="32263" entryy="32830" entryz="7" rent="390" townid="7" size="10" />
-	<house name="Smuggler Backyard 2" houseid="2053" entryx="32261" entryy="32829" entryz="7" rent="670" townid="7" size="15" />
+	<house name="Smuggler Backyard 2" houseid="2053" entryx="32261" entryy="32829" entryz="7" rent="670" townid="7" size="14" />
 	<house name="Smuggler Backyard 1" houseid="2054" entryx="32264" entryy="32823" entryz="7" rent="670" townid="7" size="14" />
 	<house name="Sugar Street 2" houseid="2055" entryx="32262" entryy="32815" entryz="7" rent="2550" townid="7" size="39" />
 	<house name="Sugar Street 1" houseid="2056" entryx="32256" entryy="32815" entryz="7" rent="3000" townid="7" size="48" />
