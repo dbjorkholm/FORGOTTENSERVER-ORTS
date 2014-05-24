@@ -1,3 +1,54 @@
+local t = {
+{x = 32808, y = 32336, z = 11, stackpos = 0},
+{x = 32809, y = 32336, z = 11, stackpos = 0},
+{x = 32810, y = 32336, z = 11, stackpos = 0},
+{x = 32808, y = 32334, z = 11, stackpos = 0},
+{x = 32807, y = 32334, z = 11, stackpos = 0},
+{x = 32807, y = 32335, z = 11, stackpos = 0},
+{x = 32807, y = 32336, z = 11, stackpos = 0},
+{x = 32807, y = 32337, z = 11, stackpos = 0},
+{x = 32806, y = 32337, z = 11, stackpos = 0},
+{x = 32805, y = 32337, z = 11, stackpos = 0},
+{x = 32805, y = 32338, z = 11, stackpos = 0},
+{x = 32805, y = 32339, z = 11, stackpos = 0},
+{x = 32806, y = 32339, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32807, y = 32338, z = 11, stackpos = 0},
+{x = 32808, y = 32338, z = 11, stackpos = 0},
+{x = 32808, y = 32337, z = 11, stackpos = 0},
+{x = 32809, y = 32337, z = 11, stackpos = 0},
+{x = 32810, y = 32337, z = 11, stackpos = 0},
+{x = 32811, y = 32337, z = 11, stackpos = 0},
+{x = 32811, y = 32338, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32339, z = 11, stackpos = 0},
+{x = 32809, y = 32339, z = 11, stackpos = 0},
+{x = 32809, y = 32338, z = 11, stackpos = 0},
+{x = 32811, y = 32336, z = 11, stackpos = 0},
+{x = 32811, y = 32335, z = 11, stackpos = 0},
+{x = 32810, y = 32335, z = 11, stackpos = 0},
+{x = 32809, y = 32335, z = 11, stackpos = 0},
+{x = 32808, y = 32335, z = 11, stackpos = 0},
+{x = 32809, y = 32334, z = 11, stackpos = 0},
+{x = 32809, y = 32333, z = 11, stackpos = 0},
+{x = 32810, y = 32333, z = 11, stackpos = 0},
+{x = 32811, y = 32333, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32334, z = 11, stackpos = 0},
+{x = 32811, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32334, z = 11, stackpos = 0},
+{x = 32813, y = 32334, z = 11, stackpos = 0},
+{x = 32814, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32333, z = 11, stackpos = 0},
+{x = 32810, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32335, z = 11, stackpos = 0},
+{x = 32813, y = 32335, z = 11, stackpos = 0},
+{x = 32814, y = 32335, z = 11, stackpos = 0},
+{x = 32814, y = 32333, z = 11, stackpos = 0},
+{x = 32813, y = 32333, z = 11, stackpos = 0}
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local iEx = Item(itemEx.uid)
@@ -30,5 +81,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	end
+	--The Pits of Inferno Quest
+    if itemEx.uid == 1022 and itemEx.itemid == 1304 then
+        for i = 1, #t do
+            doCreateItem(5815, 1, t[i])
+        end
+        iEx:transform(2256)
+		toPosition:sendMagicEffect(CONST_ME_SMOKE)
+    end
 	return true
 end
