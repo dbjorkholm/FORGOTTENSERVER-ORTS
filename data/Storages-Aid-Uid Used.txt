@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50020
-Last Used Aid = 50019
-Last Used Uid = 50021
+Last Used Storage = 50021
+Last Used Aid = 50021
+Last Used Uid = 50022
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -67,3 +67,9 @@ Second Seal:
 	pearlsTeleport aid =			50019
 	secondSeal Flame uid =			50021
 	secondSeal Flame storage =		50019
+
+Last room:
+	doors aid =				50020
+	last door aid =				50021
+	last quest storage =			50021
+	last flame uid =			50022

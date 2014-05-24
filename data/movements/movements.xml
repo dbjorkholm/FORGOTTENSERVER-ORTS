@@ -12,6 +12,7 @@
 	<movevent event="StepIn" uniqueid="50020" script="the queen of the banshees quest/theThirdSealFlame.lua" />
 	<movevent event="StepIn" actionid="50017" script="the queen of the banshees quest/theSecondSealPearl.lua" />
 	<movevent event="StepIn" uniqueid="50021" script="the queen of the banshees quest/theSecondSealFlame.lua" />
+	<movevent event="StepIn" uniqueid="50022" script="the queen of the banshees quest/theLastFlame.lua" />
 
 	<!--- Others -->
 	<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>

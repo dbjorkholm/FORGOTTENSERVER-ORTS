@@ -573,5 +573,6 @@
 		<mission name="The Seal of Sacrifice" storageid="50016" startvalue="1" endvalue="1" description="You broke the fourth seal."/>
 		<mission name="The Seal of Demonrage" storageid="50018" startvalue="1" endvalue="1" description="You broke the third seal."/>
 		<mission name="The Plague Seal" storageid="50019" startvalue="1" endvalue="1" description="You broke the second seal."/>
+		<mission name="All Seals" storageid="50021" startvalue="1" endvalue="1" description="You broke all the seals."/>
 	</quest>
 </quests>
