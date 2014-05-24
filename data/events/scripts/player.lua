@@ -87,6 +87,15 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemByType(ITEM_TYPE_TELEPORT)
+		if thing ~= nil then
+			self:sendCancelMessage("Sorry, not possible.")
+			self:getPosition():sendMagicEffect(CONST_ME_POFF)
+			return false
+		end
+	end
 	return true
 end
 

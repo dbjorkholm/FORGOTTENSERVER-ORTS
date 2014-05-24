@@ -14,9 +14,6 @@
 	<movevent event="StepIn" uniqueid="50021" script="the queen of the banshees quest/theSecondSealFlame.lua" />
 
 	<!--- Others -->
-	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/notrash.lua"/>
-	<movevent event="AddItem" tileitem="1" itemid="5023" script="others/notrash.lua"/>
-	<movevent event="AddItem" tileitem="1" itemid="5024" script="others/notrash.lua"/>
 	<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
 	<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
 		
