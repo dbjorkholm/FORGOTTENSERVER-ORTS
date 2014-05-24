@@ -8,10 +8,11 @@ local pos = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 1945) then
 		doRemoveItem(getTileItemById(pos[item.uid], 6289).uid, 1)
-		doSendMagicEffect(pos[item.uid], CONST_ME_FIRE)
+		doRemoveItem(getTileItemById(pos[item.uid], 6289).uid, 1)
+		doSendMagicEffect(pos[item.uid], CONST_ME_FIREATTACK)
 	else
 		doCreateItem(6289, 1, pos[item.uid])
-		doSendMagicEffect(pos[item.uid], CONST_ME_FIRE)
+		doSendMagicEffect(pos[item.uid], CONST_ME_FIREATTACK)
 	end
 	
 	if (item.itemid == 1945) then
