@@ -172,7 +172,6 @@
 	<action uniqueid="3110" script="barbarian test quest/barbarianTestQuestMead.lua"/>
 	
 	<!-- Behemoth Quest -->
-	<action fromuid="2220" touid="2223" script="behemoth quest/behemothQuestRewards.lua"/>
 	<action uniqueid="2007" script="behemoth quest/behemothQuestLever.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
