@@ -13,12 +13,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You have found " .. getItemName(t.reward) .. ".")
 			doPlayerAddItem(cid, t.reward, t.count)
 			setPlayerStorageValue(cid, 1010, 3)
-			doPlayerAddExp(cid, 250000, true, true)
-			if (getSex == 0) then
-				doPlayerAddOutfit(cid,542,2)
-			else
-				doPlayerAddOutfit(cid,541,2)
-			end
         	else
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "It's empty.")
     		end
