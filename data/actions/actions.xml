@@ -38,7 +38,6 @@
 	<action uniqueid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
 	<action actionid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
 	<action uniqueid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
-	<action actionid="12125" script="the ape city/Mission5HydraEggReward.lua" />
 	<action actionid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
 	<action actionid="12127" script="the ape city/Mission7DestroyingCasksWithCrowbar.lua" />
 	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
