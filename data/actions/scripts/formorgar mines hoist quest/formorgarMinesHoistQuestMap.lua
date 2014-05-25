@@ -17,6 +17,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 	player:setStorageValue(targetItem[1], 1)
 	player:addItem(targetItem[2], 1)
-	player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a part of hoist instruction.")
+	player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a part of hoist instruction.")
 	return true
 end

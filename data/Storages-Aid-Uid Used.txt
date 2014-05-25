@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50021
 Last Used Aid = 50021
-Last Used Uid = 50022
+Last Used Uid = 50026
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 ice islands quest storage:		12001-12009
@@ -73,3 +73,8 @@ Last room:
 	last door aid =				50021
 	last quest storage =			50021
 	last flame uid =			50022
+
+Triangle Tower lever uid =	50023
+Blood Herb quest tree uid = 50024
+Vampire Shield Quest uid = 50025
+Bone Key (3520) uid = 50026
