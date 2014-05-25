@@ -131,7 +131,7 @@
 	<!-- Bosses -->
 	<monster name="Abyssador" file="bosses/abyssador.xml"/>
 	<monster name="Annihilon" file="bosses/annihilon.xml"/>
-	<monster name="Apocalypse" file="bosses/Apocalypse.xml"/>
+	<monster name="Apocalypse" file="bosses/apocalypse.xml"/>
 	<monster name="Apprentice Sheng" file="bosses/apprentice sheng.xml"/>
 	<monster name="Arachir the Ancient One" file="bosses/arachir the ancient one.xml"/>
 	<monster name="Armenius" file="bosses/armenius.xml"/>
@@ -300,7 +300,7 @@
 	<monster name="Crustacea Gigantica" file="crustaceans/crustacea gigantica.xml"/>
 
 	<!-- Cryo-Elementals -->
-	<monster name="Ice Golem" file="Cryo-Elementals/ice golem.xml"/>
+	<monster name="Ice Golem" file="cryo-elementals/ice golem.xml"/>
 
 	<!-- Deeplings -->
 	<monster name="Deepling Brawler" file="deeplings/deepling brawler.xml"/>
