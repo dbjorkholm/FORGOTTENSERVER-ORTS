@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		for i = 1, #rewards do
 			container:addItem(rewards[i], 1)
 		end
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a bag.")
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a bag.")
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
 	end
