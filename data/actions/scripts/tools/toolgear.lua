@@ -1,3 +1,53 @@
+local lava = {
+{x = 32808, y = 32336, z = 11, stackpos = 0},
+{x = 32809, y = 32336, z = 11, stackpos = 0},
+{x = 32810, y = 32336, z = 11, stackpos = 0},
+{x = 32808, y = 32334, z = 11, stackpos = 0},
+{x = 32807, y = 32334, z = 11, stackpos = 0},
+{x = 32807, y = 32335, z = 11, stackpos = 0},
+{x = 32807, y = 32336, z = 11, stackpos = 0},
+{x = 32807, y = 32337, z = 11, stackpos = 0},
+{x = 32806, y = 32337, z = 11, stackpos = 0},
+{x = 32805, y = 32337, z = 11, stackpos = 0},
+{x = 32805, y = 32338, z = 11, stackpos = 0},
+{x = 32805, y = 32339, z = 11, stackpos = 0},
+{x = 32806, y = 32339, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32807, y = 32338, z = 11, stackpos = 0},
+{x = 32808, y = 32338, z = 11, stackpos = 0},
+{x = 32808, y = 32337, z = 11, stackpos = 0},
+{x = 32809, y = 32337, z = 11, stackpos = 0},
+{x = 32810, y = 32337, z = 11, stackpos = 0},
+{x = 32811, y = 32337, z = 11, stackpos = 0},
+{x = 32811, y = 32338, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32339, z = 11, stackpos = 0},
+{x = 32809, y = 32339, z = 11, stackpos = 0},
+{x = 32809, y = 32338, z = 11, stackpos = 0},
+{x = 32811, y = 32336, z = 11, stackpos = 0},
+{x = 32811, y = 32335, z = 11, stackpos = 0},
+{x = 32810, y = 32335, z = 11, stackpos = 0},
+{x = 32809, y = 32335, z = 11, stackpos = 0},
+{x = 32808, y = 32335, z = 11, stackpos = 0},
+{x = 32809, y = 32334, z = 11, stackpos = 0},
+{x = 32809, y = 32333, z = 11, stackpos = 0},
+{x = 32810, y = 32333, z = 11, stackpos = 0},
+{x = 32811, y = 32333, z = 11, stackpos = 0},
+{x = 32806, y = 32338, z = 11, stackpos = 0},
+{x = 32810, y = 32334, z = 11, stackpos = 0},
+{x = 32811, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32334, z = 11, stackpos = 0},
+{x = 32813, y = 32334, z = 11, stackpos = 0},
+{x = 32814, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32333, z = 11, stackpos = 0},
+{x = 32810, y = 32334, z = 11, stackpos = 0},
+{x = 32812, y = 32335, z = 11, stackpos = 0},
+{x = 32813, y = 32335, z = 11, stackpos = 0},
+{x = 32814, y = 32335, z = 11, stackpos = 0},
+{x = 32814, y = 32333, z = 11, stackpos = 0},
+{x = 32813, y = 32333, z = 11, stackpos = 0}
+}
 local holeId = {
 	294, 369, 370, 383, 392, 408, 409, 410, 427, 428, 430, 462, 469, 470, 482,
 	484, 485, 489, 924, 3135, 3136, 7933, 7938, 8170, 8286, 8285, 8284, 8281,
@@ -133,10 +183,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	else
+	--The Pits of Inferno Quest
+    if itemEx.itemid == 1304 and itemEx.uid == 1022 then
+        for i = 1, #lava do
+            doCreateItem(5815, 1, lava[i])
+        end
+        targetItem:transform(2256)
+		toPosition:sendMagicEffect(CONST_ME_SMOKE)
+    end
 		return false
 	end
 	
-	-- TODO: Add jamming, spoon and kitchen knife
+	-- TODO: Add jamming, sickle, spoon and kitchen knife
 
 	return true
 end
