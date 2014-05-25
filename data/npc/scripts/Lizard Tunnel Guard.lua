@@ -1,25 +1,19 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+
+function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() npcHandler:onThink() end
 
 function greetCallback(cid)
-	setPlayerStorageValue(cid, 1062, 1)
-	doTeleportThing(cid, {x = 33356, y = 31206, z = 8})
-	doCreatureSay(cid, "The guards have spotted you. You were forcibly dragged into a small cell. It looks like you need to build another disguise.", TALKTYPE_ORANGE_1)
+	local player = Player(cid)
+	if player:getStorageValue(1060) >= 2 then
+		player:setStorageValue(1062, 1)
+		player:teleportTo({x = 33361, y = 31206, z = 8})
+		player:say("The guards have spotted you. You were forcibly dragged into a small cell. It looks like you need to build another disguise.", TALKTYPE_ORANGE_1)
+	end
 	return true
 end
 
