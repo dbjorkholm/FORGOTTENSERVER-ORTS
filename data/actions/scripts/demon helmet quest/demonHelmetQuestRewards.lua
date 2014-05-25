@@ -7,9 +7,7 @@ local config = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	if player:getStorageValue(2217) < 1 then
-		player:addExperience(250000, true)
 		player:setStorageValue(2217, 1)
-		player:addOutfitAddon(player:getSex() == 0 and 542 or 541, 1)
 	end
 	
 	local targetItem = config[item.uid]
