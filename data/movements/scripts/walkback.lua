@@ -1,10 +1,15 @@
-function onStepIn(cid, item, position, fromPosition)
-	if item.uid > 0 and item.uid <= 65535 then
-		local player = Player(cid)
-		if player then
-			player:teleportTo(fromPosition, false)
-		end
-	end
+local SPECIAL_QUESTS = {2215, 2216}
 
-	return true
+function onStepIn(cid, item, position, fromPosition)
+    if (Container(item.uid) and not isInArray(SPECIAL_QUESTS, item.actionid) and item.uid > 65535) then
+        return true
+    end
+
+    local player = Player(cid)
+    if not player then
+        return true
+    end
+
+    player:teleportTo(fromPosition, false)
+    return true
 end
