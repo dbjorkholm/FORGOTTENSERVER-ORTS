@@ -140,10 +140,11 @@ local function creatureSayCallback(cid, type, msg)
 							"Well, I hope you understand the importance of this mission and got what it takes to fulfil it. So hurry up and get us the needed support. "
 						}, player)
 			player:setStorageValue(Questlinestorage, 15)
+			player:setStorageValue(12135, 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Questlinestorage) == 15) then
 			if(player:getStorageValue(1020) == 1 and player:getStorageValue(1021) == 1 and player:getStorageValue(1022) == 1 and player:getStorageValue(1023) == 1 and player:getStorageValue(1024) == 1 and player:getStorageValue(1025) == 1) then
-				npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other missions to accomplish. ", player)
+				npcHandler:say("You did an excellent job! With all this help Farmine will grow and prosper. While we put all available resources into building this base, I have another urgent {mission} for you.", player)
 				player:setStorageValue(Questlinestorage, 16)
 				npcHandler.topic[cid] = 0
 			end
