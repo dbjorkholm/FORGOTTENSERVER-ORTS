@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "project")) then
+	elseif(msgcontains(msg, "project") and player:getStorageValue(Questlinestorage) < 1) then
 		if(npcHandler.topic[cid] == 0) then
 			npcHandler:say(
 						{
@@ -64,7 +64,6 @@ local function creatureSayCallback(cid, type, msg)
 							"But there might be something for you to do outside the base. We need to learn more about the land up there. Take the lift and do some exploring. Find a passage leading out of the mountains. ...",
 							"Do not explore any further though. You never know whom you might be messing with."
 						}, player)
-						
 			player:setStorageValue(Questlinestorage, 1)
 			player:setStorageValue(12131, 1) --Questlog, The New Frontier Quest "Mission 01: New Land"
 			npcHandler.topic[cid] = 0
