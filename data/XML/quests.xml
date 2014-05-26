@@ -575,4 +575,10 @@
 		<mission name="The Plague Seal" storageid="50019" startvalue="1" endvalue="1" description="You broke the second seal."/>
 		<mission name="All Seals" storageid="50021" startvalue="1" endvalue="1" description="You broke all the seals."/>
 	</quest>
+	<quest name="Hot Cuisine" startstorageid="50022" startstoragevalue="1">
+		<mission name="Hot Cuisine" storageid="50023" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You've become the apprentice of Maltre Jean Pierre. The first dish he will teach you to prepare is Rotworm Stew. Bring him the ingredients he told you."/>
+			<missionstate id="2" description="You have completed the first dish, the second dish he will teach you to prepare is Hydra Tongue Salad. Bring him the ingredients he told you."/>
+		</mission>
+	</quest>
 </quests>
