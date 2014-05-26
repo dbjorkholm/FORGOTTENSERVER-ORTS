@@ -5,20 +5,24 @@ local pos = {
 	[2028] = {x = 32837, y = 32333, z = 11}
 }
 
+local function doRemoveFirewalls(fwPos)
+        local tile = Position(fwPos):getTile()
+        if tile then
+                local thing = tile:getItemById(6289)
+                if thing and thing:isItem() then
+                        thing:remove()
+                end
+        end
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 1945) then
-		doRemoveItem(getTileItemById(pos[item.uid], 6289).uid, 1)
-		doSendMagicEffect(pos[item.uid], CONST_ME_FIRE)
+		doRemoveFirewalls(pos[item.uid])
+		Position(pos[item.uid]):sendMagicEffect(CONST_ME_FIREAREA)
 	else
-		doCreateItem(6289, 1, pos[item.uid])
-		doSendMagicEffect(pos[item.uid], CONST_ME_FIRE)
+		Game.createItem(6289, 1, pos[item.uid])
+		Position(pos[item.uid]):sendMagicEffect(CONST_ME_FIREAREA)
 	end
-	
-	if (item.itemid == 1945) then
-		doTransformItem(item.uid, item.itemid + 1)
-	else
-		doTransformItem(item.uid, item.itemid - 1)
-	end
-	
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end
