@@ -6,7 +6,7 @@ function onStepIn(cid, item, position, lastPosition)
 			doPlayerRemoveItem(cid, 2684, 1)
 		else
 			doTeleportThing(cid, lastPosition)
-			doAreaCombatHealth(cid, COMBAT_FIREDAMAGE, lastPosition, 0, -10, -20, CONST_ME_FIRE)
+			doAreaCombatHealth(cid, COMBAT_FIREDAMAGE, lastPosition, 0, -10, -20, CONST_ME_HITBYFIRE)
 			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
 		end
 	elseif(item.uid == 2242) then
