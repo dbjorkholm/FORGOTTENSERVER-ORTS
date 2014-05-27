@@ -10,6 +10,6 @@ function onStepIn(cid, item, position, fromPosition)
         return true
     end
 
-    player:teleportTo(fromPosition, false)
+    player:teleportTo(fromPosition, true)
     return true
 end
