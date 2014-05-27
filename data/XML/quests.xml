@@ -583,6 +583,8 @@
 		<mission name="Hot Cuisine" storageid="50023" startvalue="1" endvalue="3">
 			<missionstate id="1" description="You've become the apprentice of Maltre Jean Pierre. The first dish he will teach you to prepare is Rotworm Stew. Bring him the ingredients he told you."/>
 			<missionstate id="2" description="You have completed the first dish, the second dish he will teach you to prepare is Hydra Tongue Salad. Bring him the ingredients he told you."/>
+			<missionstate id="3" description="You have completed the second dish, the third dish he will teach you to prepare is Roasted Dragon Wings. Bring him the ingredients he told you."/>
+			<missionstate id="4" description="..."/>
 		</mission>
 	</quest>
 </quests>
