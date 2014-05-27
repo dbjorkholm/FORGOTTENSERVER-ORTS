@@ -16,12 +16,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Player(cid):setStorageValue(200, 25)
 		Player(cid):setStorageValue(12117, 5) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
 		doPlayerAddItem(cid, rewards[item.uid], 1)
-		doTeleportThing(cid, {x = 32317, y = 32261, z = 9})
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found " .. getItemName(rewards[item.uid]) .. ".")
-		doPlayerAddExp(cid, 1000000, true, true)
 	else
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		doTeleportThing(cid, {x = 32317, y = 32261, z = 9})
 	end
 	return true
 end
