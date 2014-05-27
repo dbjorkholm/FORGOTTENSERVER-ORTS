@@ -27,7 +27,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if(getGlobalStorageValue(1000) == 14) then
 				for i = 1, 2 do
 					doRemoveItem(getTileItemById(stones[i], 1304).uid, 1)
-					doSendMagicEffect(stones[i], CONST_ME_EXPLOSION)
+					doSendMagicEffect(stones[i], CONST_ME_EXPLOSIONAREA)
 				end
 				doTransformItem(item.uid, 1946)
 			else

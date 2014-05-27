@@ -2,7 +2,7 @@ function onStepIn(cid, item, position, lastPosition)
 	if(item.uid == 3122) then
 		if(getPlayerStorageValue(cid, 900) == 4) then
 			doSetMonsterOutfit(cid, "skeleton", 2 * 1000)
-			doSendMagicEffect(position, CONST_ME_ENERGY)
+			doSendMagicEffect(position, CONST_ME_ENERGYHIT)
 			setPlayerStorageValue(cid, 900, 5)
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You've been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!")
 			doCreatureSay(cid, "*Rrrrrrrrrrr...*", TALKTYPE_ORANGE_1)

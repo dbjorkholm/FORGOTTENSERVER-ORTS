@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			else
 				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You had no luck this time.")
 			end
-			doSendMagicEffect(toPosition, CONST_ME_FIRE)
+			doSendMagicEffect(toPosition, CONST_ME_HITBYFIRE)
 			doTransformItem(item.uid, 18335)
 		end
 	end
