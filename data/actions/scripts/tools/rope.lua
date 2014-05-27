@@ -7,7 +7,8 @@ local holeId = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local tile = toPosition:getTile()
-	if isInArray(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
+	local ground = tile:getGround()
+	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
 		Player(cid):teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
 		return true
 	elseif isInArray(holeId, itemEx.itemid) then
@@ -21,7 +22,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return thing:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1})
 			end
 		end
-		return Player(cid):sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+
+		Player(cid):sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		return true
 	end
 
 	return false
