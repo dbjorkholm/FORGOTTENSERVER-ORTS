@@ -204,9 +204,9 @@
 			<missionstate id="7" description="You got support from all needed people to help farmine! Return to Ongulf and report your mission!"/>
 		</mission>
 		<mission name="Mission 06: Days Of Doom" storageid="12136" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Go to Curos, leader of the Orcs, in the middle of the Zao Steppe in the north-east area of an Orc camp. Ask for a mission and accept it."/>
+			<missionstate id="2" description="Enter the ring of battle, close to Curos quarter. Face Mooh'Tah Master in a battle and survive for two minutes. Return to him after you have passed this test."/>
+			<missionstate id="3" description="You passed the test of Curos. Return to Ongulf and report your mission!"/>
 		</mission>
 		<mission name="Mission 07: Messengers Of Peace" storageid="12137" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

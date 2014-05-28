@@ -24,7 +24,7 @@
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000"  script="the new frontier quest/theNewFrontierQuestWayOut.lua"/>
 	<movevent event="StepIn" actionid="8007"  script="the new frontier quest/theNewFrontierQuestTrap.lua"/>
-	<movevent event="StepIn" actionid="3155"  script="the new frontier quest/theNewFrontierQuestMinotaurBoss.lua"/>
+	<movevent event="StepIn" fromaid="12135" toaid="12136"  script="the new frontier quest/theNewFrontierQuestMinotaurBoss.lua"/>
 	
 	<!-- Teleports -->
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
