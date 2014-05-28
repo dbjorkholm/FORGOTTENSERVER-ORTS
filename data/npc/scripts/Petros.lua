@@ -40,8 +40,8 @@ local keywordHandler = KeywordHandler:new()
         	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = {x=33092, y=32883, z=6} })
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 			
-        keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can take you to Venore, Port Hope, Liberty Bay and Ankrahmun.'})
+        keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can take you to Venore, Port Hope, Liberty Bay, Ankrahmun or Gray Island.'})
         keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
-        keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can only take you to Venore, Port Hope, Liberty Bay and Ankrahmun.'})
+        keywordHandler:addKeyword({'travel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can only take you to Venore, Port Hope, Liberty Bay, Ankrahmun or Gray Island'})
         -- Makes sure the npc reacts when you say hi, bye etc.
         npcHandler:addModule(FocusModule:new())
