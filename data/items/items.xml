@@ -25703,7 +25703,11 @@
 	</item>
 	<item id="19511" article="a" name="wooden scaffolding" />
 	<item fromid="19512" toid="19514" article="a" name="small wooden fence" />
-	<item fromid="19515" toid="19517" article="a" name="wooden ramp" />
+	<item id="19515" article="a" name="wooden ramp" />
+	<item id="19516" article="a" name="wooden ramp">
+		<attribute key="floorchange" value="north" />
+	</item>
+	<item id="19517" article="a" name="wooden ramp" />
 	<item id="19518" name="muddy floor">
 		<attribute key="description" value="There is a hole in the ceiling." />
 	</item>

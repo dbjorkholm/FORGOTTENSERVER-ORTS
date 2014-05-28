@@ -156,6 +156,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Scare them, bribe them, give them another target or whatever. As futile as it may sound: Try to talk to their leaders in some way and make them stop their attack plans. This is our only hope."
 						}, player)	
 			player:setStorageValue(Questlinestorage, 17)
+			player:setStorageValue(12136, 1) --Questlog, The New Frontier Quest "Mission 06: Days Of Doom"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Questlinestorage) == 20) then
 			npcHandler:say(

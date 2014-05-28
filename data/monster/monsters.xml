@@ -203,6 +203,7 @@
 	<monster name="Mephiles" file="bosses/mephiles.xml"/>
 	<monster name="Minishabaal" file="bosses/minishabaal.xml"/>
 	<monster name="Monstor" file="bosses/monstor.xml"/>
+	<monster name="Mooh'Tah Master" file="bosses/mooh'tah master.xml"/>
 	<monster name="Morik the Gladiator" file="bosses/morik the gladiator.xml"/>
 	<monster name="Mr. Punish" file="bosses/mr. punish.xml"/>
 	<monster name="Munster" file="bosses/munster.xml"/>
