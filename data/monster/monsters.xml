@@ -135,6 +135,10 @@
 	<monster name="Apprentice Sheng" file="bosses/apprentice sheng.xml"/>
 	<monster name="Arachir the Ancient One" file="bosses/arachir the ancient one.xml"/>
 	<monster name="Armenius" file="bosses/armenius.xml"/>
+	<monster name="Azerus" file="yalahar/azerus.xml"/>
+	<monster name="Azerus1" file="yalahar/azerus1.xml"/>
+	<monster name="Azerus2" file="yalahar/azerus2.xml"/>
+	<monster name="Azerus3" file="yalahar/azerus3.xml"/> 
 	<monster name="Barbaria" file="bosses/barbaria.xml"/>
 	<monster name="Baron Brute" file="bosses/baron brute.xml"/>
 	<monster name="Bazir" file="bosses/bazir.xml"/>
@@ -747,7 +751,6 @@
 	<monster name="Morgaroth" file="the triangle of terror/morgaroth.xml"/>
 
 	<!-- Sorcerers -->
-	<monster name="Azerus" file="sorcerers/azerus.xml"/>
 	<monster name="Dark Apprentice" file="sorcerers/dark apprentice.xml"/>
 	<monster name="Dark Magician" file="sorcerers/dark magician.xml"/>
 	<monster name="Energized Raging Mage" file="sorcerers/energized raging mage.xml"/>

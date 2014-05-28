@@ -11,8 +11,8 @@ local rewards = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(getPlayerStorageValue(cid, 300) < 1) then
-		local player = Player(cid)
+	local player = Player(cid)
+	if(player:getStorageValue(300) < 1) then
 		player:setStorageValue(300, 1)
 		player:setStorageValue(200, 25)
 		player:setStorageValue(12117, 5) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
