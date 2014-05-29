@@ -230,27 +230,13 @@
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
-		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Omruc and found a Helmet piece: Helmet Adornment"/>
-		</mission>
-		<mission name="Thalas' Treasure" storageid="12102" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Thalas and found a Helmet piece: Gem Holder"/>
-		</mission>
-		<mission name="Diphtrah's Treasure" storageid="12103" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Dipthrah and found a Helmet piece: Damaged Helmet"/>
-		</mission>
-		<mission name="Mahrdis' Treasure" storageid="12104" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Mahrdis and found a Helmet piece: Helmet Ornament"/>
-		</mission>
-		<mission name="Vashresamun's Treasure" storageid="12105" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You solved the musical riddles of Vashresamun's Tomb and reterived a left horn."/>
-		</mission>
-		<mission name="Morguthis' Treasure" storageid="12106" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Morguthis and found a Helmet piece: Right Horn"/>
-		</mission>
-		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1">
-			<missionstate id="1" description="You defeated the Pharaoh Rahemos and found a Helmet piece: Helmet Piece"/>
-		</mission>
+		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1" description="You defeated Omruc and received a helmet adornment"/>
+		<mission name="Thalas' Treasure" storageid="12102" startvalue="1" endvalue="1" description="You defeated Thalas and received a Gem Holder"/>
+		<mission name="Diphtrah's Treasure" storageid="12103" startvalue="1" endvalue="1" description="You defeated Dipthrah and received a Damaged Helmet"/>
+		<mission name="Mahrdis' Treasure" storageid="12104" startvalue="1" endvalue="1" description="You defeated Mahrdis and received a Helmet Ornament"/>
+		<mission name="Vashresamun's Treasure" storageid="12105" startvalue="1" endvalue="1" description="You solved the musical riddles of Vashresamun's Tomb and received a left horn."/>
+		<mission name="Morguthis' Treasure" storageid="12106" startvalue="1" endvalue="1" description="You defeated Morguthis and received a Right Horn"/>
+		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1" description="You defeated Rahemos and received a Helmet Piece"/>
 	</quest>
 	<quest name="Barbarian Test Quest" startstorageid="12022" startstoragevalue="1">
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
