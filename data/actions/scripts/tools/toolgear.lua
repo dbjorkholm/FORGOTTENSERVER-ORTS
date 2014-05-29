@@ -56,13 +56,14 @@ local holeId = {
 	8252, 8253, 8254, 8255, 8256, 8972, 9606, 9625, 13190, 14461, 19519, 21536
 }
 
-local holes = {468, 481, 483}
+local holes = {468, 481, 483, 7932}
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local tile = toPosition:getTile()
+	local ground = tile:getGround()
 	local targetItem = Item(itemEx.uid)
-	if isInArray(ropeSpots, tile:getGround():getId()) or tile:getItemById(14435) then
+	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
 		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
 	elseif isInArray(holeId, itemEx.itemid) then
 		toPosition.z = toPosition.z + 1
