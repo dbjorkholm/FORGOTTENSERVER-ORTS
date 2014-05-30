@@ -8158,7 +8158,6 @@
 	<item fromid="5020" toid="5021" article="a" name="burning skull" />
 	<item id="5022" article="an" name="orichalcum pearl">
 		<attribute key="weight" value="30" />
-		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="5023" toid="5024" article="a" name="magic forcefield">
 		<attribute key="type" value="teleport" />
@@ -29948,7 +29947,7 @@
 	<item id="22612" article="a" name="demonic tapestry">
 		<attribute key="weight" value="1000" />
 	</item>
-	<item id="22613" article="a" name="eye pod">
+	<item id="22613" article="an" name="eye pod">
 		<attribute key="weight" value="500" />
 	</item>
 	<item fromid="22614" toid="22615" article="a" name="nightmare beacon">
