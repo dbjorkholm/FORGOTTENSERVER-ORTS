@@ -70,7 +70,7 @@ function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(storage) >= 1 and player:getStorageValue(storage) < 10 then
 			npcHandler:say("Before I can nominate you for an award, please complete your task.", cid)
 		elseif player:getStorageValue(storage) == 10 then
-			npcHandler:say("Go to the academy in Edron and tell Zoltan that I sent you, player.", cid)
+			npcHandler:say("Go to the academy in Edron and tell Zoltan that I sent you, " .. player:getName() .. ".", cid)
 		end
 	elseif config[msg:lower()] then
 		if player:getStorageValue(storage) == config[msg:lower()]["value"] then
@@ -84,6 +84,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(storage, 1)
+			player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
 			npcHandler:say("Fine! Let's start with the 70 {bat wings}. I really feel uncomfortable out there in the jungle.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then

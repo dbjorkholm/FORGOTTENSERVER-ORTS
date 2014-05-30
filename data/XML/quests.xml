@@ -367,7 +367,19 @@
 			<missionstate id="1" description="Now you can get a lottery ticket at Sandra for 100 empty vials."/>
 			<missionstate id="2" description="You got the Outfit! Now you can get for a lottery prize 50000 gold!"/>
 		</mission>
-
+		<mission name="Mage & Summoner Outfit Quest (Tiara & Cloak)" storageid="50011" startvalue="1" endvalue="11">
+			<missionstate id="1" description="Bring Myra in port hope 70 bat wings"/>
+			<missionstate id="2" description="Bring Myra in port hope 20 pieces of red cloth"/>
+			<missionstate id="3" description="Bring Myra in port hope 40 pieces of ape fur"/>
+			<missionstate id="4" description="Bring Myra in port hope 35 holy orchids"/>
+			<missionstate id="5" description="Bring Myra in port hope 10 spools of spider silk yarn"/>
+			<missionstate id="6" description="Bring Myra in port hope 60 lizard scales"/>
+			<missionstate id="7" description="Bring Myra in port hope 40 red dragon scales"/>
+			<missionstate id="8" description="Bring Myra in port hope 15 ounces of magic sulphur"/>
+			<missionstate id="9" description="Bring Myra in port hope 30 ounces of vampire dust"/>
+			<missionstate id="10" description="Go to the academy in Edron and tell Zoltan that Myra sent you!"/>
+			<missionstate id="11" description="You got the Outfit!"/>
+		</mission>
 		<mission name="Citizen Outfit Quest (Feather Hat)" storageid="12062" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
 			<missionstate id="2" description="You got the Outfit!"/>
