@@ -21,7 +21,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		container:addItem(targetItem[3][i][1], targetItem[3][i][2])
 	end
 	player:setStorageValue(targetItem[1], os.time() + targetItem[4])
-	local itemType = ItemType(backpack:getId())
+	local itemType = ItemType(container:getId())
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You have found %s %s.", itemType:getArticle(), itemType:getName()))
 	return true
 end
