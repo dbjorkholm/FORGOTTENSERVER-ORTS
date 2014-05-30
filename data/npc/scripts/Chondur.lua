@@ -13,26 +13,23 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif msgcontains(msg, "stampor") or msgcontains(msg, "mount") then
 		if not player:hasMount(11) then
-			if player:removeItem(13299, 50) and player:removeItem(13301, 30) and player:removeItem(13300, 100) then
 				npcHandler:say("You did bring all the items I requqested, cuild. Good. Shall I travel to the spirit realm and try finding a stampor compasion for you?", cid)
 				npcHandler.topic[cid] = 1
-			else
-				npcHandler:say("Sorry you don't have the necessary items.", cid)
-				npcHandler.topic[cid] = 0
-			end
 		else
 			npcHandler:say("You already have stampor mount.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...","Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...","Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...","So, since me are done here... I need to prepare another ritual, so please let me work, cuild."}, cid, 0, 1, 4000)
-			player:removeItem(13299,50)
-			player:removeItem(13301,30)
-			player:removeItem(13300,100)
-			player:addMount(11)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
-			npcHandler.topic[cid] = 0
+			if player:removeItem(13299, 50) and player:removeItem(13301, 30) and player:removeItem(13300, 100) then
+				npcHandler:say({"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...","Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...","Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...","So, since me are done here... I need to prepare another ritual, so please let me work, cuild."}, cid, 0, 1, 4000)
+				player:addMount(11)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("Sorry you don't have the necessary items.", cid)
+				npcHandler.topic[cid] = 0
+			end
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getStorageValue(5941) >= 1 then
 				player:setStorageValue(88, os.time())

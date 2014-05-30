@@ -1,5 +1,9 @@
 function onStepIn(cid, item, position, lastPosition)
-local player = Player(cid)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+	
 	if item.uid == 12031 then
 		if player:getStorageValue(12001) == 30 then
 			player:setStorageValue(12001, 31)
