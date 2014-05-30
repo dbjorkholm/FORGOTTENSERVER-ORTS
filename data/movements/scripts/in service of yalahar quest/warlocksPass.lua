@@ -1,39 +1,44 @@
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+	
 	if(item.actionid == 7813) then
 		if(lastPosition.y == 31081) then
-			if(getPlayerItemCount(cid, 8299) >= 1) then
-				doPlayerRemoveItem(cid, 8299, 1)
+			if(player:getItemCount(8299) >= 1) then
+				player:removeItem(8299, 1)
 				doSendMagicEffect(position, CONST_ME_MAGIC_RED)
 			else
-				doTeleportThing(cid, lastPosition)
-				doCreatureSay(cid, "You may not enter without a sacrifice of a glimmering soil.", TALKTYPE_ORANGE_1)
-				doSendMagicEffect(position, CONST_ME_ENERGYHIT)
+				player:teleportTo(lastPosition)
+				player:say("You may not enter without a sacrifice of a glimmering soil.", TALKTYPE_ORANGE_1)
+				position:sendMagicEffect(CONST_ME_ENERGYHIT)
 			end
 		else
-			doTeleportThing(cid, {x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z})	
-			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z}, CONST_ME_ENERGYHIT)
+			player:teleportTo({x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z})	
+			Position({x = lastPosition.x, y = lastPosition.y - 1, z = lastPosition.z}):sendMagicEffect(CONST_ME_ENERGYHIT)
 		end
 	elseif(item.actionid == 7814) then
 		if (lastPosition.y == 31080) then
-			if(getPlayerItemCount(cid, 8303) >= 1) then
-				doPlayerRemoveItem(cid, 8303, 1)
-				doSendMagicEffect(position, CONST_ME_MAGIC_BLUE)
+			if(player:getItemCount(8303) >= 1) then
+				player:removeItem(8303, 1)
+				position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			else
-				doTeleportThing(cid, lastPosition)
-				doCreatureSay(cid, "You may not enter without a sacrifice of a energy soil.", TALKTYPE_ORANGE_1)
-				doSendMagicEffect(position, CONST_ME_ENERGYHIT)
+				player:teleportTo(lastPosition)
+				player:say("You may not enter without a sacrifice of a energy soil.", TALKTYPE_ORANGE_1)
+				position:sendMagicEffect(CONST_ME_ENERGYHIT)
 			end
 		elseif (lastPosition.y == 31023) then --ice island Yakchal room
 			if(getPlayerStorageValue(cid, 12001) >= 40) then
-			doSendMagicEffect(position, CONST_ME_MAGIC_BLUE)
+			position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			else
-			doCreatureSay(cid, "You may not enter without absolve the ice island quest.", TALKTYPE_ORANGE_1)
-			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(position, CONST_ME_ENERGYHIT)
+			player:say("You may not enter without absolve the ice island quest.", TALKTYPE_ORANGE_1)
+			player:teleportTo(lastPosition)
+			position:sendMagicEffect(CONST_ME_ENERGYHIT)
 			end
 		else
-			doTeleportThing(cid, {x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z})	
-			doSendMagicEffect({x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z}, CONST_ME_ENERGYHIT)			
+			player:teleportTo({x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z})	
+			Position({x = lastPosition.x, y = lastPosition.y + 1, z = lastPosition.z}):sendMagicEffect(CONST_ME_ENERGYHIT)			
 		end
 	end
 	return true
