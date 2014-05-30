@@ -1,11 +1,18 @@
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if(item.uid == 9014) then
-		if (getPlayerStorageValue(cid, 200) >= 20) then
-			doTeleportThing(cid, {x = 33168, y = 31683, z = 15})
-			doSendMagicEffect({x = 33168, y = 31683, z = 15}, CONST_ME_TELEPORT)
+		if (player:getStorageValue(200) >= 20) then
+			local destination = Position({x = 33168, y = 31683, z = 15})
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(getCreaturePosition(cid),10)
+			player:teleportTo(lastPosition)
+			lastPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have access to this area.")
 		end
 	end
 	return true

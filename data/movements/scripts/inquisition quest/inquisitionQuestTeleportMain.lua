@@ -36,48 +36,53 @@ local teleports = {
 }
 
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if (item.uid == 2150) then
-		if(getPlayerStorageValue(cid,1050) <= teleports2[item.uid].storage) then
-			setPlayerStorageValue(cid, 1050, teleports2[item.uid].storage)
+		if(player:getStorageValue(1050) <= teleports2[item.uid].storage) then
+			player:setStorageValue(1050, teleports2[item.uid].storage)
 		end
-		doTeleportThing(cid, teleports2[item.uid].newPos)
-		doSendMagicEffect(teleports2[item.uid].newPos, CONST_ME_TELEPORT)
-		doCreatureSay(cid, teleports2[item.uid].text, TALKTYPE_ORANGE_1)
+		player:teleportTo(teleports2[item.uid].newPos)
+		Position(teleports2[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
+		player:say(teleports2[item.uid].text, TALKTYPE_ORANGE_1)
 	return true	
 	end
 	if(teleports[item.uid].boss) then
 		if(getGlobalStorageValue(teleports[item.uid].bossStorage) == 2) then
-			if(getPlayerStorageValue(cid,1050) <= teleports[item.uid].storage) then
-				setPlayerStorageValue(cid, 1050, teleports[item.uid].storage)
+			if(player:getStorageValue(1050) <= teleports[item.uid].storage) then
+				player:setStorageValue(1050, teleports[item.uid].storage)
 			end
-			doTeleportThing(cid, teleports[item.uid].newPos)
-			doSendMagicEffect(teleports[item.uid].newPos, CONST_ME_TELEPORT)
-			doCreatureSay(cid, teleports[item.uid].text, TALKTYPE_ORANGE_1)
+			player:teleportTo(teleports[item.uid].newPos)
+			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
+			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
 		else
-			doTeleportThing(cid, {x = 33165, y = 31709, z = 14})
-			doSendMagicEffect({x = 33165, y = 31709, z = 14}, CONST_ME_TELEPORT)
-			doCreatureSay(cid, "Escaping back to Retreat.", TALKTYPE_ORANGE_1)
+			player:teleportTo({x = 33165, y = 31709, z = 14})
+			Position({x = 33165, y = 31709, z = 14}):sendMagicEffect(CONST_ME_TELEPORT)
+			player:say("Escaping back to Retreat.", TALKTYPE_ORANGE_1)
 		end
 		return true
 	end
 	
 	if(teleports[item.uid].storage) then
-		if(getPlayerStorageValue(cid, 1050) >= teleports[item.uid].storage) then
-			doTeleportThing(cid, teleports[item.uid].newPos)
-			doSendMagicEffect(teleports[item.uid].newPos, CONST_ME_TELEPORT)
-			doCreatureSay(cid, teleports[item.uid].text, TALKTYPE_ORANGE_1)
+		if(player:getStorageValue( 1050) >= teleports[item.uid].storage) then
+			player:teleportTo(teleports[item.uid].newPos)
+			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
+			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
 		else
-			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(getCreaturePosition(cid),10)
-			doCreatureSay(cid, 'You don\'t have enough energy to enter this portal', TALKTYPE_ORANGE_1)
+			player:teleportTo(lastPosition)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:say('You don\'t have enough energy to enter this portal', TALKTYPE_ORANGE_1)
 		end
 		return true
 	end
 
 	if(teleports[item.uid]) then
-		doTeleportThing(cid, teleports[item.uid].newPos)
-		doSendMagicEffect(teleports[item.uid].newPos, CONST_ME_TELEPORT)
-		doCreatureSay(cid, teleports[item.uid].text, TALKTYPE_ORANGE_1)
+		player:teleportTo(teleports[item.uid].newPos)
+		Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
+		player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
 		return true
 	end
 	return true

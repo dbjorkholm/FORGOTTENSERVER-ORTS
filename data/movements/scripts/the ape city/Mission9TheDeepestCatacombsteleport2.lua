@@ -10,8 +10,12 @@ local config = {
 
 
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if item.uid == 12130 then
-		local player = Player(cid)
 		for i = 1, #config["AmphorasPositions"] do
 			local tile = config["AmphorasPositions"][i]:getTile()
 			if tile then
