@@ -428,6 +428,7 @@ function Position.getTile(self)
 end
 
 --Custom Functions
+stopMoveStorage = 100000
 enchantableGems = {2147, 2146, 2149, 2150}
 enchantableItems = {2383, 7383, 7384, 7406, 7402, 2429, 2430, 7389, 7380, 2454, 2423, 2445, 7415, 7392, 2391, 2544, 8905}
 

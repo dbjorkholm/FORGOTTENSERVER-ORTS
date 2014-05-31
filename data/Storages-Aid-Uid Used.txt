@@ -4,6 +4,8 @@ Last Used Aid = 50021
 Last Used Uid = 50026
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
+stopMove Storage	=		100000 --Reserved to cancel player movement
+---/////////////////////////////////////////////////////////////----
 ice islands quest storage:		12001-12009
 Default Start Outfits Quest:		12010
 in service of yalahar storage:		12011-12021
