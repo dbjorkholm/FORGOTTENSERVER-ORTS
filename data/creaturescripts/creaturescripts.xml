@@ -42,5 +42,6 @@
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua"/>
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
+	<event type="death" name="whiteDeer" script="others/whitedeer.lua"/>
 
 </creaturescripts>
