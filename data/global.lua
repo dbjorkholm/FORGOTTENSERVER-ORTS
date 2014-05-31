@@ -429,6 +429,17 @@ end
 
 --Custom Functions
 stopMoveStorage = 100000
+function Player.stopMove(self, param)
+	if param == true then
+		self:setStorageValue(stopMoveStorage, 1)
+	elseif == false then
+		self:setStorageValue(stopMoveStorage, 0)
+	else
+		print("Function [Player.stopMove]: param is a nil boolean value.")
+	end
+	return true
+end
+
 enchantableGems = {2147, 2146, 2149, 2150}
 enchantableItems = {2383, 7383, 7384, 7406, 7402, 2429, 2430, 7389, 7380, 2454, 2423, 2445, 7415, 7392, 2391, 2544, 8905}
 
