@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50023
-Last Used Aid = 50021
+Last Used Aid = 50022
 Last Used Uid = 50026
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -34,6 +34,8 @@ The Ape City Aid/Uid:			12120-12130
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
+
+Waterfall Quest:                        50022
 
 The Queen of banshee Quest:
 Kiss storage =					50020
