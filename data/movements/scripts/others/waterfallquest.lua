@@ -17,7 +17,7 @@ function onStepIn(cid, item, pos, fromPosition)
 
 	-- Splash effect when jumping down the waterfall
 	elseif pos.x == 32968 and pos.y == 32630 and pos.z == 7 then
-		Position(pos):sendMagicEffect(CONST_ME_WATERSPLASH)
+		pos:sendMagicEffect(CONST_ME_WATERSPLASH)
 
 	-- Teleport when entering the waterfall / cave
 	elseif pos.x == 32968 and pos.y == 32629 and pos.z == 7 then
