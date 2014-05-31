@@ -12,8 +12,8 @@ function onStepIn(cid, item, position, lastPosition)
 		end
 	elseif(item.uid == 3123) then
 		if(getPlayerStorageValue(cid, 900) == 6) then
-			mayNotMove(cid, true)
-			addEvent(mayNotMove, 14 * 1000, cid, false)
+			setPlayerStorageValue(cid, stopMoveStorage, 1)
+			addEvent(setPlayerStorageValue, 14 * 1000, cid, stopMoveStorage, 0)
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Gnomedix: So let the examination begin! Now don't move. Don't be afraid. The good doctor gnome won't hurt you - hopefully!")
 			addEvent(doPlayerSendTextMessage, 2 * 1000, cid, MESSAGE_EVENT_ADVANCE, "Gnomedix: Now! Now! Don't panic! It's all over soon!")
 			addEvent(doPlayerSendTextMessage, 4 * 1000, cid, MESSAGE_EVENT_ADVANCE, "Gnomedix: Let me try a bigger chisel!")
