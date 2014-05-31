@@ -22,7 +22,7 @@ To contribute in code to this project, [create a pull request](http://otland.net
 - Post a Checkbox |- [X] Working now on map| which you can click when you want work on it.
 - Check if another user already has an X in his controllbox.
 - If nobody has one, you can check your box and start editing the map.
-- If you finish your map edit, create a pull request and uncheck you box.
+- If you finish your map edit, create a pull request with changelog(coords with changes) and uncheck your box.
 
 **If you want to contribute by sending pull request, here are some tips.
 Try to use metatables in your script. Ex.**
