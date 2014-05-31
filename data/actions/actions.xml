@@ -380,6 +380,7 @@
 	<action uniqueid="9136" script="quests/key3980.lua"/>
 	<action uniqueid="9185" script="quests/mummy.lua"/>
 	<action uniqueid="9192" script="quests/orcedron.lua"/>
+	<action uniqueid="1912" script="quests/desertdungeonquest.lua"/>
 	<action uniqueid="50023" script="quests/triangletowerlever.lua"/>
 	<action fromaid="50023" toaid="50024" script="quests/thaislighthouselever.lua"/>
 	<action actionid="2000" script="quests/system.lua"/>
