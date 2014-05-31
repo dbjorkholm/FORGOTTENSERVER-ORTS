@@ -432,7 +432,7 @@ stopMoveStorage = 100000
 function Player.stopMove(self, param)
 	if param == true then
 		self:setStorageValue(stopMoveStorage, 1)
-	elseif == false then
+	elseif param == false then
 		self:setStorageValue(stopMoveStorage, 0)
 	else
 		print("Function [Player.stopMove]: param is a nil boolean value.")
