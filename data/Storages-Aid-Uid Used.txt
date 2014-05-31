@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50023
-Last Used Aid = 50022
+Last Used Aid = 50026
 Last Used Uid = 50026
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -36,6 +36,7 @@ horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
 
 Waterfall Quest:                        50022
+Thais Lighthouse Quest Aid:		50023-50026
 
 The Queen of banshee Quest:
 Kiss storage =					50020
