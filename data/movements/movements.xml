@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Waterfall Quest (Port Hope) -->
+	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
 
 	<!-- The Queen of the Banshees Quest -->
 	<movevent event="StepIn" uniqueid="50004" script="the queen of the banshees quest/theFirstSealFlame.lua" />
