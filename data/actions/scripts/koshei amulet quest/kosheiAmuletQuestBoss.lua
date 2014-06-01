@@ -1,4 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	if(item.itemid == 8266 and itemEx.itemid == 8272) then
 		if(getPlayerStorageValue(cid, 49) == 2 and getPlayerStorageValue(cid, 47) < 1) then
 			player:removeItem(8266, 1)
