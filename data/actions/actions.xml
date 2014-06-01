@@ -412,6 +412,8 @@
 	<action itemid="10515" script="tools/toolgear.lua"/>
 
 	<!-- Increase/Decrease ItemId -->
+        <action itemid="3697" function="increaseItemId"/>
+        <action itemid="3698" function="decreaseItemId"/>
 	<action itemid="1873" function="increaseItemId"/>
 	<action itemid="1874" function="decreaseItemId"/>
 	<action itemid="1875" function="increaseItemId"/>
