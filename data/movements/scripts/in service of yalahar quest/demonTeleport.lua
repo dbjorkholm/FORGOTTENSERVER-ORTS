@@ -9,6 +9,11 @@ local soil = {8302, 8303, 8298, 8299}
 local count = 0
 
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if(teleport[item.uid].action == 1) then
 		for _, i in pairs(soil) do
 			count = getTileItemById(teleport[item.uid][2], i).uid
@@ -17,17 +22,17 @@ function onStepIn(cid, item, position, lastPosition)
 			end
 		end
 		if(count > 0) then
-			doRemoveItem(count, 1)
-			doTeleportThing(cid, teleport[item.uid][1])
-			doSendMagicEffect(teleport[item.uid][1], CONST_ME_TELEPORT)
+			Item(count):remove(1)
+			player:teleportTo(teleport[item.uid][1])
+			Position(teleport[item.uid][1]):sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			doTeleportThing(cid, lastPosition)
-			doSendMagicEffect(lastPosition, CONST_ME_ENERGYHIT)
-			doCreatureSay(cid, "You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
+			player:teleportTo(lastPosition)
+			lastPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
+			player:say("You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
 		end
 	else
-		doTeleportThing(cid, teleport[item.uid][1])
-		doSendMagicEffect(teleport[item.uid][1], CONST_ME_ENERGYHIT)
+		player:teleportTo(teleport[item.uid][1])
+		Position(teleport[item.uid][1]):sendMagicEffect(CONST_ME_ENERGYHIT)
 	end
 	return true
 end
