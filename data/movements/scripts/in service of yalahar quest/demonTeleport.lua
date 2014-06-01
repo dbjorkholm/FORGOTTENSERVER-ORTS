@@ -6,7 +6,7 @@ local teleport = {
 }
 
 local soil = {8302, 8303, 8298, 8299}
-local count = 0
+local engerysoil = 0
 
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
@@ -14,15 +14,15 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 
-	if(teleport[item.uid].action == 1) then
+	if teleport[item.uid].action == 1 then
 		for _, i in pairs(soil) do
-			count = getTileItemById(teleport[item.uid][2], i).uid
-			if(count > 0) then
+			engerysoil = getTileItemById(teleport[item.uid][2], i).uid
+			if engerysoil > 0 then
 				break
 			end
 		end
-		if(count > 0) then
-			Item(count):remove(1)
+		if engerysoil > 0 then
+			Item(engerysoil):remove(1)
 			player:teleportTo(teleport[item.uid][1])
 			Position(teleport[item.uid][1]):sendMagicEffect(CONST_ME_TELEPORT)
 		else

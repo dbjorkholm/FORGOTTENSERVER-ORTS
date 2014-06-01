@@ -4,8 +4,8 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 	
-	if(item.uid == 7809 and isPlayer(cid)) then
-		if(player:getStorageValue(30) == 51) then
+	if item.uid == 7809 and isPlayer(cid) then
+		if player:getStorageValue(30) == 51 then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32783, y = 31174, z = 10})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
@@ -14,8 +14,8 @@ function onStepIn(cid, item, position, lastPosition)
 		else
 			player:teleportTo(lastPosition)
 		end
-	elseif(item.uid == 7810 and isPlayer(cid)) then
-		if(getGlobalStorageValue(982) < 1) then
+	elseif item.uid == 7810 and isPlayer(cid) then
+		if getGlobalStorageValue(982) < 1 then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32784, y = 31178, z = 9})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
