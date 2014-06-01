@@ -29898,7 +29898,7 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="22587" article="a" name="stair">
-		<attribute key="floorchange" value="west" />
+		<attribute key="floorchange" value="north" />
 	</item>
 	<item id="22588" article="a" name="stair">
 		<attribute key="floorchange" value="west" />
