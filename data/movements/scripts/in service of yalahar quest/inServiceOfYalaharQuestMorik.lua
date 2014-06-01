@@ -4,8 +4,8 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 	
-	if(item.uid == 3087) then
-		if(player:getStorageValue(30) == 51) then
+	if item.uid == 3087 then
+		if player:getStorageValue(30) == 51 then
 			player:setStorageValue(30, 52)
 			player:setStorageValue(12021, 3) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			player:say("It seems by defeating Azerus you have stopped this army from entering your world! Better leave this ghastly place forever.", TALKTYPE_ORANGE_1)
