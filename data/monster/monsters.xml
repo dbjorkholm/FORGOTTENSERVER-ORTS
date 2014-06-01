@@ -763,7 +763,7 @@
 	<monster name="Raging Mage" file="sorcerers/raging mage.xml"/>
 	<monster name="Warlock" file="sorcerers/warlock.xml"/>
 	<monster name="Witch" file="sorcerers/witch.xml"/>
-	<monster name="Yalahari" file="sorcerers/yalahari.xml"/>
+	<monster name="YalahariMonster" file="sorcerers/yalahari.xml"/>
 
 	<!-- Traps -->
 	<monster name="a carved stone tile" file="traps/a carved stone tile.xml"/>
