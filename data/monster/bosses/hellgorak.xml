@@ -18,6 +18,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
+		<attack script="monster/smokeue.lua" interval="2000" chance="8"/>
 		<attack name="melee" interval="2000" min="0" max="-800"/>
 		<attack name="energy" interval="1000" chance="11" length="8" spread="0" min="-250" max="-850">
 			<attribute key="areaEffect" value="purpleenergy"/>

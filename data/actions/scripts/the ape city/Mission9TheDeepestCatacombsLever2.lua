@@ -9,7 +9,7 @@ local config = {
 
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if itemEx.itemid == 1945 and item.actionid == 12131 then
+	if itemEx.itemid == 1945 and item.uid == 12131 then
 		Item(item.uid):transform(1946)
 		addEvent(function() local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing and thing:isItem() then thing:transform(1945) end end end, 1 * 60 * 1000) -- 1 minutes until lever turn back
 		local tilewall1 = config["wall1pos"]:getTile()
