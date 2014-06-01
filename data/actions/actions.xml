@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 
+	<!-- Hot Cuisine Quest -->
+	<action itemid="10006" script="hot cuisine quest/hotCuisineQuestCookbook.lua"/>
+
 	<!-- The Queen of the Banshees Quest -->
 	<action fromuid="50000" touid="50002" script="the queen of the banshees quest/theFirstSeal.lua"/>
 	<action fromuid="50005" touid="50010" script="the queen of the banshees quest/theSixthSeal.lua"/>

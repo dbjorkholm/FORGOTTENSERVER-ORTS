@@ -578,12 +578,23 @@
 		<mission name="All Seals" storageid="50021" startvalue="1" endvalue="1" description="You broke all the seals."/>
 	</quest>
 	<quest name="Hot Cuisine" startstorageid="50022" startstoragevalue="1">
-		<mission name="Hot Cuisine" storageid="50023" startvalue="1" endvalue="3">
+		<mission name="Hot Cuisine" storageid="50024" startvalue="1" endvalue="16">
 			<missionstate id="1" description="You've become the apprentice of Maltre Jean Pierre. The first dish he will teach you to prepare is Rotworm Stew. Bring him the ingredients he told you."/>
 			<missionstate id="2" description="You have completed the first dish, the second dish he will teach you to prepare is Hydra Tongue Salad. Bring him the ingredients he told you."/>
 			<missionstate id="3" description="You have completed the second dish, the third dish he will teach you to prepare is Roasted Dragon Wings. Bring him the ingredients he told you."/>
 			<missionstate id="4" description="You have completed the third dish, the fourth dish he will teach you to prepare is Tropical Fried Terrorbird. Bring him the ingredients he told you."/>
-			<missionstate id="5" description="..."/>
+			<missionstate id="5" description="You have completed the fourth dish, the fifth dish he will teach you to prepare is Banana Chocolate Shake. Bring him the ingredients he told you."/>
+			<missionstate id="6" description="You have completed the fifth dish, the sixth dish he will teach you to prepare is Veggie Casserole. Bring him the ingredients he told you."/>
+			<missionstate id="7" description="You have completed the sixth dish, the seventh dish he will teach you to prepare is Filled Jalapeno Peppers. Bring him the ingredients he told you."/>
+			<missionstate id="8" description="You have completed the seventh dish, the eight dish he will teach you to prepare is Blessed Steak. Bring him the ingredients he told you."/>
+			<missionstate id="9" description="You have completed the eight dish, the ninth dish he will teach you to prepare is Northern Fishburger. Bring him the ingredients he told you."/>
+			<missionstate id="10" description="You have completed the ninth dish, the tenth dish he will teach you to prepare is Carrot Cake. Bring him the ingredients he told you."/>
+			<missionstate id="11" description="You have completed the tenth dish. You are now able to obtain the cookbook from Jean Pierre's room upstairs."/>
+			<missionstate id="12" description="The eleventh dish he will teach you to prepare is Coconut Shrimp Bake. Bring him the ingredients he told you."/>
+			<missionstate id="13" description="You have completed the eleventh dish, the twelfth dish he will teach you to prepare is Blackjack. Bring him the ingredients he told you."/>
+			<missionstate id="14" description="You have completed the twelfth dish, the thirteenth dish he will teach you to prepare is Demonic Candy Balls. Bring him the ingredients he told you."/>
+			<missionstate id="15" description="You have completed the thirteenth dish, the fourteenth dish he will teach you to prepare is Sweet Mangonaise Elixir. Bring him the ingredients he told you."/>
+			<missionstate id="16" description="You have completed all the dishes. You are now able to make all the dishes in any order you want."/>
 		</mission>
 	</quest>
 </quests>

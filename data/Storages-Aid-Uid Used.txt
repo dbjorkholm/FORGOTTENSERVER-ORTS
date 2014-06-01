@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50023
-Last Used Aid = 50027
-Last Used Uid = 50026
+Last Used Storage = 50029
+Last Used Aid = 50028
+Last Used Uid = 50029
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -87,5 +87,8 @@ Bone Key (3520) uid			=	50026
 Hot Cuisine Quest:
 	Quest Start storage =				50022
 	Dishes Storages =				50023
+	Questlog storage =				50024
+	Door storage/aid =				50028
+	Chest storage/uid =				50029
 
 Hellgate exit bridge lever AID =	50027
