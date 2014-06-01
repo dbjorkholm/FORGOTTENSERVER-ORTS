@@ -387,6 +387,7 @@
 	<action uniqueid="50023" script="quests/triangletowerlever.lua"/>
 	<action fromaid="50023" toaid="50024" script="quests/thaislighthouselever.lua"/>
 	<action actionid="50027" script="quests/hellgatelever.lua"/>
+	<action uniqueid="50032" script="quests/bloodherbquestRewards.lua"/>
 	<action actionid="2000" script="quests/system.lua"/>
 	<action actionid="2215" script="quests/system.lua"/>
 	<action actionid="2216" script="quests/system.lua"/>

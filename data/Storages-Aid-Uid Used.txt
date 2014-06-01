@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50031
+Last Used Storage = 50032
 Last Used Aid = 50028
-Last Used Uid = 50031
+Last Used Uid = 50032
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -80,7 +80,6 @@ Last room:
 	last flame uid =			50022
 
 Triangle Tower lever uid	=	50023
-Blood Herb quest tree uid	=	50024
 
 
 Hot Cuisine Quest:
@@ -90,6 +89,7 @@ Hot Cuisine Quest:
 	Door storage/aid =				50028
 	Chest storage/uid =				50029
 
-Hellgate exit bridge lever AID =	50027
-Vampire Shield Quest uid	=	50030
-Bone Key (3520) uid		=	50031
+Hellgate exit bridge lever AID 	=	50027
+Vampire Shield Quest storage/uid	=	50030
+Bone Key (3520) storage/uid		=	50031
+Blood Herb quest tree storage/uid	=	50032
