@@ -13,13 +13,11 @@
 	<!-- Hunter Outfits Quest -->
 	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
-	<action actionid="12055" script="hunter outfit quest/ElaneCrossbowQuestDoor.lua"/>
 	
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
 	<action itemid="11100" script="the new frontier quest/theNewFrontierQuestBeaver.lua"/>
 	<action fromaid="8005" toaid="8006" script="the new frontier quest/theNewFrontierQuestLever.lua"/>
-	<action actionid="12134" script="the new frontier quest/theNewFrontierQuestMineDoor.lua"/>
 	<action actionid="8008" script="the new frontier quest/theNewFrontierQuestTrapDoor.lua"/>
 	<action fromuid="3153" touid="3154" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
 	<action uniqueid="3156" script="the new frontier quest/theNewFrontierQuestRetreat.lua"/>
@@ -45,7 +43,7 @@
 	<action actionid="12127" script="the ape city/Mission7DestroyingCasksWithCrowbar.lua" />
 	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
 	<action actionid="12129" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
-	<action actionid="12131" script="the ape city/Mission9TheDeepestCatacombsLever2.lua" />
+	<action uniqueid="12131" script="the ape city/Mission9TheDeepestCatacombsLever2.lua" />
 	<action itemid="4846" 	 script="the ape city/Mission9TheDeepestCatacombsSnakedestroyer.lua"/>
 	
 	<!--- The Ancient Tombs Quest -->
