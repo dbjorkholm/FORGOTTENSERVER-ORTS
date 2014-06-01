@@ -18,7 +18,7 @@ local function creatureSayCallback(cid, type, msg)
 					"The shield however will only be granted to those adventurers who have finished the demon helmet quest. ...",
 					"Well, the helmet is for those who really are tenacious and have hunted down all 6666 demons and finished the demon oak as well. ...",
 					"Are you interested?"
-					}, cid, 0, 1, 4000)
+					}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "base") then
@@ -34,7 +34,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "shield") then
 		if npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(2215) == 2 and player:getStorageValue(2217) == 1 then
-				player:addOutfitAddon(player:getSex() == 0 and 542 or 541, 1)
+				player:addOutfitAddon(541, 1)
+				player:addOutfitAddon(542, 1)
 				npcHandler:say("Receive the base outfit, " .. player:getName() .. ".", cid)
 				player:setStorageValue(2217, 2)
 				npcHandler.topic[cid] = 0
@@ -43,7 +44,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "helmet") then
 		if npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(2215) == 2 and player:getStorageValue(1010) == 3 then
-				player:addOutfitAddon(player:getSex() == 0 and 542 or 541, 2)
+				player:addOutfitAddon(541, 2)
+				player:addOutfitAddon(542, 2)
 				player:setStorageValue(1010, 4)
 				npcHandler:say("Receive the helmet, " .. player:getName() .. ".", cid)
 			end
