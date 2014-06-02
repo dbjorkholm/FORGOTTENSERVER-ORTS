@@ -43,5 +43,6 @@
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
 	<event type="death" name="whiteDeer" script="others/whitedeer.lua"/>
+	<event type="death" name="whiteDeerScouts" script="others/whitedeer_scouts.lua"/>
 
 </creaturescripts>

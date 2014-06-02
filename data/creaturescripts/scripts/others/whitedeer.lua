@@ -12,13 +12,11 @@ function onDeath(cid, corpse, lasthitkiller, mostdamagekiller, lasthitunjustifie
 	local rand = math.random(100)
 	for i = 1, #config do
 		if rand >= config[i][1] and rand <= config[i][2] then
-			local spawnMonster = Game.createMonster(config[i][3], monster:getPosition())
-			if not spawnMonster then
-				return true
+			local spawnMonster = Game.createMonster(config[i][3], monster:getPosition(), true, true)
+			if spawnMonster then
+				spawnMonster:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				monster:say(config[i][4], TALKTYPE_MONSTER_SAY)
 			end
-			
-			spawnMonster:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			monster:say(config[i][4], TALKTYPE_MONSTER_SAY)
 			break
 		end
 	end
