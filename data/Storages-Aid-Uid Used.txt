@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50032
-Last Used Aid = 50028
+Last Used Aid = 50057
 Last Used Uid = 50032
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -88,6 +88,9 @@ Hot Cuisine Quest:
 	Questlog storage =				50024
 	Door storage/aid =				50028
 	Chest storage/uid =				50029
+
+Thais Exhibition:
+	aid 50030 - 50057
 
 Hellgate exit bridge lever AID 	=	50027
 Vampire Shield Quest storage/uid	=	50030
