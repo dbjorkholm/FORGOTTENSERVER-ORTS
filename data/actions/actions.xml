@@ -317,7 +317,6 @@
 	<action actionid="2022" script="pits of inferno quest/pitsOfInfernoQuestGoshnar.lua"/>
 	<action uniqueid="1020" script="pits of inferno quest/pitsOfInfernoQuestKey3700.lua"/>
 	<action fromuid="2050" touid="2065" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
-	<action fromuid="10544" touid="10550" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
 	<action uniqueid="10552" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
 	<action uniqueid="10559" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
 	<action uniqueid="1021" script="pits of inferno quest/pitsOfInfernoQuestOil.lua"/>
@@ -339,9 +338,8 @@
 	<action uniqueid="3118" script="postman quest/postmanQuestWaldo.lua"/>
 	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
 
-	<!-- Rookgaar Quests -->
+	<!-- Rookgaard Quests -->
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>
-	<!--<action uniqueid="3031;3032;3033;3034;3035;3036;3037;3038;3039;3040;3041;3042;3043;3044;3045" script="rookgaard/rookgaardQuests.lua"/>-->
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
@@ -353,9 +351,6 @@
 
 	<!-- Their Masters Voice Quest -->
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
-
-	<!-- Tomes of Knowledge Quest -->
-	<!-- <action uniqueid="" script="tomes of knowledge quest/tomesOfKnowledgeQuestTomes.lua"/> -->
 
 	<!-- Quests -->
 	<action uniqueid="9196" script="quests/bkkey.lua"/>
@@ -373,6 +368,7 @@
 	<action actionid="2000" script="quests/system.lua"/>
 	<action actionid="2215" script="quests/system.lua"/>
 	<action actionid="2216" script="quests/system.lua"/>
+	<action actionid="10544" script="quests/system.lua"/>
 	<action uniqueid="9170" script="quests/system.lua"/>
 	<action fromuid="9050" touid="9053" script="quests/system.lua"/>
 	<action uniqueid="1296" script="quests/system.lua"/>

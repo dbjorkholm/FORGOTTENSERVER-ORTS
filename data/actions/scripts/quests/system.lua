@@ -1,6 +1,7 @@
 local specialQuests = {
 	[2215] = 2215, -- Annihilator
-	[2216] = 9050 -- Dreamer's Challenge Quest Boxes
+	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
+	[10544] = 10544
 }
 
 local questsExperience = {
