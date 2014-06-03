@@ -36,11 +36,7 @@
 	<action uniqueid="3402" script="The-outlaw-quest/powerburn.lua" />
 
 	<!--- The Ape City Quest -->
-	<action actionid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
-	<action uniqueid="12121" script="the ape city/Mission1WhisperMossDoorReward.lua" />
-	<action actionid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
-	<action uniqueid="12123" script="the ape city/Mission3LizardParchmentDoorReward.lua" />
-	<action actionid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
+	<action uniqueid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
 	<action actionid="12127" script="the ape city/Mission7DestroyingCasksWithCrowbar.lua" />
 	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
 	<action actionid="12129" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
@@ -303,7 +299,6 @@
 	<action itemid="7494" script="inquisition quest/inquisitionQuestHolyWater.lua"/>
 	<action actionid="1004" script="inquisition quest/inquisitionQuestUngreez.lua"/>
 	<action actionid="2002" script="inquisition quest/inquisitionQuestVampire Hunt.lua"/>
-	<action uniqueid="9016" script="inquisition quest/inquisitionQuestBookDoor.lua"/>
 	<action uniqueid="9017" script="inquisition quest/inquisitionQuestBrotherLever1.lua"/>
 	<action uniqueid="9018" script="inquisition quest/inquisitionQuestBrotherLever2.lua"/>
 	<action uniqueid="9019" script="inquisition quest/inquisitionQuestBrotherLever3.lua"/>

@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50032
+Last Used Storage = 50034
 Last Used Aid = 50057
-Last Used Uid = 50032
+Last Used Uid = 50034
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -96,3 +96,5 @@ Hellgate exit bridge lever AID 	=	50027
 Vampire Shield Quest storage/uid	=	50030
 Bone Key (3520) storage/uid		=	50031
 Blood Herb quest tree storage/uid	=	50032
+Whisper Moss quest storage/uid		=	50033
+old parchment quest tree storage/uid	=	50034
