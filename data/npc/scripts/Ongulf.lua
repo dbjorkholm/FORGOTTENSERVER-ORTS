@@ -174,6 +174,7 @@ local function creatureSayCallback(cid, type, msg)
 							"If the orcs are right, they are somewhere in or behind those mountains in the north. I doubt you can reason with them in any way, but you'll have to try for the sake of Farmine."
 						}, player)
 			player:setStorageValue(Questlinestorage, 22)
+			player:setStorageValue(12137, 1) --Questlog, The New Frontier Quest "Mission 07: Messengers Of Peace"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Questlinestorage) == 27) then
 			npcHandler:say(
