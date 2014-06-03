@@ -267,6 +267,9 @@
 	<movevent event="AddItem" tileitem="1" itemid="1790" script="dough.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="1792" script="dough.lua"/>
 
+	<!-- Create party cake -->
+	<movevent event="AddItem" tileitem="1" itemid="6279" script="cake.lua"/>
+
 	<!-- Campfires -->
 	<movevent event="StepIn" itemid="1423" function="onStepInField"/>
 	<movevent event="AddItem" itemid="1423" function="onAddField"/>
