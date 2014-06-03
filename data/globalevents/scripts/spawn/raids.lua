@@ -1,53 +1,44 @@
-local cfg_raids = 
+local raids =
 {
-	--Weekly
-	["Monday"] = 
-	{
-		["08:00"] = {
-			raidName = "RatsThais",
-			alreadyExecuted = false
-		},
-		["15:00"] = {
-			raidName = "Arachir the Ancient One",
-			alreadyExecuted = false
-		},
+	-- Weekly
+	['Monday'] = {
+		['08:00'] = {raidName = 'RatsThais'},
+
+		['15:00'] = {raidName = 'Arachir the Ancient One'}
 	},
-	["Wednesday"] = 
-	{
-		["12:00"] = {
-			raidName = "OrcsThais",
-			alreadyExecuted = false
-		},
+
+	['Wednesday'] = {
+		['12:00'] = {raidName = 'OrcsThais'}
 	},
-	--Monthly
-	--Month/Day
-	["31/10"] = 
-	{
-		["16:00"] = {
-			raidName = "Halloween Hare",
-			alreadyExecuted = false
-		},
-	},
+
+	--By date (Day/Month)
+	['31/10'] = {
+		['16:00'] = {raidName = 'Halloween Hare'}
+	}
 }
 
 function onThink(interval, lastExecution, thinkInterval)
-	local day = os.date("%A", os.time())
-	if cfg_raids[day] ~= nil then
-		local tableD = cfg_raids[day][getRealTime()]
-		if tableD ~= nil then
-			if not tableD.alreadyExecuted then
-				Game.startRaid(tableD.raidName)
-				tableD.alreadyExecuted  = true
-			end
-		end
-	elseif cfg_raids[getRealDate()] ~= nil then
-		local tableM = cfg_raids[getRealDate()][getRealTime()]
-		if tableM ~= nil then
-			if not tableM.alreadyExecuted then
-				Game.startRaid(tableM.raidName)
-				tableM.alreadyExecuted  = true
-			end
+	local day, date = os.date('%A'), getRealDate()
+
+	local raidDays = {}
+	if raids[day] then
+		table.insert(raidDays, raids[day])
+	end
+	if raids[date] then
+		table.insert(raidDays, raids[date])
+	end
+
+	if #raidDays == 0 then
+		return true
+	end
+
+	for i = 1, #raidDays do
+		local settings = raidDays[i][getRealTime()]
+		if settings and not settings.alreadyExecuted then
+				Game.startRaid(settings.raidName)
+				settings.alreadyExecuted = true
 		end
 	end
+
 	return true
 end
