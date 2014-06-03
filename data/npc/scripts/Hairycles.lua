@@ -150,7 +150,7 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(4838, 1)
 				npcHandler:say("Ah yes! That's it. Thank you for bringing mighty whisper moss to Hairycles. It will help but still much is to be done. Just ask for other {mission} if you ready.", cid)
 				player:setStorageValue(12120, 2)
-				player:setStorageValue(12121, 3) -- The Ape City Questlog - Mission 1: Whisper Moss
+				player:setStorageValue(12121, 2) -- The Ape City Questlog - Mission 1: Whisper Moss
 				npcHandler.topic[cid] = 0	
 			else
 				npcHandler:say("You don't have it...", cid)
@@ -180,7 +180,7 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(5956, 1)
 				npcHandler:say("You brought scroll with lizard text? Good! I will see what text tells me! Come back when ready for other {mission}.", cid)
 				player:setStorageValue(12120, 9)
-				player:setStorageValue(12123, 3) -- The Ape City Questlog - Mission 3: Lizard Parchment
+				player:setStorageValue(12123, 2) -- The Ape City Questlog - Mission 3: Lizard Parchment
 				npcHandler.topic[cid] = 0	
 			else
 				npcHandler:say("You don't have it...", cid)

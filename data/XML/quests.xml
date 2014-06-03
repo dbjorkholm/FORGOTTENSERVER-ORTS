@@ -122,10 +122,9 @@
 		</mission>
 	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
-		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="3">
+		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Hairycles wants for you to infiltrate the Dworc Caves and steal some Whisper Moss which is said to be a cure. Find the Dworc Caves anywhere in Trapwood, the southern part of Tiquanda."/>
-			<missionstate id="2" description="You found the Whisper Moss! Bring it to Hairycles."/>
-			<missionstate id="3" description="You brought Hairycles the Whisper Moss. Ask Hairycles for new mission!"/>
+			<missionstate id="2" description="You brought Hairycles the Whisper Moss. Ask Hairycles for new mission!"/>
 		</mission>
 		<mission name="Mission 2: The Cure" storageid="12122" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Hairycles now needs Cough Syrup that humans use. He sends you to a local healer in Port hope to ask him for cough syrup."/>
@@ -134,10 +133,9 @@
 			<missionstate id="4" description="You bought the Cough Syrup from Padreia, bring it to Hairycles."/>
 			<missionstate id="5" description="You brought Hairycles the Cough Syrup. Ask Hairycles for new mission!"/>
 		</mission>
-		<mission name="Mission 3: Lizard Parchment" storageid="12123" startvalue="1" endvalue="3">
+		<mission name="Mission 3: Lizard Parchment" storageid="12123" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Hairycles wants you to collect an Old Parchment from the lizard city of Chor."/>
-			<missionstate id="2" description="You found the Old Parchment! Bring it to Hairycles."/>
-			<missionstate id="3" description="You brought Hairycles the Old Parchment. Ask Hairycles for new mission!"/>
+			<missionstate id="2" description="You brought Hairycles the Old Parchment. Ask Hairycles for new mission!"/>
 		</mission>
 		<mission name="Mission 4: Parchment Decyphering" storageid="12124" startvalue="1" endvalue="3">
 			<missionstate id="1" description="You should go east to the big desert. The hidden tomb is in the east of city under sand. You will have to dig until you find it. There you find a stone with signs between two huge red stones. Read them!"/>
