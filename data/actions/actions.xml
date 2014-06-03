@@ -31,7 +31,6 @@
 	<action uniqueid="3314" script="The-outlaw-quest/3304.lua" />
 	<action uniqueid="3311" script="The-outlaw-quest/3301.lua" />
 	<action uniqueid="3312" script="The-outlaw-quest/3302.lua" />
-	<action uniqueid="3403" script="The-outlaw-quest/bright_sword.lua" />
 	<action uniqueid="3400" script="The-outlaw-quest/oven.lua" />
 	<action uniqueid="3401" script="The-outlaw-quest/powerswitch.lua" />
 	<action uniqueid="3402" script="The-outlaw-quest/powerburn.lua" />
@@ -202,11 +201,7 @@
 	<action uniqueid="3023" script="blue djinn quest/blueDjinnQuestLampDoor.lua"/>
 	<action actionid="3027" script="blue djinn quest/blueDjinnQuestYalaharDoor.lua"/>
 
-	<!-- Deeper Fibula Quest -->
-	<action fromuid="2228" touid="2232" script="deeper fibula quest/fibulaQuestRewards.lua"/>
-
 	<!-- Demon Helmet Quest -->
-	<action fromuid="2212" touid="2214" script="demon helmet quest/demonHelmetQuestRewards.lua"/>
 	<action uniqueid="2005" script="demon helmet quest/demonHelmetQuestLever.lua"/>
 
 	<!-- Dreamer Challenge Quest -->
@@ -317,22 +312,14 @@
 
 	<!-- Koshei Amulet Quest -->
 	<action itemid="8266" script="koshei amulet quest/kosheiAmuletQuestBoss.lua"/>
-	<action uniqueid="3066" script="koshei amulet quest/kosheiAmuletQuestDoor.lua"/>
-	<action fromuid="3062" touid="3065" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
-	<action fromuid="3067" touid="3068" script="koshei amulet quest/kosheiAmuletQuestReward.lua"/>
+	<action uniqueid="3062" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
+	<action uniqueid="3064" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
 	<action uniqueid="3070" script="koshei amulet quest/kosheiAmuletQuestSwitch.lua"/>
-
-	<!-- Life Ring Quest -->
-	<action uniqueid="2237" script="life ring quest/lifeRingQuestReward.lua"/>
-
-	<!-- Necromancer Quest -->
-	<action uniqueid="2226" script="necromancer quest/necromancerQuestRewards.lua"/>
 
 	<!-- Pits Of Inferno Quest -->
 	<action actionid="2023" script="pits of inferno quest/pitsOfInfernoQuestBloodGraveStone.lua"/>
 	<action actionid="8815" script="pits of inferno quest/pitsOfInfernoQuestFountain.lua"/>
 	<action actionid="2022" script="pits of inferno quest/pitsOfInfernoQuestGoshnar.lua"/>
-	<action uniqueid="2021" script="pits of inferno quest/pitsOfInfernoQuestHolyTible.lua"/>
 	<action uniqueid="1020" script="pits of inferno quest/pitsOfInfernoQuestKey3700.lua"/>
 	<action fromuid="2050" touid="2065" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
 	<action fromuid="10544" touid="10550" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>

@@ -307,7 +307,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	local exhibitPosition = Position(fromPosition)
+	local exhibitPosition = fromPosition
 	exhibitPosition:getNextPosition(settings.dir)
 
 	local exhibitTile = Tile(exhibitPosition)
