@@ -353,8 +353,8 @@
 	<action uniqueid="9226" script="sam old backpack/samOldBackpackQuestReward.lua"/>
 
 	<!-- The Travelling Trader Quest -->
-	<action uniqueid="3019" script="the travelling trader quest/rashidQuestPackage.lua"/>
-	<action uniqueid="3020" script="the travelling trader quest/rashidQuestPackageDoor.lua"/>
+	<action uniqueid="3019" script="the travelling trader quest/rashidQuestPackageDoor.lua"/>
+	<action uniqueid="3020" script="the travelling trader quest/rashidQuestPackage.lua"/>
 
 	<!-- Their Masters Voice Quest -->
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
