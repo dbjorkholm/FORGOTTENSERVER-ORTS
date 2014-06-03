@@ -209,12 +209,12 @@
 			<missionstate id="3" description="You passed the test of Curos. Return to Ongulf and report your mission!"/>
 		</mission>
 		<mission name="Mission 07: Messengers Of Peace" storageid="12137" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="You now have to contact the Lizards, the real rulers of Zao. Find them, contact them, talk to them, scare them, bribe them, whatever."/>
+			<missionstate id="2" description="You have been trapped! Find a way out!"/>
+			<missionstate id="3" description="You found the Lizards!"/>
 		</mission>
 		<mission name="Mission 08: An Offer You Can't Refuse" storageid="12138" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
+			<missionstate id="1" description="Take the boat at the northern of Dragonblaze Peaks to tournament Isle. There you'll learn anything you need to know about the great tournament."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
 		</mission>
@@ -224,6 +224,11 @@
 			<missionstate id="3" description="..."/>
 		</mission>
 		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Tome of Knowledge Counter" storageid="12145" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
