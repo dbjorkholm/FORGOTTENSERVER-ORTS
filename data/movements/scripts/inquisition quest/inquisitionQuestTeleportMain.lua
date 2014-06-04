@@ -61,7 +61,7 @@ function onStepIn(cid, item, position, lastPosition)
 		else
 			player:teleportTo({x = 33165, y = 31709, z = 14})
 			Position({x = 33165, y = 31709, z = 14}):sendMagicEffect(CONST_ME_TELEPORT)
-			player:say("Escaping back to Retreat.", TALKTYPE_ORANGE_1)
+			player:say("Escaping back to the Retreat.", TALKTYPE_ORANGE_1)
 		end
 		return true
 	end
