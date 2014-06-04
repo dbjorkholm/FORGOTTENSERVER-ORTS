@@ -317,8 +317,6 @@
 	<action actionid="2022" script="pits of inferno quest/pitsOfInfernoQuestGoshnar.lua"/>
 	<action uniqueid="1020" script="pits of inferno quest/pitsOfInfernoQuestKey3700.lua"/>
 	<action fromuid="2050" touid="2065" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
-	<action uniqueid="10552" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
-	<action uniqueid="10559" script="pits of inferno quest/pitsOfInfernoQuestRewards.lua"/>
 	<action uniqueid="1021" script="pits of inferno quest/pitsOfInfernoQuestOil.lua"/>
 	<action uniqueid="3300" script="pits of inferno quest/pitsOfInfernoQuestStoneLever.lua"/>
 	<action fromuid="2025" touid="2028" script="pits of inferno quest/pitsOfInfernoQuestWalls.lua"/>
