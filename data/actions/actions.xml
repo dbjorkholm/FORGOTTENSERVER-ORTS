@@ -293,7 +293,8 @@
 	<action uniqueid="9012" script="in service of yalahar quest/inServiceOfYalaharQuestTamerinDoor.lua"/>
 	<action uniqueid="9031" script="in service of yalahar quest/inServiceOfYalaharQuestMorikSummon.lua"/>
 	<action uniqueid="3083" script="in service of yalahar quest/inServiceOfYalaharQuestMorikDoor.lua"/>
-
+	<action fromaid="23700" toaid="23701" script="in service of yalahar quest/YalaharMachineWargolems.lua"/>
+	
 	<!-- Inquisition Quest -->
 	<action fromuid="1300" touid="1308" script="inquisition quest/inquisitionQuestRewards.lua"/>
 	<action itemid="7494" script="inquisition quest/inquisitionQuestHolyWater.lua"/>

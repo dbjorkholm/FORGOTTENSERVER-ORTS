@@ -125,6 +125,8 @@
 	<movevent event="StepIn" actionid="7812" script="in service of yalahar quest/quaraVortex.lua"/>
 	<movevent event="StepIn" actionid="7813" script="in service of yalahar quest/warlocksPass.lua"/>
 	<movevent event="StepIn" actionid="7814" script="in service of yalahar quest/warlocksPass.lua"/>
+	<movevent event="StepIn" fromaid="23698" toaid="23699" script="in service of yalahar quest/YalaharMachineWargolemsEntrance.lua"/>
+	<movevent event="StepIn" fromaid="23702" toaid="23703" script="in service of yalahar quest/YalaharMachineWargolemsExit.lua"/>
 	
 	<!-- Inquisition Quest -->
 	<movevent event="StepIn" fromuid="2150" touid="2180" script="inquisition quest/inquisitionQuestTeleportMain.lua"/>
