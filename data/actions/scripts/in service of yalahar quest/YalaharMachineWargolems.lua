@@ -18,7 +18,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:say("*CLICK*", TALKTYPE_ORANGE_2, false, cid, (machines[3]))
 			player:say("*CLICK*", TALKTYPE_ORANGE_2, false, cid, (machines[4]))
 			player:say("*CLICK*", TALKTYPE_ORANGE_2, false, cid, (machines[5]))
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You insert all 4 gear wheels, them adjusting the teleporter to transport you to the deeper floor")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You insert all 4 gear wheels, them adjusting the teleporter to transport you to the deeper floor")
 		else
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have enough gear wheels to activate the machine.")
 		end

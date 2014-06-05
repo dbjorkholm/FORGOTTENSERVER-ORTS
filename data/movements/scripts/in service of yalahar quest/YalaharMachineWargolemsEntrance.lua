@@ -14,8 +14,9 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 	if Game.getStorageValue(machines[1]) == 1 then 
+		player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 		player:teleportTo(machines[2])
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "...")
+		player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 	else
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, "The machines are not activated.")
 	end
