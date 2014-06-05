@@ -1,4 +1,4 @@
-local keywordHandler = KeywordHandler:new()
+﻿local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
@@ -51,39 +51,23 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "twist of fate") then
 		npcHandler:say({"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...", "It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...", "The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...", "Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"}, cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "wooden stake") then
-		if player:getStorageValue(87) == 11 then
-			if player:getItemCount(5941) >= 1 then
-				npcHandler:say("Yes, I was informed what to do. Are you prepared to receive my line of the prayer?", cid)
-				npcHandler.topic[cid] = 2
-			end
-		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			if blessings >= 1 or player:getItemCount(2173) >= 1 then
-				if not player:hasBlessing(6) then
-					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
-						player:addBlessing(6)
-						npcHandler:say("So receive the protection of the twist of fate, pilgrim.", cid)
-					else
-						npcHandler:say("Oh. You do not have enough money.", cid)
-					end
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
+		if blessings >= 1 or player:getItemCount(2173) >= 1 then
+			if not player:hasBlessing(6) then
+				if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
+					player:addBlessing(6)
+					npcHandler:say("So receive the protection of the twist of fate, pilgrim.", cid)
 				else
-					npcHandler:say("You already possess this blessing.", cid)
+					npcHandler:say("Oh. You do not have enough money.", cid)
 				end
 			else
-				npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
+				npcHandler:say("You already possess this blessing.", cid)
 			end
-		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(5941) >= 1 then
-				player:setStorageValue(87, 12)
-				player:removeItem(5941, 1)
-				player:addItem(5942, 1)
-				npcHandler:say("So receive my prayer: 'Your mind shall be a vessel for joy, light and wisdom' - uh, wow, something happened. Well, I guess that's it, but next time if you need some mumbo jumbo rather go to Chondur.", cid)
-			end
+		else
+			npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then
+	elseif msgcontains(msg, "no") and npcHandler.topic[cid] == 1 then
 		npcHandler:say("Fine. You are free to decline my offer.", cid)
 		npcHandler.topic[cid] = 0
 	end
