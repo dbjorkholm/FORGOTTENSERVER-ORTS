@@ -22,7 +22,7 @@ function creatureSayCallback(cid, type, msg)
 	
 	local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 		
-    if msgcontains(msg, "heal") then
+	if msgcontains(msg, "heal") then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
 			for i = 1, #conditions do
