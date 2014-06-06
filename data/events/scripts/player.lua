@@ -97,7 +97,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
-	if isInArray({1738, 1740}, item:getId()) and item:getActionId() > 0 and item:getActionId() < 65535 then
+	if isInArray({1738, 1740, 1747, 1748, 1749}, item:getId()) and item:getActionId() > 0 and item:getActionId() < 65535 then
 		self:sendCancelMessage("You cannot move this object.")
 		return false
 	end

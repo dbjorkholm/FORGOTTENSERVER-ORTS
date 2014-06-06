@@ -142,22 +142,6 @@
 	<action actionid="26100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="27100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="28100" script="svargrond arena quest/arena_door.lua"/>
-	<action uniqueid="26300" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="26400" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="26500" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="26600" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="26700" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27000" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27300" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27400" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27500" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27600" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="27700" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="28300" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="28400" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="28500" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="28600" script="svargrond arena quest/arena_reward.lua"/>
-	<action uniqueid="28700" script="svargrond arena quest/arena_reward.lua"/>
 
 	<!-- Annihilator Quest -->
 	<action uniqueid="2216" script="annihilator quest/annihilatorQuestDoor.lua"/>
@@ -368,6 +352,9 @@
 	<action actionid="2215" script="quests/system.lua"/>
 	<action actionid="2216" script="quests/system.lua"/>
 	<action actionid="10544" script="quests/system.lua"/>
+	<action actionid="26300" script="quests/system.lua"/>
+	<action actionid="27300" script="quests/system.lua"/>
+	<action actionid="28300" script="quests/system.lua"/>
 	<action uniqueid="9170" script="quests/system.lua"/>
 	<action fromuid="9050" touid="9053" script="quests/system.lua"/>
 	<action uniqueid="1296" script="quests/system.lua"/>

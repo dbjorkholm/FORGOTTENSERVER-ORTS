@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, lastPosition)
 		end
 	elseif(item.uid == 3123) then
 		if(getPlayerStorageValue(cid, 900) == 6) then
-			player:stopMove(true)
+			Player(cid):stopMove(true)
 			addEvent(function() local player = Player(cid) if player ~= nil then player:stopMove(false) end end, 14 * 1000)
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Gnomedix: So let the examination begin! Now don't move. Don't be afraid. The good doctor gnome won't hurt you - hopefully!")
 			addEvent(doPlayerSendTextMessage, 2 * 1000, cid, MESSAGE_EVENT_ADVANCE, "Gnomedix: Now! Now! Don't panic! It's all over soon!")
