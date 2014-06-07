@@ -118,6 +118,7 @@
 	
 	<!-- Ice Islands Quest -->
 	<movevent event="StepIn" uniqueid="12031" script="ice islands quest/iceIslandsQuestHelheim.lua"/>
+	<movevent event="StepIn" fromuid="12025" touid="12026" script="ice islands quest/iceIslandsQuestNibelorDogSled.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
 	<movevent event="StepIn" fromuid="3103" touid="3106" script="in service of yalahar quest/demonTeleport.lua"/>
