@@ -211,13 +211,12 @@
 			<missionstate id="2" description="You have been trapped! Find a way out!"/>
 			<missionstate id="3" description="You found the Lizards!"/>
 		</mission>
-		<mission name="Mission 08: An Offer You Can't Refuse" storageid="12138" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Take the boat at the northern of Dragonblaze Peaks to tournament Isle. There you'll learn anything you need to know about the great tournament."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 08: An Offer You Can't Refuse" storageid="12138" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Take the boat at the northern of Dragonblaze Peaks to tournament Isle. Ask Zurak for a passage. There you'll learn anything you need to know about the great tournament. Ask there Chrak for the battle."/>
+			<missionstate id="2" description="You agreed the Offer."/>
 		</mission>
 		<mission name="Mission 09: Mortal Combat" storageid="12139" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
+			<missionstate id="1" description="You have to go into the Arena with another player, because 2 players are needed, at the same time, to enter. Choose your companion wisely!"/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
 		</mission>
@@ -296,7 +295,7 @@
 			<missionstate id="5" description="To cure Nilsor dogs, bring him the 5th of 7 ingredients: Purple Kiss Blossom. The purple kiss is a plant that grows in a place called jungle. You will have to use a kitchen knife to harvest its blossom."/>
 			<missionstate id="6" description="To cure Nilsor dogs, bring him the 6th of 7 ingredients: the Hydra Tongue. The hydra tongue is a common pest plant in warmer regions. You might find one in a shop."/>
 			<missionstate id="7" description="To cure Nilsor dogs, bring him the 7th of 7 ingredients: Spores of a Giant Glimmercap Mushroom. The giant glimmercap mushroom exists in caves and other preferably warm and humid places. Use an ordinary kitchen spoon on a mushroom to collectits spores."/>
-			<missionstate id="8" description="You found all ingredients to cure Nilsor dogs, ask him for mission."/>
+			<missionstate id="8" description="You found all ingredients to cure Nilsor dogs, ask him for mission. You can now travel by Dog Sleds to Inukaya."/>
 		</mission>
 		<mission name="The Secret of Helheim" storageid="12031" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Hjaern might have a mission for you. So maybe you go and talk to him."/>

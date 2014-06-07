@@ -24,7 +24,6 @@
 	<action fromuid="3153" touid="3154" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
 	<action uniqueid="3156" script="the new frontier quest/theNewFrontierQuestRetreat.lua"/>
 	<action fromuid="3158" touid="3160" script="the new frontier quest/theNewFrontierQuestReward.lua"/>
-	<action uniqueid="3161" script="the new frontier quest/theNewFrontierQuestRewardDoor.lua"/>
 
 	<!-- outlaw camp -->
 	<action uniqueid="3313" script="The-outlaw-quest/3303.lua" />
