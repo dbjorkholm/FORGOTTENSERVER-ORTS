@@ -1,13 +1,13 @@
+local commonSounds = {
+	'Fchhhhhh!',
+	'Zchhhhhh!',
+}
+local explosionSounds = {
+	['normal'] = 'Aaa... CHOO!',
+	['rare'] = 'Groaaarrr.... *cough*',
+	['veryRare'] = 'You... will.... burn!!'
+}
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local commonSounds = {
-		'Fchhhhhh!',
-		'Zchhhhhh!',
-	}
-	local explosionSounds = {
-		['normal'] = 'Aaa... CHOO!',
-		['rare'] = 'Groaaarrr.... *cough*',
-		['veryRare'] = 'You... will.... burn!!'
-	}
 	local player = Player(cid)
 	local item = Item(uid)
 	if player:getStorageValue(530) >= 5 then
@@ -26,7 +26,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:setStorageValue(530, nil)
 	else
 		player:say(commonSounds[ math.random( #commonSounds ) ], TALKTYPE_ORANGE_1, isInGhostMode, 0, fromPosition)
-		player:setStorageValue(530, player:getStorageValue(530) + 1)
+		player:setStorageValue(530, math.max(1, player:getStorageValue(530) +1))
 	end
 	return true
 end
