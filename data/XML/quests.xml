@@ -217,14 +217,10 @@
 		</mission>
 		<mission name="Mission 09: Mortal Combat" storageid="12139" startvalue="1" endvalue="3">
 			<missionstate id="1" description="You have to go into the Arena with another player, because 2 players are needed, at the same time, to enter. Choose your companion wisely!"/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="2" description="You have won! Report Chrak your mission about the battle."/>
+			<missionstate id="3" description="Go back to Farmine and talk to Ongulf about your mission."/>
 		</mission>
-		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
-		</mission>
+		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="1" description="You now have permission to use the Magic Carpet on the mountain above Farmine, Cael now accepts more Tomes of Knowledge from you and you got the Warmaster Outfit!"/>
 		<mission name="Tome of Knowledge Counter" storageid="12145" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>

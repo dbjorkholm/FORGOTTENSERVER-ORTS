@@ -25,6 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 							"For now ze mazter will zee zat you and your alliez are zpared of ze wraz of ze dragon emperor az you are unimportant for hiz goalz. ...",
 							"You may crawl back to your alliez and warn zem of ze gloriouz might of ze dragon emperor and hiz minionz."}, cid)
 			player:setStorageValue(Questlinestorage, 27)
+			player:setStorageValue(12139, 3) --Questlog, The New Frontier Quest "Mission 09: Mortal Combat"
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
