@@ -143,7 +143,7 @@
 	<movevent event="StepIn" fromaid="8816" toaid="8817" script="pits of inferno quest/pitsOfInfernoQuestShortcuts.lua"/>
 	<movevent event="StepIn" fromuid="2080" touid="2086" script="pits of inferno quest/pitsOfInfernoQuestThrones.lua"/>
 	<movevent event="StepIn" fromuid="2000" touid="2001" script="pits of inferno quest/pitsOfInfernoQuestTibleTile.lua"/>
-	<movevent event="StepIn" fromaid="28810" toaid="28826" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
+	<movevent event="StepIn" fromaid="28810" toaid="28834" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/pitsOfInfernoQuestSecondTrap.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
 	
