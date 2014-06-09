@@ -17,6 +17,7 @@
 	
 	<!-- The new Frontier Quest -->
 	<event type="kill" name="theNewFrontierQuestShardOfCorruption" script="the new frontier quest/theNewFrontierQuestShardOfCorruption.lua"/>
+	<event type="kill" name="theNewFrontierQuestTirecz" script="the new frontier quest/theNewFrontierQuestTirecz.lua"/>
 	
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>

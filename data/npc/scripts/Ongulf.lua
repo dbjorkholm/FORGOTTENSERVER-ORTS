@@ -187,8 +187,12 @@ local function creatureSayCallback(cid, type, msg)
 							"This new land is yours to be taken, so to say. Go out and make your fortune! With Farmine you have always a safe haven to return to. ...",
 							"Oh and one last thing: We convinced a carpet pilot to join us here. You'll find him on top of our lift in the mountains. I think he can offer you fast access to some cities back home. "
 						}, player)
-			doPlayerAddOutfit(cid, getPlayerSex(cid) == 0 and 366 or 367, 0)
+			player:addExperience(8000)
+			player:addOutfit(366)
+			player:addOutfit(367)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Questlinestorage, 28)
+			player:setStorageValue(12140, 1) --Questlog, The New Frontier Quest "Mission 10: New Horizons"
 			npcHandler.topic[cid] = 0
 		end
 	end
