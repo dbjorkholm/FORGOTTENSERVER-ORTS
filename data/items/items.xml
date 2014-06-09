@@ -778,7 +778,7 @@
 		<attribute key="type" value="trashholder" />
 		<attribute key="effect" value="fire" />
 	</item>
-	<item id="1510" name="slits"/>
+	<item id="1510" name="slits" />
 	<item id="1511" name="blades">
 		<attribute key="decayTo" value="1510" />
 		<attribute key="duration" value="10" />
@@ -7377,7 +7377,7 @@
 	<item id="4185" article="a" name="large pearl flower" />
 	<item fromid="4186" toid="4201" article="a" name="fallen tree" />
 	<item fromid="4202" toid="4207" name="vines" />
-	<item id="4208" article="a" name="jungle maw"/>
+	<item id="4208" article="a" name="jungle maw" />
 	<item id="4209" article="a" name="jungle maw">
 		<attribute key="decayTo" value="4208" />
 		<attribute key="duration" value="5" />
@@ -8021,7 +8021,7 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="4860" name="wooden trash" />
-	<item id="4861" article="a" name="cobra statue" />
+	<item id="4861" article="a" name="cobra statue"/>
 	<item id="4862" name="destroyed cobra statue" >
 		<attribute key="decayTo" value="4861" />
 		<attribute key="duration" value="30" />
@@ -11365,21 +11365,21 @@
 	<item id="6546" name="Dracola's eye">
 		<attribute key="weight" value="1500" />
 	</item>
-	<item id="6547" name="easily inflammable sulphur">
+	<item id="6547" name="yellow powder">
 		<attribute key="weight" value="50" />
 		<attribute key="showcount" value="0" />
 	</item>
-	<item id="6548" article="a" name="violet sulphur">
+	<item id="6548" article="a" name="purple powder">
 		<attribute key="weight" value="750" />
 	</item>
-	<item id="6549" article="a" name="green sulphur">
+	<item id="6549" article="a" name="green powder">
 		<attribute key="weight" value="750" />
 	</item>
-	<item id="6550" article="a" name="demon dust">
+	<item id="6550" article="a" name="red powder">
 		<attribute key="description" value="It reeks of hatred and malice." />
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="6551" article="a" name="vampire dust">
+	<item id="6551" article="a" name="blue powder">
 		<attribute key="description" value="Sun can be a merciless killer, but so can you." />
 		<attribute key="weight" value="100" />
 	</item>
@@ -13090,11 +13090,11 @@
 	<item id="7536" name="the remains of a spider egg" />
 	<item id="7537" article="a" name="spider egg" />
 	<item fromid="7538" toid="7543" article="a" name="spider web" />
-	<item id="7544" name="the remains of a spider web" >
+	<item id="7544" name="the remains of a spider web">
 		<attribute key="decayTo" value="7538" />
 		<attribute key="duration" value="60" />
 	</item>
-	<item id="7545" name="the remains of a spider web" >
+	<item id="7545" name="the remains of a spider web">
 		<attribute key="decayTo" value="7539" />
 		<attribute key="duration" value="60" />
 	</item>
@@ -15050,7 +15050,7 @@
 	<item id="8300" article="a" name="flawless ice crystal">
 		<attribute key="weight" value="250" />
 	</item>
-	<item id="8301" name="fine sulphur">
+	<item id="8301" name="holy soil">
 		<attribute key="description" value="It has been extracted from an inactive lava hole." />
 		<attribute key="weight" value="50" />
 	</item>
@@ -16463,7 +16463,7 @@
 		<attribute key="containerSize" value="8" />
 		<attribute key="slotType" value="backpack" />
 	</item>
-	<item id="9078" article="a" name="vial">
+	<item id="9078" article="a" name="special flask">
 		<attribute key="weight" value="170" />
 	</item>
 	<item id="9081" article="a" name="parcel">
@@ -17325,9 +17325,9 @@
 		<attribute key="weight" value="500" />
 	</item>
 	<item id="9928" article="a" name="leaf legs">
-        <attribute key="slotType" value="legs" />
-        <attribute key="weight" value="1200" />
-    </item>
+		<attribute key="slotType" value="legs" />
+		<attribute key="weight" value="1200" />
+	</item>
 	<item id="9929" article="a" name="flower dress">
 		<attribute key="slotType" value="body" />
 		<attribute key="weight" value="1900" />
@@ -17337,9 +17337,9 @@
 		<attribute key="weight" value="90" />
 	</item>
 	<item id="9931" article="a" name="coconut shoes">
-        <attribute key="slotType" value="feet" />
-        <attribute key="weight" value="600" />
-    </item>
+		<attribute key="slotType" value="feet" />
+		<attribute key="weight" value="600" />
+	</item>
 	<item id="9932" article="a" name="firewalker boots">
 		<attribute key="description" value="Wearing these boots reduces the damage gotten from fiery ground." />
 		<attribute key="weight" value="950" />
