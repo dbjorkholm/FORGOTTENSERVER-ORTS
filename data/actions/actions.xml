@@ -20,7 +20,6 @@
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
 	<action itemid="11100" script="the new frontier quest/theNewFrontierQuestBeaver.lua"/>
 	<action fromaid="8005" toaid="8006" script="the new frontier quest/theNewFrontierQuestLever.lua"/>
-	<action actionid="8008" script="the new frontier quest/theNewFrontierQuestTrapDoor.lua"/>
 	<action fromuid="3153" touid="3154" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
 	<action uniqueid="3156" script="the new frontier quest/theNewFrontierQuestRetreat.lua"/>
 
