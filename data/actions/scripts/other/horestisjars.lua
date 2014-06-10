@@ -11,7 +11,7 @@ local config = {
 	chance = 5,
 	randomText = {"Waaaaaah", "You are too afraid to destroy this object"},
 	bossName = "Horestis",
-	bossPosition = Position({x = 32943, y = 32767, z = 12})
+	bossPosition = Position({x = 32941, y = 32793, z = 12})
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
