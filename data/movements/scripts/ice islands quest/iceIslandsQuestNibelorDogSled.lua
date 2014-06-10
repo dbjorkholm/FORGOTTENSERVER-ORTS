@@ -21,8 +21,6 @@ function onStepIn(cid, item, position, lastPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(sled)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		else
-			player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		end
 	end
 	return true
