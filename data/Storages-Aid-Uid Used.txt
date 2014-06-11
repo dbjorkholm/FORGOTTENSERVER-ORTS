@@ -21,7 +21,7 @@ mage Outfits Quest(Fluid Belt):		12064
 the ancient tombs storage:		12100-12109
 inquisition storage:			12110-12117
 The Ape City storage:			12120-12130
-The New Frontier Quest:		12131-12143
+The New Frontier Quest:			12131-12151
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002

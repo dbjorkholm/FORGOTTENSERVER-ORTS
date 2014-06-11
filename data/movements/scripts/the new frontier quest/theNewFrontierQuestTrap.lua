@@ -3,10 +3,10 @@ function onStepIn(cid, item, position, lastPosition)
 	if not player then
 		return true
 	end
-	
+	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
 	if(item.actionid == 8007) then
-		if player:getStorageValue(1015) == 22 then
-			player:setStorageValue(1015, 23)
+		if player:getStorageValue(TheNewFrontierQuestStorage) == 22 then
+			player:setStorageValue(TheNewFrontierQuestStorage, 23)
 			player:setStorageValue(12137, 2) --Questlog, The New Frontier Quest "Mission 07: Messengers Of Peace"
 		end
 		local destination = Position({x = 33170, y = 31253, z = 11})

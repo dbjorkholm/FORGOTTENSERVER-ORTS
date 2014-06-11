@@ -8,19 +8,22 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
+	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
+	local TheNewFrontierBribe5 = 12150
+
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif(msgcontains(msg, "farmine")) then
-		if(player:getStorageValue(1015) == 15) then
+		if(player:getStorageValue(TheNewFrontierQuestStorage) == 15) then
 			npcHandler:say("I have heard only little about this mine. I am a bit absorbed in my studies. But what does this mine have to do with me?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "reason")) then
 		if(npcHandler.topic[cid] == 1) then
-			if(player:getStorageValue(1025) < 1) then
+			if(player:getStorageValue(TheNewFrontierBribe5) < 1) then
 				npcHandler:say("Well it sounds like a good idea to test my golems in some real environment. I think it is acceptable to send some of them to Farmine.", cid)
-				player:setStorageValue(1025, 1)
+				player:setStorageValue(TheNewFrontierBribe5, 1)
 				player:setStorageValue(12135, player:getStorageValue(12135) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			end
 		end

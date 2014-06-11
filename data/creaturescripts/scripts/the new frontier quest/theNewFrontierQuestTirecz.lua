@@ -1,6 +1,6 @@
 function onKill(cid, target)
-	local player = Player(cid)
 	local monster = Monster(target)
+	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
 	if monster then
 		if string.lower(monster:getName()) == "tirecz" then
 			Game.setStorageValue(12139, -1)
@@ -11,9 +11,9 @@ function onKill(cid, target)
 					spectator:teleportTo({x = 33064, y = 31028, z = 7})
 					spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					spectator:say("You have won! As new champion take the ancient armor as reward before you leave.", TALKTYPE_ORANGE_1)
-					if spectator:getStorageValue(1015) == 25 then
+					if spectator:getStorageValue(TheNewFrontierQuestStorage) == 25 then
 						spectator:setStorageValue(12139, 2) --Questlog, The New Frontier Quest "Mission 09: Mortal Combat"
-						spectator:setStorageValue(1015, 26)
+						spectator:setStorageValue(TheNewFrontierQuestStorage, 26)
 					end
 				end
 			end
