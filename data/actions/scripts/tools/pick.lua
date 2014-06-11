@@ -1,16 +1,67 @@
+local lava = {
+	{x = 32808, y = 32336, z = 11, stackpos = 0},
+	{x = 32809, y = 32336, z = 11, stackpos = 0},
+	{x = 32810, y = 32336, z = 11, stackpos = 0},
+	{x = 32808, y = 32334, z = 11, stackpos = 0},
+	{x = 32807, y = 32334, z = 11, stackpos = 0},
+	{x = 32807, y = 32335, z = 11, stackpos = 0},
+	{x = 32807, y = 32336, z = 11, stackpos = 0},
+	{x = 32807, y = 32337, z = 11, stackpos = 0},
+	{x = 32806, y = 32337, z = 11, stackpos = 0},
+	{x = 32805, y = 32337, z = 11, stackpos = 0},
+	{x = 32805, y = 32338, z = 11, stackpos = 0},
+	{x = 32805, y = 32339, z = 11, stackpos = 0},
+	{x = 32806, y = 32339, z = 11, stackpos = 0},
+	{x = 32806, y = 32338, z = 11, stackpos = 0},
+	{x = 32807, y = 32338, z = 11, stackpos = 0},
+	{x = 32808, y = 32338, z = 11, stackpos = 0},
+	{x = 32808, y = 32337, z = 11, stackpos = 0},
+	{x = 32809, y = 32337, z = 11, stackpos = 0},
+	{x = 32810, y = 32337, z = 11, stackpos = 0},
+	{x = 32811, y = 32337, z = 11, stackpos = 0},
+	{x = 32811, y = 32338, z = 11, stackpos = 0},
+	{x = 32806, y = 32338, z = 11, stackpos = 0},
+	{x = 32810, y = 32338, z = 11, stackpos = 0},
+	{x = 32810, y = 32339, z = 11, stackpos = 0},
+	{x = 32809, y = 32339, z = 11, stackpos = 0},
+	{x = 32809, y = 32338, z = 11, stackpos = 0},
+	{x = 32811, y = 32336, z = 11, stackpos = 0},
+	{x = 32811, y = 32335, z = 11, stackpos = 0},
+	{x = 32810, y = 32335, z = 11, stackpos = 0},
+	{x = 32809, y = 32335, z = 11, stackpos = 0},
+	{x = 32808, y = 32335, z = 11, stackpos = 0},
+	{x = 32809, y = 32334, z = 11, stackpos = 0},
+	{x = 32809, y = 32333, z = 11, stackpos = 0},
+	{x = 32810, y = 32333, z = 11, stackpos = 0},
+	{x = 32811, y = 32333, z = 11, stackpos = 0},
+	{x = 32806, y = 32338, z = 11, stackpos = 0},
+	{x = 32810, y = 32334, z = 11, stackpos = 0},
+	{x = 32811, y = 32334, z = 11, stackpos = 0},
+	{x = 32812, y = 32334, z = 11, stackpos = 0},
+	{x = 32813, y = 32334, z = 11, stackpos = 0},
+	{x = 32814, y = 32334, z = 11, stackpos = 0},
+	{x = 32812, y = 32333, z = 11, stackpos = 0},
+	{x = 32810, y = 32334, z = 11, stackpos = 0},
+	{x = 32812, y = 32335, z = 11, stackpos = 0},
+	{x = 32813, y = 32335, z = 11, stackpos = 0},
+	{x = 32814, y = 32335, z = 11, stackpos = 0},
+	{x = 32814, y = 32333, z = 11, stackpos = 0},
+	{x = 32813, y = 32333, z = 11, stackpos = 0}
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	local iEx = Item(itemEx.uid)
+	local targetItem = Item(itemEx.uid)
 	if (itemEx.uid <= 65535 or itemEx.actionid > 0) then
 		if (itemEx.itemid == 354 or itemEx.itemid == 355) then
-			iEx:transform(392)
-			iEx:decay()
+			targetItem:transform(392)
+			targetItem:decay()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	elseif itemEx.itemid == 7200 then
-			iEx:transform(7236)
-        	iEx:decay()
-       		toPosition:sendMagicEffect(CONST_ME_HITAREA)
+		targetItem:transform(7236)
+		targetItem:decay()
+		toPosition:sendMagicEffect(CONST_ME_HITAREA)
 	end
 	--The Ice Islands Quest, Nibelor 1: Breaking the Ice
 	if itemEx.itemid == 3621 and itemEx.actionid == 12026 then
@@ -29,6 +80,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(12026, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			end
 		end
+	elseif itemEx.itemid == 1304 and itemEx.uid == 1022 then --The Pits of Inferno Quest
+		for i = 1, #lava do
+			Game.createItem(5815, 1, lava[i])
+		end
+		targetItem:transform(2256)
+		toPosition:sendMagicEffect(CONST_ME_SMOKE)
+	else
+		return false
 	end
 	return true
 end
