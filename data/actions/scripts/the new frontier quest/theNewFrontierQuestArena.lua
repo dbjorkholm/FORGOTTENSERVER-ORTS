@@ -22,9 +22,9 @@ local config = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player1 = Tile(Position({x = 33091, y = 31019, z = 2})):getTopCreature() if player1 == nil or not player1:isPlayer() then return true end
 	local player2 = Tile(Position({x = 33092, y = 31019, z = 2})):getTopCreature() if player2 == nil or not player2:isPlayer()  then return true end
-	local Questlinestorage = 1015 --Questlinestorage
+	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
 	if item.uid == 3157 then
-		if player1:getStorageValue(Questlinestorage) == 25 then
+		if player1:getStorageValue(TheNewFrontierQuestStorage) == 25 then
 			if not Game.getStorageValue(12139) ~= -1 then
 				Game.setStorageValue(12139, 1)
 				addEvent(clearArena, 30 * 60 * 1000, {x = 33064, y = 31030, z = 3}, {x = 33085, y = 31050, z = 3})

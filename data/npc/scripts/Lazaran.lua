@@ -8,13 +8,14 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
+	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "mission")) then
-		if(player:getStorageValue(1015) == 9) then
+	elseif msgcontains(msg, "mission") then
+		if player:getStorageValue(TheNewFrontierQuestStorage) == 9 then
 			npcHandler:say("Me people wanting peace. No war with others. No war with little men. We few. We weak. Need help. We not wanting make war. No hurt. ", cid)
-			player:setStorageValue(1015, 10)
+			player:setStorageValue(TheNewFrontierQuestStorage, 10)
 			player:setStorageValue(12133, 2) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
 		end
 	end
