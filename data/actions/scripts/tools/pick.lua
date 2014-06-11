@@ -52,6 +52,7 @@ local lava = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local iEx = Item(itemEx.uid)
+	local targetItem = Item(itemEx.uid)
 	if (itemEx.uid <= 65535 or itemEx.actionid > 0) then
 		if (itemEx.itemid == 354 or itemEx.itemid == 355) then
 			iEx:transform(392)
