@@ -51,17 +51,16 @@ local lava = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	local iEx = Item(itemEx.uid)
 	local targetItem = Item(itemEx.uid)
 	if (itemEx.uid <= 65535 or itemEx.actionid > 0) then
 		if (itemEx.itemid == 354 or itemEx.itemid == 355) then
-			iEx:transform(392)
-			iEx:decay()
+			targetItem:transform(392)
+			targetItem:decay()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	elseif itemEx.itemid == 7200 then
-			iEx:transform(7236)
-        	iEx:decay()
+			targetItem:transform(7236)
+        	targetItem:decay()
        		toPosition:sendMagicEffect(CONST_ME_HITAREA)
 	end
 	--The Ice Islands Quest, Nibelor 1: Breaking the Ice
