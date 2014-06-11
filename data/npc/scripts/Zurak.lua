@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -8,12 +9,11 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "trip") then
-		if player:getStorageValue(TheNewFrontierQuestStorage) >= 24 then
+		if player:getStorageValue(TheNewFrontier.Questline) >= 24 then
 			npcHandler:say("You want trip to Izzle of Zztrife?", cid)
 			npcHandler.topic[cid] = 1
 		end

@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -8,24 +9,21 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
-	local TheNewFrontierBribe2 = 12147
-	
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	--The New Frontier
 	elseif msgcontains(msg, "farmine") then
-		if player:getStorageValue(TheNewFrontierQuestStorage) == 15 then
+		if player:getStorageValue(TheNewFrontier.Questline) == 15 then
 			npcHandler:say("Oh yes, that project the whole dwarven community is so excited about. I guess I already know why you are here, but speak up.", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "impress") or msgcontains(msg, "plea") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getStorageValue(TheNewFrontierBribe2) < 1 then
+			if player:getStorageValue(TheNewFrontier.BribeLeeland) < 1 then
 				npcHandler:say("Oh yes, that project the whole dwarven community is so excited about. I guess I already know why you are here, but speak up.", cid)
-				player:setStorageValue(TheNewFrontierBribe2, 1)
-				player:setStorageValue(12135, player:getStorageValue(12135) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
+				player:setStorageValue(TheNewFrontier.BribeLeeland, 1)
+				player:setStorageValue(TheNewFrontier.Mission05, player:getStorageValue(TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			end
 		end
 	end
