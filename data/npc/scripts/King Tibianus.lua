@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -8,10 +9,6 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
-	--New Frontier Sorages
-	local TheNewFrontierQuestStorage = 12144 --TheNewFrontierQuestline_Storage
-	local TheNewFrontierBribe1 = 12146
-	
 	local player = Player(cid)
 	if (msgcontains(msg, "hail") or msgcontains(msg, "salutations") or msgcontains(msg, "king")) and (not npcHandler:isFocused(cid)) then
                 npcHandler:say("I greet thee, my loyal subject "..getCreatureName(cid)..".", cid)
@@ -214,16 +211,16 @@ function creatureSayCallback(cid, type, msg)
 	end
 	--The New Frontier
 	if(msgcontains(msg, "farmine")) then
-		if(player:getStorageValue(TheNewFrontierQuestStorage) == 15) then
+		if(player:getStorageValue(TheNewFrontier.Questline) == 15) then
 			npcHandler:say("Ah, I vaguely remember that our little allies were eager to build some base. So speak up, what do you want?", cid)
 			npcHandler.topic[cid] = 2
 		end
 	elseif(msgcontains(msg, "flatter")) then
 		if(npcHandler.topic[cid] == 2) then
-			if(player:getStorageValue(TheNewFrontierBribe1) < 1) then
+			if(player:getStorageValue(TheNewFrontier.BribeKing) < 1) then
 				npcHandler:say("Indeed, indeed. Without the help of Thais, our allies stand no chance! Well, I'll send some money to support their cause.", cid)
-				player:setStorageValue(TheNewFrontierBribe1, 1)
-				player:setStorageValue(12135, player:getStorageValue(12135) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
+				player:setStorageValue(TheNewFrontier.BribeKing, 1)
+				player:setStorageValue(TheNewFrontier.Mission05, player:getStorageValue(TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			end
 		end
 	end

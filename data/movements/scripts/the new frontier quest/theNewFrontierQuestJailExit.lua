@@ -1,9 +1,10 @@
+dofile('data/lib/StorageValues.lua')
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
 	if not player then
 		return true
 	end
-	if player:getStorageValue(12138) >= 1 then
+	if player:getStorageValue(TheNewFrontier.Mission08) >= 1 then
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo({x = 33145, y = 31247, z = 6})
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

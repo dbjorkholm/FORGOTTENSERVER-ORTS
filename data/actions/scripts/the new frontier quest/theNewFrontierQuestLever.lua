@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.actionid == 8006 and item.itemid == 1945 then
 		local Startposition = {x = toPosition.x - 1, y = toPosition.y, z = toPosition.z} -- Startposition of elevator always left of lever
@@ -22,12 +23,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 		
 		
-		if Player(Elevatoruser):getStorageValue(12135) == 7 then --if The New Frontier Quest "Mission 05: Getting Things Busy" complete then Stage 3
+		if Player(Elevatoruser):getStorageValue(TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest "Mission 05: Getting Things Busy" complete then Stage 3
 			Elevatoruser:teleportTo({x=33055, y=31527, z=10})
 			Position({x=33055, y=31527, z=10}):sendMagicEffect(CONST_ME_TELEPORT)
 			Item(item.uid):transform(1946)
 			return true
-		elseif Player(Elevatoruser):getStorageValue(12133) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
+		elseif Player(Elevatoruser):getStorageValue(TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
 			Elevatoruser:teleportTo({x=33055, y=31527, z=12})
 			Position({x=33055, y=31527, z=12}):sendMagicEffect(CONST_ME_TELEPORT)
 			Item(item.uid):transform(1946)

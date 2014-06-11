@@ -169,7 +169,7 @@
 			<missionstate id="3" description="You completed the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
 		</mission>
 	</quest>
-	<quest name="The New Frontier" startstorageid="12144" startstoragevalue="1">
+	<quest name="The New Frontier" startstorageid="12130" startstoragevalue="1">
 		<mission name="Mission 01: New Land" storageid="12131" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Ongulf sends you to explore the passage to the east of farmine."/>
 			<missionstate id="2" description="You have found the passage through the mountains and can report Ongulf about your success."/>
@@ -221,7 +221,7 @@
 			<missionstate id="3" description="Go back to Farmine and talk to Ongulf about your mission."/>
 		</mission>
 		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="1" description="You now have permission to use the Magic Carpet on the mountain above Farmine, Cael now accepts more Tomes of Knowledge from you and you got the Warmaster Outfit!"/>
-		<mission name="Tome of Knowledge Counter" storageid="12145" startvalue="1" endvalue="3">
+		<mission name="Tome of Knowledge Counter" storageid="12141" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
 			<missionstate id="3" description="..."/>
