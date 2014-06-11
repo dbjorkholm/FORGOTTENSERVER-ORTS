@@ -59,9 +59,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	elseif itemEx.itemid == 7200 then
-			targetItem:transform(7236)
-        	targetItem:decay()
-       		toPosition:sendMagicEffect(CONST_ME_HITAREA)
+		targetItem:transform(7236)
+		targetItem:decay()
+		toPosition:sendMagicEffect(CONST_ME_HITAREA)
 	end
 	--The Ice Islands Quest, Nibelor 1: Breaking the Ice
 	if itemEx.itemid == 3621 and itemEx.actionid == 12026 then
