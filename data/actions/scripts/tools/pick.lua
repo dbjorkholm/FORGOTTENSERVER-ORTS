@@ -86,6 +86,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 		targetItem:transform(2256)
 		toPosition:sendMagicEffect(CONST_ME_SMOKE)
+	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
+		targetItem:transform(392)
+		targetItem:decay()
+		toPosition:sendMagicEffect(CONT_ME_POFF)
 	else
 		return false
 	end
