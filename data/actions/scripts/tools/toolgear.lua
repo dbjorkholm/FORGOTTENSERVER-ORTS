@@ -197,6 +197,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	else
 		return false
 	end
+
 	-- TODO: Add jamming, sickle, spoon and kitchen knife
 
 	return true
