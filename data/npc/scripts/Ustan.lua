@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -12,10 +13,10 @@ function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "cough syrup") then
-		if player:getStorageValue(12120) == 4 then
+		if player:getStorageValue(TheApeCity.Questline) == 4 then
 			npcHandler:say("I had some cough syrup a while ago. It was stolen in an ape raid. I fear if you want more cough syrup you will have to buy it in the druids guild in carlin.", cid)
-			player:setStorageValue(12120, 5)
-			player:setStorageValue(12122, 3) -- The Ape City Questlog - Mission 2: The Cure
+			player:setStorageValue(TheApeCity.Questline, 5)
+			player:setStorageValue(TheApeCity.Mission02, 3) -- The Ape City Questlog - Mission 2: The Cure
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "addon") then

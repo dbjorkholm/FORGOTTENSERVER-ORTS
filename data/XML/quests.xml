@@ -149,8 +149,8 @@
 		</mission>
 		<mission name="Mission 6: Witches' Cap Spot" storageid="12126" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Hairycles needs a sample of the Witches' Cap Spot for his Charm of Life. This can only be found in the Fibula Dungeon. Bring it to Hairycles!"/>
-			<missionstate id="2" description="You found a witches cap spot! Bring it to Hairycles."/>
-			<missionstate id="3" description="You are now a friend of the apes and can purchase Bananas for 2gp. Ask Hairycles for new mission!"/>
+			<missionstate id="2" description="Bring the sample back to Hairycles and report about your mission."/>
+			<missionstate id="3" description="You are now a friend of the apes and can purchase Bananas for 2gp. Hairycles will also heal you if you are low in health. Ask Hairycles for new mission!"/>
 		</mission>
 		<mission name="Mission 7: Destroying Casks With Crowbar" storageid="12127" startvalue="1" endvalue="4">
 			<missionstate id="1" description="Hairycles wants you to destroy the Casks below the city left by the Lizard ancestors so that the Apes cannot drink from them."/>

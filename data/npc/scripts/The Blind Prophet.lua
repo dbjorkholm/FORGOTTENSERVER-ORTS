@@ -1,3 +1,4 @@
+dofile('data/lib/StorageValues.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -23,9 +24,9 @@ function onThink() npcHandler:onThink() end
 
 function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(12120) <= 18 then
+	if player:getStorageValue(TheApeCity.Questline) <= 18 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello!")
-	elseif player:getStorageValue(12120) >= 19 then
+	elseif player:getStorageValue(TheApeCity.Questline) >= 19 then
 		npcHandler:setMessage(MESSAGE_GREET, "Be greeted, friend of the apes.")
 	end
 	return true
@@ -36,7 +37,7 @@ function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "transport") then
-		if player:getStorageValue(12120) >= 19 then
+		if player:getStorageValue(TheApeCity.Questline) >= 19 then
 			npcHandler:say("You want me to transport you to forbidden land?", cid)
 			npcHandler.topic[cid] = 1
 		else
