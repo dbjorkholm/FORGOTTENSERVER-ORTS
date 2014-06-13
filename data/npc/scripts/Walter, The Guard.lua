@@ -1,47 +1,36 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+
+function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	local player = Player(cid)
+	if not npcHandler:isFocused(cid) then
 		return false
-	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
- 
-	if(msgcontains(msg, "trouble") and getPlayerStorageValue(cid, 201) < 1) then
+	elseif(msgcontains(msg, "trouble") and player:getStorageValue(Storage.TheInquisition.WalterGuard) < 1 and player:getStorageValue(Storage.TheInquisition.Mission01) ~= -1) then
 		npcHandler:say("I think there is a pickpocket in town.", cid)
-		talkState[talkUser] = 1
+		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "authorities")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Well, sooner or later we will get hold of that delinquent. That's for sure.", cid)
-			talkState[talkUser] = 2
+			npcHandler.topic[cid] = 2
 		end
 	elseif(msgcontains(msg, "avoided")) then
-		if(talkState[talkUser] == 2) then
+		if(npcHandler.topic[cid] == 2) then
 			npcHandler:say("You can't tell by a person's appearance who is a pickpocket and who isn't. You simply can't close the city gates for everyone.", cid)
-			talkState[talkUser] = 3
+			npcHandler.topic[cid] = 3
 		end
 	elseif(msgcontains(msg, "gods allow")) then
-		if(talkState[talkUser] == 3) then
+		if(npcHandler.topic[cid] == 3) then
 			npcHandler:say("If the gods had created the world a paradise, no one had to steal at all.", cid)
-			talkState[talkUser] = 0
-			if(getPlayerStorageValue(cid, 201) < 1) then
-				setPlayerStorageValue(cid, 201, 1)
-				Player(cid):setStorageValue(12111, Player(cid):getStorageValue(12111) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
+			npcHandler.topic[cid] = 0
+			if(player:getStorageValue(Storage.TheInquisition.WalterGuard) < 1) then
+				player:setStorageValue(Storage.TheInquisition.WalterGuard, 1)
+				player:setStorageValue(Storage.TheInquisition.Mission01, player:getStorageValue(Storage.TheInquisition.Mission01) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
 				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
 			end
 		end

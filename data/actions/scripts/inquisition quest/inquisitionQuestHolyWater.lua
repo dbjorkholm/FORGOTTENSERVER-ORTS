@@ -27,16 +27,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(itemEx.actionid == 2000) then
 		doRemoveItem(item.uid, 1)
 		doSendMagicEffect(toPosition, CONST_ME_FIREAREA)
-		setPlayerStorageValue(cid, 200, 5)
-		Player(cid):setStorageValue(12112, 2) -- The Inquisition Questlog- "Mission 2: Eclipse"
+		setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 5)
+		Player(cid):setStorageValue(Storage.TheInquisition.Mission02, 2) -- The Inquisition Questlog- "Mission 2: Eclipse"
 	end
 	-- Haunted Ruin
 	if(itemEx.actionid == 2003) then
-		if(getPlayerStorageValue(cid, 200) == 12) then
+		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) == 12) then
 			doSummonCreature("Pirate Ghost", toPosition)
 			doRemoveItem(item.uid, 1)
-			setPlayerStorageValue(cid, 200, 13)
-			Player(cid):setStorageValue(12114, 2) -- The Inquisition Questlog- "Mission 4: The Haunted Ruin"
+			setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 13)
+			Player(cid):setStorageValue(Storage.TheInquisition.Mission04, 2) -- The Inquisition Questlog- "Mission 4: The Haunted Ruin"
 			doTransformItem(getTileItemById( pos,8697 ).uid, 8696)
 			addEvent(OpenDoor, 10*1000)
 		end
@@ -58,9 +58,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getGlobalStorageValue(210) < 1) then
 			addEvent(setGlobalStorageValue, 20 * 1000, 210, 0)
 		end
-		if(getPlayerStorageValue(cid, 200) < 22) then
-			setPlayerStorageValue(cid, 200, 22)
-			Player(cid):setStorageValue(12117, 2) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
+		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) < 22) then
+			setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 22)
+			Player(cid):setStorageValue(Storage.TheInquisition.Mission07, 2) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
 		end
 		doCreatureSay(cid,""..getCreatureName(cid).." destroyed the shadow nexus! In 20 seconds it will return to its original state.",TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid))
 		doRemoveItem(item.uid, 1)

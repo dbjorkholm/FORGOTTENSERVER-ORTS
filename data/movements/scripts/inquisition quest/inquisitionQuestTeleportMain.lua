@@ -42,8 +42,8 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 
 	if (item.uid == 2150) then
-		if(player:getStorageValue(1050) <= teleports2[item.uid].storage) then
-			player:setStorageValue(1050, teleports2[item.uid].storage)
+		if(player:getStorageValue(Storage.TheInquisition.EnterTeleport) <= teleports2[item.uid].storage) then
+			player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleports2[item.uid].storage)
 		end
 		player:teleportTo(teleports2[item.uid].newPos)
 		Position(teleports2[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
@@ -52,8 +52,8 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 	if(teleports[item.uid].boss) then
 		if(getGlobalStorageValue(teleports[item.uid].bossStorage) == 2) then
-			if(player:getStorageValue(1050) <= teleports[item.uid].storage) then
-				player:setStorageValue(1050, teleports[item.uid].storage)
+			if(player:getStorageValue(Storage.TheInquisition.EnterTeleport) <= teleports[item.uid].storage) then
+				player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleports[item.uid].storage)
 			end
 			player:teleportTo(teleports[item.uid].newPos)
 			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
@@ -67,7 +67,7 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 	
 	if(teleports[item.uid].storage) then
-		if(player:getStorageValue( 1050) >= teleports[item.uid].storage) then
+		if(player:getStorageValue( Storage.TheInquisition.EnterTeleport) >= teleports[item.uid].storage) then
 			player:teleportTo(teleports[item.uid].newPos)
 			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
 			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
