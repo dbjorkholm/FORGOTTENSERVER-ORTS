@@ -2,6 +2,18 @@
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it alphabetical -
 Storage = {
+	TheAncientTombs = {
+			DefaultStart = 12100,
+			Omruc = 12101,
+			Thalas = 12102,
+			Diphtrah = 12103,
+			Mahrdis = 12104,
+			Vashresamun = 12105,
+			Morguthis = 12106,
+			Rahemos = 12107,
+			Ashmunrah = 12108,
+			VashresamunInstruments = 12109,
+				},
 	TheApeCity = {
 			Questline = 12120, --Storage through the Quest
 			Mission01 = 12121,
