@@ -1,4 +1,4 @@
-dofile('data/lib/StorageValues.lua')
+
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -13,7 +13,7 @@ function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "cough syrup") then
-		if player:getStorageValue(TheApeCity.Questline) == 5 then
+		if player:getStorageValue(Storage.TheApeCity.Questline) == 5 then
 			npcHandler:say("Do you want to buy a bottle of cough syrup for 50 gold?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -21,8 +21,8 @@ function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 and player:removeMoney(50) then
 			npcHandler:say("Thank you. Here it is.", cid)
 			player:addItem(4839, 1)	
-			player:setStorageValue(TheApeCity.Questline, 6)
-			player:setStorageValue(TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
+			player:setStorageValue(Storage.TheApeCity.Questline, 6)
+			player:setStorageValue(Storage.TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
 			npcHandler.topic[cid] = 0
 		else
 			npcHandler:say("You don't have enough money.", cid)

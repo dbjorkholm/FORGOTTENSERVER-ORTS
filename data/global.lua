@@ -1,4 +1,5 @@
 dofile('data/compat.lua')
+dofile('data/lib/StorageValues.lua')
 
 TRUE = true
 FALSE = false
