@@ -1,12 +1,12 @@
 local pharaoh = {
-	["omruc"] = 12101,
-	["thalas"] = 12102,
-	["dipthrah"] = 12103,
-	["mahrdis"] = 12104,
-	["vashresamun"] = 12105,
-	["morguthis"] = 12106,
-	["rahemos"] = 12107,
-	["ashmunrah"] = 12108
+	["omruc"] = Storage.TheAncientTombs.Omruc,
+	["thalas"] = Storage.TheAncientTombs.Thalas,
+	["dipthrah"] = Storage.TheAncientTombs.Diphtrah,
+	["mahrdis"] = Storage.TheAncientTombs.Mahrdis,
+	["vashresamun"] = Storage.TheAncientTombs.Vashresamun,
+	["morguthis"] = Storage.TheAncientTombs.Morguthis,
+	["rahemos"] = Storage.TheAncientTombs.Rahemos,
+	["ashmunrah"] = Storage.TheAncientTombs.Ashmunrah
 }
 
 function onKill(cid, target)
