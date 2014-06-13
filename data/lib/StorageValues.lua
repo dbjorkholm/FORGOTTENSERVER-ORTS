@@ -1,6 +1,20 @@
 -- STORAGES --
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
-TheNewFrontier = {
+-- Sort it alphabetical -
+Storage = {
+	TheApeCity = {
+			Questline = 12120, --Storage through the Quest
+			Mission01 = 12121,
+			Mission02 = 12122,
+			Mission03 = 12123,
+			Mission04 = 12124,
+			Mission05 = 12125,
+			Mission06 = 12126,
+			Mission07 = 12127,
+			Mission08 = 12128,
+			Mission09 = 12129
+				},
+	TheNewFrontier = {
 			Questline = 12130, --Storage through the Quest
 			Mission01 = 12131,
 			Mission02 = 12132,
@@ -22,16 +36,5 @@ TheNewFrontier = {
 			BribeWydrin = 12148,
 			BribeTelas = 12149,
 			BribeHumgolf = 12150
-		}
-TheApeCity = {
-			Questline = 12120,
-			Mission01 = 12121,
-			Mission02 = 12122,
-			Mission03 = 12123,
-			Mission04 = 12124,
-			Mission05 = 12125,
-			Mission06 = 12126,
-			Mission07 = 12127,
-			Mission08 = 12128,
-			Mission09 = 12129
 			}
+}

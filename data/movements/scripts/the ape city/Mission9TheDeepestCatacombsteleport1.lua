@@ -1,4 +1,4 @@
-dofile('data/lib/StorageValues.lua')
+
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
 	if not player then
@@ -6,7 +6,7 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 
 	if item.uid == 12129 then
-		if player:getStorageValue(TheApeCity.Questline) >= 21 then
+		if player:getStorageValue(Storage.TheApeCity.Questline) >= 21 then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32749, y = 32536, z = 10})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

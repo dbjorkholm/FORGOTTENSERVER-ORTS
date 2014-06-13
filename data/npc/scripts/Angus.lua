@@ -1,4 +1,4 @@
-dofile('data/lib/StorageValues.lua')
+
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -20,17 +20,17 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	--The New Frontier
 	elseif(msgcontains(msg, "farmine")) then
-		if(player:getStorageValue(TheNewFrontier.Questline) == 15) then
+		if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 15) then
 			npcHandler:say("Oh yes, an interesting topic. We had vivid discussions about this discovery. But what is it that you want?", cid)
 			npcHandler.topic[cid] = 30
 		end
 	elseif(msgcontains(msg, "bluff")) then
 		if(npcHandler.topic[cid] == 30) then
-			if(player:getStorageValue(TheNewFrontier.BribeAngus) < 1) then
+			if(player:getStorageValue(Storage.TheNewFrontier.BribeAngus) < 1) then
 				npcHandler:say({"Those stories are just amazing! Men with faces on their stomach instead of heads you say? And hens that lay golden eggs? Whereas, most amazing is this fountain of youth you've mentioned! ...",
 								"I'll immediately send some of our most dedicated explorers to check those things out!"}, cid)
-				player:setStorageValue(TheNewFrontier.BribeAngus, 1)
-				player:setStorageValue(TheNewFrontier.Mission05, player:getStorageValue(TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
+				player:setStorageValue(Storage.TheNewFrontier.BribeAngus, 1)
+				player:setStorageValue(Storage.TheNewFrontier.Mission05, player:getStorageValue(Storage.TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			end
 		end
 	
