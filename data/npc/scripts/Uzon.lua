@@ -61,7 +61,7 @@ local travelNode = keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandl
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
  
 	if(msgcontains(msg, "eclipse")) then
-		if(getPlayerStorageValue(cid, 200) == 4) then
+		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) == 4) then
 			npcHandler:say('Oh no, so the time has come? Do you really want me to fly you to this unholy place?', cid)
 			talkState[talkUser] = 1
 		end

@@ -1,37 +1,26 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+
+function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() npcHandler:onThink() end
 
 function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	local player = Player(cid)
+	if not npcHandler:isFocused(cid) then
 		return false
-	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
- 
-	if(msgcontains(msg, "trouble") and getPlayerStorageValue(cid, 203) < 1) then
+	elseif(msgcontains(msg, "trouble") and player:getStorageValue(Storage.TheInquisition.GrofGuard) < 1 and player:getStorageValue(Storage.TheInquisition.Mission01) ~= -1) then
 		npcHandler:say("I think it'll rain soon and I left some laundry out for drying.", cid)
-		talkState[talkUser] = 1
+		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "authorities")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Yes I'm pretty sure they have failed to send the laundry police to take care of it, you fool.", cid)
-			talkState[talkUser] = 0
-			if(getPlayerStorageValue(cid, 203) < 1) then
-				setPlayerStorageValue(cid, 203, 1)
-				Player(cid):setStorageValue(12111, Player(cid):getStorageValue(12111) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
+			npcHandler.topic[cid] = 0
+			if(player:getStorageValue(Storage.TheInquisition.GrofGuard) < 1) then
+				player:setStorageValue(Storage.TheInquisition.GrofGuard, 1)
+				player:setStorageValue(Storage.TheInquisition.Mission01, player:getStorageValue(Storage.TheInquisition.Mission01) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
 				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
 			end
 		end

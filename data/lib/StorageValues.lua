@@ -14,6 +14,24 @@ Storage = {
 			Mission08 = 12128,
 			Mission09 = 12129
 				},
+	TheInquisition = {
+			Questline = 12160, --Storage through the Quest
+			Mission01 = 12161,
+			Mission02 = 12162,
+			Mission03 = 12163,
+			Mission04 = 12164,
+			Mission05 = 12165,
+			Mission06 = 12166,
+			Mission07 = 12167,
+			GrofGuard = 12170,
+			KulagGuard = 12171,
+			MilesGuard = 12172,
+			TimGuard = 12173,
+			WalterGuard = 12174,
+			StorkusVampiredust = 12175,
+			EnterTeleport = 12176,
+			Reward = 12177
+				},
 	TheNewFrontier = {
 			Questline = 12130, --Storage through the Quest
 			Mission01 = 12131,

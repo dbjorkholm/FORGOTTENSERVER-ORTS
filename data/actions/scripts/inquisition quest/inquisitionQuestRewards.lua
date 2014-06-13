@@ -12,10 +12,10 @@ local rewards = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if(player:getStorageValue(300) < 1) then
-		player:setStorageValue(300, 1)
-		player:setStorageValue(200, 25)
-		player:setStorageValue(12117, 5) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
+	if(player:getStorageValue(Storage.TheInquisition.Reward) < 1) then
+		player:setStorageValue(Storage.TheInquisition.Reward, 1)
+		player:setStorageValue(Storage.TheInquisition.Questline, 25)
+		player:setStorageValue(Storage.TheInquisition.Mission07, 5) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
 		player:addItem(rewards[item.uid], 1)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found " .. getItemName(rewards[item.uid]) .. ".")
 	else

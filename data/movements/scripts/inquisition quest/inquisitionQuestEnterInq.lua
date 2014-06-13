@@ -5,7 +5,7 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 
 	if(item.uid == 9014) then
-		if (player:getStorageValue(200) >= 20) then
+		if (player:getStorageValue(Storage.TheInquisition.Questline) >= 20) then
 			local destination = Position({x = 33168, y = 31683, z = 15})
 			player:teleportTo(destination)
 			destination:sendMagicEffect(CONST_ME_TELEPORT)
