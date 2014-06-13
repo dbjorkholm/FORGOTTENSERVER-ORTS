@@ -208,13 +208,13 @@ function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 8 then	
 			npcHandler:say("Good thing that is! Report about mission when you have read those signs.", cid)
 			player:setStorageValue(Storage.TheApeCity.Questline, 10)
-			player:setStorageValue(Storage.Storage.TheApeCity.Mission04, 1) -- The Ape City Questlog - Mission 4: Parchment Decyphering
+			player:setStorageValue(Storage.TheApeCity.Mission04, 1) -- The Ape City Questlog - Mission 4: Parchment Decyphering
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getStorageValue(Storage.Storage.TheApeCity.Mission04) == 2 then
+			if player:getStorageValue(Storage.TheApeCity.Mission04) == 2 then
 				npcHandler:say("Oh, so clear is all now! Easy it will be to read the signs now! Soon we will know what to do! Thank you again! Ask for {mission} if you feel ready.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 11)
-				player:setStorageValue(Storage.Storage.TheApeCity.Mission04, 3) -- The Ape City Questlog - Mission 4: Parchment Decyphering
+				player:setStorageValue(Storage.TheApeCity.Mission04, 3) -- The Ape City Questlog - Mission 4: Parchment Decyphering
 				npcHandler.topic[cid] = 0	
 			else
 				npcHandler:say("You don't have it...", cid)

@@ -26,18 +26,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:say("You have marked the tree but it seems someone marked it already! He is not happy with your actions and he brought friends!", TALKTYPE_ORANGE_1)
 			end
 		elseif(itemEx.actionid == 8004) then
-			if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 5) and (player:getStorageValue(Storage.Storage.TheNewFrontier.Beaver3) < 1) then
+			if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 5) and (player:getStorageValue(Storage.TheNewFrontier.Beaver3) < 1) then
 				for i = 1, 3 do
 					pos = toPosition
 					Game.createMonster("enraged squirrel", pos)
 					toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 				end
-				player:setStorageValue(Storage.Storage.TheNewFrontier.Beaver3, 1)
+				player:setStorageValue(Storage.TheNewFrontier.Beaver3, 1)
 				player:setStorageValue(Storage.TheNewFrontier.Mission02, player:getStorageValue(Storage.TheNewFrontier.Mission02) + 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
 				player:say("You have marked the tree, but you also angered the aquirrel family who lived on it!", TALKTYPE_ORANGE_1)
 			end
 		end
-		if(player:getStorageValue(Storage.TheNewFrontier.Beaver1) == 1) and (player:getStorageValue(Storage.TheNewFrontier.Beaver2) == 1) and (player:getStorageValue(Storage.Storage.TheNewFrontier.Beaver3) == 1)then
+		if(player:getStorageValue(Storage.TheNewFrontier.Beaver1) == 1) and (player:getStorageValue(Storage.TheNewFrontier.Beaver2) == 1) and (player:getStorageValue(Storage.TheNewFrontier.Beaver3) == 1)then
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 6)
 		end
 	end
