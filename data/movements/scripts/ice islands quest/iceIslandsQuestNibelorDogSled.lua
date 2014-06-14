@@ -15,7 +15,7 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 	-- Nibelor 5: Cure the Dogs needed or Barbarian Test Quest needed
-	if ((item.uid == 12025 or item.uid == 12026) and player:getStorageValue(12030) == 8) or ((item.uid == 12027 or item.uid == 12028) and player:getStorageValue(12024) == 3) then 
+	if ((item.uid == 12025 or item.uid == 12026) and player:getStorageValue(Storage.TheIceIslands.Mission06) == 8) or ((item.uid == 12027 or item.uid == 12028) and player:getStorageValue(Storage.BarbarianTest.Mission03) == 3) then 
 		if player:getItemCount(2671) >= 1 then --if ham then
 			player:removeItem(2671, 1)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
