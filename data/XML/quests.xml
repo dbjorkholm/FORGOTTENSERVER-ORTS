@@ -2,67 +2,67 @@
 <quests>
 	<quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
         <!--s for level 6 to 49 -->
-		<mission name="Edron City: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
-		<mission name="Edron City: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 goblins." />
-        <mission name="Paw and Fur - Elite Hunting: Trolls" storageid="65001" startvalue="0" endvalue="100" description="You've already slained |STATE|/100 trolls." />
-        <mission name="Paw and Fur - Elite Hunting: Globins" storageid="65002" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 globins." />
-        <mission name="Paw and Fur - Elite Hunting: Crocodiles" storageid="65003" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 crocodiles." />
-        <mission name="Paw and Fur - Elite Hunting: Badgers" storageid="65004" startvalue="0" endvalue="3" description="You've already slained |STATE|/3 badgers." />
-        <mission name="Paw and Fur - Elite Hunting: Tarantulas" storageid="65005" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 tarantulas." />
-        <mission name="Paw and Fur - Elite Hunting: Carniphilas" storageid="65006" startvalue="0" endvalue="150" description="You've already slained |STATE|/150 carniphilas." />
-        <mission name="Paw and Fur - Elite Hunting: Stone Golems" storageid="65007" startvalue="0" endvalue="200" description="You've already slained |STATE|/200 stone golems." />
-        <mission name="Paw and Fur - Elite Hunting: Mammoths" storageid="65008" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 mammoths." />
-        <mission name="Paw and Fur - Elite Hunting: Gnarlhounds" storageid="65009" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 gnarlhounds." />
-        <mission name="Paw and Fur - Elite Hunting: Terramites" storageid="65010" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 terramites." />
-        <mission name="Paw and Fur - Elite Hunting: Apes" storageid="65011" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 apes." />
-        <mission name="Paw and Fur - Elite Hunting: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 thornback tortoises." />
-        <mission name="Paw and Fur - Elite Hunting: Gargoyles" storageid="65013" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 gargoyles." />
+		<mission name="Edron City - Elite Hunting: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
+		<mission name="Edron City - Elite Hunting: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 goblins." />
+        <mission name="Paw and Fur: Trolls" storageid="65001" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
+        <mission name="Paw and Fur: Globins" storageid="65002" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 globins." />
+        <mission name="Paw and Fur: Crocodiles" storageid="65003" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 crocodiles." />
+        <mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="3" description="You already hunted |STATE|/3 badgers." />
+        <mission name="Paw and Fur: Tarantulas" storageid="65005" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 tarantulas." />
+        <mission name="Paw and Fur: Carniphilas" storageid="65006" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 carniphilas." />
+        <mission name="Paw and Fur: Stone Golems" storageid="65007" startvalue="0" endvalue="200" description="You already hunted |STATE|/200 stone golems." />
+        <mission name="Paw and Fur: Mammoths" storageid="65008" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 mammoths." />
+        <mission name="Paw and Fur: Gnarlhounds" storageid="65009" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 gnarlhounds." />
+        <mission name="Paw and Fur: Terramites" storageid="65010" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 terramites." />
+        <mission name="Paw and Fur: Apes" storageid="65011" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 apes." />
+        <mission name="Paw and Fur: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 thornback tortoises." />
+        <mission name="Paw and Fur: Gargoyles" storageid="65013" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 gargoyles." />
        
         <!--Tasks for level 50 to 79 -->
-        <mission name="Paw and Fur - Elite Hunting: Ice Golems" storageid="65014" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 ice golems." />
-        <mission name="Paw and Fur - Elite Hunting: Quara Scouts" storageid="65015" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 quara scouts." />
-        <mission name="Paw and Fur - Elite Hunting: Mutated Rats" storageid="65016" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 mutated rats." />
-        <mission name="Paw and Fur - Elite Hunting: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250" description="You've already slained |STATE|/250 ancient scarabs." />
-        <mission name="Paw and Fur - Elite Hunting: Wyverns" storageid="65018" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 wyverns." />
-        <mission name="Paw and Fur - Elite Hunting: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 lancer beetles." />
-        <mission name="Paw and Fur - Elite Hunting: Wailing Widows" storageid="65020" startvalue="0" endvalue="400" description="You've already slained |STATE|/300 wailing widows." />
-        <mission name="Paw and Fur - Elite Hunting: Killer Caimans" storageid="65021" startvalue="0" endvalue="250" description="You've already slained |STATE|/300 killer caimans." />
-        <mission name="Paw and Fur - Elite Hunting: Bonebeasts" storageid="65022" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 bonebeasts." />
-        <mission name="Paw and Fur - Elite Hunting: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 crystal spiders." />
-        <mission name="Paw and Fur - Elite Hunting: Mutated Tigers" storageid="65024" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 mutated tigers." />
+        <mission name="Paw and Fur: Ice Golems" storageid="65014" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 ice golems." />
+        <mission name="Paw and Fur: Quara Scouts" storageid="65015" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 quara scouts." />
+        <mission name="Paw and Fur: Mutated Rats" storageid="65016" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 mutated rats." />
+        <mission name="Paw and Fur: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 ancient scarabs." />
+        <mission name="Paw and Fur: Wyverns" storageid="65018" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 wyverns." />
+        <mission name="Paw and Fur: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 lancer beetles." />
+        <mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400" description="You already hunted |STATE|/300 wailing widows." />
+        <mission name="Paw and Fur: Killer Caimans" storageid="65021" startvalue="0" endvalue="250" description="You already hunted |STATE|/300 killer caimans." />
+        <mission name="Paw and Fur: Bonebeasts" storageid="65022" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 bonebeasts." />
+        <mission name="Paw and Fur: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 crystal spiders." />
+        <mission name="Paw and Fur: Mutated Tigers" storageid="65024" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 mutated tigers." />
        
         <!--s for level 80 to 129 -->
-        <mission name="Paw and Fur - Elite Hunting: Underwater Quara" storageid="65025" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 underwater quara." />
-        <mission name="Paw and Fur - Elite Hunting: Giant Spiders" storageid="65026" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 giant spiders." />
-        <mission name="Paw and Fur - Elite Hunting: Werewolves" storageid="65027" startvalue="0" endvalue="300" description="You've already slained |STATE|/300 werewolves." />   
-        <mission name="Paw and Fur - Elite Hunting: Nightmares" storageid="65028" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 nightmares." />   
-        <mission name="Paw and Fur - Elite Hunting: Hellspawns" storageid="65029" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 hellspawns." />   
-        <mission name="Paw and Fur - Elite Hunting: High Class Lizards" storageid="65030" startvalue="0" endvalue="800" description="You've already slained |STATE|/800 high class lizards." />   
-        <mission name="Paw and Fur - Elite Hunting: Stampors" storageid="65031" startvalue="0" endvalue="600" description="You've already slained |STATE|/600 stampors." />   
-        <mission name="Paw and Fur - Elite Hunting: Brimstone Bugs" storageid="65032" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 brimstone bugs." />   
-        <mission name="Paw and Fur - Elite Hunting: Mutated Bats" storageid="65033" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 mutated bats." />   
+        <mission name="Paw and Fur: Underwater Quara" storageid="65025" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 underwater quara." />
+        <mission name="Paw and Fur: Giant Spiders" storageid="65026" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 giant spiders." />
+        <mission name="Paw and Fur: Werewolves" storageid="65027" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 werewolves." />   
+        <mission name="Paw and Fur: Nightmares" storageid="65028" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 nightmares." />   
+        <mission name="Paw and Fur: Hellspawns" storageid="65029" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 hellspawns." />   
+        <mission name="Paw and Fur: High Class Lizards" storageid="65030" startvalue="0" endvalue="800" description="You already hunted |STATE|/800 high class lizards." />   
+        <mission name="Paw and Fur: Stampors" storageid="65031" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 stampors." />   
+        <mission name="Paw and Fur: Brimstone Bugs" storageid="65032" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 brimstone bugs." />   
+        <mission name="Paw and Fur: Mutated Bats" storageid="65033" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 mutated bats." />   
        
         <!--s for level 130+ -->       
-        <mission name="Paw and Fur - Elite Hunting: Hydras" storageid="65034" startvalue="0" endvalue="650" description="You've already slained |STATE|/650 hydras." />
-        <mission name="Paw and Fur - Elite Hunting: Serpent Spawns" storageid="65035" startvalue="0" endvalue="800" description="You've already slained |STATE|/800 serpent spawns." />
-        <mission name="Paw and Fur - Elite Hunting: Medusas" storageid="65036" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 medusas." />       
-        <mission name="Paw and Fur - Elite Hunting: Behemoths" storageid="65037" startvalue="0" endvalue="700" description="You've already slained |STATE|/700 behemoths." />
-        <mission name="Paw and Fur - Elite Hunting: Sea Serpents and Young Sea Serpents" storageid="65038" startvalue="0" endvalue="900" description="You've already slained |STATE|/900 sea serpents and young sea serpents." />       
-        <mission name="Paw and Fur - Elite Hunting: Hellhounds" storageid="65039" startvalue="0" endvalue="250" description="You've already slained |STATE|/250 hellhounds." />
-        <mission name="Paw and Fur - Elite Hunting: Ghastly Dragons" storageid="65040" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 ghastly dragons." />
-        <mission name="Paw and Fur - Elite Hunting: Drakens" storageid="65041" startvalue="0" endvalue="900" description="You've already slained |STATE|/900 drakens." />
-        <mission name="Paw and Fur - Elite Hunting: Destroyers" storageid="65042" startvalue="0" endvalue="650" description="You've already slained |STATE|/650 destroyers." />
-        <mission name="Paw and Fur - Elite Hunting: Undead Dragons" storageid="65043" startvalue="0" endvalue="400" description="You've already slained |STATE|/400 undead dragons." />
+        <mission name="Paw and Fur: Hydras" storageid="65034" startvalue="0" endvalue="650" description="You already hunted |STATE|/650 hydras." />
+        <mission name="Paw and Fur: Serpent Spawns" storageid="65035" startvalue="0" endvalue="800" description="You already hunted |STATE|/800 serpent spawns." />
+        <mission name="Paw and Fur: Medusas" storageid="65036" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 medusas." />       
+        <mission name="Paw and Fur: Behemoths" storageid="65037" startvalue="0" endvalue="700" description="You already hunted |STATE|/700 behemoths." />
+        <mission name="Paw and Fur: Sea Serpents and Young Sea Serpents" storageid="65038" startvalue="0" endvalue="900" description="You already hunted |STATE|/900 sea serpents and young sea serpents." />       
+        <mission name="Paw and Fur: Hellhounds" storageid="65039" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 hellhounds." />
+        <mission name="Paw and Fur: Ghastly Dragons" storageid="65040" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 ghastly dragons." />
+        <mission name="Paw and Fur: Drakens" storageid="65041" startvalue="0" endvalue="900" description="You already hunted |STATE|/900 drakens." />
+        <mission name="Paw and Fur: Destroyers" storageid="65042" startvalue="0" endvalue="650" description="You already hunted |STATE|/650 destroyers." />
+        <mission name="Paw and Fur: Undead Dragons" storageid="65043" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 undead dragons." />
        
         <!-- Specials -->
-        <mission name="Paw and Fur - Elite Hunting: Demons" storageid="65044" startvalue="0" endvalue="6666" description="You've already slained |STATE|/6666 demons." />
-        <mission name="Paw and Fur - Elite Hunting: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 green djinns or efreets." />
-        <mission name="Paw and Fur - Elite Hunting: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500" description="You've already slained |STATE|/500 blue djinns or marids." />
-        <mission name="Paw and Fur - Elite Hunting: Pirates" storageid="65047" startvalue="0" endvalue="3000" description="You've already slained |STATE|/3000 pirates." />
-        <mission name="Paw and Fur - Elite Hunting: Pirates Second" storageid="65048" startvalue="0" endvalue="3000" description="You've already slained |STATE|/3000 pirates." />
-        <mission name="Paw and Fur - Elite Hunting: Minotaurs" storageid="65049" startvalue="0" endvalue="5000" description="You've already slained |STATE|/5000 minotaurs." />
-        <mission name="Paw and Fur - Elite Hunting: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000" description="You've already slained |STATE|/4000 necromancers and priestess." />
-        <mission name="Paw and Fur - Elite Hunting: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You've already slained |STATE|/1000 necromancers and priestess." />
+        <mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="6666" description="You already hunted |STATE|/6666 demons." />
+        <mission name="Paw and Fur: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 green djinns or efreets." />
+        <mission name="Paw and Fur: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 blue djinns or marids." />
+        <mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
+        <mission name="Paw and Fur: Pirates Second" storageid="65048" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
+        <mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000" description="You already hunted |STATE|/5000 minotaurs." />
+        <mission name="Paw and Fur: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000" description="You already hunted |STATE|/4000 necromancers and priestess." />
+        <mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
 	</quest>
 	<quest name="The Inquisition" startstorageid="12160" startstoragevalue="2">
 		<mission name="Mission 1: Interrogation" storageid="12161" startvalue="1" endvalue="7">
