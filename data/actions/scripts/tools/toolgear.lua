@@ -82,16 +82,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif itemEx.itemid == 3621 and itemEx.actionid == 12026 then
 		local chakoyas = {"chakoya toolshaper", "chakoya tribewarden", "chakoya windcaller"}
-		if player:getStorageValue(12026) > 0 and player:getStorageValue(12002) < 3 and player:getStorageValue(12001) == 3  then
-			player:setStorageValue(12002, player:getStorageValue(12002) + 1)
-			player:setStorageValue(12026, player:getStorageValue(12026) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
+		if player:getStorageValue(Storage.TheIceIslands.Mission02) > 0 and player:getStorageValue(Storage.TheIceIslands.PickAmount) < 3 and player:getStorageValue(Storage.TheIceIslands.Questline) == 3  then
+			player:setStorageValue(Storage.TheIceIslands.PickAmount, player:getStorageValue(Storage.TheIceIslands.PickAmount) + 1)
+			player:setStorageValue(Storage.TheIceIslands.Mission02, player:getStorageValue(Storage.TheIceIslands.Mission02) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			Game.createMonster(chakoyas[math.random(1, 3)], toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 			tile:getItemById(7185):transform(7186) 
 			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(7186) if thing and thing:isItem() then thing:transform(7185) end end end, 60 * 1000, toPosition)			
-			if player:getStorageValue(12002) >= 2 then
-				player:setStorageValue(12001, 4)
-				player:setStorageValue(12026, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
+			if player:getStorageValue(Storage.TheIceIslands.PickAmount) >= 2 then
+				player:setStorageValue(Storage.TheIceIslands.Questline, 4)
+				player:setStorageValue(Storage.TheIceIslands.Mission02, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			end
 		end
 	elseif itemEx.itemid == 7200 then
@@ -168,11 +168,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(29, 1)
 				player:setStorageValue(12012, player:getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
-		elseif itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(12127) <= 3 then -- The Ape City - Mission 7: Destroying Casks With Crowbar
+		elseif itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(Storage.TheApeCity.Mission07) <= 3 then -- The Ape City - Mission 7: Destroying Casks With Crowbar
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			player:setStorageValue(12127, player:getStorageValue(12127) + 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
-			if player:getStorageValue(12127) == 4 then
-				player:setStorageValue(12120, 17)
+			player:setStorageValue(Storage.TheApeCity.Mission07, player:getStorageValue(Storage.TheApeCity.Mission07) + 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
+			if player:getStorageValue(Storage.TheApeCity.Mission07) == 4 then
+				player:setStorageValue(Storage.TheApeCity.Questline, 17)
 			end
 			player:say("You destroyed a cask.", TALKTYPE_ORANGE_1)
 			targetItem:transform(2249)

@@ -2,12 +2,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 local player = Player(cid)
 local targetItem = Item(itemEx.uid)
 	if itemEx.itemid == 7178 and item.itemid == 7253 then
-		if player:getStorageValue(12001) == 8 then
+		if player:getStorageValue(Storage.TheIceIslands.Questline) == 8 then
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			player:setStorageValue(12003, player:getStorageValue(12003) + 1)
-			if player:getStorageValue(12003) == 2 then
-				player:setStorageValue(12001, 9)
-				player:setStorageValue(12028, 2) -- Questlog The Ice Islands Quest, Nibelor 3: Artful Sabotage
+			player:setStorageValue(Storage.TheIceIslands.PaintSeal, player:getStorageValue(Storage.TheIceIslands.PaintSeal) + 1)
+			if player:getStorageValue(Storage.TheIceIslands.PaintSeal) == 2 then
+				player:setStorageValue(Storage.TheIceIslands.Questline, 9)
+				player:setStorageValue(Storage.TheIceIslands.Mission04, 2) -- Questlog The Ice Islands Quest, Nibelor 3: Artful Sabotage
 			end
 			player:say("You painted a baby seal.", TALKTYPE_ORANGE_1)
 			targetItem:transform(7252)

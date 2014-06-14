@@ -3,14 +3,40 @@
 -- Sort it alphabetical -
 Storage = {
 	BarbarianTest = {
-			Questline = 12190, --Storage through the Quest
+			Questline = 12190, -- Storage through the Quest
 			Mission01 = 12191,
 			Mission02 = 12192,
 			Mission03 = 12193,
 			MeadTotalSips = 12194,
 			MeadSuccessSips = 12195
 				},
-
+	TheIceIslands = {
+			Questline = 12200, -- Storage through the Quest
+			Mission01 = 12201, -- Befriending the Musher
+			Mission02 = 12202, -- Nibelor 1: Breaking the Ice
+			Mission03 = 12203, -- Nibelor 2: Ecological Terrorism
+			Mission04 = 12204, -- Nibelor 3: Artful Sabotage
+			Mission05 = 12205, -- Nibelor 4: Berserk Brewery
+			Mission06 = 12206, -- Nibelor 5: Cure the Dogs
+			Mission07 = 12207, -- The Secret of Helheim
+			Mission08 = 12208, -- The Contact
+			Mission09 = 12209, -- Formorgar Mines 1: The Mission
+			Mission10 = 12210, -- Formorgar Mines 2: Ghostwhisperer
+			Mission11 = 12211, -- Formorgar Mines 3: The Secret
+			Mission12 = 12212, -- Formorgar Mines 4: Retaliation
+			PickAmount = 12213,
+			PaintSeal = 12214,
+			SulphurLava = 12215,
+			SporesMushroom = 12216,
+			FrostbiteHerb = 12217,
+			FlowerCactus = 12218,
+			FlowerBush = 12219,
+			MemoryCrystal = 12220,
+			Obelisk01 = 12221,
+			Obelisk02 = 12222,
+			Obelisk03 = 12223,
+			Obelisk04 = 12224
+				},
 	TheAncientTombs = {
 			DefaultStart = 12100,
 			Omruc = 12101,
@@ -24,7 +50,7 @@ Storage = {
 			VashresamunInstruments = 12109,
 				},
 	TheApeCity = {
-			Questline = 12120, --Storage through the Quest
+			Questline = 12120, -- Storage through the Quest
 			Mission01 = 12121,
 			Mission02 = 12122,
 			Mission03 = 12123,
@@ -36,7 +62,7 @@ Storage = {
 			Mission09 = 12129
 				},
 	TheInquisition = {
-			Questline = 12160, --Storage through the Quest
+			Questline = 12160, -- Storage through the Quest
 			Mission01 = 12161,
 			Mission02 = 12162,
 			Mission03 = 12163,
@@ -54,7 +80,7 @@ Storage = {
 			Reward = 12177
 				},
 	TheNewFrontier = {
-			Questline = 12130, --Storage through the Quest
+			Questline = 12130, -- Storage through the Quest
 			Mission01 = 12131,
 			Mission02 = 12132,
 			Mission03 = 12133,

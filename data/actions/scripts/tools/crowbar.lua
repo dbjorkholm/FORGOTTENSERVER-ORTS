@@ -42,11 +42,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	-- The Ape City - Mission 7: Destroying Casks With Crowbar
-	if itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(TheApeCity.Mission07) <= 3 then --hit cask with crowbar
+	if itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(Storage.TheApeCity.Mission07) <= 3 then --hit cask with crowbar
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			player:setStorageValue(TheApeCity.Mission07, player:getStorageValue(TheApeCity.Mission07) + 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
-			if player:getStorageValue(TheApeCity.Mission07) == 4 then
-				player:setStorageValue(TheApeCity.Questline, 17)
+			player:setStorageValue(Storage.TheApeCity.Mission07, player:getStorageValue(Storage.TheApeCity.Mission07) + 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
+			if player:getStorageValue(Storage.TheApeCity.Mission07) == 4 then
+				player:setStorageValue(Storage.TheApeCity.Questline, 17)
 			end
 			player:say("You destroyed a cask.", TALKTYPE_ORANGE_1)
 			targetItem:transform(2249)
