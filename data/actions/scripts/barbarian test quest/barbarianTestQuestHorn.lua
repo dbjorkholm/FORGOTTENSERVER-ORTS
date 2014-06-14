@@ -11,10 +11,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Item(itemEx.uid):transform(7175)
 			toPosition:sendMagicEffect(CONST_ME_STUN)
 	elseif(item.itemid == 7175) then
-		if(player:getStorageValue(120) == 4) then
+		if(player:getStorageValue(Storage.BarbarianTest.Questline) == 4) then
 			player:say("You hug the unconcious bear.", TALKTYPE_ORANGE_1)
-			player:setStorageValue(120, 5)
-			player:setStorageValue(12023, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
+			player:setStorageValue(Storage.BarbarianTest.Questline, 5)
+			player:setStorageValue(Storage.BarbarianTest.Mission02, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
 			targetItem:transform(7174)
 			targetItem:decay()
 			toPosition:sendMagicEffect(CONST_ME_SLEEP)
@@ -26,11 +26,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:say("The bear is not amused by the disturbance.", TALKTYPE_ORANGE_1)
 		doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -10, -30, CONST_ME_POFF)
 	elseif(item.itemid == 7176) then
-		if(player:getStorageValue(120) == 6) then
+		if(player:getStorageValue(Storage.BarbarianTest.Questline) == 6) then
 			if(player:getCondition(CONDITION_DRUNK)) then
 				player:say("You hustle the mammoth. What a fun. *hicks*.", TALKTYPE_ORANGE_1)
-				player:setStorageValue(120, 7)
-				player:setStorageValue(12024, 2) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
+				player:setStorageValue(Storage.BarbarianTest.Questline, 7)
+				player:setStorageValue(Storage.BarbarianTest.Mission03, 2) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
 				targetItem:transform(7177)
 				targetItem:decay()
 				addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_SLEEP) end, 60 * 1000, toPosition)

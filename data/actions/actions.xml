@@ -34,7 +34,6 @@
 
 	<!--- The Ape City Quest -->
 	<action uniqueid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
-	<action actionid="12127" script="the ape city/Mission7DestroyingCasksWithCrowbar.lua" />
 	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
 	<action actionid="12129" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
 	<action uniqueid="12131" script="the ape city/Mission9TheDeepestCatacombsLever2.lua" />

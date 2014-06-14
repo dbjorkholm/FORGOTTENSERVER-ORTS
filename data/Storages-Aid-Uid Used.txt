@@ -22,6 +22,7 @@ the ancient tombs storage:		12100-12109
 The Ape City storage:			12120-12129
 The New Frontier Quest:			12130-12150
 inquisition storage:			12160-12180
+barbarian test quest:			12190-12199
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
