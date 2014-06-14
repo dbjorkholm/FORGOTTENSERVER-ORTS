@@ -1,4 +1,3 @@
-dofile('data/lib/StorageValues.lua')
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local targetItem = Item(itemEx.uid)

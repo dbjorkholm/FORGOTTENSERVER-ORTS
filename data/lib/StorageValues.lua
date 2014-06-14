@@ -2,6 +2,15 @@
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it alphabetical -
 Storage = {
+	BarbarianTest = {
+			Questline = 12190, --Storage through the Quest
+			Mission01 = 12191,
+			Mission02 = 12192,
+			Mission03 = 12193,
+			MeadTotalSips = 12194,
+			MeadSuccessSips = 12195
+				},
+
 	TheAncientTombs = {
 			DefaultStart = 12100,
 			Omruc = 12101,

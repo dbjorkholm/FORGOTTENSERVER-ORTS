@@ -232,18 +232,18 @@
 		<mission name="Morguthis' Treasure" storageid="12106" startvalue="1" endvalue="1" description="You defeated Morguthis and received a Right Horn"/>
 		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1" description="You defeated Rahemos and received a Helmet Piece"/>
 	</quest>
-	<quest name="Barbarian Test Quest" startstorageid="12022" startstoragevalue="1">
-		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12022" startvalue="1" endvalue="3">
+	<quest name="Barbarian Test Quest" startstorageid="12190" startstoragevalue="1">
+		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12191" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Talk to Sven about mead and give him a honeycomb. For each honeycomb you will be allowed 20 sips."/>
 			<missionstate id="2" description="Now drink from the bucket until you drink 10 sips in a row without passing out"/>
 			<missionstate id="3" description="You have completed this Test! Talk to Sven about the mead."/>
 		</mission>
-		<mission name="Barbarian Test 2: The Bear Hugging" storageid="12023" startvalue="1" endvalue="3">
+		<mission name="Barbarian Test 2: The Bear Hugging" storageid="12192" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Sven gave you a Mead Horn. Fill it with mead from the bucket behind Sven (brown contents) and then proceed to the sleeping bear. The bear is inside a small ice cave in the north. Use the full mead horn on the bear so it becomes unconscious, then use the bear to hug it."/>
 			<missionstate id="2" description="You hugging the bear! Go tell Sven that you hugged the bear!"/>
 			<missionstate id="3" description="You have completed this Test!"/>
 		</mission>
-		<mission name="Barbarian Test 3: The Mammoth Pushing" storageid="12024" startvalue="1" endvalue="3">
+		<mission name="Barbarian Test 3: The Mammoth Pushing" storageid="12193" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Go to the north-west of Svargrond and find the Mammoth. Drink your three mugs of mead, stand in front of the Mammoth and push it. Just use it..."/>
 			<missionstate id="2" description="You pushed the Mammoth! Go tell Sven that you pushed the Mammoth!"/>
 			<missionstate id="3" description="You have completed this Test! You can now be a citizen of Svargrond!"/>
