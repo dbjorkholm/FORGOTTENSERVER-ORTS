@@ -50,11 +50,11 @@
 		</mission>	
         <mission name="Paw and Fur: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 thornback tortoises." />
-			<missionstate id="300" description="You successfully hunted 300 ice golems. if you want to you may complete this task again." />
+			<missionstate id="300" description="You successfully hunted 300 thornback tortoises. if you want to you may complete this task again." />
 		</mission>	
         <mission name="Paw and Fur: Gargoyles" storageid="65013" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 gargoyles." />
-			<missionstate id="300" description="You successfully hunted 300 gargoyles if you want to you may complete this task again." />
+			<missionstate id="300" description="You successfully hunted 300 gargoyles. if you want to you may complete this task again." />
 		</mission>	
         <!--Tasks for level 50 to 79 -->
         <mission name="Paw and Fur: Ice Golems" storageid="65014" startvalue="0" endvalue="300">
