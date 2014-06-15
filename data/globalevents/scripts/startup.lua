@@ -28,8 +28,8 @@ local config = {
 	}
 }
 
-local yasirEnabled = true
-local yasirChance = 20 -- 20% chance
+local yasirEnabled = false
+local yasirChance = 20
 
 function onStartup()
 	db.query("TRUNCATE TABLE `players_online`")
