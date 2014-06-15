@@ -148,7 +148,7 @@ function creatureSayCallback(cid, type, msg)
 		end
 	end
 	if msgcontains(msg, "buy animal cure") or msgcontains(msg, "animal cure") then -- animal cure for in service of yalahar
-		if player:getStorageValue(30) >= 30 and player:getStorageValue(30) <= 54 then
+		if player:getStorageValue(Storage.InServiceofYalahar.Questline) >= 30 and player:getStorageValue(Storage.InServiceofYalahar.Questline) <= 54 then
 			npcHandler:say("You want to buy animal cure for 400 gold coins?", player)
 			npcHandler.topic[cid] = 13
 		else

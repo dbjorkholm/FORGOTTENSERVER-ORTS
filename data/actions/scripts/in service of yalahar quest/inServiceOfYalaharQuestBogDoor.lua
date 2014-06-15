@@ -1,11 +1,12 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.actionid == 7801) then
-		if(getPlayerStorageValue(cid, 30) >= 20) then
+		local player = Player(cid)
+		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) >= 20) then
 			if(item.itemid == 5288) then
-				doTeleportThing(cid, toPosition, true)
+				player:teleportTo(toPosition, true)
 				doTransformItem(item.uid, 5289)
 			elseif(item.itemid == 5123) then
-				doTeleportThing(cid, toPosition, true)
+				player:teleportTo(toPosition, true)
 				doTransformItem(item.uid, 5124)
 			end
 		end

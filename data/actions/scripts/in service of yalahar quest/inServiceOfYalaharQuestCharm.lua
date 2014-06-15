@@ -1,6 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 9737 and itemEx.actionid == 100 and itemEx.itemid == 471) then
-		if(getPlayerStorageValue(cid, 30) == 36) then
+		local player = Player(cid)
+		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) == 36) then
 			doPlayerRemoveItem(cid,9737, 1)
           		doCreateItem(9738,1,toPosition) 
           		doSendMagicEffect(toPosition,47)

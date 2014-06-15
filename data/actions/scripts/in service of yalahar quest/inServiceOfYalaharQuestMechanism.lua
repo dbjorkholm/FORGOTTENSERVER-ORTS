@@ -21,7 +21,7 @@ local mechanisms2 = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 local player = Player(cid)
 	if(mechanisms[item.uid]) then
-		if(player:getStorageValue(30) >= mechanisms[item.uid].value) then
+		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) >= mechanisms[item.uid].value) then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(mechanisms[item.uid].pos)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

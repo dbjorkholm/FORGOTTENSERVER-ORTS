@@ -131,11 +131,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Game.createItem(2694, 1, toPosition)
 	elseif item.itemid == 10515 then
 		if itemEx.uid == 3071 then -- In Service Of Yalahar Quest
-			if player:getStorageValue(26) < 1 then
+			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then
 				doSetMonsterOutfit(cid, "skeleton", 3 * 1000)
 				fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
-				player:setStorageValue(26, 1)
-				player:setStorageValue(12012, player:getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe01, 1)
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 				for x = -1, 1 do
 					for y = -1, 1 do
 						Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_YELLOWENERGY)
@@ -143,9 +143,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				end
 			end
 		elseif itemEx.uid == 3072 then -- In Service Of Yalahar Quest
-			if player:getStorageValue(27) < 1 then
-				player:setStorageValue(27, 1)
-				player:setStorageValue(12012, player:getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe02) < 1 then
+				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe02, 1)
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 				for x = -1, 1 do
 					for y = -1, 1 do
 						if math.random(1, 2) == 2 then
@@ -156,17 +156,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				end
 			end
 		elseif itemEx.uid == 3073 then -- In Service Of Yalahar Quest
-			if player:getStorageValue(28) < 1 then
+			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe03) < 1 then
 				player:say("You have used the crowbar on a grate.", TALKTYPE_ORANGE_1)
-				player:setStorageValue(28, 1)
-				player:setStorageValue(12012, player:getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe03, 1)
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif itemEx.uid == 3074 then -- In Service Of Yalahar Quest
-			if player:getStorageValue(29) < 1 then
+			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1 then
 				doSetMonsterOutfit(cid, "bog raider", 5 * 1000)
 				player:say("You have used the crowbar on a knot.", TALKTYPE_ORANGE_1)
-				player:setStorageValue(29, 1)
-				player:setStorageValue(12012, player:getStorageValue(12012) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(Storage.TheApeCity.Mission07) <= 3 then -- The Ape City - Mission 7: Destroying Casks With Crowbar
 			toPosition:sendMagicEffect(CONST_ME_POFF)
