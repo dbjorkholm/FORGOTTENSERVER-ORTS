@@ -1,9 +1,60 @@
+local config = {
+	[1] = { -- ankrahmun
+		itemsToRemove = {
+			{Position(33096, 32882, 6), 4978},
+			{Position(33096, 32883, 6), 4978},
+			{Position(33096, 32883, 6), 4922},
+			{Position(33096, 32884, 6), 4922},
+			{Position(33096, 32885, 6), 4922}	
+		},
+		mapName = 'yasirAnkrahmun',
+		yasirPosition = Position(33102, 32884, 6)
+	},
+	[2] = { -- carlin
+		mapName = 'yasirCarlin',
+		yasirPosition = Position(32400, 31815, 6)
+	},
+	[3] = { -- liberty bay
+		itemsToRemove = {
+			{Position(32311, 32891, 7), 3878},
+			{Position(32311, 32897, 7), 3878},
+			{Position(32311, 32892, 7), 3879},
+			{Position(32311, 32898, 7), 3879},
+			{Position(32311, 32893, 7), 3880},
+			{Position(32311, 32899, 7), 3880}
+		},
+		mapName = 'yasirLB',
+		yasirPosition = Position(32314, 32895, 6)
+	}
+}
+
+local yasirEnabled = true
+local yasirChance = 20 -- 20% chance
+
 function onStartup()
 	db.query("TRUNCATE TABLE `players_online`")
 	db.query("DELETE FROM `guild_wars` WHERE `status` = 0")
 	db.query("DELETE FROM `players` WHERE `deletion` != 0 AND `deletion` < " .. os.time())
 	db.query("DELETE FROM `ip_bans` WHERE `expires_at` != 0 AND `expires_at` <= " .. os.time())
 	db.query("DELETE FROM `market_history` WHERE `inserted` <= " .. (os.time() - configManager.getNumber(configKeys.MARKET_OFFER_DURATION)))
+	
+	-- Yasir (World Change)
+	if yasirEnabled then
+		local rand = math.random(100)
+		if rand <= yasirChance then
+			local randTown = config[math.random(#config)]
+			if randTown['itemsToRemove'] then
+				for i = 1, #randTown['itemsToRemove'] do
+					local tile = randTown['itemsToRemove'][i][1]:getTile():getItemById(randTown['itemsToRemove'][i][2])
+					if tile then
+						tile:remove()
+					end
+				end
+			end
+			Game.loadMap('data/world/yasir/' .. randTown['mapName'] .. '.otbm')
+			addEvent(function() local npc = Game.createNpc('Yasir', randTown['yasirPosition']) if npc then npc:setMasterPos(randTown['yasirPosition'], 3) end end, 3000)
+		end
+	end
 
 	-- Move expired bans to ban history
 	local resultId = db.storeQuery("SELECT * FROM `account_bans` WHERE `expires_at` != 0 AND `expires_at` <= " .. os.time())
