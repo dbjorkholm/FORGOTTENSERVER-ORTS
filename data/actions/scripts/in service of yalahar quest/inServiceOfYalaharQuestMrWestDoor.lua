@@ -1,18 +1,19 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	if(item.uid == 3081) then
-		if(getPlayerStorageValue(cid, 30) >= 24) then
+		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) >= 24) then
 			if(item.itemid == 5288) then
-				doTeleportThing(cid, toPosition, true)
+				player:teleportTo(toPosition, true)
 				doTransformItem(item.uid, 5289)
-				setPlayerStorageValue(cid, 19, 1)
+				player:setStorageValue(Storage.InServiceofYalahar.MrWestDoor, 1)
 			end
 		end
 	elseif(item.uid == 3082) then
-		if(getPlayerStorageValue(cid, 30) >= 24) then
+		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) >= 24) then
 			if(item.itemid == 6261) then
-				doTeleportThing(cid, toPosition, true)
+				player:teleportTo(toPosition, true)
 				doTransformItem(item.uid, 6262)
-				setPlayerStorageValue(cid, 19, 2)
+				player:setStorageValue(Storage.InServiceofYalahar.MrWestDoor, 2)
 			end
 		end
 	end

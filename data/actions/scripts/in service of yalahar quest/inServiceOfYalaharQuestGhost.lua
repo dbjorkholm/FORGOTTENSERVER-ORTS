@@ -34,10 +34,9 @@ local player = Player(cid)
           	ret2:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
           	toPosition:sendMagicEffect(12)
           	Item(item.uid):remove()
-			player:setStorageValue(30, 37)
-			player:setStorageValue(12017, 3) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
+			player:setStorageValue(Storage.InServiceofYalahar.Questline, 37)
+			player:setStorageValue(Storage.InServiceofYalahar.Mission06, 3) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
 			player:removeItem(9737, 1)
-			player:setStorageValue(15, 3)
 			player:say("The ghost charm is charged.", TALKTYPE_ORANGE_1)
           	doTransformItem(getTileItemById( {x=32776,y=31062,z =7},9773).uid, 9742) 
           end  

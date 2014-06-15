@@ -5,7 +5,7 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 	
 	if item.uid == 7809 and isPlayer(cid) then
-		if player:getStorageValue(30) == 51 then
+		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 51 then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32783, y = 31174, z = 10})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

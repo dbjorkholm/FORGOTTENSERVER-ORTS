@@ -49,7 +49,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
     		local players = #p
     		if (players < amountOfPlayers) then
 	  		for _, pid in pairs(p) do
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
+				p:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
 			end
 		return true
 		end
@@ -78,7 +78,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doChangeAzerus, 4 * 20 * 1000, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 			addEvent(doClearArea, 5 * 1000 * 60, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 		else
-			doCreatureSay(cid, 'You have to wait some time before this globe charges.', TALKTYPE_ORANGE_1)
+			p:say('You have to wait some time before this globe charges.', TALKTYPE_ORANGE_1)
 		end
 	end
 	return true

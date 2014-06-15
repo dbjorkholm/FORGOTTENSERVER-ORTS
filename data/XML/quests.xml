@@ -551,12 +551,8 @@
 			<missionstate id="5" description="You got the Outfit Addon!"/>
 		</mission>
 	</quest>
-	<quest name="In Service of Yalahar" startstorageid="30" startstoragevalue="4">
-		<mission name="Ask for Mission" storageid="12011" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Ask Palimuth for a mission."/>
-			<missionstate id="2" description="Ask Palimuth for a mission."/>
-		</mission>
-		<mission name="Mission 01: Something Rotten" storageid="12012" startvalue="1" endvalue="6">
+	<quest name="In Service of Yalahar" startstorageid="12240" startstoragevalue="5">
+		<mission name="Mission 01: Something Rotten" storageid="12241" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Palimuth asked you to help with some sewer malfunctions. You will need a Crowbar, there are 4 places where you need to go marked with an X on your map."/>
 			<missionstate id="2" description="You cleaned 1 pipe of 4 from the garbage."/>
 			<missionstate id="3" description="You cleaned 2 pipes of 4 from the garbage."/>
@@ -564,7 +560,7 @@
 			<missionstate id="5" description="You cleaned 4 pipes of 4 from the garbage. Go back to Palimuth and report your mission"/>
 			<missionstate id="6" description="You cleaned all pipes from the garbage! Go back to Palimuth and ask for mission."/>
 		</mission>
-		<mission name="Mission 02: Watching the Watchmen" storageid="12013" startvalue="1" endvalue="8">
+		<mission name="Mission 02: Watching the Watchmen" storageid="12242" startvalue="1" endvalue="8">
 			<missionstate id="1" description="You have to find all 7 guards and give a report to them."/>
 			<missionstate id="2" description="You reported to 1 of 7 guards"/>
 			<missionstate id="3" description="You reported to 2 of 7 guards"/>
@@ -574,7 +570,7 @@
 			<missionstate id="7" description="You reported to 6 of 7 guards"/>
 			<missionstate id="8" description="You reported to 7 of 7 guards! Go back to Palimuth and ask for mission."/>
 		</mission>
-		<mission name="Mission 03: Death to the Deathbringer" storageid="12014" startvalue="1" endvalue="6">
+		<mission name="Mission 03: Death to the Deathbringer" storageid="12243" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Get the notes in Palimuths room and read them. Talk to Palimuth again when you've read the notes."/>
 			<missionstate id="2" description="Talk to Azerus the Yalahari in the city centre to get your next mission."/>
 			<missionstate id="3" description="Get the notes behind the Yalahari and read them. Talk to Azerus again and ask him for mission when you've read the notes."/>
@@ -582,7 +578,7 @@
 			<missionstate id="5" description="First you will need to kill the three plague bearers and then get The Alchemists' Formulas. When this have been done head back to either Palimuth (good side) or Yalahari (Azerus) (bad side)."/>
 			<missionstate id="6" description="Ask Azerus the Yalahari for a mission."/>
 		</mission>
-		<mission name="Mission 04: Good to be Kingpin" storageid="12015" startvalue="1" endvalue="6">
+		<mission name="Mission 04: Good to be Kingpin" storageid="12244" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="For this mission you are asked to go to the Trade Quarter and negotiate or threaten Mr. West. Once again you will gain access to the mechanism although if you choose to help Palimuth you should go through the sewers."/>
 			<missionstate id="3" description="You decided to help Palimuth, report him your mission."/>
@@ -590,7 +586,7 @@
 			<missionstate id="5" description="Get back to Azerus and report him your mission."/>
 			<missionstate id="6" description="Ask Azerus for a mission."/>
 		</mission>
-		<mission name="Mission 05: Food or Fight" storageid="12016" startvalue="1" endvalue="8">
+		<mission name="Mission 05: Food or Fight" storageid="12245" startvalue="1" endvalue="8">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="On this mission you are asked to find a druid by the name of Tamerin, on the Arena Quarter. You now have permission to use the gates mechanism."/>
 			<missionstate id="3" description="The first is to bring Tamerin a flask of Animal Cure, you can buy this from Siflind on Nibelor (northeast of Svargrond)."/>
@@ -600,31 +596,31 @@
 			<missionstate id="7" description="You decided to help Azerus, report him your mission."/>
 			<missionstate id="8" description="Ask Azerus for a mission."/>
 		</mission>
-		<mission name="Mission 06: Frightening Fuel" storageid="12017" startvalue="1" endvalue="5">
+		<mission name="Mission 06: Frightening Fuel" storageid="12246" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="Yalahari (Azerus) orders you to travel to the Cemetery Quarter and find the Strange Carving. He gives you a Ghost Charm and tells you to charge it with the tormented souls of the ghosts there to be used as an energy source. Palimuth wants the Charged Ghost Charm in order to free those souls. You can new use the Cemetery Quarter mechanism now. Go to the big building in the Cemetery Quarter and use the Ghost Charm on the Strange Carving at the back of the room."/>
 			<missionstate id="3" description="Good side: Go to Palimuth, ask him about your mission, and hand in the charm. Bad side: Ask about your mission to Yalahari (Azerus) and give it back."/>
 			<missionstate id="4" description="Get back to Azerus and report him your mission."/>
 			<missionstate id="5" description="Ask Azerus for a mission."/>
 		</mission>
-		<mission name="Mission 07: A Fishy Mission" storageid="12018" startvalue="1" endvalue="5">
+		<mission name="Mission 07: A Fishy Mission" storageid="12247" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="Bad side: Yalahari (Azerus) will send you for a new mission to go to the Sunken Quarter and kill the Quara Leaders, Inky, Splasher and Sharptooth. Good side: Rather than fighting any Quara leaders Palimuth will instead send you to find the cause for the Quaras aggressive behavior. Find Maritima and talk to her about the Quara and she will explain what their problem is."/>
 			<missionstate id="3" description="Get back to Palimuth and report him your mission."/>
 			<missionstate id="4" description="You killed the Quarabosses. Ask Azerus for a mission."/>
 			<missionstate id="5" description="Ask Azerus for a mission."/>
 		</mission>
-		<mission name="Mission 08: Dangerous Machinations" storageid="12019" startvalue="1" endvalue="4">
+		<mission name="Mission 08: Dangerous Machinations" storageid="12248" startvalue="1" endvalue="4">
 			<missionstate id="1" description="Ask Palimuth for mission."/>
 			<missionstate id="2" description="Bad side: For this mission the Yalahari requests you go to the Factory Quarter and find a pattern crystal, which will be used to supply weapons to help take control of the city. Good side: Palimuth will send you there to use the crystal to supply food for the city."/>
 			<missionstate id="3" description="Get back to Azerus and report him your mission."/>
 			<missionstate id="4" description="Ask Azerus for a mission."/>
 		</mission>
-		<mission name="Mission 09: Decision" storageid="12020" startvalue="1" endvalue="2">
+		<mission name="Mission 09: Decision" storageid="12249" startvalue="1" endvalue="2">
 			<missionstate id="1" description="You now need to decide between supporting Palimuth or the Yalahari's goal. To choose Palimuth's good side go to him, and simply ask him for a mission mission. Likewise, to join the Yalahari (Azerus) (bad side) go to him and say the same."/>
 			<missionstate id="2" description="you already decided!"/>
 		</mission>
-		<mission name="Mission 10: The Final Battle" storageid="12021" startvalue="1" endvalue="5">
+		<mission name="Mission 10: The Final Battle" storageid="12250" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Palimuth told you that a circle of Yalahari is planning some kind of ritual. They plan to create a portal for some powerful demons and to unleash them in the city to 'purge' it once and for all."/>
 			<missionstate id="2" description="The entrance to their inner sanctum has been opened for you. Be prepared for a HARD battle! Better gather some friends to assist you."/>
 			<missionstate id="3" description="Report back to whichever principal you have chosen to help and you will receive Yalaharian Outfits."/>

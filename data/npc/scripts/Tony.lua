@@ -12,10 +12,10 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "report") then
-		if player:getStorageValue(30) == 7 or player:getStorageValue(30) == 13 then
+		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 7 or player:getStorageValue(Storage.InServiceofYalahar.Questline) == 13 then
 			npcHandler:say("Uhm, report, eh? <slowly gives a clumsy description of recent problems>. ", cid)
-			player:setStorageValue(30, math.max(1, player:getStorageValue(30) +1))
-			player:setStorageValue(12013, math.max(1, player:getStorageValue(12013) +1)) -- StorageValue for Questlog "Mission 02: Watching the Watchmen"
+			player:setStorageValue(Storage.InServiceofYalahar.Questline, math.max(1, player:getStorageValue(Storage.InServiceofYalahar.Questline) +1))
+			player:setStorageValue(Storage.InServiceofYalahar.Mission02, math.max(1, player:getStorageValue(Storage.InServiceofYalahar.Mission02) +1)) -- StorageValue for Questlog "Mission 02: Watching the Watchmen"
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "pass") then
