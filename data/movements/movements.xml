@@ -172,6 +172,7 @@
 	<movevent event="RemoveItem" itemid="2579" script="trap.lua"/>
 	<movevent event="StepIn" itemid="4208" script="trap.lua"/>
 	<movevent event="StepOut" itemid="4209" script="trap.lua"/>
+	<movevent event="RemoveItem" actionid="60999" script="others/parchment.lua"/> <!-- Edron parchment room -->
 
 	<!-- Citizen teleport -->
 	<movevent event="StepIn" fromuid="9056" touid="9068" script="citizen.lua"/>
