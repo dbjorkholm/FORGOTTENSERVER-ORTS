@@ -6,10 +6,9 @@ local demonPos = {
 }
 
 local targetItem = Item(itemEx.actionid)
-local parchPos = targetItem:getPosition()
 
 function onRemoveItem(item, tile, position)
-	if(itemEx.itemid == 1953 and targetItem == 60999) and if getDistanceBetween(parchPos, position) > 0 then
+	if(itemEx.itemid == 1953 and targetItem == 60999) and if getDistanceBetween(targetItem:getPosition(), position) > 0 then
 		targetItem:setActionId(0)
 		doSummonCreature("Demon", demonPos)
 	end
