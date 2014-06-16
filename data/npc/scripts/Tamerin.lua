@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "cattle")) then
 		if(npcHandler.topic[cid] == 2) then
-			player:getStorageValue(Storage.InServiceofYalahar.TamerinStatus, 1)
+			player:setStorageValue(Storage.InServiceofYalahar.TamerinStatus, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 32)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 6) -- StorageValue for Questlog "Mission 05: Food or Fight"
 			npcHandler:say("So be it! ", cid)
@@ -52,7 +52,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "warbeast")) then
 		if(npcHandler.topic[cid] == 2) then
-			player:getStorageValue(Storage.InServiceofYalahar.TamerinStatus, 2)
+			player:setStorageValue(Storage.InServiceofYalahar.TamerinStatus, 2)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 32)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 7) -- StorageValue for Questlog "Mission 05: Food or Fight"
 			npcHandler:say("So be it! ", cid)

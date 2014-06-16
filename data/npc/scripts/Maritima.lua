@@ -16,7 +16,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say({"The quara in this area are a strange race that seeks for inner perfection rather than physical one. ...","However, recently the quara got mad because their area is flooded with toxic sewage from the city. If you could inform someone about it, they might stop the sewage and the quara could return to their own business."}, cid, 0, 1, 3000)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 42)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission07, 3) -- StorageValue for Questlog "Mission 07: A Fishy Mission"
-			player:getStorageValue(Storage.InServiceofYalahar.QuaraState, 1)
+			player:setStorageValue(Storage.InServiceofYalahar.QuaraState, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end
