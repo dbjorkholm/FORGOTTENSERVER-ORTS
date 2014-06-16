@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Madareth" nameDescription="madareth" race="fire" experience="10000" speed="380" manacost="0">
-	<health now="55000" max="55000"/>
+	<health now="75000" max="75000"/>
 	<look type="12" head="77" body="116" legs="82" feet="79" corpse="6068"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
@@ -15,23 +15,46 @@
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="85"/>
-		<flag runonhealth="0"/>
+		<flag runonhealth="300"/>
 	</flags>
-	<defenses armor="48" defense="46"/>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-2000"/>
+		<attack name="energy" interval="2000" chance="15" radius="4" target="1" min="-180" max="-660">
+			<attribute key="areaEffect" value="purpleenergy"/>
+		</attack>
+		<attack name="death" interval="2000" chance="10" length="5" spread="2" min="-600" max="-850">
+			<attribute key="areaEffect" value="blacksmoke"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="20" radius="4" target="1" min="0" max="-200">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="5" radius="5" target="1" min="0" max="-250">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="48" defense="46">
+		<defense name="healing" interval="3000" chance="14" min="400" max="900">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
-		<element icePercent="15"/>
-		<element deathPercent="-10"/>
+		<element firePercent="-5"/>
+		<element icePercent="5"/>
+		<element deathPercent="95"/>
+		<element energyPercent="99"/>
 	</elements>
 	<immunities>
-		<immunity energy="1"/>
-		<immunity fire="1"/>
 		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="3000" chance="5">
+	<voices interval="5000" chance="10">
 		<voice sentence="I am going to play with yourself!" yell="1"/>
+		<voice sentence="Feel my wrath!"/>
+		<voice sentence="No one matches my battle prowess!"/>
+		<voice sentence="You will all die!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
+		<item id="2148" countmax="100" chance="100000"/>	<!-- gold coin -->
 		<item id="2514" chance="12650"/><!-- mastermind shield -->
 		<item id="2214" chance="8000"/><!-- ring of healing -->
 		<item id="2520" chance="7650"/><!-- demon shield -->
