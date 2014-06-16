@@ -41,7 +41,8 @@ Storage = {
 			QuaraSharptooth = 12267,
 			QuaraInky = 12268,
 			MatrixState = 12269,
-			SideDecision = 12270
+			SideDecision = 12270,
+			MatrixReward = 12271
 				},
 	TheAncientTombs = {
 			DefaultStart = 12100,
