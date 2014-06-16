@@ -121,9 +121,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 51)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 1) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 2) -- StorageValue for Questlog "Mission 10: The Final Battle"
-			player:setStorageValue(1015, 2)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 52 and player:getStorageValue(1015) == 2 then
+		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 52 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 2 then
 			npcHandler:say("Great work, take this outfit and you are able to open the door to the reward room.", player)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 53)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
