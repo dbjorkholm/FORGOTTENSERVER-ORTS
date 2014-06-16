@@ -1,177 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
 	<quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
-        <!--Tasks for level 6 to 49 -->
+		<!--Tasks for level 6 to 49 -->
 		<mission name="Edron City - Elite Hunting: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
 		<mission name="Edron City - Elite Hunting: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 goblins." />
-        <mission name="Paw and Fur: Trolls" storageid="65001" startvalue="0" endvalue="100">
+		<mission name="Paw and Fur: Trolls" storageid="65001" startvalue="0" endvalue="100">
 			<missionstate id="0" description="You already hunted |STATE|/100 trolls." />
 			<missionstate id="100" description="You successfully hunted 100 trolls. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Globins" storageid="65002" startvalue="0" endvalue="150">
+		<mission name="Paw and Fur: Globins" storageid="65002" startvalue="0" endvalue="150">
 			<missionstate id="0" description="You already hunted |STATE|/150 goblins." />
 			<missionstate id="150" description="You successfully hunted 150 goblins. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Crocodiles" storageid="65003" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Crocodiles" storageid="65003" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 crocodiles." />
 			<missionstate id="300" description="You successfully hunted 300 crocodiles. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="3">
-			<missionstate id="0" description="You already hunted |STATE|/3 badgers." />
-			<missionstate id="3" description="You successfully hunted 3 badgers. If you want to you may complete this task again." />
+		<mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="300">
+			<missionstate id="0" description="You already hunted |STATE|/300 badgers." />
+			<missionstate id="300" description="You successfully hunted 300 badgers. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Tarantulas" storageid="65005" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Tarantulas" storageid="65005" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 tarantulas." />
 			<missionstate id="300" description="You successfully hunted 300 tarantulas. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Carniphilas" storageid="65006" startvalue="0" endvalue="150">
+		<mission name="Paw and Fur: Carniphilas" storageid="65006" startvalue="0" endvalue="150">
 			<missionstate id="0" description="You already hunted |STATE|/150 carniphilas." />
 			<missionstate id="150" description="You successfully hunted 150 carniphilas. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Stone Golems" storageid="65007" startvalue="0" endvalue="200">
+		<mission name="Paw and Fur: Stone Golems" storageid="65007" startvalue="0" endvalue="200">
 			<missionstate id="0" description="You already hunted |STATE|/200 stone golems." />
 			<missionstate id="200" description="You successfully hunted 200 stone golems. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Mammoths" storageid="65008" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Mammoths" storageid="65008" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 mammoths." />
 			<missionstate id="300" description="You successfully hunted 300 mammoths. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Gnarlhounds" storageid="65009" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Gnarlhounds" storageid="65009" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 gnarlhounds." />
 			<missionstate id="300" description="You successfully hunted 300 gnarlhounds. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Terramites" storageid="65010" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Terramites" storageid="65010" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 terramites." />
 			<missionstate id="300" description="You successfully hunted 300 terramites. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Apes" storageid="65011" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Apes" storageid="65011" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 apes." />
 			<missionstate id="300" description="You successfully hunted 300 apes. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 thornback tortoises." />
 			<missionstate id="300" description="You successfully hunted 300 thornback tortoises. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Gargoyles" storageid="65013" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Gargoyles" storageid="65013" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 gargoyles." />
 			<missionstate id="300" description="You successfully hunted 300 gargoyles. If you want to you may complete this task again." />
 		</mission>	
-        <!--Tasks for level 50 to 79 -->
-        <mission name="Paw and Fur: Ice Golems" storageid="65014" startvalue="0" endvalue="300">
+		<!--Tasks for level 50 to 79 -->
+		<mission name="Paw and Fur: Ice Golems" storageid="65014" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 ice golems." />
 			<missionstate id="300" description="You successfully hunted 300 ice golems. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Quara Scouts" storageid="65015" startvalue="0" endvalue="400">
+		<mission name="Paw and Fur: Quara Scouts" storageid="65015" startvalue="0" endvalue="400">
 			<missionstate id="0" description="You already hunted |STATE|/400 quara scouts." />
 			<missionstate id="400" description="You successfully hunted 400 quara scouts. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Mutated Rats" storageid="65016" startvalue="0" endvalue="400">
+		<mission name="Paw and Fur: Mutated Rats" storageid="65016" startvalue="0" endvalue="400">
 			<missionstate id="0" description="You already hunted |STATE|/400 mutated rats." />
 			<missionstate id="400" description="You successfully hunted 400 mutated rats. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250">
+		<mission name="Paw and Fur: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250">
 			<missionstate id="0" description="You already hunted |STATE|/250 ancient scarabs." />
 			<missionstate id="250" description="You successfully hunted 250 ancient scarabs. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Wyverns" storageid="65018" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Wyverns" storageid="65018" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 wyverns." />
 			<missionstate id="300" description="You successfully hunted 300 wyverns. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 lancer beetles." />
 			<missionstate id="300" description="You successfully hunted 300 lancer beetles. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400">
+		<mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400">
 			<missionstate id="0" description="You already hunted |STATE|/300 wailing widows." />
 			<missionstate id="300" description="You successfully hunted 300 wailing widows. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Killer Caimans" storageid="65021" startvalue="0" endvalue="250">
+		<mission name="Paw and Fur: Killer Caimans" storageid="65021" startvalue="0" endvalue="250">
 			<missionstate id="0" description="You already hunted |STATE|/300 killer caimans." />
 			<missionstate id="300" description="You successfully hunted 300 killer caimans. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Bonebeasts" storageid="65022" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Bonebeasts" storageid="65022" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 bonebeasts." />
 			<missionstate id="300" description="You successfully hunted 300 bonebeasts. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 crystal spiders." />
 			<missionstate id="300" description="You successfully hunted300 crystal spiders. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Mutated Tigers" storageid="65024" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Mutated Tigers" storageid="65024" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 mutated tigers." />
 			<missionstate id="300" description="You successfully hunted 300 mutated tigers. If you want to you may complete this task again." />
 		</mission>
-        <!--Tasks for level 80 to 129 -->
-        <mission name="Paw and Fur: Underwater Quara" storageid="65025" startvalue="0" endvalue="600">
+		<!--Tasks for level 80 to 129 -->
+		<mission name="Paw and Fur: Underwater Quara" storageid="65025" startvalue="0" endvalue="600">
 			<missionstate id="0" description="You already hunted |STATE|/600 underwater quara." />
 			<missionstate id="600" description="You successfully hunted 600 underwater quara. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Giant Spiders" storageid="65026" startvalue="0" endvalue="500">
+		<mission name="Paw and Fur: Giant Spiders" storageid="65026" startvalue="0" endvalue="500">
 			<missionstate id="0" description="You already hunted |STATE|/500 giant spiders." />
 			<missionstate id="500" description="You successfully hunted 500 giant spiders. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Werewolves" storageid="65027" startvalue="0" endvalue="300">
+		<mission name="Paw and Fur: Werewolves" storageid="65027" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 werewolves." />
 			<missionstate id="300" description="You successfully hunted 300 werewolves. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Nightmares" storageid="65028" startvalue="0" endvalue="400">
+		<mission name="Paw and Fur: Nightmares" storageid="65028" startvalue="0" endvalue="400">
 			<missionstate id="0" description="You already hunted |STATE|/400 nightmares." />
 			<missionstate id="400" description="You successfully hunted 400 nightmares. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Hellspawns" storageid="65029" startvalue="0" endvalue="600">
+		<mission name="Paw and Fur: Hellspawns" storageid="65029" startvalue="0" endvalue="600">
 			<missionstate id="0" description="You already hunted |STATE|/600 hellspawns." />
 			<missionstate id="600" description="You successfully hunted 600 hellspawns. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: High Class Lizards" storageid="65030" startvalue="0" endvalue="800">
+		<mission name="Paw and Fur: High Class Lizards" storageid="65030" startvalue="0" endvalue="800">
 			<missionstate id="0" description="You already hunted |STATE|/800 high class lizards." />
 			<missionstate id="800" description="You successfully hunted 800 high class lizards. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Stampors" storageid="65031" startvalue="0" endvalue="600">
+		<mission name="Paw and Fur: Stampors" storageid="65031" startvalue="0" endvalue="600">
 			<missionstate id="0" description="You already hunted |STATE|/600 stampors." />
 			<missionstate id="600" description="You successfully hunted 600 stampors. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Brimstone Bugs" storageid="65032" startvalue="0" endvalue="500"> 
+		<mission name="Paw and Fur: Brimstone Bugs" storageid="65032" startvalue="0" endvalue="500"> 
 			<missionstate id="0" description="You already hunted |STATE|/500 brimstone bugs." />
 			<missionstate id="500" description="You successfully hunted 500 brimstone bugs. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Mutated Bats" storageid="65033" startvalue="0" endvalue="400"> 
+		<mission name="Paw and Fur: Mutated Bats" storageid="65033" startvalue="0" endvalue="400"> 
 			<missionstate id="0" description="You already hunted |STATE|/400 mutated bats." />  
 			<missionstate id="400" description="You successfully hunted 400 mutated bats. If you want to you may complete this task again." />
 		</mission>
-        <!--Tasks for level 130+ -->       
-        <mission name="Paw and Fur: Hydras" storageid="65034" startvalue="0" endvalue="650">
+		<!--Tasks for level 130+ -->       
+		<mission name="Paw and Fur: Hydras" storageid="65034" startvalue="0" endvalue="650">
 			<missionstate id="0" description="You already hunted |STATE|/650 hydras." />
 			<missionstate id="650" description="You successfully hunted 650 hydras. If you want to you may complete this task again." />
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Serpent Spawns" storageid="65035" startvalue="0" endvalue="800">
 			<missionstate id="0" description="You already hunted |STATE|/800 serpent spawns." />
 			<missionstate id="800" description="You successfully hunted 800 serpent spawns. If you want to you may complete this task again." />
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Medusas" storageid="65036" startvalue="0" endvalue="500">
 			<missionstate id="0" description="You already hunted |STATE|/500 medusas." /> 
 			<missionstate id="500" description="You successfully hunted 500 medusas. If you want to you may complete this task again." />			
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Behemoths" storageid="65037" startvalue="0" endvalue="700">
 			<missionstate id="0" description="You already hunted |STATE|/700 behemoths." />
 			<missionstate id="700" description="You successfully hunted 700 behemoths. If you want to you may complete this task again." />
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Sea Serpents and Young Sea Serpents" storageid="65038" startvalue="0" endvalue="900">
 			<missionstate id="0" description="You already hunted |STATE|/900 sea serpents and young sea serpents." />
 			<missionstate id="900" description="You successfully hunted 900 sea serpents and young sea serpents. If you want to you may complete this task again." />			
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Hellhounds" storageid="65039" startvalue="0" endvalue="250">
 			<missionstate id="0" description="You already hunted |STATE|/250 hellhounds." />
 			<missionstate id="250" description="You successfully hunted 250 hellhounds. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Ghastly Dragons" storageid="65040" startvalue="0" endvalue="500">
+		<mission name="Paw and Fur: Ghastly Dragons" storageid="65040" startvalue="0" endvalue="500">
 			<missionstate id="0" description="You already hunted |STATE|/500 ghastly dragons." />
 			<missionstate id="500" description="You successfully hunted 500 ghastly dragons. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Drakens" storageid="65041" startvalue="0" endvalue="900">
+		<mission name="Paw and Fur: Drakens" storageid="65041" startvalue="0" endvalue="900">
 			<missionstate id="0" description="You already hunted |STATE|/900 drakens." />
 			<missionstate id="900" description="You successfully hunted 900 drakens. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Destroyers" storageid="65042" startvalue="0" endvalue="650">
+		<mission name="Paw and Fur: Destroyers" storageid="65042" startvalue="0" endvalue="650">
 			<missionstate id="0" description="You already hunted |STATE|/650 destroyers." />
 			<missionstate id="650" description="You successfully hunted 650 destroyers. If you want to you may complete this task again." />
 		</mission>
@@ -179,35 +179,35 @@
 			<missionstate id="0" description="You already hunted |STATE|/400 undead dragons." />
 			<missionstate id="400" description="You successfully hunted 400 undead dragons. If you want to you may complete this task again." />
 		</mission>
-        <!-- Specials -->
-        <mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="6666">
+		<!-- Specials -->
+		<mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="6666">
 			<missionstate id="0" description="You already hunted |STATE|/6666 demons." />
 			<missionstate id="6666" description="You successfully hunted 6666 demons. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500">
+		<mission name="Paw and Fur: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500">
 			<missionstate id="0" description="You already hunted |STATE|/500 green djinns or efreets." />
 			<missionstate id="500" description="You successfully hunted 500 green djinns or efreets. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500">
+		<mission name="Paw and Fur: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500">
 			<missionstate id="0" description="You already hunted |STATE|/500 blue djinns or marids." />
 			<missionstate id="500" description="You successfully hunted 500 blue djinns or marids. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000">
+		<mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000">
 			<missionstate id="0" description="You already hunted |STATE|/3000 pirates." />
 			<missionstate id="3000" description="You successfully hunted 3000 pirates. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Pirates Second" storageid="65048" startvalue="0" endvalue="3000">
+		<mission name="Paw and Fur: Pirates Second" storageid="65048" startvalue="0" endvalue="3000">
 			<missionstate id="0" description="You already hunted |STATE|/3000 pirates." />
 			<missionstate id="3000" description="You successfully hunted 3000 pirates. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000">
+		<mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000">
 			<missionstate id="0" description="You already hunted |STATE|/5000 minotaurs." />
 			<missionstate id="5000" description="You successfully hunted 5000 minotaurs. If you want to you may complete this task again." />
 		</mission>
-        <mission name="Paw and Fur: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000">
+		<mission name="Paw and Fur: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000">
 			<missionstate id="0" description="You already hunted |STATE|/4000 necromancers and priestess." />
 			<missionstate id="4000" description="You successfully hunted 4000 necromancers and priestess. If you want to you may complete this task again." />
-        </mission>
+		</mission>
 		<mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000">
 			<missionstate id="0" description="You already hunted |STATE|/1000 necromancers and priestess." />
 			<missionstate id="1000" description="You successfully hunted 1000 necromancers and priestess. If you want to you may complete this task again." />
