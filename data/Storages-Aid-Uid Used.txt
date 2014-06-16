@@ -7,7 +7,6 @@ Last Used Uid = 50034
 stopMove Storage	=		100000 --Reserved to cancel player movement
 ---/////////////////////////////////////////////////////////////----
 Default Start Outfits Quest:		12010
-in service of yalahar storage:		12011-12021
 Norseman Outfits Quest:			12037
 hunter outfit quest storage:		12050-12056
 Knight Outfits storage:			12060
@@ -21,6 +20,7 @@ The New Frontier Quest:			12130-12150
 inquisition storage:			12160-12180
 barbarian test quest:			12190-12199
 ice islands quest storage:		12200-12230
+in service of yalahar storage:		12240-12280
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
