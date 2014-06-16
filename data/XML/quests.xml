@@ -16,9 +16,9 @@
 			<missionstate id="0" description="You already hunted |STATE|/300 crocodiles." />
 			<missionstate id="300" description="You successfully hunted 300 crocodiles. If you want to you may complete this task again." />
 		</mission>	
-        <mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="3">
-			<missionstate id="0" description="You already hunted |STATE|/3 badgers." />
-			<missionstate id="3" description="You successfully hunted 3 badgers. If you want to you may complete this task again." />
+        <mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="300">
+			<missionstate id="0" description="You already hunted |STATE|/300 badgers." />
+			<missionstate id="300" description="You successfully hunted 300 badgers. If you want to you may complete this task again." />
 		</mission>	
         <mission name="Paw and Fur: Tarantulas" storageid="65005" startvalue="0" endvalue="300">
 			<missionstate id="0" description="You already hunted |STATE|/300 tarantulas." />
