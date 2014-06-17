@@ -217,10 +217,19 @@
 			<missionstate id="3" description="Go back to Farmine and talk to Ongulf about your mission."/>
 		</mission>
 		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="1" description="You now have permission to use the Magic Carpet on the mountain above Farmine, Cael now accepts more Tomes of Knowledge from you and you got the Warmaster Outfit!"/>
-		<mission name="Tome of Knowledge Counter" storageid="12141" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Tome of Knowledge Counter" storageid="12141" startvalue="1" endvalue="12">
+			<missionstate id="1" description="You brought the fist Tome of Knowledge to Cael. He learnt more about the lizard culture. Pompan will sell you dragon tapestries from now on."/>
+			<missionstate id="2" description="You brought the second Tome of Knowledge to Cael. He learnt more about the minotaur culture. Pompan will sell you minotaur backpacks from now on."/>
+			<missionstate id="3" description="You brought the third Tome of Knowledge to Cael. He learnt more about the last stand of the draken culture. Esrik will sell you lizard weapon rack from now on."/>
+			<missionstate id="4" description="You brought the fourth Tome of Knowledge to Cael. He learnt something interesting about a certain food that the lizardmen apparently prepare. Swolt will trade you a bunch of ripe rice for 10 rice balls from now on."/>
+			<missionstate id="5" description="You brought the fifth Tome of Knowledge to Cael. He learnt more about the last stand of the lizards in the South, Zzaion. Pompan will sell you lizard backpacks from now on."/>
+			<missionstate id="6" description="You brought the sixth Tome of Knowledge to Cael. He learnt a few things about the primitive human culture on this continent. Cael will sell you War Drums and Didgeridoo from now on."/>
+			<missionstate id="7" description="You brought the seventh Tome of Knowledge to Cael. He learnt something interesting about the Zao steppe. Now you to use the snake teleport at the peak of the mountain."/>
+			<missionstate id="8" description="You brought the eighth Tome of Knowledge to Cael. He learnt a few things about an illness. Now you can enter a corruption hole in the north-eastern end of Zao."/>
+			<missionstate id="9" description="You brought the ninth Tome of Knowledge to Cael. He learnt something interesting about the Draken origin. Esrik will buy lizard equipment from you now."/>
+			<missionstate id="10" description="You brought the tenth Tome of Knowledge to Cael. He learnt more about the last stand of the lizard dynasty. Now you can enter the Zao Palace. It is situated deep underground, below the mountain base of the Lizards."/>
+			<missionstate id="11" description="You brought the eleventh Tome of Knowledge to Cael. He learnt something interesting about dragons and their symbolism. You can buy a Dragon Statue from NPC Cael after you bring him a Red Lantern."/>
+			<missionstate id="12" description="You brought the twelfth Tome of Knowledge to Cael. He learnt something about reveals some of the power structures in Zao. Cael will now make a Dragon Throne for you after you bring him a Red Piece of Cloth. He will reward you with 5000 experience points for each extra tome you give to him."/>
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">

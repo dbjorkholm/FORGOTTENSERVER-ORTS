@@ -187,7 +187,7 @@ local function creatureSayCallback(cid, type, msg)
 							"This new land is yours to be taken, so to say. Go out and make your fortune! With Farmine you have always a safe haven to return to. ...",
 							"Oh and one last thing: We convinced a carpet pilot to join us here. You'll find him on top of our lift in the mountains. I think he can offer you fast access to some cities back home. "
 						}, player)
-			player:addExperience(8000)
+			player:addExperience(8000, true)
 			player:addOutfit(366)
 			player:addOutfit(367)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
