@@ -11,13 +11,6 @@ keywordHandler:addKeyword({'soldiers'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'orcs'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The orcs attacked the workers from time to time and so they disturbed the WORKS on the city."})
 keywordHandler:addKeyword({'cruelty'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The soldiers treated the workers like slaves."})
 keywordHandler:addKeyword({'island'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The General of the Red Legion became very angry about these attacks and after some months he STROKE back!"})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
-
-function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "GET ME OUT OF HERE! NOW!")
-	return true
-end
 
 function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -66,6 +59,5 @@ function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
