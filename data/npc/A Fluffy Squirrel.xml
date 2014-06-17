@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="A Fluffy Squirrel" script="A Fluffy Squirrel.lua" walkinterval="0" floorchange="0">
-<health now="100" max="100"/>
-<look type="274" head="0" body="0" legs="0" feet="0" />
-<parameters>
-	<parameter key="MODULE_SHOP" value="1" />
-	<parameter key="SHOP_SELLABLE" value="
-											acorn,11213,10;
-											walnut,7909,80;" />
-	<parameter key="MODULE_KEYWORDS" value="1" />
-	<parameter key="KEYWORDS" value="acorn;" />
-	<parameter key="KEYWORD_REPLY1" value="Chh? Chhh?? <though you don't understand squirrelish, that one seems really excited>" />
-	<parameter key="MESSAGE_GREET" value="Chhchh?" />
-	<parameter key="MESSAGE_FAREWELL" value="Chh..." />
-	<parameter key="MESSAGE_WALKAWAY" value="Chh..." />
-	<parameter key="MESSAGE_SENDTRADE" value="Chchch. Chh! <you're not sure, but it seems that squirrel wants to trade your valuable acorns for useless stones that it found and considered uneatable>" />
+	<health now="100" max="100"/>
+	<look type="274" head="0" body="0" legs="0" feet="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="
+												acorn,11213,10;
+												walnut,7909,80;" />
+		<parameter key="message_greet" value="Chhchh?" />
+		<parameter key="message_farewell" value="Chh..." />
+		<parameter key="message_walkaway" value="Chh..." />
+		<parameter key="message_sendtrade" value="Chchch. Chh! <you're not sure, but it seems that squirrel wants to trade your valuable acorns for useless stones that it found and considered uneatable>" />
 	</parameters>
 </npc>

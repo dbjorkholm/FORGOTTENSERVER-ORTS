@@ -5,16 +5,16 @@ local talkState = {}
 
  
 function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
+	npcHandler:onCreatureAppear(cid)
 end
 function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
+	npcHandler:onCreatureDisappear(cid)
 end
 function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
+	npcHandler:onCreatureSay(cid, type, msg)
 end
 function onThink()
-	npcHandler:onThink()					
+	npcHandler:onThink()
 end
 
 function greetCallback(cid)
@@ -35,12 +35,12 @@ function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
 		if player:getStorageValue(1004) == 9 then
-			npcHandler:say("I can see in your eyes that you are a honest and friendly person, |PLAYERNAME|. You were patient enough to learn our language and I will grant you a special gift. Will you accept it?", player)
+			npcHandler:say("I can see in your eyes that you are a honest and friendly person, " .. player:getName() .. ". You were patient enough to learn our language and I will grant you a special gift. Will you accept it?", player)
 			talkState[talkUser] = 2
 		end
 	elseif msgcontains(msg, "yes") then
 		if talkState[talkUser] == 2 then	
-			npcHandler:say("From now on, you shall be known as |PLAYERNAME|, the bear warrior. You shall be strong and proud as Angros, the great dark bear. He shall guide your path.", player)
+			npcHandler:say("From now on, you shall be known as " .. player:getName() .. ", the bear warrior. You shall be strong and proud as Angros, the great dark bear. He shall guide your path.", player)
 			player:setStorageValue(1004, 10)
 			player:addOutfitAddon(148, 2)
 			player:addOutfitAddon(144, 2)
