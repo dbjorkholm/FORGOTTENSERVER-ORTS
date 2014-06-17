@@ -1,16 +1,19 @@
-function onUse(cid, item, frompos, item2, topos)
-if item.uid == 3312 then
-  queststatus = getPlayerStorageValue(cid,3312)
-  if queststatus == -1 then
-   doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR,"You have found a silver key 3301.")
-   item_uid = doPlayerAddItem(cid,2088,1)
-   doSetItemActionId(item_uid,3302)
-   setPlayerStorageValue(cid,3312,1)
-  else
-   doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR,"The dead tree is empty.")
-  end
-else
-  return 0
+local config = {
+	storage = 3312,
+	key_id = 2088, -- Key ID
+	key_aid = 3302
+}
+
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
+	if player:getStorageValue(config.storage) < 1 then
+		local key = player:addItem(config.key_id, 1)
+		key:setActionId(config.key_aid)
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a key.")
+		player:setStorageValue(config.storage, 1)
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "The dead tree is empty.")
+	end
+	return true
 end
-return 1
-end
+
