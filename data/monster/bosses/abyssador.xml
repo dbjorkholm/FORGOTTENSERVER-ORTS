@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Abyssador" nameDescription="an abyssador" race="blood" experience="35000" speed="500" manacost="0">
-	<health now="350000" max="350000"/>
+<monster name="Abyssador" nameDescription="abyssador" race="blood" experience="50000" speed="500" manacost="0">
+	<health now="300000" max="300000"/>
 	<look type="495" corpse="17412"/>
-	<targetchange interval="5000" chance="8"/>
+	<targetchange interval="5000" chance="10"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
@@ -55,21 +55,22 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
-		<voice sentence="*** BRAINS *** SMALL ***"/>
-		<voice sentence="*** LIVE *** DRY ***"/>
+		<voice sentence="*** STEALTH ***"/>
+		<voice sentence="*** TIME ***"/>
 		<voice sentence="*** IMPORTANT ***"/>
+		<voice sentence="*** BRAINS *** SMALL ***"/>
+		<voice sentence="*** DEATH ***"/>
 		<voice sentence="*** FIRE *** HOME *** VICTORY ***"/>
 		<voice sentence="*** EXISTENCE *** FUTILE ***"/>
-		<voice sentence="*** TIME ***"/>
 	</voices>
 	<loot>
-		<item id="18496" chance="100000"/><!-- abyssador's lash -->
-		<item id="18453" chance="8333"/><!-- crystal crossbow -->
-		<item id="18451" chance="8333"/><!-- crystalline axe -->
-		<item id="18465" chance="8333"/><!-- shiny blade -->
-		<item id="18450" chance="6666"/><!-- crystalline sword -->
-		<item id="18454" chance="5263"/><!-- mycological bow -->
-		<item id="18449" chance="1754"/><!-- decorative ribbon -->
-		<item id="18452" chance="1754"/><!-- mycological mace -->
+		<item id="18496" chance="100000"/>	<!-- abyssador's lash -->
+		<item id="18453" chance="8333"/>	<!-- crystal crossbow -->
+		<item id="18451" chance="8333"/>	<!-- crystalline axe -->
+		<item id="18465" chance="8333"/>	<!-- shiny blade -->
+		<item id="18450" chance="6666"/>	<!-- crystalline sword -->
+		<item id="18454" chance="5263"/>	<!-- mycological bow -->
+		<item id="18449" chance="1754"/>	<!-- decorative ribbon -->
+		<item id="18452" chance="1754"/>	<!-- mycological mace -->
 	</loot>
 </monster>

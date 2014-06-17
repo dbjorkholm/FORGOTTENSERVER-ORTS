@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="A Fluffy Squirrel" script="default.lua" walkinterval="2000" floorchange="0">
-<health now="100" max="100"/>
-<look type="274" head="0" body="0" legs="0" feet="0" />
-<parameters>
-<parameter key="module_shop" value="1" />
-<parameter key="shop_sellable" value="acorn,11207,10;" />
-        <parameter key="message_greet" value="Chhchh?"/>
-        <parameter key="message_farewell" value="Chh..."/>
+<npc name="A Fluffy Squirrel" script="A Fluffy Squirrel.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="274" head="0" body="0" legs="0" feet="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="acorn,11213,10;walnut,7909,80;" />
+		<parameter key="message_greet" value="Chhchh?" />
+		<parameter key="message_farewell" value="Chh..." />
 		<parameter key="message_walkaway" value="Chh..." />
-		<parameter key="message_sendtrade" value="Chchch. Chh! you're not sure, but it seems that squirrel wants to trade your valuable acorns for useless stones that it found and considered uneatable" />
-    </parameters>
+		<parameter key="message_sendtrade" value="Chchch. Chh! <you're not sure, but it seems that squirrel wants to trade your valuable acorns for useless stones that it found and considered uneatable>" />
+	</parameters>
 </npc>
