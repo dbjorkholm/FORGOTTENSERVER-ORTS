@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 <npc name="Ajax" script="Ajax.lua" walkinterval="2000">
-  <mana now="800" max="800" />
-  <health now="200" max="200" />
-  <look type="143" head="40" body="120" legs="81" feet="94" addons="0" />
-  <parameters>
-    <parameter key="message_greet" value="Welcome to my humble hut, |PLAYERNAME|." />
-    <parameter key="message_farewell" value="Take care, |PLAYERNAME|!" />
-    <parameter key="message_walkaway" value="Take care!" />
-  </parameters>
+	<health now="100" max="100" />
+	<look type="143" head="78" body="101" legs="120" feet="94" addons="1" />
 </npc>
