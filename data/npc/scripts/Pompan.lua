@@ -72,19 +72,19 @@ local tomes = {
 			},
 		}
 
-if player:getStorageValue(85300) >= 1 then
+if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 1 then
 	-- 1 tome
 	for i = 1, #tomes[1] do
 		table.insert(itemsList, tomes[1][i])
 	end
 end
-if player:getStorageValue(85300) >= 2 then
+if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 2 then
 	-- 2 tomes
 	for i = 1, #tomes[2] do
 		table.insert(itemsList, tomes[2][i])
 	end
 end
-if player:getStorageValue(85300) >= 5 then
+if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 5 then
 	-- 5 tomes
 	for i = 1, #tomes[3] do
 		table.insert(itemsList, tomes[3][i])
