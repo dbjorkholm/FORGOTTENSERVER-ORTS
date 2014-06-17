@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Munster" nameDescription="a munster" race="blood" experience="23" speed="200" manacost="250">
+<monster name="Munster" nameDescription="Munster" race="blood" experience="23" speed="200" manacost="0">
 	<health now="58" max="58"/>
 	<look type="56" corpse="2813"/>
 	<targetchange interval="60000" chance="0"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
-		<flag summonable="1"/>
+		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="0"/>
 		<flag staticattack="80"/>

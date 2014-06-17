@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="The Handmaiden" nameDescription="the handmaiden" race="blood" experience="3850" speed="450" manacost="0">
+<monster name="The Handmaiden" nameDescription="the Handmaiden" race="blood" experience="3850" speed="450" manacost="0">
 	<health now="14500" max="14500"/>
 	<look type="230" corpse="6312"/>
 	<targetchange interval="5000" chance="8"/>
@@ -8,7 +8,7 @@
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
-		<flag illusionable="1"/>
+		<flag illusionable="0"/>
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
@@ -18,7 +18,7 @@
 		<flag runonhealth="3100"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-800"/>
+		<attack name="melee" interval="2000" min="0" max="-800"/>
 		<attack name="manadrain" interval="2000" chance="25" range="7" min="-150" max="-800">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</attack>
