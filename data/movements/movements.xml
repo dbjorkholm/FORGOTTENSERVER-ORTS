@@ -144,9 +144,9 @@
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/pitsOfInfernoQuestSecondTrap.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
 	
-	<!-- Rookgaard Quests -->
+	<!-- Rookgaard Quests 
 	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>
-	<movevent event="StepIn" actionid="5091" script="rookgaard/bridgeSouth.lua"/>
+	<movevent event="StepIn" actionid="5091" script="rookgaard/bridgeSouth.lua"/>-->
 	
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>
