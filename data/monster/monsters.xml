@@ -151,6 +151,7 @@
 	<monster name="Countess Sorrow" file="bosses/countess sorrow.xml"/>
 	<monster name="Deadeye Devious" file="bosses/deadeye devious.xml"/>
 	<monster name="Deathbine" file="bosses/deathbine.xml"/>
+	<monster name="Deathstrike" file="bosses/deathstrike.xml"/>
 	<monster name="Demodras" file="bosses/demodras.xml"/>
 	<monster name="Dharalion" file="bosses/dharalion.xml"/>
 	<monster name="Diblis the Fair" file="bosses/diblis the fair.xml"/>
@@ -472,7 +473,6 @@
 	<monster name="Crystalcrusher" file="geo-elementals/crystalcrusher.xml"/>
 	<monster name="Damaged Crystal Golem" file="geo-elementals/damaged crystal golem.xml"/>
 	<monster name="Damaged Worker Golem" file="geo-elementals/damaged worker golem.xml"/>
-	<monster name="Deathstrike" file="geo-elementals/deathstrike.xml"/>
 	<monster name="Diamond Servant" file="geo-elementals/diamond servant.xml"/>
 	<monster name="Earth Elemental" file="geo-elementals/earth elemental.xml"/>
 	<monster name="Enraged Crystal Golem" file="geo-elementals/enraged crystal golem.xml"/>

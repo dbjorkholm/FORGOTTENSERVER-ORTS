@@ -12,7 +12,7 @@ function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 	return false
 	end
-	local talkUser = NPCHANDLER_CONVbehavior == CONVERSATION_DEFAULT and 0 or cid
+	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
  
 	if msg:lower() == "name" then
 		return npcHandler:say("Me Yasir.", cid)
