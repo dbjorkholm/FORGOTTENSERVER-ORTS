@@ -16,4 +16,3 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	return true
 end
-
