@@ -5,13 +5,21 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
+local random_texts = {
+	'Chchch.'
+}
+rnd_sounds = 0
 function onThink()
-	local config = {delay = 20, frequency = 25, message = "Chchch."}
-	if (os.time() - config["delay"]) >= config["frequency"] then
-		config["delay"] = os.time()
-		Npc():say(config["message"], TALKTYPE_SAY)
+	if(rnd_sounds < os.time()) then
+		rnd_sounds = (os.time() + 5)
+		if(math.random(1, 100) < 25) then
+			selfSay(random_texts[math.random(1, #random_texts)])
+		end
 	end
 	npcHandler:onThink()
 end
+
+keywordHandler:addKeyword({'acorn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Chh? Chhh?? <though you don't understand squirrelish, that one seems really excited>"})
 
 npcHandler:addModule(FocusModule:new())
