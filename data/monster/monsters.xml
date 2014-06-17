@@ -266,7 +266,6 @@
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
 	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
-	<monster name="Zoralurk" file="bosses/zoralurk.xml"/>
 	<monster name="Zugurosh" file="bosses/zugurosh.xml"/>
 	<monster name="Zulazza the Corruptor" file="bosses/zulazza the corruptor.xml"/>
 
@@ -751,6 +750,7 @@
 	<!-- The Triangle of Terror -->
 	<monster name="Ghazbaran" file="the triangle of terror/ghazbaran.xml"/>
 	<monster name="Morgaroth" file="the triangle of terror/morgaroth.xml"/>
+	<monster name="Zoralurk" file="the triangle of terror/zoralurk.xml"/>
 
 	<!-- Sorcerers -->
 	<monster name="Dark Apprentice" file="sorcerers/dark apprentice.xml"/>
