@@ -23,14 +23,13 @@
 	<action fromuid="3153" touid="3154" script="the new frontier quest/theNewFrontierQuestVine.lua"/>
 	<action uniqueid="3156" script="the new frontier quest/theNewFrontierQuestRetreat.lua"/>
 
-	<!-- outlaw camp -->
-	<action uniqueid="3313" script="The-outlaw-quest/3303.lua" />
-	<action uniqueid="3314" script="The-outlaw-quest/3304.lua" />
-	<action uniqueid="3311" script="The-outlaw-quest/3301.lua" />
-	<action uniqueid="3312" script="The-outlaw-quest/3302.lua" />
-	<action uniqueid="3400" script="The-outlaw-quest/oven.lua" />
-	<action uniqueid="3401" script="The-outlaw-quest/powerswitch.lua" />
-	<action uniqueid="3402" script="The-outlaw-quest/powerburn.lua" />
+	<!-- The Outlaw Camp Quest -->
+	<action uniqueid="3313" script="the outlaw camp quest/3303.lua" />
+	<action uniqueid="3311" script="the outlaw camp quest/3301.lua" />
+	<action uniqueid="3312" script="the outlaw camp quest/3302.lua" />
+	<action uniqueid="3400" script="the outlaw camp quest/oven.lua" />
+	<action uniqueid="3401" script="the outlaw camp quest/powerswitch.lua" />
+	<action uniqueid="3402" script="the outlaw camp quest/powerburn.lua" />
 
 	<!--- The Ape City Quest -->
 	<action uniqueid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
@@ -316,8 +315,8 @@
 	<action uniqueid="3118" script="postman quest/postmanQuestWaldo.lua"/>
 	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
 
-	<!-- Rookgaard Quests -->
-	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>
+	<!-- Rookgaard Quests 
+	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
