@@ -1,43 +1,23 @@
--- Script by Nottinghster
 function onUse(cid, item, frompos, item2, topos)
 
+	local power1 = Tile(Position({x = 32613, y = 32220, z = 10}))
+	local barrel = Tile(Position({x = 32614, y = 32209, z = 10}))
+	local wall = Tile(Position({x = 32614, y = 32205, z = 10}))
+	local stone = Tile(Position({x = 32614, y = 32206, z = 10}))
+	local burn1 = Tile(Position({x = 32613, y = 32220, z = 10}))
+	local burn2 = Tile(Position({x = 32615, y = 32221, z = 10}))
 
-
-local powerpos = {x=32613, y=32220, z=10, stackpos=255}
-local barrelpos = {x=32614, y=32209, z=10, stackpos=1}
-local wallpos = {x=32614, y=32205, z=10, stackpos=1}
-local stonepos = {x=32614, y=32206, z=10, stackpos=1}
-local burn1pos = {x=32613, y=32220, z=10, stackpos=1}
-local burn2pos = {x=32615, y=32221, z=10, stackpos=1}
-
-
-local getpower = getThingfromPos(powerpos)
-local getbarrel = getThingfromPos(barrelpos)
-local getwall = getThingfromPos(wallpos)
-local getstone = getThingfromPos(stonepos)
-
-
-    if item.uid == 3402 and 
-	item.itemid == 1945 and 
-	getpower.itemid == 2166 and
-	getwall.itemid == 1025 and
-	getstone.itemid == 1304 and
-	getbarrel.itemid == 1774 then
-        doRemoveItem(getpower.uid,1)
-        doRemoveItem(getwall.uid,1)
-        doRemoveItem(getstone.uid,1)
-		doCreateItem(1025,1,stonepos)
-        doTransformItem(item.uid,item.itemid+1)
-		doSendMagicEffect(burn1pos, 15)
-		doSendMagicEffect(burn2pos, 15)
-
-		
-    elseif item.uid == 3402 and 
-	item.itemid == 1946 then 
-        doTransformItem(item.uid,item.itemid-1)
-    else
-        doPlayerSendCancel(cid,"Sorry, not possible.")
-    end
-    
-return TRUE
+	if item.itemid == 1945 and power1:getItemById(2166) and wall:getItemById(1025) and stone:getItemById(1304) and barrel:getItemById(1774) then
+		power1:getItemById(2166):remove()
+		wall:getItemById(1025):remove()
+		stone:getItemById(1304):transform(1025)
+		burn1:sendMagicEffect(CONST_ME_FIREAREA)
+		burn2:sendMagicEffect(CONST_ME_FIREAREA)
+	else
+		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "Sorry, not possible.")
+	end
+	if item.itemid == 1946 then
+		Item(item.uid):transform(1945)
+	end
+	return true
 end
