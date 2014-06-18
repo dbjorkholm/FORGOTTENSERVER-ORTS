@@ -1,16 +1,12 @@
-local config = {
-	storage = 3312,
-	key_id = 2088, -- Key ID
-	key_aid = 3302
-}
+local storage = 3312
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(config.storage) < 1 then
-		local key = player:addItem(config.key_id, 1)
-		key:setActionId(config.key_aid)
+	if player:getStorageValue(storage) < 1 then
+		local key = player:addItem(2088, 1)
+		key:setActionId(3302)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a key.")
-		player:setStorageValue(config.storage, 1)
+		player:setStorageValue(storage, 1)
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "The dead tree is empty.")
 	end
