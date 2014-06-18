@@ -33,6 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(5903, 1) then
 				local player = Player(cid)
 				player:addOutfitAddon(138, 2)
+				player:addOutfitaddon(130, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 				npcHandler:say("I bow to you, player, and hereby grant you the right to wear Ferumbras´ hat as accessory. Congratulations!", cid)
 				npcHandler.topic[cid] = 0
