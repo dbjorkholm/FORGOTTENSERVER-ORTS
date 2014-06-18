@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local power1 = Tile(Position({x = 32594, y = 32214, z = 9}))
 	local power2 = Tile(Position({x = 32613, y = 32220, z = 10}))

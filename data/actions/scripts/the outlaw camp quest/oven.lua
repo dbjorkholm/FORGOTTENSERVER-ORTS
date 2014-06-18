@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local oven1 = Tile(Position({x = 32623, y = 32188, z = 9}))
 	local oven2 = Tile(Position({x=32623, y=32189, z=9}))
