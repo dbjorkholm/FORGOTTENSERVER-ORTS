@@ -6,12 +6,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local power1 = power1pos:getTile()
 
 	if item.itemid == 1945 and power1:getItemById(2166) and wall:getItemById(1026) then
-		power1:getItemById(2166):remove()
+		power1:getItemById(2166):moveTo(power2pos)
 		wall:getItemById(1026):remove()
-		Game.createItem(2166,1,power2pos)
-		--FIXME:
-		--event = addEvent(doCreateItem, 600000, 1026, 1, wallpos)
-		--doSendMagicEffect(power, 8)
 		power1pos:sendMagicEffect(CONST_ME_TELEPORT)
 	end
 		Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
