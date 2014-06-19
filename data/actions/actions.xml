@@ -328,6 +328,7 @@
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
 
 	<!-- Quests -->
+	<action actionid="60994" script="quests/parchment.lua"/>
 	<action uniqueid="9196" script="quests/bkkey.lua"/>
 	<action uniqueid="9155" script="quests/dcq_dead.lua"/>
 	<action fromuid="9172" touid="9174" script="quests/warzone_rewards.lua"/>
