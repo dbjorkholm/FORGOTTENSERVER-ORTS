@@ -18,5 +18,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	else
 		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "Sorry, not possible.")
 	end
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end
