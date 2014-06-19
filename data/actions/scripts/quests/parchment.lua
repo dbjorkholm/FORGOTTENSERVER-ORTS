@@ -1,17 +1,14 @@
+local items = {{2165}, {2151, 2}, {2230}, {2229}, {1948}}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-
-	local storage = 60994
 	local player = Player(cid)
-
-	if player:getStorageValue(storage) < 1 then
-		player:setStorageValue(storage, 1)
+	if player:getStorageValue(item.actionid) ~= 1 then
+		player:setStorageValue(item.actionid, 1)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a bag.")
 		local bag = player:addItem(1987, 1)
-		bag:addItem(2165, 1)
-		bag:addItem(2151, 2)
-		bag:addItem(2230, 1)
-		bag:addItem(2229, 1)
-		bag:addItem(1948, 1)
+		for i = 1, #items do
+			bag:addItem(items[i][1], items[i][2] or 1)
+		end
 		local key = bag:addItem(2091, 1)
 		key:setActionId(6010)
 	else
