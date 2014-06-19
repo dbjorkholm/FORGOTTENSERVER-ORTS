@@ -11,8 +11,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		wall:getItemById(1025):remove()
 		stone:getItemById(1304):transform(1025)
 		Game.createItem(1487, 1, burn)
-	else
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "Sorry, not possible.")
 	end
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
