@@ -11,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local tile = targetItem[1]:getTile()
 	if tile then
-		local thing = tile:getTopTopItem()
+		local thing = tile:getTopItem()
 		if thing and isInArray({1786, 1787}, thing:getId()) then
 			thing:moveTo(targetItem[2])
 		end
