@@ -1,6 +1,8 @@
 local config = {
 	[3062] = 8262,
-	[3064] = 8264
+	[3063] = 8263,
+	[3064] = 8264,
+	[3065] = 8265
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

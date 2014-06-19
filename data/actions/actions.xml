@@ -284,8 +284,7 @@
 
 	<!-- Koshei Amulet Quest -->
 	<action itemid="8266" script="koshei amulet quest/kosheiAmuletQuestBoss.lua"/>
-	<action uniqueid="3062" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
-	<action uniqueid="3064" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
+	<action fromuid="3062" touid="3065" script="koshei amulet quest/kosheiAmuletQuestPieces.lua"/>
 	<action uniqueid="3070" script="koshei amulet quest/kosheiAmuletQuestSwitch.lua"/>
 
 	<!-- Pits Of Inferno Quest -->
@@ -328,6 +327,7 @@
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
 
 	<!-- Quests -->
+	<action actionid="60994" script="quests/parchment.lua"/>
 	<action uniqueid="9196" script="quests/bkkey.lua"/>
 	<action uniqueid="9155" script="quests/dcq_dead.lua"/>
 	<action fromuid="9172" touid="9174" script="quests/warzone_rewards.lua"/>
