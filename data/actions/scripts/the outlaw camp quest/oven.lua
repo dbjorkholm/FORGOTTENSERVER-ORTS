@@ -1,40 +1,22 @@
--- Script by Viperthepala
-function onUse(cid, item, frompos, item2, topos)
+local config = {
+	[1945] = {Position(32623, 32188, 9), Position(32623, 32189, 9)},
+	[1946] = {Position(32623, 32189, 9), Position(32623, 32188, 9)}
+}
 
-local oven1pos = {x=32623, y=32188, z=9, stackpos=1}
-local oven2pos = {x=32623, y=32189, z=9, stackpos=1}
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local targetItem = config[item.itemid]
+	if not targetItem then
+		return true
+	end
 
-local getoven1 = getThingfromPos(oven1pos)
-local getoven2 = getThingfromPos(oven2pos)
+	local tile = targetItem[1]:getTile()
+	if tile then
+		local thing = tile:getTopItem()
+		if thing and isInArray({1786, 1787}, thing:getId()) then
+			thing:moveTo(targetItem[2])
+		end
+	end
 
-
-    if item.uid == 3400 and 
-	item.itemid == 1945 and 
-	getoven1.itemid == 1787 then
-        doRemoveItem(getoven1.uid,1)
-		 doCreateItem(1787,1,oven2pos)
-        doTransformItem(item.uid,item.itemid+1)
-    elseif item.uid == 3400 and
-        item.itemid == 1945 and
-        getoven1.itemid == 1786 then
-        doRemoveItem(getoven1.uid,1)
-                 doCreateItem(1786,1,oven2pos)
-        doTransformItem(item.uid,item.itemid+1)
-    elseif item.uid == 3400 and 
-	item.itemid == 1946 and 
-	getoven2.itemid == 1787 then
-		doRemoveItem(getoven2.uid,1)
-        doCreateItem(1787,1,oven1pos)
-        doTransformItem(item.uid,item.itemid-1)
-    elseif item.uid == 3400 and
-        item.itemid == 1946 and
-        getoven2.itemid == 1786 then
-                doRemoveItem(getoven2.uid,1)
-        doCreateItem(1786,1,oven1pos)
-        doTransformItem(item.uid,item.itemid-1)
-    else
-        doPlayerSendCancel(cid,"Sorry, not possible.")
-    end
-    
-return TRUE
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	return true
 end
