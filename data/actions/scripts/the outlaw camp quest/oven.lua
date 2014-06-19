@@ -1,40 +1,25 @@
--- Script by Viperthepala
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
-local oven1pos = {x=32623, y=32188, z=9, stackpos=1}
-local oven2pos = {x=32623, y=32189, z=9, stackpos=1}
+	local oven1pos = Position({x = 32623, y = 32188, z = 9})
+	local oven2pos = Position({x=32623, y=32189, z=9})
+	local oven1 = oven1pos:getTile()
+	local oven2 = oven2pos:getTile()
 
-local getoven1 = getThingfromPos(oven1pos)
-local getoven2 = getThingfromPos(oven2pos)
-
-
-    if item.uid == 3400 and 
-	item.itemid == 1945 and 
-	getoven1.itemid == 1787 then
-        doRemoveItem(getoven1.uid,1)
-		 doCreateItem(1787,1,oven2pos)
-        doTransformItem(item.uid,item.itemid+1)
-    elseif item.uid == 3400 and
-        item.itemid == 1945 and
-        getoven1.itemid == 1786 then
-        doRemoveItem(getoven1.uid,1)
-                 doCreateItem(1786,1,oven2pos)
-        doTransformItem(item.uid,item.itemid+1)
-    elseif item.uid == 3400 and 
-	item.itemid == 1946 and 
-	getoven2.itemid == 1787 then
-		doRemoveItem(getoven2.uid,1)
-        doCreateItem(1787,1,oven1pos)
-        doTransformItem(item.uid,item.itemid-1)
-    elseif item.uid == 3400 and
-        item.itemid == 1946 and
-        getoven2.itemid == 1786 then
-                doRemoveItem(getoven2.uid,1)
-        doCreateItem(1786,1,oven1pos)
-        doTransformItem(item.uid,item.itemid-1)
-    else
-        doPlayerSendCancel(cid,"Sorry, not possible.")
-    end
-    
-return TRUE
+	if item.itemid == 1945 and oven1:getItemById(1787) then
+		oven1:getItemById(1787):remove()
+		Game.createItem(1787,1,oven2pos)
+	elseif item.itemid == 1945 and oven1:getItemById(1786) then
+		oven1:getItemById(1786):remove()
+		Game.createItem(1786,1,oven2pos)
+	elseif item.itemid == 1946 and oven2:getItemById(1787) then
+		oven2:getItemById(1787):remove()
+		Game.createItem(1787,1,oven1pos)
+	elseif item.itemid == 1946 and oven2:getItemById(1786) then
+		oven2:getItemById(1786):remove()
+		Game.createItem(1786,1,oven1pos)
+	else
+		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "Sorry, not possible.")
+	end
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	return true
 end
