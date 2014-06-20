@@ -115,10 +115,3 @@ end
 function Player:onTradeRequest(target, item)
 	return true
 end
-
-function Player:onMove(direction)
-	if self:getStorageValue(stopMoveStorage) == 1 then
-		return false
-	end
-	return true
-end
