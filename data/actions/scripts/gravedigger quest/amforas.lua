@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(9995) == 1 and player:getStorageValue(9996) < 1 then
+	if player:getStorageValue(9995) == 1 and player:getStorageValue(9996) ~= 1 then
 		local chances = math.random(30)
 		if chances == 13 then
 			player:setStorageValue(9996,1)
