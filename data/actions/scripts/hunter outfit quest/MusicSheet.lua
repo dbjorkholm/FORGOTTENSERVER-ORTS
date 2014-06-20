@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 	
-	if player:getStorageValue(targetItem[1]) < 1 then
+	if player:getStorageValue(targetItem[1]) ~= 1 then
 		player:setStorageValue(targetItem[1], 1)
 		Item(item.uid):remove(1)
 		player:sendTextMessage(MESSAGE_STATUS_WARNING, string.format("You have learned the %s part of a hymn.", targetItem[3]))
