@@ -25,12 +25,12 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
 			if player:removeMoney(210) then
-				if player:getStorageValue(12135) == 7 then --if The New Frontier Quest "Mission 05: Getting Things Busy" complete then Stage 3
+				if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest "Mission 05: Getting Things Busy" complete then Stage 3
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo({x=33025, y=31553, z=10})
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					return true
-				elseif player:getStorageValue(12133) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
+				elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo({x=33025, y=31553, z=12})
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

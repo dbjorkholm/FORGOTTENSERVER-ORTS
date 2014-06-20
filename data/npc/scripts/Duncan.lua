@@ -13,7 +13,7 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	local storage = 50002
+	local storage = Storage.OutfitQuest.PirateSabreAddon
 	
 	if isInArray({"outfit", "addon"}, msg) then
 		npcHandler:say("You're talking about my sabre? Well, even though you earned our trust, you'd have to fulfill a task first before you are granted to wear such a sabre.", cid)
@@ -43,7 +43,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(storage, 1)
-			player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
+			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler:say("Good! Come back to me once you have gathered 100 eye patches.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then

@@ -2,6 +2,34 @@
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it alphabetical -
 Storage = {
+	OutfitQuest = {
+			DefaultStart = 12010, -- Is needed for each Quest to start the log
+			-- citizen -outfit Quest
+			CitizenHatAddon = 12011,
+			CitizenBackpackAddon = 12012,
+			-- Druid-outfit Quest
+			DruidHatAddon = 12013,
+			DruidBodyAddon = 12014,
+			-- Hunter-outfit Quest
+			HunterMusicSheet01 = 12050,
+			HunterMusicSheet02 = 12051,
+			HunterMusicSheet03 = 12052,
+			HunterMusicSheet04 = 12053,
+			HunterBodyAddon = 12054,
+			HunterHatAddon = 12055,
+			-- Knight-outfit Quest
+			KnightHatAddon = 12060,
+			-- Mage and Summoner-outfit Quest
+			MageSummonerWandAddon = 12062,
+			MageSummonerTiaraCloakAddon = 12063,
+			MageSummonerFluidBeltAddon = 12064,
+			-- Norseman-outfit Quest
+			NorsemanAddon = 12065,
+			-- Pirate-outfit Quest
+			PirateSabreAddon = 50002,
+			-- Wizard-outfit Quest
+			WizardAddon = 12066
+				},
 	BarbarianTest = {
 			Questline = 12190, -- Storage through the Quest
 			Mission01 = 12191,

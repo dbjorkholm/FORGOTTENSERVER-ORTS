@@ -57,7 +57,7 @@ local config = {
 
 function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	local storage = 50011
+	local storage = Storage.OutfitQuest.MageSummonerTiaraCloakAddon
 	
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -84,7 +84,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(storage, 1)
-			player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
+			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler:say("Fine! Let's start with the 70 {bat wings}. I really feel uncomfortable out there in the jungle.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
