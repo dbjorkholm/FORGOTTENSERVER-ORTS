@@ -7,13 +7,17 @@ Last Used Uid = 50034
 stopMove Storage	=		100000 --Reserved to cancel player movement
 ---/////////////////////////////////////////////////////////////----
 Default Start Outfits Quest:		12010
-Norseman Outfits Quest:			12037
-hunter outfit quest storage:		12050-12056
+citizen Outfits (Feather Hat):	12011
+citizen Outfits (Backpack):		12012
+Druid Outfits (Bear Fur):		12013
+Druid Outfits (Bear Paws):		12014
+hunter outfit quest storage:	12050-12055
 Knight Outfits storage:			12060
-mage Outfits (wand):			12061
-citizen Outfits (Feather Hat):		12062
-citizen Outfits (Backpack):		12063
-mage Outfits Quest(Fluid Belt):		12064
+mage/summoner addon (wand):		12062
+mage/summoner addon (tiara/cloak): 	12063
+mage/summoner addon (Fluid Belt):	12064
+Norseman Outfits Quest:			12065
+Wizard Outfits Quest:			12066
 the ancient tombs storage:		12100-12109
 The Ape City storage:			12120-12129
 The New Frontier Quest:			12130-12150
@@ -25,7 +29,7 @@ in service of yalahar storage:		12240-12280
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
 horestisjars (Aid=storage)		50006-50010
-Second mage/summoner addon (tiara/cloak): 50011
+
 
 ---/////////////////////Aid/Uid/////////////////////----
 the ancient tombs storage Uid:		12100-12109
