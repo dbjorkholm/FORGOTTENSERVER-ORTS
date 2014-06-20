@@ -54,8 +54,8 @@ function creatureSayCallback(cid, type, msg)
 				player:removeItem(7289, 1)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 40)
 				player:setStorageValue(Storage.TheIceIslands.Mission12, 6) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
-				player:setStorageValue(12037, 1) -- Questlog Norseman Outfit Quest
-				player:setStorageValue(12010, 1) --this for default start of Outfit and Addon Quests
+				player:setStorageValue(Storage.OutfitQuest.NorsemanAddon, 1) -- Questlog Norseman Outfit Quest
+				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 				player:addOutfit(251, 0)
 				player:addOutfit(252, 0)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -87,7 +87,7 @@ function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(251, 1)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 42)
-			player:setStorageValue(12037, 2) -- Questlog Norseman Outfit Quest
+			player:setStorageValue(Storage.OutfitQuest.NorsemanAddon, 2) -- Questlog Norseman Outfit Quest
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 43 then
 			player:addOutfitAddon(252, 2)
@@ -95,7 +95,7 @@ function creatureSayCallback(cid, type, msg)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			npcHandler:say("Take this. It might suit your Nordic outfit fine. From now on we only can give you 2000 gold pieces for each shard. ", player)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 44)
-			player:setStorageValue(12037, 3) -- Questlog Norseman Outfit Quest
+			player:setStorageValue(Storage.OutfitQuest.NorsemanAddon, 3) -- Questlog Norseman Outfit Quest
 			npcHandler.topic[cid] = 4
 		end
 	elseif msgcontains(msg, "tylaf") then

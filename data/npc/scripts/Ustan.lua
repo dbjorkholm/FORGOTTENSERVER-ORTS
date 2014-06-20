@@ -20,13 +20,13 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "addon") then
-		if player:getStorageValue(1005) < 1 then
+		if player:getStorageValue(Storage.OutfitQuest.DruidBodyAddon) < 1 then
 			npcHandler:say("Would you like to wear bear paws like I do? No problem, just bring me 50 bear paws and 50 wolf paws and I'll fit them on.", cid)
-			player:setStorageValue(1005, 1)
+			player:setStorageValue(Storage.OutfitQuest.DruidBodyAddon, 1)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "paws") then
-		if player:getStorageValue(1005) == 1 then
+		if player:getStorageValue(Storage.OutfitQuest.DruidBodyAddon) == 1 then
 			npcHandler:say("Have you brought 50 bear paws and 50 wolf paws?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -36,7 +36,7 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Excellent! Like promised, here are your bear paws. ", cid)
 				player:removeItem(5896, 50)
 				player:removeItem(5897, 50)
-				player:setStorageValue(1005, 2)
+				player:setStorageValue(Storage.OutfitQuest.DruidBodyAddon, 2)
 				player:addOutfitAddon(148, 1)
 				player:addOutfitAddon(144, 1)
 				npcHandler.topic[cid] = 0	
