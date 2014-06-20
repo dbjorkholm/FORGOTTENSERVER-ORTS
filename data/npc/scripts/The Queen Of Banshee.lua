@@ -28,12 +28,12 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(90, 49)
 		end
 	elseif msgcontains(msg, "addon") then
-		if player:getStorageValue(1003) == 5 then
+		if player:getStorageValue(Storage.OutfitQuest.WizardAddon) == 5 then
 			npcHandler:say("Say... I have been longing for something for an eternity now... if you help me retrieve it, I will reward you. Do you consent to this arrangement?", cid)
 			npcHandler.topic[cid] = 9
 		end
 	elseif msgcontains(msg, "orchid") then
-		if player:GetStorageValue(1003) == 6 then
+		if player:GetStorageValue(Storage.OutfitQuest.WizardAddon) == 6 then
 			npcHandler:say("Have you really brought me 50 holy orchids?", cid)
 			npcHandler.topic[cid] = 11
 		end	
@@ -102,13 +102,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 10
 		elseif npcHandler.topic[cid] == 10 then
 			npcHandler:say("Thank you. I will wait for your return.", cid)
-			player:setStorageValue(1003, 6)
+			player:setStorageValue(Storage.OutfitQuest.WizardAddon, 6)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
 			if player:removeItem(5922, 50) then
 				npcHandler:say("Thank you! You have no idea what that means to me. As promised,here is your reward... as a follower of Zathroth, I hope that you will like this accessory.", cid)
-				player:setStorageValue(1003, 7)
-				player:addOutfitAddon(player:getSex() == 0 and 149 or 145, 2)
+				player:setStorageValue(Storage.OutfitQuest.WizardAddon, 7)
+				player:addOutfitAddon(145, 1)
+				player:addOutfitAddon(149, 1)
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You need 50 holy orchid.", cid)

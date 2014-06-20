@@ -12,10 +12,10 @@ function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "myra") then
-		if player:getStorageValue(50011) == 10 then
+		if player:getStorageValue(Storage.OutfitQuest.MageSummonerTiaraCloakAddon) == 10 then
 			player:addOutfitAddon(138, 2)
 			player:addOutfitAddon(133, 2)
-			player:setStorageValue(50011, 11)
+			player:setStorageValue(Storage.OutfitQuest.MageSummonerTiaraCloakAddon, 11)
 			npcHandler:say({"Bah, I know. I received some sort of 'nomination' from our outpost in Port Hope. ...", "Usually it takes a little more than that for an award though. However, I honour Myra's word. ..."}, cid)
 		end
 	elseif msgcontains(msg, "proof") then
