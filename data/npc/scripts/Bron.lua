@@ -18,7 +18,6 @@ end
 
 keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
 
-
 function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
@@ -28,8 +27,11 @@ function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msgcontains(msg, "recruitment")) then
 		if player:getStorageValue(1000) < 1 then
-			npcHandler:say("Convincing Ajax that it is not always necessary to use brute force... this would be such an achievement. Definitely a hard task though. ...", cid)
-			npcHandler:say("Listen, I simply have to ask, maybe a stranger can influence him better than I can. Would you help me with my brother?", cid)
+			npcHandler:say(
+							{
+								"Convincing Ajax that it is not always necessary to use brute force... this would be such an achievement. Definitely a hard task though. ...",
+								"Listen, I simply have to ask, maybe a stranger can influence him better than I can. Would you help me with my brother?"
+							}, cid)
 			talkState[talkUser] = 1
 		end
 	elseif(msgcontains(msg, "fist")) then
@@ -39,8 +41,11 @@ function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "person")) then
 		if(talkState[talkUser] == 3) then
-			npcHandler:say("This... person... makes me want to... say something bad... must... control myself. <sweats> I really don't know what to do anymore....", cid)
-			npcHandler:say("I wonder if Ajax has an idea. Could you ask him about Gelagos?", cid)
+			npcHandler:say(
+							{
+								"This... person... makes me want to... say something bad... must... control myself. <sweats> I really don't know what to do anymore....",
+								"I wonder if Ajax has an idea. Could you ask him about Gelagos?"
+							}, cid)
 			talkState[talkUser] = 4
 		end
 	elseif(msgcontains(msg, "fighting spirit")) then
@@ -69,12 +74,15 @@ function creatureSayCallback(cid, type, msg)
 		end	
 	elseif(msgcontains(msg, "yes")) then
 		if(talkState[talkUser] == 1) then
-			npcHandler:say("Really! That is such an incredibly nice offer! I already have a plan. You have to teach him that sometimes words are stronger than fists. ...", cid)
-			npcHandler:say("Maybe you can provoke him with something to get angry, like saying... 'MINE!' or something. But beware, I'm sure that he will try to hit you. ...", cid)
-			npcHandler:say("Don't do this if you feel weak or ill. He will probably want to make you leave by using violence, but just stay strong and refuse to give up. ...", cid)
-			npcHandler:say("If he should ask what else is necessary to make you leave, tell him to 'say please'. Afterwards, do leave and return to him one hour later. ...", cid)
-			npcHandler:say("This way he might learn that violence doesn't always help, but that a friendly word might just do the trick. ...", cid)
-			npcHandler:say("Have you understood everything I told you and are really willing to take this risk?", cid)
+			npcHandler:say(
+							{
+								"Really! That is such an incredibly nice offer! I already have a plan. You have to teach him that sometimes words are stronger than fists. ...",
+								"Maybe you can provoke him with something to get angry, like saying... 'MINE!' or something. But beware, I'm sure that he will try to hit you. ...",
+								"Don't do this if you feel weak or ill. He will probably want to make you leave by using violence, but just stay strong and refuse to give up. ...",
+								"If he should ask what else is necessary to make you leave, tell him to 'say please'. Afterwards, do leave and return to him one hour later. ...",
+								"This way he might learn that violence doesn't always help, but that a friendly word might just do the trick. ...",
+								"Have you understood everything I told you and are really willing to take this risk?"
+							}, cid)
 			talkState[talkUser] = 2
 		elseif(talkState[talkUser] == 2) then
 			npcHandler:say("You are indeed not only well educated, but also very courageous. I wish you good luck, you are my last hope.", cid)
@@ -85,15 +93,21 @@ function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(1000, 4)
 			talkState[talkUser] = 0
 		elseif(getPlayerStorageValue(cid, 1000) == 6) then
-			npcHandler:say("I'm impressed... I am sure this was Ajax' idea. I would love to give him a present, but if I leave my hut to gather ingredients, hewill surely notice. ...", cid)
-			npcHandler:say("Would you maybe help me again, one last time, my friend? I assure you that your efforts will not be in vain.", cid)
+			npcHandler:say(
+							{
+								"I'm impressed... I am sure this was Ajax' idea. I would love to give him a present, but if I leave my hut to gather ingredients, hewill surely notice. ...",
+								"Would you maybe help me again, one last time, my friend? I assure you that your efforts will not be in vain."
+							}, cid)
 			talkState[talkUser] = 6
 		elseif(talkState[talkUser] == 6) then
-			npcHandler:say("Great! You see, I really would love to sew a nice shirt for him. I just need a few things for that, so please listen closely: ...", cid)
-			npcHandler:say("He loves green and red, so I will need about 50 pieces of red cloth - like the material heroes make their capes of - and 50 piecesof the green cloth Djinns like. ...", cid)
-			npcHandler:say("Secondly, I need about 10 rolls of spider silk yarn. I think mermaids can yarn silk of large spiders to create a smooth thread. ...", cid)
-			npcHandler:say("The only remaining thing needed would be a bottle of warrior's sweat to spray it over the shirt... he just loves this smell. ...", cid)
-			npcHandler:say("Have you understood everything I told you and are willing to handle this task?", cid)
+			npcHandler:say(
+							{
+								"Great! You see, I really would love to sew a nice shirt for him. I just need a few things for that, so please listen closely: ...",
+								"He loves green and red, so I will need about 50 pieces of red cloth - like the material heroes make their capes of - and 50 pieces of the green cloth Djinns like. ...",
+								"Secondly, I need about 10 rolls of spider silk yarn. I think mermaids can yarn silk of large spiders to create a smooth thread. ...",
+								"The only remaining thing needed would be a bottle of warrior's sweat to spray it over the shirt... he just loves this smell. ...",
+								"Have you understood everything I told you and are willing to handle this task?"
+							}, cid)
 			talkState[talkUser] = 7
 		elseif(talkState[talkUser] == 7) then
 			npcHandler:say("Thank you, my friend! Come back to me once you have collected 50 pieces of red cloth and 50 pieces of green cloth.", cid)
