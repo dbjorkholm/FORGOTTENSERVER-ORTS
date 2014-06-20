@@ -182,7 +182,7 @@
 	<action uniqueid="3044" script="dreamer challenge quest/brotherhoodOfBonesQuestDoor.lua"/>
 	<action fromid="7844" toid="7846" script="dreamer challenge quest/dreamerChallengeQuestDocuments.lua"/>
 	<action uniqueid="2004" script="dreamer challenge quest/dreamerChallengeQuestStoneTeleport.lua"/>
-	<action uniqueid="2772" script="dreamer challenge quest/dreamerChallengeQuestTicTac.lua"/>
+	<action uniqueid="2272" script="dreamer challenge quest/dreamerChallengeQuestTicTac.lua"/>
 	<action uniqueid="2003" script="dreamer challenge quest/dreamerChallengeQuestTicTacTeleport.lua"/>
 	<action fromuid="2246" touid="2249" script="dreamer challenge quest/dreamerChallengeQuestWalls.lua"/>
 	<action fromuid="3041" touid="3043" script="dreamer challenge quest/nightmareKnightQuestDocumentsLever.lua"/>
