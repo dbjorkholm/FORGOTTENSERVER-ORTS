@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Bruno" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="94" body="66" legs="114" feet="95" addons="0" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="fish,2667,5" />
-  </parameters>
+<npc name="Bruno" script="Bruno.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="128" head="94" body="66" legs="114" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="fish,2667,5" />
+		<parameter key="message_sendtrade" value="Buy all the fish you want. It's fresh and healthy, promised." />
+		<parameter key="message_farewell" value="Good bye and come again!" />
+	</parameters>
 </npc>
