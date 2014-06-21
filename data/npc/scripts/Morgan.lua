@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay('Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?', cid)
 		npcHandler.topic[cid] = 2
 	elseif (msgcontains(msg, 'warrior\'s sword') or msgcontains(msg, 'warriors sword')) then
-		if npcHandler.topic[cid] == 2 and getPlayerStorageValue(cid, Storage.OutfitQuest.WarriorSwordAddon) < 1 then 
+		if npcHandler.topic[cid] == 2 and player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) < 1 then 
 			selfSay('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 4  and player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) < 1 then
