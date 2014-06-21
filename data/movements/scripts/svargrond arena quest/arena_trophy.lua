@@ -1,5 +1,3 @@
-dofile('data/lib/SvargrondArenaQuest.lua')
-
 function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
 	if (isPlayer(cid)) then
 		local arena = getPlayerStorageValue(cid, STORAGE_ARENA) - 1

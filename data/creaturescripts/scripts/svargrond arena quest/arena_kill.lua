@@ -1,5 +1,3 @@
-dofile('data/lib/SvargrondArenaQuest.lua')
-
 function onKill(cid, target)
 	local player = Player(cid)
 	local pit = player:getStorageValue(STORAGE_PIT)

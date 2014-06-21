@@ -1,5 +1,3 @@
-dofile('data/lib/SvargrondArenaQuest.lua')
-
 local kick_time = 600
 
 local function Kick(cid)

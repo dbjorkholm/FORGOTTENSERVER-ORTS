@@ -1,4 +1,3 @@
-dofile('data/lib/demonOakQuest.lua')
 local start_storage = 1013
 local demon_stor = 1015
 
