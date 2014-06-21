@@ -1,5 +1,3 @@
-dofile('data/lib/killingInTheNameOfQuest.lua')
---dofile('data/lib/StorageList.lua')
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)

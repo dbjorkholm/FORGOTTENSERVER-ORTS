@@ -1,4 +1,3 @@
-dofile('data/lib/MissionSelect.lua')
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3019) then
 		if(getPlayerStorageValue(cid, Rashid.MissionStart + 1) >= 3) then

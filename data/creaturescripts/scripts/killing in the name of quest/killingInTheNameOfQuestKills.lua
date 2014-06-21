@@ -1,5 +1,3 @@
-dofile('data/lib/killingInTheNameOfQuest.lua')
-
 function onKill(cid, target, lastHit)
 	local started = getPlayerStartedTasks(cid)
 	if isPlayer(target) or isSummon(target) then return true end
