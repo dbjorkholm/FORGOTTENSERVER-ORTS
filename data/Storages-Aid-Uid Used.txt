@@ -13,11 +13,14 @@ Druid Outfits (Bear Fur):		12013
 Druid Outfits (Bear Paws):		12014
 hunter outfit quest storage:	12050-12055
 Knight Outfits storage:			12060
+Knight Sword storage:			12061
 mage/summoner addon (wand):		12062
 mage/summoner addon (tiara/cloak): 	12063
 mage/summoner addon (Fluid Belt):	12064
 Norseman Outfits Quest:			12065
 Wizard Outfits Quest:			12066
+Warrior Shoulder Outfits:		12067
+Warrior Sword Outfits:			12068
 the ancient tombs storage:		12100-12109
 The Ape City storage:			12120-12129
 The New Frontier Quest:			12130-12150
