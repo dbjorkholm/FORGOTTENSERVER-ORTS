@@ -1,5 +1,3 @@
-dofile('data/lib/killingInTheNameOfQuest.lua')
-
 function doCheckArea(fromPos, toPos)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
