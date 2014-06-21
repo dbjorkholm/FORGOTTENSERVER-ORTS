@@ -11,7 +11,7 @@ function onThink()                         npcHandler:onThink() end
 -- OTServ event handling functions end
 
 
-function doCreatureSayWithDelay(cid,text,type,delay,e)
+local function doCreatureSayWithDelay(cid,text,type,delay,e)
    if delay<=0 then
       doCreatureSay(cid,text,type)
    else
@@ -25,7 +25,7 @@ function doCreatureSayWithDelay(cid,text,type,delay,e)
 end
 
 --returns how many msgs he have said already
-function cancelNPCTalk(events)
+local function cancelNPCTalk(events)
   local ret=1
   for aux=1,table.getn(events) do
      if events[aux].done==FALSE then
@@ -39,7 +39,7 @@ function cancelNPCTalk(events)
 end
 
 
-function doNPCTalkALot(msgs,interval)
+local function doNPCTalkALot(msgs,interval)
   local e={}
   local ret={}
   if interval==nil then interval=3000 end --3 seconds is default time between messages
@@ -52,7 +52,7 @@ function doNPCTalkALot(msgs,interval)
 end
 
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end

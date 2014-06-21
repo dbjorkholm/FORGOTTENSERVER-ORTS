@@ -4,15 +4,11 @@ NpcSystem.parseParameters(npcHandler)
 
 local Topic = {}
 
-function greetCallback(cid)
-	Topic[cid] = 0
-	return true
-end
-
 function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
 function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() 						npcHandler:onThink() end
+
 --keywordHandler:addKeyword({'uniform'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The uniforms of our guards and soldiers are of unparraleled quality of course."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Queen Eloise. It is my duty to reign over this marvellous city and the lands of the north."})
 keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We women try to bring justice and wisdom to all, even to males."})
@@ -73,7 +69,13 @@ keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'reward'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "If you want a reward, go and bring me something this silly King Tibianus wants dearly!"})
 keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "A dusgusting organisation, which could be only created by men."})
 keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
-function creatureSayCallback(cid, type, msg)
+
+local function greetCallback(cid)
+	Topic[cid] = 0
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if (msgcontains(msg, 'hail') or msgcontains(msg, 'hello') or msgcontains(msg, 'salutations')) and msgcontains(msg, 'queen') and (not npcHandler:isFocused(cid)) then
 		npcHandler:say('I greet thee, my loyal subject.', cid)
 		npcHandler:addFocus(cid)
@@ -118,4 +120,5 @@ function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

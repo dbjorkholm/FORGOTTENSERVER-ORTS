@@ -23,7 +23,7 @@ keywordHandler:addKeyword({'general'}, StdModule.say, {npcHandler = npcHandler, 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My job is to explain about the rules and to get the fee from the competitors."})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well I would rather call it an {Ultimate Challenge} than a mission."})
  
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
  
 	local s = getPlayerStorageValue(cid, STORAGE_ARENA)
 	if(not npcHandler:isFocused(cid)) then

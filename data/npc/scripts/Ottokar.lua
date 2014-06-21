@@ -7,34 +7,30 @@ function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)			npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()					npcHandler:onThink()					end
 
-item = 'You do not have the required items.'
-done = 'Here you are.'
-
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
 	
-		if msgcontains(msg, 'belongings of deceasead') or msgcontains(msg, 'medicine') then
-			if getPlayerItemCount(cid,13506) >= 1 then
-				selfSay('Did you bring me the medicine pouch?', cid)
-				talk_state = 1
-			else
-				selfSay('I need a {medicine pouch}, to give you the {belongings of deceased}. Come back when you have them.', cid)
-				talk_state = 0
-			end
-
-			elseif msgcontains(msg, 'yes') and talk_state == 1 then
-			talk_state = 0
-			if getPlayerItemCount(cid,13506) >= 1 then
-			if doPlayerRemoveItem(cid,13506, 1) == TRUE then
-							selfSay(done, cid)
-			doPlayerAddItem(cid, 13670, 1)
-			end
-			else
-				selfSay(item, cid)
-			end
-       end
+	if msgcontains(msg, 'belongings of deceasead') or msgcontains(msg, 'medicine') then
+		if getPlayerItemCount(cid,13506) >= 1 then
+			selfSay('Did you bring me the medicine pouch?', cid)
+			npcHandler.topic[cid] = 1
+		else
+			selfSay('I need a {medicine pouch}, to give you the {belongings of deceased}. Come back when you have them.', cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
+		local player = Player(cid)
+		if player:getItemCount(13506) >= 1 then
+			player:removeItem(13506, 1)
+			player:addItem(13670, 1)
+			selfSay('Here you are', cid)
+		else
+			selfSay('You do not have the required items.', cid)
+		end
+		npcHandler.topic[cid] = 0
+	end
    return true
 end
 

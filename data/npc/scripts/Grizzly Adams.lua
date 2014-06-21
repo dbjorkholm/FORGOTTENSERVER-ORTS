@@ -55,7 +55,7 @@ local grizzlyAdamsConfig = {
 							}
 
 local Topic = {}
-function greetCallback(cid)
+local function greetCallback(cid)
 	Topic[cid] = 0
 	return true
 end
@@ -75,7 +75,7 @@ local function setNewLineTable(oldTable, newTable)
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_PRIVATE and 0 or cid
 	if (msgcontains(msg, "hi") or msgcontains(msg, "hello")) and (not npcHandler:isFocused(cid)) then

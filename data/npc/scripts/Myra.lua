@@ -55,7 +55,7 @@ local config = {
 	}
 }
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local storage = Storage.OutfitQuest.MageSummonerTiaraCloakAddon
 	
