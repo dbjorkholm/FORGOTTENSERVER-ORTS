@@ -4,30 +4,43 @@
 Storage = {
 	OutfitQuest = {
 			DefaultStart = 12010, -- Is needed for each Quest to start the log
-			-- citizen -outfit Quest
+			
+				-- Citizen -outfit Quest
 			CitizenHatAddon = 12011,
 			CitizenBackpackAddon = 12012,
-			-- Druid-outfit Quest
+			
+				-- Druid-outfit Quest
 			DruidHatAddon = 12013,
 			DruidBodyAddon = 12014,
-			-- Hunter-outfit Quest
+			
+				-- Hunter-outfit Quest
 			HunterMusicSheet01 = 12050,
 			HunterMusicSheet02 = 12051,
 			HunterMusicSheet03 = 12052,
 			HunterMusicSheet04 = 12053,
 			HunterBodyAddon = 12054,
 			HunterHatAddon = 12055,
-			-- Knight-outfit Quest
+			
+				-- Knight-outfit Quest
 			KnightHatAddon = 12060,
-			-- Mage and Summoner-outfit Quest
+			KnightSwordAddon = 12061,
+			
+				-- Mage and Summoner-outfit Quest
 			MageSummonerWandAddon = 12062,
 			MageSummonerTiaraCloakAddon = 12063,
 			MageSummonerFluidBeltAddon = 12064,
-			-- Norseman-outfit Quest
+			
+				-- Norseman-outfit Quest
 			NorsemanAddon = 12065,
-			-- Pirate-outfit Quest
+			
+				-- Pirate-outfit Quest
 			PirateSabreAddon = 50002,
-			-- Wizard-outfit Quest
+
+				-- Warrior-outfit Quest
+			WarriorShoulderAddon = 12067, -- reserved for Quest
+			WarriorSwordAddon = 12068,
+			
+				-- Wizard-outfit Quest
 			WizardAddon = 12066
 				},
 	BarbarianTest = {
