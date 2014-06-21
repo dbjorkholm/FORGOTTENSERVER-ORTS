@@ -10,6 +10,7 @@ function onCastSpell(creature, var)
 		if tile then
 			creature:teleportTo(position, false)
 			position:sendMagicEffect(CONST_ME_TELEPORT)
+			return true
 		else
 			creature:sendCancelMessage(RETURNVALUE_NOTENOUGHROOM)
 		end
@@ -17,5 +18,5 @@ function onCastSpell(creature, var)
 		creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 	end
 
-	return true
+	return false
 end
