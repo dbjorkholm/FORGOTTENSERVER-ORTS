@@ -50,6 +50,7 @@
 	<action fromid="13925" toid="13926" script="addons/addons.lua"/>
 	<action fromid="18521" toid="18522" script="addons/addons.lua"/>
 	<action fromid="18518" toid="18519" script="addons/addons.lua"/>
+	<action fromid="13540" toid="13545" script="addons/afflictedoutfit.lua"/>
 
 	<!-- Ghost Ship (Plate armor quest) -->
 	<action actionid="5556" script="other/ghostship.lua"/>
