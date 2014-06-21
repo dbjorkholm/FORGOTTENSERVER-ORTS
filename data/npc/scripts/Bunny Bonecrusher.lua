@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'hail general'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Salutations, commoner " .. player:getName() .. "!"})
+keywordHandler:addKeyword({'hail general'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Salutations, commoner |PLAYERNAME|!"})
 keywordHandler:addKeyword({'how are you?'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We are in constant training and in perfect health."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the general of the queen's army. I don't have time to explain this concept to you."})
 keywordHandler:addKeyword({'bonecrusher'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our family has been serving the Carlin army since countless generations!"})
