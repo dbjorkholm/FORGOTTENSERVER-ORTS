@@ -1,4 +1,3 @@
-
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -26,7 +25,7 @@ end
 return itemsList
 end
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	local player = Player(cid)
 	if(player:getStorageValue(Storage.TheApeCity.Questline) <= 14) then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello! Did not notice!")
@@ -36,7 +35,7 @@ function greetCallback(cid)
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false

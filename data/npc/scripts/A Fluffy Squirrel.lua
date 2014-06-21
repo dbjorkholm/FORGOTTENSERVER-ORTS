@@ -6,15 +6,12 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-local random_texts = {
-	'Chchch.'
-}
-rnd_sounds = 0
+local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
 		if(math.random(1, 100) < 25) then
-			selfSay(random_texts[math.random(1, #random_texts)])
+			selfSay('Chchch.')
 		end
 	end
 	npcHandler:onThink()

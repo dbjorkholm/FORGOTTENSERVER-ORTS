@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(1000) == 6 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh no! Was that really me? This is so embarassing, I have no idea what has gotten into me. Was that the fighting spirit you gave me?")
@@ -17,7 +17,7 @@ end
 
 keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end

@@ -39,7 +39,7 @@ keywordHandler:addKeyword({'buy'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'have'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you the holy tible for a small fee."})
 keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Now, it is "..getTibianTime().."."})
  
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
    	if (not npcHandler:isFocused(cid)) then 
 		return false 
@@ -97,7 +97,6 @@ function creatureSayCallback(cid, type, msg)
     	end
 	return true
 end
- 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

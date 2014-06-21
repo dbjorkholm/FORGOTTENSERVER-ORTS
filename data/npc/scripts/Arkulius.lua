@@ -16,13 +16,13 @@ function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() 						npcHandler:onThink() end
  
-function greetCallback(cid)
+local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, greetMsg[math.random(#greetMsg)])
 	Topic[cid] = 0
 	return true
 end
  
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	elseif msgcontains(msg, "job") then

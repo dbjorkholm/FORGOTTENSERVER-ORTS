@@ -8,7 +8,7 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -23,13 +23,12 @@ function creatureSayCallback(cid, type, msg)
 			player:addItem(4839, 1)	
 			player:setStorageValue(Storage.TheApeCity.Questline, 6)
 			player:setStorageValue(Storage.TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
-			npcHandler.topic[cid] = 0
 		else
 			npcHandler:say("You don't have enough money.", cid)
-			npcHandler.topic[cid] = 0
 		end
+		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "no") then
-		if npcHandler.topic[cid] > 1 then
+		if npcHandler.topic[cid] >= 1 then
 			npcHandler:say("Then no.", cid)
 			npcHandler.topic[cid] = 0
 		end

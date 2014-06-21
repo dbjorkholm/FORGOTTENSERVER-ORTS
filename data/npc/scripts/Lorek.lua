@@ -30,7 +30,7 @@ local darama = {x=32987, y=32729, z=7}
 local chor = {x=32968, y=32799, z=7}
 local banuta = {x=32826, y=32631, z=7}
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if(not(npcHandler:isFocused(cid))) then
 		return false
 	end

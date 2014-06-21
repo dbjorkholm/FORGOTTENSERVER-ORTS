@@ -37,9 +37,9 @@ local list =
 return list
 end
 
-function creatureSayCallback(cid, type, msg)
-local player = Player(cid)
-local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+local function creatureSayCallback(cid, type, msg)
+	local player = Player(cid)
+	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	if(msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
 		npcHandler:addFocus(cid)
 		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", player)

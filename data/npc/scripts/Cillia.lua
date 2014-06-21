@@ -10,7 +10,7 @@ function onThink() npcHandler:onThink() end
 local ticketPrice = 50
 local exhibitionPosition = Position(32390, 32195, 8)
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end

@@ -15,7 +15,8 @@ local random_texts = {
 	'Get a locksmith and free me or you will regret it, you foolish pirates!',
 	'I am not a princess, I am an actor!'
 }
-rnd_sounds = 0
+
+local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
@@ -35,12 +36,12 @@ keywordHandler:addKeyword({'cell'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "How dare you? I left to rot in this dirty cell and you have nothing better to do than chit chat?"})
 keywordHandler:addKeyword({'rot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "YOU .. YOU .. You are as good as dead! I will get you! Do you hear me? I will have your head! On a platter!"})
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, "GET ME OUT OF HERE! NOW!")
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "pirate") then

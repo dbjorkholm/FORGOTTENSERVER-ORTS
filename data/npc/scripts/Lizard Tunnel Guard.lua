@@ -7,7 +7,7 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(1060) >= 2 then
 		player:setStorageValue(1062, 1)

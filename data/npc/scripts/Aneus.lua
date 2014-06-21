@@ -12,7 +12,7 @@ keywordHandler:addKeyword({'orcs'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'cruelty'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The soldiers treated the workers like slaves."})
 keywordHandler:addKeyword({'island'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The General of the Red Legion became very angry about these attacks and after some months he STROKE back!"})
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "story") then
