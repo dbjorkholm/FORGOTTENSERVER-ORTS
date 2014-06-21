@@ -13,15 +13,15 @@ function onThink() npcHandler:onThink() end
 local thinkDelay = 0
 local thinkFrequency = 60
 
-function thinkCallback()
+local function thinkCallback()
 	if ((os.time() - thinkDelay) >= thinkFrequency) then
 		thinkDelay = os.time()
-		doCreatureSay(getNpcCid(), "Hey there, up for a chat?", 1)
+		Npc():say("Hey there, up for a chat?", TALKTYPE_SAY)
 	end
 	return true
 end
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	if Sex == 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|, your hair looks great! Who did it for you?")
 		Topic[cid] = 1
@@ -33,7 +33,7 @@ function greetCallback(cid)
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif Topic[cid] == 1 then

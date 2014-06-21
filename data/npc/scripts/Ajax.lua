@@ -3,20 +3,12 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
  
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)			
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)			
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)		
-end
-function onThink()
-	npcHandler:onThink()					
-end
+function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() npcHandler:onThink() end
 
-function greetCallback(cid)
+local function greetCallback(cid)
 	if(getPlayerStorageValue(cid, 1000) == 1 or getPlayerStorageValue(cid, 1000) > 3) then	
 		npcHandler:setMessage(MESSAGE_GREET, "Whatcha do in my place?")
 	elseif(getPlayerStorageValue(cid, 1000) == 2 and getPlayerStorageValue(cid, 1001) < os.time()) then	
@@ -26,7 +18,7 @@ function greetCallback(cid)
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end

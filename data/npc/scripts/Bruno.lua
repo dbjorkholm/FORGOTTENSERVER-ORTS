@@ -15,8 +15,8 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'marlene'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah yes, my lovely wife. God forgive her, but she can't stop talking. So my work is a great rest for my poor ears. *laughs loudly*"})
 keywordHandler:addKeyword({'graubart'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I like this old salt. I learned much from him. Whatever. You like some fish? *grin*"})
 
-function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Ahoi, " .. player:getName() .. ". You want to buy some fresh fish?")
+local function greetCallback(cid)
+	npcHandler:setMessage(MESSAGE_GREET, "Ahoi, " .. Player(cid):getName() .. ". You want to buy some fresh fish?")
 	return true
 end
 

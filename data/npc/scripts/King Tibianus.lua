@@ -8,7 +8,7 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if (msgcontains(msg, "hail") or msgcontains(msg, "salutations") or msgcontains(msg, "king")) and (not npcHandler:isFocused(cid)) then
                 npcHandler:say("I greet thee, my loyal subject "..getCreatureName(cid)..".", cid)

@@ -10,7 +10,8 @@ local random_texts = {
 	'Can I finally have some peace...?',
 	'Please leave me alone in my mourning.'
 }
-rnd_sounds = 0
+
+local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
@@ -32,12 +33,12 @@ keywordHandler:addKeyword({'venore'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'ab\'dendriel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city of the elves is an exotic wonder."})
 keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city is like the dwarfs that built it. Stony, never-changing and hard to understand for an outsider."})
 
-function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Hello, " .. player:getName() .. ". Please leave me alone in my {mourning}.")
+local function greetCallback(cid)
+	npcHandler:setMessage(MESSAGE_GREET, "Hello, " .. Player(cid):getName() .. ". Please leave me alone in my {mourning}.")
 	return true
 end
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "winfred") then

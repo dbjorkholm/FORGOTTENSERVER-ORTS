@@ -104,7 +104,7 @@ local function setNewTradeTable(table)
 end
 		
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)
 	
