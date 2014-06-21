@@ -37,7 +37,7 @@ Storage = {
 			PirateSabreAddon = 50002,
 
 				-- Warrior-outfit Quest
-			WarriorShoulderAddon = 12067, -- reserved for Quest
+			WarriorShoulderAddon = 12067,
 			WarriorSwordAddon = 12068,
 			
 				-- Wizard-outfit Quest

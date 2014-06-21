@@ -396,6 +396,14 @@
 			<missionstate id="2" description="Bring Hjaern 10 frostheart shards to get the second Addon. Ask him for shard!"/>
 			<missionstate id="3" description="You got the Outfit Addons! You can trade the rest shards to Hjaern for 2000 gold each!"/>
 		</mission>
+		<mission name="Warrior Outfit Quest" storageid="12067" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Bring Trisha in Carlin 100 Hardened Bones"/>
+			<missionstate id="2" description="Bring Trisha in Carlin 100 Turtle Shells"/>
+			<missionstate id="3" description="Bring Trisha in Carlin 1 Spirit Container"/>
+			<missionstate id="4" description="Bring Trisha in Carlin 1 Dragon Claw"/>
+			<missionstate id="5" description="Go ask Cornelia in Carlin to adorn your armour."/>
+			<missionstate id="6" description="You got the Outfit!"/>
+		</mission>
 		<mission name="Wizard Outfits Quest" storageid="12066" startvalue="1" endvalue="7">
 			<missionstate id="1" description="Bring Lugri the Medusa shield!"/>
 			<missionstate id="2" description="Bring Lugri the Dragon Scale Mail!"/>
