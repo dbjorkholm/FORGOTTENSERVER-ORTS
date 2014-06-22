@@ -91,18 +91,6 @@ local function creatureSayCallback(cid, type, msg)
 		setPlayerStorageValue(cid, storageMain, 1)
 		npcHandler:say("Good, don't waste time! Come back here when you have the elemental object!", cid)
 		Topic[cid] = 0
-	elseif msgcontains(msg, "trade") and getPlayerStorageValue(cid, storageMain) == 3 then
-		local items = {{name="neutral matter", id=8310, sell=5000, subType = 1}}
-		openShopWindow(cid, items,
-			function(cid, itemid, subType, amount, ignoreCap, inBackpacks)
-				customCallbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks, items)
-			end,
-			function(cid, itemid, subType, amount, ignoreCap, inBackpacks)
-				customCallbackOnSell(cid, itemid, subType, amount, ignoreCap, inBackpacks, items)
-			end
-		)
-		npcHandler:say("I only buy neutral matter. You'll get 5,000 gold for each.", cid)
-		Topic[cid] = 0
 	end
 	return TRUE
 end
