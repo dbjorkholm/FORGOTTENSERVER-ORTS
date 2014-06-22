@@ -181,5 +181,15 @@ Storage = {
 		MatrixState = 12269,
 		SideDecision = 12270,
 		MatrixReward = 12271
+	},
+	ChildrenoftheRevolution = {
+		Questline = 12300, -- Storage through the Quest
+		Mission00 = 12301, -- Prove Your Worzz!
+		Mission01 = 12302,
+		Mission02 = 12303,
+		Mission03 = 12304,
+		Mission04 = 12305,
+		Mission05 = 12306,
+		Mission06 = 12300
 	}
 }
