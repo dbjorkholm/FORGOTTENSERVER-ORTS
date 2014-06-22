@@ -14,7 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		local looktype = player:getSex() == 0 and v.female or v.male
 		if not player:hasOutfit(looktype, v.addon) then 
 			if player:removeItem(v.itemid, 1) then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've received the " .. v.msg .. " addon!")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received the " .. v.msg .. " addon!")
 				player:addOutfitAddon(looktype, v.addon)
 				player:addOutfitAddon(looktype == v.female and v.male or v.female, v.addon)
 				player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
@@ -22,7 +22,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have the required item!")
 			end
 		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've already obtained this addon!")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained this addon!")
 		end
 	end
 	return true
