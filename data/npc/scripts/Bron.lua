@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(1000) == 6 then
+	if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 6 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh no! Was that really me? This is so embarassing, I have no idea what has gotten into me. Was that the fighting spirit you gave me?")
 	end
 	return true
@@ -23,8 +23,8 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if(msgcontains(msg, "recruitment")) then
-		if player:getStorageValue(1000) < 1 then
+	if isInArray({"recruitment", "violence", "outfit", "addon"}, msg) then
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) < 1 then
 			npcHandler:say(
 							{
 								"Convincing Ajax that it is not always necessary to use brute force... this would be such an achievement. Definitely a hard task though. ...",
@@ -33,8 +33,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "fist")) then
-		if player:getStorageValue(1000) == 3 then
-			npcHandler:say("Oh! He really said that? I am so proud of you, " .. player:getName() .. ". These are really good news. Everything would be great... if only there wasn't this person near my house.", cid)
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 3 then
+			npcHandler:say("Oh! He really said that? I am so proud of you, " .. player:getName() .. ". These are really good news. Everything would be great... if only there wasn't this {person} near my house.", cid)
 			npcHandler.topic[cid] = 3
 		end
 	elseif(msgcontains(msg, "person")) then
@@ -47,26 +47,26 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 4
 		end
 	elseif(msgcontains(msg, "fighting spirit")) then
-		if player:getStorageValue(1000) == 5 then
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 5 then
 			if player:getItemCount(5884) >= 1 then
 				player:removeItem(5884, 1)
-				player:setStorageValue(1000, 6)
+				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 6)
 				npcHandler:say("Fighting spirit? What am I supposed to do with this fi... - oh! I feel strange... ME MIGHTY! ME WILL CHASE OFF ANNOYING KIDS!GROOOAARR!! RRRRRRRRRRRRAAAAAAAGE!!", cid)
 				npcHandler.topic[cid] = 0
 			end	
 		end
 	elseif(msgcontains(msg, "cloth")) then
-		if player:getStorageValue(1000) == 7 then
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 7 then
 			npcHandler:say("Have you really managed to fulfil the task and brought me 50 pieces of red cloth and 50 pieces of green cloth?", cid)
 			npcHandler.topic[cid] = 8
 		end	
 	elseif(msgcontains(msg, "silk")) then
-		if player:getStorageValue(1000) == 8 then
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 8 then
 			npcHandler:say("Oh, did you bring 10 rolls of spider silk yarn for me?", cid)
 			npcHandler.topic[cid] = 9
 		end
 	elseif(msgcontains(msg, "sweat")) then
-		if player:getStorageValue(1000) == 9 then
+		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 9 then
 			npcHandler:say("Were you able to get hold of a flask with pure warrior's sweat?", cid)
 			npcHandler.topic[cid] = 10
 		end	
@@ -84,13 +84,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif(npcHandler.topic[cid] == 2) then
 			npcHandler:say("You are indeed not only well educated, but also very courageous. I wish you good luck, you are my last hope.", cid)
-			player:setStorageValue(1000, 1)
+			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 1)
+			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 4) then
 			npcHandler:say("Again, I have to thank you for your selfless offer to help me. I hope that Ajax can come up with something, now that he has experienced the power of words.", cid)
-			player:setStorageValue(1000, 4)
+			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 4)
 			npcHandler.topic[cid] = 0
-		elseif(getPlayerStorageValue(cid, 1000) == 6) then
+		elseif(player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 6 and npcHandler.topic[cid] == 0) then
 			npcHandler:say(
 							{
 								"I'm impressed... I am sure this was Ajax' idea. I would love to give him a present, but if I leave my hut to gather ingredients, hewill surely notice. ...",
@@ -109,35 +110,36 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 7
 		elseif(npcHandler.topic[cid] == 7) then
 			npcHandler:say("Thank you, my friend! Come back to me once you have collected 50 pieces of red cloth and 50 pieces of green cloth.", cid)
-			player:setStorageValue(1000, 7)
+			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 7)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 8) then
 			if player:getItemCount(5910) >= 50 and player:getItemCount(5911) >= 50 then
 				npcHandler:say("Terrific! I will start to trim it while you gather 10 rolls of spider silk. I'm sure that Ajax will love it.", cid)
 				player:removeItem(5910, 50)
 				player:removeItem(5911, 50)
-				player:setStorageValue(1000, 8)
+				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 8)
 				npcHandler.topic[cid] = 0	
 			end
 		elseif(npcHandler.topic[cid] == 9) then
 			if player:getItemCount(5886) >= 10 then
 				npcHandler:say("I'm impressed! You really managed to get spider silk yarn for me! I will immediately start to work on this shirt. Please don't forget to bring me warrior's sweat!", cid)
 				player:removeItem(5886, 10)
-				player:setStorageValue(1000, 9)
+				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 9)
 				npcHandler.topic[cid] = 0	
 			end
-		elseif(npcHandler.topic[cid] == 9) then
+		elseif(npcHandler.topic[cid] == 10) then
 			if player:getItemCount(5885) >= 1 then
 				npcHandler:say("Good work, " .. player:getName() .. "! Now I can finally finish this present for Ajax. Because you were such a great help, I have also a present for you. Will you accept it?", cid)
 				player:removeItem(5885, 1)
-				player:setStorageValue(1000, 10)
+				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 10)
 				npcHandler.topic[cid] = 0
 			end
-		elseif player:getStorageValue(1000) == 10 then
+		elseif player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 10 then
 			npcHandler:say("I have kept this traditional barbarian wig safe for many years now. It is now yours! I hope you will wear it proudly, friend.", cid)
-			player:setStorageValue(1000, 11)
+			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 11)
 			player:addOutfitAddon(147, 1)
 			player:addOutfitAddon(143, 1)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			npcHandler.topic[cid] = 0	
 		end
 	end

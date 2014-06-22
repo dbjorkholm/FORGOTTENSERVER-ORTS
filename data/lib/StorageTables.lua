@@ -5,13 +5,17 @@ Storage = {
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 		
-		-- Citizen -outfit Quest
+		-- Citizen-outfit Quest
 		CitizenHatAddon = 12011,
 		CitizenBackpackAddon = 12012,
 		
 		-- Druid-outfit Quest
 		DruidHatAddon = 12013,
 		DruidBodyAddon = 12014,
+
+		-- Barbarian-outfit Quest
+		BarbarianAddon = 12015,
+		BarbarianAddonWaitTimer = 12016,
 		
 		-- Hunter-outfit Quest
 		HunterMusicSheet01 = 12050,

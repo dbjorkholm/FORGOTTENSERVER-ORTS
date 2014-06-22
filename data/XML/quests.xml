@@ -339,6 +339,25 @@
 			<missionstate id="1" description="Bring Lubo in northeast of Thais 100 minotaur leather to get the Backpack"/>
 			<missionstate id="2" description="You got the Outfit!"/>
 		</mission>
+		<mission name="Barbarian Outfit Quest" storageid="12015" startvalue="1" endvalue="17">
+			<missionstate id="1" description="Bron told you that his brother Ajax in Northport needs to learn that violence is not always the answer. He told you to make his brother angry, then show him that all he needed to do was say 'please' to fix the situation."/>
+			<missionstate id="2" description="You will need to leave Ajax alone for an hour, then return to him."/>
+			<missionstate id="3" description="Ajax told you that he has thought about it, and that violence is not always good. Return to Bron now, and tell him that Ajax said fist not always good"/>
+			<missionstate id="4" description="Bron mentioned that he has someone in his house that he doesn't like, and he wants you to get advice from Ajax about how to handle the situation. Go back to Ajax and ask him about Gelagos"/>
+			<missionstate id="5" description="Ajax told you his brother needs Fighting Spirit, and that you should get some from a Djinn and give it to him."/>
+			<missionstate id="6" description="You brought Bron the Fighting Spirit. He acted a little strange."/>
+			<missionstate id="7" description="In order to make a shirt as a present for Ajax, Bron wants you to bring him 50 Pieces of Red Cloth and 50 Pieces of Green Cloth."/>
+			<missionstate id="8" description="Bron wants you to bring him 10 Spider Silk Yarn."/>
+			<missionstate id="9" description="Bron wants you to bring him the Warrior's Sweat."/>
+			<missionstate id="10" description="You brought him all required items! accept it!"/>
+			<missionstate id="11" description="You got the Barbarian Wig Addon! Bring now the present from Bron to Ajax!"/>
+			<missionstate id="12" description="Bring Ajax in Northport 100 Iron Ore."/>
+			<missionstate id="13" description="Bring Ajax 1 Huge Chunk of Crude Iron."/>
+			<missionstate id="14" description="Bring Ajax 50 Perfect Behemoth Fang"/>
+			<missionstate id="15" description="Bring Ajax 50 Lizard Leather"/>
+			<missionstate id="16" description="Come later in 2 hours and ask Ajax for the axe."/>
+			<missionstate id="17" description="You got the Axe Addon!"/>
+		</mission>
 		<mission name="Druid Outfit Quest" storageid="12013" startvalue="1" endvalue="10">
 			<missionstate id="1" description="Ceiron sends you to collect a sample of the blooming Griffinclaw."/>
 			<missionstate id="2" description="Ask Ceiron for task."/>
