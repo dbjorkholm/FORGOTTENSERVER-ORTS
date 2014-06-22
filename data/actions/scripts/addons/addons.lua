@@ -1,28 +1,44 @@
-local t = {
-	[13925] = {itemid = 13925, female = 431, male = 430, addon = 1, msg = "first afflicted"},
-	[13926] = {itemid = 13926, female = 431, male = 430, addon = 2, msg = "second afflicted"},
-	[18518] = {itemid = 18518, female = 514, male = 516, addon = 1, msg = "first soil guardian"},
-	[18519] = {itemid = 18519, female = 514, male = 516, addon = 2, msg = "second soil guardian"},
-	[18521] = {itemid = 18521, female = 513, male = 512, addon = 1, msg = "first crystal warlord"},
-	[18522] = {itemid = 18522, female = 513, male = 512, addon = 2, msg = "second crystal warlord"}
+local config = {
+	[13925] = {female = 431, male = 430, addon = 1, msg = "first afflicted"},
+	[13926] = {female = 431, male = 430, addon = 2, msg = "second afflicted"},
+	[18517] = {female = 514, male = 516, msg = "soil guardian"}, -- soil guardian (base outfit)
+	[18518] = {female = 514, male = 516, addon = 1, msg = "first soil guardian"},
+	[18519] = {female = 514, male = 516, addon = 2, msg = "second soil guardian"},
+	[18520] = {female = 513, male = 512, msg = "crystal warlord"}, -- crystal warlord (base outfit)
+	[18521] = {female = 513, male = 512, addon = 1, msg = "first crystal warlord"},
+	[18522] = {female = 513, male = 512, addon = 2, msg = "second crystal warlord"}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local targetItem = config[item.itemid]
+	if not targetItem then
+		return true
+	end
+	
 	local player = Player(cid)
-	local v = t[item.itemid]
-	if v then
-		local looktype = player:getSex() == 0 and v.female or v.male
-		if not player:hasOutfit(looktype, v.addon) then 
-			if player:removeItem(v.itemid, 1) then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received the " .. v.msg .. " addon!")
-				player:addOutfitAddon(looktype, v.addon)
-				player:addOutfitAddon(looktype == v.female and v.male or v.female, v.addon)
-				player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
+	if targetItem['addon'] then
+		if player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male']) then
+			if not player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male'], targetItem['addon']) then
+				player:addOutfitAddon(targetItem['female'], targetItem['addon'])
+				player:addOutfitAddon(targetItem['male'], targetItem['addon'])
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem['msg'] .. ' addon!')
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+				Item(item.uid):remove(1)
 			else
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have the required item!")
+				player:sendCancelMessage('You have already obtained this addon!')
 			end
 		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained this addon!")
+			return false
+		end
+	else
+		if not player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male']) then
+			player:addOutfit(targetItem['female'])
+			player:addOutfit(targetItem['male'])
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem['msg'] .. ' outfit!')
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			Item(item.uid):remove(1)
+		else
+			player:sendCancelMessage('You have already obtained this outfit!')
 		end
 	end
 	return true
