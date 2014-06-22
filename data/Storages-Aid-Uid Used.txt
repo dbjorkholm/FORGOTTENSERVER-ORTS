@@ -1,18 +1,18 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50034
+Last Used Storage = 50037
 Last Used Aid = 50057
-Last Used Uid = 50034
+Last Used Uid = 50037
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
 ---/////////////////////////////////////////////////////////////----
 Default Start Outfits Quest:		12010
-citizen Outfits (Feather Hat):	12011
+citizen Outfits (Feather Hat):		12011
 citizen Outfits (Backpack):		12012
 Druid Outfits (Bear Fur):		12013
 Druid Outfits (Bear Paws):		12014
-Barbarian Outfits:				12013, 12014
-hunter outfit quest storage:	12050-12055
+Barbarian Outfits:			12013, 12014
+hunter outfit quest storage:		12050-12055
 Knight Outfits storage:			12060
 Knight Sword storage:			12061
 mage/summoner addon (wand):		12062
