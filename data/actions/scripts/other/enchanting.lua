@@ -43,7 +43,7 @@ local enchantedItems = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and player:getStorageValue(10002) > 0 then
+	if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and player:getStorageValue(10000) > 0 then
 		if not isInArray(spheres[item.itemid], player:getVocation():getId()) then
 			return false
 		elseif isInArray({7915, 7916}, itemEx.itemid) then
@@ -53,7 +53,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:setStorageValue(10002, math.max(1, player:getStorageValue(10002) + 1))
 			toPosition:sendMagicEffect(CONST_ME_PURPLEENERGY)
 			local item = Item(item.uid)
-			item:transform(item:getId(), -1)
+			item:transform(item:getId(), item:getSubType() - 1)
 			return true
 		end
 	end
