@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			for i = 13540, 13545 do
 				player:removeItem(i, 1)
 			end
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've received the Afflicted addon!")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received the Afflicted outfit!")
 			player:addOutfit(430)
 			player:addOutfit(431)
 			player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have all required items!")
 		end
 	else
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've already obtained this addon!")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained this outfit!")
 	end
 	return true
 end
