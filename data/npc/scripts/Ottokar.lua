@@ -11,9 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+	local player = Player(cid)
 	if msgcontains(msg, 'belongings of deceasead') or msgcontains(msg, 'medicine') then
-		if getPlayerItemCount(cid,13506) >= 1 then
+		if player:getItemCount(13506) >= 1 then
 			selfSay('Did you bring me the medicine pouch?', cid)
 			npcHandler.topic[cid] = 1
 		else
@@ -21,7 +21,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		local player = Player(cid)
 		if player:getItemCount(13506) >= 1 then
 			player:removeItem(13506, 1)
 			player:addItem(13670, 1)
