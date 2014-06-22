@@ -11,6 +11,7 @@ citizen Outfits (Feather Hat):	12011
 citizen Outfits (Backpack):		12012
 Druid Outfits (Bear Fur):		12013
 Druid Outfits (Bear Paws):		12014
+Barbarian Outfits:				12013, 12014
 hunter outfit quest storage:	12050-12055
 Knight Outfits storage:			12060
 Knight Sword storage:			12061
