@@ -1,3 +1,16 @@
+--[[
+************************************************************
+* Functions which not exists in TFS but useful too us.     *
+************************************************************
+--]]
+
+--Player functions
+
+function Player:isPremium( )
+	return ( self:getPremiumDays() > 0 ) or ( configManager.getBoolean( configKeys.FREE_PREMIUM ) ) 
+end
+
+
 stopMoveStorage = 100000
 
 function Player.stopMove(self, param)
