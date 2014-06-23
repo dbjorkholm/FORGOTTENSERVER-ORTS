@@ -36,7 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getStorageValue(2215) == 2 and player:getStorageValue(2217) == 1 then
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
-				npcHandler:say("Receive the base outfit, " .. player:getName() .. ".", cid)
+				npcHandler:say("Receive the shield, " .. player:getName() .. ".", cid)
 				player:setStorageValue(2217, 2)
 				npcHandler.topic[cid] = 0
 			end
