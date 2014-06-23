@@ -5,7 +5,21 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+
+local rnd_sounds = 0
+function onThink()
+	if(rnd_sounds < os.time()) then
+		rnd_sounds = (os.time() + 5)
+		if(math.random(1, 100) < 25) then
+			Npc():say("Quality armors for sale!", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
+
+keywordHandler:addKeyword({'armor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm selling leather armor, chain armor, and brass armor. Ask me for a {trade} if you like to take a look."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I run this armoury. If you want to protect your life, you better buy my wares."})
+
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
@@ -25,4 +39,6 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Welcome to the finest {armor} shop in the land, |PLAYERNAME|!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye. Come back soon.")
 npcHandler:addModule(FocusModule:new())

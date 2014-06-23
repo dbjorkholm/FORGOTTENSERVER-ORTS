@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Barbara" script="default.lua" walkinterval="0" floorchange="0">
+<npc name="Barbara" script="Barbara.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
 	<look type="139" head="78" body="52" legs="100" feet="115" addons="0" />
-	<parameters>
-		<parameter key="message_greet" value="MIND YOUR MANNERS COMMONER! Address the queen with her title!"/>
-		<parameter key="message_farewell" value="LONG LIVE THE QUEEN!"/>
-		<parameter key="message_walkaway" value="LONG LIVE THE QUEEN!"/>
-	</parameters>
 </npc>
