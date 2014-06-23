@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Fenbala" script="default.lua" walkinterval="0" floorchange="0">
-  <health now="100" max="100" />
-  <look type="139" head="77" body="90" legs="63" feet="115" addons="0" />
-<parameters>
-        <parameter key="message_greet" value="MIND YOUR MANNERS COMMONER! To address the queen greet with her title!"/>
-        <parameter key="message_farewell" value="LONG LIVE THE QUEEN!"/>
-		<parameter key="message_walkaway" value="LONG LIVE THE QUEEN!"/>
-	</parameters>
+<npc name="Fenbala" script="Fenbala.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100" />
+	<look type="139" head="77" body="71" legs="100" feet="115" addons="0" />
 </npc>
