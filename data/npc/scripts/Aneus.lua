@@ -59,5 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Greetings adventurer |PLAYERNAME|. What leads you to me?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye and take care of you!")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
