@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 
-	if msgcontains(msg, "heal") then
+	if isInArray({"heal", "help"}, msg) then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
 			for i = 1, #conditions do
@@ -24,10 +24,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
 		else
-			npcHandler:say("You aren't looking that bad. Sorry, I can't help you.", cid)
+			npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes.", cid)
 		end
-	elseif msgcontains(msg, "help") then
-		npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes.", cid)
 	elseif msgcontains(msg, "pilgrimage") then
 		npcHandler:say("I am here to provide one of the five {blessings}.", cid)
 	elseif msgcontains(msg, "blessings") then
