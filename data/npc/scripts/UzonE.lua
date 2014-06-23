@@ -1,12 +1,12 @@
 local keywordHandler = KeywordHandler:new()
-local npcHandler = NpcHandler:new(keywordHandler)
+local npcHandler     = NpcHandler:new(keywordHandler)
+
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+
+function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)         end
+function onCreatureDisappear(cid)      npcHandler:onCreatureDisappear(cid)      end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onThink()                     npcHandler:onThink()                     end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am known as Uzon Ibn Kalith."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a licensed Darashian carpetpilot. I can bring you to Darashia or Edron."})
@@ -24,30 +24,34 @@ keywordHandler:addKeyword({'flying'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'fly'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I transport travellers to the continent of Darama for a small fee. So many want to see the wonders of the desert and learn the secrets of Darama."})
 keywordHandler:addKeyword({'new'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I heard too many news to recall them all."})
 keywordHandler:addKeyword({'rumors'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I heard too many news to recall them all."})
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
- 
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
+keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
+keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
+keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
+
+
+ --************************************************************INQUISITION!************************************************************************************************************
+
 local function creatureSayCallback(cid, type, msg)
-	if (not npcHandler:isFocused(cid)) then
-		return false
-    	end
-   	
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-		
+	local player = Player( cid )
+
 	if (msgcontains(msg, 'back') or msgcontains(msg, 'eclipse') or msgcontains(msg, 'leave')) then
 		npcHandler:say('Oh no, so the time has come? Do you really want me to fly you to this unholy place?', cid)
-		talkState[talkUser] = 1
+		npcHandler.topic[cid] = 1
+		
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then	
-		   	doTeleportThing(cid,{x=32535, y=31837, z=4})
-			doSendMagicEffect({x=32535, y=31837, z=4},CONST_ME_TELEPORT)
+		if(npcHandler.topic[cid] == 1) then	
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo({x=32535, y=31837, z=4})
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)				
 			npcHandler:say('So be it!', cid)
-			talkState[talkUser] = 0
 		end
 	end
+	
 	return true
 end	
+
+ --***********************************************************Modules and Callbacks*******************************************************************************************************
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

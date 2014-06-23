@@ -1,31 +1,40 @@
 local keywordHandler = KeywordHandler:new()
-local npcHandler = NpcHandler:new(keywordHandler)
+local keywordHandler = KeywordHandler:new()
+local npcHandler     = NpcHandler:new(keywordHandler)
+
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
+
+function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)         end
+function onCreatureDisappear(cid)      npcHandler:onCreatureDisappear(cid)      end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onThink()                     npcHandler:onThink()                     end
+    
+--************************************************************Travel************************************************************************************************************
+ 
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
-		return false
-	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
+
+	local player = Player( cid )
 	
 	if(msgcontains(msg, "passage")) then
 		npcHandler:say("Do you want to go back to {Yalahar}?", cid)
-		talkState[talkUser] = 1
+		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
-			doTeleportThing(cid, {x = 32916, y = 31199, z = 7})
-			doSendMagicEffect({x = 32916, y = 31199, z = 7}, CONST_ME_TELEPORT)
-			talkState[talkUser] = 0
+		if(npcHandler.topic[cid] == 1) then
+
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo({x = 32916, y = 31199, z = 7})
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)		
+		
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
 end
+
+--***********************************************************Modules and Callbacks*******************************************************************************************************
+
+
 
 npcHandler:setMessage(MESSAGE_GREET, "Want to go back to Yalahar? Just ask me for a free {passage}.")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
