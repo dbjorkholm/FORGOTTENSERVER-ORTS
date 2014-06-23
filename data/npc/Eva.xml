@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Eva" script="bank.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="115" body="98" legs="95" feet="0" addons="0" />
+<npc name="Eva" script="Eva.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="136" head="115" body="98" legs="95" feet="0" addons="0" />
 <voices>
 <voice text="Better deposit your money in the bank where it's safe." interval2="100" margin="1" yell="no"/>
 </voices>
