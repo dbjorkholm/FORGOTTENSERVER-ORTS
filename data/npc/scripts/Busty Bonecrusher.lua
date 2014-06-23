@@ -18,4 +18,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "LONG LIVE THE QUEEN!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "LONG LIVE THE QUEEN!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "LONG LIVE THE QUEEN!")
 npcHandler:addModule(FocusModule:new())

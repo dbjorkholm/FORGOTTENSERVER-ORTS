@@ -16,7 +16,7 @@ function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
 		if(math.random(1, 100) < 20) then
-			selfSay(random_texts[math.random(1, #random_texts)])
+			Npc():say(random_texts[math.random(1, #random_texts)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -32,11 +32,6 @@ keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'venore'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My father wanted me to marry a wealthy Venorean. He understood so little about love and the ways of the heart."})
 keywordHandler:addKeyword({'ab\'dendriel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city of the elves is an exotic wonder."})
 keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city is like the dwarfs that built it. Stony, never-changing and hard to understand for an outsider."})
-
-local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Hello, " .. Player(cid):getName() .. ". Please leave me alone in my {mourning}.")
-	return true
-end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -56,6 +51,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Hello, |PLAYERNAME|. Please leave me alone in my {mourning}.")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

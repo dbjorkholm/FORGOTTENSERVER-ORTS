@@ -11,12 +11,17 @@ function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
 		if(math.random(1, 100) < 25) then
-			selfSay('Chchch.')
+			Npc():say("Chchch.", TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
 end
 
 keywordHandler:addKeyword({'acorn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Chh? Chhh?? <though you don't understand squirrelish, that one seems really excited>"})
+
+npcHandler:setMessage(MESSAGE_GREET, "Chhchh?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Chh...")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Chh...")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Chchch. Chh! <you're not sure, but it seems that squirrel wants to trade your valuable acorns for useless stones that it found and considered uneatable>")
 
 npcHandler:addModule(FocusModule:new())

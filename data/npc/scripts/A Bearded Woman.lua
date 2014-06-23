@@ -21,7 +21,7 @@ function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
 		if(math.random(1, 100) < 20) then
-			selfSay(random_texts[math.random(1, #random_texts)])
+			Npc():say(random_texts[math.random(1, #random_texts)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -35,11 +35,6 @@ keywordHandler:addKeyword({'princess'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'cell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "If you find some way to release me I might even let you live as reward! So you'd better do your best or I'll kill you!"})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "How dare you? I left to rot in this dirty cell and you have nothing better to do than chit chat?"})
 keywordHandler:addKeyword({'rot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "YOU .. YOU .. You are as good as dead! I will get you! Do you hear me? I will have your head! On a platter!"})
-
-local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "GET ME OUT OF HERE! NOW!")
-	return true
-end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -86,6 +81,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "GET ME OUT OF HERE! NOW!")
 npcHandler:addModule(FocusModule:new())
