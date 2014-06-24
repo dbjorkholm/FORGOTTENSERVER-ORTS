@@ -102,7 +102,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addCondition(condition)
 			npcHandler:releaseFocus(cid)
 			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 2)
-			player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 60 * 60) --1hour
+			player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 60 * 60) -- 1 hour
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 6) then	
 			npcHandler:say(
@@ -142,7 +142,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Ah! All stuff there. I will start making axes now. Come later and ask me for axe.", cid)
 				player:removeItem(5876, 50)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 16)
-				player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 2 * 60 * 60) -- 2hours
+				player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 2 * 60 * 60) -- 2 hours
 				npcHandler.topic[cid] = 0	
 			end
 		end
