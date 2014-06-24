@@ -20,19 +20,6 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local function isValidMoney(money)
-	return (isNumber(money) and money > 0 and money < 4294967296)
-end
-
-local function getCount(string)
-	local b, e = string:find("%d+")
-	local money = b and e and tonumber(string:sub(b, e)) or -1
-	if isValidMoney(money) then
-		return money
-	end
-	return -1
-end
-
 local function greetCallback(cid)
 	count[cid], transfer[cid], pin[cid] = nil, nil, nil
 	return true
@@ -105,7 +92,7 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		else
 			if string.match(msg,"%d+") then
-				count[cid] = getCount(msg)
+				count[cid] = getMoneyCount(msg)
 				if count[cid] < 1 then
 					selfSay("You do not have enough gold.", cid)
 					npcHandler.topic[cid] = 0
@@ -128,7 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 			return false
 		end
 	elseif npcHandler.topic[cid] == 1 then
-		count[cid] = getCount(msg)
+		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
 			selfSay("Would you really like to deposit " .. count[cid] .. " gold?", cid)
 			npcHandler.topic[cid] = 2
@@ -155,7 +142,7 @@ local function creatureSayCallback(cid, type, msg)
 ---------------------------- withdraw --------------------
 	elseif msgcontains(msg, 'withdraw') then
 		if string.match(msg,"%d+") then
-			count[cid] = getCount(msg)
+			count[cid] = getMoneyCount(msg)
 			if isValidMoney(count[cid]) then
 				selfSay("Are you sure you wish to withdraw " .. count[cid] .. " gold from your bank account?", cid)
 				npcHandler.topic[cid] = 7
@@ -170,7 +157,7 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		end
 	elseif npcHandler.topic[cid] == 6 then
-		count[cid] = getCount(msg)
+		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
 			selfSay("Are you sure you wish to withdraw " .. count[cid] .. " gold from your bank account?", cid)
 			npcHandler.topic[cid] = 7
@@ -199,7 +186,7 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay("Please tell me the amount of gold you would like to transfer.", cid)
 		npcHandler.topic[cid] = 11
 	elseif npcHandler.topic[cid] == 11 then
-		count[cid] = getCount(msg)
+		count[cid] = getMoneyCount(msg)
 		if Player(cid):getBankBalance() < count[cid] then
 			selfSay("There is not enough gold on your account.", cid)
 			npcHandler.topic[cid] = 0
@@ -244,11 +231,11 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay("How many platinum coins would you like to get?", cid)
 		npcHandler.topic[cid] = 14
 	elseif npcHandler.topic[cid] == 14 then
-		if getCount(msg) == -1 or getCount(msg) == 0 then
+		if getMoneyCount(msg) < 1 then
 			selfSay("Sorry, you do not have enough gold coins.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			count[cid] = getCount(msg)
+			count[cid] = getMoneyCount(msg)
 			selfSay("So you would like me to change " .. count[cid] * 100 .. " of your gold coins into " .. count[cid] .. " platinum coins?", cid)
 			npcHandler.topic[cid] = 15
 		end
@@ -280,11 +267,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 17 then
-		if getCount(msg) == -1 or getCount(msg) == 0 then
+		if getMoneyCount(msg) < 1 then
 			selfSay("Sorry, you do not have enough platinum coins.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			count[cid] = getCount(msg)
+			count[cid] = getMoneyCount(msg)
 			selfSay("So you would like me to change " .. count[cid] .. " of your platinum coins into " .. count[cid] * 100 .. " gold coins for you?", cid)
 			npcHandler.topic[cid] = 18
 		end
@@ -302,11 +289,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 19 then
-		if getCount(msg) == -1 or getCount(msg) == 0 then
-			selfSay("Well, can I help you with something else?", cid)
+		if getMoneyCount(msg) < 1 then
+			selfSay("Sorry, you do not have enough platinum coins.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			count[cid] = getCount(msg)
+			count[cid] = getMoneyCount(msg)
 			selfSay("So you would like me to change " .. count[cid] * 100 .. " of your platinum coins into " .. count[cid] .. " crystal coins for you?", cid)
 			npcHandler.topic[cid] = 20
 		end
@@ -327,11 +314,11 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay("How many crystal coins would you like to change into platinum?", cid)
 		npcHandler.topic[cid] = 21
 	elseif npcHandler.topic[cid] == 21 then
-		if getCount(msg) == -1 or getCount(msg) == 0 then
+		if getMoneyCount(msg) < 1 then
 			selfSay("Sorry, you do not have enough crystal coins.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			count[cid] = getCount(msg)
+			count[cid] = getMoneyCount(msg)
 			selfSay("So you would like me to change " .. count[cid] .. " of your crystal coins into " .. count[cid] * 100 .. " platinum coins for you?", cid)
 			npcHandler.topic[cid] = 22
 		end
