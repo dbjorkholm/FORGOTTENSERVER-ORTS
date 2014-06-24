@@ -28615,8 +28615,6 @@
 	<item fromid="20920" toid="20925" article="a" name="blood trickle" />
 	<item fromid="20926" toid="20931" article="a" name="sand trickle" />
 	<item fromid="20932" toid="20937" name="blood">
-		<attribute key="type" value="trashholder" />
-		<attribute key="effect" value="redspark" />
 		<attribute key="allowpickupable" value="1" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
