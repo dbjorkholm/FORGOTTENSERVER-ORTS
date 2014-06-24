@@ -21,6 +21,7 @@
 	<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
 	<movevent event="StepIn" fromaid="50025" toaid="50026" script="others/thaislighthousequest.lua" />
 	<movevent event="StepOut" actionid="50025" script="others/thaislighthousequest.lua" />
+	<movevent event="AddItem" tileitem="1" fromid="20932" toid="20937" script="others/bloodtiles.lua"/>
 
 	<!--- KillingOfTheNameOf -->
 	<movevent event="StepIn" fromuid="3230" touid="3257" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
