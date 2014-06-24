@@ -56,6 +56,19 @@ function Player.transferMoneyTo(self, target, amount)
 	return true
 end
 
+function isValidMoney(money)
+	return (isNumber(money) and money > 0 and money < 4294967296)
+end
+
+function getMoneyCount(string)
+	local b, e = string:find("%d+")
+	local money = b and e and tonumber(string:sub(b, e)) or -1
+	if isValidMoney(money) then
+		return money
+	end
+	return -1
+end
+
 function getRealTime()
 	local hours = tonumber(os.date("%H", os.time()))
 	local minutes = tonumber(os.date("%M", os.time()))
