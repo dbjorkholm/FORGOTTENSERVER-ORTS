@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Cerdras" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="144" head="20" body="132" legs="2" feet="3" addons="2" />
-  <parameters>
-    <parameter key="message_greet" value="Always nice to meet a fellow druid, |PLAYERNAME|." />
-	<parameter key="message_farewell" value="May Crunor bless and guide you, player." />
-  </parameters>
+<npc name="Cerdras" script="Cerdras.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="144" head="20" body="132" legs="41" feet="41" addons="2" />
 </npc>

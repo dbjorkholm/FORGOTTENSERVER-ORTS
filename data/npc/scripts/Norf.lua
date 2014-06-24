@@ -11,15 +11,27 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
-	if msgcontains(msg, "help") then
-		npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes.", cid)
+	local player = Player(cid)
+	local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
+
+	if isInArray({"heal", "help"}, msg) then
+		if player:getHealth() < 50 then
+			player:addHealth(50 - player:getHealth())
+			for i = 1, #conditions do
+				if player:getCondition(conditions[i], CONDITIONID_COMBAT) then
+					player:removeCondition(conditions[i], CONDITIONID_COMBAT)
+				end
+			end
+			npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
+		else
+			npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes.", cid)
+		end
 	elseif msgcontains(msg, "pilgrimage") then
 		npcHandler:say("I am here to provide one of the five {blessings}.", cid)
 	elseif msgcontains(msg, "blessings") then
 		npcHandler:say("There are five different blessings available in five sacred places. These blessings are: the {spiritual} shielding, the spark of the {phoenix}, the {embrace} of Tibia, the fire of the {suns} and the wisdom of {solitude}.", cid)
 	elseif msgcontains(msg, "spiritual") then
-		npcHandler:say("Here in the whiteflower temple you may receive the blessing of spiritual shielding. But we must ask of you to sacrifice " .. getBlessingsCost(Player(cid):getLevel()) .. " gold. Are you still interested?", cid)
+		npcHandler:say("Here in the whiteflower temple you may receive the blessing of spiritual shielding. But we must ask of you to sacrifice " .. getBlessingsCost(player:getLevel()) .. " gold. Are you still interested?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "phoenix") then
 		npcHandler:say("The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.", cid)
@@ -30,7 +42,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "solitude") then
 		npcHandler:say("Talk to the hermit Eremo on the isle of Cormaya about this blessing.", cid)
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		local player = Player(cid)
 		if not player:hasBlessing(1) then
 			if player:removeMoney(getBlessingsCost(player:getLevel())) then
 				player:addBlessing(1)
@@ -50,7 +61,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Welcome, Pilgrim. How may I {help} you? Are you in need of {healing}.")
+npcHandler:setMessage(MESSAGE_GREET, "Welcome, pilgrim. How may I {help} you? Are you in need of {healing}?")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
