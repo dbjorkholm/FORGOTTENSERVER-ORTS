@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local str = {"\nWisdom of Solitude", "\nSpark of the Phoenix", "\nFire of the Suns", "\nSpiritual Shielding", "\nEmbrace of Tibia", "\nTwist of Fate"}
+	local str = {"\nSpiritual Shielding", "\nEmbrace of Tibia", "\nFire of the Suns", "\nSpark of the Phoenix", "\nWisdom of Solitude", "\nTwist of Fate"}
 	local result = "Received blessings:"
 	local p = Player(cid)
 	for i = 1, 6 do

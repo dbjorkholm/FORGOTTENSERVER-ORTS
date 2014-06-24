@@ -41,11 +41,11 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say({"Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?"}, cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if not player:hasBlessing(5) then
+		if not player:hasBlessing(2) then
 			if player:removeMoney(getBlessingsCost(player:getLevel())) then
-				player:addBlessing(5)
+				player:addBlessing(2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler:say("So receive the Embrace of Tibia, pilgrim.", cid)
+				npcHandler:say("So receive the embrace of Tibia, pilgrim.", cid)
 			else
 				npcHandler:say("Oh. You do not have enough money.", cid)
 			end
