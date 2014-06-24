@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Eva" script="bank.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="115" body="98" legs="95" feet="0" addons="0" />
-<voices>
-<voice text="Better deposit your money in the bank where it's safe." interval2="100" margin="1" yell="no"/>
-</voices>
-<parameters>
-<parameter key="module_keywords" value="1" />
-<parameter key="keywords" value="bank;" />
- <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
-        <parameter key="message_greet" value="Welcome |PLAYERNAME|! What business do you have in the Tibian bank today?"/>
-        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+<npc name="Eva" script="Eva.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="136" head="115" body="98" legs="95" feet="0" addons="0" />
+	<parameters>
+		<parameter key="message_greet" value="Welcome |PLAYERNAME|! What business do you have in the Tibian bank today?" />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|." />
-</parameters>
+	</parameters>
 </npc>
