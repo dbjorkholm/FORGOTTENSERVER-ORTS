@@ -14,7 +14,91 @@
 		<parameter key="message_walkaway" value="Good bye." />
 		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="wooden chair,3901,15;sofa chair,3902,55;red cushioned chair,3903,40;green cushioned chair,3904,40;tusk chair,3905,25;ivory chair,3906,25;water pipe,2093,40;coal basin,3908,25;big table,3909,30;square table,3910,25;round table,3911,25;small table,3912,20;stone table,3913,30;tusk table,3914,25;chest,3915,10;barrel,3916,12;harp,3917,50;bird cage,3918,50;bamboo table,3919,25;bamboo drawer,3920,20;drawers,3921,18;exotic flowers,2107,300;god flowers,2100,5;potted flower,2104,5;honey flower,2103,5;flower bowl,2102,6;chest,3925,10;piano,3926,200;globe,3927,50;rocking chair,3928,25;indoor plant,3929,8;crate,3930,10;dresser,3932,25;pendulum clock,3933,75;locker,3934,30;trough,3935,7;table lamp,3937,35;bookcase,3938,70;box,5086,10;box,5087,10;barrel,5088,12;weapon rack,6114,90;armour rack,6115,90;tree stump,6372,10;mirror,6373,50;large trunk,7503,10;goldfish bowl,5928,50;large tree stump,7960,15;cuckoo clock,7961,40;telescope,7962,70;chimney,8692,200;blue tapestry,1872,25;green tapestry,1860,25;orange tapestry,1866,25;pink tapestry,1857,25;red tapestry,1869,25;white tapestry,1880,25;yellow tapestry,1863,25;silky tapestry,9959,80;small purple pillow,1678,20;small green pillow,1679,20;small red pillow,1680,20;small blue pillow,1681,20;small orange pillow,1682,500;small turquiose pillow,1683,20;small white pillow,1684,20;heart pillow,1685,30;blue pillow,1686,25;red pillow,1687,25;green pillow,1688,25;yellow pillow,1689,25;round blue pillow,1690,25;round red pillow,1691,25;round purple pillow,1692,25;round turquiose pillow,1693,25;oval mirror,1845,40;round mirror,1848,40;edged mirror,1851,40;green bed kit,7904,80;red bed kit,7905,80;yellow bed kit,7906,80;bed removal kit,7907,80;picture,1852,50;picture,1853,50;picture,1854,50;" />
-  </parameters>
+		<parameter key="shop_buyable" value="
+			amphora,2023,4;
+			armor rack kit,6114,90;
+			barrel kit,3919,12;
+			big table kit,3911,30;
+			birdcage kit,3922,50;
+			blue bed kit,7907,80;
+			blue pillow,1686,25;
+			blue tapestry,1872,25;
+			bookcase kit,6373,70;
+			box,1738,10;
+			chest,1740,10;
+			chimney kit,8692,200;
+			coal basin kit,3932,25;
+			crate,1739,10;
+			cuckoo clock,1877,40;
+			drawer kit,3915,18;
+			dresser kit,3916,25;
+			flower bowl,2102,6;
+			globe kit,3926,50;
+			goblin statue kit,3930,50;
+			god flowers,2100,5;
+			goldfish bowl,5928,50;
+			green bed kit,7904,80;
+			green cushioned chair kit,3902,40;
+			green pillow,1688,25;
+			green tapestry,1860,25;
+			harp kit,3934,50;
+			heart pillow,1685,30;
+			honey flower,2103,5;
+			indoor plant kit,3937,8;
+			knight statue kit,3928,50;
+			large amphora kit,3931,50;
+			locker kit,3917,30;
+			minotaur statue kit,3929,50;
+			orange tapestry,1866,25;
+			oven kit,6372,80;
+			pendulum clock kit,3927,75;
+			piano kit,3933,200;
+			picture,1852,50;
+			picture,1854,50;
+			picture,1853,50;
+			potted flower,2104,5;
+			purple tapestry,1857,25;
+			red bed kit,7906,80;
+			red cushioned chair kit,3901,40;
+			red pillow,1687,25;
+			red tapestry,1869,25;
+			rocking chair kit,3904,25;
+			rocking horse kit,3926,30;
+			round blue pillow,1690,25;
+			round purple pillow,1692,25;
+			round red pillow,1691,25;
+			round table kit,14328,25;
+			round turquoise pillow,1693,25;
+			small blue pillow,1681,20;
+			small green pillow,1679,20;
+			small orange pillow,1682,20;
+			small purple pillow,1678,20;
+			small red pillow,1680,20;
+			small table kit,3908,20;
+			small turquoise pillow,1683,20;
+			small white pillow,1684,20;
+			sofa chair kit,3905,55;
+			square table kit,14329,25;
+			table lamp kit,3924,35;
+			telescope kit,3925,70;
+			treasure chest,1746,1000;
+			trophy stand,7936,50;
+			trough kit,3918,7;
+			trunk kit,3920,10;
+			vase,2008,3;
+			venorean cabinet kit,20254,90;
+			venorean drawer kit,20257,40;
+			venorean wardrobe kit,20255,50;
+			wall mirror,1851,40;
+			wall mirror,1848,40;
+			wall mirror,1845,40;
+			water pipe,2099,40;
+			weapon rack kit,6115,90;
+			white tapestry,1880,25;
+			wooden chair kit,3903,15;
+			yellow bed kit,7905,80;
+			yellow pillow,1689,25;
+			yellow tapestry,1863,25;" />
+	</parameters>
 </npc>
 

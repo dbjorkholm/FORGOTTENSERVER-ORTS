@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Lector" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Lector" script="Lector.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="128" head="79" body="57" legs="19" feet="49" addons="0" />
-<voices>
-<voice text="If you need help with letters or parcels, just ask me. I can explain everything." interval2="100" margin="1" yell="no"/>
-</voices>
-<parameters>
-<parameter key="module_shop" value="1" />
-<parameter key="module_keywords" value="1" />
-<parameter key="keywords" value="meat;" />
- <parameter key="keyword_reply1" value="I can offer you ham or meat. If you'd like to check the quality of my wares, ask me for a {trade}." />
+	<parameters>
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="ham,2671,6;meat,2666,3;" />
-        <parameter key="message_greet" value="Welcome to my humble {meat} shop, |PLAYERNAME|."/>
-        <parameter key="message_farewell" value="Please come and buy again, |PLAYERNAME|."/>
-		<parameter key="message_walkaway" value="Please come and buy again, |PLAYERNAME|." />
-		<parameter key="message_sendtrade" value="Of course, take a good look at my meat." />
-</parameters>
+	</parameters>
 </npc>
