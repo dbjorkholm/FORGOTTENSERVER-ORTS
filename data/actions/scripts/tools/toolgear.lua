@@ -184,12 +184,31 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		end
-	elseif itemEx.itemid == 1304 and itemEx.uid == 1022 then --The Pits of Inferno Quest
-		for i = 1, #lava do
-			Game.createItem(5815, 1, lava[i])
+	elseif itemEx.itemid == 1304 then
+		if itemEx.uid == 1022 then --The Pits of Inferno Quest
+			for i = 1, #lava do
+				Game.createItem(5815, 1, lava[i])
+			end
+			targetItem:transform(2256)
+			toPosition:sendMagicEffect(CONST_ME_SMOKE)
+		elseif itemEx.actionid == 50058 then -- naginata quest
+			local stoneStorage = Game.getStorageValue(itemEx.actionid)
+			if not stoneStorage then
+				Game.setStorageValue(itemEx.actionid, 0)
+			elseif stoneStorage < 5 then
+				Game.setStorageValue(itemEx.actionid, math.max(1, stoneStorage + 1))
+			elseif stoneStorage == 5 then
+				Item(itemEx.uid):remove()
+				Game.setStorageValue(itemEx.actionid)
+			end
+			toPosition:sendMagicEffect(CONST_ME_POFF)
+			local rand = math.random(31, 39)
+			player:addHealth(-rand)
+			player:sendTextMessage(MESSAGE_EXPERIENCE, "You lose " .. rand .. " hitpoints.", player:getPosition(), rand, TEXTCOLOR_RED)
+			player:getPosition():sendMagicEffect(CONST_ME_DRAWBLOOD)
+			local blood = Game.createItem(2019, 2, player:getPosition())
+			blood:decay()
 		end
-		targetItem:transform(2256)
-		toPosition:sendMagicEffect(CONST_ME_SMOKE)
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
 		targetItem:transform(392)
 		targetItem:decay()

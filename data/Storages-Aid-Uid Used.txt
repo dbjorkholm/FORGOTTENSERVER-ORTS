@@ -97,7 +97,11 @@ Hot Cuisine Quest:
 	Chest storage/uid =				50029
 
 Thais Exhibition:
-	aid 50030 - 50057
+	aid 50030 - 50056
+	
+6 Small Rubies Quest: aid = 50057
+
+Naginata Quest (Stone): aid = 50058
 
 Hellgate exit bridge lever AID 	=	50027
 Vampire Shield Quest storage/uid	=	50030
@@ -125,3 +129,12 @@ Voodoo Doll Quest UIDs = 50058-50059
 Time Ring Quest UIDs = 50060-50062
 Throwing Star Quest UID = 50063
 Stealth Ring Quest UIDs = 50064-50065
+Geomancer Quest UID = 50066
+Heaven Blossom Quest UID = 50067
+Steel Helmet Quest UID's = 50068-50071
+Dragon Tower Quest UID's = 50072-50073
+Iron Hammer Quest UID = 50074
+Iron Ore Quest UID = 50075
+Scale Armor Quest UID = 50076
+Isle of the Mists Quest UID = 50077
+Lone Medusa Quest UID = 50078
