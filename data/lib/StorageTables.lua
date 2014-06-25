@@ -190,6 +190,8 @@ Storage = {
 		Mission03 = 12304,
 		Mission04 = 12305,
 		Mission05 = 12306,
-		Mission06 = 12300
+		SpyBuilding01 = 12307,
+		SpyBuilding02 = 12308,
+		SpyBuilding03 = 12309
 	}
 }

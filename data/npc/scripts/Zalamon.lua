@@ -41,6 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 						}, cid)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 6)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission01, 3) --Questlog, Children of the Revolution "Mission 1: Corruption"
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 6 then
 			npcHandler:say(
 						{
@@ -52,13 +53,14 @@ local function creatureSayCallback(cid, type, msg)
 						}, cid)
 			npcHandler.topic[cid] = 6
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 7 then
-			if player:getStorageValue(1055) == 1 and player:getStorageValue(1056) == 1 and player:getStorageValue(1057) == 1 then
+			if player:getStorageValue(Storage.ChildrenoftheRevolution.SpyBuilding01) == 1 and player:getStorageValue(Storage.ChildrenoftheRevolution.SpyBuilding02) == 1 and player:getStorageValue(Storage.ChildrenoftheRevolution.SpyBuilding03) == 1 then
 				npcHandler:say(
 						{
 						"Zzizz izz mozzt unfortunate. Zzo many warriorzz? Large amountzz of food? And how many weaponzz did you zzay? I zzee, hmm. ... ",
 						"Direct confrontation izz futile. We'll have to find ozzer wayzz to approach zze emperor and hizz army. "
 						}, cid)
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 8)
+				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission02, 5) --Questlog, Children of the Revolution "Mission 2: Imperial Zzecret Weaponzz"
 				npcHandler.topic[cid] = 0
 			end
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 8 then
@@ -176,6 +178,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Be warned. Zze mountain pazzezz have been dezzerted for zzeveral weekzz now. No one made it acrozz and I fear you won't meet a zzingle friendly zzoul up zzere.", cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 1)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission00, 1) --Questlog, Children of the Revolution "Prove Your Worzz!"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			npcHandler:say("Exzztraordinary. We are mozzt fortunate to have zzezze documentzz in our handzz now. Zzizz would zzertainly help me to build an effective rezzizztanzze. Will you give zzem to me? ", cid)
@@ -189,11 +192,14 @@ local function creatureSayCallback(cid, type, msg)
 						}, cid)
 				player:removeItem(11101, 1)
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 3)
+				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission00, 2) --Questlog, Children of the Revolution "Prove Your Worzz!"
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
 			npcHandler:say("I've marked itzz location on your map. Go and find out what happened zzere. In zze pazzt it wazz known azz zze Temple of Equilibrium. ", cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 4)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission01, 1) --Questlog, Children of the Revolution "Mission 1: Corruption"
+			player:addMapMark({x = 33177, y = 31193, z = 7}, 5, "Temple of Equilibrium")
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
 			npcHandler:say(
@@ -202,6 +208,11 @@ local function creatureSayCallback(cid, type, msg)
 						"Conzzentrate on one location at a time. Zze one who chazzezz after two harezz, won't catch even one. "
 						}, cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 7)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission02, 1) --Questlog, Children of the Revolution "Mission 2: Imperial Zzecret Weaponzz"
+			player:addMapMark({x = 33235, y = 31177, z = 7}, 4, "entrance of the camp")
+			player:addMapMark({x = 33257, y = 31172, z = 7}, 3, "building 1 which you have to spy")
+			player:addMapMark({x = 33227, y = 31163, z = 7}, 3, "building 2 which you have to spy")
+			player:addMapMark({x = 33230, y = 31156, z = 7}, 3, "building 3 which you have to spy")
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
 			npcHandler:say(
