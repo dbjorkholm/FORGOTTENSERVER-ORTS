@@ -69,7 +69,7 @@ keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, on
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen') and (not npcHandler:isFocused(cid)) then
+	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen')) and (not npcHandler:isFocused(cid)) then
 		npcHandler:say('I greet thee, my loyal subject.', cid)
 		npcHandler:addFocus(cid)
 		npcHandler.topic[cid] = 0
@@ -81,11 +81,11 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		if player:getStorageValue(30018) == 1 then
 			npcHandler:say('You are already promoted.', cid)
-		elseif player:getLevel() < 20) then
+		elseif player:getLevel() < 20 then
 			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
 		elseif player:getMoney() < 20000 then
 			npcHandler:say('You do not have enough money.', cid)
-		elseif configManager.getBoolean( configKeys.FREE_PREMIUM ) or isPremium(cid) == true then
+		elseif configManager.getBoolean(configKeys.FREE_PREMIUM) or isPremium(cid) == true then
 			npcHandler:say("Congratulations! You are now promoted.", cid)
 			local promotedVoc = getPromotedVocation(player:getVocation())
 			player:setVocation(promotedVoc)
@@ -98,7 +98,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Ok, whatever.', cid)
 		npcHandler.topic[cid] = 0
 	end
-	if(msgcontains(msg, "uniforms")) then
+	if msgcontains(msg, "uniforms") then
 		if player:getStorageValue(250) == 17 then
 			npcHandler:say("I remember about those uniforms, they had a camouflage inlay so they could be worn the inside out too. I will send some color samples via mail to Mr. Postner. ", cid)
 			player:setStorageValue(250, 18)
