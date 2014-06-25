@@ -233,20 +233,21 @@
 		</mission>
 	</quest>
 	<quest name="Children of the Revolution" startstorageid="12300" startstoragevalue="1">
-		<mission name="Prove Your Worzz!" storageid="12301" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Prove Your Worzz!" storageid="12301" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your Mission is to go to a little camp of lizards at north-east of the Dragonblaze Peaks. You have to find and deliver the Tactical map complete the mission."/>
+			<missionstate id="2" description="You delivered the Tactical map to Zalamon."/>
 		</mission>
 		<mission name="Mission 1: Corruption" storageid="12302" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Go to the Temple of Equilibrium (it's marked on your map) and find out what happened there."/>
+			<missionstate id="2" description="The temple has been corrupted and is lost. Zalamon should be informed about this as soon as possible."/>
+			<missionstate id="3" description="You already reported Zalamon about the Temple! Ask him for new mission!"/>
 		</mission>
-		<mission name="Mission 2: Imperial Zzecret Weaponzz" storageid="12303" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 2: Imperial Zzecret Weaponzz" storageid="12303" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Go into the small camp Chaochai to the north of the Dragonblaze Peaks (Zalamon marks the entrance on your map). There are 3 buildings which you have to spy"/>
+			<missionstate id="2" description="You spied 1 of 3 buildings of the camp."/>
+			<missionstate id="3" description="You spied 2 of 3 buildings of the camp."/>
+			<missionstate id="4" description="You spied 3 of 3 buildings of the camp. Zalamon should be informed about this as soon as possible."/>
+			<missionstate id="5" description="You already reported Zalamon about the camp! Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 3: Zee Killing Fieldzz" storageid="12304" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

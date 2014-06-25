@@ -26,6 +26,10 @@
 	<!--- KillingOfTheNameOf -->
 	<movevent event="StepIn" fromuid="3230" touid="3257" script="killing in the name of/killingInTheNameOfQuestBoss.lua"/>
 
+	<!-- Children of the Revolution -->
+	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/childrenOfTheRevolutionQuestTemple.lua"/>
+	<movevent event="StepIn" fromaid="8009" toaid="8011"  script="children of the revolution quest/childrenOfTheRevolutionQuestSpy.lua"/>
+	
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000"  script="the new frontier quest/theNewFrontierQuestWayOut.lua"/>
 	<movevent event="StepIn" actionid="8007"  script="the new frontier quest/theNewFrontierQuestTrap.lua"/>
