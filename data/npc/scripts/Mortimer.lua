@@ -8,9 +8,9 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
+	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	local player = Player(cid)
 	-- JOINING
 	elseif(msgcontains(msg, "join")) then
 		if(player:getStorageValue(90) < 1) then
