@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
@@ -26,15 +26,15 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say("You aren't looking that bad. Sorry, I need my powers for cases more severe than yours.", cid)
 		end
-	elseif(msgcontains(msg, "wooden stake")) then
-		if player:getStorageValue(87) == 3) then
-			if player:getItemCount(5941) >= 1) then
+	elseif msgcontains(msg, "wooden stake") then
+		if player:getStorageValue(87) == 3 then
+			if player:getItemCount(5941) >= 1 then
 				npcHandler:say("Yes, I was informed what to do. Are you prepared to receive my line of the prayer?", cid)
 				npcHandler.topic[cid] = 1
 			end
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(5941) >= 1 then
 				player:setStorageValue(87, 4)
 				npcHandler:say("So receive my prayer: 'Hope may fill your heart - doubt shall be banned'. Now, bring your stake to Maealil in the elven settlement for the next line of the prayer. I will inform him what to do. ", cid)
@@ -49,7 +49,7 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'life'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The teachings of Crunor tell us to honor life and not to harm it."})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is my mission to bring the teachings of the gods to everyone."})
 keywordHandler:addKeyword({'quest'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is my mission to bring the teachings of the gods to everyone."})
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Tibra. Your soul tells me that you are " .. player:getName() .. "."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Tibra. Your soul tells me that you are |PLAYERNAME|."})
 keywordHandler:addKeyword({'queen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Queen Eloise is wise to listen to the proposals of the druidic followers of Crunor."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The grace of the gods must be earned, it cannot be bought!"})
 keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The world of Tibia is the creation of the gods."})
@@ -81,7 +81,8 @@ keywordHandler:addKeyword({'urgith'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'archdemons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The demons are followers of Zathroth. The cruelest are known as the ruthless seven."})
 keywordHandler:addKeyword({'ruthless seven'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I don't want to talk about that subject!"})
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Welcome in the name of the gods, pilgrim |PLAYERNAME|!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|. May the gods be with you to guard and guide you, my child!")
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

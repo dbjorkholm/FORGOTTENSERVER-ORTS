@@ -11,7 +11,7 @@
         <parameter key="keywords" value="furniture;" />
         <parameter key="keyword_reply1" value="Well, as you can see, I sell furniture. Ask me for a {trade} if you're interested to see my wares." />
 		<parameter key="shop_buyable" value="
-			amphora,2023,4;
+			amphora,2023,4,0;
 			armor rack kit,6114,90;
 			barrel kit,3919,12;
 			big table kit,3911,30;
@@ -81,7 +81,7 @@
 			trophy stand,7936,50;
 			trough kit,3918,7;
 			trunk kit,3920,10;
-			vase,2008,3;
+			vase,2008,3,0;
 			venorean cabinet kit,20254,90;
 			venorean drawer kit,20257,40;
 			venorean wardrobe kit,20255,50;
