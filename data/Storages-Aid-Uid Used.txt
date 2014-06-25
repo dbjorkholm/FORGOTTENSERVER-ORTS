@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50037
+Last Used Storage = 50079
 Last Used Aid = 50057
-Last Used Uid = 50037
+Last Used Uid = 50079
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -138,3 +138,4 @@ Iron Ore Quest UID = 50075
 Scale Armor Quest UID = 50076
 Isle of the Mists Quest UID = 50077
 Lone Medusa Quest UID = 50078
+First wand/rod storage = 50079
