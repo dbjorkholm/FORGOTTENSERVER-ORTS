@@ -1,12 +1,11 @@
-
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
@@ -36,5 +35,16 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the grand druid of Carlin. I am responsible for the guild, the fields, and our citizens' health."})
+keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Every druid is able to learn the numerous spells of our craft."})
+--keywordHandler:addKeyword({'spell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Sorry, I don't teach spells for your vocation."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Padreia, grand druid of our fine city."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Time is just a crystal pillar - the centre of creation and life."})
+keywordHandler:addKeyword({'druids'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We are druids, preservers of life. Our magic is about defence, healing, and nature."})
+keywordHandler:addKeyword({'sorcerers'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Sorcerers are destructive. Their power lies in destruction and pain."})
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Welcome to our humble guild, wanderer. May I be of any assistance to you?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell.")
 npcHandler:addModule(FocusModule:new())

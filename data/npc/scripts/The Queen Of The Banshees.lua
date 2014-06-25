@@ -2,16 +2,25 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+local rnd_sounds = 0
+function onThink()
+	if(rnd_sounds < os.time()) then
+		rnd_sounds = (os.time() + 5)
+		if(math.random(1, 100) < 25) then
+			Npc():say("Uhhhhhh....", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "Seventh Seal") and npcHandler.topic[cid] == 0 then
+	elseif msgcontains(msg, "seventh seal") and npcHandler.topic[cid] == 0 then
 		npcHandler:say("If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my {kiss} ... It will open the last seal. Do you think you are ready?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "kiss") and npcHandler.topic[cid] == 7 then
@@ -126,5 +135,21 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+keywordHandler:addKeyword({'stay'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's my curse to be the eternal {guardian} of this ancient {place}."})
+keywordHandler:addKeyword({'guardian'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm the {guardian} of the {SEVENTH} and final seal. The seal to open the last door before ... but perhaps it's better to see it with your own eyes."})
+keywordHandler:addKeyword({'place'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It served as a temple, a source of power and ... as a sender for an ancient {race} which lived a long time ago and has long been forgotten."})
+keywordHandler:addKeyword({'race'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The race that built this edifice came to this place from the stars. They ran from an enemy even more horrible than themselves. But they carried the {seed} of their own destruction in them."})
+keywordHandler:addKeyword({'seed'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This ancient race was annihilated by its own doings, that's all I know. Aeons have passed since then, but the sheer presence of this {complex} is still defiling and desecrating this area."})
+keywordHandler:addKeyword({'complex'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Its constructors were too strange for you or even me to understand. We don't know what this ... thing they built was supposed to be good for. I feel a constant twisting and binding of souls, though, that is probably only a side-effect."})
+keywordHandler:addKeyword({'ghostlands'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The place you know as the Ghostlands had a different name once ... and many names after. Too many to remember them all."})
+keywordHandler:addKeyword({'banshee'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They are my maidens. They give me comfort in my eternal watch over the last seal."})
+keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
+keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
+keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
+keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Be greeted, dear visitor. Come and {stay} ... a while.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "We will meet again, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Yes, flee from death. But know it shall be always one step behind you.")
 npcHandler:addModule(FocusModule:new())
