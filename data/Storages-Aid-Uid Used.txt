@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50037
 Last Used Aid = 50057
-Last Used Uid = 50037
+Last Used Uid = 50065
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -106,3 +106,23 @@ Blood Herb quest tree storage/uid	=	50032
 Whisper Moss quest storage/uid		=	50033
 old parchment quest tree storage/uid	=	50034
 orc fortress quest UIDs = 50035-50037
+Frost Dragon Quest UID = 50038
+Fishing Box Quest UID = 50039
+Formorgar Mine Quest (skeleton) UID = 50040
+Berserker Treasure Quest UID = 50041
+Shaman Treasure Quest UID = 50042
+Berserk Potion Quest UID = 50043
+Inukaya Quest UID = 50044
+Dead Archer Quest UID = 50045
+Power Ring Quest UIDs = 50046-50047
+Orc Shaman Quest UID = 50048
+Elvenbane Quest UIDs  = 50049-50052
+Mastermind Potion Quest UIDs = 50053-50054
+Lion Trophy Quest UID = 50055
+Skeleton Decoration Quest UID = 50056
+Waterskin of Mead Quest UID = 50057
+Voodoo Doll Quest UIDs = 50058-50059
+Time Ring Quest UIDs = 50060-50062
+Throwing Star Quest UID = 50063
+Stealth Ring Quest UIDs = 50064-50065
+first wand/rod storage = 50066
