@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Uzon" script="UzonE.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="130" head="76" body="5" legs="17" feet="76" addons="0" />
-<parameters>
-        <parameter key="message_greet" value="Greetings, traveller |PLAYERNAME|. Where do you want me to fly you?"/>
-        <parameter key="message_farewell" value="Good bye!"/>
-		<parameter key="message_walkaway" value="Good bye!" />
-</parameters>
+	<health now="100" max="100" />
+	<look type="130" head="76" body="5" legs="17" feet="76" addons="0" />
 </npc>
