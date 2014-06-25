@@ -2,14 +2,11 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local Topic = {}
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
-function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() 						npcHandler:onThink() end
-
---keywordHandler:addKeyword({'uniform'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The uniforms of our guards and soldiers are of unparraleled quality of course."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Queen Eloise. It is my duty to reign over this marvellous city and the lands of the north."})
 keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We women try to bring justice and wisdom to all, even to males."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Queen Eloise. For you it's 'My Queen' or 'Your Majesty', of course."})
@@ -70,49 +67,41 @@ keywordHandler:addKeyword({'reward'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "A dusgusting organisation, which could be only created by men."})
 keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
 
-local function greetCallback(cid)
-	Topic[cid] = 0
-	return true
-end
-
 local function creatureSayCallback(cid, type, msg)
-	if (msgcontains(msg, 'hail') or msgcontains(msg, 'hello') or msgcontains(msg, 'salutations')) and msgcontains(msg, 'queen') and (not npcHandler:isFocused(cid)) then
+	local player = Player(cid)
+	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen') and (not npcHandler:isFocused(cid)) then
 		npcHandler:say('I greet thee, my loyal subject.', cid)
 		npcHandler:addFocus(cid)
-		Topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	elseif(not npcHandler:isFocused(cid)) then
 		return false
-	elseif msgcontains(msg, 'bye') or msgcontains(msg, 'farewell') then
-		npcHandler:say('Farewell, '..getCreatureName(cid)..'!', cid, TRUE)
-		Topic[cid] = nil
-		npcHandler:releaseFocus(cid)
 	elseif msgcontains(msg, "promot") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
-		Topic[cid] = 1
-	elseif msgcontains(msg, "yes") and Topic[cid] == 1 then
-		if(getPlayerStorageValue(cid, 30018) == 1) then
+		npcHandler.topic[cid] = 1
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
+		if player:getStorageValue(30018) == 1 then
 			npcHandler:say('You are already promoted.', cid)
-		elseif(getPlayerLevel(cid) < 20) then
+		elseif player:getLevel() < 20) then
 			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
-		elseif getPlayerMoney(cid) < 20000 then
+		elseif player:getMoney() < 20000 then
 			npcHandler:say('You do not have enough money.', cid)
-		elseif getConfigInfo("freePremium") == "yes" or isPremium(cid) == TRUE then
-			npcHandler:say("Congratulations! You are now promoted. You have learned new spells.", cid)
-			local promotedVoc = getPromotedVocation(getPlayerVocation(cid))
-			doPlayerSetVocation(cid, promotedVoc)
-			doPlayerRemoveMoney(cid, 20000)
+		elseif configManager.getBoolean( configKeys.FREE_PREMIUM ) or isPremium(cid) == true then
+			npcHandler:say("Congratulations! You are now promoted.", cid)
+			local promotedVoc = getPromotedVocation(player:getVocation())
+			player:setVocation(promotedVoc)
+			player:removeMoney(20000)
 		else
 			npcHandler:say("You need a premium account in order to promote.", cid)
 		end
-		Topic[cid] = 0
-	elseif Topic[cid] == 1 then
+		npcHandler.topic[cid] = 0
+	elseif npcHandler.topic[cid] == 1 then
 		npcHandler:say('Ok, whatever.', cid)
-		Topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	end
 	if(msgcontains(msg, "uniforms")) then
-		if(getPlayerStorageValue(cid, 250) == 17) then
+		if player:getStorageValue(250) == 17 then
 			npcHandler:say("I remember about those uniforms, they had a camouflage inlay so they could be worn the inside out too. I will send some color samples via mail to Mr. Postner. ", cid)
-			setPlayerStorageValue(cid, 250, 18)
+			player:setStorageValue(250, 18)
 		else
 			npcHandler:say('The uniforms of our guards and soldiers are of unparraleled quality of course.', cid)
 		end
@@ -120,5 +109,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, |PLAYERNAME|!")
+npcHandler:addModule(FocusModule:new())
