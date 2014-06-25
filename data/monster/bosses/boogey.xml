@@ -28,12 +28,11 @@
 			<attribute key="areaEffect" value="redspark"/>
 		</attack>
 		<attack name="physical" interval="1500" chance="40" lenght="8" spread="3" min="-20" max="-30">
-			<attribute key="shootEffect" value="suddendeath"/>
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
 	</attacks>
-	<defenses armor="50" defense="50">
-		<defense name="healing" interval="1000" chance="25" min="80" max="120">
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="25" min="80" max="120">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -58,6 +57,12 @@
 		<voice sentence="I'll take you into the darkness ... forever!" yell="1"/>
 	</voices>
 	<summons maxSummons="2">
-		<summon name="demon skeleton" interval="4000" chance="40" max="2"/>
+		<summon name="Demon Skeleton" interval="4000" chance="40"/>
 	</summons>
+	<loot>
+		<item id="10296" chance="1000"/>	<!-- heavy metal t-shirt -->
+		<item id="10302" chance="1000"/>	<!-- club of the fury -->
+		<item id="10301" chance="1000"/>	<!-- scythe of the reaper -->
+		<item id="10295" chance="1000"/>	<!-- musician's bow -->
+	</loot>
 </monster>
