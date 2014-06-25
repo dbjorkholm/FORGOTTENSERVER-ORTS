@@ -177,6 +177,7 @@
 	<monster name="Grand Mother Foulscale" file="bosses/grand mother foulscale.xml"/>
 	<monster name="Grandfather Tridian" file="bosses/grandfather tridian.xml"/>
 	<monster name="Gorgo" file="bosses/gorgo.xml"/>
+	<monster name="Gravelord Oshuran" file="bosses/gravelord oshuran.xml"/>
 	<monster name="Groam" file="bosses/groam.xml"/>
 	<monster name="Grorlam" file="bosses/grorlam.xml"/>
 	<monster name="Hairman the Huge" file="bosses/hairman the huge.xml"/>
