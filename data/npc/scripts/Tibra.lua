@@ -28,7 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "wooden stake")) then
 		if player:getStorageValue(87) == 3) then
-			if(getPlayerItemCount(cid, 5941) >= 1) then
+			if player:getItemCount(5941) >= 1) then
 				npcHandler:say("Yes, I was informed what to do. Are you prepared to receive my line of the prayer?", cid)
 				npcHandler.topic[cid] = 1
 			end
