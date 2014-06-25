@@ -33,7 +33,7 @@ local config = {
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local storage = Storage.OutfitQuest.WarriorShoulderAddon
-	
+
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif isInArray({"outfit", "addon"}, msg) then
@@ -87,8 +87,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true	
 end
 
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|.")
-	
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

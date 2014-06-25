@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Vera" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="97" body="116" legs="115" feet="114" addons="0" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-	<parameter key="shop_buyable" value="
+<npc name="Vera" script="Vera.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="136" head="97" body="116" legs="115" feet="114" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 			amphora,2023,4;
 			armor rack kit,6114,90;
 			barrel kit,3919,12;
