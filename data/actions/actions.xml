@@ -19,6 +19,10 @@
 	<action fromid="6087" toid="6090" script="hunter outfit quest/MusicSheet.lua"/>
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
 
+	<!-- Children of the Revolution -->
+	<action uniqueid="3170" script="children of the revolution quest/childrenOfTheRevolutionQuestZalamonDoor.lua"/>
+	<action uniqueid="3162" script="children of the revolution quest/childrenOfTheRevolutionQuestTacticalMap.lua"/>
+
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
 	<action itemid="11100" script="the new frontier quest/theNewFrontierQuestBeaver.lua"/>
