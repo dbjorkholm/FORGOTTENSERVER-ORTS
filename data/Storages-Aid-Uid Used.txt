@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50038
+Last Used Storage = 50037
 Last Used Aid = 50057
-Last Used Uid = 50038
+Last Used Uid = 50037
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -106,4 +106,3 @@ Blood Herb quest tree storage/uid	=	50032
 Whisper Moss quest storage/uid		=	50033
 old parchment quest tree storage/uid	=	50034
 orc fortress quest UIDs = 50035-50037
-first wand/rod storage = 50038
