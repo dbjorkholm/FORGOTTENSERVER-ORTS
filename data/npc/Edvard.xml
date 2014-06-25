@@ -10,8 +10,92 @@
 <parameter key="module_keywords" value="1" />
         <parameter key="keywords" value="furniture;" />
         <parameter key="keyword_reply1" value="Well, as you can see, I sell furniture. Ask me for a {trade} if you're interested to see my wares." />
-		<parameter key="shop_buyable" value="yellow bed kit,7906,80;red bed kit,7905,80;green bed kit,7904,80;blue bed kit,7907,80;red cushioned chair kit,3903,40;green cushioned chair kit,3904,40;wooden chair kit,3901,15;rocking chair kit,3928,25;sofa chair kit,3902,55;large amphora kit,6115,50;barrel kit,3916,12;bookcase kit,3938,70;box kit,5086,10;chest kit,3925,10;crate kit,3930,10;drawer kit,3921,18;dresser kit,3932,25;locker kit,3934,30;trough kit,3935,7;bird cage kit,3918,50;furnace kit,8692,200;coal basin kit,3908,25;globe kit,3927,50;goldfish bowl kit,7700,50;table lamp kit,3937,35;telescope kit,7962,70;water pipe,2099,40;flower bowl,2102,6;god flowers,2100,5;honey flower,2103,5;indoor plant kit,3929,8;potted flower,2104,5;harp kit,3917,50;piano kit,3926,200;/ pillow,1681,25;green pillow,1679,25;heart pillow,1685,30;red pillow,1680,25;round blue pillow,1686,25;round purple pillow,1692,25;round red pillow,1687,25;round turquoise pillow,1693,25;white pillow,1684,20;round green pillow,1688,25;round yellow pillow,1689,25;barrel kit,3916,12;blue round pillow,1690,25;red round pillow,1691,25;purple round pillow,1692,25;small turqoise pillow,1683,20;blue tapestry,1872,25;green tapestry,1860,25;orange tapestry,1866,25;purple tapestry,1857,25;red tapestry,1869,25;white tapestry,1880,25;yellow tapestry,1863,25;big table kit,3909,30;round table kit,3911,25;small table kit,3912,20;square table kit,3910,25;trophy stand,7936,50;mirror,1851,40;mirror,1848,40;mirror,1845,40;picture,1852,50;picture,1854,50;picture,1853,50;" />
-        <parameter key="message_greet" value="Welcome to Edron Furniture Store, |PLAYERNAME|."/>
+		<parameter key="shop_buyable" value="
+			amphora,2023,4;
+			armor rack kit,6114,90;
+			barrel kit,3919,12;
+			big table kit,3911,30;
+			birdcage kit,3922,50;
+			blue bed kit,7907,80;
+			blue pillow,1686,25;
+			blue tapestry,1872,25;
+			bookcase kit,6373,70;
+			box,1738,10;
+			chest,1740,10;
+			chimney kit,8692,200;
+			coal basin kit,3932,25;
+			crate,1739,10;
+			cuckoo clock,1877,40;
+			drawer kit,3915,18;
+			dresser kit,3916,25;
+			flower bowl,2102,6;
+			globe kit,3926,50;
+			goblin statue kit,3930,50;
+			god flowers,2100,5;
+			goldfish bowl,5928,50;
+			green bed kit,7904,80;
+			green cushioned chair kit,3902,40;
+			green pillow,1688,25;
+			green tapestry,1860,25;
+			harp kit,3934,50;
+			heart pillow,1685,30;
+			honey flower,2103,5;
+			indoor plant kit,3937,8;
+			knight statue kit,3928,50;
+			large amphora kit,3931,50;
+			locker kit,3917,30;
+			minotaur statue kit,3929,50;
+			orange tapestry,1866,25;
+			oven kit,6372,80;
+			pendulum clock kit,3927,75;
+			piano kit,3933,200;
+			picture,1852,50;
+			picture,1854,50;
+			picture,1853,50;
+			potted flower,2104,5;
+			purple tapestry,1857,25;
+			red bed kit,7906,80;
+			red cushioned chair kit,3901,40;
+			red pillow,1687,25;
+			red tapestry,1869,25;
+			rocking chair kit,3904,25;
+			rocking horse kit,3926,30;
+			round blue pillow,1690,25;
+			round purple pillow,1692,25;
+			round red pillow,1691,25;
+			round table kit,14328,25;
+			round turquoise pillow,1693,25;
+			small blue pillow,1681,20;
+			small green pillow,1679,20;
+			small orange pillow,1682,20;
+			small purple pillow,1678,20;
+			small red pillow,1680,20;
+			small table kit,3908,20;
+			small turquoise pillow,1683,20;
+			small white pillow,1684,20;
+			sofa chair kit,3905,55;
+			square table kit,14329,25;
+			table lamp kit,3924,35;
+			telescope kit,3925,70;
+			treasure chest,1746,1000;
+			trophy stand,7936,50;
+			trough kit,3918,7;
+			trunk kit,3920,10;
+			vase,2008,3;
+			venorean cabinet kit,20254,90;
+			venorean drawer kit,20257,40;
+			venorean wardrobe kit,20255,50;
+			wall mirror,1851,40;
+			wall mirror,1848,40;
+			wall mirror,1845,40;
+			water pipe,2099,40;
+			weapon rack kit,6115,90;
+			white tapestry,1880,25;
+			wooden chair kit,3903,15;
+			yellow bed kit,7905,80;
+			yellow pillow,1689,25;
+			yellow tapestry,1863,25;" />
+		<parameter key="message_greet" value="Welcome to Edron Furniture Store, |PLAYERNAME|."/>
         <parameter key="message_farewell" value="Good bye."/>
 		<parameter key="message_walkaway" value="Good bye." />
 		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />

@@ -2,10 +2,10 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
@@ -32,7 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(12135, player:getStorageValue(12135) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			end
 		end
-	
+
 	-- SPECTRAL STONE
 	elseif(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(90) == 51) then
@@ -41,7 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(90, 52)
 		end
 	-- SPECTRAL STONE	
-		
+
 	-- MISSION CHECK
 	elseif(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(90) > 3 and player:getStorageValue(90) < 27) then
@@ -84,7 +84,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ah, you've just come in time. An experienced explorer is just what we need here! Would you like to go on a mission for us?", cid)
 			npcHandler.topic[cid] = 32
 		elseif(player:getStorageValue(90) == 57) then
-			if(getPlayerItemCount(cid, 7314) > 1) then
+			if player:getItemCount(7314) > 1 then
 				player:removeItem(7314, 1)
 				npcHandler:say({"A frozen dragon lord? This is just the information we needed! And you even brought a scale from it! Take these 5000 gold pieces as a reward. ...",
 								"As you did such a great job, I might have another mission for you later."}, cid)
@@ -103,7 +103,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(7281, 1)
 		end
 	-- MISSION CHECK
-		
+
 	-- PICKAXE MISSION
 	elseif(msgcontains(msg, "pickaxe")) then
 		if(player:getStorageValue(90) < 4 or player:getStorageValue(90) > 1) then
@@ -111,7 +111,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		end
 	-- PICKAXE MISSION
-	
+
 	-- BUTTERFLY HUNT
 	elseif(msgcontains(msg, "butterfly hunt")) then
 		if(player:getStorageValue(90) == 7) then
@@ -140,7 +140,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 10
 		end
 	-- BUTTERFLY HUNT
-	
+
 	-- ICE DELIVERY
 	elseif(msgcontains(msg, "ice delivery")) then
 		if(player:getStorageValue(90) == 4) then
@@ -153,8 +153,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		end
 	-- ICE DELIVERY
-	
-	
+
 	-- PLANT COLLECTION
 	elseif(msgcontains(msg, "plant collection")) then
 		if(player:getStorageValue(90) == 15) then
@@ -181,7 +180,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 14
 		end
 	-- PLANT COLLECTION	
-	
+
 	-- LIZARD URN
 	elseif(msgcontains(msg, "lizard urn")) then
 		if(player:getStorageValue(90) == 26) then
@@ -192,7 +191,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 16
 		end
 	-- LIZARD URN
-	
+
 	-- BONELORDS
 	elseif(msgcontains(msg, "bonelord secrets")) then
 		if(player:getStorageValue(90) == 29) then
@@ -205,7 +204,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 18
 		end
 	-- BONELORDS
-	
+
 	-- ORC POWDER
 	elseif(msgcontains(msg, "orc powder")) then
 		if(player:getStorageValue(90) == 32) then
@@ -218,7 +217,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 20
 		end
 	-- ORC POWDER
-	
+
 	-- ELVEN POETRY
 	elseif(msgcontains(msg, "elven poetry")) then
 		if(player:getStorageValue(90) == 35) then
@@ -230,7 +229,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 22
 		end
 	-- ELVEN POETRY
-	
+
 	-- MEMORY STONE
 	elseif(msgcontains(msg, "memory stone")) then
 		if(player:getStorageValue(90) == 38) then
@@ -243,7 +242,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 24
 		end
 	-- MEMORY STONE
-	
+
 	-- RUNE WRITINGS
 	elseif(msgcontains(msg, "rune writings")) then
 		if(player:getStorageValue(90) == 41) then
@@ -257,7 +256,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 26
 		end
 	-- RUNE WRITINGS
-	
+
 	-- ANSWER YES
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
@@ -270,7 +269,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(90, 1)
 		elseif(npcHandler.topic[cid] == 3) then
-			if(getPlayerItemCount(cid, 11421) >= 1) then
+			if player:getItemCount(11421) >= 1 then
 				player:removeItem(11421, 1)
 				player:setStorageValue(90, 4)
 				npcHandler:say({"Excellent, you brought just the tool we need! Of course it was only a simple task. However ...",
@@ -284,7 +283,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:addItem(4856, 1)
 		elseif(npcHandler.topic[cid] == 5) then
-			if(getPlayerItemCount(cid, 4848) >= 1) then
+			if player:getItemCount(4848) >= 1 then
 				player:removeItem(4848, 1)
 				player:setStorageValue(90, 7)
 				npcHandler:say("Just in time. Sadly not much ice is left over but it will do. Thank you again.", cid)
@@ -294,7 +293,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(90, 5)
 			npcHandler:say("*Sigh* I think the time is right to grant you another chance to get that ice. Hurry up this time.", cid)
 			npcHandler.topic[cid] = 0
-		
+
 		-- BUTTERFLY HUNT
 		elseif(npcHandler.topic[cid] == 7) then
 			player:setStorageValue(90, 8)
@@ -303,29 +302,28 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:addItem(4865, 1)
 		elseif(npcHandler.topic[cid] == 8) then
-			if(getPlayerItemCount(cid, 4868) >= 1) then
+			if player:getItemCount(4868) >= 1 then
 				player:removeItem(4868, 1)
 				player:setStorageValue(90, 10)
 				npcHandler:say("A little bit battered but it will do. Thank you! If you think you are ready, ask for another butterfly hunt.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 9) then
-			if(getPlayerItemCount(cid, 4866) >= 1) then
+			if player:getItemCount(4866) >= 1 then
 				player:removeItem(4866, 1)
 				player:setStorageValue(90, 13)
 				npcHandler:say("A little bit battered but it will do. Thank you! If you think you are ready, ask for another butterfly hunt.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 10) then
-			if(getPlayerItemCount(cid, 4867) >= 1) then
+			if player:getItemCount(4867) >= 1 then
 				player:removeItem(4867, 1)
 				player:setStorageValue(90, 15)
 				npcHandler:say("That is an extraordinary species you have brought. Thank you! That was the last butterfly we needed.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- BUTTERFLY HUNT
-		
-		
+
 		-- PLANT COLLECTION	
 		elseif(npcHandler.topic[cid] == 11) then
 			player:setStorageValue(90, 16)
@@ -333,28 +331,28 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:addItem(4869, 1)
 		elseif(npcHandler.topic[cid] == 12) then
-			if(getPlayerItemCount(cid, 4870) >= 1) then
+			if player:getItemCount(4870) >= 1 then
 				player:removeItem(4870, 1)
 				player:setStorageValue(90, 18)
 				npcHandler:say("I see. It seems you've got some quite useful sample by sheer luck. Thank you! Just tell me when you are ready to continue with the plant collection.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 13) then
-			if(getPlayerItemCount(cid, 4871) >= 1) then
+			if player:getItemCount(4871) >= 1 then
 				player:removeItem(4871, 1)
 				player:setStorageValue(90, 21)
 				npcHandler:say("Ah, finally. I started to wonder what took you so long. But thank you! Another fine sample, indeed. Just tell me when you are ready to continue with the plant collection.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 14) then
-			if(getPlayerItemCount(cid, 4872) >= 1) then
+			if player:getItemCount(4872) >= 1 then
 				player:removeItem(4872, 1)
 				player:setStorageValue(90, 26)
 				npcHandler:say("What a lovely sample! With that you have finished your plant collection missions.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- PLANT COLLECTION
-		
+
 		-- LIZARD URN
 		elseif(npcHandler.topic[cid] == 15) then
 			player:setStorageValue(90, 27)
@@ -363,14 +361,14 @@ local function creatureSayCallback(cid, type, msg)
 							"Perhaps you are more successful."}, cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 16) then
-			if(getPlayerItemCount(cid, 4858) >= 1) then
+			if player:getItemCount(4858) >= 1 then
 				player:removeItem(4858, 1)
 				player:setStorageValue(90, 29)
 				npcHandler:say("Yes, that is the prized relic we have been looking for so long. You did a great job, thank you.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- LIZARD URN
-		
+
 		-- BONELORDS
 		elseif(npcHandler.topic[cid] == 17) then
 			player:setStorageValue(90, 30)
@@ -378,14 +376,14 @@ local function creatureSayCallback(cid, type, msg)
 							"If any documents are left, you probably find them in the catacombs beneath. Good luck!"}, cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 18) then
-			if(getPlayerItemCount(cid, 4857) >= 1) then
+			if player:getItemCount(4857) >= 1 then
 				player:removeItem(4857, 1)
 				player:setStorageValue(90, 32)
 				npcHandler:say("You did it! Excellent! The scientific world will be shaken by this discovery!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- BONELORDS
-		
+
 		-- ORC POWDER
 		elseif(npcHandler.topic[cid] == 19) then
 			player:setStorageValue(90, 33)
@@ -393,56 +391,56 @@ local function creatureSayCallback(cid, type, msg)
 							"There you should find lots of their war wolves and hopefully also some of the orcish powder. Good luck!"}, cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 20) then
-			if(getPlayerItemCount(cid, 15389) >= 1) then
+			if player:getItemCount(cid, 15389) >= 1 then
 				player:removeItem(15389, 1)
 				player:setStorageValue(90, 35)
 				npcHandler:say("You really got it? Amazing! Thank you for your efforts.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- ORC POWDER
-		
+
 		-- ELVEN POETRY
 		elseif(npcHandler.topic[cid] == 21) then
 			player:setStorageValue(90, 36)
 			npcHandler:say("Excellent. This mission is easy but nonetheless vital. Travel to Ab'Dendriel and get the book.", cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 22) then
-			if(getPlayerItemCount(cid, 4855) >= 1) then
+			if player:getItemCount(4855) >= 1 then
 				player:removeItem(4855, 1)
 				player:setStorageValue(90, 38)
 				npcHandler:say("Let me have a look! Yes, that's what we wanted. A copy of 'Songs of the Forest'. I won't ask any questions about those bloodstains.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- ELVEN POETRY
-		
+
 		-- MEMORY STONE
 		elseif(npcHandler.topic[cid] == 23) then
 			player:setStorageValue(90, 39)
 			npcHandler:say("In the ruins of north-western Edron you should be able to find a memory stone. Good luck.", cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 24) then
-			if(getPlayerItemCount(cid, 4852) >= 1) then
+			if player:getItemCount(4852) >= 1 then
 				player:removeItem(4852, 1)
 				player:setStorageValue(90, 41)
 				npcHandler:say("A flawless memory stone! Incredible! It will take years even to figure out how it works but what an opportunity for science, thank you!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- MEMORY STONE
-		
+
 		-- RUNE WRITINGS
 		elseif(npcHandler.topic[cid] == 25) then
 			player:setStorageValue(90, 42)
 			npcHandler:say("Excellent! Here, take this tracing paper and use it on the object you will find there to create a copy of the ancient runes.", cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 26) then
-			if(getPlayerItemCount(cid, 4853) >= 1) then
+			if player:getItemCount(4853) >= 1 then
 				player:removeItem(4853, 1)
 				player:setStorageValue(90, 44)
 				npcHandler:say("It's a bit wrinkled but it will do. Thanks again.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- RUNE WRITINGS
-		
+
 		-- ECTOPLASM
 		elseif(npcHandler.topic[cid] == 26) then
 			npcHandler:say({"Fine. The society is looking for new means to travel. Some of our most brilliant minds have some theories about astral travel that they want to research further ...",
@@ -450,20 +448,20 @@ local function creatureSayCallback(cid, type, msg)
 							"Do you think you are ready for that mission?"}, cid)
 			npcHandler.topic[cid] = 27
 		elseif(npcHandler.topic[cid] == 27) then
-			npcHandler:say("Good! Take this container and use it on a ghost that was recently slain. Return with the collected ectoplasm and hand me that container ...", cid)
-			npcHandler:say("Don't lose the container. They are expensive!", cid)
+			npcHandler:say({"Good! Take this container and use it on a ghost that was recently slain. Return with the collected ectoplasm and hand me that container ...",
+							"Don't lose the container. They are expensive!"}, cid)
 			npcHandler.topic[cid] = 0	
 			player:setStorageValue(90, 45)
 			player:addItem(4863, 1)
 		elseif(npcHandler.topic[cid] == 28) then
-			if(getPlayerItemCount(cid, 4864) >= 1) then
+			if player:getItemCount(4864) >= 1 then
 				player:removeItem(4864, 1)
 				player:setStorageValue(90, 47)
 				npcHandler:say("Phew, I had no idea that ectoplasm would smell that ... oh, it's you, well, sorry. Thank you for the ectoplasm.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- ECTOPLASM	
-		
+
 		-- SPECTRAL DRESS
 		elseif(npcHandler.topic[cid] == 29) then
 			npcHandler:say({"That is quite courageous. We know, it's much we are asking for. The queen of the banshees lives in the so called Ghostlands, south west of Carlin. It is rumoured that her lair is located in the deepest dungeons beneath that cursed place ...",
@@ -471,14 +469,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0	
 			player:setStorageValue(90, 48)
 		elseif(npcHandler.topic[cid] == 30) then
-			if(getPlayerItemCount(cid, 4847) >= 1) then
+			if player:getItemCount(4847) >= 1 then
 				player:removeItem(4847, 1)
 				player:setStorageValue(90, 50)
 				npcHandler:say("Good! Ask me for another mission.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		-- SPECTRAL DRESS
-		
+
 		-- SPECTRAL STONE
 		elseif(npcHandler.topic[cid] == 31) then
 			npcHandler:say({"Good, just take this spectral essence and use it on the strange carving in this building as well as on the corresponding tile in our base at Northport ...",
@@ -486,7 +484,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0	
 			player:setStorageValue(90, 53)
 		-- SPECTRAL STONE
-		
+
 		-- ISLAND OF DRAGONS
 		elseif(npcHandler.topic[cid] == 32) then
 			npcHandler:say({"Now we're talking! Maybe you've already heard of the island Okolnir south of Hrodmir. ...",
@@ -496,10 +494,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0	
 			player:setStorageValue(90, 57)
 		-- ISLAND OF DRAGONS
-			
+
 		end
 	-- ANSWER YES
-	
+
 	-- ANSWER NO
 	elseif(msgcontains(msg, "no")) then
 		if(npcHandler.topic[cid] == 5) then
@@ -510,6 +508,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Be greeted, noble |PLAYERNAME| and welcome to the Explorer Society.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Come back soon, noble |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Come back soon, noble.")
 npcHandler:addModule(FocusModule:new())
