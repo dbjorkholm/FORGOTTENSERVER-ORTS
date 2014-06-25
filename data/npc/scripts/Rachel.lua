@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Okay, then just browse through all of my wares."})
 
-function creatureSayCallback(cid, type, msg)
+local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(not npcHandler:isFocused(cid)) then
 		return false
@@ -19,10 +19,10 @@ function creatureSayCallback(cid, type, msg)
 	if(msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand')) then
 		if(isSorcerer(cid) or isDruid(cid)) then
 			if player:getStorageValue(50066) == -1 then
-				selfSay('So you ask me for a {' .. getItemName(items[player:getVocation()]) .. '} to begin your adventure?', cid)
+				selfSay('So you ask me for a {' .. ItemType(items[player:getVocation()]):getName() .. '} to begin your adventure?', cid)
 				npcHandler.topic[cid] = 1
 			else
-				selfSay('What? I have already gave you one {' .. getItemName(items[player:getVocation()]) .. '}!', cid)
+				selfSay('What? I have already gave you one {' .. ItemType(items[player:getVocation()]):getName() .. '}!', cid)
 			end
 		else
 			selfSay('Sorry, you aren\'t a druid either a sorcerer.', cid)
