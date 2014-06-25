@@ -22,7 +22,7 @@ To contribute in code to this project, [create a pull request](http://otland.net
 - Post a Checkbox |- [X] Working now on map| which you can click when you want work on it.
 - Check if another user already has an X in his controllbox.
 - If nobody has one, you can check your box and start editing the map.
-- Use the following [creatures.xml](http://pastebin.com/6jJeGhui) in your RME in order to avoid conflicts
+- Use the following [creatures.xml](http://pastebin.com/ztKATU1z) in your RME in order to avoid conflicts
 - It should be placed into "C:\Users\'YOUR USER NAME'\AppData\Roaming\Remere's Map Editor\data\1035" in Windows 7
 - If you finish your map edit, create a pull request with changelog(coords with changes) and uncheck your box.
 
