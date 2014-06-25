@@ -65,7 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "farmine") then
-		if player:getStorageValue(Storage.TheNewFrontier.Mission01) == 3 then
+		if player:getStorageValue(Storage.TheNewFrontier.Mission10) == 1 then
 			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
 			npcHandler.topic[cid] = 2
 		else
