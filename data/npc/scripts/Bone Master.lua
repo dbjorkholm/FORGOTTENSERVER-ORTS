@@ -11,23 +11,23 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-
+	local player = Player(cid)
 	if(msgcontains(msg, "join")) then
-		if(getPlayerStorageValue(cid, 66) < 1 and getPlayerStorageValue(cid, 67) < 1) then
+		if player:getStorageValue(66) < 1 and player:getStorageValue(67) < 1 then
 			npcHandler:say("The Brotherhood of Bones has suffered greatly in the past, but we did survive as we always will ... ", cid)
 			npcHandler:say("You have proven resourceful by beating the silly riddles the Nightmare Knights set up to test their candidates ... ", cid)
 			npcHandler:say("It's an amusing thought that after passing their test you might choose to join the ranks of their sworn enemies ...", cid)
-			npcHandler:say("For the irony of this I ask you, " .. getCreatureName(cid) ..": Do you want to join the Brotherhood of Bones? ", cid)
+			npcHandler:say("For the irony of this I ask you, " .. player:getName() .. ": Do you want to join the Brotherhood of Bones? ", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "advancement")) then
-		if(getPlayerStorageValue(cid, 67) == 1) then
+		if player:getStorageValue(67) == 1 then
 			npcHandler:say("So you want to advance to a {Hyaena} rank? Did you bring 500 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 3
-		elseif(getPlayerStorageValue(cid, 67) == 2) then
+		elseif player:getStorageValue(67) == 2 then
 			npcHandler:say("So you want to advance to a {Death Dealer} rank? Did you bring 1000 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 4
-		elseif(getPlayerStorageValue(cid, 67) == 3) then
+		elseif player:getStorageValue(67) == 3 then
 			npcHandler:say("So you want to advance to a {Dread Lord} rank? Did you bring 1500 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -43,20 +43,20 @@ local function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, 67, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
-			if(getPlayerItemCount(cid, 6500) >= 500) then
-				doPlayerRemoveItem(cid, 6500, 500)
-				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-				setPlayerStorageValue(cid, 67, 2)
+			if player:getItemCount(6500) >= 500 then
+				player:removeItem(6500, 500)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:setStorageValue(67, 2)
 				npcHandler:say("You advanced to {Hyaena} rank! You are now able to use teleports of second floor of Knightwatch Tower.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 4) then
-			if(getPlayerItemCount(cid, 6500) >= 1000) then
-				doPlayerRemoveItem(cid, 6500, 1000)
-				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-				setPlayerStorageValue(cid, 67, 3)
+			if player:getItemCount(6500) >= 1000 then
+				player:removeItem(6500, 1000)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:setStorageValue(67, 3)
 				doPlayerAddItem(cid, 6433, 1)
 				npcHandler:say("You advanced to {Death Dealer} rank!", cid)
 			else
@@ -64,10 +64,10 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 5) then
-			if(getPlayerItemCount(cid, 6500) >= 1500) then
-				doPlayerRemoveItem(cid, 6500, 1500)
-				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-				setPlayerStorageValue(cid, 67, 4)
+			if player:getItemCount(6500) >= 1500 then
+				player:removeItem(6500, 1500)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:setStorageValue(67, 4)
 				npcHandler:say("You advanced to {Dread Lord} rank! You are now able to use teleports of fourth floor of Knightwatch Tower and to create addon scrolls.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
@@ -77,6 +77,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

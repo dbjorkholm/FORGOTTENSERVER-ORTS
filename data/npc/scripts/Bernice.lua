@@ -11,9 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if(getPlayerStorageValue(cid, 90) > 34) then
+		if player:getStorageValue(90) > 34 then
 			npcHandler:say("The most important mission we currently have is an expedition to Calassa.", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -23,9 +23,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif(npcHandler.topic[cid] == 4) then
 			npcHandler:say("Captain Max will bring you to Calassa whenever you are ready. Please try to retrieve the missing logbook which must be in one of the sunken shipwrecks.", cid)
-			setPlayerStorageValue(cid, 90, 63)
+			player:setStorageValue(90, 63)
 			npcHandler.topic[cid] = 0
-		elseif(getPlayerStorageValue(cid, 90) == 64) then
+		elseif player:getStorageValue(90) == 64 then
 			npcHandler:say("OH! So you have safely returned from Calassa! Congratulations, were you able to retrieve the logbook?", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -44,16 +44,16 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Excellent! I will immediately inform Captain Max to bring you to Calassa whenever you are ready. Don't forget to make thorough preparations!", cid)
 			npcHandler.topic[cid] = 4
 		elseif(npcHandler.topic[cid] == 5) then
-			if(getPlayerItemCount(cid, 6124) >= 1) then
-				doPlayerRemoveItem(cid, 6124, 1)
+			if player:getItemCount(6124) >= 1 then
+				player:removeItem(6124, 1)
 				npcHandler:say("Yes! That's the logbook! However... it seems that the water has already destroyed many of the pages. This is not your fault though, you did your best. Thank you!", cid)
-				setPlayerStorageValue(cid, 90, 65)
+				player:setStorageValue(90, 65)
 				npcHandler.topic[cid] = 0
 			end
 		end
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
