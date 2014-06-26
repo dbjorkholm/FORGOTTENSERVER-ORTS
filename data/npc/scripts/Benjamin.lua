@@ -11,16 +11,16 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-
+	local player = Player(cid)
 	if(msgcontains(msg, "measurements")) then
-		if(getPlayerStorageValue(cid, 250) == 31) then
+		if player:getStorageValue(250) == 31 then
 			npcHandler:say("Oh they don't change that much since in the old days as... <tells a boring and confusing story about a cake, a parcel, himself and two squirrels, at least he tells you his measurements in the end> ", cid)
-			setPlayerStorageValue(cid, 250, 32)
+			player:setStorageValue(250, 32)
 			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -8,7 +8,8 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if(getPlayerStorageValue(cid, 1060) == 29) then
+	local player = Player(cid)
+	if player:getStorageValue(1060) == 29 then
 		npcHandler:setMessage(MESSAGE_GREET, "ZzzzZzzZz...chrrr...")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Greetings, wayfarer.")
@@ -20,7 +21,8 @@ local function creatureSayCallback(cid, type, msg)
 	if(not(npcHandler:isFocused(cid))) then
 		return false
 	end
-	if(getPlayerStorageValue(cid, 1060) == 29) then
+	local player = Player(cid)
+	if player:getStorageValue(1060) == 29 then
 		if(msg == "SOLOSARASATIQUARIUM") then
 			npcHandler:say("Dragon dreams are golden. ..." , cid)
 			npcHandler:say("A broad darkness surrounds you as if a heavy curtain is closing before your eyes. After what seems like minutes of floating through emptiness, you get the feeling as if a hole opens in the dark before you. ..." , cid)
@@ -138,9 +140,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 33
 		elseif(string.lower(msg) == "use mirror" and npcHandler.topic[cid] == 33) then
 			npcHandler:say({"With your eyes covered and avoiding direct sight of the rays, you put the mirror into the stand. ..", "Instinctively you run to a larger emerald bluff near the raise to find cover. Mere seconds after you claimed the sturdy shelter, a deep dark humming starts to swirl through the air. ... ", "Seconds pass as the hum gets louder. The noise is maddening, drowning all other sounds around you. As you cover your ears in pain, the humming explodes into a deafening growl. ... ", "You raise your head above the edge of the emerald to catch a glimpse of what's happening. ... ", "The hand seems to have grown into a fist. In the distance you can now see a blurry scheme of a creature too large for your eyes to get a sharper view of its head. ... ", "Blending the rays, the mirror directs pure white light directly towards the part where you assume the face of the creature. ... ", "The growl transforms into a scream, everything around you seems to compress. As you press yourself tightly against the bluff, everything falls silent and in a split second, the dark being dissolves into bursts of blackness. You wake. "}, cid)
-			setPlayerStorageValue(cid, 1060, 30)
+			player:setStorageValue(1060, 30)
 		end
-	elseif(getPlayerStorageValue(cid, 1060) == 30) then
+	elseif player:getStorageValue(1060) == 30 then
 		if(msgcontains(msg, "wayfarer")) then
 			npcHandler:say("I call you the wayfarer. You travelled through my dreams. You ultimately freed my mind. My mind accepted you and so will I.", cid)
 			npcHandler.topic[cid] = 1
@@ -156,7 +158,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("RISE. ...", cid)
 			npcHandler:say("The transfer was successful. ...", cid)
 			npcHandler:say("You are now prepared to enter the realm of the evildoer. I am grateful for your help, wayfarer. Should you seek my council, use this charm I cede to you. For my spirit will guide you wherever you are. May you enjoy a sheltered future, you shall prevail.", cid)
-			setPlayerStorageValue(cid, 1060, 31)	
+			player:setStorageValue(1060, 31)	
 			npcHandler.topic[cid] = 0
 		end
 	end
