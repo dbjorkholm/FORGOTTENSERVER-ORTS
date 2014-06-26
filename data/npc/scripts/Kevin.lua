@@ -8,11 +8,13 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getPlayerBones(cid)
-	return getPlayerItemCount(cid, 2230) + getPlayerItemCount(cid, 2231)
+	local player = Player(cid)
+	return player:getItemCount(2230) + player:getItemCount(2231)
 end
 
 local function doPlayerRemoveBones(cid)
-	return doPlayerRemoveItem(cid, 2230, getPlayerItemCount(cid, 2230)) and doPlayerRemoveItem(cid, 2231, getPlayerItemCount(cid, 2231))
+	local player = Player(cid)
+	return player:removeItem(2230, player:getItemCount(2230)) and player:removeItem(2231, player:getItemCount(2231))
 end
 
 local function creatureSayCallback(cid, type, msg)
