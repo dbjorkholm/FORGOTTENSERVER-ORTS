@@ -1,15 +1,16 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3164) then
-		if(getPlayerStorageValue(cid, 1050) == 9) then
-			setPlayerStorageValue(cid, 1050, 10)
-			doPlayerAddItem(cid, 10760, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a flask of poison.")
-		elseif(getPlayerStorageValue(cid, 1050) == 15) then
-			setPlayerStorageValue(cid, 1050, 16)
-			doPlayerAddItem(cid, 11106, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a flask of extra greasy oil.")
+	if item.uid == 3164 then
+		local player = Player(cid)
+		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 9 then
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 10)
+			player:addItem(10760, 1)
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a flask of poison.")
+		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols) == 2 then
+			player:setStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols, 3)
+			player:addItem(11106, 1)
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a flask of extra greasy oil.")
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
 		end
 	end
 	return true

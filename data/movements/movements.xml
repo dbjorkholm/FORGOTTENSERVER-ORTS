@@ -28,6 +28,7 @@
 
 	<!-- Children of the Revolution -->
 	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/childrenOfTheRevolutionQuestTemple.lua"/>
+	<movevent event="StepIn" uniqueid="3166" script="children of the revolution quest/childrenOfTheRevolutionQuestSymbols.lua"/>
 	<movevent event="StepIn" fromaid="8009" toaid="8011"  script="children of the revolution quest/childrenOfTheRevolutionQuestSpy.lua"/>
 	
 	<!--- The New Frontier Quest -->

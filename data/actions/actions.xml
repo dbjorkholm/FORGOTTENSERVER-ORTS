@@ -22,6 +22,11 @@
 	<!-- Children of the Revolution -->
 	<action uniqueid="3170" script="children of the revolution quest/childrenOfTheRevolutionQuestZalamonDoor.lua"/>
 	<action uniqueid="3162" script="children of the revolution quest/childrenOfTheRevolutionQuestTacticalMap.lua"/>
+	<action uniqueid="3164" script="children of the revolution quest/childrenOfTheRevolutionQuestPoison.lua"/>
+	<action uniqueid="3165" script="children of the revolution quest/childrenOfTheRevolutionQuestPoisonDoor.lua"/>
+	<action actionid="8013" script="children of the revolution quest/childrenOfTheRevolutionQuestLevers.lua"/>
+	<action itemid="10760" 	script="children of the revolution quest/childrenOfTheRevolutionQuestPoisonWater.lua"/>
+	<action itemid="11106" 	script="children of the revolution quest/childrenOfTheRevolutionQuestGreaseOil.lua"/>
 
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
