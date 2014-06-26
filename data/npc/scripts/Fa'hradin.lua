@@ -1,16 +1,13 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	
 	-- GREET
 	if(msg == "DJANNI'HAH") and (not npcHandler:isFocused(cid)) then
 		if(getPlayerStorageValue(cid, Factions) > 0) then
@@ -32,20 +29,20 @@ local function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, BlueDjinn.MissionStart+2, 1)
 		elseif(getPlayerStorageValue(cid, BlueDjinn.MissionStart+2) == 2) then
 			npcHandler:say("Did you already retrieve the spyreport?", cid)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			if(doPlayerRemoveItem(cid, 2345, 1)) then
 				npcHandler:say({"You really have made it? You have the report? How come you did not get slaughtered? I must say I'm impressed. Your race will never cease to surprise me. ...","Well, let's see. ...","I think I need to talk to Gabel about this. I am sure he will know what to do. Perhaps you should have aword with him, too."}, cid, 0, 1, 3000)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 				setPlayerStorageValue(cid, BlueDjinn.MissionStart+2, 3)
 			end
 		end
 	end
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
 		npcHandler:say("Farewell, human. I will always remember you. Unless I forget you, of course.", cid)
-		talkState[talkUser] = 0
+		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
 	end
 	return true

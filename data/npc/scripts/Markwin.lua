@@ -1,12 +1,11 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	guards = {
@@ -37,18 +36,17 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	
+
 	if(msgcontains(msg, "letter")) then
 		if(getPlayerStorageValue(cid, 250) == 42) then
 			npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Uhm, well thank you, hornless being. ", cid)
 			setPlayerStorageValue(cid, 250, 43)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "bye")) then
 		npcHandler:say("Hm ... good bye. ", cid)
