@@ -250,14 +250,17 @@
 			<missionstate id="5" description="You already reported Zalamon about the camp! Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 3: Zee Killing Fieldzz" storageid="12304" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Get the poison from Zalamon's storage room. Then go to the teleporter to the Muggy Plains and head east from there to the rice fields. Go to the very top rice field and use the poison anywhere on the water."/>
+			<missionstate id="2" description="The rice has been poisoned. This will weaken the Emperor's army significantly. Return and tell Zalamon about your success."/>
+			<missionstate id="3" description="You already reported Zalamon about your success! Ask him for new mission!"/>
 		</mission>
-		<mission name="Mission 4: Zze Way of Zztonezz" storageid="12305" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 4: Zze Way of Zztonezz" storageid="12305" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Your mission is to find a way to enter the north of the valley and find a passage to the great gate itself. Search any temples or settlements you come across for hidden passages."/>
+			<missionstate id="2" description="Report Zalamon about the strange symbols that you found."/>
+			<missionstate id="3" description="Get the greasy oil from Zalamon's storage room and put them on the levers that you found."/>
+			<missionstate id="4" description="Due to being extra greasy, the leavers can now be moved."/>
+			<missionstate id="5" description="You found the right combination for the puzzle in the mountains and triggered some kind of mechanism. You should head back to Zalamon to report your success."/>
+			<missionstate id="6" description="You already reported Zalamon about your success! Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 5: Phantom Army" storageid="12306" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

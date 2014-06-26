@@ -79,6 +79,7 @@ local function creatureSayCallback(cid, type, msg)
 						}, cid)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 12)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission03, 3) --Questlog, Children of the Revolution "Mission 3: Zee Killing Fieldzz"
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 12 then
 			npcHandler:say(
 						{
@@ -153,13 +154,19 @@ local function creatureSayCallback(cid, type, msg)
 		
 	-- CHILDREN OF REVOLUTION QUEST
 	elseif msgcontains(msg, "symbols") then
-		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 14 then
+		if player:getStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols) == 1 then
 			npcHandler:say(
 						{
 						"Mh, zze zzymbolzz of zze chamber you dezzcribe are very common in our culture, palezzkin. You should have come accrozz zzem in many a plazze already. ...",
 						"Zze zzymbolzz zzeem to be arranged in zzome way you zzay? Were zzere any notizzeable devizzezz? Zzwitchezz or leverzz? "
 						}, cid)
 			npcHandler.topic[cid] = 11
+		end
+	-- CHILDREN OF REVOLUTION QUEST
+	elseif msgcontains(msg, "poison") or msgcontains(msg, "poizzon") then
+		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 9 then
+			npcHandler:say("Zze emperor of zze dragonzz hazz tranzzformed himzzelf into an undead creature to lazzt for all eternity, to cheat deazz. Hizz corruption flowzz to zzozze he bound, and from zzem to zzozze zzey bound, and from zzem into zze land.", cid)
+			npcHandler.topic[cid] = 0
 		end
 	-- CHILDREN OF REVOLUTION QUEST
 	elseif msgcontains(msg, "yes") then
@@ -222,13 +229,14 @@ local function creatureSayCallback(cid, type, msg)
 						"Are you fully prepared for zzizz?"
 						}, cid)
 			npcHandler.topic[cid] = 8
-		elseif npcHandler.topic[cid] == 9 then
+		elseif npcHandler.topic[cid] == 8 then
 			npcHandler:say(
 						{
 						"Good. Zze fieldzz should be not far from Xiachai in zze eazzt. Go to zze top terrazze and mix zze poizzon wizz zze water. ... ",
-						"Poizzon izz often uzzed by cowardzz, yet it grantzz great power to zze opprezzed. "
+						"{Poizzon} izz often uzzed by cowardzz, yet it grantzz great power to zze opprezzed. "
 						}, cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 9)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission03, 1) --Questlog, Children of the Revolution "Mission 3: Zee Killing Fieldzz"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 10 then
 			npcHandler:say(
@@ -236,7 +244,10 @@ local function creatureSayCallback(cid, type, msg)
 						"Perhapzz you can find a way to enter zze norzz of zze valley and find a pazzage to zze great gate itzzelf. Zzearch any templezz or zzettlementzz you come accrozz for hidden pazzagezz. ... ",
 						"I wish for a zzafe return wizz good newzz. "
 						}, cid)
-			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 12)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 13)
+			if player:getStorageValue(Storage.ChildrenoftheRevolution.Mission04) <= 1 then
+				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 1) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
 			npcHandler:say(
@@ -245,7 +256,8 @@ local function creatureSayCallback(cid, type, msg)
 						"Not too far from zze lever, zzere muzzt be a hint of zzome zzort. An image of how zze zzymbolzz muzzt be arranged. Zzurely zze mechanizzm will trigger a zzecret pazzage, maybe a moving wall or a portal. ... ",
 						"Zzizz should be our pazz to zze great gate. Head to zze zztorage onzze again. Zzere should be zzome extra greazzy oil which should work wizz zzuch a large mechanizzm. Zze leverzz should zzen be movable again. "
 						}, cid)
-			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 15)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols, 2)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 3) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 12 then
 			npcHandler:say(
@@ -255,6 +267,7 @@ local function creatureSayCallback(cid, type, msg)
 						" I may alzzo have anozzer mizzion for you if you are interezzted."
 						}, cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 18)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 6) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 13 then
 			npcHandler:say("You did well on your quezzt zzo far. I hope you will reach zze great gate in time. If we are lucky, it will zztill be open. ... Zalamon: If not, it will already be overrun by enemy zzoldierzz. Direct confrontation will be inevitable in zzat cazze, palezzkin. Now clear your mind and approach zze portal.", cid)
