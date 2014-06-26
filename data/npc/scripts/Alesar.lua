@@ -1,12 +1,11 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
-function onThink()                                      npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function getTable()
 local list = {
@@ -64,28 +63,28 @@ local function creatureSayCallback(cid, type, msg)
 	if(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(GreenDjinn.MissionStart+1) == 4 and player:getStorageValue(GreenDjinn.MissionStart+2) < 1) then
 			npcHandler:say({"So Baa'leal thinks you are up to do a mission for us? ...", "I think he is getting old, entrusting human scum such as you are with an important mission like that. ...", "Personally, I don't understand why you haven't been slaughtered right at the gates. ...", "Anyway. Are you prepared to embark on a dangerous mission for us?"}, player, 0, 1, 3500)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		elseif(player:getStorageValue(GreenDjinn.MissionStart+2) == 2) then
 			npcHandler:say("Did you find the tear of Daraman?", player)
-			talkState[talkUser] = 2
+			npcHandler.topic[cid] = 2
 		end
 	-- Mission 2 - The Tear of Daraman
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say({"All right then, human. Have you ever heard of the {'Tears of Daraman'}? ...", "They are precious gemstones made of some unknown blue mineral and possess enormous magical power. ...", "If you want to learn more about these gemstones don't forget to visit our library. ...", "Anyway, one of them is enough to create thousands of our mighty djinn blades. ...", "Unfortunately my last gemstone broke and therefore I'm not able to create new blades anymore. ...", "To my knowledge there is only one place where you can find these gemstones - I know for a fact that the Marid have at least one of them. ...", "Well... to cut a long story short, your mission is to sneak into Ashta'daramai and to steal it. ...", "Needless to say, the Marid won't be too eager to part with it. Try not to get killed until you have delivered the stone to me."}, player, 0, 1, 4500)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 			player:setStorageValue(GreenDjinn.MissionStart+2, 1)
-		elseif(talkState[talkUser] == 2) then
+		elseif(npcHandler.topic[cid] == 2) then
 			if(player:removeItem(cid, 2346, 1)) then
 				npcHandler:say({"So you have made it? You have really managed to steal a Tear of Daraman? ...", "Amazing how you humans are just impossible to get rid of. Incidentally, you have this character trait in common with many insects and with other vermin. ...", "Nevermind. I hate to say it, but it you have done us a favour, human. That gemstone will serve us well. ...", "Baa'leal, wants you to talk to Malor concerning some new mission. ...", "Looks like you have managed to extended your life expectancy - for just a bit longer."}, player, 0, 1, 4000)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 				player:setStorageValue(GreenDjinn.MissionStart+2, 3)
 			end
 		end
 	end
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
 		npcHandler:say("Finally.", player)
-		talkState[talkUser] = 0
+		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
 	end
 	return true

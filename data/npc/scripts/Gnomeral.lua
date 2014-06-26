@@ -1,26 +1,24 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
 	if(msgcontains(msg, "mission")) then
 		if(getPlayerStorageValue(cid, 900) >= 16 and getPlayerStorageValue(cid, 900) < 17) then
 			npcHandler:say("For your rank there are two missions available: matchmaker and golem repair. You can undertake each mission, but you can turn in a specific mission only once every 20 hours. ", cid)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		elseif(getPlayerStorageValue(cid, 900) >= 17) then
 			npcHandler:say("For your rank there are four missions available: matchmaker, golem repair, spore gathering and grindstone hunt. You can undertake each mission, but you can turn in a specific mission only once every 20 hours.", cid)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		end
 	--  Matchmaker
 	elseif(msgcontains(msg, "matchmaker")) then
@@ -31,8 +29,8 @@ local function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, 942, 1)
 			setPlayerStorageValue(cid, 943, 0)
 			doPlayerAddItem(cid, 18313, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 1 or talkState[talkUser] == 2) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
 			if(getPlayerStorageValue(cid, 943) == 1 and getPlayerItemCount(cid, 18312) >= 1) then
 				doPlayerRemoveItem(cid, 18312, 1)
 				setPlayerStorageValue(cid, 921, getPlayerStorageValue(cid, 921) + 10)
@@ -42,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 				setPlayerStorageValue(cid, 944, os.time() + 20 * 60 * 1000)
 				npcHandler:say("Gnomo arigato " .. getPlayerName(cid) .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	-- Matchmaker
@@ -57,8 +55,8 @@ local function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, 945, 1)
 			setPlayerStorageValue(cid, 946, 0)
 			doPlayerAddItem(cid, 18343, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 1 or talkState[talkUser] == 2) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
 			if(getPlayerStorageValue(cid, 946) == 4 and getPlayerItemCount(cid, 18343) >= 1) then
 				doPlayerRemoveItem(cid, 18343, 1)
 				setPlayerStorageValue(cid, 921, getPlayerStorageValue(cid, 921) + 10)
@@ -68,7 +66,7 @@ local function creatureSayCallback(cid, type, msg)
 				setPlayerStorageValue(cid, 947, os.time() + 20 * 60 * 1000)
 				npcHandler:say("Gnomo arigato " .. getPlayerName(cid) .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	-- Golem Repair
@@ -82,8 +80,8 @@ local function creatureSayCallback(cid, type, msg)
 			setPlayerStorageValue(cid, 948, 1)
 			setPlayerStorageValue(cid, 949, 0)
 			doPlayerAddItem(cid, 18328, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 2) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 2) then
 			if(getPlayerStorageValue(cid, 949) == 5 and getPlayerItemCount(cid, 18332) >= 1) then
 				doPlayerRemoveItem(cid, 18332, 1)
 				setPlayerStorageValue(cid, 921, getPlayerStorageValue(cid, 921) + 10)
@@ -93,7 +91,7 @@ local function creatureSayCallback(cid, type, msg)
 				setPlayerStorageValue(cid, 950, os.time() + 20 * 60 * 1000)
 				npcHandler:say("Gnomo arigato " .. getPlayerName(cid) .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	-- Spore Gathering
@@ -105,8 +103,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("It will be your task to get one such grindstone and bring it back to me.", cid)
 			setPlayerStorageValue(cid, 951, 1)
 			setPlayerStorageValue(cid, 952, 0)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 2) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 2) then
 			if(getPlayerStorageValue(cid, 952) == 1 and getPlayerItemCount(cid, 18337) >= 1) then
 				doPlayerRemoveItem(cid, 18337, 1)
 				setPlayerStorageValue(cid, 921, getPlayerStorageValue(cid, 921) + 10)
@@ -116,7 +114,7 @@ local function creatureSayCallback(cid, type, msg)
 				setPlayerStorageValue(cid, 953, os.time() + 20 * 60 * 1000)
 				npcHandler:say("Gnomo arigato " .. getPlayerName(cid) .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	-- Grindstone Hunt
@@ -124,10 +122,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "report")) then
 		if(getPlayerStorageValue(cid, 900) >= 116 and getPlayerStorageValue(cid, 900) < 17) then
 			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}?", cid)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		elseif(getPlayerStorageValue(cid, 900) >= 17) then
 			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}, {extermination} or {mushroom digging}?", cid)
-			talkState[talkUser] = 2
+			npcHandler.topic[cid] = 2
 		end
 	end
 	return true
