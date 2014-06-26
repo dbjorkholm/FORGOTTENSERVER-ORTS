@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Welcome to the Brotherhood! From now on you will walk the path of Bones. A life full of promises and power has just beenoffered to you ... ", cid)
 			npcHandler:say("Take it, if you are up to that challenge ... or perish in agony if you deserve this fate ... ", cid)
 			npcHandler:say("You can always ask me about your current rank and about the privileges the ranks grant to those who hold them. ", cid)
-			setPlayerStorageValue(cid, 67, 1)
+			player:setStorageValue(67, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
 			if player:getItemCount(6500) >= 500 then
@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(6500, 1000)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(67, 3)
-				doPlayerAddItem(cid, 6433, 1)
+				player:addItem(6433, 1)
 				npcHandler:say("You advanced to {Death Dealer} rank!", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
