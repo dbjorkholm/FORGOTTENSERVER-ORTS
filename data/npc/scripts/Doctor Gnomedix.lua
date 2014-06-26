@@ -5,9 +5,10 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)
-	if(getPlayerStorageValue(cid, 900) == 5) then
-		npcHandler:setMessage(MESSAGE_GREET, "Stand still on the examination platform " .. getCreatureName(cid) .. ".")
-		setPlayerStorageValue(cid, 900, 6)
+	local player = Player(cid)
+	if player:getStorageValue(900) == 5 then
+		npcHandler:setMessage(MESSAGE_GREET, "Stand still on the examination platform |PLAYERNAME|.")
+		player:setStorageValue(900, 6)
 	end
 	npcHandler:onCreatureSay(cid, type, msg)		
 end
@@ -19,6 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
