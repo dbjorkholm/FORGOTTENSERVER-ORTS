@@ -51,7 +51,7 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("I'm sorry this task is highly dangerous and I need experienced people for it.", cid)
 				npcHandler.topic[cid] = 0
-				return
+				return false
 			end
 			npcHandler.topic[cid] = 1
 		elseif v == 1 then
