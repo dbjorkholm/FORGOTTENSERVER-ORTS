@@ -24,8 +24,9 @@ end
 local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
+	end
 	local player = Player(cid)
-	elseif msgcontains(msg, "alverus") then
+	if msgcontains(msg, "alverus") then
 		npcHandler:say({"It happened while he carried out an experiment concerning the creation of the elemental {shrines}. I still get goose bumps just by thinking of it. ...", "You need to know about the process of creating an elemental shrine to understand it completely, but I don't want to go into detail now. ...", "Anyway, his spell had a different outcome than he had planned. He accidentally created an Ice Overlord, pure living elemental ice, who froze him in a blink of an eye."}, cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "shrine") then
