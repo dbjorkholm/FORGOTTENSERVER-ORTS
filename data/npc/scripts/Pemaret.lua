@@ -1,14 +1,12 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
 
--- Don't forget npcHandler = npcHandler in the parameters. It is required for all StdModule functions!
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
+
 local travelNode = keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to get to Edron?'})
 	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = {x=33176, y=31764, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Maybe later.'})
@@ -27,22 +25,21 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	
 	if(msgcontains(msg, "marlin")) then
 		if(getPlayerItemCount(cid, 7963) >= 1) then
 			npcHandler:say("WOW! You have a marlin!! I could make a nice decoration for your wall from it. May I have it?", cid)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		end
-	elseif(talkState[talkUser] == 1) then
+	elseif(npcHandler.topic[cid] == 1) then
 		if(getPlayerItemCount(cid, 7963) >= 1) then
 			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it! ", cid)
 			doPlayerAddItem(cid, 7964, 1)
 			doPlayerRemoveItem(cid, 7963, 1)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		else
 			npcHandler:say("You don't have the fish.", cid)
-			talkState[talkUser] = 0
+			npcHandler.topic[cid] = 0
 		end
 	end
 	if(msgcontains(msg, "no")) then

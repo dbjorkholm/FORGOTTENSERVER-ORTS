@@ -1,12 +1,11 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local Topic = {}
 
-function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid)			end
-function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)			npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()					npcHandler:onThink()					end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function getTable(player)
 local itemsList = {
@@ -121,7 +120,6 @@ end
 		
 
 local function creatureSayCallback(cid, type, msg)
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)
 	
 	if (msgcontains(msg, "hello") or msgcontains(msg, "hi")) and (not npcHandler:isFocused(cid)) then
