@@ -192,6 +192,7 @@ Storage = {
 		Mission05 = 12306,
 		SpyBuilding01 = 12307,
 		SpyBuilding02 = 12308,
-		SpyBuilding03 = 12309
+		SpyBuilding03 = 12309,
+		StrangeSymbols = 12310
 	}
 }
