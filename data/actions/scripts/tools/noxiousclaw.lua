@@ -7,6 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		targetItem:transform(10312)
 		targetItem:decay()
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Ouch! The serpent claw stabbed you.')
 	else
 		if player:getCondition(CONDITION_POISON) then
 			player:removeCondition(CONDITION_POISON)
