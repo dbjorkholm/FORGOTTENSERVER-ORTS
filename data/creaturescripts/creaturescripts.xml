@@ -47,6 +47,6 @@
 	<event type="death" name="whiteDeerScouts" script="others/whitedeer_scouts.lua"/>
 	
 	<!-- Scripts -->
-	<event type="think" name="gaz'haragoth heal" script="scripts/gaz'haragoth heal.lua"/>
+	<event type="think" name="gaz'haragoth heal" script="gaz'haragoth heal.lua"/>
 
 </creaturescripts>
