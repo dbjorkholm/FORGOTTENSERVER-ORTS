@@ -46,7 +46,10 @@ Storage = {
 		WizardAddon = 12066,
 
 		-- Pirate-outfit Quest
-		PirateSabreAddon = 50002
+		PirateSabreAddon = 50002,
+		
+		-- Assassin Outfit
+		AssassinBaseOutfit = 50080
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
