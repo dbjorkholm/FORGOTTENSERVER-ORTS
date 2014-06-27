@@ -11,9 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+	local player = Player(cid)
 	if(msgcontains(msg, "research notes")) then
-		if(getPlayerStorageValue(cid, 30) == 1) then
+		if player:getStorageValue(30) == 1 then
 			npcHandler:say("Oh, you are the contact person of the academy? Here are the notes that contain everything I have found out so far. ...", cid)
 			npcHandler:say("This city is absolutely fascinating, I tell you! If there hadn't been all this trouble and chaos in the past, this city would certainly be the greatest centre of knowledge in the world. ...", cid)
 			npcHandler:say("Oh, by the way, speaking about all the trouble here reminds me of Palimuth, a friend of mine. He is a native who was quite helpful in gathering all these information. ...", cid)
@@ -22,14 +22,14 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			setPlayerStorageValue(cid, 30, 2)
-			npcHandler:say("Excellent! You will find Palimuth near the entrance of the city centre. Just ask him if you can assist him in a few missions. ", cid)
-			doPlayerAddItem(cid, 10090, 1)
+			player:setStorageValue(30, 2)
+			npcHandler:say("Excellent! You will find Palimuth near the entrance of the city centre. Just ask him if you can assist him in a few missions.", cid)
+			player:addItem(10090, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
