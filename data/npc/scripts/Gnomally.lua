@@ -18,12 +18,13 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
+	local player = Player(cid)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 
 	if(msgcontains(msg, "looking")) then
-		if(getPlayerStorageValue(cid, 900) >= 14) then
+		if player:getStorageValue(900) >= 14 then
 			npcHandler:say("Our relations improve with every mission you undertake on our behalf. Another way to improve your relations with us gnomes is to trade in minor crystal tokens. ...", cid)
-			npcHandler:say("Your renown amongst us gnomes is currently ".. getPlayerStorageValue(cid, 921) .. ". Do you want to improve your standing by sacrificing tokens? One token will raise your renown by 5 points. ", cid)
+			npcHandler:say("Your renown amongst us gnomes is currently ".. player:getStorageValue(921) .. ". Do you want to improve your standing by sacrificing tokens? One token will raise your renown by 5 points. ", cid)
 			talkState[talkUser] = 1
 		end
 	elseif(talkState[talkUser] == 2) then
@@ -37,9 +38,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("How many tokens do you want to trade?", cid)
 			talkState[talkUser] = 2
 		elseif(talkState[talkUser] == 3) then
-			if(getPlayerItemCount(cid, 18422) >= renown[talkUser]) then
-				doPlayerRemoveItem(cid, 18422, renown[talkUser])
-				setPlayerStorageValue(cid, 921, getPlayerStorageValue(cid, 921) + renown[talkUser] * 5)
+			if player:getItemCount(18422) >= renown[talkUser] then
+				player:removeItem(18422, renown[talkUser])
+				player:setStorageValue(921, player:getStorageValue(921) + renown[talkUser] * 5)
 			else
 				npcHandler:say("You don't have theese many crystals.", cid)
 			end
@@ -48,6 +49,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
