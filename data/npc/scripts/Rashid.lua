@@ -1,12 +1,11 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)                          npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid)                       npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg)                  npcHandler:onCreatureSay(cid, type, msg) end
-function onThink()                                      npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function getTable()
 local list = 
@@ -197,67 +196,66 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
 		if(os.date("%A") == "Monday") then
 			if(player:getStorageValue(Rashid.MissionStart) < 1) then
 				npcHandler:say("Well, you could attempt the mission to become a recognised trader, but it requires a lot of travelling. Are you willing to try?", cid)
-				talkState[talkUser] = 1
+				npcHandler.topic[cid] = 1
 			elseif(player:getStorageValue(Rashid.MissionStart) == 1) then
 				npcHandler:say("Have you managed to obtain a rare deer trophy for my customer?", player)
-				talkState[talkUser] = 3
+				npcHandler.topic[cid] = 3
 			end
 		elseif(os.date("%A") == "Tuesday") then
 			if(player:getStorageValue(Rashid.MissionStart) == 2 and player:getStorageValue(Rashid.MissionStart+1) < 1 ) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", player)
-				talkState[talkUser] = 4
+				npcHandler.topic[cid] = 4
 			elseif(player:getStorageValue(Rashid.MissionStart + 1) == 4) then
 				npcHandler:say("Did you bring me the package?", player)
-				talkState[talkUser] = 6
+				npcHandler.topic[cid] = 6
 			end
 		elseif(os.date("%A") == "Wednesday") then
 			if(player:getStorageValue(Rashid.MissionStart + 1) == 5 and player:getStorageValue(Rashid.MissionStart + 2) < 1 ) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", player)
-				talkState[talkUser] = 7
+				npcHandler.topic[cid] = 7
 			elseif(player:getStorageValue(Rashid.MissionStart + 2) == 2) then
 				npcHandler:say("Have you brought the cheese?", player)
-				talkState[talkUser] = 9
+				npcHandler.topic[cid] = 9
 			end
 		elseif(os.date("%A") == "Thursday") then
 			if(player:getStorageValue(Rashid.MissionStart + 2) == 3 and player:getStorageValue(Rashid.MissionStart + 3) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", player)
-				talkState[talkUser] = 10
+				npcHandler.topic[cid] = 10
 			elseif(player:getStorageValue(Rashid.MissionStart + 3) == 2) then
 				npcHandler:say("Have you brought the vase?", player)
-				talkState[talkUser] = 12
+				npcHandler.topic[cid] = 12
 			end
 		elseif(os.date("%A") == "Friday") then
 			if(player:getStorageValue(Rashid.MissionStart + 3) == 3 and player:getStorageValue(Rashid.MissionStart + 4) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", player)
-				talkState[talkUser] = 13
+				npcHandler.topic[cid] = 13
 			elseif(player:getStorageValue(Rashid.MissionStart + 4) == 2) then
 				npcHandler:say("Have you brought a cheap but good crimson sword?", player)
-				talkState[talkUser] = 15
+				npcHandler.topic[cid] = 15
 			end
 		elseif(os.date("%A") == "Saturday") then
 			if(player:getStorageValue(Rashid.MissionStart + 4) == 3 and player:getStorageValue(Rashid.MissionStart + 5) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", player)
-				talkState[talkUser] = 16
+				npcHandler.topic[cid] = 16
 			elseif(player:getStorageValue(Rashid.MissionStart + 5) == 1) then
 				npcHandler:say("Have you brought me a gold fish??", player)
-				talkState[talkUser] = 18
+				npcHandler.topic[cid] = 18
 			end
 		elseif(os.date("%A") == "Sunday") then
 			if(player:getStorageValue(Rashid.MissionStart + 5) == 2 and player:getStorageValue(Rashid.MissionStart + 6) < 1) then
 				npcHandler:say("Ah, right. <ahem> I hereby declare you - one of my recognised traders! Feel free to offer me your wares!", player)
 				player:setStorageValue(Rashid.MissionStart + 6, 1)
 				--player:AddArchie(id or name)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 		
 			npcHandler:say(
 			{
@@ -268,38 +266,38 @@ local function creatureSayCallback(cid, type, msg)
 			"Everything clear and understood?"
 			}, player)
 			
-			talkState[talkUser] = 2
-		elseif(talkState[talkUser] == 2) then
+			npcHandler.topic[cid] = 2
+		elseif(npcHandler.topic[cid] == 2) then
 			npcHandler:say("Fine. Then get a hold of that deer trophy and bring it to me while I'm in Svargrond. Just ask me about your mission.", player)
 			player:setStorageValue(Rashid.MissionStart, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 3) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 3) then
 			if(player:getItemCount(7397) >= 1) then
 				player:removeItem(7397, 1)
 				npcHandler:say("Well done! I'll take that from you. <snags it> Come see me another day, I'll be busy for a while now. ", player)
 				player:setStorageValue(Rashid.MissionStart, 2)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
-		elseif(talkState[talkUser] == 4) then
+		elseif(npcHandler.topic[cid] == 4) then
 			npcHandler:say(
 			{
 			"Alright, that's good to hear. From you as my trader and deliveryman, I expect more than finding rare items. ...",
 			"You also need to be able to transport heavy wares, weaklings won't get far here. I have ordered a special package from Edron. ...",
 			"Pick it up from Willard and bring it back to me while I'm in Liberty Bay. Everything clear and understood?"
 			}, player)
-			talkState[talkUser] = 5
-		elseif(talkState[talkUser] == 5) then
+			npcHandler.topic[cid] = 5
+		elseif(npcHandler.topic[cid] == 5) then
 			npcHandler:say("Fine. Then off you go, just ask Willard about the 'package for Rashid'.", player)
 			player:setStorageValue(Rashid.MissionStart + 1, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 6) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 6) then
 			if(player:getItemCount(7503) >= 1) then
 				player:removeItem(7503, 1)
 				npcHandler:say("Great. Just place it over there - yes, thanks, that's it. Come see me another day, I'll be busy for a while now. ", player)
 				player:setStorageValue(Rashid.MissionStart + 1, 5)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
-		elseif(talkState[talkUser] == 7) then
+		elseif(npcHandler.topic[cid] == 7) then
 			npcHandler:say(
 			{
 			"Well, that's good to hear. From you as my trader and deliveryman, I expect more than carrying heavy packages. ...",
@@ -308,12 +306,12 @@ local function creatureSayCallback(cid, type, msg)
 			"I'm also afraid that you might not be able to use ships because of the smell of the cheese. ...",
 			"Please get the cheese from Miraia and bring it to me while I'm in Port Hope. Everything clear and understood?"
 			}, player)
-			talkState[talkUser] = 8
-		elseif(talkState[talkUser] == 8) then
+			npcHandler.topic[cid] = 8
+		elseif(npcHandler.topic[cid] == 8) then
 			npcHandler:say("Okay, then please find Miraia in Darashia and ask her about the {'scarab cheese'}.", player)
 			player:setStorageValue(Rashid.MissionStart + 2, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 9) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 9) then
 			if(player:getItemCount(8112) >= 1) then
 				player:removeItem(8112, 1)
 				--if (player:getStorageValue(ExplorerSocietySTORAGE) == 1) then
@@ -321,29 +319,29 @@ local function creatureSayCallback(cid, type, msg)
 				--end
 				npcHandler:say("Mmmhh, the lovely odeur of scarab cheese! I really can't understand why most people can't stand it. Thanks, well done! ", player)
 				player:setStorageValue(Rashid.MissionStart + 2, 3)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
-		elseif(talkState[talkUser] == 10) then
+		elseif(npcHandler.topic[cid] == 10) then
 			npcHandler:say(
 			{
 			"Well, that's good to hear. From you as my trader and deliveryman, I expect more than bringing stinky cheese. ...",
 			"I wonder if you are able to deliver goods so fragile they almost break when looked at. ...",
 			"I have ordered a special elven vase from Briasol in Ab'Dendriel. Get it from him and don't even touch it, just bring it to me while I'm in Ankrahmun. Everything clear and understood?"
 			}, player)
-			talkState[talkUser] = 11
-		elseif(talkState[talkUser] == 11) then
+			npcHandler.topic[cid] = 11
+		elseif(npcHandler.topic[cid] == 11) then
 			npcHandler:say("Okay, then please find {Briasol} in {Ab'Dendriel} and ask for a {'fine vase'}.", player)
 			player:setStorageValue(Rashid.MissionStart + 3, 1)
 			player:addMoney(1000)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 12) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 12) then
 			if(player:getItemCount(8760) >= 1) then
 				player:removeItem(8760, 1)
 				npcHandler:say("I'm surprised that you managed to bring this vase without a single crack. That was what I needed to know, thank you. ", player)
 				player:setStorageValue(Rashid.MissionStart + 3, 3)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
-		elseif(talkState[talkUser] == 13) then
+		elseif(npcHandler.topic[cid] == 13) then
 			npcHandler:say(
 			{
 			"Fine! There's one more skill that I need to test and which is cruicial for a successful trader. ...",
@@ -353,19 +351,19 @@ local function creatureSayCallback(cid, type, msg)
 			"And the quality must not suffer, of course! Everything clear and understood?",
 			"Dwarves are said to be the most stubborn of all traders. Travel to Kazordoon and try to get the smith Uzgod to sell a crimson sword to you. ..."
 			}, player)
-			talkState[talkUser] = 14
-		elseif(talkState[talkUser] == 14) then
+			npcHandler.topic[cid] = 14
+		elseif(npcHandler.topic[cid] == 14) then
 			npcHandler:say("Okay, I'm curious how you will do with {Uzgod}. Good luck!", player)
 			player:setStorageValue(Rashid.MissionStart + 4, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 15) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 15) then
 			if(player:getItemCount(7385) >= 1) then
 				player:removeItem(7385, 1)
 				npcHandler:say("Ha! You are clever indeed, well done! I'll take this from you. Come see me tomorrow, I think we two might get into business after all.", player)
 				player:setStorageValue(Rashid.MissionStart + 4, 3)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
-		elseif(talkState[talkUser] == 16) then
+		elseif(npcHandler.topic[cid] == 16) then
 			npcHandler:say(
 			{
 			"My friend, it seems you have already learnt a lot about the art of trading. I think you are more than worthy to become a recognised trader. ...",
@@ -373,17 +371,17 @@ local function creatureSayCallback(cid, type, msg)
 			"I have always dreamed to have a small pet, one that I could take with me and which wouldn't cause problems. ...",
 			"Could you - just maybe - bring me a small goldfish in a bowl? I know that you would be able to get one, wouldn't you?"
 			}, player)
-			talkState[talkUser] = 17
-		elseif(talkState[talkUser] == 17) then
+			npcHandler.topic[cid] = 17
+		elseif(npcHandler.topic[cid] == 17) then
 			npcHandler:say("Thanks so much! I'll be waiting eagerly for your return then.", player)
 			player:setStorageValue(Rashid.MissionStart + 5, 1)
-			talkState[talkUser] = 0
-		elseif(talkState[talkUser] == 18) then
+			npcHandler.topic[cid] = 0
+		elseif(npcHandler.topic[cid] == 18) then
 			if(player:getItemCount(8766) >= 1) then
 				player:removeItem(8766, 1)
 				npcHandler:say("Thank you!! Ah, this makes my day! I'll take the rest of the day off to get to know this little guy. Come see me tomorrow, if you like.", player)
 				player:setStorageValue(Rashid.MissionStart + 5, 2)
-				talkState[talkUser] = 0
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end
