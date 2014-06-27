@@ -497,6 +497,7 @@
 	<movevent event="Equip" itemid="18408" level="120" slot="ring" function="onEquipItem"/>
 	<movevent event="Equip" itemid="18528" level="120" slot="ring" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="18528" slot="ring" function="onDeEquipItem"/>
+	<movevent event="Equip" itemid="10310" level="100" slot="ring" function="onEquipItem"/>
 
 	<!-- Helmets -->
 	<movevent event="Equip" itemid="5461" slot="head" function="onEquipItem"/>
