@@ -19,29 +19,29 @@ keywordHandler:addKeyword({'die'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'general'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Basically you pay me a {fee}, and you are sent into an arena with 10 different stages. If you succeed you will be rewarded accordingly."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My job is to explain about the rules and to get the fee from the competitors."})
 keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well I would rather call it an {Ultimate Challenge} than a mission."})
- 
+
 local function creatureSayCallback(cid, type, msg)
- 
-	local s = getPlayerStorageValue(cid, STORAGE_ARENA)
+	local player = Player(cid)
+	local s = player:getStorageValue(STORAGE_ARENA)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
 	if msgcontains(msg, "fight") or msgcontains(msg, "pit") or msgcontains(msg, "challenge") or msgcontains(msg, "arena") then
 		if s < 1 then
-			setPlayerStorageValue(cid, STORAGE_ARENA, 1)
-			s = getPlayerStorageValue(cid, STORAGE_ARENA)
+			player:setStorageValue(STORAGE_ARENA, 1)
+			s = player:getStorageValue(STORAGE_ARENA)
 		end
 		if ARENA[s] then
-			if getPlayerStorageValue(cid, STORAGE_PIT) > 0 then
-				setPlayerStorageValue(cid, STORAGE_PIT, 0)
+			if player:getStorageValue(STORAGE_PIT) > 0 then
+				player:setStorageValue(STORAGE_PIT, 0)
 			end
 			npcHandler:say("So you agree with the {rules} and want to participate in the {challenge}? The {fee} for one try in {" .. ARENA[s].name .. "} is " .. ARENA[s].price .. " gold pieces. Do you really want to participate and pay the {fee}?", cid)
 			npcHandler.topic[cid] = 1
-		elseif getPlayerStorageValue(cid, STORAGE_ARENA) > 3 then
+		elseif player:getStorageValue(STORAGE_ARENA) > 3 then
 			npcHandler:say("You've already completed the arena in all {difficulty levels}.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			print("[Svargrond Arena[NPC]]", "Wrong configuration\nPlayer: " .. getCreatureName(cid) .. "\nAction: Trying to enter to arena\nStorage " .. STORAGE_ARENA .. " for player is: " .. s)
+			print("[Svargrond Arena[NPC]]", "Wrong configuration\nPlayer: " .. player:getName() .. "\nAction: Trying to enter to arena\nStorage " .. STORAGE_ARENA .. " for player is: " .. s)
 			npcHandler:say("Something is wrong, plase contact a gamemaster.", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -50,8 +50,8 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		if ARENA[s] then
-			if doPlayerRemoveMoney(cid, ARENA[s].price) then
-				setPlayerStorageValue(cid, STORAGE_PIT, 1)
+			if player:removeMoney(ARENA[s].price) then
+				player:setStorageValue(STORAGE_PIT, 1)
 				npcHandler:say("As you wish! You can pass the door now and enter the teleporter to the pits.", cid)
 				npcHandler.topic[cid] = 0
 			else
@@ -59,7 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		else
-			print("[Svargrond Arena[NPC]]", "Wrong configuration\nPlayer: " .. getCreatureName(cid) .. "\nAction: Trying to enter to arena\nStorage " .. STORAGE_ARENA .. " for player is: " .. s)
+			print("[Svargrond Arena[NPC]]", "Wrong configuration\nPlayer: " .. player:getName() .. "\nAction: Trying to enter to arena\nStorage " .. STORAGE_ARENA .. " for player is: " .. s)
 			npcHandler:say("Something is wrong, plase contact a gamemaster.", cid)
 			npcHandler.topic[cid] = 0
 		end			
