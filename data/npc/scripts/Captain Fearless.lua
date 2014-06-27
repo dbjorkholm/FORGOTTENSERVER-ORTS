@@ -1,18 +1,12 @@
 local keywordHandler = KeywordHandler:new()
-        local npcHandler = NpcHandler:new(keywordHandler)
-        NpcSystem.parseParameters(npcHandler)
-        
-        
-        
-        -- OTServ event handling functions start
-        function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
-        function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
-        function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
-        function onThink() 						npcHandler:onThink() end
-        -- OTServ event handling functions end
-        
-        
-        -- Don't forget npcHandler = npcHandler in the parameters. It is required for all StdModule functions!
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
+
 	local travelNode = keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Thais for free?'})
         	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = {x=32310, y=32210, z=6} })
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
@@ -56,24 +50,21 @@ local keywordHandler = KeywordHandler:new()
         keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Where do you want to go? To Thais, Carlin, Ab\'Dendriel, Port Hope, Edron, Darashia, Liberty Bay, Svargrond, Yalahar or Ankrahmun?'})
         keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
 		keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
-
-local talkState = {}
 		
 local function creatureSayCallback(cid, type, msg)
 	if(not(npcHandler:isFocused(cid))) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-   	   	
+
 	if (msgcontains(msg, 'darashia')) then
 		npcHandler:say('Do you seek a passage to Darashia?', cid)
-		talkState[talkUser] = 1
- 	elseif (talkState[talkUser] == 1) then
+		npcHandler.topic[cid] = 1
+ 	elseif (npcHandler.topic[cid] == 1) then
 		if (msgcontains(msg, 'yes')) then
 			npcHandler:say("I warn you! This route is haunted by a ghostship. Do you really want to go there?",cid)
-			talkState[talkUser] = 2
+			npcHandler.topic[cid] = 2
 	end
-	elseif (talkState[talkUser] == 2) then
+	elseif (npcHandler.topic[cid] == 2) then
 		if (msgcontains(msg, 'yes')) then
 			if(math.random(1, 10) == 1) then
 				doTeleportThing(cid, {x = 33324, y = 32173, z = 6})

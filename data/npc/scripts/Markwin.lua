@@ -1,22 +1,22 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	guards = {
-		"minotaur guard",
-		"minotaur archer",
-		"minotaur mage"
+		"Minotaur Guard",
+		"Minotaur Archer",
+		"Minotaur Mage"
 	}
-	if(getPlayerStorageValue(cid, 258) < 1) then
+	local player = Player(cid)
+	if player:getStorageValue(258) < 1 then
 		npcHandler:setMessage(MESSAGE_GREET, "Intruder! Guards, take him down!")
-		setPlayerStorageValue(cid, 258, 1)
+		player:setStorageValue(258, 1)
 		npcHandler:releaseFocus(cid)
 		for x = -1, 1 do
 			for y = -1, 1 do
@@ -24,10 +24,10 @@ local function greetCallback(cid)
 				doSendMagicEffect({x = 32418 + x, y = 32147 + y, z = 15}, CONST_ME_TELEPORT)
 			end
 		end
-	elseif(getPlayerStorageValue(cid, 258) == 1) then	
+	elseif player:getStorageValue(258) == 1 then	
 		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now. ")
-		setPlayerStorageValue(cid, 258, 2)
-	elseif(getPlayerStorageValue(cid, 258) == 2) then	
+		player:setStorageValue(258, 2)
+	elseif player:getStorageValue(258) == 2 then	
 		npcHandler:setMessage(MESSAGE_GREET, "Oh its you again. What du you want, hornless messenger?")
 	end
 	return true
@@ -37,18 +37,17 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-	
+	local player = Player(cid)
 	if(msgcontains(msg, "letter")) then
-		if(getPlayerStorageValue(cid, 250) == 42) then
+		if player:getStorageValue(250) == 42 then
 			npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
-			talkState[talkUser] = 1
+			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "yes")) then
-		if(talkState[talkUser] == 1) then
+		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Uhm, well thank you, hornless being. ", cid)
-			setPlayerStorageValue(cid, 250, 43)
-			talkState[talkUser] = 0
+			player:setStorageValue(250, 43)
+			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "bye")) then
 		npcHandler:say("Hm ... good bye. ", cid)
