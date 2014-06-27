@@ -11,12 +11,12 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-
+	local player = Player(cid)
 	if(msgcontains(msg, "silk yarn")) then
-		if(getPlayerStorageValue(cid, 78) < 1) then
+		if player:getStorageValue(78) < 1 then
 			npcHandler:say("Um. You mean, you really want me to touch that gooey spider silk just because you need yarn? Well... do you think that I'm pretty?", cid)
 			npcHandler.topic[cid] = 1
-		elseif(getPlayerStorageValue(cid, 78) == 1) then
+		elseif player:getStorageValue(78) == 1 then
 			npcHandler:say("Okay... a deal is a deal, would you like me to create a {spool of yarn} from {10 pieces of spider silk}?", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -34,18 +34,18 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You want me to touch something gooey, so you have to touch something gooey for me too. <giggles> ...", cid)
 			npcHandler:say("I love honey and I haven't eaten it in a while, so bring me 50 honeycombs and worship my beauty a little more, then we will see.", cid)
 			npcHandler.topic[cid] = 3
-			setPlayerStorageValue(cid, 79, 1)
+			player:setStorageValue(79, 1)
 		elseif(npcHandler.topic[cid] == 4) then
-			if(getPlayerItemCount(cid, 5902) >= 50) then
-				doPlayerRemoveItem(cid, 5902, 50)
+			if player:getItemCount(5902) >= 50 then
+				player:removeItem(5902, 50)
 				npcHandler:say("Oh goodie! Thank you! Okay... I guess since my fingers are sticky now anyway, I will help you. From now on, if you bring me {10 pieces of spider silk}, I will create one {spool of yarn}.", cid)
 				npcHandler.topic[cid] = 0
-				setPlayerStorageValue(cid, 78, 1)
+				player:setStorageValue(78, 1)
 			end
 		elseif(npcHandler.topic[cid] == 5) then
-			if(getPlayerItemCount(cid, 5979) >= 10) then
-				doPlayerRemoveItem(cid, 5979, 10)
-				doPlayerAddItem(cid, 5886, 1)
+			if player:getItemCount(5979) >= 10 then
+				player:removeItem(5979, 10)
+				player:addItem(5886, 1)
 				npcHandler:say("Ew... gooey... there you go.", cid)
 				npcHandler.topic[cid] = 0
 			end
@@ -53,6 +53,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
