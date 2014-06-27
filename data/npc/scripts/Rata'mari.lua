@@ -8,12 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
+	local player = Player(cid)
 	-- GREET
 	if(msg == "PIEDPIPER") and (not npcHandler:isFocused(cid)) then
-		if(getPlayerStorageValue(cid, BlueDjinn.MissionStart+2) == 1) then
+		if player:getStorageValue(BlueDjinn.MissionStart+2) == 1 then
 			npcHandler:addFocus(cid)
-			npcHandler:say("Meep? I mean - hello! Sorry, " .. getCreatureName(cid) .. "... Being a rat has kind of grown on me.", cid)
-			npcHandler:addFocus(cid)
+			npcHandler:say("Meep? I mean - hello! Sorry, " .. player:getName() .. "... Being a rat has kind of grown on me.", cid)
 			npcHandler.topic[cid] = 1
 		end
 	end
@@ -32,11 +32,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 3) then
-			if(doPlayerRemoveItem(cid, 2696, 1)) then
+			if player:removeItem(2696, 1) then
 				npcHandler:say({"Meep! Meep! Great! Here is the spyreport for you!","Meep!"}, cid, 0, 1, 2000)
+				player:setStorageValue(BlueDjinn.MissionStart+2, 2)
+				player:addItem(2345, 1)
 				npcHandler.topic[cid] = 0
-				setPlayerStorageValue(cid, BlueDjinn.MissionStart+2, 2)
-				doPlayerAddItem(cid, 2345, 1)
 			else
 				npcHandler:say("Come back when you have brought the cheese.", cid)
 				npcHandler.topic[cid] = 2
@@ -50,5 +50,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

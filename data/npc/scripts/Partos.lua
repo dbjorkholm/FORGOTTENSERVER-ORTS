@@ -11,10 +11,10 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-
+	local player = Player(cid)
 	-- Mission 1 - The Supply Thief 
 	if(msgcontains(msg, "prison")) then
-		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+1) == 2) then
+		if player:getStorageValue(GreenDjinn.MissionStart+1) == 2 then
 			npcHandler:say("You mean that's a JAIL? They told me it's the finest hotel in town! THAT explains the lousy roomservice!", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -26,13 +26,13 @@ local function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "supplies")) then
 		if(npcHandler.topic[cid] == 2) then
 			npcHandler:say({"What!? I bet, Baa'leal sent you! ...", "I won't tell you anything! Shove off!"}, cid, 0, 1, 2000)
-			setPlayerStorageValue(cid, GreenDjinn.MissionStart+1, 3)
+			player:setStorageValue(GreenDjinn.MissionStart+1, 3)
 			npcHandler.topic[cid] = 0
 		end
 	end
 	-- Mission 1 - The Supply Thief 
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
