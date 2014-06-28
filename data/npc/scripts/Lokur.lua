@@ -350,7 +350,7 @@ local function creatureSayCallback(cid, type, msg)
 		if(npcHandler.topic[cid] == 1) then
 			if player:getMoney() >= 250 then
 				player:removeMoney(250)
-				player:setStorageValue(1131, os.time() + 7 * 24 * 60 * 60 * 1000)
+				player:setStorageValue(1131, os.time() + 7 * 24 * 60 * 60)
 				npcHandler:say("Thank you for purchasing a wagon ticket.", cid)
 			else
 				npcHandler:say("You don't have enough money.", cid)
