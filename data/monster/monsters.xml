@@ -156,6 +156,7 @@
 	<monster name="Doomhowl" file="bosses/doomhowl.xml"/>
 	<monster name="Dracola" file="bosses/dracola.xml"/>
 	<monster name="Dreadwing" file="bosses/dreadwing.xml"/>
+	<monster name="Energized Raging Mage" file="bosses/energized raging mage.xml"/>
 	<monster name="Esmeralda" file="bosses/esmeralda.xml"/>
 	<monster name="Evil Mastermind" file="bosses/evil mastermind.xml"/>
 	<monster name="Fatality" file="bosses/fatality.xml"/>
@@ -323,6 +324,7 @@
 	<monster name="Destroyer" file="demons/destroyer.xml"/>
 	<monster name="Diabolic Imp" file="demons/diabolic imp.xml"/>
 	<monster name="Fire Devil" file="demons/fire devil.xml"/>
+	<monster name="Fury" file="demons/fury.xml"/>
 	<monster name="Gozzler" file="demons/gozzler.xml"/>
 	<monster name="Grave Guard" file="demons/grave guard.xml"/>
 	<monster name="Gravedigger" file="demons/gravedigger.xml"/>
@@ -588,7 +590,6 @@
 
 	<!-- Misc Mounts -->
 	<monster name="Donkey" file="misc/misc mounts/donkey.xml"/>
-	<monster name="Incredibly Old Witch" file="misc/misc mounts/incredibly old witch.xml"/>
 	<monster name="Modified Gnarlhound" file="misc/misc mounts/modified gnarlhound.xml"/>
 
 	<!-- Misc Others -->
@@ -757,9 +758,8 @@
 	<!-- Sorcerers -->
 	<monster name="Dark Apprentice" file="sorcerers/dark apprentice.xml"/>
 	<monster name="Dark Magician" file="sorcerers/dark magician.xml"/>
-	<monster name="Energized Raging Mage" file="sorcerers/energized raging mage.xml"/>
-	<monster name="Fury" file="sorcerers/fury.xml"/>
 	<monster name="Ice Witch" file="sorcerers/ice witch.xml"/>
+	<monster name="Incredibly Old Witch" file="sorcerers/incredibly old witch.xml"/>
 	<monster name="Infernalist" file="sorcerers/infernalist.xml"/>
 	<monster name="Mad Mage" file="sorcerers/mad mage.xml"/>
 	<monster name="Mad Scientist" file="sorcerers/mad scientist.xml"/>
