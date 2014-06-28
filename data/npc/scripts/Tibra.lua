@@ -9,7 +9,6 @@ function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
@@ -17,6 +16,7 @@ local function creatureSayCallback(cid, type, msg)
 	if isInArray({"heal", "help"}, msg) then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
+			local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 			for i = 1, #conditions do
 				if player:getCondition(conditions[i], CONDITIONID_COMBAT) then
 					player:removeCondition(conditions[i], CONDITIONID_COMBAT)

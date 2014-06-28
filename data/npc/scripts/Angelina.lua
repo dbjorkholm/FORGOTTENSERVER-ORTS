@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif msgcontains(msg, "Yes") then
 		if player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) < 1 then
-			npcHandler:say("OI will tell you a small secret now. My friend Lynda in Thais can create a blessed wand. Greet her from me, maybe she will aid you.", player)
+			npcHandler:say("OI will tell you a small secret now. My friend Lynda in Thais can create a blessed wand. Greet her from me, maybe she will aid you.", cid)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 		elseif player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) >= 1 then
