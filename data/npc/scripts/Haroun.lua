@@ -73,11 +73,11 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(trade[npcHandler.topic[cid]].GiveItem, trade[npcHandler.topic[cid]].Gcount)
 			return npcHandler:say(msg,'Here you are')						
         else
-            npcHandler:say('Sorry but you don\'t have the item', player)
+            npcHandler:say('Sorry but you don\'t have the item', cid)
         end
  
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 5) then
-		 npcHandler:say(msg,'Ok then', player)
+		 npcHandler:say(msg,'Ok then', cid)
 		 npcHandler.topic[cid] = 0
 		 npcHandler:releaseFocus(cid)
 	end
