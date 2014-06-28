@@ -19,18 +19,18 @@ local function creatureSayCallback(cid, type, msg)
 	
 	local player = Player(cid)
 	if msgcontains(msg, "transport") then
-		npcHandler:say("We can bring you to Venore with one of our coaches for 125 gold. Are you interested?", player)
+		npcHandler:say("We can bring you to Venore with one of our coaches for 125 gold. Are you interested?", cid)
 		npcHandler.topic[cid] = 5
 	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 5) then
 		if player:getMoney() >= 125 then
 			player:removeMoney(125)
-			npcHandler:say("Have a nice trip!", player)
+			npcHandler:say("Have a nice trip!", cid)
 			local port = {x = 32850, y = 32124, z = 7}
 			player:teleportTo(port)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		else
-			npcHandler:say("You don't have enough money.", player)
+			npcHandler:say("You don't have enough money.", cid)
 		end
 	end
 	local msg = string.lower(msg)

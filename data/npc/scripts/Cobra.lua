@@ -17,7 +17,7 @@ local function greetCallback(cid)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return false
 	else
-		npcHandler:say("Begone! Hissssss! You bear not the mark of the cobra!", player)
+		npcHandler:say("Begone! Hissssss! You bear not the mark of the cobra!", cid)
 		return false
 	end
 	return true
