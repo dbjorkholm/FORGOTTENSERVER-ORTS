@@ -122,9 +122,7 @@
 	<!-- Bonelords -->
 	<monster name="Bonelord" file="bonelords/bonelord.xml"/>
 	<monster name="Braindeath" file="bonelords/braindeath.xml"/>
-	<monster name="Elder Beholder" file="bonelords/elder bonelord.xml"/>
 	<monster name="Gazer" file="bonelords/gazer.xml"/>
-	<monster name="Beholder" file="bonelords/bonelord.xml"/>
 	<monster name="Elder Bonelord" file="bonelords/elder bonelord.xml"/>
 	<monster name="Eye of the Seven" file="bonelords/eye of the seven.xml"/>
 
@@ -394,6 +392,7 @@
 	<!-- Dwarves -->
 	<monster name="Dwarf Geomancer" file="dwarves/dwarf geomancer.xml"/>
 	<monster name="Dwarf Guard" file="dwarves/dwarf guard.xml"/>
+	<monster name="Dwarf Henchman" file="dwarves/dwarf henchman.xml"/>
 	<monster name="Dwarf Miner" file="dwarves/dwarf miner.xml"/>
 	<monster name="Dwarf Soldier" file="dwarves/dwarf soldier.xml"/>
 	<monster name="Dwarf" file="dwarves/dwarf.xml"/>
@@ -771,12 +770,15 @@
 	<monster name="a carved stone tile" file="traps/a carved stone tile.xml"/>
 	<monster name="Deathslicer" file="traps/deathslicer.xml"/>
 	<monster name="Deaththrower" file="traps/deaththrower.xml"/>
+	<monster name="Dwarf Dispenser" file="traps/dwarf dispenser.xml"/>
 	<monster name="Flamethrower" file="traps/flamethrower.xml"/>
+	<monster name="Hell Hole" file="traps/hell hole.xml"/>
 	<monster name="Hive Pore" file="traps/hive pore.xml"/>
 	<monster name="Lavahole" file="traps/lavahole.xml"/>
 	<monster name="Magic Pillar" file="traps/magic pillar.xml"/>
 	<monster name="Magicthrower" file="traps/magicthrower.xml"/>
 	<monster name="Plaguethrower" file="traps/plaguethrower.xml"/>
+	<monster name="Pillar" file="traps/pillar.xml"/>
 	<monster name="Shredderthrower" file="traps/shredderthrower.xml"/>
 
 	<!-- Trolls -->
