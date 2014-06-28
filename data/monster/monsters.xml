@@ -128,7 +128,6 @@
 
 	<!-- Bosses -->
 	<monster name="Abyssador" file="bosses/abyssador.xml"/>
-	<monster name="Annihilon" file="bosses/annihilon.xml"/>
 	<monster name="Apocalypse" file="bosses/apocalypse.xml"/>
 	<monster name="Apprentice Sheng" file="bosses/apprentice sheng.xml"/>
 	<monster name="Arachir the Ancient One" file="bosses/arachir the ancient one.xml"/>
@@ -171,7 +170,6 @@
 	<monster name="General Murius" file="bosses/general murius.xml"/>
 	<monster name="Glitterscale" file="bosses/glitterscale.xml"/>
 	<monster name="Gnomevil" file="bosses/gnomevil.xml"/>
-	<monster name="Golgordan" file="bosses/golgordan.xml"/>
 	<monster name="Grand Mother Foulscale" file="bosses/grand mother foulscale.xml"/>
 	<monster name="Grandfather Tridian" file="bosses/grandfather tridian.xml"/>
 	<monster name="Gorgo" file="bosses/gorgo.xml"/>
@@ -181,7 +179,6 @@
 	<monster name="Hairman the Huge" file="bosses/hairman the huge.xml"/>
 	<monster name="Handmaiden" file="bosses/handmaiden.xml"/>
 	<monster name="Haunter" file="bosses/haunter.xml"/>
-	<monster name="Hellgorak" file="bosses/hellgorak.xml"/>
 	<monster name="Heoni" file="bosses/heoni.xml"/>
 	<monster name="Hide" file="bosses/hide.xml"/>
 	<monster name="Incineron" file="bosses/incineron.xml"/>
@@ -191,12 +188,10 @@
 	<monster name="Koshei The Deathless" file="bosses/koshei the deathless.xml"/>
 	<monster name="Kraknaknork Demon" file="bosses/kraknaknork demon.xml"/>
 	<monster name="Kraknaknork" file="bosses/kraknaknork.xml"/>
-	<monster name="Latrivan" file="bosses/latrivan.xml"/>
 	<monster name="Lethal Lissy" file="bosses/lethal lissy.xml"/>
 	<monster name="Leviathan" file="bosses/leviathan.xml"/>
 	<monster name="Mad Mage" file="bosses/mad mage.xml"/>
 	<monster name="Mad Technomancer" file="bosses/mad technomancer.xml"/>
-	<monster name="Madareth" file="bosses/madareth.xml"/>
 	<monster name="Man In The Cave" file="bosses/man in the cave.xml"/>
 	<monster name="Massacre" file="bosses/massacre.xml"/>
 	<monster name="Mawhawk" file="bosses/mawhawk.xml"/>
@@ -255,7 +250,6 @@
 	<monster name="Tremorak" file="bosses/tremorak.xml"/>
 	<monster name="Tromphonyte" file="bosses/tromphonyte.xml"/>
 	<monster name="Ungreez" file="bosses/ungreez.xml"/>
-	<monster name="Ushuriel" file="bosses/ushuriel.xml"/>
 	<monster name="Verminor" file="bosses/verminor.xml"/>
 	<monster name="Versperoth" file="bosses/versperoth.xml"/>
 	<monster name="Warlord Ruzad" file="bosses/warlord ruzad.xml"/>
@@ -265,7 +259,6 @@
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
 	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
-	<monster name="Zugurosh" file="bosses/zugurosh.xml"/>
 	<monster name="Zulazza the Corruptor" file="bosses/zulazza the corruptor.xml"/>
 
 	<!-- Canines -->
@@ -746,6 +739,15 @@
 	<monster name="Undead Gladiator" file="skeletons/undead gladiator.xml"/>
 	<monster name="Undead Minion" file="skeletons/undead minion.xml"/>
 	<monster name="Undead Mine Worker" file="skeletons/undead mine worker.xml"/>
+
+	<!-- The Ruthless Seven Minions -->
+	<monster name="Annihilon" file="the ruthless seven minions/annihilon.xml"/>
+	<monster name="Golgordan" file="the ruthless seven minions/golgordan.xml"/>
+	<monster name="Hellgorak" file="the ruthless seven minions/hellgorak.xml"/>
+	<monster name="Latrivan" file="the ruthless seven minions/latrivan.xml"/>
+	<monster name="Madareth" file="the ruthless seven minions/madareth.xml"/>
+	<monster name="Ushuriel" file="the ruthless seven minions/ushuriel.xml"/>
+	<monster name="Zugurosh" file="the ruthless seven minions/zugurosh.xml"/>
 
 	<!-- The Triangle of Terror -->
 	<monster name="Ghazbaran" file="the triangle of terror/ghazbaran.xml"/>
