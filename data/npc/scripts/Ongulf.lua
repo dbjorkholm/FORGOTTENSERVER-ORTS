@@ -18,7 +18,7 @@ local function creatureSayCallback(cid, type, msg)
 						{
 							"Well, it's a long story but you really should listen to understand what is going on here. You can also hear a short version of the story, but then don't blame me if you mess something up due to your undwarfish impatience. ...",
 							"So what would you like to hear, the {long} story or the {short} version?"
-						}, player)
+						}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "long")) then
@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Well, some ships were sent to establish a first base. ...",
 							"It became painfully obvious that the number of workers needed there could not easily be supplied by the ships alone. Also such a base would require an amount of money, expertise and manpower that the guild could not provide. ...",
 							"We would need help and additional resources. That's were you come into play. If you are interested, let's talk about possible missions."
-						}, player)
+						}, cid)
 			npcHandler.topic[cid] = 2
 		end
 	elseif(msgcontains(msg, "short")) then
@@ -51,7 +51,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Listen, I can handle the organisation down here and my boys will handle the construction of the base fine enough. Actually, all you do down here is to stand in the workers' way. ...",
 							"But there might be something for you to do outside the base. We need to learn more about the land up there. Take the lift and do some exploring. Find a passage leading out of the mountains. ...",
 							"Do not explore any further though. You never know whom you might be messing with."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 1)
 			player:setStorageValue(Storage.TheNewFrontier.Mission01, 1) --Questlog, The New Frontier Quest "Mission 01: New Land"
 			npcHandler.topic[cid] = 0
@@ -63,12 +63,12 @@ local function creatureSayCallback(cid, type, msg)
 							"Listen, I can handle the organisation down here and my boys will handle the construction of the base fine enough. Actually, all you do down here is to stand in the workers' way. ...",
 							"But there might be something for you to do outside the base. We need to learn more about the land up there. Take the lift and do some exploring. Find a passage leading out of the mountains. ...",
 							"Do not explore any further though. You never know whom you might be messing with."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 1)
 			player:setStorageValue(Storage.TheNewFrontier.Mission01, 1) --Questlog, The New Frontier Quest "Mission 01: New Land"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 2) then
-			npcHandler:say("Excellent. Although we have no idea what awaits us in this foreign land, it is always good to know something more about our surroundings. ", player)
+			npcHandler:say("Excellent. Although we have no idea what awaits us in this foreign land, it is always good to know something more about our surroundings. ", cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 3)
 			player:setStorageValue(Storage.TheNewFrontier.Mission01, 3) --Questlog, The New Frontier Quest "Mission 01: New Land"
 			npcHandler.topic[cid] = 0
@@ -77,12 +77,12 @@ local function creatureSayCallback(cid, type, msg)
 						{
 							"Things are running fine so far. Actually so fine that we are short of supplies and men. I'd send a letter home but I guess sending you to get some assistance gives the whole affair a bit more urgency. ...",
 							"So please travel back to Kazordoon. In the western mines outside of The Big Old One, you'll find Melfar of the imperial mining guild. Ask him to send some more miners and wood. When you return, I might have some more interesting missions for you."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 4)
 			player:setStorageValue(Storage.TheNewFrontier.Mission02, 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
 			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 7) then
-			npcHandler:say("That's good news for sure. It will give our operation a new impulse. However, only if there is not some unexpected trouble ahead. Well, we'll talk about that when we discuss your next {mission}. ", player)
+			npcHandler:say("That's good news for sure. It will give our operation a new impulse. However, only if there is not some unexpected trouble ahead. Well, we'll talk about that when we discuss your next {mission}. ", cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 8)
 			npcHandler.topic[cid] = 0	
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 8) then
@@ -92,7 +92,7 @@ local function creatureSayCallback(cid, type, msg)
 							"It could easily be some trap and I'm somewhat reluctant to send you there, but we can't allow some invisible aggressor to spy on us and maybe to prepare an attack. ...",
 							"Find these vines in this mountain, climb up there and find out who is spying on us! If they mean harm, get rid of them if possible. ...",
 							"If they are too powerful, just retreat and we will have to re-evaluate the situation. If they are harmless, all the better."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 9)
 			player:setStorageValue(Storage.TheNewFrontier.Mission03, 1) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
 			npcHandler.topic[cid] = 0	
@@ -101,7 +101,7 @@ local function creatureSayCallback(cid, type, msg)
 						{
 							"Primitive humans you say? These are most startling news, that's for sure. Well, I guess I'll send some victuals we can spare as a sign of our good will. ...",
 							"However, our miners encountered another problem in the meantime. I'm afraid this will be your next {mission}"
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 11)
 			player:setStorageValue(Storage.TheNewFrontier.Mission03, 3) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
 			npcHandler.topic[cid] = 0	
@@ -111,12 +111,12 @@ local function creatureSayCallback(cid, type, msg)
 							"It seems things went from bad to worse! First we had some problems with the mine shafts we were building, and now that we found some precious veins in one of the new mines, and it happens to be the holiday resort of some hostile stone creatures! ...",
 							"Nothing we dwarfs couldn't handle alone, but I rather thought this could be something interesting for an adventurer like you. ...",
 							"So I reserved you the privilege to slay the leader! Use the mining lift to reach mine A07. The more stone creatures you kill, the better. Your mission, however, is to slay their leader, most likely some special stone beast."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 12)
 			player:setStorageValue(Storage.TheNewFrontier.Mission04, 1) --Questlog, The New Frontier Quest "Mission 04: The Mine Is Mine"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 13) then
-			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other {missions} to accomplish. ", player)
+			npcHandler:say("Shortly after you killed that creature, the others crumbled to dust and stone. I hope this incident does not foreshadow similar problems in our mines. However, for now I have other things to take care of and you have other {missions} to accomplish. ", cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 14)
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 14) then
@@ -137,13 +137,13 @@ local function creatureSayCallback(cid, type, msg)
 							"This is all stuff the Explorer Society is interested in. It should be easy to convince their representative in Port Hope. ... ",
 							"At last, with the growing numbers of adventurers here, not only the security of the base is growing but also the demand for certain supplies. I'd like the Edron academy to open up a shop in the base. We need to keep you adventurers happy, don't we? ... ",
 							"Well, I hope you understand the importance of this mission and got what it takes to fulfil it. So hurry up and get us the needed support. "
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 15)
 			player:setStorageValue(Storage.TheNewFrontier.Mission05, 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 15) then
 			if(player:getStorageValue(Storage.TheNewFrontier.BribeKing) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeLeeland) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeAngus) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeWydrin) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeTelas) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeHumgolf) == 1) then
-				npcHandler:say("You did an excellent job! With all this help Farmine will grow and prosper. While we put all available resources into building this base, I have another urgent {mission} for you.", player)
+				npcHandler:say("You did an excellent job! With all this help Farmine will grow and prosper. While we put all available resources into building this base, I have another urgent {mission} for you.", cid)
 				player:setStorageValue(Storage.TheNewFrontier.Questline, 16)
 				npcHandler.topic[cid] = 0
 			end
@@ -154,7 +154,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Considering their expected number, there is no chance for us to beat them off. We might be able to hold our ground for a while, but without access to the surface and under constant attacks, we might have to abandon the base. ...",
 							"Now, I'm aware that you cannot stop an entire army by yourself, but desperate situations call for desperate measures. I ask you to find the leaders of the orcs and - well do something. ...",
 							"Scare them, bribe them, give them another target or whatever. As futile as it may sound: Try to talk to their leaders in some way and make them stop their attack plans. This is our only hope."
-						}, player)	
+						}, cid)	
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 17)
 			player:setStorageValue(Storage.TheNewFrontier.Mission06, 1) --Questlog, The New Frontier Quest "Mission 06: Days Of Doom"
 			npcHandler.topic[cid] = 0
@@ -163,7 +163,7 @@ local function creatureSayCallback(cid, type, msg)
 						{
 							"Oh my. What a mess you have gotten yourself into. Well, at least you made it out alive. Whatever the value of a minotaur's promise might be, I guess that is the best we can get. ...",
 							"Of course all those revelations lead to new problems and a new mission for you. "
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 21)
 			npcHandler.topic[cid] = 0
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 21) then
@@ -172,7 +172,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Ooook. Now that we managed to keep those orcs and minotaurs at bay at least for a while, we learn that the real meanies over here are some lizardmen. Just great, isn't it?. ...",
 							"So you might already guess your next mission: Find a way to hold those lizards off. Find them, contact them, talk to them, scare them, bribe them, whatever. Just keep that snakes away if anyhow possible. ...",
 							"If the orcs are right, they are somewhere in or behind those mountains in the north. I doubt you can reason with them in any way, but you'll have to try for the sake of Farmine."
-						}, player)
+						}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 22)
 			player:setStorageValue(Storage.TheNewFrontier.Mission07, 1) --Questlog, The New Frontier Quest "Mission 07: Messengers Of Peace"
 			npcHandler.topic[cid] = 0
@@ -186,7 +186,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Even some of the people here in the base might offer you some tasks sooner or later. If you prefer, you can also do some exploring, hunting and good ol' plundering on your own of course. ...",
 							"This new land is yours to be taken, so to say. Go out and make your fortune! With Farmine you have always a safe haven to return to. ...",
 							"Oh and one last thing: We convinced a carpet pilot to join us here. You'll find him on top of our lift in the mountains. I think he can offer you fast access to some cities back home. "
-						}, player)
+						}, cid)
 			player:addExperience(8000, true)
 			player:addOutfit(366)
 			player:addOutfit(367)

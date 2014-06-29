@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
 		npcHandler:addFocus(cid)
-		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", player)
+		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", cid)
 	end
 	
 	if(not npcHandler:isFocused(cid)) then
@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
-		npcHandler:say("Finally.", player)
+		npcHandler:say("Finally.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
 	elseif isInArray({"enchanted chicken wing", "boots of haste"}, msg:lower()) then
@@ -79,13 +79,13 @@ local function creatureSayCallback(cid, type, msg)
         if player:getItemCount(trade[npcHandler.topic[cid]].NeedItem) >= trade[npcHandler.topic[cid]].Ncount then
 			player:removeItem(trade[npcHandler.topic[cid]].NeedItem, trade[npcHandler.topic[cid]].Ncount)
 			player:addItem(trade[npcHandler.topic[cid]].GiveItem, trade[npcHandler.topic[cid]].Gcount)
-			return npcHandler:say(msg,'Here you are')						
+			return npcHandler:say('Here you are', cid)						
         else
-            npcHandler:say('Sorry but you don\'t have the item', player)
+            npcHandler:say('Sorry but you don\'t have the item', cid)
         end
  
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 5) then
-		 npcHandler:say(msg,'Ok then', player)
+		 npcHandler:say('Ok then', cid)
 		 npcHandler.topic[cid] = 0
 		 npcHandler:releaseFocus(cid)
 	end
