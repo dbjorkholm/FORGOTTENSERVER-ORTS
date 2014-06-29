@@ -34,7 +34,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You want me to touch something gooey, so you have to touch something gooey for me too. <giggles> ...", cid)
 			npcHandler:say("I love honey and I haven't eaten it in a while, so bring me 50 honeycombs and worship my beauty a little more, then we will see.", cid)
 			npcHandler.topic[cid] = 3
-			player:setStorageValue(79, 1)
 		elseif(npcHandler.topic[cid] == 4) then
 			if player:getItemCount(5902) >= 50 then
 				player:removeItem(5902, 50)
@@ -43,8 +42,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(78, 1)
 			end
 		elseif(npcHandler.topic[cid] == 5) then
-			if player:getItemCount(5979) >= 10 then
-				player:removeItem(5979, 10)
+			if player:getItemCount(5879) >= 10 then
+				player:removeItem(5879, 10)
 				player:addItem(5886, 1)
 				npcHandler:say("Ew... gooey... there you go.", cid)
 				npcHandler.topic[cid] = 0
