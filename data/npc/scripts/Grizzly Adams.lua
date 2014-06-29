@@ -151,9 +151,9 @@ if isInArray({"offer", "trade"}, msg:lower()) then
 			return true
 		end
 		openShopWindow(cid, tradeRank, onBuy, onSell)
-		return npcHandler:say('It\'s my offer.', player)
+		return npcHandler:say('It\'s my offer.', cid)
 	else
-		return npcHandler:say('You don\'t have any rank.', player)
+		return npcHandler:say('You don\'t have any rank.', cid)
 		end
 end
  
@@ -176,27 +176,27 @@ end
 				end
 				text = text .. "{" .. (tasks[id].name or tasks[id].raceName) .. "}" .. sep
 			end
-			npcHandler:say("The current task" .. (#can > 1 and "s" or "") .. " that you can choose " .. (#can > 1 and "are" or "is") .. " " .. text, player)
+			npcHandler:say("The current task" .. (#can > 1 and "s" or "") .. " that you can choose " .. (#can > 1 and "are" or "is") .. " " .. text, cid)
 			npcHandler.topic[cid] = 0
 		else
-			npcHandler:say("I don't have any task for you right now.", player)
+			npcHandler:say("I don't have any task for you right now.", cid)
 		end
 	elseif msg ~= "" and canStartTask(cid, msg) then
 		if #getPlayerStartedTasks(cid) >= tasksByPlayer then
-			npcHandler:say("Sorry, but you already started " .. tasksByPlayer .. " tasks. You can check their {status} or {cancel} a task.", player)
+			npcHandler:say("Sorry, but you already started " .. tasksByPlayer .. " tasks. You can check their {status} or {cancel} a task.", cid)
 			return true
 		end
 		local task = getTaskByName(msg)
 		if task and player:getStorageValue(QUESTSTORAGE_BASE + task) > 0 then  
 			return false
 		end
-		npcHandler:say("In this task you must defeat " .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ". Are you sure that you want to start this task?", player)
+		npcHandler:say("In this task you must defeat " .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ". Are you sure that you want to start this task?", cid)
 		choose[cid] = task
 		npcHandler.topic[cid] = 1
 	elseif msg:lower() == "yes" and npcHandler.topic[cid] == 1 then
 		player:setStorageValue(QUESTSTORAGE_BASE + choose[cid], 1)
 		player:setStorageValue(KILLSSTORAGE_BASE + choose[cid], 0)
-		npcHandler:say("Excellent! You can check the {status} of your task saying {report} to me. Also you can {cancel} tasks to.", player)
+		npcHandler:say("Excellent! You can check the {status} of your task saying {report} to me. Also you can {cancel} tasks to.", cid)
 		choose[cid] = nil
 		npcHandler.topic[cid] = 0	
 	elseif (msg:lower() == "report" or msg:lower() == "status") then
@@ -262,13 +262,13 @@ end
 				end
 				text = text .. "{" .. (tasks[id].name or tasks[id].raceName) .. "}" .. sep
 			end
-			    npcHandler:say("The current task" .. (#started > 1 and "s" or "") .. " that you started " .. (#started > 1 and "are" or "is") .. " " .. text, player)
+			    npcHandler:say("The current task" .. (#started > 1 and "s" or "") .. " that you started " .. (#started > 1 and "are" or "is") .. " " .. text, cid)
 			    Topic[cid] = 1
 			else
-				npcHandler:say("Awesome! you finished " .. (finished > 1 and "various" or "a") .. " task" .. (finished > 1 and "s" or "") .. ". Talk to me again if you want to start a {task}.", player)
+				npcHandler:say("Awesome! you finished " .. (finished > 1 and "various" or "a") .. " task" .. (finished > 1 and "s" or "") .. ". Talk to me again if you want to start a {task}.", cid)
 			end
 		else
-			npcHandler:say("You haven't started any task yet.", player)
+			npcHandler:say("You haven't started any task yet.", cid)
 		end
 	end
 	elseif msg:lower() == "started" then
@@ -288,9 +288,9 @@ end
 				text = text .. "{" .. (tasks[id].name or tasks[id].raceName) .. "}" .. sep
 			end
  
-			npcHandler:say("The current task" .. (#started > 1 and "s" or "") .. " that you started " .. (#started > 1 and "are" or "is") .. " " .. text, player)
+			npcHandler:say("The current task" .. (#started > 1 and "s" or "") .. " that you started " .. (#started > 1 and "are" or "is") .. " " .. text, cid)
 		else
-			npcHandler:say("You haven't started any task yet.", player)
+			npcHandler:say("You haven't started any task yet.", cid)
 		end
 	elseif msg:lower() == "cancel" then
 		local started = getPlayerStartedTasks(cid)
@@ -309,38 +309,38 @@ end
 				text = text .. "{" .. (tasks[id].name or tasks[id].raceName) .. "}" .. sep
 			end
 		if started and #started > 0 then
-			npcHandler:say("Cancelling a task will make the counter restart. Which of these tasks you want cancel?" .. (#started > 1 and "" or "") .. " " .. text, player)
+			npcHandler:say("Cancelling a task will make the counter restart. Which of these tasks you want cancel?" .. (#started > 1 and "" or "") .. " " .. text, cid)
 			npcHandler.topic[cid] = 2
 		else
-			npcHandler:say("You haven't started any task yet.", player)
+			npcHandler:say("You haven't started any task yet.", cid)
 		end
 	elseif getTaskByName(msg) and npcHandler.topic[cid] == 2 and isInArray(getPlayerStartedTasks(cid), getTaskByName(msg)) then
 		local task = getTaskByName(msg)
 		if player:getStorageValue(KILLSSTORAGE_BASE + task) > 0 then
-			npcHandler:say("You currently killed " .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. "/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ". Cancelling this task will restart the count. Are you sure you want to cancel this task?", player)
+			npcHandler:say("You currently killed " .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. "/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ". Cancelling this task will restart the count. Are you sure you want to cancel this task?", cid)
 		else
-			npcHandler:say("Are you sure you want to cancel this task?", player)
+			npcHandler:say("Are you sure you want to cancel this task?", cid)
 		end
 		npcHandler.topic[cid] = 3
 		cancel[cid] = task
 	elseif getTaskByName(msg) and Topic[cid] == 1 and isInArray(getPlayerStartedTasks(cid), getTaskByName(msg)) then
 		local task = getTaskByName(msg)
 		if player:getStorageValue(KILLSSTORAGE_BASE + task) > 0 then
-			npcHandler:say("You currently killed " .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. "/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ".", player)
+			npcHandler:say("You currently killed " .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. "/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ".", cid)
 			Topic[cid] = 0
 		else
-		    npcHandler:say("You currently killed 0/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ".", player)
+		    npcHandler:say("You currently killed 0/" .. tasks[task].killsRequired .. " " .. tasks[task].raceName .. ".", cid)
 		end
 	elseif msg:lower() == "yes" and npcHandler.topic[cid] == 3 then
 		player:setStorageValue(QUESTSTORAGE_BASE + cancel[cid], -1)
 		player:setStorageValue(KILLSSTORAGE_BASE + cancel[cid], -1)
-		npcHandler:say("You have cancelled the task " .. (tasks[cancel[cid]].name or tasks[cancel[cid]].raceName) .. ".", player)
+		npcHandler:say("You have cancelled the task " .. (tasks[cancel[cid]].name or tasks[cancel[cid]].raceName) .. ".", cid)
 		npcHandler.topic[cid] = 0
 	elseif isInArray({"points", "rank"}, msg:lower()) then
 	    if player:getStorageValue(POINTSSTORAGE) < 1 then
-		npcHandler:say("At this time, you have 0 Paw & Fur points. You " .. (getPlayerRank(cid) == 6 and "are an Elite Hunter" or getPlayerRank(cid) == 5 and "are a Trophy Hunter" or getPlayerRank(cid) == 4 and "are a Big Game Hunter" or getPlayerRank(cid) == 3 and "are a Ranger" or getPlayerRank(cid) == 2 and "are a Huntsman" or getPlayerRank(cid) == 1 and "are a Member"  or "haven't been ranked yet") .. ".", player)
+		npcHandler:say("At this time, you have 0 Paw & Fur points. You " .. (getPlayerRank(cid) == 6 and "are an Elite Hunter" or getPlayerRank(cid) == 5 and "are a Trophy Hunter" or getPlayerRank(cid) == 4 and "are a Big Game Hunter" or getPlayerRank(cid) == 3 and "are a Ranger" or getPlayerRank(cid) == 2 and "are a Huntsman" or getPlayerRank(cid) == 1 and "are a Member"  or "haven't been ranked yet") .. ".", cid)
 		elseif player:getStorageValue(POINTSSTORAGE) >= 1 then 
-		npcHandler:say("At this time, you have " .. player:getStorageValue(POINTSSTORAGE) .. " Paw & Fur points. You " .. (getPlayerRank(cid) == 6 and "are an Elite Hunter" or getPlayerRank(cid) == 5 and "are a Trophy Hunter" or getPlayerRank(cid) == 4 and "are a Big Game Hunter" or getPlayerRank(cid) == 3 and "are a Ranger" or getPlayerRank(cid) == 2 and "are a Huntsman" or getPlayerRank(cid) == 1 and "are a Member"  or "haven't been ranked yet") .. ".", player)
+		npcHandler:say("At this time, you have " .. player:getStorageValue(POINTSSTORAGE) .. " Paw & Fur points. You " .. (getPlayerRank(cid) == 6 and "are an Elite Hunter" or getPlayerRank(cid) == 5 and "are a Trophy Hunter" or getPlayerRank(cid) == 4 and "are a Big Game Hunter" or getPlayerRank(cid) == 3 and "are a Ranger" or getPlayerRank(cid) == 2 and "are a Huntsman" or getPlayerRank(cid) == 1 and "are a Member"  or "haven't been ranked yet") .. ".", cid)
 		end
 		npcHandler.topic[cid] = 0
 	end
