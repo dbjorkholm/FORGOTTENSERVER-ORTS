@@ -9,5 +9,9 @@
 		<parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="job" />
 		<parameter key="keyword_reply1" value="I'm an old djinn, I buy several items, and sell a few myself." />
+		<parameter key="module_shop" value="1" /> <!-- added shop module to show the icon in npc (10:36 +) -->
+		<parameter key="shop_sellable" value="0,0,0;"/>
+		<parameter key="shop_buyable" value="0,0,0;"/>
+		
 	</parameters>
 </npc>
