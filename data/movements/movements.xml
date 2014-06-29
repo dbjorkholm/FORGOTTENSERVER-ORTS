@@ -500,6 +500,8 @@
 	<movevent event="Equip" itemid="10310" level="100" slot="ring" script="others/noxiousclaw.lua"/>
 	<movevent event="Equip" itemid="10309" level="100" slot="ring" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="10309" level="100" slot="ring" function="onDeEquipItem"/>
+	<movevent event="Equip" itemid="10311" level="100" slot="ring" function="onEquipItem"/>
+    <movevent event="DeEquip" itemid="10311" level="100" slot="ring" script="others/noxiousclawDeEquip.lua"/>
 
 	<!-- Helmets -->
 	<movevent event="Equip" itemid="5461" slot="head" function="onEquipItem"/>
