@@ -2,6 +2,9 @@
 <movements>
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
+	
+	<!-- Meriana Turtles -->
+	<movevent event="StepIn" fromuid="3206" touid="3213" script="meriana/merianaTurtles.lua" />
 
 	<!-- The Queen of the Banshees Quest -->
 	<movevent event="StepIn" uniqueid="50004" script="the queen of the banshees quest/theFirstSealFlame.lua" />

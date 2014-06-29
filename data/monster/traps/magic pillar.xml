@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Magic Pillar" nameDescription="a magic pillar" race="undead" experience="0" speed="0" manacost="0">
-	<health now="9950" max="9950"/>
-	<look type="0" corpse="1740"/>
+	<health now="100" max="100"/>
+	<look typeex="1551"/>
 	<targetchange interval="2000" chance="0"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -14,11 +14,11 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag runonhealth="100"/>
+		<flag runonhealth="0"/>
 		<flag hidehealth="1"/>
 	</flags>
-	<summons maxSummons="2">
-		<summon name="Demon" interval="2000" chance="7" max="3"/>
+	<summons maxSummons="3">
+		<summon name="Demon" interval="2000" chance="7"/>
 	</summons>
 	<defenses armor="1" defense="1"/>
 	<immunities>
@@ -30,10 +30,9 @@
 		<immunity holy="1"/>
 		<immunity death="1"/>
 		<immunity lifedrain="1"/>
-		<immunity manadrain="1"/>
 		<immunity paralyze="1"/>
 		<immunity drunk="1"/>
-		<immunity outfit="1"/>
+		<immunity drown="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 </monster>

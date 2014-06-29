@@ -14,22 +14,22 @@ local function creatureSayCallback(cid, type, msg)
 	
 	local player = Player(cid)
 	if msgcontains(msg, "Hydra Tongue") then
-		npcHandler:say("Do you want to buy a Hydra Tongue for 100 gold?", player)
+		npcHandler:say("Do you want to buy a Hydra Tongue for 100 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getMoney() >= 100 then
 				player:removeMoney(100)
-				npcHandler:say("Here you are. A Hydra Tongue!", player)
+				npcHandler:say("Here you are. A Hydra Tongue!", cid)
 				player:addItem(7250, 1)
 				npcHandler.topic[cid] = 0
 			else
-				npcHandler:say("You don't have enough money.", player)
+				npcHandler:say("You don't have enough money.", cid)
 			end
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("Then not.", player)
+			npcHandler:say("Then not.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	end

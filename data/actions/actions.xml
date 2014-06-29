@@ -304,7 +304,6 @@
 	<action actionid="2023" script="pits of inferno quest/pitsOfInfernoQuestBloodGraveStone.lua"/>
 	<action actionid="8815" script="pits of inferno quest/pitsOfInfernoQuestFountain.lua"/>
 	<action actionid="2022" script="pits of inferno quest/pitsOfInfernoQuestGoshnar.lua"/>
-	<action uniqueid="1020" script="pits of inferno quest/pitsOfInfernoQuestKey3700.lua"/>
 	<action fromuid="2050" touid="2065" script="pits of inferno quest/pitsOfInfernoQuestLevers.lua"/>
 	<action uniqueid="1021" script="pits of inferno quest/pitsOfInfernoQuestOil.lua"/>
 	<action uniqueid="3300" script="pits of inferno quest/pitsOfInfernoQuestStoneLever.lua"/>
@@ -647,7 +646,8 @@
 	<action fromid="7025" toid="7032" script="other/windows.lua"/>
 	<action fromid="10264" toid="10267" script="other/windows.lua" />
 	<action fromid="10488" toid="10491" script="other/windows.lua" />
-
+	<action itemid="18215" script="other/gnomish_supply_package.lua"/>
+	
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
 </actions>

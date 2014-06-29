@@ -1,19 +1,22 @@
-local nodes = {
-	[3206] = {x = 32359, y = 32901, z = 7},
-	[3207] = {x = 32340, y = 32538, z = 7},
-	[3208] = {x = 32472, y = 32869, z = 7},
-	[3209] = {x = 32415, y = 32916, z = 7},
-	[3210] = {x = 32490, y = 32979, z = 7},
-	[3211] = {x = 32440, y = 32971, z = 7},
-	[3212] = {x = 32527, y = 32951, z = 7},
-	[3213] = {x = 32523, y = 32923 z = 7},
+local config = {
+	[3206] = Position(32359, 32901, 7),
+	[3207] = Position(32340, 32538, 7),
+	[3208] = Position(32472, 32869, 7),
+	[3209] = Position(32415, 32916, 7),
+	[3210] = Position(32490, 32979, 7),
+	[3211] = Position(32440, 32971, 7),
+	[3212] = Position(32527, 32951, 7),
+	[3213] = Position(32523, 32923, 7)
 }
 
 function onStepIn(cid, item, position, lastPosition)
-	if(getPlayerStorageValue(cid, 1140) < 2000) then
-		setPlayerStorageValue(cid, 1140, math.max(0, getPlayerStorageValue(cid, 1140)) + 1)
+	local player = Player(cid)
+	if not player then
+		return true
 	end
-	doTeleportThing(cid, nodes[item.uid])
-	doSendMagicEffect(nodes[item.uid], CONST_ME_TELEPORT)
+	
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	player:teleportTo(config[item.uid])
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end
