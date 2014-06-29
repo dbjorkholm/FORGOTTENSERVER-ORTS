@@ -34,7 +34,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Player(cid):addItem(randomItem['itemid'], randomItem['count'] or 1)
 			local targetItem = Item(item.uid)
 			targetItem:getPosition():sendMagicEffect(CONST_ME_CRAPS)
-            targetItem:remove()
+			targetItem:remove()
 			break
 		end
 	end
