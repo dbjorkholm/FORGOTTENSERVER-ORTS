@@ -7,3 +7,6 @@ Incredibly Old Witch:
 
 Infernalist:
 	- missing its skill reducer spell
+
+Energized Raging Mage:
+	- missing its skill reducer spell
