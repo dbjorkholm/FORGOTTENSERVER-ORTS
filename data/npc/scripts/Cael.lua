@@ -7,6 +7,14 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
+local function getTable(player)
+local itemsList = {
+		{name="Didgeridoo", id=3952, buy=5,000},
+		{name="War Drum", id=3953, buy=1,000}
+		}
+return itemsList
+end
+
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
@@ -244,6 +252,117 @@ local function creatureSayCallback(cid, type, msg)
 								"Well, I've certainly learnt how the great old thrones look like. If you bring me some red cloth, I could probably try and reconstruct one for you."
 							}, cid)
 			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "lantern") then
+		if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 11 then
+		 	npcHandler:say("Have you brought me a red lantern for a dragon statue?", cid)
+			npcHandler.topic[cid] = 65
+		end
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 65 then
+		if player:removeItem(11206, 1) then
+			player:addItem(11133,1)
+			npcHandler:say("Let's put this little lantern here.. there you go. I wrap it up for you, just unwrap it in your house again!", cid)
+			npcHandler.topic[cid] = 0
+		else
+			npcHandler:say("You don't have a red lantern.", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "cloth") then
+		if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 12 then
+		 	npcHandler:say("Have you brought me a piece of red cloth? I can make that throne for you if you want. But remember, I won't do that all the time - so try and don't destroy it, okay?", cid)
+			npcHandler.topic[cid] = 66
+		end
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 66 then
+		if player:removeItem(5911, 1) then
+			player:addItem(11205,1)
+			npcHandler:say("Let's put this cloth over the seat.. there you go. I wrap it up for you, just unwrap it in your house again!", cid)
+			npcHandler.topic[cid] = 0
+		else
+			npcHandler:say("You don't have a red cloth.", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "crest") then
+		if player:hasOutfit(366) and player:hasOutfit(367) and player:getItemCount(11116) >= 1 then
+		 	npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that serpent crest?", cid)
+			npcHandler.topic[cid] = 60
+		elseif player:hasOutfit(366) and player:hasOutfit(367) and player:getItemCount(11115) >= 1 then
+			npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that tribal crest?", cid)
+			npcHandler.topic[cid] = 61
+		else
+			npcHandler:say("You don't have a Warmaster Outfit or the crest to get the Addons.", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] >= 60 and npcHandler.topic[cid] <= 61 then
+		if npcHandler.topic[cid] == 60 then
+			if not player:hasOutfit(366, 1) and not player:hasOutfit(367, 1) and player:removeItem(11116, 1) then
+				player:addOutfitAddon(366, 1)
+				player:addOutfitAddon(367, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say("Thank you! Let me reward you with something I stumbled across recently and which might fit your warmaster outfit perfectly.", cid)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You don't have a crest or already have this Outfitaddon.", cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 61 then
+			if not player:hasOutfit(366, 2) and not player:hasOutfit(367, 2) and player:removeItem(11115, 1) then
+				player:addOutfitAddon(366, 2)
+				player:addOutfitAddon(367, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say("Thank you! Let me reward you with something I stumbled across recently and which might fit your warmaster outfit perfectly.", cid)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You don't have a crest or already have this Outfitaddon.", cid)
+				npcHandler.topic[cid] = 0
+			end
+		end
+	elseif msgcontains(msg, "trade") then
+		if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 6 then
+			local player = Player(cid)
+			local items = setNewTradeTable(getTable(player))
+			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+				if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
+				end
+				if items[item].buyPrice <= player:getMoney() then
+					if inBackpacks then
+						local container = Game.createItem(1988, 1)
+						local bp = player:addItemEx(container)
+						if(bp ~= 1) then
+							return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+						end
+						for i = 1, amount do
+							container:addItem(items[item].itemId, items[item])
+						end
+					else
+						return 
+						player:addItem(items[item].itemId, amount, false, items[item]) and
+						player:removeMoney(amount * items[item].buyPrice) and
+						player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+					end
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+					player:removeMoney(amount * items[item].buyPrice)
+				else
+					player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
+				end
+				return true
+			end
+				
+			local function onSell(cid, item, subType, amount, ignoreEquipped)
+				if items[item].sellPrice then
+					return
+					player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
+					player:addMoney(items[item].sellPrice * amount) and
+			
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
+				end
+				return true
+			end
+				openShopWindow(cid, getTable(player), onBuy, onSell)
+				
+				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
+		else
+			npcHandler:say("Sorry, I don't have Items to trade now.", cid)
 		end
 	end
 	return true
