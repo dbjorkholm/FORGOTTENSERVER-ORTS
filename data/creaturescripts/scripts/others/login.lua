@@ -33,6 +33,7 @@ function onLogin(cid)
 	player:registerEvent("SvargrondArenaKill")
 	player:registerEvent("AdvanceSave")
 	player:registerEvent("StorageConversion")
+	registerCreatureEvent(cid, "Gaz'haragoth Heal")
 	
 	--Others
 	player:stopMove(false)
