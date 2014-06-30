@@ -207,6 +207,7 @@
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>
 	<monster name="Obujos" file="bosses/obujos.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
+	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
 	<monster name="Ribstride" file="bosses/ribstride.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron the Ripper" file="bosses/ron the ripper.xml"/>
@@ -374,7 +375,6 @@
 	<monster name="Feversleep" file="dreamhaunters/feversleep.xml"/>
 	<monster name="Frazzlemaw" file="dreamhaunters/frazzlemaw.xml"/>
 	<monster name="Guzzlemaw" file="dreamhaunters/guzzlemaw.xml"/>
-	<monster name="Mawhawk" file="dreamhaunters/mawhawk.xml"/>
 	<monster name="Minion of Gaz'haragoth" file="dreamhaunters/minion of gaz'haragoth.xml"/>
 	<monster name="Nightmare of Gaz'haragoth" file="dreamhaunters/nightmare of gaz'haragoth.xml"/>
 	<monster name="Retching Horror" file="dreamhaunters/retching horror.xml"/>
@@ -592,9 +592,6 @@
 	<monster name="Donkey" file="misc/misc mounts/donkey.xml"/>
 	<monster name="Modified Gnarlhound" file="misc/misc mounts/modified gnarlhound.xml"/>
 
-	<!-- Misc Others -->
-	<monster name="Minion of Vesperoth" file="misc/misc others/minion of vesperoth.xml"/>
-
 	<!-- Misc Reptiles -->
 	<monster name="Crocodile" file="misc/misc reptiles/crocodile.xml"/>
 	<monster name="Hydra" file="misc/misc reptiles/hydra.xml"/>
@@ -698,6 +695,7 @@
 	<monster name="Lava Golem" file="pyro-elementals/lava golem.xml"/>
 	<monster name="Magma Crawler" file="pyro-elementals/magma crawler.xml"/>
 	<monster name="Massive Fire Elemental" file="pyro-elementals/massive fire elemental.xml"/>
+	<monster name="Minion of Versperoth" file="pyro-elementals/minion of versperoth.xml"/>
 	<monster name="Orewalker" file="pyro-elementals/orewalker.xml"/>
 	<monster name="Weeper" file="pyro-elementals/weeper.xml"/>
 
@@ -761,9 +759,7 @@
 	<monster name="Ice Witch" file="sorcerers/ice witch.xml"/>
 	<monster name="Incredibly Old Witch" file="sorcerers/incredibly old witch.xml"/>
 	<monster name="Infernalist" file="sorcerers/infernalist.xml"/>
-	<monster name="Mad Mage" file="sorcerers/mad mage.xml"/>
 	<monster name="Mad Scientist" file="sorcerers/mad scientist.xml"/>
-	<monster name="Raging Mage" file="sorcerers/raging mage.xml"/>
 	<monster name="Warlock" file="sorcerers/warlock.xml"/>
 	<monster name="Witch" file="sorcerers/witch.xml"/>
 	<monster name="YalahariMonster" file="sorcerers/yalahari.xml"/>
