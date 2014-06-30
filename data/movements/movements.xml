@@ -33,6 +33,9 @@
 	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/childrenOfTheRevolutionQuestTemple.lua"/>
 	<movevent event="StepIn" uniqueid="3166" script="children of the revolution quest/childrenOfTheRevolutionQuestSymbols.lua"/>
 	<movevent event="StepIn" fromaid="8009" toaid="8011"  script="children of the revolution quest/childrenOfTheRevolutionQuestSpy.lua"/>
+	<movevent event="StepIn" fromuid="3167" touid="3168"  script="children of the revolution quest/childrenOfTheRevolutionQuestTeleport.lua"/>
+	<movevent event="StepIn" uniqueid="3169" script="children of the revolution quest/childrenOfTheRevolutionQuestStairs.lua"/>
+	<movevent event="StepIn" actionid="8014" script="children of the revolution quest/childrenOfTheRevolutionQuestClick.lua"/>
 	
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000"  script="the new frontier quest/theNewFrontierQuestWayOut.lua"/>
@@ -121,7 +124,7 @@
 	<movevent event="StepIn" actionid="2070" script="explorer society quest/explorerSocietyQuestCalassa.lua"/>
 	
 	<!-- Formorgar Mines Hoist -->
-	<!--<movevent event="StepIn" uniqueid="" script="formorgar mines hoist/formorgarMinesHoist.lua"/>-->
+	<movevent event="StepIn" fromuid="3059" touid="3061" script="formorgar mines hoist/formorgarMinesHoist.lua"/>
 	
 	<!-- Ice Islands Quest -->
 	<movevent event="StepIn" uniqueid="12031" script="ice islands quest/iceIslandsQuestHelheim.lua"/>
