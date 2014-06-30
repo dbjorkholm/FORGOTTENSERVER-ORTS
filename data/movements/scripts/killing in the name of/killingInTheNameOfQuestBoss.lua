@@ -83,8 +83,8 @@ local bosses = {
 	[3257] = {bossName = "zanakeph", storage = 35027, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
 }
 local special = {
--- Not working  	[3258] = {bossName = "Tiquandas Revenge", storage = 22222, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
--- Not working  	[3259] = {bossName = "Demodras", storage = 22223, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
+-- Not working  	[3258] = {bossName = "Tiquandas Revenge", storage = 22555, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
+-- Not working  	[3259] = {bossName = "Demodras", storage = 22556, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
 }
 
 function onStepIn(cid, item, position, lastPosition)
