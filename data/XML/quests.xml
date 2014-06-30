@@ -63,7 +63,23 @@
         <mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000" description="You already hunted |STATE|/5000 minotaurs." />
         <mission name="Paw and Fur: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000" description="You already hunted |STATE|/4000 necromancers and priestess." />
         <mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
-	</quest>	
+	
+		
+		<mission name="Paw and Fur - Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur - Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur - Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur - Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur - Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+
+		<mission name="Paw and Fur - Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
+		<missionstate id="1" description="Grizzly Adams told you that there is Tiquandas Revenge hiding somewhere in the jungle of Port Hope. Go find its hideout and kill it."/>
+		<missionstate id="2" description="You have slained the Tiquandas Revenge."/>
+		</mission>
+		<mission name="Paw and Fur - Demodras" storageid="22556" startvalue="1" endvalue="2">
+		<missionstate id="1" description="Grizzly Adams wanted you to go look for Demodras'  hideout. He also mentioned that it might be somewhere under the Plains of Havoc."/>
+		<missionstate id="2" description="You have slained the Demodras."/>
+		</mission>
+    </quest>
 	<quest name="The Inquisition" startstorageid="12160" startstoragevalue="2">
 		<mission name="Mission 1: Interrogation" storageid="12161" startvalue="1" endvalue="7">
 			<missionstate id="1" description="Your mission is to investigate the 5 guards in Thais regarding the Heretic behavior. Tim, Kulag, Grof, Miles and Walter are their names. If you do well you see a holy sprite on you."/>
