@@ -260,12 +260,12 @@
 			<missionstate id="3" description="Get the greasy oil from Zalamon's storage room and put them on the levers that you found."/>
 			<missionstate id="4" description="Due to being extra greasy, the leavers can now be moved."/>
 			<missionstate id="5" description="You found the right combination for the puzzle in the mountains and triggered some kind of mechanism. You should head back to Zalamon to report your success."/>
-			<missionstate id="6" description="You already reported Zalamon about your success! Ask him for new mission!"/>
+			<missionstate id="6" description="You already reported Zalamon about your success! You got a Tome of Knowledge as reward! Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 5: Phantom Army" storageid="12306" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Your mission is to use the portal in the chamber beyond the mechanism. It will lead you to the great gate."/>
+			<missionstate id="2" description="Eternal guardians and lizard chosen has been awaken. Survive them and report it to Zalamon!"/>
+			<missionstate id="3" description="You Survived the Waves and reported Zalamon about your success! You got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
