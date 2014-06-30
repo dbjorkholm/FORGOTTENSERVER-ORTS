@@ -82,12 +82,33 @@ local bosses = {
 	[3256] = {bossName = "bretzecutioner", storage = 35026, playerPos = {x = 31973, y = 31184, z = 10}, bossPos = {x = 31979, y = 31176, z = 10 },  fromPos = {x = 31954, y = 31163, z = 10 }, toPos = {x = 31987, y = 31190, z = 10 }, flamePos = {x = 31973, y = 31166, z = 10}},
 	[3257] = {bossName = "zanakeph", storage = 35027, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
 }
+local special = {
+-- Not working  	[3258] = {bossName = "Tiquandas Revenge", storage = 22222, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
+-- Not working  	[3259] = {bossName = "Demodras", storage = 22223, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
+}
 
 function onStepIn(cid, item, position, lastPosition)
 	B = bosses[item.uid]
 		if(getPlayerStorageValue(cid, B.storage) == 1) then
 			if(doCheckArea(B.fromPos, B.toPos) == false) then
 				setPlayerStorageValue(cid, B.storage, 0)
+				doTeleportThing(cid, B.playerPos)
+				doSendMagicEffect(B.playerPos, CONST_ME_TELEPORT)
+				doSummonCreature(B.bossName, B.bossPos)
+				addEvent(removeSummon, 60 * 10 * 1000, B.fromPos, B.toPos)
+				addEvent(removePlayer, 60 * 10 * 1000, B.fromPos, B.toPos , lastPosition, cid)
+				doCreatureSay(cid, "You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out." , TALKTYPE_ORANGE_1)
+			else
+				doTeleportThing(cid, lastPosition)
+			end
+		else
+			doTeleportThing(cid, lastPosition)
+		end
+		
+	B = special[item.uid]
+		if(getPlayerStorageValue(cid, B.storage) == 1) then
+			if(doCheckArea(B.fromPos, B.toPos) == false) then
+				setPlayerStorageValue(cid, B.storage, 2)
 				doTeleportThing(cid, B.playerPos)
 				doSendMagicEffect(B.playerPos, CONST_ME_TELEPORT)
 				doSummonCreature(B.bossName, B.bossPos)
