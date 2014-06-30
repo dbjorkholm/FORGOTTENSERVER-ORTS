@@ -207,6 +207,7 @@
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>
 	<monster name="Obujos" file="bosses/obujos.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
+	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
 	<monster name="Ribstride" file="bosses/ribstride.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron the Ripper" file="bosses/ron the ripper.xml"/>
@@ -759,7 +760,6 @@
 	<monster name="Incredibly Old Witch" file="sorcerers/incredibly old witch.xml"/>
 	<monster name="Infernalist" file="sorcerers/infernalist.xml"/>
 	<monster name="Mad Scientist" file="sorcerers/mad scientist.xml"/>
-	<monster name="Raging Mage" file="sorcerers/raging mage.xml"/>
 	<monster name="Warlock" file="sorcerers/warlock.xml"/>
 	<monster name="Witch" file="sorcerers/witch.xml"/>
 	<monster name="YalahariMonster" file="sorcerers/yalahari.xml"/>
