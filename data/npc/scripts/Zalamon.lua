@@ -112,6 +112,8 @@ local function creatureSayCallback(cid, type, msg)
 						"Rezzt for now, you will need it - you have earned it."
 						}, cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 21)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 3) --Questlog, Children of the Revolution "Mission 5: Phantom Army"
+			player:addItem(11116, 1)
 			npcHandler.topic[cid] = 0
 		-- CHILDREN OF REVOLUTION QUEST
 			
@@ -266,12 +268,14 @@ local function creatureSayCallback(cid, type, msg)
 						"By zze way, before I forget it - zzinzze you are zzkilled in zzolving riddlezz, maybe you can make uzze of zzizz old tome I've found? It containzz ancient knowledge and truly izz a tezztament of our culture, treat it wizz care. ...",
 						" I may alzzo have anozzer mizzion for you if you are interezzted."
 						}, cid)
+			player:addItem(11134, 1)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 18)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 6) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 13 then
 			npcHandler:say("You did well on your quezzt zzo far. I hope you will reach zze great gate in time. If we are lucky, it will zztill be open. ... Zalamon: If not, it will already be overrun by enemy zzoldierzz. Direct confrontation will be inevitable in zzat cazze, palezzkin. Now clear your mind and approach zze portal.", cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 19)
+			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 1) --Questlog, Children of the Revolution "Mission 5: Phantom Army"
 			npcHandler.topic[cid] = 0
 		-- CHILDREN OF REVOLUTION QUEST
 		
