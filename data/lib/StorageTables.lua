@@ -49,7 +49,9 @@ Storage = {
 		PirateSabreAddon = 50002,
 		
 		-- Assassin Outfit
-		AssassinBaseOutfit = 50080
+		AssassinBaseOutfit = 50080,
+		AssassinFirstAddon = 50081,
+		AssassinSecondAddon = 50082
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
