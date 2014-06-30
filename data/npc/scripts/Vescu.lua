@@ -86,10 +86,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-local function onReleaseFocus(cid)
-	t[cid] = nil
-end
-
 keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can give you a <hicks> scar as an addon. Nyahahah.'})
 keywordHandler:addKeyword({'booze'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Did I say booze? I meant, {flamingo}. <hicks> Pink birds are kinda cool, don\'t you think? Especially on a painting.'})
 keywordHandler:addKeyword({'flamingo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You have to enjoy the word. Like, {flayyyminnngoooo}. Say it with me. <hicks>'})
@@ -102,6 +98,5 @@ npcHandler:setMessage(MESSAGE_FAREWELL, 'T-time for another b-beer. <hicks>')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Oh, two t-trolls. Hellooo, wittle twolls. <hicks>')
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
-npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
