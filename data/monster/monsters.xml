@@ -153,6 +153,7 @@
 	<monster name="Dharalion" file="bosses/dharalion.xml"/>
 	<monster name="Diblis the Fair" file="bosses/diblis the fair.xml"/>
 	<monster name="Dirtbeard" file="bosses/dirtbeard.xml"/>
+	<monster name="Doctor Perhaps" file="bosses/doctor perhaps.xml"/>
 	<monster name="Doomhowl" file="bosses/doomhowl.xml"/>
 	<monster name="Dracola" file="bosses/dracola.xml"/>
 	<monster name="Dreadwing" file="bosses/dreadwing.xml"/>

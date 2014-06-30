@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Energized Raging Mage" nameDescription="an energized raging mage" race="blood" experience="0" speed="230" manacost="0">
+<monster name="Energized Raging Mage" nameDescription="energized raging mage" race="blood" experience="0" speed="230" manacost="0">
 	<health now="3500" max="3500"/>
 	<look type="423" corpse="0"/>
 	<targetchange interval="4000" chance="10"/>
@@ -18,12 +18,12 @@
 		<flag runonhealth="300"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="32" attack="37"/>
-		<attack name="thunderstorm" interval="2000" chance="40" range="7" target="1" min="-150" max="-230"/>
-		<attack name="manadrain" interval="2000" chance="20" range="7" min="-100" max="-200"/>
 		<attack name="energyfield" interval="2000" chance="20" range="7" radius="2" target="1">
 			<attribute key="shootEffect" value="energy"/>
 		</attack>
+		<attack name="melee" interval="2000" skill="32" attack="37"/>
+		<attack name="thunderstorm" interval="2000" chance="40" range="7" target="1" min="-150" max="-230"/>
+		<attack name="manadrain" interval="2000" chance="20" range="7" min="-100" max="-210"/>
 		<attack name="energy" interval="2000" chance="25" length="8" spread="0" min="-200" max="-300">
 			<attribute key="areaEffect" value="bigclouds"/>
 		</attack>
@@ -39,7 +39,6 @@
 	</elements>
 	<immunities>
 		<immunity energy="1"/>
-		<immunity outfit="1"/>
 		<immunity fire="1"/>
 		<immunity drunk="1"/>
 		<immunity invisible="1"/>
@@ -51,6 +50,6 @@
 		<voice sentence="MWAAAHAHAAA!! NO ONE!! NO ONE CAN DEFEAT MEEE!!!"/>
 	</voices>
 	<summons maxSummons="1">
-		<summon name="golden servant" interval="2000" chance="50"/>
+		<summon name="Golden Servant" interval="2000" chance="50"/>
 	</summons>
 </monster>
