@@ -37,10 +37,10 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say({"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...", "It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...", "The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...", "Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"}, cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "wooden stake") then
-		if player:getStorageValue(87) < 1 then
+		if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) < 1 then
 			npcHandler:say({"A blessed stake to defeat evil spirits? I do know an old prayer which is said to grant sacred power and to be able to bind this power to someone, or something. ...", "However, this prayer needs the combined energy of ten priests. Each of them has to say one line of the prayer. ...", "I could start with the prayer, but since the next priest has to be in a different location, you probably will have to travel a lot. ...", "Is this stake really important enough to you so that you are willing to take this burden?"}, cid)
 			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(87) == 2 then
+		elseif player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 2 then
 			if player:getItemCount(5941) >= 1 then
 				npcHandler:say("Ah, I see you brought a stake with you. Are you ready to receive my line of the prayer then?", cid)
 				npcHandler.topic[cid] = 3
@@ -63,11 +63,12 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
 			end
 		elseif npcHandler.topic[cid] == 2 then
-			player:setStorageValue(87, 1)
+			player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 1)
+			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 			npcHandler:say("Alright, I guess you need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to me.", cid)
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getItemCount(5941) >= 1 then
-				player:setStorageValue(87, 3)
+				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 3)
 				npcHandler:say("So receive my prayer: 'Light shall be near - and darkness afar'. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer. I will inform her what to do. ", cid)
 			end
 		end
