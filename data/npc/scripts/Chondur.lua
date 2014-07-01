@@ -52,8 +52,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getStorageValue(5941) >= 1 then
-				player:setStorageValue(88, os.time())
+			if player:getItemCount(5941) >= 1 then
+				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, os.time())
 				npcHandler:say("<mumblemumble> Sha Kesh Mar!", cid)
 				player:removeItem(5941, 1)
 				player:addItem(5942, 1)
@@ -101,9 +101,9 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "wooden stake") then
 		if npcHandler.topic[cid] < 1 then
-			if player:getStorageValue(87) == 12 and player:getStorageValue(5941) >= 1 then
-				if player:getStorageValue(88) + 7 * 24 * 60 * 60 < os.time() then
-					npcHandler:say("Ten prayers for a blessed stake? Don't tell me they made you travel whole Tibia for it! Listen, child, if you bring me a wooden stake, I'll bless it for you. <chuckles>", cid)
+			if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getItemCount(5941) >= 1 then
+				if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) + 7 * 24 * 60 * 60 < os.time() then
+					npcHandler:say("Ten prayers for a blessed stake? Don't tell me they made you travel whole Tibia for it! Listen, child, if you bring me a {wooden stake}, I'll bless it for you. <chuckles>", cid)
 					npcHandler.topic[cid] = 2
 				else
 					npcHandler:say("Sorry I'm still exhausted from the last ritual. come back later and try again.", cid)
@@ -111,7 +111,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			end
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(5941) >= 1 then
+			if player:getItemCount(5941) >= 1 then
 				npcHandler:say("Would you like to receive a spiritual prayer to bless your stake?", cid)
 				npcHandler.topic[cid] = 3
 			end
