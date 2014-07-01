@@ -117,10 +117,14 @@
 			<missionstate id="3" description="You have completed Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
-		<quest name="Friends and Traders" startstorageid="12400" startstoragevalue="1">
+	<quest name="Friends and Traders" startstorageid="12400" startstoragevalue="1">
 		<mission name="The Sweaty Cyclops" storageid="12401" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Big Ben, the cyclops in Ab'Dendriel sends you to bring him 3 bast skirts for his woman. After this he will help you to forge different steel."/>
 			<missionstate id="2" description="Big Ben, the cyclops in Ab'Dendriel will help you to forge different steel now. Just ask him if you need something."/>
+		</mission>
+		<mission name="The Mermaid Marina" storageid="12402" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Marina, the mermaid north of Sabrehaven sends you to bring her 50 honeycombs. After this she will help you create spool of yarn."/>
+			<missionstate id="2" description="Marina, the mermaid north of Sabrehaven will help you to create a spool of yarn from 10 pieces of spider silk. Just ask her if you need something."/>
 		</mission>
 	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
