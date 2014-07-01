@@ -106,8 +106,16 @@ local function creatureSayCallback(cid, type, msg)
 		-- Soul Orb
 		elseif(npcHandler.topic[cid] == 8) then
 			if(player:getItemCount(5944) >= 1) then
-				player:addItem(6529, player:getItemCount(5944) * 3)
-				player:removeItem(5944, player:getItemCount(5944))
+				local count = player:getItemCount(5944)
+				for i = 1, count do
+					if math.random(100) <= 1 then
+						player:addItem(6529, 6)
+						player:removeItem(5944, 1)
+					else
+						player:addItem(6529, 3)
+						player:removeItem(5944, 1)
+					end
+				end
 				npcHandler:say("Cling clang! ", cid)
 				npcHandler.topic[cid] = 0
 			end	
