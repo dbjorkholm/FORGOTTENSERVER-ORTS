@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Mad Scientist" nameDescription="a mad scientist" race="blood" experience="205" speed="190" manacost="0">
 	<health now="325" max="325"/>
-	<look type="133" head="97" body="0" legs="38" feet="97" addons="1" corpse="20439"/>
+	<look type="133" head="39" body="0" legs="38" feet="59" addons="1" corpse="20439"/>
 	<targetchange interval="4000" chance="10"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
@@ -21,7 +21,7 @@
 		<attack name="melee" interval="2000" min="0" max="-35"/>
 		<attack name="drown" interval="2000" chance="15" range="5" radius="3" target="1" min="-20" max="-56">
 			<attribute key="shootEffect" value="smallearth"/>
-			<attribute key="areaEffect" value="poff"/>
+			<attribute key="areaEffect" value="bluebubble"/>
 		</attack>
 		<attack name="energy" interval="2000" chance="15" range="5" target="1" min="-20" max="-36">
 			<attribute key="shootEffect" value="poison"/>
@@ -34,7 +34,7 @@
 	</attacks>
 	<defenses armor="15" defense="15">
 		<defense name="healing" interval="2000" chance="15" min="10" max="30">
-			<attribute key="areaEffect" value="bluebubble"/>
+			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
 	<elements>

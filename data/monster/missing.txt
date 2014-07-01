@@ -7,3 +7,9 @@ Incredibly Old Witch:
 
 Infernalist:
 	- missing its skill reducer spell
+
+Energized Raging Mage:
+	- missing its skill reducer spell
+
+Raging Mage
+	- missing sound when he dies
