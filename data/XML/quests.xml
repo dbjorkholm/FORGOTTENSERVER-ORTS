@@ -117,6 +117,12 @@
 			<missionstate id="3" description="You have completed Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
+		<quest name="Friends and Traders" startstorageid="12400" startstoragevalue="1">
+		<mission name="The Sweaty Cyclops" storageid="12401" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Big Ben, the cyclops in Ab'Dendriel sends you to bring him 3 bast skirts for his woman. After this he will help you to forge different steel."/>
+			<missionstate id="2" description="Big Ben, the cyclops in Ab'Dendriel will help you to forge different steel now. Just ask him if you need something."/>
+		</mission>
+	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
 		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Hairycles wants for you to infiltrate the Dworc Caves and steal some Whisper Moss which is said to be a cure. Find the Dworc Caves anywhere in Trapwood, the southern part of Tiquanda."/>
