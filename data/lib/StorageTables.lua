@@ -207,6 +207,8 @@ Storage = {
 	FriendsandTraders = {
 		DefaultStart = 12400,
 		TheSweatyCyclops = 12401,
-		TheMermaidMarina = 12402
+		TheMermaidMarina = 12402,
+		TheBlessedStake = 12403,
+		TheBlessedStakeWaitTime = 12404
 	}
 }

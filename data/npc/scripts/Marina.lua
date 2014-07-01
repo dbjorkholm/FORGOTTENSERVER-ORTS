@@ -34,6 +34,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You want me to touch something gooey, so you have to touch something gooey for me too. <giggles> ...", cid)
 			npcHandler:say("I love honey and I haven't eaten it in a while, so bring me 50 honeycombs and worship my beauty a little more, then we will see.", cid)
 			player:setStorageValue(Storage.FriendsandTraders.TheMermaidMarina, 1)
+			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 		elseif(npcHandler.topic[cid] == 4) then
 			if player:getItemCount(5902) >= 50 then
 				player:removeItem(5902, 50)
