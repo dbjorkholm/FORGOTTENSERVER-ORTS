@@ -203,5 +203,9 @@ Storage = {
 		SpyBuilding02 = 12308,
 		SpyBuilding03 = 12309,
 		StrangeSymbols = 12310
+	},
+	FriendsandTraders = {
+		DefaultStart = 12400,
+		TheSweatyCyclops = 12401
 	}
 }
