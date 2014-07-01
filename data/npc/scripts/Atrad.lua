@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	
 	if msgcontains(msg, "addon") then
 		local player = Player(cid)
-		if player:hasOutfit(player:getSex() == 0 and 156 or 152, 1) and player:getStorageValue(Storage["AssassinSecondAddon"]) < 1 then
+		if player:hasOutfit(player:getSex() == 0 and 156 or 152, 1) and player:getStorageValue(Storage["OutfitQuest"]["AssassinSecondAddon"]) < 1 then
 			npcHandler:say("You managed to deceive Erayo? Impressive. Well, I guess, since you have come that far, I might as well give you a task too, eh?", cid)
 			npcHandler.topic[cid] = 1
 		else
@@ -47,7 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(156, 2)
 			player:addOutfitAddon(152, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			player:getStorageValue(Storage["AssassinSecondAddon"], 2)
+			player:getStorageValue(Storage["OutfitQuest"]["AssassinSecondAddon"], 2)
 			npcHandler:say("I see you brought my stuff. Good. I'll keep my promise: Here's katana in return.", cid)
 		else
 			npcHandler:say("You don't have the required items.", cid)
@@ -58,8 +58,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			local player = Player(cid)
-			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
-			player:setStorageValue(Storage["AssassinSecondAddon"], 1)
+			player:setStorageValue(Storage["OutfitQuest"]["DefaultStart"], 1)
+			player:setStorageValue(Storage["OutfitQuest"]["AssassinSecondAddon"], 1)
 			npcHandler:say("Good. Come back when you have BOTH. Should be clear where to get a behemoth claw from. There's a horned fox who wears a nose ring. Good luck.", cid)
 			npcHandler.topic[cid] = 0
 		end

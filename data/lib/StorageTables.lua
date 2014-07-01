@@ -37,7 +37,6 @@ Storage = {
 		-- Norseman-outfit Quest
 		NorsemanAddon = 12065,
 		
-
 		-- Warrior-outfit Quest
 		WarriorShoulderAddon = 12067,
 		WarriorSwordAddon = 12068,
@@ -51,7 +50,10 @@ Storage = {
 		-- Assassin Outfit
 		AssassinBaseOutfit = 50080,
 		AssassinFirstAddon = 50081,
-		AssassinSecondAddon = 50082
+		AssassinSecondAddon = 50082,
+		
+		NightmareOutfit = 50083,
+		BrotherhoodOutfit = 50084
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
