@@ -1,39 +1,63 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+local config = {
+	[7844] = {
+		[1] = {female = 269, male = 268, msg = "nightmare"}, 
+		[2] = {female = 279, male = 278, msg = "brotherhood"}
+	},
+	[7845] = {
+		[1] = {female = 269, male = 268, addon = 1, msg = "first nightmare"}, 
+		[2] = {female = 279, male = 278, addon = 1, msg = "first brotherhood"}, 
+		storageValue = 2
+	},
+	[7846] = {
+		[1] = {female = 269, male = 268, addon = 2, msg = "second nightmare"}, 
+		[2] = {female = 279, male = 278, addon = 2, msg = "second brotherhood"}, 
+		storageValue = 3
+	}
+}
 
-	if(getPlayerStorageValue(cid, 66) > 0) then
-		outfit = getPlayerSex(cid) == 0 and 269 or 268
-		text = "Nightmare"
-	elseif(getPlayerStorageValue(cid, 67) > 0) then
-		outfit = getPlayerSex(cid) == 0 and 279 or 278
-		text = "Brotherhood"
-	else
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local targetItem = config[item.itemid]
+	if not targetItem then
 		return true
 	end
 
-	if(item.itemid == 7844) then
-		if(canPlayerWearOutfit(cid, outfit, 0)) then
-			doPlayerAddOutfit(cid, outfit, 0)
-			doRemoveItem(item.uid, 1)
-			doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You recive " .. text .. " outfit.")
-		end
-	elseif(item.itemid == 7845) then
-		if(canPlayerWearOutfit(cid, outfit, 1)) then
-			if(getPlayerStorageValue(cid, 66) == 2 or getPlayerStorageValue(cid, 67) == 2) then
-				doPlayerAddOutfit(cid, outfit, 1)
-				doRemoveItem(item.uid, 1)
-				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You recive " .. text .. " outfit's first addon.")
+	local player = Player(cid)
+	local choice = targetItem[1]
+	if player:getStorageValue(Storage['OutfitQuest']['BrotherhoodOutfit']) > player:getStorageValue(Storage['OutfitQuest']['NightmareOutfit']) then
+		choice = targetItem[2]
+	end
+	
+	if choice['addon'] then
+		if player:hasOutfit(player:getSex() == 0 and choice['female'] or choice['male']) then
+			if not player:hasOutfit(player:getSex() == 0 and choice['female'] or choice['male'], choice['addon']) then
+				if player:getStorageValue(Storage['OutfitQuest']['NightmareOutfit']) >= targetItem['storageValue'] or player:getStorageValue(Storage['OutfitQuest']['BrotherhoodOutfit']) >= targetItem['storageValue'] then
+					player:addOutfitAddon(choice['female'], choice['addon'])
+					player:addOutfitAddon(choice['male'], choice['addon'])
+					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. choice['msg'] .. ' addon!')
+					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+					Item(item.uid):remove(1)
+				else
+					return false
+				end
+			else
+				player:sendCancelMessage('You have already obtained this addon!')
 			end
+		else
+			return false
 		end
-	elseif(item.itemid == 7846) then
-		if(canPlayerWearOutfit(cid, outfit, 2)) then
-			if(getPlayerStorageValue(cid, 66) == 3 or getPlayerStorageValue(cid, 67) == 3) then
-				doPlayerAddOutfit(cid, outfit, 2)
-				doRemoveItem(item.uid, 1)
-				doSendMagicEffect(getPlayerPosition(cid), CONST_ME_MAGIC_BLUE)
-				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You recive " .. text .. " outfit's second addon.")
+	else
+		if not player:hasOutfit(player:getSex() == 0 and choice['female'] or choice['male']) then
+			if player:getStorageValue(Storage['OutfitQuest']['NightmareOutfit']) >= 1 or player:getStorageValue(Storage['OutfitQuest']['BrotherhoodOutfit']) >= 1 then
+				player:addOutfit(choice['female'])
+				player:addOutfit(choice['male'])
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. choice['msg'] .. ' outfit!')
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+				Item(item.uid):remove(1)
+			else
+				return false
 			end
+		else
+			player:sendCancelMessage('You have already obtained this outfit!')
 		end
 	end
 	return true
