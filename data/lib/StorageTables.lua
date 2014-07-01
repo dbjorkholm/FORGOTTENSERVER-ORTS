@@ -206,6 +206,7 @@ Storage = {
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
-		TheSweatyCyclops = 12401
+		TheSweatyCyclops = 12401,
+		TheMermaidMarina = 12402
 	}
 }
