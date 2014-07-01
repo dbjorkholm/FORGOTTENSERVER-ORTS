@@ -53,7 +53,9 @@ Storage = {
 		AssassinSecondAddon = 50082,
 		
 		NightmareOutfit = 50083,
-		BrotherhoodOutfit = 50084
+		BrotherhoodOutfit = 50084,
+		
+		ShamanAddons = 50085
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
