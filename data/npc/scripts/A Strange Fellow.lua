@@ -40,6 +40,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Hey! Don't touch that hat! Leave it alone!!! Don't do this!!!!", cid)
 			npcHandler.topic[cid] = 5
 		elseif(npcHandler.topic[cid] == 5) then
+			local pos = Creature("A Strange Fellow"):getPosition()
+			for i = 1, 5 do
+				toPosition(pos):sendMagicEffect(CONST_ME_TELEPORT)
+				Game.createMonster("Rabbit", pos)
+			end
 			npcHandler:say("Noooooo! Argh, ok, ok, I guess I can't deny it anymore, I am David Brassacres, the magnificent, so what do you want?", cid)
 			npcHandler.topic[cid] = 6
 		end
