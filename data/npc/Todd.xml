@@ -7,7 +7,7 @@
 	<parameter key="message_greet" value="Uhm oh hello |PLAYERNAME|... not so loud please... my {head}... What ... do you {want}?"/>
         <parameter key="message_farewell" value="Yes, goodbye |PLAYERNAME|, just leave me alone."/>
 	<parameter key="message_walkaway" value="Silence at last." />
-        <parameter key="shop_buyable" value="scroll of heroic deeds,12466,230;small notebook,12406,480" />
+        <parameter key="shop_sellable" value="scroll of heroic deeds,12466,230;small notebook,12406,480" />
 	<parameter key="module_keywords" value="1" />
         <parameter key="keywords" value="head;want;name;hugo" />
         <parameter key="keyword_reply1" value="Uhhh ohhhh one of the beers yesterday must have been bad." />
