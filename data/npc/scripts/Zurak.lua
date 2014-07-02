@@ -9,17 +9,17 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "trip") then
-		if player:getStorageValue(Storage.TheNewFrontier.Questline) >= 24 then
+		if Player(cid):getStorageValue(Storage.TheNewFrontier.Questline) >= 24 then
 			npcHandler:say("You want trip to Izzle of Zztrife?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("It'zz your doom you travel to.", cid)
+			local player = Player(cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 33102, y = 31056, z = 7})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
