@@ -260,9 +260,11 @@
 	<monster name="Xenia" file="bosses/xenia.xml"/>
 	<monster name="Yaga The Crone" file="bosses/yaga the crone.xml"/>
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
+	<monster name="Zarabustor" file="bosses/zarabustor.xml"/>
 	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
 	<monster name="Zulazza the Corruptor" file="bosses/zulazza the corruptor.xml"/>
+	<monster name="Zushuka" file="bosses/zushuka.xml"/>
 
 	<!-- Canines -->
 	<monster name="Crystal Wolf" file="canines/crystal wolf.xml"/>
