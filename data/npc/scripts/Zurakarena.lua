@@ -12,16 +12,16 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "trip") then
+	elseif isInArray({"trip", "passage", "back"}, msg) then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) >= 24 then
-			npcHandler:say("You want trip to Izzle of Zztrife?", cid)
+			npcHandler:say("You want to go back?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("It'zz your doom you travel to.", cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 33102, y = 31056, z = 7})
+			player:teleportTo({x = 33158, y = 31228, z = 7})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
@@ -31,7 +31,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'hurry') or msgcontains(msg, 'job')  then
-		npcHandler:say('Me zzimple ferryman. I arrange {trip} to Izzle of Zztrife.', cid)
+		npcHandler:say('Me zzimple ferryman. I arrange {trip} to Zao.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
