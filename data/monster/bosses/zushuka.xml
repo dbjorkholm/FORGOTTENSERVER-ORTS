@@ -18,14 +18,14 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-260"/>
+		<attack name="melee" interval="2000" min="0" max="-560"/>
 		<attack name="ice" interval="2000" chance="10" length="8" spread="3" min="0" max="-100">
 			<attribute key="areaEffect" value="iceattack"/>
 		</attack>
 		<attack name="ice" interval="2000" chance="20" range="7" min="0" max="-110">
 			<attribute key="shootEffect" value="snowball"/>
 		</attack>
-		<attack name="ice" interval="2000" chance="10" length="8" spread="3" min="-750" max="-800">
+		<attack name="ice" interval="2000" chance="10" length="8" spread="3" min="-300" max="-750">
 			<attribute key="areaEffect" value="icearea"/>
 		</attack>
 		<attack name="outfit" interval="2000" chance="10" range="7" item="7172" duration="4000">
@@ -39,7 +39,7 @@
 		<defense name="healing" interval="10000" chance="1" min="7500" max="7515">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="healing" interval="3000" chance="15" min="435" max="460">
+		<defense name="healing" interval="3000" chance="15" min="200" max="500">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -56,9 +56,12 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
-		<voice sentence="So you think you are cool?"/>
-		<voice sentence="I hope it is not too cold for you! HeHeHe."/>
+		<voice sentence="Cool down, you will?"/>
 		<voice sentence="Freeze!"/>
+		<voice sentence="Is this all you've got?"/>
+		<voice sentence="Rise, my servants. Destroy the trespassers!"/>
+		<voice sentence="And stay cool."/>
+		<voice sentence="Your cold dead body will be a marvelous ice statue."/>
 	</voices>
 	<loot>
 		<item id="2148" countmax="200" chance="92000"/>	<!-- gold coin -->
