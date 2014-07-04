@@ -23,6 +23,7 @@
 			<attribute key="areaEffect" value="rednote"/>
 		</attack>
 		<attack name="death" interval="2000" chance="5" range="1" target="1" radius="1" min="-55" max="-350">
+			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
 		<attack name="speed" interval="2000" chance="10" range="7" speedchange="-300" duration="15000">
