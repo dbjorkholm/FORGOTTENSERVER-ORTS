@@ -22,7 +22,6 @@
 		<attack name="death" interval="2000" chance="20" range="7" target="1" min="-60" max="-80">
 			<attribute key="shootEffect" value="suddendeath"/>
 			<attribute key="areaEffect" value="smallclouds"/>
-			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
 		<attack name="death" interval="2000" chance="15" target="0" radius="3" min="-30" max="-60">
 			<attribute key="areaEffect" value="mortarea"/>
