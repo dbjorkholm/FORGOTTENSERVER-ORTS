@@ -1003,4 +1003,6 @@
 	<house name="Upper Barracks 11" houseid="2418" entryx="32614" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
 	<house name="Upper Barracks 12" houseid="2419" entryx="32616" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
 	<house name="Low Waters Observatory" houseid="2420" entryx="33335" entryy="32762" entryz="6" rent="17165" guildhall="true" townid="9" size="473" />
+	<house name="Eastern House of Tranquility" houseid="2421" entryx="33388" entryy="31453" entryz="4" rent="11120" townid="14" size="256" />
+	<house name="Mammoth House" houseid="2422" entryx="32234" entryy="31226" entryz="7" rent="9300" townid="12" size="158" />
 </houses>
