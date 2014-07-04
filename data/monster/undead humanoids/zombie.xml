@@ -24,6 +24,7 @@
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 		<attack name="death" interval="2000" chance="15" target="1" range="1" min="-30" max="-49">
+			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
 	</attacks>
