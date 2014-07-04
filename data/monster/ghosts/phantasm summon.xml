@@ -21,7 +21,6 @@
 		<attack name="melee" interval="2000" skill="30" attack="25"/>
 		<attack name="death" interval="2000" chance="15" range="7" min="-50" max="-80">
 			<attribute key="shootEffect" value="suddendeath"/>
-			<attribute key="areaEffect" value="mortarea"/>
 			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
 		<attack name="manadrain" interval="2000" chance="10" target="0" radius="3" min="-5" max="-80">
