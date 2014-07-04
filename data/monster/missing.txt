@@ -13,3 +13,6 @@ Energized Raging Mage:
 
 Raging Mage
 	- missing sound when he dies
+
+Dreadbeast
+	- missing its skill increaser spell
