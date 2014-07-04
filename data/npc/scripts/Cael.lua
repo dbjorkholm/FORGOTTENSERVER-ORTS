@@ -282,10 +282,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "crest") then
-		if player:hasOutfit(366) and player:hasOutfit(367) and player:getItemCount(11116) >= 1 then
+		if player:hasOutfit(player:getSex() == 0 and 336 or 335) and player:getItemCount(11116) >= 1 then
 		 	npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that serpent crest?", cid)
 			npcHandler.topic[cid] = 60
-		elseif player:hasOutfit(366) and player:hasOutfit(367) and player:getItemCount(11115) >= 1 then
+		elseif player:hasOutfit(player:getSex() == 0 and 336 or 335) and player:getItemCount(11115) >= 1 then
 			npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that tribal crest?", cid)
 			npcHandler.topic[cid] = 61
 		else
@@ -294,9 +294,9 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] >= 60 and npcHandler.topic[cid] <= 61 then
 		if npcHandler.topic[cid] == 60 then
-			if not player:hasOutfit(366, 1) and not player:hasOutfit(367, 1) and player:removeItem(11116, 1) then
-				player:addOutfitAddon(366, 1)
-				player:addOutfitAddon(367, 1)
+			if not player:hasOutfit(player:getSex() == 0 and 336 or 335, 1) and player:removeItem(11116, 1) then
+				player:addOutfitAddon(335, 1)
+				player:addOutfitAddon(336, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say("Thank you! Let me reward you with something I stumbled across recently and which might fit your warmaster outfit perfectly.", cid)
 				npcHandler.topic[cid] = 0
@@ -305,9 +305,9 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 61 then
-			if not player:hasOutfit(366, 2) and not player:hasOutfit(367, 2) and player:removeItem(11115, 1) then
-				player:addOutfitAddon(366, 2)
-				player:addOutfitAddon(367, 2)
+			if not player:hasOutfit(player:getSex() == 0 and 336 or 335, 2) and player:removeItem(11115, 1) then
+				player:addOutfitAddon(335, 2)
+				player:addOutfitAddon(336, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say("Thank you! Let me reward you with something I stumbled across recently and which might fit your warmaster outfit perfectly.", cid)
 				npcHandler.topic[cid] = 0

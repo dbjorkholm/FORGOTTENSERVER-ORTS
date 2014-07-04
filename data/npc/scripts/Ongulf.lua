@@ -188,8 +188,8 @@ local function creatureSayCallback(cid, type, msg)
 							"Oh and one last thing: We convinced a carpet pilot to join us here. You'll find him on top of our lift in the mountains. I think he can offer you fast access to some cities back home. "
 						}, cid)
 			player:addExperience(8000, true)
-			player:addOutfit(366)
-			player:addOutfit(367)
+			player:addOutfit(335)
+			player:addOutfit(336)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 28)
 			player:setStorageValue(Storage.TheNewFrontier.Mission10, 1) --Questlog, The New Frontier Quest "Mission 10: New Horizons"
