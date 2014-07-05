@@ -16,3 +16,6 @@ Raging Mage
 
 Dreadbeast
 	- missing its skill increaser spell
+
+Ethershreck
+	- missing all attack values
