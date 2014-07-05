@@ -157,6 +157,7 @@
 	<monster name="Dreadwing" file="bosses/dreadwing.xml"/>
 	<monster name="Energized Raging Mage" file="bosses/energized raging mage.xml"/>
 	<monster name="Esmeralda" file="bosses/esmeralda.xml"/>
+	<monster name="Ethershreck" file="bosses/ethershreck.xml"/>
 	<monster name="Evil Mastermind" file="bosses/evil mastermind.xml"/>
 	<monster name="Fatality" file="bosses/fatality.xml"/>
 	<monster name="Fernfang" file="bosses/fernfang.xml"/>
@@ -223,6 +224,7 @@
 	<monster name="Splasher" file="bosses/splasher.xml"/>
 	<monster name="Stonecracker" file="bosses/stonecracker.xml"/>
 	<monster name="Tanjis" file="bosses/tanjis.xml"/>
+	<monster name="Teleskor" file="bosses/teleskor.xml"/>
 	<monster name="Terofar" file="bosses/terofar.xml"/>
 	<monster name="The Abomination" file="bosses/the abomination.xml"/>
 	<monster name="The Axeorcist" file="bosses/the axeorcist.xml"/>
