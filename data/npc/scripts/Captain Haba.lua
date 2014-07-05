@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if player:getStorageValue(525501) >= 1 then
+		if player:getStorageValue(525501) <= 1 then
 			npcHandler:say("Ya wanna join the hunt fo' the sea serpent? Be warned ya may pay with ya life! Are ya in to it?", cid)
 			npcHandler.topic[cid] = 1
 		end
