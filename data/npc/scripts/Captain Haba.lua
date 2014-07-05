@@ -21,37 +21,31 @@ local function creatureSayCallback(cid, type, msg)
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("A'right, we are here to resupply our stock of baits to catch the sea serpent. Your first task is to bring me 5 fish they are easy to catch. When you got them ask me for the bait again.", cid)
 			player:setStorageValue(525501, 2)
-			npcHandler.topic[cid] = 2
+			npcHandler.topic[cid] = 0
 		end
-	elseif(msgcontains(msg, "bait")) then
-		if player:getStorageValue(525501) == 2 then
+	end
+	if(msgcontains(msg, "bait") and player:getStorageValue(525501) == 2) then
 			if player:getItemCount(2667) >= 5 then
 				player:removeItem(2667, 5)
 				npcHandler:say("Excellent, now bring me 5 northern pike.", cid)
 				player:setStorageValue(525501, 3)
 				npcHandler.topic[cid] = 3
 			end
-		end
-	elseif(msgcontains(msg, "bait")) then
-		if player:getStorageValue(525501) == 3 then
+	elseif(msgcontains(msg, "bait") and player:getStorageValue(525501) == 3) then
 			if player:getItemCount(2669) >= 5 then
 				player:removeItem(2669, 5)
 				npcHandler:say("Excellent, now bring me 5 green perch.", cid)
 				player:setStorageValue(525501, 4)
 				npcHandler.topic[cid] = 4
 			end
-		end
-	elseif(msgcontains(msg, "bait")) then
-		if player:getStorageValue(525501) == 4 then
+	elseif(msgcontains(msg, "bait") and player:getStorageValue(525501) == 4) then
 			if player:getItemCount(7159) >= 5 then
 				player:removeItem(7159, 5)
 				npcHandler:say("Excellent, now bring me 5 rainbow trout.", cid)
 				player:setStorageValue(525501, 5)
 				npcHandler.topic[cid] = 5
 			end
-		end
-	elseif(msgcontains(msg, "bait")) then
-		if player:getStorageValue(525501) == 5 then
+	elseif(msgcontains(msg, "bait") and player:getStorageValue(525501) == 5) then
 			if player:getItemCount(7158) >= 5 then
 				player:removeItem(7158, 1)
 				npcHandler:say("Excellent, that should be enough fish to make the bait. Tell me when ya're ready fo' the hunt.", cid)
@@ -59,7 +53,6 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 6
 			end
 		end
-	end
 	if(msgcontains(msg, "hunt")) then
 		if player:getStorageValue(525501) == 6 then
 			npcHandler:say("A'right, wanna put out to sea?", cid)
