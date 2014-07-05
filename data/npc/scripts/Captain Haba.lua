@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, "mission")) then
+	if msgcontains(msg, "mission") then
 		if player:getStorageValue(525501) <= 1 then
 			npcHandler:say("Ya wanna join the hunt fo' the sea serpent? Be warned ya may pay with ya life! Are ya in to it?", cid)
 			npcHandler.topic[cid] = 1
@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
-	if(msgcontains(msg, "bait") and player:getStorageValue(525501) == 2) then
+	if msgcontains(msg, "bait") and player:getStorageValue(525501) == 2 then
 			if player:getItemCount(2667) >= 5 then
 				player:removeItem(2667, 5)
 				npcHandler:say("Excellent, now bring me 5 northern pike.", cid)
