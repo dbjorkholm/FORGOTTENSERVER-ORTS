@@ -7951,10 +7951,9 @@
 	<item id="4840" article="a" name="witches' cap spot">
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="4842" article="a" name="parchment">
+	<item id="4842" article="an" name="old parchment">
+		<attribute key="description" value="It is covered with foreign symbols." />
 		<attribute key="weight" value="200" />
-		<attribute key="writeable" value="1" />
-		<attribute key="maxTextLen" value="1023" />
 	</item>
 	<item id="4843" article="a" name="giant ape's hair">
 		<attribute key="weight" value="2000" />
