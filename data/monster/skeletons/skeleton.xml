@@ -38,7 +38,7 @@
 		<item id="2473" chance="7520"/>					<!-- viking helmet -->
 		<item id="2398" chance="4850"/>					<!-- mace -->
 		<item id="2388" chance="4820"/>					<!-- hatchet -->
-		<item id="2511" chance="2000"/>					<!-- brass shield -->		
+		<item id="2511" chance="2000"/>					<!-- brass shield -->
 		<item id="2376" chance="1920"/>					<!-- sword -->
 	</loot>
 </monster>
