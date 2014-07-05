@@ -53,7 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 6
 			end
 		end
-	if(msgcontains(msg, "hunt")) then
+	if msgcontains(msg, "hunt") then
 		if player:getStorageValue(525501) == 6 then
 			npcHandler:say("A'right, wanna put out to sea?", cid)
 			npcHandler.topic[cid] = 7
