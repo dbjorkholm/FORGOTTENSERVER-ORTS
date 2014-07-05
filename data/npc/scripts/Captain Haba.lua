@@ -47,7 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 	elseif msgcontains(msg, "bait") and player:getStorageValue(525501) == 5 then
 			if player:getItemCount(7158) >= 5 then
-				player:removeItem(7158, 1)
+				player:removeItem(7158, 5)
 				npcHandler:say("Excellent, that should be enough fish to make the bait. Tell me when ya're ready fo' the hunt.", cid)
 				player:setStorageValue(525501, 6)
 				npcHandler.topic[cid] = 6
