@@ -5,12 +5,12 @@ function onStepIn(cid, item, position, lastPosition)
 		chance = math.random(1, 3)
 		if(tile:getItemById(18340) and tile:getItemById(18340):getActionId() ~= 100) then
 			if chance < 3 then
-				toPosition():sendMagicEffect(CONST_ME_POFF)
-				Item(item.uid):transformItem(tile:getItemById(18340), 18218)
-				addEvent(Item(item.uid):transformItem, 40 * 1000, tile:getItemById(18218), 18340)
+				position:sendMagicEffect(CONST_ME_POFF)
+				tile:getItemById(18340):transform(18218)
+				addEvent(function(position) local tile = Tile(position) if not tile then return end local thing = tile:getItemById(18218) if thing then thing:transform(18340) end end, 40000, position)
 			elseif chance == 3 then
-				Item(item.uid):transformItem(tile:getItemById(18340), 18341)
-				toPosition():sendMagicEffect(CONST_ME_GROUNDSHAKER)
+				tile:getItemById(18340):transform(18341)
+				position:sendMagicEffect(CONST_ME_GROUNDSHAKER)
 			end
 		end
 	end

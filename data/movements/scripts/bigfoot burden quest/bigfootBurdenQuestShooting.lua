@@ -5,10 +5,10 @@ local function doCreateDummy(cid, pos)
 	if player:getStorageValue(902) < 5 then
 		if tile:getItemById(18226) then
 			tile:getItemById(18226):remove()
-		elseif Tile(pos):getItemById(18227) then
+		elseif tile:getItemById(18227) then
 			tile:getItemById(18227):remove()
 		end
-		toPosition():sendMagicEffect(CONST_ME_POFF)
+		pos:sendMagicEffect(CONST_ME_POFF)
 		Game.createItem(math.random(18226, 18227), 1, pos)
 	elseif getPlayerStorageValue(cid, 902) == 5 then
 		if tile:getItemById(18226) then
@@ -29,16 +29,14 @@ function onStepIn(cid, item, position, lastPosition)
 		return true
 	end
 
-	if item.actionid == 8030 then
-		if player:getStorageValue(900) == 8 then
-			player:setStorageValue(902, 0)
-			-- Commenting away mayNotMove since this function no longer exists.
-			-- mayNotMove(cid, true)
-			doCreateDummy(cid, {x = player:getPosition().x, y = player:getPosition().y - 5, z = 10})
-			toPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		else
-			player:teleportTo(lastPosition)
-		end
+	if player:getStorageValue(900) == 8 then
+		player:setStorageValue(902, 0)
+		-- Commenting away mayNotMove since this function no longer exists.
+		-- mayNotMove(cid, true)
+		doCreateDummy(cid, {x = player:getPosition().x, y = player:getPosition().y - 5, z = 10})
+		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	else
+		player:teleportTo(lastPosition)
 	end
 	return true
 end
