@@ -9,7 +9,7 @@ function onStepIn(cid, item, position, lastPosition)
 	end
 
 	if item.actionid == 7816 then
-		random = math.random(1, 5)
+		local random = math.random(1, 5)
 		if random == 1 then
 			player:teleportTo(lastPosition)
 		elseif random == 2 then
