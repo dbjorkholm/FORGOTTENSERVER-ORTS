@@ -1,9 +1,9 @@
 function onStepIn(cid, item, position, lastPosition)
-	local tile = Tile(position)
 
-	if string.lower(Creature():getName()) == "mushroom sniffer" then
-		local chance = math.random(1, 3)
-		if(tile:getItemById(18340) and tile:getItemById(18340):getActionId() ~= 100) then
+	if string.lower(Creature(cid):getName()) == "mushroom sniffer" then
+		local tile = Tile(position)
+		if tile:getItemById(18340) and tile:getItemById(18340):getActionId() ~= 100 then
+			local chance = math.random(1, 3)
 			if chance < 3 then
 				position:sendMagicEffect(CONST_ME_POFF)
 				tile:getItemById(18340):transform(18218)
