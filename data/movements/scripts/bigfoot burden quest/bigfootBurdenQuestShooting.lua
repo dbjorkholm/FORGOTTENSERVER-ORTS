@@ -1,19 +1,20 @@
 local function doCreateDummy(cid, pos)
 	local player = Player(cid)
+	local tile = Tile(pos)
 
 	if player:getStorageValue(902) < 5 then
-		if Tile(pos):getItemById(18226) > 0 then
-			Item(item.uid):removeItem(Tile(pos):getItemById(18226), 1)
-		elseif Tile(pos):getItemById(18227) > 0 then
-			Item(item.uid):removeItem(Tile(pos):getItemById(18227), 1)
+		if tile:getItemById(18226) then
+			tile:getItemById(18226):remove()
+		elseif Tile(pos):getItemById(18227) then
+			tile:getItemById(18227):remove()
 		end
 		toPosition():sendMagicEffect(CONST_ME_POFF)
 		Game.createItem(math.random(18226, 18227), 1, pos)
 	elseif getPlayerStorageValue(cid, 902) == 5 then
-		if Tile(pos):getItemById(18226) > 0 then
-			Item(item.uid):removeItem(Tile(pos):getItemById(18226), 1)
-		elseif Tile(pos):getItemById(18227) > 0 then
-			Item(item.uid):removeItem(Tile(pos):getItemById(18227), 1)
+		if tile:getItemById(18226) then
+			tile:getItemById(18226):remove()
+		elseif tile:getItemById(18227) then
+			tile:getItemById(18227):remove()
 		end
 		-- Commenting away mayNotMove since this function no longer exists.
 		-- mayNotMove(cid, false)
@@ -24,6 +25,9 @@ end
 
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
+	if not player then
+		return true
+	end
 
 	if item.actionid == 8030 then
 		if player:getStorageValue(900) == 8 then

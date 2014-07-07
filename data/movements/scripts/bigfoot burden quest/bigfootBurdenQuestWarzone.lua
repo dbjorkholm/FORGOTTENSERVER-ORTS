@@ -7,7 +7,7 @@ local boss = {
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
 
-	if player:isPlayer() then
+	if player then
 		player:TeleportTo(boss[item.uid].pos)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have half an hour to heroically defeat " .. boss[item.uid].name .. ". Otherwise you'll be teleported out by the gnomish emergency device.")
