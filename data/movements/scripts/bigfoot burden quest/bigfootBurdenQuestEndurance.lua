@@ -1,6 +1,6 @@
-local condition = createConditionObject(CONDITION_PARALYZE)
-setConditionParam(condition, CONDITION_PARAM_TICKS, 2000)
-setConditionFormula(condition, -0.9, 0, -0.9, 0)
+local condition = Condition(CONDITION_PARALYZE)
+condition:setParameter(CONDITION_PARAM_TICKS, 2000)
+condition:setFormula(-0.9, 0, -0.9, 0)
 
 function onStepIn(cid, item, position, lastPosition)
 	local player = Player(cid)
