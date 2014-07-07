@@ -9,6 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local x1 = Tile(Position(32841, 32269, 14))
 	local x2 = Tile(Position(32840, 32268, 14))
 	local x3 = Tile(Position(32842, 32267, 14))
+	local portal = Position(32836, 32288, 14)
 	
 	local o = 2639
 	local x = 2638
@@ -26,10 +27,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				x2:getItemById(x):remove()
 				x3:getItemById(x):remove()
 					
-				local crack = Tile(Position(32836, 32288, 14)):getItemById(6299)
+				local crack = Tile(portal):getItemById(6299)
 				if crack ~= 0 then
 					crack:remove()
-					local item = Game.createItem(1387, 1, Position(32836, 32288, 14))
+					local item = Game.createItem(1387, 1, portal)
 					item:setActionId(9032)
 				end
 			end
