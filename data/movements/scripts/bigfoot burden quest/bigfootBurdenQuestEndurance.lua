@@ -2,9 +2,12 @@ local condition = createConditionObject(CONDITION_PARALYZE)
 setConditionParam(condition, CONDITION_PARAM_TICKS, 2000)
 setConditionFormula(condition, -0.9, 0, -0.9, 0)
 
-local player = Player(cid)
-			
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if item.actionid == 7816 then
 		random = math.random(1, 5)
 		if random == 1 then
@@ -20,7 +23,7 @@ function onStepIn(cid, item, position, lastPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You passed endurance test.")
 	elseif item.actionid == 7818 then
-		if getPlayerStorageValue(cid, 900) == 10 then
+		if player:getStorageValue(900) == 10 then
 			player:teleportTo(Position(32759, 31811, 11))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else

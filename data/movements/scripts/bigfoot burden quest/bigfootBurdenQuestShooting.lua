@@ -1,6 +1,6 @@
-local player = Player(cid)
-
 local function doCreateDummy(cid, pos)
+	local player = Player(cid)
+
 	if player:getStorageValue(902) < 5 then
 		if Tile(pos):getItemById(18226) > 0 then
 			Item(item.uid):removeItem(Tile(pos):getItemById(18226), 1)
@@ -23,6 +23,8 @@ local function doCreateDummy(cid, pos)
 end
 
 function onStepIn(cid, item, position, lastPosition)
+	local player = Player(cid)
+
 	if item.actionid == 8030 then
 		if player:getStorageValue(900) == 8 then
 			player:setStorageValue(902, 0)
