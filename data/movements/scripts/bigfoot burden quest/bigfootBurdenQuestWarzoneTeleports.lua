@@ -5,14 +5,17 @@ local destination = {
 }
 
 function onStepIn(cid, item, position, lastPosition)
-	local v = destination[item.uid]
-	if(v) then
-		local p = Player(cid)
-		if(p:getStorageValue(missionStorageKey) == missionStorageValue) then
-			p:teleportTo(v.newPos)
-			p:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	local uniqueid = destination[item.uid]
+	if uniqueid then
+		local player = Player(cid)
+		if not player then
+			return true
+		end
+		if player:getStorageValue(uniqueid.missionStorageKey) == uniqueid.missionStorageValue then
+			player:teleportTo(uniqueid.newPos)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			p:teleportTo(lastPosition)
+			player:teleportTo(lastPosition)
 		end
 	end
 return true

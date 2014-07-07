@@ -11,6 +11,11 @@ local config = {
 		yasirPosition = Position(33102, 32884, 6)
 	},
 	[2] = { -- carlin
+		itemsToRemove = {
+			{Position(32393, 31814, 6), 10408},
+			{Position(32393, 31815, 6), 10408},
+			{Position(32393, 31816, 6), 10408}	
+		},
 		mapName = 'yasirCarlin',
 		yasirPosition = Position(32400, 31815, 6)
 	},
