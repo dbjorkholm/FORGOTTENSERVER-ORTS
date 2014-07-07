@@ -9,8 +9,7 @@ local function doCreateDummy(cid, pos)
 			tile:getItemById(18227):remove()
 		end
 		pos:sendMagicEffect(CONST_ME_POFF)
-		local dumdum = math.random(18226, 18227)
-		Game.createItem(dumdum, 1, pos)
+		Game.createItem(math.random(18226, 18227), 1, pos)
 	elseif getPlayerStorageValue(cid, 902) == 5 then
 		if tile:getItemById(18226) then
 			tile:getItemById(18226):remove()
