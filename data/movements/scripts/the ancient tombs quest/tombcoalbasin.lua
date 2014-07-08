@@ -17,7 +17,7 @@ local config = {
 	[9046] = {x=33137,y=32683,z=12}
 }
 
-function onStepIn(cid, item, pos, fromPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if (isPlayer(cid)) then
 		if(config[item.uid]) then
 			if(type(config[item.uid]) == "table" and #config[item.uid] == 2) then

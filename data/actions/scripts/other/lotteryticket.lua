@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local item = Item(item.uid)
-	if math.random(1, 50) == 1 then
+	if math.random(50) == 1 then
 		player:getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
 		item:transform(5958)
 		player:say("You get the Prize!", TALKTYPE_ORANGE_1)

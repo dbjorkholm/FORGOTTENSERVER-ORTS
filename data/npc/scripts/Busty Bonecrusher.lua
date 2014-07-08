@@ -11,7 +11,7 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
-		if(math.random(1, 100) < 20) then
+		if(math.random(100) < 20) then
 			Npc():say('Behave yourself as long as you are in Carlin, commoner!', TALKTYPE_SAY)
 		end
 	end

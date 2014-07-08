@@ -56,7 +56,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				doSendMagicEffect(toPosition, CONST_ME_POFF)
 				if(getFungusInArea({x = 33306, y = 31847}, {x = 33369, y = 31919}) == false) then
 					for i = 1, #pos do
-						addEvent(doSummonCrature, 5 * 1000, creatures[math.random(1, 3)], pos[i])
+						addEvent(doSummonCrature, 5 * 1000, creatures[math.random(3)], pos[i])
 						addEvent(doSendMagicEffect, 5 * 1000, pos[i], CONST_ME_TELEPORT)
 					end
 					doSendMagicEffect(getPlayerPosition(cid), CONST_ME_FIREWORK_RED)

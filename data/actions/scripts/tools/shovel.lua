@@ -6,7 +6,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		iEx:transform(itemEx.itemid + 1)
 		iEx:decay()
 	elseif itemEx.itemid == 231 or itemEx.itemid == 9059 then
-		local rand = math.random(1, 100)
+		local rand = math.random(100)
 		if(itemEx.actionid  == 100 and rand <= 20) then
 		iEx:transform(489)
 		iEx:decay()

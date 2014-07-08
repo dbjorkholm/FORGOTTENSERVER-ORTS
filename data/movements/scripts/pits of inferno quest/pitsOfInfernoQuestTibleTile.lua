@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return false
@@ -13,7 +13,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	else
-		player:teleportTo(lastPosition)
+		player:teleportTo(fromPosition)
 	end
 	return true
 end

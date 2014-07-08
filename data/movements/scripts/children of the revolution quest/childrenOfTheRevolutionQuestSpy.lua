@@ -4,7 +4,7 @@ local config = {
 	[8011] = {Storage.ChildrenoftheRevolution.SpyBuilding03, "These barracks seem to be home for quite a lot of soldiers."}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	local targetTile = config[item.actionid]
 	if not player then 

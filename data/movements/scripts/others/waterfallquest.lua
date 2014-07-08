@@ -4,28 +4,28 @@ local config = {
 	caveExitPosition = Position(32971, 32620, 8)
 }
 
-function onStepIn(cid, item, pos, fromPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
 	end
 
 	-- Jumping off the mountain edge into the water / onto water edge
-	if pos.x == 32966 and pos.y == 32626 and pos.z == 5 then
+	if position.x == 32966 and position.y == 32626 and position.z == 5 then
 		player:teleportTo(config.swimmingPosition)
 		config.swimmingPosition:sendMagicEffect(CONST_ME_WATERSPLASH)
 
 	-- Splash effect when jumping down the waterfall
-	elseif pos.x == 32968 and pos.y == 32630 and pos.z == 7 then
-		pos:sendMagicEffect(CONST_ME_WATERSPLASH)
+	elseif position.x == 32968 and position.y == 32630 and position.z == 7 then
+		position:sendMagicEffect(CONST_ME_WATERSPLASH)
 
 	-- Teleport when entering the waterfall / cave
-	elseif pos.x == 32968 and pos.y == 32629 and pos.z == 7 then
+	elseif position.x == 32968 and position.y == 32629 and position.z == 7 then
 		player:teleportTo(config.caveEntrancePosition)
 		player:setDirection(SOUTH)
 
 	-- Leaving the cave through teleport
-	elseif pos.x == 32967 and pos.y == 32630 and pos.z == 8 then
+	elseif position.x == 32967 and position.y == 32630 and position.z == 8 then
 		player:teleportTo(config.caveExitPosition)
 		player:setDirection(EAST)
 	end

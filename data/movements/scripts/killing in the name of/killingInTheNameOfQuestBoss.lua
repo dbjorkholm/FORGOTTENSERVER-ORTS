@@ -26,14 +26,14 @@ function removeSummon(fromPos, toPos)
 	return true
 end
 
-function removePlayer(fromPos, toPos, lastPosition, cid)
+function removePlayer(fromPos, toPos, fromPosition, cid)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
 			for z = toPos.z, toPos.z do
 				if(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
 					if(isPlayer(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid)) then
-							doTeleportThing(cid, lastPosition)
-							doSendMagicEffect(lastPosition, CONST_ME_TELEPORT)
+							doTeleportThing(cid, fromPosition)
+							doSendMagicEffect(fromPosition, CONST_ME_TELEPORT)
 							doCreatureSay(cid, "Kicked out." , TALKTYPE_ORANGE_1)
 					end
 				end
@@ -83,7 +83,7 @@ local bosses = {
 	[3257] = {bossName = "zanakeph", storage = 28, playerPos = {x = 33077, y = 31040, z = 12}, bossPos = {x = 33082, y = 31056, z = 12 },  fromPos = {x = 33059, y = 31039, z = 12 }, toPos = {x = 33093, y = 31064, z = 12 }, flamePos = {x = 33070, y = 31039, z = 12}},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	B = bosses[item.uid]
 	if(getPlayerStorageValue(cid, 4000) == 1) then
 		if(getPlayerStorageValue(cid, 4008) == B.storage) then
@@ -94,16 +94,16 @@ function onStepIn(cid, item, position, lastPosition)
 				doSendMagicEffect(B.playerPos, CONST_ME_TELEPORT)
 				doSummonCreature(B.bossName, B.bossPos)
 				addEvent(removeSummon, 60 * 10 * 1000, B.fromPos, B.toPos)
-				addEvent(removePlayer, 60 * 10 * 1000, B.fromPos, B.toPos , lastPosition, cid)
+				addEvent(removePlayer, 60 * 10 * 1000, B.fromPos, B.toPos , fromPosition, cid)
 				doCreatureSay(cid, "You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out." , TALKTYPE_ORANGE_1)
 			else
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 			end
 		else
-			doTeleportThing(cid, lastPosition)
+			doTeleportThing(cid, fromPosition)
 		end
 	else
-		doTeleportThing(cid, lastPosition)
+		doTeleportThing(cid, fromPosition)
 	end	
 	return true
 end

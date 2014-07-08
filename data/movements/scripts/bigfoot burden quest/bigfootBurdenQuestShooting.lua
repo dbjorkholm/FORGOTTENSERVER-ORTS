@@ -23,7 +23,7 @@ local function doCreateDummy(cid, pos)
 	return addEvent(doCreateDummy, 2 * 1000, cid, pos)
 end
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -36,7 +36,7 @@ function onStepIn(cid, item, position, lastPosition)
 		doCreateDummy(cid, {x = player:getPosition().x, y = player:getPosition().y - 5, z = 10})
 		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	else
-		player:teleportTo(lastPosition)
+		player:teleportTo(fromPosition)
 	end
 	return true
 end

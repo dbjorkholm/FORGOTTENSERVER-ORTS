@@ -1,6 +1,6 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(item.actionid == 5091) then
-		doTeleportThing(cid, lastPosition)
+		doTeleportThing(cid, fromPosition)
 	end
 	return true
 end

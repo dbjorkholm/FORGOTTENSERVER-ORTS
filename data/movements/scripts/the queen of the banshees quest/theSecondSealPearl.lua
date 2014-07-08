@@ -17,7 +17,7 @@ local config = {
 	[2] = {pos = {x = 32180, y = 31871, z = 15}, pId = 2144}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	local pearls = 0
 	if not player then
@@ -33,11 +33,11 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo({x = player:getPosition().x, y = player:getPosition().y-6, z = 15}, false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition, true)
+			player:teleportTo(fromPosition, true)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end		
 	else
-		player:teleportTo(lastPosition, true)
+		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true

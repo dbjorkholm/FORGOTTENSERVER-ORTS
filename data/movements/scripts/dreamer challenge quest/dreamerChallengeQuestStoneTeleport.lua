@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	doTeleportThing(cid, {x = 32920, y = 32296, z = 13})
 	doSendMagicEffect({x = 32920, y = 32296, z = 13}, CONST_ME_TELEPORT)
  	doTransformItem(getTileItemById({x = 32873, y = 32263, z = 14}, 1946).uid, 1945)

@@ -45,8 +45,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, 958) == 1) then
 			setPlayerStorageValue(cid, 958, 0)
 			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(1, #reward[item.uid])
-				tmpTable[2] = math.random(1, #reward[item.uid])
+				tmpTable[1] = math.random(#reward[item.uid])
+				tmpTable[2] = math.random(#reward[item.uid])
 			end
 			for i = 1, #reward[item.uid] do
 				if(not(isInArray(tmpTable, i))) then
@@ -60,8 +60,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.uid == 3149) then
 		if(getPlayerStorageValue(cid, 959) == 1) then
 			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(1, #reward[item.uid])
-				tmpTable[2] = math.random(1, #reward[item.uid])
+				tmpTable[1] = math.random(#reward[item.uid])
+				tmpTable[2] = math.random(#reward[item.uid])
 			end
 			for i = 1, #reward[item.uid] do
 				if(not(isInArray(tmpTable, i))) then
@@ -71,7 +71,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			setPlayerStorageValue(cid, 959, 0)
 			doPlayerAddItem(cid, 2493, 1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a reward for defeating Warzone 2.")
-			if(math.random(1, 25) == 1) then
+			if(math.random(25) == 1) then
 				doPlayerAddItem(cid, 16619, 1)
 			end
 		else
@@ -80,8 +80,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.uid == 3150) then
 		if(getPlayerStorageValue(cid, 960) == 1) then
 			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(1, #reward[item.uid])
-				tmpTable[2] = math.random(1, #reward[item.uid])
+				tmpTable[1] = math.random(#reward[item.uid])
+				tmpTable[2] = math.random(#reward[item.uid])
 			end
 			for i = 1, #reward[item.uid] do
 				if(not(isInArray(tmpTable, i))) then

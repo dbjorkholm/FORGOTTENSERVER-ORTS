@@ -1,5 +1,5 @@
 function skinMonster(cid,item,skin)
-local random = math.random(1,15)
+local random = math.random(15)
         if(random < 4) then
                 doPlayerAddItem(cid,skin,1)
                 doSendMagicEffect(getThingPos(item.uid), CONST_ME_MAGIC_GREEN)
@@ -34,7 +34,7 @@ local pumpkin_items = {
 	[8] = {9005, 20}
 }
 
-local random = math.random(1,10)
+local random = math.random(10)
         if isInArray(minotaurs, itemEx.itemid) then
                 skinMonster(cid, itemEx, 5878)
         return true
@@ -79,7 +79,7 @@ local random = math.random(1,10)
         elseif isInArray(marble, itemEx.itemid) then
                 doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_ICEAREA)
                 doRemoveItem(itemEx.uid,1)
-                local check = math.random(1,10)
+                local check = math.random(10)
                 if(check < 6) then
                         goblet = doPlayerAddItem(cid, 11344, 1)
                         doSetItemSpecialDescription(goblet, "This shoddy work was made by " .. getCreatureName(cid) .. ".")
@@ -123,7 +123,7 @@ if DUSTS[itemEx.itemid] == nil then
         return false
 end
         
-        local random = math.random(1, 100000)
+        local random = math.random(100000)
         if(random <= dust[1]) then
                 doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_GROUNDSHAKER)
                 doPlayerAddItem(cid, dust[2], 1)

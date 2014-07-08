@@ -3,7 +3,7 @@ local config = {
 	[3168] = {Storage.ChildrenoftheRevolution.Questline, Position({x = 33356, y = 31125, z = 7}), Position({x = 33261, y = 31079, z = 8})}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	local targetTile = config[item.uid]
 	if not player then 

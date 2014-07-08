@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	doTransformItem(item.uid, 425)
     	--[[if(item.actionid == 2245) then
         	doTeleportThing(getThingFromPos({x = position.x + 2, y = position.y, z = position.z, stackpos = 1}).uid, {x = 32842, y = 32340, z = 9})
@@ -16,6 +16,6 @@ function onStepIn(cid, item, position, lastPosition)
     	return true]]--
 end
 
-function onStepOut(cid, item, position, lastPosition)
+function onStepOut(cid, item, position, fromPosition)
 	doTransformItem(item.uid, 426)
 end

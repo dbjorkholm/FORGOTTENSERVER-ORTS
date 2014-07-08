@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(item.actionid == 9032) then
 		doTransformItem(getTileItemById({x = 32836, y = 32288, z = 14}, 1387).uid, 6299)
 		doTransformItem(getTileItemById({x = 32834, y = 32285, z = 14}, 1946).uid, 1945)

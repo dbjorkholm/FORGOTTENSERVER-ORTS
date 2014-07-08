@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:say("The apparatus in the centre looks odd! You should inspect it.", TALKTYPE_ORANGE_1)
 
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 		end
 	elseif item.uid == 7810 and isPlayer(cid) then
 		if getGlobalStorageValue(982) < 1 then
@@ -20,7 +20,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo({x = 32784, y = 31178, z = 9})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 		end
 	end
 	return true

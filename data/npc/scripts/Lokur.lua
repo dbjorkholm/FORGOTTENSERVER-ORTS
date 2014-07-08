@@ -13,7 +13,7 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(1, 100) < 25) then
+		if(math.random(100) < 25) then
 			Npc():say("It's a wise idea to store your money in your bank account.", TALKTYPE_SAY)
 		end
 	end

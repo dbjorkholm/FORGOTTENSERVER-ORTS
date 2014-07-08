@@ -28,7 +28,7 @@ local config = {
 	},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return false
@@ -45,7 +45,7 @@ function onStepIn(cid, item, position, lastPosition)
 			doResetStateSeal3(config.switchesPos[i], 1945, 1946)
 		end
 	else
-		player:teleportTo(lastPosition, true)
+		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true

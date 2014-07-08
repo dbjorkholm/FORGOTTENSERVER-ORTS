@@ -8,7 +8,7 @@ local thrones = {
 	[2086] = {text = "You have touched Pumin's throne and absorbed some of his spirit.", animation = CONST_ME_MORTAREA}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(getPlayerStorageValue(cid, item.uid) < 1) then
 		setPlayerStorageValue(cid, item.uid, 1)
 		doSendMagicEffect(position, thrones[item.uid].animation)
