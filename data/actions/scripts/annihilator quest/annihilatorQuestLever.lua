@@ -83,7 +83,7 @@ local cid = {}
 end
 
 function onUse(cid, item)
-	if(item.itemid == 1946) then
+	if(item.itemid == 1945) then
 		local condition = SummonDemon(demonPos)
 		if(condition ~= true) then
 			doPlayerSendCancel(cid, condition)
