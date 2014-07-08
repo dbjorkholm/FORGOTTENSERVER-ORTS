@@ -343,6 +343,26 @@ end
 		npcHandler:say("At this time, you have " .. player:getStorageValue(POINTSSTORAGE) .. " Paw & Fur points. You " .. (getPlayerRank(cid) == 6 and "are an Elite Hunter" or getPlayerRank(cid) == 5 and "are a Trophy Hunter" or getPlayerRank(cid) == 4 and "are a Big Game Hunter" or getPlayerRank(cid) == 3 and "are a Ranger" or getPlayerRank(cid) == 2 and "are a Huntsman" or getPlayerRank(cid) == 1 and "are a Member"  or "haven't been ranked yet") .. ".", cid)
 		end
 		npcHandler.topic[cid] = 0
+	elseif isInArray({"special task"}, msg:lower()) then
+	    if player:getStorageValue(POINTSSTORAGE) >= 90 then -- Tiquandas Revenge 90 points
+			if player:getStorageValue(22222) == 1 then  -- Check if he has already started the task.
+				npcHandler:say("You have already started the task. Go find Tiquandas Revenge and take revenge yourself!", cid)
+				else
+				npcHandler:say({"Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...", "I myself believe that there is some truth in this clap trap. Something 'real' which therefore must have a hideout somewhere. Go find it and take revenge yourself!"}, cid)
+				setPlayerStorageValue(cid, 22555, 1) -- Task needed to enter Tiquandas Revenge TP
+				setPlayerStorageValue(cid, 22222, 1) -- Won't give this task again.
+			end
+		end
+		if player:getStorageValue(POINTSSTORAGE) >= 100 then -- Demodras 100 points
+			if player:getStorageValue(22223) == 1 then  -- Check if he has already started the task.
+			npcHandler:say("You have already started the special task. Find Demodras and kill it.", cid)
+				else
+				npcHandler:say("This task is a very dangerous one. I want you to look for Demodras' hideout. It might be somewhere under the Plains of Havoc. Good luck, old chap.", cid)
+				setPlayerStorageValue(cid, 22556, 1) -- Task needed to enter Demodras TP
+				setPlayerStorageValue(cid, 22223, 1) -- Won't give this task again.
+			end
+		end
+		npcHandler.topic[cid] = 0
 	end
 end
  
