@@ -11,7 +11,7 @@ local wall = {
 
 function onStepIn(cid, item, position, lastPosition)
 	for i = 1, #pos do
-		local creature = Tile(Position(pos[i]))
+		local creature = Tile(Position(pos[i])):getTopCreature()
 		if not creature or not creature:isPlayer() then
 			return true
 		end
@@ -19,7 +19,7 @@ function onStepIn(cid, item, position, lastPosition)
 	for i = 1, #wall do
 		if Tile(Position(wall[i])):getItemById(1050) then
 			Tile(Position(wall[i])):getItemById(1050):remove()
-			addEvent(Game.createItem, 10 * 60 * 1000, 1050, 1, wall[i])
+			addEvent(Game.createItem, 5 * 60 * 1000, 1050, 1, wall[i])
 		end
 	end
 	return true
