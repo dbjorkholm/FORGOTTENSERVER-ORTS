@@ -10,13 +10,13 @@ local wall = {
 }
 
 function onStepIn(cid, item, position, lastPosition)
-	if item.actionid == 980 then
-		for i = 1, 2 do
-			if not Tile(Position(pos[i])):getThing():Player(cid) then
-				return true
-			end
+	for i = 1, #pos do
+		if not Tile(Position(pos[i])):getThing():Player(cid) then
+			return true
 		end
-		for i = 1, 3 do
+	end
+	for i = 1, #wall do
+		if Tile(Position(wall[i])):getItemById(1050) then
 			Tile(Position(wall[i])):getItemById(1050):remove()
 			addEvent(Game.createItem, 10 * 60 * 1000, 1050, 1, wall[i])
 		end
