@@ -16,4 +16,3 @@ function onAddItem(moveitem, tileitem, position)
 	end
 	return true
 end
-			
