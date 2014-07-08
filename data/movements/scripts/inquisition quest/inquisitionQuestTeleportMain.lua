@@ -35,7 +35,7 @@ local teleports = {
 	[2180] = {text = "Entering the Blood Halls.", newPos = {x = 33357, y = 31589, z = 12}} -- from foundry to blood halls
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -72,7 +72,7 @@ function onStepIn(cid, item, position, lastPosition)
 			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
 			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:say('You don\'t have enough energy to enter this portal', TALKTYPE_ORANGE_1)
 		end

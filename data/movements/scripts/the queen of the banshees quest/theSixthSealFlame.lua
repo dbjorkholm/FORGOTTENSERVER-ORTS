@@ -19,7 +19,7 @@ local config = {
 	[6] = {pos = {x = 32313, y = 31976, z = 13}, cpId = 1423}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local campfiresDone = 0
 	local player = Player(cid)
 	if not player then
@@ -36,11 +36,11 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo({x = 32261, y = 31856, z = 15}, false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition, true)
+			player:teleportTo(fromPosition, true)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end			
 	else
-		player:teleportTo(lastPosition, true)
+		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true

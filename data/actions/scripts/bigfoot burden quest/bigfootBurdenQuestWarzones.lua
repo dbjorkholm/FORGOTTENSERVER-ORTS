@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						"hideous fungus"
 					}
 					pos = {x = math.random(33091, 33101), y = math.random(31899, 31916), z = 10}
-					addEvent(doSummonCreature, i * 20 * 1000, creatures[math.random(1, 2)], pos)
+					addEvent(doSummonCreature, i * 20 * 1000, creatures[math.random(2)], pos)
 					addEvent(doSendMagicEffect, i * 20 * 1000, pos, CONST_ME_TELEPORT)
 				end
 				addEvent(doCreatureSay, i * 20 * 1000, cid, "The crystals are charging.", TALKTYPE_ORANGE_1, false, cid, toPosition)

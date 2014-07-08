@@ -8,7 +8,7 @@ local teleport = {
 local soil = {8302, 8303, 8298, 8299}
 local engerysoil = 0
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -26,8 +26,8 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo(teleport[item.uid][1])
 			Position(teleport[item.uid][1]):sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition)
-			lastPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
+			player:teleportTo(fromPosition)
+			fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:say("You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
 		end
 	else

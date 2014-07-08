@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
+function onStepIn(cid, item, position, fromPosition)
 	if (isPlayer(cid)) then
 		local arena = getPlayerStorageValue(cid, STORAGE_ARENA) - 1
 		if arena == item.uid - 23200 then --trophy tile actionid should be 23201 23202 23203

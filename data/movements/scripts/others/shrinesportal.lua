@@ -77,7 +77,7 @@ local cfg = {
 	}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if (isPlayer(cid)) then
 		local i = cfg.portals[item.uid]
 		if (i and isInArray(i[2], getPlayerVocation(cid)) and getPlayerLevel(cid) >= cfg.level) then
@@ -85,7 +85,7 @@ function onStepIn(cid, item, position, lastPosition)
 			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
 			setPlayerStorageValue(cid, i[3], 1)
 		else
-			doTeleportThing(cid, lastPosition, true)
+			doTeleportThing(cid, fromPosition, true)
 			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
 			doCreatureSay(cid, not i and "" or "Only " .. (cfg.premium and "Premium " or "") .. (i[2][1] == 1 and "Sorcerers" or "Druids") .. (cfg.level and " of level " .. cfg.level .. " or higher" or "") .. " may enter this portal", TALKTYPE_ORANGE_1, false, cid)
 		end

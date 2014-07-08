@@ -1,5 +1,5 @@
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have access to this area.")
 		end

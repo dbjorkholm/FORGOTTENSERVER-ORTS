@@ -1,6 +1,6 @@
 local Area_fromPos, Area_toPos = {x = 33235, y = 31801, z = 12}, {x = 33299, y = 31867, z = 12}
 	
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if isPlayer(cid) then
 		if isPlayerInArea(Area_fromPos, Area_toPos) then
 			doTeleportThing(cid, {x = 33265, y = 31838, z = 10})

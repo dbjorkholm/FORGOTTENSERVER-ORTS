@@ -14,8 +14,8 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 10)
-		if(math.random(1, 100) < 20) then
-			Npc():say(random_texts[math.random(1, #random_texts)], TALKTYPE_SAY)
+		if(math.random(100) < 20) then
+			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()

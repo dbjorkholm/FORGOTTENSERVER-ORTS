@@ -1,5 +1,5 @@
 
-function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true

@@ -4,7 +4,7 @@ local boss = {
 	[3146] = {pos = {x = 33081, y = 31902, z = 12}, name = "abyssador"},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 
 	if player then

@@ -85,7 +85,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(Storage.TheIceIslands.Mission02) > 0 and player:getStorageValue(Storage.TheIceIslands.PickAmount) < 3 and player:getStorageValue(Storage.TheIceIslands.Questline) == 3  then
 			player:setStorageValue(Storage.TheIceIslands.PickAmount, player:getStorageValue(Storage.TheIceIslands.PickAmount) + 1)
 			player:setStorageValue(Storage.TheIceIslands.Mission02, player:getStorageValue(Storage.TheIceIslands.Mission02) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
-			Game.createMonster(chakoyas[math.random(1, 3)], toPosition)
+			Game.createMonster(chakoyas[math.random(3)], toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 			tile:getItemById(7185):transform(7186) 
 			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(7186) if thing and thing:isItem() then thing:transform(7185) end end end, 60 * 1000, toPosition)			
@@ -148,7 +148,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 				for x = -1, 1 do
 					for y = -1, 1 do
-						if math.random(1, 2) == 2 then
+						if math.random(2) == 2 then
 							Game.createMonster("rat", {x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z})
 							Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_TELEPORT)
 						end

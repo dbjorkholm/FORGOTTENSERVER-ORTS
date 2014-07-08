@@ -5,7 +5,7 @@ function catchPlayer(cid)
 	return true
 end
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(isPlayer(cid)) then
 		if(item.actionid == 8015) then
 			doCreatureSay(cid, "You hear guards moving behind doors in the distance. If you have any sort of disguise with you, this is the moment to use it.", TALKTYPE_ORANGE_1)

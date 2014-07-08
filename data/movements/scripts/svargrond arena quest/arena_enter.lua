@@ -12,14 +12,14 @@ local function Kick(cid)
 	return true
 end		
 
-function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
+function onStepIn(cid, item, position, fromPosition)
  
 	local pit = getPlayerStorageValue(cid, STORAGE_PIT)
 	local arena = getPlayerStorageValue(cid, STORAGE_ARENA)
  
 	if (pit < 1 or pit > 10) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You can't enter without Halvar's permission.")
-		doTeleportThing(cid, lastPosition)
+		doTeleportThing(cid, fromPosition)
 		return true
 	end
  
@@ -43,7 +43,7 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 				else
 					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, ""..getCreatureName(uid).." is currently in the next arena pit. You will have to wait until he leaves.")
 				end
-					doTeleportThing(cid, lastPosition)
+					doTeleportThing(cid, fromPosition)
 				end
 			end
 			return true
@@ -69,7 +69,7 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 	else
 		print("[Svargrond Arena::MoveEvent] >> Wrong configuration\nPlayer: " .. getCreatureName(cid) .. "\nAction: Trying to enter to arena\nStorage " .. STORAGE_ARENA .. " for player is: " .. arena .. "\nStorage " .. STORAGE_PIT .. " for player is " .. pit)
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Something is wrong, please contact a gamemaster.")
-		doTeleportThing(cid, lastPosition)
+		doTeleportThing(cid, fromPosition)
 	end
 	return true
 end

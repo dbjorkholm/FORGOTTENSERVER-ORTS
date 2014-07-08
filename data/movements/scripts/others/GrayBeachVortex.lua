@@ -1,4 +1,4 @@
-function onStepIn(cid, item, pos, fromPosition)
+function onStepIn(cid, item, position, fromPosition)
 local t = {
 	[9238] = {pos = {x=33456,y=31346,z=8}},
 	[9239] = {pos = {x=33199,y=31978,z=8}},

@@ -10,7 +10,7 @@ local pos = {
 
 function onThink(interval, lastExecution)
 	for i = 1, 5 do
-		if(math.random(1, 2) == 1) then
+		if(math.random(2) == 1) then
 			if(getTileItemById(pos[i], 12214).uid > 0) then
 				doTransformItem(getTileItemById(pos[i], 12214).uid, 12213)
 			else

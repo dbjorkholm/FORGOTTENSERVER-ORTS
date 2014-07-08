@@ -3,7 +3,7 @@ local kickPosition = {x=32716, y=32340, z=7}
 local enterStorage = 1013
 local squareStorage = 1014
 
-function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		returen true

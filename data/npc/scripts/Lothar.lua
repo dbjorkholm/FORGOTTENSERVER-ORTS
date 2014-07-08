@@ -10,7 +10,7 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(1, 100) < 25) then
+		if(math.random(100) < 25) then
 			Npc():say("I enjoy the peace and solitude out here. You're welcome to be my guest as long as you behave in a quiet and tolerable manner.", TALKTYPE_SAY)
 		end
 	end

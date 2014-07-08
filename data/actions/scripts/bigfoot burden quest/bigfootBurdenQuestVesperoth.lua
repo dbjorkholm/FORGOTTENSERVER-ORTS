@@ -13,7 +13,7 @@ end
 
 local function vesperothHide()
 	if(getGlobalStorageValue(3147) == 1) then
-		chance = math.random(1, 10)
+		chance = math.random(10)
 		if(chance == 1) then
 			vesperoth = getThingfromPos({x = 33075, y = 31878, z = 12, stackpos = 255}).uid
 			setGlobalStorageValue(3148, getCreatureHealth(vesperoth))

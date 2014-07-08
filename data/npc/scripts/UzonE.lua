@@ -9,7 +9,7 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(1, 100) < 25) then
+		if(math.random(100) < 25) then
 			Npc():say("Feel the wind in your hair during one of my carpet rides!", TALKTYPE_SAY)
 		end
 	end

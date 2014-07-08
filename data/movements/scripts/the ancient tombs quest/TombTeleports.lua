@@ -9,7 +9,7 @@ local config = {
 	[12108] = {Storage.TheAncientTombs.Ashmunrah, {x = 33198, y = 32880, z = 11}} -- from Ashmunrah Boss
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 		local player = Player(cid)
 		local teleports = config[item.actionid]
 		if not teleports then
@@ -19,7 +19,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo(teleports[2])
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:say("You don\'t have killed the Pharaoh to enter this portal", TALKTYPE_ORANGE_1)
 		end

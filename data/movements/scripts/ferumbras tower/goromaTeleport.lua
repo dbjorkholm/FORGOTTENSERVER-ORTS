@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(getPlayerStorageValue(cid, 9005) < 1) then
 		setPlayerStorageValue(cid, 9005, 1)
 	end

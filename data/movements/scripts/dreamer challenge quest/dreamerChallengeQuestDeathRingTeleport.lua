@@ -4,7 +4,7 @@ local pos = {
 	{x = 32857, y = 32233, z = 11}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(item.uid == 9234) then
 		doTeleportThing(cid, {x = 32819, y = 32347, z = 9})
 		doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)

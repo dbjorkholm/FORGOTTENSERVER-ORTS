@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(isMonster(cid)) then
 		if(string.lower(getCreatureName(cid)) == "the keeper") then
 			if(item.itemid == 12334) then

@@ -27,7 +27,7 @@ local config = {
 }
 
 local function doFailAction(cid, mount, pos, item, itemEx)
-        local action, effect = mount.FAIL_MSG[math.random(1, table.maxn(mount.FAIL_MSG))], CONST_ME_POFF
+        local action, effect = mount.FAIL_MSG[math.random(table.maxn(mount.FAIL_MSG))], CONST_ME_POFF
         if(action[1] == ACTION_RUN) then
 		Creature(itemEx.uid):remove()
         elseif(action[1] == ACTION_BREAK) then
@@ -53,7 +53,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
                 return false
         end
 
-        local rand = math.random(1, 100)
+        local rand = math.random(100)
         --Monster Mount
         if monster ~= nil and mount.TYPE == TYPE_MONSTER then
 		if Creature(itemEx.uid):getMaster() then

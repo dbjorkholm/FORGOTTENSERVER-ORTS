@@ -5,16 +5,16 @@ local pos = {
 	[3192] = {x = 33038, y = 31119, z = 15},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(getPlayerStorageValue(cid, 1090) == item.uid - 3188)
 		if(getGlobalStorage(item.uid) < 1) then
 			doTeleportThing(cid, pos[item.uid])
 			doSendMagicEffect(pos[item.uid], CONST_ME_TELEPORT)
 		else
-			doTeleportThing(cid, lastPosition)
+			doTeleportThing(cid, fromPosition)
 		end
 	else
-		doTeleportThing(cid, lastPosition)
+		doTeleportThing(cid, fromPosition)
 	end
 	return true
 end
