@@ -6,6 +6,24 @@
     <parameter key="message_greet" value="Welcome, |PLAYERNAME|, wanderer between the worlds." />
     <parameter key="message_farewell" value="See you again, |PLAYERNAME| ... sooner or later, more or less alive." />
     <parameter key="message_walkaway" value="See you again ... sooner or later, more or less alive." />
-    <parameter key="message_onsendtrade" value="Yes, it's a wise idea not to leave the choice of your future vessel to chance. Have a look." />
+	
+    <parameter key="message_sendtrade" value="Yes, it's a wise idea not to leave the choice of your future vessel to chance. Have a look." />
+  	<parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="amphora,2023,4,0;vase,2008,3,0" />
+	
+  	<parameter key="module_keywords" value="1" />
+    <parameter key="keywords" value="job;souls;time;name;venore;help;king;birth;death;monsters;body;offer" />
+    <parameter key="keyword_reply1" value="I consider myself as a guide, a guardian over the souls who transcend the border to another world." />
+    <parameter key="keyword_reply2" value="The essence of life. Source of your very self. While the body is in space and time, the soul exists in time only." />
+    <parameter key="keyword_reply3" value="It's time now, but the true question is: How much time is left?" />
+    <parameter key="keyword_reply4" value="What is a name worth in your eyes? And more important: Does the choice of your name decide your further fate? Perhaps we will never know." />
+    <parameter key="keyword_reply5" value="You come to this world naked, and leave it this way, so there's no need to hold back your money, especially not in a place like Venore." />
+    <parameter key="keyword_reply6" value="What help might I offer you except guidance? Would you like me to help you transcend the border to the afterlife?" />
+    <parameter key="keyword_reply7" value="Kings, queens ... I've seen them come and go. Everything fades, even the glory and wealth of the richest." />
+    <parameter key="keyword_reply8" value="Birth might be the beginning but death is certainly not the end." />
+    <parameter key="keyword_reply9" value="What else does it mean than the loss of your weak physical shell? And isn't the true power in the universe rather mental than physical?" />
+    <parameter key="keyword_reply10" value="Oh yes, monsters can grant you a passage to the afterlife also, but it's not a comfortable trip. <chuckles>" />
+    <parameter key="keyword_reply11" value="Is the mind an emination of body, or the body an invention by the mind?" />
+    <parameter key="keyword_reply12" value="I'm offering vases and amphoras, the perfect vessel for all kinds of dusty remains. Ask me for a {trade} if you're interested." />
   </parameters>
 </npc>
