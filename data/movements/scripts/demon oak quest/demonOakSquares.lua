@@ -27,23 +27,27 @@ local vocies =
 }
 
 function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
- 	if (isPlayer(cid)) then
-		if (item.uid == 9001 and getPlayerStorageValue(cid, square_storage) < 1) then
-			setPlayerStorageValue(cid, square_storage, 1)
-			doCreatureSay(cid, vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-		elseif (item.uid == 9002 and getPlayerStorageValue(cid, 1014) == 1) then
-			setPlayerStorageValue(cid, square_storage, 2)
-			doCreatureSay(cid, vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-		elseif (item.uid == 9003 and getPlayerStorageValue(cid, square_storage) == 2) then
-			setPlayerStorageValue(cid, square_storage, 3)
-			doCreatureSay(cid, vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-		elseif (item.uid == 9004 and getPlayerStorageValue(cid, square_storage) == 3) then
-			setPlayerStorageValue(cid, square_storage, 4)
-			doCreatureSay(cid, vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-		elseif (item.uid == 9005 and getPlayerStorageValue(cid, square_storage) == 4) then
-			setPlayerStorageValue(cid, square_storage, 5)
-			doCreatureSay(cid, vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-		end
+	local player = Player(cid)
+	local creature = Creature(cid)
+	if not player then
+		return true
+	end
+
+	if item.uid == 9001 and player:getStorageValue(square_storage) < 1 then
+		player:setStorageValue(square_storage, 1)
+		creature:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or creature:getPosition()))
+	elseif item.uid == 9002 and player:getStorageValue(1014) == 1 then
+		player:setStorageValue(square_storage, 2)
+		creature:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or creature:getPosition()))
+	elseif item.uid == 9003 and player:getStorageValue(square_storage) == 2 then
+		player:setStorageValue(square_storage, 3)
+		creature:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or creature:getPosition()))
+	elseif item.uid == 9004 and player:getStorageValue(square_storage) == 3 then
+		player:setStorageValue(square_storage, 4)
+		creature:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or creature:getPosition()))
+	elseif item.uid == 9005 and player:getStorageValue(square_storage) == 4 then
+		player:setStorageValue(square_storage, 5)
+		creature:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or creature:getPosition()))
 	end
 	return true
 end
