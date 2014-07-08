@@ -18,11 +18,11 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 				player:setStorageValue(enter_storage, 1)
 				player:say("I AWAITED YOU! COME HERE AND GET YOUR REWARD!", TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
 			else
+				player:say("LEAVE LITTLE FISH, YOU ARE NOT WORTH IT!", TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
 				player:teleportTo(kickPosition)
 				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		else
-			player:say("LEAVE LITTLE FISH, YOU ARE NOT WORTH IT!", TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
 			player:teleportTo(kickPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
