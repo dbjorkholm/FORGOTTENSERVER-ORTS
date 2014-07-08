@@ -1,16 +1,16 @@
-local pos = {
-	{x = 32857, y = 32231, z = 11},
-	{x = 32857, y = 32232, z = 11},
-	{x = 32857, y = 32233, z = 11}
+local tree = {
+	Position(32857, 32231, 11),
+	Position(32857, 32232, 11),
+	Position(32857, 32233, 11)
 }
 
 function onAddItem(moveitem, tileitem, position)
-	if(tileitem.uid == 2244 and moveitem.itemid == 6300) then
-		doRemoveItem(moveitem.uid, 1)
-		for i = 1, 3 do
-			if(getTileItemById(pos[i], 2722).uid) then
-				doRemoveItem(getTileItemById(pos[i], 2722).uid, 1)
-				doSendMagicEffect(pos[i], CONST_ME_MAGIC_BLUE)
+	if tileitem.uid == 2244 and moveitem.itemid == 6300 then
+		Item(moveitem.uid):remove(1)
+		for i = 1, #tree do
+			if Tile(tree[i]):getItemById(2722) then
+				Tile(tree[i]):getItemById(2722):remove(1)
+				tree[i]:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		end
 	end

@@ -1,17 +1,18 @@
 function onStepIn(cid, item, position, fromPosition)
-	if(item.uid == 2241) then
-		if(getPlayerItemCount(cid, 2684) >= 1) then
-			doTeleportThing(cid, {x = 32861, y = 32235, z = 9})
-			doSendMagicEffect({x = 32861, y = 32235, z = 9}, CONST_ME_TELEPORT)
-			doPlayerRemoveItem(cid, 2684, 1)
+	local player = Player(cid)
+	if item.uid == 2241 then
+		if player:getItemCount(2684) >= 1 then
+			player:teleportTo(Position(32861, 32235, 9))
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:removeItem(2684, 1)
 		else
-			doTeleportThing(cid, fromPosition)
+			player:teleportTo(fromPosition)
 			doAreaCombatHealth(cid, COMBAT_FIREDAMAGE, fromPosition, 0, -10, -20, CONST_ME_HITBYFIRE)
-			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
-	elseif(item.uid == 2242) then
-		doTeleportThing(cid, {x = 32861, y = 32240, z = 9})
-		doSendMagicEffect({x = 32861, y = 32240, z = 9}, CONST_ME_TELEPORT)
+	elseif item.uid == 2242 then
+		player:teleportTo(Position(32861, 32240, 9))
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
 end

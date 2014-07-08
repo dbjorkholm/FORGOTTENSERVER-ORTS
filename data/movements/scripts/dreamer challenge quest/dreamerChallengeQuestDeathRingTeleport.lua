@@ -1,17 +1,22 @@
-local pos = {
-	{x = 32857, y = 32231, z = 11},
-	{x = 32857, y = 32232, z = 11},
-	{x = 32857, y = 32233, z = 11}
+local tree = {
+	Position(32857, 32231, 11),
+	Position(32857, 32232, 11),
+	Position(32857, 32233, 11)
 }
 
 function onStepIn(cid, item, position, fromPosition)
-	if(item.uid == 9234) then
-		doTeleportThing(cid, {x = 32819, y = 32347, z = 9})
-		doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-		for i = 1, 3 do
-			if(getTileItemById(pos[i], 2722).uid == 0) then
-				doCreateItem(2722, 1, pos[i])
-				doSendMagicEffect(pos[i], CONST_ME_MAGIC_BLUE)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
+	if item.uid == 9234 then
+		player:teleportTo(Position(32819, 32347, 9))
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		for i = 1, #tree do
+			if Tile(tree[i]):getItemById(2722) == 0 then
+				Game.createItem(2722, 1, tree[i])
+				tree[i]:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		end
 	end
