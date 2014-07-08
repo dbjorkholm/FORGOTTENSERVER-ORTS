@@ -32,12 +32,12 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, 'potion') then
-		if Player(cid):getStorageValue(Storage['AssassinBaseOutfit']) < 1 then
+		if Player(cid):getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) < 1 then
 			npcHandler:say('It\'s so hard to know the exact time when to stop drinking. <hicks> C-could you help me to brew such a potion?', cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif config[msg] and npcHandler.topic[cid] == 0 then
-		if Player(cid):getStorageValue(Storage['AssassinBaseOutfit']) == config[msg]['value'] then
+		if Player(cid):getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) == config[msg]['value'] then
 			npcHandler:say(config[msg]['message'][1], cid)
 			npcHandler.topic[cid] = 3
 			t[cid] = msg
@@ -46,12 +46,12 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "secret") then
 		local player = Player(cid)
-		if player:getStorageValue(Storage['AssassinBaseOutfit']) == 8 then
+		if player:getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) == 8 then
 			npcHandler:say('Right. <hicks> Since you helped me to b-brew that potion and thus ensured the high quality of my work <hicks>, I\'ll give you my old assassin costume. It lacks the head part, but it\'s almost like new. Don\'t pretend to be me though, \'kay? <hicks>', cid)
 			player:addOutfit(156)
 			player:addOutfit(152)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			player:setStorageValue(Storage['AssassinBaseOutfit'], 9)
+			player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], 9)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -59,8 +59,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			local player = Player(cid)
-			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
-			player:setStorageValue(Storage['AssassinBaseOutfit'], 1)
+			player:setStorageValue(Storage['OutfitQuest']['DefaultStart'], 1)
+			player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], 1)
 			npcHandler:say('G-good. Go get them, I\'ll have a beer in the meantime.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
@@ -68,7 +68,7 @@ local function creatureSayCallback(cid, type, msg)
 			local count = targetTable['count'] or 1
 			if player:getItemCount(targetTable['itemid']) >= count then 
 				player:removeItem(targetTable['itemid'], count)
-				player:setStorageValue(Storage['AssassinBaseOutfit'], math.max(0, player:getStorageValue(Storage['AssassinBaseOutfit'])) + 1)
+				player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], math.max(0, player:getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'])) + 1)
 				npcHandler:say(targetTable['message'][3], cid)
 			else
 				npcHandler:say("Next time you lie to me I'll k-kill you. <hicks> Don't think I can't aim well just because I'm d-drunk.", cid)

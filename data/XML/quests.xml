@@ -117,6 +117,30 @@
 			<missionstate id="3" description="You have completed Dwarven Armor Quest!"/>
 		</mission>
 	</quest>
+	<quest name="Friends and Traders" startstorageid="12400" startstoragevalue="1">
+		<mission name="The Sweaty Cyclops" storageid="12401" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Big Ben, the cyclops in Ab'Dendriel sends you to bring him 3 bast skirts for his woman. After this he will help you to forge different steel."/>
+			<missionstate id="2" description="Big Ben, the cyclops in Ab'Dendriel will help you to forge different steel now. Just ask him if you need something."/>
+		</mission>
+		<mission name="The Mermaid Marina" storageid="12402" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Marina, the mermaid north of Sabrehaven sends you to bring her 50 honeycombs. After this she will help you create spool of yarn."/>
+			<missionstate id="2" description="Marina, the mermaid north of Sabrehaven will help you to create a spool of yarn from 10 pieces of spider silk. Just ask her if you need something."/>
+		</mission>
+		<mission name="The Blessed Stake" storageid="12403" startvalue="1" endvalue="12">
+			<missionstate id="1" description="You need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to Quentin in Thais."/>
+			<missionstate id="2" description="You bought a stake from Gamon, bring it back to Quentin in Thais"/>
+			<missionstate id="3" description="Now, bring your stake to Tibra in the Carlin church for the next line of the prayer."/>
+			<missionstate id="4" description="Now, bring your stake to Maealil in the elven settlement for the next line of the prayer."/>
+			<missionstate id="5" description="Now, bring your stake to Yberius in the Venore temple for the next line of the prayer."/>
+			<missionstate id="6" description="Now, bring your stake to Isimov in the dwarven settlement for the next line of the prayer."/>
+			<missionstate id="7" description="Now, bring your stake to Amanda in Edron for the next line of the prayer."/>
+			<missionstate id="8" description="Now, bring your stake to Kasmir in Darashia for the next line of the prayer."/>
+			<missionstate id="9" description="Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer."/>
+			<missionstate id="10" description="Now, bring your stake to Brewster in Port Hope for the next line of the prayer."/>
+			<missionstate id="11" description="Now, bring your stake to Tyrias in Liberty Bay for the next line of the prayer."/>
+			<missionstate id="12" description="You received all blessings for the stake, now you can obtain weekly blessed wooden stake from Chondur in north of Sabrehaven."/>
+		</mission>
+	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
 		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Hairycles wants for you to infiltrate the Dworc Caves and steal some Whisper Moss which is said to be a cure. Find the Dworc Caves anywhere in Trapwood, the southern part of Tiquanda."/>

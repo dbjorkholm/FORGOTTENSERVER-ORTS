@@ -75,7 +75,6 @@
 	<monster name="Bear" file="bears/bear.xml"/>
 	<monster name="Panda" file="bears/panda.xml"/>
 	<monster name="Polar Bear" file="bears/polar bear.xml"/>
-	<monster name="Undead Cavebear" file="bears/undead cavebear.xml"/>
 
 	<!-- Bio-Elementals -->
 	<monster name="Bane Bringer" file="bio-elementals/bane bringer.xml"/>
@@ -140,7 +139,6 @@
 	<monster name="Baron Brute" file="bosses/baron brute.xml"/>
 	<monster name="Bazir" file="bosses/bazir.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
-	<monster name="Bones" file="bosses/bones.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Chizzoron the Distorter" file="bosses/chizzoron the distorter.xml"/>
@@ -153,11 +151,13 @@
 	<monster name="Dharalion" file="bosses/dharalion.xml"/>
 	<monster name="Diblis the Fair" file="bosses/diblis the fair.xml"/>
 	<monster name="Dirtbeard" file="bosses/dirtbeard.xml"/>
+	<monster name="Doctor Perhaps" file="bosses/doctor perhaps.xml"/>
 	<monster name="Doomhowl" file="bosses/doomhowl.xml"/>
 	<monster name="Dracola" file="bosses/dracola.xml"/>
 	<monster name="Dreadwing" file="bosses/dreadwing.xml"/>
 	<monster name="Energized Raging Mage" file="bosses/energized raging mage.xml"/>
 	<monster name="Esmeralda" file="bosses/esmeralda.xml"/>
+	<monster name="Ethershreck" file="bosses/ethershreck.xml"/>
 	<monster name="Evil Mastermind" file="bosses/evil mastermind.xml"/>
 	<monster name="Fatality" file="bosses/fatality.xml"/>
 	<monster name="Fernfang" file="bosses/fernfang.xml"/>
@@ -224,6 +224,7 @@
 	<monster name="Splasher" file="bosses/splasher.xml"/>
 	<monster name="Stonecracker" file="bosses/stonecracker.xml"/>
 	<monster name="Tanjis" file="bosses/tanjis.xml"/>
+	<monster name="Teleskor" file="bosses/teleskor.xml"/>
 	<monster name="Terofar" file="bosses/terofar.xml"/>
 	<monster name="The Abomination" file="bosses/the abomination.xml"/>
 	<monster name="The Axeorcist" file="bosses/the axeorcist.xml"/>
@@ -259,9 +260,11 @@
 	<monster name="Xenia" file="bosses/xenia.xml"/>
 	<monster name="Yaga The Crone" file="bosses/yaga the crone.xml"/>
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
+	<monster name="Zarabustor" file="bosses/zarabustor.xml"/>
 	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
 	<monster name="Zulazza the Corruptor" file="bosses/zulazza the corruptor.xml"/>
+	<monster name="Zushuka" file="bosses/zushuka.xml"/>
 
 	<!-- Canines -->
 	<monster name="Crystal Wolf" file="canines/crystal wolf.xml"/>
@@ -404,7 +407,6 @@
 
 	<!-- Event Creatures -->
 	<monster name="Hacker" file="event creatures/hacker.xml"/>
-	<monster name="Spectral Scum" file="event creatures/spectral scum.xml"/>
 
 	<!-- Elves -->
 	<monster name="Elf" file="elves/elf.xml"/>
@@ -735,6 +737,9 @@
 	<monster name="Party Skeleton" file="skeletons/party skeleton.xml"/>
 	<monster name="Skeleton" file="skeletons/skeleton.xml"/>
 	<monster name="Skeleton Warrior" file="skeletons/skeleton warrior.xml"/>
+	<monster name="Sloth Wraith" file="skeletons/sloth wraith.xml"/>
+	<monster name="Spectral Scum" file="skeletons/spectral scum.xml"/>
+	<monster name="Undead Cavebear" file="skeletons/undead cavebear.xml"/>
 	<monster name="Undead Gladiator" file="skeletons/undead gladiator.xml"/>
 	<monster name="Undead Minion" file="skeletons/undead minion.xml"/>
 	<monster name="Undead Mine Worker" file="skeletons/undead mine worker.xml"/>

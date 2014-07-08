@@ -49,6 +49,7 @@ Since the link above dosen't have all the functions in it, I will link to a comp
 [compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua)
 
 Actual map (with marked missing areas):
-![minimap_floor](https://cloud.githubusercontent.com/assets/6708725/2932230/7519de00-d7ad-11e3-8cad-fe610b7912f9.png)
+![minimap_floor_7](https://cloud.githubusercontent.com/assets/6708725/3487554/257cb9be-0488-11e4-94e6-2464355761c8.png)
+
 
 **Remember to have fun and say thanks!**

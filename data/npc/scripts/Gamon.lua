@@ -18,8 +18,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
 			if player:getMoney() >= 5000 then
-				if player:getStorageValue(87) == 1 then
-					player:setStorageValue(87, 2)
+				if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 1 then
+					player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 2)
 				end
 				player:removeMoney(5000)
 				player:addItem(5941, 1)

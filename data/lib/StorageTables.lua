@@ -37,7 +37,6 @@ Storage = {
 		-- Norseman-outfit Quest
 		NorsemanAddon = 12065,
 		
-
 		-- Warrior-outfit Quest
 		WarriorShoulderAddon = 12067,
 		WarriorSwordAddon = 12068,
@@ -51,7 +50,12 @@ Storage = {
 		-- Assassin Outfit
 		AssassinBaseOutfit = 50080,
 		AssassinFirstAddon = 50081,
-		AssassinSecondAddon = 50082
+		AssassinSecondAddon = 50082,
+		
+		NightmareOutfit = 50083,
+		BrotherhoodOutfit = 50084,
+		
+		ShamanAddons = 50085
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
@@ -199,5 +203,12 @@ Storage = {
 		SpyBuilding02 = 12308,
 		SpyBuilding03 = 12309,
 		StrangeSymbols = 12310
+	},
+	FriendsandTraders = {
+		DefaultStart = 12400,
+		TheSweatyCyclops = 12401,
+		TheMermaidMarina = 12402,
+		TheBlessedStake = 12403,
+		TheBlessedStakeWaitTime = 12404
 	}
 }

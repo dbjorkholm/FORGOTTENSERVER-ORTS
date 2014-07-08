@@ -8,10 +8,11 @@
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
-		<flag illusionable="1"/>
+		<flag illusionable="0"/>
 		<flag convinceable="0"/>
 		<flag pushable="0"/>
 		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
 		<flag staticattack="70"/>
 		<flag targetdistance="4"/>
 		<flag runonhealth="0"/>

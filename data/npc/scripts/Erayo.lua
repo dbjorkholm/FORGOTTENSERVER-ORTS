@@ -24,12 +24,12 @@ local function creatureSayCallback(cid, type, msg)
 	
 	if msgcontains(msg, "addon") then
 		local player = Player(cid)
-		if player:hasOutfit(player:getSex() == 0 and 156 or 152) and player:getStorageValue(Storage["AssassinFirstAddon"]) < 1 then
+		if player:hasOutfit(player:getSex() == 0 and 156 or 152) and player:getStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"]) < 1 then
 			npcHandler:say("Vescu gave you an assassin outfit? Haha. Noticed it lacks the head piece? You look a bit silly. Want my old head piece?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif config[msg] and npcHandler.topic[cid] == 0 then
-		if Player(cid):getStorageValue(Storage["AssassinFirstAddon"]) == config[msg]['value'] then
+		if Player(cid):getStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"]) == config[msg]['value'] then
 			npcHandler:say(config[msg]["message"][1], cid)
 			npcHandler.topic[cid] = 3
 			t[cid] = msg
@@ -40,20 +40,20 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			local player = Player(cid)
-			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
-			player:setStorageValue(Storage["AssassinFirstAddon"], 1)
+			player:setStorageValue(Storage["OutfitQuest"]["DefaultStart"], 1)
+			player:setStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"], 1)
 			npcHandler:say("Good. Start with the blue cloth. I'll wait.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			local player, targetTable = Player(cid), config[t[cid]]
 			if player:getItemCount(targetTable["itemid"]) >= targetTable["count"] then 
 				player:removeItem(targetTable["itemid"], targetTable["count"])
-				player:setStorageValue(Storage["AssassinFirstAddon"], math.max(0, player:getStorageValue(Storage["AssassinFirstAddon"])) + 1)
-				if player:getStorageValue(Storage["AssassinFirstAddon"]) == 8 then
+				player:setStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"], math.max(0, player:getStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"])) + 1)
+				if player:getStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"]) == 8 then
 					player:addOutfitAddon(156, 1)
 					player:addOutfitAddon(152, 1)
 					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-					player:setStorageValue(Storage["AssassinFirstAddon"], 9)
+					player:setStorageValue(Storage["OutfitQuest"]["AssassinFirstAddon"], 9)
 				end
 				npcHandler:say(targetTable["message"][2], cid)
 			else

@@ -20,7 +20,7 @@
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-70"/>
 		<attack name="lifedrain" interval="2000" chance="10" radius="1" target="1" range="1" min="-15" max="-27">
-			<attribute key="areaEffect" value="smallclouds"/>
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
 	</attacks>
 	<defenses armor="15" defense="15">

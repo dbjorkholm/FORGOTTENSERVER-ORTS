@@ -7951,10 +7951,9 @@
 	<item id="4840" article="a" name="witches' cap spot">
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="4842" article="a" name="parchment">
+	<item id="4842" article="an" name="old parchment">
+		<attribute key="description" value="It is covered with foreign symbols." />
 		<attribute key="weight" value="200" />
-		<attribute key="writeable" value="1" />
-		<attribute key="maxTextLen" value="1023" />
 	</item>
 	<item id="4843" article="a" name="giant ape's hair">
 		<attribute key="weight" value="2000" />
@@ -18373,7 +18372,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="decayTo" value="10309" />
 		<attribute key="duration" value="10" />
-		<attribute key="transformDeEquipTo" value="10310" />
+		<attribute key="transformDeEquipTo" value="10315" />
 	</item>
 	<item id="10312" name="claw of 'The Noxious Spawn'">
 		<attribute key="description" value="Its power is depleted at the moment." />
@@ -18397,8 +18396,8 @@
 	<item id="10315" article="a" name="claw of 'The Noxious Spawn'">
 		<attribute key="description" value="Its power is depleted at the moment." />
 		<attribute key="weight" value="500" />
-		<attribute key="decayTo" value="10309" />
-		<attribute key="duration" value="86400" />
+		<attribute key="decayTo" value="10310" />
+		<attribute key="duration" value="10" />
 	</item>
 	<item id="10316" article="a" name="mighty helm of green sparks">
 		<attribute key="description" value="This helmet spawns green stars. Awesome." />
