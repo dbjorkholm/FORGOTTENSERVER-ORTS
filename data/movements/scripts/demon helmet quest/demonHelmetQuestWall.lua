@@ -11,7 +11,8 @@ local wall = {
 
 function onStepIn(cid, item, position, lastPosition)
 	for i = 1, #pos do
-		if not Tile(Position(pos[i])):getThing(Player(cid)) then
+		local creature = Tile(Position(pos[i]))
+		if not creature or not creature:isPlayer() then
 			return true
 		end
 	end
