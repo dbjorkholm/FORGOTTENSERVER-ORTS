@@ -1,6 +1,6 @@
-local square_storage = 1014
+local squareStorage = 1014
 
-local vocies =
+local voices =
 {
 	[1] =
 	{
@@ -32,21 +32,21 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 		return true
 	end
 
-	if item.uid == 9001 and player:getStorageValue(square_storage) < 1 then
-		player:setStorageValue(square_storage, 1)
-		player:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
+	if item.uid == 9001 and player:getStorageValue(squareStorage) < 1 then
+		player:setStorageValue(squareStorage, 1)
+		player:say(voices[1][math.random(1, #voices[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
 	elseif item.uid == 9002 and player:getStorageValue(1014) == 1 then
-		player:setStorageValue(square_storage, 2)
-		player:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
-	elseif item.uid == 9003 and player:getStorageValue(square_storage) == 2 then
-		player:setStorageValue(square_storage, 3)
-		player:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
-	elseif item.uid == 9004 and player:getStorageValue(square_storage) == 3 then
-		player:setStorageValue(square_storage, 4)
-		player:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
-	elseif item.uid == 9005 and player:getStorageValue(square_storage) == 4 then
-		player:setStorageValue(square_storage, 5)
-		player:say(vocies[1][math.random(1, #vocies[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
+		player:setStorageValue(squareStorage, 2)
+		player:say(voices[1][math.random(1, #voices[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
+	elseif item.uid == 9003 and player:getStorageValue(squareStorage) == 2 then
+		player:setStorageValue(squareStorage, 3)
+		player:say(voices[1][math.random(1, #voices[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
+	elseif item.uid == 9004 and player:getStorageValue(squareStorage) == 3 then
+		player:setStorageValue(squareStorage, 4)
+		player:say(voices[1][math.random(1, #voices[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
+	elseif item.uid == 9005 and player:getStorageValue(squareStorage) == 4 then
+		player:setStorageValue(squareStorage, 5)
+		player:say(voices[1][math.random(1, #voices[1])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or player:getPosition()))
 	end
 	return true
 end
