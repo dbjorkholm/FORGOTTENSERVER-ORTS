@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 1945) then
-		if(math.random(1, 3) == 1) then
+		if(math.random(3) == 1) then
 			local carrotpos = {x = toPosition.x - 1, y = toPosition.y, z = toPosition.z}
 			Position(carrotpos):sendMagicEffect(CONST_ME_TELEPORT)
 			Game.createItem(2684, 1, Position(carrotpos))

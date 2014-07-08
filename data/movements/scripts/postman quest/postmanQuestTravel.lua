@@ -5,7 +5,7 @@ local travel = {
 	[7844] = {4, "You visited Cormaya. Now head to the Kevin's Post Office."},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(getPlayerStorageValue(cid, 250 + travel[item.actionid][1]) < 1) then
 		setPlayerStorageValue(cid, 250 + travel[item.actionid][1], 1)
 		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, travel[item.actionid][2])

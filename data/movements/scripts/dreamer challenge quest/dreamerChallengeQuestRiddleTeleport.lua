@@ -1,8 +1,8 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	--[[for x = 0, 2 do
 		for y = 0, 2 do
 			if(getTileItemById({x = 32818 + x, y = 32334 + y, z = 9}, 1686).uid < 1) then
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 				return true
 			end	
 		end
@@ -10,7 +10,7 @@ function onStepIn(cid, item, position, lastPosition)
 	for x = 0, 2 do
 		for y = 0, 2 do
 			if(getTileItemById({x = 32818 + x, y = 32337 + y, z = 9}, 1687).uid < 1) then
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 				return true
 			end	
 		end
@@ -18,7 +18,7 @@ function onStepIn(cid, item, position, lastPosition)
 	for x = 0, 2 do
 		for y = 0, 2 do
 			if(getTileItemById({x = 32821 + x, y = 32337 + y, z = 9}, 1689).uid < 1) then
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 				return true
 			end	
 		end
@@ -26,7 +26,7 @@ function onStepIn(cid, item, position, lastPosition)
 	for x = 0, 2 do
 		for y = 0, 2 do
 			if(getTileItemById({x = 32821 + x, y = 32334 + y, z = 9}, 1688).uid < 1) then
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 				return true
 			end	
 		end

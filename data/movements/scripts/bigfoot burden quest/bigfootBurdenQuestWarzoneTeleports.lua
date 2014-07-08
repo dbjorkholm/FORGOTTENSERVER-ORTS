@@ -4,7 +4,7 @@ local destination = {
 	[3142] = {newPos = {x = 32989, y = 31909, z = 12}, missionStorageKey = 957, missionStorageValue = 3},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local uniqueid = destination[item.uid]
 	if uniqueid then
 		local player = Player(cid)
@@ -15,7 +15,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo(uniqueid.newPos)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 		end
 	end
 return true

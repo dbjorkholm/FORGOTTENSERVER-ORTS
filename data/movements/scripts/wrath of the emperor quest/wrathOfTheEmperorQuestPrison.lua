@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(isPlayer(cid)) then
 		if(item.uid == 3175) then
 			if(getPlayerStorageValue(cid, 1067) == 1) then

@@ -7,7 +7,7 @@ local teleports = {
 	[2255] = {x = 32753, y = 32344, z = 14}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	doTeleportThing(cid, teleports[item.uid])
 	doSendMagicEffect(teleports[item.uid], CONST_ME_TELEPORT)
 	return true

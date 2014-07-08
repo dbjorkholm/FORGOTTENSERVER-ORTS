@@ -90,11 +90,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					if isLastCut(cid) then
 						doCreatureSay(cid, "HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!", TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
 					else
-						doCreatureSay(cid, sounds[2][math.random(1, #sounds[2])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
+						doCreatureSay(cid, sounds[2][math.random(#sounds[2])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
 					end
 					doSendMagicEffect(toPosition, CONST_ME_DRAWBLOOD)
 				else
-					local r = math.random(1, 100)
+					local r = math.random(100)
 					if (r >= 90) then
 						local sPos = positions.summon[math.random(#positions.summon)]
 						doSummonCreature("bonebeast", sPos)

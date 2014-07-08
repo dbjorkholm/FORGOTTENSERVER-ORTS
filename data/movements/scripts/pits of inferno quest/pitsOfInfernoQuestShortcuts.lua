@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local p = Player(cid)
 	if not p then
 		return true

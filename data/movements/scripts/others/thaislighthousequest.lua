@@ -1,4 +1,4 @@
-function onStepIn(cid, item, pos, fromPosition)
+function onStepIn(cid, item, position, fromPosition)
 	--stairs appear if stepon stone tile
 	if item.actionid == 50025 then
 		local stairstile = Tile(Position({x = 32225, y = 32282, z = 9}))

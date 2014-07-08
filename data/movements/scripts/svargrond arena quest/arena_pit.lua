@@ -11,13 +11,13 @@ local function Kick(cid)
 	return true
 end
 
-function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, actor)
+function onStepIn(cid, item, position, fromPosition)
 
 	local oldPit = getPlayerStorageValue(cid, STORAGE_PIT) - 1
 	local newPit = getPlayerStorageValue(cid, STORAGE_PIT)
  
 	local arena = getPlayerStorageValue(cid, STORAGE_ARENA)
-	if (newPit < 1) then return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Something is wrong, please contact a gamemaster.") and doTeleportThing(cid, lastPosition) end
+	if (newPit < 1) then return doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Something is wrong, please contact a gamemaster.") and doTeleportThing(cid, fromPosition) end
 	if (newPit > 10) then
 		doTeleportThing(cid, POSITION_REWARD)
 		doSendMagicEffect(getCreaturePosition(cid), (arena == 1 and CONST_ME_FIREWORK_BLUE or arena == 2 and CONST_ME_FIREWORK_YELLOW or CONST_ME_FIREWORK_RED))
@@ -33,7 +33,7 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 	for _, uid in ipairs(thing) do
 		if (getCreatureName(uid):lower() == ARENA[arena].creatures[pit]) then
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Defeat the monster first.")
-			doTeleportThing(cid, lastPosition)
+			doTeleportThing(cid, fromPosition)
 			return true
 		end
 	end
@@ -56,7 +56,7 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 				else
 					doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, ""..getCreatureName(uid).." is currently in the next arena pit. You will have to wait until she leaves.")
 				end
-				doTeleportThing(cid, lastPosition)
+				doTeleportThing(cid, fromPosition)
 			end
 		end
 		return true

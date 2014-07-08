@@ -26,7 +26,7 @@ local config = {
 	[28834] = Position(32855, 32319, 9)
 }
 
-function onStepIn(cid, item, pos, fromPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true

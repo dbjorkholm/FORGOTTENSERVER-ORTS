@@ -24,7 +24,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_WATERSPLASH)
 		targetItem:remove()
 
-		local rareChance = math.random(1, 100)
+		local rareChance = math.random(100)
 		if rareChance == 1 then
 			player:addItem(lootVeryRare[math.random(#lootVeryRare)], 1)
 		elseif rareChance <= 3 then
@@ -46,7 +46,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	player:addSkillTries(SKILL_FISHING, 1)
-	if math.random(1, 100) <= math.min(math.max(10 + (player:getEffectiveSkillLevel(SKILL_FISHING) - 10) * 0.597, 10), 50) then
+	if math.random(100) <= math.min(math.max(10 + (player:getEffectiveSkillLevel(SKILL_FISHING) - 10) * 0.597, 10), 50) then
 		if useWorms and not player:removeItem("worm", 1) then
 			return true
 		end
@@ -56,7 +56,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(targetId + 1)
 			targetItem:decay()
 
-			if math.random(1, 100) >= 97 then
+			if math.random(100) >= 97 then
 				player:addItem(15405, 1)
 				return true
 			end
@@ -65,7 +65,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(targetId + 1)
 			targetItem:decay()
 
-			local rareChance = math.random(1, 100)
+			local rareChance = math.random(100)
 			if rareChance == 1 then
 				player:addItem(7158, 1)
 				return true

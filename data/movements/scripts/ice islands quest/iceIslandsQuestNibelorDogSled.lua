@@ -5,7 +5,7 @@ local config = {
 	[12028] = {x = 32301, y = 31080, z = 7}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true

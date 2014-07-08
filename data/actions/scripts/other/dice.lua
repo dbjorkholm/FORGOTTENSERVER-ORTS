@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local dice = Item(item.uid)
 	local dicePosition = dice:getPosition()
-	local value = math.random(1, 6)
+	local value = math.random(6)
 	local isInGhostMode = player:isInGhostMode()
 
 	dicePosition:sendMagicEffect(CONST_ME_CRAPS, isInGhostMode and player)

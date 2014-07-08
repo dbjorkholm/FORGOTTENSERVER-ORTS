@@ -30,7 +30,7 @@ local tiles = {
 
 
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	if(tiles[item.actionid]) then
 		if(isInArray({tiles[item.actionid].voc, tiles[item.actionid].voc + 4}, getPlayerVocation(cid)) == false) then
 			damage = COMBAT_FIREDAMAGE

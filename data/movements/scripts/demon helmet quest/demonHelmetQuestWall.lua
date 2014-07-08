@@ -9,7 +9,7 @@ local wall = {
 	{x = 33212, y = 31630, z = 13}
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	for i = 1, #pos do
 		local creature = Tile(Position(pos[i])):getTopCreature()
 		if not creature or not creature:isPlayer() then

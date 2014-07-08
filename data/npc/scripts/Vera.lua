@@ -10,7 +10,7 @@ local rnd_sounds = 0
 function onThink()
 	if(rnd_sounds < os.time()) then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(1, 100) < 25) then
+		if(math.random(100) < 25) then
 			Npc():say("Have you moved to a new home? I'm the specialist for equipping it.", TALKTYPE_SAY)
 		end
 	end

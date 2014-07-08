@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 local player = Player(cid)
 	if item.uid == 3110 then
 		if player:getStorageValue(Storage.BarbarianTest.Questline) == 2 and player:getStorageValue(Storage.BarbarianTest.MeadTotalSips) <= 20 then
-			if math.random(1, 5) > 1 then
+			if math.random(5) > 1 then
 				player:say("The world seems to spin but you manage to stay on your feet.", TALKTYPE_ORANGE_1)
 				player:setStorageValue(Storage.BarbarianTest.MeadSuccessSips, player:getStorageValue(Storage.BarbarianTest.MeadSuccessSips) + 1)
 				if player:getStorageValue(Storage.BarbarianTest.MeadSuccessSips) == 9 then -- 9 sips here cause local player at start

@@ -20,7 +20,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 				for x = -1, 1 do
 					for y = -1, 1 do
-						if(math.random(1, 2) == 2) then
+						if(math.random(2) == 2) then
 							Game.createMonster("rat", {x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z})
 							doSendMagicEffect({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}, CONST_ME_TELEPORT)
 						end

@@ -8,7 +8,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	if math.random(1, 10) == 1 then
+	if math.random(10) == 1 then
 		position:sendMagicEffect(CONST_ME_BUBBLES)
 	end
 	player:addCondition(condition)

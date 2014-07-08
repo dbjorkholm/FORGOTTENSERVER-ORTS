@@ -2,16 +2,16 @@ local condition = Condition(CONDITION_PARALYZE)
 condition:setParameter(CONDITION_PARAM_TICKS, 2000)
 condition:setFormula(-0.9, 0, -0.9, 0)
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
 	end
 
 	if item.actionid == 7816 then
-		local random = math.random(1, 5)
+		local random = math.random(5)
 		if random == 1 then
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 		elseif random == 2 then
 			player:moveTo(SOUTH)
 		elseif random == 3 then
@@ -27,7 +27,7 @@ function onStepIn(cid, item, position, lastPosition)
 			player:teleportTo(Position(32759, 31811, 11))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(lastPosition)
+			player:teleportTo(fromPosition)
 		end
 	end
 	return true

@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 18313 and itemEx.itemid == 18321) then
-		chance = math.random(1, 3)
+		chance = math.random(3)
 		if(getPlayerStorageValue(cid, 943) < 1 and getPlayerStorageValue(cid, 942) == 1) then
 			if(chance == 3) then
 				setPlayerStorageValue(cid, 943, getPlayerStorageValue(cid, 943) + 1)

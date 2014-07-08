@@ -3,10 +3,10 @@ local pos = {
 	{x = 32113, y = 32692, z = 5},
 }
 
-function onStepIn(cid, item, position, lastPosition)
+function onStepIn(cid, item, position, fromPosition)
 	for i = 1, 2 do
 		if(getTileItemById(pos[i], 1946).uid < 1) then
-			doTeleportThing(cid, lastPosition)
+			doTeleportThing(cid, fromPosition)
 			return true
 		end
 	end

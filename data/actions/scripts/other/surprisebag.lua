@@ -17,7 +17,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local count = 1
-	local gift = present[math.random(1, #present)]
+	local gift = present[math.random(#present)]
 	if type(gift) == "table" then
 		count = gift[2]
 		gift = gift[1]

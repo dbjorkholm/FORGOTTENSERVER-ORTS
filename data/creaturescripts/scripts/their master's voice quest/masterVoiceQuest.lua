@@ -58,13 +58,13 @@ function onKill(cid, target)
 			setGlobalStorageValue(985, 0)
 			setGlobalStorageValue(984, getGlobalStorageValue(984) + 1)
 			for i = 1, #pos do
-				addEvent(doSummonCreature, 5 * 1000, creatures[math.random(1, 3)], pos[i])
+				addEvent(doSummonCreature, 5 * 1000, creatures[math.random(3)], pos[i])
 				addEvent(doSendMagicEffect, 5 * 1000, pos[i], CONST_ME_TELEPORT)
 			end
 		elseif(getGlobalStorageValue(985) < #pos and getGlobalStorageValue(984) < 25) then
 			setGlobalStorageValue(985, getGlobalStorageValue(985) + 1)
 		elseif(getGlobalStorageValue(985) == #pos and getGlobalStorageValue(984) == 25) then
-			doSummonCreature("mad mage", magePos[math.random(1, 3)])
+			doSummonCreature("mad mage", magePos[math.random(3)])
 			doCreatureSay(target, "The Mad Mage has been spawned!", TALKTYPE_ORANGE_1)
 			fillWithFungus({x = 33306, y = 31847}, {x = 33369, y = 31919})
 		end

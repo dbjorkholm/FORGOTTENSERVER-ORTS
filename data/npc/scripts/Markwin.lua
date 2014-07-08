@@ -20,7 +20,7 @@ local function greetCallback(cid)
 		npcHandler:releaseFocus(cid)
 		for x = -1, 1 do
 			for y = -1, 1 do
-				doSummonCreature(guards[math.random(1, 3)], {x = 32418 + x, y = 32147 + y, z = 15})
+				doSummonCreature(guards[math.random(3)], {x = 32418 + x, y = 32147 + y, z = 15})
 				doSendMagicEffect({x = 32418 + x, y = 32147 + y, z = 15}, CONST_ME_TELEPORT)
 			end
 		end
