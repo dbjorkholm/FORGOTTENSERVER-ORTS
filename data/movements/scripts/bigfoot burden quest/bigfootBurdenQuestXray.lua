@@ -35,7 +35,7 @@ function onStepIn(cid, item, position, fromPosition)
 			end
 			player:getPosition():sendMagicEffect(CONST_ME_STUN)
 			player:setStorageValue(900, 7)
-			addEvent(function(cid) local player = Player(cid) if player then player:stopMove(false) Game.createMonster("strange slime", Position({x = player:getPosition().x, y = player:getPosition().y + 1, z = player:getPosition().z}), false, true) end end, 14000, cid)
+			addEvent(function(cid) local player = Player(cid) if player then Game.createMonster("strange slime", Position({x = player:getPosition().x, y = player:getPosition().y + 1, z = player:getPosition().z}), false, true) end end, 14000, cid)
 		end
 	end
 	return true
