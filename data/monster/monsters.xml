@@ -491,7 +491,6 @@
 	<monster name="Shard Of Corruption" file="geo-elementals/shard of corruption.xml"/>
 	<monster name="Stone Devourer" file="geo-elementals/stone devourer.xml"/>
 	<monster name="Stone Golem" file="geo-elementals/stone golem.xml"/>
-	<monster name="Vulcongra" file="geo-elementals/vulcongra.xml"/>
 
 	<!-- Ghosts -->
 	<monster name="Ghost" file="ghosts/ghost.xml"/>
@@ -590,6 +589,14 @@
 	<monster name="Walker" file="machines/walker.xml"/>
 	<monster name="War Golem" file="machines/war golem.xml"/>
 	<monster name="Worker Golem" file="machines/worker golem.xml"/>
+
+	<!-- Magma-Elementals -->
+	<monster name="Infected Weeper" file="magma-elementals/infected weeper.xml"/>
+	<monster name="Lava Golem" file="magma-elementals/lava golem.xml"/>
+	<monster name="Magma Crawler" file="magma-elementals/magma crawler.xml"/>
+	<monster name="Minion Of Versperoth" file="magma-elementals/minion of versperoth.xml"/>
+	<monster name="Vulcongra" file="magma-elementals/vulcongra.xml"/>
+	<monster name="Weeper" file="magma-elementals/weeper.xml"/>
 
 	<!-- Minotaurs -->
 	<monster name="Execowtioner" file="minotaurs/execowtioner.xml"/>
@@ -716,13 +723,8 @@
 	<monster name="Fire Elemental" file="pyro-elementals/fire elemental.xml"/>
 	<monster name="Flame Of Omrafir" file="pyro-elementals/flame of omrafir.xml"/>
 	<monster name="Hellfire Fighter" file="pyro-elementals/hellfire fighter.xml"/>
-	<monster name="Infected Weeper" file="pyro-elementals/infected weeper.xml"/>
-	<monster name="Lava Golem" file="pyro-elementals/lava golem.xml"/>
-	<monster name="Magma Crawler" file="pyro-elementals/magma crawler.xml"/>
 	<monster name="Massive Fire Elemental" file="pyro-elementals/massive fire elemental.xml"/>
-	<monster name="Minion Of Versperoth" file="pyro-elementals/minion of versperoth.xml"/>
 	<monster name="Orewalker" file="pyro-elementals/orewalker.xml"/>
-	<monster name="Weeper" file="pyro-elementals/weeper.xml"/>
 
 	<!-- Quaras -->
 	<monster name="Quara Constrictor" file="quaras/quara constrictor.xml"/>
