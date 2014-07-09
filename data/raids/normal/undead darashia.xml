@@ -9,7 +9,7 @@
     <monster name="Stalker" amount="30" />
     <monster name="Skeleton" amount="35" />
     <monster name="demon skeleton" amount="35" />
-    <monster name="beholder" amount="25" />
+    <monster name="bonelord" amount="25" />
     <monster name="necromancer" amount="25" />
     <monster name="bone beast" amount="25" />
   </areaspawn>
