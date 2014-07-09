@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local storeTable = ""
+local storeTable = {}
 local tokenId = 6527
 local itemsTable = {
 	["Gingerbreadman"] = {itemId = 6501, tokens = 1},
@@ -28,26 +28,34 @@ local itemsTable = {
 }
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	local table = itemsTable[msg]
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif table and npcHandler.topic[cid] == 0 then
-		npcHandler:say("So you want to exchange "..msg..", for "..table["tokens"].." christmas tokens?", cid)
-		storeTable = msg
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:removeItem(tokenId, itemsTable[storeTable]["tokens"]) then
-			npcHandler:say("Thank you, here is your "..storeTable..".", cid)
-			player:addItem(itemsTable[storeTable]["itemId"], 1)
-			npcHandler.topic[cid] = 0
-		else
-			npcHandler:say("You don't have enough of tokens.", cid)
-			npcHandler.topic[cid] = 0
+	end
+	local player = Player(cid)
+	if npcHandler.topic[cid] == 0 then
+		local table = itemsTable[msg]
+		if table then
+			npcHandler:say("So you want to exchange "..msg..", for "..table["tokens"].." christmas tokens?", cid)
+			storeTable[cid] = msg
+			npcHandler.topic[cid] = 1
 		end
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
-		npcHandler:say("Come back when you are ready to trade some tokens!", cid)
-	elseif msgcontains(msg, "santa claus") then
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, "yes") then
+			if player:removeItem(tokenId, itemsTable[storeTable]["tokens"]) then
+				npcHandler:say("Thank you, here is your "..storeTable..".", cid)
+				player:addItem(itemsTable[storeTable]["itemId"], 1)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You don't have enough of tokens.", cid)
+				npcHandler.topic[cid] = 0
+			end
+		end
+	elseif npcHandler.topic[cid] > 0 then
+		if msgcontains(msg, "no") then
+			npcHandler:say("Come back when you are ready to trade some tokens!", cid)
+		end
+	end
+	if msgcontains(msg, "santa claus") then
 		npcHandler:say({"Well, he does not really like it if someone tells his story ... but I do! A long, long time ago Santa was nothing but a greedy little dwarf. A real miser, I tell ya ...",
 				"He was greedy even by dwarven standards. He would never share anything or give away the cheapest thing in his possession ...",
 				"One day a woman came to his house and asked him for a cup of water ...",
@@ -64,6 +72,12 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+local function onReleaseFocus(cid)
+	storeTable[cid] = nil
+end
+
+npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
