@@ -28,6 +28,14 @@
 	<monster name="Tarantula" file="arachnids/tarantula.xml"/>
 	<monster name="Wailing Widow" file="arachnids/wailing widow.xml"/>
 
+	<!-- Arak Demons -->
+	<monster name="Askarak Demon" file="arak demons/askarak demon.xml"/>
+	<monster name="Askarak Lord" file="arak demons/askarak lord.xml"/>
+	<monster name="Askarak Prince" file="arak demons/askarak prince.xml"/>
+	<monster name="Shaburak Demon" file="arak demons/shaburak demon.xml"/>
+	<monster name="Shaburak Lord" file="arak demons/shaburak lord.xml"/>
+	<monster name="Shaburak Prince" file="arak demons/shaburak prince.xml"/>
+
 	<!-- Arena -->
 	<!-- Greenhorn -->
 	<monster name="Achad" file="arena/greenhorn/achad.xml"/>
@@ -329,9 +337,6 @@
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml"/>
 
 	<!-- Demons -->
-	<monster name="Askarak Demon" file="demons/askarak demon.xml"/>
-	<monster name="Askarak Lord" file="demons/askarak lord.xml"/>
-	<monster name="Askarak Prince" file="demons/askarak prince.xml"/>
 	<monster name="Dark Torturer" file="demons/dark torturer.xml"/>
 	<monster name="Demon" file="demons/demon.xml"/>
 	<monster name="Destroyer" file="demons/destroyer.xml"/>
@@ -351,9 +356,6 @@
 	<monster name="Plaguesmith" file="demons/plaguesmith.xml"/>
 	<monster name="Rift Brood" file="demons/rift brood.xml"/>
 	<monster name="Rift Scythe" file="demons/rift scythe.xml"/>
-	<monster name="Shaburak Demon" file="demons/shaburak demon.xml"/>
-	<monster name="Shaburak Lord" file="demons/shaburak lord.xml"/>
-	<monster name="Shaburak Prince" file="demons/shaburak prince.xml"/>
 	<monster name="Shadow Hound" file="demons/shadow hound.xml"/>
 	<monster name="Yielothax" file="demons/yielothax.xml"/>
 	<monster name="Zavarash" file="demons/zavarash.xml"/>
