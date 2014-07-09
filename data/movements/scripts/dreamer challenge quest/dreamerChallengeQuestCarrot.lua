@@ -1,5 +1,9 @@
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
+	if not player then
+		return true
+	end
+
 	if item.uid == 2241 then
 		if player:getItemCount(2684) >= 1 then
 			player:teleportTo(Position(32861, 32235, 9))
