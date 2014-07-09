@@ -8,23 +8,22 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local storeTable = {}
-local tokenId = 6527
 local itemsTable = {
-	["Gingerbreadman"] = {itemId = 6501, tokens = 1},
-	--["Christmas Cookie Tray"] = {itemId = , tokens = 1},
-	["Gingerbread Recipe"] = {itemId = 6523, tokens = 10},
-	["Jewel Case"] = {itemId = 8261, tokens = 25},
-	["Santa Hat"] = {itemId = 6531, tokens = 50},
-	["Santa Backpack"] = {itemId = 11263, tokens = 75},
-	["Snowflake Tapestry"] = {itemId = 22649, tokens = 75},
-	["Santa Doll"] = {itemId = 6512, tokens = 100},
-	["Snowman Doll"] = {itemId = 11256, tokens = 150},
-	["Snow Globe"] = {itemId = 22645, tokens = 150},
-	["Frazzlemaw Santa"] = {itemId = 22642, tokens = 250},
-	--["Leaf Golem Santa"] = {itemId = , tokens = 250},
-	["Santa Music Box"] = {itemId = 22647, tokens = 250},
-	["Santa Teddy"] = {itemId = 11255, tokens = 500},
-	["Present Bag"] = {itemId = 6497, tokens = 1}
+	["Gingerbreadman"] = {itemId = 6501, count = 1},
+	--["Christmas Cookie Tray"] = {itemId = , count = 1},
+	["Gingerbread Recipe"] = {itemId = 6523, count = 10},
+	["Jewel Case"] = {itemId = 8261, count = 25},
+	["Santa Hat"] = {itemId = 6531, count = 50},
+	["Santa Backpack"] = {itemId = 11263, count = 75},
+	["Snowflake Tapestry"] = {itemId = 22649, count = 75},
+	["Santa Doll"] = {itemId = 6512, count = 100},
+	["Snowman Doll"] = {itemId = 11256, count = 150},
+	["Snow Globe"] = {itemId = 22645, count = 150},
+	["Frazzlemaw Santa"] = {itemId = 22642, count = 250},
+	--["Leaf Golem Santa"] = {itemId = , count = 250},
+	["Santa Music Box"] = {itemId = 22647, count = 250},
+	["Santa Teddy"] = {itemId = 11255, count = 500},
+	["Present Bag"] = {itemId = 6497, count = 1}
 }
 
 local function creatureSayCallback(cid, type, msg)
@@ -35,15 +34,15 @@ local function creatureSayCallback(cid, type, msg)
 	if npcHandler.topic[cid] == 0 then
 		local table = itemsTable[msg]
 		if table then
-			npcHandler:say("So you want to exchange "..msg..", for ".. table.tokens .." christmas tokens?", cid)
+			npcHandler:say("So you want to exchange "..msg..", for ".. table.count .." christmas tokens?", cid)
 			storeTable[cid] = msg
 			npcHandler.topic[cid] = 1
 		end
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, "yes") then
-			if player:removeItem(tokenId, itemsTable[storeTable].tokens) then
+			if player:removeItem(6527, itemsTable[storeTable[cid]].count) then
 				npcHandler:say("Thank you, here is your "..storeTable[cid]..".", cid)
-				player:addItem(itemsTable[storeTable].itemId, 1)
+				player:addItem(itemsTable[storeTable[cid]].itemId, 1)
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have enough of tokens.", cid)
