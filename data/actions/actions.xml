@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+	<!-- Rookgaard -->
+	<action uniqueid="50081" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialSnakeHead.lua"/>
+	<action itemid="8599" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialLadderReqCockroachLegs.lua"/>
+	<action itemid="8593" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialCockroachdeadBody.lua"/>
+
 	<!-- Belongings of a Deceased -->
 	<action itemid="13670" script="other/belongings_deceased.lua"/>
 
@@ -629,6 +634,7 @@
 	<action fromid="2047" toid="2048" script="other/decayto.lua"/>
 	<action fromid="2050" toid="2055" script="other/decayto.lua"/>
 	<action itemid="430" script="other/teleport.lua"/>
+	<action itemid="8580" script="other/teleport.lua"/>
 	<action itemid="1369" script="other/teleportdrawwell.lua"/>
 	<action itemid="1386" script="other/teleport.lua"/>
 	<action itemid="3678" script="other/teleport.lua"/>

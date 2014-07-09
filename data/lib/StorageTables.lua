@@ -210,5 +210,13 @@ Storage = {
 		TheMermaidMarina = 12402,
 		TheBlessedStake = 12403,
 		TheBlessedStakeWaitTime = 12404
+	},
+	RookgaardTutorialIsland = {
+		tutorialHintsStorage = 50085,
+		SantiagoNpcGreetStorage = 50086,
+		SantiagoQuestLog = 50087,
+		cockroachKillStorage = 50088,
+		cockroachLegsMsgStorage = 50089,
+		cockroachBodyMsgStorage = 50090
 	}
 }

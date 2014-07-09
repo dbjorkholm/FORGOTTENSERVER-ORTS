@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
+	<!-- Rookgaard Cockroach -->
+	<event type="kill" name="rookgaardCockroach" script="rookgaard/killCockroach.lua"/>
+
 	<!-- Elemental Spheres Quest -->
 	<event type="kill" name="elementalspheresquestOverlords" script="elemental spheres quest/ElementalSpheresQuestKillOverlords.lua"/>
 
