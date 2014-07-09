@@ -8,6 +8,10 @@ local gnomedixMessages = {
 	"Gnomedix: I got it! Yikes! What was that? Uhm, well ... you passed the ear examination. Talk to Gnomaticus for your next test."	
 }
 
+local condition = Condition(CONDITION_OUTFIT)
+condition:setTicks(2000)
+condition:addOutfit({lookType = 33}) -- skeleton looktype
+
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
@@ -16,7 +20,7 @@ function onStepIn(cid, item, position, fromPosition)
 	
 	if item.uid == 3122 then
 		if player:getStorageValue(900) == 4 then
-			player:setOutfit("skeleton", 2 * 1000)
+			player:addCondition(condition)
 			player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:setStorageValue(900, 5)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!")
