@@ -35,15 +35,15 @@ local function creatureSayCallback(cid, type, msg)
 	if npcHandler.topic[cid] == 0 then
 		local table = itemsTable[msg]
 		if table then
-			npcHandler:say("So you want to exchange "..msg..", for "..table["tokens"].." christmas tokens?", cid)
+			npcHandler:say("So you want to exchange "..msg..", for ".. table.tokens .." christmas tokens?", cid)
 			storeTable[cid] = msg
 			npcHandler.topic[cid] = 1
 		end
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, "yes") then
-			if player:removeItem(tokenId, itemsTable[storeTable]["tokens"]) then
-				npcHandler:say("Thank you, here is your "..storeTable..".", cid)
-				player:addItem(itemsTable[storeTable]["itemId"], 1)
+			if player:removeItem(tokenId, itemsTable[storeTable].tokens) then
+				npcHandler:say("Thank you, here is your "..storeTable[cid]..".", cid)
+				player:addItem(itemsTable[storeTable].itemId, 1)
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have enough of tokens.", cid)
