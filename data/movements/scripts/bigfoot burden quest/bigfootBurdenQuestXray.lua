@@ -8,7 +8,11 @@ local gnomedixMessages = {
 	"Gnomedix: I got it! Yikes! What was that? Uhm, well ... you passed the ear examination. Talk to Gnomaticus for your next test."	
 }
 
-function onStepIn(cid, item, pos, fromPosition)
+local condition = Condition(CONDITION_OUTFIT)
+condition:setTicks(2000)
+condition:addOutfit({lookType = 33}) -- skeleton looktype
+
+function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
 		return true
@@ -16,8 +20,8 @@ function onStepIn(cid, item, pos, fromPosition)
 	
 	if item.uid == 3122 then
 		if player:getStorageValue(900) == 4 then
-			doSetMonsterOutfit(cid, "skeleton", 2 * 1000)
-			pos:sendMagicEffect(CONST_ME_ENERGYHIT)
+			player:addCondition(condition)
+			player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:setStorageValue(900, 5)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!")
 			player:say("*Rrrrrrrrrrr...*", TALKTYPE_ORANGE_1)
@@ -27,14 +31,15 @@ function onStepIn(cid, item, pos, fromPosition)
 		end
 	elseif item.uid == 3123 then
 		if player:getStorageValue(900) == 6 then
-			player:stopMove(true)
+			-- Commenting away stopMove since this function has been removed
+			-- player:stopMove(true)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Gnomedix: So let the examination begin! Now don't move. Don't be afraid. The good doctor gnome won't hurt you - hopefully!")
 			for i = 1, 7 do
-				addEvent(function(cid, pos) local player = Player(cid) if player then player:sendTextMessage(MESSAGE_EVENT_ADVANCE, gnomedixMessages[i]) pos:sendMagicEffect(CONST_ME_STUN) end end, i * 2000, cid, pos)
+				addEvent(function(cid, position) local player = Player(cid) if player then player:sendTextMessage(MESSAGE_EVENT_ADVANCE, gnomedixMessages[i]) player:getPosition():sendMagicEffect(CONST_ME_STUN) end end, i * 2000, cid, position)
 			end
-			pos:sendMagicEffect(CONST_ME_STUN)
+			player:getPosition():sendMagicEffect(CONST_ME_STUN)
 			player:setStorageValue(900, 7)
-			addEvent(function(cid) local player = Player(cid) if player then player:stopMove(false) Game.createMonster("strange slime", Position({x = player:getPosition().x, y = player:getPosition().y + 1, z = player:getPosition().z}), false, true) end end, 14000, cid)
+			addEvent(function(cid) local player = Player(cid) if player then Game.createMonster("strange slime", Position({x = player:getPosition().x, y = player:getPosition().y + 1, z = player:getPosition().z}), false, true) end end, 14000, cid)
 		end
 	end
 	return true
