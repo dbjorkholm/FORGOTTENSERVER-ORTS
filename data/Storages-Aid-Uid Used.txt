@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50084
-Last Used Aid = 50057
-Last Used Uid = 50079
+Last Used Storage = 50090
+Last Used Aid = 50069
+Last Used Uid = 50083
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -143,3 +143,14 @@ Scale Armor Quest UID = 50076
 Isle of the Mists Quest UID = 50077
 Lone Medusa Quest UID = 50078
 First wand/rod storage = 50079
+Rook Santiago House Quest Coat UID = 50080
+Rook Santiago Cellar Snake Head Lever UID = 50081
+Rook Santiago Cellar Quest Torch Uid = 50082
+Rook Santiago Cellar Ladder Uid = 50083
+Rook tutorial tiles aid = 50058-50069
+Rook tutorial Hints Storage = 50085
+Rook Santiago Npc Greet Storage = 50086
+Rook Santiago Quest Log Storage = 50087
+Rook cockroach Kill Storage = 50088
+Rook cockroach Legs Msg Storage = 50089
+Rook cockroach Body Msg Storage = 50090

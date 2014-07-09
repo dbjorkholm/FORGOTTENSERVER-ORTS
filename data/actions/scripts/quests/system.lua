@@ -13,6 +13,11 @@ local questsExperience = {
 	[9050] = 20000
 }
 
+local tutorialIds = {
+	[50080] = 5,
+	[50082] = 6
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local storage = specialQuests[item.actionid]
 	if not storage then
@@ -107,6 +112,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if questsExperience[storage] ~= nil then
 		player:addExperience(questsExperience[storage], true)
+	end
+
+	if tutorialIds[storage] ~= nil then
+		player:sendTutorial(tutorialIds[storage])
+		if item.uid == 50080 then
+			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 3)
+		end
 	end
 
 	player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found " .. result .. ".")

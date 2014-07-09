@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Rookgaard -->
+	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialTiles.lua"/>
+
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
 	

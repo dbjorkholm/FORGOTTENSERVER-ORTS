@@ -4,7 +4,7 @@ function onLogin(cid)
 	local loginStr = "Welcome to " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Please choose your outfit."
-		player:sendOutfitWindow()
+		player:sendTutorial(1)
 	else
 		if loginStr ~= "" then
 			player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
@@ -33,7 +33,7 @@ function onLogin(cid)
 	player:registerEvent("SvargrondArenaKill")
 	player:registerEvent("AdvanceSave")
 	player:registerEvent("StorageConversion")
-	
+	player:registerEvent("rookgaardCockroach")
 	--Others
 	player:stopMove(false)
 	return true

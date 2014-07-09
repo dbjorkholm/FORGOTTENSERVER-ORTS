@@ -685,4 +685,16 @@
 			<missionstate id="16" description="You have completed all the dishes. You are now able to make all the dishes in any order you want."/>
 		</mission>
 	</quest>
+	<quest name="The Beginning" startstorageid="50087" startstoragevalue="1">
+		<mission name="The Cockroach Plague" storageid="50087" startvalue="1" endvalue="8">
+			<missionstate id="1" description="You have found a fisherman called Santiago, who has a little problem. Maybe you should talk to him again to find out more."/>
+			<missionstate id="2" description="Santiago asked you to go into his house. Upstairs you will find a chest. You can keep what you find inside of it. Once you got that, talk to Santiago again."/>
+			<missionstate id="3" description="You have found Santiago's Coat and reported back to him. Your quest is not done yet, you should talk to him a bit more."/>
+			<missionstate id="4" description="Santiago gave you a weapon. After equipping it, go to the cellar of his house to find out about the cockroach plague."/>
+			<missionstate id="5" description="Santiago has a valuable lesson for you. You should talk to him again."/>
+			<missionstate id="6" description="Santiago gave you some fish! Just 'use' it to eat it and regain health. Afterwards, you should talk to Santiago again."/>
+			<missionstate id="7" description="Santiago asked you if you had seen Zirella. Don't let him wait for the answer."/>
+			<missionstate id="8" description="You have helped Santiago a lot by killing the cokcroaches in his cellar. In exchange, he gave you equipment and some valuable experience. Well done!"/>
+		</mission>
+	</quest>
 </quests>
