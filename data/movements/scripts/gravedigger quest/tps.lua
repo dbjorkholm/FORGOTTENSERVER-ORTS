@@ -16,10 +16,5 @@ function onStepIn(cid, item, position)
 		creature:teleportTo(amfora)
 		amfora:sendMagicEffect(CONST_ME_POFF)
 	end
-
-	if item.actionid == 4531 then
-		creature:teleportTo(amfora)
-		amfora:sendMagicEffect(CONST_ME_POFF)
-	end
 	return true
 end
