@@ -4,6 +4,9 @@
 	<action uniqueid="50081" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialSnakeHead.lua"/>
 	<action itemid="8599" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialLadderReqCockroachLegs.lua"/>
 	<action itemid="8593" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialCockroachdeadBody.lua"/>
+	<action itemid="8582" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialBranch.lua"/>
+	<action itemid="8583" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialDeadtreeBranch.lua"/>
+	<action uniqueid="50085" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialZirellaDoor.lua"/>
 
 	<!-- Belongings of a Deceased -->
 	<action itemid="13670" script="other/belongings_deceased.lua"/>
