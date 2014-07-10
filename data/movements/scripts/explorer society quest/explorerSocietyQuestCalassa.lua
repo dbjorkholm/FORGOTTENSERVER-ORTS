@@ -4,7 +4,8 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getSlotItem(CONST_SLOT_HEAD) == 5461 then
+	local headItem = player:getSlotItem(CONST_SLOT_HEAD)
+	if headItem and headItem:getId() == 5461 then
 		player:teleportTo(Position(31914, 32713, 12))
 		player:getPosition():sendMagicEffect(CONST_ME_WATERSPLASH)
 		player:getPosition():sendMagicEffect(CONST_ME_LOSEENERGY)
