@@ -65,17 +65,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
-	elseif msgcontains(msg, "yes") then
-		if(npcHandler.topic[cid] == 7) then
-			npcHandler:say("Let's go fo' a hunt and bring the beast down!", cid)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(Position(31947, 31045, 6), false)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler.topic[cid] = 8
-		end
-	end
-	return true
-end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Harrr, landlubber wha'd ya want?")
