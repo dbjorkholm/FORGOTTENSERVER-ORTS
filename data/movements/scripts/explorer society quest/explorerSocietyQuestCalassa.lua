@@ -5,7 +5,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	local headItem = player:getSlotItem(CONST_SLOT_HEAD)
-	if headItem and headItem:getId() == 5461 then
+	if headItem and isInArray({5461, 12541, 15408}, headItem:getId()) then
 		player:teleportTo(Position(31914, 32713, 12))
 		player:getPosition():sendMagicEffect(CONST_ME_WATERSPLASH)
 		player:getPosition():sendMagicEffect(CONST_ME_LOSEENERGY)
