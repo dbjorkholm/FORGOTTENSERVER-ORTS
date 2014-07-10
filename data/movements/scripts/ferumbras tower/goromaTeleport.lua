@@ -1,7 +1,7 @@
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
-		return false
+		return true
 	end
 
 	if player:getStorageValue(9005) < 1 then
