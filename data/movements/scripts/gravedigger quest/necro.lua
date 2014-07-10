@@ -1,12 +1,11 @@
-function onStepIn(cid, item, pos)
+function onStepIn(cid, item, position)
 	local player = Player(cid)
 	if not player then
 		return true
 	end
 	
-	local summonpos = {x = 33011, y = 32437, z = 11}
-	if item.actionid == 4536 and (player:getStorageValue(9932) == 1) and (player:getStorageValue(9933) < 1) then
+	if player:getStorageValue(9932) == 1 and player:getStorageValue(9933) < 1 then
 		player:setStorageValue(9933,1)
-		doSummonCreature("Necromancer Servant", summonpos)
+		Game.createMonster("Necromancer Servant", Position(33011, 32437, 11))
 	end
 end
