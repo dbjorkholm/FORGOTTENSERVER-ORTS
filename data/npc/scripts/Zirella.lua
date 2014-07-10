@@ -7,7 +7,8 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 local random_texts = {
 	"I wish someone could spare a minute and help me...",
-	"This is too hard for an old woman like me.", "Hello, young adventurer, you look strong enough to help me!"
+	"This is too hard for an old woman like me.", 
+	"Hello, young adventurer, you look strong enough to help me!"
 }
 
 local rnd_sounds = 0
