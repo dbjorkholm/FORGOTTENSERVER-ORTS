@@ -1446,7 +1446,7 @@ keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onl
     node24:addChildKeyword({'yes'}, PirateSecond, {}) 
     node24:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 
- node25 = keywordHandler:addKeyword({'first assassin addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first assassin addon you need to give me 30 beholder eyes, 10 red dragon scales, 30 lizard scales, 20 fish fins, 20 vampire dusts, 10 demon dusts and Warrior\'s sweat. Do you have them with you?'}) 
+ node25 = keywordHandler:addKeyword({'first assassin addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first assassin addon you need to give me 30 bonelord eyes, 10 red dragon scales, 30 lizard scales, 20 fish fins, 20 vampire dusts, 10 demon dusts and Warrior\'s sweat. Do you have them with you?'}) 
     node25:addChildKeyword({'yes'}, AssassinFirst, {}) 
     node25:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 
