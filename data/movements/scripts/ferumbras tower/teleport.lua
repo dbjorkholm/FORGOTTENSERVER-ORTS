@@ -6,7 +6,7 @@ local pos = {
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
-		return false
+		return true
 	end
 
 	for i = 1, #pos do
