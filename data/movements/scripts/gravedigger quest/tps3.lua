@@ -18,10 +18,5 @@ function onStepIn(cid, item, position)
 		creature:teleportTo(dormitori)
 		dormitori:sendMagicEffect(CONST_ME_POFF)
 	end
-
-	if item.actionid == 4535 then
-		creature:teleportTo(dormitori)
-		dormitori:sendMagicEffect(CONST_ME_POFF)
-	end
 	return true
 end
