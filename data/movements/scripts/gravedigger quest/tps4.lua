@@ -16,10 +16,5 @@ function onStepIn(cid, item, position)
 		creature:teleportTo(sacrifice)
 		sacrifice:sendMagicEffect(CONST_ME_POFF)
 	end
-
-	if item.actionid == 4542 then
-		creature:teleportTo(sacrifice)
-		sacrifice:sendMagicEffect(CONST_ME_POFF)
-	end
 	return true
 end

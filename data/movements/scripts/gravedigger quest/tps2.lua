@@ -16,10 +16,5 @@ function onStepIn(cid, item, position)
 		creature:teleportTo(brain)
 		brain:sendMagicEffect(CONST_ME_POFF)
 	end
-
-	if item.actionid == 4533 then
-		creature:teleportTo(brain)
-		brain:sendMagicEffect(CONST_ME_POFF)
-	end
 	return true
 end
