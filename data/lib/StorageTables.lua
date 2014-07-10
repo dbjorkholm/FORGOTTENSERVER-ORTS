@@ -217,6 +217,8 @@ Storage = {
 		SantiagoQuestLog = 50087,
 		cockroachKillStorage = 50088,
 		cockroachLegsMsgStorage = 50089,
-		cockroachBodyMsgStorage = 50090
+		cockroachBodyMsgStorage = 50090,
+		ZirellaNpcGreetStorage = 50091,
+		ZirellaQuestLog = 50092
 	}
 }
