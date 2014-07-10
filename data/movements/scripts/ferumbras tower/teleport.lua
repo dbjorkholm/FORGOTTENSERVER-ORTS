@@ -10,7 +10,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	for i = 1, #pos do
-		if Tile(pos[i]):getItemById(1946) then
+		if not Tile(pos[i]):getItemById(1946) then
 			player:teleportTo(fromPosition)
 			return true
 		end
