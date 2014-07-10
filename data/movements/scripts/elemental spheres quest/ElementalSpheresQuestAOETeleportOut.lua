@@ -11,7 +11,6 @@ function onStepIn(cid, item, position, fromPosition)
 			player:setStorageValue(10006, 0)
 			player:setStorageValue(10007, 0)
 			player:setStorageValue(10008, 0)
-			print("Player is here")
 		else
 			Game.setStorageValue(10004, 0)	
 			player:teleportTo(Position(33265, 31838, 10))
@@ -20,7 +19,6 @@ function onStepIn(cid, item, position, fromPosition)
 			player:setStorageValue(10006, 0)
 			player:setStorageValue(10007, 0)
 			player:setStorageValue(10008, 0)	
-			print("Player is not here")
 		end
 	end
 	return true
