@@ -3,7 +3,7 @@ local Area_fromPos, Area_toPos = Position(33235, 31801, 12), Position(33299, 318
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 
-	if isPlayer(cid) then
+	if player then
 		if isPlayerInArea(Area_fromPos, Area_toPos) then
 			player:teleportTo(Position(33265, 31838, 10))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
