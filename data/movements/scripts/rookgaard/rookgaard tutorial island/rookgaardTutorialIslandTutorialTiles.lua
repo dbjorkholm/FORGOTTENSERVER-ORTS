@@ -7,10 +7,11 @@ local config = {
 	[50063] = {tutorialId = 22, storageValue = 6},
 	[50064] = {tutorialId = 4, storageValue = 7},
 	[50065] = {effPos = Position(32033, 32278, 8), text = "You can't see any cockroaches here. 'Open' this chest and see if you can find something to light the room better.", storageValue = 8},
-	[50066] = {effPos = Position(32033, 32278, 8), text = "You can't see so well here. 'Open' this chest and see if you can find something to light the room.", storageValue = 9},
+	[50066] = {text = "Maybe you shouldn't stay in this forest longer than necessary. Zirella is waiting for her firewood!", storageValue = 13},
 	[50067] = {effPos = Position(32035, 32285, 8), text = "Look at the metallic object on the floor - this is a sewer grate. Right-click on it and select 'Use' to climb down.", storageValue = 10},
 	[50068] = {tutorialId = 7, text = "You smell stinky cockroaches around here. When you see one, walk to it and attack it by left-clicking it in your battle list!", storageValue = 11},
 	[50069] = {tutorialId = 23, effPos = Position(32035, 32285, 9), text = "Right-click on the lower right end of the ladder - anywhere in the red frame - and select 'Use' to climb up.", storageValue = 12},
+	[50075] = {"Do you have trouble finding those dead trees? Here are some - just 'Use' them to break a branch.", storageValue = 14, effPos = Position(32067, 32281, 7), effPos2 = Position(32073, 32276, 7)}
 }
 
 function onStepIn(cid, item, position, fromPosition)
@@ -21,13 +22,30 @@ function onStepIn(cid, item, position, fromPosition)
 
 	local targetTableAid = config[item.actionid]
 	if not targetTableAid then
+		if item.actionid == 50069 then
+			if player:getStorageValue(Storage.RookgaardTutorialIsland.cockroachLegsMsgStorage) < 1 then
+				return
+			end
+		elseif item.actionid == 50076 then
+			print(1)
+			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) == 15 then
+				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 16)
+				Position(32062, 32271, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
+				Position(32062, 32271, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
+				player:sendTutorial(24)
+			end
+		elseif item.actionid == 50077 then
+			if player:getStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage) == 8 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 17  then
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This is Zirella's door. Right-click on the lower part of the door and select 'Use' to open it.")
+				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 17)
+			end
+			if player:getStorageValue(50084) == 1 then
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Good, now continue to the east to find a place to try out your shovel.")
+				player:setStorageValue(50084, 2)
+			end
+		end
 		return
-	end
-
-	if item.actionid == 50069 and player:getStorageValue(Storage.RookgaardTutorialIsland.cockroachLegsMsgStorage) < 1 then
-		return
-	end
-		
+	end	
 
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < targetTableAid.storageValue then
 		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, targetTableAid.storageValue)
@@ -35,6 +53,13 @@ function onStepIn(cid, item, position, fromPosition)
 		if targetTableAid.tutorialId then
 			player:sendTutorial(targetTableAid.tutorialId)
 		end
+
+		if item.actionid == 50075 then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetTableAid.text)
+			targetTableAid.effPos:sendMagicEffect(CONST_ME_TUTORIALARROW)
+			targetTableAid.effPos2:sendMagicEffect(CONST_ME_TUTORIALARROW)
+		end
+				
 
 		if targetTableAid.text then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetTableAid.text)

@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50090
-Last Used Aid = 50069
-Last Used Uid = 50083
+Last Used Storage = 50092
+Last Used Aid = 50077
+Last Used Uid = 50085
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -147,10 +147,15 @@ Rook Santiago House Quest Coat UID = 50080
 Rook Santiago Cellar Snake Head Lever UID = 50081
 Rook Santiago Cellar Quest Torch Uid = 50082
 Rook Santiago Cellar Ladder Uid = 50083
-Rook tutorial tiles aid = 50058-50069
+Rook Zirella Shovel Quest Uid = 50084
+Rook Zirella Door Uid = 50085
+Rook tutorial tiles aid = 50058-50069/50075-50077
+Rook stopFromGoingBackorForward tiles aid = 50070-50074
 Rook tutorial Hints Storage = 50085
 Rook Santiago Npc Greet Storage = 50086
 Rook Santiago Quest Log Storage = 50087
 Rook cockroach Kill Storage = 50088
 Rook cockroach Legs Msg Storage = 50089
 Rook cockroach Body Msg Storage = 50090
+Rook Zirella greet Storage = 50091
+Rook Zirella questlog Storage = 50092

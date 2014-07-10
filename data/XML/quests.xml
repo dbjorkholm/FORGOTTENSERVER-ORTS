@@ -686,15 +686,28 @@
 		</mission>
 	</quest>
 	<quest name="The Beginning" startstorageid="50087" startstoragevalue="1">
-		<mission name="The Cockroach Plague" storageid="50087" startvalue="1" endvalue="8">
+		<mission name="The Cockroach Plague" storageid="50087" startvalue="1" endvalue="11">
 			<missionstate id="1" description="You have found a fisherman called Santiago, who has a little problem. Maybe you should talk to him again to find out more."/>
 			<missionstate id="2" description="Santiago asked you to go into his house. Upstairs you will find a chest. You can keep what you find inside of it. Once you got that, talk to Santiago again."/>
 			<missionstate id="3" description="You have found Santiago's Coat and reported back to him. Your quest is not done yet, you should talk to him a bit more."/>
 			<missionstate id="4" description="Santiago gave you a weapon. After equipping it, go to the cellar of his house to find out about the cockroach plague."/>
-			<missionstate id="5" description="Santiago has a valuable lesson for you. You should talk to him again."/>
-			<missionstate id="6" description="Santiago gave you some fish! Just 'use' it to eat it and regain health. Afterwards, you should talk to Santiago again."/>
-			<missionstate id="7" description="Santiago asked you if you had seen Zirella. Don't let him wait for the answer."/>
-			<missionstate id="8" description="You have helped Santiago a lot by killing the cokcroaches in his cellar. In exchange, he gave you equipment and some valuable experience. Well done!"/>
+			<missionstate id="5" description="You brought the cockroach legs to Santiago. He still has something to tell you though."/>
+			<missionstate id="6" description="Santiago asked you, if those cockroaches hurt you. You should reply to him!"/>
+			<missionstate id="7" description="Santiago has a valuable lesson for you. You should talk to him again."/>
+			<missionstate id="8" description="Santiago showed you how some monsters might hurt you. Better to talk to him to learn a way to heal yourself."/>
+			<missionstate id="9" description="Santiago gave you some fish! Just 'use' it to eat it and regain health. Afterwards, you should talk to Santiago again."/>
+			<missionstate id="10" description="Santiago asked you if you had seen Zirella. Don't let him wait for the answer."/>
+			<missionstate id="11" description="You have helped Santiago a lot by killing the cokcroaches in his cellar. In exchange, he gave you equipment and some valuable experience. Well done!"/>
+		</mission>
+		<mission name="Collecting Wood" storageid="50092" startvalue="1" endvalue="8">
+			<missionstate id="1" description="You have a vague idea that Zirella might need you for collecting firewood, but you don't know yet where to get it. You should talk to her again."/>
+			<missionstate id="2" description="You know that the branches Zirella needs might be gotten from dead trees in the forest south of here, but you don't know the details yet. You should talk to her again."/>
+			<missionstate id="3" description="You have learned that you need to 'Use' the dead tree to break a branch from it, but there is some information missing. You should talk to Zirella again."/>
+			<missionstate id="4" description="You have learned that you can push the branch which you've broken from a dead tree by 'Drag & Drop', but you still need some information. You should talk to Zirella again."/>
+			<missionstate id="5" description="You know that you have to 'Use' the branch. Then leftclick with the changed cursor on the cart. Now you just have to tell Zirella that you will help her."/>
+			<missionstate id="6" description="Go into the forest south of here and look for trees without leaves. 'Use' one to break a branch from it, then drag & drop the branch back to her cart and 'Use' it with the cart."/>
+			<missionstate id="7" description="You have brought a branch to Zirella, congratulations! You should talk to her again for your reward."/>
+			<missionstate id="8" description="You have helped Zirella by collecting wood for her. The reward can be found in her house."/>
 		</mission>
 	</quest>
 </quests>

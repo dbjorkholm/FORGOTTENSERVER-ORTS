@@ -2,6 +2,9 @@
 <movements>
 	<!-- Rookgaard -->
 	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialTiles.lua"/>
+	<movevent event="StepIn" fromaid="50075" toaid = "50077" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialTiles.lua"/>
+	<movevent event="StepIn" fromaid="50070" toaid = "50074" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialStopTiles.lua"/>
+	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialStopTiles.lua"/>
 
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>

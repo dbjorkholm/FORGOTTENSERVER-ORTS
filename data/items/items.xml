@@ -15275,6 +15275,8 @@
 	<item id="8582" article="a" name="branch">
 		<attribute key="description" value="Push it back to Zirella by holding the left mousebutton down on it and pushing it over the grass." />
 		<attribute key="weight" value="100000" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="120" />
 	</item>
 	<item id="8583" article="a" name="dead tree">
 		<attribute key="description" value="It is one of those Zirella mentioned. Rightclick it and select 'Use' to break a branch from it." />
@@ -15307,9 +15309,8 @@
 		<attribute key="fluidSource" value="slime" />
 	</item>
 	<item id="8594" name="dirt" />
-	<item fromid="8595" toid="8596" article="a" name="trapdoor">
-		<attribute key="floorchange" value="down" />
-	</item>
+	<item id="8595" name="ladder" />
+	<item id="8596" name="stairs" />
 	<item id="8597" name="wooden floor" />
 	<item id="8598" name="stone floor" />
 	<item id="8599" article="a" name="ladder" />
@@ -15423,9 +15424,7 @@
 		<attribute key="weight" value="900" />
 	</item>
 	<item id="8708" name="rock soil" />
-	<item id="8709" name="wooden stairs">
-		<attribute key="floorchange" value="west" />
-	</item>
+	<item id="8709" name="wooden stairs"/>
 	<item id="8710" name="cockroach leg">
 		<attribute key="weight" value="10" />
 		<attribute key="description" value="This is proof for Santiago that you have killed a cockroach." />
@@ -15442,9 +15441,7 @@
 	<item id="8714" name="wooden floor">
 		<attribute key="description" value="This is the border to the village of Rookgaard." />
 	</item>
-	<item id="8715" article="a" name="ramp">
-		<attribute key="floorchange" value="west" />
-	</item>
+	<item id="8715" article="a" name="ramp" />
 	<item id="8716" name="stone stairs">
 		<attribute key="floorchange" value="southalt" />
 	</item>
