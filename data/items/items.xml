@@ -20454,7 +20454,10 @@
 		<attribute key="weight" value="1000" />
 	</item>
 	<item fromid="12305" toid="12315" article="a" name="corrupted plantation" />
-	<!-- Missing 13216 -->
+	<item id="12316" name="the dead keeper">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="900" />
+	</item>
 	<item id="12317" name="the presence of the emperor">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="60" />
