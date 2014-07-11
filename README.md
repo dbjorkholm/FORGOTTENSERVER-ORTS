@@ -2,51 +2,56 @@
 We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.0](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
 
 For more information about TFS 1.0 (including compiling guides) visit the link above.
+
 You can download TFS 1.0 Windows binaries from http://nightlies.otland.net.
 
-To login you can use [OTClient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart)
+To login you can use [Otclient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart).
 
 - Client Version: **10.41**
 - Map Version: **10.35**
 - The map is available as a rar archive in data/world/ which you have to unpack before running the server.
 
-To edit the map you can use [Remere's Map Editor (Github)](https://github.com/hjnilsson/rme), [Remere's Map Editor 10.35 (Otland, compiled)](http://otland.net/threads/10-35-remeres-map-editor.211040/) or [here](https://github.com/decltype/forgottenmapeditor.
-You can use [the forum](http://otland.net/threads/best-released-rlmap-10-41-based-1-0-new-roshamuul-new-quests-optimized-bug-fixing-open-source.204514/) to discuss and report bugs.
+To edit the map you can use [Remere's Map Editor (Github)](https://github.com/hjnilsson/rme), [Remere's Map Editor 10.35 (Otland, compiled)](http://otland.net/threads/10-35-remeres-map-editor.211040/) or [Forgotten Map Editor](https://github.com/decltype/forgottenmapeditor).
+You can use our [forum thread](http://otland.net/threads/best-released-rlmap-10-41-based-1-0-new-roshamuul-new-quests-optimized-bug-fixing-open-source.204514/) at Otland to discuss and report bugs.
 
-If you need support you can post your questions in the issues area or [here](http://otland.net/forums/support.16/). Dont forget to post in good, understandable English. Feel free to use a [translator](http://translate.google.com/) if you need help.
+If you need support you can post your questions in the issues area or use [Otland's support board](http://otland.net/forums/support.16/). Do not forget to post in good, understandable English and include all the information needed to solve the problem.
 
-To contribute in code to this project, [create a pull request](http://otland.net/threads/contributing-to-someones-repository-create-a-pull-request-on-github.210627/).
+### Script Contribution
+In order to contribute scripts to this project [create a pull request](http://otland.net/threads/contributing-to-someones-repository-create-a-pull-request-on-github.210627/).
 
-To contribute with a map edit, [read this](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map)
+**Important:**
+- Scripts should follow this [lua style guide](https://github.com/Olivine-Labs/lua-style-guide) and be as efficient as possible.
+- Use tabs as indentation.
+- Use new metatable function whenever possible or you might have to revise your pull request.
 
-**If you want to contribute by sending pull request, here are some tips.
-Try to use metatables in your script. Ex.**
+**Example script (using metatables):**
 ```lua
-function metaExample(cid)
-	local player = Player(cid)
-	if player ~= nil then
-		player:addItem(2160, 5)
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Here is some cash.")
-	end
+local player = Player(cid)
+if not player then
+	return true
 end
+
+player:addItem(2160, 5)
+player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 ```
-**How non meta looks like:**
+**Example script (not using metatables):**
 ```lua
-function nonMetaExample(cid)
-	if isPlayer(cid) then
-		doPlayerAddItem(cid, 2160, 5)
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Here is some cash.")
-	end
+if not isPlayer(cid) then
+	return true
 end
+
+doPlayerAddItem(cid, 2160, 5)
+doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 ```
-**[LUA METATABLE LISTS](http://pastebin.com/UPKLCSsi)**
 
-**NOTE:**
-Since the link above dosen't have all the functions in it, I will link to a compat.lua file(can be found in your ot aswell, dir/data/compat.lua), use ctrl+f and enter the old function then press enter. 
+**Scripting related links:**
+- [List of metatable functions](http://pastebin.com/UPKLCSsi)
+- [compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua) (which contains additional functions)
 
-[compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua)
+### Map Contributions
+In order to contribute map updates read this [article](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map) first.
 
-Actual map (with marked missing areas):
+Current map (missing areas are marked):
 ![minimap_floor_7](https://cloud.githubusercontent.com/assets/6708725/3487554/257cb9be-0488-11e4-94e6-2464355761c8.png)
 
 
