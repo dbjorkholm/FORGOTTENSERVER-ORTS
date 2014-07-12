@@ -1,24 +1,24 @@
-local Area_fromPos, Area_toPos = {x = 33235, y = 31801, z = 12}, {x = 33299, y = 31867, z = 12}
+local Area_fromPos, Area_toPos = Position(33235, 31801, 12), Position(33299, 31867, 12)
 	
 function onStepIn(cid, item, position, fromPosition)
-	if isPlayer(cid) then
+	local player = Player(cid)
+
+	if player then
 		if isPlayerInArea(Area_fromPos, Area_toPos) then
-			doTeleportThing(cid, {x = 33265, y = 31838, z = 10})
-			doSendMagicEffect({x = 33265, y = 31838, z = 10}, CONST_ME_TELEPORT)
-			setPlayerStorageValue(cid, 10005, 0)
-			setPlayerStorageValue(cid, 10006, 0)
-			setPlayerStorageValue(cid, 10007, 0)
-			setPlayerStorageValue(cid, 10008, 0)
-			print("Player is here")
+			player:teleportTo(Position(33265, 31838, 10))
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:setStorageValue(10005, 0)
+			player:setStorageValue(10006, 0)
+			player:setStorageValue(10007, 0)
+			player:setStorageValue(10008, 0)
 		else
-			setGlobalStorageValue(10004, 0)	
-			doTeleportThing(cid, {x = 33265, y = 31838, z = 10})
-			doSendMagicEffect({x = 33265, y = 31838, z = 10}, CONST_ME_TELEPORT)
-			setPlayerStorageValue(cid, 10005, 0)
-			setPlayerStorageValue(cid, 10006, 0)
-			setPlayerStorageValue(cid, 10007, 0)
-			setPlayerStorageValue(cid, 10008, 0)	
-			print("Player is not here")
+			Game.setStorageValue(10004, 0)	
+			player:teleportTo(Position(33265, 31838, 10))
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:setStorageValue(10005, 0)
+			player:setStorageValue(10006, 0)
+			player:setStorageValue(10007, 0)
+			player:setStorageValue(10008, 0)	
 		end
 	end
 	return true
