@@ -21,7 +21,8 @@ Functions:
 	isAchievementSecret(achievement_id/name)
 	getPlayerAchievementPoints(cid)
 	
-	
+Note: 	This lib was created following the data found in tibia.wikia.com.
+		Achievements with no points (or points equal to 0) are achievements with no available info about points in tibia.wikia.com. These achievements should be updated
 ]]
 
 ACHIEVEMENTS_BASE = 30000 -- base storage
