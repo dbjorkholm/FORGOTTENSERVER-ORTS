@@ -8,8 +8,6 @@ TYPE_ALL = 4
 GET_COUNT = 1
 GET_UID = 2
  
-STORAGE_LIB = 1008
- 
 oneInArea = true
 killAllBeforeCut = true
 
