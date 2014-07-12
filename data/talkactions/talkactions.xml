@@ -15,6 +15,10 @@
 	<talkaction words="/s" separator=" " script="place_npc.lua" />
 	<talkaction words="/summon" separator=" " script="place_summon.lua" />
 	
+	<!-- Achievements Commands -->
+	<talkaction words="/addach" separator=" " script="achievements.lua"/>
+	<talkaction words="/removeach" separator=" " script="achievements.lua"/>
+	
 	<!-- Gamemasters -->
 	<talkaction words="/save" script="save.lua" />
 	<talkaction words="/ban" separator=" " script="ban.lua" />
