@@ -1,6 +1,6 @@
 --[[
 
-Achievements Lib Created By Darkhaos for TFS 1.0
+Achievements Lib Created By Eduardo Montilva (Darkhaos) for TFS 1.0
 
 LAST UPDATE: 12 July 2014 (Tibia Update 10.50)
 
