@@ -10,16 +10,16 @@ Functions:
 	getSecretAchievements()
 	getPublicAchievements()
 	getAchievements()
-	doPlayerAddAchievement(cid, achievement_id/name[, showMsg])
-	doPlayerRemoveAchievement(cid, achievement_id/name)
-	hasAchievement(cid, achievement_id/name)
-	doPlayerAddAllAchievements(cid[, showMsg])
-	doPlayerRemoveAllAchievements(cid)
-	getPlayerSecretAchievements(cid)
-	getPlayerPublicAchievements(cid)
-	getPlayerAchievements(cid)
+	Player:addAchievement(achievement_id/name[, showMsg])
+	Player:removeAchievement(achievement_id/name)
+	Player:hasAchievement(achievement_id/name)
+	Player:addAllAchievements([showMsg])
+	Player:removeAllAchievements()
+	Player:getSecretAchievements()
+	Player:getPublicAchievements()
+	Player:getAchievements()
 	isAchievementSecret(achievement_id/name)
-	getPlayerAchievementPoints(cid)
+	Player:getAchievementPoints()
 	
 Note: 	This lib was created following the data found in tibia.wikia.com.
 		Achievements with no points (or points equal to 0) are achievements with no available info about points in tibia.wikia.com. These achievements should be updated
@@ -416,96 +416,8 @@ function getPublicAchievements()
 	return t
 end
 
-
 function getAchievements()
 	return achievements
-end
-
-function doPlayerAddAchievement(cid, ach, showMsg)
-	local player = Player(cid)
-	local achievement
-	if isNumber(ach) then
-		achievement = getAchievementInfoById(ach)
-	else
-		achievement = getAchievementInfoByName(ach)
-	end
-	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
-	if not hasAchievement(cid, achievement.id) then
-		player:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, 1)
-		if showMsg then
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Congratulations! You earned the achievement \"" .. achievement.name .. "\".")
-		end
-	end
-	return true
-end
-
-function doPlayerRemoveAchievement(cid, ach)
-	local player = Player(cid)
-	local achievement
-	if isNumber(ach) then
-		achievement = getAchievementInfoById(ach)
-	else
-		achievement = getAchievementInfoByName(ach)
-	end
-	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
-	if hasAchievement(cid, achievement.id) then
-		player:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, -1)
-	end
-	return true
-end
-
-function hasAchievement(cid, ach)
-	local player = Player(cid)
-	local achievement
-	if isNumber(ach) then
-		achievement = getAchievementInfoById(ach)
-	else
-		achievement = getAchievementInfoByName(ach)
-	end
-	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
-	
-	return player:getStorageValue(ACHIEVEMENTS_BASE + achievement.id) > 0
-end
-
-function doPlayerAddAllAchievements(cid, showMsg)
-
-	for i = ACHIEVEMENT_FIRST, ACHIEVEMENT_LAST do
-		doPlayerAddAchievement(cid, i, showMsg)
-	end
-	return true
-end
-
-function doPlayerRemoveAllAchievements(cid)
-
-	for k, v in pairs(achievements) do
-		if hasAchievement(cid, k) then
-			doPlayerRemoveAchievement(cid, k)
-		end
-	end
-	return true
-end
-
-function getPlayerSecretAchievements(cid)
-	local t = {}
-	for k, v in pairs(achievements) do
-		if hasAchievement(cid, k) and v.secret then
-			table.insert(t, k)
-		end
-	end
-	return t
-end
-
-function getPlayerAchievements(cid)
-	local t = {}
-	for k, v in pairs(achievements) do
-		if hasAchievement(cid, k) then
-			table.insert(t, k)
-		end
-	end
-	return t
 end
 
 function isAchievementSecret(ach)
@@ -520,9 +432,113 @@ function isAchievementSecret(ach)
 	return achievement.secret
 end
 
-function getPlayerAchievementPoints(cid)
+function Player.hasAchievement(self, ach)
+	local achievement
+	if isNumber(ach) then
+		achievement = getAchievementInfoById(ach)
+	else
+		achievement = getAchievementInfoByName(ach)
+	end
+	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
+	
+	
+	return self:getStorageValue(ACHIEVEMENTS_BASE + achievement.id) > 0
+end
+
+function Player.getAchievements(self)
+	local t = {}
+	for k, v in pairs(achievements) do
+		if self:hasAchievement(k) then
+			table.insert(t, k)
+		end
+	end
+	return t
+end
+
+function Player.addAchievement(self, ach, showMsg)
+	local achievement
+	if isNumber(ach) then
+		achievement = getAchievementInfoById(ach)
+	else
+		achievement = getAchievementInfoByName(ach)
+	end
+	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
+	
+	if not self:hasAchievement(achievement.id) then
+		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, 1)
+		if showMsg then
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! You earned the achievement \"" .. achievement.name .. "\".")
+		end
+	end
+	return true
+end
+
+function Player.removeAchievement(self, ach)
+	local achievement
+	if isNumber(ach) then
+		achievement = getAchievementInfoById(ach)
+	else
+		achievement = getAchievementInfoByName(ach)
+	end
+	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
+	
+	if self:hasAchievement(achievement.id) then
+		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, -1)
+	end
+	return true
+end
+
+function Player.addAllAchievements(self, showMsg)
+
+	for i = ACHIEVEMENT_FIRST, ACHIEVEMENT_LAST do
+		self:addAchievement(i, showMsg)
+	end
+	return true
+end
+
+function Player.removeAllAchievements(self)
+
+	for k, v in pairs(achievements) do
+		if self:hasAchievement(k) then
+			self:removeAchievement(k)
+		end
+	end
+	return true
+end
+
+function Player.getSecretAchievements(self)
+	local t = {}
+	for k, v in pairs(achievements) do
+		if self:hasAchievement(k) and v.secret then
+			table.insert(t, k)
+		end
+	end
+	return t
+end
+
+function Player.getPublicAchievements(self)
+	local t = {}
+	for k, v in pairs(achievements) do
+		if self:hasAchievement(k) and not v.secret then
+			table.insert(t, k)
+		end
+	end
+	return t
+end
+
+function Player.getAchievements(self)
+	local t = {}
+	for k, v in pairs(achievements) do
+		if self:hasAchievement(k) then
+			table.insert(t, k)
+		end
+	end
+	return t
+end
+
+function Player.getAchievementPoints(self)
 	local points = 0
-	local list = getPlayerAchievements(cid)
+	local list = self:getAchievements()
 	if #list > 0 then --has achievements
 		for _, id in ipairs(list) do
 			local a = getAchievementInfoById(id)
