@@ -21,7 +21,7 @@
 		<attack name="melee" interval="2000" min="0" max="-185"/>
 		<attack name="death" interval="2000" chance="10" radius="1" target="1" range="1" min="-30" max="-50">
 			<attribute key="shootEffect" value="death"/>
-			<attribute key="areaEffect" value="mortarea"/>
+			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
 	</attacks>
 	<defenses armor="30" defense="30"/>
