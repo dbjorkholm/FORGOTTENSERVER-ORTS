@@ -45,7 +45,7 @@ doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 ```
 
 **Scripting related links:**
-- [List of metatable functions](http://pastebin.com/UPKLCSsi)
+- [List of metatable functions](http://pastebin.com/nws8xHmK)
 - [compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua) (which contains additional functions)
 
 ### Map Contributions
