@@ -22,7 +22,7 @@ function onUse(cid, item, frompos, item2, topos)
 		end
 	elseif(item.itemid == 7440) then
 		if(not(isSorcerer(cid) or isDruid(cid))) then
-			c:say("Only sorcerers and druids may drink this fluid.", TALKTYPE_ORANGE_1)
+			c:say("Only sorcerers and druids may drink this fluid.", TALKTYPE_MONSTER_SAY)
 			return true
 		end
 

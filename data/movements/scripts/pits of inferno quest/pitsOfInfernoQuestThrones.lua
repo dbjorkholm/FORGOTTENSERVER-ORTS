@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if(getPlayerStorageValue(cid, item.uid) < 1) then
 		setPlayerStorageValue(cid, item.uid, 1)
 		doSendMagicEffect(position, thrones[item.uid].animation)
-		doCreatureSay(cid, thrones[item.uid].text, TALKTYPE_ORANGE_1)
+		doCreatureSay(cid, thrones[item.uid].text, TALKTYPE_MONSTER_SAY)
 	else
 		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You've already absorbed energy from this throne.")
 	end

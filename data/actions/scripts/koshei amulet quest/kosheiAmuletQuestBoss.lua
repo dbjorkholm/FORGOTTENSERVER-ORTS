@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:removeItem(8266, 1)
 			player:setStorageValue(3066, 1)
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
-			player:say("At last.. I have it back, my precious amulet. I am glad you didn't use it! I allow you to ...ahh... enter door ...ahh", TALKTYPE_ORANGE_1, false, cid, toPosition)
+			player:say("At last.. I have it back, my precious amulet. I am glad you didn't use it! I allow you to ...ahh... enter door ...ahh", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 		end
 	end
 	return true

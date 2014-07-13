@@ -32,7 +32,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif random == 1 then --it explode on the user 1% chance
 		doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -5, -5, CONST_ME_HITBYFIRE)
-		player:say("OUCH!", TALKTYPE_ORANGE_1)
+		player:say("OUCH!", TALKTYPE_MONSTER_SAY)
 		item:remove(1)
 	else
 		toPosition:sendMagicEffect(CONST_ME_POFF) --it fails, but dont get removed 3% chance

@@ -48,11 +48,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
             end
             for i = 0, #fluidType do
                 if item.type == fluidType[i] then
-                    player:say(fluidMessage[i], TALKTYPE_ORANGE_1)
+                    player:say(fluidMessage[i], TALKTYPE_MONSTER_SAY)
                     return true
                 end
             end
-            player:say("Gulp.", TALKTYPE_ORANGE_1)
+            player:say("Gulp.", TALKTYPE_MONSTER_SAY)
         else
             Item(item.uid):transform(item.itemid, 0)
             Game.createItem(2016, item.type, toPosition):decay()

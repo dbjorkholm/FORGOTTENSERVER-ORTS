@@ -31,7 +31,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				end
 				doTransformItem(item.uid, 1946)
 			else
-				doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_ORANGE_1)
+				doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
 			end
 			return true
 		end
@@ -42,10 +42,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 1945) or (item.itemid == 1946) then
 		if((getGlobalStorageValue(1000) + 1) == pos[item.uid].number) then
 			setGlobalStorageValue(1000, pos[item.uid].number)
-			doCreatureSay(cid, pos[item.uid].text, TALKTYPE_ORANGE_1)
+			doCreatureSay(cid, pos[item.uid].text, TALKTYPE_MONSTER_SAY)
 			doTransformItem(item.uid, 1946)
 		else
-			doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_ORANGE_1)
+			doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

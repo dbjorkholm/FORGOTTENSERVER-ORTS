@@ -5,9 +5,9 @@ local sarcophagus = {x = 32205, y = 31002, z = 14}
 		if getGlobalStorageValue(987) < os.time() then
 			setGlobalStorageValue(987, os.time() + 24 * 60 * 60)
 			if math.random(2) == 2 then
-				player:say("You have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_ORANGE_1)
+				player:say("You have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
 			else
-				player:say("The frozen starlight shattered, but you have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_ORANGE_1)
+				player:say("The frozen starlight shattered, but you have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
 				doRemoveItem(item.uid, 1)
 			end
 			doSummonCreature("Yakchal", toPosition)
@@ -31,7 +31,7 @@ local sarcophagus = {x = 32205, y = 31002, z = 14}
 				end
 			end
 		else
-			player:say("Yakchal has already been awakened today. You should try again tomorrow.", TALKTYPE_ORANGE_1)
+			player:say("Yakchal has already been awakened today. You should try again tomorrow.", TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

@@ -1,4 +1,4 @@
-local playerexhaust = Condition(CONDITION_EXHAUST)
+local playerexhaust = Condition(CONDITION_EXHAUST_WEAPON)
 	playerexhaust:setParameter(CONDITION_PARAM_TICKS, 3000)
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

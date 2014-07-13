@@ -60,11 +60,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						addEvent(doSendMagicEffect, 5 * 1000, pos[i], CONST_ME_TELEPORT)
 					end
 					doSendMagicEffect(getPlayerPosition(cid), CONST_ME_FIREWORK_RED)
-					doCreatureSay(cid, "COME! My servants! RISE!", TALKTYPE_ORANGE_1)
+					doCreatureSay(cid, "COME! My servants! RISE!", TALKTYPE_MONSTER_SAY)
 					setGlobalStorageValue(985, 0)
 					setGlobalStorageValue(984, 0)
 				else
-					doCreatureSay(cid, "The slime gobbler gobbles large chunks of the slime fungus with great satisfaction.", TALKTYPE_ORANGE_1)
+					doCreatureSay(cid, "The slime gobbler gobbles large chunks of the slime fungus with great satisfaction.", TALKTYPE_MONSTER_SAY)
 					doPlayerAddExp(cid, 20, true, true)
 				end
 			end

@@ -18,7 +18,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	if itemEx.itemid == 13500 then
 		if player:getStorageValue(item.actionid) > os.time() then
-			player:say("You are too afraid to destroy this object", TALKTYPE_ORANGE_1)
+			player:say("You are too afraid to destroy this object", TALKTYPE_MONSTER_SAY)
 			return true
 		end
 	
@@ -26,7 +26,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 		local rand = math.random(100)
 		if rand > config["chance"] then
-			player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
+			player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_MONSTER_SAY)
 			return true
 		end
 	
@@ -49,7 +49,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Game.createMonster(config["bossName"], config["bossPosition"])
 		end
 	else
-		player:say("This jar is already broken!", TALKTYPE_ORANGE_1)
+		player:say("This jar is already broken!", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

@@ -45,15 +45,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(itemEx.itemid == 8753) then
 		doTransformItem(itemEx.uid, 8754)
 		addEvent(transformBack1, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid)) 
+		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
 	elseif(itemEx.itemid == 8755) then
 		doTransformItem(itemEx.uid, 8756)
 		addEvent(transformBack2, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid)) 
+		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
 	elseif(itemEx.itemid == 8757) then
 		doTransformItem(itemEx.uid, 8758)
 		addEvent(transformBack3, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid)) 
+		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
 	elseif(itemEx.itemid == 8759) then
 		if(getGlobalStorageValue(210) < 1) then
 			addEvent(setGlobalStorageValue, 20 * 1000, 210, 0)
@@ -62,7 +62,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 22)
 			Player(cid):setStorageValue(Storage.TheInquisition.Mission07, 2) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
 		end
-		doCreatureSay(cid,""..getCreatureName(cid).." destroyed the shadow nexus! In 20 seconds it will return to its original state.",TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid))
+		doCreatureSay(cid,""..getCreatureName(cid).." destroyed the shadow nexus! In 20 seconds it will return to its original state.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid))
 		doRemoveItem(item.uid, 1)
 		addEvent(transformBack4, 60*1000)
 	end

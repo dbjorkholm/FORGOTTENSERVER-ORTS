@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			local player = Player(cid)
 			player:getPosition():sendMagicEffect(CONST_ME_DRAWBLOOD)
 			player:teleportTo(config["newPos"])
-			player:say('Muahaha..', TALKTYPE_ORANGE_1)
+			player:say('Muahaha..', TALKTYPE_MONSTER_SAY)
 			player:getPosition():sendMagicEffect(CONST_ME_MORTAREA)
 		end
 	end

@@ -62,18 +62,18 @@ local random = math.random(10)
                         doSendMagicEffect(toPosition, CONST_ME_MAGIC_GREEN)
                         setPlayerStorageValue(cid, 100003, 1)
                 else
-                        doCreatureSay(cid, "You cannot skin the corpse more than once.", TALKTYPE_ORANGE_1)
+                        doCreatureSay(cid, "You cannot skin the corpse more than once.", TALKTYPE_MONSTER_SAY)
                 end
         return true
         elseif isInArray(pumpkin, itemEx.itemid) then
                 if (getPlayerStorageValue(cid, 81279) <= 0) then
-        		doCreatureSay(cid, "Happy Halloween!", TALKTYPE_ORANGE_1)
+        		doCreatureSay(cid, "Happy Halloween!", TALKTYPE_MONSTER_SAY)
         		doSendMagicEffect(getCreaturePosition(cid), math.random(28,30))
         		setPlayerStorageValue(cid, 81279, 1)
         		local v = pumpkin_items[math.random(#pumpkin_items)]
         		doPlayerAddItem(cid, v[1], v[2] or 1)
                 else
-			doCreatureSay(cid, "You already used your knife on the corpse.", TALKTYPE_ORANGE_1)
+			doCreatureSay(cid, "You already used your knife on the corpse.", TALKTYPE_MONSTER_SAY)
                 end
         return true
         elseif isInArray(marble, itemEx.itemid) then
@@ -102,7 +102,7 @@ local random = math.random(10)
                 else
                         doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_HITAREA)
                         doRemoveItem(itemEx.uid)
-                        doCreatureSay(cid, "The attempt of sculpting failed miserably.", TALKTYPE_ORANGE_1)
+                        doCreatureSay(cid, "The attempt of sculpting failed miserably.", TALKTYPE_MONSTER_SAY)
                 return true
                 end
         end

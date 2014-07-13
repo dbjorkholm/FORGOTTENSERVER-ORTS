@@ -10,7 +10,7 @@ function onKill(cid, target)
 				for _, spectator in ipairs(spectators) do
 					spectator:teleportTo({x = 33053, y = 31022, z = 7})
 					spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					spectator:say("You have won! As new champion take the ancient armor as reward before you leave.", TALKTYPE_ORANGE_1)
+					spectator:say("You have won! As new champion take the ancient armor as reward before you leave.", TALKTYPE_MONSTER_SAY)
 					if spectator:getStorageValue(Storage.TheNewFrontier.Questline) == 25 then
 						spectator:setStorageValue(Storage.TheNewFrontier.Mission09, 2) --Questlog, The New Frontier Quest "Mission 09: Mortal Combat"
 						spectator:setStorageValue(Storage.TheNewFrontier.Questline, 26)

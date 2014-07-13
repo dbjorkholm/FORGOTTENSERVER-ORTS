@@ -34,7 +34,7 @@ function removePlayer(fromPos, toPos, fromPosition, cid)
 					if(isPlayer(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid)) then
 							doTeleportThing(cid, fromPosition)
 							doSendMagicEffect(fromPosition, CONST_ME_TELEPORT)
-							doCreatureSay(cid, "Kicked out." , TALKTYPE_ORANGE_1)
+							doCreatureSay(cid, "Kicked out." , TALKTYPE_MONSTER_SAY)
 					end
 				end
 			end
@@ -95,7 +95,7 @@ function onStepIn(cid, item, position, fromPosition)
 				doSummonCreature(B.bossName, B.bossPos)
 				addEvent(removeSummon, 60 * 10 * 1000, B.fromPos, B.toPos)
 				addEvent(removePlayer, 60 * 10 * 1000, B.fromPos, B.toPos , fromPosition, cid)
-				doCreatureSay(cid, "You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out." , TALKTYPE_ORANGE_1)
+				doCreatureSay(cid, "You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out." , TALKTYPE_MONSTER_SAY)
 			else
 				doTeleportThing(cid, fromPosition)
 			end

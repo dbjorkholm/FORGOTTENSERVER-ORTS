@@ -29,7 +29,7 @@ local function doChangeAzerus(fromPos, toPos)
 			for _z = fromPos.z, toPos.z do
 				creature = getTopCreature({x = _x, y = _y, z = _z})
 				if (creature.type == THING_TYPE_MONSTER and getCreatureName(creature.uid) == "Azerus") then
-					doCreatureSay(creature.uid, "No! I am losing my energy!", TALKTYPE_ORANGE_1)
+					doCreatureSay(creature.uid, "No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
 					doSummonCreature("Azerus", getThingPos(creature.uid))
 					doRemoveCreature(creature.uid)
 					return true
@@ -78,7 +78,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doChangeAzerus, 4 * 20 * 1000, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 			addEvent(doClearArea, 5 * 1000 * 60, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 		else
-			p:say('You have to wait some time before this globe charges.', TALKTYPE_ORANGE_1)
+			p:say('You have to wait some time before this globe charges.', TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

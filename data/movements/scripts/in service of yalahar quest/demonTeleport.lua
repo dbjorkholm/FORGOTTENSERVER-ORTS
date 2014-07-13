@@ -28,7 +28,7 @@ function onStepIn(cid, item, position, fromPosition)
 		else
 			player:teleportTo(fromPosition)
 			fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
-			player:say("You may not enter without a sacrifice of a elemental soil.", TALKTYPE_ORANGE_1)
+			player:say("You may not enter without a sacrifice of a elemental soil.", TALKTYPE_MONSTER_SAY)
 		end
 	else
 		player:teleportTo(teleport[item.uid][1])

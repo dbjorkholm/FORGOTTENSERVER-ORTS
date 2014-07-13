@@ -9,7 +9,7 @@ function onStepIn(cid, item, position, fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32783, y = 31174, z = 10})
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:say("The apparatus in the centre looks odd! You should inspect it.", TALKTYPE_ORANGE_1)
+			player:say("The apparatus in the centre looks odd! You should inspect it.", TALKTYPE_MONSTER_SAY)
 
 		else
 			player:teleportTo(fromPosition)

@@ -7,7 +7,7 @@ function onStepIn(cid, item, position, fromPosition)
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols) < 1 and player:getStorageValue(Storage.ChildrenoftheRevolution.Mission03) >= 2 then
 			player:setStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols, 1)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 2) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
-			player:say("A part of the floor before you displays an arrangement of strange symbols.", TALKTYPE_ORANGE_1)
+			player:say("A part of the floor before you displays an arrangement of strange symbols.", TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

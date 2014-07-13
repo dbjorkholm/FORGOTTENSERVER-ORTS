@@ -47,7 +47,7 @@ function onStepIn(cid, item, position, fromPosition)
 		end
 		player:teleportTo(teleports2[item.uid].newPos)
 		Position(teleports2[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
-		player:say(teleports2[item.uid].text, TALKTYPE_ORANGE_1)
+		player:say(teleports2[item.uid].text, TALKTYPE_MONSTER_SAY)
 	return true	
 	end
 	if(teleports[item.uid].boss) then
@@ -57,11 +57,11 @@ function onStepIn(cid, item, position, fromPosition)
 			end
 			player:teleportTo(teleports[item.uid].newPos)
 			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
-			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
+			player:say(teleports[item.uid].text, TALKTYPE_MONSTER_SAY)
 		else
 			player:teleportTo({x = 33165, y = 31709, z = 14})
 			Position({x = 33165, y = 31709, z = 14}):sendMagicEffect(CONST_ME_TELEPORT)
-			player:say("Escaping back to the Retreat.", TALKTYPE_ORANGE_1)
+			player:say("Escaping back to the Retreat.", TALKTYPE_MONSTER_SAY)
 		end
 		return true
 	end
@@ -70,11 +70,11 @@ function onStepIn(cid, item, position, fromPosition)
 		if(player:getStorageValue( Storage.TheInquisition.EnterTeleport) >= teleports[item.uid].storage) then
 			player:teleportTo(teleports[item.uid].newPos)
 			Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
-			player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
+			player:say(teleports[item.uid].text, TALKTYPE_MONSTER_SAY)
 		else
 			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:say('You don\'t have enough energy to enter this portal', TALKTYPE_ORANGE_1)
+			player:say('You don\'t have enough energy to enter this portal', TALKTYPE_MONSTER_SAY)
 		end
 		return true
 	end
@@ -82,7 +82,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if(teleports[item.uid]) then
 		player:teleportTo(teleports[item.uid].newPos)
 		Position(teleports[item.uid].newPos):sendMagicEffect(CONST_ME_TELEPORT)
-		player:say(teleports[item.uid].text, TALKTYPE_ORANGE_1)
+		player:say(teleports[item.uid].text, TALKTYPE_MONSTER_SAY)
 		return true
 	end
 	return true

@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				doTransformItem(item.uid, 1946)
 				addEvent(doTransformItem, 10 * 60 * 1000, item.uid, 1946)
 			else
-				doCreatureSay(cid, "The lever is creaking and rusty.", TALKTYPE_ORANGE_1)
+				doCreatureSay(cid, "The lever is creaking and rusty.", TALKTYPE_MONSTER_SAY)
 			end
 		end
 	end

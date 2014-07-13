@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					addEvent(doSummonCreature, i * 20 * 1000, creatures[math.random(2)], pos)
 					addEvent(doSendMagicEffect, i * 20 * 1000, pos, CONST_ME_TELEPORT)
 				end
-				addEvent(doCreatureSay, i * 20 * 1000, cid, "The crystals are charging.", TALKTYPE_ORANGE_1, false, cid, toPosition)
+				addEvent(doCreatureSay, i * 20 * 1000, cid, "The crystals are charging.", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 			end
 			addEvent(doTransformItem, 6 * 20 * 1000, getTileItemById({x = 33104, y = 31908, z = 10}), 17999, 1387)
 			addEvent(doTransformItem, 6 * 20 * 1000, getTileItemById({x = 33104, y = 31908, z = 10}), 1387, 17999)
