@@ -375,6 +375,7 @@
 	<action uniqueid="9170" script="quests/system.lua"/>
 	<action fromuid="9050" touid="9053" script="quests/system.lua"/>
 	<action uniqueid="1296" script="quests/system.lua"/>
+	<action itemid="10523" script="others/deeperBanutaShortcut.lua"/>
 
 	<!-- Tools -->
 	<action itemid="2558" script="tools/saw.lua"/>
