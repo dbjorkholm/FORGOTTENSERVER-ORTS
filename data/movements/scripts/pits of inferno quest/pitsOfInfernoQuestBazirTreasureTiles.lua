@@ -17,4 +17,3 @@ function onStepIn(cid, item, position, fromPosition)
 	player:teleportTo(targetTile)
 	return true
 end
- 
