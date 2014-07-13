@@ -11,7 +11,9 @@ local config = {
 	[50067] = {effPos = Position(32035, 32285, 8), text = "Look at the metallic object on the floor - this is a sewer grate. Right-click on it and select 'Use' to climb down.", storageValue = 10},
 	[50068] = {tutorialId = 7, text = "You smell stinky cockroaches around here. When you see one, walk to it and attack it by left-clicking it in your battle list!", storageValue = 11},
 	[50069] = {tutorialId = 23, effPos = Position(32035, 32285, 9), text = "Right-click on the lower right end of the ladder - anywhere in the red frame - and select 'Use' to climb up.", storageValue = 12},
-	[50075] = {"Do you have trouble finding those dead trees? Here are some - just 'Use' them to break a branch.", storageValue = 14, effPos = Position(32067, 32281, 7), effPos2 = Position(32073, 32276, 7)}
+	[50075] = {text = "Do you have trouble finding those dead trees? Here are some - just 'Use' them to break a branch.", storageValue = 14, effPos = Position(32067, 32281, 7), effPos2 = Position(32073, 32276, 7)},
+	[50078] = {text = "This is a loose stone pile. Right-click your shovel, select 'Use with' and then left-click on the stonepile to dig it open.", storageValue = 18, effPos = Position(32070, 32266, 7)},
+	[50079] = {text = "Caves like this one are common in Tibia. To climb out again, you need something which you can find in this chest.", storageValue = 20, effPos = Position(32067, 32264, 8)}
 }
 
 function onStepIn(cid, item, position, fromPosition)
@@ -27,7 +29,6 @@ function onStepIn(cid, item, position, fromPosition)
 				return
 			end
 		elseif item.actionid == 50076 then
-			print(1)
 			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) == 15 then
 				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 16)
 				Position(32062, 32271, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
@@ -39,13 +40,28 @@ function onStepIn(cid, item, position, fromPosition)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This is Zirella's door. Right-click on the lower part of the door and select 'Use' to open it.")
 				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 17)
 			end
-			if player:getStorageValue(50084) == 1 then
+			if player:getStorageValue(50093) == 1 then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Good, now continue to the east to find a place to try out your shovel.")
-				player:setStorageValue(50084, 2)
+				player:setStorageValue(50093, 2)
 			end
+		elseif item.actionid == 50081 then
+			if player:getStorageValue(50094) == 1 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 21 then
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "To climb out of this cave right-click your rope, select 'Use with' then left-click on the dark spot on the floor, the ropespot.")
+				Position(32070, 32266, 8):sendMagicEffect(CONST_ME_TUTORIALARROW)
+				Position(32070, 32266, 8):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
+				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 21)
+			end	
 		end
 		return
 	end	
+	
+	if item.actionid == 50078 then
+		if player:getStorageValue(50093) < 1 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < targetTableAid.storageValue then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have not claimed your reward from Zirella house.')
+			player:teleportTo(fromPosition, true)
+			return
+		end
+	end
 
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < targetTableAid.storageValue then
 		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, targetTableAid.storageValue)
@@ -56,11 +72,8 @@ function onStepIn(cid, item, position, fromPosition)
 
 		if item.actionid == 50075 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetTableAid.text)
-			targetTableAid.effPos:sendMagicEffect(CONST_ME_TUTORIALARROW)
-			targetTableAid.effPos2:sendMagicEffect(CONST_ME_TUTORIALARROW)
 		end
 				
-
 		if targetTableAid.text then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetTableAid.text)
 		end
@@ -68,6 +81,11 @@ function onStepIn(cid, item, position, fromPosition)
 		if targetTableAid.effPos then
 			targetTableAid.effPos:sendMagicEffect(CONST_ME_TUTORIALARROW)
 			targetTableAid.effPos:sendMagicEffect(CONST_ME_TUTORIALSQUARE)
+		end
+
+		if targetTableAid.effPos2 then
+			targetTableAid.effPos2:sendMagicEffect(CONST_ME_TUTORIALARROW)
+			targetTableAid.effPos2:sendMagicEffect(CONST_ME_TUTORIALSQUARE)
 		end
 
 		if targetTableAid.markPos then

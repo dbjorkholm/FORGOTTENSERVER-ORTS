@@ -16,6 +16,21 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Game.createMonster("Scarab", toPosition)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
+	elseif itemEx.itemid == 8579 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 19 then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You dug a hole! Walk onto it as long as it is open to jump down into the forest cave.')
+		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 19)
+		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
+		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
+		iEx:transform(469)
+		addEvent(function(toPosition) 
+			local tile = toPosition:getTile() 
+			if tile then 
+				local thing = tile:getItemById(469) 
+				if thing and thing:isItem() then 
+					thing:transform(8579) 
+				end 
+			end 
+		end, 30 * 1000, toPosition)
 	elseif itemEx.aid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
