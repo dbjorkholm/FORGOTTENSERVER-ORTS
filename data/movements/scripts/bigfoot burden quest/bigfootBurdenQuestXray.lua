@@ -24,7 +24,7 @@ function onStepIn(cid, item, position, fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:setStorageValue(900, 5)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!")
-			player:say("*Rrrrrrrrrrr...*", TALKTYPE_ORANGE_1)
+			player:say("*Rrrrrrrrrrr...*", TALKTYPE_MONSTER_SAY)
 		elseif player:getStorageValue(900) < 4 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The x-ray is not ready.")
 			player:teleportTo(fromPosition, true)

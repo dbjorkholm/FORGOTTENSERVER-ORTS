@@ -27,7 +27,7 @@ function onKill(cid, target)
 			print("[Svargrond Arena::CreatureEvent] Cannot remove stone pillar on position X: " .. PITS[pit].pillar.x .. ", Y: " .. PITS[pit].pillar.y .. ", Z: " .. PITS[pit].pillar.z .. ".")
 		end
 		player:setStorageValue(STORAGE_PIT, pit + 1)
-		player:say("Victory! Head through the new teleporter into the next room.", TALKTYPE_ORANGE_1)
+		player:say("Victory! Head through the new teleporter into the next room.", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

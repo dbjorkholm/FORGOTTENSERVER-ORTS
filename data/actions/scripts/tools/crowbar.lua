@@ -29,14 +29,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		elseif(itemEx.uid == 3073) then
 			if(player:getStorageValue(Storage.InServiceofYalahar.SewerPipe03) < 1) then
-				player:say("You have used the crowbar on a grate.", TALKTYPE_ORANGE_1)
+				player:say("You have used the crowbar on a grate.", TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe03, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
 		elseif(itemEx.uid == 3074) then
 			if(player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1) then
 				doSetMonsterOutfit(cid, "bog raider", 5 * 1000)
-				player:say("You have used the crowbar on a knot.", TALKTYPE_ORANGE_1)
+				player:say("You have used the crowbar on a knot.", TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			end
@@ -48,7 +48,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if player:getStorageValue(Storage.TheApeCity.Mission07) == 4 then
 				player:setStorageValue(Storage.TheApeCity.Questline, 17)
 			end
-			player:say("You destroyed a cask.", TALKTYPE_ORANGE_1)
+			player:say("You destroyed a cask.", TALKTYPE_MONSTER_SAY)
 			targetItem:transform(2249)
 			addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN) end, 30 * 1000, toPosition)
 			addEvent(function () local tile = toPosition:getTile() if tile then local thing = tile:getItemById(2249) if thing and thing:isItem() then thing:transform(5539) end end end, 30 * 1000)			

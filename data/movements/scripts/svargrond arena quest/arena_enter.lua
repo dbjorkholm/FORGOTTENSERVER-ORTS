@@ -52,7 +52,7 @@ function onStepIn(cid, item, position, fromPosition)
 		doTeleportThing(cid, PITS[pit].center)
 		doForceSummonCreature(ARENA[arena].creatures[pit], PITS[pit].summon)
 		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_MAGIC_RED)
-		doCreatureSay(cid, "Fight!", TALKTYPE_ORANGE_1)
+		doCreatureSay(cid, "Fight!", TALKTYPE_MONSTER_SAY)
 		setPlayerStorageValue(cid, 10030, 1)
 		local pillar = getTopItem(PITS[pit].pillar)
 		if (getTopItem(PITS[pit].tp).itemid == ITEM_TELEPORT) then

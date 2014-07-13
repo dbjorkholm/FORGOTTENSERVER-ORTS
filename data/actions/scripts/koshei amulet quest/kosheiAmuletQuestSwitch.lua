@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		else
 			Tile(Position(33273, 32458, 8)):getItemById(7525):transform(7520)
 		end
-		doCreatureSay(cid, "Click!", TALKTYPE_ORANGE_1, false, cid, {x = 33273, y = 32452, z = 8})
+		doCreatureSay(cid, "Click!", TALKTYPE_MONSTER_SAY, false, cid, {x = 33273, y = 32452, z = 8})
 	end
 	return true
 end

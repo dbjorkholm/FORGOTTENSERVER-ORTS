@@ -10,7 +10,7 @@ function onStepIn(cid, item, position, fromPosition)
 				local destination = Position({x = 32950, y = 31181, z = 9})
 				player:teleportTo(destination)
 				destination:sendMagicEffect(CONST_ME_WATERSPLASH)
-				player:say("The vortex throws you out in this vicious place.", TALKTYPE_ORANGE_1)
+				player:say("The vortex throws you out in this vicious place.", TALKTYPE_MONSTER_SAY)
 		else
 			player:teleportTo(fromPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You must wear helmet of the deep in order to dive.")

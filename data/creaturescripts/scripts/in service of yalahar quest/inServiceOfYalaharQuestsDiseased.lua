@@ -9,7 +9,7 @@ function onKill(cid, target)
 		local player = Player(cid)
 		if(player:getStorageValue(boss[string.lower(getCreatureName(target))]) < 1) then
 			player:setStorageValue(boss[string.lower(getCreatureName(target))], 1)
-			player:say("You slained " .. getCreatureName(target) .. ".", TALKTYPE_ORANGE_1)
+			player:say("You slained " .. getCreatureName(target) .. ".", TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

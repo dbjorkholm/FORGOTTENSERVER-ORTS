@@ -21,7 +21,7 @@ function onStepIn(cid, item, position, fromPosition)
 		else
 			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:say("You don\'t have killed the Pharaoh to enter this portal", TALKTYPE_ORANGE_1)
+			player:say("You don\'t have killed the Pharaoh to enter this portal", TALKTYPE_MONSTER_SAY)
 		end
 	return true
 end

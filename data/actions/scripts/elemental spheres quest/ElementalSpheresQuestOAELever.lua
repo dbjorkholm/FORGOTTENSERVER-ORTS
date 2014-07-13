@@ -113,7 +113,7 @@ end
 
 local function warn(cid)
 	if (isPlayer(cid)) then
-		doCreatureSay(cid, 'You have 5 minutes from now on until you get teleported out.', TALKTYPE_ORANGE_2, false, 0, {x=33266, y=31835, z=13})
+		doCreatureSay(cid, 'You have 5 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
 	end
 	return true
 end
@@ -125,7 +125,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getGlobalStorageValue(10005) > 0 and getGlobalStorageValue(10006) > 0 and getGlobalStorageValue(10007) > 0 and getGlobalStorageValue(10008) > 0) then
 			failed = false
 		else
-			doCreatureSay(cid, 'Charge the four machines and stand at the marked spots beside the levers.', TALKTYPE_ORANGE_1, false, cid, getThingPos(cid))
+			doCreatureSay(cid, 'Charge the four machines and stand at the marked spots beside the levers.', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
 			failed = true
 			return true
 		end
@@ -137,7 +137,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			failed = false
 		else
 			doTransformItem(item.uid, 1946)
-			doCreatureSay(cid, 'Everyone have to use the switches!', TALKTYPE_ORANGE_1, false, cid, getThingPos(cid))
+			doCreatureSay(cid, 'Everyone have to use the switches!', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
 			failed = true
 			return true
 		end
@@ -145,12 +145,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doSummonCreature('Lord of the Elements', {x=33267, y=31836, z=12})
 			addEvent(reset, 10 * 60 * 1000)
 			addEvent(warn, 5 * 60 * 1000, cid)
-			doCreatureSay(cid, 'You have 10 minutes from now on until you get teleported out.', TALKTYPE_ORANGE_2, false, 0, {x=33266, y=31835, z=13})
+			doCreatureSay(cid, 'You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
 			setGlobalStorageValue(10004, 1)
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_ORANGE_1, false, 0, {x=33268, y=31828, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_ORANGE_1, false, 0, {x=33268, y=31843, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_ORANGE_1, false, 0, {x=33260, y=31836, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_ORANGE_1, false, 0, {x=33275, y=31836, z=12})
+			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31828, z=12})
+			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31843, z=12})
+			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33260, y=31836, z=12})
+			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33275, y=31836, z=12})
 			doTransformItem(item.uid, 1946)
 			for i = 1, 4 do
 				player[i] = getThingfromPos(players_pos[i])

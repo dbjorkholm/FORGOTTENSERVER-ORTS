@@ -87,7 +87,7 @@ function onStepIn(cid, item, position, fromPosition)
 		else
 			doTeleportThing(cid, fromPosition, true)
 			doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-			doCreatureSay(cid, not i and "" or "Only " .. (cfg.premium and "Premium " or "") .. (i[2][1] == 1 and "Sorcerers" or "Druids") .. (cfg.level and " of level " .. cfg.level .. " or higher" or "") .. " may enter this portal", TALKTYPE_ORANGE_1, false, cid)
+			doCreatureSay(cid, not i and "" or "Only " .. (cfg.premium and "Premium " or "") .. (i[2][1] == 1 and "Sorcerers" or "Druids") .. (cfg.level and " of level " .. cfg.level .. " or higher" or "") .. " may enter this portal", TALKTYPE_MONSTER_SAY, false, cid)
 		end
 	end
 	return true

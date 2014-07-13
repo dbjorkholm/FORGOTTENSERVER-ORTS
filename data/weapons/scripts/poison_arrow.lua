@@ -1,6 +1,6 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, 1)
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_POISONDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_POISONARROW)
 combat:setFormula(COMBAT_FORMULA_SKILL, 1, 0, 1, 0)
 

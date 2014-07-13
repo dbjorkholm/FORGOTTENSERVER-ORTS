@@ -6,12 +6,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if item.actionid == 9743 then
 		creature:teleportTo(up, TRUE)
-		creature:say("Zrrrt!", TALKTYPE_ORANGE_1)
+		creature:say("Zrrrt!", TALKTYPE_MONSTER_SAY)
 		Position(pos):sendMagicEffect(10)
 		else
 			if item.actionid == 9744 then
 				creature:teleportTo(down, TRUE)
-				creature:say("Zrrrt!", TALKTYPE_ORANGE_1)
+				creature:say("Zrrrt!", TALKTYPE_MONSTER_SAY)
 				Position(pos):sendMagicEffect(10)
 			end
 	end

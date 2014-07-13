@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.itemid == 2331) then
 		doRemoveItem(item.uid, 1)
 		doSendMagicEffect(toPosition, CONST_ME_POFF)
-		doCreatureSay(cid, "You open the present.", TALKTYPE_ORANGE_1)
+		doCreatureSay(cid, "You open the present.", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

@@ -11,7 +11,7 @@ function onThink(interval, lastExecution)
 		if isInRange(specs[i]:getPosition(), questAreaPosition[1], questAreaPosition[2]) then
 			return true
 		end
-		specs[i]:say(sounds[1][math.random(#sounds[1])], TALKTYPE_ORANGE_2, false, 0, demonOak_pos)
+		specs[i]:say(sounds[1][math.random(#sounds[1])], TALKTYPE_MONSTER_YELL, false, 0, demonOak_pos)
 	end
  	return true
 end

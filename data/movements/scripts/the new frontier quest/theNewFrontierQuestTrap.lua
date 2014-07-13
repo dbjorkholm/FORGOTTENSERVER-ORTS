@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, fromPosition)
 		local destination = Position({x = 33170, y = 31253, z = 11})
 		player:teleportTo(destination)
 		destination:sendMagicEffect(CONST_ME_POFF)
-		player:say("So far for the negotiating peace. Now you have other problems to handle.", TALKTYPE_ORANGE_1)
+		player:say("So far for the negotiating peace. Now you have other problems to handle.", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end
