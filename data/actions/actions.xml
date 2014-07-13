@@ -320,6 +320,7 @@
 	<action uniqueid="3304" script="pits of inferno quest/pitsOfInfernoQuestTrapLever.lua"/>
 	<action actionid="8818" script="pits of inferno quest/pitsOfInfernoQuestShortcutDoors.lua"/>
 	<action uniqueid="3305" script="pits of inferno quest/pitsOfInfernoQuestShortcutDoor.lua"/>
+	<action fromaid="39511" toaid="39512" script="pits of inferno quest/pitsOfInfernoQuestBazirMirror.lua"/>
 
 	<!-- Postman Quest -->
 	<action actionid="7815" script="postman quest/postmanQuestMailbox.lua"/>
