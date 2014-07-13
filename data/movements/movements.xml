@@ -163,6 +163,7 @@
 	<movevent event="StepIn" fromaid="28810" toaid="28834" script="pits of inferno quest/pitsOfInfernoQuestTileTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/pitsOfInfernoQuestSecondTrap.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
+	<movevent event="StepIn" fromaid="50082" toaid="50083" script="pits of inferno quest/pitsOfInfernoQuestBazirTreasureTiles.lua"/>
 	
 	<!-- Rookgaard Quests 
 	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>
