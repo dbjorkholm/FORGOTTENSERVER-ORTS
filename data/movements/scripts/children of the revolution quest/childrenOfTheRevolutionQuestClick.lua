@@ -36,7 +36,7 @@ function onStepIn(cid, item, position, fromPosition)
 		if Game.getStorageValue(Storage.ChildrenoftheRevolution.Mission05) ~= 1 then
 			for i = 1, 4 do
 				local otherplayer = Tile(Position(config[i])):getTopCreature() if otherplayer == nil or not otherplayer:isPlayer() then return true end
-				otherplayer:say("A clicking sound tatters the silence.", TALKTYPE_ORANGE_1)
+				otherplayer:say("A clicking sound tatters the silence.", TALKTYPE_MONSTER_SAY)
 				startwavesCotR = true
 			end
 		end				

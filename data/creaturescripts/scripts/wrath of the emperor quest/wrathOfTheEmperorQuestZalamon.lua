@@ -19,7 +19,7 @@ function onKill(cid, target)
 	if monster then
 		if bossTmp then
 			Game.createMonster(bossTmp.newForm, monster:getPosition())
-			Player(cid):say(bossTmp.text, TALKTYPE_ORANGE_1)
+			Player(cid):say(bossTmp.text, TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

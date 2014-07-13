@@ -22,7 +22,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo(targetTile[3])
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:say("This portal should not be entered unprepared", TALKTYPE_ORANGE_1)
+		player:say("This portal should not be entered unprepared", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

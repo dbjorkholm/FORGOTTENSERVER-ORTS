@@ -9,7 +9,7 @@ function onStepIn(cid, item, position, fromPosition)
 			Tile(Position({x = 33265, y = 31116, z = 7})):getItemById(3219):transform(9197)
 			addEvent(function() Tile(Position({x = 33265, y = 31116, z = 7})):getItemById(9197):transform(3219) end, 5 * 30 * 1000)
 			end
-			player:say("The area around the gate is suspiciously quiet, you have a bad feeling about this.", TALKTYPE_ORANGE_1)
+			player:say("The area around the gate is suspiciously quiet, you have a bad feeling about this.", TALKTYPE_MONSTER_SAY)
 			if player:getStorageValue(Storage.ChildrenoftheRevolution.Mission05) == 1 then
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 2) --Questlog, Children of the Revolution "Mission 5: Phantom Army"
 			end

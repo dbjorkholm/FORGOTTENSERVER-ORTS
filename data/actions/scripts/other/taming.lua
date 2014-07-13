@@ -39,7 +39,7 @@ local function doFailAction(cid, mount, pos, item, itemEx)
         end
 
 	Position(pos):sendMagicEffect(effect)
-	Player(cid):say(action[2], TALKTYPE_ORANGE_1)
+	Player(cid):say(action[2], TALKTYPE_MONSTER_SAY)
         return action
 end
 
@@ -57,7 +57,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
         --Monster Mount
         if monster ~= nil and mount.TYPE == TYPE_MONSTER then
 		if Creature(itemEx.uid):getMaster() then
-			player:say("You cant tame a summon!", TALKTYPE_ORANGE_1)
+			player:say("You cant tame a summon!", TALKTYPE_MONSTER_SAY)
 			return true
 		end
                 if mount.NAME == monster:getName() then
@@ -69,7 +69,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:addMount(mount.ID)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 			monster:remove()
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
@@ -87,7 +87,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:addMount(mount.ID)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			Item(item.uid):remove(1)
@@ -104,7 +104,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:addMount(mount.ID)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			Item(item.uid):remove(1)
@@ -120,7 +120,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:addMount(mount.ID)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			Item(item.uid):remove(1)
@@ -137,7 +137,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:addMount(mount.ID)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, mount.SUCCESS_MSG)
 
-			player:say(mount.SUCCESS_MSG, TALKTYPE_ORANGE_1)
+			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			Item(item.uid):remove(1)

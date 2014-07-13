@@ -7,7 +7,7 @@ function onStepIn(cid, item, position, fromPosition)
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 4 then
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 5)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission01, 2) --Questlog, Children of the Revolution "Mission 1: Corruption"
-			player:say("The temple has been corrupted and is lost. Zalamon should be informed about this as soon as possible.", TALKTYPE_ORANGE_1)
+			player:say("The temple has been corrupted and is lost. Zalamon should be informed about this as soon as possible.", TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

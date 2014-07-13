@@ -88,9 +88,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						setPlayerStorageValue(cid, itemEx.itemid, get + 1)
 					end
 					if isLastCut(cid) then
-						doCreatureSay(cid, "HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!", TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
+						doCreatureSay(cid, "HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!", TALKTYPE_MONSTER_YELL, false, cid, (positions.demonOak or getCreaturePosition(cid)))
 					else
-						doCreatureSay(cid, sounds[2][math.random(#sounds[2])], TALKTYPE_ORANGE_2, false, cid, (positions.demonOak or getCreaturePosition(cid)))
+						doCreatureSay(cid, sounds[2][math.random(#sounds[2])], TALKTYPE_MONSTER_YELL, false, cid, (positions.demonOak or getCreaturePosition(cid)))
 					end
 					doSendMagicEffect(toPosition, CONST_ME_DRAWBLOOD)
 				else
@@ -108,7 +108,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doTargetCombatHealth(0, cid, floorDamage.type, -floorDamage.min, -floorDamage.max, floorDamage.effect)
 			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, getPlayerStorageValue(cid, itemEx.itemid))
 			doSendMagicEffect(toPosition, CONST_ME_DRAWBLOOD)
-			doCreatureSay(cid, "-krrrrak-", TALKTYPE_ORANGE_2, false, cid, getThingPos(itemEx.uid))
+			doCreatureSay(cid, "-krrrrak-", TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid))
 			if (getPlayerStorageValue(cid, demon_stor) < 1) then
 				setPlayerStorageValue(cid, demon_stor, 1)
 			else

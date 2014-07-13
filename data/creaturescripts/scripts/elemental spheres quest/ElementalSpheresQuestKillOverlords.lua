@@ -17,7 +17,7 @@ function onKill(cid, target)
 				setPlayerStorageValue(cid, t.storage, 1)
 			end
 		end
-		doCreatureSay(cid, "You slained " .. getCreatureName(target) .. ".", TALKTYPE_ORANGE_1)
+		doCreatureSay(cid, "You slained " .. getCreatureName(target) .. ".", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

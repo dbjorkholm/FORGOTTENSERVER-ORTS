@@ -47,19 +47,19 @@ end
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if (item.itemid == 1945) then
 		if (isPlayerInArea(Area_fromPos, Area_toPos) or getGlobalStorageValue(10004) > 0) then
-			return (doCreatureSay(cid, 'Wait for the current team to exit.', TALKTYPE_ORANGE_1, false, 0, {x=33268, y=31835, z=10}))
+			return (doCreatureSay(cid, 'Wait for the current team to exit.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 		end
 		for k, v in pairs(t) do
 			local player = getTopCreature(v[1]).uid
 			if isPlayer(player) == FALSE then
-				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_ORANGE_1, false, 0, {x=33268, y=31835, z=10}))
+				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 			end
 			local voc = getPlayerVocation(player)
 			if voc > 4 then
 				voc = voc - 4
 			end
 			if voc ~= k or getPlayerItemCount(player, v[2]) < 1 or getPlayerStorageValue(player, 10000) < 2 then
-				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_ORANGE_1, false, 0, {x=33268, y=31835, z=10}))
+				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 			end
 		end
 		local effectTable = {}

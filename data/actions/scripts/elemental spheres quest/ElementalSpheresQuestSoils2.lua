@@ -11,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if isInArray(spheres[item.itemid], getPlayerVocation(cid)) ~= TRUE then
 			return FALSE
 		elseif isInArray({7917, 7918}, itemEx.itemid) == TRUE then
-			return (doCreatureSay(cid, 'Turn off the machine first.', TALKTYPE_ORANGE_1))		
+			return (doCreatureSay(cid, 'Turn off the machine first.', TALKTYPE_MONSTER_SAY))		
 		else
 			doSendMagicEffect(toPosition, CONST_ME_PURPLEENERGY)
 			if isSorcerer(cid) then

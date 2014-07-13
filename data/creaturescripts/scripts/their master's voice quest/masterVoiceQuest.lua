@@ -65,7 +65,7 @@ function onKill(cid, target)
 			setGlobalStorageValue(985, getGlobalStorageValue(985) + 1)
 		elseif(getGlobalStorageValue(985) == #pos and getGlobalStorageValue(984) == 25) then
 			doSummonCreature("mad mage", magePos[math.random(3)])
-			doCreatureSay(target, "The Mad Mage has been spawned!", TALKTYPE_ORANGE_1)
+			doCreatureSay(target, "The Mad Mage has been spawned!", TALKTYPE_MONSTER_SAY)
 			fillWithFungus({x = 33306, y = 31847}, {x = 33369, y = 31919})
 		end
 	end

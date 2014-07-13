@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 12320 and itemEx.actionid == 8026) then
 		if(getGlobalStorageValue(8026) < 5) then
 			setGlobalStorageValue(8026, getGlobalStorageValue(8026) < 0 and 0 or getGlobalStorageValue(8026) + 1)
-			doCreatureSay(cid, "The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_ORANGE_1) 
+			doCreatureSay(cid, "The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY) 
 		elseif(getGlobalStorageValue(8026) == 5) then
 			setGlobalStorageValue(8026, 6)
 			doSendMagicEffect(toPosition, CONST_ME_YELLOWRINGS)
