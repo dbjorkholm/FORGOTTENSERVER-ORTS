@@ -8912,7 +8912,7 @@
 	<item id="5670" article="an" name="enigmatic voodoo skull">
 		<attribute key="weight" value="1400" />
 		<attribute key="decayTo" value="5669" />
-		<attribute key="duration" value="86400" />
+		<attribute key="duration" value="72000" />
 		<attribute key="description" value="It is not time yet." />
 	</item>
 	<item fromid="5671" toid="5674" article="a" name="pirate statue" />
@@ -17545,7 +17545,7 @@
 		<attribute key="description" value="The plant in it seems to be a finger snapper plant." />
 		<attribute key="weight" value="150" />
 		<attribute key="decayTo" value="9982" />
-		<attribute key="duration" value="86400" />
+		<attribute key="duration" value="72000" />
 	</item>
 	<item fromid="9984" toid="9985" article="a" name="flower pot">
 		<attribute key="description" value="This plant urgently needs some water, else it will wither away and disappear completely." />
@@ -17563,7 +17563,7 @@
 		<attribute key="description" value="The plant in it seems to be a fairy dancer flower." />
 		<attribute key="weight" value="150" />
 		<attribute key="decayTo" value="9986" />
-		<attribute key="duration" value="86400" />
+		<attribute key="duration" value="72000" />
 	</item>
 	<item id="9988" article="a" name="flower pot">
 		<attribute key="description" value="There is a fully grown fairy dancer flower in it." />
@@ -17575,7 +17575,7 @@
 		<attribute key="description" value="There is a fully grown fairy dancer flower in it." />
 		<attribute key="weight" value="150" />
 		<attribute key="decayTo" value="9988" />
-		<attribute key="duration" value="86400" />
+		<attribute key="duration" value="72000" />
 	</item>
 	<item id="9990" article="a" name="flower pot">
 		<attribute key="description" value="There is a fully grown finger snapper plant in it." />
@@ -17587,7 +17587,7 @@
 		<attribute key="description" value="There is a fully grown finger snapper plant in it." />
 		<attribute key="weight" value="150" />
 		<attribute key="decayTo" value="9990" />
-		<attribute key="duration" value="86400" />
+		<attribute key="duration" value="72000" />
 	</item>
 	<item id="9992" article="a" name="rotworm stew">
 		<attribute key="description" value="It's hot, beefy and delicious. The perfect food for knights." />
@@ -20454,7 +20454,10 @@
 		<attribute key="weight" value="1000" />
 	</item>
 	<item fromid="12305" toid="12315" article="a" name="corrupted plantation" />
-	<!-- Missing 13216 -->
+	<item id="12316" name="the dead keeper">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="900" />
+	</item>
 	<item id="12317" name="the presence of the emperor">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="60" />
