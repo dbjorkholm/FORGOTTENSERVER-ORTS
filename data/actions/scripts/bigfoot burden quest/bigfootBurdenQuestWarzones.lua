@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3143) then
-		if(getGlobalStorageValue(item.uid) < 1) then
-			setGlobalStorageValue(item.uid, 1)
+		if(Game.getStorageValue(item.uid) < 1) then
+			Game.setStorageValue(item.uid, 1)
 			for i = 1, 6 do
 				for k = 1, 10 do
 					creatures = {

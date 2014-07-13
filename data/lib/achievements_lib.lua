@@ -26,12 +26,15 @@ Note: 	This lib was created following the data found in tibia.wikia.com.
 ]]
 
 ACHIEVEMENTS_BASE = 30000 -- base storage
+ACHIEVEMENTS_ACTION_BASE = 20000 	--this storage will be used to save the process to obtain the certain achievement
+									--(Ex: this storage + the id of achievement 'Allowance Collector' to save...
+									-- ...how many piggy banks has been broken
 
 achievements =
 {
 	[1] = {name = "Afraid of no Ghost!", grade = 1, points = 2, description = "You passed their test and helped the Spirithunters testing equipment, researching the supernatural and catching ghosts - it's you they're gonna call."},
 	[2] = {name = "Allow Cookies?", grade = 1, points = 2, description = "With a perfectly harmless smile you fooled all of those wisecrackers into eating your exploding cookies. Consider a boy or girl scout outfit next time to make the trick even better."},
-	[3] = {name = "Allowance Collector", grade = 1, points = 2, description = "You certainly have your ways when it comes to acquiring money. Many of them are pink and paved with broken fragments of porcelain."},
+	[3] = {name = "Allowance Collector", grade = 1, points = 2, secret = true, description = "You certainly have your ways when it comes to acquiring money. Many of them are pink and paved with broken fragments of porcelain."},
 	[4] = {name = "Amateur Actor", grade = 1, points = 2, description = "You helped bringing Princess Buttercup, Doctor Dumbness and Lucky the Wonder Dog to life - and will probably dream of them tonight, since you memorised your lines perfectly. What a .. special piece of.. screenplay."},
 	[5] = {name = "Animal Activist", grade = 1, points = 2, description = "You have a soft spot for little, weak animals, and you do everything in your power to protect them - even if you probably eat dragons for breakfast."},
 	[6] = {name = "Arachnoise", grade = 1, points = 1, description = "You've shattered each of Bloodweb's eight frozen legs. As they say: break a leg, and then some more."},
@@ -373,6 +376,7 @@ function getAchievementInfoById(id)
 		if k == id then
 			local t = {}
 			t.id = k
+			t.actionStorage = ACHIEVEMENTS_ACTION_BASE + id
 			for inf, it in pairs(v) do
 				t[inf] = it
 			end
@@ -387,6 +391,7 @@ function getAchievementInfoByName(name)
 		if v.name:lower() == name:lower() then
 			local t = {}
 			t.id = k
+			t.actionStorage = ACHIEVEMENTS_ACTION_BASE + id
 			for inf, it in pairs(v) do
 				t[inf] = it
 			end
@@ -457,6 +462,8 @@ end
 
 function Player.addAchievement(self, ach, showMsg)
 	local achievement
+	local denyMsg = false
+	if not showMsg then denyMsg = true end
 	if isNumber(ach) then
 		achievement = getAchievementInfoById(ach)
 	else
@@ -466,7 +473,7 @@ function Player.addAchievement(self, ach, showMsg)
 	
 	if not self:hasAchievement(achievement.id) then
 		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, 1)
-		if showMsg then
+		if not denyMsg then
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! You earned the achievement \"" .. achievement.name .. "\".")
 		end
 	end
