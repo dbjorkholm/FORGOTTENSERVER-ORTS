@@ -7,11 +7,12 @@ local lava = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	for i = 1, #lava do
-		if Tile(lava[i]):getItemById(598) then
-			Tile(lava[i]):getItemById(598):transform(407)
+		local lavaTile = Tile(lava[i])
+		if lavaTile:getItemById(598) then
+			lavaTile:getItemById(598):transform(407)
 			lava[i]:sendMagicEffect(CONST_ME_SMOKE)
-		elseif Tile(lava[i]):getItemById(407) then
-			Tile(lava[i]):getItemById(407):transform(598)
+		elseif lavaTile:getItemById(407) then
+			lavaTile:getItemById(407):transform(598)
 			lava[i]:sendMagicEffect(CONST_ME_SMOKE)
 		end
 	end
