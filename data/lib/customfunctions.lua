@@ -1,12 +1,7 @@
 stopMoveStorage = 100000
 
 function Player.stopMove(self, param)
-	if param then
-		self:setStorageValue(stopMoveStorage, 1)
-	else
-		self:setStorageValue(stopMoveStorage, 0)
-	end
-	return true
+	return self:setStorageValue(stopMoveStorage, (param and 1 or 0))
 end
 
 function Player.withdrawMoney(self, amount)
@@ -30,10 +25,10 @@ end
   
 function playerExists(name)
 	local a = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
-	  if a then
-	   return true
-	  end
-	  return false
+	if a then
+		result.free(a)
+		return true
+	end
 end
   
 function Player.transferMoneyTo(self, target, amount)
@@ -46,7 +41,7 @@ function Player.transferMoneyTo(self, target, amount)
 	if targetPlayer then
 		targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
 	else
-		if playerExists(target) == false then
+		if not playerExists(target) then
 			return false
 		end
 		db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = " .. db.escapeString(target))
@@ -100,9 +95,9 @@ function isPlayerInArea(fromPos, toPos)
 		for _y = fromPos.y, toPos.y do
 			for _z = fromPos.z, toPos.z do
 				creature = getTopCreature({x = _x, y = _y, z = _z})
-					if (creature.type == THING_TYPE_PLAYER) then
-						return true
-					end
+				if (creature.type == THING_TYPE_PLAYER) then
+					return true
+				end
 			end
 		end
 	end
@@ -114,9 +109,9 @@ function isMonsterInArea(fromPos, toPos, showMonsters, disableSummons)
 		for _y = fromPos.y, toPos.y do
 			for _z = fromPos.z, toPos.z do
 				creature = getTopCreature({x = _x, y = _y, z = _z})
-					if (creature.type == 2 and showMonsters and (not disableSummons or (disableSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
-						return true
-					end
+				if (creature.type == THING_TYPE_MONSTER and showMonsters and (not disableSummons or (disableSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
+					return true
+				end
 			end
 		end
 	end
@@ -154,10 +149,12 @@ function teleportAllPlayersFromArea(fromArea, toPos)
 		for y = fromArea[1].y, fromArea[2].y do
 			for z = fromArea[1].z, fromArea[2].z do
 				if(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
-					if(isPlayer(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid)) then
-						doTeleportThing(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid, toPos)
+					local thing = getThingfromPos({x = x, y = y, z = z, stackpos = 255})
+					local player = Player(thing.uid)
+					if thing and player then
+						doTeleportThing(thing.uid, toPos)
 						doSendMagicEffect(toPos, CONST_ME_TELEPORT)
-						doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You were teleported out by the gnomish emergency device.")
+						player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You were teleported out by the gnomish emergency device.")
 					end
 				end
 			end
@@ -170,10 +167,11 @@ function removeBoss(fromArea, bossName)
 	for x = fromArea[1].x, fromArea[2].x do
 		for y = fromArea[1].y, fromArea[2].y do
 			for z = fromArea[1].z, fromArea[2].z do
-				if(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
-					if(isMonster(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid)) then
-						if(string.lower(getCreatureName(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid)) == bossName) then
-							doRemoveCreature(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid)
+				local thing = getThingfromPos({x = x, y = y, z = z, stackpos = 255})
+				if thing and thing.uid > 0 then
+					if isMonster(thing.uid) then
+						if string.lower(getCreatureName(thing.uid)) == bossName then
+							doRemoveCreature(thing.uid)
 						end
 					end
 				end
@@ -188,12 +186,13 @@ function clearArena(fromPos, toPos)
 		for x = fromPos.x, toPos.x do
 			for y = fromPos.y, toPos.y do
 				for z = fromPos.z, toPos.z do
-					if(getTopCreature({x = x, y = y, z = z}).uid > 0) then
-						if(isPlayer(getTopCreature({x = x, y = y, z = z}).uid)) then
-							doTeleportThing(getTopCreature({x = x, y = y, z = z}).uid, {x = 33049, y = 31017, z = 2})
+					local creature = getTopCreature({x = x, y = y, z = z})
+					if creature and creature.uid > 0 then
+						if isPlayer(creature.uid) then
+							doTeleportThing(creature.uid, {x = 33049, y = 31017, z = 2})
 							doSendMagicEffect({x = 33049, y = 31017, z = 2}, CONST_ME_TELEPORT)
 						else
-							doRemoveCreature(getTopCreature({x = x, y = y, z = z}).uid)
+							doRemoveCreature(creature.uid)
 						end
 					end
 				end
@@ -259,7 +258,7 @@ function getCreaturesInRange(position, radiusx, radiusy, showMonsters, showPlaye
 		for y = -radiusy, radiusy do
 			if not (x == 0 and y == 0) then
 				local creature = getTopCreature({x = position.x + x, y = position.y + y, z = position.z})
-				if (creature.type == 1 and showPlayers) or (creature.type == 2 and showMonsters and (not showSummons or (showSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
+				if creature and creature.uid > 0 and (creature.type == THING_TYPE_PLAYER and showPlayers) or (creature.type == THING_TYPE_NPC and showMonsters and (not showSummons or (showSummons and getCreatureMaster(creature.uid) == creature.uid))) then
 					table.insert(creaturesList, creature.uid)
 				end
 			end
@@ -267,7 +266,7 @@ function getCreaturesInRange(position, radiusx, radiusy, showMonsters, showPlaye
 	end
 
 	local creature = getTopCreature(position)
-	if (creature.type == 1 and showPlayers) or (creature.type == 2 and showMonsters and not (showSummons or (showSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
+	if (creature.type == THING_TYPE_PLAYER and showPlayers) or (creature.type == THING_TYPE_NPC and showMonsters and not (showSummons or (showSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
 		if not(table.find(creaturesList, creature.uid)) then
 			table.insert(creaturesList, creature.uid)
 		end
