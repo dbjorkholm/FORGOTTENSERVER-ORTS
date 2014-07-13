@@ -14,8 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	--count how many piggy banks has been broken
 	--Achievement: Allowance Collector
 	local achivement = getAchievementInfoByName("Allowance Collector")
-	local brokenCount = player:getStorageValue(achievement.actionStorage)
-	if brokenCount < 0 then player:setStorageValue(achievement.actionStorage, 0)
+	local brokenCount = math.max(player:getStorageValue(achievement.actionStorage), 0)
 	
 	player:setStorageValue(achievement.actionStorage, brokenCount + 1)
 	if brokenCount >= 50 and not player:hasAchievement(achievement.id) then
