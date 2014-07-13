@@ -255,6 +255,7 @@
 	<monster name="The Frog Prince" file="bosses/the frog prince.xml"/>
 	<monster name="The Handmaiden" file="bosses/the handmaiden.xml"/>
 	<monster name="The Horned Fox" file="bosses/the horned fox.xml"/>
+	<monster name="The Keeper" file="bosses/the keeper.xml"/>
 	<monster name="The Imperor" file="bosses/the imperor.xml"/>
 	<monster name="The Many" file="bosses/the many.xml"/>
 	<monster name="The Noxious Spawn" file="bosses/the noxious spawn.xml"/>
