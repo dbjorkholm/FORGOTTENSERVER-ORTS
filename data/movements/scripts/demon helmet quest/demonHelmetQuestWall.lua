@@ -16,9 +16,11 @@ function onStepIn(cid, item, position, fromPosition)
 			return true
 		end
 	end
+	
 	for i = 1, #wall do
-		if Tile(Position(wall[i])):getItemById(1050) then
-			Tile(Position(wall[i])):getItemById(1050):remove()
+		local tile = Tile(Position(wall[i]))
+		if tile:getItemById(1050) then
+			tile:getItemById(1050):remove()
 			addEvent(Game.createItem, 5 * 60 * 1000, 1050, 1, wall[i])
 		end
 	end

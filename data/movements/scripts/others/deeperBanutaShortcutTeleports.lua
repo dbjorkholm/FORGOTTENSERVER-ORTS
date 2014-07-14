@@ -10,12 +10,13 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 	
-	local targetTile = config[item.actionid]
-	if not targetTile then
+	local targetPosition = config[item.actionid]
+	if not targetPosition then
 		return true
 	end
+	
 	if player:getStorageValue(Storage.DeeperBanuta.Shortcut) == 1 then
-		player:teleportTo(targetTile)
+		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
