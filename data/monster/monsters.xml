@@ -728,7 +728,6 @@
 	<monster name="Flame Of Omrafir" file="pyro-elementals/flame of omrafir.xml"/>
 	<monster name="Hellfire Fighter" file="pyro-elementals/hellfire fighter.xml"/>
 	<monster name="Massive Fire Elemental" file="pyro-elementals/massive fire elemental.xml"/>
-	<monster name="Orewalker" file="pyro-elementals/orewalker.xml"/>
 
 	<!-- Quaras -->
 	<monster name="Quara Constrictor" file="quaras/quara constrictor.xml"/>
