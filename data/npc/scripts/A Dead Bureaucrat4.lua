@@ -14,6 +14,11 @@ local vocation = {
 	[paladin] = "P A L A D I N"
 }
 
+local function greetCallback(cid)
+	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	return true
+end
+
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -54,10 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
-	return true
-end
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye and don't forget me!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye and don't forget me!")
 npcHandler:addModule(FocusModule:new())
