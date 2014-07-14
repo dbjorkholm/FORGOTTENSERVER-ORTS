@@ -7,13 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local config = {
-	[1] = "sorcerer",
-	[2] = "druid",
-	[3] = "paladin",
-	[4] = "knight"
-}
-
 local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
 	return true
@@ -40,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, Vocation(vocationId):getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 10 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 11)
-			npcHandler:say(" I was a" .. config[vocationId] .. ", too, before I died!! What do you want from me?", cid)
+			npcHandler:say(" I was a" .. Vocation(vocationId):getName() .. ", too, before I died!! What do you want from me?", cid)
 		end
 	elseif msgcontains(msg, "145") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 11 then
