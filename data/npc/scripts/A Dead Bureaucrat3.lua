@@ -7,11 +7,11 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local vocation = {
-	[sorcerer] = "sorcerer",
-	[knight] = "knight",
-	[druid] = "druid",
-	[paladin] = "paladin"
+local config = {
+	[1] = "sorcerer",
+	[2] = "druid",
+	[3] = "paladin",
+	[4] = "knight"
 }
 
 local function greetCallback(cid)
@@ -25,6 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 8 then
@@ -36,10 +37,10 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 10)
 			npcHandler:say("Alright" .. player:getName() ..". Vocation?", cid)
 		end
-	elseif msgcontains(msg, player:getVocation()) then
+	elseif msgcontains(msg, Vocation(vocationId):getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 10 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 11)
-			npcHandler:say(" I was a" .. player:getVocation() .. ", too, before I died!! What do you want from me?", cid)
+			npcHandler:say(" I was a" .. config[vocationId] .. ", too, before I died!! What do you want from me?", cid)
 		end
 	elseif msgcontains(msg, "145") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 11 then

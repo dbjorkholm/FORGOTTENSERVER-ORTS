@@ -7,11 +7,11 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local vocation = {
-	[sorcerer] = "wand",
-	[knight] = "sword",
-	[druid] = "rod",
-	[paladin] = "bow"
+local config = {
+	[1] = "wand",
+	[2] = "rod",
+	[3] = "bow",
+	[4] = "sword"
 }
 
 local function greetCallback(cid)
@@ -25,6 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) <= 1 then
@@ -36,10 +37,10 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 2)
 			npcHandler:say("Alright" .. player:getName() ..". Vocation?", cid)
 		end
-	elseif msgcontains(msg, player:getVocation()) then
+	elseif msgcontains(msg, Vocation(vocationId):getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 2 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 3)
-			npcHandler:say("Huhu, please don't hurt me with your" .. player:getVocation() = vocation.[vocation] .. "! Reason of your visit?", cid)
+			npcHandler:say("Huhu, please don't hurt me with your" .. config[vocationId] .. "! Reason of your visit?", cid)
 		end
 	elseif msgcontains(msg, "visit pumin") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
