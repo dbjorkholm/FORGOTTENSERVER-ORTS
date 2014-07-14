@@ -1,11 +1,17 @@
 function onKill(cid, target, lastHit)
+	local targetCreature = Creature(target)
+	if targetCreature:isPlayer() or targetCreature:getMaster() then
+		return true
+	end
+
+	local player = Player(cid)
 	local started = getPlayerStartedTasks(cid)
-	if isPlayer(target) or isSummon(target) then return true end
 	if started and #started > 0 then
-		for _, id in ipairs(started) do
-			if isInArray(tasks[id].creatures, getCreatureName(target):lower()) then
-				if getPlayerStorageValue(cid, KILLSSTORAGE_BASE + id) < tasks[id].killsRequired then
-					setPlayerStorageValue(cid, KILLSSTORAGE_BASE + id, getPlayerStorageValue(cid, KILLSSTORAGE_BASE + id) + 1)
+		for _, taskId in ipairs(started) do
+			if isInArray(tasks[taskId].creatures, targetCreature:getName():lower()) then
+				local killAmount = player:getStorageValue(KILLSSTORAGE_BASE + taskId)
+				if killAmount < tasks[taskId].killsRequired then
+					player:setStorageValue(KILLSSTORAGE_BASE + taskId, killAmount + 1)
 				end
 			end
 		end

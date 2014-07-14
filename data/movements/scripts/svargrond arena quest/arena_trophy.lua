@@ -1,17 +1,22 @@
 function onStepIn(cid, item, position, fromPosition)
-	if (isPlayer(cid)) then
-		local arena = getPlayerStorageValue(cid, STORAGE_ARENA) - 1
-		if arena == item.uid - 23200 then --trophy tile actionid should be 23201 23202 23203
-			if (getPlayerStorageValue(cid, ARENA[arena].reward.trophyStorage) < 1) then
-				local pos = getCreaturePosition(cid)
-				pos.y = pos.y - 1
-				local thing = doCreateItem(ARENA[arena].reward.trophy, 1, pos)
-				doSetItemSpecialDescription(thing, string.format(ARENA[arena].reward.desc, getCreatureName(cid)))
-				setPlayerStorageValue(cid, ARENA[arena].reward.trophyStorage, 1)
-				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_MAGIC_RED)
-			return true
-			end
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
+	--trophy tile actionid should be 23201 23202 23203
+	local arenaId = player:getStorageValue(Storage.SvargrondArena.Arena) - 1
+	if arenaId == item.uid - 23200 and player:getStorageValue(ARENA[arenaId].reward.trophyStorage) < 1 then
+		local rewardPosition = player:getPosition()
+		rewardPosition.y = rewardPosition.y - 1
+
+		local rewardItem = Game.createItem(ARENA[arenaId].reward.trophy, 1, rewardPosition)
+		if rewardItem then
+			rewardItem:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, string.format(ARENA[arenaId].reward.desc, player:getName()))
 		end
+
+		player:setStorageValue(ARENA[arenaId].reward.trophyStorage, 1)
+		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 	end
 	return true
 end

@@ -1,3 +1,9 @@
+--[[
+	TODO
+		Unite all related variables / functions in a table
+		rewrite functions like "getTasksByPlayer" to "Player.getTasks"
+]]
+
 RANK_NONE = 0
 RANK_JOIN = 1
 RANK_HUNTSMAN = 2
@@ -5,14 +11,14 @@ RANK_RANGER = 3
 RANK_BIGGAMEHUNTER = 4
 RANK_TROPHYHUNTER = 5
 RANK_ELITEHUNTER = 6
- 
+
 REWARD_MONEY = 1
 REWARD_EXP = 2
 REWARD_ACHIEVEMENT = 3
 REWARD_STORAGE = 4
 REWARD_POINT = 5
 REWARD_ITEM = 6
- 
+
 QUESTSTORAGE_BASE = 1500
 JOIN_STOR = 100157
 KILLSSTORAGE_BASE = 65000
@@ -72,15 +78,15 @@ tasks =
 	[50] = {killsRequired = 4000, raceName = "Necromancers and Priestess", level = {60, 9999}, norepeatable = true, premium = true, creatures = {"necromancer", "priestess"}, rewards = {{type = "storage", value = {35033, 1}},{type = "storage", value = {12800, 1}}}},
 	[49] = {killsRequired = 1000, name = "Necromancers and Priestess second task", raceName = "Necromancers and Priestess", level = {60, 9999}, storage = {12800, 1}, norepeatable = true, premium = true, creatures = {"necromancer", "priestess"}, rewards = {{type = "exp", value = {40000}},{type = "storage", value = {35033, 1}}}},																																		
 }
- 
+
 tasksByPlayer = 3
 repeatTimes = 3
- 
+
 function getPlayerRank(cid)
 	local p = Player(cid)
 	return (p:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or p:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or p:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or p:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
 end
- 
+
 function getTaskByName(name, table)
 	local t = (table and table or tasks)
 	for k, v in pairs(t) do
@@ -94,9 +100,9 @@ function getTaskByName(name, table)
 			end
 		end
 	end
-return false
+	return false
 end
- 
+
 function getTasksByPlayer(cid)
 	local p = Player(cid)
 	local canmake = {}
@@ -110,28 +116,27 @@ function getTasksByPlayer(cid)
 			if(v.storage and p:getStorageValue(v.storage[1]) < v.storage[2]) then
 				able[k] = false
 			end
- 
+
 			if(v.rank) then
 				if(getPlayerRank(cid) < v.rank) then
 					able[k] = false
 				end
 			end
- 
+
 			if(v.premium) then
 				if(not(isPremium(cid))) then
 					able[k] = false
 				end
 			end
- 
+
 			if(able[k]) then
 				table.insert(canmake, k)
 			end
 		end
 	end
-return canmake
+	return canmake
 end
- 
- 
+
 function canStartTask(cid, name, table)
 	local p = Player(cid)
 	local v = ""
@@ -182,16 +187,16 @@ function canStartTask(cid, name, table)
 			return true
 		end
 	end
-return false
+	return false
 end
- 
+
 function getPlayerStartedTasks(cid)
 	local p = Player(cid)
 	local tmp = {}
 	for k, v in pairs(tasks) do
 		if(p:getStorageValue(QUESTSTORAGE_BASE + k) > 0 and p:getStorageValue(QUESTSTORAGE_BASE + k) < 2) then
-			table.insert(tmp, k) 
+			table.insert(tmp, k)
 		end
 	end
-return tmp
+	return tmp
 end

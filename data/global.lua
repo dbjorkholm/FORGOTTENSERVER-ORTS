@@ -221,27 +221,6 @@ function getTibianTime()
 	return hours .. ':' .. minutes
 end
 
-function doForceSummonCreature(name, pos)
-	local creature = doSummonCreature(name, pos)
-	if creature == false then
-		pos.stackpos = STACKPOS_FIRST_ITEM_ABOVE_GROUNDTILE
-
-		local lastUid = nil
-		while true do
-			local thing = getTileThingByPos(pos)
-			if thing.uid == 0 or thing.uid == lastUid or not isItem(thing.uid) then
-				break
-			end
-
-			lastUid = thing.uid
-			doRemoveItem(thing.uid)
-		end
-
-		creature = doSummonCreature(name, pos)
-	end
-	return creature
-end
-
 if not globalStorageTable then
 	globalStorageTable = {}
 end
