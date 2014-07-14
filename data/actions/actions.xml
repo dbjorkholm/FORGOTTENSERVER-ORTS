@@ -150,7 +150,7 @@
 	<action fromuid="9008" touid="9011" script="demon oak quest/demonOakChest.lua"/>
 	<action uniqueid="9007" script="demon oak quest/demonOakGravestone.lua" />
 
-   	<!--Arena Quest-->
+	<!--Arena Quest-->
 	<action actionid="13100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="26100" script="svargrond arena quest/arena_door.lua"/>
 	<action actionid="27100" script="svargrond arena quest/arena_door.lua"/>

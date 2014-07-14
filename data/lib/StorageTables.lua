@@ -228,5 +228,9 @@ Storage = {
 		Done = 1010,
 		Progress = 1013,
 		Squares = 1014
+	},
+	SvargrondArena = {
+		Arena = 1100,
+		Pit = 1101
 	}
 }
