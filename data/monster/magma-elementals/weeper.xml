@@ -53,7 +53,7 @@
 	<loot>
 		<item id="2148" countmax="100" chance="50000"/><!-- gold coin -->
 		<item id="2148" countmax="99" chance="50000"/><!-- gold coin -->
-		<item id="2172" countmax="7" chance="100000"/><!-- platinum coin -->
+		<item id="2152" countmax="7" chance="100000"/><!-- platinum coin -->
 		<item id="18425" chance="14890"/><!-- blazing bones -->
 		<item id="18426" chance="15870"/><!-- eye of a weeper -->
 		<item id="10553" chance="13570"/><!-- fiery hearts -->
