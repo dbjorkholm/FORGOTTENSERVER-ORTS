@@ -28,12 +28,12 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, player:getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 9 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 10)
-			npcHandler:say("Alright" .. player:getName() ..". Vocation?", cid)
+			npcHandler:say("Alright " .. player:getName() ..". Vocation?", cid)
 		end
 	elseif msgcontains(msg, Vocation(vocationId):getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 10 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 11)
-			npcHandler:say(" I was a" .. Vocation(vocationId):getName() .. ", too, before I died!! What do you want from me?", cid)
+			npcHandler:say("I was a " .. Vocation(vocationId):getName() .. ", too, before I died!! What do you want from me?", cid)
 		end
 	elseif msgcontains(msg, "145") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 11 then

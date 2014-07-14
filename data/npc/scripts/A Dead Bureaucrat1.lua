@@ -28,19 +28,19 @@ local function creatureSayCallback(cid, type, msg)
 	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) <= 1 then
+		if player:getStorageValue(Storage.pitsOfInferno.Pumin) < 1 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 1)
 			npcHandler:say("Sure, where else. Everyone likes to meet my master, he is a great demon, isn't he? Your name is ...?", cid)
 		end
 	elseif msgcontains(msg, player:getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 1 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 2)
-			npcHandler:say("Alright" .. player:getName() ..". Vocation?", cid)
+			npcHandler:say("Alright " .. player:getName() ..". Vocation?", cid)
 		end
 	elseif msgcontains(msg, Vocation(vocationId):getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 2 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 3)
-			npcHandler:say("Huhu, please don't hurt me with your" .. config[vocationId] .. "! Reason of your visit?", cid)
+			npcHandler:say("Huhu, please don't hurt me with your " .. config[vocationId] .. "! Reason of your visit?", cid)
 		end
 	elseif msgcontains(msg, "visit pumin") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
