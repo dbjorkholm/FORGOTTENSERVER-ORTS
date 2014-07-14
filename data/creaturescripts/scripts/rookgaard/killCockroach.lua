@@ -1,5 +1,9 @@
 function onKill(cid, target)
 	local monsterTarget = Monster(target)
+	if not monsterTarget then
+		return
+	end
+
 	if monsterTarget:getName() == "Cockroach" then
 		local player = Player(cid)
 		if player:getStorageValue(Storage.RookgaardTutorialIsland.cockroachKillStorage) < 1 then
