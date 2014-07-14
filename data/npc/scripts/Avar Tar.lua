@@ -43,10 +43,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "helmet") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(2215) == 2 and player:getStorageValue(1010) == 3 then
+			if player:getStorageValue(2215) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
 				player:addOutfitAddon(541, 2)
 				player:addOutfitAddon(542, 2)
-				player:setStorageValue(1010, 4)
+				player:setStorageValue(Storage.DemonOak.Done, 4)
 				npcHandler:say("Receive the helmet, " .. player:getName() .. ".", cid)
 			end
 		end

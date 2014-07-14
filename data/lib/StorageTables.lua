@@ -4,11 +4,11 @@
 Storage = {
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
-		
+
 		-- Citizen-outfit Quest
 		CitizenHatAddon = 12011,
 		CitizenBackpackAddon = 12012,
-		
+
 		-- Druid-outfit Quest
 		DruidHatAddon = 12013,
 		DruidBodyAddon = 12014,
@@ -16,7 +16,7 @@ Storage = {
 		-- Barbarian-outfit Quest
 		BarbarianAddon = 12015,
 		BarbarianAddonWaitTimer = 12016,
-		
+
 		-- Hunter-outfit Quest
 		HunterMusicSheet01 = 12050,
 		HunterMusicSheet02 = 12051,
@@ -24,37 +24,37 @@ Storage = {
 		HunterMusicSheet04 = 12053,
 		HunterBodyAddon = 12054,
 		HunterHatAddon = 12055,
-		
+
 		-- Knight-outfit Quest
 		KnightHatAddon = 12060,
 		KnightSwordAddon = 12061,
-		
+
 		-- Mage and Summoner-outfit Quest
 		MageSummonerWandAddon = 12062,
 		MageSummonerTiaraCloakAddon = 12063,
 		MageSummonerFluidBeltAddon = 12064,
-		
+
 		-- Norseman-outfit Quest
 		NorsemanAddon = 12065,
-		
+
 		-- Warrior-outfit Quest
 		WarriorShoulderAddon = 12067,
 		WarriorSwordAddon = 12068,
-		
+
 		-- Wizard-outfit Quest
 		WizardAddon = 12066,
 
 		-- Pirate-outfit Quest
 		PirateSabreAddon = 50002,
-		
+
 		-- Assassin Outfit
 		AssassinBaseOutfit = 50080,
 		AssassinFirstAddon = 50081,
 		AssassinSecondAddon = 50082,
-		
+
 		NightmareOutfit = 50083,
 		BrotherhoodOutfit = 50084,
-		
+
 		ShamanAddons = 50085
 	},
 	TheAncientTombs = {
@@ -223,5 +223,10 @@ Storage = {
 	},
 	DeeperBanuta = {
 		Shortcut = 50095
+	},
+	DemonOak = {
+		Done = 1010,
+		Progress = 1013,
+		Squares = 1014
 	}
 }

@@ -1,5 +1,8 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if (getPlayerStorageValue(cid, 1010) == 2) then
-		return (doTeleportThing(cid, {x = 32714, y = 32398, z = 8}))
+	local player = Player(cid)
+	if player:getStorageValue(Storage.DemonOak.Done) == 2 then
+		player:teleportTo(DEMON_OAK_REWARDROOM_POSITION)
+		DEMON_OAK_REWARDROOM_POSITION:sendMagicEffect(CONST_ME_TELEPORT)
+		return true
 	end
 end
