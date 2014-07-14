@@ -1,119 +1,115 @@
-local start_storage = 1013
-local demon_stor = 1015
-
-local floorDamage =
-{
-	min = 170,
-	max = 210,
-	type = COMBAT_EARTHDAMAGE,
-	effect = CONST_ME_BIGPLANTS
+local config = {
+	demonOakIds = {8288, 8289, 8290, 8291},
+	sounds = {
+		'MY ROOTS ARE SHARP AS A SCYTHE! FEEL IT?!?',
+		'CURSE YOU!',
+		'RISE, MINIONS, RISE FROM THE DEAD!!!!',
+		'AHHHH! YOUR BLOOD MAKES ME STRONG!',
+		'GET THE BONES, HELLHOUND! GET THEM!!',
+		'GET THERE WHERE I CAN REACH YOU!!!',
+		'ETERNAL PAIN AWAITS YOU! NICE REWARD, HUH?!?!',
+		'YOU ARE GOING TO PAY FOR EACH HIT WITH DECADES OF TORTURE!!',
+		'ARGG! TORTURE IT!! KILL IT SLOWLY MY MINION!!'
+	},
+	bonebeastChance = 90,
+	bonebeastCount = 4,
+	waves = 10,
+	questArea = {
+		fromPosition = {x = 32706, y = 32345, z = 7},
+		toPosition = {x = 32725, y = 32357, z = 7}
+	},
+	summonPositions = {
+		{x = 32714, y = 32348, z = 7},
+		{x = 32712, y = 32349, z = 7},
+		{x = 32711, y = 32351, z = 7},
+		{x = 32713, y = 32354, z = 7},
+		{x = 32716, y = 32354, z = 7},
+		{x = 32719, y = 32354, z = 7},
+		{x = 32721, y = 32351, z = 7},
+		{x = 32719, y = 32348, z = 7}
+	},
+	summons = {
+		[8288] = {
+			[5] = {'Braindeath', 'Braindeath', 'Braindeath', 'Bonebeast'},
+			[10] = {'Betrayed Wraith', 'Betrayed Wraith'}
+		},
+		[8289] = {
+			[5] = {'Lich', 'Lich', 'Lich'},
+			[10] = {'Dark Torturer', 'Blightwalker'}
+		},
+		[8290] = {
+			[5] = {'Banshee', 'Banshee', 'Banshee'},
+			[10] = {'Grim Reaper'}
+		},
+		[8291] = {
+			[5] = {'Giant Spider', 'Giant Spider', 'Lich'},
+			[10] = {'Undead Dragon', 'Hand of Cursed Fate'}
+		}
+	}
 }
 
+local function getRandomSummonPosition()
+	return config.summonPositions[math.random(#config.summonPositions)]
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
- 
-	if isInArray(demonOak, itemEx.itemid) then
- 
-		local get = getPlayerStorageValue(cid, itemEx.itemid)
-		if get == -1 then setPlayerStorageValue(cid, itemEx.itemid, 1) end
-		get = getPlayerStorageValue(cid, itemEx.itemid)
- 
-		local k = 0
-		for i = demonOak[1], demonOak[#demonOak] do
-			if(getPlayerStorageValue(cid, i) == (waves and waves > 0 and waves) + 1) then
-				k = k + 1
+	if not isInArray(config.demonOakIds, itemEx.itemid) then
+		return true
+	end
+
+	local player = Player(cid)
+
+	local totalProgress = 0
+	for i = 1, #config.demonOakIds do
+		totalProgress = totalProgress + math.max(0, player:getStorageValue(config.demonOakIds[i]))
+	end
+
+	local isDefeated = totalProgress == (#config.demonOakIds * (config.waves + 1))
+	if (config.killAllBeforeCut or isDefeated)
+			and isMonsterInArea(config.questArea.fromPosition, config.questArea.toPosition, true) then
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You need to kill all monsters first.')
+		return true
+	end
+
+	if isDefeated then
+		player:teleportTo(DEMON_OAK_KICK_POSITION)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Tell Oldrak about your great victory against the demon oak.')
+		player:setStorageValue(Storage.DemonOak.Done, 1)
+		player:setStorageValue(Storage.DemonOak.Progress, 3)
+		return true
+	end
+
+	local progress = math.max(player:getStorageValue(itemEx.itemid), 1)
+	if progress >= config.waves + 1 then
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		return true
+	end
+
+	local isLastCut = totalProgress == (#config.demonOakIds * (config.waves + 1) - 1)
+	local summons = config.summons[itemEx.itemid]
+	if summons and summons[progress] then
+		-- Summon a single demon on the last hit
+		if isLastCut then
+			Game.createMonster('Demon', getRandomSummonPosition(), false, true)
+
+		-- Summon normal monsters otherwise
+		else
+			for i = 1, #summons[progress] do
+				Game.createMonster(summons[progress][i], getRandomSummonPosition(), false, true)
 			end
 		end
- 
-		if killAllBeforeCut or k == #demonOak then
-			if (isMonsterInArea(questAreaPosition[1], questAreaPosition[2], true, true)) then
-				doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You need to kill all monsters first.")
-				return true
-			end
+
+	-- if it is not the 5th or 10th there is only a chance to summon bonebeasts
+	elseif math.random(100) >= config.bonebeastChance then
+		for i = 1, config.bonebeastCount do
+			Game.createMonster('Bonebeast', getRandomSummonPosition(), false, true)
 		end
- 
-		if(k == #demonOak) then 
-			doTeleportThing(cid, positions.kick)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Tell Oldrak about your great victory against the demon oak.")
-			setPlayerStorageValue(cid, storages.done, 1)
-			setPlayerStorageValue(cid, start_storage, 3)
-			return true
-		end
- 
-		if getPlayerStorageValue(cid, itemEx.itemid) >= (waves and waves > 0 and waves) + 1 then
-			return doSendMagicEffect(toPosition, CONST_ME_POFF)
-		end
- 
-		local deny = false
-		local cbs = 0
-		if summons_[itemEx.itemid] then
-			if summons_[itemEx.itemid][get] then
-				for _, s in ipairs(summons_[itemEx.itemid][get]) do
-						for i = 1, s.count do
-							local sPos = positions.summon[math.random(#positions.summon)]
-							local thing = getTopCreature(sPos)
-							local area
-							if isMonster(thing.uid) then
-								area = getCreaturesInRange(sPos, 2, 2)
-								for _, pos in pairs(area) do
-									if isCreature(getTopCreature(pos).uid) or not isInRange(pos, questAreaPosition[1], questAreaPosition[2]) then
-										deny = true
-										break
-									else
-										if (getPlayerStorageValue(cid, demon_stor) <= 37 and tonumber(doSummonCreature(s.monster, pos)) == nil) then
-											cbs = cbs + 1
-										end
-										break
-									end
-								end
-							else
-								if (getPlayerStorageValue(cid, demon_stor) >= 38) then
-									doSummonCreature("Demon", sPos)
-									local demons = getCreaturesInRange(getPlayerPosition(cid), 7, 7, true,false,true)
-									for i = 1, #demons do
-										doRemoveCreature(demons[i])
-									end
-									doSummonCreature("Demon", sPos)
-								elseif (getPlayerStorageValue(cid, demon_stor) <= 37 and tonumber(doSummonCreature(s.monster, sPos)) == nil) then
-									cbs = cbs + 1
-								end
-							end
-						end
-					end
-		 
-					if cbs > 0 then
-						return doPlayerSendCancel(cid, "There are " .. cbs .. " monster that could not be summoned. Wave has not been counted.")
-					end
-		 
-					if not deny then
-						setPlayerStorageValue(cid, itemEx.itemid, get + 1)
-					end
-					if isLastCut(cid) then
-						doCreatureSay(cid, "HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!", TALKTYPE_MONSTER_YELL, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-					else
-						doCreatureSay(cid, sounds[2][math.random(#sounds[2])], TALKTYPE_MONSTER_YELL, false, cid, (positions.demonOak or getCreaturePosition(cid)))
-					end
-					doSendMagicEffect(toPosition, CONST_ME_DRAWBLOOD)
-				else
-					local r = math.random(100)
-					if (r >= 90) then
-						local sPos = positions.summon[math.random(#positions.summon)]
-						doSummonCreature("bonebeast", sPos)
-						doSummonCreature("bonebeast", sPos)
-						doSummonCreature("bonebeast", sPos)
-						doSummonCreature("bonebeast", sPos)
-					end
-				end
-			end
-			setPlayerStorageValue(cid, itemEx.itemid, get + 1)
-			doTargetCombatHealth(0, cid, floorDamage.type, -floorDamage.min, -floorDamage.max, floorDamage.effect)
-			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, getPlayerStorageValue(cid, itemEx.itemid))
-			doSendMagicEffect(toPosition, CONST_ME_DRAWBLOOD)
-			doCreatureSay(cid, "-krrrrak-", TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid))
-			if (getPlayerStorageValue(cid, demon_stor) < 1) then
-				setPlayerStorageValue(cid, demon_stor, 1)
-			else
-				setPlayerStorageValue(cid, demon_stor, getPlayerStorageValue(cid, demon_stor) + 1)
-			end
-		end
+	end
+
+	player:say(isLastCut and 'HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!' or config.sounds[math.random(#config.sounds)], TALKTYPE_MONSTER_YELL, false, player, DEMON_OAK_POSITION)
+	toPosition:sendMagicEffect(CONST_ME_DRAWBLOOD)
+	player:setStorageValue(itemEx.itemid, progress + 1)
+	player:say('-krrrrak-', TALKTYPE_MONSTER_YELL, false, player, toPosition)
+	doTargetCombatHealth(0, cid, COMBAT_EARTHDAMAGE, -170, -210, CONST_ME_BIGPLANTS)
 	return true
 end
