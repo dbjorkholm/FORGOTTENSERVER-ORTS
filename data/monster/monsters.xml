@@ -491,6 +491,7 @@
 	<monster name="Massive Earth Elemental" file="geo-elementals/massive earth elemental.xml"/>
 	<monster name="Medusa" file="geo-elementals/medusa.xml"/>
 	<monster name="Muddy Earth Elemental" file="geo-elementals/muddy earth elemental.xml"/>
+	<monster name="Orewalker" file="geo-elementals/orewalker.xml"/>
 	<monster name="Shard Of Corruption" file="geo-elementals/shard of corruption.xml"/>
 	<monster name="Stone Devourer" file="geo-elementals/stone devourer.xml"/>
 	<monster name="Stone Golem" file="geo-elementals/stone golem.xml"/>
