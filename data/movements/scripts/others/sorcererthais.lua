@@ -1,13 +1,14 @@
-function onStepIn(cid, item, pos)
-
-local out = {x = 32308, y = 32267, z = 7}
-local creature = Creature(cid)
-local player = Player(cid)
-
-	if (player:getVocation():getId() == 1 or player:getVocation():getId() == 5) then
-		return false
-	else
-		creature:teleportTo(out)
-		Position(out):sendMagicEffect(CONST_ME_MAGIC_BLUE)
+function onStepIn(cid, item, position, fromPosition)
+	local player = Player(cid)
+	if not player then
+		return true
 	end
+	
+	if isSorcerer(cid) then
+		return false
+	end
+	
+	player:teleportTo(Position(32308, 32267, 7))
+	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	return true
 end
