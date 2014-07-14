@@ -1,7 +1,7 @@
 stopMoveStorage = 100000
 
 function Player.stopMove(self, param)
-	return self:setStorageValue(stopMoveStorage, (param and 1 or 0))
+	return self:setStorageValue(stopMoveStorage, param and 1 or 0)
 end
 
 function Player.withdrawMoney(self, amount)
@@ -22,7 +22,7 @@ function Player.depositMoney(self, amount)
 	self:setBankBalance(self:getBankBalance() + amount)
 	return true
 end
-  
+
 function playerExists(name)
 	local a = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
 	if a then
@@ -30,7 +30,7 @@ function playerExists(name)
 		return true
 	end
 end
-  
+
 function Player.transferMoneyTo(self, target, amount)
 	local balance = self:getBankBalance()
 	if amount > balance then
@@ -91,30 +91,38 @@ function getRealDate()
 end
 
 function isPlayerInArea(fromPos, toPos)
-	for _x = fromPos.x, toPos.x do
-		for _y = fromPos.y, toPos.y do
-			for _z = fromPos.z, toPos.z do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if (creature.type == THING_TYPE_PLAYER) then
-					return true
+	for x = fromPos.x, toPos.x do
+		for y = fromPos.y, toPos.y do
+			for z = fromPos.z, toPos.z do
+				local tile = Tile({x = x, y = y, z = z})
+				if tile then
+					local creature = tile:getTopCreature()
+					if creature and creature:isPlayer() then
+						return true
+					end
 				end
 			end
 		end
 	end
+
 	return false
 end
 
-function isMonsterInArea(fromPos, toPos, showMonsters, disableSummons)
-	for _x = fromPos.x, toPos.x do
-		for _y = fromPos.y, toPos.y do
-			for _z = fromPos.z, toPos.z do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if (creature.type == THING_TYPE_MONSTER and showMonsters and (not disableSummons or (disableSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
-					return true
+function isMonsterInArea(fromPos, toPos, ignoreSummons)
+	for x = fromPos.x, toPos.x do
+		for y = fromPos.y, toPos.y do
+			for z = fromPos.z, toPos.z do
+				local tile = Tile({x = x, y = y, z = z})
+				if tile then
+					local creature = tile:getTopCreature()
+					if creature and creature:isMonster() and not(ignoreSummons and creature:getMaster()) then
+						return true
+					end
 				end
 			end
 		end
 	end
+
 	return false
 end
 
