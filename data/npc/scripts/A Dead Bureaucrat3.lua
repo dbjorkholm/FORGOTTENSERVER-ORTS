@@ -7,11 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local sex = {
-	[beautiful lady] = player:getSex(PLAYERSEX_FEMALE),
-	[handsome gentleman] = player:getSex(PLAYERSEX_MALE)
-}
-
 local vocation = {
 	[sorcerer] = "sorcerer",
 	[knight] = "knight",
@@ -31,12 +26,12 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 9)
 			npcHandler:say("Tell me if you liked it when you come back. What is your name?", cid)
 		end
-	elseif msgcontains(msg, .. player:getName() ..) then
+	elseif msgcontains(msg, player:getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 9 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 10)
 			npcHandler:say("Alright" .. player:getName() ..". Vocation?", cid)
 		end
-	elseif msgcontains(msg, .. player:getVocation() ..) then
+	elseif msgcontains(msg, player:getVocation()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 10 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 11)
 			npcHandler:say(" I was a" .. player:getVocation() .. ", too, before I died!! What do you want from me?", cid)
@@ -59,7 +54,10 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Hello beautiful".. player:getSex() .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+local function greetCallback(cid)
+	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	return true
+end
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye and don't forget me!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye and don't forget me!")
 npcHandler:addModule(FocusModule:new())
