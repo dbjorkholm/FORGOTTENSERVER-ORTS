@@ -1,5 +1,13 @@
 stopMoveStorage = 100000
 
+function getBaseVocation(vocationId)
+	if vocationId == 0 then
+		return 0
+	end
+
+	return (vocationId - 1) % 4 + 1
+end
+
 function Player.stopMove(self, param)
 	return self:setStorageValue(stopMoveStorage, param and 1 or 0)
 end
