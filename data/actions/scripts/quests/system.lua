@@ -16,7 +16,8 @@ local questsExperience = {
 local tutorialIds = {
 	[50080] = 5,
 	[50082] = 6,
-	[50084] = 10
+	[50084] = 10,
+	[50086] = 11
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

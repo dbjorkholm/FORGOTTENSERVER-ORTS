@@ -192,15 +192,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
 		elseif itemEx.actionid == 50058 then -- naginata quest
-			local stoneStorage = Game.getStorageValue(itemEx.actionid)
-			if not stoneStorage then
-				Game.setStorageValue(itemEx.actionid, 0)
-			elseif stoneStorage < 5 then
+			local stoneStorage = Game.getStorageValue(itemEx.actionid) or -1
+			if stoneStorage < 5 then
 				Game.setStorageValue(itemEx.actionid, math.max(1, stoneStorage + 1))
 			elseif stoneStorage == 5 then
 				Item(itemEx.uid):remove()
 				Game.setStorageValue(itemEx.actionid)
 			end
+			
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			local rand = math.random(31, 39)
 			player:addHealth(-rand)
