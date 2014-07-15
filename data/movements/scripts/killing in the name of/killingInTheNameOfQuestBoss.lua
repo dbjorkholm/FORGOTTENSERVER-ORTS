@@ -1,48 +1,18 @@
-function doCheckArea(fromPos, toPos)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = fromPos.z, toPos.z do
-				if(getTopCreature({x = x, y = y, z = z}).uid > 0) then
-					return true
-				end
-			end
-		end
-	end
-	return false
-end
-
-function removeSummon(fromPos, toPos)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = toPos.z, toPos.z do
-				if(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
-					if(isMonster(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid)) then
-						doRemoveCreature(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid)
-					end
-				end
-			end
-		end
-	end
-	return true
-end
-
 function removePlayer(fromPos, toPos, lastPosition, cid)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = toPos.z, toPos.z do
-				if(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
-					if(isPlayer(getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid)) then
-							doTeleportThing(cid, lastPosition)
-							doSendMagicEffect(lastPosition, CONST_ME_TELEPORT)
-							doCreatureSay(cid, "Kicked out." , TALKTYPE_ORANGE_1)
-					end
-				end
-			end
-		end
-	end
-	return true
+local spectators = Game.getSpectators(B.bossPos, false, false, 0, 9, 0, 9)
+    if spectators then
+        for _, spectator in ipairs(spectators) do
+            if spectator:isPlayer() then
+                spectator:teleportTo(lastPosition)
+                spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+                spectator:say("Kicked out.", TALKTYPE_MONSTER_SAY)
+            elseif spectator:isMonster() then
+                spectator:remove()
+            end
+        end
+    end
 end
-
+					
 function fireOfLife(pos, time)
 	fire = getTileThingByPos(pos).uid
 	doSetItemSpecialDescription(fire, "")
@@ -84,21 +54,22 @@ local bosses = {
 }
 
 function onStepIn(cid, item, position, lastPosition)
+local player = Player(cid)
 	B = bosses[item.uid]
-		if(getPlayerStorageValue(cid, B.storage) == 1) then
-			if(doCheckArea(B.fromPos, B.toPos) == false) then
-				setPlayerStorageValue(cid, B.storage, 0)
-				doTeleportThing(cid, B.playerPos)
-				doSendMagicEffect(B.playerPos, CONST_ME_TELEPORT)
-				doSummonCreature(B.bossName, B.bossPos)
-				addEvent(removeSummon, 60 * 10 * 1000, B.fromPos, B.toPos)
+		if player:getStorageValue(B.storage) == 0 then
+		 local specs = Game.getSpectators(B.bossPos, false, false, 0, 9, 0, 9)
+		 if #specs < 1 then
+				player:setStorageValue(B.storage, 0)
+				player:teleportTo(B.playerPos)
+				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				Game.createMonster(B.bossName, B.bossPos)
 				addEvent(removePlayer, 60 * 10 * 1000, B.fromPos, B.toPos , lastPosition, cid)
-				doCreatureSay(cid, "You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out." , TALKTYPE_ORANGE_1)
+				player:say("You have ten minutes to kill and loot this boss. else you will lose that chance and will be kicked out.", TALKTYPE_MONSTER_SAY)
 			else
-				doTeleportThing(cid, lastPosition)
+				player:teleportTo(lastPosition)
 			end
 		else
-			doTeleportThing(cid, lastPosition)
+			player:teleportTo(lastPosition)
 		end
 	return true
 end
