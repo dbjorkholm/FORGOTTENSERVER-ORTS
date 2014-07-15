@@ -30015,6 +30015,14 @@
 	<item id="22670" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="22696" article="a" name="cake backpack">
+		<attribute key="weight" value="1800" />
+		<attribute key="containerSize" value="20" />
+		<attribute key="slotType" value="backpack" />
+	</item>
+	<item id="22699" article="a" name="cake tapestry">
+		<attribute key="weight" value="1000" />
+	</item>
 	<item id="30001" name="water" />
 	<item id="30002" name="blood" />
 	<item id="30003" name="beer" />
