@@ -20,7 +20,7 @@ Rashid = {
 		}
 ]]
 Rashid = {
-			NeedMission = false,
+			NeedMission = true,
 			MissionStart = 101,
 			MissionEnd = 107,
 			WithoutMissionPrice = 0.5
@@ -57,7 +57,7 @@ BlueOrGreen = false		-- blue djinn or green djinn quest, true = only one. -- NOT
 Factions = 110	-- shared storage between blue and green djinn quest and others.
 
 BlueDjinn = {
-				NeedMission = false,
+				NeedMission = true,
 				MissionStart = 111,
 				MissionEnd = 114,
 				WithoutMissionPrice = 0.5
@@ -81,7 +81,7 @@ BlueDjinn = {
 ]]
 	
 GreenDjinn = {
-				NeedMission = false,
+				NeedMission = true,
 				MissionStart = 121,
 				MissionEnd = 124,
 				WithoutMissionPrice = 0.5
