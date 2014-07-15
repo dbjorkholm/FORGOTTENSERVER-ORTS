@@ -2,9 +2,7 @@
 <monster name="Hive Pore" nameDescription="a hive pore" race="venom" experience="0" speed="0" manacost="0">
 	<health now="100" max="100"/>
 	<look typeex="15467"/>
-	<targetchange interval="4000" chance="10"/>
-	<strategy attack="100" defense="0"/>
-	<flags>
+	<targetchange interval="4000" chance="10"/>	<flags>
 		<flag summonable="0"/>
 		<flag attackable="0"/>
 		<flag hostile="1"/>
