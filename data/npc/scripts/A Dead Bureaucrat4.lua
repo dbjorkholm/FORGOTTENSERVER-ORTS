@@ -16,7 +16,6 @@ local config = {
 
 local function greetCallback(cid)
 	local player = Player(cid)
-
 	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 22 then
 		player:setStorageValue(Storage.pitsOfInferno.Pumin, 23)
 		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
@@ -61,8 +60,9 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye and don't forget me!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye and don't forget me!")
+
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
