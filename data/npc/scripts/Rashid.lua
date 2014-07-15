@@ -14,7 +14,6 @@ local list =
 	{name = 'Amber Staff',			id = 7426,		sell = 8000,		buy = 0},
 	{name = 'Ancient Amulet',		id = 2142,		sell = 200,			buy = 0},
 	{name = 'Assassin Dagger',		id = 7404,		sell = 20000,		buy = 0},
-	{name = 'Royal Helmet',			id = 2498,		sell = 30000,		buy = 0},
 	{name = 'Bandana',				id = 5917,		sell = 150,			buy = 0},
 	{name = 'Beastslayer axe',		id = 3962,		sell = 1500,		buy = 0},
 	{name = 'Beetle Necklace',		id = 11374,		sell = 1500,		buy = 0},
