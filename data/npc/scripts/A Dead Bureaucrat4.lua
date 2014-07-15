@@ -15,7 +15,12 @@ local config = {
 }
 
 local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 22 then
+		player:setStorageValue(Storage.pitsOfInferno.Pumin, 23)
+		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
+	else
+		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	end
 	return true
 end
 
@@ -46,14 +51,9 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 8)
 			npcHandler:say("Sorry, you need Form 145 to get Form 356. Come back when you have it", cid)
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 23 then
+		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 23 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 24)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
-		end
-	elseif msgcontains(msg, "hi") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 22 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 23)
-			npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
 		end
 	end
 	return true

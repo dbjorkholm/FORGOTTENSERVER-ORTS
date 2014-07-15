@@ -15,7 +15,18 @@ local config = {
 }
 
 local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 12 then 
+		player:setStorageValue(Storage.pitsOInferno.Pumin, 13)
+		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
+	elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 17 then
+		player:setStorageValue(Storage.pitsOfInferno.Pumin, 18)
+		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
+	elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 24 then
+		player:setStorageValue(Storage.pitsOfInferno.Pumin, 25)
+		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
+	else
+		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+	end
 	return true
 end
 
@@ -46,17 +57,6 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 4)
 			npcHandler:say("How very interesting. I need to tell that to my master immediately. Please go to my colleagues and ask for Form 356. You will need it in order to proceed.", cid)
-		end
-	elseif msgcontains(msg, "hi") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 12 then 
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 13)
-			npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
-		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 17 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 18)
-			npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
-		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 24 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 25)
-			npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
 		end
 	elseif msgcontains(msg, "411") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 13 then
