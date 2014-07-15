@@ -232,5 +232,8 @@ Storage = {
 	SvargrondArena = {
 		Arena = 1100,
 		Pit = 1101
+	},
+	pitsOfInferno = {
+		Pumin = 50096
 	}
 }
