@@ -44,6 +44,9 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) < 1 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 1)
 			npcHandler:say("Sure, where else. Everyone likes to meet my master, he is a great demon, isn't he? Your name is ...?", cid)
+		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 4)
+			npcHandler:say("How very interesting. I need to tell that to my master immediately. Please go to my colleagues and ask for Form 356. You will need it in order to proceed.", cid)
 		end
 	elseif msgcontains(msg, player:getName()) then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 1 then
@@ -54,11 +57,6 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 2 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 3)
 			npcHandler:say("Huhu, please don't hurt me with your " .. config[vocationId] .. "! Reason of your visit?", cid)
-		end
-	elseif msgcontains(msg, "visit pumin") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 4)
-			npcHandler:say("How very interesting. I need to tell that to my master immediately. Please go to my colleagues and ask for Form 356. You will need it in order to proceed.", cid)
 		end
 	elseif msgcontains(msg, "411") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 13 then
