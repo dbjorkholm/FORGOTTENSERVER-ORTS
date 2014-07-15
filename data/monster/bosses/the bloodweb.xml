@@ -2,8 +2,7 @@
 <monster name="The Bloodweb" nameDescription="the Bloodweb" race="undead" experience="900" speed="340" manacost="0">
 	<health now="1250" max="1250"/>
 	<look type="263" corpse="7344"/>
-	<targetchange speed="20000" chance="8"/>
-	<strategy attack="100" defense="0"/>
+	<targetchange interval="20000" chance="8"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>

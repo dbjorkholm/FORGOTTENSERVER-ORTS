@@ -2,7 +2,6 @@
 <monster name="Kreebosh The Exile" nameDescription="Kreebosh The Exile" race="blood" experience="350" speed="270" manacost="0">
 	<health now="880" max="880"/>
 	<look type="103" corpse="7349"/>
-	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
