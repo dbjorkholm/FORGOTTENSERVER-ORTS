@@ -10,5 +10,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		orig:sendMagicEffect(CONST_ME_SOUND_YELLOW)
 		player:addItem(ITEM_PLATINUM_COIN, 1)
 	end
+	
+	--count how many piggy banks has been broken
+	--Achievement: Allowance Collector
+	local achivement = getAchievementInfoByName("Allowance Collector")
+	local brokenCount = math.max(player:getStorageValue(achievement.actionStorage), 0)
+	
+	player:setStorageValue(achievement.actionStorage, brokenCount + 1)
+	if brokenCount >= 50 and not player:hasAchievement(achievement.id) then
+		player:addAchievement(achievement.id)
+	end
 	return true
 end
