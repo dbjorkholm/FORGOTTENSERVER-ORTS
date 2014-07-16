@@ -152,6 +152,7 @@
 	<monster name="Boogey" file="bosses/boogey.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
+	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
 	<monster name="Coldheart" file="bosses/coldheart.xml"/>
 	<monster name="Countess Sorrow" file="bosses/countess sorrow.xml"/>
