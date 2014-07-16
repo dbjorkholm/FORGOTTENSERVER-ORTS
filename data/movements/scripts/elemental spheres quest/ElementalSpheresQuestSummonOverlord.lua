@@ -75,7 +75,7 @@ local config = {
 }
 function onAddItem(moveitem, tileitem, position)
 	local target = config[tileitem.itemid]
-	if target and target.corpse == moveitem.itemid and Game.getStorageValue(tileitem.itemid) or -1 ~= 1 then
+	if target and target.corpse == moveitem.itemid and Game.getStorageValue(tileitem.itemid) ~= 1 then
 		for i = 1, #target.pos do
 			if not Tile(target.pos[i]):getItemById(target.charged) then
 				return
