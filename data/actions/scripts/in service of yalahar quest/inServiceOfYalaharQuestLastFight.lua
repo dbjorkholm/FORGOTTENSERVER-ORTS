@@ -44,15 +44,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3086) then
 		if(getGlobalStorageValue(982) < 1) then -- Fight
     		local amountOfPlayers = 3
-    		local p = getSpectators(getCreaturePosition(cid), 7, 7, false, true)  
- 
-    		local players = #p
-    		if (players < amountOfPlayers) then
-	  		for _, pid in pairs(p) do
-				p:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
+			local spectators = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, true, 10, 10, 10, 10)
+    		local players = #spectators
+    		if players < amountOfPlayers then
+				if spectators ~= nil then
+					for _, spectator in ipairs(spectators) do
+						spectator:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
+					end
+				end
+				return true
 			end
-		return true
-		end
 			setGlobalStorageValue(982, 1)
 			addEvent(doSummonCreature, 18 * 1000, "Azerus2", {x = 32783, y = 31167, z = 10})
 			for i = 1, 4 do
@@ -78,7 +79,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doChangeAzerus, 4 * 20 * 1000, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 			addEvent(doClearArea, 5 * 1000 * 60, {x = 32776, y = 31157, z = 10}, {x = 32790, y = 31175, z = 10})
 		else
-			p:say('You have to wait some time before this globe charges.', TALKTYPE_MONSTER_SAY)
+			Player(cid):say('You have to wait some time before this globe charges.', TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true
