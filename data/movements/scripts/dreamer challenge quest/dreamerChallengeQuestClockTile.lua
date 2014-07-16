@@ -2,7 +2,8 @@ local words = {
 	"YOU ARE DREAMING !",
 	"WAKE UP !",
 	"TIC TAC",
-	"TAC", "TIC"
+	"TAC",
+	"TIC"
 }
 
 function onStepIn(cid, item, position, fromPosition)
