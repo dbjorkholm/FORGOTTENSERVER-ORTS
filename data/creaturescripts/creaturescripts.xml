@@ -24,7 +24,7 @@
 	
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>
-	<event type="kill" name="inServiceOfYalaharQuestsMorik" script="in service of yalahar quest/inServiceOfYalaharQuestsMorik.lua"/>
+	<event type="kill" name="inServiceOfYalaharQuestsAzerus" script="in service of yalahar quest/inServiceOfYalaharQuestsAzerus.lua"/>
 	<event type="kill" name="inServiceOfYalaharQuestsQuara" script="in service of yalahar quest/inServiceOfYalaharQuestsQuara.lua"/>
 	
 	<!-- Inquisition Quest -->
