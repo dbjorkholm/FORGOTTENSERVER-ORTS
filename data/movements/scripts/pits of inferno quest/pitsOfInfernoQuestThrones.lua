@@ -9,12 +9,17 @@ local thrones = {
 }
 
 function onStepIn(cid, item, position, fromPosition)
-	if(getPlayerStorageValue(cid, item.uid) < 1) then
-		setPlayerStorageValue(cid, item.uid, 1)
-		doSendMagicEffect(position, thrones[item.uid].animation)
-		doCreatureSay(cid, thrones[item.uid].text, TALKTYPE_MONSTER_SAY)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+	
+	if not player:getStorageValue(item.uid) then
+		player:setStorageValue(item.uid, 1)
+		player:getPosition():sendMagicEffect(thrones[item.uid].animation)
+		player:say(thrones[item.uid].text, TALKTYPE_MONSTER_SAY)
 	else
-		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You've already absorbed energy from this throne.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've already absorbed energy from this throne.")
 	end
 	return true
 end
