@@ -1,20 +1,20 @@
-local t = {
+local config = {
 	[8568] = {
 		corpse = 8967,
 		charged = 1495,
 		inactive = 0,
 		boss = 'Energy Overlord',
 		effect = CONST_ME_BIGCLOUDS,
-		summonPos = {x=33095, y=32194, z=13},
+		summonPos = Position(33095, 32194, 13),
 		pos = {
-			{x=33094, y=32189, z=13},
-			{x=33097, y=32189, z=13},
-			{x=33099, y=32191, z=13},
-			{x=33099, y=32194, z=13},
-			{x=33097, y=32196, z=13},
-			{x=33094, y=32196, z=13},
-			{x=33092, y=32194, z=13},
-			{x=33092, y=32191, z=13}
+			Position(33094, 32189, 13),
+			Position(33097, 32189, 13),
+			Position(33099, 32191, 13),
+			Position(33099, 32194, 13),
+			Position(33097, 32196, 13),
+			Position(33094, 32196, 13),
+			Position(33092, 32194, 13),
+			Position(33092, 32191, 13)
 		}
 	},
 	[8569] = {
@@ -23,16 +23,16 @@ local t = {
 		inactive = 8573,
 		boss = 'Fire Overlord',
 		effect = CONST_ME_FIREAREA,
-		summonPos = {x=33199, y=32103, z=13},
+		summonPos = Position(33199, 32103, 13),
 		pos = {
-			{x=33198, y=32102, z=13},
-			{x=33201, y=32102, z=13},
-			{x=33203, y=32104, z=13},
-			{x=33203, y=32107, z=13},
-			{x=33201, y=32109, z=13},
-			{x=33198, y=32109, z=13},
-			{x=33196, y=32107, z=13},
-			{x=33196, y=32104, z=13}
+			Position(33198, 32102, 13),
+			Position(33201, 32102, 13),
+			Position(33203, 32104, 13),
+			Position(33203, 32107, 13),
+			Position(33201, 32109, 13),
+			Position(33198, 32109, 13),
+			Position(33196, 32107, 13),
+			Position(33196, 32104, 13)
 		}
 	},
 	[8570] = {
@@ -42,16 +42,16 @@ local t = {
 		boss = 'Ice Overlord',
 		effect = CONST_ME_ICETORNADO,
 		summonEffect = CONST_ME_ICEAREA,
-		summonPos = {x=33286, y=32102, z=13},
+		summonPos = Position(33286, 32102, 13),
 		pos = {
-			{x=33285, y=32097, z=13},
-			{x=33288, y=32097, z=13},
-			{x=33290, y=32099, z=13},
-			{x=33290, y=32102, z=13},
-			{x=33288, y=32104, z=13},
-			{x=33285, y=32104, z=13},
-			{x=33283, y=32102, z=13},
-			{x=33283, y=32099, z=13}
+			Position(33285, 32097, 13),
+			Position(33288, 32097, 13),
+			Position(33290, 32099, 13),
+			Position(33290, 32102, 13),
+			Position(33288, 32104, 13),
+			Position(33285, 32104, 13),
+			Position(33283, 32102, 13),
+			Position(33283, 32099, 13)
 		}
 	},
 	[8578] = {
@@ -60,32 +60,32 @@ local t = {
 		inactive = 8572,
 		boss = 'Earth Overlord',
 		effect = CONST_ME_BIGPLANTS,
-		summonPos = {x=33347, y=32208, z=13},
+		summonPos = Position(33347, 32208, 13),
 		pos = {
-			{x=33346, y=32203, z=13},
-			{x=33349, y=32203, z=13},
-			{x=33351, y=32205, z=13},
-			{x=33351, y=32208, z=13},
-			{x=33349, y=32210, z=13},
-			{x=33346, y=32210, z=13},
-			{x=33344, y=32208, z=13},
-			{x=33344, y=32205, z=13}
+			Position(33346, 32203, 13),
+			Position(33349, 32203, 13),
+			Position(33351, 32205, 13),
+			Position(33351, 32208, 13),
+			Position(33349, 32210, 13),
+			Position(33346, 32210, 13),
+			Position(33344, 32208, 13),
+			Position(33344, 32205, 13)
 		}
 	}
 }
 function onAddItem(moveitem, tileitem, position)
-	local v = t[tileitem.itemid]
-	if (v and v.corpse == moveitem.itemid and getGlobalStorageValue(tileitem.itemid) < 1) then
-		for i = 1, #v.pos do
-			if (getTileItemById(v.pos[i], v.charged).uid < 1) then
+	local target = config[tileitem.itemid]
+	if target and target.corpse == moveitem.itemid and Game.getStorageValue(tileitem.itemid) ~= 1 then
+		for i = 1, #target.pos do
+			if not Tile(target.pos[i]):getItemById(target.charged) then
 				return
 			end
 		end
-		doRemoveItem(moveitem.uid)
-		doSendMagicEffect(position, v.effect)
-		doSendMagicEffect(v.summonPos, v.summonEffect or v.effect)
-		doSummonCreature(v.boss, v.summonPos)
-		setGlobalStorageValue(tileitem.itemid, 1)
+		Item(moveitem.uid):remove()
+		position:sendMagicEffect(target.effect)
+		target.summonPos:sendMagicEffect(target.summonEffect or target.effect)
+		Game.createMonster(target.boss, target.summonPos)
+		Game.setStorageValue(tileitem.itemid, 1)
 	end
 	return true
 end
