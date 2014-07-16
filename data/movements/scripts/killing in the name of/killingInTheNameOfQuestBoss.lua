@@ -56,7 +56,7 @@ local bosses = {
 function onStepIn(cid, item, position, lastPosition)
 local player = Player(cid)
 	B = bosses[item.uid]
-		if player:getStorageValue(B.storage) == 0 then
+		if player:getStorageValue(B.storage) == 1 then
 		 local specs = Game.getSpectators(B.bossPos, false, false, 0, 9, 0, 9)
 		 if #specs < 1 then
 				player:setStorageValue(B.storage, 0)
