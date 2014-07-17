@@ -17,3 +17,4 @@ function onEquip(cid, item, slot)
 	blood:decay()
 	return true
 end
+
