@@ -1,5 +1,4 @@
 local config = {
-	level = 30,
 	portals = {
 	-- uniqueid, teleportToPos, vocations
 	--Carlin
@@ -84,15 +83,14 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 	
 	local tile = config.portals[item.uid]
-	if tile and isInArray(i[2], player:getVocation()) and player:getLevel() >= config.level then
+	if tile and isInArray(i[2], player:getVocation()) and player:getLevel() >= 30 then
 		player:teleportTo(tile[1])
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:setStorageValue(tile[3], 1)
 	else
 		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:say(not tile and "" or "Only " .. (config.premium and "Premium " or "") .. (tile[2][1] == 1 and "Sorcerers" or "Druids") .. (config.level and " of level " .. config.level .. " or higher" or "") .. " may enter this portal", TALKTYPE_MONSTER_SAY, false, cid)
+		player:say("Only Sorcerers or Druids of level 30 or higher may enter this portal", TALKTYPE_MONSTER_SAY, false, cid)
 	end
 	return true
 end
-
