@@ -2,7 +2,7 @@
 
 Achievements Lib Created By Eduardo Montilva (Darkhaos) for TFS 1.0
 
-LAST UPDATE: 12 July 2014 (Tibia Update 10.50)
+LAST UPDATE: 16 July 2014 (Tibia Update 10.50)
 
 Functions:
 	getAchievementInfoById(achievement_id)
@@ -460,10 +460,8 @@ function Player.getAchievements(self)
 	return t
 end
 
-function Player.addAchievement(self, ach, showMsg)
+function Player.addAchievement(self, ach, denyMsg)
 	local achievement
-	local denyMsg = false
-	if not showMsg then denyMsg = true end
 	if isNumber(ach) then
 		achievement = getAchievementInfoById(ach)
 	else
@@ -495,10 +493,10 @@ function Player.removeAchievement(self, ach)
 	return true
 end
 
-function Player.addAllAchievements(self, showMsg)
+function Player.addAllAchievements(self, denyMsg)
 
 	for i = ACHIEVEMENT_FIRST, ACHIEVEMENT_LAST do
-		self:addAchievement(i, showMsg)
+		self:addAchievement(i, denyMsg)
 	end
 	return true
 end
