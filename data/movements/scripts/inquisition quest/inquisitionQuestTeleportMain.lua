@@ -52,7 +52,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	if teleports[item.uid].boss then
-		if getGlobalStorageValue(teleports[item.uid].bossStorage) == 2 then
+		if Game.getStorageValue(teleports[item.uid].bossStorage) == 2 then
 			if player:getStorageValue(Storage.TheInquisition.EnterTeleport) <= teleports[item.uid].storage then
 				player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleports[item.uid].storage)
 			end
@@ -68,7 +68,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 	
 	if teleports[item.uid].storage then
-		if player:getStorageValue( Storage.TheInquisition.EnterTeleport) >= teleports[item.uid].storage then
+		if player:getStorageValue(Storage.TheInquisition.EnterTeleport) >= teleports[item.uid].storage then
 			player:teleportTo(teleports[item.uid].newPos)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:say(teleports[item.uid].text, TALKTYPE_MONSTER_SAY)
