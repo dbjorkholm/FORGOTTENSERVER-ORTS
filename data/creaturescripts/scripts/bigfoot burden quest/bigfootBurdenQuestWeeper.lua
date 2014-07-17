@@ -1,22 +1,20 @@
 function onKill(cid, target)
-	if(string.lower(getCreatureName(target)) == "parasite" and getGlobalStorageValue(3144) < 1) then
+	target = Creature(target)
+	if string.lower(target:getName()) == "parasite" and Game.getStorageValue(3144) < 1 then
 		pos = {
 			{x = 33097, y = 31976, z = 11},
 			{x = 33097, y = 31977, z = 11},
 			{x = 33097, y = 31978, z = 11},
 			{x = 33097, y = 31979, z = 11}
 		}
-		barrier = false
+		local barrier = false
 		for i = 1, 4 do
-			if(getCreaturePosition(target).x == pos[i].x and
-				getCreaturePosition(target).y == pos[i].y and
-				getCreaturePosition(target).z == pos[i].z
-			) then
+			if target:getPosition() == Position(pos[i].x, pos[i].y, pos[i].z) then
 				barrier = true
 			end
 		end
-		last = false
-		if(barrier == true) then
+		local last = false
+		if barrier == true then
 			for i = 1, 4 do
 				barrier = {
 					{x = 33098, y = 31976, z = 11},
@@ -24,21 +22,21 @@ function onKill(cid, target)
 					{x = 33098, y = 31978, z = 11},
 					{x = 33098, y = 31979, z = 11}
 				}
-				if(getTileItemById(barrier[i], 18459).uid > 0) then
+				if Tile(Position(barrier[i].x, barrier[i].y, barrier[i].z)):getItemById(18459) then
 					doTransformItem(getTileItemById(barrier[i], 18459).uid, getTileItemById(barrier[i], 18459), 19460, 1)
-				elseif(getTileItemById(barrier[i], 18460).uid > 0) then
+				elseif Tile(Position(barrier[i].x, barrier[i].y, barrier[i].z)):getItemById(18460) then
 					doTransformItem(getTileItemById(barrier[i], 18460).uid, getTileItemById(barrier[i], 18459), 19461, 1)
-				elseif(getTileItemById(barrier[i], 18459).uid > 0) then
-					doRemoveItem(getTileItemById(barrier[i], 18461).uid, 1)
-					addEvent(doCreateItem, 30 * 60 * 1000, 18459, 1, barrier[i])
+				elseif Tile(Position(barrier[i].x, barrier[i].y, barrier[i].z)):getItemById(18459) then
+					Tile(Position(barrier[i].x, barrier[i].y, barrier[i].z)):getItemById(18461):remove(1)
+					addEvent(Game.createItem(), 30 * 60 * 1000, 18459, 1, Position(barrier[i].x, barrier[i].y, barrier[i].z))
 					last = true
 				end
 			end
 		end
-		if(barrier == true and last == true) then
-			setGlobalStorageValue(3144, 1)
-			addEvent(setGlobalStorageValue, 30 * 60 * 1000, 3144, 0)
-			doSummonCreature("gnomevil", {x = 33114, y = 31953, z = 11})
+		if barrier == true and last == true then
+			Game.setStorageValue(3144, 1)
+			addEvent(Game.setStorageValue(), 30 * 60 * 1000, 3144, 0)
+			Game.createMonster("gnomevil", Position(33114, 31953, 11))
 			addEvent(teleportAllPlayersFromArea, 6 * 20 * 1000 + 30 * 60 * 1000, {
 				{x = 33102, y = 31942, z = 11},
 				{x = 33130, y = 31970, z = 11}

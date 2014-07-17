@@ -22,4 +22,5 @@ function onKill(cid, target, lastHit)
 			player:setStorageValue(956 + targetName[1], 1)
 		end
 	end
+	return true
 end
