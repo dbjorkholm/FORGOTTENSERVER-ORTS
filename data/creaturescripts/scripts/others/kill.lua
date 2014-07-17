@@ -40,7 +40,7 @@ function onKill(cid, target)
 							end
 						end
 					else
-						Player(id):addAchievement(aname)
+						player:addAchievement(aname)
 					end
 					return true
 				end
