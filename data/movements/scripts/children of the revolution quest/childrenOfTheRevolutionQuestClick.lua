@@ -7,22 +7,18 @@ local config = {
 function doClearMissionArea()
 	Game.setStorageValue(Storage.ChildrenoftheRevolution.Mission05, -1)
 	local spectators = Game.getSpectators(Position({x = 33268, y = 31119, z = 7}), false, true, 26, 26, 20, 20)
-		if spectators ~= nil then
-			for _, spectator in ipairs(spectators) do
-				spectator:teleportTo({x = 33353, y = 31410, z = 8})
-				spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				if spectator:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 19 then
-					spectator:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 20)
-				end
-			end
+	for _, spectator in ipairs(spectators) do
+		spectator:teleportTo({x = 33353, y = 31410, z = 8})
+		spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		if spectator:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 19 then
+			spectator:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 20)
 		end
+	end
 	local monsters = Game.getSpectators(Position({x = 33268, y = 31119, z = 7}), false, false, 26, 26, 20, 20)
-		if monsters ~= nil then
-			for _, monster in ipairs(monsters) do
-				monster:getPosition():sendMagicEffect(CONST_ME_POFF)
-				monster:remove()
-			end
-		end
+	for _, monster in ipairs(monsters) do
+		monster:getPosition():sendMagicEffect(CONST_ME_POFF)
+		monster:remove()
+	end
 	return true
 end
 
