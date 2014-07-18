@@ -65,5 +65,6 @@
 		<item id="2139" chance="330"/>					<!-- ancient tiara -->
 		<item id="2074" chance="330"/>					<!-- panpipes -->
 		<item id="2124" chance="300"/>					<!-- crystal ring -->
+		<item id="11207" chance="100"/>					<!-- mini mummy -->
 	</loot>
 </monster>
