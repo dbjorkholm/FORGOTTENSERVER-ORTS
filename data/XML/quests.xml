@@ -709,5 +709,15 @@
 			<missionstate id="7" description="You have brought a branch to Zirella, congratulations! You should talk to her again for your reward."/>
 			<missionstate id="8" description="You have helped Zirella by collecting wood for her. The reward can be found in her house."/>
 		</mission>
+		<mission name="A Hungry Tailor" storageid="50098" startvalue="1" endvalue="8">
+			<missionstate id="1" description="You found another person named Carlos. You should talk to him learn how to change your outfit."/>
+			<missionstate id="2" description="Carlos taught you how to change your outfit. Now he seems to be wanting a small favour from you. Talk to him again to learn more."/>
+			<missionstate id="3" description="Carlos asked you whether you could bring him some food. Talk to him again to learn how to find food here."/>
+			<missionstate id="4" description="Carlos asked you to hunt some deer and rabbits and loot them to find a piece of ham or meat. However you haven't agreed yet, so you should tell him that you'll do it."/>
+			<missionstate id="5" description="You agreed to bring Carlos some food. Hunt some deer or rabbit until you find a piece of meat or ham talk to Carlos again."/>
+			<missionstate id="6" description="To sell the meat or ham to Carlos, talk to him and ask him for a 'trade'."/>
+			<missionstate id="7" description="You sucessfully learnt how to change your outfit and how to trade with NPCs. Time to head over the bridge to Rookgaard!"/>
+			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
+		</mission>
 	</quest>
 </quests>

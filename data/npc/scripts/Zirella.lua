@@ -110,6 +110,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif storeTalkCid[cid] == 8 then
 			npcHandler:say("Oh, you deserve it. You really have earned some experience! Also, you may enter my little house now and take what's in that chest beside my bed. Good {bye} for now!", cid)
 			player:addExperience(50, true)
+			Position(32058, 32266, 6):sendMagicEffect(CONST_ME_TUTORIALARROW)
 			player:getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.ZirellaQuestLog, 8)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage, 8)

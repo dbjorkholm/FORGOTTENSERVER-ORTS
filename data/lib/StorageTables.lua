@@ -219,7 +219,9 @@ Storage = {
 		cockroachLegsMsgStorage = 50089,
 		cockroachBodyMsgStorage = 50090,
 		ZirellaNpcGreetStorage = 50091,
-		ZirellaQuestLog = 50092
+		ZirellaQuestLog = 50092,
+		CarlosNpcGreetStorage = 50097,
+		CarlosQuestLog = 50098
 	},
 	DeeperBanuta = {
 		Shortcut = 50095
