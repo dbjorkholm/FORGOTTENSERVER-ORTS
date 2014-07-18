@@ -10,12 +10,10 @@ local waves = {
 function doClearAreaAzerus()
 	if Game.getStorageValue(982) == 1 then
 		local othermonsters = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
-		if othermonsters ~= nil then
-			for _, othermonster in ipairs(othermonsters) do
-				if othermonster:isMonster() then
-					othermonster:getPosition():sendMagicEffect(CONST_ME_POFF)
-					othermonster:remove()
-				end
+		for _, othermonster in ipairs(othermonsters) do
+			if othermonster:isMonster() then
+				othermonster:getPosition():sendMagicEffect(CONST_ME_POFF)
+				othermonster:remove()
 			end
 		end
 		Game.setStorageValue(982, 0)
@@ -25,17 +23,15 @@ end
 
 function doChangeAzerus()
 	local azeruses = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
-		if azeruses ~= nil then
-			for _, azerus in ipairs(azeruses) do
-				if azerus:isMonster() and string.lower(azerus:getName()) == "azerus" then
-					azerus:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
-					local azeruspos = azerus:getPosition()
-					azerus:remove()
-					Game.createMonster("Azerus", azeruspos) 
-					return true
-				end
-			end
+	for _, azerus in ipairs(azeruses) do
+		if azerus:isMonster() and string.lower(azerus:getName()) == "azerus" then
+			azerus:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
+			local azeruspos = azerus:getPosition()
+			azerus:remove()
+			Game.createMonster("Azerus", azeruspos) 
+			return true
 		end
+	end
 	return false
 end		
 
@@ -44,12 +40,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if Game.getStorageValue(982) ~= 1 then -- Fight
     		local amountOfPlayers = 1
 			local spectators = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, true, 10, 10, 10, 10)
-    		local players = #spectators
-    		if players < amountOfPlayers then
-				if spectators ~= nil then
-					for _, spectator in ipairs(spectators) do
-						spectator:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
-					end
+    		if #spectators < amountOfPlayers then
+				for _, spectator in ipairs(spectators) do
+					spectator:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
 				end
 				return true
 			end
