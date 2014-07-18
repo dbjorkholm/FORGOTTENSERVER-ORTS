@@ -90,7 +90,7 @@ function onStepIn(cid, item, position, fromPosition)
 	else
 		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:say("Only Sorcerers or Druids of level 30 or higher may enter this portal", TALKTYPE_MONSTER_SAY, false, cid)
+		player:say("Only " .. (tile[2][1] == 1 and "Sorcerers" or "Druids") .. "of level 30 or higher may enter this portal.", TALKTYPE_MONSTER_SAY, false, cid)
 	end
 	return true
 end
