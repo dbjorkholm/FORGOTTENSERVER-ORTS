@@ -17,7 +17,7 @@ local config = {
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 12 then 
-		player:setStorageValue(Storage.pitsOInferno.Pumin, 13)
+		player:setStorageValue(Storage.pitsOfInferno.Pumin, 13)
 		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
 	elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 17 then
 		player:setStorageValue(Storage.pitsOfInferno.Pumin, 18)
@@ -59,25 +59,25 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "411") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 13 then
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 14)
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 14)
 			npcHandler:say("Form 411? You need Form 287 to get that! Do you have it?", cid)
 		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 18 then
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 19)
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 19)
 			npcHandler:say("Form 411? You need Form 287 to get that! Do you have it?", cid)
 		end
 	elseif msgcontains(msg, "no") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 14 then
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 15)
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 15)
 			npcHandler:say("Oh, what a pity. Go see one of my colleagues. I give you the permission to get Form 287. Bye!", cid)
 		end
 	elseif msgcontains(msg, "yes") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 19 then
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 20)
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 20)
 			npcHandler:say("Great. Here you are. Form 411. Come back anytime you want to talk. Bye.", cid)
 		end
 	elseif msgcontains(msg, "356") then
 		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 25 then
-			player:setStorageValue(Storage.pitsOInferno.Pumin, 26)
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 26)
 			npcHandler:say("INCREDIBLE, you did it!! Have fun at Pumin's Domain!", cid)
 		end
 	end
