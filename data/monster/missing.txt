@@ -22,3 +22,6 @@ Ethershreck
 
 Inky
 	- missing freezing condition
+
+Dipthrah
+	- missing divine caldera that halves all skills
