@@ -196,6 +196,7 @@
 	<monster name="Haunter" file="bosses/haunter.xml"/>
 	<monster name="Heoni" file="bosses/heoni.xml"/>
 	<monster name="Hide" file="bosses/hide.xml"/>
+	<monster name="Horestis" file="bosses/horestis.xml"/>
 	<monster name="Incineron" file="bosses/incineron.xml"/>
 	<monster name="Infernatil" file="bosses/infernatil.xml"/>
 	<monster name="Inky" file="bosses/inky.xml"/>
@@ -703,7 +704,6 @@
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="pharaohs/ashmunrah.xml"/>
 	<monster name="Dipthrah" file="pharaohs/dipthrah.xml"/>
-	<monster name="Horestis" file="pharaohs/horestis.xml"/>
 	<monster name="Mahrdis" file="pharaohs/mahrdis.xml"/>
 	<monster name="Morguthis" file="pharaohs/morguthis.xml"/>
 	<monster name="Omruc" file="pharaohs/omruc.xml"/>
