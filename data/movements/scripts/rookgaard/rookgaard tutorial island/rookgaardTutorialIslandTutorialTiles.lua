@@ -56,10 +56,14 @@ function onStepIn(cid, item, position, fromPosition)
 	end	
 	
 	if item.actionid == 50078 then
-		if player:getStorageValue(50093) < 1 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < targetTableAid.storageValue then
+		if player:getStorageValue(50093) < 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have not claimed your reward from Zirella house.')
 			player:teleportTo(fromPosition, true)
 			return
+		end
+	elseif item.actionid == 50069 then
+		if player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) < 6 then
+			return true
 		end
 	end
 
