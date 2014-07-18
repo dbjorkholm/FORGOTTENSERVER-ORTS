@@ -37,6 +37,8 @@ local yasirEnabled = false
 local yasirChance = 20
 
 function onStartup()
+	print(">> Loaded "..Game.getNpcCount().." npcs, spawned "..Game.getMonsterCount().." monsters.")
+
 	db.query("TRUNCATE TABLE `players_online`")
 	db.query("DELETE FROM `guild_wars` WHERE `status` = 0")
 	db.query("DELETE FROM `players` WHERE `deletion` != 0 AND `deletion` < " .. os.time())
