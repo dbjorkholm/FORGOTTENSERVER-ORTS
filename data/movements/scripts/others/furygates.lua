@@ -14,7 +14,7 @@ function onStepIn(cid, item, position)
 	end
 
 	local gate = config[item.actionid]
-	if item.actionid == gate and Game.getStorageValue(gate) == 1 then
+	if gate and Game.getStorageValue(item.actionid) == 1 then
 		if player:getLevel() >= 60 then
 			player:teleportTo(Position(33290, 31786, 13))
 			player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
@@ -23,7 +23,7 @@ function onStepIn(cid, item, position)
 			player:getPosition():sendMagicEffect(CONST_ME_POFF)
 			player:teleportTo(gate)
 		end
-	elseif item.actionid == 9715 and Game.getStorageValue(gate) == 1 then
+	elseif not gate and Game.getStorageValue(item.actionid) == 1 then
 		player:teleportTo(gate)
 		player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	end
