@@ -83,7 +83,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 	
 	local tile = config.portals[item.uid]
-	if tile and isInArray(i[2], player:getVocation()) and player:getLevel() >= 30 then
+	if tile and isInArray(tile[2], player:getVocation():getId()) and player:getLevel() >= 30 then
 		player:teleportTo(tile[1])
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:setStorageValue(tile[3], 1)
