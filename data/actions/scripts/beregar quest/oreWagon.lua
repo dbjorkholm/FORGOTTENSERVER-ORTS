@@ -11,6 +11,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 	
-	player:teleportTo(targetItem)
+	if player:getStorageValue(Storage.hiddenCityOfBeregar.Travel) >= 1 then
+		player:teleportTo(targetItem)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	end
 	return true
 end
