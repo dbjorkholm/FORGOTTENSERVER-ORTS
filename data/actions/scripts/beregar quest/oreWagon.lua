@@ -6,13 +6,13 @@ local config = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	
-	local targetItem = config[item.actionid]
-	if not targetItem then
+	local targetPosition = config[item.actionid]
+	if not targetPosition then
 		return true
 	end
 	
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.OreWagon) == 1 then
-		player:teleportTo(targetItem)
+		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't know how to use this yet.")
