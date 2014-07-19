@@ -335,6 +335,9 @@
 	<action uniqueid="3115" script="postman quest/postmanQuestPresentDoor.lua"/>
 	<action uniqueid="3118" script="postman quest/postmanQuestWaldo.lua"/>
 	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
+	
+	<!-- Hidden City of Beregar Quest -->
+	<action fromaid="50092" toaid="50093" script="beregar quest/oreWagon.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
