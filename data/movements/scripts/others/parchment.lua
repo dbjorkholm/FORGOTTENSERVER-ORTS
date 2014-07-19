@@ -1,8 +1,8 @@
 local demonPos = {
-	{x=33060, y=31623, z=15},
-	{x=33066, y=31623, z=15},
-	{x=33060, y=31627, z=15},
-	{x=33066, y=31627, z=15}
+	Position(33060, 31623, 15),
+	Position(33066, 31623, 15),
+	Position(33060, 31627, 15),
+	Position(33066, 31627, 15)
 }
 
 function onRemoveItem(item, tile, position)
@@ -15,3 +15,4 @@ function onRemoveItem(item, tile, position)
 	end
 	return true
 end
+
