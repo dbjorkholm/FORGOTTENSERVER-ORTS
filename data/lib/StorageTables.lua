@@ -240,6 +240,7 @@ Storage = {
 	},
 	hiddenCityOfBeregar = {
 		WayToBeregar = 50099,
-		Travel = 50100
+		OreWagon = 50100,
+		Elevator = 50101
 	}
 }
