@@ -244,6 +244,7 @@ Storage = {
 		GoingDown = 50101,
 		JusticeForAll = 50102,
 		GearWheel = 50103,
-		SweetAsChocolateCake = 50104
+		SweetAsChocolateCake = 50104,
+		RoyalRescue = 50105
 	}
 }

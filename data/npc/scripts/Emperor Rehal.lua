@@ -14,25 +14,35 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "promot") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(30018) == 1 then
-			npcHandler:say('You are already promoted.', cid)
-		elseif player:getLevel() < 20 then
-			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
-		elseif player:getMoney() < 20000 then
-			npcHandler:say('You do not have enough money.', cid)
-		elseif configManager.getBoolean(configKeys.FREE_PREMIUM) or isPremium(cid) == true then
-			npcHandler:say("Congratulations! You are now promoted.", cid)
-			local promotedVoc = getPromotedVocation(player:getVocation())
-			player:setVocation(promotedVoc)
-			player:removeMoney(20000)
-		else
-			npcHandler:say("You need a premium account in order to promote.", cid)
-		end
-		npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			if player:getStorageValue(30018) == 1 then
+				npcHandler:say('You are already promoted.', cid)
+			elseif player:getLevel() < 20 then
+				npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
+			elseif player:getMoney() < 20000 then
+				npcHandler:say('You do not have enough money.', cid)
+			elseif configManager.getBoolean(configKeys.FREE_PREMIUM) or isPremium(cid) == true then
+				npcHandler:say("Congratulations! You are now promoted.", cid)
+				local promotedVoc = getPromotedVocation(player:getVocation())
+				player:setVocation(promotedVoc)
+				player:removeMoney(20000)
+			else
+				npcHandler:say("You need a premium account in order to promote.", cid)
+			end
+			npcHandler.topic[cid] = 0
+	elseif npcHandler.topic[cid] == 3 then
+		player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 1)
+		npcHandler:say(
+						{
+						"Splendid! My son Rehon set off on an expedition to the deeper mines. He and a group of dwarfs were to search for new veins of crystal. Unfortunately they have been missing for 2 weeks now. ..."
+						"Find my son and if he's alive bring him back. You will find a reactivated ore wagon tunnel at the entrance of the great citadel which leades to the deeper mines. If you encounter problems within the tunnel go ask Xorlosh, he can help you."
+						}, cid)
+	end
 	elseif npcHandler.topic[cid] == 1 then
 		npcHandler:say('Ok, whatever.', cid)
 		npcHandler.topic[cid] = 0
+
 	elseif msgcontains(msg, "nokmir") then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 1 then
 			npcHandler:say("Oh well, I liked Nokmir. He used to be a good dwarf until that day on which he stole the ring from Rerun.", cid)
@@ -53,6 +63,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
+	elseif msgcontains(msg, "mission") then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) > 1 and player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 5 then
+			npcHandler:say("As you have proven yourself trustworthy I'm going to assign you a special mission. Are you interested?", cid)
+			npcHandler.topic[cid] = 3
 	return true
 end
 
