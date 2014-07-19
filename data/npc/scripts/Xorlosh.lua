@@ -44,6 +44,5 @@ end
 npcHandler:setMessage(MESSAGE_WALKAWAY, "See you my friend.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you my friend.")
 npcHandler:setMessage(MESSAGE_GREET, "Who are you? Are you a genius in mechanics? You don't look like one.")
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
