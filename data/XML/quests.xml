@@ -720,4 +720,22 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
+	<quest name="The Hidden City of Beregar" startstorageid="50099" startstoragevalue="1">
+		<mission name="The Way to Beregar" storageid="50099" startvalue="1" endvalue="1" description="You have spoken to Maris about Mistrock. He suggested that you search on Fenrock."/>
+		<mission name="Ore Wagon" storageid="50100" startvalue="1" endvalue="1" description="You have found the entrance to the hidden city of Beregar and may now use the ore wagon."/>
+		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You have asked Xorlosh for a mission."/>
+			<missionstate id="2" description="Xorlosh has asked you to bring 3 gear wheels to him."/>
+			<missionstate id="3" description="You have delivered 3 gear wheels to Xorlosh. You may now use the elevator."/>
+		</mission>
+		<mission name="Justice For All" storageid="50102" startvalue="1" endvalue="7">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+			<missionstate id="7" description=""/>
+		</mission>
+	</quest>
 </quests>
