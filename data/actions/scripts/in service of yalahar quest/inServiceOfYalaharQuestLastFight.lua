@@ -38,9 +38,9 @@ end
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.uid == 3086 then
 		if Game.getStorageValue(982) ~= 1 then -- Fight
-    		local amountOfPlayers = 1
+			local amountOfPlayers = 3
 			local spectators = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, true, 10, 10, 10, 10)
-    		if #spectators < amountOfPlayers then
+			if #spectators < amountOfPlayers then
 				for _, spectator in ipairs(spectators) do
 					spectator:sendTextMessage(MESSAGE_INFO_DESCR, "You need atleast "..amountOfPlayers.." players inside the quest room.")
 				end
