@@ -28,6 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay('Then not.', cid)
 	end
 	npcHandler:releaseFocus(cid)
+	npcHandler:resetNpc(cid)
 	return true
 end
 

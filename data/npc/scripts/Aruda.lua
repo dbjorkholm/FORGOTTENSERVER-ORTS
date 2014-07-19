@@ -44,7 +44,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Oh, sorry, I was distracted, what did you say?", cid)
 		else
 			npcHandler:say("Oh, I just remember I have some work to do, sorry. Bye!", cid)
-		npcHandler:releaseFocus(cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 		Topic[cid] = nil
 		Price[cid] = nil
@@ -157,6 +158,7 @@ local function creatureSayCallback(cid, type, msg)
 		Topic[cid] = nil
 		Price[cid] = nil
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, "tibia") then
 		npcHandler:say("I would like to visit the beach more often, but I guess it's too dangerous.", cid)
 		Topic[cid] = 2
@@ -202,6 +204,7 @@ local function creatureSayCallback(cid, type, msg)
 		Topic[cid] = nil
 		Price[cid] = nil
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

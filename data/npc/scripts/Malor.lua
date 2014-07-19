@@ -44,12 +44,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(GreenDjinn.MissionStart+3, 4)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	end
 	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
 		npcHandler:say("Farewell, human. When I have taken my rightful place I shall remember those who served me well. Even if they are only humans.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

@@ -45,6 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("<salutes>Aaaa -tention!.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

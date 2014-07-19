@@ -101,6 +101,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoQuestLog, 2)
 			player:sendTutorial(3)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 2 then
 			if player:getItemCount(2651) >= 1 then
 				local coatSlot = player:getSlotItem(CONST_SLOT_ARMOR)
@@ -125,6 +126,7 @@ local function creatureSayCallback(cid, type, msg)
 			Position(32036, 32277, 6):sendMagicEffect(CONST_ME_TUTORIALARROW)
 			player:addItem(2382, 1)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 4 then
 			npcHandler:say("That's just great! Now you have more health points, can carry more stuff and walk faster. Talking about health, did you get {hurt} by those cockroaches?", cid)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 8)
@@ -164,6 +166,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoQuestLog, 11)
 			player:addMapMark(Position(32045, 32270, 6), MAPMARK_GREENSOUTH, "To Zirella")
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "hurt") then
 		if storeTalkCid[cid] == 6 then
@@ -183,6 +186,7 @@ local function creatureSayCallback(cid, type, msg)
 			Position(32036, 32277, 6):sendMagicEffect(CONST_ME_TUTORIALARROW)
 			player:addItem(2382, 1)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "easy") then
 		if storeTalkCid[cid] == 8 then

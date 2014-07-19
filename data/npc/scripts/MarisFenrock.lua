@@ -15,6 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 		doTeleportThing(cid, pos)
 		doSendMagicEffect(pos, CONST_ME_TELEPORT)
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

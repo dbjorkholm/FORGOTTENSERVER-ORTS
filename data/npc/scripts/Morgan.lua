@@ -73,6 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Finally.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	
 	return true
