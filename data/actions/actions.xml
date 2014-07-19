@@ -338,9 +338,9 @@
 	
 	<!-- Hidden City of Beregar Quest -->
 	<action fromaid="50092" toaid="50093" script="beregar quest/oreWagon.lua"/>
-	<action actionid="50094" script="beregar quest/goldenIngot.lua"/>
-	<action actionid="50095" script="beregar quest/ring.lua"/>
-	<action actionid="50096" script="beregar quest/door.lua"/>
+	<action actionid="50096" script="beregar quest/goldenIngot.lua"/>
+	<action actionid="50097" script="beregar quest/ring.lua"/>
+	<action actionid="50098" script="beregar quest/door.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
