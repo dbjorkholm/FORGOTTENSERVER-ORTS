@@ -340,6 +340,7 @@
 	<action actionid="50096" script="beregar quest/goldenIngot.lua"/>
 	<action actionid="50097" script="beregar quest/ring.lua"/>
 	<action fromaid="50098" toaid="50099" script="beregar quest/doors.lua"/>
+	<action actionid="50100" script="beregar quest/royalRescueWagon.lua"
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
