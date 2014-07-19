@@ -9,7 +9,7 @@ local config = {
 	[50089] = {storageKey = Storage.RookgaardTutorialIsland.CarlosQuestLog, storageValue = 7, text = "You are not ready to enter the village of Rookgaard yet. You should talk to Carlos some more.", storageValue2 = 7, text2 = "You have no business anymore on the other side of Rookgaard."}
 }
 
-local allowPass = false
+local allowPass = {}
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
@@ -30,12 +30,12 @@ function onStepIn(cid, item, position, fromPosition)
 			return true
 		end
 	elseif item.actionid == 50071 then
-		allowPass = true
+		allowPass[cid] = true
 	elseif item.actionid == 50074 then
-		if allowPass then
+		if allowPass[cid] then
 			local playerPos = player:getPosition()
 			player:teleportTo(Position(playerPos.x + 1, playerPos.y, playerPos.z), false)
-			allowPass = false
+			allowPass[cid] = nil
 			return true
 		end
 	end
