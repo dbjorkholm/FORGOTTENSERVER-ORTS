@@ -723,19 +723,17 @@
 	<quest name="The Hidden City of Beregar" startstorageid="50099" startstoragevalue="1">
 		<mission name="The Way to Beregar" storageid="50099" startvalue="1" endvalue="1" description="You have spoken to Maris about Mistrock. He suggested that you search on Fenrock."/>
 		<mission name="Ore Wagon" storageid="50100" startvalue="1" endvalue="1" description="You have found the entrance to the hidden city of Beregar and may now use the ore wagon."/>
-		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="3">
-			<missionstate id="1" description="You have asked Xorlosh for a mission."/>
-			<missionstate id="2" description="Xorlosh has asked you to bring 3 gear wheels to him."/>
-			<missionstate id="3" description="You have delivered 3 gear wheels to Xorlosh. You may now use the elevator."/>
+		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Xorlosh has asked you to bring 3 gear wheels to him."/>
+			<missionstate id="2" description="You have delivered 3 gear wheels to Xorlosh. You may now use the elevator."/>
 		</mission>
-		<mission name="Justice For All" storageid="50102" startvalue="1" endvalue="7">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-			<missionstate id="7" description=""/>
+		<mission name="Justice For All" storageid="50102" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Nokmir wishes someone would find out the truth about the whole mess. Maybe you should talk with Emperor Rehal."/>
+			<missionstate id="2" description="Emperor Rehal still can't believe that Nokmir stole the ring. Maybe you should talk with Grombur"/>
+			<missionstate id="3" description="Grombur said that Rerun might get promoted instead of Nokmir. Maybe you should search for the ring."/>
+			<missionstate id="4" description="You have found Rerun's Ring, report back to Emperor Rehal."/>
+			<missionstate id="5" description="You have reported back to Emperor Rehal about the ring."/>
+			<missionstate id="6" description="You have saved Nokmir's life. You are now allowed to pass the door to the northern mines!"/>
 		</mission>
 	</quest>
 </quests>

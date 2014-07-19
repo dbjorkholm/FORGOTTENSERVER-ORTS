@@ -204,7 +204,7 @@ local function creatureSayCallback(cid, type, msg)
 		end		
 	end
 	elseif msgcontains(msg, "gear wheel") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.GoingDown) >= 2 and player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) > 3 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.GoingDown) >= 1 and player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) > 3 then
 			npcHandler:say("Uh. Me can make some gear wheel from iron ores. Lil' one want to trade?", cid)
 			npcHandler.topic[cid] = 11
 		end

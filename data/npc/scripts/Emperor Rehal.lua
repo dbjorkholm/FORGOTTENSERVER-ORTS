@@ -34,19 +34,21 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Ok, whatever.', cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "nokmir") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 2 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 1 then
 			npcHandler:say("Oh well, I liked Nokmir. He used to be a good dwarf until that day on which he stole the ring from Rerun.", cid)
-		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 5 then
+			npcHandler.topic[cid] = 2
+		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 4 then
 			npcHandler:say(
 							{
 							"Interesting. The fact that you have the ring means that Nokmir can't have stolen it. Combined with the information Grombur gave you, the case appears in a completely different light. ..."
 							"Let there be justice for all. Nokmir is innocent and acquitted from all charges! And Rerun... I want him in prison for this malicious act!"
 							}, cid)
-			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 6)
+			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 5)
+			player:removeItem(14348, 1)
 		end
 	elseif msgcontains(msg, "Grombur") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 2 then
-			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 3)
+		if npcHandler.topic[cid] == 2 then
+			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 2)
 			npcHandler:say("He's very ambitious and always volunteers for the long shifts.", cid)
 		end
 	end
