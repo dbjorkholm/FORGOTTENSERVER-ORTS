@@ -13,6 +13,7 @@ function onStepIn(cid, item, position)
 		return true
 	end
 	
+	local gate = config[item.actionid]
 	if item.actionid == gate and Game.getStorageValue(gate) == 1 then
 		if player:getLevel() >= 60 then
 			player:teleportTo(Position(33290, 31786, 13))
