@@ -44,6 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 4 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 1)
 			npcHandler:say("He's a good emperor but I doubt he is wise enough to see the truth behind that false accusation against me. If just someone would find out the truth about that whole mess.", cid)
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

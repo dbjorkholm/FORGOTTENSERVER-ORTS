@@ -733,7 +733,12 @@
 			<missionstate id="3" description="Grombur said that Rerun might get promoted instead of Nokmir. Maybe you should search for the ring."/>
 			<missionstate id="4" description="You have found Rerun's Ring, report back to Emperor Rehal."/>
 			<missionstate id="5" description="You have reported back to Emperor Rehal about the ring."/>
-			<missionstate id="6" description="You have saved Nokmir's life. You are now allowed to pass the door to the northern mines!"/>
+			<missionstate id="6" description="You have saved Nokmir's life. You are now allowed to access the northern part of the mine!"/>
+		</mission>
+		<mission name="Sweet as Chocolate Cake" storageid="50104" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Frafnar has asked you to bake a Chocolate Cake as a gift to Bolfona from him."/>
+			<missionstate id="2" description="You have delivered the Chocolate Cake to Bolfona. Report back to Frafnar!."/>
+			<missionstate id="3" description="You told Frafnar of the great success. You are now allowed to access the western part of the mine!"/>
 		</mission>
 	</quest>
 </quests>

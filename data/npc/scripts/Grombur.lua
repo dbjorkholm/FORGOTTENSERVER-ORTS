@@ -23,6 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.GoingDown, 3)
 			npcHandler:say("Yeah, he's the lucky guy in this whole story. I heard rumours that emperor Rehal had plans to promote Nokmir, but after this whole thievery story, he might pick Rerun instead.", cid)
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

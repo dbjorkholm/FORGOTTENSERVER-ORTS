@@ -243,6 +243,7 @@ Storage = {
 		OreWagon = 50100,
 		GoingDown = 50101,
 		JusticeForAll = 50102,
-		GearWheel = 50103
+		GearWheel = 50103,
+		SweetAsChocolateCake = 50104
 	}
 }

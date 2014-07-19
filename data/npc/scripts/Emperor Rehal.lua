@@ -50,6 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 2 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 2)
 			npcHandler:say("He's very ambitious and always volunteers for the long shifts.", cid)
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

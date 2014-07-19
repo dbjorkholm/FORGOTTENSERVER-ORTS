@@ -137,8 +137,10 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.hiddenCityOfBeregar.GearWheel, player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) + 1)
 				player:removeItem(5880, 1)
 				player:addItem(9690, 1)
+				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("Lil' one does not have any iron ores.", cid)
+				npcHandler.topic[cid] = 0
 			end
 		end
 
