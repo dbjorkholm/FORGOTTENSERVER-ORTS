@@ -1,94 +1,32 @@
-function onStepIn(cid, item, pos)
-local dungeon = {x = 33290, y = 31786, z = 13}
-local gatev = {x = 32834, y = 32082, z = 7}
-local gatea = {x = 32680, y = 31720, z = 7}
-local gatet = {x = 32268, y = 32162, z = 7}
-local gatec = {x = 32263, y = 31847, z = 7}
-local gatee = {x = 33221, y = 31921, z = 7}
-local gatek = {x = 32574, y = 31981, z = 7}
-	if item.actionid == 9710 and (getGlobalStorageValue(9710) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
+local config = {
+	[9710] = {Position(32834, 32082, 7)},
+	[9711] = {Position(32680, 31720, 7)},
+	[9712] = {Position(32268, 32162, 7)},
+	[9713] = {Position(32263, 31847, 7)},
+	[9714] = {Position(33221, 31921, 7)},
+	[9716] = {Position(32574, 31981, 7)}
+}
+
+function onStepIn(cid, item, position)
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
+	local gate = config[item.actionid]
+	if item.actionid == gate and Game.getStorageValue(gate) == 1 then
+		if player:getLevel() >= 60 then
+			player:teleportTo(Position(33290, 31786, 13))
+			player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatev)
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
+			player:getPosition():sendMagicEffect(CONST_ME_POFF)
+			player:teleportTo(gate[1])
 		end
+	elseif item.actionid == 9715 and Game.getStorageValue(gate) == 1 then
+		player:teleportTo(gate[1])
+		player:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
 	end
-	if item.actionid == 9711 and (getGlobalStorageValue(9711) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatea)
-		end
-	end
-	if item.actionid == 9712 and (getGlobalStorageValue(9712) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatet)
-		end
-	end
-	if item.actionid == 9713 and (getGlobalStorageValue(9713) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatec)
-		end
-	end
-	if item.actionid == 9714 and (getGlobalStorageValue(9714) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatee)
-		end
-	end
-	if item.actionid == 9716 and (getGlobalStorageValue(9716) == 1) then
-		if getPlayerLevel(cid) >= 60 then
-			doTeleportThing(cid,dungeon)
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-		else
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have to be at least level 60 to enter this gate.")
-			doSendMagicEffect(getCreaturePosition(cid), CONST_ME_POFF)
-			doTeleportThing(cid,gatek)
-		end
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9714) == 1) then
-		doTeleportThing(cid,gatee)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9716) == 1) then
-		doTeleportThing(cid,gatek)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9713) == 1) then
-		doTeleportThing(cid,gatec)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9712) == 1) then
-		doTeleportThing(cid,gatet)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9711) == 1) then
-		doTeleportThing(cid,gatea)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	if item.actionid == 9715 and (getGlobalStorageValue(9710) == 1) then
-		doTeleportThing(cid,gatev)
-		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-	end
-	
+	return true
 end
+

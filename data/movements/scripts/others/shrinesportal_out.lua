@@ -1,59 +1,35 @@
+local config = {
+	{storageKey = 10017, teleportPos = Position(32360, 31781, 9)},
+	{storageKey = 10018, teleportPos = Position(32369, 32242, 6)},
+	{storageKey = 10019, teleportPos = Position(32958, 32077, 5)},
+	{storageKey = 10020, teleportPos = Position(32681, 31686, 2)},
+	{storageKey = 10021, teleportPos = Position(32646, 31925, 11)},
+	{storageKey = 10022, teleportPos = Position(33230, 32392, 5)},
+	{storageKey = 10023, teleportPos = Position(33130, 32815, 4)},
+	{storageKey = 10024, teleportPos = Position(33266, 31835, 9)},
+	{storageKey = 10025, teleportPos = Position(32337, 32837, 8)},
+	{storageKey = 10026, teleportPos = Position(32628, 32743, 4)},
+	{storageKey = 10027, teleportPos = Position(32213, 31132, 8)},
+	{storageKey = 10028, teleportPos = Position(32786, 31245, 5)}
+}
+
 function onStepIn(cid, item, position, fromPosition)
-	if (isPlayer(cid)) then
-		if (item.actionid == 9117) then
-			if (getPlayerStorageValue(cid, 10017) == 1) then
-				doTeleportThing(cid, {x=32360, y=31781, z=9})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10017, 0)
-			elseif (getPlayerStorageValue(cid, 10018) == 1) then
-				doTeleportThing(cid, {x=32369, y=32242, z=6})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10018, 0)
-			elseif (getPlayerStorageValue(cid, 10019) == 1) then
-				doTeleportThing(cid, {x=32958, y=32077, z=5})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10019, 0)
-			elseif (getPlayerStorageValue(cid, 10020) == 1) then
-				doTeleportThing(cid, {x=32681, y=31686, z=2})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10020, 0)
-			elseif (getPlayerStorageValue(cid, 10021) == 1) then
-				doTeleportThing(cid, {x=32646, y=31925, z=11})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10021, 0)
-			elseif (getPlayerStorageValue(cid, 10022) == 1) then
-				doTeleportThing(cid, {x=33230, y=32392, z=5})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10022, 0)
-			elseif (getPlayerStorageValue(cid, 10023) == 1) then
-				doTeleportThing(cid, {x=33130, y=32815, z=4})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10023, 0)
-			elseif (getPlayerStorageValue(cid, 10024) == 1) then
-				doTeleportThing(cid, {x=33266, y=31835, z=9})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10024, 0)
-			elseif (getPlayerStorageValue(cid, 10025) == 1) then
-				doTeleportThing(cid, {x=32337, y=32837, z=8})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10025, 0)
-			elseif (getPlayerStorageValue(cid, 10026) == 1) then
-				doTeleportThing(cid, {x=32628, y=32743, z=4})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10026, 0)
-			elseif (getPlayerStorageValue(cid, 10027) == 1) then
-				doTeleportThing(cid, {x=32213, y=31132, z=8})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10027, 0)
-			elseif (getPlayerStorageValue(cid, 10028) == 1) then
-				doTeleportThing(cid, {x=32786, y=31245, z=5})
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-				setPlayerStorageValue(cid, 10028, 0)
-			else
-				doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)))
-				doSendMagicEffect(getThingPos(cid), CONST_ME_TELEPORT)
-			end
+	local player = Player(cid)
+	if not player then
+		return
+	end
+
+	for i = 1, #config do
+		table = config[i]
+		if player:getStorageValue(table.storageKey) == 1 then
+			player:teleportTo(table.teleportPos)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:setStorageValue(table.storageKey, 0)
+			break
+		else
+			player:teleportTo(player:getTown():getTemplePosition())
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	end
 	return true
-end	 
+end
