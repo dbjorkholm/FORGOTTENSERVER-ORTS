@@ -32,10 +32,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "tunnel") then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) == 1 then
 			npcHandler:say(
-							{
-							"There should be a book in our library about tunnelling. I don't have that much time to talk to you about that. ..."
-							"The book about tunnelling is in the library which is located in the north eastern wing of Beregar city."
-							}, cid)
+			{
+			"There should be a book in our library about tunnelling. I don't have that much time to talk to you about that. ..."
+			"The book about tunnelling is in the library which is located in the north eastern wing of Beregar city."
+			}, cid)
 		end
 	end
 	return true

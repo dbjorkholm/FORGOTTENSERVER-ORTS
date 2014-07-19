@@ -1,6 +1,7 @@
 local config = {
 	[50092] = Position(32600, 31504, 13),
-	[50093] = Position(32604, 31338, 11)
+	[50093] = Position(32604, 31338, 11),
+	[50100] = Position(32566, 31505, 9)
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

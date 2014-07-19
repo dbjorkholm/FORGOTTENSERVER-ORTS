@@ -33,10 +33,10 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 3 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 1)
 			npcHandler:say(
-							{
-							"Splendid! My son Rehon set off on an expedition to the deeper mines. He and a group of dwarfs were to search for new veins of crystal. Unfortunately they have been missing for 2 weeks now. ..."
-							"Find my son and if he's alive bring him back. You will find a reactivated ore wagon tunnel at the entrance of the great citadel which leades to the deeper mines. If you encounter problems within the tunnel go ask Xorlosh, he can help you."
-							}, cid)
+			{
+			"Splendid! My son Rehon set off on an expedition to the deeper mines. He and a group of dwarfs were to search for new veins of crystal. Unfortunately they have been missing for 2 weeks now. ..."
+			"Find my son and if he's alive bring him back. You will find a reactivated ore wagon tunnel at the entrance of the great citadel which leades to the deeper mines. If you encounter problems within the tunnel go ask Xorlosh, he can help you."
+			}, cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 1 then
@@ -48,10 +48,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 4 then
 			npcHandler:say(
-							{
-							"Interesting. The fact that you have the ring means that Nokmir can't have stolen it. Combined with the information Grombur gave you, the case appears in a completely different light. ..."
-							"Let there be justice for all. Nokmir is innocent and acquitted from all charges! And Rerun... I want him in prison for this malicious act!"
-							}, cid)
+			{
+			"Interesting. The fact that you have the ring means that Nokmir can't have stolen it. Combined with the information Grombur gave you, the case appears in a completely different light. ..."
+			"Let there be justice for all. Nokmir is innocent and acquitted from all charges! And Rerun... I want him in prison for this malicious act!"
+			}, cid)
 			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 5)
 			player:removeItem(14348, 1)
 		end

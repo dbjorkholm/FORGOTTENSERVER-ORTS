@@ -25,10 +25,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "ring") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say(
-							{
-							"He said he still had it after work. On that evening, Grombur, Rerun and me opened a cask of beer in one of the mine tunnels. We had a fun evening there. ...",
-							"On the next day, the guards brought me to emperor Rehal, and Rerun was there, too. He said I had stolen his ring. I'd never steal, you have to believe me."
-							}, cid)
+			{
+			"He said he still had it after work. On that evening, Grombur, Rerun and me opened a cask of beer in one of the mine tunnels. We had a fun evening there. ...",
+			"On the next day, the guards brought me to emperor Rehal, and Rerun was there, too. He said I had stolen his ring. I'd never steal, you have to believe me."
+			}, cid)
 			npcHandler.topic[cid] = 2
 	elseif msgcontains(msg, "Grombur") then
 		if npcHandler.topic[cid] == 2 then

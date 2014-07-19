@@ -8,23 +8,26 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
 function onThink() 						npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+	
 	local player = Player(cid)
 	
-	if(not npcHandler:isFocused(cid)) then
-		return false
-	elseif msgcontains(msg, 'kick') then
-		local pos = {x=math.random(32561,32562), y=math.random(31312,31314), z=7}
-		doTeleportThing(cid, pos)
-		doSendMagicEffect(pos, CONST_ME_TELEPORT)
+	if msgcontains(msg, 'kick') then
+		local pos = Position(math.random(32561,32562), math.random(31312,31314), 7)
+		player:teleportTo(pos)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, 'Mistrock') then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) < 1 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) ~= 1 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar, 1)
 			npcHandler:say(
-							{
-							"Do you smell this? It's the smell of fire... the fire of a forge. Many people searched this rock here for a hidden path, but they haven't found anything. ...",
-							"I'd search on Fenrock if I were you. Even though there's snow on the surface, it's still warm underground. There are often caves under fresh lava streams."
-							}, cid)
+			{
+			"Do you smell this? It's the smell of fire... the fire of a forge. Many people searched this rock here for a hidden path, but they haven't found anything. ...",
+			"I'd search on Fenrock if I were you. Even though there's snow on the surface, it's still warm underground. There are often caves under fresh lava streams."
+			}, cid)
 		end
 	end
 	return true
