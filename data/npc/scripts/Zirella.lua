@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	
 	local player = Player(cid)
-	if msgcontains(msg, "yes") or msgcontains(msg, "quest") or msgcontains(msg, "ok") then
+	if isInArray({"yes", "quest", "ok"}, msg) then
 		if storeTalkCid[cid] == 0 then
 			npcHandler:say("By the way, 'quest' is a keyword that many NPCs react to, especially those which have tasks for you. So darling, about that {quest}... are you listening?", cid)
 			storeTalkCid[cid] = 1
