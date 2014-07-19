@@ -132,6 +132,14 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Well, well, I do that! Big Ben makes lil' amulet unbroken with big hammer in big hands! No worry! Come back after sun hits the horizon 24 times and ask me for amulet.", cid)
 				npcHandler.topic[cid] = 0
 			end	
+		elseif npcHandler.topic[cid] == 11 then
+			if player:getItemCount(5880) >= 1 then
+				player:setStorageValue(Storage.hiddenCityOfBeregar.GearWheel, player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) + 1)
+				player:removeItem(5880, 1)
+				player:addItem(9690, 1)
+			else
+				npcHandler:say("Lil' one does not have any iron ores.", cid)
+			end
 		end
 
 	-- Crown Armor
@@ -195,6 +203,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 8
 		end		
 	end
+	elseif msgcontains(msg, "gear wheel") then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.GoingDown) >= 2 and player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) > 3 then
+			npcHandler:say("Uh. Me can make some gear wheel from iron ores. Lil' one want to trade?", cid)
+			npcHandler.topic[cid] = 11
+		end
 	return true
 end
 
