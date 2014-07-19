@@ -34,7 +34,7 @@ function onLogin(cid)
 	player:registerEvent("AdvanceSave")
 	player:registerEvent("StorageConversion")
 	player:registerEvent("rookgaardCockroach")
-	player:registerEvent("MiscKill")
+	player:registerEvent("AchievementsKill")
 	--Others
 	player:stopMove(false)
 	return true
