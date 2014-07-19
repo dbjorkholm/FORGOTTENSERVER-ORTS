@@ -20,7 +20,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	for i = 1, #config do
-		table = config[i]
+		local table = config[i]
 		if player:getStorageValue(table.storageKey) == 1 then
 			player:teleportTo(table.teleportPos)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

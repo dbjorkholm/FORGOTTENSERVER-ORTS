@@ -14,7 +14,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 	
-	if not player:getStorageValue(item.uid) then
+	if player:getStorageValue(item.uid) ~= 1 then
 		player:setStorageValue(item.uid, 1)
 		player:getPosition():sendMagicEffect(thrones[item.uid].animation)
 		player:say(thrones[item.uid].text, TALKTYPE_MONSTER_SAY)
