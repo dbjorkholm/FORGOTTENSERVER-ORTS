@@ -62,15 +62,18 @@ local function greetCallback(cid)
 		else
 			npcHandler:setMessage(MESSAGE_GREET, "Welcome back, ".. player:getName() .."! Where did you put that delicious piece of food? Did you eat it yourself? Well, if you find another one, please come back.")
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage) == 7 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hey there, ".. player:getName() .."! Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard! Take care!")
 		player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
 		npcHandler:releaseFocus(cid)	
+		npcHandler:resetNpc(cid)
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage) == 8 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hello again, ".. player:getName() .."! What are you still doing here? You should head over the bridge to Rookgaard village now!")
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end
@@ -88,6 +91,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 2)
 			player:sendTutorial(12)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 2 then
 			npcHandler:say("You see, I'm quite hungry from standing here all day. Could you get me some {food}?", cid)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 3)
@@ -103,6 +107,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 5)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 5)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 5 then
 			if player:getItemCount(2666) >= 1 or player:getItemCount(2671) >= 1 then
 				npcHandler:say("What's that delicious smell? That must be a piece of meat! Please hurry, simply ask me for a {trade} and I'll give you two gold pieces for it!", cid)
@@ -112,6 +117,7 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Hmm. No, I don't think you have something with you that I'd like to eat. Please come back once you looted a piece of meat or a piece of ham from a rabbit or deer.", cid)
 				npcHandler:releaseFocus(cid)
+				npcHandler:resetNpc(cid)
 			end
 		elseif storeTalkCid[cid] == 7 then
 			npcHandler:say("Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, ".. player:getName() .."! ...", cid)
@@ -120,6 +126,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "outfit") then
 		if storeTalkCid[cid] == 1 then
@@ -134,6 +141,7 @@ local function creatureSayCallback(cid, type, msg)
 					return
 				end
 				npcHandler:releaseFocus(cid)
+				npcHandler:resetNpc(cid)
 			end, 1000, cid)
 		end
 	elseif msgcontains(msg, "trade") then
@@ -168,6 +176,7 @@ local function creatureSayCallback(cid, type, msg)
 					return
 				end
 				npcHandler:releaseFocus(cid)
+				npcHandler:resetNpc(cid)
 			end, 5000, cid)
 		end
 	end

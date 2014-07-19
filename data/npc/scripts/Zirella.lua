@@ -101,6 +101,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage, 6)
 			Position(32064, 32273, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 7 then
 			npcHandler:say({"Well, you know that old women like me like to talk a lot. If you see three dots at the end of a sentence, I have still something to say and you should not interrupt, like now ...",
 					"Patience is a virtue, young adventurer! So, the quest was to go into the forest south of here and to find a dead tree. Wait, let me continue! ...",
@@ -115,11 +116,13 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.ZirellaQuestLog, 8)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage, 8)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "no") then
 		if storeTalkCid[cid] == 7 then
 			npcHandler:say("Well then, I hope you find nice and dry branches for me! Good {bye}!", cid)
 			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	end
 	return true

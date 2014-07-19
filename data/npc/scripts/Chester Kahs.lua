@@ -41,8 +41,9 @@ local function creatureSayCallback(cid, type, msg)
 			doSendMagicEffect(getThingPos(cid), CONST_ME_EXPLOSIONHIT)
 			doSendMagicEffect(getNpcPos(), CONST_ME_MAGIC_RED)
 			doPlayerRemoveItem(cid, 2177, 1)
-			npcHandler:releaseFocus(cid)
 			Topic[cid] = nil
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif msgcontains(msg, "yes") then
 			if doPlayerRemoveItem(cid, 2177, 1) then
 				npcHandler:say("Thank you! Take this ring. If you ever need a healing, come, bring the scroll, and ask me to 'heal'.", cid)

@@ -51,6 +51,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Finally.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif isInArray({"enchanted chicken wing", "boots of haste"}, msg:lower()) then
         npcHandler:say('Do you want to trade Boots of haste for Enchanted Chicken Wing?', cid)
         npcHandler.topic[cid] = 1 
@@ -88,6 +89,7 @@ local function creatureSayCallback(cid, type, msg)
 		 npcHandler:say('Ok then', cid)
 		 npcHandler.topic[cid] = 0
 		 npcHandler:releaseFocus(cid)
+		 npcHandler:resetNpc(cid)
 	end
 	
 	return true

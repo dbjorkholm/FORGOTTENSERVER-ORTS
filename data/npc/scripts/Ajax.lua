@@ -100,10 +100,10 @@ local function creatureSayCallback(cid, type, msg)
 			condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 			condition:addDamage(10, 2000, -10)
 			player:addCondition(condition)
-			npcHandler:releaseFocus(cid)
 			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 2)
 			player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 60 * 60) -- 1 hour
-			npcHandler.topic[cid] = 0
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		elseif(npcHandler.topic[cid] == 6) then	
 			npcHandler:say(
 						{

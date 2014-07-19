@@ -130,6 +130,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
 		npcHandler:say("Bye.", cid, true)
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, "trade") then
 		
 		local player = Player(cid)

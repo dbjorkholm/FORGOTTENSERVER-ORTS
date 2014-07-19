@@ -80,6 +80,7 @@ local function creatureSayCallback(cid, type, msg)
 		 npcHandler:say('Ok then', cid)
 		 npcHandler.topic[cid] = 0
 		 npcHandler:releaseFocus(cid)
+		 npcHandler:resetNpc(cid)
 	end
 	return true
 end
