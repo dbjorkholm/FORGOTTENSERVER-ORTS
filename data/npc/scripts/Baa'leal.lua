@@ -59,6 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Stand down, soldier!", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

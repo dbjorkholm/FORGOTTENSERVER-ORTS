@@ -22,6 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay("Good bye, "..getCreatureName(cid).."!", cid, TRUE)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, "job") then
 		npcHandler:say("I am your sovereign, King Tibianus III, and it's my duty to uphold {justice} and provide guidance for my subjects.", cid)
 		npcHandler.topic[cid] = 0

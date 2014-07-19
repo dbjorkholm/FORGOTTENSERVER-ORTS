@@ -17,13 +17,14 @@ local function greetCallback(cid)
 	if player:getStorageValue(258) < 1 then
 		npcHandler:setMessage(MESSAGE_GREET, "Intruder! Guards, take him down!")
 		player:setStorageValue(258, 1)
-		npcHandler:releaseFocus(cid)
 		for x = -1, 1 do
 			for y = -1, 1 do
 				doSummonCreature(guards[math.random(3)], {x = 32418 + x, y = 32147 + y, z = 15})
 				doSendMagicEffect({x = 32418 + x, y = 32147 + y, z = 15}, CONST_ME_TELEPORT)
 			end
 		end
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	elseif player:getStorageValue(258) == 1 then	
 		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now. ")
 		player:setStorageValue(258, 2)
@@ -57,6 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 		setConditionParam(condition, CONDITION_PARAM_TICKINTERVAL, 4000)
 		doAddCondition(cid, condition)
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

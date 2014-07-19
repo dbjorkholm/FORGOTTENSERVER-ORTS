@@ -49,6 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Farewell human!", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end

@@ -47,6 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Farewell, stranger. May Uman open your minds and your hearts to Daraman's wisdom!", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end
