@@ -29,7 +29,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Err, thanks. I doubt it's from you. Who sent it?", cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif msg == "Frafnar"
+	elseif msg == "Frafnar" then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say("Oh, Frafnar. That's so nice of him. I gotta invite him for a beer.", cid)
 			player:setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 2)
