@@ -237,5 +237,8 @@ Storage = {
 	},
 	pitsOfInferno = {
 		Pumin = 50096
+	},
+	hiddenCityOfBeregar = {
+		WayToBeregar = 50099
 	}
 }
