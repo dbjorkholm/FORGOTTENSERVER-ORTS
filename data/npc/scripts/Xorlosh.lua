@@ -29,6 +29,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("That would be great! Maybe a blacksmith can forge you some. Come back when you got them and ask me about your mission.", cid)
 			npcHandler.topic[cid] = 0
 		end
+	elseif msgcontains(msg, "tunnel") then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) == 1 then
+			npcHandler:say(
+							{
+							"There should be a book in our library about tunnelling. I don't have that much time to talk to you about that. ..."
+							"The book about tunnelling is in the library which is located in the north eastern wing of Beregar city."
+							}, cid)
+		end
 	end
 	return true
 end

@@ -727,7 +727,7 @@
 			<missionstate id="1" description="Xorlosh has asked you to bring 3 gear wheels to him."/>
 			<missionstate id="2" description="You have delivered 3 gear wheels to Xorlosh. You may now use the elevator."/>
 		</mission>
-		<mission name="Justice For All" storageid="50102" startvalue="1" endvalue="6">
+		<mission name="Justice for All" storageid="50102" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Nokmir wishes someone would find out the truth about the whole mess. Maybe you should talk with Emperor Rehal."/>
 			<missionstate id="2" description="Emperor Rehal still can't believe that Nokmir stole the ring. Maybe you should talk with Grombur"/>
 			<missionstate id="3" description="Grombur said that Rerun might get promoted instead of Nokmir. Maybe you should search for the ring."/>
@@ -739,6 +739,14 @@
 			<missionstate id="1" description="Frafnar has asked you to bake a Chocolate Cake as a gift to Bolfona from him."/>
 			<missionstate id="2" description="You have delivered the Chocolate Cake to Bolfona. Report back to Frafnar!."/>
 			<missionstate id="3" description="You told Frafnar of the great success. You are now allowed to access the western part of the mine!"/>
+		</mission>
+		<mission name="Royal rescue" storageid="50105" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Emperor Rehal told you about the missing explorers and his own son Rehon among them. Use the ore wagon to the deeper mines to find and rescue them. Ask Xorlosh if you encounter any problems."/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
 		</mission>
 	</quest>
 </quests>
