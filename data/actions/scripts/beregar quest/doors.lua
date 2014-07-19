@@ -11,8 +11,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	for i = 1, #config do
 		if player:getStorageValue(config[i].storage) = config[i].value then
-				player:teleportTo(toPosition, true)
-				Item(item.uid):transform(1226)
+			player:teleportTo(toPosition, true)
+			Item(item.uid):transform(1226)
 		end
 	end
 	return true
