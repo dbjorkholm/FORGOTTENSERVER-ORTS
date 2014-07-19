@@ -12,7 +12,7 @@ function onStepIn(cid, item, position)
 	if not player then
 		return true
 	end
-	
+
 	local gate = config[item.actionid]
 	if item.actionid == gate and Game.getStorageValue(gate) == 1 then
 		if player:getLevel() >= 60 then
