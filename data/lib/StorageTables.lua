@@ -241,6 +241,7 @@ Storage = {
 	hiddenCityOfBeregar = {
 		WayToBeregar = 50099,
 		OreWagon = 50100,
-		Elevator = 50101
+		GoingDown = 50101,
+		JusticeForAll = 50102,
 	}
 }
