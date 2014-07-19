@@ -32,8 +32,8 @@ local tiles = {
 
 function onStepIn(cid, item, position, fromPosition)
 	if tiles[item.actionid] then
-		if isInArray({tiles[item.actionid].voc, tiles[item.actionid].voc + 4}, Player(cid):getVocation()) == false then
-		local damage = COMBAT_FIREDAMAGE
+		if not isInArray({tiles[item.actionid].voc, tiles[item.actionid].voc + 4}, Player(cid):getVocation():getId()) then
+			local damage = COMBAT_FIREDAMAGE
 			if tiles[item.actionid].damage > 300 then
 				damage = COMBAT_PHYSICALDAMAGE
 			end
