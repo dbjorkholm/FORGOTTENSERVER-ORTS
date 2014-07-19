@@ -1,9 +1,9 @@
 function onStepIn(cid, item, position, fromPosition)
-	doCreateItem(5543, 1, {x = 32854, y = 32321, z = 11})
+	Game.createItem(5543, 1, Position(32854, 32321, 11))
 	return true
 end
 
 function onStepOut(cid, item)
-	doRemoveItem(getTileItemById({x = 32854, y = 32321, z = 11}, 5543).uid, 1)
+	Tile(Position(32854, 32321, 11)):getItemById(5543):remove(1)
 	return true
 end
