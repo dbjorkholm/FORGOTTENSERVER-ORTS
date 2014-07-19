@@ -720,4 +720,33 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
+	<quest name="The Hidden City of Beregar" startstorageid="50099" startstoragevalue="1">
+		<mission name="The Way to Beregar" storageid="50099" startvalue="1" endvalue="1" description="You have spoken to Maris about Mistrock. He suggested that you search on Fenrock."/>
+		<mission name="Ore Wagon" storageid="50100" startvalue="1" endvalue="1" description="You have found the entrance to the hidden city of Beregar and may now use the ore wagon."/>
+		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Xorlosh has asked you to bring 3 gear wheels to him."/>
+			<missionstate id="2" description="You have delivered 3 gear wheels to Xorlosh. You may now use the elevator."/>
+		</mission>
+		<mission name="Justice for All" storageid="50102" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Nokmir wishes someone would find out the truth about the whole mess. Maybe you should talk with Emperor Rehal."/>
+			<missionstate id="2" description="Emperor Rehal still can't believe that Nokmir stole the ring. Maybe you should talk with Grombur"/>
+			<missionstate id="3" description="Grombur said that Rerun might get promoted instead of Nokmir. Maybe you should search for the ring."/>
+			<missionstate id="4" description="You have found Rerun's Ring, report back to Emperor Rehal."/>
+			<missionstate id="5" description="You have reported back to Emperor Rehal about the ring."/>
+			<missionstate id="6" description="You have saved Nokmir's life. You are now allowed to access the northern part of the mine!"/>
+		</mission>
+		<mission name="Sweet as Chocolate Cake" storageid="50104" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Frafnar has asked you to bake a Chocolate Cake as a gift to Bolfona from him."/>
+			<missionstate id="2" description="You have delivered the Chocolate Cake to Bolfona. Report back to Frafnar!."/>
+			<missionstate id="3" description="You told Frafnar of the great success. You are now allowed to access the western part of the mine!"/>
+		</mission>
+		<mission name="Royal rescue" storageid="50105" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Emperor Rehal told you about the missing explorers and his own son Rehon among them. Use the ore wagon to the deeper mines to find and rescue them. Ask Xorlosh if you encounter any problems."/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+	</quest>
 </quests>
