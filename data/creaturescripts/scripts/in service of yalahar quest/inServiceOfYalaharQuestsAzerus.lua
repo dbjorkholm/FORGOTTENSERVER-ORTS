@@ -7,13 +7,13 @@ function onKill(cid, target)
 		azerus:say("Azerus ran into teleporter! It will disappear in 2 minutes. Enter It!", TALKTYPE_MONSTER_SAY, 0, 0, deathpos)
 		
 		--remove portal after 2 min
-		addEvent(function(target) 
+		addEvent(function() 
 			local portaltile = Tile(deathpos) 
 			if portaltile:getItemById(1387) then 
 				portaltile:getItemById(1387):remove() 
 				deathpos:sendMagicEffect(CONST_ME_POFF) 
 			end 
-		end, 2 * 60 * 1000, target)
+		end, 2 * 60 * 1000)
 		
 		--clean arena of monsters
 		local othermonsters = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
