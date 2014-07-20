@@ -11,8 +11,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:say("You safely passed the tunnel.", TALKTYPE_MONSTER_SAY, false, 0, pos)
 		Game.createItem(5709, Position(32619, 31514, 9))
-		Game.removeItem(1027, Position(32617, 31513, 9))
-		Game.removeItem(1205, Position(32617, 31514, 9))
+		Tile(Position(32617, 31513, 9)):getItemId(1027):remove()
+		Tile(Position(32617, 31514, 9)):getItemId(1205):remove()
 	end
 	return true
 end

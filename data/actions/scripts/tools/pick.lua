@@ -114,7 +114,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	elseif itemEx.actionid == 50114 then
 		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
-			Game.removeItem(5709, Position(32619, 31514, 9))
+			Tile(Position(32619, 31514, 9)):getItemById(5709):remove()
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
 		end
