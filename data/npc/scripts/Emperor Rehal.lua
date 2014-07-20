@@ -37,6 +37,10 @@ local function creatureSayCallback(cid, type, msg)
 			"Splendid! My son Rehon set off on an expedition to the deeper mines. He and a group of dwarfs were to search for new veins of crystal. Unfortunately they have been missing for 2 weeks now. ..."
 			"Find my son and if he's alive bring him back. You will find a reactivated ore wagon tunnel at the entrance of the great citadel which leades to the deeper mines. If you encounter problems within the tunnel go ask Xorlosh, he can help you."
 			}, cid)
+		elseif npcHandler.topic[cid] == 4 then
+			player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 6)
+			player:addItem(2504, 1)
+			npcHandler:say("Look at these dwarven legs. They were forged years ago by a dwarf who was rather tall for our kind. I want you to have them. Thank you for rescuing my son Player.", cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 1 then
@@ -65,6 +69,9 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) > 1 and player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 5 then
 			npcHandler:say("As you have proven yourself trustworthy I'm going to assign you a special mission. Are you interested?", cid)
 			npcHandler.topic[cid] = 3
+		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) == 5 then
+			npcHandler:say("My son was captured by trolls? Doesn't sound like him, but if you say so. Now you want a reward, huh? ...", cid)
+			npcHandler.topic[cid] = 4
 		end
 	end
 	return true

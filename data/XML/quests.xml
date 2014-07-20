@@ -742,9 +742,9 @@
 		</mission>
 		<mission name="Royal rescue" storageid="50105" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Emperor Rehal told you about the missing explorers and his own son Rehon among them. Use the ore wagon to the deeper mines to find and rescue them. Ask Xorlosh if you encounter any problems."/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
+			<missionstate id="2" description="You have passed the first mine."/>
+			<missionstate id="3" description="You have passed the second mine."/>
+			<missionstate id="4" description="You Found Tehlim, he told you the trolls captured his brothers!"/>
 			<missionstate id="5" description=""/>
 			<missionstate id="6" description=""/>
 		</mission>
