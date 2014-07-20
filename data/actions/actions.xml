@@ -343,6 +343,7 @@
 	<action fromaid="50099" toaid="50108" script="beregar quest/oreWagon.lua"/>
 	<action actionid="50112" script="beregar quest/gapWagon.lua"/>
 	<action actionid="50115" script="beregar quest/tunnelWagon.lua"/>
+	<action actionid="50117" script="beregar quest/coalWagon.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
