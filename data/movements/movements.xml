@@ -171,6 +171,7 @@
 	<!-- Hidden City of Beregar Quest -->
 	<movevent event="StepIn" actionid="50091" script="beregar quest/oreWagon.lua"/>
 	<movevent event="StepIn" fromaid="50092" toaid="50093" script="beregar quest/elevator.lua"/>
+	<movevent event="StepIn" actionid="50111" script="gap.lua"/>
 
 	<!-- Rookgaard Quests
 	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>

@@ -1,6 +1,6 @@
 local wagons = {
 	{storage = Storage.hiddenCityOfBeregar.RoyalRescue, value = 1, teleportPos = Position(32566, 31505, 9)}
-	{storage = Storage.hiddenCityOfBeregar.RoyalRescue, value = 2}
+	{storage = Storage.hiddenCityOfBeregar.RoyalRescue, value = 2, teleportPos = Position(32611, 31513, 9)}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

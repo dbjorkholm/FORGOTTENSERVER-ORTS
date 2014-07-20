@@ -7,6 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:removeItem(8309, 3)
 			local bridge = Game.createItem(5779, Position(32571, 31508, 9))
 			bridge:setActionId(50110)
+			player:say("KLING KLONG!", TALKTYPE_MONSTER_SAY, false, 0, pos)
 		end
 	elseif itemEx.actionid == 50110 then
 		player:removeItem(10033, 1)
@@ -14,6 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:removeItem(8309, 3)
 		local rails = Game.createItem(7122, Position(32571, 31508, 9))
 		rails:setActionId(50111)
+		player:say("KLING KLONG!", TALKTYPE_MONSTER_SAY, false, 0, pos)
 	else
 		return false
 	end
