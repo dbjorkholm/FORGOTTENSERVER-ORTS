@@ -744,9 +744,9 @@
 			<missionstate id="1" description="Emperor Rehal told you about the missing explorers and his own son Rehon among them. Use the ore wagon to the deeper mines to find and rescue them. Ask Xorlosh if you encounter any problems."/>
 			<missionstate id="2" description="You have passed the first mine."/>
 			<missionstate id="3" description="You have passed the second mine."/>
-			<missionstate id="4" description="You Found Tehlim, he told you the trolls captured his brothers!"/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
+			<missionstate id="4" description="You found Tehlim, he told you the trolls captured his brothers!"/>
+			<missionstate id="5" description="You found Rehon and gave him the Prison Cell Key, report back to Emperor Rehal!"/>
+			<missionstate id="6" description="You have told Emperor Rehal that his son was captured by Trolls and received a reward!"/>
 		</mission>
 	</quest>
 </quests>
