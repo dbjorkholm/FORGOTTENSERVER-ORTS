@@ -1,6 +1,6 @@
 local config = {
-	[50094] = Position(32612, 31499, 15),
-	[50095] = Position(32612, 31499, 14)
+	[50092] = Position(32612, 31499, 15),
+	[50093] = Position(32612, 31499, 14)
 }
 
 function onStepIn(cid, item, position, fromPosition)
