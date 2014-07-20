@@ -33,7 +33,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:setStorageValue(902, 0)
 		-- Commenting away mayNotMove since this function no longer exists.
 		-- mayNotMove(cid, true)
-		doCreateDummy(cid, {x = player:getPosition().x, y = player:getPosition().y - 5, z = 10})
+		doCreateDummy(cid, Position(player:getPosition().x, player:getPosition().y - 5, 10))
 		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	else
 		player:teleportTo(fromPosition)
