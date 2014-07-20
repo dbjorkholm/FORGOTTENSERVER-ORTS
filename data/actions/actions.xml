@@ -384,6 +384,7 @@
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
 
 	<!-- Tools -->
+	<action itemid="2557" script="tools/hammer.lua"/>
 	<action itemid="2558" script="tools/saw.lua"/>
 	<action itemid="5865" script="tools/juice squeezer.lua"/>
 	<action itemid="2416" script="tools/crowbar.lua"/>
