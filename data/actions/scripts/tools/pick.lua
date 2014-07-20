@@ -112,6 +112,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then -- The Hidden City of Beregar Quest
 			player:teleportTo(Position(32566, 31338, 10))
 		end
+	elseif itemEx.actionid == 50114 then
+		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
+			Game.removeItem(5709, Position(32619, 31514, 9))
+		else
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
+		end
 	else
 		return false
 	end

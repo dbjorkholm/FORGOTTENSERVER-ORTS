@@ -342,6 +342,7 @@
 	<action actionid="50098" script="beregar quest/deeperMineWagon.lua"
 	<action fromaid="50099" toaid="50108" script="beregar quest/oreWagon.lua"/>
 	<action actionid="50112" script="beregar quest/gapWagon.lua"/>
+	<action actionid="50115" script="beregar quest/tunnelWagon.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
@@ -385,6 +386,7 @@
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
 
 	<!-- Tools -->
+	<action itemid="8613" script="tools/bricklayerKit.lua"/> 
 	<action itemid="2557" script="tools/hammer.lua"/>
 	<action itemid="2558" script="tools/saw.lua"/>
 	<action itemid="5865" script="tools/juice squeezer.lua"/>
