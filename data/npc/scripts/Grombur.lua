@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "mission") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) > 1 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) > 1 and player:getStorageValue(Storage.ultimateBooze.Quest) == 2 then
 			npcHandler:say("Got any dwarven brown ale?? I DON'T THINK SO....and Bolfana, the tavern keeper, won't sell you anything. I'm sure about that...she doesn't like humans... I tell you what, if you get me a cask of dwarven brown ale, I allow you to enter the mine. Alright?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 2 and player:getItemCount(9689) == 1 then

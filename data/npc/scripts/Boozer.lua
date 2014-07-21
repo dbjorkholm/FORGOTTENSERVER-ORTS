@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	elseif msgcontains(msg, "dwarven brown ale") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 1 and player:getStorageValue(Storage.ultimateBooze.Quest) == 2 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 1 then
 			npcHandler:say("You are soooo lucky. Only recently I finished my first cask. As this would never have been possible without you, I make you a special offer. 3000 Gold! Alright?", cid)
 			npcHandler.topic[cid] = 2
 		end
