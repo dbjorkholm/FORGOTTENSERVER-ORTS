@@ -16,9 +16,9 @@ local config = {
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 22 then
-		player:setStorageValue(Storage.pitsOfInferno.Pumin, 23)
+	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
 		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
+		npcHandler.topic[cid] = 4
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (player:getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
 	end
@@ -34,28 +34,29 @@ local function creatureSayCallback(cid, type, msg)
 	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 4 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 5)
+		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 1 then
 			npcHandler:say("I'm not sure if you know what you are doing but anyway. Your name is?", cid)
+			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, player:getName()) then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 5 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 6)
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Alright " .. player:getName() ..". Vocation?", cid)
+			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, Vocation(vocationId):getName()) then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 6 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 7)
+		if npcHandler.topic[cid] == 2 then
 			npcHandler:say(config[vocationId] .. ", is that right?! What do you want from me?", cid)
+			npcHandler.topic[cid] = 3
 		end
 	elseif msgcontains(msg, "356") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 8)
+		if npcHandler.topic[cid] == 3 then
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 2)
 			npcHandler:say("Sorry, you need Form 145 to get Form 356. Come back when you have it", cid)
-		elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 23 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 24)
+		elseif npcHandler.topic[cid] == 4 then
+			player:setStorageValue(Storage.pitsOfInferno.Pumin, 8)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
 		end
+	npcHandler.topic[cid] = 0
 	end
 	return true
 end
