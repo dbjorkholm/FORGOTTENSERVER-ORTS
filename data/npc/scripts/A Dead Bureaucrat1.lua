@@ -67,7 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 7
 		end
 	elseif msgcontains(msg, "no") then
-		if npcHandler.topic[cid] = 5 then
+		if npcHandler.topic[cid] == 5 then
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 4)
 			npcHandler:say("Oh, what a pity. Go see one of my colleagues. I give you the permission to get Form 287. Bye!", cid)
 		end
