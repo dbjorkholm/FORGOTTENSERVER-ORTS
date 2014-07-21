@@ -30,6 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 			"On the next day, the guards brought me to emperor Rehal, and Rerun was there, too. He said I had stolen his ring. I'd never steal, you have to believe me."
 			}, cid)
 			npcHandler.topic[cid] = 2
+		end
 	elseif msgcontains(msg, "Grombur") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say("Maybe Grombur knows more than me. The thing is he won't talk to me, and he will surely not accuse his best friend as a liar. What a dilemma!", cid)
