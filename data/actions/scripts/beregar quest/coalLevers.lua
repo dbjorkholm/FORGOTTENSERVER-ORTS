@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 	for i = 1, #config do
 		local table = config[i]
-		if item.itemuid == table.uniqueId and Tile(Position(32699, 31494, 11)):getItemById(8641):getActionId(50121) then
+		if item.uid == table.uniqueId and Tile(Position(32699, 31494, 11)):getItemById(8641):getActionId(50121) then
 			local wagon = Game.createItem(7132, table.wagonPos)
 			wagon:setActionId(table.actionId)
 			Tile(Position(32699, 31494, 11)):getItemById(8641):transform(8642)

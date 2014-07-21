@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if item.actionId == table.actionId then
 			player:teleportTo(table.teleportPos, true)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			Item(item.uid):remove()
+			Item(item.actionid):remove()
 		end
 	end
 	return true

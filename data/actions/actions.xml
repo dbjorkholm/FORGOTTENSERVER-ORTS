@@ -346,6 +346,7 @@
 	<action actionid="50117" script="beregar quest/coalWagon.lua"/>
 	<action fromuid="50108" touid="50111" script="beregar quest/coalLevers..lua"/>
 	<action fromaid="50122" toaid="50125" script="beregar quest/coalExitWagons.lua"/>
+	<action uniqueid="50112" script="beregar quest/mushroom.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
