@@ -29,6 +29,19 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Good! Listen closely. Take this bottle and go to Kazordoon. I need a sample of their very special brown ale. You may find a cask in their brewery. Come back as soon as you got it.", cid)
 			player:addItem(7496, 1)
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 2 then
+			if player:getMoney() >= 3000 then
+				player:setStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard, 2)
+				player:removeMoney(3000)
+				player:addItem(9689, 1)
+				npcHandler:say("Here it is. Have fun with this delicious brew.", cid)
+				npcHandler.topic[cid] = 0
+			end
+		end
+	elseif msgcontains(msg, "dwarven brown ale") then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 1 then
+			npcHandler:say("You are soooo lucky. Only recently I finished my first cask. As this would never have been possible without you, I make you a special offer. 3000 Gold! Alright?", cid)
+			npcHandler.topic[cid] = 2
 		end
 	end
 	return true

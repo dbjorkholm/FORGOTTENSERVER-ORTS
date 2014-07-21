@@ -1,6 +1,7 @@
 local doors = {
 	{storage = Storage.hiddenCityOfBeregar.JusticeForAll, value = 6}
 	{storage = Storage.hiddenCityOfBeregar.SweetAsChocolateCake, value = 3}
+	{storage = Storage.hiddenCityOfBeregar.TheGoodGuard, value = 3}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
