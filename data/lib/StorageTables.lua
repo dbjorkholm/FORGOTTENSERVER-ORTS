@@ -245,6 +245,11 @@ Storage = {
 		JusticeForAll = 50102,
 		GearWheel = 50103,
 		SweetAsChocolateCake = 50104,
-		RoyalRescue = 50105
+		RoyalRescue = 50105,
+		TheGoodGuard = 50106,
+		PythiusTheRotten = 50107
+	},
+	ultimateBooze = {
+		Quest = 50108
 	}
 }
