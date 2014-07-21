@@ -49,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 7)
 			npcHandler:say("Well done! You have form 411!! Here is Form 145. Have fun with it.", cid)
 		end
-	npcHandler.topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
