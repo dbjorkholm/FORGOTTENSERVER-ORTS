@@ -81,7 +81,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 9)
 			npcHandler:say("INCREDIBLE, you did it!! Have fun at Pumin's Domain!", cid)
 		end
-	npcHandler.topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
