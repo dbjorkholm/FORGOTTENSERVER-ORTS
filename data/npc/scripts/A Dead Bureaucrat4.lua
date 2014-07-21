@@ -56,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 8)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
 		end
-	npcHandler.topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end

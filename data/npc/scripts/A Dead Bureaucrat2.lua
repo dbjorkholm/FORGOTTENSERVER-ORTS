@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.pitsOfInferno.Pumin, 5)
 			npcHandler:say("Sure, you can get it from me. Here you are. Bye", cid)
 		end
-	npcHandler.topic[cid] = 0
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
