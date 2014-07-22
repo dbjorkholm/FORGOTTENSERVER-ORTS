@@ -175,6 +175,7 @@
 	<movevent event="StepIn" actionid="50116" script="beregar quest/tunnel.lua"/>
 	<movevent event="StepIn" uniqueid="50107" script="beregar quest/bellow.lua"/>
 	<movevent event="StepIn" uniqueid="50127" script="beregar quest/pythiusTeleport.lua"/>
+	<movevent event="StepIn" actionid="50126" script="beregar quest/pythiusBossTeleport.lua"/>
 
 	<!-- Rookgaard Quests
 	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>
