@@ -17397,29 +17397,32 @@
 	<item fromid="9943" toid="9947" article="a" name="gate" />
 	<item id="9948" article="a" name="dracoyle statue">
 		<attribute key="slotType" value="ammo" />
-		<attribute key="description" value="This rare treasure can be charged with an enchanted emerald." />
+		<attribute key="description" value="This rare treasure is said to protect its owner from misery and curses." />
 		<attribute key="weight" value="1500" />
 		<attribute key="rotateTo" value="9953" />
 		<attribute key="duration" value="604800" />
 		<attribute key="decayTo" value="9949" />
 	</item>
 	<item id="9949" article="a" name="dracoyle statue">
+		<attribute key="slotType" value="ammo" />
 		<attribute key="description" value="This rare treasure can be charged with an enchanted emerald." />
 		<attribute key="weight" value="1500" />
 		<attribute key="rotateTo" value="9954" />
 	</item>
 	<item fromid="9950" toid="9952" article="a" name="gate" />
 	<item id="9953" article="a" name="dracoyle statue">
-		<attribute key="description" value="This rare treasure can be charged with an enchanted emerald." />
+		<attribute key="slotType" value="ammo" />
+		<attribute key="description" value="This rare treasure is said to protect its owner from misery and curses." />
 		<attribute key="weight" value="1500" />
-		<attribute key="rotateTo" value="9949" />
+		<attribute key="rotateTo" value="9948" />
 		<attribute key="duration" value="604800" />
 		<attribute key="decayTo" value="9954" />
 	</item>
 	<item id="9954" article="a" name="dracoyle statue">
+		<attribute key="slotType" value="ammo" />
 		<attribute key="description" value="This rare treasure can be charged with an enchanted emerald." />
 		<attribute key="weight" value="1500" />
-		<attribute key="rotateTo" value="9948" />
+		<attribute key="rotateTo" value="9949" />
 	</item>
 	<item id="9955" article="a" name="vampiric crest">
 		<attribute key="description" value="This crest seems important. You shouldn't lose it." />
