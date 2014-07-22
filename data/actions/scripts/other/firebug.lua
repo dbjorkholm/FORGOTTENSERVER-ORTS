@@ -26,6 +26,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif itemEx.itemid == 1485 then --Light Up empty coal basins
 			toPosition:sendMagicEffect(CONST_ME_HITBYFIRE)
 			itemTarget:transform(1484)
+		elseif itemEx.actionid == 50119 then --The Hidden City of Beregar Quest
+			itemTarget:transform(8641)
 		end
 	elseif random == 2 then --it remove the fire bug 2% chance
 		item:remove(1)
