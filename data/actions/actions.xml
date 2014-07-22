@@ -349,7 +349,8 @@
 	<action uniqueid="50112" script="beregar quest/mushroom.lua"/>
 	<action fromuid="50113" touid="50123" script="beregar quest/wagonMazeLevers.lua"/>
 	<action uniqueid="50124" script="beregar quest/wagonMazeExit.lua"/>
-	<action uniqueid="50126" script="beregar quest/rustyArmor.lua"
+	<action uniqueid="50126" script="beregar quest/rustyArmor.lua"/>
+	<action uniqueid="50128" script="beregar quest/steam.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
