@@ -1,9 +1,9 @@
-local combat = createCombatObject()
-setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
 
 local area = createCombatArea(AREA_CROSS5X5)
-setCombatArea(combat, area)
+combat:setArea(area)
 
 function onGetFormulaValues(cid, level, maglevel)
 	min = -((level / 5) + (maglevel * 8) + 50)
@@ -11,8 +11,8 @@ function onGetFormulaValues(cid, level, maglevel)
 	return min, max
 end
 
-setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
-function onCastSpell(cid, var)
-	return doCombat(cid, combat, var)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end
