@@ -106,7 +106,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	
 	if item.itemid == 7761 and isInArray({9949, 9954}, itemEx.itemid) then
-		Item(itemEx.uid):transform(itemEx.itemid - 1)
+		local targetItem = Item(itemEx.uid)
+		targetItem:transform(itemEx.itemid - 1)
+		targetItem:decay()
 		Item(item.uid):remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		return true
