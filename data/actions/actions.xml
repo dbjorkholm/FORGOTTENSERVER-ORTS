@@ -661,7 +661,7 @@
 	<action fromid="10264" toid="10267" script="other/windows.lua" />
 	<action fromid="10488" toid="10491" script="other/windows.lua" />
 	<action itemid="18215" script="other/gnomish_supply_package.lua"/>
-	<action itemid="7761" script="other/smallEnchantedEmerald.lua"/>
+	<action itemid="7761" script="other/enchanting.lua"/>
 	
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
