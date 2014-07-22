@@ -105,8 +105,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 	
-	if item.itemid == 7761 and isInArray({9949, 9954}, itemEx.itemid) then
-		Item(itemEx.uid):transform(itemEx.itemid - 1)
+	if item.itemid == 7761 and isInArray({9948, 9949}, itemEx.itemid) then
+		Item(itemEx.uid):transform(itemEx.itemid + 5)
+		Item(itemEx.uid):decay(math.random(604800))
 		Item(item.uid):remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		return true
