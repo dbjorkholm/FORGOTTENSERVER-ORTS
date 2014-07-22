@@ -8,26 +8,35 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
 	-- Mission 1 - The Supply Thief 
-	if(msgcontains(msg, "job")) then
-		if player:getStorageValue(GreenDjinn.MissionStart + 1) == 1 then
+	if msgcontains(msg, "job") then
+		if Player(cid):getStorageValue(GreenDjinn.MissionStart + 1) == 1 then
 			npcHandler:say("What do you think? I am the sheriff of Carlin.", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif(msgcontains(msg, "water pipe")) then
-		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say({"Oh, there's a waterpipe in one of my cells? ...", "I guess my last {prisoner} forgot it there."}, cid, 0, 1, 2500)
+	elseif msgcontains(msg, "water pipe") then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say(
+			{
+				"Oh, there's a waterpipe in one of my cells? ...",
+				"I guess my last {prisoner} forgot it there."
+			}, cid, 0, 1, 2500)
 			npcHandler.topic[cid] = 2
 		end
-	elseif(msgcontains(msg, "prisoner")) then
-		if(npcHandler.topic[cid] == 2) then
-			npcHandler:say({"My last prisoner? Hmm. ...", "I think he was some guy from Darama. Can't remember his name. ...", "He was here just for one night, because he got drunk and annoyed our citizens. ...", "Obviously he wasn't pleased with this place, because he headed for Thais the next day. ...", "Something tells me that he won't stay out of trouble for too long."}, cid, 0, 1, 3500)
-			player:setStorageValue(GreenDjinn.MissionStart + 1, 2)
+	elseif msgcontains(msg, "prisoner") then
+		if npcHandler.topic[cid] == 2 then
+			npcHandler:say(
+			{
+				"My last prisoner? Hmm. ...", "I think he was some guy from Darama. Can't remember his name. ...",
+				"He was here just for one night, because he got drunk and annoyed our citizens. ...",
+				"Obviously he wasn't pleased with this place, because he headed for Thais the next day. ...",
+				"Something tells me that he won't stay out of trouble for too long."
+			}, cid, 0, 1, 3500)
+			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 2)
 			npcHandler.topic[cid] = 0
 		end
 	end
@@ -38,7 +47,6 @@ end
 keywordHandler:addKeyword({'news'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "No news are good news."})
 keywordHandler:addKeyword({'queen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "HAIL TO QUEEN ELOISE!"})
 keywordHandler:addKeyword({'leader'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "HAIL TO QUEEN ELOISE!"})
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What do you think? I am the sheriff of Carlin."})
 keywordHandler:addKeyword({'how are you?'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Just fine."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Would you like to buy the general key to the town?"})
 keywordHandler:addKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Yeah, I bet you'd like to do that! HO, HO, HO!"})
