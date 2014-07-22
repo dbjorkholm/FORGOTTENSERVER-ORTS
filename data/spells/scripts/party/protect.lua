@@ -1,17 +1,18 @@
-local combat = createCombatObject()
+local combat = Combat()
 local area = createCombatArea(AREA_CROSS5X5)
-setCombatArea(combat, area)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
-setCombatParam(combat, COMBAT_PARAM_AGGRESSIVE, 0)
+combat:setArea(area)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
+combat:setParameter(COMBAT_PARAM_AGGRESSIVE, 0)
 
-local condition = createConditionObject(CONDITION_ATTRIBUTES)
-setConditionParam(condition, CONDITION_PARAM_SUBID, 2)
-setConditionParam(condition, CONDITION_PARAM_BUFF_SPELL, 1)
-setConditionParam(condition, CONDITION_PARAM_TICKS, 2 * 60 * 1000)
-setConditionParam(condition, CONDITION_PARAM_SKILL_SHIELD, 2)
+local condition = Condition(CONDITION_ATTRIBUTES)
+condition:setParameter(CONDITION_PARAM_SUBID, 2)
+condition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
+condition:setParameter(CONDITION_PARAM_TICKS, 2 * 60 * 1000)
+condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, 2)
 
 local baseMana = 90
-function onCastSpell(cid, var)
+function onCastSpell(creature, var)
+	local cid = creature:getId()
 	local pos = getCreaturePosition(cid)
 
 	local membersList = getPartyMembers(cid)
