@@ -88,21 +88,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
 		elseif itemEx.actionid == 50058 then -- naginata quest
-			local stoneStorage = Game.getStorageValue(itemEx.actionid) or -1
-			if stoneStorage < 5 then
-				Game.setStorageValue(itemEx.actionid, math.max(1, stoneStorage + 1))
+			local stoneStorage = Game.getStorageValue(itemEx.actionid)
+			if stoneStorage ~= 5 then
+				Game.setStorageValue(itemEx.actionid, math.max(0, stoneStorage or 0) + 1)
 			elseif stoneStorage == 5 then
 				Item(itemEx.uid):remove()
 				Game.setStorageValue(itemEx.actionid)
 			end
 			
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			local rand = math.random(31, 39)
-			player:addHealth(-rand)
-			player:sendTextMessage(MESSAGE_EXPERIENCE, "You lose " .. rand .. " hitpoints.", player:getPosition(), rand, TEXTCOLOR_RED)
-			player:getPosition():sendMagicEffect(CONST_ME_DRAWBLOOD)
-			local blood = Game.createItem(2019, 2, player:getPosition())
-			blood:decay()
+			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
 		targetItem:transform(392)
