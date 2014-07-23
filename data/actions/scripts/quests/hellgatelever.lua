@@ -1,20 +1,38 @@
+local config = {
+	BridgePositions = {
+		[1] = Position({x = 32627, y = 31699, z = 10}),
+		[2] = Position({x = 32628, y = 31699, z = 10}),
+		[3] = Position({x = 32629, y = 31699, z = 10})
+	},
+	bridgeID = 5770,
+	waterID = 493
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	--lever to create the bridge
-	if item.actionid == 50027 then
-		local bridgetile1 = Tile(Position({x = 32627, y = 31699, z = 10}))
-		local bridgetile2 = Tile(Position({x = 32628, y = 31699, z = 10}))
-		local bridgetile3 = Tile(Position({x = 32629, y = 31699, z = 10}))
-			if item.itemid == 1945 then
-				bridgetile1:getItemById(493):transform(5770)
-				bridgetile2:getItemById(493):transform(5770)
-				bridgetile3:getItemById(493):transform(5770)
-				Item(item.uid):transform(1946)
-			else
-				bridgetile1:getItemById(5770):transform(493)
-				bridgetile2:getItemById(5770):transform(493)
-				bridgetile3:getItemById(5770):transform(493)
-				Item(item.uid):transform(1945)
+	if itemEx.itemid == 1945 then
+		for i = 1, #config["BridgePositions"] do
+			local tile = config["BridgePositions"][i]:getTile()
+			if tile then
+				local thing = tile:getItemById(config["waterID"])
+				if thing and thing:isItem() then
+					Item(item.uid):transform(1946)
+					thing:transform(config["bridgeID"])
+				end
 			end
+		end	
+	elseif itemEx.itemid == 1946 then
+		for i = 1, #config["BridgePositions"] do
+			local tile = config["BridgePositions"][i]:getTile()
+			if tile then
+				local thing = tile:getItemById(config["bridgeID"])
+				if thing and thing:isItem() then
+					Item(item.uid):transform(1945)
+					thing:transform(config["waterID"])
+				end
+			end
+		end
+	else
+		Player(cid):sendCancelMessage("Sorry, not possible.")
 	end
 	return true
 end
