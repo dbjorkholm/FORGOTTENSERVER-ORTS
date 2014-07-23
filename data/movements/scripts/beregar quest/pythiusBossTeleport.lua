@@ -22,7 +22,7 @@ function onStepIn(cid, item, position, fromPosition)
 	Tile(Position(32550, 31378, 15)):getGround():getId():transform(598)
 	Tile(Position(32550, 31379, 15)):getGround():getId():transform(598)
 	Game.createItem(1304, Position(32551, 31379, 15))
-	local steam = Game.createItem(Position(9341, 32551, 31379, 15))
+	local steam = Game.createItem(9341, Position(9341, 32551, 31379, 15))
 	steam:setActionId(50127)
 	return true
 end
