@@ -30,7 +30,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				if crack ~= 0 then
 					crack:remove()
 					local item = Game.createItem(1387, 1, Position(32836, 32288, 14))
-					item:setActionId(9032)
+					if item then
+						item:setActionId(9032)
+					end
 				end
 			end
 		end
