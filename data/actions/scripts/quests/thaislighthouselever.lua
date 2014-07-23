@@ -17,7 +17,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				portaltile:getItemById(1387):remove()
 			else
 				local portal = Game.createItem(1387, 1, {x = 32232, y = 32276, z = 9})
-				portal:setActionId(50026)
+				if portal then
+					portal:setActionId(50026)
+				end
 				Item(item.uid):transform(1946)
 			end
 		else

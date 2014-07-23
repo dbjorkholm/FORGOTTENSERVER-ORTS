@@ -33,6 +33,8 @@ function onStepIn(cid, item, position, fromPosition)
 	local steamPos = Position(32551, 31379, 15)
 	Game.createItem(1304, 1, steamPos)
 	local steam = Game.createItem(9341, 1, steamPos)
-	steam:setActionId(50127)
+	if steam then
+		steam:setActionId(50127)
+	end
 	return true
 end

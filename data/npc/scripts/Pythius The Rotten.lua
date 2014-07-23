@@ -12,16 +12,14 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	local player = Player(cid)
-
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten) < 1 then
+		if Player(cid):getStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten) < 1 then
 			npcHandler:say("I HAVE A MISSION FOR YOU BUT YOU NEED TO DIE FIRST AND RETURN AS AN UNDEAD CREATURE. COME BACK TO ME WHEN YOU ACHIEVED THIS GOAL.", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "undead") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getStorageValue(50020) == 1
+			if Player(cid):getStorageValue(50020) == 1
 				npcHandler:say("BOON AND BANE. I HAVE CHOSEN THIS LIFE VOLUNTARILLY AND I NEVER REGRET IT. MY TREASURE IS GROWING BIGGER EACH DAY.", cid)
 				npcHandler.topic[cid] = 2
 			end
@@ -33,12 +31,12 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
-			player:setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 1)
+			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 1)
 			npcHandler:say(
 			{
-			"HAHAHA, WHO WOULD SAY SOMETHING ELSE?....BUT....NOTHING'S FOR FREE AND SO WASN'T THE TREASURE BEHIND ME. ...",
-			"BRING ME SOMETHING VALUABLE IN EXCHANGE. SOMETHING YOU THINK I'D LIKE AND THEN.....HAHAHAHA......WE CAN CONTINUE OUR SMALL CONVERSATION."
-			"EVERYTHING YOU CARRY WITH YOU CAN ALSO BE FOUND IN MY TREASURE. BRING ME SOMETHING I DON'T OWN!!!"
+				"HAHAHA, WHO WOULD SAY SOMETHING ELSE?....BUT....NOTHING'S FOR FREE AND SO WASN'T THE TREASURE BEHIND ME. ...",
+				"BRING ME SOMETHING VALUABLE IN EXCHANGE. SOMETHING YOU THINK I'D LIKE AND THEN.....HAHAHAHA......WE CAN CONTINUE OUR SMALL CONVERSATION.",
+				"EVERYTHING YOU CARRY WITH YOU CAN ALSO BE FOUND IN MY TREASURE. BRING ME SOMETHING I DON'T OWN!!!"
 			}, cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
@@ -46,12 +44,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		end
 	elseif msgcontains(msg, "offer") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten) == 1 then
+		if Player(cid):getStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten) == 1 then
 			npcHandler:say("I GRANT YOU ACCESS TO THE DUNGEON IN THE NORTH. YOU'LL FIND SOME OF MY LIVING BROTHERS THERE....BUT.....EVERY TIME YOU WANT TO ENTER YOU HAVE TO GIVE ME SOMETHING PRECIOUS. ALRIGHT?", cid)
 			npcHandler.topic[cid] = 4
 		end
 	elseif msgcontains(msg, "golden mug") then
 		if npcHandler.topic[cid] == 4 then
+			local player = Player(cid)
 			if player:getItemCount(2033) > 0 then
 				player:removeItem(2033, 1)
 				player:setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 2)
