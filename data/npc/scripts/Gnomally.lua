@@ -2,12 +2,15 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
-local config, t, renown = {
+local t = {}
+local renown = {}
+
+local config = {
 	['supply'] = {itemid = 18215, token = {type = 'minor', id = 18422, count = 2}},
 	['muck'] = {itemid = 18395, token = {type = 'minor', id = 18422, count = 8}},
 	['mission'] = {itemid = 18509, token = {type = 'minor', id = 18422, count = 10}},
@@ -28,7 +31,7 @@ local config, t, renown = {
 	['basic crystal warlord outfit'] = {itemid = 18520, token = {type = 'major', id = 18423, count = 20}},
 	['iron loadstone'] = {itemid = 18447, token = {type = 'major', id = 18423, count = 20}},
 	['glow wine'] = {itemid = 18448, token = {type = 'major', id = 18423, count = 20}}
-}, {}, {}
+}
 
 local function getTable()
 	local itemsList = {
@@ -78,7 +81,6 @@ end
 
 local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, 'Oh, hello! I\'m the gnome-human relations assistant. I am here for you to trade your tokens for {equipment}, resupply you with mission {items} and talk to you about your {relations} to us gnomes! ...')
-	t[cid], renown[cid] = nil, nil
 	return true
 end
 
@@ -94,8 +96,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'minor') then
 		npcHandler:say({'For two minor tokens, you can buy one gnomish {supply} package! For eight tokens, you can buy a {muck} remover! For ten tokens, you can buy a {mission} crystal. For fifteen tokens, you can buy a crystal {lamp} or a mushroom {backpack}. ...', 'For seventy tokens, I can offer you a voucher for an {addition to the soil guardian outfit}, or a voucher for an {addition to the crystal warlord armor outfit}.'}, cid)
 	elseif config[msg] then
-		local itemType = ItemType(config[msg]['itemid'])
-		npcHandler:say(string.format('Do you want to trade %s %s for %d %s tokens?', (itemType:getArticle() ~= "" and itemType:getArticle() or ""), itemType:getName(), config[msg]['token']['count'], config[msg]['token']['type']), cid)
+		local itemType = ItemType(config[msg].itemid)
+		npcHandler:say(string.format('Do you want to trade %s %s for %d %s tokens?', (itemType:getArticle() ~= "" and itemType:getArticle() or ""), itemType:getName(), config[msg].token.count, config[msg].token.type), cid)
 		npcHandler.topic[cid] = 1
 		t[cid] = msg
 	elseif msgcontains(msg, 'relations') then
@@ -120,13 +122,13 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			local player, targetTable = Player(cid), config[t[cid]]
-			if player:getItemCount(targetTable['token']['id']) < targetTable['token']['count'] then
-				npcHandler:say('Sorry, you don\'t have enough ' .. targetTable['token']['type'] .. ' tokens with you.', cid)
+			if player:getItemCount(targetTable.token.id) < targetTable.token.count then
+				npcHandler:say('Sorry, you don\'t have enough ' .. targetTable.token.type .. ' tokens with you.', cid)
 				npcHandler.topic[cid] = 0
 				return true
 			end
 			
-			local item = Game.createItem(targetTable['itemid'], 1)
+			local item = Game.createItem(targetTable.itemid, 1)
 			local weight = 0
 			weight = ItemType(item:getId()):getWeight(item:getCount())
 			
@@ -140,7 +142,7 @@ local function creatureSayCallback(cid, type, msg)
 				return true
 			end
 			
-			player:removeItem(targetTable['token']['id'], targetTable['token']['count'])
+			player:removeItem(targetTable.token.id, targetTable.token.count)
 			npcHandler:say('Here have one of our ' .. item:getPluralName() .. '.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
@@ -168,6 +170,11 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+local function onReleaseFocus(cid)
+	t[cid] = nil, renown[cid] = nil
+end
+
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
 npcHandler:addModule(FocusModule:new())

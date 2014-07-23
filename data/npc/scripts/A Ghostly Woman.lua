@@ -7,9 +7,9 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink()
 	local config = {delay = 20, frequency = 25, message = "Alone ... so alone. So cold."} 
-    if (os.time() - config["delay"]) >= config["frequency"] then
-        config["delay"] = os.time()
-        Npc():say(config["message"], TALKTYPE_SAY)
+    if (os.time() - config.delay) >= config.frequency then
+        config.delay = os.time()
+        Npc():say(config.message, TALKTYPE_SAY)
     end
     npcHandler:onThink()    
 end

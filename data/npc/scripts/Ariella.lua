@@ -8,9 +8,9 @@ function onCreatureAppear(cid)            npcHandler:onCreatureAppear(cid)      
 function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)            end
 function onCreatureSay(cid, type, msg)    npcHandler:onCreatureSay(cid, type, msg)    end
 function onThink()
-    if (os.time() - config["delay"]) >= config["frequency"] then
-        config["delay"] = os.time()
-        Npc():say(config["message"], TALKTYPE_SAY)
+    if (os.time() - config.delay) >= config.frequency then
+        config.delay = os.time()
+        Npc():say(config.message, TALKTYPE_SAY)
     end
     npcHandler:onThink()    
 end
