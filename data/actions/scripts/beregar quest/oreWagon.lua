@@ -12,12 +12,12 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true
 	end
+
+	local player = Player(cid)
 	
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.OreWagon) == 1 then
 		player:teleportTo(targetPosition)
