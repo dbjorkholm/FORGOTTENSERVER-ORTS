@@ -8,9 +8,9 @@ local wagons = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	
-	for i = 1, #config do
-		local table = config[i]
-		if item.actionId == table.actionId then
+	for i = 1, #wagons do
+		local table = wagons[i]
+		if item.actionid == table.actionId then
 			player:teleportTo(table.teleportPos, true)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			Item(item.actionid):remove()

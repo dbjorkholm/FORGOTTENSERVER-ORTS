@@ -8,8 +8,8 @@ local levers = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	
-	for i = 1, #config do
-		local table = config[i]
+	for i = 1, #levers do
+		local table = levers[i]
 		if item.uid == table.uniqueId and Tile(Position(32699, 31494, 11)):getItemById(8641):getActionId(50121) then
 			local wagon = Game.createItem(7132, table.wagonPos)
 			wagon:setActionId(table.actionId)
