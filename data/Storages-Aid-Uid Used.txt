@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50098
 Last Used Aid = 50089
-Last Used Uid = 50106
+Last Used Uid = 50108
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -164,3 +164,5 @@ Rook Carlos greet Storage = 50097
 Rook Carlos Questlog Storage = 50098
 Rook Try skipping rope & shovel tutorial aid = 50088
 Rook Step Into First Time Rookaard tiles aid = 50089
+Prison Cell Key chest uid = 50107
+Royal Rescue quest - skeleton rusty armor uid = 50108
