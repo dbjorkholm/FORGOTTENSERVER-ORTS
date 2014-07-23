@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Blood Hand" nameDescription="a blood hand" race="blood" experience="750" speed="220" manacost="0">
 	<health now="700" max="700"/>
-	<look type="552" corpse="21257"/>
+	<look type="552" corpse="21261"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>
