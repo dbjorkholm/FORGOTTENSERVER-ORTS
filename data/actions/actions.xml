@@ -336,7 +336,6 @@
 	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
 	
 	<!-- Hidden City of Beregar Quest -->
-	<action actionid="50094" script="beregar quest/goldenIngot.lua"/>
 	<action uniqueid="50125" script="beregar quest/ring.lua"/>
 	<action fromaid="50095" toaid="50097" script="beregar quest/doors.lua"/>
 	<action actionid="50098" script="beregar quest/deeperMineWagon.lua"/>
@@ -349,7 +348,6 @@
 	<action uniqueid="50112" script="beregar quest/mushroom.lua"/>
 	<action fromuid="50113" touid="50123" script="beregar quest/wagonMazeLevers.lua"/>
 	<action uniqueid="50124" script="beregar quest/wagonMazeExit.lua"/>
-	<action uniqueid="50126" script="beregar quest/rustyArmor.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
