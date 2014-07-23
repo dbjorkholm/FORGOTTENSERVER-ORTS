@@ -23,13 +23,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "addon") then
 		if player:hasOutfit(player:getSex() == 0 and 158 or 154) then
-			if player:getStorageValue(Storage["OutfitQuest"]["ShamanAddons"]) < 1 then
+			if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) < 1 then
 				npcHandler:say({"Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...", "This monster, if slain, carries a rare root called Mandrake. If you find it, bring it to me. Also, gather 5 of the voodoo dolls used by the mysterious dworc voodoomasters. ...", "If you manage to fulfil this task, I will grant you your own staff. Have you understood everything and are ready for this test?"}, cid)
 				npcHandler.topic[cid] = 4
-			elseif player:getStorageValue(Storage["OutfitQuest"]["ShamanAddons"]) == 1 then
+			elseif player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 1 then
 				npcHandler:say("Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?", cid)
 				npcHandler.topic[cid] = 5
-			elseif player:getStorageValue(Storage["OutfitQuest"]["ShamanAddons"]) == 2 then
+			elseif player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 2 then
 				npcHandler:say("You have successfully passed the first task. If you can fulfil my second task, I will grant you a mask like the one I wear. Will you listen to the requirements?", cid)
 				npcHandler.topic[cid] = 6
 			end
@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Come back when you can wear shamanic clothing.", cid)
 		end
 	elseif msgcontains(msg, "tribal mask") then
-		if player:getStorageValue(Storage["OutfitQuest"]["ShamanAddons"]) == 3 then
+		if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 3 then
 			npcHandler:say("Have you gathered the 5 tribal masks and the 5 banana staves?", cid)
 			npcHandler.topic[cid] = 8
 		end
@@ -71,7 +71,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(3955, 5)
 				player:addOutfitAddon(158, 1)
 				player:addOutfitAddon(154, 1)
-				player:setStorageValue(Storage["OutfitQuest"]["ShamanAddons"], 2)
+				player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				npcHandler:say("I am proud of you, my child, excellent work. This staff shall be yours from now on!", cid)
 			else
@@ -82,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say({"The dworcs of Tiquanda like to wear certain tribal masks which I would like to take a look at. Please bring me 5 of these masks. ...", "Secondly, the high ape magicians of Banuta use banana staves. I would love to learn more about theses staves, so pleasebring me 5 of them also. ...", "If you manage to fulfil this task, I will grant you your own mask. Have you understood everything and are ready for this test?"}, cid)
 			npcHandler.topic[cid] = 7
 		elseif npcHandler.topic[cid] == 7 then
-			player:setStorageValue(Storage["OutfitQuest"]["ShamanAddons"], 3)
+			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 3)
 			npcHandler:say({"Good! Come back once you have collected 5 tribal masks and 5 banana staves.", "I shall grant you a sign of your progress as shaman if you can fulfil my task."}, cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then
@@ -91,7 +91,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(3967, 5)
 				player:addOutfitAddon(158, 2)
 				player:addOutfitAddon(154, 2)
-				player:setStorageValue(Storage["OutfitQuest"]["ShamanAddons"], 4)
+				player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 4)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				npcHandler:say("Well done, my child! I hereby grant you the right to wear a shamanic mask. Do it proudly.", cid)
 			else

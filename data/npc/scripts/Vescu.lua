@@ -2,12 +2,14 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)       npcHandler:onCreatureAppear(cid)     end
-function onCreatureDisappear(cid)     npcHandler:onCreatureDisappear(cid)     end
-function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, msg)   end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
-local config, t = {
+local t = {}
+
+local config = {
 	['bonelord eyes'] = {value = 1, message = {'Have you really managed to bring me 30 bonelord eyes? <hicks>', 'Do bonelord eyes continue blinking when they are seperated from the bonelord? That is a scary thought.', 'Aw-awsome! <hicks> Squishy! Now, please bring me 10 {red dragon scales}.'}, itemid = 5898, count = 30},
 	['red dragon scales'] = {value = 2, message = {'D-did you get all of the 10 red dragon scales? <hicks>', 'Have you ever wondered if a red dragon means \'stop\' whereas a green dragon means \'go\'?', 'G-good work, ... wha-what\'s your name again? <hicks> Anyway... come back with 30 {lizard scales}.'}, itemid = 5882, count = 10},
 	['lizard scales'] = {value = 3, message = {'Ah, are those - <hicks> - the 30 lizard scales?', 'I once had a girlfriend c-called L-lizzie. She had s-scales too.', 'This potion will become p-pretty scaly. I\'m not sure yet if I want to d-drink that. I think the 20 {fish fins} which come next won\'t really improve it. <hicks>'}, itemid = 5881, count = 30},
@@ -15,12 +17,11 @@ local config, t = {
 	['vampire dust'] = {value = 5, message = {'Have you collected 20 ounces of vampire d-dust? <hicks>', 'Don\'t you think vampires have something - <hicks> - romantic about them? I think you need a b-blessed steak though to turn them into d-dust.', 'Tha-thank you. Trolls are good for something a-after all. Bring me the 10 ounces of {demon dust} now. <hicks>'}, itemid = 5905, count = 20},
 	['demon dust'] = {value = 6, message = {'Have you slain enough d-demons to gather 10 ounces of demon dust? <hicks>', 'I like d-demons. They are just as pretty as flamingos. But you need a blessed stake or something to get demon dust. <hicks>', 'G-great. You\'re a reeeal k-killer like me, eh? I think I\'ll g-give you something fun when the potion is complete. But first, b-bring me {warrior\'s sweat}.'}, itemid = 5906, count = 10},
 	['warrior\'s sweat'] = {value = 7, message = {'This s-smells even worse than the fish fins. Is that warrior\'s sweat?', 'If you can\'t sweat enough yourself, go ask a Djinn. They do - <hicks> magical <hicks> - tractions. Err, extractions.', 'Yahaha! Here we g-go. I\'ll just take a small sip - <gulp>. Okay, this is disgusting, but it seems to work. I\'ll teach you something fun, remind me to tell you a {secret} sometime.'}, itemid = 5885},
-}, {}
+}
 
 local function greetCallback(cid)
 	if Player(cid):getCondition(CONDITION_DRUNK) then
 		npcHandler:setMessage(MESSAGE_GREET, 'Hey t-there, you look like someone who enjoys a good {booze}.')
-		t[cid] = nil
 	else
 		npcHandler:say('Oh, two t-trolls. Hellooo, wittle twolls. <hicks>', cid)
 		return false
@@ -32,26 +33,26 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, 'potion') then
-		if Player(cid):getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) < 1 then
+		if Player(cid):getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit) < 1 then
 			npcHandler:say('It\'s so hard to know the exact time when to stop drinking. <hicks> C-could you help me to brew such a potion?', cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif config[msg] and npcHandler.topic[cid] == 0 then
-		if Player(cid):getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) == config[msg]['value'] then
-			npcHandler:say(config[msg]['message'][1], cid)
+		if Player(cid):getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit) == config[msg].value then
+			npcHandler:say(config[msg].message[1], cid)
 			npcHandler.topic[cid] = 3
 			t[cid] = msg
 		else
-			npcHandler:say(config[msg]['message'][2], cid)
+			npcHandler:say(config[msg].message[2], cid)
 		end
 	elseif msgcontains(msg, "secret") then
 		local player = Player(cid)
-		if player:getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit']) == 8 then
+		if player:getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit) == 8 then
 			npcHandler:say('Right. <hicks> Since you helped me to b-brew that potion and thus ensured the high quality of my work <hicks>, I\'ll give you my old assassin costume. It lacks the head part, but it\'s almost like new. Don\'t pretend to be me though, \'kay? <hicks>', cid)
 			player:addOutfit(156)
 			player:addOutfit(152)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], 9)
+			player:setStorageValue(Storage.OutfitQuest.AssassinBaseOutfit, 9)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -59,17 +60,17 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			local player = Player(cid)
-			player:setStorageValue(Storage['OutfitQuest']['DefaultStart'], 1)
-			player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], 1)
+			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
+			player:setStorageValue(Storage.OutfitQuest.AssassinBaseOutfit, 1)
 			npcHandler:say('G-good. Go get them, I\'ll have a beer in the meantime.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			local player, targetTable = Player(cid), config[t[cid]]
-			local count = targetTable['count'] or 1
-			if player:getItemCount(targetTable['itemid']) >= count then 
-				player:removeItem(targetTable['itemid'], count)
-				player:setStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'], math.max(0, player:getStorageValue(Storage['OutfitQuest']['AssassinBaseOutfit'])) + 1)
-				npcHandler:say(targetTable['message'][3], cid)
+			local count = targetTable.count or 1
+			if player:getItemCount(targetTable.itemid) >= count then 
+				player:removeItem(targetTable.itemid, count)
+				player:setStorageValue(Storage.OutfitQuest.AssassinBaseOutfit, math.max(0, player:getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit)) + 1)
+				npcHandler:say(targetTable.message[3], cid)
 			else
 				npcHandler:say("Next time you lie to me I'll k-kill you. <hicks> Don't think I can't aim well just because I'm d-drunk.", cid)
 			end
@@ -86,6 +87,10 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+local function onReleaseFocus(cid)
+	t[cid] = nil
+end
+
 keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can give you a <hicks> scar as an addon. Nyahahah.'})
 keywordHandler:addKeyword({'booze'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Did I say booze? I meant, {flamingo}. <hicks> Pink birds are kinda cool, don\'t you think? Especially on a painting.'})
 keywordHandler:addKeyword({'flamingo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You have to enjoy the word. Like, {flayyyminnngoooo}. Say it with me. <hicks>'})
@@ -99,4 +104,5 @@ npcHandler:setMessage(MESSAGE_WALKAWAY, 'Oh, two t-trolls. Hellooo, wittle twoll
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
 npcHandler:addModule(FocusModule:new())
