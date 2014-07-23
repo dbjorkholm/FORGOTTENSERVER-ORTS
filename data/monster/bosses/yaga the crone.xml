@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Yaga The Crone" nameDescription="Yaga The Crone" race="blood" experience="375" speed="240" manacost="0">
 	<health now="620" max="620"/>
-	<look type="54" corpse="20535"/>
+	<look type="54" corpse="20587"/>
 	<targetchange interval="5000" chance="8"/>
 	<flags>
 		<flag summonable="0"/>

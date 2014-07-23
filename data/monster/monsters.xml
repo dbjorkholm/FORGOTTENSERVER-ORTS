@@ -260,6 +260,7 @@
 	<monster name="The Many" file="bosses/the many.xml"/>
 	<monster name="The Noxious Spawn" file="bosses/the noxious spawn.xml"/>
 	<monster name="The Old Widow" file="bosses/the old widow.xml"/>
+	<monster name="The Pale Count" file="bosses/the pale count.xml"/>
 	<monster name="The Plasmother" file="bosses/the plasmother.xml"/>
 	<monster name="The Ravager" file="bosses/the ravager.xml"/>
 	<monster name="The Snapper" file="bosses/the snapper.xml"/>
@@ -416,11 +417,13 @@
 	<monster name="Dworc Voodoomaster" file="dworcs/dworc voodoomaster.xml"/>
 
 	<!-- Event Creatures -->
+	<monster name="Dryad" file="event creatures/dryad.xml"/>
 	<monster name="Football" file="event creatures/football.xml"/>
 	<monster name="Grynch Clan Goblin" file="event creatures/grynch clan goblin.xml"/>
 	<monster name="Hacker" file="event creatures/hacker.xml"/>
 	<monster name="The Halloween Hare" file="event creatures/the halloween hare.xml"/>
 	<monster name="Tibia Bug" file="event creatures/tibia bug.xml"/>
+	<monster name="Doomsday Cultist" file="event creatures/doomsday cultist.xml"/>
 
 	<!-- Elves -->
 	<monster name="Elf" file="elves/elf.xml"/>
@@ -693,6 +696,8 @@
 	<monster name="Hero" file="outlaws/hero.xml"/>
 	<monster name="Hunter" file="outlaws/hunter.xml"/>
 	<monster name="Nomad" file="outlaws/nomad.xml"/>
+	<monster name="Nomad (blue)" file="outlaws/nomad (blue).xml"/>
+	<monster name="Nomad (female)" file="outlaws/nomad (female).xml"/>
 	<monster name="Poacher" file="outlaws/poacher.xml"/>
 	<monster name="Primitive" file="outlaws/primitive.xml"/>
 	<monster name="Smuggler" file="outlaws/smuggler.xml"/>
@@ -823,6 +828,11 @@
 	<monster name="Troll Legionnaire" file="trolls/troll legionnaire.xml"/>
 	<monster name="Young Troll" file="trolls/young troll.xml"/>
 
+	<!-- Vampires -->
+	<monster name="Vampire" file="vampires/vampire.xml"/>
+	<monster name="Vampire Bride" file="vampires/vampire bride.xml"/>
+	<monster name="Vampire Viscount" file="vampires/vampire viscount.xml"/>
+
 	<!-- Undead Humanoids -->
 	<monster name="Banshee" file="undead humanoids/banshee.xml"/>
 	<monster name="Blightwalker" file="undead humanoids/blightwalker.xml"/>
@@ -834,15 +844,11 @@
 	<monster name="Grim Reaper" file="undead humanoids/grim reaper.xml"/>
 	<monster name="Lich" file="undead humanoids/lich.xml"/>
 	<monster name="Mummy" file="undead humanoids/mummy.xml"/>
-	<monster name="Vampire" file="undead humanoids/vampire.xml"/>
-	<monster name="Vampire Bride" file="undead humanoids/vampire bride.xml"/>
-	<monster name="Vampire Viscount" file="undead humanoids/vampire viscount.xml"/>
 	<monster name="Vicious Manbat" file="undead humanoids/vicious manbat.xml"/>
 	<monster name="Zombie" file="undead humanoids/zombie.xml"/>
 	<monster name="Undead Prospector" file="undead humanoids/undead prospector.xml"/>
 	<monster name="Nightfiend" file="undead humanoids/nightfiend.xml"/>
 	<monster name="Tomb Servant" file="undead humanoids/tomb servant.xml"/>
-	<monster name="The Pale Count" file="undead humanoids/the pale count.xml"/>
 
 	<!-- Ungulates -->
 	<monster name="Black Sheep" file="ungulates/black sheep.xml"/>
@@ -871,7 +877,6 @@
 	<!-- Voodoo Cultists -->
 	<monster name="Acolyte Of The Cult" file="voodoo cultists/acolyte of the cult.xml"/>
 	<monster name="Adept Of The Cult" file="voodoo cultists/adept of the cult.xml"/>
-	<monster name="Doomsday Cultist" file="voodoo cultists/doomsday cultist.xml"/>
 	<monster name="Enlightened Of The Cult" file="voodoo cultists/enlightened of the cult.xml"/>
 	<monster name="Novice Of The Cult" file="voodoo cultists/novice of the cult.xml"/>
 
