@@ -88,21 +88,55 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
 		elseif itemEx.actionid == 50058 then -- naginata quest
-			local stoneStorage = Game.getStorageValue(itemEx.actionid)
-			if stoneStorage ~= 5 then
-				Game.setStorageValue(itemEx.actionid, math.max(0, stoneStorage or 0) + 1)
+			local stoneStorage = Game.getStorageValue(itemEx.actionid) or -1
+			if stoneStorage < 5 then
+				Game.setStorageValue(itemEx.actionid, math.max(1, stoneStorage + 1))
 			elseif stoneStorage == 5 then
 				Item(itemEx.uid):remove()
 				Game.setStorageValue(itemEx.actionid)
 			end
 			
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
+			local rand = math.random(31, 39)
+			player:addHealth(-rand)
+			player:sendTextMessage(MESSAGE_EXPERIENCE, "You lose " .. rand .. " hitpoints.", player:getPosition(), rand, TEXTCOLOR_RED)
+			player:getPosition():sendMagicEffect(CONST_ME_DRAWBLOOD)
+			local blood = Game.createItem(2019, 2, player:getPosition())
+			blood:decay()
 		end
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
 		targetItem:transform(392)
 		targetItem:decay()
 		toPosition:sendMagicEffect(CONT_ME_POFF)
+	elseif itemEx.actionid == 50090 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then -- The Hidden City of Beregar Quest
+			player:teleportTo(Position(32566, 31338, 10))
+		end
+	elseif itemEx.actionid == 50114 then
+		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
+			Tile(Position(32619, 31514, 9)):getItemById(5709):remove()
+		else
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
+		end
+	elseif itemEx.actionid == 50127 then
+		Tile(Position(32551, 31379, 15)):getItemById(9341):remove()
+		Tile(Position(32551, 31379, 15)):getItemById(1304):remove()
+		Tile(Position(32551, 31379, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31378, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31377, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31376, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31375, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31374, 15)):getGround():getId():transform(5815)
+		Tile(Position(32551, 31373, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31373, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31374, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31375, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31376, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31377, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31378, 15)):getGround():getId():transform(5815)
+		Tile(Position(32550, 31379, 15)):getGround():getId():transform(5815)
+		local portal = Game.createItem(1387, Position(32551, 31376, 15))
+		portal:setActionId(50126)
 	else
 		return false
 	end
