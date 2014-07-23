@@ -14,20 +14,20 @@ local function creatureSayCallback(cid, type, msg)
 	
 	local player = Player(cid)
 	if msgcontains(msg, "join") then
-		if player:getStorageValue(Storage["OutfitQuest"]["BrotherhoodOutfit"]) < 1 and player:getStorageValue(Storage["OutfitQuest"]["NightmareOutfit"]) < 1 then
+		if player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) < 1 and player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) < 1 then
 			npcHandler:say("The Nightmare Knights are almost extinct now, and as far as I know I am the only teacher that is left. But you might beright and its time to accept new disciples ... ", cid)
 			npcHandler:say("After all you have passed the Dream Challenge to reach this place, which used to be the process of initiation in the past... ", cid)
 			npcHandler:say("So I ask you: do you wish to become a member of the ancient order of the Nightmare Knights, " .. player:getName() .. "?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "advancement") then
-		if player:getStorageValue(Storage["OutfitQuest"]["NightmareOutfit"]) == 1 then
+		if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) == 1 then
 			npcHandler:say("So you want to advance to a {Initiate} rank? Did you bring 500 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 3
-		elseif player:getStorageValue(Storage["OutfitQuest"]["NightmareOutfit"]) == 2 then
+		elseif player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) == 2 then
 			npcHandler:say("So you want to advance to a {Dreamer} rank? Did you bring 1000 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 4
-		elseif player:getStorageValue(Storage["OutfitQuest"]["NightmareOutfit"]) == 3 then
+		elseif player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) == 3 then
 			npcHandler:say("So you want to advance to a {Lord Protector} rank? Did you bring 1500 demonic essences with you?", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -39,13 +39,13 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("So I welcome you as the latest member of the order of the Nightmare Knights. You entered this place as a stranger, butyou will leave this place as a friend ... ", cid)
 			npcHandler:say("You can always ask me about your current rank and about the privileges the ranks grant to those who hold them. ", cid)
-			player:setStorageValue(Storage["OutfitQuest"]["NightmareOutfit"], 1)
+			player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getItemCount(6500) >= 500 then
 				player:removeItem(6500, 500)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:setStorageValue(Storage["OutfitQuest"]["NightmareOutfit"], 2)
+				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 2)
 				npcHandler:say("You advanced to {Initiate} rank! You are now able to use teleports of second floor of Knightwatch Tower.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
@@ -55,7 +55,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(6500) >= 1000 then
 				player:removeItem(6500, 1000)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:setStorageValue(Storage["OutfitQuest"]["NightmareOutfit"], 3)
+				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 3)
 				player:addItem(6391, 1)
 				npcHandler:say("You advanced to {Dreamer} rank!", cid)
 			else
@@ -66,7 +66,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(6500) >= 1500 then
 				player:removeItem(6500, 1500)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:setStorageValue(Storage["OutfitQuest"]["NightmareOutfit"], 4)
+				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 4)
 				npcHandler:say("You advanced to {Lord Protector} rank! You are now able to use teleports of fourth floor of Knightwatch Tower and to create addon scrolls.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)

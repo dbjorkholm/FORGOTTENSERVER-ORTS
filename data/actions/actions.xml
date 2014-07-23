@@ -295,10 +295,7 @@
 	<action itemid="7494" script="inquisition quest/inquisitionQuestHolyWater.lua"/>
 	<action actionid="1004" script="inquisition quest/inquisitionQuestUngreez.lua"/>
 	<action actionid="2002" script="inquisition quest/inquisitionQuestVampire Hunt.lua"/>
-	<action uniqueid="9017" script="inquisition quest/inquisitionQuestBrotherLever1.lua"/>
-	<action uniqueid="9018" script="inquisition quest/inquisitionQuestBrotherLever2.lua"/>
-	<action uniqueid="9019" script="inquisition quest/inquisitionQuestBrotherLever3.lua"/>
-	<action uniqueid="9020" script="inquisition quest/inquisitionQuestBrotherLever4.lua"/>
+	<action fromuid="9017" touid="9020" script="inquisition quest/inquisitionQuestBrotherLever.lua"/>
 	<action uniqueid="9021" script="inquisition quest/inquisitionQuestRewardDoor.lua"/>
 
 	<!-- Koshei Amulet Quest -->
