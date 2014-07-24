@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50098
+Last Used Storage = 50110
 Last Used Aid = 50089
-Last Used Uid = 50108
+Last Used Uid = 50110
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -166,3 +166,5 @@ Rook Try skipping rope & shovel tutorial aid = 50088
 Rook Step Into First Time Rookaard tiles aid = 50089
 Prison Cell Key chest uid = 50107
 Royal Rescue quest - skeleton rusty armor uid = 50108
+Justice for all - skeleton gold ingot uid = 50109
+Justice for all - corpse small topaz uid = 50110
