@@ -11917,7 +11917,7 @@
 		<attribute key="description" value="This would be a good place to destroy the ice." />
 	</item>
 		<item id="7186" article="a" name="big crack in the ice">
-		<attribute key="description" value="Now the ice passage are destroyed." />
+		<attribute key="description" value="Now the ice passage is destroyed." />
 	</item>
 
 	<item fromid="7187" toid="7188" article="a" name="raft" />
@@ -28965,7 +28965,13 @@
 	</item>
 	<item id="21367" article="a" name="dead white shade">
 		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="21369" />
+		<attribute key="decayTo" value="21375" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="undead" />
+	</item>
+	<item id="21367" article="a" name="dead enraged soul">
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="21372" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="undead" />
 	</item>
@@ -28986,15 +28992,32 @@
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="undead" />
 	</item>
+	<item id="21372" article="a" name="dead enraged soul">
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="21373" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="undead" />
+	</item>
+	<item id="21373" article="a" name="dead enraged soul">
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="21374" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="undead" />
+	</item>
+	<item id="21374" article="a" name="dead enraged soul">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="undead" />
+	</item>
 	<item id="21375" article="a" name="dead white shade">
 		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="21370" />
+		<attribute key="decayTo" value="21376" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="undead" />
 	</item>
 	<item id="21376" article="a" name="dead white shade">
 		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="21371" />
+		<attribute key="decayTo" value="21377" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="undead" />
 	</item>
@@ -29991,7 +30014,7 @@
 	<item id="22643" article="a" name="leaf golem santa">
 		<attribute key="weight" value="650" />
 	</item>
-	<item id="22644" article="a" name="chrismas cookie tray">
+	<item id="22644" article="a" name="christmas cookie tray">
 		<attribute key="weight" value="650" />
 	</item>
 	<item fromid="22645" toid="22646" article="a" name="snow globe">
