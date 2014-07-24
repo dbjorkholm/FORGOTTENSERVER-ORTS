@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:teleportTo(Position(32625, 31514, 9))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:say("You safely passed the tunnel.", TALKTYPE_MONSTER_SAY, false, 0, pos)
-		Game.createItem(5709, Position(32619, 31514, 9))
+		Game.createItem(5709, 1, Position(32619, 31514, 9))
 		local tile = Tile(Position(32617, 31513, 9))
 		if tile then
 			local thing = tile:getItemById(1027)
