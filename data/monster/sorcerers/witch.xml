@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Witch" nameDescription="a witch" race="blood" experience="120" speed="195" manacost="0">
 	<health now="300" max="300"/>
-	<look type="54" corpse="20535"/>
+	<look type="54" corpse="20538"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>

@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local storeTable = {}
 local itemsTable = {
 	["Gingerbreadman"] = {itemId = 6501, count = 1},
-	--["Christmas Cookie Tray"] = {itemId = , count = 1},
+	["Christmas Cookie Tray"] = {itemId = 22644, count = 1},
 	["Gingerbread Recipe"] = {itemId = 6523, count = 10},
 	["Jewel Case"] = {itemId = 8261, count = 25},
 	["Santa Hat"] = {itemId = 6531, count = 50},
@@ -20,7 +20,7 @@ local itemsTable = {
 	["Snowman Doll"] = {itemId = 11256, count = 150},
 	["Snow Globe"] = {itemId = 22645, count = 150},
 	["Frazzlemaw Santa"] = {itemId = 22642, count = 250},
-	--["Leaf Golem Santa"] = {itemId = , count = 250},
+	["Leaf Golem Santa"] = {itemId = 22643, count = 250},
 	["Santa Music Box"] = {itemId = 22647, count = 250},
 	["Santa Teddy"] = {itemId = 11255, count = 500},
 	["Present Bag"] = {itemId = 6497, count = 1}
