@@ -129,9 +129,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	elseif itemEx.itemid == 8749 then
-		local position = Position(32699, 31492, 11)
-		if Tile(position):getItemById(8749) then
-			Tile(position):getItemById(8749):remove()
+		local tile = Tile(Position(32699, 31492, 11))
+		if tile:getItemById(8749) then
+			tile:getItemById(8749):remove()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
 		end
