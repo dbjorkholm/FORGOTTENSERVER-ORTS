@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "undead") then
 		if npcHandler.topic[cid] == 1 then
-			if Player(cid):getStorageValue(50020) == 1
+			if Player(cid):getStorageValue(50020) == 1 then
 				npcHandler:say("BOON AND BANE. I HAVE CHOSEN THIS LIFE VOLUNTARILLY AND I NEVER REGRET IT. MY TREASURE IS GROWING BIGGER EACH DAY.", cid)
 				npcHandler.topic[cid] = 2
 			end
