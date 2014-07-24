@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Acolyte Of The Cult" nameDescription="an acolyte of the cult" race="blood" experience="300" speed="200" manacost="0">
 	<health now="390" max="390"/>
-	<look type="194" head="114" body="121" legs="121" feet="57" corpse="20319"/>
+	<look type="194" head="114" body="121" legs="121" feet="57" corpse="20322"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Rorc" nameDescription="a rorc" race="blood" experience="105" speed="200" manacost="0">
 	<health now="260" max="260"/>
-	<look type="550" corpse="21223"/>
+	<look type="550" corpse="21226"/>
 	<targetchange interval="5000" chance="0"/>
 	<flags>
 		<flag summonable="0"/>

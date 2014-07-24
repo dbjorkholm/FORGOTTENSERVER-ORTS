@@ -2,7 +2,7 @@
 <monster name="Werewolf" nameDescription="a werewolf" experience="1900" speed="200" race="blood" manacost="0">
 	<health now="1955" max="1955"/>
 	<targetchange interval="4000" chance="10"/>
-	<look type="308" corpse="20380"/>	<flags>
+	<look type="308" corpse="20379"/>	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="1"/>
