@@ -42,22 +42,22 @@ local function getTable()
 end
 
 local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
 
 	local player = Player(cid)
 	-- GREET
-	if(msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi")) then
+	if msg:lower() == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
-			if(player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen) then
+			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
 				npcHandler:say("What do you want from me, " .. player:getName() .."?", cid)
-				npcHandler:addFocus(cid)
 			end
 		end
 	end
 	-- GREET
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
 	-- Mission 2 - The Tear of Daraman
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(GreenDjinn.MissionStart+1) == 4 and player:getStorageValue(GreenDjinn.MissionStart+2) < 1 then
