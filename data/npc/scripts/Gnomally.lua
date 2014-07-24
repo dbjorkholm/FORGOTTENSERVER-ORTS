@@ -171,7 +171,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 local function onReleaseFocus(cid)
-	t[cid] = nil, renown[cid] = nil
+	t[cid], renown[cid] = nil, nil
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
