@@ -41,13 +41,19 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
 		player:setStorageValue(9944, 1)
-	elseif itemEx.actionid == 50118 and Tile(Position(32717, 31492, 11)):getItemById(7131) then
-		Game.createItem(8749, Position(32717, 31492, 11))
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-	elseif itemEx.itemid == 8749 and Tile(Position(32699, 31492, 11)):getItemById(8749) then
-		Tile(Position(32699, 31492, 11)):getItemById(8749):remove()
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-		Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
+	elseif itemEx.actionid == 50118 then
+		local position = Position(32717, 31492, 11)
+		if Tile(position):getItemById(7131) then
+			Game.createItem(8749, 1, Position(32717, 31492, 11))
+			toPosition:sendMagicEffect(CONST_ME_POFF)
+		end
+	elseif itemEx.itemid == 8749 then
+		local tile = Tile(Position(32699, 31492, 11))
+		if tile:getItemById(8749) then
+			tile:getItemById(8749):remove()
+			toPosition:sendMagicEffect(CONST_ME_POFF)
+			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
+		end	
 	else
 		return false
 	end
