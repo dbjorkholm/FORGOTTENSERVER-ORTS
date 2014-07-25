@@ -7,12 +7,19 @@ local config = {
 		[5] = Position(32411, 32231, 10),
 		[6] = Position(32412, 32231, 10)
 	},
+	removeCreaturePosition = Position(32409, 32231, 10),
 	bridgeID = 5770,
 	waterID = 4615
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	for i = 1, #config.bridgePositions do
+		--if Creature on bridge then push off
+		local creature = Tile(config.bridgePositions[i]):getTopCreature()
+		if creature ~= nil then
+			creature:teleportTo(config.removeCreaturePosition)
+		end
+		--create and remove bridge
 		local tile = config.bridgePositions[i]:getTile()
 		if tile then
 			local thing = tile:getItemById(item.itemid == 1945 and config.waterID or config.bridgeID)
