@@ -231,24 +231,39 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
 		end
 	elseif itemEx.actionid == 50127 then
-		Tile(Position(32551, 31379, 15)):getItemById(9341):remove()
-		Tile(Position(32551, 31379, 15)):getItemById(1304):remove()
-		Tile(Position(32551, 31379, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31378, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31377, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31376, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31375, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31374, 15)):getGround():getId():transform(5815)
-		Tile(Position(32551, 31373, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31373, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31374, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31375, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31376, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31377, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31378, 15)):getGround():getId():transform(5815)
-		Tile(Position(32550, 31379, 15)):getGround():getId():transform(5815)
-		local portal = Game.createItem(1387, Position(32551, 31376, 15))
-		portal:setActionId(50126)
+		local positions = {
+			Position(32551, 31379, 15),
+			Position(32551, 31378, 15),
+			Position(32551, 31377, 15),
+			Position(32551, 31376, 15),
+			Position(32551, 31375, 15),
+			Position(32551, 31374, 15),
+			Position(32551, 31373, 15),
+			Position(32550, 31373, 15),
+			Position(32550, 31374, 15),
+			Position(32550, 31375, 15),
+			Position(32550, 31376, 15),
+			Position(32550, 31377, 15),
+			Position(32550, 31378, 15),
+			Position(32550, 31379, 15)
+		}
+		local tile = Tile(Position(32551, 31379, 15))
+		if tile:getItemById(9341) then
+			tile:getItemById(9341):remove()
+		end
+		if tile:getItemById(1304) then
+			tile:getItemById(1304):remove()
+		end
+		for i = 1, #positions do
+			local ground = Tile(psoitions[i]):getGround()
+			if ground and ground:getId() == 598 then
+				ground:transform(5815)
+			end
+		end
+		local portal = Game.createItem(1387, 1, Position(32551, 31376, 15))
+		if portal then
+			portal:setActionId(50126)
+		end
 	else
 		return false
 	end
