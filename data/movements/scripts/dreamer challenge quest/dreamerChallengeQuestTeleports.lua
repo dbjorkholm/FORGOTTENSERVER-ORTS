@@ -1,14 +1,19 @@
 local teleports = {
-	[2250] = {x = 32915, y = 32263, z = 14},
-	[2251] = {x = 32946, y = 32270, z = 13},
-	[2252] = {x = 32976, y = 32270, z = 14},
-	[2253] = {x = 32933, y = 32282, z = 13},
-	[2254] = {x = 32753, y = 32344, z = 14},
-	[2255] = {x = 32753, y = 32344, z = 14}
+	[2250] = Position(32915, 32263, 14),
+	[2251] = Position(32946, 32270, 13),
+	[2252] = Position(32976, 32270, 14),
+	[2253] = Position(32933, 32282, 13),
+	[2254] = Position(32753, 32344, 14),
+	[2255] = Position(32753, 32344, 14)
 }
 
 function onStepIn(cid, item, position, fromPosition)
-	doTeleportThing(cid, teleports[item.uid])
-	doSendMagicEffect(teleports[item.uid], CONST_ME_TELEPORT)
+	local player = Player(cid)
+	if not player then
+		return false
+	end
+
+	player:teleportTo(teleports[item.uid])
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end
