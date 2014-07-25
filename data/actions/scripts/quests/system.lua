@@ -31,7 +31,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local player = Player(cid)
 	if player:getStorageValue(storage) > 0 then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 		return true
 	end
 
@@ -68,15 +68,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		weight = weight + ret:getWeight(reward:getCount())
 	else
 		if size > 20 then
-			reward = Container(Game.createItem(item.itemid, 1):getUniqueId())
+			reward = Game.createItem(item.itemid, 1)
 		elseif size > 8 then
-			reward = Container(Game.createItem(1988, 1):getUniqueId())
+			reward = Game.createItem(1988, 1)
 		else
-			reward = Container(Game.createItem(1987, 1):getUniqueId())
+			reward = Game.createItem(1987, 1)
 		end
 
 		for i = 1, size do
-		local tmp = items[i]
+			local tmp = items[i]
 			if reward:addItemEx(tmp) ~= RETURNVALUE_NOERROR then
 				print('[Warning] QuestSystem:', 'Could not add quest reward to container')
 			else
@@ -111,18 +111,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	if questsExperience[storage] ~= nil then
+	if questsExperience[storage] then
 		player:addExperience(questsExperience[storage], true)
 	end
 
-	if tutorialIds[storage] ~= nil then
+	if tutorialIds[storage] then
 		player:sendTutorial(tutorialIds[storage])
 		if item.uid == 50080 then
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 3)
 		end
 	end
 
-	player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found ' .. result .. '.')
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. result .. '.')
 	player:setStorageValue(storage, 1)
 	return true
 end

@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The door seems to be sealed against unwanted intruders.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The door seems to be sealed against unwanted intruders.")
 		end
 		return true
 
@@ -15,7 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "Only the worthy may pass.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Only the worthy may pass.")
 		end
 		return true
 
@@ -27,7 +27,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					return true
 				end
 			end
-			Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "The key does not match.")
+			Player(cid):sendCancelMessage("The key does not match.")
 			return true
 		end
 		return false
@@ -41,7 +41,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if isInArray(horizontalOpenDoors, item.itemid) or isInArray(verticalOpenDoors, item.itemid) then
 		local doorCreature = tileToPos:getTopCreature()
-		if doorCreature ~= nil then
+		if doorCreature then
 			toPosition.x = toPosition.x + 1
 			local query = toPosition:getTile():queryAdd(doorCreature, 20)
 			if query ~= RETURNVALUE_NOERROR then
@@ -51,7 +51,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 
 			if query ~= RETURNVALUE_NOERROR then
-				player:sendTextMessage(MESSAGE_STATUS_SMALL, query)
+				Player(cid):sendCancelMessage(query)
 				return true
 			end
 
@@ -67,7 +67,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if item.actionid == 0 then
 			Item(item.uid):transform(doors[item.itemid])
 		else
-			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")
+			Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "It is locked.")
 		end
 		return true
 	end
