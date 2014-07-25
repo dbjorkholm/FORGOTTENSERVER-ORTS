@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local playerPos = player:getPosition()
 	if player:getStorageValue(Storage.BigfootBurden.Shooting) < 6 then
-		local pos = Position(playerPos.x, y = playerPos.y - 5, 10)
+		local pos = Position(playerPos.x, playerPos.y - 5, 10)
 		local tile = Tile(pos)
 		if tile:getItemById(18226) then
 			player:setStorageValue(Storage.BigfootBurden.Shooting, player:getStorageValue(Storage.BigfootBurden.Shooting) + 1)
