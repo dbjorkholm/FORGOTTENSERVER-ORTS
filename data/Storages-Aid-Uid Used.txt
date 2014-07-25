@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50131
-Last Used Aid = 50128
+Last Used Aid = 50129
 Last Used Uid = 50131
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -164,6 +164,23 @@ Rook Carlos greet Storage = 50097
 Rook Carlos Questlog Storage = 50098
 Rook Try skipping rope & shovel tutorial aid = 50088
 Rook Step Into First Time Rookaard tiles aid = 50089
+
+HCoB some cracks aid = 50090
+HCoB rock aid = 50091
+HCoB forcefield aid = 50092,50093
+HCoB closed door aid = 50095-50097
+HCoB orewagon aid = 50098-50108
+HCoB rock soil aid = 50109
+HCoB orewagon aid = 50112
+HCoB rock soil aid = 50113
+HCoB rubble aid = 50114
+HCoB orewagon aid = 50115
+HCoB rails aid = 50116
+HCoB orewagon aid = 50117
+HCoB coal aid = 50118
+HCoB steam aid = 50127
+HCoB orewagon aid = 50128
+
 HCoB bellow uid = 50107
 HCoB lever uid = 50108-50111
 HCoB glimmer cap uid = 50112
@@ -175,3 +192,5 @@ Prison Cell Key chest uid = 50128
 Royal Rescue quest - skeleton rusty armor uid = 50129
 Justice for all - skeleton gold ingot uid = 50130
 Justice for all - corpse small topaz uid = 50131
+
+leverbridge liferingquest aid = 50129
