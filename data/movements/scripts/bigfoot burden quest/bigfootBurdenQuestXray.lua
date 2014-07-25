@@ -19,18 +19,18 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 	
 	if item.uid == 3122 then
-		if player:getStorageValue(900) == 4 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 4 then
 			player:addCondition(condition)
 			player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
-			player:setStorageValue(900, 5)
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 5)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!")
 			player:say("*Rrrrrrrrrrr...*", TALKTYPE_MONSTER_SAY)
-		elseif player:getStorageValue(900) < 4 then
+		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) < 4 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The x-ray is not ready.")
 			player:teleportTo(fromPosition, true)
 		end
 	elseif item.uid == 3123 then
-		if player:getStorageValue(900) == 6 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 6 then
 			-- Commenting away stopMove since this function has been removed
 			-- player:stopMove(true)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Gnomedix: So let the examination begin! Now don't move. Don't be afraid. The good doctor gnome won't hurt you - hopefully!")
@@ -38,7 +38,7 @@ function onStepIn(cid, item, position, fromPosition)
 				addEvent(function(cid, position) local player = Player(cid) if player then player:sendTextMessage(MESSAGE_EVENT_ADVANCE, gnomedixMessages[i]) player:getPosition():sendMagicEffect(CONST_ME_STUN) end end, i * 2000, cid, position)
 			end
 			player:getPosition():sendMagicEffect(CONST_ME_STUN)
-			player:setStorageValue(900, 7)
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 7)
 			addEvent(function(cid) local player = Player(cid) if player then Game.createMonster("strange slime", Position({x = player:getPosition().x, y = player:getPosition().y + 1, z = player:getPosition().z}), false, true) end end, 14000, cid)
 		end
 	end

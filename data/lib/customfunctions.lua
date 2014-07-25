@@ -136,24 +136,24 @@ end
 
 function doPlayerGnomishRank(cid)
 	local player = Player(cid)
-	if player:getStorageValue(921) >= 30 then
-		if player:getStorageValue(900) == 14 then
-			player:setStorageValue(900, 15)
+	if player:getStorageValue(Storage.BigfootBurden.Rank) >= 30 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 14 then
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 15)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
-	elseif player:getStorageValue(921) >= 120 then
-		if player:getStorageValue(900) == 15 then
-			player:setStorageValue(900, 16)
+	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 120 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 15 then
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 16)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
-	elseif player:getStorageValue(921) >= 480 then
-		if player:getStorageValue(900) == 16 then
-			player:setStorageValue(900, 17)
+	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 480 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 16 then
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 17)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
-	elseif player:getStorageValue(921) >= 1440 then
-		if player:getStorageValue(900) == 17 then
-			player:setStorageValue(900, 18)
+	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 1440 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
+			player:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
 	end
