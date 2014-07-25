@@ -32,7 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({"Congratulations on finding your soul melody. And a pretty one as far as I can tell. Now you are a true recruit of the Bigfoot company! Commander Stone might have some tasks for you to do! ...", "Look for him in the central chamber. I marked your map where you will find him."}, cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 14)
-			player:setStorageValue(921)
+			player:setStorageValue(Storage.BigfootBurden.Rank)
 		end
 		npcHandler.topic[cid] = 0
 	end
