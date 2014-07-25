@@ -159,7 +159,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = npcHandler.topic[cid] + 1
 		end
 	-- TEST
-	elseif msgcontains(msg, "result" then
+	elseif msgcontains(msg, "result") then
 		if npcHandler.topic[cid] == 33 then
 			if player:getStorageValue(Storage.BigfootBurden.Test) < 100 then
 				npcHandler:say({"You have failed the test with " .. player:getStorageValue(Storage.BigfootBurden.Test) .. " of 112 possible points. You probably were just too nervous. ...", "I suggest you relax a bit with a fresh mushroom beer and we'll start over after that. Gnominus sells some beer. You should find him somewhere in the central chamber."}, cid)
@@ -168,7 +168,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.QuestLine, 3)
 			end
 		end
-	elseif msgcontains(msg, "yes" then
+	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Excellent! Now let us begin with the gnomish aptitude test. Just tell me when you feel ready for the {test}!", cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 2)

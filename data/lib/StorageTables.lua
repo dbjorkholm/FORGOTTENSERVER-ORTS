@@ -7,7 +7,7 @@ Storage = {
 		Test = 901,
 		Shooting = 902,
 		Rank = 921
-	}
+	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
