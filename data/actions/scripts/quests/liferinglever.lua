@@ -15,17 +15,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	for i = 1, #config.bridgePositions do
 		local tile = config.bridgePositions[i]:getTile()
 		if tile then
-			local thing = tile:getItemById(config.waterID)
-			if thing == nil then
-				thing = tile:getItemById(config.bridgeID)
-			end
-			if thing:getId() == config.waterID then
-				thing:transform(config.bridgeID)
-			elseif thing:getId() == config.bridgeID then
-				thing:transform(config.waterID)
+			local thing = tile:getItemById(item.itemid == 1945 and config.waterID or config.bridgeID)
+			if thing then
+				thing:transform(item.itemid == 1945 and config.bridgeID or config.waterID)
 			end
 		end
-	end
+	end	
 	
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
