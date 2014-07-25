@@ -16,7 +16,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	for i = 1, #config.bridgePositions do
 		--if Creature on bridge then push off
 		local creature = Tile(config.bridgePositions[i]):getTopCreature()
-		if creature ~= nil then
+		if creature then
 			creature:teleportTo(config.removeCreaturePosition)
 		end
 		--create and remove bridge
