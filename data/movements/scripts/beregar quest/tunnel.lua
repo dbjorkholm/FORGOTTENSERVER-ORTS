@@ -5,6 +5,6 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 		
 	player:teleportTo(Position(32616, 31514, 9))
-	player:say("Use the ore wagon to pass this spot.", TALKTYPE_MONSTER_SAY, false, 0, pos)
+	player:say("Use the ore wagon to pass this spot.", TALKTYPE_MONSTER_SAY)
 	return true
 end
