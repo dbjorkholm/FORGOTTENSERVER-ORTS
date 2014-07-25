@@ -18,12 +18,12 @@ function onStepIn(cid, item, position, fromPosition)
 			player:addCondition(condition)
 		end
 	elseif item.actionid == 7817 then
-		player:setStorageValue(900, 11)
+		player:setStorageValue(Storage.BigfootBurden.QuestLine, 11)
 		player:teleportTo(Position(32760, 31811, 10))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You passed endurance test.")
 	elseif item.actionid == 7818 then
-		if player:getStorageValue(900) == 10 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 10 then
 			player:teleportTo(Position(32759, 31811, 11))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else

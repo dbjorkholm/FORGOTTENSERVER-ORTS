@@ -3,7 +3,7 @@ local function doCreateDummy(cid, pos)
 	if not player then
 		return true
 	end
-	
+
 	local tile = Tile(pos)
 	if tile then
 		local thing = tile:getTopVisibleThing()
@@ -12,14 +12,14 @@ local function doCreateDummy(cid, pos)
 		end
 	end
 
-	if player:getStorageValue(902) < 5 then
+	if player:getStorageValue(Storage.BigfootBurden.Shooting) < 5 then
 		pos:sendMagicEffect(CONST_ME_POFF)
 		Game.createItem(math.random(18226, 18227), 1, pos)
-	elseif player:getStorageValue(902) == 5 then
-		player:setStorageValue(900, 9)
+	elseif player:getStorageValue(Storage.BigfootBurden.Shooting) == 5 then
+		player:setStorageValue(Storage.BigfootBurden.QuestLine, 9)
 		return false
 	end
-	
+
 	return addEvent(doCreateDummy, 2 * 1000, cid, pos)
 end
 
@@ -28,9 +28,9 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
-	if player:getStorageValue(900) == 8 then
-		player:setStorageValue(902)
+
+	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 8 then
+		player:setStorageValue(Storage.BigfootBurden.Shooting)
 		local playerPos = player:getPosition()
 		doCreateDummy(cid, Position(playerPos.x, playerPos.y - 5, 10))
 		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)

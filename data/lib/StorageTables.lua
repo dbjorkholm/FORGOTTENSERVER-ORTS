@@ -2,6 +2,12 @@
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it in Values -
 Storage = {
+	BigfootBurden = {
+		QuestLine = 900,
+		Test = 901,
+		Shooting = 902,
+		Rank = 921
+	}
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 

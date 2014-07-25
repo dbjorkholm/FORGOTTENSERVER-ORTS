@@ -6,9 +6,9 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)
 	local player = Player(cid)
-	if player:getStorageValue(900) == 5 then
+	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 5 then
 		npcHandler:setMessage(MESSAGE_GREET, "Stand still on the examination platform |PLAYERNAME|.")
-		player:setStorageValue(900, 6)
+		player:setStorageValue(Storage.BigfootBurden.QuestLine, 6)
 	end
 	npcHandler:onCreatureSay(cid, type, msg)		
 end
