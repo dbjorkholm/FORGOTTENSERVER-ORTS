@@ -1,9 +1,12 @@
 function onStepIn(cid, item, position, fromPosition)
-	if(item.actionid == 9032) then
-		doTransformItem(getTileItemById({x = 32836, y = 32288, z = 14}, 1387).uid, 6299)
-		doTransformItem(getTileItemById({x = 32834, y = 32285, z = 14}, 1946).uid, 1945)
-		doTeleportThing(cid, {x = 32874, y = 32275, z = 14})
-		doSendMagicEffect({x = 32874, y = 32275, z = 14}, CONST_ME_TELEPORT)
+	local player = Player(cid)
+	if not player then
+		return false
 	end
+
+	Tile(Position(32836, 32288, 14)):getItemById(1387):transform(6299)
+	Tile(Position(32834, 32285, 14)):getItemById(1946):transform(1945)
+	player:teleportTo(Position(32874, 32275, 14))
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end
