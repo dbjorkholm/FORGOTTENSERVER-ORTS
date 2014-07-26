@@ -15,12 +15,11 @@ local config = {
 }
 
 local function greetCallback(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
+	if Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
 		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
 		npcHandler.topic[cid] = 4
 	else
-		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (player:getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
 	end
 	return true
 end

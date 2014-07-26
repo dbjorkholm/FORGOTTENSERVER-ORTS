@@ -15,18 +15,17 @@ local config = {
 }
 
 local function greetCallback(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
+	if Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 3 then
 		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
 		npcHandler.topic[cid] = 4
-	elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 5 then
+	elseif Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 5 then
 		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
 		npcHandler.topic[cid] = 6
-	elseif player:getStorageValue(Storage.pitsOfInferno.Pumin) == 8 then
+	elseif Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 8 then
 		npcHandler:say("You again. I told my master that you wish to end your stupid life in his domain but you need Form 356 to get there. What do you need this time?", cid)
 		npcHandler.topic[cid] = 8
 	else
-		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (player:getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
+		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
 	end
 	return true
 end
