@@ -37,7 +37,6 @@ function playerExists(name)
 		result.free(a)
 		return true
 	end
-	return false
 end
 
 function Player.transferMoneyTo(self, target, amount)
