@@ -25,3 +25,9 @@ Inky
 
 Dipthrah
 	- missing divine caldera that halves all skills
+
+Morik The Gladiator
+	- missing party buff spell
+
+Gnorre Chyllson
+	- missing all drown attacks
