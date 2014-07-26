@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50131
 Last Used Aid = 50129
-Last Used Uid = 50131
+Last Used Uid = 50133
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 stopMove Storage	=		100000 --Reserved to cancel player movement
@@ -194,3 +194,6 @@ Justice for all - skeleton gold ingot uid = 50130
 Justice for all - corpse small topaz uid = 50131
 
 leverbridge liferingquest aid = 50129
+
+Key 3620 uid = 50132
+Key 3650 uid = 50133
