@@ -295,7 +295,6 @@
 	<monster name="Starving Wolf" file="canines/starving wolf.xml"/>
 	<monster name="Thornfire Wolf" file="canines/thornfire wolf.xml"/>
 	<monster name="War wolf" file="canines/war wolf.xml"/>
-	<monster name="Werewolf" file="canines/werewolf.xml"/>
 	<monster name="Wild Dog" file="canines/wild dog.xml"/>
 	<monster name="Winter Wolf" file="canines/winter wolf.xml"/>
 	<monster name="Wolf" file="canines/wolf.xml"/>
@@ -421,6 +420,7 @@
 	<monster name="Football" file="event creatures/football.xml"/>
 	<monster name="Grynch Clan Goblin" file="event creatures/grynch clan goblin.xml"/>
 	<monster name="Hacker" file="event creatures/hacker.xml"/>
+	<monster name="Primitive" file="event creatures/primitive.xml"/>
 	<monster name="The Halloween Hare" file="event creatures/the halloween hare.xml"/>
 	<monster name="Tibia Bug" file="event creatures/tibia bug.xml"/>
 	<monster name="Doomsday Cultist" file="event creatures/doomsday cultist.xml"/>
@@ -690,6 +690,8 @@
 	<monster name="Bandit" file="outlaws/bandit.xml"/>
 	<monster name="Black Knight" file="outlaws/black knight.xml"/>
 	<monster name="Crazed Beggar" file="outlaws/crazed beggar.xml"/>
+	<monster name="Crypt Defiler" file="outlaws/crypt defiler.xml"/>
+	<monster name="Feverish Citizen" file="outlaws/feverish citizen.xml"/>
 	<monster name="Gang Member" file="outlaws/gang member.xml"/>
 	<monster name="Gladiator" file="outlaws/gladiator.xml"/>
 	<monster name="Grave Robber" file="outlaws/grave robber.xml"/>
@@ -699,12 +701,13 @@
 	<monster name="Nomad (blue)" file="outlaws/nomad (blue).xml"/>
 	<monster name="Nomad (female)" file="outlaws/nomad (female).xml"/>
 	<monster name="Poacher" file="outlaws/poacher.xml"/>
-	<monster name="Primitive" file="outlaws/primitive.xml"/>
 	<monster name="Smuggler" file="outlaws/smuggler.xml"/>
 	<monster name="Stalker" file="outlaws/stalker.xml"/>
+	<monster name="Thief" file="outlaws/thief.xml"/>
+	<monster name="Travelling Merchant" file="outlaws/travelling merchant.xml"/>
+	<monster name="Werewolf" file="outlaws/werewolf.xml"/>
 	<monster name="Wild Warrior" file="outlaws/wild warrior.xml"/>
-	<monster name="Feverish Citizen" file="outlaws/feverish citizen.xml"/>
-	<monster name="Crypt Defiler" file="outlaws/crypt defiler.xml"/>
+	
 
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="pharaohs/ashmunrah.xml"/>
