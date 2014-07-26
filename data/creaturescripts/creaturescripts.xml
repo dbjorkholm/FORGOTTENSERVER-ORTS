@@ -37,9 +37,6 @@
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
 	
-	<!-- Achievements -->
-	<event type="kill" name="AchievementsKill" script="others/achievements_kill.lua"/>
-	
 	<!-- Storage Conversion -->
 	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
