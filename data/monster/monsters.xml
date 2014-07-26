@@ -194,6 +194,7 @@
 	<monster name="Hairman The Huge" file="bosses/hairman the huge.xml"/>
 	<monster name="Handmaiden" file="bosses/handmaiden.xml"/>
 	<monster name="Haunter" file="bosses/haunter.xml"/>
+	<monster name="Hemming" file="bosses/hemming.xml"/>
 	<monster name="Heoni" file="bosses/heoni.xml"/>
 	<monster name="Hide" file="bosses/hide.xml"/>
 	<monster name="Horestis" file="bosses/horestis.xml"/>
@@ -201,6 +202,7 @@
 	<monster name="Infernatil" file="bosses/infernatil.xml"/>
 	<monster name="Inky" file="bosses/inky.xml"/>
 	<monster name="Jaul" file="bosses/jaul.xml"/>
+	<monster name="Jesse The Wicked" file="bosses/jesse the wicked.xml"/>
 	<monster name="Koshei The Deathless" file="bosses/koshei the deathless.xml"/>
 	<monster name="Kraknaknork'S Demon" file="bosses/kraknaknork's demon.xml"/>
 	<monster name="Kraknaknork" file="bosses/kraknaknork.xml"/>
@@ -226,14 +228,17 @@
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
 	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
 	<monster name="Ribstride" file="bosses/ribstride.xml"/>
+	<monster name="Robby The Reckless" file="bosses/robby the reckless.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron The Ripper" file="bosses/ron the ripper.xml"/>
 	<monster name="Rottie The Rotworm" file="bosses/rottie the rotworm.xml"/>
 	<monster name="Rotworm Queen" file="bosses/rotworm queen.xml"/>
+	<monster name="Rukor Zad" file="bosses/rukor zad.xml"/>
 	<monster name="Scorn Of The Emperor" file="bosses/scorn of the emperor.xml"/>
 	<monster name="Shardhead" file="bosses/shardhead.xml"/>
 	<monster name="Sharptooth" file="bosses/sharptooth.xml"/>
 	<monster name="Sir Valorcrest" file="bosses/sir valorcrest.xml"/>
+	<monster name="Smuggler Baron Silvertoe" file="bosses/smuggler baron silvertoe.xml"/>
 	<monster name="Snake God Essence" file="bosses/snake god essence.xml"/>
 	<monster name="Snake Thing" file="bosses/snake thing.xml"/>
 	<monster name="Spider Queen" file="bosses/spider queen.xml"/>
@@ -707,7 +712,6 @@
 	<monster name="Travelling Merchant" file="outlaws/travelling merchant.xml"/>
 	<monster name="Werewolf" file="outlaws/werewolf.xml"/>
 	<monster name="Wild Warrior" file="outlaws/wild warrior.xml"/>
-	
 
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="pharaohs/ashmunrah.xml"/>
