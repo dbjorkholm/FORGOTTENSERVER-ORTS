@@ -1,8 +1,8 @@
 local config = {
 	bridgePositions = {
-		[1] = Position(32627, 31699, 10),
-		[2] = Position(32628, 31699, 10),
-		[3] = Position(32629, 31699, 10)
+		Position(32627, 31699, 10),
+		Position(32628, 31699, 10),
+		Position(32629, 31699, 10)
 	},
 	removeCreaturePosition = Position(32630, 31699, 10),
 	bridgeID = 5770,
@@ -10,18 +10,17 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local tile, thing, creature
 	for i = 1, #config.bridgePositions do
-		--if Creature on bridge then push off
-		local creature = Tile(config.bridgePositions[i]):getTopCreature()
-		if creature then
-			creature:teleportTo(config.removeCreaturePosition)
-		end
-		--create and remove bridge
-		local tile = config.bridgePositions[i]:getTile()
+		tile = Tile(config.bridgePositions[i])
 		if tile then
-			local thing = tile:getItemById(item.itemid == 1945 and config.waterID or config.bridgeID)
+			thing, creature = tile:getItemById(item.itemid == 1945 and config.waterID or config.bridgeID), tile:getTopCreature()
 			if thing then
 				thing:transform(item.itemid == 1945 and config.bridgeID or config.waterID)
+			end
+			
+			if creature then
+				creature:teleportTo(config.removeCreaturePosition)
 			end
 		end
 	end	
