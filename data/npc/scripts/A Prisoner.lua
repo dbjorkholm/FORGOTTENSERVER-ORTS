@@ -12,10 +12,8 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	local player = Player(cid)
-
 	if msgcontains(msg, "riddle") then
-		if player:getStorageValue(Storage.madMage.Quest) ~= 1 then
+		if Player(cid):getStorageValue(Storage.madMage.Quest) ~= 1 then
 			npcHandler:say("Great riddle, isn´t it? If you can tell me the correct answer, I will give you something. Hehehe!", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -26,6 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
+			local player = Player(cid)
 			if player:getItemCount(2674) >= 7 then
 				player:removeItem(2674, 7)
 				npcHandler:say("Mnjam - excellent apples. Now - about that key. You are sure want it?", cid)
@@ -41,14 +40,17 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Really, really, really, really?", cid)
 			npcHandler.topic[cid] = 5
 		elseif npcHandler.topic[cid] == 5 then
+			local player = Player(cid)
 			player:setStorageValue(Storage.madMage.Quest, 1)
 			npcHandler:say("Then take it and get happy - or die, hehe.", cid)
 			local key = player:addItem(2088, 1)
-			key:setActionId(3666)
+			if key then
+				key:setActionId(3666)
+			end
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
-		napcHandler:say("Then go away!", cid)
+		npcHandler:say("Then go away!", cid)
 	end
 	return true
 end
