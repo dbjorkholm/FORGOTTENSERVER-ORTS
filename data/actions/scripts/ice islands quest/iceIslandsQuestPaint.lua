@@ -11,8 +11,7 @@ local targetItem = Item(itemEx.uid)
 			end
 			player:say("You painted a baby seal.", TALKTYPE_MONSTER_SAY)
 			targetItem:transform(7252)
-			addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN) end, 30 * 1000, toPosition)
-			addEvent(function () local tile = toPosition:getTile() if tile then local thing = tile:getTopVisibleThing() if thing and thing:isItem() then thing:transform(7178) end end end, 30 * 1000)			
+			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getTopVisibleThing() if thing and thing:isItem() then thing:transform(7178) end end toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN) end, 30 * 1000, toPosition)			
 		end
 	end
 	return true
