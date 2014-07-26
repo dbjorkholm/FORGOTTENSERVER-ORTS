@@ -2,7 +2,7 @@
 
 Achievements Lib Created By Eduardo Montilva (Darkhaos) for TFS 1.0
 
-LAST UPDATE: 16 July 2014 (Tibia Update 10.50)
+LAST UPDATE: 26 July 2014 (Tibia Update 10.50)
 
 Functions:
 	getAchievementInfoById(achievement_id)
