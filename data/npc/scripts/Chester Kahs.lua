@@ -17,7 +17,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif msgcontains(msg, 'gamel') and msgcontains(msg, 'rebel') then
 		npcHandler:say('Are you saying that Gamel is a member of the rebellion?', cid)
-		npcHandler.npcHandler.topic[cid] = 1
+		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'no') then
 			npcHandler:say('Then don't bother me with it. I'm a busy man.', cid)
