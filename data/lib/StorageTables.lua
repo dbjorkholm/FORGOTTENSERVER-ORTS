@@ -257,5 +257,11 @@ Storage = {
 	},
 	ultimateBooze = {
 		Quest = 50108
+	},
+	toOutfoxAFox = {
+		Quest = 50135
+	},
+	madMage = {
+		Quest = 50136
 	}
 }
