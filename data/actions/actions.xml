@@ -331,6 +331,20 @@
 	<action uniqueid="3115" script="postman quest/postmanQuestPresentDoor.lua"/>
 	<action uniqueid="3118" script="postman quest/postmanQuestWaldo.lua"/>
 	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
+	
+	<!-- Hidden City of Beregar Quest -->
+	<action uniqueid="50125" script="beregar quest/ring.lua"/>
+	<action fromaid="50095" toaid="50097" script="beregar quest/doors.lua"/>
+	<action actionid="50128" script="beregar quest/deeperMineWagon.lua"/>
+	<action fromaid="50098" toaid="50108" script="beregar quest/oreWagon.lua"/>
+	<action actionid="50112" script="beregar quest/gapWagon.lua"/>
+	<action actionid="50115" script="beregar quest/tunnelWagon.lua"/>
+	<action actionid="50117" script="beregar quest/coalWagon.lua"/>
+	<action fromuid="50108" touid="50111" script="beregar quest/coalLevers.lua"/>
+	<action fromaid="50122" toaid="50125" script="beregar quest/coalExitWagons.lua"/>
+	<action uniqueid="50112" script="beregar quest/mushroom.lua"/>
+	<action fromuid="50113" touid="50123" script="beregar quest/wagonMazeLevers.lua"/>
+	<action uniqueid="50124" script="beregar quest/wagonMazeExit.lua"/>
 
 	<!-- Rookgaard Quests
 	<action actionid="5090" script="rookgaard/bridgeLever.lua"/>-->
@@ -373,8 +387,11 @@
 	<action fromuid="9050" touid="9053" script="quests/system.lua"/>
 	<action uniqueid="1296" script="quests/system.lua"/>
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
+	<action itemid="7496" script="other/beerBottle.lua"/>
 
 	<!-- Tools -->
+	<action itemid="8613" script="tools/bricklayerKit.lua"/> 
+	<action itemid="2557" script="tools/hammer.lua"/>
 	<action itemid="2558" script="tools/saw.lua"/>
 	<action itemid="5865" script="tools/juice squeezer.lua"/>
 	<action itemid="2416" script="tools/crowbar.lua"/>
