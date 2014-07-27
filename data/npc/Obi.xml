@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Obi" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="131" head="19" body="63" legs="96" feet="38" addons="0" />
-  <parameters>
-    <parameter key="module_keywords" value="1" />
-    <parameter key="message_sendtrade" value="Of course, just browse through my wares." />
-    <parameter key="message_greet" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy! If you like to see my offers, ask me for a {trade}!" />
-    <parameter key="keywords" value="armor;sell;name;job;name;weapon;rookgaard;cipfried;thais;sam;mainland;oracle;al dee;tom;seymour;academy;equipment;willie;food;monsters;billy;sewers;guards;dallheim;rookgaard;buy;dixi;bye;hi;amber;paulie;bank;money;gold;monsters;merchants;buy;backack;rope;shovel;shield;al'dee;lee'delle;hyacinth;lily;potion;academy" />
-    <parameter key="keyword_reply1" value="Oh, just upstairs. My granddaughter {Dixi} is in charge of selling armors and shields." />
-    <parameter key="keyword_reply2" value="Just ask me for a {trade} to see which things I buy from you." />
-    <parameter key="keyword_reply3" value="My name is Obi, just Obi, the honest merchant. If you like to {trade}, just ask." />
-    <parameter key="keyword_reply4" value="I'm a merchant and the local {weapon} smith. If you like to see my quality wares or sell weapons to me, ask me for a {trade}." />
-    <parameter key="keyword_reply5" value="My name is Obi, just Obi, the honest merchant. If you like to {trade}, just ask." />
-    <parameter key="keyword_reply6" value="Yes, I'm selling weapons. Just ask me for a {trade} to see my offers and the things I buy from you." />
-    <parameter key="keyword_reply7" value="Ah, Rookgaard. Home sweet home, that's what it became for me, but I will always miss {Thais} and {Sam}." />
-    <parameter key="keyword_reply8" value="He shouldn't heal people for free, no he shouldn't. That would be a great source of income for the village that could be invested in enhancing the smithy." />
-    <parameter key="keyword_reply9" value="Oh, Thais, I'll be back. One day, I'll be back." />
-    <parameter key="keyword_reply10" value="My good old cousin Sam. Oh, how I miss him." />
-    <parameter key="keyword_reply11" value="Well, the mainland also consists of several continents. You can go there once you are level 8 and have talked to the {oracle}." />
-    <parameter key="keyword_reply12" value="The oracle, ah, such a weird being! It will lead you off this island once you are level 8, yes it will, mark my words." />
-    <parameter key="keyword_reply13" value="Oh, this guy is so greedy, so greedy. Ripping off poor adventurers like you!" />
-    <parameter key="keyword_reply14" value="Well, he just buys what no one else wants. Stuff that's long dead. I can live with that, yes, I can live with that." />
-    <parameter key="keyword_reply15" value="He is the head of the local academy. I encouraged him to sponsor you, but no one listens to Obi, no one listens to me, as usual." />
-    <parameter key="keyword_reply16" value="I think good practice is better than reading a boring book. Of course, you will need proper {equipment} to be able to get practice!" />
-    <parameter key="keyword_reply17" value="As an adventurer you should always have at least a {backpack}, a {rope}, a {shovel}, a {weapon}, an {armor} and a {shield}." />
-    <parameter key="keyword_reply18" value="This guy doesn't understand that he should entrust me with the food business, too. He really should do. Then he had time for his farm." />
-    <parameter key="keyword_reply19" value="I told them to let me sell food, but no! Sorry, you have to ask {Willie} or {Billy} on the farms west of here." />
-    <parameter key="keyword_reply20" value="Good monsters to start with are rats. They live in the {sewers} under the village of {Rookgaard}." />
-    <parameter key="keyword_reply21" value="He's just like his cousin {Willie}." />
-    <parameter key="keyword_reply22" value="There are many sewer entrances throughout Rookgaard. One is right outside this shop and to the left. For more details about monsters and dungeons, best talk to one of the {guards}." />
-    <parameter key="keyword_reply23" value="The bridge guard {Dallheim} is north of here, just follow the street, you can't miss it." />
-    <parameter key="keyword_reply24" value="What a hero, what a hero." />
-    <parameter key="keyword_reply25" value="Ah, Rookgaard. Home sweet home, that's what it became for me, but I will always miss {Thais} and {Sam}." />
-    <parameter key="keyword_reply26" value="I sell {weapons} of all kinds. Just ask me for a {trade} if you like to see my offers." />
-    <parameter key="keyword_reply27" value="Oh, what an endearing little girl, and she's working so hard to help me, even without receiving payment. Such a sweet little girl!" />
-    <parameter key="keyword_reply28" value="Farewell, I hope you were satisfied with our service." />
-    <parameter key="keyword_reply29" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy! If you like to see my offers, ask me for a {trade}!" />
-    <parameter key="keyword_reply30" value="She is beautiful, very, very beautiful. I hope I can impress her somehow." />
-    <parameter key="keyword_reply31" value="I told everyone he will cause trouble. He talks people into giving him their money and putting it on the {bank}! They rather should leave it here with us honest merchants!" />
-    <parameter key="keyword_reply32" value="If I were you, I'd invest my money in quality steel rather than putting it in a so-called safe bank account!" />
-    <parameter key="keyword_reply33" value="Well, no gold, no deal. Earn gold by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
-    <parameter key="keyword_reply34" value="Well, no gold, no deal. Earn gold by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
-    <parameter key="keyword_reply35" value="Good monsters to start with are rats. They live in the {sewers} under the village of {Rookgaard}." />
-    <parameter key="keyword_reply36" value="Sadly, not many merchants are as honest as I am." />
-    <parameter key="message_farewell" value="Farewell, I hope you were satisfied with our service." />
-    <parameter key="keyword_reply37" value="I sell {weapons} of all kinds. Just ask me for a {trade} if you like to see my offers." />
-    <parameter key="keyword_reply38" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
-    <parameter key="keyword_reply39" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
-    <parameter key="keyword_reply40" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
-    <parameter key="keyword_reply41" value="Oh, just upstairs. My granddaughter {Dixi} is in charge of selling armors and shields." />
-    <parameter key="keyword_reply42" value="Oh, this guy is so greedy, so greedy. Ripping off poor adventurers like you!" />
-    <parameter key="keyword_reply43" value="She ruins the market with her offers! This is bad for us honest merchants, really bad." />
-    <parameter key="keyword_reply44" value="I don't like him, actually I dislike him deeply. He is so greedy that he doesn't want to share his profit he gains from health potions." />
-    <parameter key="keyword_reply45" value="I knew it! I knew she would try to get the monopoly on potions in this village! But no one has listened to me!" />
-    <parameter key="keyword_reply46" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Lily}." />
-    <parameter key="keyword_reply47" value="I think good practice is better than reading a boring book. Of course, you will need proper {equipment} to be able to get practice!" />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="axe,2386,20;dagger,2379,5;hand axe,2380,8;rapier,2384,15;sabre,2385,25;scythe,2550,12;short sword,2406,30;sickle,2405,8;spear,2389,10;" />
-    <parameter key="shop_sellable" value="axe,2386,7;bone club,2449,5;dagger,2379,2;hand axe,2380,4;hatchet,2388,25;katana,2412,35;mace,2398,30;machete,2420,6;rapier,2384,5;sabre,2385,12;scythe,2550,3;short sword,2406,10;sickle,2405,2;spear,2389,3;sword,2376,25;" />
-  </parameters>
+	<health now="100" max="100" />
+	<look type="131" head="19" body="63" legs="96" feet="38" addons="0" />
+	<parameters>
+		<parameter key="module_keywords" value="1" />
+		<parameter key="message_sendtrade" value="Of course, just browse through my wares." />
+		<parameter key="message_greet" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy! If you like to see my offers, ask me for a {trade}!" />
+		<parameter key="keywords" value="armor;sell;name;job;name;weapon;rookgaard;cipfried;thais;sam;mainland;oracle;al dee;tom;seymour;academy;equipment;willie;food;monsters;billy;sewers;guards;dallheim;rookgaard;buy;dixi;bye;hi;amber;paulie;bank;money;gold;monsters;merchants;buy;backack;rope;shovel;shield;al'dee;lee'delle;hyacinth;lily;potion;academy" />
+		<parameter key="keyword_reply1" value="Oh, just upstairs. My granddaughter {Dixi} is in charge of selling armors and shields." />
+		<parameter key="keyword_reply2" value="Just ask me for a {trade} to see which things I buy from you." />
+		<parameter key="keyword_reply3" value="My name is Obi, just Obi, the honest merchant. If you like to {trade}, just ask." />
+		<parameter key="keyword_reply4" value="I'm a merchant and the local {weapon} smith. If you like to see my quality wares or sell weapons to me, ask me for a {trade}." />
+		<parameter key="keyword_reply5" value="My name is Obi, just Obi, the honest merchant. If you like to {trade}, just ask." />
+		<parameter key="keyword_reply6" value="Yes, I'm selling weapons. Just ask me for a {trade} to see my offers and the things I buy from you." />
+		<parameter key="keyword_reply7" value="Ah, Rookgaard. Home sweet home, that's what it became for me, but I will always miss {Thais} and {Sam}." />
+		<parameter key="keyword_reply8" value="He shouldn't heal people for free, no he shouldn't. That would be a great source of income for the village that could be invested in enhancing the smithy." />
+		<parameter key="keyword_reply9" value="Oh, Thais, I'll be back. One day, I'll be back." />
+		<parameter key="keyword_reply10" value="My good old cousin Sam. Oh, how I miss him." />
+		<parameter key="keyword_reply11" value="Well, the mainland also consists of several continents. You can go there once you are level 8 and have talked to the {oracle}." />
+		<parameter key="keyword_reply12" value="The oracle, ah, such a weird being! It will lead you off this island once you are level 8, yes it will, mark my words." />
+		<parameter key="keyword_reply13" value="Oh, this guy is so greedy, so greedy. Ripping off poor adventurers like you!" />
+		<parameter key="keyword_reply14" value="Well, he just buys what no one else wants. Stuff that's long dead. I can live with that, yes, I can live with that." />
+		<parameter key="keyword_reply15" value="He is the head of the local academy. I encouraged him to sponsor you, but no one listens to Obi, no one listens to me, as usual." />
+		<parameter key="keyword_reply16" value="I think good practice is better than reading a boring book. Of course, you will need proper {equipment} to be able to get practice!" />
+		<parameter key="keyword_reply17" value="As an adventurer you should always have at least a {backpack}, a {rope}, a {shovel}, a {weapon}, an {armor} and a {shield}." />
+		<parameter key="keyword_reply18" value="This guy doesn't understand that he should entrust me with the food business, too. He really should do. Then he had time for his farm." />
+		<parameter key="keyword_reply19" value="I told them to let me sell food, but no! Sorry, you have to ask {Willie} or {Billy} on the farms west of here." />
+		<parameter key="keyword_reply20" value="Good monsters to start with are rats. They live in the {sewers} under the village of {Rookgaard}." />
+		<parameter key="keyword_reply21" value="He's just like his cousin {Willie}." />
+		<parameter key="keyword_reply22" value="There are many sewer entrances throughout Rookgaard. One is right outside this shop and to the left. For more details about monsters and dungeons, best talk to one of the {guards}." />
+		<parameter key="keyword_reply23" value="The bridge guard {Dallheim} is north of here, just follow the street, you can't miss it." />
+		<parameter key="keyword_reply24" value="What a hero, what a hero." />
+		<parameter key="keyword_reply25" value="Ah, Rookgaard. Home sweet home, that's what it became for me, but I will always miss {Thais} and {Sam}." />
+		<parameter key="keyword_reply26" value="I sell {weapons} of all kinds. Just ask me for a {trade} if you like to see my offers." />
+		<parameter key="keyword_reply27" value="Oh, what an endearing little girl, and she's working so hard to help me, even without receiving payment. Such a sweet little girl!" />
+		<parameter key="keyword_reply28" value="Farewell, I hope you were satisfied with our service." />
+		<parameter key="keyword_reply29" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy! If you like to see my offers, ask me for a {trade}!" />
+		<parameter key="keyword_reply30" value="She is beautiful, very, very beautiful. I hope I can impress her somehow." />
+		<parameter key="keyword_reply31" value="I told everyone he will cause trouble. He talks people into giving him their money and putting it on the {bank}! They rather should leave it here with us honest merchants!" />
+		<parameter key="keyword_reply32" value="If I were you, I'd invest my money in quality steel rather than putting it in a so-called safe bank account!" />
+		<parameter key="keyword_reply33" value="Well, no gold, no deal. Earn gold by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
+		<parameter key="keyword_reply34" value="Well, no gold, no deal. Earn gold by fighting {monsters} and picking up the things they carry. Sell it to {merchants} to make profit!" />
+		<parameter key="keyword_reply35" value="Good monsters to start with are rats. They live in the {sewers} under the village of {Rookgaard}." />
+		<parameter key="keyword_reply36" value="Sadly, not many merchants are as honest as I am." />
+		<parameter key="message_farewell" value="Farewell, I hope you were satisfied with our service." />
+		<parameter key="keyword_reply37" value="I sell {weapons} of all kinds. Just ask me for a {trade} if you like to see my offers." />
+		<parameter key="keyword_reply38" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
+		<parameter key="keyword_reply39" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
+		<parameter key="keyword_reply40" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Al} {Dee} or {Lee'Delle}." />
+		<parameter key="keyword_reply41" value="Oh, just upstairs. My granddaughter {Dixi} is in charge of selling armors and shields." />
+		<parameter key="keyword_reply42" value="Oh, this guy is so greedy, so greedy. Ripping off poor adventurers like you!" />
+		<parameter key="keyword_reply43" value="She ruins the market with her offers! This is bad for us honest merchants, really bad." />
+		<parameter key="keyword_reply44" value="I don't like him, actually I dislike him deeply. He is so greedy that he doesn't want to share his profit he gains from health potions." />
+		<parameter key="keyword_reply45" value="I knew it! I knew she would try to get the monopoly on potions in this village! But no one has listened to me!" />
+		<parameter key="keyword_reply46" value="I wish I could help you with that, but no, I was told to stick to weapons. Go see {Lily}." />
+		<parameter key="keyword_reply47" value="I think good practice is better than reading a boring book. Of course, you will need proper {equipment} to be able to get practice!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="axe,2386,20;dagger,2379,5;hand axe,2380,8;rapier,2384,15;sabre,2385,25;scythe,2550,12;short sword,2406,30;sickle,2405,8;spear,2389,10;" />
+		<parameter key="shop_sellable" value="axe,2386,7;bone club,2449,5;dagger,2379,2;hand axe,2380,4;hatchet,2388,25;katana,2412,35;mace,2398,30;machete,2420,6;rapier,2384,5;sabre,2385,12;scythe,2550,3;short sword,2406,10;sickle,2405,2;spear,2389,3;sword,2376,25;" />
+	</parameters>
 </npc>
