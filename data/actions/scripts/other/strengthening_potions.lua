@@ -18,7 +18,7 @@ function onUse(cid, item, frompos, item2, topos)
 		if not doTargetCombatCondition(0, cid, berserker, CONST_ME_MAGIC_RED) then
 			return false
 		end
-	elseif item.itemid == 7440) then
+	elseif item.itemid == 7440 then
 		if not (isSorcerer(cid) or isDruid(cid)) then
 			Player(cid):say("Only sorcerers and druids may drink this fluid.", TALKTYPE_MONSTER_SAY)
 			return true
