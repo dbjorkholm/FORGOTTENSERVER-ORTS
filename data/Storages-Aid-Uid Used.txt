@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50134
-Last Used Aid = 50129
+Last Used Aid = 50152
 Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -199,3 +199,5 @@ leverbridge liferingquest aid = 50129
 Key 3620 uid = 50132
 Key 3650 uid = 50133
 mininghelmet uid+storage = 50134
+
+Kaz wagons aid = 50130-50152
