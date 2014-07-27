@@ -20,8 +20,8 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'no') then
-			npcHandler:say('Then don't bother me with it. I'm a busy man.', cid)
-			npcHandler.topic[cid] = nil
+			npcHandler:say('Then don\'t bother me with it. I\'m a busy man.', cid)
+			npcHandler.topic[cid] = 0
 		elseif msgcontains(msg, 'yes') then
 			npcHandler:say('Do you know what his plans are about?', cid)
 			npcHandler.topic[cid] = 2
