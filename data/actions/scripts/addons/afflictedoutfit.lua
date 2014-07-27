@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if not player:hasOutfit(430) and not player:hasOutfit(431) then 
-		if player:getItemCount(13540) >= 1 and player:getItemCount(13541) >= 1 and player:getItemCount(13542) >= 1 and player:getItemCount(13543) >= 1 and player:getItemCount(13544) >= 1 and player:getItemCount(13545) >= 1 then
+	if not player:hasOutfit(player:getSex() == 0 and 431 or 430) then 
+		if player:getItemCount(13540) > 0 and player:getItemCount(13541) > 0 and player:getItemCount(13542) > 0 and player:getItemCount(13543) > 0 and player:getItemCount(13544) > 0 and player:getItemCount(13545) > 0 then
 			for i = 13540, 13545 do
 				player:removeItem(i, 1)
 			end

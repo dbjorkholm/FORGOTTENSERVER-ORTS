@@ -3,7 +3,7 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
  
 local Topic = {}
-local fire = createConditionObject(CONDITION_FIRE)
+local fire = Condition(CONDITION_FIRE)
 setConditionParam(fire, CONDITION_PARAM_DELAYED, true)
 setConditionParam(fire, CONDITION_PARAM_FORCEUPDATE, true)
 addDamageCondition(fire, 25, 9000, -10)

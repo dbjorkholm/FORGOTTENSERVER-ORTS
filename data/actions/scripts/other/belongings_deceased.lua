@@ -33,9 +33,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local rand = math.random(10001)
 	for i = 1, #config do
 		local randomItem = config[i]
-		if rand >= randomItem['from'] and rand <= randomItem['to'] then
-			if randomItem['itemid'] then
-				local itemid, count = randomItem['itemid'], randomItem['count'] or 1
+		if rand >= randomItem.from and rand <= randomItem.to then
+			if randomItem.itemid then
+				local itemid, count = randomItem.itemid, randomItem.count or 1
 				local itemType = ItemType(itemid)
 				Player(cid):addItem(itemid, count)
 				doCreatureSayWithRadius(cid, "You found " .. (count > 1 and count or (itemType:getArticle() ~= "" and itemType:getArticle() or "")) .. " " .. (count > 1 and itemType:getPluralName() or itemType:getName()) .. " in the bag.", TALKTYPE_MONSTER_SAY, 2, 2)
