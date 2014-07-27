@@ -30,8 +30,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local rand = math.random(10001)
 	for i = 1, #config do
 		local randomItem = config[i]
-		if rand >= randomItem['from'] and rand <= randomItem['to'] then
-			Player(cid):addItem(randomItem['itemid'], randomItem['count'] or 1)
+		if rand >= randomItem.from and rand <= randomItem.to then
+			Player(cid):addItem(randomItem.itemid, randomItem.count or 1)
 			local targetItem = Item(item.uid)
 			targetItem:getPosition():sendMagicEffect(CONST_ME_CRAPS)
 			targetItem:remove(1)

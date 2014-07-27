@@ -16,12 +16,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	
 	local player = Player(cid)
-	if targetItem['addon'] then
-		if player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male']) then
-			if not player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male'], targetItem['addon']) then
-				player:addOutfitAddon(targetItem['female'], targetItem['addon'])
-				player:addOutfitAddon(targetItem['male'], targetItem['addon'])
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem['msg'] .. ' addon!')
+	if targetItem.addon then
+		if player:hasOutfit(player:getSex() == 0 and targetItem.female or targetItem.male) then
+			if not player:hasOutfit(player:getSex() == 0 and targetItem.female or targetItem.male, targetItem.addon) then
+				player:addOutfitAddon(targetItem.female, targetItem.addon)
+				player:addOutfitAddon(targetItem.male, targetItem.addon)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem.msg .. ' addon!')
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				Item(item.uid):remove(1)
 			else
@@ -31,10 +31,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return false
 		end
 	else
-		if not player:hasOutfit(player:getSex() == 0 and targetItem['female'] or targetItem['male']) then
-			player:addOutfit(targetItem['female'])
-			player:addOutfit(targetItem['male'])
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem['msg'] .. ' outfit!')
+		if not player:hasOutfit(player:getSex() == 0 and targetItem.female or targetItem.male) then
+			player:addOutfit(targetItem.female)
+			player:addOutfit(targetItem.male)
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. targetItem.msg .. ' outfit!')
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			Item(item.uid):remove(1)
 		else
