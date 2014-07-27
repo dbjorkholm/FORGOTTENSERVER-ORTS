@@ -1,14 +1,14 @@
 local levers = {
-	{uniqueId = 50113, railPos = Position(32696, 31453, 13)}
-	{uniqueId = 50114, railPos = Position(32692, 31453, 13)}
-	{uniqueId = 50115, railPos = Position(32687, 31452, 13)}
-	{uniqueId = 50116, railPos = Position(32682, 31455, 13)}
-	{uniqueId = 50117, railPos = Position(32688, 31456, 13)}
-	{uniqueId = 50118, railPos = Position(32692, 31459, 13)}
-	{uniqueId = 50119, railPos = Position(32696, 31461, 13)}
-	{uniqueId = 50120, railPos = Position(32695, 31464, 13)}
-	{uniqueId = 50121, railPos = Position(32690, 31465, 13)}
-	{uniqueId = 50122, railPos = Position(32684, 31464, 13)}
+	{uniqueId = 50113, railPos = Position(32696, 31453, 13)},
+	{uniqueId = 50114, railPos = Position(32692, 31453, 13)},
+	{uniqueId = 50115, railPos = Position(32687, 31452, 13)},
+	{uniqueId = 50116, railPos = Position(32682, 31455, 13)},
+	{uniqueId = 50117, railPos = Position(32688, 31456, 13)},
+	{uniqueId = 50118, railPos = Position(32692, 31459, 13)},
+	{uniqueId = 50119, railPos = Position(32696, 31461, 13)},
+	{uniqueId = 50120, railPos = Position(32695, 31464, 13)},
+	{uniqueId = 50121, railPos = Position(32690, 31465, 13)},
+	{uniqueId = 50122, railPos = Position(32684, 31464, 13)},
 	{uniqueId = 50123, railPos = Position(32688, 31469, 13)}
 }
 
