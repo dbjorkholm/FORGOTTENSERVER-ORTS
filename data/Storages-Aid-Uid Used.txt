@@ -200,4 +200,4 @@ Key 3620 uid = 50132
 Key 3650 uid = 50133
 mininghelmet uid+storage = 50134
 
-Kaz wagons aid = 50130-50152
+Kaz wagons aid = 50130-50153
