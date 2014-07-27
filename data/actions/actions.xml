@@ -387,7 +387,6 @@
 	<action fromuid="9050" touid="9053" script="quests/system.lua"/>
 	<action uniqueid="1296" script="quests/system.lua"/>
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
-	<action itemid="7496" script="other/beerBottle.lua"/>
 
 	<!-- Tools -->
 	<action itemid="8613" script="tools/bricklayerKit.lua"/> 
