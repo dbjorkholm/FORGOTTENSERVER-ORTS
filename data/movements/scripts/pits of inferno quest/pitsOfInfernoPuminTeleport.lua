@@ -4,7 +4,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 26 then
+	if player:getStorageValue(Storage.pitsOfInferno.Pumin) >= 9 then
 		player:teleportTo(Position(32786, 32308, 15))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else
