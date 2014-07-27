@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <npc name="The Gatekeeper" script="default.lua" walkinterval="0" floorchange="0">
   <health now="150" max="150" />
   <look typeex="10349" corpse="3128" />
