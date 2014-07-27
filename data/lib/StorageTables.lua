@@ -243,5 +243,11 @@ Storage = {
 	},
 	pitsOfInferno = {
 		Pumin = 50096
+	},
+	toOutfoxAFox = {
+		Quest = 50135
+	},
+	madMage = {
+		Quest = 50136
 	}
 }
