@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- allowMovement -->
+	<movevent event="StepIn" actionid="60000" script="allowMovement.lua" />
+	<movevent event="StepOut" actionid="60000" script="allowMovement.lua" />
+
 	<!-- Rookgaard -->
 	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialTiles.lua"/>
 	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialTiles.lua"/>
