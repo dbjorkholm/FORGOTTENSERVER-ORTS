@@ -13,7 +13,9 @@ function onStepIn(cid, item, position, fromPosition)
 		if random == 1 then
 			player:teleportTo(fromPosition)
 		elseif random == 2 then
-			doMoveCreature(cid, SOUTH)
+			position.y = position.y + 1
+			player:teleportTo(position, true)
+			player:setDirection(SOUTH)
 		elseif random == 3 then
 			player:addCondition(condition)
 		end
