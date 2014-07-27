@@ -5,6 +5,7 @@ local config = {
 	[50130] = Position(gate),
 	[50131] = Position(gate),
 	[50132] = Position(gate),
+	[50153] = Position(gate),
 -- kaz main gate wagons --
 	[50133] = Position(32673, 31975, 15), -- Steamboat
 	[50134] = Position(32625, 31921, 11), -- Temple
