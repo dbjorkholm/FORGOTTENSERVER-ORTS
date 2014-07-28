@@ -37,7 +37,7 @@
 		<mission name="Paw and Fur: Fazzrah" storageid="35014" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
 		<mission name="Paw and Fur: Tromphonyte" storageid="35015" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
 		<mission name="Paw and Fur: Sulphur Scuttler" storageid="35016" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
-	<!--	<mission name="Paw and Fur: Sulphur Scuttler" storageid="35017" startvalue="1" endvalue="2" description="Try find its hideout and kill it." /> -->
+	<!--missing 	<mission name="Paw and Fur: Sulphur Scuttler" storageid="35017" startvalue="1" endvalue="2" description="Try find its hideout and kill it." /> -->
 		<mission name="Paw and Fur: The Many" storageid="35018" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
 		<mission name="Paw and Fur: The Noxious Spawn" storageid="35019" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
 		<mission name="Paw and Fur: Gorgo" storageid="35020" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
