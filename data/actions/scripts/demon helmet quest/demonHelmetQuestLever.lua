@@ -1,6 +1,6 @@
 local t = {
 	Position(33314, 31592, 15), -- stone position
-	Position(33316, 31591, 15}, -- teleport creation position
+	Position(33316, 31591, 15), -- teleport creation position
 	Position(33322, 31592, 14) -- where the teleport takes you
 }
  
