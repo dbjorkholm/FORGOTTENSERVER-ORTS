@@ -1,4 +1,4 @@
-local gate = Position(32575, 31973, 9) -- Don't know if this is where you're supposed to end up?
+local gate = Position(32575, 31973, 9)
 
 local config = {
 -- outside wagons --
@@ -44,7 +44,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You need a wagon ticket to use this.")
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "Purchase a weekly ticket from Gewen, Lokur in the post office, The Lukosch brothers or from Brodrosch on the steamboat.")
 	end
 	return true
 end
