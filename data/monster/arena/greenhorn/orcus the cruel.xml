@@ -13,8 +13,8 @@
 		<flag targetdistance="1"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="50" attack="60"/>
-		<attack name="physical" interval="2000" chance="40" range="5" radius="1" target="1" min="0" max="-70">
+		<attack name="melee" interval="2000" min="0" max="-180"/>
+		<attack name="physical" interval="2000" chance="40" range="5" min="0" max="-70">
 			<attribute key="shootEffect" value="throwingknife"/>
 		</attack>
 	</attacks>
@@ -25,8 +25,6 @@
 	</elements>
 	<immunities>
 		<immunity fire="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 </monster>
