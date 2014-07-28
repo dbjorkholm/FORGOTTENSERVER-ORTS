@@ -2,7 +2,7 @@
 
 Achievements Lib Created By Eduardo Montilva (Darkhaos) for TFS 1.0
 
-LAST UPDATE: 12 July 2014 (Tibia Update 10.50)
+LAST UPDATE: 16 July 2014 (Tibia Update 10.50)
 
 Functions:
 	getAchievementInfoById(achievement_id)
@@ -26,12 +26,15 @@ Note: 	This lib was created following the data found in tibia.wikia.com.
 ]]
 
 ACHIEVEMENTS_BASE = 30000 -- base storage
+ACHIEVEMENTS_ACTION_BASE = 20000 	--this storage will be used to save the process to obtain the certain achievement
+									--(Ex: this storage + the id of achievement 'Allowance Collector' to save...
+									-- ...how many piggy banks has been broken
 
 achievements =
 {
 	[1] = {name = "Afraid of no Ghost!", grade = 1, points = 2, description = "You passed their test and helped the Spirithunters testing equipment, researching the supernatural and catching ghosts - it's you they're gonna call."},
 	[2] = {name = "Allow Cookies?", grade = 1, points = 2, description = "With a perfectly harmless smile you fooled all of those wisecrackers into eating your exploding cookies. Consider a boy or girl scout outfit next time to make the trick even better."},
-	[3] = {name = "Allowance Collector", grade = 1, points = 2, description = "You certainly have your ways when it comes to acquiring money. Many of them are pink and paved with broken fragments of porcelain."},
+	[3] = {name = "Allowance Collector", grade = 1, points = 2, secret = true, description = "You certainly have your ways when it comes to acquiring money. Many of them are pink and paved with broken fragments of porcelain."},
 	[4] = {name = "Amateur Actor", grade = 1, points = 2, description = "You helped bringing Princess Buttercup, Doctor Dumbness and Lucky the Wonder Dog to life - and will probably dream of them tonight, since you memorised your lines perfectly. What a .. special piece of.. screenplay."},
 	[5] = {name = "Animal Activist", grade = 1, points = 2, description = "You have a soft spot for little, weak animals, and you do everything in your power to protect them - even if you probably eat dragons for breakfast."},
 	[6] = {name = "Arachnoise", grade = 1, points = 1, description = "You've shattered each of Bloodweb's eight frozen legs. As they say: break a leg, and then some more."},
@@ -49,7 +52,7 @@ achievements =
 	[18] = {name = "Beautiful Agony", grade = 1, points = 2, description = "Ethershreck's cry of agony kept ringing in your ear for hours after he had dissolved into thin air. He probably moved to another plane of existence... for a while."},
 	[19] = {name = "Becoming a Bigfoot", grade = 1, points = 1, description = "You did it! You convinced the reclusive gnomes to accept you as one of their Bigfoots. Now you are ready to help them. With big feet big missions seen to come."},
 	[20] = {name = "Berserker", grade = 1, points = 3, description = "RAWR! Strength running through your body, your heart racing faster and adrenaline fueling your every weapon swing. All in a little bottle. No refund for destroyed furniture. For further questions consult your healer or potion dealer."},
-	[21] = {name = "Bibby's Bloodbath", grade = 1, points = 1, description = "You lend a helping hand in defeating invading Orcs by destroying their warcamp along with their leader. Bibby's personal bloodbath..."},
+	[21] = {name = "Bibby's Bloodbath", grade = 1, points = 1, secret = true, description = "You lend a helping hand in defeating invading Orcs by destroying their warcamp along with their leader. Bibby's personal bloodbath..."},
 	[22] = {name = "Blessed!", grade = 1, points = 2, description = "You travelled the world for an almost meaningless prayer - but at least you don't have to do that again and can get a new blessed stake in the blink of an eye."},
 	[23] = {name = "Blood-Red Snapper", grade = 1, points = 1, description = "You've tainted the jungle floor with the Snapper's crimson blood."},
 	[24] = {name = "Bluebarian", grade = 1, points = 2, description = "You live the life of hunters and gatherers. Well, especially that of a gatherer, and especially of one who gathers lots of blueberries. Have you checked the colour of your tongue lately?"},
@@ -61,8 +64,8 @@ achievements =
 	[30] = {name = "Chest Robber", grade = 1, points = 1, description = "You've discovered three nomad camps and stole their supplies. Well, you can probably use them better then they can."},
 	[31] = {name = "Choking on Her Venom", grade = 1, points = 1, description = "The Old Widow fell prey to your supreme hunting skills."},
 	[32] = {name = "Chorister", grade = 1, points = 1, description = "Lalalala... you now know the cult's hymn sung in Liberty Bay"},
-	[33] = {name = "Clay Fighter", grade = 1, points = 3, description = "You love getting your hands wet and dirty - and covered with clay. Your perfect sculpture of Brog, the raging Titan is your true masterpiece."},
-	[34] = {name = "Cocoon of Doom", grade = 1, points = 3, description = "You helped bringing Devovorga's dangerous tentacles and her humongous cocoon down - not stopping her transformation, but ultimately completing a crucial step to her death."},
+	[33] = {name = "Clay Fighter", grade = 1, points = 3, secret = true, description = "You love getting your hands wet and dirty - and covered with clay. Your perfect sculpture of Brog, the raging Titan is your true masterpiece."},
+	[34] = {name = "Cocoon of Doom", grade = 1, points = 3, secret = true, description = "You helped bringing Devovorga's dangerous tentacles and her humongous cocoon down - not stopping her transformation, but ultimately completing a crucial step to her death."},
 	[35] = {name = "Commitment Phobic", grade = 1, points = 2, description = "Longterm relationships are just not for you. And each time you think you're in love, you're proven wrong shortly afterwards. Or maybe you just end up with the wrong lover each time - exploited and betrayed. Staying single might just be better."},
 	[36] = {name = "Confusion", grade = 1, points = 3, description = "The destruction you have caused by now can be felt throughout the whole hive. The mayhem that follows your step caused significant confusion in the consciousness of the hive."},
 	[37] = {name = "Cookie Monster", grade = 1, points = 1, description = "You can easily be found by anyone if they just follow the cookie crumb trail. And for you, true love means to give away your last cookie."},
@@ -72,11 +75,11 @@ achievements =
 	[41] = {name = "Crystals in Love", grade = 1, points = 1, description = "You brought two loving crystals together. Perhaps they might even name one of their children after you. To bad you forgot to leave your calling card."},
 	[42] = {name = "Cursed!", grade = 1, points = 3, description = "The wrath of the Noxious Spawn - you accidentally managed to incur it. Your days are counted and your death inevitable. Sometime. Someplace."},
 	[43] = {name = "Daring Trespasser", grade = 1, points = 3, description = "You've entered the lair of Devovorga and joined the crew trying to take her down - whether crowned with success or not doesn't matter, but they can't blame you for not trying!"},
-	[44] = {name = "Dark Voodoo Priest", grade = 1, points = 2, description = "Sinister curses, evil magic - you don't shy away from punishing others by questionable means. Someone just gave you a strange look - now where's that needle again?"},
+	[44] = {name = "Dark Voodoo Priest", grade = 1, points = 2, secret = true, description = "Sinister curses, evil magic - you don't shy away from punishing others by questionable means. Someone just gave you a strange look - now where's that needle again?"},
 	[45] = {name = "Dazzler", grade = 1, points = 3, description = "In the war against the hive, your efforts in blinding it begin to pay off. Your actions have blinded the hive severely and the entity seems to become aware that something dangerous is happening."},
-	[46] = {name = "Death from Below", grade = 1, points = 2, description = "The face of the enemy is unmasked. You have encountered one of 'those below' and survived. More than that, you managed to kill the beast and prove once and for all that the enemy can be beaten."},
+	[46] = {name = "Death from Below", grade = 1, points = 2, secret = true, description = "The face of the enemy is unmasked. You have encountered one of 'those below' and survived. More than that, you managed to kill the beast and prove once and for all that the enemy can be beaten."},
 	[47] = {name = "Death Song", grade = 1, points = 3, description = "You hushed the songs of war in the black depths by sliencing more than three hundred Deepling Spellsingers."},
-	[48] = {name = "Deer Hunt", grade = 1, points = 1, description = "You managed to kill more than four hundred white deer - it looks like you are one of the main reasons they will soon be considered extinct, way to go!"},
+	[48] = {name = "Deer Hunt", grade = 1, points = 1, secret = true, description = "You managed to kill more than four hundred white deer - it looks like you are one of the main reasons they will soon be considered extinct, way to go!"},
 	[49] = {name = "Demonic Barkeeper", grade = 1, points = 3, description = "Thick, red - shaken, not stirred - and with a straw in it: that's the way you prefer your demon blood. Served with an onion ring, the subtle metallic aftertaste is almost not noticeable. Beneficial effects on health or mana are welcome."},
 	[50] = {name = "Depth Dwellers", grade = 1, points = 3, description = "By eliminating at least three hundred Deepling Warriors you delivered quite a blow to the amassing armies of the deep."},
 	[51] = {name = "Desert Fisher", grade = 1, points = 1, description = "You managed to catch a fish in a surrounding that usually doesn't even carry water. Everything is subject to change, probably..."},
@@ -373,6 +376,7 @@ function getAchievementInfoById(id)
 		if k == id then
 			local t = {}
 			t.id = k
+			t.actionStorage = ACHIEVEMENTS_ACTION_BASE + k
 			for inf, it in pairs(v) do
 				t[inf] = it
 			end
@@ -387,6 +391,7 @@ function getAchievementInfoByName(name)
 		if v.name:lower() == name:lower() then
 			local t = {}
 			t.id = k
+			t.actionStorage = ACHIEVEMENTS_ACTION_BASE + k
 			for inf, it in pairs(v) do
 				t[inf] = it
 			end
@@ -455,7 +460,7 @@ function Player.getAchievements(self)
 	return t
 end
 
-function Player.addAchievement(self, ach, showMsg)
+function Player.addAchievement(self, ach, denyMsg)
 	local achievement
 	if isNumber(ach) then
 		achievement = getAchievementInfoById(ach)
@@ -466,7 +471,7 @@ function Player.addAchievement(self, ach, showMsg)
 	
 	if not self:hasAchievement(achievement.id) then
 		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, 1)
-		if showMsg then
+		if not denyMsg then
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! You earned the achievement \"" .. achievement.name .. "\".")
 		end
 	end
@@ -488,10 +493,10 @@ function Player.removeAchievement(self, ach)
 	return true
 end
 
-function Player.addAllAchievements(self, showMsg)
+function Player.addAllAchievements(self, denyMsg)
 
 	for i = ACHIEVEMENT_FIRST, ACHIEVEMENT_LAST do
-		self:addAchievement(i, showMsg)
+		self:addAchievement(i, denyMsg)
 	end
 	return true
 end
