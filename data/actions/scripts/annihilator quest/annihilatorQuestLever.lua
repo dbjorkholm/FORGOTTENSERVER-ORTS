@@ -60,7 +60,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		for i, tablePlayer in ipairs(players) do
-			Position(config.playerPositions[i]):sendMagicEffect(CONST_ME_POFF)
+			config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
 			tablePlayer:teleportTo(config.newPositions[i])
 			tablePlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
 			tablePlayer:setDirection(EAST)
