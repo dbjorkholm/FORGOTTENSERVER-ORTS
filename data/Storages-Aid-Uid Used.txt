@@ -1,10 +1,11 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50131
+Last Used Storage = 50136
 Last Used Aid = 50129
-Last Used Uid = 50131
+Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
-stopMove Storage	=		100000 --Reserved to cancel player movement
+allowMovement Storage	=		100000 --Reserved to cancel player movement
+allowMovement actionId = 		60000 --Reserved to cancel player movement
 ---/////////////////////////////////////////////////////////////----
 Default Start Outfits Quest:		12010
 citizen Outfits (Feather Hat):		12011
@@ -194,3 +195,7 @@ Justice for all - skeleton gold ingot uid = 50130
 Justice for all - corpse small topaz uid = 50131
 
 leverbridge liferingquest aid = 50129
+
+Key 3620 uid = 50132
+Key 3650 uid = 50133
+mininghelmet uid+storage = 50134

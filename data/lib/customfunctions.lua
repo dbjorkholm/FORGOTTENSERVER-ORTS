@@ -1,15 +1,22 @@
 stopMoveStorage = 100000
 
+function Player.allowMovement(self, param)
+	return self:setStorageValue(stopMoveStorage, param and 0 or 1)
+end
+
+function Player.hasAllowMovement(self)
+	if self:getStorageValue(stopMoveStorage) == 1 then
+		return false
+	end
+	return true
+end
+
 function getBaseVocation(vocationId)
 	if vocationId == 0 then
 		return 0
 	end
 
 	return (vocationId - 1) % 4 + 1
-end
-
-function Player.stopMove(self, param)
-	return self:setStorageValue(stopMoveStorage, param and 1 or 0)
 end
 
 function Player.withdrawMoney(self, amount)

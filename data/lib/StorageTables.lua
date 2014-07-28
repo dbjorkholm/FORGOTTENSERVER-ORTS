@@ -243,5 +243,25 @@ Storage = {
 	},
 	pitsOfInferno = {
 		Pumin = 50096
+	},
+	hiddenCityOfBeregar = {
+		WayToBeregar = 50099,
+		OreWagon = 50100,
+		GoingDown = 50101,
+		JusticeForAll = 50102,
+		GearWheel = 50103,
+		SweetAsChocolateCake = 50104,
+		RoyalRescue = 50105,
+		TheGoodGuard = 50106,
+		PythiusTheRotten = 50107
+	},
+	ultimateBooze = {
+		Quest = 50108
+	},
+	toOutfoxAFox = {
+		Quest = 50135
+	},
+	madMage = {
+		Quest = 50136
 	}
 }

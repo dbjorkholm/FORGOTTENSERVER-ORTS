@@ -1,10 +1,10 @@
 local config = {
 	jarPositions = {
-		[1] = Position(32991, 32721, 8),
-		[2] = Position(32940, 32778, 9),
-		[3] = Position(32985, 32772, 10),
-		[4] = Position(32936, 32752, 11),
-		[5] = Position(32979, 32737, 12)
+		Position(32991, 32721, 8),
+		Position(32940, 32778, 9),
+		Position(32985, 32772, 10),
+		Position(32936, 32752, 11),
+		Position(32979, 32737, 12)
 	},
 	time = 3600,
 	brokenJarId = 13495,
@@ -31,11 +31,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	
 		Item(item.uid):transform(config.brokenJarId)
-	
+		
+		local tile, thing
 		for i = 1, #config.jarPositions do
-			local tile = config.jarPositions[i]:getTile()
+			tile = Tile(config.jarPositions[i])
 			if tile then
-				local thing = tile:getItemById(config.brokenJarId)
+				thing = tile:getItemById(config.brokenJarId)
 				if thing then
 					broken = 1
 				else

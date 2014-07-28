@@ -148,12 +148,14 @@
 	<monster name="Barbaria" file="bosses/barbaria.xml"/>
 	<monster name="Baron Brute" file="bosses/baron brute.xml"/>
 	<monster name="Bazir" file="bosses/bazir.xml"/>
+	<monster name="Bibby Bloodbath" file="bosses/bibby bloodbath.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
 	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
+	<monster name="Clubarc The Plunderer" file="bosses/clubarc the plunderer.xml"/>
 	<monster name="Coldheart" file="bosses/coldheart.xml"/>
 	<monster name="Countess Sorrow" file="bosses/countess sorrow.xml"/>
 	<monster name="Deadeye Devious" file="bosses/deadeye devious.xml"/>
@@ -194,6 +196,7 @@
 	<monster name="Hairman The Huge" file="bosses/hairman the huge.xml"/>
 	<monster name="Handmaiden" file="bosses/handmaiden.xml"/>
 	<monster name="Haunter" file="bosses/haunter.xml"/>
+	<monster name="Hemming" file="bosses/hemming.xml"/>
 	<monster name="Heoni" file="bosses/heoni.xml"/>
 	<monster name="Hide" file="bosses/hide.xml"/>
 	<monster name="Horestis" file="bosses/horestis.xml"/>
@@ -201,6 +204,7 @@
 	<monster name="Infernatil" file="bosses/infernatil.xml"/>
 	<monster name="Inky" file="bosses/inky.xml"/>
 	<monster name="Jaul" file="bosses/jaul.xml"/>
+	<monster name="Jesse The Wicked" file="bosses/jesse the wicked.xml"/>
 	<monster name="Koshei The Deathless" file="bosses/koshei the deathless.xml"/>
 	<monster name="Kraknaknork'S Demon" file="bosses/kraknaknork's demon.xml"/>
 	<monster name="Kraknaknork" file="bosses/kraknaknork.xml"/>
@@ -225,15 +229,19 @@
 	<monster name="Obujos" file="bosses/obujos.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
 	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
+	<monster name="Renegade Orc" file="bosses/renegade orc.xml"/>
 	<monster name="Ribstride" file="bosses/ribstride.xml"/>
+	<monster name="Robby The Reckless" file="bosses/robby the reckless.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron The Ripper" file="bosses/ron the ripper.xml"/>
 	<monster name="Rottie The Rotworm" file="bosses/rottie the rotworm.xml"/>
 	<monster name="Rotworm Queen" file="bosses/rotworm queen.xml"/>
+	<monster name="Rukor Zad" file="bosses/rukor zad.xml"/>
 	<monster name="Scorn Of The Emperor" file="bosses/scorn of the emperor.xml"/>
 	<monster name="Shardhead" file="bosses/shardhead.xml"/>
 	<monster name="Sharptooth" file="bosses/sharptooth.xml"/>
 	<monster name="Sir Valorcrest" file="bosses/sir valorcrest.xml"/>
+	<monster name="Smuggler Baron Silvertoe" file="bosses/smuggler baron silvertoe.xml"/>
 	<monster name="Snake God Essence" file="bosses/snake god essence.xml"/>
 	<monster name="Snake Thing" file="bosses/snake thing.xml"/>
 	<monster name="Spider Queen" file="bosses/spider queen.xml"/>
@@ -295,7 +303,6 @@
 	<monster name="Starving Wolf" file="canines/starving wolf.xml"/>
 	<monster name="Thornfire Wolf" file="canines/thornfire wolf.xml"/>
 	<monster name="War wolf" file="canines/war wolf.xml"/>
-	<monster name="Werewolf" file="canines/werewolf.xml"/>
 	<monster name="Wild Dog" file="canines/wild dog.xml"/>
 	<monster name="Winter Wolf" file="canines/winter wolf.xml"/>
 	<monster name="Wolf" file="canines/wolf.xml"/>
@@ -359,6 +366,7 @@
 	<monster name="Rift Brood" file="demons/rift brood.xml"/>
 	<monster name="Rift Scythe" file="demons/rift scythe.xml"/>
 	<monster name="Shadow Hound" file="demons/shadow hound.xml"/>
+	<monster name="Weakened Demon" file="demons/weakened demon.xml"/>
 	<monster name="Yielothax" file="demons/yielothax.xml"/>
 	<monster name="Zavarash" file="demons/zavarash.xml"/>
 
@@ -421,6 +429,7 @@
 	<monster name="Football" file="event creatures/football.xml"/>
 	<monster name="Grynch Clan Goblin" file="event creatures/grynch clan goblin.xml"/>
 	<monster name="Hacker" file="event creatures/hacker.xml"/>
+	<monster name="Primitive" file="event creatures/primitive.xml"/>
 	<monster name="The Halloween Hare" file="event creatures/the halloween hare.xml"/>
 	<monster name="Tibia Bug" file="event creatures/tibia bug.xml"/>
 	<monster name="Doomsday Cultist" file="event creatures/doomsday cultist.xml"/>
@@ -677,6 +686,7 @@
 	<monster name="Orc" file="orcs/orc.xml"/>
 	<monster name="Orc Marauder" file="orcs/orc marauder.xml"/>
 	<monster name="Rorc" file="orcs/rorc.xml"/>
+	<monster name="Running Elite Orc Guard" file="orcs/running elite orc guard.xml"/>
 	
 	<!-- Raid Orcs -->
 	<monster name="Orcarmor" file="orcs/raid/orcarmor.xml"/>
@@ -690,6 +700,8 @@
 	<monster name="Bandit" file="outlaws/bandit.xml"/>
 	<monster name="Black Knight" file="outlaws/black knight.xml"/>
 	<monster name="Crazed Beggar" file="outlaws/crazed beggar.xml"/>
+	<monster name="Crypt Defiler" file="outlaws/crypt defiler.xml"/>
+	<monster name="Feverish Citizen" file="outlaws/feverish citizen.xml"/>
 	<monster name="Gang Member" file="outlaws/gang member.xml"/>
 	<monster name="Gladiator" file="outlaws/gladiator.xml"/>
 	<monster name="Grave Robber" file="outlaws/grave robber.xml"/>
@@ -699,12 +711,12 @@
 	<monster name="Nomad (blue)" file="outlaws/nomad (blue).xml"/>
 	<monster name="Nomad (female)" file="outlaws/nomad (female).xml"/>
 	<monster name="Poacher" file="outlaws/poacher.xml"/>
-	<monster name="Primitive" file="outlaws/primitive.xml"/>
 	<monster name="Smuggler" file="outlaws/smuggler.xml"/>
 	<monster name="Stalker" file="outlaws/stalker.xml"/>
+	<monster name="Thief" file="outlaws/thief.xml"/>
+	<monster name="Travelling Merchant" file="outlaws/travelling merchant.xml"/>
+	<monster name="Werewolf" file="outlaws/werewolf.xml"/>
 	<monster name="Wild Warrior" file="outlaws/wild warrior.xml"/>
-	<monster name="Feverish Citizen" file="outlaws/feverish citizen.xml"/>
-	<monster name="Crypt Defiler" file="outlaws/crypt defiler.xml"/>
 
 	<!-- Pharaohs -->
 	<monster name="Ashmunrah" file="pharaohs/ashmunrah.xml"/>

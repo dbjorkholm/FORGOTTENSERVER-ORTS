@@ -22982,6 +22982,12 @@
 	<item fromid="14853" toid="14854" name="small insectoid hairs" />
 	<item fromid="14858" toid="14871" article="an" name="insectoid meatball" />
 	<item fromid="14887" toid="14898" article="a" name="rockboy" />
+	<item id="14903" article="a" name="bag with stolen gold">
+		<attribute key="weight" value="5000" />
+		<attribute key="description" value="It contains so much cash that you wouldn't have any idea how to use it. Return it to a nearby bank." />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="43200" />
+	</item>
 	<item fromid="14904" toid="14912" name="wet temple floor" />
 	<item fromid="14913" toid="14914" article="a" name="finely crafted ornament" />
 	<item fromid="14915" toid="14930" name="wet temple floor" />
