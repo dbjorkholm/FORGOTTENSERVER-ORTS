@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Rashid" script="Rashid.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="146" head="100" body="100" legs="119" feet="115" addons="2" />
-  <parameters>
-    <parameter key="message_greet" value="Ah, a customer! Be greeted, |PLAYERNAME|!" />
-	<parameter key="message_sendtrade" value="Take all the time you need to decide what you want!" />
-	<parameter key="message_needmoremoney" value="You dont have not enough of gold." />
-	<parameter key="message_decline" value="|TOTALCOST| is a very good price |PLAYERNAME|." />
-	<parameter key="message_farewell" value="Farewell, |PLAYERNAME|, may the winds guide your way." />
-	<parameter key="message_walkaway" value="Come back soon!" />
-	<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|!" />
-	
-		<parameter key="module_shop" value="1" /> <!-- added shop module to show the icon in npc (10:36 +) -->
+<npc name="Rashid" script="Rashid.lua" walkinterval="2000" floorchange="0" walkradius="3">
+	<health now="100" max="100" />
+	<look type="146" head="100" body="100" legs="119" feet="115" addons="2" />
+	<parameters>
+		<parameter key="message_greet" value="Ah, a customer! Be greeted, |PLAYERNAME|!" />
+		<parameter key="message_sendtrade" value="Take all the time you need to decide what you want!" />
+		<parameter key="message_farewell" value="Farewell, |PLAYERNAME|, may the winds guide your way." />
+		<parameter key="message_walkaway" value="Come back soon!" />
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="0,0,0;"/>
 		<parameter key="shop_buyable" value="0,0,0;"/>
-		
-	<parameter key="module_keywords" value="1" />
-	<parameter key="keywords" value="job;name;offers;ab\'dendriel;desert;karmia;cormaya;darashia;premy island;bibula;greenshore;moria;blood bay;northport;port hope;senja;svargrond;thalia;vega;venore;time;king" />
-	<parameter key="keyword_reply1" value="I am a travelling trader. I don't buy everything, though. And not from everyone, for that matter." />
-	<parameter key="keyword_reply2" value="I am Rashid, son of the desert." />
-	<parameter key="keyword_reply3" value="Of course, old friend. You can also browse only armor, legs, shields, helmets, boots, weapons, enchanted weapons, jewelry or miscellaneous stuff." />
-	<parameter key="keyword_reply4" value="Elves... I don't really trust them. All this talk about nature and flowers and treehugging... I'm sure there's some wicked scheme behind all this." />
-	<parameter key="keyword_reply5" value="My beloved hometown! Ah, the sweet scent of the desert sands, the perfect shape of the pyramids... stunningly beautiful." />
-	<parameter key="keyword_reply6" value="I have to go to Karmia once in a while, since the queen wishes to see my exclusive wares in regular intervals." />
-	<parameter key="keyword_reply7" value="Cormaya? Not a good place to make business, it's way too far and small." />
-	<parameter key="keyword_reply8" value="It's not the real thing, but almost as good. The merchants there claim ridiculous prices, which is fine for my own business." />
-	<parameter key="keyword_reply9" value="Ah yes, Premy Island! Such a lovely and quiet island! I usually make some nice business there." />
-	<parameter key="keyword_reply10" value="Too few customers there, it's not worth the trip." />
-	<parameter key="keyword_reply11" value="Um... I don't think so." />
-	<parameter key="keyword_reply12" value="I don't like being underground much. I also tend to get lost in these labyrinthine dwarven tunnels, so I rather avoid them." />
-	<parameter key="keyword_reply13" value="When you avoid the slums, it's a really pretty city. Almost as pretty as the governor's daughter." />
-	<parameter key="keyword_reply14" value="Um... I don't think so." />
-	<parameter key="keyword_reply15" value="I like the settlement itself, but I don't set my foot into the jungle. Have you seen the size of these centipedes??" />
-	<parameter key="keyword_reply16" value="Um... I don't think so." />
-	<parameter key="keyword_reply17" value="I wish it was a little bit warmer there, but with a good mug of barbarian mead in your tummy everything gets a lot cosier." />
-	<parameter key="keyword_reply18" value="I feel uncomfortable and rather unsafe in Thalia, so I don't really travel there." />
-	<parameter key="keyword_reply19" value="Um... I don't think so." />
-	<parameter key="keyword_reply20" value="Although it's the flourishing trade centre of Tibia, I don't like going there. Too much competition for my taste." />
-	<parameter key="keyword_reply21" value="It's almost time to journey on." />
-	<parameter key="keyword_reply22" value="Kings, queens, emperors and kaliphs... everyone claims to be different and unique, but actually it's the same thing everywhere." />
- </parameters>
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="job;name;offers;ab\'dendriel;desert;karmia;cormaya;darashia;premy island;bibula;greenshore;moria;blood bay;northport;port hope;senja;svargrond;thalia;vega;venore;time;king" />
+		<parameter key="keyword_reply1" value="I am a travelling trader. I don't buy everything, though. And not from everyone, for that matter." />
+		<parameter key="keyword_reply2" value="I am Rashid, son of the desert." />
+		<parameter key="keyword_reply3" value="Of course, old friend. You can also browse only armor, legs, shields, helmets, boots, weapons, enchanted weapons, jewelry or miscellaneous stuff." />
+		<parameter key="keyword_reply4" value="Elves... I don't really trust them. All this talk about nature and flowers and treehugging... I'm sure there's some wicked scheme behind all this." />
+		<parameter key="keyword_reply5" value="My beloved hometown! Ah, the sweet scent of the desert sands, the perfect shape of the pyramids... stunningly beautiful." />
+		<parameter key="keyword_reply6" value="I have to go to Karmia once in a while, since the queen wishes to see my exclusive wares in regular intervals." />
+		<parameter key="keyword_reply7" value="Cormaya? Not a good place to make business, it's way too far and small." />
+		<parameter key="keyword_reply8" value="It's not the real thing, but almost as good. The merchants there claim ridiculous prices, which is fine for my own business." />
+		<parameter key="keyword_reply9" value="Ah yes, Premy Island! Such a lovely and quiet island! I usually make some nice business there." />
+		<parameter key="keyword_reply10" value="Too few customers there, it's not worth the trip." />
+		<parameter key="keyword_reply11" value="Um... I don't think so." />
+		<parameter key="keyword_reply12" value="I don't like being underground much. I also tend to get lost in these labyrinthine dwarven tunnels, so I rather avoid them." />
+		<parameter key="keyword_reply13" value="When you avoid the slums, it's a really pretty city. Almost as pretty as the governor's daughter." />
+		<parameter key="keyword_reply14" value="Um... I don't think so." />
+		<parameter key="keyword_reply15" value="I like the settlement itself, but I don't set my foot into the jungle. Have you seen the size of these centipedes??" />
+		<parameter key="keyword_reply16" value="Um... I don't think so." />
+		<parameter key="keyword_reply17" value="I wish it was a little bit warmer there, but with a good mug of barbarian mead in your tummy everything gets a lot cosier." />
+		<parameter key="keyword_reply18" value="I feel uncomfortable and rather unsafe in Thalia, so I don't really travel there." />
+		<parameter key="keyword_reply19" value="Um... I don't think so." />
+		<parameter key="keyword_reply20" value="Although it's the flourishing trade centre of Tibia, I don't like going there. Too much competition for my taste." />
+		<parameter key="keyword_reply21" value="It's almost time to journey on." />
+		<parameter key="keyword_reply22" value="Kings, queens, emperors and kaliphs... everyone claims to be different and unique, but actually it's the same thing everywhere." />
+	</parameters>
 </npc>
