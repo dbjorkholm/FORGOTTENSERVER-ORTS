@@ -1,95 +1,77 @@
-local players_area =  {
-	{x = 33225, y = 31671, z = 13},
-	{x = 33222, y = 31671, z = 13}
+local config = {
+	requiredLevel = 100,
+	daily = false,
+	centerDemonRoomPosition = Position(33221, 31659, 13),
+	playerPositions = {
+		Position(33225, 31671, 13),
+		Position(33224, 31671, 13),
+		Position(33223, 31671, 13),
+		Position(33222, 31671, 13)
+	},
+	newPositions = {
+		Position(33222, 31659, 13),
+		Position(33221, 31659, 13),
+		Position(33220, 31659, 13),
+		Position(33219, 31659, 13)
+	},
+	demonPositions = {
+		Position(33219, 31657, 13),
+		Position(33221, 31657, 13),
+		Position(33223, 31659, 13),
+		Position(33224, 31659, 13),
+		Position(33220, 31661, 13),
+		Position(33222, 31661, 13)
+	}
 }
-local new_player_pos = {
-	{x = 33222, y = 31659, z = 13},
-	{x = 33221, y = 31659, z = 13},
-	{x = 33220, y = 31659, z = 13},
-	{x = 33219, y = 31659, z = 13}
-}
-local demonPos = {
-	{x = 33219, y = 31657, z = 13},
-	{x = 33221, y = 31657, z = 13},
-	{x = 33223, y = 31659, z = 13},
-	{x = 33224, y = 31659, z = 13},
-	{x = 33220, y = 31661, z = 13},
-	{x = 33222, y = 31661, z = 13}
-}
+	
 
-function getPlayerCountInArea(toPos, fromPos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local lever = Item(item.uid)
+	local player = Player(cid)
+	if item.itemid == 1946 then
+		local players = {}
+		local continue = true
+		for _, positions in ipairs(config.playerPositions) do
+			local playerTile = Tile(positions):getTopCreature()
+			if not playerTile or not playerTile:isPlayer() or playerTile:getLevel() < config.requiredLevel then
+				return false
+			end
+			players[#players+1] = playerTile
+		end
 
-	local count = 0
-	local cid = {}
-
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = toPos.z, toPos.z do
-				local creature = getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid
-				if(creature > 0) then
-					if(isPlayer(creature)) then
-						table.insert(cid, creature)
-						count = count + 1
-						if(getPlayerLevel(creature) < 100) then
-							return "All players must be above level 100."
-						end
-					elseif(isMonster(creature)) then
-						return "Players are allowed only."
-					end
-				end
+		local specs = Game.getSpectators(config.centerDemonRoomPosition, false, false, 3, 3, 2, 2)
+		for i = 1, #specs do
+			if specs[i]:isPlayer() then
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, "A team is already inside the quest room.")
+				continue = false
+				break
+			end
+			if specs[i]:isMonster() then
+				specs[i]:remove()
 			end
 		end
-	end
 
-	if(count < 4) then
-		return "You need 4 players."
-	else
-		for i = 1,4 do
-			Player(cid[5-i]):teleportTo(new_player_pos[i])
-			Player(cid[5-i]):getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		if not continue then
+			return true
 		end
-	end
-	return true
-end
 
-function SummonDemon(Pos)
-local count = 0
-local cid = {}
-	for x = Pos[1].x, Pos[4].x do
-		for y = Pos[1].y, Pos[6].y do
-			for z = Pos[1].z, Pos[6].z do
-				local creature = getTopCreature({x = x, y = y, z = z, stackpos = 255}).uid
-				if(creature > 0) then
-					if(isPlayer(creature)) then
-						return "A team is already inside the quest room."
-					elseif(isMonster(creature)) then
-						table.insert(cid, creature)
-						count = count + 1
-					end
-				end
-			end
+		for i = 1, #config.demonPositions do
+			Game.createMonster("Demon", config.demonPositions[i])
 		end
-	end
-	
-	for i = 1, #cid do
-		doRemoveCreature(cid[i])
-	end
 
-	for i = 1, #Pos do
-		doSummonCreature("Demon", Pos[i])
-	end
-	
-	return getPlayerCountInArea(players_area[1], players_area[2])
-end
-
-function onUse(cid, item)
-	if(item.itemid == 1946) then
-		local condition = SummonDemon(demonPos)
-		if(condition ~= true) then
-			doPlayerSendCancel(cid, condition)
+		for i, tablePlayer in ipairs(players) do
+			Position(config.playerPositions[i]):sendMagicEffect(CONST_ME_POFF)
+			tablePlayer:teleportTo(config.newPositions[i])
+			tablePlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
+			tablePlayer:setDirection(EAST)
 		end
-	else
-		Item(item.uid):transform(1946)
+		lever:transform(item.itemid - 1)
+	elseif item.itemid == 1945 then
+		if config.daily then
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
+		else
+			lever:transform(item.itemid + 1)
+		end
 	end
 	return true
 end
