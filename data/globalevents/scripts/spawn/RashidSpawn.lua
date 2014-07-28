@@ -1,11 +1,11 @@
 local config = {
-	['Monday'] = {x=32209, y=31158, z=7},
-	['Tuesday'] = {x=32290, y=32831, z=7},
-	['Wednesday'] = {x=32579, y=32754, z=7},
-	['Thursday'] = {x=33066, y=32880, z=6},
-	['Friday'] = {x=33239, y=32483, z=7},
-	['Saturday'] = {x=33171, y=31810, z=6},
-	['Sunday'] = {x=32326, y=31783, z=6}
+	['Monday'] = Position(32209, 31158, 7),
+	['Tuesday'] = Position(32290, 32831, 7),
+	['Wednesday'] = Position(32579, 32754, 7),
+	['Thursday'] = Position(33066, 32880, 6),
+	['Friday'] = Position(33239, 32483, 7),
+	['Saturday'] = Position(33171, 31810, 6),
+	['Sunday'] = Position(32326, 31783, 6)
 }
 
 -- Should Rashid spawn as real tibia?
@@ -13,10 +13,17 @@ local spawnByDay = true
 
 function onStartup()
 	if spawnByDay then
-		Game.createNpc('Rashid', config[os.date('%A')])
+		local npc = Game.createNpc('Rashid', config[os.date('%A')])
+		if npc then
+			npc:setMasterPos(config[os.date('%A')])
+		end
 	else
+		local npc
 		for _, position in pairs(config) do
-			Game.createNpc('Rashid', position)
+			npc = Game.createNpc('Rashid', position)
+			if npc then
+				npc:setMasterPos(position)
+			end
 		end
 	end
 
