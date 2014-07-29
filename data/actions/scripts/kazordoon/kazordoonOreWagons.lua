@@ -2,10 +2,10 @@ local gate = Position(32575, 31973, 9)
 
 local config = {
 -- outside wagons --
-	[50136] = Position(gate),
-	[50137] = Position(gate),
-	[50138] = Position(gate),
-	[50139] = Position(gate),
+	[50136] = gate,
+	[50137] = gate,
+	[50138] = gate,
+	[50139] = gate,
 -- kaz main gate wagons --
 	[50140] = Position(32673, 31975, 15), -- Steamboat
 	[50141] = Position(32625, 31921, 11), -- Temple
