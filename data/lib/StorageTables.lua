@@ -8,6 +8,9 @@ Storage = {
 		Shooting = 902,
 		Rank = 921
 	},
+	wagon = {
+		Ticket = 1131
+	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
