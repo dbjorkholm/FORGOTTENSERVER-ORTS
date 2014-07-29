@@ -35,6 +35,9 @@
 	<action itemid="10760" 	script="children of the revolution quest/childrenOfTheRevolutionQuestPoisonWater.lua"/>
 	<action itemid="11106" 	script="children of the revolution quest/childrenOfTheRevolutionQuestGreaseOil.lua"/>
 
+	<!-- Unnatural Selection -->
+	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
+
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>
 	<action itemid="11100" script="the new frontier quest/theNewFrontierQuestBeaver.lua"/>
