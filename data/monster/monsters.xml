@@ -566,7 +566,6 @@
 	<monster name="Scarab" file="insects/scarab.xml"/>
 	<monster name="Spidris Elite" file="insects/spidris elite.xml"/>
 	<monster name="Spidris" file="insects/spidris.xml"/>
-	<monster name="Spitter" file="insects/spitter.xml"/>
 	<monster name="Swarmer Hatchling" file="insects/swarmer hatchling.xml"/>
 	<monster name="Swarmer" file="insects/swarmer.xml"/>
 	<monster name="Terramite" file="insects/terramite.xml"/>
@@ -663,6 +662,7 @@
 	<!-- Myriapods -->
 	<monster name="Centipede" file="myriapods/centipede.xml"/>
 	<monster name="Crawler" file="myriapods/crawler.xml"/>
+	<monster name="Spitter" file="myriapods/spitter.xml"/>
 	<monster name="Wiggler" file="myriapods/wiggler.xml"/>
 
 	<!-- Necromancers -->
