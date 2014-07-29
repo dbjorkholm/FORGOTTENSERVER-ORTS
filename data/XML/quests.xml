@@ -292,6 +292,39 @@
 			<missionstate id="3" description="You Survived the Waves and reported Zalamon about your success! You got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
+		<quest name="Unnatural Selection" startstorageid="12330" startstoragevalue="1">
+		<mission name="Mission 1: Skulled" storageid="12331" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your mission is to find the Holy Skull. It is in a cave in the northern orc settlement, which is located north-west on the Zao Steppe."/>
+			<missionstate id="2" description="You found the Holy Skull. Retrieve it to Lazaran in the Zao Mountains."/>
+			<missionstate id="3" description="You brought Lazaran the Holy Skull. Ask him for new mission!"/>
+		</mission>
+		<mission name="Mission 2: All Around the World" storageid="12332" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 3: Dance Dance Evolution" storageid="12333" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 5: Ray of Light" storageid="12335" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 6: Firewater Burn" storageid="12336" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+	</quest>
+
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1" description="You defeated Omruc and received a helmet adornment"/>
 		<mission name="Thalas' Treasure" storageid="12102" startvalue="1" endvalue="1" description="You defeated Thalas and received a Gem Holder"/>
