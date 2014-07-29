@@ -351,7 +351,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	Item(item.uid):transform(1946)
-	addEvent(resetLever, settings.leverDuration or exhibits.leverDuration, fromPosition)
+	addEvent(resetLever, settings.leverDuration or exhibits.leverDuration, toPosition)
 
 	if not isToggle then
 		addEvent(resetExhibit, settings.transformDuration or exhibits.transformDuration, exhibitPosition, item.actionid)
