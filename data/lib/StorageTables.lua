@@ -213,6 +213,15 @@ Storage = {
 		SpyBuilding03 = 12309,
 		StrangeSymbols = 12310
 	},
+	UnnaturalSelection = {
+		Questline = 12330, -- Storage through the Quest
+		Mission01 = 12331,
+		Mission02 = 12332,
+		Mission03 = 12333,
+		Mission04 = 12334,
+		Mission05 = 12335,
+		Mission06 = 12336
+	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
 		TheSweatyCyclops = 12401,
