@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
 <quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
+
+	<!-- killing in the name of rank -->
+		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
+		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+
+	<!-- special tasks for killing in the name of -->
+		<mission name="Paw and Fur: Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
+		<missionstate id="1" description="Grizzly Adams told you that there is Tiquandas Revenge hiding somewhere in the jungle of Port Hope. Go find its hideout and kill it."/>
+		<missionstate id="2" description="You have slained the Tiquandas Revenge."/>
+		</mission>
+		<mission name="Paw and Fur: Demodras" storageid="22556" startvalue="1" endvalue="2">
+		<missionstate id="1" description="Grizzly Adams wanted you to go look for Demodras'  hideout. He also mentioned that it might be somewhere under the Plains of Havoc."/>
+		<missionstate id="2" description="You have slained the Demodras."/>
+		</mission>
+		
+	<!-- Short questlog for bosses, when they have the correct storage. (atm disspears from questlog after jumping into tp)-->
+		<mission name="Paw and Fur: The Snapper" storageid="35000" startvalue="1" endvalue="2" description="Grizzly told you about the Snapper, a crocodile that already killed many citizens of Port Hope. Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Hide" storageid="35001" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Deathbine" storageid="35002" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Bloodtusk" storageid="35003" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Shardhead" storageid="35004" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Esmerelda" storageid="35005" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Fleshcrawler" storageid="35006" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Ribstride" storageid="35007" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Bloodweb" storageid="35008" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Thul" storageid="35009" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Old Widow" storageid="35010" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Hemming" storageid="35011" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Tormentor" storageid="35012" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Flameborn" storageid="35013" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Fazzrah" storageid="35014" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Tromphonyte" storageid="35015" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Sulphur Scuttler" storageid="35016" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+	<!--missing 	<mission name="Paw and Fur: Sulphur Scuttler" storageid="35017" startvalue="1" endvalue="2" description="Try find its hideout and kill it." /> -->
+		<mission name="Paw and Fur: The Many" storageid="35018" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Noxious Spawn" storageid="35019" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Gorgo" storageid="35020" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Stonecracker" storageid="35021" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Leviathan" storageid="35022" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Kerberos" storageid="35023" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Ethershreck" storageid="35024" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Paiz the Pauperizer" storageid="35025" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Bretzecutioner" storageid="35026" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Zanakeph" storageid="35027" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+     
+     
+     
         <!--s for level 6 to 49 -->
 		<mission name="Edron City - Elite Hunting: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
 		<mission name="Edron City - Elite Hunting: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 goblins." />
