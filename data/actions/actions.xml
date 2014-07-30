@@ -564,11 +564,6 @@
 	<action fromid="7904" toid="7907" script="other/bed_modification_kits.lua"/>
 	<action itemid="20252" script="other/bed_modification_kits.lua"/>
 
-	<!-- Gold -->
-	<action itemid="2148" script="other/changegold.lua"/>
-	<action itemid="2152" script="other/changegold.lua"/>
-	<action itemid="2160" script="other/changegold.lua"/>
-
 	<!-- Potions / Fluids -->
 	<action fromid="2005" toid="2009" script="other/fluids.lua"/>
 	<action fromid="2011" toid="2015" script="other/fluids.lua"/>
