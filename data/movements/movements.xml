@@ -55,6 +55,9 @@
 	<movevent event="StepIn" actionid="8007"  script="the new frontier quest/theNewFrontierQuestTrap.lua"/>
 	<movevent event="StepIn" fromaid="12135" toaid="12136"  script="the new frontier quest/theNewFrontierQuestMinotaurBoss.lua"/>
 	<movevent event="StepIn" actionid="12138"  script="the new frontier quest/theNewFrontierQuestJailExit.lua"/>
+	
+	<!--- Unnatural Selection -->
+	<movevent event="StepIn" actionid="12332"  script="unnatural selection/Mission2AllAroundtheWorld.lua"/>
 
 	<!-- Teleports -->
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>

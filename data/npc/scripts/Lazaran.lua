@@ -30,8 +30,19 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Oh! You found holy skull? In bone pile you found?! Thank Pandor you brought! Me can have it back?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 2 then
-			npcHandler:say("work in process", cid)
+			npcHandler:say(	
+			{
+				"You brought back skull of first leader. Hero of tribe! But we more missions to do. ...",
+				"Me and Ulala talk about land outside. We wanting to see more of land! Land over big water! But us no can leave tribe. No can cross water. Only way is skull of first leader. ...",
+				"What holy skull sees, tribe sees. That we believe. Can you bring holy skull over big water and show places?"
+			}, cid)
 			npcHandler.topic[cid] = 3
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 3 then
+			npcHandler:say("You say you was to where sun is hot and burning? And where trees grow as high as mountain? And where Fasuon cries white tears? Me can't wait to see!! Can have holy skull back?", cid)
+			npcHandler.topic[cid] = 4
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 4 then
+			npcHandler:say("work in process", cid)
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -40,13 +51,30 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.UnnaturalSelection.Mission01, 1) --Questlog, Unnatural Selection Quest "Mission 1: Skulled"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			if player:removeItem(11134, 1) then --remove tome
+			if player:removeItem(11076, 1) then
 				npcHandler:say("Me thank you much! All wisdom safe again now.", cid)
 				player:setStorageValue(Storage.UnnaturalSelection.Questline, 2)
 				player:setStorageValue(Storage.UnnaturalSelection.Mission01, 3) --Questlog, Unnatural Selection Quest "Mission 1: Skulled"
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You do not have it!", cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 3 then
+			npcHandler:say("Here take holy skull. You bring where you think is good. See as much as possible! See where other people live!", cid)
+			player:addItem(11076, 1)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 3)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission02, 1) --Questlog, Unnatural Selection Quest "Mission 2: All Around the World"
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 4 then
+			if player:getStorageValue(Storage.UnnaturalSelection.Mission02) == 12 and player:getItemCount(11076) >= 1 then
+				npcHandler:say("We make big ritual soon and learn much about world outside. Me thank you many times for teaching us world. Very wise and adventurous you are!", cid)
+				player:removeItem(11076, 1)
+				player:setStorageValue(Storage.UnnaturalSelection.Questline, 4)
+				player:setStorageValue(Storage.UnnaturalSelection.Mission02, 13) --Questlog, Unnatural Selection Quest "Mission 2: All Around the World"
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("The skull have not seen all yet!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		end

@@ -348,10 +348,20 @@
 			<missionstate id="2" description="You found the Holy Skull. Retrieve it to Lazaran in the Zao Mountains."/>
 			<missionstate id="3" description="You brought Lazaran the Holy Skull. Ask him for new mission!"/>
 		</mission>
-		<mission name="Mission 2: All Around the World" storageid="12332" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 2: All Around the World" storageid="12332" startvalue="1" endvalue="13">
+			<missionstate id="1" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Edron."/>
+			<missionstate id="2" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Ab'dendriel."/>
+			<missionstate id="3" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Femor Hills."/>
+			<missionstate id="4" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Darashia"/>
+			<missionstate id="5" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Ankrahmun"/>
+			<missionstate id="6" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Port Hope"/>
+			<missionstate id="7" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Liberty Bay"/>
+			<missionstate id="8" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Yalahar"/>
+			<missionstate id="9" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Svargrond"/>
+			<missionstate id="10" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Thais"/>
+			<missionstate id="11" description="You received the Skull of a Caveman and need to explore the world, letting the skull see everything. You need to stand at the highest place of Carlin"/>
+			<missionstate id="12" description="You visited all the highest places with the skull. Turn the skull back to Lazaran and report him your mission!"/>
+			<missionstate id="13" description="You turned the skull already back to Lazaran. Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 3: Dance Dance Evolution" storageid="12333" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
