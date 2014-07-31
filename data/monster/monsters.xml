@@ -151,6 +151,7 @@
 	<monster name="Bibby Bloodbath" file="bosses/bibby bloodbath.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
+	<monster name="Bruise Payne" file="bosses/bruise payne.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
 	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
