@@ -670,6 +670,95 @@
 			<missionstate id="5" description="You have completed the Quest!"/>
 		</mission>
 	</quest>
+	<quest name="The Postman Missions" startstorageid="12450" startstoragevalue="1">
+		<mission name="Mission 1 - Check Postal Routes" storageid="12450" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 2 - Fix Mailbox" storageid="12451" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 3 - Bill Delivery" storageid="12452" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 4 - Aggressive Dogs" storageid="12453" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 5 - Present Delivery" storageid="12454" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 6 - New Uniforms" storageid="12455" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 7 - Measurements" storageid="12456" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 8 - Missing Courier" storageid="12457" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 9 - Dear Santa" storageid="12458" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 10 - Mintwallin" storageid="12459" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Postman Rank" storageid="12460" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Assistant Postman"/>
+			<missionstate id="2" description="Postman"/>
+			<missionstate id="3" description="Grand Postman"/>
+			<missionstate id="4" description="Grand Postman for Special Operations"/>
+			<missionstate id="5" description="Arch Postman"/>
+		</mission>
+	</quest>
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
 		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
@@ -811,96 +900,6 @@
 			<missionstate id="6" description="To sell the meat or ham to Carlos, talk to him and ask him for a 'trade'."/>
 			<missionstate id="7" description="You sucessfully learnt how to change your outfit and how to trade with NPCs. Time to head over the bridge to Rookgaard!"/>
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
-		</mission>
-	</quest>
-	<quest name="The Postman Missions" startstorageid="50137" startstoragevalue="1">
-		<mission name="Mission 1 - Check Postal Routes" storageid="50137" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 2 - Fix Mailbox" storageid="50138" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 3 - Bill Delivery" storageid="50139" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 4 - Aggressive Dogs" storageid="50140" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 5 - Present Delivery" storageid="50141" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 6 - New Uniforms" storageid="50142" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 7 - Measurements" storageid="50143" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 8 - Missing Courier" storageid="50144" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 9 - Dear Santa" storageid="50145" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Mission 10 - Mintwallin" storageid="50146" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
-		</mission>
-		<mission name="Postman Rank" storageid="50147" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
 		</mission>
 	</quest>
 </quests>

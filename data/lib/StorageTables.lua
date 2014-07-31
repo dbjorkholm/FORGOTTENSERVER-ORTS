@@ -229,6 +229,19 @@ Storage = {
 		TheBlessedStake = 12403,
 		TheBlessedStakeWaitTime = 12404
 	},
+	postman = {
+		Mission01 = 12450
+		Mission02 = 12451
+		Mission03 = 12452
+		Mission04 = 12453
+		Mission05 = 12454
+		Mission06 = 12455
+		Mission07 = 12456
+		Mission08 = 12457
+		Mission09 = 12458
+		Mission10 = 12459
+		Rank = 12460
+	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,
@@ -275,18 +288,5 @@ Storage = {
 	},
 	madMage = {
 		Quest = 50136
-	},
-	postman = {
-		Mission01 = 50137
-		Mission02 = 50138
-		Mission03 = 50139
-		Mission04 = 50140
-		Mission05 = 50141
-		Mission06 = 50142
-		Mission07 = 50143
-		Mission08 = 50144
-		Mission09 = 50145
-		Mission10 = 50146
-		Rank = 50147
 	}
 }
