@@ -13,12 +13,10 @@ local doors = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if item.actionid == 7815 then
-		if Player(cid):getStorageValue(Storage.postman.Rank) == 5 then
-			if isInArray(doors, item.itemid) then
-				Player(cid):teleportTo(toPosition, true)
-				Item(item.uid):transform(item.itemid + 1)
-			end
+	if Player(cid):getStorageValue(Storage.postman.Rank) == 5 then
+		if isInArray(doors, item.itemid) then
+			Player(cid):teleportTo(toPosition, true)
+			Item(item.uid):transform(item.itemid + 1)
 		end
 	end
 	return true
