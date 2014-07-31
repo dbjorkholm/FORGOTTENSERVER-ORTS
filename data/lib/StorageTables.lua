@@ -220,7 +220,8 @@ Storage = {
 		Mission03 = 12333,
 		Mission04 = 12334,
 		Mission05 = 12335,
-		Mission06 = 12336
+		Mission06 = 12336,
+		DanceStatus = 12337
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,

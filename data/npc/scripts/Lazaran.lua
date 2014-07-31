@@ -41,6 +41,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You say you was to where sun is hot and burning? And where trees grow as high as mountain? And where Fasuon cries white tears? Me can't wait to see!! Can have holy skull back?", cid)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 4 then
+			npcHandler:say("We been weak for too long! We prepare for great hunt. But still need many doings! You can help us?", cid)
+			npcHandler.topic[cid] = 5
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 5 then
 			npcHandler:say("work in process", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -77,7 +80,12 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("The skull have not seen all yet!", cid)
 				npcHandler.topic[cid] = 0
 			end
-		end
+		elseif npcHandler.topic[cid] == 5 then
+			npcHandler:say("We need to calm and make happy gods. Best go to Ulala. She is priest of us and can tell what needs doing.", cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 5)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission03, 1) --Questlog, Unnatural Selection Quest "Mission 3: Dance Dance Evolution"
+			npcHandler.topic[cid] = 0		
+			end
 	end
 	return true
 end
