@@ -8,43 +8,43 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, "banana skin")) then
-		if player:getStorageValue(250) == 19 then
+	if msgcontains(msg, "banana skin") then
+		if player:getStorageValue(Storage.postman.Mission06) == 7 then
 			if player:getItemCount(2219) >= 1 then
 				npcHandler:say("<sniff><sniff>", cid)
 				npcHandler.topic[cid] = 1
 			end
 		end
-	elseif(msgcontains(msg, "dirty fur")) then
-		if player:getStorageValue(250) == 20 then
+	elseif msgcontains(msg, "dirty fur") then
+		if player:getStorageValue(Storage.postman.Mission06) == 8 then
 			if player:getItemCount(2220) >= 1 then
 				npcHandler:say("<sniff><sniff>", cid)
 				npcHandler.topic[cid] = 2
 			end
 		end
-	elseif(msgcontains(msg, "mouldy cheese")) then
-		if player:getStorageValue(250) == 21 then
+	elseif msgcontains(msg, "mouldy cheese") then
+		if player:getStorageValue(Storage.postman.Mission06) == 9 then
 			if player:getItemCount(2235) >= 1 then
 				npcHandler:say("<sniff><sniff>", cid)
 				npcHandler.topic[cid] = 3
 			end
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1  then
 			npcHandler:say("Woof!", cid)
-			player:setStorageValue(250, 20)
+			player:setStorageValue(Storage.postman.Mission06, 8)
 			npcHandler.topic[cid] = 0
-		elseif(npcHandler.topic[cid] == 2) then
+		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Woof!", cid)
-			player:setStorageValue(250, 21)
+			player:setStorageValue(Storage.postman.Mission06, 9)
 			npcHandler.topic[cid] = 0
-		elseif(npcHandler.topic[cid] == 3) then
+		elseif npcHandler.topic[cid] == 3 then
 			npcHandler:say("Meeep! Grrrrr! <spits>", cid)
-			player:setStorageValue(250, 22)
+			player:setStorageValue(Storage.postman.Mission06, 10)
 			npcHandler.topic[cid] = 0
 		end
 	end
