@@ -8,21 +8,22 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, "present")) then
-		if player:getStorageValue(250) == 11 then
+
+	if msgcontains(msg, "present") then
+		if player:getStorageValue(Storage.postman.Mission05) == 2 then
 			npcHandler:say("You have a present for me?? Realy?", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(2331) >= 1 then
 				player:removeItem(2331, 1)
 				npcHandler:say("Thank you very much!", cid)
-				player:setStorageValue(250, 12)
+				player:setStorageValue(Storage.postman.Mission05, 3)
 				npcHandler.topic[cid] = 0
 			end
 		end

@@ -1,16 +1,18 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3116) then
-		if(getPlayerStorageValue(cid, 250) == 10) then
-			setPlayerStorageValue(cid, 250, 11)
-			doPlayerAddItem(cid, 2331, 1)
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a present.")
+	local player = Player(cid)
+
+	if item.uid == 3116 then
+		if player:getStorageValue(Storage.postman.Mission05) == 1 then
+			player:setStorageValue(Storage.postman.Mission05, 2)
+			player:addItem(2331, 1)
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a present.")
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
 		end
-	elseif(item.itemid == 2331) then
-		doRemoveItem(item.uid, 1)
-		doSendMagicEffect(toPosition, CONST_ME_POFF)
-		doCreatureSay(cid, "You open the present.", TALKTYPE_MONSTER_SAY)
+	elseif item.itemid == 2331 then
+		player:removeItem(item.uid, 1)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		player:say("You open the present.", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

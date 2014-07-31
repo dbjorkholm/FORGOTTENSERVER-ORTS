@@ -13,11 +13,11 @@ local doors = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.actionid == 7815) then
-		if(getPlayerStorageValue(cid, 250) >= 45) then
-			if(isInArray(doors, item.itemid)) then
-				doTeleportThing(cid, toPosition, true)
-				doTransformItem(item.uid, item.itemid + 1)
+	if item.actionid == 7815 then
+		if Player(cid):getStorageValue(250) >= 45 then
+			if isInArray(doors, item.itemid) then
+				Player(cid):teleportTo(toPosition, true)
+				Item(item.uid):transform(item.itemid + 1)
 			end
 		end
 	end

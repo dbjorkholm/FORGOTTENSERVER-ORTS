@@ -69,11 +69,11 @@ keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, on
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen')) and (not npcHandler:isFocused(cid)) then
+	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen')) and not npcHandler:isFocused(cid) then
 		npcHandler:say('I greet thee, my loyal subject.', cid)
 		npcHandler:addFocus(cid)
 		npcHandler.topic[cid] = 0
-	elseif(not npcHandler:isFocused(cid)) then
+	elseif not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "promot") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
@@ -99,9 +99,9 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	end
 	if msgcontains(msg, "uniforms") then
-		if player:getStorageValue(250) == 17 then
+		if player:getStorageValue(Storage.postman.Mission06) == 5 then
 			npcHandler:say("I remember about those uniforms, they had a camouflage inlay so they could be worn the inside out too. I will send some color samples via mail to Mr. Postner. ", cid)
-			player:setStorageValue(250, 18)
+			player:setStorageValue(Storage.postman.Mission06, 6)
 		else
 			npcHandler:say('The uniforms of our guards and soldiers are of unparraleled quality of course.', cid)
 		end
