@@ -169,7 +169,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.postman.Mission06, 7)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 19 then
-			npcHandler:say("Good, so listen. Hugo Chief informed me that he needs the measurements of our postofficers. Go and bring me the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik.", cid)
+			npcHandler:say("Good, so listen. Hugo Chief informed me that he needs the measurements of our postofficers. Go and bring me the measurements of Benjamin, Lokur, Dove, Liane, Chrystal and Olrik.", cid)
 			player:setStorageValue(Storage.postman.Mission07, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
