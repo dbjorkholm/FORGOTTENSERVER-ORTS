@@ -275,5 +275,18 @@ Storage = {
 	},
 	madMage = {
 		Quest = 50136
+	},
+	postman = {
+		Mission01 = 50137
+		Mission02 = 50138
+		Mission03 = 50139
+		Mission04 = 50140
+		Mission05 = 50141
+		Mission06 = 50142
+		Mission07 = 50143
+		Mission08 = 50144
+		Mission09 = 50145
+		Mission10 = 50146
+		Rank = 50147
 	}
 }
