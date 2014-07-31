@@ -1,4 +1,15 @@
 local holes = {468, 481, 483, 7932}
+
+local function revertHole(toPosition)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemById(469)
+		if thing and thing:isItem() then
+			thing:transform(8579)
+		end
+	end
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local iEx = Item(itemEx.uid)
@@ -22,15 +33,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
 		iEx:transform(469)
-		addEvent(function(toPosition) 
-			local tile = toPosition:getTile() 
-			if tile then 
-				local thing = tile:getItemById(469) 
-				if thing and thing:isItem() then 
-					thing:transform(8579) 
-				end 
-			end 
-		end, 30 * 1000, toPosition)
+		addEvent(revertHole, 30 * 1000, toPosition)
 	elseif itemEx.aid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
@@ -53,7 +56,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			tile:getItemById(8749):remove()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
-		end	
+		end
 	else
 		return false
 	end

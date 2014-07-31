@@ -1,29 +1,46 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
-		if(math.random(3) == 1) then
-			local carrotpos = {x = toPosition.x - 1, y = toPosition.y, z = toPosition.z}
-			Position(carrotpos):sendMagicEffect(CONST_ME_TELEPORT)
-			Game.createItem(2684, 1, Position(carrotpos))
-			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "You found the carrot! The door is open!")
-			Item(item.uid):transform(1946)
-			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing and thing:isItem() then thing:transform(1945) end end end, 4 * 1000, toPosition)
-			addEvent(function(toPosition) local carrotpos = {x = toPosition.x - 1, y = toPosition.y, z = toPosition.z} local tile = Position(carrotpos):getTile() if tile then local thing = tile:getItemById(2684) if thing and thing:isItem() then thing:remove(1) end end end, 4 * 1000, toPosition)
-			
-			local doorpos = {x = 33122, y = 32765, z = 14}
-			local tile = Position(doorpos):getTile()
-			if(tile) then 
-				local thing = tile:getItemById(1243) 
-				if(thing and thing:isItem()) then
-					thing:transform(1244)
-				end 
-			end
-		else
-			local p = Player(cid)
-			p:sendTextMessage(MESSAGE_INFO_DESCR, "you guess wrong! Take this! Carrot changed now the Hat!")
-			doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, p:getPosition(), 0, -200, -200, CONST_ME_POFF)
-		end
-	elseif(item.itemid == 1243) then
-		Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "You first must find the Carrot under one of the three hats to get the access!")
+local doorPosition = Position(33122, 32765, 14)
+
+local function revertCarrotAndLever(position, carrotPosition)
+	local leverItem = Tile(position):getItemById(1946)
+	if leverItem then
+		leverItem:transform(1945)
 	end
-return true
+
+	local carrotItem = Tile(carrotPosition):getItemById(2684)
+	if carrotItem then
+		carrotItem:remove()
+	end
+end
+
+function onUse(cid, item, position, itemEx, toPosition)
+	if item.itemid == 1243 then
+		Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, 'You first must find the Carrot under one of the three hats to get the access!')
+		return true
+	end
+
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	local player = Player(cid)
+	if math.random(3) == 1 then
+		local hatPosition = Position(toPosition.x - 1, toPosition.y, toPosition.z)
+		hatPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+		doorPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+		Game.createItem(2684, 1, hatPosition)
+
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You found the carrot! The door is open!')
+		Item(item.uid):transform(1946)
+		addEvent(revertCarrotAndLever, 4 * 1000, position, hatPosition)
+
+		local doorItem = Tile(doorPosition):getItemById(1243)
+		if doorItem then
+			doorItem:transform(1244)
+		end
+		return true
+	end
+
+	player:sendTextMessage(MESSAGE_INFO_DESCR, 'You guessed wrong! Take this! Carrot changed now the Hat!')
+	doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -200, -200, CONST_ME_POFF)
+	return true
 end
