@@ -49,6 +49,16 @@ local lava = {
 	{x = 32813, y = 32333, z = 11, stackpos = 0}
 }
 
+local function revertIce(toPosition)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemById(7186)
+		if thing and thing:isItem() then
+			thing:transform(7185)
+		end
+	end
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local targetItem = Item(itemEx.uid)
@@ -66,15 +76,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	--The Ice Islands Quest, Nibelor 1: Breaking the Ice
 	if itemEx.itemid == 3621 and itemEx.actionid == 12026 then
 		local tile1 = toPosition:getTile()
-		local thing1 = tile1:getItemById(7185) 
+		local thing1 = tile1:getItemById(7185)
 		local chakoyas = {"chakoya toolshaper","chakoya tribewarden","chakoya windcaller"}
 		if player:getStorageValue(Storage.TheIceIslands.Mission02) > 0 and player:getStorageValue(Storage.TheIceIslands.PickAmount) < 3 and player:getStorageValue(Storage.TheIceIslands.Questline) == 3  then
 			player:setStorageValue(Storage.TheIceIslands.PickAmount, player:getStorageValue(Storage.TheIceIslands.PickAmount) + 1)
 			player:setStorageValue(Storage.TheIceIslands.Mission02, player:getStorageValue(Storage.TheIceIslands.Mission02) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			doSummonCreature(chakoyas[math.random(3)], toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
-			thing1:transform(7186) 
-			addEvent(function () local tile = toPosition:getTile() if tile then local thing = tile:getItemById(7186) if thing and thing:isItem() then thing:transform(7185) end end end, 60 * 1000)			
+			thing1:transform(7186)
+			addEvent(revertIce, 60 * 1000, toPosition)
 			if player:getStorageValue(Storage.TheIceIslands.PickAmount) >= 2 then
 				player:setStorageValue(Storage.TheIceIslands.Questline, 4)
 				player:setStorageValue(Storage.TheIceIslands.Mission02, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
@@ -95,7 +105,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				Item(itemEx.uid):remove()
 				Game.setStorageValue(itemEx.actionid)
 			end
-			
+
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end

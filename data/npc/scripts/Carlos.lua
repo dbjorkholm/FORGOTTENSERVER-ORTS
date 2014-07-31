@@ -6,7 +6,7 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 local random_texts = {
-	"Hmm, we should do something about your outfit.", 
+	"Hmm, we should do something about your outfit.",
 	"Ah, another adventurer. Let's talk a little.", "Psst! Come over here for a little trade.",
 	"Hello, hello! Don't be shy, I don't bite.",
 	"By the way, if you want to look at old hints again, find the 'Help' button near your inventory and select 'Tutorial Hints'."
@@ -68,7 +68,7 @@ local function greetCallback(cid)
 		npcHandler:setMessage(MESSAGE_GREET, "Hey there, ".. player:getName() .."! Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard! Take care!")
 		player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
-		npcHandler:releaseFocus(cid)	
+		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage) == 8 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hello again, ".. player:getName() .."! What are you still doing here? You should head over the bridge to Rookgaard village now!")
@@ -78,11 +78,20 @@ local function greetCallback(cid)
 	return true
 end
 
+local function releasePlayer(cid)
+	if not Player(cid) then
+		return
+	end
+
+	npcHandler:releaseFocus(cid)
+	npcHandler:resetNpc(cid)
+end
+
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if isInArray({"yes", "help", "ok"}, msg) then
 		if storeTalkCid[cid] == 1 then
@@ -136,13 +145,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid, 0, 1, 1)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
-			addEvent(function(cid)
-				if not Player(cid) then
-					return
-				end
-				npcHandler:releaseFocus(cid)
-				npcHandler:resetNpc(cid)
-			end, 1000, cid)
+			addEvent(releasePlayer, 1000, cid)
 		end
 	elseif msgcontains(msg, "trade") then
 		if storeTalkCid[cid] == 6 then
@@ -150,13 +153,13 @@ local function creatureSayCallback(cid, type, msg)
 			player:sendTutorial(13)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 7)
 			storeTalkCid[cid] = 7
-			local items = setNewTradeTable(getTable())	
+			local items = setNewTradeTable(getTable())
 			local function onSell(cid, item, subType, amount, ignoreEquipped)
 				if items[item].sellPrice then
 					return
 					player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
 					player:addMoney(items[item].sellPrice * amount) and
-			
+
 					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
 				end
 				return true

@@ -1,18 +1,21 @@
 function onStepIn(cid, item, position, fromPosition)
+	if Creature(cid):getName():lower() ~= 'mushroom sniffer' then
+		return true
+	end
 
-	if string.lower(Creature(cid):getName()) == "mushroom sniffer" then
-		local tile = Tile(position)
-		if tile:getItemById(18340) and tile:getItemById(18340):getActionId() ~= 100 then
-			local chance = math.random(3)
-			if chance < 3 then
-				position:sendMagicEffect(CONST_ME_POFF)
-				tile:getItemById(18340):transform(18218)
-				addEvent(function(position) local tile = Tile(position) if not tile then return end local thing = tile:getItemById(18218) if thing then thing:transform(18340) end end, 40000, position)
-			elseif chance == 3 then
-				tile:getItemById(18340):transform(18341)
-				position:sendMagicEffect(CONST_ME_GROUNDSHAKER)
-			end
-		end
+	local moldFloor = Tile(position):getItemById(18340)
+	if moldFloor:getActionId() == 100 then
+		return true
+	end
+
+	if math.random(3) < 3 then
+		moldFloor:transform(18218)
+		moldFloor:decay()
+		position:sendMagicEffect(CONST_ME_POFF)
+	else
+		moldFloor:transform(18341)
+		moldFloor:decay()
+		position:sendMagicEffect(CONST_ME_GROUNDSHAKER)
 	end
 	return true
 end

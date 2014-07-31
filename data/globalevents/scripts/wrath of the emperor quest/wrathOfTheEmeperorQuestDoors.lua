@@ -1,20 +1,21 @@
-local pos = {
-	{x = 33385, y = 31139, z = 8},
-	{x = 33385, y = 31134, z = 8},
-	{x = 33385, y = 31126, z = 8},
-	{x = 33385, y = 31119, z = 8},
-	{x = 33385, y = 31118, z = 8},
-	{x = 33380, y = 31085, z = 8},
-	{x = 33380, y = 31093, z = 8}
+local positions = {
+	Position(33385, 31139, 8),
+	Position(33385, 31134, 8),
+	Position(33385, 31126, 8),
+	Position(33385, 31119, 8),
+	Position(33385, 31118, 8),
+	Position(33380, 31085, 8),
+	Position(33380, 31093, 8)
 }
 
 function onThink(interval, lastExecution)
 	for i = 1, 5 do
-		if(math.random(2) == 1) then
-			if(getTileItemById(pos[i], 12214).uid > 0) then
-				doTransformItem(getTileItemById(pos[i], 12214).uid, 12213)
+		if math.random(2) == 1 then
+			local tile = Tile(positions[i])
+			if tile:getItemById(12214) then
+				tile:getItemById(12214):transform(12213)
 			else
-				doTransformItem(getTileItemById(pos[i], 12213).uid, 12214)
+				tile:getItemById(12213):transform(12214)
 			end
 		end
 	end
