@@ -58,6 +58,7 @@
 	
 	<!--- Unnatural Selection -->
 	<movevent event="StepIn" actionid="12332"  script="unnatural selection/Mission2AllAroundtheWorld.lua"/>
+	<movevent event="StepIn" actionid="12333"  script="unnatural selection/Mission3DanceDanceEvolution.lua"/>
 
 	<!-- Teleports -->
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>

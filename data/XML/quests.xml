@@ -364,9 +364,9 @@
 			<missionstate id="13" description="You turned the skull already back to Lazaran. Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 3: Dance Dance Evolution" storageid="12333" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Lazaran told you to go to Ulala, who is located above Lazaran."/>
+			<missionstate id="2" description="Ulala told you to dance to please their god Krunus. On the south mountain in the camp you will find the Krunus altar, there are lots of leaves on the ground."/>
+			<missionstate id="3" description="You solved the dance. Head back to Ulala and report your mission!"/>
 		</mission>
 		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
