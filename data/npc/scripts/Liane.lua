@@ -25,22 +25,24 @@ function onThink()
 end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
 
-	if(msgcontains(msg, "measurements")) then
-		if player:getStorageValue(250) == 28 then
+	if msgcontains(msg, "measurements") then
+		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
 			npcHandler:say("I have more urgent problem to attend then that. Those hawks are hunting my carrier pigeons. Bring me 12 arrows and I'll see if I have the time for this nonsense. Do you have 12 arrows with you? ", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if player:getItemCount(2544) >= 12 then
-			player:removeItem(2544, 12)
-			npcHandler:say("Great! Now I'll teach them a lesson ... For those measurements ... <tells you her measurements> ", cid)
-			player:setStorageValue(250, 29)
-			npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			if player:getItemCount(2544) >= 12 then
+				player:removeItem(2544, 12)
+				npcHandler:say("Great! Now I'll teach them a lesson ... For those measurements ... <tells you her measurements> ", cid)
+				player:setStorageValue(Storage.postman.Mission07, player:getStorageValue(Storage.postman.Mission07) + 1)
+				npcHandler.topic[cid] = 0
+			end
 		end
 	end
 	return true
