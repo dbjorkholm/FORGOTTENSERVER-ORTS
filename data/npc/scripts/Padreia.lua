@@ -11,7 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "cough syrup") then
+	end
+
+	if msgcontains(msg, "cough syrup") then
 		if player:getStorageValue(Storage.TheApeCity.Questline) == 5 then
 			npcHandler:say("Do you want to buy a bottle of cough syrup for 50 gold?", cid)
 			npcHandler.topic[cid] = 1
