@@ -174,13 +174,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid, 0, 1, 1)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
-			addEvent(function(cid)
-				if not Player(cid) then
-					return
-				end
-				npcHandler:releaseFocus(cid)
-				npcHandler:resetNpc(cid)
-			end, 5000, cid)
+			addEvent(releasePlayer, 5000, cid)
 		end
 	end
 	return true
