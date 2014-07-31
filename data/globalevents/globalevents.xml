@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globalevents>
-	<!-- Blooming Griffinclaw -->
-	<globalevent name="bloomingGriffinclaw" type="start" script="blooming griffinclaw/bloomingGriffinclaw.lua"/>
-
 	<!-- Wrath Of The Emperor Quest -->
-	<globalevent name="wrathOfTheEmeperorQuestDoors" interval="5000" script="wrath of the emperor quest/wrathOfTheEmeperorQuestDoors.lua"/>
+	<globalevent name="WotESpyHoles" interval="5000" script="wrath of the emperor quest/spyHoles.lua"/>
 
 	<!-- Demon Oak Quest -->
-	<globalevent name="OakThink" interval="15000" script="demon oak quest/oakthink.lua"/>
+	<globalevent name="DemonOakVoices" interval="15000" script="demon oak quest/voices.lua"/>
 
 	<!-- Rent Horses -->
-	<globalevent name="RentThink" interval="15000" script="others/checkmount.lua"/>
+	<globalevent name="RentedMounts" interval="15000" script="others/checkMount.lua"/>
+
+	<!-- Blooming Griffinclaw -->
+	<globalevent name="GriffinclawFlower" type="start" script="others/griffinclawFlower.lua"/>
 
 	<!-- World Changes -->
-	<globalevent name="furygates" type="startup" script="worldchanges/gates.lua"/>
-	<globalevent name="resetfurygates" type="shutdown" script="worldchanges/resetgates.lua"/>
+	<globalevent name="FuryGates" type="startup" script="worldchanges/furygates.lua"/>
 
 	<!-- Others -->
 	<globalevent type="startup" name="ServerStartup" script="startup.lua"/>
-
 	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
-	<globalevent name="Server Save" time="09:55:00" script="serversave.lua"/>
+	<globalevent name="ServerSave" time="09:55:00" script="serversave.lua"/>
 
 	<!-- Spawn -->
 	<globalevent name="RaidSystem" interval="10000" script="spawn/raids.lua"/>
-	<globalevent name="RandomBossSummon" interval="3600000" script="spawn/BossSpawn.lua"/>
-	<globalevent type="startup" name="RashidSpawnStartup" script="spawn/RashidSpawn.lua"/>
-	<globalevent type="startup" name="CilliaSpawnStartup" script="spawn/CilliaSpawn.lua"/>
-
-	<!-- Site -->
-<!--
-	<globalevent name="website_shop_item_delivery" interval="30000" script="shop.lua"/>
--->
+	<globalevent name="BossSystem" interval="3600000" script="spawn/BossSpawn.lua"/>
+	<globalevent type="startup" name="RashidSpawn" script="spawn/RashidSpawn.lua"/>
+	<globalevent type="startup" name="CilliaSpawn" script="spawn/CilliaSpawn.lua"/>
 </globalevents>

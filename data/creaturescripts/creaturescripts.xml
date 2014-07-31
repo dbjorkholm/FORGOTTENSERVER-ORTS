@@ -14,29 +14,29 @@
 
 	<!-- Svargrond Arena Quest -->
 	<event type="kill" name="SvargrondArenaKill" script="svargrond arena quest/arena_kill.lua"/>
-	
+
 	<!-- Boss Summoning -->
 	<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>
-	
+
 	<!-- The new Frontier Quest -->
 	<event type="kill" name="theNewFrontierQuestShardOfCorruption" script="the new frontier quest/theNewFrontierQuestShardOfCorruption.lua"/>
 	<event type="kill" name="theNewFrontierQuestTirecz" script="the new frontier quest/theNewFrontierQuestTirecz.lua"/>
-	
+
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>
 	<event type="kill" name="inServiceOfYalaharQuestsAzerus" script="in service of yalahar quest/inServiceOfYalaharQuestsAzerus.lua"/>
 	<event type="kill" name="inServiceOfYalaharQuestsQuara" script="in service of yalahar quest/inServiceOfYalaharQuestsQuara.lua"/>
-	
+
 	<!-- Inquisition Quest -->
 	<event type="kill" name="inquisitionQuestBosses" script="inquisition quest/inquisitionQuestBosses.lua"/>
 	<event type="kill" name="inquisitionQuestUngreez" script="inquisition quest/inquisitionQuestUngreez.lua"/>
-	
+
 	<!-- Killing In The Name Of Quest -->
 	<event type="kill" name="killingInTheNameOfQuestKills" script="killing in the name of quest/killingInTheNameOfQuestKills.lua"/>
-	
+
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
-	
+
 	<!-- Storage Conversion -->
 	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
@@ -48,5 +48,4 @@
 	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
 	<event type="death" name="whiteDeer" script="others/whitedeer.lua"/>
 	<event type="death" name="whiteDeerScouts" script="others/whitedeer_scouts.lua"/>
-
 </creaturescripts>

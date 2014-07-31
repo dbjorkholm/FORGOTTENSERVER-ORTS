@@ -1,5 +1,4 @@
-local raids =
-{
+local raids = {
 	-- Weekly
 	['Monday'] = {
 		['08:00'] = {raidName = 'RatsThais'},
@@ -11,7 +10,7 @@ local raids =
 		['12:00'] = {raidName = 'OrcsThais'}
 	},
 
-	--By date (Day/Month)
+	-- By date (Day/Month)
 	['31/10'] = {
 		['16:00'] = {raidName = 'Halloween Hare'}
 	}
