@@ -1,7 +1,7 @@
 function onSay(cid, words, param)
 	local player = Player(cid)
 	local totalPrice = getBlessingsCost(player:getLevel()) * 5
-	if not(isPlayerPzLocked(cid)) then
+	if not player:isPzLocked() then
 		if player:hasBlessing(1) and player:hasBlessing(2) and player:hasBlessing(3) and player:hasBlessing(4) and player:hasBlessing(5) then
 			player:sendCancelMessage("You have already been blessed by the gods.")
 			return false
