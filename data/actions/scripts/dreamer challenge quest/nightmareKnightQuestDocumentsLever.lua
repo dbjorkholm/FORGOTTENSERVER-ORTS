@@ -1,27 +1,33 @@
 local config = {
-	[3041] = {Position({x = 32836, y = 32221, z = 14}), 7844},
-	[3042] = {Position({x = 32837, y = 32229, z = 14}), 7846},
-	[3043] = {Position({x = 32833, y = 32225, z = 14}), 7845}
+	[3041] = {position = Position(32836, 32221, 14), itemId = 7844},
+	[3042] = {position = Position(32837, 32229, 14), itemId = 7846},
+	[3043] = {position = Position(32833, 32225, 14), itemId = 7845}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local targetItem = config[item.uid]
-	if not targetItem then
+local function reverLever(position)
+	local leverItem = Tile(position):getItemById(1946)
+	if leverItem then
+		leverItem:transform(1945)
+	end
+end
+
+function onUse(cid, item, position, itemEx, toPosition)
+	local altar = config[item.uid]
+	if not altar then
 		return true
 	end
-	
-	if item.itemid == 1945 then
-		local tile = targetItem[1]:getTile()
-		if tile then
-			local thing = tile:getItemById(2145)
-			if thing and thing:isItem() then
-				Item(item.uid):transform(1946)
-				targetItem[1]:sendMagicEffect(CONST_ME_TELEPORT)
-				Game.createItem(targetItem[2], 1, targetItem[1])
-				thing:remove()
-				addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(1946) if thing and thing:isItem() then thing:transform(1945) end end end, 4 * 1000, toPosition)
-			end
-		end
+
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	local diamondItem = Tile(altar.position):getItemById(2145)
+	if diamondItem then
+		diamondItem:remove(1)
+		altar.position:sendMagicEffect(CONST_ME_TELEPORT)
+		Game.createItem(altar.itemId, 1, altar.position)
+		Item(item.uid):transform(1946)
+		addEvent(reverLever, 4 * 1000, position)
 	end
 	return true
 end

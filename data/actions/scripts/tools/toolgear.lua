@@ -58,6 +58,27 @@ local holeId = {
 
 local holes = {468, 481, 483, 7932}
 
+local function revertCask(toPosition)
+	toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemById(2249)
+		if thing and thing:isItem() then
+			thing:transform(5539)
+		end
+	end
+end
+
+local function revertIce(toPosition)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemById(7186)
+		if thing and thing:isItem() then
+			thing:transform(7185)
+		end
+	end
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local tile = toPosition:getTile()
@@ -81,14 +102,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		targetItem:decay()
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif itemEx.itemid == 3621 and itemEx.actionid == 12026 then
-		local chakoyas = {"chakoya toolshaper", "chakoya tribewarden", "chakoya windcaller"}
+		local chakoyas = {'chakoya toolshaper', 'chakoya tribewarden', 'chakoya windcaller'}
 		if player:getStorageValue(Storage.TheIceIslands.Mission02) > 0 and player:getStorageValue(Storage.TheIceIslands.PickAmount) < 3 and player:getStorageValue(Storage.TheIceIslands.Questline) == 3  then
 			player:setStorageValue(Storage.TheIceIslands.PickAmount, player:getStorageValue(Storage.TheIceIslands.PickAmount) + 1)
 			player:setStorageValue(Storage.TheIceIslands.Mission02, player:getStorageValue(Storage.TheIceIslands.Mission02) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			Game.createMonster(chakoyas[math.random(3)], toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
-			tile:getItemById(7185):transform(7186) 
-			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(7186) if thing and thing:isItem() then thing:transform(7185) end end end, 60 * 1000, toPosition)			
+			tile:getItemById(7185):transform(7186)
+			addEvent(revertIce, 60 * 1000, toPosition)
 			if player:getStorageValue(Storage.TheIceIslands.PickAmount) >= 2 then
 				player:setStorageValue(Storage.TheIceIslands.Questline, 4)
 				player:setStorageValue(Storage.TheIceIslands.Mission02, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
@@ -109,7 +130,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif rand == 1 then
 			Game.createItem(2159, 1, toPosition)
 		elseif rand > 95 then
-			Game.createMonster("Scarab", toPosition)
+			Game.createMonster('Scarab', toPosition)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif itemEx.actionid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
@@ -145,10 +166,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif item.itemid == 10515 then
 		if itemEx.uid == 3071 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then
-				doSetMonsterOutfit(cid, "skeleton", 3 * 1000)
+				doSetMonsterOutfit(cid, 'skeleton', 3 * 1000)
 				fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe01, 1)
-				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 				for x = -1, 1 do
 					for y = -1, 1 do
 						Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_YELLOWENERGY)
@@ -158,11 +179,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif itemEx.uid == 3072 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe02) < 1 then
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe02, 1)
-				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 				for x = -1, 1 do
 					for y = -1, 1 do
 						if math.random(2) == 2 then
-							Game.createMonster("rat", {x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z})
+							Game.createMonster('rat', {x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z})
 							Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_TELEPORT)
 						end
 					end
@@ -170,16 +191,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		elseif itemEx.uid == 3073 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe03) < 1 then
-				player:say("You have used the crowbar on a grate.", TALKTYPE_MONSTER_SAY)
+				player:say('You have used the crowbar on a grate.', TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe03, 1)
-				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 			end
 		elseif itemEx.uid == 3074 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1 then
-				doSetMonsterOutfit(cid, "bog raider", 5 * 1000)
-				player:say("You have used the crowbar on a knot.", TALKTYPE_MONSTER_SAY)
+				doSetMonsterOutfit(cid, 'bog raider', 5 * 1000)
+				player:say('You have used the crowbar on a knot.', TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
-				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
+				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 			end
 		elseif itemEx.itemid == 5539 and itemEx.actionid == 12127 and player:getStorageValue(Storage.TheApeCity.Mission07) <= 3 then -- The Ape City - Mission 7: Destroying Casks With Crowbar
 			toPosition:sendMagicEffect(CONST_ME_POFF)
@@ -187,10 +208,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if player:getStorageValue(Storage.TheApeCity.Mission07) == 4 then
 				player:setStorageValue(Storage.TheApeCity.Questline, 17)
 			end
-			player:say("You destroyed a cask.", TALKTYPE_MONSTER_SAY)
+			player:say('You destroyed a cask.', TALKTYPE_MONSTER_SAY)
 			targetItem:transform(2249)
-			addEvent(function(toPosition) toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN) end, 30 * 1000, toPosition)
-			addEvent(function(toPosition) local tile = toPosition:getTile() if tile then local thing = tile:getItemById(2249) if thing and thing:isItem() then thing:transform(5539) end end end, 30 * 1000, toPosition)
+			addEvent(revertCask, 30 * 1000, toPosition)
 		elseif (itemEx.actionid == 100 and itemEx.itemid == 2593) then -- Postman Quest
 			if player:getStorageValue(250) == 3 then
 				player:setStorageValue(250, 4)
@@ -212,7 +232,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				Item(itemEx.uid):remove()
 				Game.setStorageValue(itemEx.actionid)
 			end
-			
+
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
@@ -228,7 +248,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
 			Tile(Position(32619, 31514, 9)):getItemById(5709):remove()
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
+			player:sendTextMessage(MESSAGE_INFO_DESCR, 'You can\'t remove this pile since it\'s currently holding up the tunnel.')
 		end
 	elseif itemEx.actionid == 50127 then
 		local positions = {
