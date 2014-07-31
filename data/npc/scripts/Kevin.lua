@@ -49,21 +49,21 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Excellent! Another job well done! Would you accept another mission?", cid)
 			player:setStorageValue(Storage.postman.Mission06, 13)
 			npcHandler.topic[cid] = 19
-		elseif player:getStorageValue(Storage.postman.Mission07) ==  then
+		elseif player:getStorageValue(Storage.postman.Mission07) ==  7 then
 			npcHandler:say("Once more you have impressed me! Are you willing to do another job?", cid)
 			npcHandler.topic[cid] = 21
-		elseif player:getStorageValue(250) == 34 then
+		elseif player:getStorageValue(Storage.postman.Mission08) == 2 then
 			npcHandler:say("So Waldo is dead? This is grave news indeed. Did you recover his posthorn?", cid)
 			npcHandler.topic[cid] = 23
-		elseif player:getStorageValue(250) == 38 then
+		elseif player:getStorageValue(Storage.postman.Rank) == 4 then
 			npcHandler:say("So are you ready for another mission?", cid)
 			npcHandler.topic[cid] = 25
-		elseif player:getStorageValue(250) == 41 then
+		elseif player:getStorageValue(Storage.postman.Mission09) == 3 then
 			npcHandler:say("You did it? I hope you did not catch a flu in the cold! However theres another mission for you. Are you interested?", cid)
 			npcHandler.topic[cid] = 26
-		elseif player:getStorageValue(250) == 43 then
+		elseif player:getStorageValue(Storage.postman.Mission10) == 2 then
 			npcHandler:say("You have delivered that letter? You are a true postofficer. All over the land bards shallpraise your name. There are no missions for you left right now.", cid)
-			player:setStorageValue(250, 44)
+			player:setStorageValue(Storage.postman.Mission10, 3)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "dress pattern") then
@@ -95,10 +95,10 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.postman.Mission06) == 13 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 20
-		elseif player:getStorageValue(250) == 37 then
+		elseif player:getStorageValue(Storage.postman.Mission08) == 3 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 24
-		elseif player:getStorageValue(250) == 44 then
+		elseif player:getStorageValue(Storage.postman.Mission10) == 3 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 27
 		end
@@ -169,7 +169,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.postman.Mission06, 7)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 19 then
-			npcHandler:say("Good, so listen. Hugo Chief informed me that he needs the measurements of our postofficers. Go and bring me the measurements of Benjamin, Lokur, Dove, Liane, Chrystal and Olrik.", cid)
+			npcHandler:say("Good, so listen. Hugo Chief informed me that he needs the measurements of our postofficers. Go and bring me the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik.", cid)
 			player:setStorageValue(Storage.postman.Mission07, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
@@ -181,11 +181,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 22
 		elseif npcHandler.topic[cid] == 22 then
 			npcHandler:say("Find out about his whereabouts and retrieve him or at least his posthorn. He was looking for a new underground passage that is rumoured to be found underneath the troll-infested Mountain east of Thais.", cid)
-			player:setStorageValue(Storage.postman.Mission08, 35)
+			player:setStorageValue(Storage.postman.Mission08, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 23 then
 			npcHandler:say("Thank you. We will honour this. Your next mission will be a very special one. Good thing you are a special person as well. Are you ready?", cid)
-			player:setStorageValue(250, 37)
+			player:setStorageValue(Storage.postman.Mission08, 3)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 24 then
 			npcHandler:say("From now on you are a grand postman for special operations. You are an honoured member of our guild and earned the privilege of your own post horn. Here, take it.", cid)
@@ -194,11 +194,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 25 then
 			npcHandler:say("So listen well. Behind the lower left door you will find a bag. The letters in the bag are for none other than Santa Claus! Deliver them to his house on the isle of Vega, USE thebag on his mailbox and report back here.", cid)
-			player:setStorageValue(250, 39)
+			player:setStorageValue(Storage.postman.Mission09, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 26 then
 			npcHandler:say("Excellent. Here is a letter for you to deliver. Well, to be honest, no one else volunteered. It's a letter from the mother of Markwin, the king of Mintwallin. Deliver that letter to him, but note that you will not be welcome there.", cid)
-			player:setStorageValue(250, 42)
+			player:setStorageValue(Storage.postman.Mission09, 4)
+			player:setStorageValue(Storage.postman.Mission10, 1)
+			player:addItem(2333, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 27 then
 			npcHandler:say("I grant you the title of archpostman. You are a legend in our guild. As privilege of your newly aquired status you are allowed to make use of certain mailboxes in dangerous areas. Just look out for them and you'll see.", cid)
