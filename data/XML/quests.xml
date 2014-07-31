@@ -813,4 +813,94 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
+	<quest name="The Postman Missions" startstorageid="50137" startstoragevalue="1">
+		<mission name="Mission 1 - Check Postal Routes" storageid="50137" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 2 - Fix Mailbox" storageid="50138" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 3 - Bill Delivery" storageid="50139" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 4 - Aggressive Dogs" storageid="50140" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 5 - Present Delivery" storageid="50141" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 6 - New Uniforms" storageid="50142" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 7 - Measurements" storageid="50143" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 8 - Missing Courier" storageid="50144" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 9 - Dear Santa" storageid="50145" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 10 - Mintwallin" storageid="50146" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Postman Rank" storageid="50147" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+	</quest>
 </quests>
