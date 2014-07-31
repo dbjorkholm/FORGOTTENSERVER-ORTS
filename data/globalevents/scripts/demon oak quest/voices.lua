@@ -1,6 +1,6 @@
-local questAreaPosition = {
-	{x = 32706, y = 32345, z = 7, stackpos = 255},
-	{x = 32725, y = 32357, z = 7, stackpos = 255}
+local questArea = {
+	Position(32706, 32345, 7),
+	Position(32725, 32357, 7)
 }
 
 local sounds = {
@@ -14,12 +14,12 @@ local sounds = {
 }
 
 function onThink(interval, lastExecution)
-	local specs = Game.getSpectators(DEMON_OAK_POSITION, false, true, 0, 15, 0, 15)
-	for i = 1, #specs do
-		if isInRange(specs[i]:getPosition(), questAreaPosition[1], questAreaPosition[2]) then
+	local spectators = Game.getSpectators(DEMON_OAK_POSITION, false, true, 0, 15, 0, 15)
+	for i = 1, #spectators do
+		if isInRange(spectators[i]:getPosition(), questArea[1], questArea[2]) then
 			return true
 		end
-		specs[i]:say(sounds[math.random(#sounds)], TALKTYPE_MONSTER_YELL, false, 0, DEMON_OAK_POSITION)
+		spectators[i]:say(sounds[math.random(#sounds)], TALKTYPE_MONSTER_YELL, false, 0, DEMON_OAK_POSITION)
 	end
 	return true
 end

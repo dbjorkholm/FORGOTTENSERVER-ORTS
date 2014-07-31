@@ -9,14 +9,15 @@ local positions = {
 }
 
 function onThink(interval, lastExecution)
-	for i = 1, 5 do
+	for i = 1, #positions do
 		if math.random(2) == 1 then
 			local tile = Tile(positions[i])
-			if tile:getItemById(12214) then
+			if not positions[i].opened then
 				tile:getItemById(12214):transform(12213)
 			else
 				tile:getItemById(12213):transform(12214)
 			end
+			positions[i].opened = not positions[i].opened
 		end
 	end
 	return true
