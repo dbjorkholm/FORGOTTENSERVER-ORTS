@@ -10,7 +10,6 @@ function decayFlower()
 	end
 end
 
-
 local function bloom()
 	if math.random(7) ~= 1 then
 		addEvent(bloom, 60 * 60 * 1000)
