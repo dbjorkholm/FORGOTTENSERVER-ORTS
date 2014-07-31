@@ -4,7 +4,7 @@ local config = {
 	[3043] = {position = Position(32833, 32225, 14), itemId = 7845}
 }
 
-local function reverLever(position)
+local function revertLever(position)
 	local leverItem = Tile(position):getItemById(1946)
 	if leverItem then
 		leverItem:transform(1945)
@@ -27,7 +27,7 @@ function onUse(cid, item, position, itemEx, toPosition)
 		altar.position:sendMagicEffect(CONST_ME_TELEPORT)
 		Game.createItem(altar.itemId, 1, altar.position)
 		Item(item.uid):transform(1946)
-		addEvent(reverLever, 4 * 1000, position)
+		addEvent(revertLever, 4 * 1000, position)
 	end
 	return true
 end
