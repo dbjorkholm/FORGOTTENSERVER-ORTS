@@ -14,7 +14,7 @@ function onThink(interval)
 				player:setOutfit(outfit)
 				player:removeMount(mount.mountId)
 				player:setStorageValue(mount.storage, -1)
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The time of your mount ' .. var .. ' has ended, to get it again back to the NPC.')
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The time of your mount ' .. mount.name .. ' has ended, to get it again back to the NPC.')
 			end
 		end
 	end
