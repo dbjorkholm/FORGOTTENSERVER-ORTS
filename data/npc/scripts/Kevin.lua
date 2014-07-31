@@ -174,7 +174,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
 			npcHandler:say("From now on it shall be known that you are a grand postman. You are now a privilegedmember until the end of days. Most captains around the world have an agreement with our guild to transport our privileged members, like you, for less gold.", cid)
-			player:setStorageValue(250, 26)
+			player:setStorageValue(Storage.postman.Rank, 3)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
 			npcHandler:say("Ok but your next assignment might be dangerous. Our Courier Waldo has been missing for a while. I must assume he is dead. Can you follow me so far?", cid)
@@ -189,7 +189,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 23 then
 			npcHandler:say("From now on you are a grand postman for special operations. You are an honoured member of our guild and earned the privilege of your own post horn. Here, take it.", cid)
-			player:setStorageValue(250, 38)
+			player:setStorageValue(Storage.postman.Rank, 4)
 			player:addItem(2078, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 24 then
@@ -202,7 +202,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 26 then
 			npcHandler:say("I grant you the title of archpostman. You are a legend in our guild. As privilege of your newly aquired status you are allowed to make use of certain mailboxes in dangerous areas. Just look out for them and you'll see.", cid)
-			player:setStorageValue(250, 45)
+			player:setStorageValue(Storage.postman.Rank, 5)
 			npcHandler.topic[cid] = 0
 		end
 	end
