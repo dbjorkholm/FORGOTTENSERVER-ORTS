@@ -8,12 +8,11 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 function SimonBeggarStaffStorage(cid, message, keywords, parameters, node)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if player:getStorageValue(60134) == -1 then
-		player:setStorageValue(60134, 1)
+	if Player(cid):getStorageValue(60134) == -1 then
+		Player(cid):setStorageValue(60134, 1)
 		npcHandler:say("Good! Come back to me once you have retrieved my staff. Good luck.", cid)
 	else
 		npcHandler:say("I alrealy give you information about mine staff.", cid)
@@ -21,11 +20,11 @@ function SimonBeggarStaffStorage(cid, message, keywords, parameters, node)
 end
 
 function BeggarFirst(cid, message, keywords, parameters, node)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if configManager.getBoolean(configKeys.FREE_PREMIUM) or isPremium(cid) == true then
+	local player = Player(cid)
+	if player:isPremium() == true then
 		if player:getStorageValue(22029) == -1 then
 			if player:getItemCount(5883) >= 100 and player:getMoney() >= 20000 then
 				if player:removeItem(5883, 100) and player:removeMoney(20000) then
@@ -45,15 +44,15 @@ function BeggarFirst(cid, message, keywords, parameters, node)
 end
 
 function BeggarSecond(cid, message, keywords, parameters, node)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if configManager.getBoolean(configKeys.FREE_PREMIUM) or isPremium(cid) == true then
+	local player = Player(cid)
+	if player:isPremium() == true then
 		if player:getStorageValue(22030) == -1 then	
 			if player:getItemCount(6107) >= 1 then
 				if player:removeItem(6107, 1) then
-					npcHandler:say("Ah, right! The Beggar Staff! Here you go.", cid)
+					npcHandler:say("Ah, right! The beggar staff! Here you go.", cid)
 					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 					player:setStorageValue(22030, 1)
 					player:addOutfitAddon(153, 2)
@@ -69,14 +68,13 @@ function BeggarSecond(cid, message, keywords, parameters, node)
 end
 
 function key(cid, message, keywords, parameters, node)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if player:getMoney() >= 800 then
-		if player:removeItem(800) then
+	if Player(cid):getMoney() >= 800 then
+		if Player(cid):removeItem(800) then
 			npcHandler:say("Here, take the key!", cid)
-			local key = player:addItem(2087, 1)
+			local key = Player(cid):addItem(2087, 1)
 			key:setActionId(3940)
 		end
 	else
