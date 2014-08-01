@@ -82,9 +82,22 @@ tasks =
 tasksByPlayer = 3
 repeatTimes = 3
 
+function Player:getPawAndFurRank()
+	return (self:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or self:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or self:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or self:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
+end
+
 function getPlayerRank(cid)
 	local p = Player(cid)
 	return (p:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or p:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or p:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or p:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
+end
+
+function Player:getPawAndFurPoints()
+	return math.max(self:getStorageValue(POINTSSTORAGE), 0)
+end
+
+function getPlayerTasksPoints(cid)
+	local p = Player(cid)
+	return math.max(p:getStorageValue(POINTSSTORAGE), 0)
 end
 
 function getTaskByName(name, table)
@@ -103,33 +116,32 @@ function getTaskByName(name, table)
 	return false
 end
 
-function getTasksByPlayer(cid)
-	local p = Player(cid)
+function Player:getTasks()
 	local canmake = {}
 	local able = {}
 	for k, v in pairs(tasks) do
-		if(p:getStorageValue(QUESTSTORAGE_BASE + k) < 1 and p:getStorageValue(REPEATSTORAGE_BASE + k) < repeatTimes) then
+		if self:getStorageValue(QUESTSTORAGE_BASE + k) < 1 and self:getStorageValue(REPEATSTORAGE_BASE + k) < repeatTimes then
 			able[k] = true
-			if(p:getLevel() < v.level[1] or p:getLevel() > v.level[2]) then
+			if self:getLevel() < v.level[1] or self:getLevel() > v.level[2] then
 				able[k] = false
 			end
-			if(v.storage and p:getStorageValue(v.storage[1]) < v.storage[2]) then
+			if v.storage and self:getStorageValue(v.storage[1]) < v.storage[2] then
 				able[k] = false
 			end
 
-			if(v.rank) then
-				if(getPlayerRank(cid) < v.rank) then
+			if v.rank then
+				if self:getPawAndFurRank() < v.rank then
 					able[k] = false
 				end
 			end
 
-			if(v.premium) then
-				if(not(isPremium(cid))) then
+			if v.premium then
+				if not self:isPremium() then
 					able[k] = false
 				end
 			end
 
-			if(able[k]) then
+			if able[k] then
 				table.insert(canmake, k)
 			end
 		end
@@ -137,42 +149,41 @@ function getTasksByPlayer(cid)
 	return canmake
 end
 
-function canStartTask(cid, name, table)
-	local p = Player(cid)
+function Player:canStartTask(name, table)
 	local v = ""
 	local id = 0
 	local t = (table and table or tasks)
 	for k, i in pairs(t) do
-		if(i.name) then
-			if(i.name:lower() == name:lower()) then
+		if i.name then
+			if i.name:lower() == name:lower() then
 				v = i
 				id = k
 				break
 			end
 		else
-			if(i.raceName:lower() == name:lower()) then
+			if i.raceName:lower() == name:lower() then
 				v = i
 				id = k
 				break
 			end
 		end
 	end
-	if(v == "") then
+	if v == "" then
 		return false
 	end
-	if(p:getStorageValue(QUESTSTORAGE_BASE + id) > 0) then
+	if self:getStorageValue(QUESTSTORAGE_BASE + id) > 0 then
 		return false
 	end
-	if(p:getStorageValue(REPEATSTORAGE_BASE +  id) >= repeatTimes) or (v.norepeatable and p:getStorageValue(REPEATSTORAGE_BASE +  id) > 0) then
+	if self:getStorageValue(REPEATSTORAGE_BASE +  id) >= repeatTimes or v.norepeatable and self:getStorageValue(REPEATSTORAGE_BASE +  id) > 0 then
 		return false
 	end
-	if(p:getLevel() >= v.level[1] and p:getLevel() <= v.level[2]) then
-		if(v.premium) then
-			if(isPremium(cid)) then
-				if(v.rank) then
-					if(getPlayerRank(cid) >= v.rank) then
-						if(v.storage) then 
-							if(p:getStorageValue(v.storage[1]) >= v.storage[2]) then
+	if v.level and self:getLevel() >= v.level[1] and self:getLevel() <= v.level[2] then
+		if v.premium then
+			if self:isPremium() then
+				if v.rank then
+					if self:getPawAndFurRank() >= v.rank then
+						if v.storage then
+							if self:getStorageValue(v.storage[1]) >= v.storage then 
 								return true
 							end
 						else
@@ -182,6 +193,8 @@ function canStartTask(cid, name, table)
 				else
 					return true
 				end
+			else
+				return true
 			end
 		else
 			return true
@@ -190,11 +203,10 @@ function canStartTask(cid, name, table)
 	return false
 end
 
-function getPlayerStartedTasks(cid)
-	local p = Player(cid)
+function Player:getStartedTasks()
 	local tmp = {}
 	for k, v in pairs(tasks) do
-		if(p:getStorageValue(QUESTSTORAGE_BASE + k) > 0 and p:getStorageValue(QUESTSTORAGE_BASE + k) < 2) then
+		if self:getStorageValue(QUESTSTORAGE_BASE + k) > 0 and self:getStorageValue(QUESTSTORAGE_BASE + k) < 2 then
 			table.insert(tmp, k)
 		end
 	end
