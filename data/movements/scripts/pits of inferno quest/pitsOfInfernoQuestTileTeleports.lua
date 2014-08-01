@@ -32,11 +32,11 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 	
-	local targetTile = config[item.actionid]
-	if not targetTile then
+	local targetPosition = config[item.actionid]
+	if not targetPosition then
 		return true
 	end
 	
-	player:teleportTo(targetTile)
+	player:teleportTo(targetPosition)
 	return true
 end

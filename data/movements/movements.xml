@@ -123,7 +123,6 @@
 	<movevent event="StepIn" fromuid="23201" touid="23203" script="svargrond arena quest/arena_trophy.lua"/>
 
 	<!-- Dreamer Challenge Quest -->
-	<movevent event="StepIn" actionid="8031" script="dreamer challenge quest/dreamerChallengeQuestAchievement.lua"/>
 	<movevent event="StepIn" fromuid="2241" touid="2242" script="dreamer challenge quest/dreamerChallengeQuestCarrot.lua"/>
 	<movevent event="StepIn" uniqueid="2243" script="dreamer challenge quest/dreamerChallengeQuestFireBugTeleport.lua"/>
 	<movevent event="StepIn" fromaid="2245" toaid="2246" script="dreamer challenge quest/dreamerChallengeQuestRiddle.lua"/>
@@ -184,10 +183,6 @@
 	<movevent event="StepIn" uniqueid="50107" script="beregar quest/bellow.lua"/>
 	<movevent event="StepIn" uniqueid="50127" script="beregar quest/pythiusTeleport.lua"/>
 	<movevent event="StepIn" actionid="50126" script="beregar quest/pythiusBossTeleport.lua"/>
-
-	<!-- Rookgaard Quests
-	<movevent event="StepIn" actionid="5092" script="rookgaard/bridgeNorth.lua"/>
-	<movevent event="StepIn" actionid="5091" script="rookgaard/bridgeSouth.lua"/>-->
 
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>

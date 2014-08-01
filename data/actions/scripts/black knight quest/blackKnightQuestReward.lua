@@ -1,21 +1,21 @@
+local config = {
+	[3027] = {storageKey = 491, rewardId = 2487},
+	[9055] = {storageKey = 490, rewardId = 2519}
+}
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local targetTree = config[item.uid]
+	if not targetTree then
+		return true
+	end
+	
 	local player = Player(cid)
-	if item.uid == 9055 then
-		if player:getStorageValue(490) ~= 1 then
-			player:setStorageValue(490, 1)
-			player:addItem(2519, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a crown shield.")
-		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The tree is empty.")
-		end
-	elseif item.uid == 3027 then
-		if player:getStorageValue(491) ~= 1 then
-			player:setStorageValue(491, 1)
-			player:addItem(2487, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a crown armor.")
-		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The tree is empty.")
-		end
+	if player:getStorageValue(targetTree.storageKey) ~= 1 then
+		player:setStorageValue(targetTree.storageKey, 1)
+		player:addItem(targetTree.rewardId, 1)
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. ItemType(targetItem.rewardId):getName() .. '.')
+	else
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 	end
 	return true
 end
