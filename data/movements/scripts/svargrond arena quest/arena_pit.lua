@@ -1,3 +1,5 @@
+local condition = Condition(CONDITION_OUTFIT, CONDITIONID_COMBAT)
+
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
@@ -6,7 +8,6 @@ function onStepIn(cid, item, position, fromPosition)
 
 	SvargrondArena.cancelEvents(cid)
 	if item.actionid == 25300 then
-		local condition = Condition(CONDITION_OUTFIT, CONDITIONID_COMBAT)
 		condition:setTicks(120000)
 		condition:addOutfit({lookType = 111})
 		player:addCondition(condition)
