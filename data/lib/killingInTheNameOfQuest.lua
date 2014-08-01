@@ -86,18 +86,8 @@ function Player:getPawAndFurRank()
 	return (self:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or self:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or self:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or self:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
 end
 
-function getPlayerRank(cid)
-	local p = Player(cid)
-	return (p:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or p:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or p:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or p:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or p:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
-end
-
 function Player:getPawAndFurPoints()
 	return math.max(self:getStorageValue(POINTSSTORAGE), 0)
-end
-
-function getPlayerTasksPoints(cid)
-	local p = Player(cid)
-	return math.max(p:getStorageValue(POINTSSTORAGE), 0)
 end
 
 function getTaskByName(name, table)

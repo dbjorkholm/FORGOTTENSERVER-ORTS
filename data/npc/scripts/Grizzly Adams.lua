@@ -172,7 +172,7 @@ function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler:say({'The status of your current tasks is:\n' .. text}, cid)
 		else
-			npcHandler:say('You haven\'t started any task.', cid)
+			npcHandler:say('You haven\'t started any task yet.', cid)
 		end
 	elseif msgcontains('report', msg) then
 		local started = player:getStartedTasks()
