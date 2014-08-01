@@ -181,6 +181,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 22
 		elseif npcHandler.topic[cid] == 22 then
 			npcHandler:say("Find out about his whereabouts and retrieve him or at least his posthorn. He was looking for a new underground passage that is rumoured to be found underneath the troll-infested Mountain east of Thais.", cid)
+			player:setStorageValue(Storage.postman.Mission07, 8)
 			player:setStorageValue(Storage.postman.Mission08, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 23 then
