@@ -7,17 +7,17 @@
 		<flag summonable="0"/>
 		<flag attackable="1"/>
 		<flag hostile="0"/>
-		<flag illusionable="1"/>
-		<flag convinceable="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
 		<flag pushable="1"/>
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
-		<flag targetdistance="4"/>
+		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
 		<flag runonhealth="25"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="5"/>
+		<attack name="melee" interval="2000" min="0" max="-5"/>
 	</attacks>
 	<defenses armor="2" defense="2"/>
 	<voices interval="5000" chance="10">
