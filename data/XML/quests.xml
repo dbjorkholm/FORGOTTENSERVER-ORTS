@@ -670,6 +670,92 @@
 			<missionstate id="5" description="You have completed the Quest!"/>
 		</mission>
 	</quest>
+	<quest name="The Postman Missions" startstorageid="12450" startstoragevalue="1">
+		<mission name="Mission 1 - Check Postal Routes" storageid="12450" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Kevin wants you to travel with Captain Bluebear to Carlin."/>
+			<missionstate id="2" description="Kevin wants you to travel with Uzon in Femor Hills to Edron."/>
+			<missionstate id="3" description="Kevin wants you to travel with Captain Seahorse to Venore."/>
+			<missionstate id="4" description="Kevin wants you to travel with Brodrosch to Cormaya"/>
+			<missionstate id="5" description="You have checked the Postal Routes, report back to Kevin!"/>
+			<missionstate id="6" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 2 - Fix Mailbox" storageid="12451" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to fix one of their Mailboxes located on Folda with a crowbar."/>
+			<missionstate id="2" description="You have fixed the mailbox, report back to Kevin!"/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 3 - Bill Delivery" storageid="12452" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to deliver a bill to the stage magician David Brassacres. He's hiding from his creditors somewhere in Venore."/>
+			<missionstate id="2" description="You have delivered the bill to the stage magician David Brassacres, report back to Kevin!"/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 4 - Aggressive Dogs" storageid="12453" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Kevin has asked you to deliver 20 Bones to him."/>
+			<missionstate id="2" description="You have delivered 20 Bones to Kevin."/>
+		</mission>
+		<mission name="Mission 5 - Present Delivery" storageid="12454" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Kevin has asked you to retrieve the present behind the door on the lower right side of his room and deliver it to Dermot in Fibula."/>
+			<missionstate id="2" description="Deliver the present to Dermot in Fibula."/>
+			<missionstate id="3" description="You have delivered the present to Dermot, report back to Kevin!"/>
+			<missionstate id="4" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 6 - New Uniforms" storageid="12455" startvalue="1" endvalue="13">
+			<missionstate id="1" description="Kevin has asked you to travel to Venore and negotiate with Hugo for new uniforms."/>
+			<missionstate id="2" description="Hugo said that his dog ate the last dress pattern they used and he has no clue where Kevin Postner got it from, go ask Kevin."/>
+			<missionstate id="3" description="Kevin wants you to ask the great Technomancer Talphion in Kazordoon for the technical details."/>
+			<missionstate id="4" description="Talphion will send a copy to Kevin, report back to Kevin."/>
+			<missionstate id="5" description="Kevin wants you tk ask Queen Eloise of Carlin for the perfect colours."/>
+			<missionstate id="6" description="Queen Eloise said she will send some color samples via mail to Kevin, report back to Kevin."/>
+			<missionstate id="7" description="Kevin has asked you to go to Noodles and find out what he dislikes the most: mouldy cheese, a piece of fur or a banana skin."/>
+			<missionstate id="8" description="Noodles seems to like banana skin, check if he likes dirty fur."/>
+			<missionstate id="9" description="Noodles seems to like dirty fur, check if he likes mouldy cheese."/>
+			<missionstate id="10" description="Noodles dislikes mouldy cheese! Report back to Kevin."/>
+			<missionstate id="11" description="Kevin wants you to tell Hugo that they order those uniforms."/>
+			<missionstate id="12" description="Hugo has agreed to make the uniforms, report back to Kevin!"/>
+			<missionstate id="13" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 7 - Measurements" storageid="12456" startvalue="1" endvalue="8">
+			<missionstate id="1" description="Kevin wants you to bring him the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik."/>
+			<missionstate id="2" description="You have received the measurements from 1 of 6 postofficers."/>
+			<missionstate id="3" description="You have received the measurements from 2 of 6 postofficers."/>
+			<missionstate id="4" description="You have received the measurements from 3 of 6 postofficers."/>
+			<missionstate id="5" description="You have received the measurements from 4 of 6 postofficers."/>
+			<missionstate id="6" description="You have received the measurements from 5 of 6 postofficers."/>
+			<missionstate id="7" description="You have received all measurements, report back to Kevin!"/>
+			<missionstate id="8" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 8 - Missing Courier" storageid="12457" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 9 - Dear Santa" storageid="12458" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Mission 10 - Mintwallin" storageid="12459" startvalue="1" endvalue="6">
+			<missionstate id="1" description=""/>
+			<missionstate id="2" description=""/>
+			<missionstate id="3" description=""/>
+			<missionstate id="4" description=""/>
+			<missionstate id="5" description=""/>
+			<missionstate id="6" description=""/>
+		</mission>
+		<mission name="Postman Rank" storageid="12460" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Assistant Postman"/>
+			<missionstate id="2" description="Postman"/>
+			<missionstate id="3" description="Grand Postman"/>
+			<missionstate id="4" description="Grand Postman for Special Operations"/>
+			<missionstate id="5" description="Arch Postman"/>
+		</mission>
+	</quest>
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
 		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
