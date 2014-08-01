@@ -59,9 +59,11 @@ function onLogin(cid)
         end
      
         local backpack = player:addItem(1988)
-        for i = 1, #targetVocation[2] do
-            backpack:addItem(targetVocation[2][i][1], targetVocation[2][i][2])
-        end
+		if backpack then
+			for i = 1, #targetVocation[2] do
+				backpack:addItem(targetVocation[2][i][1], targetVocation[2][i][2])
+			end
+		end
     end
     return true
 end
