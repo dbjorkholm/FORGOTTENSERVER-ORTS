@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if Aluguel_mounts[msg] then
-			if Aluguel_mounts[msg].premium == true and not isPremium(cid) then
+			if Aluguel_mounts[msg].premium == true and not player:isPremium() then
 				selfSay('You need to be premium to rent this mount.', cid) return true
 			elseif player:getLevel() < Aluguel_mounts[msg].level then
 				selfSay('You need level ' .. Aluguel_mounts[msg].level .. ' or more to rent this mount.', cid) return true

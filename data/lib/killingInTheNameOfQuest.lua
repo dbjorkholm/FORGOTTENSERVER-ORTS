@@ -124,7 +124,7 @@ function getTasksByPlayer(cid)
 			end
 
 			if(v.premium) then
-				if(not(isPremium(cid))) then
+				if(not(p:isPremium())) then
 					able[k] = false
 				end
 			end
@@ -168,7 +168,7 @@ function canStartTask(cid, name, table)
 	end
 	if(p:getLevel() >= v.level[1] and p:getLevel() <= v.level[2]) then
 		if(v.premium) then
-			if(isPremium(cid)) then
+			if(p:isPremium()) then
 				if(v.rank) then
 					if(getPlayerRank(cid) >= v.rank) then
 						if(v.storage) then 
