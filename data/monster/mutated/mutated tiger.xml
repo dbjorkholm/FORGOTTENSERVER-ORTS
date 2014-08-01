@@ -17,8 +17,8 @@
 		<flag runonhealth="100"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="60"/>
-		<attack name="physical" interval="2000" chance="20" length="5" spread="3" min="-0" max="-200">
+		<attack name="melee" interval="2000" min="0" max="-145"/>
+		<attack name="physical" interval="2000" chance="20" length="5" spread="3" min="0" max="-200">
 			<attribute key="areaEffect" value="yellowspark"/>
 		</attack>
 	</attacks>
@@ -26,7 +26,7 @@
 		<defense name="invisible" interval="2000" chance="10" duration="2000">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
-		<defense name="healing" interval="2000" chance="10" min="150" max="300">
+		<defense name="healing" interval="2000" chance="10" min="150" max="200">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
