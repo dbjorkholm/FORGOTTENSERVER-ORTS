@@ -341,8 +341,13 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	-- WAGON TICKET
 <<<<<<< HEAD
+<<<<<<< HEAD
 	local player = Player(cid)
 	if msgcontains(msg, "ticket")  then
+=======
+	if(msgcontains(msg, "ticket")) then
+		local player = Player(cid)
+>>>>>>> parent of fe0ddfc... Fix Lokur. Now it should sell wagon tickets correctly.
 		if player:getStorageValue(1131) < os.time() then
 =======
 	if(msgcontains(msg, "ticket")) then
@@ -355,8 +360,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Your weekly ticket is still valid. Would be a waste of money to purchase a second one", cid)
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
+	elseif(msgcontains(msg, "yes")) then
+		if(npcHandler.topic[cid] == 1) then
 			if player:getMoney() >= 250 then
 				player:removeMoney(250)
 				player:setStorageValue(Storage.wagon.Ticket, os.time() + 7 * 24 * 60 * 60)
@@ -366,8 +371,13 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
+<<<<<<< HEAD
 	elseif npcHandler.topic[cid] == 1 then 
 		if msgcontains(msg, "no")  then 
+=======
+	elseif(npcHandler.topic[cid] == 1) then 
+		if(msgcontains(msg, "no")) then 
+>>>>>>> parent of fe0ddfc... Fix Lokur. Now it should sell wagon tickets correctly.
 			npcHandler:say("No then.", cid)	
 			npcHandler.topic[cid] = 0
 		end
