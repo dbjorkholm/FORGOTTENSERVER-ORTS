@@ -1,5 +1,5 @@
 local specialQuests = {
-	[2215] = 2215, -- Annihilator
+	[2215] = Storage.Annihilator.Done, -- Annihilator
 	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
 	[10544] = 10544,
 	[26300] = 26300,
