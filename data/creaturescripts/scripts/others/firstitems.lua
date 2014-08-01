@@ -47,23 +47,23 @@ local config = {
 }
 
 function onLogin(cid)
-    local player = Player(cid)
-    local targetVocation = config[player:getVocation():getId()]
-    if not targetVocation then
-        return true
-    end
- 
-    if player:getLastLoginSaved() == 0 then
-        for i = 1, #targetVocation[1] do
-            player:addItem(targetVocation[1][i][1], targetVocation[1][i][2])
-        end
-     
-        local backpack = player:addItem(1988)
+	local player = Player(cid)
+	local targetVocation = config[player:getVocation():getId()]
+	if not targetVocation then
+		return true
+	end
+
+	if player:getLastLoginSaved() == 0 then
+		for i = 1, #targetVocation[1] do
+			player:addItem(targetVocation[1][i][1], targetVocation[1][i][2])
+		end
+
+		local backpack = player:addItem(1988)
 		if backpack then
 			for i = 1, #targetVocation[2] do
 				backpack:addItem(targetVocation[2][i][1], targetVocation[2][i][2])
 			end
 		end
-    end
-    return true
+	end
+	return true
 end
