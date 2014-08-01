@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Blood Beast" nameDescription="a blood beast" race="blood" experience="1000" speed="250" manacost="0">
 	<health now="1600" max="1600"/>
-	<look type="22" corpse="5962"/>
+	<look type="602" corpse="5962"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>
