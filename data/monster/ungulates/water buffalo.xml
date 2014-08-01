@@ -9,24 +9,16 @@
 		<flag hostile="1"/>
 		<flag illusionable="0"/>
 		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="30"/>
+		<attack name="melee" interval="2000" min="0" max="-40"/>
 	</attacks>
-	<elements>
-		<element physicalPercent="5"/>
-	</elements>
-	<immunities>
-		<immunity earth="1"/>
-		<immunity paralyze="1"/>
-		<immunity invisible="1"/>
-	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="Gnorrr!"/>
 		<voice sentence="Gnarrr!"/>
@@ -34,8 +26,8 @@
 		<voice sentence="Mrrr!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="20" chance="100000"/><!-- gold coin -->
-		<item id="2666" countmax="4" chance="33600"/><!-- Meat -->
-		<item id="2671" countmax="3" chance="39200"/><!-- Ham -->
+		<item id="2148" countmax="20" chance="100000"/>	<!-- gold coin -->
+		<item id="2666" countmax="4" chance="33600"/>	<!-- meat -->
+		<item id="2671" countmax="3" chance="39200"/>	<!-- ham -->
 	</loot>
 </monster>
