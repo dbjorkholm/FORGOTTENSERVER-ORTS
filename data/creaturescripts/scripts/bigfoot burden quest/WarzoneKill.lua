@@ -10,7 +10,7 @@ function onKill(cid, target, lastHit)
 		return true
 	end
 
-	local bossValue = bosses[targetName:getName():lower()]
+	local bossValue = bosses[targetMonster:getName():lower()]
 	if not bossValue then
 		return true
 	end
