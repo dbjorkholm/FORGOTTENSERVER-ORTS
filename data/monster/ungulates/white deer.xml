@@ -23,6 +23,6 @@
 		<voice sentence="*bell*"/>
 	</voices>
 	<script>
-		<event name="whiteDeer"/>
+		<event name="WhiteDeerDeath"/>
 	</script>
 </monster>

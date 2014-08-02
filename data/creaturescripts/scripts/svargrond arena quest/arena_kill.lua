@@ -1,16 +1,6 @@
-local function getEffectPositions(pos)
-	return	{
-				{x = pos.x - 1, y = pos.y,     z = pos.z},
-				{x = pos.x + 1, y = pos.y,     z = pos.z},
-				{x = pos.x + 1, y = pos.y - 1, z = pos.z},
-				{x = pos.x + 1, y = pos.y + 1, z = pos.z},
-				{x = pos.x,     y = pos.y,     z = pos.z}
-			}
-end
-
 function onKill(cid, target)
-	local monster = Monster(target)
-	if not monster then
+	local targetMonster = Monster(target)
+	if not targetMonster then
 		return true
 	end
 
@@ -25,26 +15,27 @@ function onKill(cid, target)
 		return true
 	end
 
-	if isInArray(ARENA[arena].creatures, monster:getName():lower()) then
-		local pillarTile = Tile(PITS[pit].pillar)
-		if pillarTile then
-			local pillarItem = pillarTile:getItemById(SvargrondArena.itemPillar)
-			if pillarItem then
-				pillarItem:remove()
-
-				local teleportItem = Game.createItem(SvargrondArena.itemTeleport, 1, PITS[pit].tp)
-				if teleportItem then
-					teleportItem:setActionId(25200)
-				end
-
-				for _, position in ipairs(getEffectPositions(PITS[pit].pillar)) do
-					Position(position):sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				end
-			end
-		end
-
-		player:setStorageValue(Storage.SvargrondArena.Pit, pit + 1)
-		player:say("Victory! Head through the new teleporter into the next room.", TALKTYPE_MONSTER_SAY)
+	if not isInArray(ARENA[arena].creatures, targetMonster:getName():lower()) then
+		return true
 	end
+
+	-- Remove pillar and create teleport
+	local pillarTile = Tile(PITS[pit].pillar)
+	if pillarTile then
+		local pillarItem = pillarTile:getItemById(SvargrondArena.itemPillar)
+		if pillarItem then
+			pillarItem:remove()
+
+			local teleportItem = Game.createItem(SvargrondArena.itemTeleport, 1, PITS[pit].tp)
+			if teleportItem then
+				teleportItem:setActionId(25200)
+			end
+
+			SvargrondArena.sendPillarEffect(pit)
+		end
+	end
+
+	player:setStorageValue(Storage.SvargrondArena.Pit, pit + 1)
+	player:say('Victory! Head through the new teleporter into the next room.', TALKTYPE_MONSTER_SAY)
 	return true
 end
