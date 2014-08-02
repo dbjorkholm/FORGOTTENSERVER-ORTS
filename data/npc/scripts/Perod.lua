@@ -11,7 +11,7 @@ function onThink()
 	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
 		if math.random(100) < 25  then
-			Npc():say("General equipment and all sorts of goods. Visit my store!", TALKTYPE_SAY)
+			Npc():say("Stop by before embarking on your great adventure! Distance weapons and general equipment on sale today!", TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -40,9 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Oh, please come in, |PLAYERNAME|. What can I do for you? If you need adventure equipment, ask me for a {trade}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. {Footballs} have to be purchased separately.")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

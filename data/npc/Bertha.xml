@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Bertha" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Bertha" script="Bertha.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="140" head="57" body="97" legs="116" feet="99" addons="0" />
-<voices>
-<voice text="Hey there, need some general goods or paperware?" interval2="100" margin="1" yell="no"/>
-</voices>
 <parameters>
 <parameter key="module_keywords" value="1" />
         <parameter key="keywords" value="goods;" />
