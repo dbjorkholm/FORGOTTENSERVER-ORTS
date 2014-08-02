@@ -211,9 +211,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:say('You destroyed a cask.', TALKTYPE_MONSTER_SAY)
 			targetItem:transform(2249)
 			addEvent(revertCask, 30 * 1000, toPosition)
-		elseif (itemEx.actionid == 100 and itemEx.itemid == 2593) then -- Postman Quest
-			if player:getStorageValue(250) == 3 then
-				player:setStorageValue(250, 4)
+		elseif itemEx.actionid == 100 and itemEx.itemid == 2593 then -- Postman Quest
+			if player:getStorageValue(Storage.postman.Mission02) == 1 then
+				player:setStorageValue(Storage.postman.Mission02, 2)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		end

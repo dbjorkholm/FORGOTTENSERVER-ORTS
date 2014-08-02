@@ -8,24 +8,24 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, "measurements")) then
-		if player:getStorageValue(250) == 33 then
+	if msgcontains(msg, "measurements") then
+		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
 			npcHandler:say("My measurements? Listen, lets make that a bit more exciting ... No, no, not what you think! I mean let's gamble. I will roll a dice. If I roll a 6 you win and I'll tell you what you need to know, else I win and get 5 gold. Deal? ", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif(msgcontains(msg, "yes")) then
+	elseif msgcontains(msg, "yes") then
 		if player:getMoney() >= 5 then
 			player:removeMoney(5)
-			number = math.random(6)
-			if(number ~= 6) then
+			local number = math.random(6)
+			if number ~= 6 then
 				npcHandler:say("Ok, here we go ... " .. number .. "! You lose! Try again.", cid)
 			else
 				npcHandler:say("Ok, here we go ... " .. number .. "! You have won! How lucky you are! So listen ...<tells you what you need to know> ", cid)
-				player:setStorageValue(250, 34)
+				player:setStorageValue(Storage.postman.Mission07, player:getStorageValue(Storage.postman.Mission07) + 1)
 				npcHandler.topic[cid] = 0
 			end
 		end
