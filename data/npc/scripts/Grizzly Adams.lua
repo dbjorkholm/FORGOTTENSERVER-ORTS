@@ -27,7 +27,7 @@ local grizzlyAdamsConfig = {
 													{id=10547, buy=0, sell=280, name='scarab pincers'},
 													{id=11365, buy=0, sell=60, name='terramite legs'},
 													{id=11363, buy=0, sell=170, name='terramite shell'},
-													{id=11184, buy=0, sell=30000, name='terrorbird beak'},
+													{id=11184, buy=0, sell=95, name='terrorbird beak'},
 													
 													{id=7398, buy=0, sell=500, name='cyclops trophy'},
 													{id=11315, buy=0, sell=15000, name='draken trophy'},
