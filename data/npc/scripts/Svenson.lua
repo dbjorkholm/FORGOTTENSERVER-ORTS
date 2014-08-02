@@ -21,24 +21,23 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
 	if(msgcontains(msg, "heavy ball")) then
 		npcHandler:say("Do you want to buy a heavy ball for 123 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
+			local player = Player(cid)
 			if player:getMoney() >= 123 then
 				npcHandler:say("Here it is.", cid)
 				player:addItem(11257, 1)
 				player:removeMoney(123)
-				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have enough money.", cid)
-				npcHandler.topic[cid] = 0
 			end
+		npcHandler.topic[cid] = 0
 		end
 	end
 	return true
