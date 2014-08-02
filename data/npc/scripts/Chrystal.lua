@@ -8,14 +8,14 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, "measurements")) then
-		if player:getStorageValue(250) == 27 then
+	if msgcontains(msg, "measurements") then
+		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
 			npcHandler:say("If its necessary ... <tells you her measurements>", cid)
-			player:setStorageValue(250, 28)
+			player:setStorageValue(Storage.postman.Mission07, player:getStorageValue(Storage.postman.Mission07) + 1)
 			npcHandler.topic[cid] = 0
 		end
 	end
