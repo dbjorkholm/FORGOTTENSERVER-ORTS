@@ -15,6 +15,9 @@
 
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
+	
+	<!-- Svargrond Citizen -->
+	<movevent event="StepIn" actionid="30032" script="others/svargrondCitizen.lua"/>
 
 	<!-- Meriana Turtles -->
 	<movevent event="StepIn" fromuid="3206" touid="3213" script="meriana/merianaTurtles.lua" />
