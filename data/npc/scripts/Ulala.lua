@@ -25,6 +25,19 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Come back if you finished the dance.", cid)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 7 then
+			npcHandler:say(	
+			{
+				"You born dancer! Krunus is pleased and support the great hunt. But he easy to please! Pandor much harder. We weak, so he sad about us. ...",
+				"Maybe we can please with sacrifice of body parts of our enemies. But you need help us get it! We much too weak. ...",
+				"If you bring us 5 teeth of green men, 5 skin of horned ones and 5 skin of snakemen that already be good. Please help tribe make Pandor happy!"
+			}, cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 8)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission04, 1) --Questlog, Unnatural Selection Quest "Mission 4: Bits and Pieces"
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 8 then
+			npcHandler:say("Please help tribe make Pandor happy! Did you bring us what I asked?", cid)
+			npcHandler.topic[cid] = 2
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 9 then
 			npcHandler:say("work in process", cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -35,6 +48,21 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.UnnaturalSelection.Mission03, 2) --Questlog, Unnatural Selection Quest "Mission 3: Dance Dance Evolution"
 			player:setStorageValue(Storage.UnnaturalSelection.DanceStatus, 1)
 			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 2 then
+			if player:getItemCount(11113) >= 5 and player:getItemCount(5878) >= 5 and player:getItemCount(5876) >= 5 then
+				player:removeItem(11113, 5)
+				player:removeItem(5878, 5)
+				player:removeItem(5876, 5)
+				npcHandler:say("Me thank you! Me will bring sacrifice for Pandor. He surely be pleased with our work. Well your work, but me won't tell him. Teehee.", cid)
+				player:setStorageValue(Storage.UnnaturalSelection.Questline, 9)
+				player:setStorageValue(Storage.UnnaturalSelection.Mission04, 2) --Questlog, Unnatural Selection Quest "Mission 4: Bits and Pieces"
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You do not have these things!", cid)
+				npcHandler.topic[cid] = 0
+			end
 		end
 	end
 	return true
