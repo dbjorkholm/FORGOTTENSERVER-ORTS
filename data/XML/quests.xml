@@ -368,10 +368,9 @@
 			<missionstate id="2" description="Ulala told you to dance to please their god Krunus. On the south mountain in the camp you will find the Krunus altar, there are lots of leaves on the ground."/>
 			<missionstate id="3" description="You solved the dance. Head back to Ulala and report your mission!"/>
 		</mission>
-		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Now the god Krunus is pleased, another god called Pandor needs to be pleased. Ulala wants you to collect 5 Orc Teeth, 5 Minotaur leathers and 5 Lizard Leathers. Bring them to her."/>
+			<missionstate id="2" description="You brought Ulala 5 Orc Teeth, 5 Minotaur leathers and 5 Lizard Leathers. Ask her for new mission!"/>
 		</mission>
 		<mission name="Mission 5: Ray of Light" storageid="12335" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
