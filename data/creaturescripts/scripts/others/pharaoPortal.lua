@@ -16,9 +16,8 @@ function onKill(cid, target)
 		return true
 	end
 
-	local player = Player(cid)
 	Game.setStorageValue(pharaohStorage, 1)
 	addEvent(setGlobalStorageValue, 3 * 60 * 1000, pharaohStorage, 0)
-	player:say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the reward room.', TALKTYPE_MONSTER_SAY)
+	Player(cid):say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the reward room.', TALKTYPE_MONSTER_SAY)
 	return true
 end
