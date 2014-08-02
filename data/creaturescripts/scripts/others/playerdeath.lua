@@ -4,7 +4,7 @@ local maxDeathRecords = 5
 function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjustified)
 	local player = Player(cid)
 
-	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are dead.")
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You are dead.')
 	if player:getStorageValue(cid, 1101) > 0 then
 		player:setStorageValue(1101, 0)
 	end
@@ -16,7 +16,7 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 	local byPlayer = 0
 	local killerCreature = Creature(killer)
 	if killerCreature == nil then
-		killerName = "field item"
+		killerName = 'field item'
 	else
 		if killerCreature:isPlayer() then
 			byPlayer = 1
@@ -32,7 +32,7 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 
 	local byPlayerMostDamage = 0
 	if mostDamage == 0 then
-		mostDamageName = "field item"
+		mostDamageName = 'field item'
 	else
 		local mostDamageKiller = Creature(mostDamage)
 		if mostDamageKiller:isPlayer() then
@@ -48,8 +48,8 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 	end
 
 	local playerGuid = player:getGuid()
-	db.query("INSERT INTO `player_deaths` (`player_id`, `time`, `level`, `killed_by`, `is_player`, `mostdamage_by`, `mostdamage_is_player`, `unjustified`, `mostdamage_unjustified`) VALUES (" .. playerGuid .. ", " .. os.time() .. ", " .. player:getLevel() .. ", " .. db.escapeString(killerName) .. ", " .. byPlayer .. ", " .. db.escapeString(mostDamageName) .. ", " .. byPlayerMostDamage .. ", " .. unjustified .. ", " .. mostDamage_unjustified .. ")")
-	local resultId = db.storeQuery("SELECT `player_id` FROM `player_deaths` WHERE `player_id` = " .. playerGuid)
+	db.query('INSERT INTO `player_deaths` (`player_id`, `time`, `level`, `killed_by`, `is_player`, `mostdamage_by`, `mostdamage_is_player`, `unjustified`, `mostdamage_unjustified`) VALUES (' .. playerGuid .. ', ' .. os.time() .. ', ' .. player:getLevel() .. ', ' .. db.escapeString(killerName) .. ', ' .. byPlayer .. ', ' .. db.escapeString(mostDamageName) .. ', ' .. byPlayerMostDamage .. ', ' .. unjustified .. ', ' .. mostDamage_unjustified .. ')')
+	local resultId = db.storeQuery('SELECT `player_id` FROM `player_deaths` WHERE `player_id` = ' .. playerGuid)
 
 	local deathRecords = 0
 	local tmpResultId = resultId
@@ -63,7 +63,7 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 	end
 
 	while deathRecords > maxDeathRecords do
-		db.query("DELETE FROM `player_deaths` WHERE `player_id` = " .. playerGuid .. " ORDER BY `time` LIMIT 1")
+		db.query('DELETE FROM `player_deaths` WHERE `player_id` = ' .. playerGuid .. ' ORDER BY `time` LIMIT 1')
 		deathRecords = deathRecords - 1
 	end
 
@@ -72,15 +72,15 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 		if playerGuild then
 			local killerGuild = killerCreature:getGuild()
 			if playerGuild ~= killerGuild and isInWar(cid, killerCreature) then
-				local warId = false
-				resultId = db.storeQuery("SELECT `id` FROM `guild_wars` WHERE `status` = 1 AND ((`guild1` = " .. killerGuild:getId() .. " AND `guild2` = " .. playerGuild:getId() .. ") OR (`guild1` = " .. playerGuild:getId() .. " AND `guild2` = " .. killerGuild:getId() .. "))")
+				local warId
+				resultId = db.storeQuery('SELECT `id` FROM `guild_wars` WHERE `status` = 1 AND ((`guild1` = ' .. killerGuild:getId() .. ' AND `guild2` = ' .. playerGuild:getId() .. ') OR (`guild1` = ' .. playerGuild:getId() .. ' AND `guild2` = ' .. killerGuild:getId() .. '))')
 				if resultId ~= false then
-					warId = result.getDataInt(resultId, "id")
+					warId = result.getDataInt(resultId, 'id')
 					result.free(resultId)
 				end
 
-				if warId ~= false then
-					db.query("INSERT INTO `guildwar_kills` (`killer`, `target`, `killerguild`, `targetguild`, `time`, `warid`) VALUES (" .. db.escapeString(killerName) .. ", " .. db.escapeString(player:getName()) .. ", " .. killerGuild:getId() .. ", " .. playerGuild:getId() .. ", " .. os.time() .. ", " .. warId .. ")")
+				if warId then
+					db.query('INSERT INTO `guildwar_kills` (`killer`, `target`, `killerguild`, `targetguild`, `time`, `warid`) VALUES (' .. db.escapeString(killerName) .. ', ' .. db.escapeString(player:getName()) .. ', ' .. killerGuild:getId() .. ', ' .. playerGuild:getId() .. ', ' .. os.time() .. ', ' .. warId .. ')')
 				end
 			end
 		end
