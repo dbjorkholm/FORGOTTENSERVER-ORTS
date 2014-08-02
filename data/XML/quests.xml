@@ -3,11 +3,11 @@
 <quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
 
 	<!-- killing in the name of rank -->
-		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
-		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
 
 	<!-- special tasks for killing in the name of -->
 		<mission name="Paw and Fur: Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
@@ -538,7 +538,7 @@
 			<missionstate id="5" description="Gregor send you to Sam to adorn your helmet."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Wand)" storageid="12062" startvalue="1" endvalue="6">
+		<mission name="Mage &amp; Summoner Outfit Quest (Wand)" storageid="12062" startvalue="1" endvalue="6">
 			<missionstate id="1" description="You found Angelina in a Prison. She told you a secret: Lynda in Thais can create a blessed wand. Greet her from Angelina, maybe she will aid you."/>
 			<missionstate id="2" description="Lynda send you to bring her a sample of all five wands and five rods (Snakebite, Moonlight, Necrotic, Terra, Hailstorm, Vortex, Dragonbreath, Decay, Cosmic Energy and Inferno)"/>
 			<missionstate id="3" description="Bring Lynda 10 ounces of magic sulphur"/>
@@ -546,11 +546,11 @@
 			<missionstate id="5" description="Bring Lynda 20 ankhs now to complete the ritual."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Fluid Belt)" storageid="12063" startvalue="1" endvalue="2">
+		<mission name="Mage &amp; Summoner Outfit Quest (Fluid Belt)" storageid="12063" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Now you can get a lottery ticket at Sandra for 100 empty vials."/>
 			<missionstate id="2" description="You got the Outfit! Now you can get for a lottery prize 50000 gold!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Tiara & Cloak)" storageid="12064" startvalue="1" endvalue="11">
+		<mission name="Mage &amp; Summoner Outfit Quest (Tiara &amp; Cloak)" storageid="12064" startvalue="1" endvalue="11">
 			<missionstate id="1" description="Bring Myra in port hope 70 bat wings"/>
 			<missionstate id="2" description="Bring Myra in port hope 20 pieces of red cloth"/>
 			<missionstate id="3" description="Bring Myra in port hope 40 pieces of ape fur"/>
@@ -882,9 +882,9 @@
 			<missionstate id="1" description="You have a vague idea that Zirella might need you for collecting firewood, but you don't know yet where to get it. You should talk to her again."/>
 			<missionstate id="2" description="You know that the branches Zirella needs might be gotten from dead trees in the forest south of here, but you don't know the details yet. You should talk to her again."/>
 			<missionstate id="3" description="You have learned that you need to 'Use' the dead tree to break a branch from it, but there is some information missing. You should talk to Zirella again."/>
-			<missionstate id="4" description="You have learned that you can push the branch which you've broken from a dead tree by 'Drag & Drop', but you still need some information. You should talk to Zirella again."/>
+			<missionstate id="4" description="You have learned that you can push the branch which you've broken from a dead tree by 'Drag &amp; Drop', but you still need some information. You should talk to Zirella again."/>
 			<missionstate id="5" description="You know that you have to 'Use' the branch. Then leftclick with the changed cursor on the cart. Now you just have to tell Zirella that you will help her."/>
-			<missionstate id="6" description="Go into the forest south of here and look for trees without leaves. 'Use' one to break a branch from it, then drag & drop the branch back to her cart and 'Use' it with the cart."/>
+			<missionstate id="6" description="Go into the forest south of here and look for trees without leaves. 'Use' one to break a branch from it, then drag &amp; drop the branch back to her cart and 'Use' it with the cart."/>
 			<missionstate id="7" description="You have brought a branch to Zirella, congratulations! You should talk to her again for your reward."/>
 			<missionstate id="8" description="You have helped Zirella by collecting wood for her. The reward can be found in her house."/>
 		</mission>
