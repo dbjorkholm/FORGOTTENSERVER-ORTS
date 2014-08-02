@@ -9,9 +9,11 @@ function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
-		return false
-	local player = Player(cid)
-	elseif msgcontains(msg, "outfit") then
+        return false
+    end
+
+    local player = Player(cid)
+    if msgcontains(msg, "outfit") then
 		if npcHandler.topic[cid] == 0  then
 			npcHandler:say({"I'm tired of all these young unskilled wannabe heroes. Every Tibian can show his skills or actions by wearing a special outfit. To prove oneself worthy of the demon outfit, this is how it goes: ...",
 					"The base outfit will be granted for completing the annihilator quest, which isn't much of a challenge nowadays, in my opinion. Anyway ...",
