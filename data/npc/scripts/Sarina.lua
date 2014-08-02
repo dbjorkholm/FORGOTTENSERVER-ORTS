@@ -17,10 +17,33 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'equipment'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell equipment for your adventure! Just ask me for a {trade} to see my wares."})
+local function creatureSayCallback(cid, type, msg)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+	local player = Player(cid)
+	if(msgcontains(msg, "football")) then
+		npcHandler:say("Do you want to buy a football for 111 gold?", cid)
+		npcHandler.topic[cid] = 1
+	elseif(msgcontains(msg, "yes")) then
+		if(npcHandler.topic[cid] == 1) then
+			if player:getMoney() >= 111 then
+				npcHandler:say("Here it is.", cid)
+				player:addItem(2109, 1)
+				player:removeMoney(111)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You don't have enough money.", cid)
+				npcHandler.topic[cid] = 0
+			end
+		end
+	end
+	return true
+end
 
 npcHandler:setMessage(MESSAGE_GREET, "Oh, please come in, |PLAYERNAME|. What can I do for you? If you need adventure equipment, ask me for a {trade}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. {Footballs} have to be purchased separately.")
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
