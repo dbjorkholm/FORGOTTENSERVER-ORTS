@@ -1,8 +1,3 @@
-local YELL = {
-	"Selling general goods and paperware! Come to my shop!"
-}
- 
- 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -10,14 +5,40 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink() 
-	if ((os.time() - yell_delay) >= frequency) then
-		yell_delay = os.time()
-		doCreatureSay(getNpcCid(), YELL[math.random(#YELL)], 1)
-	end
-	npcHandler:onThink() 
-end
-npcHandler:addModule(FocusModule:new())
 
-yell_delay = 20
-frequency = 25
+local rnd_sounds = 0
+function onThink()
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 5)
+		if math.random(100) < 25  then
+			Npc():say("Selling general goods and paperware! Come to my shop!", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
+
+local function creatureSayCallback(cid, type, msg)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+	if(msgcontains(msg, "football")) then
+		npcHandler:say("Do you want to buy a football for 111 gold?", cid)
+		npcHandler.topic[cid] = 1
+	elseif(msgcontains(msg, "yes")) then
+		if(npcHandler.topic[cid] == 1) then
+			local player = Player(cid)
+			if player:getMoney() >= 111 then
+				npcHandler:say("Here it is.", cid)
+				player:addItem(2109, 1)
+				player:removeMoney(111)
+			else
+				npcHandler:say("You don't have enough money.", cid)
+			end
+		npcHandler.topic[cid] = 0
+		end
+	end
+	return true
+end
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())
