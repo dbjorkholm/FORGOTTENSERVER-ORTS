@@ -1,3 +1,5 @@
+local teleportToPosition = Position(32780, 31168, 14)
+
 local function removeTeleport(position)
 	local teleportItem = Tile(position):getItemById(1387)
 	if teleportItem then
@@ -7,15 +9,15 @@ local function removeTeleport(position)
 end
 
 function onKill(cid, target)
-	local azerus = Monster(target)
-	if not azerus or azerus:getName():lower() ~= 'azerus' then
+	local targetMonster = Monster(target)
+	if not targetMonster or targetMonster:getName():lower() ~= 'azerus' then
 		return true
 	end
 
-	local position = azerus:getPosition()
-	doCreateTeleport(1387, {x=32780, y=31168, z=14}, position)
+	local position = targetMonster:getPosition()
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	azerus:say('Azerus ran into teleporter! It will disappear in 2 minutes. Enter it!', TALKTYPE_MONSTER_SAY, 0, 0, position)
+	doCreateTeleport(1387, teleportToPosition, position)
+	targetMonster:say('Azerus ran into teleporter! It will disappear in 2 minutes. Enter it!', TALKTYPE_MONSTER_SAY, 0, 0, position)
 
 	--remove portal after 2 min
 	addEvent(removeTeleport, 2 * 60 * 1000, position)

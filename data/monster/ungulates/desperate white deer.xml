@@ -33,6 +33,6 @@
 		<item id="13534" chance="20000"/>				<!-- white deer skin -->
 	</loot>
 	<script>
-		<event name="whiteDeerScouts"/>
+		<event name="WhiteDeerScoutsDeath"/>
 	</script>
 </monster>

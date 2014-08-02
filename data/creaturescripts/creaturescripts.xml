@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
 	<!-- Rookgaard Cockroach -->
-	<event type="kill" name="rookgaardCockroach" script="rookgaard/killCockroach.lua"/>
+	<event type="kill" name="TurtorialCockroach" script="rookgaard/killCockroach.lua"/>
 
 	<!-- Elemental Spheres Quest -->
-	<event type="kill" name="elementalspheresquestOverlords" script="elemental spheres quest/ElementalSpheresQuestKillOverlords.lua"/>
+	<event type="kill" name="ElementalSpheresOverlords" script="elemental spheres quest/OverlordsKill.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<event type="kill" name="bigfootBurdenQuestVesperoth" script="bigfoot burden quest/bigfootBurdenQuestVesperoth.lua"/>
-	<event type="kill" name="bigfootBurdenQuestWarzone" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
-	<event type="kill" name="bigfootBurdenQuestWeeper" script="bigfoot burden quest/bigfootBurdenQuestWeeper.lua"/>
-	<event type="kill" name="bigfootBurdenQuestWiggler" script="bigfoot burden quest/bigfootBurdenQuestWiggler.lua"/>
+	<event type="kill" name="BigfootBurdenVesperoth" script="bigfoot burden quest/VesperothKill.lua"/>
+	<event type="kill" name="BigfootBurdenWarzone" script="bigfoot burden quest/WarzoneKill.lua"/>
+	<event type="kill" name="BigfootBurdenWeeper" script="bigfoot burden quest/WeeperKill.lua"/>
+	<event type="kill" name="BigfootBurdenWiggler" script="bigfoot burden quest/WigglerKill.lua"/>
 
-	<!-- Svargrond Arena Quest -->
+	<!-- Svargrond Arena: Killing a boss -->
 	<event type="kill" name="SvargrondArenaKill" script="svargrond arena quest/arena_kill.lua"/>
 
-	<!-- Boss Summoning -->
-	<event type="kill" name="bossSummoning" script="boss summoning/bossSummoning.lua"/>
-
-	<!-- The new Frontier Quest -->
-	<event type="kill" name="theNewFrontierQuestShardOfCorruption" script="the new frontier quest/theNewFrontierQuestShardOfCorruption.lua"/>
-	<event type="kill" name="theNewFrontierQuestTirecz" script="the new frontier quest/theNewFrontierQuestTirecz.lua"/>
+	<!-- The New Frontier Quest -->
+	<event type="kill" name="NewFrontierShardOfCorruption" script="the new frontier quest/ShardOfCorruption.lua"/>
+	<event type="kill" name="NewFrontierTirecz" script="the new frontier quest/TireczKill.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
-	<event type="kill" name="inServiceOfYalaharQuestsDiseased" script="in service of yalahar quest/inServiceOfYalaharQuestsDiseased.lua"/>
-	<event type="kill" name="inServiceOfYalaharQuestsAzerus" script="in service of yalahar quest/inServiceOfYalaharQuestsAzerus.lua"/>
-	<event type="kill" name="inServiceOfYalaharQuestsQuara" script="in service of yalahar quest/inServiceOfYalaharQuestsQuara.lua"/>
+	<event type="kill" name="ServiceOfYalaharAzerus" script="in service of yalahar quest/AzerusKill.lua"/>
+	<event type="kill" name="ServiceOfYalaharDiseasedTrio" script="in service of yalahar quest/DiseasedTrioKill.lua"/>
+	<event type="kill" name="ServiceOfYalaharQuaraLeaders" script="in service of yalahar quest/QuaraLeadersKill.lua"/>
 
 	<!-- Inquisition Quest -->
-	<event type="kill" name="inquisitionQuestBosses" script="inquisition quest/inquisitionQuestBosses.lua"/>
-	<event type="kill" name="inquisitionQuestUngreez" script="inquisition quest/inquisitionQuestUngreez.lua"/>
+	<event type="kill" name="InquisitionBosses" script="inquisition quest/inquisitionQuestBosses.lua"/>
+	<event type="kill" name="InquisitionUngreez" script="inquisition quest/inquisitionQuestUngreez.lua"/>
 
 	<!-- Killing In The Name Of Quest -->
-	<event type="kill" name="killingInTheNameOfQuestKills" script="killing in the name of quest/killingInTheNameOfQuestKills.lua"/>
+	<event type="kill" name="KillingInTheNameOfKills" script="killing in the name of quest/kills.lua"/>
 
 	<!-- The Masters Voice Quest -->
-	<event type="kill" name="masterVoiceQuest" script="their master's voice quest/masterVoiceQuest.lua"/>
+	<event type="kill" name="MastersVoiceServants" script="their master's voice quest/ServantsKill.lua"/>
 
 	<!-- Storage Conversion -->
 	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
+	<!-- Pharaos: Portal to reward room -->
+	<event type="kill" name="PharaoKillPortal" script="others/pharaoPortal.lua"/>
+
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
+	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
+
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua"/>
-	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
-	<event type="extendedopcode" name="ExtendedOpcode" script="others/extendedopcode.lua"/>
-	<event type="death" name="whiteDeer" script="others/whitedeer.lua"/>
-	<event type="death" name="whiteDeerScouts" script="others/whitedeer_scouts.lua"/>
+	<event type="death" name="WhiteDeerDeath" script="others/whitedeer.lua"/>
+	<event type="death" name="WhiteDeerScoutsDeath" script="others/whitedeer_scouts.lua"/>
 </creaturescripts>

@@ -36,6 +36,6 @@
 		<item id="13533" chance="19520"/>				<!-- white deer antlers -->
 	</loot>
 	<script>
-		<event name="whiteDeerScouts"/>
+		<event name="WhiteDeerScoutsDeath"/>
 	</script>
 </monster>
