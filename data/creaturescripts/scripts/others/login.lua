@@ -1,3 +1,4 @@
+-- ordered as in creaturescripts.xml
 local events = {
 	'TurtorialCockroach',
 	'ElementalSpheresOverlords',
