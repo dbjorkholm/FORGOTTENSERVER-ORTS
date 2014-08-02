@@ -17,8 +17,9 @@ local function creatureSayCallback(cid, type, msg)
 	end 
 	if isInArray({"fuck", "idiot", "asshole", "ass", "fag", "stupid", "tyrant", "shit", "lunatic"}, msg) then
 		selfSay("Take this!", cid)
-		Player(cid):getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
-		Player(cid):addCondition(condition)
+		local player = Player(cid)
+		player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+		player:addCondition(condition)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end
