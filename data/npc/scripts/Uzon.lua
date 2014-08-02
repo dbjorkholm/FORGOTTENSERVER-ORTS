@@ -98,7 +98,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("You shouldn't miss the experience.", cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "edron") then
-		npcHandler:say("Do you seek a ride to Edron?")
+		npcHandler:say("Do you seek a ride to Edron?", cid)
 		npcHandler.topic[cid] = 3
 	end
 	return true
