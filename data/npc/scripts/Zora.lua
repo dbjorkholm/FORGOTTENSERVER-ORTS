@@ -11,11 +11,11 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if(msgcontains(msg, "football")) then
+	if msgcontains(msg, "football") then
 		npcHandler:say("Do you want to buy a football for 111 gold?", cid)
 		npcHandler.topic[cid] = 1
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
 			local player = Player(cid)
 			if player:getMoney() >= 111 then
 				npcHandler:say("Here it is.", cid)
@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("You don't have enough money.", cid)
 			end
-		npcHandler.topic[cid] = 0
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
