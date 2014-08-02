@@ -28,7 +28,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.postman.Mission01) == 5 then
 			npcHandler:say("So you have finally made it! I did not think that you would have it in you ... However: are you ready for another assignment?", cid)
-			player:setStorageValue(Storage.postman.Mission01, 6)
 			npcHandler.topic[cid] = 8
 		elseif player:getStorageValue(Storage.postman.Mission02) == 2 then
 			npcHandler:say("Excellent, you got it fixed! This will teach this mailbox a lesson indeed! Are you interested in another assignment?", cid)
@@ -47,7 +46,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 16
 		elseif player:getStorageValue(Storage.postman.Mission06) == 12 then
 			npcHandler:say("Excellent! Another job well done! Would you accept another mission?", cid)
-			player:setStorageValue(Storage.postman.Mission06, 13)
 			npcHandler.topic[cid] = 19
 		elseif player:getStorageValue(Storage.postman.Mission07) ==  7 then
 			npcHandler:say("Once more you have impressed me! Are you willing to do another job?", cid)
@@ -127,6 +125,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then
 			npcHandler:say("I am glad to hear that. One of our mailboxes was reported to be jammed. It is located on the so called 'mountain' on theisle Folda. Get a crowbar and fix the mailbox. Report about your mission when you have done so.", cid)
+			player:setStorageValue(Storage.postman.Mission01, 6)
 			player:setStorageValue(Storage.postman.Mission02, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then
@@ -170,6 +169,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 19 then
 			npcHandler:say("Good, so listen. Hugo Chief informed me that he needs the measurements of our postofficers. Go and bring me the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik.", cid)
+			player:setStorageValue(Storage.postman.Mission06, 13)
 			player:setStorageValue(Storage.postman.Mission07, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
