@@ -18,6 +18,7 @@ SvargrondArena = {
 	-- used to store event ids
 	kickEvents = {},
 	timerEvents = {},
+	effectPositionCache = {},
 
 	-- item ids used by the script
 	itemTimer = 10288,
@@ -438,4 +439,24 @@ function SvargrondArena.removeTimer(pitId)
 		timerItem:remove()
 	end
 	SvargrondArena.timerEvents[pitId] = nil
+end
+
+function SvargrondArena.sendPillarEffect(pitId)
+	local positions = SvargrondArena.effectPositionCache[pitId]
+	if not positions then
+		local position = PITS[pitId].pillar
+		local effectPositions = {
+				Position(position.x - 1, position.y,     position.z),
+				Position(position.x + 1, position.y,     position.z),
+				Position(position.x + 1, position.y - 1, position.z),
+				Position(position.x + 1, position.y + 1, position.z),
+				Position(position.x,     position.y,     position.z)
+		}
+		SvargrondArena.effectPositionCache[pitId] = effectPositions
+		positions = effectPositions
+	end
+
+	for _, position in ipairs(positions) do
+		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	end
 end
