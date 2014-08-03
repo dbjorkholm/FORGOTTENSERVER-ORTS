@@ -88,12 +88,12 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have enough money.", cid)
 			end
 		elseif npcHandler.topic[cid] == 3 then
- -			if player:getStorageValue(Storage.postman.Mission01) == 2 then
- -				player:setStorageValue(Storage.postman.Mission01, 3)
- -				player:teleportTo(edronPos)
- -			else
- -				player:teleportTo(edronPos)
- -			end
+ 			if player:getStorageValue(Storage.postman.Mission01) == 2 then
+ 				player:setStorageValue(Storage.postman.Mission01, 3)
+ 				player:teleportTo(edronPos)
+ 			else
+ 				player:teleportTo(edronPos)
+ 			end
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
@@ -101,8 +101,8 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	end
 	elseif msgcontains(msg, "edron") then
- -		npcHandler:say("Do you seek a ride to Edron?", cid)
- -		npcHandler.topic[cid] = 3
+ 		npcHandler:say("Do you seek a ride to Edron?", cid)
+ 		npcHandler.topic[cid] = 3
 	return true
 end
 
