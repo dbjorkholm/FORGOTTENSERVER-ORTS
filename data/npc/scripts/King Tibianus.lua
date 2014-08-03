@@ -135,7 +135,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "flatter") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(Storage.TheNewFrontier.BribeKing) < 1 then
+			if player:getStorageValue(Storage.TheNewFrontier.BribeKing) ~= 1 then
 				npcHandler:say("Indeed, indeed. Without the help of Thais, our allies stand no chance! Well, I'll send some money to support their cause.", cid)
 				player:setStorageValue(Storage.TheNewFrontier.BribeKing, 1)
 				player:setStorageValue(Storage.TheNewFrontier.Mission05, player:getStorageValue(Storage.TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
