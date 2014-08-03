@@ -571,6 +571,7 @@
 	<action itemid="2023" script="other/fluids.lua"/>
 	<action itemid="1775" script="other/fluids.lua"/>
 	<action fromid="2031" toid="2034" script="other/fluids.lua"/>
+	<action itemid="2562" script="other/fluids.lua"/>
 	<action fromid="2574" toid="2577" script="other/fluids.lua"/>
 
 	<action itemid="7588" script="other/potions.lua"/>
