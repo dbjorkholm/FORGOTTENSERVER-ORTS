@@ -43,9 +43,19 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 4 then
 			npcHandler:say("We been weak for too long! We prepare for great hunt. But still need many doings! You can help us?", cid)
 			npcHandler.topic[cid] = 5
-		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 5 then
-			npcHandler:say("work in process", cid)
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 13 then
+			npcHandler:say(	
+			{
+				"You well did! Great hunt is under best signs now. We prepare weapons and paint faces and then go! ...",
+				"No no, you no need to help us. But can prepare afterparty! Little men sent us stuff some time ago. Was strange water in there. Brown and stinky! But when we tried all tribe became veeeeeeery happy. ...",
+				"Now brown water is gone and we sad! Can you bring POT of brown water for party after great hunt? Just bring to me and me trade for shiny treasure."
+			}, cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 14)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission06, 2) --Questlog, Unnatural Selection Quest "Mission 6: Firewater Burn"
 			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 14 then
+			npcHandler:say("You bring us big pot of strange water from little men?", cid)
+			npcHandler.topic[cid] = 6
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -85,7 +95,18 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.UnnaturalSelection.Questline, 5)
 			player:setStorageValue(Storage.UnnaturalSelection.Mission03, 1) --Questlog, Unnatural Selection Quest "Mission 3: Dance Dance Evolution"
 			npcHandler.topic[cid] = 0		
+		elseif npcHandler.topic[cid] == 6 then
+			if player:removeItem(2562, 1, 3) then
+				npcHandler:say("We make big ritual soon and learn much about world outside. Me thank you many times for teaching us world. Very wise and adventurous you are!", cid)
+				player:addItem(11115, 1)
+				player:setStorageValue(Storage.UnnaturalSelection.Questline, 15)
+				player:setStorageValue(Storage.UnnaturalSelection.Mission06, 3) --Questlog, Unnatural Selection Quest "Mission 6: Firewater Burn"
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("You do not have the brown strange water!", cid)
+				npcHandler.topic[cid] = 0
 			end
+		end
 	end
 	return true
 end

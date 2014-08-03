@@ -37,6 +37,7 @@
 
 	<!-- Unnatural Selection -->
 	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
+	<action uniqueid="12335" script="unnatural selection/Mission5RayofLight.lua"/>
 
 	<!-- The New Frontier Quest -->
 	<action uniqueid="3157" script="the new frontier quest/theNewFrontierQuestArena.lua"/>

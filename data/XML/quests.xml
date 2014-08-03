@@ -373,14 +373,14 @@
 			<missionstate id="2" description="You brought Ulala 5 Orc Teeth, 5 Minotaur leathers and 5 Lizard Leathers. Ask her for new mission!"/>
 		</mission>
 		<mission name="Mission 5: Ray of Light" storageid="12335" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="The third god which needs to be pleased is called Fasuon. Find the great crystal on top of mountain of Fasuon and pray there for his support!"/>
+			<missionstate id="2" description="You already prayed at the great crystal. Report it to Ulala"/>
+			<missionstate id="3" description="You have reported back to Ulala that you have completed the mission."/>
 		</mission>
 		<mission name="Mission 6: Firewater Burn" storageid="12336" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Speak with Lazaran and tell the gods are pleased now."/>
+			<missionstate id="2" description="Bring Lazaran a Pot of brown water for a party after the great hunt."/>
+			<missionstate id="3" description="You brought Lazaran the beer and got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
 
