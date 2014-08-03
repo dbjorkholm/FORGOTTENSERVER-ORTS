@@ -723,29 +723,21 @@
 			<missionstate id="7" description="You have received all measurements, report back to Kevin!"/>
 			<missionstate id="8" description="You have reported back that you have completed the mission."/>
 		</mission>
-		<mission name="Mission 8 - Missing Courier" storageid="12457" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
+		<mission name="Mission 8 - Missing Courier" storageid="12457" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to find the missing courier Waldo or at least his posthorn."/>
+			<missionstate id="2" description="You have found Waldos posthorn."/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
 		</mission>
-		<mission name="Mission 9 - Dear Santa" storageid="12458" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
+		<mission name="Mission 9 - Dear Santa" storageid="12458" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Kevin wants you to deliver som letters to Santa Claus on Vega."/>
+			<missionstate id="2" description="You have retrieved the letters, deliver them to Santa Claus on Vega."/>
+			<missionstate id="3" description="You have delivered the letters to Santa Claus on Vega."/>
+			<missionstate id="4" description="You have reported back that you have completed the mission."/>
 		</mission>
-		<mission name="Mission 10 - Mintwallin" storageid="12459" startvalue="1" endvalue="6">
-			<missionstate id="1" description=""/>
-			<missionstate id="2" description=""/>
-			<missionstate id="3" description=""/>
-			<missionstate id="4" description=""/>
-			<missionstate id="5" description=""/>
-			<missionstate id="6" description=""/>
+		<mission name="Mission 10 - Mintwallin" storageid="12459" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to deliver a letter  to Markwin, king of Mintwallin from his mother."/>
+			<missionstate id="2" description="You have delivered the letter to Markwin."/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
 		</mission>
 		<mission name="Postman Rank" storageid="12460" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Assistant Postman"/>
