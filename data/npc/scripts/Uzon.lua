@@ -54,7 +54,7 @@ local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcH
         	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local edronPos = Position(33175, 31764, 6)
-			
+
 local function creatureSayCallback(cid, type, msg)
 	    local player = Player(cid)
 	    if not npcHandler:isFocused(cid) then
@@ -78,7 +78,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then	
 			npcHandler:say('Hold on!', cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 32659, y = 31915, z = 0}, false)
+			player:teleportTo(Position(32659, 31915, 0), false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeMoney(60) then
@@ -95,7 +95,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:teleportTo(edronPos)
 			else
 				player:teleportTo(edronPos)
-			end	
+			end
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
@@ -103,7 +103,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "edron") then
 		npcHandler:say("Do you seek a ride to Edron?", cid)
-		npcHandler.topic[cid] = 3	
+		npcHandler.topic[cid] = 3
 	end
 	return true
 end
