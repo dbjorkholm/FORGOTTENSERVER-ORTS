@@ -6,16 +6,16 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local targetItem = config[item.uid]
-	if not targetItem then
+	local useItem = config[item.uid]
+	if not useItem then
 		return true
 	end
 
 	local crucible = Tile(Position(32699, 31494, 11)):getItemById(8641)
 	if crucible:getActionId() == 50121 then
-		local wagon = Game.createItem(7132, 1, targetItem.wagonPos)
+		local wagon = Game.createItem(7132, 1, useItem.wagonPos)
 		if wagon then
-			wagon:setActionId(targetItem.actionId)
+			wagon:setActionId(useItem.actionId)
 		end
 
 		crucible:transform(8642)
