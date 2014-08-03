@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		-- Crown Armor
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(2487) >= 1 then
+			if player:getItemCount(2487) > 0 then
 				player:removeItem(2487, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
@@ -80,7 +80,7 @@ local function creatureSayCallback(cid, type, msg)
 			end	
 		-- Dragon Shield
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(2516) >= 1 then
+			if player:getItemCount(2516) > 0 then
 				player:removeItem(2516, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
@@ -88,7 +88,7 @@ local function creatureSayCallback(cid, type, msg)
 			end	
 		-- Devil Helmet	
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(2462) >= 1 then
+			if player:getItemCount(2462) > 0 then
 				player:removeItem(2462, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
@@ -96,7 +96,7 @@ local function creatureSayCallback(cid, type, msg)
 			end	
 		-- Giant Sword	
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(2393) >= 1 then
+			if player:getItemCount(2393) > 0 then
 				player:removeItem(2393, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
@@ -104,7 +104,7 @@ local function creatureSayCallback(cid, type, msg)
 			end	
 		-- Soul Orb
 		elseif npcHandler.topic[cid] == 8 then
-			if player:getItemCount(5944) >= 1 then
+			if player:getItemCount(5944) > 0 then
 				local count = player:getItemCount(5944)
 				for i = 1, count do
 					if math.random(100) <= 1 then
@@ -119,7 +119,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end	
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getItemCount(8262) >= 1 and player:getItemCount(8263) >= 1 and player:getItemCount(8264) >= 1 and player:getItemCount(8265) >= 1 and player:getMoney() >= 5000 then
+			if player:getItemCount(8262) > 0 and player:getItemCount(8263) > 0 and player:getItemCount(8264) > 0 and player:getItemCount(8265) > 0 and player:getMoney() >= 5000 then
 				player:removeItem(8262, 1)
 				player:removeItem(8263, 1)
 				player:removeItem(8264, 1)
