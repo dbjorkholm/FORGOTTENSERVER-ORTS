@@ -1,7 +1,7 @@
 local config = {
 	[4641] = {storageKey = {9972, 9973}, message = 'Shadows rise and engulf the candle. The statue flickers in an unearthly light.'},
-	[4642] = {storageKey = {9973, 9874}, message = 'The shadows of the statue swallow the candle hungrily.'},
-	[4643] = {storageKey = {9974, 9875}, message = 'A shade emerges and snatches the candle from your hands.'}
+	[4642] = {storageKey = {9973, 9974}, message = 'The shadows of the statue swallow the candle hungrily.'},
+	[4643] = {storageKey = {9974, 9975}, message = 'A shade emerges and snatches the candle from your hands.'}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
