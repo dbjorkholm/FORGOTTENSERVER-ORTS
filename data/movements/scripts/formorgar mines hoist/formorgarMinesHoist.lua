@@ -4,7 +4,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return false
 	end
 
-	if player:getStorageValue(470) == 1 and player:getStorageValue(471) == 1 then
+	if player:getStorageValue(3057) == 1 and player:getStorageValue(3058) == 1 then
 		if isInArray({3059, 3061}, item.uid) then
 			player:teleportTo(Position(32157, 31125, 10))
 		elseif item.uid == 3060 then
