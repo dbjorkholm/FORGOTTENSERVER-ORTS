@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50136
-Last Used Aid = 50159
+Last Used Aid = 50160
 Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -204,3 +204,4 @@ Key 3650 uid = 50133
 mininghelmet uid+storage = 50134
 
 Kaz wagons aid = 50136-50159
+PoI Maze Stone aid = 50160

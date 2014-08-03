@@ -239,9 +239,6 @@
 	<action uniqueid="3003" script="explorer society quest/explorerSocietyQuestUrn.lua"/>
 	<action uniqueid="3002" script="explorer society quest/explorerSocietyQuestUrnDoor.lua"/>
 
-	<!-- Formorgar Mines Hoist Quest -->
-	<action fromuid="3057" touid="3058" script="formorgar mines hoist quest/formorgarMinesHoistQuestMap.lua"/>
-
 	<!-- Green Djinn Quest -->
 	<action uniqueid="9023" script="green djinn quest/greenDjinnQuestDoor.lua"/>
 	<action uniqueid="3025" script="green djinn quest/greenDjinnQuestBackDoor.lua"/>
@@ -323,6 +320,7 @@
 	<action fromuid="50095" touid="50104" script="pits of inferno quest/pitsOfInfernoQuestBazirWrongLevers.lua"/>
 	<action uniqueid="50105" script="pits of inferno quest/pitsOfInfernoQuestBazirMazeLever.lua"/>
 	<action uniqueid="50106" script="pits of inferno quest/pitsOfInfernoQuestFireThroneLever.lua"/>
+	<action actionid="50160" script="pits of inferno quest/pitsOfInfernoQuestMazeStone.lua"/>
 
 	<!-- Postman Quest -->
 	<action actionid="7815" script="postman quest/postmanQuestMailbox.lua"/>
