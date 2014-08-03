@@ -15,6 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if player:getStorageValue(targetItem.storageKey[1]) == 1 and player:getStorageValue(targetItem.storageKey[2]) < 1 then
 		player:setStorageValue(targetItem.storageKey[2], 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<sizzle> <fizz>')
+		player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 	end
 	return true
 end

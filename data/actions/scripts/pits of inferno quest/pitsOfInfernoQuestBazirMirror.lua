@@ -11,20 +11,21 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-    local targetActionId = config[item.actionid]
-    if not targetActionId then
+    local useItem = config[item.actionid]
+    if not useItem then
         return true
     end
 
-    if targetActionId.teleportPlayer then
+    if useItem.teleportPlayer then
         local player = Player(cid)
-        player:teleportTo(Position(32717, 32388, 13))
+        player:teleportTo(Position(32712, 32392, 13))
         player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:say('Beauty has to be rewarded! Muahahaha!', TALKTYPE_MONSTER_SAY)
     end
 
-    local tapestry = Tile(targetActionId.fromPosition):getItemById(6434)
+    local tapestry = Tile(useItem.fromPosition):getItemById(6434)
     if tapestry then
-        tapestry:moveTo(targetActionId.toPosition)
+        tapestry:moveTo(useItem.toPosition)
     end
     return true
 end
