@@ -1,7 +1,7 @@
 local config = {
 	[4641] = {9972, 9973, "Shadows rise and engulf the candle. The statue flickers in an unearthly light."},
-	[4642] = {9973, 9874, "The shadows of the statue swallow the candle hungrily."},
-	[4643] = {9974, 9875, "A shade emerges and snatches the candle from your hands."}
+	[4642] = {9973, 9974, "The shadows of the statue swallow the candle hungrily."},
+	[4643] = {9974, 9975, "A shade emerges and snatches the candle from your hands."}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
