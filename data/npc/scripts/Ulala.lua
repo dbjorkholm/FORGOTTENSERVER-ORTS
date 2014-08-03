@@ -38,7 +38,31 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Please help tribe make Pandor happy! Did you bring us what I asked?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 9 then
-			npcHandler:say("work in process", cid)
+			npcHandler:say(	
+			{
+				"We need make sure Fasuon is on our side. There is laaaaaaaarge crystal on top of mountain. Don't know where come from, was there before us. Problem is - way is infested with creatures! ...",
+				"Creatures from the other side of mountain. Bony! Scary! We too weak to go through there, can just run and hope to survive.. but you do better! ...",
+				"Please find great crystal of Fasuon and pray there for his support!"
+			}, cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 10)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission05, 1) --Questlog, Unnatural Selection Quest "Mission 5: Ray of Light"
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 10 then
+			npcHandler:say("Please find great crystal of Fasuon and pray there for his support!", cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 11 then
+			npcHandler:say("You prayed to Fasuon! Me saw ray of lights on mountain top! Beautiful it was. Me thank you for your help. Great hunt almost can't go wrong now!", cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 12)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission05, 3) --Questlog, Unnatural Selection Quest "Mission 5: Ray of Light"
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 12 then
+			npcHandler:say(	
+			{
+				"Uzroth very easy to anger. You been great help so far but me think that need to pray to Uzroth meself. Only me understand what he wants at time and he is veeeeeery moody. Cannot risk to make angry! ...",
+				"So me will do when you gone. But me thank you very much. Go speak Lazaran and tell the gods are pleased now."
+			}, cid)
+			player:setStorageValue(Storage.UnnaturalSelection.Questline, 13)
+			player:setStorageValue(Storage.UnnaturalSelection.Mission06, 1) --Questlog, Unnatural Selection Quest "Mission 6: Firewater Burn"
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "krunus") then
