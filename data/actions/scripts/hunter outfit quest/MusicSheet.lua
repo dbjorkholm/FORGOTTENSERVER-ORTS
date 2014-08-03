@@ -1,24 +1,24 @@
 local config = {
-	[6087] = {Storage.OutfitQuest.HunterMusicSheet01, 6087, "first"},
-	[6088] = {Storage.OutfitQuest.HunterMusicSheet02, 6088, "second"},
-	[6089] = {Storage.OutfitQuest.HunterMusicSheet03, 6089, "third"},
-	[6090] = {Storage.OutfitQuest.HunterMusicSheet04, 6090, "fourth"}
+	[6087] = {storageKey = Storage.OutfitQuest.HunterMusicSheet01, text = 'first'},
+	[6088] = {storageKey = Storage.OutfitQuest.HunterMusicSheet02, text = 'second'},
+	[6089] = {storageKey = Storage.OutfitQuest.HunterMusicSheet03, text = 'third'},
+	[6090] = {storageKey = Storage.OutfitQuest.HunterMusicSheet04, text = 'fourth'}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	local targetItem = config[item.itemid]
-	if not targetItem then
+	local useItem = config[item.itemid]
+	if not useItem then
 		return true
 	end
-	
-	if player:getStorageValue(targetItem[1]) ~= 1 then
-		player:setStorageValue(targetItem[1], 1)
-		Item(item.uid):remove(1)
-		player:sendTextMessage(MESSAGE_STATUS_WARNING, string.format("You have learned the %s part of a hymn.", targetItem[3]))
+
+	local player = Player(cid)
+	if player:getStorageValue(useItem.storageKey) ~= 1 then
+		player:setStorageValue(useItem.storageKey, 1)
+		player:sendTextMessage(MESSAGE_STATUS_WARNING, 'You have learned the ' .. useItem.text .. ' part of a hymn.')
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+		Item(item.uid):remove(1)
 	else
-		player:sendTextMessage(MESSAGE_STATUS_WARNING, string.format("You already know the %s verse of the hymn.", targetItem[3]))
+		player:sendTextMessage(MESSAGE_STATUS_WARNING, 'You already know the ' .. useItem.text .. ' verse of the hymn.')
 	end
 	return true
 end

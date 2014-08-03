@@ -1,22 +1,22 @@
 local config = {
-	[3057] = {471, 1954},
-	[3058] = {470, 1954}
+	[3057] = {storageKey = 471, itemId = 1954},
+	[3058] = {storageKey = 470, itemId = 1954}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	local targetItem = config[item.uid]
-	if not targetItem then
+	local useItem = config[item.uid]
+	if not useItem then
 		return true
 	end
-	
-	if player:getStorageValue(targetItem[1]) > 0 then
+
+	local player = Player(cid)
+	if player:getStorageValue(useItem.storageKey) > 0 then
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty")
 		return true
 	end
-	
-	player:setStorageValue(targetItem[1], 1)
-	player:addItem(targetItem[2], 1)
+
+	player:setStorageValue(useItem.storageKey, 1)
+	player:addItem(useItem.itemId, 1)
 	player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a part of hoist instruction.")
 	return true
 end
