@@ -2,9 +2,9 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
-function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			        end
+function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			        end
+function onCreatureSay(cid, type, msg)		    npcHandler:onCreatureSay(cid, type, msg)		        end
 local rnd_sounds = 0
 function onThink()
 	if rnd_sounds < os.time() then
@@ -38,23 +38,27 @@ keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
 
 local travelNode = keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Darashia on Darama for 60 gold?'})
-travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, destination = {x=33270, y=32441, z=6} })
-travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
+		travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, destination = {x=33270, y=32441, z=6} })
+		travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local travelNode = keywordHandler:addKeyword({'svargrond'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Svargrond for 60 gold?'})
-travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, destination = {x=32253, y=31097, z=4} })
-travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
+		travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, destination = {x=32253, y=31097, z=4} })
+		travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
+
+local travelNode = keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Edron for 60 gold?'})
+	    travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 60, destination = {x=33193, y=31784, z=3} })
+	    travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Kazordoon for 80 gold?'})
-travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 80, destination = {x=33193, y=31784, z=3} })
-travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
+        	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 80, destination = {x=32588, y=31941, z=0} })
+        	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local edronPos = Position(33175, 31764, 6)
-
+			
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if not npcHandler:isFocused(cid) then
-		return false
+	    local player = Player(cid)
+	    if not npcHandler:isFocused(cid) then
+		        return false
 	end
 
 	if msgcontains(msg, "eclipse") then
@@ -64,17 +68,17 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "farmine") then
 		if player:getStorageValue(Storage.TheNewFrontier.Mission10) == 1 then
-			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
-			npcHandler.topic[cid] = 2
+			    npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
+			    npcHandler.topic[cid] = 2
 		else
-			npcHandler:say("Never heard about a place like this.", cid)
-			npcHandler.topic[cid] = 0
+			    npcHandler:say("Never heard about a place like this.", cid)
+			    npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then	
 			npcHandler:say('Hold on!', cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(Position(32659, 31915, 0), false)
+			player:teleportTo({x = 32659, y = 31915, z = 0}, false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeMoney(60) then
@@ -91,7 +95,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:teleportTo(edronPos)
 			else
 				player:teleportTo(edronPos)
-			end
+			end	
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
@@ -99,7 +103,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "edron") then
 		npcHandler:say("Do you seek a ride to Edron?", cid)
-		npcHandler.topic[cid] = 3
+		npcHandler.topic[cid] = 3	
 	end
 	return true
 end
