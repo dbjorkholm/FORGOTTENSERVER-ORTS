@@ -18,9 +18,9 @@ local random_texts = {
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 10)
-		if(math.random(100) < 20) then
+		if math.random(100) < 20 then
 			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
 		end
 	end
@@ -39,7 +39,8 @@ keywordHandler:addKeyword({'rot'}, StdModule.say, {npcHandler = npcHandler, only
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "pirate") then
+	end
+	if msgcontains(msg, "pirate") then
 		npcHandler:say({'In a just world, I would be captain of a grand ship, ...',
 		'those pirates out there would now be my minions, and we would brave the seas and become the terror of the coastal towns! ...',
 		'If only our plan had worked!'}, cid)
