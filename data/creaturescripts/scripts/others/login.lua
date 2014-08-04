@@ -1,6 +1,6 @@
 -- ordered as in creaturescripts.xml
 local events = {
-	'TurtorialCockroach',
+	'TutorialCockroach',
 	'ElementalSpheresOverlords',
 	'BigfootBurdenVesperoth',
 	'BigfootBurdenWarzone',
@@ -16,7 +16,6 @@ local events = {
 	'InquisitionUngreez',
 	'KillingInTheNameOfKills',
 	'MastersVoiceServants',
-	'StorageConversion',
 	'PharaoKillPortal',
 	'PlayerDeath',
 	'AdvanceSave'

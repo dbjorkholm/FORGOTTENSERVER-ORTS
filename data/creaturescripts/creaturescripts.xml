@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
 	<!-- Rookgaard Cockroach -->
-	<event type="kill" name="TurtorialCockroach" script="rookgaard/killCockroach.lua"/>
+	<event type="kill" name="TutorialCockroach" script="rookgaard/killCockroach.lua"/>
 
 	<!-- Elemental Spheres Quest -->
 	<event type="kill" name="ElementalSpheresOverlords" script="elemental spheres quest/OverlordsKill.lua"/>
@@ -33,9 +33,6 @@
 
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="MastersVoiceServants" script="their master's voice quest/ServantsKill.lua"/>
-
-	<!-- Storage Conversion -->
-	<event type="login" name="StorageConversion" script="others/StorageConversion.lua"/>
 
 	<!-- Pharaos: Portal to reward room -->
 	<event type="kill" name="PharaoKillPortal" script="others/pharaoPortal.lua"/>
