@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "base") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(Storage.Annihilator.Done) == 1 then
+			if player:getStorageValue(Storage.AnnihilatorDone) == 1 then
 				player:addOutfit(541, 0)
 				player:addOutfit(542, 0)
 				player:setStorageValue(Storage.Annihilator.Done, 2)
@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "shield") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(Storage.Annihilator.Done) == 2 and player:getStorageValue(2217) == 1 then
+			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(2217) == 1 then
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
 				npcHandler:say("Receive the shield, " .. player:getName() .. ".", cid)
@@ -45,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "helmet") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(Storage.Annihilator.Done) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
+			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
 				player:addOutfitAddon(541, 2)
 				player:addOutfitAddon(542, 2)
 				player:setStorageValue(Storage.DemonOak.Done, 4)
