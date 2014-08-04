@@ -10,8 +10,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doSendMagicEffect({x = 33171, y = 31058, z = 11}, CONST_ME_TELEPORT)
 		end
 	elseif(item.itemid == 12316) then
-		if(getPlayerStorageValue(cid, 1060) == 7) then
-			setPlayerStorageValue(cid, 1060, 8)
+		if(getPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest) == 7) then
+			setPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest, 8)
 			doPlayerAddItem(cid, 12323, 1)
 		end
 	end

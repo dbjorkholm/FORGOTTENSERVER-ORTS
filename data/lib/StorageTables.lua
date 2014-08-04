@@ -8,9 +8,8 @@ Storage = {
 		Shooting = 902,
 		Rank = 921
 	},
-	wagon = {
-		Ticket = 1131
-	},
+	wagonTicket = 1131,
+	wrathOfTheEmperorQuest = 1060,
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
@@ -255,12 +254,8 @@ Storage = {
 		CarlosNpcGreetStorage = 50097,
 		CarlosQuestLog = 50098
 	},
-	DeeperBanuta = {
-		Shortcut = 50095
-	},
-	Annihilator = {
-		Done = 2215
-	},
+	DeeperBanutaShortcut = 50095,
+	AnnihilatorDone = 2215,
 	DemonOak = {
 		Done = 1010,
 		Progress = 1013,
@@ -270,9 +265,7 @@ Storage = {
 		Arena = 1100,
 		Pit = 1101
 	},
-	pitsOfInferno = {
-		Pumin = 50096
-	},
+	pitsOfInfernoPumin = 50096,
 	hiddenCityOfBeregar = {
 		WayToBeregar = 50099,
 		OreWagon = 50100,
@@ -284,13 +277,7 @@ Storage = {
 		TheGoodGuard = 50106,
 		PythiusTheRotten = 50107
 	},
-	ultimateBooze = {
-		Quest = 50108
-	},
-	toOutfoxAFox = {
-		Quest = 50135
-	},
-	madMage = {
-		Quest = 50136
-	}
+	ultimateBoozeQuest = 50108,
+	toOutfoxAFoxQuest = 50135,
+	madMageQuest = 50136
 }

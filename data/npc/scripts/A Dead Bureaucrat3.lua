@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 6 then
+	if Player(cid):getStorageValue(Storage.pitsofInfernoPumin) == 6 then
 		npcHandler:say("Back again? How can I help you this time?", cid)
 		npcHandler.topic[cid] = 4
 	else
@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 	local vocation = Vocation(getBaseVocation(player:getVocation():getId()))
 
 	if msgcontains(msg, "pumin") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 2 then
+		if player:getStorageValue(Storage.pitsofInfernoPumin) == 2 then
 			npcHandler:say("Tell me if you liked it when you come back. What is your name?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -42,10 +42,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "145") then
 		if npcHandler.topic[cid] == 3 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 3)
+			player:setStorageValue(Storage.pitsofInfernoPumin, 3)
 			npcHandler:say("That's right, you can get Form 145 from me. However, I need Form 411 first. Come back when you have it.", cid)
 		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 7)
+			player:setStorageValue(Storage.pitsofInfernoPumin, 7)
 			npcHandler:say("Well done! You have form 411!! Here is Form 145. Have fun with it.", cid)
 		end
 		npcHandler.topic[cid] = 0
