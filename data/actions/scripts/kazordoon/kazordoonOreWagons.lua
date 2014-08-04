@@ -40,7 +40,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(Storage.wagon.Ticket) >= os.time() then
+	if player:getStorageValue(Storage.wagonTicket) >= os.time() then
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else

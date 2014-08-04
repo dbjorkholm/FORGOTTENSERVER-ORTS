@@ -13,26 +13,26 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if player:getStorageValue(1060) == 2 then
+		if player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 2 then
 			npcHandler:say("Mhm, what are you doing here. Who zent you? ", cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(1060) == 3 then
+		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 3 then
 			npcHandler:say("Zo are you ready to get zomezing done?", cid)
 			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(1060) == 5 then
+		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 5 then
 			npcHandler:say("Zo? Did you find a way to reztore ze teleporter? ", cid)
 			npcHandler.topic[cid] = 3
-		elseif player:getStorageValue(1060) == 6 then
+		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 6 then
 			npcHandler:say("You ezztablished zze connection to zze hideout, good. But zzizz izz no time to rezzt. Your new tazzk will be quite different. ... ", cid)
 			npcHandler:say("Zze gardenzz are plagued by a creature. Zze former keeper of zzizz garden became an abomination of madnezz zzat needzz to be zztopped. ... ", cid)
 			npcHandler:say("He hidezz deep underground and it will be dangerouzz to challenge him in hizz lair but I am willing to rizzk it. ... ", cid)
 			npcHandler:say("Find him, dezztroy him, bring me hizz - I uhm, mean it izz utterly nezzezzary for you to deliver me a proof of hizz deazz. ... ", cid)
 			npcHandler:say("Now go - what are you waiting for, zzoftzzkin? Ready to finish what needzz to be finished? ", cid)
 			npcHandler.topic[cid] = 4
-		elseif player:getStorageValue(1060) == 8 then
+		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 8 then
 			npcHandler:say("Zzo... you finished him. Show me hizz head, will you? ", cid)
 			npcHandler.topic[cid] = 5
-		elseif player:getStorageValue(1060) == 9 then
+		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 9 then
 			npcHandler:say("At zze dawn of time, zze children of zze Great Zznake were numerouzz. Zzey daringly colonizzed many partzz of zze world. But all bravery did not help againzzt zze sheer number of enemiezz zzey encountered. ... ", cid)
 			npcHandler:say("And while zze entitiezz zze unbelieverzz call godzz battled for power out of vanity, zze fazze of zze world changed violently. ... ", cid)
 			npcHandler:say("Many zzentrezz of our magnifizzent zzivilizzation were dezztroyed and only two realmzz zzat we know of remained intact but lozzt contact to each ozzer. ... ", cid)
@@ -43,7 +43,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("It wazz revealed zzat it hazz been zzplit into 3 partzz for reazzonzz zzat are of no importanzze anymore. Zzizz powerful devizze could help uzz in our battle againzzt zze emperor. ... ", cid)
 			npcHandler:say("A shaft, a cuzzp, and an emerald form a zzeptre of zzuch power zzat zze partzz were hidden and are now guarded by vile creaturezz. ... ", cid)
 			npcHandler:say("Find it. Retrieve it. And bring it back to me. ", cid)
-			player:setStorageValue(1060, 10)
+			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 10)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "zalamon")) then
@@ -54,7 +54,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Oh you did. ... ", cid)
 			npcHandler:say("I zee. Interezting. ... ", cid)
 			npcHandler:say("You being here meanz we have eztablished connectionz to ze zouz. Finally. And you are going to help uz. Well, zere iz zertainly a lot for you to do. Zo better get ztarted. ", cid)
-			player:setStorageValue(1060, 3)
+			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 3)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "yes")) then
@@ -64,24 +64,24 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("My men believe it iz a dizturbanze cauzed by ze corruption zat zpreadz everywhere. Zey are too zcared to go down zere. And zat'z where you come in. ... ", cid)
 			npcHandler:say("Zere were meanz to activate teleporterz zomewhere in ze complex. But zinze you cannot reach all ze roomz, I guezz you will have to improvize. ... ", cid)
 			npcHandler:say("Here iz ze key to ze entranze to ze complex. Figure zomezing out, reztore ze teleporter zo we can get back to ze plainz in ze zouz. ", cid)
-			player:setStorageValue(1060, 4)
+			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 4)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
 			npcHandler:say("You did it! Zere waz zome kind of zparkle and I zink it iz working again - oh pleaze feel free to try it, I uhm, I will wait here and be ready juzt in caze zomezing uhm happenz to you. ... ", cid)
 			npcHandler:say("And if you head to Zalamon, be zure to inform him about our zituation. Food rationz are running low and we are ztill not well equipped. We need to eztablish a working zupply line. ", cid)
-			player:setStorageValue(1060, 6)
+			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 6)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 4) then
 			npcHandler:say("Fine. I guezz poizzoning zzome of hizz plantzz will be enough to lure him out of hizz conzzealment. Zzizz plant poizzon here should allow you to do zzome zzignificant damage, take it. ... ", cid)
 			npcHandler:say("You can find him eazzt of zze corrupted gardenzz. Zzere uzzed to be a zzmall domizzile zzere but it hazz probably been conzzumed by zze corruption zzo beware. And now - go. ", cid)
-			player:setStorageValue(1060, 7)
+			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 7)
 			player:addItem(12320, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 5) then
 			if player:getItemCount(12316) >= 1 then
 				player:removeItem(12316, 1)
 				npcHandler:say("Zzizz izz not hizz head but clearly belonged to zze keeper. I - I am imprezzed. You can go now. Leave me alone for a zzecond. ", cid)
-				player:setStorageValue(1060, 9)
+				player:setStorageValue(Storage.wrathOfTheEmperorQuest, 9)
 				npcHandler.topic[cid] = 0
 			end
 		end	
