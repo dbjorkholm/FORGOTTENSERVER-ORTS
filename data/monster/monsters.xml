@@ -160,6 +160,7 @@
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
 	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
+	<monster name="Chikhaton" file="bosses/chikhaton.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
 	<monster name="Clubarc The Plunderer" file="bosses/clubarc the plunderer.xml"/>
 	<monster name="Coldheart" file="bosses/coldheart.xml"/>
