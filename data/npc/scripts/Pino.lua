@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
 			npcHandler.topic[cid] = 1
 		else
-			npcHandler:say("The flying route to this place is unsafe for you. Why you don\'t try the route by the steamboat? It seems to be better in your case.", cid)
+			npcHandler:say("Never heard about a place like this.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
