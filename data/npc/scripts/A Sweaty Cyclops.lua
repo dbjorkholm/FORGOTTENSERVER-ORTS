@@ -173,7 +173,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.FriendsandTraders.TheSweatyCyclops) == 1 then
 			npcHandler:say("Lil' one bring three bast skirts?", cid)
 			npcHandler.topic[cid] = 3
-		elseif player:getStorageValue(Storage.FriendsandTraders.TheSweatyCyclops) == 2)then
+		elseif player:getStorageValue(Storage.FriendsandTraders.TheSweatyCyclops) == 2 then
 			npcHandler:say("Hellsteel is. Cursed and evil. Dangerous to work with. Me can make from evil helmet. Lil' one want to trade?", cid)
 			npcHandler.topic[cid] = 6
 		end
