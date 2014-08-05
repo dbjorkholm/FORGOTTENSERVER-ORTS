@@ -383,7 +383,68 @@
 			<missionstate id="3" description="You brought Lazaran the beer and got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
-
+	<quest name="Wrath of the Emperor" startstorageid="12350" startstoragevalue="1">
+		<mission name="Mission 01: Catering the Lions Den" storageid="12351" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 02: First Contact" storageid="12352" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 03: The Keeper" storageid="12353" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 04: Sacrament of the Snake" storageid="12354" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 05: New in Town" storageid="12355" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 06: The Office Job" storageid="12356" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 07: A Noble Cause" storageid="12357" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 08: Uninvited Guests" storageid="12358" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 09: The Sleeping Dragon" storageid="12359" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 10: A Message of Freedom" storageid="12360" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 11: Payback Time" storageid="12361" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+		<mission name="Mission 12: Just Rewards" storageid="12362" startvalue="1" endvalue="3">
+			<missionstate id="1" description="..."/>
+			<missionstate id="2" description="..."/>
+			<missionstate id="3" description="..."/>
+		</mission>
+	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
 		<mission name="Omruc's Treasure" storageid="12101" startvalue="1" endvalue="1" description="You defeated Omruc and received a helmet adornment"/>
 		<mission name="Thalas' Treasure" storageid="12102" startvalue="1" endvalue="1" description="You defeated Thalas and received a Gem Holder"/>

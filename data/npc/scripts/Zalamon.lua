@@ -118,20 +118,20 @@ local function creatureSayCallback(cid, type, msg)
 		-- CHILDREN OF REVOLUTION QUEST
 			
 		-- WRATH OF THE EMPEROR QUEST
-		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 21 and player:getStorageValue(Storage.wrathOfTheEmperorQuest) < 1 then
+		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 21 and player:getStorageValue(Storage.WrathoftheEmperor.Questline) < 1 then
 			npcHandler:say(
 						{
 						"Zze attackzz have weakened our enemy zzignificantly. Yet, your quezzt continuezz. Bezzidezz zzome tazzkzz you could take, zze zzreat of zze emperor izz zztill hanging over our headzz like a rain cloud. ... ",
 						"Zzo, are you indeed willing to continue zze fight for our cauzze? "
 						}, cid)
 			npcHandler.topic[cid] = 14
-		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 1 then
+		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 1 then
 			npcHandler:say("Ah you have returned. I azzume you already found zzome itemzz to build a proper dizzguizze? ", cid)
 			npcHandler.topic[cid] = 16
-		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 11 then
+		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 11 then
 			npcHandler:say("You - azzembled zze zzeptre? Hand it out, give it to me, will you? ", cid)
 			npcHandler.topic[cid] = 19
-		elseif player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 12 then
+		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 12 then
 			npcHandler:say(
 						{
 						"Now we need to get clozzer to zze emperor himzzelf. A hive of beezz would defend zzeir queen wizz zzeir lives in cazze an enemy gained entranzze. Zzizz makezz a formidable defenzze line, nearly inviolable. ... ",
@@ -141,7 +141,7 @@ local function creatureSayCallback(cid, type, msg)
 						"We have alzzo forged zome paperzz for you and zzent zzem to zze zzity. Your victory in zze arena iz well known in our land. Wizz zze help of zzezze paperzz you will pretend zzat zzome of zze higher officialzz want to talk to you about your battle. ... ",
 						"Zzizz way you will be able to enter zze zzity of zze dragon emperor and meet our contact zzere in zze imperial offizze. He will give you zze next inzztructionzz. "
 						}, cid)
-			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 13)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 13)
 			npcHandler.topic[cid] = 0
 		-- WRATH OF THE EMPEROR QUEST	
 		end
@@ -296,7 +296,7 @@ local function creatureSayCallback(cid, type, msg)
 						"One of zzem izz uzzed azz a maintenanzze connection by enemy lizardzz. To enter it, you will have to uzze a dizzguizze. Zzomezzing like a crate perhapzz. ... ",
 						"Mh, if you can find zzome nailzz - 3 should be enough - and 1 piezze of wood, I should be able to create an appropriate cazzing. Return to me if you found zze itemzz and we will talk about zze next zztep. "
 						}, cid)
-			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 1)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
 			npcHandler:say(
@@ -309,7 +309,7 @@ local function creatureSayCallback(cid, type, msg)
 			if getPlayerItemCount(cid, 8309) >= 3 and getPlayerItemCount(cid, 5901) >= 1 then
 				player:removeItem(5901, 1)
 				player:removeItem(8309, 3)
-				player:setStorageValue(Storage.wrathOfTheEmperorQuest, 2)
+				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 2)
 				player:addItem(12284, 1)
 				npcHandler:say(
 						{
@@ -324,7 +324,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 19 then
 			if getPlayerItemCount(cid, 12327) >= 1 then
 				player:removeItem(12327, 1)
-				player:setStorageValue(Storage.wrathOfTheEmperorQuest, 12)
+				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 12)
 				npcHandler:say("Finally. At lazzt. Zze zzeptre izz - ourzz. Ourzz of courzze. A weapon we should uzze wizzely for our cauzze. I need a zzecond or two. Do you leave me already? ", cid)
 				npcHandler.topic[cid] = 0
 			end

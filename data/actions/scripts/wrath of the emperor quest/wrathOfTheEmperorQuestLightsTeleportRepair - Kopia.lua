@@ -30,7 +30,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.itemid == 12290 and itemEx.actionid == 8025) then
 		doCreatureSay(cid, "As you give the coal into the pool the corrupted fluid begins to dissolve, leaving purified, refreshing water.", TALKTYPE_MONSTER_SAY)
 		doRemoveItem(item.uid)
-		setPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest, 5)
+		setPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline, 5)
 		pos = {
 			{x = 33282, y = 31036, z = 10},
 			{x = 33282, y = 31037, z = 10},
