@@ -178,7 +178,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 7 then
 		if msgcontains(msg, 'yes') then
 			local player = Player(cid)
-			if player:getCap() >= getMoneyWeight(count[cid]) then
+			if player:getCapacity() >= getMoneyWeight(count[cid]) then
 				if not player:withdrawMoney(count[cid]) then
 					npcHandler:say('There is not enough gold on your account.', cid)
 				else
