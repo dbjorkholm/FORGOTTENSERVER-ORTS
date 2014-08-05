@@ -42,7 +42,7 @@ local config = {
 			{from = 8150, to = 9823, itemId = 7590, count = 2},
 			{from = 9824, to = 9923, itemId = 9971},
 			{from = 9924, to = 9990, itemId = 15546},
-			{from = 9991, to = 10001, itemId = 15492},
+			{from = 9991, to = 10001, itemId = 15492}
 		},
 		effect = CONST_ME_HITBYPOISON
 	},
@@ -83,7 +83,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not useId then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	local chance = math.random(10001)
 	for i = 1, #useId.chances do
@@ -102,7 +102,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 			local useItem = Item(item.uid)
 			useItem:getPosition():sendMagicEffect(useId.effect)
-            useItem:remove(1)
+			useItem:remove(1)
 			break
 		end
 	end
