@@ -124,36 +124,25 @@ CONTAINER_POSITION = 0xFFFF
 ITEMCOUNT_MAX = 100
 
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
-	if position == nil then
-		position = getCreaturePosition(cid)
+	local player = Player(cid)
+	if not position then
+		position = player:getPosition()
 	end
 
 	local spectators = getSpectators(position, radiusx, radiusy, false, true)
-	if spectators ~= nil then
+	if spectators then
 		for _, spectator in ipairs(spectators) do
-			doCreatureSay(cid, text, type, false, spectator, position)
+			player:say(text,type, false, spectator, position)
 		end
 	end
 end
 
 function getBlessingsCost(level)
-	if level <= 30 then
-		return 2000
-	elseif level >= 120 then
-		return 20000
-	else
-		return ((level - 20) * 200)
-	end
+	return (level <= 30 and 2000 or level >= 120 and 20000 or ((level - 20) * 200))
 end
 
 function getPvpBlessingCost(level)
-	if level <= 30 then
-		return 2000
-	elseif level >= 270 then
-		return 50000
-	else
-		return ((level - 20) * 200)
-	end
+	return (level <= 30 and 2000 or level >= 270 and 50000 or ((level - 20) * 200))
 end
 
 function isInRange(pos, fromPos, toPos)
@@ -165,7 +154,7 @@ function Player:isPremium()
 end
 
 function isNumber(str)
-	return tonumber(str) ~= nil
+	return tonumber(str)
 end
 
 function getDistanceBetween(firstPosition, secondPosition)
@@ -180,7 +169,7 @@ end
 
 function isSorcerer(cid)
 	local player = Player(cid)
-	if player == nil then
+	if not player then
 		return false
 	end
 	return isInArray({1, 5}, player:getVocation():getId())
@@ -188,7 +177,7 @@ end
 
 function isDruid(cid)
 	local player = Player(cid)
-	if player == nil then
+	if not player then
 		return false
 	end
 	return isInArray({2, 6}, player:getVocation():getId())
@@ -196,7 +185,7 @@ end
 
 function isPaladin(cid)
 	local player = Player(cid)
-	if player == nil then
+	if not player then
 		return false
 	end
 	return isInArray({3, 7}, player:getVocation():getId())
@@ -204,7 +193,7 @@ end
 
 function isKnight(cid)
 	local player = Player(cid)
-	if player == nil then
+	if not player then
 		return false
 	end
 	return isInArray({4, 8}, player:getVocation():getId())
