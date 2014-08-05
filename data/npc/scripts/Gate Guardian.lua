@@ -13,14 +13,14 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "mission") or msgcontains(msg, "pass")) then
-		if player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 21 then
+		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 21 then
 			npcHandler:say("You want entranzzze to zzze zzzity?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Mh, zzzezzze paperzzz zzzeem legit, I have orderzzz to let you pazzz. Zzzo be it.", cid)
-			player:setStorageValue(Storage.wrathOfTheEmperorQuest, 22)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 22)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(33114, 31197, 7), false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if player:getStorageValue(Storage.wrathOfTheEmperorQuest) == 10 then
+		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 10 then
 			if player:getPosition().z == 12 and player:getStorageValue(1070) < 1 then
 				npcHandler:say("Although we are willing to hand this item to you, there is something you have to understand: There is no such thing as 'the' sceptre. ...", cid)
 				npcHandler:say("Those sceptres are created for special purposes each time anew. Therefore you will have to create one on your own. It will be your mission to find us three keepers and to get the three parts of the holy sceptre. ...", cid)

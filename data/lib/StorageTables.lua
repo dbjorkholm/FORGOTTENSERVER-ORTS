@@ -9,7 +9,6 @@ Storage = {
 		Rank = 921
 	},
 	wagonTicket = 1131,
-	wrathOfTheEmperorQuest = 1060,
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
@@ -223,6 +222,21 @@ Storage = {
 		Mission05 = 12335,
 		Mission06 = 12336,
 		DanceStatus = 12337
+	},
+	WrathoftheEmperor = {
+		Questline = 12350, -- Storage through the Quest
+		Mission01 = 12351,
+		Mission02 = 12352,
+		Mission03 = 12353,
+		Mission04 = 12354,
+		Mission05 = 12355,
+		Mission06 = 12356,
+		Mission07 = 12357,
+		Mission08 = 12358,
+		Mission09 = 12359,
+		Mission10 = 12360,
+		Mission11 = 12361,
+		Mission12 = 12362
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
