@@ -7,21 +7,19 @@ cursed:setParameter(CONDITION_PARAM_TICKINTERVAL, 40000) -- Delay between damage
 cursed:setParameter(CONDITION_PARAM_FORCEUPDATE, true) -- Re-update condition when adding it(ie. min/max value)
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local depleteChance = 05
-	local player = Player(cid)
-	local targetItem = Item(item.uid)
+	local player, useItem, depleteChance = Player(cid), Item(item.uid), 5
 	if math.random(100) <= depleteChance then
 		player:addCondition(cursed)
-		targetItem:transform(10312)
-		targetItem:decay()
+		useItem:transform(10312)
+		useItem:decay()
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Ouch! The serpent claw stabbed you.')
 	else
 		if player:getCondition(CONDITION_POISON) then
 			player:removeCondition(CONDITION_POISON)
 		end
-		targetItem:transform(10311)
-		targetItem:decay()
+		useItem:transform(10311)
+		useItem:decay()
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 	end
 	return true

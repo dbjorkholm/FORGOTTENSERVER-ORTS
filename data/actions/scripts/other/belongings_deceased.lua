@@ -38,13 +38,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				local itemid, count = randomItem.itemid, randomItem.count or 1
 				local itemType = ItemType(itemid)
 				Player(cid):addItem(itemid, count)
-				doCreatureSayWithRadius(cid, "You found " .. (count > 1 and count or (itemType:getArticle() ~= "" and itemType:getArticle() or "")) .. " " .. (count > 1 and itemType:getPluralName() or itemType:getName()) .. " in the bag.", TALKTYPE_MONSTER_SAY, 2, 2)
+				doCreatureSayWithRadius(cid, 'You found ' .. (count > 1 and count or (itemType:getArticle() ~= '' and itemType:getArticle() or '')) .. ' ' .. (count > 1 and itemType:getPluralName() or itemType:getName()) .. ' in the bag.', TALKTYPE_MONSTER_SAY, 2, 2)
 			else
-				doCreatureSayWithRadius(cid, "You found nothing useful.", TALKTYPE_MONSTER_SAY, 2, 2)
+				doCreatureSayWithRadius(cid, 'You found nothing useful.', TALKTYPE_MONSTER_SAY, 2, 2)
 			end
-			local targetItem = Item(item.uid)
-			targetItem:getPosition():sendMagicEffect(CONST_ME_POFF)
-			targetItem:remove()
+			local useItem = Item(item.uid)
+			useItem:getPosition():sendMagicEffect(CONST_ME_POFF)
+			useItem:remove()
 			break
 		end
 	end

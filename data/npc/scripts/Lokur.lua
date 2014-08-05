@@ -342,6 +342,7 @@ local function creatureSayCallback(cid, type, msg)
 	-- WAGON TICKET
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	local player = Player(cid)
 	if msgcontains(msg, "ticket")  then
 =======
@@ -354,17 +355,22 @@ local function creatureSayCallback(cid, type, msg)
 		local player = Player(cid)
 		if player:getStorageValue(Storage.wagon.Ticket) < os.time() then
 >>>>>>> upstream/master
+=======
+	if msgcontains(msg, "ticket") then
+		local player = Player(cid)
+		if player:getStorageValue(Storage.wagonTicket) < os.time() then
+>>>>>>> upstream/master
 			npcHandler:say("Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?", cid)
 			npcHandler.topic[cid] = 1
 		else
 			npcHandler:say("Your weekly ticket is still valid. Would be a waste of money to purchase a second one", cid)
 			npcHandler.topic[cid] = 0
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
 			if player:getMoney() >= 250 then
 				player:removeMoney(250)
-				player:setStorageValue(Storage.wagon.Ticket, os.time() + 7 * 24 * 60 * 60)
+				player:setStorageValue(Storage.wagonTicket, os.time() + 7 * 24 * 60 * 60)
 				npcHandler:say("Here is your stamp. It can't be transferred to another person and will last one week from now. You'll get notified upon using an ore wagon when it isn't valid anymore.", cid)
 			else
 				npcHandler:say("You don't have enough money.", cid)
@@ -372,16 +378,25 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 <<<<<<< HEAD
+<<<<<<< HEAD
 	elseif npcHandler.topic[cid] == 1 then 
 		if msgcontains(msg, "no")  then 
 =======
 	elseif(npcHandler.topic[cid] == 1) then 
 		if(msgcontains(msg, "no")) then 
 >>>>>>> parent of fe0ddfc... Fix Lokur. Now it should sell wagon tickets correctly.
+=======
+	elseif npcHandler.topic[cid] == 1 then 
+		if msgcontains(msg, "no") then 
+>>>>>>> upstream/master
 			npcHandler:say("No then.", cid)	
 			npcHandler.topic[cid] = 0
 		end
 	-- WAGON TICKET
+	elseif msgcontains(msg, "measurements") then
+		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
+			npcHandler:say("Come on, I have no clue what they are. Better ask my armorer Kroox for such nonsense.Go and ask him for good ol' Lokurs measurements, he'll know.", cid)
+		end
 	end
 	return true
 end

@@ -8,7 +8,7 @@ local config = {
 	['Sunday'] = Position(32326, 31783, 6)
 }
 
--- Should Rashid spawn as real tibia?
+-- Should Rashid spawn as in real tibia?
 local spawnByDay = true
 
 function onStartup()

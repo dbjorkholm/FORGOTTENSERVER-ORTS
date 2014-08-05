@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 4 then
+	if Player(cid):getStorageValue(Storage.pitsofInfernoPumin) == 4 then
 		npcHandler:say("Hey! You are back! How can I help you this time?", cid)
 		npcHandler.topic[cid] = 1
 	else
@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "287") then
 		if npcHandler.topic[cid] == 1 then
-			Player(cid):setStorageValue(Storage.pitsOfInferno.Pumin, 5)
+			Player(cid):setStorageValue(Storage.pitsofInfernoPumin, 5)
 			npcHandler:say("Sure, you can get it from me. Here you are. Bye", cid)
 		end
 		npcHandler.topic[cid] = 0

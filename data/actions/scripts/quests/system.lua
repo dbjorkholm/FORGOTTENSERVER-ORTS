@@ -1,5 +1,5 @@
 local specialQuests = {
-	[2215] = 2215, -- Annihilator
+	[2215] = Storage.AnnihilatorDone, -- Annihilator
 	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
 	[10544] = 10544,
 	[26300] = 26300,
@@ -35,13 +35,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	local targetItem = Item(item.uid)
+	local useItem = Item(item.uid)
 	local items = {}
 	local reward = nil
 
-	local size = targetItem:isContainer() and Container(item.uid):getSize() or 0
+	local size = useItem:isContainer() and Container(item.uid):getSize() or 0
 	if size == 0 then
-		reward = targetItem:clone()
+		reward = useItem:clone()
 	else
 		local container = Container(item.uid)
 		for i = 0, container:getSize() - 1 do

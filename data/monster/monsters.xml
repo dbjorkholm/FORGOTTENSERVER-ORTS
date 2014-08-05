@@ -79,6 +79,11 @@
 	<monster name="Barbarian Headsplitter" file="barbarians/barbarian headsplitter.xml"/>
 	<monster name="Barbarian Skullhunter" file="barbarians/barbarian skullhunter.xml"/>
 
+	<!-- Bats -->
+	<monster name="Bat" file="bats/bat.xml"/>
+	<monster name="Nightfiend" file="bats/nightfiend.xml"/>
+	<monster name="Vicious Manbat" file="bats/vicious manbat.xml"/>
+
 	<!-- Bears -->
 	<monster name="Bear" file="bears/bear.xml"/>
 	<monster name="Panda" file="bears/panda.xml"/>
@@ -151,9 +156,11 @@
 	<monster name="Bibby Bloodbath" file="bosses/bibby bloodbath.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
+	<monster name="Bruise Payne" file="bosses/bruise payne.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
 	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
+	<monster name="Chikhaton" file="bosses/chikhaton.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
 	<monster name="Clubarc The Plunderer" file="bosses/clubarc the plunderer.xml"/>
 	<monster name="Coldheart" file="bosses/coldheart.xml"/>
@@ -306,7 +313,6 @@
 	<monster name="Wild Dog" file="canines/wild dog.xml"/>
 	<monster name="Winter Wolf" file="canines/winter wolf.xml"/>
 	<monster name="Wolf" file="canines/wolf.xml"/>
-	<monster name="Gnarlhound" file="canines/gnarlhound.xml"/>
 
 	<!-- Chakoyas -->
 	<monster name="Chakoya Toolshaper" file="chakoyas/chakoya toolshaper.xml"/>
@@ -534,6 +540,12 @@
 	<monster name="Goblin Scavenger" file="goblins/goblin scavenger.xml"/>
 	<monster name="Demon (Goblin)" file="goblins/demon (goblin).xml"/>
 
+	<!-- Hyaenids -->
+	<monster name="Ghoulish Hyaena" file="hyaenids/ghoulish hyaena.xml"/>
+	<monster name="Gnarlhound" file="hyaenids/gnarlhound.xml"/>
+	<monster name="Hyaena" file="hyaenids/hyaena.xml"/>
+	<monster name="Modified Gnarlhound" file="hyaenids/modified gnarlhound.xml"/>
+
 	<!-- Hydro-Elementals -->
 	<monster name="Massive Water Elemental" file="hydro-elementals/massive water elemental.xml"/>
 	<monster name="Roaring Water Elemental" file="hydro-elementals/roaring water elemental.xml"/>
@@ -626,18 +638,6 @@
 	<monster name="Worm Priestess" file="minotaurs/worm priestess.xml"/>
 
 	<!-- Misc -->
-	<!-- Misc Mammals -->
-	<monster name="Badger" file="misc/misc mammals/badger.xml"/>
-	<monster name="Bat" file="misc/misc mammals/bat.xml"/>
-	<monster name="Ghoulish Hyaena" file="misc/misc mammals/ghoulish hyaena.xml"/>
-	<monster name="Hyaena" file="misc/misc mammals/hyaena.xml"/>
-	<monster name="Skunk" file="misc/misc mammals/skunk.xml"/>
-	<monster name="Water Buffalo" file="misc/misc mammals/water buffalo.xml"/>
-
-	<!-- Misc Mounts -->
-	<monster name="Donkey" file="misc/misc mounts/donkey.xml"/>
-	<monster name="Modified Gnarlhound" file="misc/misc mounts/modified gnarlhound.xml"/>
-
 	<!-- Misc Reptiles -->
 	<monster name="Crocodile" file="misc/misc reptiles/crocodile.xml"/>
 	<monster name="Hydra" file="misc/misc reptiles/hydra.xml"/>
@@ -652,6 +652,10 @@
 	<!-- Monks -->
 	<monster name="Dark Monk" file="monks/dark monk.xml"/>
 	<monster name="Monk" file="monks/monk.xml"/>
+
+	<!-- Mustelids -->
+	<monster name="Badger" file="mustelids/badger.xml"/>
+	<monster name="Skunk" file="mustelids/skunk.xml"/>
 
 	<!-- Mutated -->
 	<monster name="Mutated Bat" file="mutated/mutated bat.xml"/>
@@ -856,10 +860,8 @@
 	<monster name="Grim Reaper" file="undead humanoids/grim reaper.xml"/>
 	<monster name="Lich" file="undead humanoids/lich.xml"/>
 	<monster name="Mummy" file="undead humanoids/mummy.xml"/>
-	<monster name="Vicious Manbat" file="undead humanoids/vicious manbat.xml"/>
 	<monster name="Zombie" file="undead humanoids/zombie.xml"/>
 	<monster name="Undead Prospector" file="undead humanoids/undead prospector.xml"/>
-	<monster name="Nightfiend" file="undead humanoids/nightfiend.xml"/>
 	<monster name="Tomb Servant" file="undead humanoids/tomb servant.xml"/>
 
 	<!-- Ungulates -->
@@ -867,6 +869,7 @@
 	<monster name="Boar" file="ungulates/boar.xml"/>
 	<monster name="Deer" file="ungulates/deer.xml"/>
 	<monster name="Desperate White Deer" file="ungulates/desperate white deer.xml"/>
+	<monster name="Donkey" file="ungulates/donkey.xml"/>
 	<monster name="Doom Deer" file="ungulates/doom deer.xml"/>
 	<monster name="Dromedary" file="ungulates/dromedary.xml"/>
 	<monster name="Elephant" file="ungulates/elephant.xml"/>
@@ -884,6 +887,7 @@
 	<monster name="Stampor" file="ungulates/stampor.xml"/>
 	<monster name="Terrified Elephant" file="ungulates/terrified elephant.xml"/>
 	<monster name="Vampire Pig" file="ungulates/vampire pig.xml"/>
+	<monster name="Water Buffalo" file="ungulates/water buffalo.xml"/>
 	<monster name="White Deer" file="ungulates/white deer.xml"/>
 
 	<!-- Voodoo Cultists -->

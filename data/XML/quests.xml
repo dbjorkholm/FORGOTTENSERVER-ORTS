@@ -3,11 +3,11 @@
 <quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
 
 	<!-- killing in the name of rank -->
-		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points." />	
-		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
-		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw & Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />	
+		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
+		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />	
 
 	<!-- special tasks for killing in the name of -->
 		<mission name="Paw and Fur: Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
@@ -364,24 +364,23 @@
 			<missionstate id="13" description="You turned the skull already back to Lazaran. Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 3: Dance Dance Evolution" storageid="12333" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Lazaran told you to go to Ulala, who is located above Lazaran."/>
+			<missionstate id="2" description="Ulala told you to dance to please their god Krunus. On the south mountain in the camp you will find the Krunus altar, there are lots of leaves on the ground."/>
+			<missionstate id="3" description="You solved the dance. Head back to Ulala and report your mission!"/>
 		</mission>
-		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 4: Bits and Pieces" storageid="12334" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Now the god Krunus is pleased, another god called Pandor needs to be pleased. Ulala wants you to collect 5 Orc Teeth, 5 Minotaur leathers and 5 Lizard Leathers. Bring them to her."/>
+			<missionstate id="2" description="You brought Ulala 5 Orc Teeth, 5 Minotaur leathers and 5 Lizard Leathers. Ask her for new mission!"/>
 		</mission>
 		<mission name="Mission 5: Ray of Light" storageid="12335" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="The third god which needs to be pleased is called Fasuon. Find the great crystal on top of mountain of Fasuon and pray there for his support!"/>
+			<missionstate id="2" description="You already prayed at the great crystal. Report it to Ulala"/>
+			<missionstate id="3" description="You have reported back to Ulala that you have completed the mission."/>
 		</mission>
 		<mission name="Mission 6: Firewater Burn" storageid="12336" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Speak with Lazaran and tell the gods are pleased now."/>
+			<missionstate id="2" description="Bring Lazaran a Pot of brown water for a party after the great hunt."/>
+			<missionstate id="3" description="You brought Lazaran the beer and got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
 
@@ -538,7 +537,7 @@
 			<missionstate id="5" description="Gregor send you to Sam to adorn your helmet."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Wand)" storageid="12062" startvalue="1" endvalue="6">
+		<mission name="Mage &amp; Summoner Outfit Quest (Wand)" storageid="12062" startvalue="1" endvalue="6">
 			<missionstate id="1" description="You found Angelina in a Prison. She told you a secret: Lynda in Thais can create a blessed wand. Greet her from Angelina, maybe she will aid you."/>
 			<missionstate id="2" description="Lynda send you to bring her a sample of all five wands and five rods (Snakebite, Moonlight, Necrotic, Terra, Hailstorm, Vortex, Dragonbreath, Decay, Cosmic Energy and Inferno)"/>
 			<missionstate id="3" description="Bring Lynda 10 ounces of magic sulphur"/>
@@ -546,11 +545,11 @@
 			<missionstate id="5" description="Bring Lynda 20 ankhs now to complete the ritual."/>
 			<missionstate id="6" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Fluid Belt)" storageid="12063" startvalue="1" endvalue="2">
+		<mission name="Mage &amp; Summoner Outfit Quest (Fluid Belt)" storageid="12063" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Now you can get a lottery ticket at Sandra for 100 empty vials."/>
 			<missionstate id="2" description="You got the Outfit! Now you can get for a lottery prize 50000 gold!"/>
 		</mission>
-		<mission name="Mage & Summoner Outfit Quest (Tiara & Cloak)" storageid="12064" startvalue="1" endvalue="11">
+		<mission name="Mage &amp; Summoner Outfit Quest (Tiara &amp; Cloak)" storageid="12064" startvalue="1" endvalue="11">
 			<missionstate id="1" description="Bring Myra in port hope 70 bat wings"/>
 			<missionstate id="2" description="Bring Myra in port hope 20 pieces of red cloth"/>
 			<missionstate id="3" description="Bring Myra in port hope 40 pieces of ape fur"/>
@@ -668,6 +667,84 @@
 			<missionstate id="3" description="Report back to whichever principal you have chosen to help and you will receive Yalaharian Outfits."/>
 			<missionstate id="4" description="You got the access to the reward room. Choose carefully which reward you pick as you can only take one item."/>
 			<missionstate id="5" description="You have completed the Quest!"/>
+		</mission>
+	</quest>
+	<quest name="The Postman Missions" startstorageid="12450" startstoragevalue="1">
+		<mission name="Mission 1 - Check Postal Routes" storageid="12450" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Kevin wants you to travel with Captain Bluebear to Carlin."/>
+			<missionstate id="2" description="Kevin wants you to travel with Uzon in Femor Hills to Edron."/>
+			<missionstate id="3" description="Kevin wants you to travel with Captain Seahorse to Venore."/>
+			<missionstate id="4" description="Kevin wants you to travel with Brodrosch to Cormaya"/>
+			<missionstate id="5" description="You have checked the Postal Routes, report back to Kevin!"/>
+			<missionstate id="6" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 2 - Fix Mailbox" storageid="12451" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to fix one of their Mailboxes located on Folda with a crowbar."/>
+			<missionstate id="2" description="You have fixed the mailbox, report back to Kevin!"/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 3 - Bill Delivery" storageid="12452" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to deliver a bill to the stage magician David Brassacres. He's hiding from his creditors somewhere in Venore."/>
+			<missionstate id="2" description="You have delivered the bill to the stage magician David Brassacres, report back to Kevin!"/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 4 - Aggressive Dogs" storageid="12453" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Kevin has asked you to deliver 20 Bones to him."/>
+			<missionstate id="2" description="You have delivered 20 Bones to Kevin."/>
+		</mission>
+		<mission name="Mission 5 - Present Delivery" storageid="12454" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Kevin has asked you to retrieve the present behind the door on the lower right side of his room and deliver it to Dermot in Fibula."/>
+			<missionstate id="2" description="Deliver the present to Dermot in Fibula."/>
+			<missionstate id="3" description="You have delivered the present to Dermot, report back to Kevin!"/>
+			<missionstate id="4" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 6 - New Uniforms" storageid="12455" startvalue="1" endvalue="13">
+			<missionstate id="1" description="Kevin has asked you to travel to Venore and negotiate with Hugo for new uniforms."/>
+			<missionstate id="2" description="Hugo said that his dog ate the last dress pattern they used and he has no clue where Kevin Postner got it from, go ask Kevin."/>
+			<missionstate id="3" description="Kevin wants you to ask the great Technomancer Talphion in Kazordoon for the technical details."/>
+			<missionstate id="4" description="Talphion will send a copy to Kevin, report back to Kevin."/>
+			<missionstate id="5" description="Kevin wants you tk ask Queen Eloise of Carlin for the perfect colours."/>
+			<missionstate id="6" description="Queen Eloise said she will send some color samples via mail to Kevin, report back to Kevin."/>
+			<missionstate id="7" description="Kevin has asked you to go to Noodles and find out what he dislikes the most: mouldy cheese, a piece of fur or a banana skin."/>
+			<missionstate id="8" description="Noodles seems to like banana skin, check if he likes dirty fur."/>
+			<missionstate id="9" description="Noodles seems to like dirty fur, check if he likes mouldy cheese."/>
+			<missionstate id="10" description="Noodles dislikes mouldy cheese! Report back to Kevin."/>
+			<missionstate id="11" description="Kevin wants you to tell Hugo that they order those uniforms."/>
+			<missionstate id="12" description="Hugo has agreed to make the uniforms, report back to Kevin!"/>
+			<missionstate id="13" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 7 - Measurements" storageid="12456" startvalue="1" endvalue="8">
+			<missionstate id="1" description="Kevin wants you to bring him the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik."/>
+			<missionstate id="2" description="You have received the measurements from 1 of 6 postofficers."/>
+			<missionstate id="3" description="You have received the measurements from 2 of 6 postofficers."/>
+			<missionstate id="4" description="You have received the measurements from 3 of 6 postofficers."/>
+			<missionstate id="5" description="You have received the measurements from 4 of 6 postofficers."/>
+			<missionstate id="6" description="You have received the measurements from 5 of 6 postofficers."/>
+			<missionstate id="7" description="You have received all measurements, report back to Kevin!"/>
+			<missionstate id="8" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 8 - Missing Courier" storageid="12457" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to find the missing courier Waldo or at least his posthorn."/>
+			<missionstate id="2" description="You have found Waldos posthorn."/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 9 - Dear Santa" storageid="12458" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Kevin wants you to deliver som letters to Santa Claus on Vega."/>
+			<missionstate id="2" description="You have retrieved the letters, deliver them to Santa Claus on Vega."/>
+			<missionstate id="3" description="You have delivered the letters to Santa Claus on Vega."/>
+			<missionstate id="4" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Mission 10 - Mintwallin" storageid="12459" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Kevin wants you to deliver a letter  to Markwin, king of Mintwallin from his mother."/>
+			<missionstate id="2" description="You have delivered the letter to Markwin."/>
+			<missionstate id="3" description="You have reported back that you have completed the mission."/>
+		</mission>
+		<mission name="Postman Rank" storageid="12460" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Assistant Postman"/>
+			<missionstate id="2" description="Postman"/>
+			<missionstate id="3" description="Grand Postman"/>
+			<missionstate id="4" description="Grand Postman for Special Operations"/>
+			<missionstate id="5" description="Arch Postman"/>
 		</mission>
 	</quest>
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
@@ -796,9 +873,9 @@
 			<missionstate id="1" description="You have a vague idea that Zirella might need you for collecting firewood, but you don't know yet where to get it. You should talk to her again."/>
 			<missionstate id="2" description="You know that the branches Zirella needs might be gotten from dead trees in the forest south of here, but you don't know the details yet. You should talk to her again."/>
 			<missionstate id="3" description="You have learned that you need to 'Use' the dead tree to break a branch from it, but there is some information missing. You should talk to Zirella again."/>
-			<missionstate id="4" description="You have learned that you can push the branch which you've broken from a dead tree by 'Drag & Drop', but you still need some information. You should talk to Zirella again."/>
+			<missionstate id="4" description="You have learned that you can push the branch which you've broken from a dead tree by 'Drag &amp; Drop', but you still need some information. You should talk to Zirella again."/>
 			<missionstate id="5" description="You know that you have to 'Use' the branch. Then leftclick with the changed cursor on the cart. Now you just have to tell Zirella that you will help her."/>
-			<missionstate id="6" description="Go into the forest south of here and look for trees without leaves. 'Use' one to break a branch from it, then drag & drop the branch back to her cart and 'Use' it with the cart."/>
+			<missionstate id="6" description="Go into the forest south of here and look for trees without leaves. 'Use' one to break a branch from it, then drag &amp; drop the branch back to her cart and 'Use' it with the cart."/>
 			<missionstate id="7" description="You have brought a branch to Zirella, congratulations! You should talk to her again for your reward."/>
 			<missionstate id="8" description="You have helped Zirella by collecting wood for her. The reward can be found in her house."/>
 		</mission>

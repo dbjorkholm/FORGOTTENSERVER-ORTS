@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3184) then
-		if(getPlayerStorageValue(cid, 1060) == 27) then
+		if(getPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest) == 27) then
 			if(getPlayerPosition(cid).x == 33078 and 
 				getPlayerPosition(cid).y == 31080 and 
 				getPlayerPosition(cid).z == 13) then
@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	elseif(item.uid == 3185) then
-		if(getPlayerStorageValue(cid, 1060) == 27) then
+		if(getPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest) == 27) then
 			if(getPlayerPosition(cid).x == 33077 and 
 				getPlayerPosition(cid).y == 31186 and 
 				getPlayerPosition(cid).z == 3) then

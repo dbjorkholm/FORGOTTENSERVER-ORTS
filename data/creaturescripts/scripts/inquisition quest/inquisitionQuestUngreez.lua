@@ -1,11 +1,19 @@
 function onKill(cid, target)
-local player = Player(cid)
-	if(string.lower(getCreatureName(target)) == "ungreez") then
-		if(player:getStorageValue(Storage.TheInquisition.Questline) == 18) then
-			player:setStorageValue(Storage.TheInquisition.Questline, 19)
-			player:setStorageValue(Storage.TheInquisition.Mission06, 2) -- The Inquisition Questlog- "Mission 6: The Demon Ungreez"
-			player:say("You have slain Ungreez.", TALKTYPE_MONSTER_SAY)
-		end
+	local targetMonster = Monster(target)
+	if not targetMonster then
+		return true
+	end
+
+	if targetMonster:getName():lower() ~= 'ungreez' then
+		return true
+	end
+
+	local player = Player(cid)
+	if player:getStorageValue(Storage.TheInquisition.Questline) == 18 then
+		-- The Inquisition Questlog- 'Mission 6: The Demon Ungreez'
+		player:setStorageValue(Storage.TheInquisition.Mission06, 2)
+		player:setStorageValue(Storage.TheInquisition.Questline, 19)
+		player:say('You have slain Ungreez.', TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

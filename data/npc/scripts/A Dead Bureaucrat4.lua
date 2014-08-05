@@ -15,7 +15,7 @@ local config = {
 }
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(Storage.pitsOfInferno.Pumin) == 7 then
+	if Player(cid):getStorageValue(Storage.pitsofInfernoPumin) == 7 then
 		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
 		npcHandler.topic[cid] = 4
 	else
@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
-		if player:getStorageValue(Storage.pitsOfInferno.Pumin) == 1 then
+		if player:getStorageValue(Storage.pitsofInfernoPumin) == 1 then
 			npcHandler:say("I'm not sure if you know what you are doing but anyway. Your name is?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -49,10 +49,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "356") then
 		if npcHandler.topic[cid] == 3 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 2)
+			player:setStorageValue(Storage.pitsofInfernoPumin, 2)
 			npcHandler:say("Sorry, you need Form 145 to get Form 356. Come back when you have it", cid)
 		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(Storage.pitsOfInferno.Pumin, 8)
+			player:setStorageValue(Storage.pitsofInfernoPumin, 8)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
 		end
 		npcHandler.topic[cid] = 0

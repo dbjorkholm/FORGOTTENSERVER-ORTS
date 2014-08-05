@@ -1,17 +1,24 @@
 local wall = {
-	{x = 33295, y = 31677, z = 15},
-	{x = 33296, y = 31677, z = 15},
-	{x = 33297, y = 31677, z = 15},
-	{x = 33298, y = 31677, z = 15},
-	{x = 33299, y = 31677, z = 15}
+	Position(33295, 31677, 15),
+	Position(33296, 31677, 15),
+	Position(33297, 31677, 15),
+	Position(33298, 31677, 15),
+	Position(33299, 31677, 15)
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
-		for i = 1, #wall do
-			doRemoveItem(getTileItemById(wall[i], 1304).uid, 1)
-		end
-		doTransformItem(item.uid, 1946)
+	if item.itemid == 1946 then
+		return false
 	end
+	
+	local thing
+	for i = 1, #wall do
+		thing = Tile(wall[i]):getItemById(1304)
+		if thing then
+			thing:remove()
+		end
+	end
+	
+	Item(item.uid):transform(1946)
 	return true
 end

@@ -41,21 +41,25 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+	local player = Player(cid)
 	
 	if msgcontains(msg, "letter") then
-		if Player(cid):getStorageValue(250) == 42 then
-			npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
-			npcHandler.topic[cid] = 1
+		if player:getStorageValue(Storage.postman.Mission10) == 1 then
+			if player:getItemCount(2333) > 0 then
+				npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
+				npcHandler.topic[cid] = 1
+			end
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Uhm, well thank you, hornless being. ", cid)
-			Player(cid):setStorageValue(250, 43)
+			player:setStorageValue(Storage.postman.Mission10, 2)
+			player:removeItem(2333, 1)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "bye") then
 		npcHandler:say("Hm ... good bye. ", cid)
-		Player(cid):addCondition(condition)
+		player:addCondition(condition)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end

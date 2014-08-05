@@ -8,9 +8,8 @@ Storage = {
 		Shooting = 902,
 		Rank = 921
 	},
-	wagon = {
-		Ticket = 1131
-	},
+	wagonTicket = 1131,
+	wrathOfTheEmperorQuest = 1060,
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
@@ -220,7 +219,8 @@ Storage = {
 		Mission03 = 12333,
 		Mission04 = 12334,
 		Mission05 = 12335,
-		Mission06 = 12336
+		Mission06 = 12336,
+		DanceStatus = 12337
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
@@ -228,6 +228,19 @@ Storage = {
 		TheMermaidMarina = 12402,
 		TheBlessedStake = 12403,
 		TheBlessedStakeWaitTime = 12404
+	},
+	postman = {
+		Mission01 = 12450,
+		Mission02 = 12451,
+		Mission03 = 12452,
+		Mission04 = 12453,
+		Mission05 = 12454,
+		Mission06 = 12455,
+		Mission07 = 12456,
+		Mission08 = 12457,
+		Mission09 = 12458,
+		Mission10 = 12459,
+		Rank = 12460
 	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
@@ -241,9 +254,8 @@ Storage = {
 		CarlosNpcGreetStorage = 50097,
 		CarlosQuestLog = 50098
 	},
-	DeeperBanuta = {
-		Shortcut = 50095
-	},
+	DeeperBanutaShortcut = 50095,
+	AnnihilatorDone = 2215,
 	DemonOak = {
 		Done = 1010,
 		Progress = 1013,
@@ -253,9 +265,7 @@ Storage = {
 		Arena = 1100,
 		Pit = 1101
 	},
-	pitsOfInferno = {
-		Pumin = 50096
-	},
+	pitsOfInfernoPumin = 50096,
 	hiddenCityOfBeregar = {
 		WayToBeregar = 50099,
 		OreWagon = 50100,
@@ -267,13 +277,7 @@ Storage = {
 		TheGoodGuard = 50106,
 		PythiusTheRotten = 50107
 	},
-	ultimateBooze = {
-		Quest = 50108
-	},
-	toOutfoxAFox = {
-		Quest = 50135
-	},
-	madMage = {
-		Quest = 50136
-	}
+	ultimateBoozeQuest = 50108,
+	toOutfoxAFoxQuest = 50135,
+	madMageQuest = 50136
 }

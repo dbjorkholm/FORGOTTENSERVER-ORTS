@@ -1,27 +1,32 @@
 local config = {
-	[9172] = {9172, 18394, {{18402, 1}, {18414, 12}, {18396, 1}, {18500, 1}, {2160, 5}, {18423, 2}}, 20 * 60 * 60},
-	[9173] = {9173, 18393, {{18402, 1}, {18415, 7}, {18396, 1}, {18504, 1}, {2160, 3}, {18423, 2}}, 20 * 60 * 60},
-	[9174] = {9174, 18394, {{18402, 1}, {18413, 10}, {18396, 1}, {18508, 1}, {2160, 4}, {18423, 2}}, 20 * 60 * 60}
+	[9172] = {items = {{18402}, {18414, 12}, {18396}, {18500}, {2160, 5}, {18423, 2}}, containerId = 18394},
+	[9173] = {items = {{18402}, {18415, 7}, {18396}, {18504}, {2160, 3}, {18423, 2}}, containerId = 18393},
+	[9174] = {items = {{18402}, {18413, 10}, {18396}, {18508}, {2160, 4}, {18423, 2}}, containerId = 18394}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local useItem = config[item.uid]
+	if not useItem then
+		return true
+	end
+	
 	local player = Player(cid)
-	local targetItem = config[item.uid]
-	if not targetItem then
+	if player:getStorageValue(item.uid) > os.time() then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'It is empty.')
 		return true
 	end
 	
-	if player:getStorageValue(targetItem[1]) > os.time() then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "It is empty.")
+	local container = player:addItem(useItem.containerId)
+	if not container then
 		return true
 	end
 	
-	local container = player:addItem(targetItem[2])
-	for i = 1, #targetItem[3] do
-		container:addItem(targetItem[3][i][1], targetItem[3][i][2])
+	for i = 1, #useItem.items do
+		container:addItem(useItem.items[i][1], useItem.items[i][2] or 1)
 	end
-	player:setStorageValue(targetItem[1], os.time() + targetItem[4])
+	
+	player:setStorageValue(item.uid, os.time() + 20 * 60 * 60)
 	local itemType = ItemType(container:getId())
-	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("You have found %s %s.", itemType:getArticle(), itemType:getName()))
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. itemType:getArticle() .. ' ' .. itemType:getName() .. '.')
 	return true
 end
