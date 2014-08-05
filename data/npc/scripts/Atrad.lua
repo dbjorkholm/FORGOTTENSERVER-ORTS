@@ -19,7 +19,7 @@ shopModule:addBuyableItem({'spear'}, 2389, 9, 'spear')
 
 local function greetCallback(cid)
 	if Player(cid):getCondition(CONDITION_FIRE) then
-		npcHandler:setMessage(MESSAGE_GREET, 'Hehe. That's a good show, |PLAYERNAME|, with all the pyro effects. You got my attention. For a minute or so.')
+		npcHandler:setMessage(MESSAGE_GREET, 'Hehe. That\'s a good show, |PLAYERNAME|, with all the pyro effects. You got my attention. For a minute or so.')
 	else
 		return false
 	end
