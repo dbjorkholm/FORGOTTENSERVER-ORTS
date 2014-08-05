@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Okay... a deal is a deal, would you like me to create a {spool of yarn} from {10 pieces of spider silk}?", cid)
 			npcHandler.topic[cid] = 5
 		end
-	elseif(msgcontains(msg, "honey")) or (msgcontains(msg, "comb")) then
+	elseif msgcontains(msg, "honey") then
 		if player:getStorageValue(Storage.FriendsandTraders.TheMermaidMarina) == 1 then
 			npcHandler:say("Did you bring me the 50 honeycombs I requested and do you absolutely admire my beauty?", cid)
 			npcHandler.topic[cid] = 4
@@ -59,6 +59,8 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+keywordHandler:addKeyword({'comb'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Sorry, I don\'t have a spare comb. I lost my favourite one when diving around in Calassa.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
