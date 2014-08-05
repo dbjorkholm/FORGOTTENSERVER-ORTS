@@ -20,12 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 			player:teleportTo(Position(33288, 31956, 6))
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "blessings") then
-		npcHandler:say("There are five blessings available in five sacred places: the {spiritual} shielding, the spark of the {phoenix}, the {embrace} of Tibia, the fire of the {suns} and the wisdom of {solitude}. Additionally, you can receive the {twist of fate} here.", cid)
-	elseif msgcontains(msg, "spiritual") then
-		npcHandler:say("You can ask for the blessing of spiritual shielding in the whiteflower temple south of Thais.", cid)
-	elseif msgcontains(msg, "phoenix") then
-		npcHandler:say("The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.", cid)
 	elseif msgcontains(msg, "solitude") then
 		npcHandler:say({"Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?"}, cid)
 		npcHandler.topic[cid] = 1
@@ -48,6 +42,11 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+keywordHandler:addKeyword({'blessings'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'There are five blessings available in five sacred places: the {spiritual} shielding, the spark of the {phoenix}, the {embrace} of Tibia, the fire of the {suns} and the wisdom of {solitude}. Additionally, you can receive the {twist of fate} here.'})
+keywordHandler:addKeyword({'spiritual'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You can ask for the blessing of spiritual shielding in the whiteflower temple south of Thais.'})
+keywordHandler:addKeyword({'phoenix'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.'})
+keywordHandler:addKeyword({'embrace'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The druids north of Carlin will provide you with the embrace of Tibia.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
