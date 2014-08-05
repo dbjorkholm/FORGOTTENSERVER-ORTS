@@ -82,11 +82,11 @@ tasks =
 tasksByPlayer = 3
 repeatTimes = 3
 
-function Player:getPawAndFurRank()
+function Player.getPawAndFurRank(self)
 	return (self:getStorageValue(POINTSSTORAGE) >= 100 and RANK_ELITEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 70 and RANK_TROPHYHUNTER or self:getStorageValue(POINTSSTORAGE) >= 40 and RANK_BIGGAMEHUNTER or self:getStorageValue(POINTSSTORAGE) >= 20 and RANK_RANGER or self:getStorageValue(POINTSSTORAGE) >= 10 and RANK_HUNTSMAN or self:getStorageValue(JOIN_STOR) == 1 and RANK_JOIN or RANK_NONE)
 end
 
-function Player:getPawAndFurPoints()
+function Player.getPawAndFurPoints(self)
 	return math.max(self:getStorageValue(POINTSSTORAGE), 0)
 end
 
@@ -106,7 +106,7 @@ function getTaskByName(name, table)
 	return false
 end
 
-function Player:getTasks()
+function Player.getTasks(self)
 	local canmake = {}
 	local able = {}
 	for k, v in pairs(tasks) do
@@ -139,7 +139,7 @@ function Player:getTasks()
 	return canmake
 end
 
-function Player:canStartTask(name, table)
+function Player.canStartTask(self, name, table)
 	local v = ""
 	local id = 0
 	local t = (table and table or tasks)
@@ -193,7 +193,7 @@ function Player:canStartTask(name, table)
 	return false
 end
 
-function Player:getStartedTasks()
+function Player.getStartedTasks(self)
 	local tmp = {}
 	for k, v in pairs(tasks) do
 		if self:getStorageValue(QUESTSTORAGE_BASE + k) > 0 and self:getStorageValue(QUESTSTORAGE_BASE + k) < 2 then
@@ -202,7 +202,6 @@ function Player:getStartedTasks()
 	end
 	return tmp
 end
-
 
 --in case other scripts are using these functions, i'll let them here
 function getPlayerRank(cid) local p = Player(cid) return p and p:getPawAndFurRank() end
