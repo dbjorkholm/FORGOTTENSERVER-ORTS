@@ -48,4 +48,39 @@ keywordHandler:addKeyword({'partos'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'durin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Just between you and me, he can be quite a tyrant."})
 keywordHandler:addKeyword({'monsters'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "AHHHH!!! WHERE??? WHERE???"})
 
+local function creatureSayCallback(cid, type, msg)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
+	local player = Player(cid)
+
+	if msgcontains(msg, 'invitation') then
+		if player:getStorageValue(Storage.thievesGuild.Mission03) == 1 then
+			npcHandler:say('What? So why in the world should I give you an invitation? It\'s not as if you were someone important, are you?', cid)
+			npcHandler.topic[cid] = 1
+		end
+	elseif msgcontains(msg, 'yes') then
+		if npcHandler.topic[cid] == 2 then
+			player:setStorageValue(Storage.thievesGuild.Quest, 1)
+			npcHandler:say({'Well, rich and generous people are always welcome in the palace.If you donate 1000 gold to a fund I oversee, I\'ll give you an invitation, ok?'}, cid)
+			npcHandler.topic[cid] = 3
+		elseif npcHandler.topic[cid] == 3 then
+			if player:getMoney() >= 1000 then
+				player:addItem(8761, 1)
+				player:removeMoney(1000)
+				npcHandler:say({'Excellent! Here is your invitation!'}, cid)
+				npcHandler.topic[cid] = 0
+			end
+		end
+	elseif msgcontains(msg, 'gold') then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say('Not that I am bribeable but I doubt that you own 1000 gold pieces. Or do you?', cid)
+			npcHandler.topic[cid] = 2
+		end
+	end
+	return true
+end
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
