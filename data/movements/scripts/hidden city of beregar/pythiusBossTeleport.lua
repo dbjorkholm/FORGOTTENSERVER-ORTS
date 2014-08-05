@@ -20,21 +20,24 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return
 	end
-	
-	Game.createMonster("Pythius the Rotten", Position(32566, 31400, 15))
+
+	Game.createMonster('Pythius the Rotten', Position(32566, 31400, 15))
 	player:teleportTo(Position(32566, 31406, 15))
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+
+	local groundItem
 	for i = 1, #positions do
-		local ground = Tile(positions[i]):getGround()
-		if ground and ground:getId() == 5815 then
-			ground:transform(598)
+		groundItem = Tile(positions[i]):getGround()
+		if groundItem and groundItem:getId() == 5815 then
+			groundItem:transform(598)
 		end
 	end
-	local steamPos = Position(32551, 31379, 15)
-	Game.createItem(1304, 1, steamPos)
-	local steam = Game.createItem(9341, 1, steamPos)
-	if steam then
-		steam:setActionId(50127)
+
+	local steamPosition = Position(32551, 31379, 15)
+	Game.createItem(1304, 1, steamPosition)
+	local steamItem = Game.createItem(9341, 1, steamPosition)
+	if steamItem then
+		steamItem:setActionId(50127)
 	end
 	return true
 end
