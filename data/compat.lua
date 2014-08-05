@@ -166,7 +166,7 @@ function getPlayerGuildName(cid)
 end
 function getPlayerGuildRank(cid)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 
@@ -183,21 +183,21 @@ function getPlayerMasterPos(cid) local p = Player(cid) return p and p:getTown():
 function getPlayerItemCount(cid, itemId, ...) local p = Player(cid) return p and p:getItemCount(itemId, ...) end
 function getPlayerSlotItem(cid, slot)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return pushThing(nil)
 	end
 	return pushThing(player:getSlotItem(slot))
 end
 function getPlayerItemById(cid, deepSearch, itemId, ...)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return pushThing(nil)
 	end
 	return pushThing(player:getItemById(itemId, deepSearch, ...))
 end
 function getPlayerFood(cid)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 	local c = player:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT) return c ~= nil and math.floor(c:getTicks() / 1000) or 0
@@ -285,7 +285,7 @@ function doPlayerAddBlessing(cid, blessing) local p = Player(cid) return p and p
 function doPlayerAddOutfit(cid, lookType, addons) local p = Player(cid) return p and p:addOutfitAddon(lookType, addons) end
 function doPlayerRemOutfit(cid, lookType, addons)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 	if addons == 255 then
@@ -307,7 +307,7 @@ function doPlayerSendTextMessage(cid, type, text, ...) local p = Player(cid) ret
 function doSendAnimatedText() debugPrint("Deprecated function.") return true end
 function doPlayerAddExp(cid, exp, useMult, ...)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 
@@ -351,7 +351,7 @@ function doPlayerJoinParty(cid, leaderId)
 end
 function getPartyMembers(cid)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 
@@ -443,7 +443,7 @@ function doConvinceCreature(cid, target)
 	end
 
 	local targetCreature = Creature(target)
-	if targetCreature then
+	if not targetCreature then
 		return false
 	end
 
