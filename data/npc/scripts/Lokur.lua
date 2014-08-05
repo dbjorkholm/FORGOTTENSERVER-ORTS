@@ -340,9 +340,26 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	end
 	-- WAGON TICKET
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	local player = Player(cid)
+	if msgcontains(msg, "ticket")  then
+=======
+	if(msgcontains(msg, "ticket")) then
+		local player = Player(cid)
+>>>>>>> parent of fe0ddfc... Fix Lokur. Now it should sell wagon tickets correctly.
+		if player:getStorageValue(1131) < os.time() then
+=======
+	if(msgcontains(msg, "ticket")) then
+		local player = Player(cid)
+		if player:getStorageValue(Storage.wagon.Ticket) < os.time() then
+>>>>>>> upstream/master
+=======
 	if msgcontains(msg, "ticket") then
 		local player = Player(cid)
 		if player:getStorageValue(Storage.wagonTicket) < os.time() then
+>>>>>>> upstream/master
 			npcHandler:say("Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?", cid)
 			npcHandler.topic[cid] = 1
 		else
@@ -360,8 +377,18 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
+<<<<<<< HEAD
+<<<<<<< HEAD
+	elseif npcHandler.topic[cid] == 1 then 
+		if msgcontains(msg, "no")  then 
+=======
+	elseif(npcHandler.topic[cid] == 1) then 
+		if(msgcontains(msg, "no")) then 
+>>>>>>> parent of fe0ddfc... Fix Lokur. Now it should sell wagon tickets correctly.
+=======
 	elseif npcHandler.topic[cid] == 1 then 
 		if msgcontains(msg, "no") then 
+>>>>>>> upstream/master
 			npcHandler:say("No then.", cid)	
 			npcHandler.topic[cid] = 0
 		end
