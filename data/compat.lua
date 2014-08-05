@@ -321,7 +321,7 @@ function doPlayerAddSkillTry(cid, skillid, n) local p = Player(cid) return p and
 function doPlayerAddMana(cid, mana, ...) local p = Player(cid) return p and p:addMana(mana, ...) end
 function doPlayerJoinParty(cid, leaderId)
 	local player = Player(cid)
-	if player then
+	if not player then
 		return false
 	end
 
