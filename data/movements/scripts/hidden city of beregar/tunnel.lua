@@ -3,8 +3,8 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-		
-	player:teleportTo(Position(32569, 31507, 9))
-	player:say("Use the wagon to pass the gap.", TALKTYPE_MONSTER_SAY)
+
+	player:teleportTo(Position(32616, 31514, 9))
+	player:say('Use the ore wagon to pass this spot.', TALKTYPE_MONSTER_SAY)
 	return true
 end
