@@ -39,10 +39,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end	
 		end
 	elseif(item.itemid == 12318 and itemEx.itemid == 12385) then
-		if(getPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest) == 33) then
+		if(getPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline) == 33) then
 			doCreatureSay(cid, "NOOOoooooooo...!", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 			doCreatureSay(cid, "This should have dealt the deathblow to the snake things' ambitions.", TALKTYPE_MONSTER_SAY)
-			setPlayerStorageValue(cid, Storage.wrathOfTheEmperorQuest, 34)
+			setPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline, 34)
 		end
 	end
 	return true
