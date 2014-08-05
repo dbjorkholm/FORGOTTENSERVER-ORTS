@@ -15,7 +15,7 @@
 
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
-	
+
 	<!-- Svargrond Citizen -->
 	<movevent event="StepIn" actionid="30032" script="others/svargrondCitizen.lua"/>
 
@@ -58,7 +58,7 @@
 	<movevent event="StepIn" actionid="8007"  script="the new frontier quest/theNewFrontierQuestTrap.lua"/>
 	<movevent event="StepIn" fromaid="12135" toaid="12136"  script="the new frontier quest/theNewFrontierQuestMinotaurBoss.lua"/>
 	<movevent event="StepIn" actionid="12138"  script="the new frontier quest/theNewFrontierQuestJailExit.lua"/>
-	
+
 	<!--- Unnatural Selection -->
 	<movevent event="StepIn" actionid="12332"  script="unnatural selection/Mission2AllAroundtheWorld.lua"/>
 	<movevent event="StepIn" actionid="12333"  script="unnatural selection/Mission3DanceDanceEvolution.lua"/>
@@ -100,24 +100,24 @@
 	<movevent event="StepIn" actionid="9029" script="elemental spheres quest/ElementalSpheresQuestAOETeleportOut.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<movevent event="StepIn" fromaid="7816" toaid="7818" script="bigfoot burden quest/bigfootBurdenQuestEndurance.lua"/>
-	<movevent event="StepIn" actionid="4121" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" fromaid="3215" toaid="3220" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" fromaid="3128" toaid="3137" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="35669" script="bigfoot burden quest/bigfootBurdenQuestGTCS.lua"/>
-	<movevent event="StepIn" actionid="8030" script="bigfoot burden quest/bigfootBurdenQuestShooting.lua"/>
-	<movevent event="StepIn" itemid="18340" script="bigfoot burden quest/bigfootBurdenQuestTruffles.lua"/>
-	<movevent event="StepIn" fromuid="3144" touid="3146" script="bigfoot burden quest/bigfootBurdenQuestWarzone.lua"/>
-	<movevent event="StepIn" fromuid="3140" touid="3142" script="bigfoot burden quest/bigfootBurdenQuestWarzoneTeleports.lua"/>
-	<movevent event="StepIn" fromuid="3122" touid="3123" script="bigfoot burden quest/bigfootBurdenQuestXray.lua"/>
+	<movevent event="StepIn" fromaid="7816" toaid="7818" script="bigfoot burden quest/endurance.lua"/>
+	<movevent event="StepIn" actionid="4121" script="bigfoot burden quest/GCTS.lua"/>
+	<movevent event="StepIn" fromaid="3215" toaid="3220" script="bigfoot burden quest/GCTS.lua"/>
+	<movevent event="StepIn" fromaid="3128" toaid="3137" script="bigfoot burden quest/GCTS.lua"/>
+	<movevent event="StepIn" actionid="35669" script="bigfoot burden quest/GCTS.lua"/>
+	<movevent event="StepIn" actionid="8030" script="bigfoot burden quest/shooting.lua"/>
+	<movevent event="StepIn" itemid="18340" script="bigfoot burden quest/truffles.lua"/>
+	<movevent event="StepIn" fromuid="3144" touid="3146" script="bigfoot burden quest/warzone.lua"/>
+	<movevent event="StepIn" fromuid="3140" touid="3142" script="bigfoot burden quest/warzoneTeleports.lua"/>
+	<movevent event="StepIn" fromuid="3122" touid="3123" script="bigfoot burden quest/xray.lua"/>
 
 	<!-- Demon Oak Quest -->
-	<movevent event="StepIn" uniqueid="9000" script="demon oak quest/demonOakTreeEnter.lua" />
-	<movevent event="StepIn" itemid="8292" script="demon oak quest/demonOakArea.lua" />
-	<movevent event="StepIn" fromuid="9001" touid="9005" script="demon oak quest/demonOakSquares.lua" />
+	<movevent event="StepIn" uniqueid="9000" script="demon oak quest/entrance.lua" />
+	<movevent event="StepIn" itemid="8292" script="demon oak quest/areaDamage.lua" />
+	<movevent event="StepIn" fromuid="9001" touid="9005" script="demon oak quest/squares.lua" />
 
 	<!-- Demon Helmet Quest -->
-	<movevent event="StepIn" actionid="980" script="demon helmet quest/demonHelmetQuestWall.lua"/>
+	<movevent event="StepIn" actionid="980" script="demon helmet quest/walls.lua"/>
 
 	<!--Svargrond Arena Quest-->
  	<movevent event="StepIn" actionid="25100" script="svargrond arena quest/arena_enter.lua"/>
@@ -177,15 +177,15 @@
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/pitsOfInfernoQuestTrap.lua"/>
 	<movevent event="StepIn" fromaid="50082" toaid="50083" script="pits of inferno quest/pitsOfInfernoQuestBazirTreasureTiles.lua"/>
 	<movevent event="StepIn" actionid="50087" script="pits of inferno quest/pitsOfInfernoPuminTeleport.lua"/>
-	
+
 	<!-- Hidden City of Beregar Quest -->
-	<movevent event="StepIn" actionid="50091" script="beregar quest/oreWagon.lua"/>
-	<movevent event="StepIn" fromaid="50092" toaid="50093" script="beregar quest/elevator.lua"/>
-	<movevent event="StepIn" actionid="50111" script="beregar quest/gap.lua"/>
-	<movevent event="StepIn" actionid="50116" script="beregar quest/tunnel.lua"/>
-	<movevent event="StepIn" uniqueid="50107" script="beregar quest/bellow.lua"/>
-	<movevent event="StepIn" uniqueid="50127" script="beregar quest/pythiusTeleport.lua"/>
-	<movevent event="StepIn" actionid="50126" script="beregar quest/pythiusBossTeleport.lua"/>
+	<movevent event="StepIn" actionid="50091" script="hidden city of beregar/oreWagon.lua"/>
+	<movevent event="StepIn" fromaid="50092" toaid="50093" script="hidden city of beregar/elevator.lua"/>
+	<movevent event="StepIn" actionid="50111" script="hidden city of beregar/gap.lua"/>
+	<movevent event="StepIn" actionid="50116" script="hidden city of beregar/tunnel.lua"/>
+	<movevent event="StepIn" uniqueid="50107" script="hidden city of beregar/bellow.lua"/>
+	<movevent event="StepIn" uniqueid="50127" script="hidden city of beregar/pythiusTeleport.lua"/>
+	<movevent event="StepIn" actionid="50126" script="hidden city of beregar/pythiusBossTeleport.lua"/>
 
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>
