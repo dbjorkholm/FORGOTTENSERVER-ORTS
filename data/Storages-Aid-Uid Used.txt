@@ -30,9 +30,11 @@ inquisition storage:			12160-12180
 barbarian test quest:			12190-12199
 ice islands quest storage:		12200-12230
 in service of yalahar storage:		12240-12280
-ChildrenoftheRevolution storage:	12300-12310
-FriendsandTraders storage:		12400-12301
-postman storage:				12450-12500
+ChildrenoftheRevolution storage:	12300-12329
+UnnaturalSelection storage:		12330-12349
+WrathoftheEmperor storage:		12350-12399
+FriendsandTraders storage:		12400-12449
+postman storage:			12450-12500
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
