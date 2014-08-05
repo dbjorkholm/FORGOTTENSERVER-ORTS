@@ -591,6 +591,10 @@
 			<missionstate id="4" description="Go to Morgan and tell him this codeword: 'firebird' to get the outfit addon!"/>
 			<missionstate id="5" description="You got the Outfit Addon!"/>
 		</mission>
+		<mission name="Oriental Addon: Hipwear" storageid="50137" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your current task is to find a mermaid's comb. If you have ever encountered a mermaid, you should ask her. Bring the comb to Habdel if you are male or to Ishina if you are female."/>
+			<missionstate id="2" description="You have received the first oriental addon."/>
+		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="12240" startstoragevalue="5">
 		<mission name="Mission 01: Something Rotten" storageid="12241" startvalue="1" endvalue="6">
