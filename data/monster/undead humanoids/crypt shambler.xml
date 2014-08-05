@@ -18,7 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-140"/>
-		<attack name="lifedrain" interval="2000" chance="15" target="1" range="1" min="-28" max="-55"/>
+		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-28" max="-55"/>
 	</attacks>
 	<defenses armor="25" defense="25"/>
 	<elements>

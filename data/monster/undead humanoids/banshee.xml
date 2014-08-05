@@ -21,7 +21,7 @@
 		<attack name="lifedrain" interval="2000" chance="15" radius="4" target="0" min="-100" max="-200">
 			<attribute key="areaEffect" value="rednote"/>
 		</attack>
-		<attack name="death" interval="2000" chance="5" range="1" target="1" radius="1" min="-55" max="-350">
+		<attack name="death" interval="2000" chance="5" range="1" target="1" min="-55" max="-350">
 			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="smallclouds"/>
 		</attack>
