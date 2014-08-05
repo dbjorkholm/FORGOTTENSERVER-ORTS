@@ -8,9 +8,11 @@
 	<action itemid="8583" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialDeadtreeBranch.lua"/>
 	<action uniqueid="50085" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialZirellaDoor.lua"/>
 
-	<!-- Belongings of a Deceased -->
-	<action itemid="13670" script="other/belongings_deceased.lua"/>
-
+	<!-- -->
+	<action itemid="13670" script="other/randomItemBags.lua"/>
+	<action itemid="15572" script="other/randomItemBags.lua"/>
+	<action itemid="18215" script="other/randomItemBags.lua"/>
+	
 	<!-- Thais Exhibition-->
 	<action fromaid="50030" toaid="50056" script="other/thais_exhibition.lua"/>
 
@@ -676,7 +678,6 @@
 	<action fromid="7025" toid="7032" script="other/windows.lua"/>
 	<action fromid="10264" toid="10267" script="other/windows.lua" />
 	<action fromid="10488" toid="10491" script="other/windows.lua" />
-	<action itemid="18215" script="other/gnomish_supply_package.lua"/>
 	
 	<!-- Market -->
 	<action itemid="14405" function="market"/>

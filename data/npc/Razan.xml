@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
-<npc name="Razan" script="default.lua" walkinterval="2000">
+<npc name="Razan" script="Razan.lua" walkinterval="2000">
   <health now="200" max="200" />
   <look type="146" head="19" body="19" legs="9" feet="39" addons="3" />
-  <parameters>
-    <parameter key="message_greet" value="Greetings |PLAYERNAME|. What leads you to me?" />
-    <parameter key="message_farewell" value="Daraman's blessings." />
-  </parameters>
 </npc>

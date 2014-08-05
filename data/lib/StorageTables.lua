@@ -64,7 +64,8 @@ Storage = {
 		BrotherhoodOutfit = 50084,
 
 		ShamanAddons = 50085,
-		firstOrientalAddon = 50137
+		firstOrientalAddon = 50137,
+		secondOrientalAddon = 50138
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
