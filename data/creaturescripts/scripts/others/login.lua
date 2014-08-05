@@ -17,6 +17,7 @@ local events = {
 	'KillingInTheNameOfKills',
 	'MastersVoiceServants',
 	'PharaoKillPortal',
+	'ThievesGuildNomad',
 	'PlayerDeath',
 	'AdvanceSave'
 }

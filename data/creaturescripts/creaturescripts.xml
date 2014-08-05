@@ -36,6 +36,9 @@
 
 	<!-- Pharaos: Portal to reward room -->
 	<event type="kill" name="PharaoKillPortal" script="others/pharaoPortal.lua"/>
+	
+	<!-- Thieves Guild Quest -->
+	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>

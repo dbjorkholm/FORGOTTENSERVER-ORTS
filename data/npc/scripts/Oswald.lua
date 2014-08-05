@@ -70,8 +70,10 @@ local function creatureSayCallback(cid, type, msg)
 				player:addItem(8761, 1)
 				player:removeMoney(1000)
 				npcHandler:say({'Excellent! Here is your invitation!'}, cid)
-				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say({'You don\'t have enough money.'}, cid)
 			end
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'gold') then
 		if npcHandler.topic[cid] == 1 then
