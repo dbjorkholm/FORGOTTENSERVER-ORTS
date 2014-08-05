@@ -6,13 +6,13 @@
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 			basket,1989,6;
-			bottle,2007,3;
-			bucket,2005,4;
+			bottle,2007,3,0;
+			bucket,2005,4,0;
 			candelabrum,2041,8;
 			candlestick,2047,2;
 			closed trap,2578,280;
 			crowbar,2416,260;
-			cup,2013,2;
+			cup,2013,2,0;
 			document,1952,12;
 			fishing rod,2580,150;
 			green backpack,1998,20;
