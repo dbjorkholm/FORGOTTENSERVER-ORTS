@@ -8,7 +8,7 @@
 	<action itemid="8583" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialDeadtreeBranch.lua"/>
 	<action uniqueid="50085" script="rookgaard/rookgaard tutorial island/rookgaardTutorialIslandTutorialZirellaDoor.lua"/>
 
-	<!-- -->
+	<!-- Belongings of a Deceased, Gooey Mass and Gnomish Supply Package -->
 	<action itemid="13670" script="other/randomItemBags.lua"/>
 	<action itemid="15572" script="other/randomItemBags.lua"/>
 	<action itemid="18215" script="other/randomItemBags.lua"/>
