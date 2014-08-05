@@ -595,6 +595,13 @@
 			<missionstate id="1" description="Your current task is to find a mermaid's comb. If you have ever encountered a mermaid, you should ask her. Bring the comb to Habdel if you are male or to Ishina if you are female."/>
 			<missionstate id="2" description="You have received the first oriental addon."/>
 		</mission>
+		<mission name="Oriental Addon: Headgear" storageid="50138" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Your current task is to bring 100 pieces of ape fur to Razan if you are male, or to Miraia if you are female."/>
+			<missionstate id="2" description="Your current task is to bring 100 fish fins to Razan if you are male, or to Miraia if you are female."/>
+			<missionstate id="3" description="Your current task is to bring 2 enchanted chicken wings to Razan if you are male, or to Miraia if you are female."/>
+			<missionstate id="4" description="Your current task is to bring 100 pieces of blue cloth to Razan if you are male, or to Miraia if you are female."/>
+			<missionstate id="5" description="You have received the second oriental addon."/>
+		</mission>
 	</quest>
 	<quest name="In Service of Yalahar" startstorageid="12240" startstoragevalue="5">
 		<mission name="Mission 01: Something Rotten" storageid="12241" startvalue="1" endvalue="6">

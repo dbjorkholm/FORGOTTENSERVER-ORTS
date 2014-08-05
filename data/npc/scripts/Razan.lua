@@ -47,7 +47,7 @@ local config = {
 		text = {
 			'Ah, have you brought the 100 pieces of blue cloth?', 
 			'It\'s a great material for turbans.', 
-			'Ah! Congratulations - I hope this veil will turn out as beautiful as you are. Here, I\'ll do it for you.'
+			'Ah! Congratulations - even if you are not a true weaponmaster, you surely deserve to wear this turban. Here, I\'ll tie it for you.'
 		}
 	}
 }
@@ -60,15 +60,15 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	
 	if msgcontains(msg, 'outfit') then
-		npcHandler:say(player:getSex() == 0 and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
+		npcHandler:say(player:getSex() == 0 and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
 	elseif msgcontains(msg, 'task') then
-		if player:getSex() ~= 0 then
-			npcHandler:say('Uh... I don\'t think that I have work for you right now. If you need a job, go talk to Razan.', cid)
+		if player:getSex() ~= 1 then
+			npcHandler:say('I really don\'t want to make girls work for me. If you are looking for a job, ask Miraia.', cid)
 			return true
 		end
 		
 		if player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) < 1 then
-			npcHandler:say('You mean, you would like to prove that you deserve to wear such a veil?', cid)
+			npcHandler:say('You mean, you would like to prove that you deserve to wear such a turban?', cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif config[msg] and npcHandler.topic[cid] == 0 then
@@ -79,13 +79,6 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say(config[msg].text[2], cid)
 		end
-	elseif msgcontains(msg, 'scarab cheese') then
-		if player:getStorageValue(Rashid.MissionStart + 2) == 1 then
-			npcHandler:say('Let me cover my nose before I get this for you... Would you REALLY like to buy scarab cheese for 100 gold?', cid)
-		elseif player:getStorageValue(Rashid.MissionStart + 2) == 2 then
-			npcHandler:say('Oh the last cheese molded? Would you like to buy another one for 100 gold?', cid)
-		end
-		npcHandler.topic[cid] = 4
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({'Alright, then listen to the following requirements. We are currently in dire need of ape fur since the Caliph has requested a new bathroom carpet. ...', 'Thus, please bring me 100 pieces of ape fur. Secondly, it came to our ears that the explorer society has discovered a new undersea race of fishmen. ...', 'Their fins are said to allow humans to walk on water! Please bring us 100 of these fish fin. ...', 'Third, if the plan of walking on water should fail, we need enchanted chicken wings to prevent the testers from drowning. Please bring me two. ...', 'Last but not least, just drop by with 100 pieces of blue cloth and I will happily show you how to make a turban. ...', 'Did you understand everything I told you and are willing to handle this task?'}, cid)
@@ -113,21 +106,12 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler:say(targetMessage.text[3], cid)
 			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 4 then
-			if player:getMoney() >= 100 then
-				player:setStorageValue(Rashid.MissionStart + 2, 2)
-				player:addItem(8112, 1)
-				player:removeMoney(100)
-				npcHandler:say('Here it is.', cid)
-			else
-				npcHandler:say('You don\'t have enough money.', cid)
-			end
-			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] ~= 0 then
 		npcHandler:say('What a pity.', cid)
 		npcHandler.topic[cid] = 0
 	end
+	
 	return true
 end
 
@@ -135,11 +119,8 @@ local function onReleaseFocus(cid)
 	message[cid] = nil
 end
 
-keywordHandler:addKeyword({'drink'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can offer you lemonade, camel milk, and water. If you\'d like to see my offers, ask me for a {trade}.'})
-keywordHandler:addKeyword({'food'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Are you looking for food? I have bread, cheese, ham, and meat. If you\'d like to see my offers, ask me for a {trade}.'})
-
-npcHandler:setMessage(MESSAGE_GREET, 'Daraman\'s blessings, |PLAYERNAME|. Welcome to the Enlightened Oasis. Sit down, have a {drink} or some {food}!')
-npcHandler:setMessage(MESSAGE_FAREWELL, 'Daraman\'s blessings. Come back soon.')
+npcHandler:setMessage(MESSAGE_GREET, 'Greetings |PLAYERNAME|. What leads you to me?')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Daraman\'s blessings.')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
