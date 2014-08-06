@@ -25,11 +25,63 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say('How dare you? Are you mad? I hold the princess hostage and you drop your weapons. You\'re all lost!', cid)
 			npcHandler.topic[cid] = 2
+		elseif npcHandler.topic[cid] == 3 then
+			npcHandler:say('Too late puny knight. You can\'t stop my master plan anymore!', cid)
+			npcHandler.topic[cid] = 4
+		elseif npcHandler.topic[cid] == 5 then
+			npcHandler:say('What\'s this? Behind the doctor?', cid)
+			npcHandler.topic[cid] = 6
+		elseif npcHandler.topic[cid] == 7 then
+			npcHandler:say('Grrr!', cid)
+			npcHandler.topic[cid] = 8
+		elseif npcHandler.topic[cid] == 9 then
+			npcHandler:say('You\'re such a monster!', cid)
+			npcHandler.topic[cid] = 10
+		elseif npcHandler.topic[cid] == 11 then
+			npcHandler:say('Ah well, I think you passed the test! Here is your disguise kit! Now get lost, fate awaits me!', cid)
+			player:setStorageValue(Storage.thievesGuild.Mission04, 6)
+			player:addItem(8693, 1)
+			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, 'I don\'t think so, dear doctor!') then
-		if npcHandler.topic[cid] == 2 then
+	elseif npcHandler.topic[cid] == 2 then
+		if msg:lower() == 'I don\'t think so, dear doctor!' then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 3
+		else
+			npcHandler:say('No no no! That is not correct!', cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 4 then
+		if msg:lower() == 'Watch out! It\'s a trap!' then
+			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
+			npcHandler.topic[cid] = 5
+		else
+			npcHandler:say('No no no! That is not correct!', cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 6 then
+		if msg:lower() == 'Look! It\'s Lucky, the wonder dog!' then
+			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
+			npcHandler.topic[cid] = 7
+		else
+			npcHandler:say('No no no! That is not correct!', cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 8 then
+		if msg:lower() == 'Ahhhhhh!' then
+			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
+			npcHandler.topic[cid] = 9
+		else
+			npcHandler:say('No no no! That is not correct!', cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 10 then
+		if msg:lower() == 'Hahaha! Now drop your weapons or else...' then
+			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
+			npcHandler.topic[cid] = 11
+		else
+			npcHandler:say('No no no! That is not correct!', cid)
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true
