@@ -45,6 +45,9 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission05) == 1 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 6
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 then
+			player:setStorageValue(Storage.thievesGuild.Mission06, 1)
+			npcHandler:say({'Your next job will be kidnapping. You\'ll get us the only creature that this scrupulous trader Theodore Loveless in Liberty Bay holds dear. ...', 'His little goldfish! To get that fish, you\'ll have to get in his room somehow. ...', 'As you might know I sell lock picks, but I fear unless you\'re extremely lucky, you won\'t crack this expensive masterpiece of a lock. However, get us that fish, regardless how.'}, cid)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
