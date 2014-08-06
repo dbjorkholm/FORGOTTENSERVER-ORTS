@@ -70,7 +70,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					Item(itemEx.uid):transform(targetItem[i][2])
 					toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				else
-					Player(cid):say((isInArray({9808, 9809, 9810}, itemEx.itemid) and "The armor was already damaged so badly that it broke when you tried to clean it." or "The legs were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_ORANGE_1)
+					Player(cid):say((isInArray({9808, 9809, 9810}, itemEx.itemid) and "The armor was already damaged so badly that it broke when you tried to clean it." or "The legs were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_MONSTER_SAY)
 					Item(itemEx.uid):remove()
 					toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 				end
