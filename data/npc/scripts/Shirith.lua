@@ -11,29 +11,30 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
-	if isInArray({"soft", "boots"}, msg) then
-		npcHandler:say("Do you want to repair your worn soft boots for 10000 gold coins?", cid)
+	if msgcontains(msg, "key") then
+		npcHandler:say("Do you want to buy a key for 50 gold?", cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		if player:getItemCount(10021) >= 1 then
-			if player:removeMoney(10000) then
-				player:removeItem(10021, 1)
-				player:addItem(6132, 1)
-				npcHandler:say("Here you are.", cid)
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			local player = Player(cid)
+			if player:getMoney() >= 50 then
+				npcHandler:say("Here it is.", cid)
+				local key = player:addItem(2088, 1)
+				if key then
+					key:setActionId(3033)
+				end
+				player:removeMoney(50)
 			else
-				npcHandler:say("Sorry, you don't have enough gold.", cid)
+				npcHandler:say("You don't have enough money.", cid)
 			end
-		else
-			npcHandler:say("Sorry, you don't have the item.", cid)
+			npcHandler.topic[cid] = 0
 		end
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
-		npcHandler.topic[cid] = 0
-		npcHandler:say("Ok then.", cid)
 	end
 	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Ashari |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Asha Thrazi.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Asha Thrazi.")
 npcHandler:addModule(FocusModule:new())

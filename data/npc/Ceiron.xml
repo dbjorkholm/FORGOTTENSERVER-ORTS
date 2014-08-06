@@ -1,9 +1,5 @@
-<?xml version="1.0"?>
-<npc name="Ceiron" script="Ceiron.lua" walkinterval="2000" speechbubble="3">
-  <health now="200" max="200" />
-  <look type="144" head="78" body="100" legs="119" feet="119" addons="3" />
- <parameters>
-    <parameter key="message_greet" value="Always nice to meet a fellow druid, |PLAYERNAME|." />
-    <parameter key="message_farewell" value="May Crunor bless and guide you, player." />
- </parameters>
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Ceiron" script="Ceiron.lua" walkinterval="2000">
+	<health now="100" max="100" />
+	<look type="144" head="78" body="100" legs="119" feet="116" addons="3" />
 </npc>
