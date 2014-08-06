@@ -8,14 +8,14 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	if(msgcontains(msg, 'soft') or msgcontains(msg, 'boots')) then
+	if isInArray({"soft", "boots"}, msg) then
 		npcHandler:say("Do you want to repair your worn soft boots for 10000 gold coins?", cid)
 		npcHandler.topic[cid] = 1
-	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
 		if player:getItemCount(10021) >= 1 then
 			if player:removeMoney(10000) then
 				player:removeItem(10021, 1)
@@ -28,7 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Sorry, you don't have the item.", cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif(msgcontains(msg, 'no') and npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
 		npcHandler.topic[cid] = 0
 		npcHandler:say("Ok then.", cid)
 	end

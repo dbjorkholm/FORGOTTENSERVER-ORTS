@@ -2,25 +2,18 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
-	
-	if player:getLevel() < 30 then --calculate prize for blessing
-		blessprize = 2000*5*1.1
-	elseif player:getLevel() >= 30 and player:getLevel() <= 120 then
-		blessprize = 200*(player:getLevel()-20)*5*1.1
-	elseif player:getLevel() > 120 then
-		blessprize = 20000*5*1.1
-	end
-	
+	local totalBlessPrice = getBlessingsCost(player:getLevel()) * 5 * 1.1
+
 	if(msgcontains(msg, "inquisitor")) then
 		npcHandler:say("The churches of the gods entrusted me with the enormous and responsible task to lead the inquisition. I leave the field work to inquisitors who I recruit from fitting people that cross my way.", cid)
 	elseif(msgcontains(msg, "join")) then
@@ -30,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "blessing") or msgcontains(msg, "bless")) then
 		if(player:getStorageValue(Storage.TheInquisition.Questline) == 25) then --if quest is done
-			npcHandler:say("Do you want to receive the blessing of the inquisition - which means all five available blessings - for "..blessprize.." gold?", cid)
+			npcHandler:say("Do you want to receive the blessing of the inquisition - which means all five available blessings - for " .. totalBlessPrice .. " gold?", cid)
 			npcHandler.topic[cid] = 7
 		else
 			npcHandler:say("You cannot get this blessing unless you have completed The Inquisition Quest.", cid)
@@ -158,13 +151,11 @@ local function creatureSayCallback(cid, type, msg)
 			if player:hasBlessing(1) or player:hasBlessing(2) or player:hasBlessing(3) or player:hasBlessing(4) or player:hasBlessing(5) then
 				npcHandler:say("You already have been blessed!", cid)
 			else
-				if player:removeMoney(blessprize) then
+				if player:removeMoney(totalBlessPrice) then
 					npcHandler:say("You have been blessed by all of five gods!, " .. player:getName() .. ".", cid)
-					player:addBlessing(1)
-					player:addBlessing(2)
-					player:addBlessing(3)
-					player:addBlessing(4)
-					player:addBlessing(5)
+					for b = 1, 5 do
+						player:addBlessing(b)
+					end
 					player:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
 					npcHandler.topic[cid] = 0
 				else

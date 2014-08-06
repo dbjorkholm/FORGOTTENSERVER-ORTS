@@ -71,11 +71,14 @@ function key(cid, message, keywords, parameters, node)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if Player(cid):getMoney() >= 800 then
-		if Player(cid):removeItem(800) then
+	local player = Player(cid)
+	if player:getMoney() >= 800 then
+		if player:removeItem(800) then
 			npcHandler:say("Here, take the key!", cid)
-			local key = Player(cid):addItem(2087, 1)
-			key:setActionId(3940)
+			local key = player:addItem(2087, 1)
+			if key then
+				key:setActionId(3940)
+			end
 		end
 	else
 		npcHandler:say("You don't have enough money for the key!", cid)
