@@ -44,7 +44,11 @@
 			wand of dragonbreath,2191,1000;
 			wand of vortex,2190,500;" />
 		<parameter key="shop_sellable" value="
+			empty potion flask,7634,5;
+			empty potion flask,7635,5;
+			empty potion flask,7636,5;
 			spellwand,7735,299;
-			vial,9078,5;" />
+			talon,2151,320;
+			vial,2006,5;" />
 	</parameters>
 </npc>
