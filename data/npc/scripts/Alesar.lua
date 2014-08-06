@@ -75,7 +75,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(GreenDjinn.MissionStart+2, 1)
 		elseif(npcHandler.topic[cid] == 2) then
-			if(player:removeItem(cid, 2346, 1)) then
+			if player:getItemCount(2346) > 0 then
+				player:removeItem(2346, 1)
 				npcHandler:say({"So you have made it? You have really managed to steal a Tear of Daraman? ...", "Amazing how you humans are just impossible to get rid of. Incidentally, you have this character trait in common with many insects and with other vermin. ...", "Nevermind. I hate to say it, but it you have done us a favour, human. That gemstone will serve us well. ...", "Baa'leal, wants you to talk to Malor concerning some new mission. ...", "Looks like you have managed to extended your life expectancy - for just a bit longer."}, cid, 0, 1, 4000)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(GreenDjinn.MissionStart+2, 3)
