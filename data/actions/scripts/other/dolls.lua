@@ -70,9 +70,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
 		end
 	elseif item.itemid == 5669 then
+		local targetItem = Item(item.uid)
 		fromPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
-		Item(item.uid):transform(item.itemid + 1)
-		Item(item.uid):decay()
+		targetItem:transform(item.itemid + 1)
+		targetItem:decay()
 	elseif item.itemid == 6388 then
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_YELLOW)
 		sound = sound .. Player(cid):getName() .. "."
