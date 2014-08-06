@@ -41,7 +41,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 5 then
 			player:setStorageValue(Storage.thievesGuild.Mission05, 1)
-			npcHandler:say('', cid)
+			npcHandler:say('Some smugglers underneath Tiquanda, north west of Port Hope owe us some debts. Go there and steal their Golden Goblet and bring it to me.', cid)
+		elseif player:getStorageValue(Storage.thievesGuild.Mission05) == 1 then
+			npcHandler:say('Have you finished your mission?', cid)
+			npcHandler.topic[cid] = 6
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -74,6 +77,13 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.ThievesGuild.Mission04, 8)
 				player:setStorageValue(Storage.thievesGuild.Quest, 5)
 				npcHandler:say('Excellent, that serves this fool right. I fear in your next mission, you\'ll have to get your hands dirty. Just ask me to learn more about it.', cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 6 then
+			if player:removeItem(8698, 1) then
+				player:setStorageValue(Storage.ThievesGuild.Mission05, 2)
+				player:setStorageValue(Storage.thievesGuild.Quest, 6)
+				npcHandler:say('That goblet is hardly worth all this trouble but we had to insist on our payment. However, I assume you are eager for more missions, so just ask.', cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
