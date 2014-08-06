@@ -8,8 +8,10 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getOutfit({lookType = }) then -- dwarf looktype
-		if Player(cid):getStorageValue(Storage.thievesGuild.Mission04) == 6 then
+	local player = Player(cid)
+	local playerOutfit = player:getOutfit()
+	if playerOutfit.lookType == 69 then -- dwarf looktype
+		if player:getStorageValue(Storage.thievesGuild.Mission04) == 6 then
 			npcHandler:say('It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?', cid)
 			npcHandler.topic[cid] = 1
 		end
