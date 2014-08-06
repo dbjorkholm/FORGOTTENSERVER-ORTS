@@ -75,7 +75,9 @@ function key(cid, message, keywords, parameters, node)
 		if Player(cid):removeItem(800) then
 			npcHandler:say("Here, take the key!", cid)
 			local key = Player(cid):addItem(2087, 1)
-			key:setActionId(3940)
+			if key then
+				key:setActionId(3940)
+			end
 		end
 	else
 		npcHandler:say("You don't have enough money for the key!", cid)
