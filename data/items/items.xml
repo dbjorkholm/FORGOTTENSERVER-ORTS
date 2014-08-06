@@ -30112,11 +30112,6 @@
 	<item id="22699" article="a" name="cake tapestry">
 		<attribute key="weight" value="1000" />
 	</item>
-	<item id="22706" article="a" name="melting horn">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
-		<attribute key="weight" value="200" />
-	</item>
-	<item fromid="22709" toid="22711" article="a" name="frozen ursagrodon" />
 	<!--
 	<item id="23457" article="a" name="glooth injection tube">
 		<attribute key="weight" value="1400" />
