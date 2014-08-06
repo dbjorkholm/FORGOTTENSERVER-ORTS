@@ -9472,7 +9472,8 @@
 	<item id="5951" article="a" name="fish tail">
 		<attribute key="weight" value="250" />
 	</item>
-	<item id="5952" article="a" name="scroll">
+	<item id="5952" article="a" name="poem scroll">
+		<attribute key="description" value="It contains a love poem, written by an unknown elven poet." />
 		<attribute key="weight" value="120" />
 	</item>
 	<item id="5953" article="a" name="raven herb">
@@ -29034,6 +29035,7 @@
 	</item>
 	<item fromid="21378" toid="21379" name="leaves" />
 	<item id="21384" article="a" name="strangely shaped menhir" />
+	<item id="21385" article="a" name="mysterious ornate chest" />
 	<item id="21392" article="a" name="dusty amphora" />
 	<item id="21393" name="remains of a dusty amphora">
 		<attribute key="decayTo" value="21392" />
