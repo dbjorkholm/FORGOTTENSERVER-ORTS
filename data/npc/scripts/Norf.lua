@@ -11,9 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if isInArray({"heal", "help"}, msg) then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())

@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Brasith" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="41" body="94" legs="116" feet="95" addons="1" />
-<voices>
-<voice text="Food of various kinds, have a look." interval2="120" margin="1" yell="no"/>
-</voices>
-  <parameters>
-	<parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="food;" />
-        <parameter key="keyword_reply1" value="I can offer you meat, ham, salmon, fish, fruits and vegetables. If you'd like to see my offers, ask me for a {trade}." />
-        <parameter key="message_greet" value="Be mourned pilgrim in flesh. Talking of flesh, maybe you'd enjoy some {food}?"/>
-        <parameter key="message_farewell" value="May enlightenment be your path."/>
-		<parameter key="message_walkaway" value="May enlightenment be your path." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="banana,2676,2;cherry,2679,1;strawberry,2680,1;grapes,2681,3;melon,2682,8;carrot,2684,3;corncob,2686,3;green egg,6544,2;potato,8838,4" />
-  </parameters>
+<npc name="Brasith" script="Brasith.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="159" head="41" body="94" legs="97" feet="76" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			banana,2676,2;
+			bottle of bug milk,9674,200;
+			bottle of milk,2007,4,15;
+			broccoli,12417,3;
+			bulb of garlic,9114,4;
+			carrot,2684,3;
+			cauliflower,12418,4;
+			cherry,2679,1;
+			corncob,2686,3;
+			grapes,2681,3;
+			juice squeezer,5865,100;
+			melon,2682,8;
+			potato,8838,4;
+			pumpkin,2683,10;
+			strawberry,2680,1;" />
+	</parameters>
 </npc>

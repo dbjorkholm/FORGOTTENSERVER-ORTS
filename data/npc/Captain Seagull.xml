@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Captain Seagull" script="Captain Seagull.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="129" head="60" body="113" legs="95" feet="115" addons="0" />
-<parameters>
-<parameter key="message_farewell" value="Good bye. Recommend us if you were satisfied with our service." />
-<parameter key="message_walkaway" value="Good bye. Recommend us if you were satisfied with our service." />
- <parameter key="module_keywords" value="1" />
- <parameter key="keywords" value="name;" />
- <parameter key="keyword_reply1" value="My name is Seagull from the Royal Tibia Line." />
- <parameter key="message_greet" value="Welcome on board, |PLAYERNAME|. Where may I {sail} you today?"/>
-</parameters>
+	<health now="100" max="100" />
+	<look type="129" head="60" body="113" legs="95" feet="115" addons="0" />
 </npc>
