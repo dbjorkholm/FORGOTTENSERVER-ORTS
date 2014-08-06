@@ -48,6 +48,21 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 then
 			player:setStorageValue(Storage.thievesGuild.Mission06, 1)
 			npcHandler:say({'Your next job will be kidnapping. You\'ll get us the only creature that this scrupulous trader Theodore Loveless in Liberty Bay holds dear. ...', 'His little goldfish! To get that fish, you\'ll have to get in his room somehow. ...', 'As you might know I sell lock picks, but I fear unless you\'re extremely lucky, you won\'t crack this expensive masterpiece of a lock. However, get us that fish, regardless how.'}, cid)
+		elseif player:getStorageValue(Storage.thievesGuild.Mission06) >= 1 then
+			npcHandler:say('Have you finished your mission?', cid)
+			npcHandler.topic[cid] = 7
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 7 then
+			player:setStorageValue(Storage.thievesGuild.Mission07, 1)
+			npcHandler:say({'We\'d like to ease our lives somewhat. Therefore, we would appreciate the cooperation with one of the Venore city guards. ...', 'Find some dirt about one of them. It\'s unimportant what it is. As soon as we have a foothold, we\'ll convince him to cooperate. Bring me whatever you may find.'}, cid)
+		elseif player:getStorageValue(Storage.theivesGuild.Mission07) == 1 then
+			npcHandler:say('Have you finished your mission?', cid)
+			npcHandler.topic[cid] = 8
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 then
+			player:setStorageValue(Storage.thievesGuild.Mission08, 1)
+			npcHandler:say({'Competition might be an interesting challenge but our guild isn\'t really keen on competition. ...', 'Unfortunately, we are lacking some good fighters, which is quite a disadvantage against certain other organisations. However, I think you\'re a really good fighter ...', 'Travel to the Plains of Havoc and find the base of our competitors under the ruins of the dark cathedral ...', 'On the lowest level, you\'ll find a wall with two trophies. Place a message of our guild on the wall, right between the trophies. On your way, get rid of as many of our competitors as you can.'}, cid)
+		elseif player:getStorageValue(Storage.thievesGuild.Mission08) >= 1 then
+			npcHandler:say('Have you finished your mission?', cid)
+			npcHandler.topic[cid] = 9
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -77,16 +92,37 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 5 then
 			if player:removeItem(8699, 1) then
-				player:setStorageValue(Storage.ThievesGuild.Mission04, 8)
+				player:setStorageValue(Storage.thievesGuild.Mission04, 8)
 				player:setStorageValue(Storage.thievesGuild.Quest, 5)
 				npcHandler:say('Excellent, that serves this fool right. I fear in your next mission, you\'ll have to get your hands dirty. Just ask me to learn more about it.', cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
 			if player:removeItem(8698, 1) then
-				player:setStorageValue(Storage.ThievesGuild.Mission05, 2)
+				player:setStorageValue(Storage.thievesGuild.Mission05, 2)
 				player:setStorageValue(Storage.thievesGuild.Quest, 6)
 				npcHandler:say('That goblet is hardly worth all this trouble but we had to insist on our payment. However, I assume you are eager for more missions, so just ask.', cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 7 then
+			if player:removeItem(8766, 1) then
+				player:setStorageValue(Storage.thievesGuild.Mission06, 3)
+				player:setStorageValue(Storage.thievesGuild.Quest, 7)
+				npcHandler:say('This little goldfish will bring us a hefty ransom! Just ask me if you\'re ready for another mission.', cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 8 then
+			if player:removeItem(8763, 1) then
+				player:setStorageValue(Storage.thievesGuild.Mission07, 2)
+				player:setStorageValue(Storage.thievesGuild.Quest, 8)
+				npcHandler:say({'Excellent, that little letter will do the trick for sure ...', 'I think you\'re really capable and if you finish another mission, I\'ll allow you full access to our black market of lost and found items. Just ask me to learn more about that mission.'}, cid)
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 9 then
+			if player:getStorageValue(Storage.theivesGuild.Mission08) == 2 then
+				player:setStorageValue(Storage.thievesGuild.Mission08, 3)
+				player:setStorageValue(Storage.thievesGuild.Quest, 9)
+				npcHandler:say({'Once again you\'ve finished your job, and I\'ll keep my promise. From now on, you can trade with old Black Bert somewhere upstairs to get access to certain items that mightbe of value to someone like you. ...', 'If you like, you can also enter the room to the left and pick one item of your choice.'}, cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
