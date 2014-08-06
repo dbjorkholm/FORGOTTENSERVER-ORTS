@@ -61,6 +61,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local random = math.random(1, table.maxn(doll))
 	local sound = doll[random]
+	local player = Player(cid)
 	if item.itemid == 6566 then
 		if random == 3 then
 			fromPosition:sendMagicEffect(CONST_ME_POFF)
@@ -76,9 +77,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		targetItem:decay()
 	elseif item.itemid == 6388 then
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_YELLOW)
-		sound = sound .. Player(cid):getName() .. "."
+		sound = sound .. player:getName() .. "."
 	end
 
-	Player(cid):say(sound, TALKTYPE_MONSTER_SAY, false, 0, fromPosition)
+	player:say(sound, TALKTYPE_MONSTER_SAY, false, 0, fromPosition)
 	return true
 end
