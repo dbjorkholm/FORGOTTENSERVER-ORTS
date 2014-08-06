@@ -36,6 +36,12 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 4 then
 			player:setStorageValue(Storage.thievesGuild.Mission04, 1)
 			npcHandler:say({'Your next mission is somewhat bigger and I\'m sure much fun for you. Some new-rich merchant is being a bit more greedy than it\'s good for him. ...', 'The good thing is he\'s as stupid as greedy, so we have a little but cunning plan. We arranged the boring correspondence in advance, so you\'ll come in when the fun starts. ...', 'You\'ll disguise yourself as the dwarven ambassador and sell that fool the old dwarven bridge, south of Kazordoon. ...', 'Well, actually it is a bit more complicated than that. Firstly, you\'ll have to get forged documents. Ask around in the criminal camp to find a forger. ...', 'Secondly, you\'ll need a disguise. Percybald in Carlin is an eccentric actor that might help you with that. ...', 'As soon as you got both things, travel to Venore and find the merchant Nurik. Trade the false documents for the famous painting of Mina Losa and bring it to me.'}, cid)
+		elseif player:getStorageValue(Storage.thievesGuild.Mission04) == 7 then
+			npcHandler:say('Have you finished your mission?', cid)
+			npcHandler.topic[cid] = 5
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 5 then
+			player:setStorageValue(Storage.thievesGuild.Mission05, 1)
+			npcHandler:say('', cid)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -43,28 +49,33 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say({'Excellent. You\'ll learn this trade from scratch. Our operations cover many fields of work. Some aren\'t even illegal. ...', 'Well, as long as you don\'t get caught at least. Ask me for a mission whenever you\'re ready.'}, cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(3956) > 9 then
-				player:removeItem(3956, 10)
+			if player:removeItem(3956, 10) then
 				player:setStorageValue(Storage.thievesGuild.Mission01, 2)
 				player:setStorageValue(Storage.thievesGuild.Quest, 2)
 				npcHandler:say('What a fine material. That will be worth a coin or two. So far, so good. Ask me for another mission if you\'re ready for it.', cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(8760) > 0 then
-				player:removeItem(8760, 1)
+			if player:removeItem(8760, 1) then
 				player:setStorageValue(Storage.thievesGuild.Mission02, 2)
 				player:setStorageValue(Storage.thievesGuild.Quest, 3)
 				npcHandler:say('What an ugly vase. But who am I to question the taste of our customers? Anyway, I might have another mission in store for you.', cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(8761) > 0 then
-				player:removeItem(8761, 1)
+			if player:removeItem(8761, 1) then
 				player:setStorageValue(Storage.thievesGuild.Mission03, 2)
 				player:setStorageValue(Storage.thievesGuild.Quest, 4)
 				npcHandler:say({'Ah, the key to untold riches. Don\'t worry, we\'ll make sure that no one will connect you to the disappearance of certain royal possessions. ...', 'You\'re too valuable to us. Speaking about your value, I might have some other mission for you.'}, cid)
 				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 5 then
+			if player:removeItem(8699, 1) then
+				player:setStorageValue(Storage.ThievesGuild.Mission04, 8)
+				player:setStorageValue(Storage.thievesGuild.Quest, 5)
+				npcHandler:say('Excellent, that serves this fool right. I fear in your next mission, you\'ll have to get your hands dirty. Just ask me to learn more about it.', cid)
+				npcHandler.topic[cid] = 0
+			end
 		end
 	elseif msgcontains(msg, 'thieves') then
 		if player:getStorageValue(Storage.thievesGuild.Quest) < 1 then
