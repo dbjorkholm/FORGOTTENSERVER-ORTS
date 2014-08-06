@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Ukea" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="97" body="58" legs="102" feet="58" addons="1" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-	<parameter key="shop_buyable" value="
+	<health now="100" max="100" />
+	<look type="159" head="78" body="39" legs="101" feet="58" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
 			barrel kit,3919,12;

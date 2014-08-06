@@ -12,10 +12,12 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if msgcontains(msg, "sam send me") then
-		if player:getStorageValue( 330) == 1 then
-			npcHandler:say({"Oh, so its you, he wrote me about? Sadly I have no dwarven armor in stock. But I give you the permission to retrive one from the mines. ...","The problem is, some giant spiders made the tunnels where the storage is their new home. Good luck. "}, cid, 0, 1, 3000)
+	if msgcontains(msg, "sam sent me") then
+		if player:getStorageValue(330) == 1 then
+			npcHandler:say({"Oh, so its you, he wrote me about? Sadly I have no dwarven armor in stock. But I give you the permission to retrive one from the mines. ...",
+							"The problem is, some giant spiders made the tunnels where the storage is their new home. Good luck."}, cid)
 			player:setStorageValue(330, 2)
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "measurements") then
 		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
