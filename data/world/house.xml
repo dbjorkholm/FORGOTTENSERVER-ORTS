@@ -429,14 +429,14 @@
 	<house name="Fimbul Shelf 1" houseid="804" entryx="32204" entryy="31169" entryz="7" rent="975" townid="12" size="20" />
 	<house name="Frost Manor" houseid="805" entryx="32287" entryy="31106" entryz="5" rent="26370" townid="12" size="377" />
 	<house name="Marble Guildhall" houseid="831" entryx="32622" entryy="31954" entryz="9" rent="16810" townid="3" size="282" />
-	<house name="Iron Guildhall" houseid="832" entryx="32607" entryy="31893" entryz="9" rent="15560" townid="3" size="236" />
+	<house name="Iron Guildhall" houseid="832" entryx="32607" entryy="31893" entryz="9" rent="15560" townid="3" size="243" />
 	<house name="The Market 1 (Shop)" houseid="833" entryx="32631" entryy="31922" entryz="8" rent="650" townid="3" size="7" />
 	<house name="The Market 3 (Shop)" houseid="834" entryx="32635" entryy="31926" entryz="8" rent="1450" townid="3" size="22" />
 	<house name="The Market 2 (Shop)" houseid="835" entryx="32634" entryy="31930" entryz="8" rent="1100" townid="3" size="16" />
 	<house name="The Market 4 (Shop)" houseid="836" entryx="32635" entryy="31933" entryz="8" rent="1800" townid="3" size="28" />
 	<house name="Granite Guildhall" houseid="837" entryx="32599" entryy="31949" entryz="5" rent="17845" townid="3" size="297" />
 	<house name="Upper Barracks 1" houseid="838" entryx="32605" entryy="31923" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 13" houseid="850" entryx="32616" entryy="31923" entryz="5" rent="580" townid="3" size="11" />
+	<house name="Upper Barracks 13" houseid="850" entryx="32615" entryy="31923" entryz="5" rent="580" townid="3" size="11" />
 	<house name="Nobility Quarter 4" houseid="851" entryx="32607" entryy="31921" entryz="4" rent="765" townid="3" size="14" />
 	<house name="Nobility Quarter 5" houseid="852" entryx="32612" entryy="31921" entryz="4" rent="765" townid="3" size="14" />
 	<house name="Nobility Quarter 7" houseid="853" entryx="32607" entryy="31914" entryz="4" rent="765" townid="3" size="14" />
@@ -451,9 +451,9 @@
 	<house name="The Farms 3" houseid="866" entryx="32645" entryy="31908" entryz="2" rent="1530" townid="3" size="21" />
 	<house name="The Farms 2" houseid="867" entryx="32641" entryy="31918" entryz="2" rent="1530" townid="3" size="21" />
 	<house name="The Farms 1" houseid="868" entryx="32627" entryy="31921" entryz="2" rent="2510" townid="3" size="34" />
-	<house name="Outlaw Castle" houseid="886" entryx="32660" entryy="32236" entryz="7" rent="8000" townid="3" size="149" />
-	<house name="Tunnel Gardens 3" houseid="889" entryx="32603" entryy="31908" entryz="11" rent="2000" townid="3" size="5" />
-	<house name="Tunnel Gardens 4" houseid="890" entryx="32602" entryy="31909" entryz="11" rent="2000" townid="3" size="1" />
+	<house name="Outlaw Castle" houseid="886" entryx="32660" entryy="32236" entryz="7" rent="8000" townid="3" size="159" />
+	<house name="Tunnel Gardens 3" houseid="889" entryx="32603" entryy="31908" entryz="11" rent="2000" townid="3" size="22" />
+	<house name="Tunnel Gardens 4" houseid="890" entryx="32602" entryy="31909" entryz="11" rent="2000" townid="3" size="23" />
 	<house name="Tunnel Gardens 5" houseid="892" entryx="32594" entryy="31905" entryz="11" rent="1360" townid="3" size="16" />
 	<house name="Tunnel Gardens 6" houseid="893" entryx="32594" entryy="31910" entryz="11" rent="1360" townid="3" size="16" />
 	<house name="Tunnel Gardens 8" houseid="894" entryx="32594" entryy="31911" entryz="12" rent="1360" townid="3" size="16" />
@@ -957,59 +957,61 @@
 	<house name="Theater Avenue 5b" houseid="2389" entryx="32359" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
 	<house name="Theater Avenue 5c" houseid="2390" entryx="32359" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
 	<house name="Theater Avenue 5d" houseid="2391" entryx="32361" entryy="31782" entryz="6" rent="450" townid="4" size="7" />
-	<house name="Outlaw Camp 1" houseid="2392" entryx="32644" entryy="32204" entryz="7" rent="1660" townid="3" size="41" />
-	<house name="Outlaw Camp 2" houseid="2393" entryx="32650" entryy="32212" entryz="7" rent="280" townid="3" size="4" />
-	<house name="Outlaw Camp 3" houseid="2394" entryx="32648" entryy="32212" entryz="6" rent="740" townid="3" size="11" />
-	<house name="Outlaw Camp 4" houseid="2395" entryx="32657" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 5" houseid="2396" entryx="32660" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 6" houseid="2397" entryx="32663" entryy="32210" entryz="7" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 7" houseid="2398" entryx="32647" entryy="32212" entryz="8" rent="780" townid="3" size="12" />
-	<house name="Outlaw Camp 8" houseid="2399" entryx="32650" entryy="32212" entryz="8" rent="280" townid="3" size="4" />
-	<house name="Outlaw Camp 9" houseid="2400" entryx="32657" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 10" houseid="2401" entryx="32660" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 11" houseid="2402" entryx="32663" entryy="32210" entryz="8" rent="200" townid="3" size="2" />
-	<house name="Outlaw Camp 12 (Shop)" houseid="2404" entryx="32661" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
-	<house name="Outlaw Camp 13 (Shop)" houseid="2405" entryx="32666" entryy="32201" entryz="8" rent="280" townid="3" size="6" />
-	<house name="Outlaw Camp 14 (Shop)" houseid="2406" entryx="32665" entryy="32198" entryz="8" rent="640" townid="3" size="15" />
+	<house name="Outlaw Camp 1" houseid="2392" entryx="32645" entryy="32204" entryz="7" rent="1660" townid="3" size="41" />
+	<house name="Outlaw Camp 2" houseid="2393" entryx="32649" entryy="32212" entryz="7" rent="280" townid="3" size="4" />
+	<house name="Outlaw Camp 3" houseid="2394" entryx="32649" entryy="32212" entryz="6" rent="740" townid="3" size="11" />
+	<house name="Outlaw Camp 4" houseid="2395" entryx="32657" entryy="32209" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 5" houseid="2396" entryx="32660" entryy="32209" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 6" houseid="2397" entryx="32663" entryy="32209" entryz="7" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 7" houseid="2398" entryx="32648" entryy="32212" entryz="8" rent="780" townid="3" size="12" />
+	<house name="Outlaw Camp 8" houseid="2399" entryx="32649" entryy="32212" entryz="8" rent="280" townid="3" size="4" />
+	<house name="Outlaw Camp 9" houseid="2400" entryx="32657" entryy="32209" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 10" houseid="2401" entryx="32660" entryy="32209" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 11" houseid="2402" entryx="32663" entryy="32209" entryz="8" rent="200" townid="3" size="2" />
+	<house name="Outlaw Camp 12 (Shop)" houseid="2404" entryx="32661" entryy="32200" entryz="8" rent="280" townid="3" size="6" />
+	<house name="Outlaw Camp 13 (Shop)" houseid="2405" entryx="32666" entryy="32200" entryz="8" rent="280" townid="3" size="6" />
+	<house name="Outlaw Camp 14 (Shop)" houseid="2406" entryx="32665" entryy="32199" entryz="8" rent="640" townid="3" size="15" />
 	<house name="Open-Air Theatre" houseid="2407" entryx="32262" entryy="32237" entryz="7" rent="2700" townid="2" size="55" />
 	<house name="The Lair" houseid="2408" entryx="32993" entryy="32153" entryz="7" rent="7625" townid="1" size="154" />
-	<house name="Upper Barracks 2" houseid="2409" entryx="32604" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 3" houseid="2410" entryx="32604" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 4" houseid="2411" entryx="32604" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 5" houseid="2412" entryx="32606" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 6" houseid="2413" entryx="32606" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 7" houseid="2414" entryx="32606" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 8" houseid="2415" entryx="32614" entryy="31923" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 9" houseid="2416" entryx="32614" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 10" houseid="2417" entryx="32614" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 11" houseid="2418" entryx="32614" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
-	<house name="Upper Barracks 12" houseid="2419" entryx="32616" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 2" houseid="2409" entryx="32605" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 3" houseid="2410" entryx="32605" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 4" houseid="2411" entryx="32605" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 5" houseid="2412" entryx="32605" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 6" houseid="2413" entryx="32605" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 7" houseid="2414" entryx="32605" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 8" houseid="2415" entryx="32615" entryy="31923" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 9" houseid="2416" entryx="32615" entryy="31920" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 10" houseid="2417" entryx="32615" entryy="31917" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 11" houseid="2418" entryx="32615" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
+	<house name="Upper Barracks 12" houseid="2419" entryx="32615" entryy="31914" entryz="5" rent="210" townid="3" size="4" />
 	<house name="Low Waters Observatory" houseid="2420" entryx="33335" entryy="32762" entryz="6" rent="17165" townid="9" size="470" />
 	<house name="Eastern House of Tranquility" houseid="2421" entryx="33388" entryy="31453" entryz="4" rent="11120" townid="14" size="256" />
 	<house name="Mammoth House" houseid="2422" entryx="32234" entryy="31226" entryz="7" rent="9300" townid="12" size="158" />
-	<house name="Lower Barracks 1" houseid="2427" entryx="32623" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 2" houseid="2428" entryx="32626" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 3" houseid="2429" entryx="32635" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 4" houseid="2430" entryx="32638" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 5" houseid="2431" entryx="32623" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 6" houseid="2432" entryx="32626" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 7" houseid="2433" entryx="32635" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 8" houseid="2434" entryx="32638" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 9" houseid="2435" entryx="32623" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 10" houseid="2436" entryx="32626" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 11" houseid="2437" entryx="32635" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 12" houseid="2438" entryx="32638" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 13" houseid="2439" entryx="32623" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 14" houseid="2440" entryx="32626" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 15" houseid="2441" entryx="32635" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 16" houseid="2442" entryx="32638" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 17" houseid="2443" entryx="32623" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 18" houseid="2444" entryx="32626" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 19" houseid="2445" entryx="32635" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 20" houseid="2446" entryx="32638" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 21" houseid="2447" entryx="32623" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 22" houseid="2448" entryx="32626" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 23" houseid="2449" entryx="32635" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
-	<house name="Lower Barracks 24" houseid="2450" entryx="32638" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
-	<house name="The Farms 4" houseid="2451" entryx="32649" entryy="31899" entryz="2" rent="1530" townid="3" size="21" />
+	<house name="Lower Barracks 1" houseid="2427" entryx="32624" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 2" houseid="2428" entryx="32625" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 3" houseid="2429" entryx="32636" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 4" houseid="2430" entryx="32637" entryy="31906" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 5" houseid="2431" entryx="32624" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 6" houseid="2432" entryx="32625" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 7" houseid="2433" entryx="32636" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 8" houseid="2434" entryx="32637" entryy="31911" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 9" houseid="2435" entryx="32624" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 10" houseid="2436" entryx="32625" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 11" houseid="2437" entryx="32636" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 12" houseid="2438" entryx="32637" entryy="31916" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 13" houseid="2439" entryx="32624" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 14" houseid="2440" entryx="32625" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 15" houseid="2441" entryx="32636" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 16" houseid="2442" entryx="32637" entryy="31921" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 17" houseid="2443" entryx="32624" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 18" houseid="2444" entryx="32625" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 19" houseid="2445" entryx="32636" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 20" houseid="2446" entryx="32637" entryy="31926" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 21" houseid="2447" entryx="32624" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 22" houseid="2448" entryx="32625" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 23" houseid="2449" entryx="32636" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
+	<house name="Lower Barracks 24" houseid="2450" entryx="32637" entryy="31931" entryz="9" rent="300" townid="3" size="7" />
+	<house name="The Farms 4" houseid="2451" entryx="32648" entryy="31899" entryz="2" rent="1530" townid="3" size="21" />
+	<house name="Tunnel Gardens 1" houseid="2452" entryx="32606" entryy="31908" entryz="11" rent="2000" townid="3" size="20" />
+	<house name="Tunnel Gardens 2" houseid="2455" entryx="32606" entryy="31909" entryz="11" rent="2000" townid="3" size="20" />
 </houses>
