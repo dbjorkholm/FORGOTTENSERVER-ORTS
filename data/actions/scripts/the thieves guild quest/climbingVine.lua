@@ -11,7 +11,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
     local player = Player(cid)
     player:teleportTo(useItem)
-    player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
     return true
 end
