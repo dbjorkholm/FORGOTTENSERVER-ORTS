@@ -69,6 +69,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getMoney() >= 1000 then
 				player:addItem(8761, 1)
 				player:removeMoney(1000)
+				player:setStorageValue(Storage.thievesGuild.Mission03, 2)
 				npcHandler:say({'Excellent! Here is your invitation!'}, cid)
 			else
 				npcHandler:say({'You don\'t have enough money.'}, cid)

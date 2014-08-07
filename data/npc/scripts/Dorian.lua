@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 3 then
 			player:setStorageValue(Storage.thievesGuild.Mission03, 1)
 			npcHandler:say({'Our beloved king will hold a great festivity at the end of the month. Unfortunately he forgot to invite one of our guild\'s representatives. ...', 'Of course it would be rude to point out this mistake to the king. It will be your job to get us an invitation to the ball. ...', 'Moreover, It will be a great chance to check the castle for, well, opportunities. I\'m sure you understand. However, it\'s up to that pest Oswald to give out invitations, so he\'s the man you\'re looking for.'}, cid)
-		elseif player:getStorageValue(Storage.thievesGuild.Mission03) == 1 then
+		elseif player:getStorageValue(Storage.thievesGuild.Mission03) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 4 then
@@ -86,7 +86,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 4 then
 			if player:removeItem(8761, 1) then
-				player:setStorageValue(Storage.thievesGuild.Mission03, 2)
+				player:setStorageValue(Storage.thievesGuild.Mission03, 3)
 				player:setStorageValue(Storage.thievesGuild.Quest, 4)
 				npcHandler:say({'Ah, the key to untold riches. Don\'t worry, we\'ll make sure that no one will connect you to the disappearance of certain royal possessions. ...', 'You\'re too valuable to us. Speaking about your value, I might have some other mission for you.'}, cid)
 				npcHandler.topic[cid] = 0

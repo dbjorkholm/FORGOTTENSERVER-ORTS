@@ -41,8 +41,7 @@ Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
 horestisjars (Aid=storage)		50006-50010
 
-Assassin Outfit Quest: 			50080-50082
-
+Assassin Outfit Quest:			50080-50082
 
 
 ---/////////////////////Aid/Uid/////////////////////----
