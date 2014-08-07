@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50138
+Last Used Storage = 50147
 Last Used Aid = 50161
-Last Used Uid = 50134
+Last Used Uid = 50137
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 allowMovement Storage	=		100000 --Reserved to cancel player movement
@@ -40,14 +40,15 @@ Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
 horestisjars (Aid=storage)		50006-50010
 
-Assassin Outfit Quest: 50080-50082
+Assassin Outfit Quest: 			50080-50082
 
+Thieves Guild storage:			50139-50147
 
 ---/////////////////////Aid/Uid/////////////////////----
 the ancient tombs storage Uid:		12100-12109
 The Ape City Aid/Uid:			12120-12130
 
-postman Aid/Uid:				12450-12500
+postman Aid/Uid:			12450-12500
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
@@ -56,7 +57,7 @@ Waterfall Quest:                        50022
 Thais Lighthouse Quest Aid:		50023-50026
 
 The Queen of banshee Quest:
-Kiss storage =					50020
+Kiss storage =				50020
 
 First Seal:
 	2 magic wall lever uid:			50000/50001/50002

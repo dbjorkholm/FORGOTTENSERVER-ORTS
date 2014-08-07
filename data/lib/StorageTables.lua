@@ -295,5 +295,16 @@ Storage = {
 	},
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
-	madMageQuest = 50136
+	madMageQuest = 50136,
+	thievesGuild = {
+		Quest = 50139,
+		Mission01 = 50140,
+		Mission02 = 50141,
+		Mission03 = 50142,
+		Mission04 = 50143,
+		Mission05 = 50144,
+		Mission06 = 50145,
+		Mission07 = 50146,
+		Mission08 = 50147
+	}
 }
