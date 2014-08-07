@@ -121,6 +121,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 9 then
 				player:setStorageValue(Storage.thievesGuild.Mission08, 3)
 				player:setStorageValue(Storage.thievesGuild.Quest, 9)
+				player:setStorageValue(Storage.thievesGuild.Reward, 1)
 				npcHandler:say({'Once again you\'ve finished your job, and I\'ll keep my promise. From now on, you can trade with old Black Bert somewhere upstairs to get access to certain items that mightbe of value to someone like you. ...', 'If you like, you can also enter the room to the left and pick one item of your choice.'}, cid)
 				npcHandler.topic[cid] = 0
 		end

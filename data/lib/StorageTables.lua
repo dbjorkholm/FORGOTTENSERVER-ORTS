@@ -267,7 +267,8 @@ Storage = {
 		Mission05 = 12506,
 		Mission06 = 12507,
 		Mission07 = 12508,
-		Mission08 = 12509
+		Mission08 = 12509,
+		Reward = 12510
 	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,

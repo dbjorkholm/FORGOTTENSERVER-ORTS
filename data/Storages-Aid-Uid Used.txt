@@ -35,7 +35,7 @@ UnnaturalSelection storage:		12330-12349
 WrathoftheEmperor storage:		12350-12399
 FriendsandTraders storage:		12400-12449
 postman storage:			12450-12500
-Thieves Guild storage:			12501-12509
+Thieves Guild storage:			12501-12510
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
@@ -50,7 +50,7 @@ the ancient tombs storage Uid:		12100-12109
 The Ape City Aid/Uid:			12120-12130
 
 postman Aid/Uid:			12450-12500
-Thieves Guild Aid/Uid:			12501-12509
+Thieves Guild Aid/Uid:			12501-12510
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012
