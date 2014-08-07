@@ -16,7 +16,7 @@ local function greetCallback(cid)
 			npcHandler.topic[cid] = 1
 		end
 	else
-		npcHandler:say('Greetings, ' .. Player(cid):getName() .. '', cid)
+		npcHandler:say('Greetings, ' .. player:getName() .. '', cid)
 	end
 	return true
 end

@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 2 then
 			player:setStorageValue(Storage.thievesGuild.Mission02, 1)
 			npcHandler:say({'A client of our guild would like to get a certain vase. Unfortunately, it\'s not for sale. Well, by the original owner, that is. ...', 'We, on the other hand, would gladly sell him the vase. Therefore, it would come in handy if we get this vase in our hands. ...', 'Luckily, the walls of the owner\'s house are covered with vines, that will make a burglary quite easy. ...', 'You\'ll still need some lock picks to get the chest open in which the vase is stored. Must be your lucky day, as I\'m selling lock picks for a fair price. ...', 'You might need some of them to get that chest open. The soon to be ex-owner of that vase is Sarina, the proprietor of Carlin\'s general store.'}, cid)
-		elseif player:getStorageValue(Storage.thievesGuild.Mission02) == 1 then
+		elseif player:getStorageValue(Storage.thievesGuild.Mission02) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 3 then
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 then
 			player:setStorageValue(Storage.thievesGuild.Mission08, 1)
 			npcHandler:say({'Competition might be an interesting challenge but our guild isn\'t really keen on competition. ...', 'Unfortunately, we are lacking some good fighters, which is quite a disadvantage against certain other organisations. However, I think you\'re a really good fighter ...', 'Travel to the Plains of Havoc and find the base of our competitors under the ruins of the dark cathedral ...', 'On the lowest level, you\'ll find a wall with two trophies. Place a message of our guild on the wall, right between the trophies. On your way, get rid of as many of our competitors as you can.'}, cid)
-		elseif player:getStorageValue(Storage.thievesGuild.Mission08) >= 1 then
+		elseif player:getStorageValue(Storage.thievesGuild.Mission08) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 9
 		end
@@ -78,7 +78,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 3 then
 			if player:removeItem(8760, 1) then
-				player:setStorageValue(Storage.thievesGuild.Mission02, 2)
+				player:setStorageValue(Storage.thievesGuild.Mission02, 3)
 				player:setStorageValue(Storage.thievesGuild.Quest, 3)
 				npcHandler:say('What an ugly vase. But who am I to question the taste of our customers? Anyway, I might have another mission in store for you.', cid)
 				npcHandler.topic[cid] = 0
@@ -119,12 +119,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getStorageValue(Storage.theivesGuild.Mission08) == 2 then
 				player:setStorageValue(Storage.thievesGuild.Mission08, 3)
 				player:setStorageValue(Storage.thievesGuild.Quest, 9)
 				npcHandler:say({'Once again you\'ve finished your job, and I\'ll keep my promise. From now on, you can trade with old Black Bert somewhere upstairs to get access to certain items that mightbe of value to someone like you. ...', 'If you like, you can also enter the room to the left and pick one item of your choice.'}, cid)
 				npcHandler.topic[cid] = 0
-			end
 		end
 	elseif msgcontains(msg, 'thieves') then
 		if player:getStorageValue(Storage.thievesGuild.Quest) < 1 then
