@@ -59,6 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 8
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 then
 			player:setStorageValue(Storage.thievesGuild.Mission08, 1)
+			player:addItem(8701, 1)
 			npcHandler:say({'Competition might be an interesting challenge but our guild isn\'t really keen on competition. ...', 'Unfortunately, we are lacking some good fighters, which is quite a disadvantage against certain other organisations. However, I think you\'re a really good fighter ...', 'Travel to the Plains of Havoc and find the base of our competitors under the ruins of the dark cathedral ...', 'On the lowest level, you\'ll find a wall with two trophies. Place a message of our guild on the wall, right between the trophies. On your way, get rid of as many of our competitors as you can.'}, cid)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission08) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)

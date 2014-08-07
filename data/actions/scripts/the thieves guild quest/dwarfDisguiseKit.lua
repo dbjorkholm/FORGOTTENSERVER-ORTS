@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local condition = Condition(CONDITION_OUTFIT)
-	condition:setTicks(5 * 60 * 2000) -- should be 5 minutes
+	condition:setTicks(5 * 60 * 1000) -- should be 5 minutes
 	condition:addOutfit({lookType = 66}) -- dwarf geomancer looktype
 
 	Player(cid):addCondition(condition)

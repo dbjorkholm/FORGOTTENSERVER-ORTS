@@ -355,6 +355,7 @@
 	<action itemid="8693" script="the thieves guild quest/dwarfDisguiseKit.lua"/>
 	<action actionid="12507" script="the thieves guild quest/fishnapping.lua"/>
 	<action uniqueid="12501" script="quests/system.lua"/>
+	<action itemid="8701" script="the thieves guild quest/note.lua"/>
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
