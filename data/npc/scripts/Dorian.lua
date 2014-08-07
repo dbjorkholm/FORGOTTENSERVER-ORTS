@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 then
 			player:setStorageValue(Storage.thievesGuild.Mission06, 1)
 			npcHandler:say({'Your next job will be kidnapping. You\'ll get us the only creature that this scrupulous trader Theodore Loveless in Liberty Bay holds dear. ...', 'His little goldfish! To get that fish, you\'ll have to get in his room somehow. ...', 'As you might know I sell lock picks, but I fear unless you\'re extremely lucky, you won\'t crack this expensive masterpiece of a lock. However, get us that fish, regardless how.'}, cid)
-		elseif player:getStorageValue(Storage.thievesGuild.Mission06) >= 1 then
+		elseif player:getStorageValue(Storage.thievesGuild.Mission06) == 3 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 7
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 7 then
@@ -106,7 +106,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 7 then
 			if player:removeItem(8766, 1) then
-				player:setStorageValue(Storage.thievesGuild.Mission06, 3)
+				player:setStorageValue(Storage.thievesGuild.Mission06, 4)
 				player:setStorageValue(Storage.thievesGuild.Quest, 7)
 				npcHandler:say('This little goldfish will bring us a hefty ransom! Just ask me if you\'re ready for another mission.', cid)
 				npcHandler.topic[cid] = 0

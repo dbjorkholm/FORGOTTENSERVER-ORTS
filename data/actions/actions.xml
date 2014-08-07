@@ -353,6 +353,7 @@
 	<!-- Thieves Guild Quest -->
 	<action fromaid="12501" toaid="12502" script="the thieves guild quest/climbingVine.lua"/>
 	<action itemid="8693" script="the thieves guild quest/dwarfDisguiseKit.lua"/>
+	<action actionid="12507" script="the thieves guild quest/fishnapping.lua"/>
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
