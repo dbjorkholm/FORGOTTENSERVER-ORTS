@@ -258,6 +258,17 @@ Storage = {
 		Mission10 = 12459,
 		Rank = 12460
 	},
+	thievesGuild = {
+		Quest = 12501,
+		Mission01 = 12502,
+		Mission02 = 12503,
+		Mission03 = 12504,
+		Mission04 = 12505,
+		Mission05 = 12506,
+		Mission06 = 12507,
+		Mission07 = 12508,
+		Mission08 = 12509
+	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,
@@ -295,16 +306,5 @@ Storage = {
 	},
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
-	madMageQuest = 50136,
-	thievesGuild = {
-		Quest = 50139,
-		Mission01 = 50140,
-		Mission02 = 50141,
-		Mission03 = 50142,
-		Mission04 = 50143,
-		Mission05 = 50144,
-		Mission06 = 50145,
-		Mission07 = 50146,
-		Mission08 = 50147
-	}
+	madMageQuest = 50136
 }
