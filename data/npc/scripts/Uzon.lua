@@ -49,7 +49,7 @@ local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcH
 travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 80, destination = {x=33193, y=31784, z=3} })
 travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
-local edronPos = Position(33175, 31764, 6)
+local edronPos = Position(33193, 31783, 3)
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
