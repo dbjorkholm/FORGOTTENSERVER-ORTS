@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local function greetCallback(cid)
 	local player = Player(cid)
 	local playerOutfit = player:getOutfit()
-	if playerOutfit.lookType == 69 then -- dwarf looktype
+	if playerOutfit.lookType == 66 then -- dwarf geomancer looktype
 		if player:getStorageValue(Storage.thievesGuild.Mission04) == 6 then
 			npcHandler:say('It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?', cid)
 			npcHandler.topic[cid] = 1
