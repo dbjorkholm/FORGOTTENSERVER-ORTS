@@ -72,6 +72,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Have you really found my wolf tooth chain??", cid)
 			npcHandler.topic[cid] = 11
 		end
+	elseif msgcontains(msg, "ceiron's waterskin") then
+		if player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 3 then
+			npcHandler:say("Have you lost my waterskin?", cid)
+			npcHandler.topic[cid] = 12
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then	
 			npcHandler:say({"I hope that I am not asking too much of you with this task. I heard of a flower which is currently unique in Tibia and can survive at only one place. ...",
@@ -87,9 +92,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(4869, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5937) >= 1 then
+			if player:removeItem(5937, 1) then
 				npcHandler:say("Crunor be praised! The Griffinclaw really exists! Now, I will make sure that it will not become extinct. If you are ready to help me again, just ask me for a {task}.", cid)
-				player:removeItem(5937, 1)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 2)
 				npcHandler.topic[cid] = 0	
 			end
@@ -99,9 +103,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(5938, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5939) >= 1 then
+			if player:removeItem(5939, 1) then
 				npcHandler:say("Good work, " .. player:getName() .. "! This water looks indeed extremely clear. I will examine it right away. If you are ready to help me again, just ask me for a {task}.", cid)
-				player:removeItem(5939, 1)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 4)
 				npcHandler.topic[cid] = 0	
 			end
@@ -110,9 +113,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 5)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getItemCount(6550) >= 100 then
+			if player:removeItem(6550, 100) then
 				npcHandler:say("I'm very impressed, " .. player:getName() .. ". With this task you have proven that you are on the right side and are powerful as well. If you are ready to help me again, just ask me for a {task}.", cid)
-				player:removeItem(6550, 100)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 6)
 				npcHandler.topic[cid] = 0	
 			end	
@@ -121,11 +123,18 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 7)
 			npcHandler.topic[cid] = 0	
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(5940) >= 1 then
+			if player:removeItem(5940, 1) then
 				npcHandler:say("Crunor be praised! You found my beloved chain! " .. player:getName() .. ", you really earned my respect and I consider you as a friend from now on. Remind me to tell you about {Faolan} sometime.", cid)
-				player:removeItem(5940, 1)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 8)
 				npcHandler.topic[cid] = 0	
+			end
+		elseif npcHandler.topic[cid] == 12 then
+			npcHandler:say("I can give you a new one, but I fear that I have to take a small fee for it. Would you like to buy a waterskin for 1000 gold?", cid)
+			npcHandler.topic[cid] = 13
+		elseif npcHandler.topic[cid] == 13 then
+			if player:removeMoney(1000) then
+				player:addItem(5938, 1)
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end
