@@ -9,8 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
         return true
     end
 
-    local player = Player(cid)
-    player:teleportTo(useItem)
+    Player(cid):teleportTo(useItem)
 
     return true
 end
