@@ -9,10 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	local player = Player(cid)
-	if player:getStorageValue(Storage.thievesGuild.Mission02) > 0 then
-		player:teleportTo(useItem)
-	end
+	Player(cid):teleportTo(useItem)
 
 	return true
 end

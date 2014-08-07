@@ -350,6 +350,10 @@
 	<action fromuid="50113" touid="50123" script="beregar quest/wagonMazeLevers.lua"/>
 	<action uniqueid="50124" script="beregar quest/wagonMazeExit.lua"/>
 
+	<!-- Thieves Guild Quest -->
+	<action fromuid="50135" touid="50136" script="the thieves guild quest/climbingVine.lua"/>
+	<action itemid="8693" script="the thieves guild quest/dwarfDisguiseKit.lua"/>
+
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/samOldBackpackQuestDoor.lua"/>
 	<action uniqueid="9226" script="sam old backpack/samOldBackpackQuestReward.lua"/>
@@ -392,6 +396,7 @@
 	<action actionid="50161" script="quests/calassaCombDoor.lua"/>
 
 	<!-- Tools -->
+	<action itemid="8717" script="tools/lockPick.lua"/>
 	<action itemid="8613" script="tools/bricklayerKit.lua"/> 
 	<action itemid="2557" script="tools/hammer.lua"/>
 	<action itemid="2558" script="tools/saw.lua"/>
