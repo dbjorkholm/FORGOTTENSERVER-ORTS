@@ -328,12 +328,9 @@
 	<action actionid="7815" script="postman quest/postmanQuestMailbox.lua"/>
 	<action uniqueid="3120" script="postman quest/postmanQuestPackage.lua"/>
 	<action itemid="2330" script="postman quest/postmanQuestPackage.lua"/>
-	<action uniqueid="3119" script="postman quest/postmanQuestPackageDoor.lua"/>
 	<action uniqueid="3116" script="postman quest/postmanQuestPresent.lua"/>
 	<action itemid="2331" script="postman quest/postmanQuestPresent.lua"/>
-	<action uniqueid="3115" script="postman quest/postmanQuestPresentDoor.lua"/>
 	<action uniqueid="3118" script="postman quest/postmanQuestWaldo.lua"/>
-	<action uniqueid="3117" script="postman quest/postmanQuestWaldoDoor.lua"/>
 	
 	<!-- Hidden City of Beregar Quest -->
 	<action uniqueid="50125" script="beregar quest/ring.lua"/>
