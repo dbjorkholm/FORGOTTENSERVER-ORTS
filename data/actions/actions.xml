@@ -361,7 +361,7 @@
 	<!-- Their Masters Voice Quest -->
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
 
-	<!-- Their Masters Voice Quest -->
+	<!-- Rottin Wood and the Married Men Quest -->
 	<action itemid="13176" script="rottin wood and the married men quest/capturedMerchant.lua"/>
 
 	<!-- Quests -->
