@@ -31,3 +31,6 @@ Morik The Gladiator
 
 Gnorre Chyllson
 	- missing all drown attacks
+
+Minotaur Amazon
+	- missing bleedingcondition
