@@ -1014,4 +1014,5 @@
 	<house name="The Farms 4" houseid="2451" entryx="32648" entryy="31899" entryz="2" rent="1530" townid="3" size="21" />
 	<house name="Tunnel Gardens 1" houseid="2452" entryx="32606" entryy="31908" entryz="11" rent="2000" townid="3" size="20" />
 	<house name="Tunnel Gardens 2" houseid="2455" entryx="32606" entryy="31909" entryz="11" rent="2000" townid="3" size="20" />
+	<house name="The Yeah Beach Project" houseid="2456" entryx="32294" entryy="32555" entryz="6" rent="6525" townid="7" size="108" />
 </houses>
