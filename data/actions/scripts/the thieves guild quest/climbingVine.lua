@@ -4,12 +4,12 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local useItem = config[item.actionid]
-	if not useItem then
+	local targetPosition = config[item.actionid]
+	if not targetPosition then
 		return true
 	end
 
-	Player(cid):teleportTo(useItem)
+	Player(cid):teleportTo(targetPosition)
 
 	return true
 end
