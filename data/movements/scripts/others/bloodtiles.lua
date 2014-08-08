@@ -4,7 +4,7 @@ function onAddItem(moveitem, tileitem, position)
 	if isInArray(tileExceptions, position) then
 		return true
 	end
-	
+
 	Item(moveitem.uid):remove()
 	position:sendMagicEffect(CONST_ME_DRAWBLOOD)
 	return true

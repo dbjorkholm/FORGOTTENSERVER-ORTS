@@ -3,6 +3,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return false
 	end
+
 	if player:getStorageValue(50015) < 1 then
 		player:setStorageValue(50015, 1)
 		player:teleportTo({x = 32268, y = 31856, z = 15}, false)
