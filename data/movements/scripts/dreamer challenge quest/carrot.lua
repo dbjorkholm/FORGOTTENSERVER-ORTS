@@ -15,7 +15,7 @@ function onStepIn(cid, item, position, fromPosition)
 	elseif item.uid == 2242 then
 		player:teleportTo(Position(32861, 32240, 9))
 	end
-	
+
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

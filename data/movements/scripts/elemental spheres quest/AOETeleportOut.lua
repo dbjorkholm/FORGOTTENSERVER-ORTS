@@ -3,7 +3,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
+
 	if not isPlayerInArea(Position(33235, 31801, 12), Position(33299, 31867, 12)) then
 		Game.setStorageValue(10004)
 	end

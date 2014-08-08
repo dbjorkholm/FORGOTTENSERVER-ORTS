@@ -15,24 +15,20 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
+
 	local targetTeleport = config[item.uid]
 	if not targetTeleport then
 		return true
 	end
 
-	if player:getItemCount(5022) > 0 then
-		if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) >= targetTeleport.storageValue 
-				or player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) >= targetTeleport.storageValue then
-			player:removeItem(5022, 1)
-			player:teleportTo(targetTeleport.toPosition)
-		else
-			player:teleportTo(fromPosition)
-		end
+	if (player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) >= targetTeleport.storageValue
+			or player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) >= targetTeleport.storageValue)
+			and player:removeItem(5022, 1) then
+		player:teleportTo(targetTeleport.toPosition)
 	else
 		player:teleportTo(fromPosition)
 	end
-	
+
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

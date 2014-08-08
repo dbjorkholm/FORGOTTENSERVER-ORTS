@@ -1,4 +1,4 @@
-local wall = {
+local walls = {
 	Position(32760, 32288, 14),
 	Position(32761, 32288, 14),
 	Position(32762, 32288, 14),
@@ -19,15 +19,19 @@ local wall = {
 
 function onStepIn(cid, item, position)
 	local player = Player(cid)
+	if not player then
+		return true
+	end
 
-	for i = 1, #wall do
-		if Tile(wall[i]):getThing() ~= 0 then
+	for i = 1, #walls do
+		if Tile(walls[i]):hasFlag(TILESTATE_IMMOVABLEBLOCKSOLID) then
 			player:teleportTo(Position(32762, 32305, 14))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		else
-			player:teleportTo(Position(32852, 32287, 14))
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			return true
 		end
 	end
-	return TRUE
+
+	player:teleportTo(Position(32852, 32287, 14))
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	return true
 end

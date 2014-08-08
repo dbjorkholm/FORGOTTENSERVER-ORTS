@@ -3,7 +3,6 @@ local dormitori2 = Position(33015, 32440, 10)
 
 function onStepIn(cid, item, position)
 	local player = Player(cid)
-
 	if not player then
 		return true
 	end
@@ -12,10 +11,10 @@ function onStepIn(cid, item, position)
 		player:setStorageValue(9932,1)
 		player:teleportTo(dormitori2)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You should hurry, try not to dwell here any longer than a few minutes.')
-		dormitori2:sendMagicEffect(CONST_ME_POFF)
 	else
 		player:teleportTo(dormitori)
-		dormitori:sendMagicEffect(CONST_ME_POFF)
 	end
+
+	player:getPosition():sendMagicEffect(CONST_ME_POFF)
 	return true
 end

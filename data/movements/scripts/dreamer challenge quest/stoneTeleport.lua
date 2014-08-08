@@ -15,6 +15,7 @@ function onStepIn(cid, item, position, fromPosition)
 	player:teleportTo(Position(32920, 32296, 13))
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	Item(item.uid):transform(1355)
+
 	local thing
 	for i = 1, #config do
 		thing = Tile(config[i].position):getItemById(config[i].itemId)
