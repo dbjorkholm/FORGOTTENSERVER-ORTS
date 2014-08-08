@@ -1095,10 +1095,6 @@
 	<movevent event="DeEquip" itemid="22412" slot="hand" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="22415" slot="hand" level="250" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="22415" slot="hand" function="onDeEquipItem"/>
-	<movevent event="Equip" itemid="22418" slot="hand" level="250" function="onEquipItem"/>
-	<movevent event="DeEquip" itemid="22418" slot="hand" function="onDeEquipItem"/>
-	<movevent event="Equip" itemid="22421" slot="hand" level="250" function="onEquipItem"/>
-	<movevent event="DeEquip" itemid="22421" slot="hand" function="onDeEquipItem"/>
 
 	<!-- Shields -->
 	<movevent event="Equip" itemid="8905" slot="shield" level="100" function="onEquipItem">
