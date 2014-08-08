@@ -1099,8 +1099,6 @@
 	<movevent event="DeEquip" itemid="22418" slot="hand" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="22421" slot="hand" level="250" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="22421" slot="hand" function="onDeEquipItem"/>
-	<movevent event="Equip" itemid="22424" slot="hand" level="250" function="onEquipItem"/>
-	<movevent event="DeEquip" itemid="22424" slot="hand" function="onDeEquipItem"/>
 
 	<!-- Shields -->
 	<movevent event="Equip" itemid="8905" slot="shield" level="100" function="onEquipItem">
@@ -1201,6 +1199,13 @@
 		<vocation name="Elder Druid" showInDescription="0"/>
 	</movevent>
 	<movevent event="DeEquip" itemid="16112" slot="shield" function="onDeEquipItem"/>
+		<movevent event="Equip" itemid="22424" slot="shield" level="250" function="onEquipItem">
+		<vocation name="Sorcerer"/>
+		<vocation name="Master Sorcerer" showInDescription="0"/>
+		<vocation name="Druid"/>
+		<vocation name="Elder Druid" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="22424" slot="shield" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="18401" slot="shield" level="130" function="onEquipItem">
 		<vocation name="Sorcerer"/>
 		<vocation name="Master Sorcerer" showInDescription="0"/>
