@@ -5,7 +5,7 @@ local config = {
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
-	if not player then 
+	if not player then
 		return true
 	end
 
@@ -13,16 +13,13 @@ function onStepIn(cid, item, position, fromPosition)
 	if not targetTile then
 		return true
 	end
-	
+
 	local playerPos = player:getPosition()
-	if player:getStorageValue(targetTile.storageKey) >= 19 then
-		playerPos:sendMagicEffect(CONST_ME_TELEPORT)
-		player:teleportTo(targetTile.toPosition[1])
-		playerPos:sendMagicEffect(CONST_ME_TELEPORT)
-	else
-		playerPos:sendMagicEffect(CONST_ME_TELEPORT)
-		player:teleportTo(targetTile.toPosition[2])
-		playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+	local hasStorageValue = player:getStorageValue(targetTile.storageKey) >= 19
+	playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+	player:teleportTo(targetTile.toPosition[hasStorageValue and 1 or 2])
+	playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+	if hasStorageValue then
 		player:say('This portal should not be entered unprepared', TALKTYPE_MONSTER_SAY)
 	end
 	return true
