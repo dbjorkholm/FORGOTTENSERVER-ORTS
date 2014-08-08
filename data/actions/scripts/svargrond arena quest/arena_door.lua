@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	-- Doors to rewards
 	if isInArray({SvargrondArena.actionGreenhorn, SvargrondArena.actionScrapper, SvargrondArena.actionWarlord}, item.actionid) then
-		if getPlayerStorageValue(cid, item.actionid) <= 0 then
+		if player:getStorageValue(item.actionid) <= 0 then
 			player:sendTextMessage(MESSAGE_INFO_DESCR, 'It\'s locked.')
 			return true
 		end
