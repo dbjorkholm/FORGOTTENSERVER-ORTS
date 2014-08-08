@@ -20,7 +20,9 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "seventh seal") and npcHandler.topic[cid] == 0 then
+	end
+	
+	if msgcontains(msg, "seventh seal") then
 		npcHandler:say("If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my {kiss} ... It will open the last seal. Do you think you are ready?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "kiss") and npcHandler.topic[cid] == 7 then
@@ -143,10 +145,6 @@ keywordHandler:addKeyword({'seed'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'complex'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Its constructors were too strange for you or even me to understand. We don't know what this ... thing they built was supposed to be good for. I feel a constant twisting and binding of souls, though, that is probably only a side-effect."})
 keywordHandler:addKeyword({'ghostlands'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The place you know as the Ghostlands had a different name once ... and many names after. Too many to remember them all."})
 keywordHandler:addKeyword({'banshee'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They are my maidens. They give me comfort in my eternal watch over the last seal."})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Be greeted, dear visitor. Come and {stay} ... a while.")
