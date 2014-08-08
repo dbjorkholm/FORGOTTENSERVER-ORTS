@@ -1,8 +1,11 @@
 function onAddItem(moveitem, tileitem, position)
-	if moveitem.itemid == 2048 then
-		Item(moveitem.uid):remove(1)
-		Item(tileitem.uid):transform(6280)
-		position:sendMagicEffect(CONST_ME_MAGIC_RED)
+	-- has to be a candle
+	if moveitem.itemid ~= 2048 then
+		return true
 	end
-	return TRUE
+
+	Item(moveitem.uid):remove()
+	Item(tileitem.uid):transform(6280)
+	position:sendMagicEffect(CONST_ME_MAGIC_RED)
+	return true
 end
