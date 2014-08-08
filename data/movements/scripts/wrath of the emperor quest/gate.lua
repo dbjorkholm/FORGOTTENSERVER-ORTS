@@ -4,10 +4,8 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if item.actionid == 50014 then
-		position:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-	else
-		player:teleportTo({x = 32185, y = 31939, z = 14}, false)
+	if player:getStorageValue(1060) >= 32 then
+		player:teleportTo(Position(33027, 31084, 13))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true

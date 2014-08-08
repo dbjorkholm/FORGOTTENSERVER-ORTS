@@ -12,12 +12,12 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
+
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true
 	end
-	
+
 	player:teleportTo(targetPosition)
 	targetPosition:sendMagicEffect(CONST_ME_POFF)
 	return true

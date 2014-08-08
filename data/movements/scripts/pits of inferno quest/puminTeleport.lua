@@ -10,7 +10,7 @@ function onStepIn(cid, item, position, fromPosition)
 	else
 		player:teleportTo(fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "To enter Pumin's domain you must gain permission from the bureaucrats.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'To enter Pumin\'s domain you must gain permission from the bureaucrats.')
 	end
 	return true
 end

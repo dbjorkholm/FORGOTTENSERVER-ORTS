@@ -5,10 +5,12 @@ function onStepIn(cid, item, position, fromPosition)
 	if not increasing[item.itemid] then
 		return false
 	end
+
 	local player = Player(cid)
 	if not player or player:isInGhostMode() then
 		return false
 	end
+
 	Item(item.uid):transform(increasing[item.itemid])
 
 	if item.actionid >= 1000 then
@@ -45,11 +47,12 @@ function onStepOut(cid, item, position, fromPosition)
 	if not decreasing[item.itemid] then
 		return false
 	end
+
 	local player = Player(cid)
 	if not player or player:isInGhostMode() then
 		return false
 	end
-	Item(item.uid):transform(decreasing[item.itemid])
 
+	Item(item.uid):transform(decreasing[item.itemid])
 	return true
 end

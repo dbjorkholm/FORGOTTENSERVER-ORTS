@@ -13,12 +13,12 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
+
 	local useThrone = config[item.uid]
 	if not useThrone then
 		return true
 	end
-	
+
 	if player:getStorageValue(item.uid) ~= 1 then
 		player:setStorageValue(item.uid, 1)
 		player:getPosition():sendMagicEffect(useThrone.effect)
