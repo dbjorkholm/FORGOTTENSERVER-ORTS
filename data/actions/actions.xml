@@ -12,7 +12,7 @@
 	<action itemid="13670" script="other/randomItemBags.lua"/>
 	<action itemid="15572" script="other/randomItemBags.lua"/>
 	<action itemid="18215" script="other/randomItemBags.lua"/>
-	
+
 	<!-- Thais Exhibition-->
 	<action fromaid="50030" toaid="50056" script="other/thais_exhibition.lua"/>
 
