@@ -7,12 +7,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local useItem = Item(item.uid)
 	local targetItem = Item(itemEx.uid)
 
-	if item.itemid == 2692 then
-		if itemEx.type == 1 and isInArray(liquidContainers, itemEx.itemid) then
+	if item.itemid == 2692 and isInArray(liquidContainers, itemEx.itemid) then
+		if itemEx.type == 1 then
 			useItem:transform(item.itemid, item.type - 1)
 			player:addItem(2693, 1)
 			targetItem:transform(itemEx.itemid, 0)
-		elseif itemEx.type == 2 and isInArray(liquidContainers, itemEx.itemid) then -- not sure if itemEx.type == 2 is milk though?
+		elseif itemEx.type == 6 then
 			useItem:transform(item.itemid, item.type - 1)
 			player:addItem(6277, 1)
 			targetItem:transform(itemEx.itemid, 0)
@@ -24,12 +24,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			useItem:transform(8846)
 			targetItem:transform(itemEx.itemid, 0)
 		end
-	elseif item.itemid == 2693 then
-		if itemEx.itemid == 1786 then
-			useItem:transform(2689)
-		end
+	elseif item.itemid == 2693 and itemEx.itemid == 1786 then
+		useItem:transform(2689)
 	elseif isInArray(millstones, itemEx.itemid) then
-		Item(item.uid):transform(item.itemid, item.type - 1)
+		useItem:transform(item.itemid, item.type - 1)
 		player:addItem(2692, 1)
 	else
 		return false
