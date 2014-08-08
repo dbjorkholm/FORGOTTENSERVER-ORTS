@@ -1,9 +1,12 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local targetItem = Item(itemEx.uid)
-	if itemEx.uid == 2243 then --Dreamer Challenge Quest
+
+	--Dreamer Challenge Quest
+	if itemEx.uid == 2243 then
 		targetItem:transform(1387)
 		toPosition:sendMagicEffect(CONST_ME_FIREAREA)
-		Item(item.uid):remove(1)
+		Item(item.uid):remove()
+		return true
 	end
 
 	local random = math.random(10)
