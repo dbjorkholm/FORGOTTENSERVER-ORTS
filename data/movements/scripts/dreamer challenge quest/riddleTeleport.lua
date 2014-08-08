@@ -72,6 +72,12 @@ function onStepIn(cid, item, position, fromPosition)
 		end
 	end
 	return true]]--
-	doTeleportThing(cid, {x = 32766, y = 32275, z = 14})
-	doSendMagicEffect({x = 32766, y = 32275, z = 14}, CONST_ME_TELEPORT)
+
+	local player = Player(cid)
+	if not player then
+		return true
+	end
+
+	player:teleportTo(Position(32766, 32275, 14))
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 end
