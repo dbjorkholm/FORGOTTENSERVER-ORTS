@@ -11,14 +11,11 @@ function onThink()
 	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
 		if math.random(100) < 25 then
-			Npc():say("Krrrrrng.", TALKTYPE_SAY)
+			Npc():say("<mumble>", TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "...")
-npcHandler:setMessage(MESSAGE_FAREWELL, "...")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "...")
-
+npcHandler:setMessage(MESSAGE_GREET, "Greetings. I have only little time to {spare}, so the conversation will be short. I teach sorcerer {spells} and buy a few magical {ingredients}.")
 npcHandler:addModule(FocusModule:new())
