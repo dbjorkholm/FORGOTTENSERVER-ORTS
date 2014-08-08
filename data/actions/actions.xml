@@ -162,7 +162,6 @@
 	<action actionid="28100" script="svargrond arena quest/arena_door.lua"/>
 
 	<!-- Annihilator Quest -->
-	<action uniqueid="2216" script="annihilator quest/annihilatorQuestDoor.lua"/>
 	<action uniqueid="2208" script="annihilator quest/annihilatorQuestLever.lua"/>
 
 	<!-- Barbarian Test Quest -->
