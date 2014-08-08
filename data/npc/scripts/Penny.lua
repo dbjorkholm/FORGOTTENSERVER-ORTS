@@ -15,6 +15,7 @@ keywordHandler:addKeyword({'record'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'paper'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "<Sigh> It's an evil world, isn't it?"})
 keywordHandler:addKeyword({'mail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You can get a letter from me."})
 keywordHandler:addKeyword({'?'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Don't stare at me."})
+keywordHandler:addKeyword({'<vanish>'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Wait... will you take me a diamond when you're back?"})
 
 npcHandler:setMessage(MESSAGE_GREET, "Welcome home, Sir |PLAYERNAME|.")
 --npcHandler:setMessage(MESSAGE_GREET, "Welcome home, Sir/Lady |PLAYERNAME|.")
