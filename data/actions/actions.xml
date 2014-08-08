@@ -672,8 +672,9 @@
 	<action fromid="2421" toid="2453" script="other/destroy.lua"/>
 	<action fromid="5792" toid="5797" script="other/dice.lua"/>
 	<action itemid="6558" script="other/concentrated_demonic_blood.lua" />
-	<action itemid="2692" script="other/createbread.lua"/>
-	<action itemid="2694" script="other/createbread.lua"/>
+	<action itemid="6277" script="other/baking.lua"/>
+	<action itemid="8846" script="other/baking.lua"/>
+	<action fromid="2692" toid="2694" script="other/baking.lua"/>
 	<action fromid="6436" toid="6447" script="other/windows.lua"/>
 	<action fromid="6450" toid="6473" script="other/windows.lua"/>
 	<action fromid="6788" toid="6791" script="other/windows.lua"/>
