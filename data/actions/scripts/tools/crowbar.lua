@@ -64,7 +64,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(revertCask, 30 * 1000, toPosition)
 	end
 	-- Postman Quest
-	if itemEx.actionid == 7815 and itemEx.itemid == 2593 then
+	if itemEx.actionid == 100 and itemEx.itemid == 2593 then
 		if player:getStorageValue(Storage.postman.Mission02) == 1 then
 			player:setStorageValue(Storage.postman.Mission02, 2)
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
