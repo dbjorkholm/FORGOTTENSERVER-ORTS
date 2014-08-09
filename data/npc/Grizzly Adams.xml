@@ -2,7 +2,4 @@
 <npc name="Grizzly Adams" script="Grizzly Adams.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="144" head="113" body="115" legs="58" feet="115" addons="1" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-  </parameters>
 </npc>
