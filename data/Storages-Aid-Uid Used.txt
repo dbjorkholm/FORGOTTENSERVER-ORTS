@@ -36,6 +36,7 @@ WrathoftheEmperor storage:		12350-12399
 FriendsandTraders storage:		12400-12449
 postman storage:			12450-12500
 Thieves Guild storage:			12501-12513
+Captain Haba storage:			12514
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
