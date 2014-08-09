@@ -8,9 +8,9 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(100) < 25) then
+		if math.random(100) < 25 then
 			Npc():say("Quality armors for sale!", TALKTYPE_SAY)
 		end
 	end
@@ -20,12 +20,12 @@ end
 keywordHandler:addKeyword({'armor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm selling leather armor, chain armor, and brass armor. Ask me for a {trade} if you like to take a look."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I run this armoury. If you want to protect your life, you better buy my wares."})
 
-
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif isInArray({"adorn", "armour"}, msg) then
+	end
+	local player = Player(cid)
+	if isInArray({"adorn", "armour"}, msg) then
 		if player:getStorageValue(Storage.OutfitQuest.WarriorShoulderAddon) == 5 then
 			player:addOutfitAddon(142, 1)
 			player:addOutfitAddon(134, 1)

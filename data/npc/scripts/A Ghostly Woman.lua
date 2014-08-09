@@ -2,30 +2,21 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-local config = {delay = 20, frequency = 25, message = "Alone ... so alone. So cold."}
+local rnd_sounds = 0
 function onThink()
-	if (os.time() - config.delay) >= config.frequency then
-			config.delay = os.time()
-			Npc():say(config.message, TALKTYPE_SAY)
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 5)
+		if math.random(100) < 25  then
+			Npc():say("Alone ... so alone. So cold.", TALKTYPE_SAY)
+		end
 	end
-
 	npcHandler:onThink()
 end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Once I was a member of the order of the nightmare knights. Now I am but a shadow who walks these cold halls."})
 
-	if msgcontains(msg, "job") then
-		npcHandler:say("Once I was a member of the order of the nightmare knights. Now I am but a shadow who walks these cold halls.", cid)
-	end
-	return true
-end
-
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

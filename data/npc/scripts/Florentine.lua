@@ -8,9 +8,9 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(100) < 25) then
+		if math.random(100) < 25 then
 			Npc():say("Embellish your home with flowers!", TALKTYPE_SAY)
 		end
 	end
@@ -19,5 +19,4 @@ end
 
 npcHandler:setMessage(MESSAGE_GREET, "Welcome, |PLAYERNAME|. What can I do for you?")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")
-
 npcHandler:addModule(FocusModule:new())
