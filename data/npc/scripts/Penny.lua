@@ -8,12 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getSex() == 0 then
-		npcHandler:setMessage(MESSAGE_GREET, "Welcome home, Lady |PLAYERNAME|.")
-	else
-		npcHandler:setMessage(MESSAGE_GREET, "Welcome home, Sir |PLAYERNAME|.")
-	end
-	return true
+	npcHandler:setMessage(MESSAGE_GREET, "Welcome home, " .. Player(cid):getSex() == 0 and "Lady" or "Sir" .. " |PLAYERNAME|.")
 end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am miss Penny, your secretary."})

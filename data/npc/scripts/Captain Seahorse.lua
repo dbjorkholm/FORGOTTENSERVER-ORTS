@@ -19,10 +19,8 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			if player:getStorageValue(Storage.postman.Mission01) == 3 then
 				player:setStorageValue(Storage.postman.Mission01, 4)
-				player:teleportTo(Position(32954, 32022, 6))
-			else
-				player:teleportTo(Position(32954, 32022, 6))
 			end
+			player:teleportTo(Position(32954, 32022, 6))
 		end
 		npcHandler.topic[cid] = 0
 	end
