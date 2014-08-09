@@ -12,6 +12,9 @@
 	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
+	
+	<!-- Magician Quarter (Warlock & Infernalist Area) -->
+	<movevent event="StepIn" actionid="7813" script="others/magicianquarter.lua"/>
 
 	<!-- Waterfall Quest (Port Hope) -->
 	<movevent event="StepIn" actionid="50022" script="others/waterfallquest.lua"/>
@@ -155,8 +158,6 @@
 	<movevent event="StepIn" fromuid="7809" touid="7810" script="in service of yalahar quest/lastFightTeleports.lua"/>
 	<movevent event="StepIn" uniqueid="3087" script="in service of yalahar quest/morik.lua"/>
 	<movevent event="StepIn" actionid="7812" script="in service of yalahar quest/quaraVortex.lua"/>
-	<movevent event="StepIn" actionid="7813" script="in service of yalahar quest/warlocksPass.lua"/>
-	<movevent event="StepIn" actionid="7814" script="in service of yalahar quest/warlocksPass.lua"/>
 	<movevent event="StepIn" fromaid="23698" toaid="23699" script="in service of yalahar quest/yalaharMachineWargolems.lua"/>
 	<movevent event="StepIn" fromaid="23702" toaid="23703" script="in service of yalahar quest/yalaharMachineWargolems.lua"/>
 
