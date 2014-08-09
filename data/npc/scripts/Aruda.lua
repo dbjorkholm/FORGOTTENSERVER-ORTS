@@ -3,22 +3,21 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
 local Topic, Price = {}, {}
-local Sex = Player:getSex(cid)
+local Sex = Player(cid):getSex()
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-local thinkDelay = 0
-local thinkFrequency = 60
-
-local function thinkCallback()
-	if ((os.time() - thinkDelay) >= thinkFrequency) then
-		thinkDelay = os.time()
-		Npc():say("Hey there, up for a chat?", TALKTYPE_SAY)
+local rnd_sounds = 0
+function onThink()
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 5)
+		if math.random(100) < 25  then
+			Npc():say("Hey there, up for a chat?", TALKTYPE_SAY)
+		end
 	end
-	return true
+	npcHandler:onThink()
 end
 
 local function greetCallback(cid)
@@ -36,11 +35,13 @@ end
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif Topic[cid] == 1 then
+	end
+	local player = Player(cid)
+	if Topic[cid] == 1 then
 		npcHandler:say("I would never have guessed that.", cid)
 		Topic[cid] = nil
 	elseif Topic[cid] == 2 then
-		if doPlayerRemoveMoney(cid, Price[cid]) then
+		if player:removeMoney(Price[cid]) then
 			npcHandler:say("Oh, sorry, I was distracted, what did you say?", cid)
 		else
 			npcHandler:say("Oh, I just remember I have some work to do, sorry. Bye!", cid)
@@ -49,7 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		Topic[cid] = nil
 		Price[cid] = nil
-	elseif Topic[cid] == 3 and doPlayerRemoveItem(cid, 2036, 1) then
+	elseif Topic[cid] == 3 and player:removeItem(2036, 1) then
 		npcHandler:say("Take some time to talk to me!", cid)
 		Topic[cid] = nil
 	elseif Topic[cid] == 4 and (msgcontains(msg, "spouse") or msgcontains(msg, "girlfriend")) then
@@ -212,7 +213,6 @@ end
 npcHandler:setMessage(MESSAGE_WALKAWAY, "I hope to see you soon.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|. I really hope we'll talk again soon.")
 
-npcHandler:setCallback(CALLBACK_ONTHINK, thinkCallback)
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

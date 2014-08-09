@@ -8,9 +8,9 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(100) < 25) then
+		if math.random(100) < 25 then
 			Npc():say("I enjoy the peace and solitude out here. You're welcome to be my guest as long as you behave in a quiet and tolerable manner.", TALKTYPE_SAY)
 		end
 	end
@@ -52,12 +52,12 @@ keywordHandler:addKeyword({'sugar oat'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'sweet smelling bait'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The interesting part about that bait isn't the sweet stuff - it's the flies attracted to the sweet smell. Spiders love to eat flies, especially the Zaoan ones."})
 keywordHandler:addKeyword({'tin key'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Hm! Now that's an interesting one. Where did you get that from? I could imagine it winds something up in a factory, but it's definitely not a normal animal."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's on the door."})
-keywordHandler:addKeyword({''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = ""})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "control unit") then
+	end
+	if msgcontains(msg, "control unit") then
 		npcHandler:say({'That\'s an interesting one, nothing like I have ever seen myself. What you describe is a device of which I heard that it grants literally \'complete\' control over some sort of... artificial thing? ...',
 		'Well, if you ever happen to come about a stroke of luck and find such a thing - use it on an appropriate mount, it will probably be mechanical, driven by... something.'}, cid)
 	elseif msgcontains(msg, "golden fir cone") then
