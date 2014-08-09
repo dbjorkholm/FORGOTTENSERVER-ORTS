@@ -2,34 +2,35 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local config = {delay = 20, frequency = 25, message = "Have a drink in Meriana's only tavern!"} 
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-function onCreatureAppear(cid)            npcHandler:onCreatureAppear(cid)            end
-function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)            end
-function onCreatureSay(cid, type, msg)    npcHandler:onCreatureSay(cid, type, msg)    end
+local rnd_sounds = 0
 function onThink()
-    if (os.time() - config.delay) >= config.frequency then
-        config.delay = os.time()
-        Npc():say(config.message, TALKTYPE_SAY)
-    end
-    npcHandler:onThink()    
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 5)
+		if math.random(100) < 25  then
+			Npc():say("Have a drink in Meriana's only tavern!", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
 end
 
 function PirateSecond(cid, message, keywords, parameters, node)
-    if(not npcHandler:isFocused(cid)) then
-        return false
-    end
-	
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
 	local player = Player(cid) 
 	if player:getStorageValue(22034) == -1 then
-		if (player:getItemCount(6101) >= 1 and player:getItemCount(6102) >= 1 and player:getItemCount(6100) >= 1 and player:getItemCount(6099) >= 1) then
-			if (player:removeItem(6101, 1) and player:removeItem(6102, 1) and player:removeItem(6100, 1) and player:removeItem(6099, 1)) then
+		if player:getItemCount(6101) > 0 and player:getItemCount(6102) > 0 and player:getItemCount(6100) > 0 and player:getItemCount(6099) > 0 then
+			if player:removeItem(6101, 1) and player:removeItem(6102, 1) and player:removeItem(6100, 1) and player:removeItem(6099, 1) then
 				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)             
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 				player:setStorageValue(22034, 1)
 				player:addOutfitAddon(155, 2)
 				player:addOutfitAddon(151, 2)
-				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)
 			end
 		else
 			npcHandler:say("You do not have all the required items.", cid)

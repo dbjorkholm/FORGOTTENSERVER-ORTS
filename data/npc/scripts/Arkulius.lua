@@ -8,7 +8,6 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local storageMain = 10000
-local storageKill = 10001
 local greetMsg = {
 	"...if the expected constant is higher than... Hmmm, who are you?? What do you want?",
 	"...then I could transform a spell to bend... How can anyone expect me to work under these conditions?? What do you want?",
@@ -22,7 +21,7 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)

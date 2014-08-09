@@ -8,8 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 29 then
+	if Player(cid):getStorageValue(Storage.WrathoftheEmperor.Questline) == 29 then
 		npcHandler:setMessage(MESSAGE_GREET, "ZzzzZzzZz...chrrr...")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Greetings, wayfarer.")
@@ -18,7 +17,7 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not(npcHandler:isFocused(cid))) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)

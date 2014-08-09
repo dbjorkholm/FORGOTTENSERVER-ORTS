@@ -7,15 +7,17 @@ fire:setParameter(CONDITION_PARAM_DELAYED, true)
 fire:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
 fire:addDamage(25, 9000, -10)
  
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
  
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, 'gamel') and msgcontains(msg, 'rebel') then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, 'gamel') and msgcontains(msg, 'rebel') then
 		npcHandler:say('Are you saying that Gamel is a member of the rebellion?', cid)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
@@ -36,7 +38,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 3 then
 		if msgcontains(msg, 'no') then
 			npcHandler:say('Traitor!', cid)
-			local player = Player(cid)
 			player:addCondition(fire)
 			player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONHIT)
 			Npc():getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
@@ -45,7 +46,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
 		elseif msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2177, 1) then
 				npcHandler:say('Thank you! Take this ring. If you ever need a healing, come, bring the scroll, and ask me to {heal}.', cid)
 				player:addItem(2168, 1)
@@ -61,7 +61,6 @@ local function creatureSayCallback(cid, type, msg)
 		if msgcontains(msg, 'no') then
 			npcHandler:say('As you wish.', cid)
 		elseif msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2168, 1) then
 				npcHandler:say('So be healed!', cid)
 				player:addHealth(player:getMaxHealth())

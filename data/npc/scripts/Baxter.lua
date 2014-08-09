@@ -1,9 +1,3 @@
-local YELL = {
-	"People of Thais, bring honour to your king by fighting in the orc war!",
-	"The orcs are preparing for war!!!"
-}
- 
- 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -11,14 +5,21 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink() 
-	if ((os.time() - yell_delay) >= frequency) then
-		yell_delay = os.time()
-		doCreatureSay(getNpcCid(), YELL[math.random(#YELL)], 1)
-	end
-	npcHandler:onThink() 
-end
-npcHandler:addModule(FocusModule:new())
 
-yell_delay = 20
-frequency = 25
+local random_texts = {
+	'People of Thais, bring honour to your king by fighting in the orc war!',
+	'The orcs are preparing for war!!!'
+}
+
+local rnd_sounds = 0
+function onThink()
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 10)
+		if math.random(100) < 25  then
+			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
+
+npcHandler:addModule(FocusModule:new())

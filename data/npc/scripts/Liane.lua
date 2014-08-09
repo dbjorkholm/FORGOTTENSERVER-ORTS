@@ -15,9 +15,9 @@ local random_texts = {
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 10)
-		if(math.random(100) < 20) then
+		if math.random(100) < 20 then
 			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
 		end
 	end
@@ -29,7 +29,6 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-
 	if msgcontains(msg, "measurements") then
 		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
 			npcHandler:say("I have more urgent problem to attend then that. Those hawks are hunting my carrier pigeons. Bring me 12 arrows and I'll see if I have the time for this nonsense. Do you have 12 arrows with you? ", cid)
