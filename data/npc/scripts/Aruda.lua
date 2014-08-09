@@ -20,8 +20,7 @@ function onThink()
 end
 
 local function greetCallback(cid)
-	local Sex = Player(cid):getSex()
-	if Sex == 0 then
+	if Player(cid):getSex() == 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|, your hair looks great! Who did it for you?")
 		Topic[cid] = 1
 	else
@@ -37,7 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	local Sex = Player(cid):getSex()
+	local Sex = player:getSex()
 	if Topic[cid] == 1 then
 		npcHandler:say("I would never have guessed that.", cid)
 		Topic[cid] = nil
