@@ -8,25 +8,25 @@ function onCreatureSay(cid, type, msg)			npcHandler:onCreatureSay(cid, type, msg
 function onThink()					npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'belongings of deceasead') or msgcontains(msg, 'medicine') then
-		if player:getItemCount(13506) >= 1 then
-			selfSay('Did you bring me the medicine pouch?', cid)
+		if player:getItemCount(13506) > 0 then
+			npcHandler:say('Did you bring me the medicine pouch?', cid)
 			npcHandler.topic[cid] = 1
 		else
-			selfSay('I need a {medicine pouch}, to give you the {belongings of deceased}. Come back when you have them.', cid)
+			npcHandler:say('I need a {medicine pouch}, to give you the {belongings of deceased}. Come back when you have them.', cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		if player:getItemCount(13506) >= 1 then
+		if player:getItemCount(13506) > 0 then
 			player:removeItem(13506, 1)
 			player:addItem(13670, 1)
-			selfSay('Here you are', cid)
+			npcHandler:say('Here you are', cid)
 		else
-			selfSay('You do not have the required items.', cid)
+			npcHandler:say('You do not have the required items.', cid)
 		end
 		npcHandler.topic[cid] = 0
 	end
