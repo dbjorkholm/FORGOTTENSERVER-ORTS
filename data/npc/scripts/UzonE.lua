@@ -7,9 +7,9 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(100) < 25) then
+		if math.random(100) < 25 then
 			Npc():say("Feel the wind in your hair during one of my carpet rides!", TALKTYPE_SAY)
 		end
 	end
@@ -23,16 +23,15 @@ keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
 	if isInArray({"back", "leave", "passage"}, msg) then
 		npcHandler:say('Do you really want to leave this unholy place?', cid)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
+			local player = Player(cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo({x = 32535, y = 31837, z = 4}, false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

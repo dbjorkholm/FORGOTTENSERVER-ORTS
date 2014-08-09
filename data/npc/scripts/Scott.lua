@@ -8,9 +8,9 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 
 local rnd_sounds = 0
 function onThink()
-	if(rnd_sounds < os.time()) then
+	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if(math.random(100) < 25) then
+		if math.random(100) < 25 then
 			Npc():say("Hey there, adventurer! Need a little rest in my inn? Have some food!", TALKTYPE_SAY)
 		end
 	end

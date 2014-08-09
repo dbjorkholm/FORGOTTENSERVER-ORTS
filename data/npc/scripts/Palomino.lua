@@ -40,26 +40,26 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 1 then
 		if Aluguel_mounts[msg] then
 			if Aluguel_mounts[msg].premium == true and not player:isPremium() then
-				selfSay('You need to be premium to rent this mount.', cid) return true
+				npcHandler:say('You need to be premium to rent this mount.', cid) return true
 			elseif player:getLevel() < Aluguel_mounts[msg].level then
-				selfSay('You need level ' .. Aluguel_mounts[msg].level .. ' or more to rent this mount.', cid) return true
+				npcHandler:say('You need level ' .. Aluguel_mounts[msg].level .. ' or more to rent this mount.', cid) return true
 			elseif player:getStorageValue(Aluguel_mounts[msg].storage) >= os.time() then
-				selfSay('you already have rented this mount!', cid) return true
+				npcHandler:say('you already have rented this mount!', cid) return true
 			end
 			
 			name, price, stor, days, mountid = msg, Aluguel_mounts[msg].price, Aluguel_mounts[msg].storage, Aluguel_mounts[msg].days, Aluguel_mounts[msg].mountid
-			selfSay('Do you want to '..name..' for '..days..' day'..(days > 1 and 's' or '')..' the price '..price..' gps?', cid)
+			npcHandler:say('Do you want to '..name..' for '..days..' day'..(days > 1 and 's' or '')..' the price '..price..' gps?', cid)
 			npcHandler.topic[cid] = 2
 		else
-			selfSay('Sorry, I do not rent this mount.', cid)
+			npcHandler:say('Sorry, I do not rent this mount.', cid)
 		end
 	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 2) then
 		if player:removeMoney(price) then
 			player:addMount(mountid)
 			player:setStorageValue(stor, os.time()+days*86400)
-			selfSay('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", player:getStorageValue(stor))..'.', cid)
+			npcHandler:say('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", player:getStorageValue(stor))..'.', cid)
 		else
-			selfSay('You do not have enough money to rent the mount!', cid)
+			npcHandler:say('You do not have enough money to rent the mount!', cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
