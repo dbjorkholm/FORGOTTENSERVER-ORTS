@@ -4,5 +4,6 @@
   <look type="70" />
   <parameters>
     <parameter key="message_greet" value="Greetings. Are you interested in {adventures?}" />
+	<parameter key="shop_buyable" value="teleport crystal,18457,150" />
   </parameters>
 </npc>
