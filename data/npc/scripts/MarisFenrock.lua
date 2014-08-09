@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 		local player = Player(cid)
 		local pos = Position(math.random(32561,32562), math.random(31312,31314), 7)
 		player:teleportTo(pos)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		pos:sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end
