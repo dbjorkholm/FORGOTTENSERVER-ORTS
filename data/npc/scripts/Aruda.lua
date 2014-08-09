@@ -3,7 +3,6 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
 local Topic, Price = {}, {}
-local Sex = Player(cid):getSex()
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
@@ -21,6 +20,7 @@ function onThink()
 end
 
 local function greetCallback(cid)
+	local Sex = Player(cid):getSex()
 	if Sex == 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|, your hair looks great! Who did it for you?")
 		Topic[cid] = 1
@@ -37,6 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
+	local Sex = Player(cid):getSex()
 	if Topic[cid] == 1 then
 		npcHandler:say("I would never have guessed that.", cid)
 		Topic[cid] = nil

@@ -8,39 +8,40 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+	local player = Player(cid)
 	if(msgcontains(msg, 'key')) then
-		selfSay('I will give the key to the crypt only to the closest followers of my master. Would you like me to test you?', cid)
+		npcHandler:say('I will give the key to the crypt only to the closest followers of my master. Would you like me to test you?', cid)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1) then
-		selfSay('Before we start I must ask you for a small donation of 1000 gold coins. Are you willing to pay 1000 gold coins for the test?', cid)
+		npcHandler:say('Before we start I must ask you for a small donation of 1000 gold coins. Are you willing to pay 1000 gold coins for the test?', cid)
 		npcHandler.topic[cid] = 2
 	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 2) then
-		if(doPlayerRemoveMoney(cid, 1000)) then
-			selfSay('All right then. Here comes the first question. What was the name of Dago\'s favourite pet?', cid)
+		if player:removeMoney(1000) then
+			npcHandler:say('All right then. Here comes the first question. What was the name of Dago\'s favourite pet?', cid)
 			npcHandler.topic[cid] = 3
 		else
-			selfSay('You don\'t have enough money', cid)
+			npcHandler:say('You don\'t have enough money', cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, 'redips') and npcHandler.topic[cid] == 3) then
-		selfSay('Perhaps you knew him after all. Tell me - how many fingers did he have when he died?', cid)
+		npcHandler:say('Perhaps you knew him after all. Tell me - how many fingers did he have when he died?', cid)
 		npcHandler.topic[cid] = 4
 	elseif(msgcontains(msg, '7') and npcHandler.topic[cid] == 4) then
-		selfSay('Also true. But can you also tell me the colour of the deamons in which master specialized?', cid)
+		npcHandler:say('Also true. But can you also tell me the colour of the deamons in which master specialized?', cid)
 		npcHandler.topic[cid] = 5
 	elseif(msgcontains(msg, 'black') and npcHandler.topic[cid] == 5) then
-		selfSay('It seems you are worthy after all. Do you want the key to the crypt?', cid)
+		npcHandler:say('It seems you are worthy after all. Do you want the key to the crypt?', cid)
 		npcHandler.topic[cid] = 6
 	elseif(npcHandler.topic[cid]== 6) then
-		selfSay('here you are', cid)
-		local item = doPlayerAddItem(cid, 2089, 1)
-             doSetItemActionId(item, 3142)
+		npcHandler:say('here you are', cid)
+		local key = player:addItem(2089, 1)
+			if key then
+				key:setActionId(3142)
+			end
 	end
-        
 	return true
 end
 
