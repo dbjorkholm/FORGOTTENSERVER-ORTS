@@ -1,4 +1,4 @@
-local YELL = {
+local random_texts = {
 	"Hear me! Hear me! The mage Wyrdin in the Edron academy is looking for brave adventurers to undertake a task!",
 	"Hear me! Hear me! The postmaster's guild has open spots for aspiring postmen! Contact Kevin Postner at the post office in the plains south of Kazordoon!",
 	"Hear me! Hear me! The inquisition is looking for daring people to fight evil! Apply at the inquisition headquarters next to the Thaian jail!",
@@ -15,19 +15,18 @@ local YELL = {
 	"Hear me! Hear me! Mammoths silently watch as the snow melts away. It reveals special flowers which are not meant to stay. Grow their seeds to brighten up your day!",
 	"Hear me! Hear me! The witch Wyda seems to be bored. Pay her a visit but sharpen your sword. She might come up with a terrible surprise, are you brave enough to believe your eyes?"
 }
- 
- 
+
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-yell_delay = 20
-frequency = 25
- 
-function onThink() 
-	if ((os.time() - yell_delay) >= frequency) then
-		yell_delay = os.time()
-		doCreatureSay(getNpcCid(), YELL[math.random(#YELL)], 1)
+local rnd_sounds = 0
+function onThink()
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 10)
+		if math.random(100) < 25 then
+			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
+		end
 	end
-	npcHandler:onThink() 
+	npcHandler:onThink()
 end
