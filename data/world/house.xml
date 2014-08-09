@@ -700,7 +700,7 @@
 	<house name="Rosebud C" houseid="2125" entryx="32272" entryy="31698" entryz="7" rent="1340" townid="4" size="30" />
 	<house name="Rosebud A" houseid="2127" entryx="32265" entryy="31701" entryz="7" rent="1000" townid="4" size="22" />
 	<house name="Rosebud B" houseid="2128" entryx="32263" entryy="31698" entryz="7" rent="1000" townid="4" size="22" />
-	<house name="Nordic Stronghold" houseid="2129" entryx="32297" entryy="31675" entryz="7" rent="18400" townid="4" size="404" />
+	<house name="Nordic Stronghold" houseid="2129" entryx="32297" entryy="31675" entryz="7" rent="18400" townid="4" size="332" />
 	<house name="Northport Village 2" houseid="2130" entryx="32482" entryy="31609" entryz="7" rent="1475" townid="4" size="20" />
 	<house name="Northport Village 1" houseid="2131" entryx="32482" entryy="31614" entryz="7" rent="1475" townid="4" size="20" />
 	<house name="Northport Village 3" houseid="2132" entryx="32482" entryy="31611" entryz="6" rent="5435" townid="4" size="97" />
