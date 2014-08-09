@@ -93,7 +93,8 @@ local function creatureSayCallback(cid, type, msg)
 		
 		npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 	end
-	return TRUE
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())
