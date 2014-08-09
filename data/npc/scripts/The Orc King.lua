@@ -15,7 +15,7 @@ local function greetCallback(cid)
 		for i = 1, #creatures do
 			Game.createMonster(creatures[i], Npc():getPosition())
 		end
-		selfSay('Arrrrgh! A dirty paleskin! To me my children! Kill them my guards!', TALKTYPE_SAY)
+		npcHandler:say('Arrrrgh! A dirty paleskin! To me my children! Kill them my guards!', TALKTYPE_SAY)
 		return false
 	else
 		npcHandler:setMessage(MESSAGE_GREET, 'Harrrrk! You think you are strong now? You shall never escape my wrath! I am immortal!')
@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
 		if player:getStorageValue(GreenDjinn.MissionStart + 3) == 1 or player:getStorageValue(BlueDjinn.MissionStart + 3) == 1 then
-			npcHandler:say({'King: I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...', 'Who do you want to trap in this cursed lamp?'}, cid)
+			npcHandler:say({'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...', 'Who do you want to trap in this cursed lamp?'}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	-- Mission 3 - Orc Fortress

@@ -37,33 +37,33 @@ local function creatureSayCallback(cid, type, msg)
 	local msg = string.lower(msg)
 
 	if isInArray({"rent", "mounts", "mount", "horses"}, msg) then
-		selfSay("You can buy {brown rented horse} and {grey rented horse}!", cid)
+		npcHandler:say("You can buy {brown rented horse} and {grey rented horse}!", cid)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if rent_mounts[msg] then
 			if player:getLevel() < rent_mounts[msg].level then
-				selfSay('You need level ' .. rent_mounts[msg].level .. ' or more to rent this mount.', cid) return true
+				npcHandler:say('You need level ' .. rent_mounts[msg].level .. ' or more to rent this mount.', cid) return true
 			elseif player:getStorageValue(rent_mounts[msg].storage) >= os.time() then
-				selfSay('You already have rented this mount!', cid) return true
+				npcHandler:say('You already have rented this mount!', cid) return true
 			end
 
 			name, price, stor, days, mountid = msg, rent_mounts[msg].price, rent_mounts[msg].storage, rent_mounts[msg].days, rent_mounts[msg].mountid
-			selfSay('Do you want a '..name..' for '..days..' day'..(days > 1 and 's' or '')..' the price '..price..' gold coins?', cid)
+			npcHandler:say('Do you want a '..name..' for '..days..' day'..(days > 1 and 's' or '')..' the price '..price..' gold coins?', cid)
 			npcHandler.topic[cid] = 2
 		else
-			selfSay('Sorry, I do not rent this mount.', cid)
+			npcHandler:say('Sorry, I do not rent this mount.', cid)
 		end
 	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 2) then
 		if player:removeMoney(price) then
 			player:addMount(mountid)
 			player:setStorageValue(stor, os.time() + days * 86400)
-			selfSay('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", getPlayerStorageValue(cid,stor))..'.', cid)
+			npcHandler:say('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", getPlayerStorageValue(cid,stor))..'.', cid)
 		else
-			selfSay('You do not have enough money to rent the mount!', cid)
+			npcHandler:say('You do not have enough money to rent the mount!', cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
-		selfSay("Then not.", cid)
+		npcHandler:say("Then not.", cid)
 		npcHandler.topic[cid] = 0
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
