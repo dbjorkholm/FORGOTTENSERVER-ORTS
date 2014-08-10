@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Chantalle" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Chantalle" script="Chantalle.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
   <look type="140" head="79" body="37" legs="71" feet="70" addons="0" />
 		<voices>

@@ -819,6 +819,51 @@
 			<missionstate id="5" description="Arch Postman"/>
 		</mission>
 	</quest>
+	<quest name="The Thieves Guild" startstorageid="12501" startstoragevalue="1">
+		<mission name="Mission 1: Ivory Poaching" storageid="12502" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Dorian wants you to collect 10 elephant tusks and deliver them to him."/>
+			<missionstate id="2" description="You have delivered 10 elephant tusks to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 2: Burglary" storageid="12503" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Dorian wants you to steal a vase from Sarina, the owner of Carlin's general store."/>
+			<missionstate id="2" description="You have stolen the vase, report back to Dorian!"/>
+			<missionstate id="3" description="You have delivered the stolen vase to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 3: Invitation" storageid="12504" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Dorian wants you to earn his guild an invitation to the King's ball. Talk to Oswald."/>
+			<missionstate id="2" description="You have received the invitation to the King's ball, report back to Dorian!"/>
+			<missionstate id="3" description="You have delivered the invitation to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 4: Bridge Robbery" storageid="12505" startvalue="1" endvalue="8">
+			<missionstate id="1" description="Dorian wants you to find a forger in the outlaw camp, go talk to Snake eye."/>
+			<missionstate id="2" description="Snake Eye told you to visit Ahmet in Ankrahmun."/>
+			<missionstate id="3" description="Ahmet told you that he will only help a friend and asked you to kill at least one Nomad."/>
+			<missionstate id="4" description="You have killed a Nomad, go back to Ahmet!"/>
+			<missionstate id="5" description="You have received the forged documents from Ahmet, next is to get a disguise from Percybald in Venore!"/>
+			<missionstate id="6" description="You have received the dwarf disguise from Percybald. Now go do the deal with Nurik."/>
+			<missionstate id="7" description="You have traded the forged documents for the painting, report back to Dorian."/>
+			<missionstate id="8" description="You have delivered the painting to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 5: Enforcing Debts" storageid="12506" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Dorian has asked you to retrieve a stolen golden goblet from some smugglers in tiquanda, nort west of Port Hope."/>
+			<missionstate id="2" description="You have delivered the golden goblet to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 6: Fishnapping" storageid="12507" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Dorian wants you to fishnap Theodore Loveless' fish, first you need to get the key to his room. Talk to Chantalle in Liberty Bay."/>
+			<missionstate id="2" description="You have received the key for Theodore Loveless' room, time to fishnap his fish!"/>
+			<missionstate id="3" description="You have fishnapped Theodore Loveless' fish, deliver it to Dorian."/>
+			<missionstate id="4" description="You have delivered the fish to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 7: Blackmail" storageid="12508" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Dorian wants you to find some dirt on one of the guards in venore."/>
+			<missionstate id="2" description="You have delivered the compromising letter to Dorian, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 8: Message" storageid="12509" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Dorian wants you to deliver a message to his competitors in the dark cathedral."/>
+			<missionstate id="2" description="You have put up the message, report back to Dorian."/>
+			<missionstate id="3" description="You have reported back that you have completed the mission, Dorian now allows you to trade with Black Bert."/>
+		</mission>
+	</quest>
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">		
 		<mission name="Mission 1: Trophy" storageid="101" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Your first mission for becoming a recognized trader is to bring the traveling salesman Rashid a Deer Trophy."/>
