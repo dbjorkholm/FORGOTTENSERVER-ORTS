@@ -193,7 +193,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Exzztraordinary. We are mozzt fortunate to have zzezze documentzz in our handzz now. Zzizz would zzertainly help me to build an effective rezzizztanzze. Will you give zzem to me? ", cid)
 			npcHandler.topic[cid] = 4
 		elseif npcHandler.topic[cid] == 4 then
-			if getPlayerItemCount(cid, 11101) >= 1 then
+			if player:getItemCount(11101) >= 1 then
 				npcHandler:say(
 						{
 						"Aaah, zzezze look zzertainly interezzting. Zzezze manuzzcriptzz show uzz zzeveral locationzz of zze enemy troopzz. ... ",
@@ -297,6 +297,7 @@ local function creatureSayCallback(cid, type, msg)
 						"Mh, if you can find zzome nailzz - 3 should be enough - and 1 piezze of wood, I should be able to create an appropriate cazzing. Return to me if you found zze itemzz and we will talk about zze next zztep. "
 						}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 1)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission01, 1) --Questlog, Wrath of the Emperor "Mission 01: Catering the Lions Den"
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
 			npcHandler:say(
@@ -306,10 +307,11 @@ local function creatureSayCallback(cid, type, msg)
 						}, cid)
 			npcHandler.topic[cid] = 17
 		elseif npcHandler.topic[cid] == 18 then
-			if getPlayerItemCount(cid, 8309) >= 3 and getPlayerItemCount(cid, 5901) >= 1 then
+			if player:getItemCount(8309) >= 3 and player:getItemCount(5901) >= 1 then
 				player:removeItem(5901, 1)
 				player:removeItem(8309, 3)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 2)
+				player:setStorageValue(Storage.WrathoftheEmperor.Mission01, 2) --Questlog, Wrath of the Emperor "Mission 01: Catering the Lions Den"
 				player:addItem(12284, 1)
 				npcHandler:say(
 						{
@@ -319,10 +321,12 @@ local function creatureSayCallback(cid, type, msg)
 						"Uzze zze dizzguizze wizzely, try to hide in zze dark and avoid being zzeen at all cozzt. ... ",
 						"Onzze you have reached zze norzz, you can find zze rezzizztanzze hideout at zze ozzer zzpot I marked on your map. Now hurry. "
 						}, cid)
+				player:addMapMark({x = 33356, y = 31180, z = 7}, 19, "tunnel to hideout")
+				player:addMapMark({x = 33173, y = 31076, z = 7}, 19, "the rebel hideout")
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 19 then
-			if getPlayerItemCount(cid, 12327) >= 1 then
+			if player:getItemCount(12327) >= 1 then
 				player:removeItem(12327, 1)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 12)
 				npcHandler:say("Finally. At lazzt. Zze zzeptre izz - ourzz. Ourzz of courzze. A weapon we should uzze wizzely for our cauzze. I need a zzecond or two. Do you leave me already? ", cid)
