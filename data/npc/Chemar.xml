@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Chemar" script="Chemar.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
-  <look type="130" head="76" body="14" legs="4" feet="114" addons="0" />
+  <look type="130" head="95" body="3" legs="15" feet="95" addons="0" />
 <voices>
 <voice text="Ask me if you need letters or parcels. I'll deliver them via airmail, of course!" interval2="120" margin="1" yell="no"/>
 <voice text="Feel the wind in your hair during one of my carpet rides!" interval2="100" margin="1" yell="no"/>
