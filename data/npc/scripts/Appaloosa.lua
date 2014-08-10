@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:removeMoney(price) then
 			player:addMount(mountid)
 			player:setStorageValue(stor, os.time() + days * 86400)
-			npcHandler:say('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", getPlayerStorageValue(cid,stor))..'.', cid)
+			npcHandler:say('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", player:getStorageValue(stor))..'.', cid)
 		else
 			npcHandler:say('You do not have enough money to rent the mount!', cid)
 			npcHandler.topic[cid] = 0

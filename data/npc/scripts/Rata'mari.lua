@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- GREET
-	if(msg == "PIEDPIPER") and (not npcHandler:isFocused(cid)) then
+	if msg == "PIEDPIPER" and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(BlueDjinn.MissionStart+2) == 1 then
 			npcHandler:addFocus(cid)
 			npcHandler:say("Meep? I mean - hello! Sorry, " .. player:getName() .. "... Being a rat has kind of grown on me.", cid)
@@ -18,22 +18,27 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	end
 	-- GREET
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	if(msgcontains(msg, "spy report")) then
-		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say({"You have come for the report? Great! I have been working hard on it during the last months. And nobody came to pick it up. I thought everybody had forgotten about me! ...","Do you have any idea how difficult it is to hold a pen when you have claws instead of hands? ...","But - you know - now I have worked so hard on this report I somehow don't want to part with it. Atleast not without some decent payment. ...","All right - listen - I know Fa'hradin would not approve of this, but I can't help it. I need some cheese! I need it now! ...","And I will not give the report to you until you get me some! Meep!"}, cid, 0, 1, 3500)
+	if msgcontains(msg, "spy report") then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say({"You have come for the report? Great! I have been working hard on it during the last months. And nobody came to pick it up. I thought everybody had forgotten about me! ...",
+							"Do you have any idea how difficult it is to hold a pen when you have claws instead of hands? ...",
+							"But - you know - now I have worked so hard on this report I somehow don't want to part with it. Atleast not without some decent payment. ...",
+							"All right - listen - I know Fa'hradin would not approve of this, but I can't help it. I need some cheese! I need it now! ...",
+							"And I will not give the report to you until you get me some! Meep!"}, cid)
 			npcHandler.topic[cid] = 2
-		elseif(npcHandler.topic[cid] == 2) then
+		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Ok, have you brought me the cheese, I've asked for?", cid)
 			npcHandler.topic[cid] = 3
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 3) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 3 then
 			if player:removeItem(2696, 1) then
-				npcHandler:say({"Meep! Meep! Great! Here is the spyreport for you!","Meep!"}, cid, 0, 1, 2000)
+				npcHandler:say({"Meep! Meep! Great! Here is the spyreport for you!",
+								"Meep!"}, cid)
 				player:setStorageValue(BlueDjinn.MissionStart+2, 2)
 				player:addItem(2345, 1)
 				npcHandler.topic[cid] = 0
@@ -43,14 +48,10 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
-		npcHandler:say("Meep!", cid)
-		npcHandler.topic[cid] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
 	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_FAREWELL, "Meep!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Meep!")
 npcHandler:addModule(FocusModule:new())
