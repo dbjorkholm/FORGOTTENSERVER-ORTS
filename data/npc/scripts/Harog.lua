@@ -44,12 +44,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif(not npcHandler:isFocused(cid)) then
 		return false
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say("It was a pleasure to help you, "..getCreatureName(cid)..".", cid, TRUE)
+		npcHandler:say("It was a pleasure to help you, "..player:getName()..".", cid, TRUE)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, "trade") then
-		
-		local player = Player(cid)
 		
 		local items = setNewTradeTable(getTable(player))
 		
@@ -95,7 +93,8 @@ local function creatureSayCallback(cid, type, msg)
 		
 		npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 	end
-	return TRUE
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())
