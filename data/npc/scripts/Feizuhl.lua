@@ -10,15 +10,13 @@ local rnd_sounds = 0
 function onThink()
 	if rnd_sounds < os.time() then
 		rnd_sounds = (os.time() + 5)
-		if math.random(100) < 25  then
-			Npc():say("Come in, have a drink and something to eat.", TALKTYPE_SAY)
+		if math.random(100) < 25 then
+			Npc():say("I sell furniture both to the mourned and the enlightened.", TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Be mourned, pilgrim in flesh. Be mourned in my tavern.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Do visit us again.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Do visit us again.")
-npcHandler:setMessage(MESSAGE_SENDTRADE, "Sure, browse through my offers.")
+npcHandler:setMessage(MESSAGE_GREET, "Be mourned pilgrim in flesh and welcome to the furniture store.")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain type of furniture?")
 npcHandler:addModule(FocusModule:new())
