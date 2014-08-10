@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Jezzara" script="default.lua" walkinterval="1000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="138" head="78" body="101" legs="86" feet="115" addons="0" />
-<voices>
-<voice text="Food of various kinds, have a look." interval2="120" margin="1" yell="no"/>
-</voices>
-<parameters>
-<parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="food;" />
-        <parameter key="keyword_reply1" value="I can offer you meat, ham, salmon, fish, fruits and vegetables. If you'd like to see my offers, ask me for a {trade}." />
-        <parameter key="message_greet" value="Be mourned pilgrim in flesh. Talking of flesh, maybe you'd enjoy some {food}?"/>
-        <parameter key="message_farewell" value="May enlightenment be your path."/>
-		<parameter key="message_walkaway" value="May enlightenment be your path." />
-		<parameter key="message_sendtrade" value="Sure, take a look at my offers." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="meat,2666,10;fish,2667,6;salmon,2668,7;ham,2671,15;dragon ham,2672,25;orange,2675,9;banana,2676,5;grapes,2681,8;melon,2682,13;pumpkin,2683,10;tomato,2685,10;jalapeno pepper,8844,2;onion,8843,2;carrot,2684,8" />
-  </parameters>
+<npc name="Jezzara" script="Jezzara.lua" walkinterval="1000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="138" head="3" body="44" legs="91" feet="97" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			banana,2676,5;
+			bulb of garlic,9114,3;
+			carrot,2684,8;
+			dragon ham,2672,25;
+			fish,2667,6;
+			grapes,2681,8;
+			ham,2671,15;
+			jalapeno pepper,8844,2;
+			meat,2666,10;
+			melon,2682,13;
+			onion,8843,2;
+			orange,2675,9;
+			pumpkin,2683,10;
+			salmon,2668,7;
+			tomato,2685,10;" />
+	</parameters>
 </npc>
-

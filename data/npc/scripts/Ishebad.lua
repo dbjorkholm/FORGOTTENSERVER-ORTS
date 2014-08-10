@@ -8,10 +8,11 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "promot") then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, "promot") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
@@ -31,11 +32,14 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 1 then
-		npcHandler:say('Ok, whatever.', cid)
+		npcHandler:say('Ok, then not.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Be mourned, pilgrim in flesh. Are you looking for a promotion?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, |PLAYERNAME|!")
 npcHandler:addModule(FocusModule:new())
