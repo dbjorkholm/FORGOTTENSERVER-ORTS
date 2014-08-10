@@ -50,8 +50,7 @@ return list
 end
 
 local function creatureSayCallback(cid, type, msg)
-
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	return true
@@ -63,4 +62,5 @@ end
  
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "What do you want from me, |PLAYERNAME|?")
 npcHandler:addModule(FocusModule:new())
