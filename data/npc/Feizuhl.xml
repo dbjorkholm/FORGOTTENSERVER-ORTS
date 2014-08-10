@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Feizuhl" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="117" body="116" legs="63" feet="114" addons="0" />
-  <parameters>
-
-<voices>
-<voice text="I sell furniture both to the mourned and the enlightened." interval2="100" margin="1" yell="no"/>
-</voices>
-<parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="furniture;" />
-        <parameter key="keyword_reply1" value="Well, as you can see, I sell furniture. Ask me for a {trade} if you're interested to see my wares." />
-    <parameter key="module_shop" value="1" />
-	<parameter key="message_greet" value="Be mourned pilgrim in flesh and welcome to the {furniture} store."/>
-        <parameter key="message_farewell" value="Good bye."/>
-		<parameter key="message_walkaway" value="Good bye." />
-		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
+<npc name="Feizuhl" script="Feizuhl.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="133" head="60" body="116" legs="62" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
