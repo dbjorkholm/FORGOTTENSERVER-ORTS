@@ -10,7 +10,8 @@ function onThink() npcHandler:onThink() end
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) >= 2 then
-		player:setStorageValue(1062, 1)
+		player:setStorageValue(Storage.WrathoftheEmperor.GuardcaughtYou, 1)
+		player:setStorageValue(Storage.WrathoftheEmperor.CrateStatus, 0)
 		player:teleportTo({x = 33361, y = 31206, z = 8}, false)
 		player:say("The guards have spotted you. You were forcibly dragged into a small cell. It looks like you need to build another disguise.", TALKTYPE_MONSTER_SAY)
 	end

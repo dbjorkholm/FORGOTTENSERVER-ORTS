@@ -37,6 +37,10 @@
 	<action itemid="10760" 	script="children of the revolution quest/childrenOfTheRevolutionQuestPoisonWater.lua"/>
 	<action itemid="11106" 	script="children of the revolution quest/childrenOfTheRevolutionQuestGreaseOil.lua"/>
 
+	<!-- Wrath of the Emperor -->
+	<action itemid="12284" script="wrath of the emperor quest/Mission01Crate.lua"/>
+	<action fromuid="3171" touid="3174" script="wrath of the emperor quest/Mission01Lights.lua"/>
+
 	<!-- Unnatural Selection -->
 	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
 	<action uniqueid="12335" script="unnatural selection/Mission5RayofLight.lua"/>

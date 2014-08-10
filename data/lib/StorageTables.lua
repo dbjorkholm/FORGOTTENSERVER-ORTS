@@ -236,7 +236,11 @@ Storage = {
 		Mission09 = 12359,
 		Mission10 = 12360,
 		Mission11 = 12361,
-		Mission12 = 12362
+		Mission12 = 12362,
+		CrateStatus = 12363, --1068
+		GuardcaughtYou = 12364, --1062
+		ZumtahStatus = 12365, --1066
+		PrisonReleaseStatus = 12366 --1067
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
