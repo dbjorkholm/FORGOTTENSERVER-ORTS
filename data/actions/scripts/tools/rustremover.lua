@@ -62,21 +62,24 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local exItem = Item(itemEx.uid)
 	local targetItem = config[itemEx.itemid]
-	if targetItem then
-		local chance = math.random(100000)
-		for i = 1, #config do
-			if chance >= targetItem[i][1][1] and chance <= targetItem[i][1][2] then
-				if targetItem[i][2] then
-					Item(itemEx.uid):transform(targetItem[i][2])
-					toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-				else
-					Player(cid):say((isInArray({9808, 9809, 9810}, itemEx.itemid) and "The armor was already damaged so badly that it broke when you tried to clean it." or "The legs were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_MONSTER_SAY)
-					Item(itemEx.uid):remove()
-					toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
-				end
-				return Item(item.uid):remove(1)
+	if not targetItem then
+		return true
+	end
+	
+	local chance = math.random(100000)
+	for i = 1, #targetItem do
+		if chance >= targetItem[i][1][1] and chance <= targetItem[i][1][2] then
+			if targetItem[i][2] then
+				exItem:transform(targetItem[i][2])
+				toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			else
+				Player(cid):say((isInArray({9808, 9809, 9810}, itemEx.itemid) and "The armor was already damaged so badly that it broke when you tried to clean it." or "The legs were already damaged so badly that they broke when you tried to clean them."),TALKTYPE_MONSTER_SAY)
+				exItem:remove()
+				toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 			end
+			return Item(item.uid):remove(1)
 		end
 	end
 end
