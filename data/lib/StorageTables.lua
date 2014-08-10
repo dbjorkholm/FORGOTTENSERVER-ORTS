@@ -262,6 +262,18 @@ Storage = {
 		Mission10 = 12459,
 		Rank = 12460
 	},
+	thievesGuild = {
+		Quest = 12501,
+		Mission01 = 12502,
+		Mission02 = 12503,
+		Mission03 = 12504,
+		Mission04 = 12505,
+		Mission05 = 12506,
+		Mission06 = 12507,
+		Mission07 = 12508,
+		Mission08 = 12509,
+		Reward = 12510
+	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,
