@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "exit") then
-		if player:getStorageValue(1066) < 1 then
+		if player:getStorageValue(Storage.WrathoftheEmperor.ZumtahStatus) ~= 1 then
 			if npcHandler.topic[cid] < 1 then	
 				npcHandler:say("Oh of course, may I show you around a bit before? You want to go straight to the exit? Would you please follow me. Oh right, I am terribly sorry but THERE IS NONE. Will you finally give it up please?", cid)
 				npcHandler.topic[cid] = 1
@@ -35,12 +35,15 @@ local function creatureSayCallback(cid, type, msg)
 			elseif npcHandler.topic[cid] == 14 then	
 				npcHandler:say({"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...", "Oh and I recovered the strange crate you where hiding in, it will wait for you at the exit since you can't carry it as... a beetle, muhaha. Yes, you shall now crawl through the passage as a beetle. There you go."}, cid, 0, 1, 4000)
 				npcHandler.topic[cid] = 0
+				player:setStorageValue(Storage.WrathoftheEmperor.ZumtahStatus, 1)
+				player:setStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus, 1)
+				doSetMonsterOutfit(cid, 'brimstone bug', 10 * 1000)
 			end
 		else
 			npcHandler:say("It's you, why did they throw you in here again? Anyway, I will just transform you once more. I also recovered your crate which will wait for you at the exit. There, feel free to go.", cid)
-			player:setStorageValue(1066, 1)
-			player:setStorageValue(1067, 1)
+			player:setStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus, 1)
 			player:setOutfit({lookType = 352})
+			doSetMonsterOutfit(cid, 'brimstone bug', 10 * 1000)
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] == 1 then
