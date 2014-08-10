@@ -7,7 +7,7 @@
 		<parameter key="shop_buyable" value="
 			banana,2676,2;
 			bottle of bug milk,9674,200;
-			bottle of milk,2007,4,15;
+			bottle of milk,2007,15,6;
 			broccoli,12417,3;
 			bulb of garlic,9114,4;
 			carrot,2684,3;

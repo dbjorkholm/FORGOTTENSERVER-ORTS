@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- GREET
-	if(msg == "DJANNI'HAH" and player:getStorageValue(BlueDjinn.MissionStart) < 1) and (not npcHandler:isFocused(cid)) then
+	if msg == "DJANNI'HAH" and player:getStorageValue(BlueDjinn.MissionStart) < 1 and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
@@ -20,39 +20,40 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	end
 	-- GREET
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	-- JOINING
-	if(msgcontains(msg, "passage")) then
+	if msgcontains(msg, "passage") then
 		if player:getStorageValue(GreenDjinn.MissionStart) < 1 then
-			npcHandler:say({"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...","All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"}, cid, 0, 1, 3000)
+			npcHandler:say({"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...",
+							"All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	-- JOINING
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 2) then
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 2 then
 			npcHandler:say("So you pledge loyalty to king Malor and you are willing to never ever set foot on Marids' territory, unless you want to kill them? Yes?", cid)
 			npcHandler.topic[cid] = 3
-		elseif(npcHandler.topic[cid] == 3) then
-			npcHandler:say({"Well then - welcome to Mal'ouquah. ...", "Go now to general Baa'leal and don't forget to greet him correctly! ...", "And don't touch anything!"}, cid, 0, 1, 2500)
-			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 3 then
+			npcHandler:say({"Well then - welcome to Mal'ouquah. ...",
+							"Go now to general Baa'leal and don't forget to greet him correctly! ...",
+							"And don't touch anything!"}, cid)
 			player:setStorageValue(GreenDjinn.MissionStart, 1)
+			npcHandler.topic[cid] = 0
 		end
-	elseif(msgcontains(msg, "no")) then
-		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say({"Of cour... Huh!? No!? I can't believe it! ...", "You... you got some nerves... Hmm. ...", "Maybe we have some use for someone like you. Would you be interested in working for us. Helping to fight the Marid?"}, cid, 0, 1, 3000)
+	elseif msgcontains(msg, "no") then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say({"Of cour... Huh!? No!? I can't believe it! ...",
+							"You... you got some nerves... Hmm. ...",
+							"Maybe we have some use for someone like you. Would you be interested in working for us. Helping to fight the Marid?"}, cid)
 			npcHandler.topic[cid] = 2
 		end
-	end
-	if (msgcontains(msg, "bye") or msgcontains(msg, "farewell")) then
-		npcHandler:say("Farewell human!", cid)
-		npcHandler.topic[cid] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
 	end
 	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell human!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell human!")
 npcHandler:addModule(FocusModule:new())

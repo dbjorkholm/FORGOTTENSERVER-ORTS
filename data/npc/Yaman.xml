@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Yaman" script="Yaman.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="103" head="0" body="0" legs="0" feet="0" addons="0" />
-  <parameters>
-    <parameter key="message_greet" value="Be greeted, human |PLAYERNAME|. How can a humble djinn be of service?" />
-    <parameter key="message_farewell" value="Farewell, human." />
-    <parameter key="message_buy" value="Do you want to purchase |ITEMCOUNT| |ITEMNAME| for |TOTALCOST| gold?" />
-    <parameter key="message_sell" value="Do you want to sell |ITEMCOUNT| |ITEMNAME| for |TOTALCOST| gold?" />
-    <parameter key="message_decline" value="Well, obviously not." />
-    <parameter key="message_onbuy" value="It'll serve you well!" />
-    <parameter key="message_onsell" value="Thank you, human." />
-    <parameter key="message_walkaway" value="Farewell, human." />
-    <parameter key="module_keywords" value="1" />
-    <parameter key="keywords" value="job" />
-    <parameter key="keyword_reply1" value="I'm an old djinn, I buy several items, and sell a few myself." />
-	
-	<parameter key="module_shop" value="1" /> <!-- added shop module to show the icon in npc (10:36 +) -->
+	<health now="100" max="100" />
+	<look type="103" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="0,0,0;"/>
 		<parameter key="shop_buyable" value="0,0,0;"/>
-	
-  </parameters>
+	</parameters>
 </npc>
