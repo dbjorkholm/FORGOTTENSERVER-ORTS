@@ -3,7 +3,8 @@
   <health now="100" max="100" />
   <look type="70" />
   <parameters>
-    <parameter key="message_greet" value="Greetings. Are you interested in {adventures?}" />
+	<parameter key="message_greet" value="Greetings. Are you interested in {adventures?}" />
+	<parameter key="module_shop" value="1" />
 	<parameter key="shop_buyable" value="teleport crystal,18457,150" />
   </parameters>
 </npc>
