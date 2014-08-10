@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <npc name="Gewen" script="Gewen.lua" walkinterval="2000" floorchange="0">
   <health now="100" max="100" />
-  <look type="139" head="96" body="0" legs="100" feet="95" addons="0" />
+  <look type="139" head="132" body="0" legs="86" feet="95" addons="0" />
 <voices>
 <voice text="Nothing beats the feeling of flying with a carpet!" interval2="120" margin="1" yell="no"/>
 </voices>
