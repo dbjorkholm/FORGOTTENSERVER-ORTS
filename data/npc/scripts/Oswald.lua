@@ -63,16 +63,16 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 2 then
 			player:setStorageValue(Storage.thievesGuild.Quest, 1)
-			npcHandler:say({'Well, rich and generous people are always welcome in the palace.If you donate 1000 gold to a fund I oversee, I\'ll give you an invitation, ok?'}, cid)
+			npcHandler:say('Well, rich and generous people are always welcome in the palace.If you donate 1000 gold to a fund I oversee, I\'ll give you an invitation, ok?', cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getMoney() >= 1000 then
 				player:addItem(8761, 1)
 				player:removeMoney(1000)
 				player:setStorageValue(Storage.thievesGuild.Mission03, 2)
-				npcHandler:say({'Excellent! Here is your invitation!'}, cid)
+				npcHandler:say('Excellent! Here is your invitation!', cid)
 			else
-				npcHandler:say({'You don\'t have enough money.'}, cid)
+				npcHandler:say('You don\'t have enough money.', cid)
 			end
 			npcHandler.topic[cid] = 0
 		end
