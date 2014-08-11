@@ -11,7 +11,6 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
 	local player = Player(cid)
 	local blessings = 0
 	for i = 1, 5 do
@@ -19,7 +18,6 @@ local function creatureSayCallback(cid, type, msg)
 			blessings = blessings + 1
 		end
 	end
-	
 	if msgcontains(msg, "heal") then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
@@ -45,7 +43,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if blessings >= 1 or player:getItemCount(2173) >= 1 then
+			if blessings >= 1 or player:getItemCount(2173) > 0 then
 				if not player:hasBlessing(6) then
 					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
 						player:addBlessing(6)

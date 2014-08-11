@@ -56,9 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
 	local player = Player(cid)
-	
 	if msgcontains(msg, 'outfit') then
 		npcHandler:say(player:getSex() == 0 and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
 	elseif msgcontains(msg, 'task') then
@@ -66,7 +64,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Uh... I don\'t think that I have work for you right now. If you need a job, go talk to Razan.', cid)
 			return true
 		end
-		
 		if player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) < 1 then
 			npcHandler:say('You mean, you would like to prove that you deserve to wear such a veil?', cid)
 			npcHandler.topic[cid] = 1
@@ -88,7 +85,12 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 4
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({'Alright, then listen to the following requirements. We are currently in dire need of ape fur since the Caliph has requested a new bathroom carpet. ...', 'Thus, please bring me 100 pieces of ape fur. Secondly, it came to our ears that the explorer society has discovered a new undersea race of fishmen. ...', 'Their fins are said to allow humans to walk on water! Please bring us 100 of these fish fin. ...', 'Third, if the plan of walking on water should fail, we need enchanted chicken wings to prevent the testers from drowning. Please bring me two. ...', 'Last but not least, just drop by with 100 pieces of blue cloth and I will happily show you how to make a turban. ...', 'Did you understand everything I told you and are willing to handle this task?'}, cid)
+			npcHandler:say({'Alright, then listen to the following requirements. We are currently in dire need of ape fur since the Caliph has requested a new bathroom carpet. ...',
+							'Thus, please bring me 100 pieces of ape fur. Secondly, it came to our ears that the explorer society has discovered a new undersea race of fishmen. ...',
+							'Their fins are said to allow humans to walk on water! Please bring us 100 of these fish fin. ...',
+							'Third, if the plan of walking on water should fail, we need enchanted chicken wings to prevent the testers from drowning. Please bring me two. ...',
+							'Last but not least, just drop by with 100 pieces of blue cloth and I will happily show you how to make a turban. ...',
+							'Did you understand everything I told you and are willing to handle this task?'}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(Storage.OutfitQuest.DefaultStart) ~= 1 then
@@ -104,7 +106,6 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
 			player:setStorageValue(Storage.OutfitQuest.secondOrientalAddon, player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) + 1)
 			if player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) == 5 then
 				player:addOutfitAddon(146, 2)

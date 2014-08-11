@@ -10,7 +10,7 @@ function onThink()				npcHandler:onThink()					end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- GREET
-	if msg == "DJANNI'HAH" and player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen and not npcHandler:isFocused(cid) then
+	if msg == "DJANNI'HAH" and (player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen) and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
