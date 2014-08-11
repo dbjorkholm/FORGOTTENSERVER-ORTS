@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- GREET
 	if msg == "DJANNI'HAH" then
-		if player:getStorageValue(Factions) > 0) then
+		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
 				npcHandler:say("Greetings, human " .. player:getName() .. ". My patience with your kind is limited, so speak quickly and choose your words well.?", cid)
