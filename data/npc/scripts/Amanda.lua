@@ -2,16 +2,16 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	local blessings = 0
 	for i = 1, 5 do
@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 			blessings = blessings + 1
 		end
 	end
-	
+
 	if msgcontains(msg, "heal") then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
@@ -45,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if blessings >= 1 or player:getItemCount(2173) >= 1 then
+			if blessings >= 1 or player:getItemCount(2173) > 0 then
 				if not player:hasBlessing(6) then
 					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
 						player:addBlessing(6)
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
 			end
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 8)
 				npcHandler:say("So receive my prayer: 'Wicked curses shall be broken'. Now, bring your stake to Kasmir in Darashia for the next line of the prayer. I will inform him what to do. ", cid)
 			end

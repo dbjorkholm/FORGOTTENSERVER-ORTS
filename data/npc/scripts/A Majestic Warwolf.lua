@@ -19,7 +19,6 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
 	local player = Player(cid)
 	if isInArray({'addon', 'outfit'}, msg) then
 		if player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 9 then
@@ -37,7 +36,9 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Interesting. A human who can speak the language of wolves.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "YOOOOUHHOOOUU!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "YOOOOUHHOOOUU!")
 npcHandler:addModule(FocusModule:new())
