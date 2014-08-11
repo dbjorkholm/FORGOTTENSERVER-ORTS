@@ -5,10 +5,26 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+local random_texts = {
+	'Hm.',
+	'Yes. I listen, master.',
+	'I understand.',
+	'Not yet, my brothers. Wait.'
+}
+
+local rnd_sounds = 0
+function onThink()
+	if rnd_sounds < os.time() then
+		rnd_sounds = (os.time() + 10)
+		if math.random(100) < 20 then
+			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
@@ -45,4 +61,5 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Be greeted.")
 npcHandler:addModule(FocusModule:new())
