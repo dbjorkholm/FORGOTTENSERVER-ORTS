@@ -84,7 +84,7 @@ local buyList = {
 	{itemId = 14336, price = 4000}, -- Wrinkled Parchment
 		}
 
-if player:getStorageValue(Storage.thievesGuild.Reward) == 1 then
+if player:getStorageValue(Storage.thievesGuild.Quest) >= 9 then
 	-- 1 tome
 	for i = 1, #buyList do
 		table.insert(itemsList, buyList[i])
