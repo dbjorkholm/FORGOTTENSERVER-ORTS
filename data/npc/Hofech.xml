@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Hofech" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="114" body="20" legs="39" feet="76" addons="0" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-	<parameter key="shop_buyable" value="
+	<health now="100" max="100" />
+	<look type="128" head="95" body="2" legs="2" feet="57" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
 			barrel kit,3919,12;

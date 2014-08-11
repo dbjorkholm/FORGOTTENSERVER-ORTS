@@ -55,9 +55,6 @@
 	<talkaction words="!kills" script="kills.lua"/>
 	<talkaction words="!online" script="online.lua"/>
 	<talkaction words="!serverinfo" script="serverinfo.lua"/>
-	<talkaction words="!spells" script="spells.lua"/>
-	<talkaction words="!aol" script="aol.lua"/>
-	<talkaction words="!bless" script="bless.lua"/>
 	<talkaction words="!addon" script="addon.lua"/>
 
 	<!-- test talkactions -->
