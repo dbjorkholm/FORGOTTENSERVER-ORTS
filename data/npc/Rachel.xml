@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Rachel" script="Rachel.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="136" head="58" body="83" legs="68" feet="95" addons="0" />
+	<look type="136" head="58" body="84" legs="86" feet="114" addons="0" />
 	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="

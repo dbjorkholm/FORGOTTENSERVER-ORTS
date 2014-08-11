@@ -6,19 +6,19 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-local random_texts = {
+local voices = {
 	'Free escort to the depot for newcomers!',
 	'Hello, is this your first visit to Thais? I can show you around a little.',
 	'Need some help finding your way through Thais? Let me assist you.',
 	'Talk to me if you need directions.'
 }
 
-local rnd_sounds = 0
+local lastSound = 0
 function onThink()
-	if rnd_sounds < os.time() then
-		rnd_sounds = (os.time() + 10)
+	if lastSound < os.time() then
+		lastSound = (os.time() + 10)
 		if math.random(100) < 20 then
-			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
