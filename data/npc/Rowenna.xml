@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Rowenna" script="Rowenna.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="139" head="115" body="38" legs="76" feet="57" addons="0" />
+	<look type="139" head="115" body="38" legs="76" feet="38" addons="0" />
 	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="

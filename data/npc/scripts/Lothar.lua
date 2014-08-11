@@ -6,10 +6,10 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 
-local rnd_sounds = 0
+local lastSound = 0
 function onThink()
-	if rnd_sounds < os.time() then
-		rnd_sounds = (os.time() + 5)
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
 		if math.random(100) < 25 then
 			Npc():say("I enjoy the peace and solitude out here. You're welcome to be my guest as long as you behave in a quiet and tolerable manner.", TALKTYPE_SAY)
 		end

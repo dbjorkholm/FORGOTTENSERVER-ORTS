@@ -9,10 +9,10 @@ local pin = {}
 function onCreatureAppear(cid)       npcHandler:onCreatureAppear(cid)     end
 function onCreatureDisappear(cid)     npcHandler:onCreatureDisappear(cid)     end
 function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, msg)   end
-local rnd_sounds = 0
+local lastSound = 0
 function onThink()
-	if rnd_sounds < os.time() then
-		rnd_sounds = (os.time() + 5)
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
 		if math.random(100) < 25 then
 			Npc():say("Better deposit your money in the bank where it's safe.", TALKTYPE_SAY)
 		end
@@ -344,7 +344,9 @@ end
 
 keywordHandler:addKeyword({'money'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We can {change} money for you. You can also access your {bank account}."})
 
-npcHandler:setMessage(MESSAGE_GREET, "Welcome to the Tibian {bank}, |PLAYERNAME|! What can I do for you?")
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Welcome |PLAYERNAME|! What business do you have in the Tibian bank today?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, |PLAYERNAME|.")
 npcHandler:addModule(FocusModule:new())
