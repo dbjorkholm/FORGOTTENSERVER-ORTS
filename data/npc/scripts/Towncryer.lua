@@ -1,4 +1,4 @@
-local random_texts = {
+local voices = {
 	"Hear me! Hear me! The mage Wyrdin in the Edron academy is looking for brave adventurers to undertake a task!",
 	"Hear me! Hear me! The postmaster's guild has open spots for aspiring postmen! Contact Kevin Postner at the post office in the plains south of Kazordoon!",
 	"Hear me! Hear me! The inquisition is looking for daring people to fight evil! Apply at the inquisition headquarters next to the Thaian jail!",
@@ -20,12 +20,12 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local rnd_sounds = 0
+local lastSound = 0
 function onThink()
-	if rnd_sounds < os.time() then
-		rnd_sounds = (os.time() + 10)
+	if lastSound < os.time() then
+		lastSound = (os.time() + 10)
 		if math.random(100) < 25 then
-			Npc():say(random_texts[math.random(#random_texts)], TALKTYPE_SAY)
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
