@@ -41,4 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_FAREWELL, "See you later, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "See you later, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares.")
 npcHandler:addModule(FocusModule:new())
