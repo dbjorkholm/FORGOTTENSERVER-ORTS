@@ -210,3 +210,5 @@ mininghelmet uid+storage = 50134
 
 Kaz wagons aid = 50136-50159
 PoI Maze Stone aid = 50160
+
+Vengoth Teleports (strange whirl's) aid = 50220-50229
