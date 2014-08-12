@@ -260,7 +260,6 @@
 	<action fromid="7243" toid="7244" script="ice islands quest/iceIslandsQuestAnthill.lua"/>
 	<action itemid="7289" script="ice islands quest/iceIslandsQuestCharm.lua"/>
 	<action itemid="7286" script="ice islands quest/iceIslandsQuestCure.lua"/>
-	<action fromid="2565" toid="2566" script="ice islands quest/iceIslandsQuestCure.lua"/>
 	<action uniqueid="3112" script="ice islands quest/iceIslandsQuestMinesSkeleton.lua"/>
 	<action itemid="7253" script="ice islands quest/iceIslandsQuestPaint.lua"/>
 	<action itemid="2361" script="ice islands quest/iceIslandsQuestYakchal.lua"/>
@@ -409,6 +408,8 @@
 	<action itemid="5865" script="tools/juice squeezer.lua"/>
 	<action itemid="2416" script="tools/crowbar.lua"/>
 	<action itemid="2420" script="tools/machete.lua"/>
+	<action itemid="2565" script="tools/spoon.lua"/>
+	<action itemid="2566" script="tools/kitchenknife.lua"/>
 	<action itemid="2550" script="tools/scythe.lua"/>
 	<action itemid="2580" script="tools/fishing.lua" allowfaruse="1"/>
 	<action itemid="5710" script="tools/shovel.lua"/>
