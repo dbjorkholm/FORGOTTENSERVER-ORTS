@@ -2,24 +2,31 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
-        
-        -- Don't forget npcHandler = npcHandler in the parameters. It is required for all StdModule functions!
-        local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to go to Kazordoon to try the beer there? 160 gold?'})
-        	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 0, destination = {x=32660, y=31957, z=15} })
-        	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Then not.'})
-			
-        keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes, I\'m the captain of this ship.'})
-		keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes, I\'m the captain of this ship.'})
-       
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
+		if math.random(100) < 25 then
+			Npc():say("Passages to Kazordoon! Gotta try the beer there.", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
+
+local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to go to Kazordoon to try the beer there? 160 gold?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 160, destination = {x=32660, y=31957, z=15}})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Then not.'})
+
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, 'farmine') then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, 'farmine') then
 		npcHandler:say('Do you seek a ride to Farmine for 210 gold coins?', cid)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
@@ -53,4 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 end      
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Welcome, |PLAYERNAME|! May Earth protect you, even whilst sailing!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Until next time.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Until next time.")
 npcHandler:addModule(FocusModule:new())

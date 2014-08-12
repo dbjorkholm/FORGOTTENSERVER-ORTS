@@ -77,10 +77,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Sorry but you don\'t have the item.', cid)
 		end
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 5) then
-		 npcHandler:say('Ok then.', cid)
-		 npcHandler.topic[cid] = 0
-		 npcHandler:releaseFocus(cid)
-		 npcHandler:resetNpc(cid)
+		npcHandler:say('Ok then.', cid)
+		npcHandler.topic[cid] = 0
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	return true
 end
