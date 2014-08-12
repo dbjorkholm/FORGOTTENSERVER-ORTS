@@ -33,7 +33,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 2 then
-			npcHandler:say({'That\'s just incredible! I\'ve dreamed about acquiring the dwarven bridge since I was a child! Now my dream will finally become true. ...', 'And you are sure you want to sell it? I mean really, really sure?'}, cid)
+			npcHandler:say(
+				{
+				'That\'s just incredible! I\'ve dreamed about acquiring the dwarven bridge since I was a child! Now my dream will finally become true. ...',
+				'And you are sure you want to sell it? I mean really, really sure?'
+				}, cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 3 then
 			npcHandler:say('How splendid! Do you have the necessary documents with you?', cid)
@@ -45,7 +49,11 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(8694, 1) then
 				player:addItem(8699, 1)
 				player:setStorageValue(Storage.thievesGuild.Mission04, 7)
-				npcHandler:say({'Excellent! Here is the painting you requested. It\'s quite precious to my father, but imagine his joy when I tell him about my clever deal! ...', 'Now leave me alone please. I have to prepare for my departure. Now my family will not call me a squandering fool anymore!'}, cid)
+				npcHandler:say(
+					{
+					'Excellent! Here is the painting you requested. It\'s quite precious to my father, but imagine his joy when I tell him about my clever deal! ...',
+					'Now leave me alone please. I have to prepare for my departure. Now my family will not call me a squandering fool anymore!'
+					}, cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
