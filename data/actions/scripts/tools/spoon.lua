@@ -1,4 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if itemEx.itemid == 388 then
