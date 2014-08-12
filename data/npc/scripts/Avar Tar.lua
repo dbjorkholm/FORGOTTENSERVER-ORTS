@@ -28,6 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getStorageValue(Storage.AnnihilatorDone) == 1 then
 				player:addOutfit(541, 0)
 				player:addOutfit(542, 0)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.Annihilator.Done, 2)
 				npcHandler:say("Receive the base outfit, " .. player:getName() .. ".", cid)
 				npcHandler.topic[cid] = 0
@@ -38,6 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(2217) == 1 then
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say("Receive the shield, " .. player:getName() .. ".", cid)
 				player:setStorageValue(2217, 2)
 				npcHandler.topic[cid] = 0
@@ -48,6 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
 				player:addOutfitAddon(541, 2)
 				player:addOutfitAddon(542, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.DemonOak.Done, 4)
 				npcHandler:say("Receive the helmet, " .. player:getName() .. ".", cid)
 			end
@@ -62,4 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Greetings, traveller |PLAYERNAME|!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "See you later, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "See you later, |PLAYERNAME|.")
 npcHandler:addModule(FocusModule:new())
