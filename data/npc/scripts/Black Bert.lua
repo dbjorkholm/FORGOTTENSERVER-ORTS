@@ -85,7 +85,6 @@ local buyList = {
 		}
 
 if player:getStorageValue(Storage.thievesGuild.Quest) >= 9 then
-	-- 1 tome
 	for i = 1, #buyList do
 		table.insert(itemsList, buyList[i])
 	end
@@ -106,11 +105,9 @@ end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	
-	if (msgcontains(msg, "hello") or msgcontains(msg, "hi")) and (not npcHandler:isFocused(cid)) then
+	if msgcontains(msg, "hello") or msgcontains(msg, "hi") and then
 		npcHandler:say("Hello.", cid, TRUE)
 		npcHandler:addFocus(cid)
-	elseif(not npcHandler:isFocused(cid)) then
-		return false
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
 		npcHandler:say("It was a pleasure to help you, "..player:getName()..".", cid, TRUE)
 		npcHandler:releaseFocus(cid)
