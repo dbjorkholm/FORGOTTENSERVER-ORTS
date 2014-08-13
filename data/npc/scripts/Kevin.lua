@@ -90,13 +90,13 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.postman.Mission04) == 2 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 14
-		elseif player:getStorageValue(Storage.postman.Mission06) == 13 then
+		elseif player:getStorageValue(Storage.postman.Mission06) == 13 and player:getStorageValue(Storage.postman.Rank) == 1 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 20
-		elseif player:getStorageValue(Storage.postman.Mission08) == 3 then
+		elseif player:getStorageValue(Storage.postman.Mission08) == 3 and player:getStorageValue(Storage.postman.Rank) == 2 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 24
-		elseif player:getStorageValue(Storage.postman.Mission10) == 3 then
+		elseif player:getStorageValue(Storage.postman.Mission10) == 3 and player:getStorageValue(Storage.postman.Rank) == 3 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 27
 		end
