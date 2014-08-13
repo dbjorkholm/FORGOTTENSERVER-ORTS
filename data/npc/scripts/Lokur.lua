@@ -372,12 +372,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("No then.", cid)	
 			npcHandler.topic[cid] = 0
 		end
-	-- WAGON TICKET
-	elseif msgcontains(msg, "measurements") then
-		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
-			npcHandler:say("Come on, I have no clue what they are. Better ask my armorer Kroox for such nonsense.Go and ask him for good ol' Lokurs measurements, he'll know.", cid)
-		end
 	end
+	-- WAGON TICKET
 	return true
 end
 
