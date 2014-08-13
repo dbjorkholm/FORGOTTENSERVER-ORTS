@@ -156,6 +156,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 15 then
 			npcHandler:say("Since I am convinced I can trust you, this time you must deliver a valuable present to Dermot on Fibula. Do NOT open it!!! You will find the present behind the door here on the lower right side of this room.", cid)
+			player:setStorageValue(Storage.postman.Mission04, 3)
 			player:setStorageValue(Storage.postman.Mission05, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
