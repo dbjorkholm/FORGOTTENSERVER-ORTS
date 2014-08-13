@@ -17,8 +17,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.thievesGuild.Quest) == 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission01, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Your first job is quite easy. The Thaian officials are unwilling to share the wealth they\'ve accumulated in their new town Port Hope. ...',
 				'They insist that most resources belong to the crown. This is quite sad, especially ivory is in high demand. Collect 10 elephant tusks and bring them to me.'
 			}, cid)
@@ -27,8 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 2 then
 			player:setStorageValue(Storage.thievesGuild.Mission02, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'A client of our guild would like to get a certain vase. Unfortunately, it\'s not for sale. Well, by the original owner, that is. ...',
 				'We, on the other hand, would gladly sell him the vase. Therefore, it would come in handy if we get this vase in our hands. ...',
 				'Luckily, the walls of the owner\'s house are covered with vines, that will make a burglary quite easy. ...',
@@ -40,8 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 3 then
 			player:setStorageValue(Storage.thievesGuild.Mission03, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Our beloved king will hold a great festivity at the end of the month. Unfortunately he forgot to invite one of our guild\'s representatives. ...',
 				'Of course it would be rude to point out this mistake to the king. It will be your job to get us an invitation to the ball. ...',
 				'Moreover, It will be a great chance to check the castle for, well, opportunities. I\'m sure you understand. However, it\'s up to that pest Oswald to give out invitations, so he\'s the man you\'re looking for.'
@@ -51,8 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 4 then
 			player:setStorageValue(Storage.thievesGuild.Mission04, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Your next mission is somewhat bigger and I\'m sure much fun for you. Some new-rich merchant is being a bit more greedy than it\'s good for him. ...',
 				'The good thing is he\'s as stupid as greedy, so we have a little but cunning plan. We arranged the boring correspondence in advance, so you\'ll come in when the fun starts. ...',
 				'You\'ll disguise yourself as the dwarven ambassador and sell that fool the old dwarven bridge, south of Kazordoon. ...',
@@ -71,8 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 6
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 then
 			player:setStorageValue(Storage.thievesGuild.Mission06, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Your next job will be kidnapping. You\'ll get us the only creature that this scrupulous trader Theodore Loveless in Liberty Bay holds dear. ...',
 				'His little goldfish! To get that fish, you\'ll have to get in his room somehow. ...',
 				'As you might know I sell lock picks, but I fear unless you\'re extremely lucky, you won\'t crack this expensive masterpiece of a lock. However, get us that fish, regardless how.'
@@ -82,8 +77,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 7
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 7 then
 			player:setStorageValue(Storage.thievesGuild.Mission07, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'We\'d like to ease our lives somewhat. Therefore, we would appreciate the cooperation with one of the Venore city guards. ...',
 				'Find some dirt about one of them. It\'s unimportant what it is. As soon as we have a foothold, we\'ll convince him to cooperate. Bring me whatever you may find.'
 			}, cid)
@@ -93,8 +87,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 then
 			player:setStorageValue(Storage.thievesGuild.Mission08, 1)
 			player:addItem(8701, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Competition might be an interesting challenge but our guild isn\'t really keen on competition. ...',
 				'Unfortunately, we are lacking some good fighters, which is quite a disadvantage against certain other organisations. However, I think you\'re a really good fighter ...',
 				'Travel to the Plains of Havoc and find the base of our competitors under the ruins of the dark cathedral ...',
@@ -107,8 +100,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			player:setStorageValue(Storage.thievesGuild.Quest, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Excellent. You\'ll learn this trade from scratch. Our operations cover many fields of work. Some aren\'t even illegal. ...',
 				'Well, as long as you don\'t get caught at least. Ask me for a mission whenever you\'re ready.'
 			}, cid)
@@ -131,8 +123,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(8761, 1) then
 				player:setStorageValue(Storage.thievesGuild.Mission03, 3)
 				player:setStorageValue(Storage.thievesGuild.Quest, 4)
-				npcHandler:say(
-				{
+				npcHandler:say({
 					'Ah, the key to untold riches. Don\'t worry, we\'ll make sure that no one will connect you to the disappearance of certain royal possessions. ...',
 					'You\'re too valuable to us. Speaking about your value, I might have some other mission for you.'
 				}, cid)
@@ -163,8 +154,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(8763, 1) then
 				player:setStorageValue(Storage.thievesGuild.Mission07, 2)
 				player:setStorageValue(Storage.thievesGuild.Quest, 8)
-				npcHandler:say(
-				{
+				npcHandler:say({
 					'Excellent, that little letter will do the trick for sure ...',
 					'I think you\'re really capable and if you finish another mission, I\'ll allow you full access to our black market of lost and found items. Just ask me to learn more about that mission.'
 				}, cid)
@@ -174,8 +164,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.thievesGuild.Mission08, 3)
 			player:setStorageValue(Storage.thievesGuild.Quest, 9)
 			player:setStorageValue(Storage.thievesGuild.Door, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				'Once again you\'ve finished your job, and I\'ll keep my promise. From now on, you can trade with old Black Bert somewhere upstairs to get access to certain items that mightbe of value to someone like you. ...',
 				'If you like, you can also enter the room to the left and pick one item of your choice.'
 			}, cid)
