@@ -38,7 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.postman.Mission04) == 1 then
 			npcHandler:say("Do you bring ONE bone for our officers' safety fund or ALL bones at once?", cid)
 			npcHandler.topic[cid] = 12
-		elseif player:getStorageValue(Storage.postman.Mission04) == 2 then
+		elseif player:getStorageValue(Storage.postman.Mission04) == 2 and player:getStorageValue(Storage.postman.Mission05) < 1  then
 			npcHandler:say("You have made it! We have enough bones for the fund! You remind me of myself when I was young! Interested in another mission?", cid)
 			npcHandler.topic[cid] = 15
 		elseif player:getStorageValue(Storage.postman.Mission05) == 3 then
