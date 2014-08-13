@@ -13,26 +13,28 @@ bullseye:setParameter(CONDITION_PARAM_TICKS, 30 * 60 * 1000)
 bullseye:setParameter(CONDITION_PARAM_SKILL_DISTANCE, 5)
 bullseye:setParameter(CONDITION_PARAM_SKILL_SHIELD, -10)
 
-function onUse(cid, item, frompos, item2, topos)
-	if item.itemid == 7439 then
-		if not doTargetCombatCondition(0, cid, berserker, CONST_ME_MAGIC_RED) then
-			return false
-		end
-	elseif item.itemid == 7440 then
+local config = {
+	[7439] = berserker,
+	[7440] = mastermind,
+	[7443] = bullseye
+}
+
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local useItem = config[item.itemid]
+	if not useItem then
+		return true
+	end
+
+	local player = Player(cid)
+	if item.itemid == 7440 then
 		if not (isSorcerer(cid) or isDruid(cid)) then
-			Player(cid):say("Only sorcerers and druids may drink this fluid.", TALKTYPE_MONSTER_SAY)
+			player:say('Only sorcerers and druids may drink this fluid.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
-
-		if not doTargetCombatCondition(0, cid, mastermind, CONST_ME_MAGIC_RED) then
-			return false
-		end
-	elseif item.itemid == 7443 then
-		if not doTargetCombatCondition(0, cid, bullseye, CONST_ME_MAGIC_RED) then
-			return false
-		end	
 	end
-	
+
+	player:addCondition(useItem)
+	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 	Item(item.uid):remove(1)
 	return true
 end
