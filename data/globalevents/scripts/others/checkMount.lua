@@ -1,23 +1,19 @@
-local mounts = {
-	{name = 'brown horse', price = 500, days = 1, mountId = 22, level = 10, premium = false, storage = 50561},
-	{name = 'grey horse', price = 500, days = 1, mountId = 25, level = 20, premium = false, storage = 50562}
-}
+local mounts = {22, 25, 26}
 
 function onThink(interval)
 	for _, player in ipairs(Game.getPlayers()) do
-		local mount
+		local mountId
 		for i = 1, #mounts do
-			mount = mounts[i]
-			if player:hasMount(mount.mountId) and player:getStorageValue(mount.storage) > 0 and player:getStorageValue(mount.storage) <= os.time() then
+			mountId = mounts[i]
+			if player:hasMount(mountId) and player:getStorageValue(50561) > 0 and player:getStorageValue(50561) <= os.time() then
 				local outfit = player:getOutfit()
 				outfit.lookMount = nil
 				player:setOutfit(outfit)
-				player:removeMount(mount.mountId)
-				player:setStorageValue(mount.storage, -1)
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your rented ' .. mount.name .. ' expired.')
+				player:removeMount(mountId)
+				player:setStorageValue(50561, -1)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your contract with your horse expired and it returned back to the horse station.')
 			end
 		end
 	end
-
 	return true
 end
