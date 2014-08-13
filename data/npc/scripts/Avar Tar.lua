@@ -26,8 +26,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "base") then
 		if npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 1 then
-				player:addOutfit(541, 0)
-				player:addOutfit(542, 0)
+				player:addOutfit(541)
+				player:addOutfit(542)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.Annihilator.Done, 2)
 				npcHandler:say("Receive the base outfit, " .. player:getName() .. ".", cid)

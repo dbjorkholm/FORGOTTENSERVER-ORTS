@@ -16,7 +16,7 @@ local config = {
 	['brown cloth'] = {storageValue = 4, text = {'Brought the 50 pieces of brown cloth?', 'Good. Get me 50 pieces of yellow cloth now.'}, itemId = 5913, count = 50},
 	['yellow cloth'] = {storageValue = 5, text = {'Brought the 50 pieces of yellow cloth?', 'Good. Get me 50 pieces of white cloth now.'}, itemId = 5914, count = 50},
 	['white cloth'] = {storageValue = 6, text = {'Brought the 50 pieces of white cloth?', 'Good. Get me 10 spools of yarn now.'}, itemId = 5909, count = 50},
-	['spools of yarn'] = {storageValue = 7, text = {'Brought the 10 spools of yarn?', 'Thanks. That\'s it, you\'re done. Good job, player. I keep my promise. Here\'s my old assassin head piece.'}, itemId = 5886, count = 10}
+	['spools of yarn'] = {storageValue = 7, text = {'Brought the 10 spools of yarn?', 'Thanks. That\'s it, you\'re done. Good job, |PLAYERNAME|. I keep my promise. Here\'s my old assassin head piece.'}, itemId = 5886, count = 10}
 }
 
 local function creatureSayCallback(cid, type, msg)
@@ -50,18 +50,19 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			local targetMessage = config[message[cid]]
-			if player:getItemCount(targetMessage.itemId) >= targetMessage.count then 
-				player:removeItem(targetMessage.itemId, targetMessage.count)
-				player:setStorageValue(Storage.OutfitQuest.AssassinFirstAddon, player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) + 1)
-				if player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) == 8 then
-					player:addOutfitAddon(156, 1)
-					player:addOutfitAddon(152, 1)
-					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				end
-				npcHandler:say(targetMessage.message[2], cid)
-			else
+			if not player:removeItem(targetMessage.itemId, targetMessage.count) then
 				npcHandler:say('You don\'t have the required items.', cid)
+				npcHandler.topic[cid] = 0
+				return true
 			end
+
+			player:setStorageValue(Storage.OutfitQuest.AssassinFirstAddon, player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) + 1)
+			if player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) == 8 then
+				player:addOutfitAddon(156, 1)
+				player:addOutfitAddon(152, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+			end
+			npcHandler:say(targetMessage.message[2]:gsub('|PLAYERNAME|', player:getName()), cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
