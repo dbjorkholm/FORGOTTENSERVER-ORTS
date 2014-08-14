@@ -12,60 +12,53 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	local player = Player(cid)
-	if msgcontains(msg, "outfit") then
-		if npcHandler.topic[cid] == 0  then
-			npcHandler:say({"I'm tired of all these young unskilled wannabe heroes. Every Tibian can show his skills or actions by wearing a special outfit. To prove oneself worthy of the demon outfit, this is how it goes: ...",
-					"The base outfit will be granted for completing the annihilator quest, which isn't much of a challenge nowadays, in my opinion. Anyway ...",
-					"The shield however will only be granted to those adventurers who have finished the demon helmet quest. ...",
-					"Well, the helmet is for those who really are tenacious and have hunted down all 6666 demons and finished the demon oak as well. ...",
-					"Are you interested?"
-					}, cid)
-			npcHandler.topic[cid] = 1
-		end
-	elseif msgcontains(msg, "base") then
-		if npcHandler.topic[cid] == 2 then
+	if msgcontains(msg, 'outfit') and npcHandler.topic[cid] == 0 then
+		npcHandler:say({
+			'I\'m tired of all these young unskilled wannabe heroes. Every Tibian can show his skills or actions by wearing a special outfit. To prove oneself worthy of the demon outfit, this is how it goes: ...',
+			'The base outfit will be granted for completing the annihilator quest, which isn\'t much of a challenge nowadays, in my opinion. Anyway ...',
+			'The shield however will only be granted to those adventurers who have finished the demon helmet quest. ...',
+			'Well, the helmet is for those who really are tenacious and have hunted down all 6666 demons and finished the demon oak as well. ...',
+			'Are you interested?'
+		}, cid)
+		npcHandler.topic[cid] = 1
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
+		npcHandler:say('So you want to have the demon outfit, hah! Let\'s have a look first if you really deserve it. Tell me: {base}, {shield} or {helmet}?', cid)
+		npcHandler.topic[cid] = 2
+	elseif npcHandler.topic[cid] == 2 then
+		local player = Player(cid)
+		if msgcontains(msg, 'base') then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 1 then
 				player:addOutfit(541)
 				player:addOutfit(542)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:setStorageValue(Storage.Annihilator.Done, 2)
-				npcHandler:say("Receive the base outfit, " .. player:getName() .. ".", cid)
-				npcHandler.topic[cid] = 0
+				player:setStorageValue(Storage.AnnihilatorDone, 2)
+				npcHandler:say('Receive the base outfit, ' .. player:getName() .. '.', cid)
 			end
-		end
-	elseif msgcontains(msg, "shield") then
-		if npcHandler.topic[cid] == 2 then
+		elseif msgcontains(msg, 'shield') then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(2217) == 1 then
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler:say("Receive the shield, " .. player:getName() .. ".", cid)
 				player:setStorageValue(2217, 2)
-				npcHandler.topic[cid] = 0
+				npcHandler:say('Receive the shield, ' .. player:getName() .. '.', cid)
 			end
-		end
-	elseif msgcontains(msg, "helmet") then
-		if npcHandler.topic[cid] == 2 then
+		elseif msgcontains(msg, 'helmet') then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
 				player:addOutfitAddon(541, 2)
 				player:addOutfitAddon(542, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.DemonOak.Done, 4)
-				npcHandler:say("Receive the helmet, " .. player:getName() .. ".", cid)
+				npcHandler:say('Receive the helmet, ' .. player:getName() .. '.', cid)
 			end
 		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("So you want to have the demon outfit, hah! Let's have a look first if you really deserve it. Tell me: {base}, {shield} or {helmet}?", cid)
-			npcHandler.topic[cid] = 2
-		end
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, 'Greetings, traveller |PLAYERNAME|!')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'See you later, |PLAYERNAME|.')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'See you later, |PLAYERNAME|.')
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Greetings, traveller |PLAYERNAME|!")
-npcHandler:setMessage(MESSAGE_FAREWELL, "See you later, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "See you later, |PLAYERNAME|.")
 npcHandler:addModule(FocusModule:new())
