@@ -7,28 +7,9 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
-
-	if msgcontains(msg, "Vengoth") then
-		npcHandler:say("Do you seek a passage to Vengoth for 100 gold?", cid)
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			if player:removeMoney(110) then
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				player:teleportTo(Position(32858, 31549, 7))
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				npcHandler.topic[cid] = 0
-			else
-				npcHandler:say("You don't have enought money.", cid)
-			end
-		end
-	end
-	return true
-end
+local travelNode = keywordHandler:addKeyword({'vengoth'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Vengoth for 100 gold?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 100, destination = {x = 32858, y = 31549, z = 7} })
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Oh well.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Can I interest you in a trip to {Vengoth}?")
