@@ -29,11 +29,15 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeMoney(110) then
 				if player:getStorageValue(Storage.postman.Mission01) == 1 then
 					player:setStorageValue(Storage.postman.Mission01, 2)
+					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(Position(32387, 31820, 6))
+					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					npcHandler:say('Set the sails!', cid)
 					npcHandler.topic[cid] = 0
 				else
+					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(Position(32387, 31820, 6))
+					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					npcHandler:say('Set the sails!', cid)
 					npcHandler.topic[cid] = 0
 				end
