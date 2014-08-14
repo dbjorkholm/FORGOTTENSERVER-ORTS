@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			else
 				npcHandler:say("You don't have enough money.", cid)
-			end	
+			end
 		end
 		npcHandler.topic[cid] = 0
 	end
