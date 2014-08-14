@@ -105,7 +105,7 @@ end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	
-	if msgcontains(msg, "hello") or msgcontains(msg, "hi") and then
+	if msgcontains(msg, "hello") or msgcontains(msg, "hi") then
 		npcHandler:say("Hello.", cid, TRUE)
 		npcHandler:addFocus(cid)
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
