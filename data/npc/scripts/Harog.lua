@@ -17,7 +17,6 @@ local rustremover = {
 		}
 
 if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 6 then
-	-- 1 tome
 	for i = 1, #rustremover do
 		table.insert(itemsList, rustremover[i])
 	end
@@ -38,18 +37,14 @@ end
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	
-	if (msgcontains(msg, "hello") or msgcontains(msg, "hi")) and (not npcHandler:isFocused(cid)) then
+	if msgcontains(msg, "hello") or msgcontains(msg, "hi") then
 		npcHandler:say("Hello.", cid, TRUE)
 		npcHandler:addFocus(cid)
-	elseif(not npcHandler:isFocused(cid)) then
-		return false
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say("It was a pleasure to help you, "..getCreatureName(cid)..".", cid, TRUE)
+		npcHandler:say("It was a pleasure to help you, "..player:getName()..".", cid, TRUE)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	elseif msgcontains(msg, "trade") then
-		
-		local player = Player(cid)
 		
 		local items = setNewTradeTable(getTable(player))
 		
@@ -95,7 +90,8 @@ local function creatureSayCallback(cid, type, msg)
 		
 		npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 	end
-	return TRUE
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())
