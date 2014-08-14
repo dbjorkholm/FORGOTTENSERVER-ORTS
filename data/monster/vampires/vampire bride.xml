@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Vampire Bride" nameDescription="a vampire bride" race="blood" experience="1050" speed="230" manacost="0">
 	<health now="1200" max="1200"/>
-	<look type="312" corpse="9658"/>
+	<look type="312" corpse="9654"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>
