@@ -58,9 +58,9 @@
 	<movevent event="StepIn" actionid="8014" script="children of the revolution quest/click.lua"/>
 
 	<!-- Wrath of the Emperor -->
-	<movevent event="StepIn" uniqueid="3175" script="wrath of the emperor quest/Prison.lua"/>
-	<movevent event="StepIn" fromaid="8015" toaid="8023" script="wrath of the emperor quest/Crate.lua"/>
-	<movevent event="StepIn" actionid="32362"  script="wrath of the emperor quest/Crate.lua"/>
+	<movevent event="StepIn" uniqueid="3175" script="wrath of the emperor quest/prison.lua"/>
+	<movevent event="StepIn" fromaid="8015" toaid="8023" script="wrath of the emperor quest/crate.lua"/>
+	<movevent event="StepIn" actionid="32362"  script="wrath of the emperor quest/crate.lua"/>
 
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000"  script="the new frontier quest/wayOut.lua"/>

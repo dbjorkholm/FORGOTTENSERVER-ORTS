@@ -28,7 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 					key:setActionId(12505)
 				end
 				player:setStorageValue(Storage.thievesGuild.Mission06, 2)
-				npcHandler:say('Oh my, such a lovely necklace! Here take it, that\s the key you wanted. Now let me admire my precious necklace alone.', cid)
+				npcHandler:say('Oh my, such a lovely necklace! Here take it, that\'s the key you wanted. Now let me admire my precious necklace alone.', cid)
 			else
 				npcHandler:say('I am sorry, I am not interested in your money. Maybe you should try your luck with Herbert, the postman instead.', cid)
 			end
