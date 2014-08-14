@@ -19,10 +19,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	elseif isInArray(dough, item.itemid) then
 		if itemEx.itemid == 1786 then
-			useItem:transform(item.itemid, item.itemid + 1)
+			useItem:transform(item.itemid + 1)
 		elseif itemEx.itemid == 6574 then
 			useItem:transform(8846)
-			targetItem:transform(itemEx.itemid, 0)
+			targetItem:remove()
 		end
 	elseif item.itemid == 2693 and itemEx.itemid == 1786 then
 		useItem:transform(2689)
