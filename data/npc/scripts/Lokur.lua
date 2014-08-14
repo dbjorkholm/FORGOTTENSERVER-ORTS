@@ -26,6 +26,7 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
+	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
@@ -58,7 +59,6 @@ local function creatureSayCallback(cid, type, msg)
 ---------------------------- balance ---------------------
 	elseif msgcontains(msg, 'balance') then
 		npcHandler.topic[cid] = 0
-		local player = Player(cid)
 		if player:getBankBalance() >= 100000000 then
 			npcHandler:say("I think you must be one of the richest inhabitants in the world! Your account balance is " .. player:getBankBalance() .. " gold.", cid)
 			return true
@@ -77,7 +77,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 ---------------------------- deposit ---------------------
 	elseif msgcontains(msg, 'deposit') then
-		local player = Player(cid)
 		count[cid] = player:getMoney()
 		if count[cid] < 1 then
 			npcHandler:say("You do not have enough gold.", cid)
@@ -127,7 +126,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 2 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:getMoney() >= tonumber(count[cid]) then
 				player:depositMoney(count[cid])
 				npcHandler:say("Alright, we have added the amount of " .. count[cid] .. " gold to your {balance}. You can {withdraw} your money anytime you want to.", cid)
@@ -168,7 +166,6 @@ local function creatureSayCallback(cid, type, msg)
 		return true
 	elseif npcHandler.topic[cid] == 7 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if not player:withdrawMoney(count[cid]) then
 				npcHandler:say("There is not enough gold on your account.", cid)
 				npcHandler.topic[cid] = 0
@@ -187,7 +184,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 11
 	elseif npcHandler.topic[cid] == 11 then
 		count[cid] = getMoneyCount(msg)
-		if Player(cid):getBankBalance() < count[cid] then
+		if player:getBankBalance() < count[cid] then
 			npcHandler:say("There is not enough gold on your account.", cid)
 			npcHandler.topic[cid] = 0
 			return true
@@ -201,7 +198,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 12 then
 		transfer[cid] = msg
-		if Player(cid):getName() == transfer[cid] then
+		if player:getName() == transfer[cid] then
 			npcHandler:say("Fill in this field with person who receives your gold!", cid)
 			npcHandler.topic[cid] = 0
 			return true
@@ -216,7 +213,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 13 then
 		if msgcontains(msg, 'yes') then
-			if not Player(cid):transferMoneyTo(transfer[cid], count[cid]) then
+			if not player:transferMoneyTo(transfer[cid], count[cid]) then
 				npcHandler:say("You cannot transfer money to this account.", cid)
 			else
 				npcHandler:say("Very well. You have transferred " .. count[cid] .. " gold to " .. transfer[cid] ..".", cid)
@@ -241,7 +238,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 15 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2148, count[cid] * 100) then
 				player:addItem(2152, count[cid])
 				npcHandler:say("Here you are.", cid)
@@ -277,7 +273,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 18 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2152, count[cid]) then
 				player:addItem(2148, count[cid] * 100)
 				npcHandler:say("Here you are.", cid)
@@ -299,7 +294,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 20 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2152, count[cid] * 100) then
 				player:addItem(2160, count[cid])
 				npcHandler:say("Here you are.", cid)
@@ -324,7 +318,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 22 then
 		if msgcontains(msg, 'yes') then
-			local player = Player(cid)
 			if player:removeItem(2160, count[cid])  then
 				player:addItem(2152, count[cid] * 100)
 				npcHandler:say("Here you are.", cid)
@@ -340,8 +333,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	end
 	-- WAGON TICKET
-	if msgcontains(msg, "ticket") then
-		local player = Player(cid)
+	if msgcontains(msg, 'ticket') then
 		if player:getStorageValue(Storage.wagonTicket) < os.time() then
 			npcHandler:say("Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?", cid)
 			npcHandler.topic[cid] = 1
@@ -349,7 +341,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Your weekly ticket is still valid. Would be a waste of money to purchase a second one", cid)
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "yes") then
+	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			if player:getMoney() >= 250 then
 				player:removeMoney(250)
@@ -361,12 +353,12 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 1 then 
-		if msgcontains(msg, "no") then 
+		if msgcontains(msg, 'no') then 
 			npcHandler:say("No then.", cid)	
 			npcHandler.topic[cid] = 0
 		end
 	-- WAGON TICKET
-	elseif msgcontains(msg, "measurements") then
+	elseif msgcontains(msg, 'measurements') then
 		if player:getStorageValue(Storage.postman.Mission07) >= 1 then
 			npcHandler:say("Come on, I have no clue what they are. Better ask my armorer Kroox for such nonsense.Go and ask him for good ol' Lokurs measurements, he'll know.", cid)
 		end
