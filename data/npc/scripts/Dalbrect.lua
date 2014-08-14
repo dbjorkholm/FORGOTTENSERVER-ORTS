@@ -20,7 +20,7 @@ keywordHandler:addKeyword({'ghostlands'}, StdModule.say, {npcHandler = npcHandle
 keywordHandler:addKeyword({'brooch'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What? You want me to examine a brooch?"})
 keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "To think my family used to belong to the local nobility! And now those arrogant women are in charge!"})
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission."})
-keywordHandler:addKeyword({'ship'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My ship is my only pride and joy."})	
+keywordHandler:addKeyword({'ship'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My ship is my only pride and joy."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Be greeted, traveler.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye. You are welcome.")
