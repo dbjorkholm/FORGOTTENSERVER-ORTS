@@ -66,4 +66,6 @@ end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Harrr, landlubber wha'd ya want?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Bye.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Bye.")
 npcHandler:addModule(FocusModule:new())
