@@ -47,8 +47,11 @@ local config = {
                 -- Demon
                 [2916] = {value = 25000, newItem = 5906},
 
-                -- Vampire
-                [2956] = {value = 25000, newItem = 5905}
+                -- Vampires
+                [2956] = {value = 25000, newItem = 5905},
+				[9654] = {value = 25000, newItem = 5905, after = 9658},
+				[8938] = {value = 25000, newItem = 5905},
+				[21275] = {value = 25000, newItem= 5905}
         }
 }
 
@@ -108,7 +111,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
         toPosition:sendMagicEffect(effect)
         if transform then
-                Item(itemEx.uid):transform(itemEx.itemid + 1)
+                Item(itemEx.uid):transform(skin.after or itemEx.itemid + 1)
         end
 
         return true
