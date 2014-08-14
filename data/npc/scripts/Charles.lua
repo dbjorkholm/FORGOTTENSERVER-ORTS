@@ -52,7 +52,6 @@ keywordHandler:addKeyword({'port hope'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'It\'s Charles.'})
 keywordHandler:addKeyword({'svargrond'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I\'m sorry, but we don\'t serve the routes to the Ice Islands.'})
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Ahoy. Where can I sail you today?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Bye.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Bye.")
