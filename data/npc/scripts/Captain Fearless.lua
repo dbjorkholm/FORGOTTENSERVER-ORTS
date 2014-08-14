@@ -24,11 +24,11 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'darashia') then
 		npcHandler:say('Do you seek a passage to Darashia for 60 gold?', cid)
 		npcHandler.topic[cid] = 1
- 	elseif npcHandler.topic[cid] == 1 then
+	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say("I warn you! This route is haunted by a ghostship. Do you really want to go there?",cid)
 			npcHandler.topic[cid] = 2
-	end
+		end
 	elseif npcHandler.topic[cid] == 2 then
 		if msgcontains(msg, 'yes') then
 			if player:removeMoney(60) then
@@ -44,10 +44,10 @@ local function creatureSayCallback(cid, type, msg)
 					npcHandler.topic[cid] = 0
 				end
 			else
-				npcHandler:say("You don't have enough money.", cid)	
-			end	
-    	end
-  	end
+				npcHandler:say("You don't have enough money.", cid)
+			end
+		end
+	end
 	return true
 end
 
