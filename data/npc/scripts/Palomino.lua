@@ -2,74 +2,65 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local Aluguel_mounts = {
-	["brown rented horse"] = {price = 500, days = 1, mountid = 22, level = 10, premium = false, storage = 50561},
-	["grey rented horse"] = {price = 500, days = 1, mountid = 25, level = 10, premium = false, storage = 50562}
-}
-
-function onCreatureAppear(cid)                npcHandler:onCreatureAppear(cid)            end
-function onCreatureDisappear(cid)            npcHandler:onCreatureDisappear(cid)            end
-function onCreatureSay(cid, type, msg)            npcHandler:onCreatureSay(cid, type, msg)        end
-function onThink()                    npcHandler:onThink()                    end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
-	local player = Player(cid)
-	if msgcontains(msg, "transport") then
-		npcHandler:say("We can bring you to Venore with one of our coaches for 125 gold. Are you interested?", cid)
-		npcHandler.topic[cid] = 5
-	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 5) then
-		if player:getMoney() >= 125 then
-			player:removeMoney(125)
-			npcHandler:say("Have a nice trip!", cid)
-			local port = {x = 32850, y = 32124, z = 7}
-			player:teleportTo(port)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler.topic[cid] = 0
-		else
-			npcHandler:say("You don't have enough money.", cid)
-		end
-	end
-	local msg = string.lower(msg)
-	if isInArray({"rent", "mounts", "mount", "horses"}, msg) then
-		selfSay("You can buy {brown rented horse} and {grey rented horse}!", cid)
+
+	if msgcontains(msg, 'transport') then
+		npcHandler:say('We can bring you to Venore with one of our coaches for 125 gold. Are you interested?', cid)
 		npcHandler.topic[cid] = 1
-	elseif npcHandler.topic[cid] == 1 then
-		if Aluguel_mounts[msg] then
-			if Aluguel_mounts[msg].premium == true and not player:isPremium() then
-				npcHandler:say('You need to be premium to rent this mount.', cid) return true
-			elseif player:getLevel() < Aluguel_mounts[msg].level then
-				npcHandler:say('You need level ' .. Aluguel_mounts[msg].level .. ' or more to rent this mount.', cid) return true
-			elseif player:getStorageValue(Aluguel_mounts[msg].storage) >= os.time() then
-				npcHandler:say('you already have rented this mount!', cid) return true
+	elseif isInArray({'rent', 'horses'}, msg) then
+		npcHandler:say('Do you want to rent a horse for one day at a price of 500 gold?', cid)
+		npcHandler.topic[cid] = 2
+	elseif msgcontains(msg, 'yes') then
+		local player = Player(cid)
+		if npcHandler.topic[cid] == 1 then
+			if player:isPzLocked() then
+				npcHandler:say('First get rid of those blood stains!', cid)
+				return true
 			end
-			
-			name, price, stor, days, mountid = msg, Aluguel_mounts[msg].price, Aluguel_mounts[msg].storage, Aluguel_mounts[msg].days, Aluguel_mounts[msg].mountid
-			npcHandler:say('Do you want to '..name..' for '..days..' day'..(days > 1 and 's' or '')..' the price '..price..' gps?', cid)
-			npcHandler.topic[cid] = 2
-		else
-			npcHandler:say('Sorry, I do not rent this mount.', cid)
+
+			if not playerRemoveMoney(125) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
+			end
+
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = Position(32850, 32124, 7)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Have a nice trip!', cid)
+		elseif npcHandler.topic[cid] == 2 then
+			if player:getStorageValue(50561) >= os.time() then
+				npcHandler:say('You already have a horse.', cid)
+				return true
+			end
+
+			if not playerRemoveMoney(500) then
+				npcHandler:say('You do not have enough money to rent a horse!', cid)
+				return true
+			end
+
+			local mountId = {22, 25, 26}
+			player:addMount(mountId[math.random(#mountId)])
+			player:setStorageValue(50561, os.time() + 86400)
+			npcHandler:say('I\'ll give you one of our experienced ones. Take care! Look out for low hanging branches.', cid)
 		end
-	elseif(msgcontains(msg, 'yes') and npcHandler.topic[cid] == 2) then
-		if player:removeMoney(price) then
-			player:addMount(mountid)
-			player:setStorageValue(stor, os.time()+days*86400)
-			npcHandler:say('Here is your '..name..', it will last until '..os.date("%d %B %Y %X", player:getStorageValue(stor))..'.', cid)
-		else
-			npcHandler:say('You do not have enough money to rent the mount!', cid)
-			npcHandler.topic[cid] = 0
-		end
-	elseif msgcontains(msg, "no") then
-		selfSay("Then not", cid)
 		npcHandler.topic[cid] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
+		npcHandler:say('Then not.', cid)
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
+
+npcHandler:setMessage(MESSAGE_GREET, 'Salutations, |PLAYERNAME| I guess you are here for the {horses}.')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
