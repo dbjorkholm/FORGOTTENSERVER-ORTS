@@ -113,6 +113,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if transform then
 		Item(itemEx.uid):transform(skin.after or itemEx.itemid + 1)
 	end
-	
+
 	return true
 end
