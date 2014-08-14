@@ -390,9 +390,9 @@
 			<missionstate id="3" description="You found the leader of the rebel Chartan and reported him about Zalamon. Ask him for new mission!"/>
 		</mission>
 		<mission name="Mission 02: First Contact" storageid="12352" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Chartan needs you to reactivate the teleport to the Muggy Plains. Head downstairs and into the temple and craft material to repair the teleport. To do this you will need some tools to improvise."/>
+			<missionstate id="2" description="As you give the coal into the pool the corrupted fluid begins to dissolve, leaving purified, refreshing water. The teleporter is reactivated. Report back to Chartan."/>
+			<missionstate id="3" description="Report back to Zalamon for the next mission."/>
 		</mission>
 		<mission name="Mission 03: The Keeper" storageid="12353" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

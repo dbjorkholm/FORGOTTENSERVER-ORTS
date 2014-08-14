@@ -48,14 +48,22 @@ local config = {
                 [2916] = {value = 25000, newItem = 5906},
 
                 -- Vampire
-                [2956] = {value = 25000, newItem = 5905}
+                [2956] = {value = 25000, newItem = 5905},
+                [9658] = {value = 25000, newItem = 5905}
         }
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
         local player = Player(cid)
         local skin = config[item.itemid][itemEx.itemid]
-        if not skin then
+ 
+		-- Wrath of the emperor quest
+		if item.itemid == 5908 and itemEx.itemid == 12295 then
+			Item(itemEx.uid):transform(12287)
+			player:say("You carve a solid bowl of the chunk of wood.", TALKTYPE_MONSTER_SAY)
+        end
+		
+		if not skin then
                 player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
                 return true
         end
@@ -106,7 +114,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
                 end
         end
 
-        toPosition:sendMagicEffect(effect)
+		toPosition:sendMagicEffect(effect)
         if transform then
                 Item(itemEx.uid):transform(itemEx.itemid + 1)
         end

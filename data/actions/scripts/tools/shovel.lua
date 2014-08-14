@@ -27,6 +27,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Game.createMonster("Scarab", toPosition)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
+	-- Wrath of the emperor quest
+	elseif itemEx.itemid == 351 and itemEx.actionid == 8024 then
+		player:addItem(12297, 1)
+		player:say("You dig out a handful of earth from this sacred place.", TALKTYPE_MONSTER_SAY)
+	-- RookgaardTutorialIsland
 	elseif itemEx.itemid == 8579 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 20 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You dug a hole! Walk onto it as long as it is open to jump down into the forest cave.')
 		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 19)
@@ -34,6 +39,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
 		iEx:transform(469)
 		addEvent(revertHole, 30 * 1000, toPosition)
+	-- Gravedigger Quest
 	elseif itemEx.aid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
@@ -44,6 +50,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
 		player:setStorageValue(9944, 1)
+	-- ???
 	elseif itemEx.actionid == 50118 then
 		local position = Position(32717, 31492, 11)
 		if Tile(position):getItemById(7131) then
@@ -57,8 +64,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
 		end
-	else
-		return false
 	end
 	return true
 end

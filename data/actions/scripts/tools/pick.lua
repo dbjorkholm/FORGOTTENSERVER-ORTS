@@ -91,13 +91,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	elseif itemEx.itemid == 1304 then
-		if itemEx.uid == 1022 then --The Pits of Inferno Quest
+		--The Pits of Inferno Quest
+		if itemEx.uid == 1022 then
 			for i = 1, #lava do
 				Game.createItem(5815, 1, lava[i])
 			end
 			targetItem:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
-		elseif itemEx.actionid == 50058 then -- naginata quest
+		-- naginata quest
+		elseif itemEx.actionid == 50058 then
 			local stoneStorage = Game.getStorageValue(itemEx.actionid)
 			if stoneStorage ~= 5 then
 				Game.setStorageValue(itemEx.actionid, math.max(0, stoneStorage or 0) + 1)
@@ -109,12 +111,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
-	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
+	 --The Banshee Quest
+	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then
 		targetItem:transform(392)
 		targetItem:decay()
 		toPosition:sendMagicEffect(CONT_ME_POFF)
+	 -- The Hidden City of Beregar Quest
 	elseif itemEx.actionid == 50090 then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then -- The Hidden City of Beregar Quest
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then
 			player:teleportTo(Position(32566, 31338, 10))
 		end
 	elseif itemEx.actionid == 50114 then
@@ -157,6 +161,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if portal then
 			portal:setActionId(50126)
 		end
+	-- Wrath of the emperor quest
+	elseif itemEx.itemid == 12296 then
+		player:addItem(12295, 1)
+		player:say("The cracked part of the table lets you cut out a large chunk of wood with your pick.", TALKTYPE_MONSTER_SAY)
 	else
 		return false
 	end

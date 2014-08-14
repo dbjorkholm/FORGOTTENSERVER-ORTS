@@ -14,12 +14,11 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	local playerPos = player:getPosition()
 	local hasStorageValue = player:getStorageValue(targetTile.storageKey) >= 19
-	playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(targetTile.toPosition[hasStorageValue and 1 or 2])
-	playerPos:sendMagicEffect(CONST_ME_TELEPORT)
-	if hasStorageValue then
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	if not hasStorageValue then
 		player:say('This portal should not be entered unprepared', TALKTYPE_MONSTER_SAY)
 	end
 	return true
