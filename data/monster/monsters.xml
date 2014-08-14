@@ -712,8 +712,8 @@
 	<monster name="Hero" file="outlaws/hero.xml"/>
 	<monster name="Hunter" file="outlaws/hunter.xml"/>
 	<monster name="Nomad" file="outlaws/nomad.xml"/>
-	<monster name="Nomad (blue)" file="outlaws/nomad (blue).xml"/>
-	<monster name="Nomad (female)" file="outlaws/nomad (female).xml"/>
+	<monster name="NomadBlue" file="outlaws/nomadBlue.xml"/>
+	<monster name="NomadFemale" file="outlaws/nomadFemale.xml"/>
 	<monster name="Poacher" file="outlaws/poacher.xml"/>
 	<monster name="Smuggler" file="outlaws/smuggler.xml"/>
 	<monster name="Stalker" file="outlaws/stalker.xml"/>
