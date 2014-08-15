@@ -395,9 +395,9 @@
 			<missionstate id="3" description="Report back to Zalamon for the next mission."/>
 		</mission>
 		<mission name="Mission 03: The Keeper" storageid="12353" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Zalamon gives you a Flask of Plant Poison to destroy plants in the garden of the Emperor to lure out and kill The Keeper to get his tail. The garden is southeast of the rebel hideout."/>
+			<missionstate id="2" description="You killed the Keeper and got his tail. Bring it to Zalamon."/>
+			<missionstate id="3" description="You brought the tail of the Keeper to Zalamon and completed the mission. Ask for the next mission."/>
 		</mission>
 		<mission name="Mission 04: Sacrament of the Snake" storageid="12354" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>

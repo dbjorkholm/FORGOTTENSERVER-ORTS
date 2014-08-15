@@ -108,8 +108,7 @@ local function creatureSayCallback(cid, type, msg)
 			
 		-- WRATH OF THE EMPEROR QUEST
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 21 and player:getStorageValue(Storage.WrathoftheEmperor.Questline) < 1 then
-			npcHandler:say(
-						{
+			npcHandler:say({
 						"Zze attackzz have weakened our enemy zzignificantly. Yet, your quezzt continuezz. Bezzidezz zzome tazzkzz you could take, zze zzreat of zze emperor izz zztill hanging over our headzz like a rain cloud. ... ",
 						"Zzo, are you indeed willing to continue zze fight for our cauzze? "
 			}, cid)
@@ -125,10 +124,10 @@ local function creatureSayCallback(cid, type, msg)
 				"Find him, dezztroy him, bring me hizz - I uhm, mean it izz utterly nezzezzary for you to deliver me a proof of hizz deazz. ... ",
 				"Now go - what are you waiting for, zzoftzzkin? Ready to finish what needzz to be finished? "
 			}, cid)
-			npcHandler.topic[cid] = 30
+			npcHandler.topic[cid] = 19
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 8 then
 			npcHandler:say("Zzo... you finished him. Show me hizz head, will you? ", cid)
-			npcHandler.topic[cid] = 31
+			npcHandler.topic[cid] = 20
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 9 then
 			npcHandler:say({
 				"At zze dawn of time, zze children of zze Great Zznake were numerouzz. Zzey daringly colonizzed many partzz of zze world. But all bravery did not help againzzt zze sheer number of enemiezz zzey encountered. ... ",
@@ -146,7 +145,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 11 then
 			npcHandler:say("You - azzembled zze zzeptre? Hand it out, give it to me, will you? ", cid)
-			npcHandler.topic[cid] = 19
+			npcHandler.topic[cid] = 21
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 12 then
 			npcHandler:say({
 						"Now we need to get clozzer to zze emperor himzzelf. A hive of beezz would defend zzeir queen wizz zzeir lives in cazze an enemy gained entranzze. Zzizz makezz a formidable defenzze line, nearly inviolable. ... ",
@@ -305,7 +304,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
 			npcHandler:say({
-						"Very good, I am confident zzizz will zzuffizze. Now I can build and mark a crate large enough for you to fit in - while zztill being able to breazze of courzze - and I will mark it in our tongue zzo it will look lezz zzuzzpizziouzz. ... ",
+						"Very good, I am confident zzizz will zzuffizze. Now I can build and mark a {crate} large enough for you to fit in - while zztill being able to breazze of courzze - and I will mark it in our tongue zzo it will look lezz zzuzzpizziouzz. ... ",
 						"Wizz zzeir eyezz towardzz zze gate, your chanzzezz to zzlip zzrough have never been better. I will keep zze zzpare materialzz here wizz me, we can alwayzz build a new one if you need to. "
 			}, cid)
 			npcHandler.topic[cid] = 17
@@ -327,23 +326,25 @@ local function creatureSayCallback(cid, type, msg)
 				player:addMapMark({x = 33173, y = 31076, z = 7}, 19, "the rebel hideout")
 				npcHandler.topic[cid] = 0
 			end
-		elseif npcHandler.topic[cid] == 30 then
+		elseif npcHandler.topic[cid] == 19 then
 			npcHandler:say({
 				"Fine. I guezz poizzoning zzome of hizz plantzz will be enough to lure him out of hizz conzzealment. Zzizz plant poizzon here should allow you to do zzome zzignificant damage, take it. ... ",
 				"You can find him eazzt of zze corrupted gardenzz. Zzere uzzed to be a zzmall domizzile zzere but it hazz probably been conzzumed by zze corruption zzo beware. And now - go. "
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 7)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission03, 1) --Questlog, Wrath of the Emperor "Mission 03: The Keeper"
 			player:addItem(12320, 1)
 			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 31 then
-			if player:getItemCount(12316) >= 1 then
-				player:removeItem(12316, 1)
+		elseif npcHandler.topic[cid] == 20 then
+			if player:getItemCount(12323) >= 1 then
+				player:removeItem(12323, 1)
 				npcHandler:say("Zzizz izz not hizz head but clearly belonged to zze keeper. I - I am imprezzed. You can go now. Leave me alone for a zzecond. ", cid)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 9)
+				player:setStorageValue(Storage.WrathoftheEmperor.Mission03, 3) --Questlog, Wrath of the Emperor "Mission 03: The Keeper"
 				npcHandler.topic[cid] = 0
 			end
 
-		elseif npcHandler.topic[cid] == 19 then
+		elseif npcHandler.topic[cid] == 21 then
 			if player:getItemCount(12327) >= 1 then
 				player:removeItem(12327, 1)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 12)
