@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Yoem" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="22" body="132" legs="125" feet="75" addons="0" />
-<voices>
-<voice text="Beds, chairs, tables, statues and everything you could imagine for decorating your home!" interval2="100" margin="1" yell="no"/>
-</voices>
-  <parameters>
-<parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="furniture;" />
-        <parameter key="keyword_reply1" value="I have {beds}, {chairs}, {containers}, {decoration}, {flowers}, {instruments}, {pillows}, {pottery}, {statues}, {tapestries} and {tables}. Which of those would you like to see?" />
-        <parameter key="message_greet" value="Hello |PLAYERNAME|! Do you need some equipment for your house?"/>
-        <parameter key="message_farewell" value="Good bye."/>
-		<parameter key="message_walkaway" value="Good bye." />
-		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
-    <parameter key="module_shop" value="1" />
+<npc name="Yoem" script="Yoem.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="128" head="22" body="113" legs="105" feet="113" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
@@ -101,4 +91,3 @@
 			yellow tapestry,1863,25;" />
 	</parameters>
 </npc>
-
