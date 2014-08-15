@@ -107,7 +107,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- PICKAXE MISSION
 	elseif msgcontains(msg, "pickaxe") then
-		if(player:getStorageValue(90) < 4 or player:getStorageValue(90) > 1 then
+		if player:getStorageValue(90) < 4 or player:getStorageValue(90) > 1 then
 			npcHandler:say("Did you get the requested pickaxe from Uzgod in Kazordoon?", cid)
 			npcHandler.topic[cid] = 3
 		end
@@ -115,7 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- BUTTERFLY HUNT
 	elseif msgcontains(msg, "butterfly hunt") then
-		if(player:getStorageValue(90) == 7 then
+		if player:getStorageValue(90) == 7 then
 			npcHandler:say("The mission asks you to collect some species of butterflies, are you interested?", cid)
 			npcHandler.topic[cid] = 7
 		elseif player:getStorageValue(90) == 9 then
@@ -144,7 +144,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- ICE DELIVERY
 	elseif msgcontains(msg, "ice delivery") then
-		if(player:getStorageValue(90) == 4 then
+		if player:getStorageValue(90) == 4 then
 			npcHandler:say({"Our finest minds came up with the theory that deep beneath the ice island of Folda ice can be found that is ancient. To prove this theory we wouldneed a sample of the aforesaid ice ...",
 							"Of course the ice melts away quickly so you would need to hurry to bring it here ...",
 							"Would you like to accept this mission?"}, cid)
@@ -157,7 +157,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- PLANT COLLECTION
 	elseif msgcontains(msg, "plant collection") then
-		if(player:getStorageValue(90) == 15 then
+		if player:getStorageValue(90) == 15 then
 			npcHandler:say("In this mission we require you to get us some plant samples from Tiquandan plants. Would you like to fulfil this mission?", cid)
 			npcHandler.topic[cid] = 11
 		elseif player:getStorageValue(90) == 17 then
@@ -184,7 +184,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- LIZARD URN
 	elseif msgcontains(msg, "lizard urn") then
-		if(player:getStorageValue(90) == 26 then
+		if player:getStorageValue(90) == 26 then
 			npcHandler:say("The explorer society would like to acquire an ancient urn which is some sort of relic to the lizard people of Tiquanda. Would you like to accept this mission?", cid)
 			npcHandler.topic[cid] = 15
 		elseif player:getStorageValue(90) == 28 then
@@ -195,7 +195,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- BONELORDS
 	elseif msgcontains(msg, "bonelord secrets") then
-		if(player:getStorageValue(90) == 29 then
+		if player:getStorageValue(90) == 29 then
 			npcHandler:say({"We want to learn more about the ancient race of bonelords. We believe the black pyramid north east of Darashia was originally built by them ...",
 							"We ask you to explore the ruins of the black pyramid and look for any signs that prove our theory. You might probably find some document with the numeric bonelord language ...",
 							"That would be sufficient proof. Would you like to accept this mission?"}, cid)
@@ -208,7 +208,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- ORC POWDER
 	elseif msgcontains(msg, "orc powder") then
-		if(player:getStorageValue(90) == 32 then
+		if player:getStorageValue(90) == 32 then
 			npcHandler:say({"It is commonly known that orcs of Uldereks Rock use some sort of powder to increase the fierceness of their war wolves and berserkers ...",
 							"What we do not know are the ingredients of this powder and its effect on humans ...",
 							"So we would like you to get a sample of the aforesaid powder. Do you want to accept this mission?"}, cid)
@@ -221,7 +221,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- ELVEN POETRY
 	elseif msgcontains(msg, "elven poetry") then
-		if(player:getStorageValue(90) == 35 then
+		if player:getStorageValue(90) == 35 then
 			npcHandler:say({"Some high ranking members would like to study elven poetry. They want the rare book 'Songs of the Forest' ...",
 							"For sure someone in Ab'Dendriel will own a copy. So you would just have to ask around there. Are you willing to accept this mission?"}, cid)
 			npcHandler.topic[cid] = 21
@@ -233,7 +233,7 @@ local function creatureSayCallback(cid, type, msg)
 	
 	-- MEMORY STONE
 	elseif msgcontains(msg, "memory stone") then
-		if(player:getStorageValue(90) == 38 then
+		if player:getStorageValue(90) == 38 then
 			npcHandler:say({"We acquired some knowledge about special magic stones. Some lost civilisations used it to store knowledge and lore, just like we use books ...",
 							"The wisdom in such stones must be immense, but so are the dangers faced by every person who tries to obtain one...",
 							"As far as we know the ruins found in the north-west of Edron were once inhabited by beings who used such stones. Do you have the heart to go there and to get us such a stone?"}, cid)
@@ -246,7 +246,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- RUNE WRITINGS
 	elseif msgcontains(msg, "rune writings") then
-		if(player:getStorageValue(90) == 41 then
+		if player:getStorageValue(90) == 41 then
 			npcHandler:say({"We would like to study some ancient runes that were used by the lizard race. We suspect some relation of the lizards to the founders of Ankrahmun ...",
 							"Somewhere under the ape infested city of Banuta, one can find dungeons that were once inhabited by lizards...",
 							"Look there for an atypical structure that would rather fit to Ankrahmun and its Ankrahmun Tombs. Copy the runes you will find on this structure...",
