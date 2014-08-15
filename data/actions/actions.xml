@@ -30,12 +30,12 @@
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
 
 	<!-- Children of the Revolution -->
-	<action uniqueid="3170" script="children of the revolution quest/childrenOfTheRevolutionQuestZalamonDoor.lua"/>
-	<action uniqueid="3162" script="children of the revolution quest/childrenOfTheRevolutionQuestTacticalMap.lua"/>
-	<action uniqueid="3164" script="children of the revolution quest/childrenOfTheRevolutionQuestPoison.lua"/>
-	<action actionid="8013" script="children of the revolution quest/childrenOfTheRevolutionQuestLevers.lua"/>
-	<action itemid="10760" 	script="children of the revolution quest/childrenOfTheRevolutionQuestPoisonWater.lua"/>
-	<action itemid="11106" 	script="children of the revolution quest/childrenOfTheRevolutionQuestGreaseOil.lua"/>
+	<action uniqueid="3162" script="children of the revolution quest/Mission0ProveYourWorzzTacticalMap.lua"/>
+	<action uniqueid="3164" script="children of the revolution quest/Mission3ZeeKillingFieldzzChest.lua"/>
+	<action itemid="10760" 	script="children of the revolution quest/Mission3ZeeKillingFieldzzPoisonWater.lua"/>
+	<action actionid="8013" script="children of the revolution quest/Mission4ZzeWayofZztonezzLevers.lua"/>
+	<action itemid="11106" 	script="children of the revolution quest/Mission4ZzeWayofZztonezzGreaseOil.lua"/>
+	<action uniqueid="3170" script="children of the revolution quest/ZalamonDoor.lua"/>
 
 	<!-- Wrath of the Emperor -->
 	<action itemid="12284" script="wrath of the emperor quest/Mission01Crate.lua"/>
