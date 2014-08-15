@@ -11,25 +11,25 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+	local player = Player(cid)
 	if msgcontains(msg, "marlin") then
-		if getPlayerItemCount(cid, 7963) >= 1 then
+		if player:getItemCount(7963) > 0 then
 			npcHandler:say("WOW! You have a marlin!! I could make a nice decoration for your wall from it. May I have it?", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif npcHandler.topic[cid] == 1 then
-		if getPlayerItemCount(cid, 7963) >= 1 then
-			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it! ", cid)
-			doPlayerAddItem(cid, 7964, 1)
-			doPlayerRemoveItem(cid, 7963, 1)
-			npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
+		if player:getItemCount(7963) > 0 then
+			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it!", cid)
+			player:addItem(7964, 1)
+			player:removeItem(7963, 1)
 		else
 			npcHandler:say("You don't have the fish.", cid)
-			npcHandler.topic[cid] = 0
 		end
+		npcHandler.topic[cid] = 0
 	end
-	if msgcontains(msg, "no") then
-		travelState[talkUser] = nil
+	if msgcontains(msg, "no") and npcHandler.topic[cid] == 1 then
 		npcHandler:say("Then no.", cid)
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
