@@ -41,7 +41,9 @@ function onStepIn(cid, item, position, fromPosition)
 			stopEvent(events[cid])
 			events[cid] = nil
 		end
-		player:setStorageValue(Storage.TheNewFrontier.Questline, 17)
+		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 19 then
+			player:setStorageValue(Storage.TheNewFrontier.Questline, 17)
+		end
 		player:teleportTo(config.exitPosition)
 		config.exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		player:say('You left the arena. Ask Curos again for the mission!', TALKTYPE_MONSTER_SAY)
