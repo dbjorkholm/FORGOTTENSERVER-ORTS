@@ -6,10 +6,10 @@ local spheres = {
 }
 
 local globalTable = {
-	 [1] = 10005,
-	 [2] = 10006,
-	 [3] = 10007,
-	 [4] = 10008
+	[1] = 10005,
+	[2] = 10006,
+	[3] = 10007,
+	[4] = 10008
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -33,7 +33,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_PURPLEENERGY)
-	Game.setStorageValue(globalTable[getBaseVocation(player:getVocation():getId()], 1)
+	Game.setStorageValue(globalTable[getBaseVocation(player:getVocation():getId())], 1)
 	Item(item.uid):remove(1)
 	return true
 end
