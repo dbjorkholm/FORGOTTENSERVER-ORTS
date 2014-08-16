@@ -10,7 +10,7 @@ function onThink()
 	if lastSound < os.time() then
 		lastSound = (os.time() + 5)
 		if math.random(100) < 25 then
-			Npc():say("Passages to Thais, Carlin, Ab'Dendriel, Port Hope, Edron, Darashia, Liberty Bay, Svargrond, Gray Island, Yalahar and Ankrahmun.", TALKTYPE_SAY)
+			Npc():say('Passages to Thais, Carlin, Ab\'Dendriel, Port Hope, Edron, Darashia, Liberty Bay, Svargrond, Gray Island, Yalahar and Ankrahmun.', TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -20,35 +20,27 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+	
 	if msgcontains(msg, 'darashia') then
 		npcHandler:say('Do you seek a passage to Darashia for 60 gold?', cid)
 		npcHandler.topic[cid] = 1
-	elseif npcHandler.topic[cid] == 1 then
-		if msgcontains(msg, 'yes') then
-			npcHandler:say("I warn you! This route is haunted by a ghostship. Do you really want to go there?",cid)
-			npcHandler.topic[cid] = 2
-		end
 	elseif msgcontains(msg, 'yes') then
-		if npcHandler.topic[cid] == 2 then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say('I warn you! This route is haunted by a ghostship. Do you really want to go there?',cid)
+			npcHandler.topic[cid] = 2
+		elseif npcHandler.topic[cid] == 2 then
+			npcHandler.topic[cid] = 0
 			local player = Player(cid)
-			if player:removeMoney(60) then
-				if math.random(10) == 1 then
-					player:teleportTo(Position(33324, 32173, 6), false)
-					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
-					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler.topic[cid] = 0
-				else
-					player:teleportTo(Position(33289, 32481, 6), false)
-					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
-					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler.topic[cid] = 0
-				end
-			else
-				npcHandler:say("You don't have enough money.", cid)
-				npcHandler.topic[cid] = 0
+			if not player:removeMoney(60) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
 			end
+			
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = math.random(10) == 1 and Position(33324, 32173, 6) or Position(33289, 32481, 6)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Set the sails!', cid)
 		end
 	end
 	return true
@@ -102,7 +94,7 @@ keywordHandler:addKeyword({'venore'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'My name is Captain Fearless from the Royal Tibia Line.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, |PLAYERNAME|. Where can I {sail} you today?")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye. Recommend us if you were satisfied with our service.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye then.")
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where can I {sail} you today?')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye. Recommend us if you were satisfied with our service.')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye then.')
 npcHandler:addModule(FocusModule:new())

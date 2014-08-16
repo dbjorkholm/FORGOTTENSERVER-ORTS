@@ -45,36 +45,37 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
-	if msgcontains(msg, "farmine") then
-		if player:getStorageValue(Storage.TheNewFrontier.Mission10) == 1 then
-			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
-			npcHandler.topic[cid] = 1
-		else
-			npcHandler:say("Never heard about a place like this.", cid)
-			npcHandler.topic[cid] = 0
+
+	if msgcontains(msg, 'farmine') then
+		if player:getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
+			npcHandler:say('Never heard about a place like this.', cid)
+			return true
 		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			if player:removeMoney(60) then
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				player:teleportTo(Position(32983, 31539, 1), false)
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				npcHandler:say("Set the sails!", cid)
-			else
-				npcHandler:say("You don't have enough money.", cid)
-			end
-			npcHandler.topic[cid] = 0
+		
+		npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
+		npcHandler.topic[cid] = 1
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
+		npcHandler.topic[cid] = 0
+		local player = Player(cid)
+		if not player:removeMoney(60) then
+			npcHandler:say('You don\'t have enough money.', cid
+			return true
 		end
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
-		npcHandler:say("You shouldn't miss the experience.", cid)
+
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		local position = Position(32983, 31539, 1)
+		player:teleportTo(position)
+		position:sendMagicEffect(CONST_ME_TELEPORT)
+		npcHandler:say('Set the sails!', cid)
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		npcHandler:say('You shouldn\'t miss the experience.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Daraman's blessings, traveller |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "It was a pleasure to help you, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "It was a pleasure to help you, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_GREET, 'Daraman\'s blessings, traveller |PLAYERNAME|.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'It was a pleasure to help you, |PLAYERNAME|.')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'It was a pleasure to help you, |PLAYERNAME|.')
 npcHandler:addModule(FocusModule:new())

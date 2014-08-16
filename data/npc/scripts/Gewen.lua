@@ -5,7 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink() npcHandler:onThink() end
+function onThink()				npcHandler:onThink()					end
 
 local travelNode = keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Darashia on Darama for 40 gold?'})
 travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 40, destination = {x=33270, y=32441, z=6} })
@@ -24,54 +24,55 @@ travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, 
 travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
-	-- WAGON TICKET
-	if msgcontains(msg, "ticket") then
-		if player:getStorageValue(Storage.wagonTicket) < os.time() then
-			npcHandler:say("Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?", cid)
-			npcHandler.topic[cid] = 1
-		else
-			npcHandler:say("Your weekly ticket is still valid. Would be a waste of money to purchase a second one", cid)
-			npcHandler.topic[cid] = 0
+
+	if msgcontains(msg, 'farmine') then
+		if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
+			npcHandler:say('Never heard about a place like this.', cid)
+			return true
 		end
-	elseif msgcontains(msg, "yes") then
-		if(npcHandler.topic[cid] == 1) then
-			if player:getMoney() >= 250 then
-				player:removeMoney(250)
-				player:setStorageValue(Storage.wagonTicket, os.time() + 7 * 24 * 60 * 60)
-				npcHandler:say("Here is your stamp. It can't be transferred to another person and will last one week from now. You'll get notified upon using an ore wagon when it isn't valid anymore.", cid)
-			else
-				npcHandler:say("You don't have enough money.", cid)
-			end
-			npcHandler.topic[cid] = 0
+
+		npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
+		npcHandler.topic[cid] = 1
+	elseif msgcontains(msg, 'ticket') then
+		if Player(cid):getStorageValue(Storage.wagonTicket) >= os.time() then
+			npcHandler:say('Your weekly ticket is still valid. Would be a waste of money to purchase a second one', cid)
+			return true
 		end
-	-- WAGON TICKET
-	elseif msgcontains(msg, "farmine") then
-		if player:getStorageValue(Storage.TheNewFrontier.Mission10) == 1 then
-			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
-			npcHandler.topic[cid] = 1
-		else
-			npcHandler:say("Never heard about a place like this.", cid)
-			npcHandler.topic[cid] = 0
-		end
-	elseif msgcontains(msg, "yes") then
+
+		npcHandler:say('Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?', cid)
+		npcHandler.topic[cid] = 2
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] > 0 then
+		local player = Player(cid)
 		if npcHandler.topic[cid] == 1 then
-			if player:removeMoney(60) then
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				player:teleportTo(Position(32983, 31539, 1), false)
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				npcHandler:say("Set the sails!", cid)
-			else
-				npcHandler:say("You don't have enough money.", cid)
+			if not player:removeMoney(60) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
 			end
-			npcHandler.topic[cid] = 0
+
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = Position(32983, 31539, 1)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Set the sails!', cid)
+		elseif npcHandler.topic[cid] == 2 then
+			if not player:removeMoney(250) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
+			end
+			
+			player:setStorageValue(Storage.wagonTicket, os.time() + 7 * 24 * 60 * 60)
+			npcHandler:say('Here is your stamp. It can\'t be transferred to another person and will last one week from now. You\'ll get notified upon using an ore wagon when it isn\'t valid anymore.', cid)
 		end
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
-		npcHandler:say("You shouldn't miss the experience.", cid)
+		npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
+		if npcHandler.topic[cid] == 3 then
+			npcHandler:say('No then.', cid)	
+		else
+			npcHandler:say('You shouldn\'t miss the experience.', cid)
+		end
 		npcHandler.topic[cid] = 0
 	end
 	return true
