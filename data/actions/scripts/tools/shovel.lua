@@ -4,7 +4,7 @@ local function revertHole(toPosition)
 	local tile = toPosition:getTile()
 	if tile then
 		local thing = tile:getItemById(469)
-		if thing and thing:isItem() then
+		if thing then
 			thing:transform(8579)
 		end
 	end

@@ -109,7 +109,7 @@ function isPlayerInArea(fromPos, toPos)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
 			for z = fromPos.z, toPos.z do
-				local tile = Tile({x = x, y = y, z = z})
+				local tile = Tile(Position(x, y, z))
 				if tile then
 					local creature = tile:getTopCreature()
 					if creature and creature:isPlayer() then
@@ -127,7 +127,7 @@ function isMonsterInArea(fromPos, toPos, ignoreSummons)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
 			for z = fromPos.z, toPos.z do
-				local tile = Tile({x = x, y = y, z = z})
+				local tile = Tile(Position(x, y, z))
 				if tile then
 					local creature = tile:getTopCreature()
 					if creature and creature:isMonster() and not(ignoreSummons and creature:getMaster()) then
@@ -190,18 +190,13 @@ function removeBoss(fromArea, bossName)
 	for x = fromArea[1].x, fromArea[2].x do
 		for y = fromArea[1].y, fromArea[2].y do
 			for z = fromArea[1].z, fromArea[2].z do
-				local thing = getThingfromPos({x = x, y = y, z = z, stackpos = 255})
-				if thing and thing.uid > 0 then
-					if isMonster(thing.uid) then
-						if string.lower(getCreatureName(thing.uid)) == bossName then
-							doRemoveCreature(thing.uid)
-						end
-					end
+				local creature = Tile(Position(x, y, z)):getTopCreature()
+				if creature and creature:isMonster() and creature:getName():lower() == bossName:lower() then
+					creature:remove()
 				end
 			end
 		end
 	end
-	return true
 end
 
 function clearArena(fromPos, toPos)
@@ -224,54 +219,4 @@ function clearArena(fromPos, toPos)
 	Game.setStorageValue(3157, 0)
 	end
 	return true
-end
-
-function isNpcInArea(NpcName, fromPos, toPos)
-	for _x = fromPos.x, toPos.x do
-		for _y = fromPos.y, toPos.y do
-			for _z = fromPos.z, toPos.z do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if creature.type == THING_TYPE_NPC and getCreatureName(creature.uid):lower() == NpcName:lower() then
-					return true
-				end
-			end
-		end
-	end
-	return false
-end
-
-function isMonsterInRange(monsterName, fromPos, toPos)
-	for _x = fromPos.x, toPos.x do
-		for _y = fromPos.y, toPos.y do
-			for _z = fromPos.z, toPos.z do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if creature.type == THING_TYPE_MONSTER and getCreatureName(creature.uid):lower() == monsterName:lower() then
-					return true
-				end
-			end
-		end
-	end
-	return false
-end
-
-function getCreaturesInRange(position, radiusx, radiusy, showMonsters, showPlayers, showSummons)
-	local creaturesList = {}
-	for x = -radiusx, radiusx do
-		for y = -radiusy, radiusy do
-			if not (x == 0 and y == 0) then
-				local creature = getTopCreature({x = position.x + x, y = position.y + y, z = position.z})
-				if creature and creature.uid > 0 and (creature.type == THING_TYPE_PLAYER and showPlayers) or (creature.type == THING_TYPE_NPC and showMonsters and (not showSummons or (showSummons and getCreatureMaster(creature.uid) == creature.uid))) then
-					table.insert(creaturesList, creature.uid)
-				end
-			end
-		end
-	end
-
-	local creature = getTopCreature(position)
-	if (creature.type == THING_TYPE_PLAYER and showPlayers) or (creature.type == THING_TYPE_NPC and showMonsters and not (showSummons or (showSummons and getCreatureMaster(creature.uid) == (creature.uid)))) then
-		if not(table.find(creaturesList, creature.uid)) then
-			table.insert(creaturesList, creature.uid)
-		end
-	end
-	return creaturesList
 end

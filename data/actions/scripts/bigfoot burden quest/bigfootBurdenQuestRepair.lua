@@ -1,11 +1,16 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 18343 and isMonster(itemEx.uid)) then
-		if(getPlayerStorageValue(cid, 946) < 4 and getPlayerStorageValue(cid, 945) == 1 and string.lower(getCreatureName(itemEx.uid)) == "damaged crystal golem") then
-			setPlayerStorageValue(cid, 946, getPlayerStorageValue(cid, 946) + 1)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "The golem has been returned to the gnomish workshop.")
-			doRemoveCreature(itemEx.uid)
-			doSendMagicEffect(toPosition, CONST_ME_POFF)
-		end
+	local targetMonster = Monster(itemEx.uid)
+	if not targetMonster then
+		return true
 	end
+
+	local player = Player(cid)
+	if player:getStorageValue(946) < 4 and player:getStorageValue(cid, 945) == 1 and targetMonster:getName():lower() == 'damaged crystal golem' then
+		player:setStorageValue(946, player:getStorageValue(946) + 1)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The golem has been returned to the gnomish workshop.')
+		targetMonster:remove()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+	end
+
 	return true
 end

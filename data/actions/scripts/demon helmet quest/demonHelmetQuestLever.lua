@@ -3,13 +3,13 @@ local t = {
 	Position(33316, 31591, 15), -- teleport creation position
 	Position(33322, 31592, 14) -- where the teleport takes you
 }
- 
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.itemid == 1945 then
 		local tile = t[1]:getTile()
 		if tile then
 			local stone = tile:getItemById(1355)
-			if stone and stone:isItem() then
+			if stone then
 				stone:remove()
 			end
 		end

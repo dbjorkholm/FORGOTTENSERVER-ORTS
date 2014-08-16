@@ -16,7 +16,7 @@ function onSay(cid, words, param)
 
 	local targetCid = getPlayerByName(param)
 	if targetCid ~= false then
-		ip = getIpByName(param)
+		ip = getIpByPlayerName(param)
 		doRemoveCreature(targetCid)
 	end
 

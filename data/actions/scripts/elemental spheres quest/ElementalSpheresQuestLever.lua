@@ -26,12 +26,14 @@ local function reset()
 			doTransformItem(lever, 1945)
 		end
 	end
-	for _x = room.fromX, room.toX do
-		for _y = room.fromY, room.toY do
-			for _z = room.fromZ, room.toZ do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if (creature.type == THING_TYPE_MONSTER and getCreatureName(creature.uid) == 'Lord of the Elements') then
-					doRemoveCreature(creature.uid)
+
+	local creature
+	for x = room.fromX, room.toX do
+		for y = room.fromY, room.toY do
+			for z = room.fromZ, room.toZ do
+				creature = Tile(Position(x, y, z)):getTopCreature()
+				if creature and creature:isMonster() and creature:getName():lower() == 'lord of the elements' then
+					creature:remove()
 				end
 			end
 		end
@@ -43,7 +45,7 @@ local function reset()
 	setGlobalStorageValue(10008, 0)
 	return true
 end
- 
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if (item.itemid == 1945) then
 		if (isPlayerInArea(Area_fromPos, Area_toPos) or getGlobalStorageValue(10004) > 0) then

@@ -26,7 +26,7 @@ local levers_pos = -- lever positions
 	{x=33273, y=31840, z=12},
 	{x=33262, y=31840, z=12}
 }
-	
+
 local walls_WE = -- walls positions
 	{
 	{x=33260, y=31834, z=12, stackpos=1},
@@ -40,7 +40,7 @@ local walls_WE = -- walls positions
 	{x=33275, y=31837, z=12, stackpos=1},
 	{x=33275, y=31838, z=12, stackpos=1},
 }
-	
+
 local effects = {
 	{x=33261, y=31829, z=12}, {x=33262, y=31830, z=12}, {x=33263, y=31831, z=12},
 	{x=33264, y=31832, z=12}, {x=33265, y=31833, z=12}, {x=33266, y=31834, z=12},
@@ -55,12 +55,12 @@ local effects = {
 }
 
 local room = {
-    	fromX = 33260,
+	fromX = 33260,
 	fromY = 31828,
 	fromZ = 12,
-	--------------
-   	toX = 33275,
-    	toY = 31843,
+
+	toX = 33275,
+	toY = 31843,
 	toZ = 12
 }
 
@@ -93,16 +93,18 @@ local function reset()
 			doTransformItem(lever, 1945)
 		end
 	end
-	for _x = room.fromX, room.toX do
-		for _y = room.fromY, room.toY do
-			for _z = room.fromZ, room.toZ do
-				creature = getTopCreature({x = _x, y = _y, z = _z})
-				if (creature.type == THING_TYPE_MONSTER and getCreatureName(creature.uid) == 'Lord of the Elements') then
-					doRemoveCreature(creature.uid)
+	local creature
+	for x = room.fromX, room.toX do
+		for y = room.fromY, room.toY do
+			for z = room.fromZ, room.toZ do
+				creature = Tile(Position(x, y, z)):getTopCreature()
+				if creature and creature:isMonster() and creature:getName():lower() == 'lord of the elements' then
+					creature:remove()
 				end
 			end
 		end
 	end
+
 	setGlobalStorageValue(10004, 0)
 	setGlobalStorageValue(10005, 0)
 	setGlobalStorageValue(10006, 0)
@@ -159,7 +161,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 						addEvent(kick, 10 * 60 * 1000, cid)
 					end
 				end
-			end		
+			end
 			for i = 1, #walls_NS do
 				local wns = getTileItemById(walls_NS[i], 8861).uid
 				if (wns == 0) then
@@ -174,7 +176,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 			for _, v in ipairs(effects) do
 				doSendMagicEffect(v, CONST_ME_ENERGYHIT)
-			end	
+			end
 		end
 	end
 	return true

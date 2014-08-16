@@ -2,7 +2,7 @@ local function doTransformSmallSnakeHead(fromId, toId)
 	local tile = Position(32034, 32272, 8):getTile()
 	if tile then
 		local thing = tile:getItemById(fromId)
-		if thing and thing:isItem() then
+		if thing then
 			thing:transform(toId)
 		end
 	end
@@ -16,4 +16,4 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
-end	
+end

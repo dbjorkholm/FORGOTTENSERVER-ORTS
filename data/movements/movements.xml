@@ -12,7 +12,7 @@
 	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
-	
+
 	<!-- Magician Quarter (Warlock & Infernalist Area) -->
 	<movevent event="StepIn" actionid="7813" script="others/magicianquarter.lua"/>
 
@@ -121,6 +121,7 @@
 	<movevent event="StepIn" fromuid="3144" touid="3146" script="bigfoot burden quest/warzone.lua"/>
 	<movevent event="StepIn" fromuid="3140" touid="3142" script="bigfoot burden quest/warzoneTeleports.lua"/>
 	<movevent event="StepIn" fromuid="3122" touid="3123" script="bigfoot burden quest/xray.lua"/>
+	<movevent event="StepIn" itemid="18463" script="bigfoot burden quest/versperothSpawn.lua"/>
 
 	<!-- Demon Oak Quest -->
 	<movevent event="StepIn" uniqueid="9000" script="demon oak quest/entrance.lua" />

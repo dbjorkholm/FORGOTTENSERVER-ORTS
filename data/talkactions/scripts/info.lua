@@ -20,7 +20,7 @@ function onSay(cid, words, param)
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Access: " .. (target:getGroup():getAccess() and "1" or "0"))
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Level: " .. target:getLevel())
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Magic Level: " .. target:getMagicLevel())
-	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Speed: " .. getCreatureSpeed(player:getId()))
+	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Speed: " .. player:getSpeed())
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Position: " .. string.format("(%0.5d / %0.5d / %0.3d)", target:getPosition().x, target:getPosition().y, target:getPosition().z))
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "IP: " .. Game.convertIpToString(targetIp))
 

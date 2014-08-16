@@ -67,7 +67,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	if not isInArray(servants, getCreatureName(target):lower()) then
+	if not isInArray(servants, targetMonster:getName():lower()) then
 		return true
 	end
 

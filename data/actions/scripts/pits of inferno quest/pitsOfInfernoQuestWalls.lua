@@ -6,13 +6,13 @@ local pos = {
 }
 
 local function doRemoveFirewalls(fwPos)
-        local tile = Position(fwPos):getTile()
-        if tile then
-                local thing = tile:getItemById(6289)
-                if thing and thing:isItem() then
-                        thing:remove()
-                end
-        end
+	local tile = Position(fwPos):getTile()
+	if tile then
+		local thing = tile:getItemById(6289)
+		if thing then
+			thing:remove()
+		end
+	end
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

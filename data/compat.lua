@@ -1,8 +1,3 @@
-COMBAT_POISONDAMAGE = COMBAT_EARTHDAMAGE
-CONDITION_EXHAUST = CONDITION_EXHAUST_WEAPON
-TALKTYPE_ORANGE_1 = TALKTYPE_MONSTER_SAY
-TALKTYPE_ORANGE_2 = TALKTYPE_MONSTER_YELL
-
 function pushThing(thing)
 	local t = {uid = 0, itemid = 0, type = 0, actionid = 0}
 	if thing ~= nil then
@@ -28,78 +23,20 @@ function pushThing(thing)
 	return t
 end
 
-function isCreature(cid) return Creature(cid) ~= nil end
+-- still used in some actions
 function isPlayer(cid) return Player(cid) ~= nil end
 function isMonster(cid) return Monster(cid) ~= nil end
-function isSummon(cid) return Creature(cid):getMaster() ~= nil end
-function isNpc(cid) return Npc(cid) ~= nil end
-function isItem(uid) return Item(uid) ~= nil end
-function isContainer(uid) return Container(uid) ~= nil end
-
-function getCreatureName(cid) local c = Creature(cid) return c ~= nil and c:getName() or false end
-function getCreatureHealth(cid) local c = Creature(cid) return c ~= nil and c:getHealth() or false end
-function getCreatureMaxHealth(cid) local c = Creature(cid) return c ~= nil and c:getMaxHealth() or false end
 function getCreaturePosition(cid) local c = Creature(cid) return c ~= nil and c:getPosition() or false end
-function getCreatureOutfit(cid) local c = Creature(cid) return c ~= nil and c:getOutfit() or false end
-function getCreatureSpeed(cid) local c = Creature(cid) return c ~= nil and c:getSpeed() or false end
-function getCreatureBaseSpeed(cid) local c = Creature(cid) return c ~= nil and c:getBaseSpeed() or false end
 
-function getCreatureTarget(cid)
-	local c = Creature(cid)
-	if c ~= nil then
-		local target = c:getTarget()
-		return target ~= nil and target:getId() or 0
-	end
-	return false
-end
-
-function getCreatureMaster(cid)
-	local c = Creature(cid)
-	if c ~= nil then
-		local master = c:getMaster()
-		return master ~= nil and master:getId() or c:getId()
-	end
-	return false
-end
-
-function getCreatureSummons(cid)
-	local c = Creature(cid)
-	if c == nil then
-		return false
-	end
-
-	local result = {}
-	for _, summon in ipairs(c:getSummons()) do
-		result[#result + 1] = summon:getId()
-	end
-	return result
-end
-
-getCreaturePos = getCreaturePosition
-
-function doCreatureAddHealth(cid, health) local c = Creature(cid) return c ~= nil and c:addHealth(health) or false end
 function doRemoveCreature(cid) local c = Creature(cid) return c ~= nil and c:remove() or false end
-function doCreatureSetLookDir(cid, direction) local c = Creature(cid) return c ~= nil and c:setDirection(direction) or false end
 function doCreatureSay(cid, text, type, ...) local c = Creature(cid) return c ~= nil and c:say(text, type, ...) or false end
-function doCreatureChangeOutfit(cid, outfit) local c = Creature(cid) return c ~= nil and c:setOutfit(outfit) or false end
-function doSetCreatureDropLoot(cid, doDrop) local c = Creature(cid) return c ~= nil and c:setDropLoot(doDrop) or false end
-function doChangeSpeed(cid, delta) local c = Creature(cid) return c ~= nil and c:changeSpeed(delta) or false end
-
-doSetCreatureDirection = doCreatureSetLookDir
-
-function registerCreatureEvent(cid, name) local c = Creature(cid) return c ~= nil and c:registerEvent(name) or false end
-function unregisterCreatureEvent(cid, name) local c = Creature(cid) return c ~= nil and c:unregisterEvent(name) or false end
 
 function getPlayerByName(name) local p = Player(name) return p ~= nil and p:getId() or false end
 function getIPByPlayerName(name) local p = Player(name) return p ~= nil and p:getIp() or false end
 function getPlayerGUID(cid) local p = Player(cid) return p ~= nil and p:getGuid() or false end
 function getPlayerIp(cid) local p = Player(cid) return p ~= nil and p:getIp() or false end
-function getPlayerAccountType(cid) local p = Player(cid) return p ~= nil and p:getAccountType() or false end
-function getPlayerLastLoginSaved(cid) local p = Player(cid) return p ~= nil and p:getLastLoginSaved() or false end
 function getPlayerName(cid) local p = Player(cid) return p ~= nil and p:getName() or false end
-function getPlayerFreeCap(cid) local p = Player(cid) return p ~= nil and p:getFreeCapacity() or false end
 function getPlayerPosition(cid) local p = Player(cid) return p ~= nil and p:getPosition() or false end
-function getPlayerMagLevel(cid) local p = Player(cid) return p ~= nil and p:getMagicLevel() or false end
 function getPlayerAccess(cid)
 	local player = Player(cid)
 	if player == nil then
@@ -127,18 +64,6 @@ function getPlayerLossPercent(cid) local p = Player(cid) return p ~= nil and p:g
 function getPlayerMount(cid, mountId) local p = Player(cid) return p ~= nil and p:hasMount(mountId) or false end
 function getPlayerPremiumDays(cid) local p = Player(cid) return p ~= nil and p:getPremiumDays() or false end
 function getPlayerBlessing(cid, blessing) local p = Player(cid) return p ~= nil and p:hasBlessing(blessing) or false end
-function getPlayerParty(cid)
-	local player = Player(cid)
-	if player == nil then
-		return false
-	end
-
-	local party = player:getParty()
-	if party == nil then
-		return nil
-	end
-	return party:getLeader():getId()
-end
 function getPlayerGuildId(cid)
 	local player = Player(cid)
 	if player == nil then
@@ -218,13 +143,6 @@ function getPlayersByIPAddress(ip, mask)
 	end
 	return result
 end
-function getOnlinePlayers()
-	local result = {}
-	for _, player in ipairs(Game.getPlayers()) do
-		result[#result + 1] = player:getName()
-	end
-	return result
-end
 function getPlayersByAccountNumber(accountNumber)
 	local result = {}
 	for _, player in ipairs(Game.getPlayers()) do
@@ -262,9 +180,6 @@ function getAccountNumberByPlayerName(name)
 	end
 	return 0
 end
-
-getPlayerAccountBalance = getPlayerBalance
-getIpByName = getIPByPlayerName
 
 function setPlayerStorageValue(cid, key, value) local p = Player(cid) return p ~= nil and p:setStorageValue(key, value) or false end
 function doPlayerSetBalance(cid, balance) local p = Player(cid) return p ~= nil and p:setBankBalance(balance) or false end
