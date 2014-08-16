@@ -160,7 +160,7 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		if parameters.premium and player:getPremiumDays() == 0 then then
+		if parameters.premium and player:getPremiumDays() == 0 then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
 			return false
 		end
@@ -176,10 +176,10 @@ if Modules == nil then
 				travelCost = travelCost - 10
 			end
 
-			if player:removeMoney(travelCost) then
+			if not player:removeMoney(travelCost) then
 				npcHandler:say("You don't have enough money.", cid)
+				return false
 			end
-			return false
 		end
 
 		npcHandler:say(parameters.msg or "Set the sails!", cid)
