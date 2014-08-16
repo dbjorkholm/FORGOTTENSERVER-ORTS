@@ -29,8 +29,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("I have to warn you - we might get into a tropical storm on that route. I'm not sure if my ship will withstand it. Do you really want to travel to Thais?",cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif npcHandler.topic[cid] == 2 then
-		if msgcontains(msg, 'yes') then
+	elseif msgcontains(msg, 'yes') then
+		if npcHandler.topic[cid] == 2 then
 			if player:removeMoney(180) then
 				if math.random(8) == 1 then
 					player:teleportTo(Position(32161, 32558, 6), false)
@@ -47,6 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			else
 				npcHandler:say("You don't have enough money.", cid)
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end

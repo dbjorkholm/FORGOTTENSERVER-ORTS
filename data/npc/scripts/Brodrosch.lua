@@ -74,7 +74,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		end
-	elseif  msgcontains(msg, 'no') then
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
 			npcHandler:say('You shouldn\'t miss the experience.', cid)
 			npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'cormaya') then
