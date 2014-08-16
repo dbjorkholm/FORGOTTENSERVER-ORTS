@@ -20,7 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
 	if msgcontains(msg, 'darashia') then
 		npcHandler:say('Do you seek a passage to Darashia for 60 gold?', cid)
 		npcHandler.topic[cid] = 1
@@ -29,8 +28,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("I warn you! This route is haunted by a ghostship. Do you really want to go there?",cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif npcHandler.topic[cid] == 2 then
-		if msgcontains(msg, 'yes') then
+	elseif msgcontains(msg, 'yes') then
+		if npcHandler.topic[cid] == 2 then
+			local player = Player(cid)
 			if player:removeMoney(60) then
 				if math.random(10) == 1 then
 					player:teleportTo(Position(33324, 32173, 6), false)
@@ -47,6 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			else
 				npcHandler:say("You don't have enough money.", cid)
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end
