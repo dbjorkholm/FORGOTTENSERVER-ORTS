@@ -369,7 +369,7 @@ if Modules == nil then
 				elseif i == 6 then
 					premium = temp == "true"
 				else
-					print("[Warning : " .. getCreatureName(getNpcCid()) .. "] NpcSystem:", "Unknown parameter found in travel destination parameter.", temp, destination)
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Unknown parameter found in travel destination parameter.", temp, destination)
 				end
 				i = i + 1
 			end
@@ -377,7 +377,7 @@ if Modules == nil then
 			if(name ~= nil and x ~= nil and y ~= nil and z ~= nil and cost ~= nil) then
 				self:addDestination(name, {x=x, y=y, z=z}, cost, premium)
 			else
-				print("[Warning] NpcSystem:", "Parameter(s) missing for travel destination:", name, x, y, z, cost, premium)
+				print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for travel destination:", name, x, y, z, cost, premium)
 			end
 		end
 	end

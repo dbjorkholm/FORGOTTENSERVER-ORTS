@@ -1,11 +1,11 @@
 local function doTransformCoalBasins(cbPos)
-        local tile = Position(cbPos):getTile()
-        if tile then
-                local thing = tile:getItemById(1485)
-                if thing and thing:isItem() then
-                        thing:transform(1484)
-                end
-        end
+	local tile = Position(cbPos):getTile()
+	if tile then
+		local thing = tile:getItemById(1485)
+		if thing then
+			thing:transform(1484)
+		end
+	end
 end
 
 local config = {

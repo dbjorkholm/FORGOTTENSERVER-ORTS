@@ -7,7 +7,7 @@
 	<event type="kill" name="ElementalSpheresOverlords" script="elemental spheres quest/OverlordsKill.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<event type="kill" name="BigfootBurdenVesperoth" script="bigfoot burden quest/VesperothKill.lua"/>
+	<event type="kill" name="BigfootBurdenVersperoth" script="bigfoot burden quest/VesperothKill.lua"/>
 	<event type="kill" name="BigfootBurdenWarzone" script="bigfoot burden quest/WarzoneKill.lua"/>
 	<event type="kill" name="BigfootBurdenWeeper" script="bigfoot burden quest/WeeperKill.lua"/>
 	<event type="kill" name="BigfootBurdenWiggler" script="bigfoot burden quest/WigglerKill.lua"/>
@@ -36,7 +36,7 @@
 
 	<!-- Pharaos: Portal to reward room -->
 	<event type="kill" name="PharaoKillPortal" script="others/pharaoPortal.lua"/>
-	
+
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
 

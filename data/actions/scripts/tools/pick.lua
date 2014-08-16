@@ -53,7 +53,7 @@ local function revertIce(toPosition)
 	local tile = toPosition:getTile()
 	if tile then
 		local thing = tile:getItemById(7186)
-		if thing and thing:isItem() then
+		if thing then
 			thing:transform(7185)
 		end
 	end

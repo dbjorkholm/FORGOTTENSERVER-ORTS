@@ -8,7 +8,7 @@ function onSay(cid, words, param)
 		return false
 	end
 
-	local house = House(getTileHouseInfo(player:getPosition()))	
+	local house = House(getTileHouseInfo(player:getPosition()))
 	if house == nil then
 		player:sendCancelMessage("You are not inside a house.")
 		return false

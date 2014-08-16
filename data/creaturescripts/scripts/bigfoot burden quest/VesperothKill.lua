@@ -16,14 +16,17 @@ function onKill(cid, target)
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'vesperoth' then
+	if targetMonster:getName():lower() ~= 'versperoth' then
 		return true
 	end
 
 	setGlobalStorageValue(3147, 2)
 	addEvent(setGlobalStorageValue, 30 * 60 * 1000, 3147, 0)
 
-	Game.createItem(1387, 1, teleportPosition)
+	local holeItem = Tile(teleportPosition):getItemById(18462)
+	if holeItem then
+		holeItem:transform(1387)
+	end
 	Game.createMonster('abyssador', abyssadorPosition)
 
 	addEvent(transformTeleport, 30 * 60 * 1000)

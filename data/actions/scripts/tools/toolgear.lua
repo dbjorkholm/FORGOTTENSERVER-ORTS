@@ -63,7 +63,7 @@ local function revertCask(toPosition)
 	local tile = toPosition:getTile()
 	if tile then
 		local thing = tile:getItemById(2249)
-		if thing and thing:isItem() then
+		if thing then
 			thing:transform(5539)
 		end
 	end
@@ -73,7 +73,7 @@ local function revertIce(toPosition)
 	local tile = toPosition:getTile()
 	if tile then
 		local thing = tile:getItemById(7186)
-		if thing and thing:isItem() then
+		if thing then
 			thing:transform(7185)
 		end
 	end

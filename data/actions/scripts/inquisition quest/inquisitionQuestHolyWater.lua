@@ -1,70 +1,81 @@
-local pos = {x=32260,y=32791,z =7}
+local doorPosition = Position(32260, 32791, 7)
+local shadowNexusPosition = Position(33115, 31702, 12)
+local effectPositions = {
+	Position(33113, 31702, 12),
+	Position(33116, 31702, 12)
+}
 
-local time = 10
-
-local function OpenDoor()
-	return (doTransformItem(getTileItemById( pos,8696 ).uid, 8697))
+local function revertItem(position, itemId, transformId)
+	local item = Tile(position):getItemById(itemId)
+	if item then
+		item:transform(transformId)
+	end
 end
 
-local function transformBack1()
-	return (doTransformItem(getTileItemById( {x=33115,y=31702,z =12},8754).uid, 8755))
-end
-
-local function transformBack2()
-	return (doTransformItem(getTileItemById( {x=33115,y=31702,z =12},8756).uid, 8757))
-end
-
-local function transformBack3()
-	return (doTransformItem(getTileItemById( {x=33115,y=31702,z =12},8758).uid, 8759))
-end
-
-local function transformBack4()
-	return (doTransformItem(getTileItemById( {x=33115,y=31702,z =12},8759).uid, 8753))
+local function nexusMessage(player, message)
+	local spectators = Game.getSpectators(shadowNexusPosition, 3, 3, false, true)
+	for i = 1, #spectators do
+		player:say(message, TALKTYPE_MONSTER_YELL, false, spectators[i], shadowNexusPosition)
+	end
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	-- Eclipse
-	if(itemEx.actionid == 2000) then
-		doRemoveItem(item.uid, 1)
-		doSendMagicEffect(toPosition, CONST_ME_FIREAREA)
-		setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 5)
-		Player(cid):setStorageValue(Storage.TheInquisition.Mission02, 2) -- The Inquisition Questlog- "Mission 2: Eclipse"
-	end
+	if itemEx.actionid == 2000 then
+		Item(item.uid):remove(1)
+		toPosition:sendMagicEffect(CONST_ME_FIREAREA)
+		-- The Inquisition Questlog- 'Mission 2: Eclipse'
+		player:setStorageValue(Storage.TheInquisition.Mission02, 2)
+		player:setStorageValue(Storage.TheInquisition.Questline, 5)
+		return true
+
 	-- Haunted Ruin
-	if(itemEx.actionid == 2003) then
-		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) == 12) then
-			doSummonCreature("Pirate Ghost", toPosition)
-			doRemoveItem(item.uid, 1)
-			setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 13)
-			Player(cid):setStorageValue(Storage.TheInquisition.Mission04, 2) -- The Inquisition Questlog- "Mission 4: The Haunted Ruin"
-			doTransformItem(getTileItemById( pos,8697 ).uid, 8696)
-			addEvent(OpenDoor, 10*1000)
+	elseif itemEx.actionid == 2003 then
+		if player:getStorageValue(Storage.TheInquisition.Questline) ~= 12 then
+			return true
 		end
+
+		Game.createMonster('Pirate Ghost', toPosition)
+		Item(item.uid):remove(1)
+
+		-- The Inquisition Questlog- 'Mission 4: The Haunted Ruin'
+		player:setStorageValue(cid, Storage.TheInquisition.Questline, 13)
+		player:setStorageValue(Storage.TheInquisition.Mission04, 2)
+
+		local doorItem = Tile(doorPosition):getItemById(8697)
+		if doorItem then
+			doorItem:transform(8696)
+		end
+		addEvent(revertItem, 10 * 1000, toPosition, 8696, 8697)
+		return true
 	end
+
 	-- Shadow Nexus
-	if(itemEx.itemid == 8753) then
-		doTransformItem(itemEx.uid, 8754)
-		addEvent(transformBack1, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
-	elseif(itemEx.itemid == 8755) then
-		doTransformItem(itemEx.uid, 8756)
-		addEvent(transformBack2, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
-	elseif(itemEx.itemid == 8757) then
-		doTransformItem(itemEx.uid, 8758)
-		addEvent(transformBack3, time*1000)
-		doCreatureSay(cid,""..getCreatureName(cid).." damaged the shadow nexus! You can't damage it while it's burning.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid)) 
-	elseif(itemEx.itemid == 8759) then
-		if(getGlobalStorageValue(210) < 1) then
+	if isInArray({8753, 8755, 8757}, itemEx.itemid) then
+		local nexusItem = Item(itemEx.uid)
+		nexusItem:transform(itemEx.itemid + 1)
+		nexusItem:decay()
+		nexusMessage(player, player:getName() .. ' damaged the shadow nexus! You can\'t damage it while it\'s burning.')
+		shadowNexusPosition:sendMagicEffect(CONST_ME_HOLYAREA)
+
+	elseif itemEx.itemid == 8759 then
+		if getGlobalStorageValue(210) < 1 then
 			addEvent(setGlobalStorageValue, 20 * 1000, 210, 0)
 		end
-		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) < 22) then
-			setPlayerStorageValue(cid, Storage.TheInquisition.Questline, 22)
-			Player(cid):setStorageValue(Storage.TheInquisition.Mission07, 2) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
+
+		if player:getStorageValue(cid, Storage.TheInquisition.Questline) < 22 then
+			-- The Inquisition Questlog- 'Mission 7: The Shadow Nexus'
+			player:setStorageValue(Storage.TheInquisition.Mission07, 2)
+			player:setStorageValue(cid, Storage.TheInquisition.Questline, 22)
 		end
-		doCreatureSay(cid,""..getCreatureName(cid).." destroyed the shadow nexus! In 20 seconds it will return to its original state.",TALKTYPE_MONSTER_YELL, false, cid, getThingPos(itemEx.uid))
-		doRemoveItem(item.uid, 1)
-		addEvent(transformBack4, 60*1000)
+
+		for i = 1, #effectPositions do
+			effectPositions[i]:sendMagicEffect(CONST_ME_HOLYAREA)
+		end
+
+		nexusMessage(player, player:getName() .. ' destroyed the shadow nexus! In 20 seconds it will return to its original state.')
+		Item(item.uid):remove(1)
 	end
 	return true
 end

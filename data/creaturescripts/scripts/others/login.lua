@@ -2,7 +2,7 @@
 local events = {
 	'TutorialCockroach',
 	'ElementalSpheresOverlords',
-	'BigfootBurdenVesperoth',
+	'BigfootBurdenVersperoth',
 	'BigfootBurdenWarzone',
 	'BigfootBurdenWeeper',
 	'BigfootBurdenWiggler',
