@@ -40,11 +40,13 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 4
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then	
-			npcHandler:say({"The Edron academy has introduced a bonus system. Each time you deposit 100 vials without claiming the money for it, you will receive a lottery ticket. ...",
-							"Some of these lottery tickets will grant you a special potion belt accessory, if you bring the ticket to me. ...",
-							"If you join the bonus system now, I will ask you each time you are bringing back 100 or more vials to me whether you claim your deposit or rather want a lottery ticket. ...",
-							"Of course, you can leave or join the bonus system at any time by just asking me for the 'bonus'. ...",
-							"Would you like to join the bonus system now?"}, cid)
+			npcHandler:say({
+				"The Edron academy has introduced a bonus system. Each time you deposit 100 vials without claiming the money for it, you will receive a lottery ticket. ...",
+				"Some of these lottery tickets will grant you a special potion belt accessory, if you bring the ticket to me. ...",
+				"If you join the bonus system now, I will ask you each time you are bringing back 100 or more vials to me whether you claim your deposit or rather want a lottery ticket. ...",
+				"Of course, you can leave or join the bonus system at any time by just asking me for the 'bonus'. ...",
+				"Would you like to join the bonus system now?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then	
 			npcHandler:say("Great! I've signed you up for our bonus system. From now on, you will have the chance to win the potion belt addon!", cid)
