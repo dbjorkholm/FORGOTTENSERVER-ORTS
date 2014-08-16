@@ -19041,7 +19041,7 @@
 	<item id="10914" article="a" name="high grass" />
 	<item id="10915" article="a" name="high grass" />
 	<item id="10916" article="a" name="high grass" />
-	<item id="10917" article="a" name="solstice tree" />
+	<item id="10917" article="a" name="screaming cherry tree" />
 	<item fromid="10918" toid="10925" name="zaoan decoration" />
 	<item id="10926" article="a" name="flask of crown polisher">
 		<attribute key="description" value="Ideal to polish crowns." />
@@ -20187,6 +20187,11 @@
 	<item fromid="11631" toid="11637" article="a" name="small mudpit" />
 	<item fromid="11647" toid="11649" article="a" name="sulphur puddle" />
 	<item fromid="11662" toid="11666" article="a" name="sulphur puddle" />
+	<item id="11671" article="a" name="witherstem" />
+	<item id="11672" article="a" name="carnivortex" />
+	<item id="11673" article="a" name="toxic tulip" />
+	<item id="11674" article="a" name="sprocketwhip" />
+	<item id="11676" article="a" name="wraithtongue" />
 	<item id="11683" article="a" name="dreadcoil" />
 	<item fromid="11691" toid="11696" article="a" name="purple plant" />
 	<item id="11700" article="a" name="stone wall" />

@@ -103,6 +103,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 21)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 3) --Questlog, Children of the Revolution "Mission 5: Phantom Army"
 			player:addItem(11116, 1)
+			player:addExperience(10000, true)
 			npcHandler.topic[cid] = 0
 		-- CHILDREN OF REVOLUTION QUEST
 			
