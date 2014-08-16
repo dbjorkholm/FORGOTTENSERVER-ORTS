@@ -1009,15 +1009,15 @@
 	</quest>
 	<quest name="The Ultimate Challenges" startstorageid="50140" startstoragevalue="1">
 		<mission name="Barbarian Arena - Greenhorn Mode" storageid="50140" startvalue="1" endvalue="2">
-	    		<missionstate id="1" description="You have to defeated all enemies in this mode."/>
+	    		<missionstate id="1" description="You have to defeat all enemies in this mode."/>
 	    		<missionstate id="2" description="You have defeated all enemies in this mode."/>
 		</mission>
 	    		<mission name="Barbarian Arena - Scrapper Mode" storageid="50141" startvalue="1" endvalue="2">
-	    		<missionstate id="1" description="You have to defeated all enemies in this mode."/>
+	    		<missionstate id="1" description="You have to defeat all enemies in this mode."/>
 	    		<missionstate id="2" description="You have defeated all enemies in this mode."/>
 		</mission>
 	    		<mission name="Barbarian Arena - Warlord Mode" storageid="50142" startvalue="1" endvalue="2">
-	    		<missionstate id="1" description="You have to defeated all enemies in this mode."/>
+	    		<missionstate id="1" description="You have to defeat all enemies in this mode."/>
 	    		<missionstate id="2" description="You have defeated all enemies in this mode."/>
 		</mission>
 	</quest>

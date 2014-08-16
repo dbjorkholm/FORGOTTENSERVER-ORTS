@@ -154,26 +154,39 @@ if Modules == nil then
 		if npcHandler == nil then
 			error("StdModule.travel called without any npcHandler instance.")
 		end
-		if(not npcHandler:isFocused(cid)) then
+
+		if not npcHandler:isFocused(cid) then
 			return false
 		end
-		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
-			if(isPlayerPzLocked(cid)) then
-				npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
-			elseif(parameters.level ~= nil and getPlayerLevel(cid) < parameters.level) then
-				npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
-			elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= TRUE) then
-				npcHandler:say("You don't have enough money.", cid)
-			else
-				npcHandler:say(parameters.msg or "Set the sails!", cid)
-				npcHandler:releaseFocus(cid)
-				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_TELEPORT)
-				doTeleportThing(cid, parameters.destination)
-				doSendMagicEffect(parameters.destination, CONST_ME_TELEPORT)
-			end
-		else
+
+		local player = Player(cid)
+		if parameters.premium and player:getPremiumDays() == 0 then then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
+			return false
 		end
+
+		if player:isPzLocked() then
+			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+			return false
+		end
+
+		local travelCost = parameters.cost
+		if travelCost > 0 then
+			if player:getStorageValue(Storage.postman.Rank) >= 3 then -- Grand Postman (boat discounts)
+				travelCost = travelCost - 10
+			end
+
+			if player:removeMoney(travelCost) then
+				npcHandler:say("You don't have enough money.", cid)
+			end
+			return false
+		end
+
+		npcHandler:say(parameters.msg or "Set the sails!", cid)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(parameters.destination)
+		Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
+		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 		return true
 	end
