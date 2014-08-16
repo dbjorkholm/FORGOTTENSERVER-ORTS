@@ -26,7 +26,6 @@ local config = {
 	
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local lever = Item(item.uid)
 	local player = Player(cid)
 	if item.itemid == 1946 then
 		local players = {}
@@ -46,9 +45,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				continue = false
 				break
 			end
-			if specs[i]:isMonster() then
-				specs[i]:remove()
-			end
+			specs[i]:remove()
 		end
 
 		if not continue then
@@ -65,13 +62,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			tablePlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
 			tablePlayer:setDirection(EAST)
 		end
-		lever:transform(item.itemid - 1)
 	elseif item.itemid == 1945 then
 		if config.daily then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
-		else
-			lever:transform(item.itemid + 1)
+			return true
 		end
 	end
+
+	Item(item.uid):transform(item.itemid == 1946 and 1945 or 1946)
 	return true
 end
