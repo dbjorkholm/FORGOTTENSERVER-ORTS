@@ -20,7 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
 	if msgcontains(msg, 'thais') then
 		npcHandler:say('Do you seek a passage to Thais for 180 gold?', cid)
 		npcHandler.topic[cid] = 1
@@ -31,6 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 2 then
+			local player = Player(cid)
 			if player:removeMoney(180) then
 				if math.random(8) == 1 then
 					player:teleportTo(Position(32161, 32558, 6), false)
