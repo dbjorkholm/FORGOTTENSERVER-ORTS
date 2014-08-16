@@ -317,7 +317,10 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getStorageValue(22222) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the task. Go find Tiquandas Revenge and take revenge yourself!', cid)
 				else
-				npcHandler:say({'Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...', 'I myself believe that there is some truth in this clap trap. Something \'real\' which therefore must have a hideout somewhere. Go find it and take revenge yourself!'}, cid)
+				npcHandler:say({
+					'Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...', 
+					'I myself believe that there is some truth in this clap trap. Something \'real\' which therefore must have a hideout somewhere. Go find it and take revenge yourself!'
+				}, cid)
 				setPlayerStorageValue(cid, 22555, 1) -- Task needed to enter Tiquandas Revenge TP
 				setPlayerStorageValue(cid, 22222, 1) -- Won't give this task again.
 			end

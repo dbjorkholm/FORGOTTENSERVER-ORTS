@@ -43,11 +43,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
-			npcHandler:say({"Well then, listen closely. First, you will have to prove that you are a fierce and restless warrior by bringing me 100 perfect behemoth fangs. ...",
-							"Secondly, please retrieve a helmet for us which has been lost a long time ago. The famous Ramsay the Reckless wore it when exploring an ape settlement. ...",
-							"Third, we need a new flask of warrior's sweat. We've run out of it recently, but we need a small amount for the show battles in our arena. ...",
-							"Lastly, I will have our smith refine your helmet if you bring me royal steel, an especially noble metal. ...",
-							"Did you understand everything I told you and are willing to handle this task?"}, cid, 0, 1, 4000)
+			npcHandler:say({
+				"Well then, listen closely. First, you will have to prove that you are a fierce and restless warrior by bringing me 100 perfect behemoth fangs. ...",
+				"Secondly, please retrieve a helmet for us which has been lost a long time ago. The famous Ramsay the Reckless wore it when exploring an ape settlement. ...",
+				"Third, we need a new flask of warrior's sweat. We've run out of it recently, but we need a small amount for the show battles in our arena. ...",
+				"Lastly, I will have our smith refine your helmet if you bring me royal steel, an especially noble metal. ...",
+				"Did you understand everything I told you and are willing to handle this task?"
+			}, cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 3 then
 			npcHandler:say("Alright then. Come back to me once you have collected 100 perfect behemoth fangs.", cid)

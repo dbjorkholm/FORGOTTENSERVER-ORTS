@@ -109,7 +109,11 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 9 then
-			npcHandler:say({"Listen... there are no blooming flowers down here and the only smell present is that of death and decay. ...", "I wish that I could breathe the lovely smell of beautiful flowers just one more time, especially those which elves cultivate. ...", "Could you please bring me 50 holy orchids?"}, cid, 0, 1, 4000)
+			npcHandler:say({
+				"Listen... there are no blooming flowers down here and the only smell present is that of death and decay. ...", 
+				"I wish that I could breathe the lovely smell of beautiful flowers just one more time, especially those which elves cultivate. ...", 
+				"Could you please bring me 50 holy orchids?"
+			}, cid)
 			npcHandler.topic[cid] = 10
 		elseif npcHandler.topic[cid] == 10 then
 			npcHandler:say("Thank you. I will wait for your return.", cid)

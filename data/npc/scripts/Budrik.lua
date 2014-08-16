@@ -16,7 +16,10 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.toOutfoxAFoxQuest) < 1 then
-			npcHandler:say({"Funny that you are asking me for a mission! There is indeed something you can do for me. Ever heard about The Horned Fox? Anyway, yesterday his gang has stolen my mining helmet during a raid. ...", "It belonged to my father and before that to my grandfather. That helmet is at least 600 years old! I need it back. Are you willing to help me?"}, cid)
+			npcHandler:say({
+				"Funny that you are asking me for a mission! There is indeed something you can do for me. Ever heard about The Horned Fox? Anyway, yesterday his gang has stolen my mining helmet during a raid. ...", 
+				"It belonged to my father and before that to my grandfather. That helmet is at least 600 years old! I need it back. Are you willing to help me?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.toOutfoxAFoxQuest) == 1 then
 			if player:getItemCount(7497) > 0 then

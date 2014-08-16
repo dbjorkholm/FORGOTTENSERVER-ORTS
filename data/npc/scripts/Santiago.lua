@@ -148,9 +148,10 @@ local function creatureSayCallback(cid, type, msg)
 			player:sendTutorial(19)
 			storeTalkCid[cid] = 7
 		elseif storeTalkCid[cid] == 7 then
-			npcHandler:say({"Here, take this fish which I've caught myself. Find it in your inventory, then 'Use' it to eat it. This will slowly refill your health. ...",
-					"By the way: If your hitpoints are below 150, you will regenerate back to 150 hitpoints after few seconds as long as you are not hungry, outside a protection zone and do not have a battle sign. {Easy}, yes?"
-					}, cid, 0, 1, 3000)
+			npcHandler:say({
+				"Here, take this fish which I've caught myself. Find it in your inventory, then 'Use' it to eat it. This will slowly refill your health. ...",
+				"By the way: If your hitpoints are below 150, you will regenerate back to 150 hitpoints after few seconds as long as you are not hungry, outside a protection zone and do not have a battle sign. {Easy}, yes?"
+			}, cid)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoQuestLog, 9)
 			player:addItem(2667, 1)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 11)

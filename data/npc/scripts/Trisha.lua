@@ -55,13 +55,15 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Okay, who knows, maybe you have a chance. A really small one though. Listen up: ...",
-							"First, you have to prove your guts by bringing me 100 hardened bones. ...",
-							"Next, if you actually managed to collect that many, please complete a small task for our guild and bring us 100 turtle shells. ...",
-							"It is said that excellent shields can be created from these. ...",
-							"Alright, um, afterwards show me that you have fighting spirit. Any true hero needs plenty of that. ...",
-							"The last task is the hardest. You will need to bring me a claw from a mighty dragon king. ...",
-							"Did you understand everything I told you and are willing to handle this task?"}, cid)
+			npcHandler:say({
+				"Okay, who knows, maybe you have a chance. A really small one though. Listen up: ...",
+				"First, you have to prove your guts by bringing me 100 hardened bones. ...",
+				"Next, if you actually managed to collect that many, please complete a small task for our guild and bring us 100 turtle shells. ...",
+				"It is said that excellent shields can be created from these. ...",
+				"Alright, um, afterwards show me that you have fighting spirit. Any true hero needs plenty of that. ...",
+				"The last task is the hardest. You will need to bring me a claw from a mighty dragon king. ...",
+				"Did you understand everything I told you and are willing to handle this task?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(storage, 1)

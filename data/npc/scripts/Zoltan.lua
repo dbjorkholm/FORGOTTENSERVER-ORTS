@@ -18,8 +18,10 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(133, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerTiaraCloakAddon, 11)
-			npcHandler:say({"Bah, I know. I received some sort of 'nomination' from our outpost in Port Hope. ...",
-							"Usually it takes a little more than that for an award though. However, I honour Myra's word. ..."}, cid)
+			npcHandler:say({
+				"Bah, I know. I received some sort of 'nomination' from our outpost in Port Hope. ...",
+				"Usually it takes a little more than that for an award though. However, I honour Myra's word. ..."
+			}, cid)
 		end
 	elseif msgcontains(msg, "proof") then
 		if not player:hasOutfit(player:getSex() == 0 and 141 or 130, 2) then

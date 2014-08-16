@@ -14,9 +14,11 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say({"Whoa? You know the word! Amazing, " .. player:getName() .. "!...",
-								"I should go and tell Fa'hradin. ...",
-								"Well. Why are you here anyway, " .. player:getName() .. "?"}, cid)
+				npcHandler:say({
+					"Whoa? You know the word! Amazing, " .. player:getName() .. "!...",
+					"I should go and tell Fa'hradin. ...",
+					"Well. Why are you here anyway, " .. player:getName() .. "?"
+				}, cid)
 				npcHandler:addFocus(cid)
 			end
 		end
@@ -29,8 +31,10 @@ local function creatureSayCallback(cid, type, msg)
 	-- JOINING
 	if msgcontains(msg, "passage") then
 		if player:getStorageValue(BlueDjinn.MissionStart) < 1 then
-			npcHandler:say({"If you want to enter our fortress you have to become one of us and fight the Efreet. ...",
-							"So, are you willing to do so?"}, cid)
+			npcHandler:say({
+				"If you want to enter our fortress you have to become one of us and fight the Efreet. ...",
+				"So, are you willing to do so?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	-- JOINING
@@ -39,8 +43,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Are you sure? You pledge loyalty to king Gabel, who is... you know. And you are willing to never ever set foot on Efreets' territory, unless you want to kill them? Yes?", cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
-			npcHandler:say({"Oh. Ok. Welcome then. You may pass. ...",
-							"And don't forget to kill some Efreets, now and then."}, cid)
+			npcHandler:say({
+				"Oh. Ok. Welcome then. You may pass. ...",
+				"And don't forget to kill some Efreets, now and then."
+			}, cid)
 			npcHandler.topic[cid] = 3
 			player:setStorageValue(BlueDjinn.MissionStart, 1)
 		end

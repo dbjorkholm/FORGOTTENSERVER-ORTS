@@ -39,7 +39,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Listen, the task is not that hard. Simply prove that you are with us and not with the pirates from Nargor by bringingme some of their belongings. ...", "Bring me 100 of their eye patches, 100 of their peg legs and 100 of their hooks, in that order. ...", "Have you understood everything I told you and are willing to handle this task?"}, cid)
+			npcHandler:say({
+				"Listen, the task is not that hard. Simply prove that you are with us and not with the pirates from Nargor by bringingme some of their belongings. ...", 
+				"Bring me 100 of their eye patches, 100 of their peg legs and 100 of their hooks, in that order. ...", 
+				"Have you understood everything I told you and are willing to handle this task?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(storage, 1)

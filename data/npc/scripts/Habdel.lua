@@ -32,8 +32,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({'Listen, um... I know that Ishina has been wanting a comb for a long time... not just any comb, but a mermaid\'s comb. She said it prevents split ends... or something. ...',
-							'Do you think you could get one for me so I can give it to her? I really would appreciate it.'}, cid)
+			npcHandler:say({
+				'Listen, um... I know that Ishina has been wanting a comb for a long time... not just any comb, but a mermaid\'s comb. She said it prevents split ends... or something. ...',
+				'Do you think you could get one for me so I can give it to her? I really would appreciate it.'
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)

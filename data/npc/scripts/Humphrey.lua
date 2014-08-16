@@ -38,7 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "solitude") then
 		npcHandler:say("Talk to the hermit Eremo on the isle of Cormaya about this blessing.", cid)
 	elseif msgcontains(msg, "embrace") then
-		npcHandler:say({"Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?"}, cid)
+		npcHandler:say("Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		if not player:hasBlessing(2) then

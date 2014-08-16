@@ -17,15 +17,18 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "story") then
+	end
+
+	if msgcontains(msg, "story") then
+		local player = Player(cid)
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 37 then
-			npcHandler:say({"I was captured and tortured to death by the cultists here. They worship a being that they call Ghazbaran ...",
-							"In his name they have claimed the mines and started to melt the ice to free an army of vile demons that have been frozen here for ages ...",
-							"Their plan is to create a new demon army for their master to conquer the world. Hjaern and the other shamans must learn about it! Hurry before its too late."}, cid, 0, 1, 3500)
-			npcHandler.topic[cid] = 0
+			npcHandler:say({
+				"I was captured and tortured to death by the cultists here. They worship a being that they call Ghazbaran ...",
+				"In his name they have claimed the mines and started to melt the ice to free an army of vile demons that have been frozen here for ages ...",
+				"Their plan is to create a new demon army for their master to conquer the world. Hjaern and the other shamans must learn about it! Hurry before its too late."
+			}, cid)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 38)
 			player:setStorageValue(Storage.TheIceIslands.Mission10, 2) -- Questlog The Ice Islands Quest, Formorgar Mines 2: Ghostwhisperer
 			player:setStorageValue(Storage.TheIceIslands.Mission11, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 3: The Secret

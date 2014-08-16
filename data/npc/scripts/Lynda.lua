@@ -13,9 +13,11 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif msgcontains(msg, "angelina") then
 		if player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) == 1 then
-			npcHandler:say({"Angelina had been imprisoned? My, these are horrible news, but I am so glad to hear that she is safe now. ...",
-							"I will happily carry out her wish and reward you, but I fear I need some important ingredients for my blessing spell first....",
-							"Will you gather them for me?"}, cid, 0, 1, 4000)
+			npcHandler:say({
+				"Angelina had been imprisoned? My, these are horrible news, but I am so glad to hear that she is safe now. ...",
+				"I will happily carry out her wish and reward you, but I fear I need some important ingredients for my blessing spell first....",
+				"Will you gather them for me?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "wand") or msgcontains(msg, "rod") then
@@ -40,13 +42,15 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Thank you, I promise that your efforts won't be in vain! Listen closely now: First, I need a sample of five druid rods and five sorcerer wands. ...",
-							"I need a snakebite rod, a moonlight rod, a necrotic rod, a terra rod and a hailstorm rod. Then, I need a wand of vortex, a wand of dragonbreath ...",
-							"... a wand of decay, a wand of cosmic energy and a wand of inferno. Please bring them all at once so that their energy will be balanced. ...",
-							"Secondly, I need 10 ounces of magic sulphur. It can absorb the elemental energy of all the wands and rods and bind it to something else. ...",
-							"Next, I will need a soul stone. These can be used as a vessel for energy, evil as well as good. They are rarely used nowaday though. ...",
-							"Lastly, I need a lot of holy energy. I can extract it from ankhs, but only a small amount each time. I will need about 20 ankhs. ...",
-							"Did you understand everything I told you and will help me with my blessing?"}, cid, 0, 1, 4000)
+			npcHandler:say({
+				"Thank you, I promise that your efforts won't be in vain! Listen closely now: First, I need a sample of five druid rods and five sorcerer wands. ...",
+				"I need a snakebite rod, a moonlight rod, a necrotic rod, a terra rod and a hailstorm rod. Then, I need a wand of vortex, a wand of dragonbreath ...",
+				"... a wand of decay, a wand of cosmic energy and a wand of inferno. Please bring them all at once so that their energy will be balanced. ...",
+				"Secondly, I need 10 ounces of magic sulphur. It can absorb the elemental energy of all the wands and rods and bind it to something else. ...",
+				"Next, I will need a soul stone. These can be used as a vessel for energy, evil as well as good. They are rarely used nowaday though. ...",
+				"Lastly, I need a lot of holy energy. I can extract it from ankhs, but only a small amount each time. I will need about 20 ankhs. ...",
+				"Did you understand everything I told you and will help me with my blessing?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Alright then. Come back to with a sample of all five wands and five rods, please.", cid)

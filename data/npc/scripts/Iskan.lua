@@ -19,8 +19,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.BarbarianTest.Questline) >= 8 then -- if Barbarian Test absolved
 			if player:getStorageValue(Storage.TheIceIslands.Questline) < 1 then
-				npcHandler:say({"Well, one of the boys has run away. I think he got the scent of some beast. He's young and inexperienced so I can't blame the cub ...",
-								"I would like you to see after him. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Are you willing to do that?"}, cid, 0, 1, 4000)
+				npcHandler:say({
+					"Well, one of the boys has run away. I think he got the scent of some beast. He's young and inexperienced so I can't blame the cub ...",
+					"I would like you to see after him. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Are you willing to do that?"
+				}, cid)
 				npcHandler.topic[cid] = 1
 			elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 2 then
 				npcHandler:say("You are a friend of mine and the boys now. I tell you something. If you ever need to go to the isle of Nibelor, just ask me for a {passage}.", cid)
@@ -36,8 +38,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"That's surprising. Take a piece of meat. If you find the boy, feed it to him. That will give him enough strength and incentive to return to his pack ...",
-							"Talk to him by calling his name 'Sniffler' and tell him you got meat for him. After he has eaten the meat, return here to talk to me about your mission."}, cid, 0, 1, 3500)
+			npcHandler:say({
+				"That's surprising. Take a piece of meat. If you find the boy, feed it to him. That will give him enough strength and incentive to return to his pack ...",
+				"Talk to him by calling his name 'Sniffler' and tell him you got meat for him. After he has eaten the meat, return here to talk to me about your mission."
+			}, cid)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 1)
 			player:setStorageValue(Storage.TheIceIslands.Mission01, 1) -- Questlog The Ice Islands Quest, Befriending the Musher
 			npcHandler.topic[cid] = 0

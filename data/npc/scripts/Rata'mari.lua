@@ -24,11 +24,13 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "spy report") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"You have come for the report? Great! I have been working hard on it during the last months. And nobody came to pick it up. I thought everybody had forgotten about me! ...",
-							"Do you have any idea how difficult it is to hold a pen when you have claws instead of hands? ...",
-							"But - you know - now I have worked so hard on this report I somehow don't want to part with it. Atleast not without some decent payment. ...",
-							"All right - listen - I know Fa'hradin would not approve of this, but I can't help it. I need some cheese! I need it now! ...",
-							"And I will not give the report to you until you get me some! Meep!"}, cid)
+			npcHandler:say({
+				"You have come for the report? Great! I have been working hard on it during the last months. And nobody came to pick it up. I thought everybody had forgotten about me! ...",
+				"Do you have any idea how difficult it is to hold a pen when you have claws instead of hands? ...",
+				"But - you know - now I have worked so hard on this report I somehow don't want to part with it. Atleast not without some decent payment. ...",
+				"All right - listen - I know Fa'hradin would not approve of this, but I can't help it. I need some cheese! I need it now! ...",
+				"And I will not give the report to you until you get me some! Meep!"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Ok, have you brought me the cheese, I've asked for?", cid)
@@ -37,8 +39,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
 			if player:removeItem(2696, 1) then
-				npcHandler:say({"Meep! Meep! Great! Here is the spyreport for you!",
-								"Meep!"}, cid)
+				npcHandler:say({
+					"Meep! Meep! Great! Here is the spyreport for you!",
+					"Meep!"
+				}, cid)
 				player:setStorageValue(BlueDjinn.MissionStart+2, 2)
 				player:addItem(2345, 1)
 				npcHandler.topic[cid] = 0
