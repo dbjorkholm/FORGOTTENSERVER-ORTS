@@ -52,7 +52,7 @@ doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 In order to contribute map updates read this [article](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map) first.
 
 Current map (missing areas are marked):
-![minimap_floor](https://cloud.githubusercontent.com/assets/6708725/3603499/a3069e62-0d17-11e4-8ed5-8442f892dbfa.png)
+![minimap_floor](https://cloud.githubusercontent.com/assets/6708725/3941883/7786f4ce-2547-11e4-97d4-e836f00b61a4.png)
 
 
 **Remember to have fun and say thanks!**
