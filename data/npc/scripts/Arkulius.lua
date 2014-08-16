@@ -56,13 +56,13 @@ local function creatureSayCallback(cid, type, msg)
 		local v = player:getStorageValue(storageMain)
 		if v < 1 then
 			if player:getLevel() >= 80 then
-				if isSorcerer(cid) then
+				if player:isSorcerer() then
 					npcHandler:say({"Okay, listen closely: First of all, you need to gather 20 enchanted rubies in order to go to the fire sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", "Once you got there, find a way to gather elemental fire in any form. You will face fire elementals, that's for sure, but I don't know how the fire is stored. ...", "Anyway, there should be a way to use that elemental fire and strengthen one of the elementals. If my calculations are right, you will create a Fire Overlord who hopefully will consist of some sort of 'concentrated' fire or something similar. ...", "THAT'S what we need!! Are you in on it?"}, cid, 0, 1, 4000)
-				elseif isDruid(cid) then
+				elseif player:isDruid() then
 					npcHandler:say({"Okay, listen closely: First of all, you need to gather 20 enchanted emeralds in order to go to the earth sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", "Once you got there, find a way to gather elemental earth in any form. You will face earth elementals, that's for sure, but I don't know how the earth is stored. ...", "Anyway, there should be a way to use that elemental earth and strengthen one of the elementals. If my calculations are right, you will create an Earth Overlord who hopefully will consist of some sort of 'concentrated' earth or something similar. ...", "THAT'S what we need!! Are you in on it?"}, cid, 0, 1, 4000)
-				elseif isPaladin(cid) then
+				elseif player:isPaladin() then
 					npcHandler:say({"Okay, listen closely: First of all, you need to gather 20 enchanted sapphires in order to go to the ice sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", "Once you got there, find a way to gather elemental ice in any form. You will face ice elementals, that's for sure, but I don't know how the ice is stored. ...", "Anyway, there should be a way to use that elemental ice and strengthen one of the elementals. If my calculations are right, you will create an Ice Overlord who hopefully will consist of some sort of 'concentrated' ice or something similar. ...", "THAT'S what we need!! Are you in on it?"}, cid, 0, 1, 4000)
-				elseif isKnight(cid) then
+				elseif player:isKnight() then
 					npcHandler:say({"Okay, listen closely: First of all, you need to gather 20 enchanted amethysts in order to go to the energy sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", "Once you got there, find a way to gather elemental energy in any form. You will face energy elementals, that's for sure, but I don't know how the energy is stored. ...", "Anyway, there should be a way to use that energy and strengthen one of the elementals. If my calculations are right, you will create an Energy Overlord who hopefully will consist of some sort of 'concentrated' energy. ...", "THAT'S what we need!! Are you in on it?"}, cid, 0, 1, 4000)
 				end
 			else
@@ -72,17 +72,17 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 1
 		elseif v == 1 then
-			if player:getItemCount(isSorcerer(cid) and 8304 or isDruid(cid) and 8305 or isPaladin(cid) and 8300 or isKnight(cid) and 8306) > 0 then
+			if player:getItemCount(player:isSorcerer() and 8304 or player:isDruid() and 8305 or player:isPaladin() and 8300 or player:isKnight() and 8306) > 0 then
 				player:setStorageValue(storageMain, 2)
-				npcHandler:say({"Impressive!! Let me take a look.......Ahh, " .. (isSorcerer(cid) and "an ETERNAL FLAME! Now you need to find a knight, a druid, and a paladin who also completed this first task. ..." or isDruid(cid) and "MOTHER SOIL! Now you need to find a knight, a paladin, and a sorcerer who also completed this first task. ..." or isPaladin(cid) and "a FLAWLESS ICE CRYSTAL! Now you need to find a knight, a druid, and a sorcerer who also completed this first task. ..." or isKnight(cid) and "PURE ENERGY! Now you need to find a druid, a paladin, and a sorcerer who also completed this first task. ..."), "Go down in the cellar again. I prepared a room under the academy where it should be safe. Your task is to charge the machines with the elemental substances and summon the LORD OF THE ELEMENTS. ...", "When you use an obsidian knife on it's corpse you hopefully get some of the precious neutral matter. It's the only way to revive my dear friend Alverus!!"}, cid, 0, 1, 4500)
+				npcHandler:say({"Impressive!! Let me take a look.......Ahh, " .. (player:isSorcerer() and "an ETERNAL FLAME! Now you need to find a knight, a druid, and a paladin who also completed this first task. ..." or player:isDruid() and "MOTHER SOIL! Now you need to find a knight, a paladin, and a sorcerer who also completed this first task. ..." or player:isPaladin() and "a FLAWLESS ICE CRYSTAL! Now you need to find a knight, a druid, and a sorcerer who also completed this first task. ..." or player:isKnight() and "PURE ENERGY! Now you need to find a druid, a paladin, and a sorcerer who also completed this first task. ..."), "Go down in the cellar again. I prepared a room under the academy where it should be safe. Your task is to charge the machines with the elemental substances and summon the LORD OF THE ELEMENTS. ...", "When you use an obsidian knife on it's corpse you hopefully get some of the precious neutral matter. It's the only way to revive my dear friend Alverus!!"}, cid, 0, 1, 4500)
 			else
-				npcHandler:say("You need some kind of pure elemental soil from the " .. (isSorcerer(cid) and "Fire" or isDruid(cid) and "Earth" or isPaladin(cid) and "Ice" or isKnight(cid) and "Energy") .. " Overlord. Come back when you've got it.", cid)
+				npcHandler:say("You need some kind of pure elemental soil from the " .. (player:isSorcerer() and "Fire" or player:isDruid() and "Earth" or player:isPaladin() and "Ice" or player:isKnight() and "Energy") .. " Overlord. Come back when you've got it.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif v == 2 then
 			if player:removeItem(8310, 1) == true then
 				npcHandler:say("AMAZING!! I'm going to start immediately with the research. If it turns out the way I expect it, Alverus will be revived soon!! Here, take this as a reward and try to collect more of this substance. I'll make you a good offer, I promise. ", cid)
-				player:addItem(isSorcerer(cid) and 8867 or isDruid(cid) and 8869 or isPaladin(cid) and 8853 or isKnight(cid) and 8883, 1)
+				player:addItem(player:isSorcerer() and 8867 or player:isDruid() and 8869 or player:isPaladin() and 8853 or player:isKnight() and 8883, 1)
 				player:setStorageValue(storageMain, 3)
 				player:setStorageValue(10029, 1)
 			end

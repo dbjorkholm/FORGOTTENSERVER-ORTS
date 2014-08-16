@@ -186,8 +186,8 @@ if Modules == nil then
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo(parameters.destination)
 		Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
-		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
+		npcHandler:releaseFocus(cid)
 		return true
 	end
 

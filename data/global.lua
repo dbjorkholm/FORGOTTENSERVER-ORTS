@@ -178,36 +178,20 @@ function getDistanceBetween(firstPosition, secondPosition)
 	return posDif
 end
 
-function isSorcerer(cid)
-	local player = Player(cid)
-	if player == nil then
-		return false
-	end
-	return isInArray({1, 5}, player:getVocation():getId())
+function self.isSorcerer(self)
+	return isInArray({1, 5}, self:getVocation():getId())
 end
 
-function isDruid(cid)
-	local player = Player(cid)
-	if player == nil then
-		return false
-	end
-	return isInArray({2, 6}, player:getVocation():getId())
+function self.isDruid(self)
+	return isInArray({2, 6}, self:getVocation():getId())
 end
 
-function isPaladin(cid)
-	local player = Player(cid)
-	if player == nil then
-		return false
-	end
-	return isInArray({3, 7}, player:getVocation():getId())
+function self.isPaladin(self)
+	return isInArray({3, 7}, self:getVocation():getId())
 end
 
-function isKnight(cid)
-	local player = Player(cid)
-	if player == nil then
-		return false
-	end
-	return isInArray({4, 8}, player:getVocation():getId())
+function self.isKnight(self)
+	return isInArray({4, 8}, self:getVocation():getId())
 end
 
 function getTibianTime()
