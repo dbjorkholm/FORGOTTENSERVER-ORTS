@@ -32,21 +32,21 @@ local function creatureSayCallback(cid, type, msg)
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(Position(33025, 31553, 10))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
+					npcHandler:say('Full steam ahead!', cid)
 					npcHandler.topic[cid] = 0
 					return true
 				elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(Position(33025, 31553, 12))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
+					npcHandler:say('Full steam ahead!', cid)
 					npcHandler.topic[cid] = 0
 					return true
 				else --if nothing done Stage 1
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(Position(33025, 31553, 14))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
+					npcHandler:say('Full steam ahead!', cid)
 					npcHandler.topic[cid] = 0
 				end
 			else
@@ -60,13 +60,13 @@ local function creatureSayCallback(cid, type, msg)
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(cormayaPos)
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
+					npcHandler:say('Full steam ahead!', cid)
 					npcHandler.topic[cid] = 0
 				else
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 					player:teleportTo(cormayaPos)
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					npcHandler:say('Set the sails!', cid)
+					npcHandler:say('Full steam ahead!', cid)
 					npcHandler.topic[cid] = 0
 				end
 			else
