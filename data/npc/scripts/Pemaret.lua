@@ -22,33 +22,32 @@ local travelNode = keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandl
 	keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'My name is Pemaret, the fisherman.'})
 
 local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
+	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	local player = Player(cid)
-	if msgcontains(msg, "marlin") then
-		if player:getItemCount(7963) > 0 then
+	
+	if(msgcontains(msg, "marlin")) then
+		if(getPlayerItemCount(cid, 7963) >= 1) then
 			npcHandler:say("WOW! You have a marlin!! I could make a nice decoration for your wall from it. May I have it?", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getItemCount(7963) > 0 then
-			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it!", cid)
-			player:addItem(7964, 1)
-			player:removeItem(7963, 1)
+	elseif(npcHandler.topic[cid] == 1) then
+		if(getPlayerItemCount(cid, 7963) >= 1) then
+			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it! ", cid)
+			doPlayerAddItem(cid, 7964, 1)
+			doPlayerRemoveItem(cid, 7963, 1)
+			npcHandler.topic[cid] = 0
 		else
 			npcHandler:say("You don't have the fish.", cid)
+			npcHandler.topic[cid] = 0
 		end
-		npcHandler.topic[cid] = 0
 	end
-	if msgcontains(msg, "no") and npcHandler.topic[cid] == 1 then
+	if(msgcontains(msg, "no")) then
+		travelState[talkUser] = nil
 		npcHandler:say("Then no.", cid)
-		npcHandler.topic[cid] = 0
 	end
 	return true
 end
-
-npcHandler:setMessage(MESSAGE_GREET, "Greetings, young man. Looking for a passage or some fish, |PLAYERNAME|?")
-
+ 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
