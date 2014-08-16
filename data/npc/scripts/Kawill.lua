@@ -17,7 +17,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You already possess my blessing.', cid)
 			return true
 		end
-		
+
 		npcHandler:say('The Spark of the Phoenix is given by me and by the great pyromancer in the nearby fire temple. Do you wish to receive my part of the Spark of the Phoenix?', cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then

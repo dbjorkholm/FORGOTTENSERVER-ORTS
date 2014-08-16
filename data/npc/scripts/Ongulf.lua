@@ -80,11 +80,11 @@ local function creatureSayCallback(cid, type, msg)
 							"So please travel back to Kazordoon. In the western mines outside of The Big Old One, you'll find Melfar of the imperial mining guild. Ask him to send some more miners and wood. When you return, I might have some more interesting missions for you."}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 4)
 			player:setStorageValue(Storage.TheNewFrontier.Mission02, 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheNewFrontier.Questline) == 7 then
 			npcHandler:say("That's good news for sure. It will give our operation a new impulse. However, only if there is not some unexpected trouble ahead. Well, we'll talk about that when we discuss your next {mission}.", cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 8)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheNewFrontier.Questline) == 8 then
 			npcHandler:say({"Our guards reported some nightly visitors. They chased them through the mountains but lost them when the fugitives climbed up some vines. ...",
 							"It could easily be some trap and I'm somewhat reluctant to send you there, but we can't allow some invisible aggressor to spy on us and maybe to prepare an attack. ...",
@@ -92,13 +92,13 @@ local function creatureSayCallback(cid, type, msg)
 							"If they are too powerful, just retreat and we will have to re-evaluate the situation. If they are harmless, all the better."}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 9)
 			player:setStorageValue(Storage.TheNewFrontier.Mission03, 1) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheNewFrontier.Questline) == 10 then
 			npcHandler:say({"Primitive humans you say? These are most startling news, that's for sure. Well, I guess I'll send some victuals we can spare as a sign of our good will. ...",
 							"However, our miners encountered another problem in the meantime. I'm afraid this will be your next {mission}"}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 11)
 			player:setStorageValue(Storage.TheNewFrontier.Mission03, 3) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheNewFrontier.Questline) == 11 then
 			npcHandler:say({"It seems things went from bad to worse! First we had some problems with the mine shafts we were building, and now that we found some precious veins in one of the new mines, and it happens to be the holiday resort of some hostile stone creatures! ...",
 							"Nothing we dwarfs couldn't handle alone, but I rather thought this could be something interesting for an adventurer like you. ...",
@@ -139,7 +139,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say({"Our new friends, those primitive humans sent us a warning. According to them, the 'green men' of the plains plan an attack on the mountains. ...",
 							"Considering their expected number, there is no chance for us to beat them off. We might be able to hold our ground for a while, but without access to the surface and under constant attacks, we might have to abandon the base. ...",
 							"Now, I'm aware that you cannot stop an entire army by yourself, but desperate situations call for desperate measures. I ask you to find the leaders of the orcs and - well do something. ...",
-							"Scare them, bribe them, give them another target or whatever. As futile as it may sound: Try to talk to their leaders in some way and make them stop their attack plans. This is our only hope."}, cid)	
+							"Scare them, bribe them, give them another target or whatever. As futile as it may sound: Try to talk to their leaders in some way and make them stop their attack plans. This is our only hope."}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 17)
 			player:setStorageValue(Storage.TheNewFrontier.Mission06, 1) --Questlog, The New Frontier Quest "Mission 06: Days Of Doom"
 			npcHandler.topic[cid] = 0

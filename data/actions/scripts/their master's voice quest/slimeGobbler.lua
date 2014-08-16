@@ -56,7 +56,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not isInArray({13585, 13586, 13587, 13588, 13589}, itemEx.itemid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if player:getStorageValue(984) + 15 * 1000 < os.time() then
 		Item(itemEx.uid):transform(13590)

@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetItem then
 		return true
 	end
-	
+
 	local player = Player(cid)
 	if player:getStorageValue(targetItem.storageKey[1]) == 1 and player:getStorageValue(targetItem.storageKey[2]) < 1 then
 		player:setStorageValue(targetItem.storageKey[2], 1)

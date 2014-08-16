@@ -106,7 +106,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addExperience(10000, true)
 			npcHandler.topic[cid] = 0
 		-- CHILDREN OF REVOLUTION QUEST
-			
+
 		-- WRATH OF THE EMPEROR QUEST
 		elseif player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 21 and player:getStorageValue(Storage.WrathoftheEmperor.Questline) < 1 then
 			npcHandler:say({
@@ -158,9 +158,9 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 13)
 			npcHandler.topic[cid] = 0
-		-- WRATH OF THE EMPEROR QUEST	
+		-- WRATH OF THE EMPEROR QUEST
 		end
-	
+
 	-- WRATH OF THE EMPEROR QUEST
 	elseif msgcontains(msg, "crate") then
 		if npcHandler.topic[cid] == 17 then
@@ -168,7 +168,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 18
 		end
 	-- WRATH OF THE EMPEROR QUEST
-		
+
 	-- CHILDREN OF REVOLUTION QUEST
 	elseif msgcontains(msg, "symbols") then
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.StrangeSymbols) == 1 then
@@ -284,7 +284,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 1) --Questlog, Children of the Revolution "Mission 5: Phantom Army"
 			npcHandler.topic[cid] = 0
 		-- CHILDREN OF REVOLUTION QUEST
-		
+
 		-- WRATH OF THE EMPEROR QUEST
 		elseif npcHandler.topic[cid] == 14 then
 			npcHandler:say({
@@ -353,7 +353,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		-- WRATH OF THE EMPEROR QUEST
-		end	
+		end
 	end
 	return true
 end

@@ -33,9 +33,9 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, 'potion') then
 		if player:getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit) < 1 then
 			npcHandler:say('It\'s so hard to know the exact time when to stop drinking. <hicks> C-could you help me to brew such a potion?', cid)
@@ -76,10 +76,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:setStorageValue(Storage.OutfitQuest.AssassinBaseOutfit, player:getStorageValue(Storage.OutfitQuest.AssassinBaseOutfit) + 1)
 			npcHandler:say(targetMessage.text[3], cid)
-			npcHandler.topic[cid] = 0 
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') then
 		if npcHandler.topic[cid] ~= 3 then

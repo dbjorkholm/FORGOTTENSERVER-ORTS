@@ -22,7 +22,7 @@ function onAddItem(moveitem, tileitem, position)
 
 	Item(moveitem.uid):remove(1)
 	position:sendMagicEffect(CONST_ME_FIREAREA)
-	
+
 	local creature = Tile(targetCoalBasin.flamePosition):getTopCreature()
 	if not creature or not creature:isPlayer() then
 		return true

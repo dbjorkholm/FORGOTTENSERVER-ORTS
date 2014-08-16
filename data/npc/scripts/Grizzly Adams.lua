@@ -6,7 +6,7 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
- 
+
 local choose = {}
 local cancel = {}
 local available = {}
@@ -29,7 +29,7 @@ local grizzlyAdamsConfig = {
 			{id=11365, buy=0, sell=60, name='terramite legs'},
 			{id=11363, buy=0, sell=170, name='terramite shell'},
 			{id=11184, buy=0, sell=95, name='terrorbird beak'},
-			
+
 			{id=7398, buy=0, sell=500, name='cyclops trophy'},
 			{id=11315, buy=0, sell=15000, name='draken trophy'},
 			{id=11336, buy=0, sell=8000, name='lizard trophy'},
@@ -46,7 +46,7 @@ local grizzlyAdamsConfig = {
 			{id=7393, buy=0, sell=40000, name='demon trophy'},
 			{id=7396, buy=0, sell=20000, name='behemoth trophy'},
 			{id=7399, buy=0, sell=10000, name='dragon lord trophy'},
-			
+
 			{id=10518, buy=1000, sell=0, name='demon backpack'},
 		},
 	}
@@ -92,7 +92,7 @@ end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then return false end
-	
+
 	local player = Player(cid)
 	if msgcontains('trade', msg) then
 		local tradeItems = {}
@@ -116,8 +116,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif isInArray({'tasks', 'task', 'mission'}, msg:lower()) then
 		local can = player:getTasks()
 		if player:getStorageValue(JOIN_STOR) == -1 then
- 	        return npcHandler:say('You\'ll have to {join}, to get any {tasks}.',cid)
-        end
+			return npcHandler:say('You\'ll have to {join}, to get any {tasks}.',cid)
+		end
 		if #can > 0 then
 			local text = ''
 			local sep = ', '
@@ -143,7 +143,7 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		end
 		local task = getTaskByName(msg)
-		if task and player:getStorageValue(QUESTSTORAGE_BASE + task) > 0 then  
+		if task and player:getStorageValue(QUESTSTORAGE_BASE + task) > 0 then
 			return false
 		end
 		npcHandler:say('In this task you must defeat ' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '. Are you sure that you want to start this task?', cid)
@@ -202,12 +202,12 @@ local function creatureSayCallback(cid, type, msg)
 						elseif isInArray({REWARD_ITEM, 'item', 'items', 'object'}, reward.type:lower()) and not deny then
 							player:addItem(reward.value[1], reward.value[2])
 						end
- 
+
 						if reward.storage then
 							player:setStorageValue(reward.storage[1], reward.storage[2])
 						end
 					end
- 
+
 					player:setStorageValue(QUESTSTORAGE_BASE + id, (tasks[id].norepeatable and 2 or 0))
 					player:setStorageValue(KILLSSTORAGE_BASE + id, 0)
 					player:setStorageValue(REPEATSTORAGE_BASE + id, math.max(player:getStorageValue(REPEATSTORAGE_BASE + id), 0))
@@ -218,7 +218,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			if not finishedAtLeastOne then
 				local started = player:getStartedTasks()
-				if started and #started > 0 then	
+				if started and #started > 0 then
 					local text = ''
 					local sep = ', '
 					table.sort(started, (function(a, b) return (a < b) end))
@@ -256,7 +256,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 				text = text .. '{' .. (tasks[id].name or tasks[id].raceName) .. '}' .. sep
 			end
- 
+
 			npcHandler:say('The current task' .. (#started > 1 and 's' or '') .. ' that you started ' .. (#started > 1 and 'are' or 'is') .. ' ' .. text, cid)
 		else
 			npcHandler:say('You haven\'t started any task yet.', cid)
@@ -297,7 +297,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(KILLSSTORAGE_BASE + task) > 0 then
 			npcHandler:say('You currently killed ' .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. '/' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '.', cid)
 		else
-		    npcHandler:say('You currently killed 0/' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '.', cid)
+			npcHandler:say('You currently killed 0/' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '.', cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msg:lower() == 'yes' and npcHandler.topic[cid] == 3 then
@@ -306,14 +306,14 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('You have cancelled the task ' .. (tasks[cancel[cid]].name or tasks[cancel[cid]].raceName) .. '.', cid)
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'points', 'rank'}, msg:lower()) then
-	    if player:getPawAndFurPoints() < 1 then
+		if player:getPawAndFurPoints() < 1 then
 			npcHandler:say('At this time, you have ' .. player:getPawAndFurPoints() .. ' Paw & Fur points. You ' .. (player:getPawAndFurRank() == 6 and 'are an Elite Hunter' or player:getPawAndFurRank() == 5 and 'are a Trophy Hunter' or player:getPawAndFurRank() == 4 and 'are a Big Game Hunter' or player:getPawAndFurRank() == 3 and 'are a Ranger' or player:getPawAndFurRank() == 2 and 'are a Huntsman' or player:getPawAndFurRank() == 1 and 'are a Member'  or 'haven\'t been ranked yet') .. '.', cid)
 		else
 			npcHandler:say('At this time, you have ' .. player:getPawAndFurPoints() .. ' Paw & Fur points. You ' .. (player:getPawAndFurRank() == 6 and 'are an Elite Hunter' or player:getPawAndFurRank() == 5 and 'are a Trophy Hunter' or player:getPawAndFurRank() == 4 and 'are a Big Game Hunter' or player:getPawAndFurRank() == 3 and 'are a Ranger' or player:getPawAndFurRank() == 2 and 'are a Huntsman' or player:getPawAndFurRank() == 1 and 'are a Member'  or 'haven\'t been ranked yet') .. '.', cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'special task'}, msg:lower()) then
-	    if player:getPawAndFurPoints() >= 90 then -- Tiquandas Revenge 90 points
+		if player:getPawAndFurPoints() >= 90 then -- Tiquandas Revenge 90 points
 			if player:getStorageValue(22222) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the task. Go find Tiquandas Revenge and take revenge yourself!', cid)
 				else
@@ -357,7 +357,7 @@ local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
 	end
 	return true
 end
- 
+
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Happy hunting, old chap!')
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

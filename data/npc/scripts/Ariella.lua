@@ -22,11 +22,11 @@ function PirateSecond(cid, message, keywords, parameters, node)
 		return false
 	end
 
-	local player = Player(cid) 
+	local player = Player(cid)
 	if player:getStorageValue(22034) == -1 then
 		if player:getItemCount(6101) > 0 and player:getItemCount(6102) > 0 and player:getItemCount(6100) > 0 and player:getItemCount(6099) > 0 then
 			if player:removeItem(6101, 1) and player:removeItem(6102, 1) and player:removeItem(6100, 1) and player:removeItem(6099, 1) then
-				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)             
+				npcHandler:say("Ah, right! The pirate hat! Here you go.", cid)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 				player:setStorageValue(22034, 1)
 				player:addOutfitAddon(155, 2)

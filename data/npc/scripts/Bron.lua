@@ -47,13 +47,13 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 6)
 				npcHandler:say("Fighting spirit? What am I supposed to do with this fi... - oh! I feel strange... ME MIGHTY! ME WILL CHASE OFF ANNOYING KIDS!GROOOAARR!! RRRRRRRRRRRRAAAAAAAGE!!", cid)
 				npcHandler.topic[cid] = 0
-			end	
+			end
 		end
 	elseif(msgcontains(msg, "cloth")) then
 		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 7 then
 			npcHandler:say("Have you really managed to fulfil the task and brought me 50 pieces of red cloth and 50 pieces of green cloth?", cid)
 			npcHandler.topic[cid] = 8
-		end	
+		end
 	elseif(msgcontains(msg, "silk")) then
 		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 8 then
 			npcHandler:say("Oh, did you bring 10 rolls of spider silk yarn for me?", cid)
@@ -63,7 +63,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 9 then
 			npcHandler:say("Were you able to get hold of a flask with pure warrior's sweat?", cid)
 			npcHandler.topic[cid] = 10
-		end	
+		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say({"Really! That is such an incredibly nice offer! I already have a plan. You have to teach him that sometimes words are stronger than fists. ...",
@@ -103,14 +103,14 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(5910, 50)
 				player:removeItem(5911, 50)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 8)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 9) then
 			if player:getItemCount(5886) >= 10 then
 				npcHandler:say("I'm impressed! You really managed to get spider silk yarn for me! I will immediately start to work on this shirt. Please don't forget to bring me warrior's sweat!", cid)
 				player:removeItem(5886, 10)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 9)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 10) then
 			if player:getItemCount(5885) >= 1 then
@@ -125,7 +125,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(147, 1)
 			player:addOutfitAddon(143, 1)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

@@ -22,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("If you lose a mission item you can probably buy it from Gnomally. ", cid)
 			npcHandler.topic[cid] = 0
 		end
-	-- Crystal Keeper 
+	-- Crystal Keeper
 	elseif(msgcontains(msg, "keeper")) then
 		if player:getStorageValue(930) < 1 and player:getStorageValue(931) < os.time() then
 			npcHandler:say("You will have to repair some damaged crystals. Go into the Crystal grounds and repair them, using this harmonic crystal. Repair five of them and return to me. ", cid)
@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		end
-	-- Crystal Keeper 
+	-- Crystal Keeper
 
 	-- Raiders of the Lost Spark
 	elseif(msgcontains(msg, "spark")) then
@@ -69,7 +69,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Raiders of the Lost Spark
-	
+
 	-- Exterminators
 	elseif(msgcontains(msg, "extermination")) then
 		if player:getStorageValue(936) < 1 and player:getStorageValue(938) < os.time() and player:getStorageValue(900) >= 15 then
@@ -90,7 +90,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Exterminators
-	
+
 	-- Mushroom Digger
 	elseif(msgcontains(msg, "digging")) then
 		if player:getStorageValue(939) < 1 and player:getStorageValue(941) < os.time() and player:getStorageValue(900) >= 15 then
@@ -116,7 +116,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Mushroom Digger
-	
+
 	elseif(msgcontains(msg, "report")) then
 		if player:getStorageValue(900) >= 14 and player:getStorageValue(900) < 15 then
 			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}?", cid)

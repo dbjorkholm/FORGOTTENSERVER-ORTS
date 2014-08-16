@@ -31,7 +31,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say(	
+			npcHandler:say(
 						{
 							"So take this beaver bait. It will work best on dwarf trees. I'll mark the three trees on your map. Here .. here .. and here! So now mark those trees with the beaver bait. ... ",
 							"If you're unlucky enough to meet one of the giant beavers, try to stay calm. Don't do any hectic moves, don't yell, don't draw any weapon, and if you should carry anything wooden on you, throw it away as far as you can. "
@@ -43,9 +43,9 @@ local function creatureSayCallback(cid, type, msg)
 			player:addMapMark({x = 32515, y = 31927, z = 7}, 2, "Tree 2")
 			player:addMapMark({x = 32458, y = 31997, z = 7}, 2, "Tree 3")
 			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 2 then 
+		elseif npcHandler.topic[cid] == 2 then
 			if player:removeMoney(100) then
-				player:addItem(11100, 1)	
+				player:addItem(11100, 1)
 				npcHandler:say("Here you go.", cid)
 				npcHandler.topic[cid] = 0
 			else

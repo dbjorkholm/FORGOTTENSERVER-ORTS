@@ -22,11 +22,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You don\'t have enough money.', cid)
 			return true
 		end
-		
+
 		if player:getStorageValue(Storage.postman.Mission01) == 3 then
 			player:setStorageValue(Storage.postman.Mission01, 4)
 		end
-		
+
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		local position = Position(32954, 32022, 6)
 		player:teleportTo(position)

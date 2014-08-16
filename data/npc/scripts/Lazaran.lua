@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:setStorageValue(Storage.TheNewFrontier.Mission03, 2) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "help") and player:getStorageValue(Storage.UnnaturalSelection.Questline) < 1 then
-	npcHandler:say(	
+	npcHandler:say(
 			{
 				"Big problem we have! Skull of first leader gone. He ancestor of whole tribe but died long ago in war. We have keep his skull on our sacred place. ...",
 				"Then one night, green men came with wolves... and one of wolves took skull and ran off chewing on it! We need back - many wisdom and power is in skull. Maybe they took to north fortress. But can be hard getting in. You try get our holy skull back?"
@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Oh! You found holy skull? In bone pile you found?! Thank Pandor you brought! Me can have it back?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 2 then
-			npcHandler:say(	
+			npcHandler:say(
 			{
 				"You brought back skull of first leader. Hero of tribe! But we more missions to do. ...",
 				"Me and Ulala talk about land outside. We wanting to see more of land! Land over big water! But us no can leave tribe. No can cross water. Only way is skull of first leader. ...",
@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("We been weak for too long! We prepare for great hunt. But still need many doings! You can help us?", cid)
 			npcHandler.topic[cid] = 5
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 13 then
-			npcHandler:say(	
+			npcHandler:say(
 			{
 				"You well did! Great hunt is under best signs now. We prepare weapons and paint faces and then go! ...",
 				"No no, you no need to help us. But can prepare afterparty! Little men sent us stuff some time ago. Was strange water in there. Brown and stinky! But when we tried all tribe became veeeeeeery happy. ...",
@@ -94,7 +94,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("We need to calm and make happy gods. Best go to Ulala. She is priest of us and can tell what needs doing.", cid)
 			player:setStorageValue(Storage.UnnaturalSelection.Questline, 5)
 			player:setStorageValue(Storage.UnnaturalSelection.Mission03, 1) --Questlog, Unnatural Selection Quest "Mission 3: Dance Dance Evolution"
-			npcHandler.topic[cid] = 0		
+			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
 			if player:removeItem(2562, 1, 3) then
 				npcHandler:say("We make big ritual soon and learn much about world outside. Me thank you many times for teaching us world. Very wise and adventurous you are!", cid)

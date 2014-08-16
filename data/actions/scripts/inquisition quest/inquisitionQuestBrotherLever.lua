@@ -74,7 +74,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetLever then
 		return true
 	end
-	
+
 	local tile, thing
 	for i = 1, #targetLever.wallPositions do
 		tile = Tile(targetLever.wallPositions[i])
@@ -84,8 +84,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				thing:transform(item.itemid == 1945 and targetLever.wallUp or targetLever.wallDown)
 			end
 		end
-	end	
-	
+	end
+
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

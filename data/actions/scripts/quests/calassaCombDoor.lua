@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The door seems to be sealed against unwanted intruders.')
 		return true
 	end
-	
+
 	Item(item.uid):transform(item.itemid + 1)
 	player:teleportTo(toPosition, true)
 	return true

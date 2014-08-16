@@ -12,11 +12,11 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if player:getStorageValue(Storage.InServiceofYalahar.Questline) < 1 then
 		player:setStorageValue(Storage.InServiceofYalahar.Questline, 3)
 	end
-	
+
 	if msgcontains(msg, "job") and not player:getStorageValue(Storage.InServiceofYalahar.Questline) == 54 then
 		npcHandler:say("I'm an Augur of the city of Yalahar. My special duty consists of coordinating the efforts to keep the city and its services running.", cid)
 	elseif msgcontains(msg, "job") then
@@ -41,7 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("So are you done with your work?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 6 then
-			npcHandler:say({"We are still present at each quarter's city wall, even though we can do little to stop the chaos from spreading. Still, our garrisons are necessary to maintain some sort of order in the city. ...","My superiors ask for a first hand report about the current situation in the single city quarters. I need someone to travel to our garrisons to get the reports from the guards. Are you willing to do that?"}, cid, 0, 1, 5000) 
+			npcHandler:say({"We are still present at each quarter's city wall, even though we can do little to stop the chaos from spreading. Still, our garrisons are necessary to maintain some sort of order in the city. ...","My superiors ask for a first hand report about the current situation in the single city quarters. I need someone to travel to our garrisons to get the reports from the guards. Are you willing to do that?"}, cid, 0, 1, 5000)
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) >= 7 and player:getStorageValue(Storage.InServiceofYalahar.Questline) <= 14 then
 			npcHandler:say("Did you get all the reports my superiors asked for? ", cid)
@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 26)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission04, 5) -- StorageValue for Questlog "Mission 04: Good to be Kingpin"
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 28 then	
+		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 28 then
 			npcHandler:say({"Warbeasts? Is this true? People are already starving. ..."," How can we afford to feed an army of hungry beasts? They will not only strengthen the power of the Yalahari over the citizens, they also mean starvation and deathfor the poor. ..."," Instead of breeding warbeasts, this druid should breed cattle to feed our people. Please I beg you, convince him to do that!"}, cid, 0, 1, 4500)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 29)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 2) -- StorageValue for Questlog "Mission 05: Food or Fight"
@@ -187,6 +187,6 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")  
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

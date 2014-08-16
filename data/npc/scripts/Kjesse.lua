@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	local blessings = 0
 	for i = 1, 5 do

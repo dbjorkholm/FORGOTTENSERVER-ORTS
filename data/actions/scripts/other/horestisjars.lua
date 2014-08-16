@@ -21,17 +21,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:say('You are too afraid to destroy this object', TALKTYPE_MONSTER_SAY)
 			return true
 		end
-	
+
 		player:setStorageValue(item.actionid, os.time() + config.time)
-	
+
 		local rand = math.random(100)
 		if rand > config.chance then
 			player:say(config.randomText[math.random(#config.randomText)], TALKTYPE_MONSTER_SAY)
 			return true
 		end
-	
+
 		Item(item.uid):transform(config.brokenJarId)
-		
+
 		local tile, thing
 		for i = 1, #config.jarPositions do
 			tile = Tile(config.jarPositions[i])
@@ -45,7 +45,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				end
 			end
 		end
-	
+
 		if broken > 0 then
 			Game.createMonster(config.bossName, config.bossPosition)
 		end

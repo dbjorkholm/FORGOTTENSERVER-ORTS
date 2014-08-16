@@ -32,15 +32,15 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif(npcHandler.topic[cid] == 1) then 
-		if(msgcontains(msg, "no")) then 
-			npcHandler:say("No then.", cid)	
+	elseif(npcHandler.topic[cid] == 1) then
+		if(msgcontains(msg, "no")) then
+			npcHandler:say("No then.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	-- WAGON TICKET
 	end
 	return true
-end      
+end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Welcome, |PLAYERNAME|! Do you feel adventurous? Do you want a weekly {ticket} for the ore wagon system here? You can use it right here to get to the centre of Kazordoon!")

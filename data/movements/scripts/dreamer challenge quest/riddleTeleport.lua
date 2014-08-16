@@ -4,7 +4,7 @@ function onStepIn(cid, item, position, fromPosition)
 			if(getTileItemById({x = 32818 + x, y = 32334 + y, z = 9}, 1686).uid < 1) then
 				doTeleportThing(cid, fromPosition)
 				return true
-			end	
+			end
 		end
 	end
 	for x = 0, 2 do
@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, fromPosition)
 			if(getTileItemById({x = 32818 + x, y = 32337 + y, z = 9}, 1687).uid < 1) then
 				doTeleportThing(cid, fromPosition)
 				return true
-			end	
+			end
 		end
 	end
 	for x = 0, 2 do
@@ -20,7 +20,7 @@ function onStepIn(cid, item, position, fromPosition)
 			if(getTileItemById({x = 32821 + x, y = 32337 + y, z = 9}, 1689).uid < 1) then
 				doTeleportThing(cid, fromPosition)
 				return true
-			end	
+			end
 		end
 	end
 	for x = 0, 2 do
@@ -28,11 +28,11 @@ function onStepIn(cid, item, position, fromPosition)
 			if(getTileItemById({x = 32821 + x, y = 32334 + y, z = 9}, 1688).uid < 1) then
 				doTeleportThing(cid, fromPosition)
 				return true
-			end	
+			end
 		end
 	end
 	doTeleportThing(cid, {x = 32766, y = 32275, z = 14})
-	doSendMagicEffect({x = 32766, y = 32275, z = 14}, CONST_ME_TELEPORT)	
+	doSendMagicEffect({x = 32766, y = 32275, z = 14}, CONST_ME_TELEPORT)
 	blue = 0
 	red = 0
 	yellow = 0

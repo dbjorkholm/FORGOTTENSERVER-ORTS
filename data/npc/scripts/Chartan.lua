@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 6)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission02, 3) --Questlog, Wrath of the Emperor "Mission 02: First Contact"
 			npcHandler.topic[cid] = 0
-		end	
+		end
 	end
 	return true
 end

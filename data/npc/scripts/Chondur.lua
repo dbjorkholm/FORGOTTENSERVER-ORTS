@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "stampor") or msgcontains(msg, "mount") then
 		if not player:hasMount(11) then

@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetTree then
 		return true
 	end
-	
+
 	local player = Player(cid)
 	if player:getStorageValue(targetTree.storageKey) ~= 1 then
 		player:setStorageValue(targetTree.storageKey, 1)

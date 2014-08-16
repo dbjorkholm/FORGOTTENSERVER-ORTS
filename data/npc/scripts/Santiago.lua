@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 local voices = {
 	"Evil little beasts... I hope someone helps me fight them.",
 	"Nasty creepy crawlies!",
-	"Don't be shy, can't hurt to greet me with 'hello' or 'hi'!", 
+	"Don't be shy, can't hurt to greet me with 'hello' or 'hi'!",
 	"Hey! You over there, could you help me with a little quest? Just say 'hi' or 'hello' to talk to me!"
 }
 
@@ -88,7 +88,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if isInArray({"yes", "right", "ok"}, msg) then
 		if storeTalkCid[cid] == 0 then

@@ -2,7 +2,7 @@ local t = {
 	[50011] = {{x = 32636, y = 31881, z = 7}, {x = 32636, y = 31881, z = 2}, effect = true},
 	[50012] = {{x = 32636, y = 31881, z = 2}, {x = 32636, y = 31881, z = 7}, effect = true}
 }
- 
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local k = t[item.actionid]
 	local thing = getTopCreature(k[1]).uid

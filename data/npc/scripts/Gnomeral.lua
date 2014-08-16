@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Matchmaker
-	
+
 	-- Golem Repair
 	elseif(msgcontains(msg, "repair")) then
 		if player:getStorageValue(945) < 1 and player:getStorageValue(947) < os.time() and player:getStorageValue(900) >= 16 then
@@ -70,7 +70,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Golem Repair
-	
+
 	-- Spore Gathering
 	elseif(msgcontains(msg, "spore")) then
 		if player:getStorageValue(948) < 1 and player:getStorageValue(950) < os.time() and player:getStorageValue(900) >= 17 then
@@ -95,7 +95,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	-- Spore Gathering
-	
+
 	-- Grindstone Hunt
 	elseif(msgcontains(msg, "grindstone")) then
 		if player:getStorageValue(951) < 1 and player:getStorageValue(953) < os.time() and player:getStorageValue(900) >= 17 then

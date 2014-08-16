@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "endurance") then
 		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 9 then

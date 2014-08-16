@@ -105,7 +105,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Please tell me how much gold it is you would like to deposit.", cid)
 				npcHandler.topic[cid] = 1
 				return true
-			end      
+			end
 		end
 
 		if not isValidMoney(count[cid]) then
@@ -352,9 +352,9 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif npcHandler.topic[cid] == 1 then 
-		if msgcontains(msg, 'no') then 
-			npcHandler:say("No then.", cid)	
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, 'no') then
+			npcHandler:say("No then.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	-- WAGON TICKET

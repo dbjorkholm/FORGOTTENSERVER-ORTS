@@ -12,7 +12,7 @@ local config = {
 		["thais"] = 2,
 		["carlin"] = 4
 	},
-	
+
 	vocations = {
 		["sorcerer"] = {
 			text = "A SORCERER! ARE YOU SURE? THIS DECISION IS IRREVERSIBLE!",
@@ -82,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if npcHandler.topic[cid] == 0 then
 		if msgcontains(msg, "yes") then

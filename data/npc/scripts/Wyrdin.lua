@@ -42,7 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Did you bring the papers I asked you for?", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif msgcontains(msg, "yes") then	
+	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(10090) > 0 then
 				player:removeItem(10090, 1)

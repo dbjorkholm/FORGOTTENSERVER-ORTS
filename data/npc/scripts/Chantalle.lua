@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'key') then
-		if player:getStorageValue(Storage.thievesGuild.Mission06) == 1 then 
+		if player:getStorageValue(Storage.thievesGuild.Mission06) == 1 then
 			local headItem = player:getSlotItem(CONST_SLOT_HEAD)
 			if headItem and headItem:getId() == 2665 and player:getStorageValue(Storage.postman.Rank) == 5 and player:getSex() ~= 0 then
 				local key = player:addItem(8762)

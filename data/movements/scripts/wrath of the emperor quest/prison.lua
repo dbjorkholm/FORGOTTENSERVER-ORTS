@@ -1,9 +1,9 @@
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
-	if not player then 
+	if not player then
 		return true
 	end
-	
+
 	if player:getStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus) == 1 then
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:teleportTo(Position(33363, 31188, 8))

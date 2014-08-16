@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(GreenDjinn.MissionStart) == 1 and player:getStorageValue(GreenDjinn.MissionStart+1) < 1 then
 			npcHandler:say({"Each mission and operation is a crucial step towards our victory! ...",
@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(GreenDjinn.MissionStart+1, 4)
 			npcHandler.topic[cid] = 0
 		end
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({"Well ... All right. You may only be a human, but you do seem to have the right spirit. ...",

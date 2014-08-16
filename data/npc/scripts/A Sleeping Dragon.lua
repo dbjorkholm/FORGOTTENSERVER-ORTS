@@ -157,7 +157,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("RISE. ...", cid)
 			npcHandler:say("The transfer was successful. ...", cid)
 			npcHandler:say("You are now prepared to enter the realm of the evildoer. I am grateful for your help, wayfarer. Should you seek my council, use this charm I cede to you. For my spirit will guide you wherever you are. May you enjoy a sheltered future, you shall prevail.", cid)
-			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 31)	
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 31)
 			npcHandler.topic[cid] = 0
 		end
 	end

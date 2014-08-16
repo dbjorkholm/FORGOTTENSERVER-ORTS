@@ -13,10 +13,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetItem then
 		return true
 	end
-		
+
 	local player = Player(cid)
 	if player:removeItem(targetItem.removeId, 1) then
-		player:setStorageValue(targetItem.storageKey, 1) 
+		player:setStorageValue(targetItem.storageKey, 1)
 		player:setStorageValue(Storage.TheAncientTombs.DefaultStart, 1) -- default start of The Ancient Tombs Quest
 		player:addItem(targetItem.itemId, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a ' .. ItemType(targetItem.itemId):getName() .. '.')

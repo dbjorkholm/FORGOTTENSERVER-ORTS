@@ -23,7 +23,7 @@ local config = {
 		Position(33222, 31661, 13)
 	}
 }
-	
+
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)

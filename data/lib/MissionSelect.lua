@@ -8,13 +8,13 @@ NPCname or QuestName = {
 						MissionEnd		 	-- End Storage Mission on NPC
 						WithoutMissionPrice -- [tobuy = npcprice / WithoutMissionPrice] -- [tosell = npcprice * WithoutMissionPrice]
 						}
-			
+
 	exemple
 
 Rashid = {
 			NeedMission = false		-- mission does not need to be able to trade items,
 									-- however if WithoutMissionPrice differs from 1, the price will be different for players who have no mission
-			MissionStart = 200			
+			MissionStart = 200
 			MissionEnd	= 210
 			WithoutMissionPrice = 0.5 -- newpricebuy = 10000gp / 0.5 = 20000gp // newpricesell = 10000gp * 0.5 = 5000gp
 		}
@@ -25,7 +25,7 @@ Rashid = {
 			MissionEnd = 107,
 			WithoutMissionPrice = 0.5
 		}
-		
+
 --RASHID OLD STORAGE 85
 --[[
 descrip
@@ -48,10 +48,10 @@ descrip
 			16 = 105 3
 			17 = 106 1
 			18 = 106 2 -- removed
-			19 = 106 {3} = newvalue {2} 
+			19 = 106 {3} = newvalue {2}
 			20 = 107 1
 		}
-]]		
+]]
 
 BlueOrGreen = false		-- blue djinn or green djinn quest, true = only one. -- NOT IMPLEMENTED YET
 Factions = 110	-- shared storage between blue and green djinn quest and others.
@@ -62,7 +62,7 @@ BlueDjinn = {
 				MissionEnd = 114,
 				WithoutMissionPrice = 0.5
 			}
-			
+
 --[[
 	STORAGE VALUE = STORAGE VALUE
 	Factions 2 = 80 1
@@ -79,14 +79,14 @@ BlueDjinn = {
 	BlueDjinn.MissionStart+3 4 = 82 11
 
 ]]
-	
+
 GreenDjinn = {
 				NeedMission = true,
 				MissionStart = 121,
 				MissionEnd = 124,
 				WithoutMissionPrice = 0.5
 			}
-			
+
 --[[
 	STORAGE VALUE = STORAGE VALUE
 	Factions 2 = 80 1
@@ -129,10 +129,10 @@ end
 function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
 	local player = Player(cid)
 	if(player:getStorageValue(STORAGE.MissionEnd) >= Fvalue or STORAGE.NeedMission ~= true) then
-	
+
 		local ItemTable = sendTable(cid, table, STORAGE.MissionEnd, STORAGE.WithoutMissionPrice, Fvalue)
 		local items = setNewTradeTable(ItemTable)
-		
+
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 			if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
 				return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
@@ -142,13 +142,13 @@ function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(
 					local container = Game.createItem(1988, 1)
 					local bp = player:addItemEx(container)
 					if(bp ~= 1) then
-						return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+						return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')
 					end
 					for i = 1, amount do
 						container:addItem(items[item].itemId, items[item])
 					end
 				else
-					return 
+					return
 					player:addItem(items[item].itemId, amount, false, items[item]) and
 					player:removeMoney(amount * items[item].buyPrice) and
 					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
@@ -160,7 +160,7 @@ function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(
 			end
 			return true
 			end
-			 
+
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
 			if items[item].sellPrice then
 				return

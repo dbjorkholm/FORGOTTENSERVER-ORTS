@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(5908, 1)
 			npcHandler.topic[cid] = 0
 		else
-			npcHandler:say("You dont have these items.", cid)	
+			npcHandler:say("You dont have these items.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	end

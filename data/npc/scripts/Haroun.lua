@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable()
-	local list = 
+	local list =
 	{
 		{name = 'Axe Ring',				id = 2208,			sell = 100,			buy = 500},
 		{name = 'Club Ring',			id = 2209,			sell = 100,			buy = 500},
@@ -52,7 +52,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Do you want to trade 2 Royal Helmet for Fighting Spirit', cid)
 		npcHandler.topic[cid] = 3
 	elseif isInArray({"magic sulphur", "fire sword"}, msg) then
-		npcHandler:say('Do you want to trade 3 Fire Sword for Magic Sulphur', cid) 
+		npcHandler:say('Do you want to trade 3 Fire Sword for Magic Sulphur', cid)
 		npcHandler.topic[cid] = 4
 	elseif isInArray({"job", "items"}, msg) then
 		npcHandler:say('I trade Enchanted Chicken Wing for Boots of Haste, Warrior Sweat for 4 Warrior Helmets, Fighting Spirit for 2 Royal Helmet Magic Sulphur for 3 Fire Swords', cid)

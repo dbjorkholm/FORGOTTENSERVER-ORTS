@@ -15,8 +15,8 @@ local config = {
 		count = 100,
 		storageValue = 1,
 		text = {
-			'Have you really managed to fulfil the task and brought me 100 pieces of ape fur?', 
-			'Only ape fur is good enough to touch the feet of our Caliph.', 
+			'Have you really managed to fulfil the task and brought me 100 pieces of ape fur?',
+			'Only ape fur is good enough to touch the feet of our Caliph.',
 			'Ahhh, this softness! I\'m impressed, |PLAYERNAME|. You\'re on the best way to earn that turban. Now, please retrieve 100 fish fins.'
 		}
 	},
@@ -25,8 +25,8 @@ local config = {
 		count = 100,
 		storageValue = 2,
 		text = {
-			'Were you able to discover the undersea race and retrieved 100 fish fins?', 
-			'I really wonder what the explorer society is up to. Actually I have no idea how they managed to dive unterwater.', 
+			'Were you able to discover the undersea race and retrieved 100 fish fins?',
+			'I really wonder what the explorer society is up to. Actually I have no idea how they managed to dive unterwater.',
 			'I never thought you\'d make it, |PLAYERNAME|. Now we only need two enchanted chicken wings to start our waterwalking test!'
 		}
 	},
@@ -35,8 +35,8 @@ local config = {
 		count = 2,
 		storageValue = 3,
 		text = {
-			'Were you able to get hold of two enchanted chicken wings?', 
-			'Enchanted chicken wings are actually used to make boots of haste, so they could be magically extracted again. Djinns are said to be good at that.', 
+			'Were you able to get hold of two enchanted chicken wings?',
+			'Enchanted chicken wings are actually used to make boots of haste, so they could be magically extracted again. Djinns are said to be good at that.',
 			'Great, thank you very much. Just bring me 100 pieces of blue cloth now and I will happily show you how to make a turban.'
 		}
 	},
@@ -45,8 +45,8 @@ local config = {
 		count = 100,
 		storageValue = 4,
 		text = {
-			'Ah, have you brought the 100 pieces of blue cloth?', 
-			'It\'s a great material for turbans.', 
+			'Ah, have you brought the 100 pieces of blue cloth?',
+			'It\'s a great material for turbans.',
 			'Ah! Congratulations - even if you are not a true weaponmaster, you surely deserve to wear this turban. Here, I\'ll tie it for you.'
 		}
 	}
@@ -56,9 +56,9 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, 'outfit') then
 		npcHandler:say(player:getSex() == 0 and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
 	elseif msgcontains(msg, 'task') then
@@ -66,7 +66,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('I really don\'t want to make girls work for me. If you are looking for a job, ask Miraia.', cid)
 			return true
 		end
-		
+
 		if player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) < 1 then
 			npcHandler:say('You mean, you would like to prove that you deserve to wear such a turban?', cid)
 			npcHandler.topic[cid] = 1
@@ -97,7 +97,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:setStorageValue(Storage.OutfitQuest.secondOrientalAddon, player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) + 1)
 			if player:getStorageValue(Storage.OutfitQuest.secondOrientalAddon) == 5 then
 				player:addOutfitAddon(146, 2)
@@ -111,7 +111,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('What a pity.', cid)
 		npcHandler.topic[cid] = 0
 	end
-	
+
 	return true
 end
 

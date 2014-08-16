@@ -65,7 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 								"Take this outfit to keep your warm during your travels in this frozen realm!"}, cid, 0, 1, 3500)
 			end
 			npcHandler.topic[cid] = 0
-		else 
+		else
 		npcHandler:say("I have now no mission for you.", cid)
 		npcHandler.topic[cid] = 0
 		end
@@ -145,6 +145,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

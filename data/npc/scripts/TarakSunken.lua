@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+
 	if(msgcontains(msg, "passage")) then
 		npcHandler:say("Do you want to go back to {Yalahar}?", cid)
 		npcHandler.topic[cid] = 1

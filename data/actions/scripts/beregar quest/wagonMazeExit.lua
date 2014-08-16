@@ -8,7 +8,7 @@ local destinations = {
 	{teleportPos = Position(32600, 31504, 13), railCheck = Tile(Position(32688, 31469, 13)):getItemById(7123) and Tile(Position(32695, 31464, 13)):getItemById(7123)} --City's Entrance
 }
 	local player = Player(cid)
-	
+
 	for i = 1, #config do
 		local table = config[i]
 		if table.railCheck then

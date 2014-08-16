@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetPosition then
 		return true
 	end
-	
+
 	local player = Player(cid)
 	player:teleportTo(targetPosition)
 	player:say("Zrrrt!", TALKTYPE_MONSTER_SAY)

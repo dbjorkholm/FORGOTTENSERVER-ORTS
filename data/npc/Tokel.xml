@@ -6,10 +6,10 @@
         <parameter key="message_greet" value="Hi there |PLAYERNAME|."/>
         <parameter key="message_farewell" value="Good bye."/>
 		<parameter key="message_walkaway" value="Good bye." />
-		<parameter key="message_sendtrade" value="Of course, take a look at my tasty offers." />        
+		<parameter key="message_sendtrade" value="Of course, take a look at my tasty offers." />
 <parameter key="module_shop" value="1"/>
         <parameter key="shop_buyable" value="spellbook,6120,150" />
-    
+
 </parameters>
 </npc>
 

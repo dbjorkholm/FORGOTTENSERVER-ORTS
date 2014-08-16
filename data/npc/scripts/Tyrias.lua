@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	local blessings = 0
 	for i = 1, 5 do
@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 			blessings = blessings + 1
 		end
 	end
-	
+
 	if msgcontains(msg, "heal") then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())

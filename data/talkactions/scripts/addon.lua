@@ -3,10 +3,10 @@ local config = {
 		male = 128,
 		female = 136,
 		addon = 3,
-        items = {
+		items = {
 			{5878,100}
-        }
-    },
+		}
+	},
 	["hunter"] = {
 		male = 129,
 		female = 137,
@@ -19,19 +19,19 @@ local config = {
 		male = 130,
 		female = 138,
 		addon = 3,
-        items = {
+		items = {
 			{2160, 1000}
-         }
-    },
-    ["knight"] = {
+		 }
+	},
+	["knight"] = {
 		male = 131,
 		female = 139,
 		addon = 3,
-        items = {
+		items = {
 			{5880, 100}, {5893, 100}
 		}
-    },
-    ["summoner"] = {
+	},
+	["summoner"] = {
 		male = 133,
 		female = 141,
 		addon = 3,
@@ -39,15 +39,15 @@ local config = {
 			{2160,1000}
 		}
 	},
-    ["warrior"] = {
+	["warrior"] = {
 		male = 134,
 		female = 142,
 		addon = 3,
 		items = {
 			{5925, 100}, {5899, 100}, {5919, 1}, {5880, 100}
 		}
-    },
-    ["barbarian"] = {
+	},
+	["barbarian"] = {
 		male = 147,
 		female = 143,
 		addon = 3,
@@ -67,11 +67,11 @@ local config = {
 		male = 149,
 		female = 145,
 		addon = 3,
-        items = {
+		items = {
 			{2536, 1}, {2492, 1}, {2488, 1}, {2123, 1}, {5922, 50}
 		}
-    },
-    ["oriental"] = {
+	},
+	["oriental"] = {
 		male = 150,
 		female = 146,
 		addon = 3,
@@ -79,7 +79,7 @@ local config = {
 			{5883, 100}, {5895, 100}, {5912, 100}
 		}
 	},
-   ["pirate"] = {
+	["pirate"] = {
 		male = 151,
 		female = 155,
 		addon = 3,
@@ -87,7 +87,7 @@ local config = {
 			{6098, 100}, {6126, 100}, {6097, 100}
 		}
 	},
-    ["assassin"] = {
+	["assassin"] = {
 		male = 152,
 		female = 156,
 		addon = 3,
@@ -95,7 +95,7 @@ local config = {
 			{5898, 30}, {5882, 10}, {5881, 30}, {5895, 20}, {5905, 10}
 		}
 	},
-    ["beggar"] = {
+	["beggar"] = {
 		male = 153,
 		female = 157,
 		addon = 3,
@@ -103,7 +103,7 @@ local config = {
 			{5878, 50}, {2743, 30}, {5913, 20}, {5894, 10}
 		}
 	},
-    ["shaman"] = {
+	["shaman"] = {
 		male = 154,
 		female = 158,
 		addon = 3,
@@ -111,7 +111,7 @@ local config = {
 			{3955, 5}, {5810, 5}, {3966, 5}, {3967, 5}
 		}
 	},
-    ["norseman"] = {
+	["norseman"] = {
 		male = 251,
 		female = 252,
 		addon = 3,
@@ -150,27 +150,27 @@ function onSay(cid, words, param)
 	if not v then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	local outfit = player:getSex() == 0 and v["female"] or v["male"]
 	if player:hasOutfit(outfit, 3) then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained the " .. param .. " addons.")
 		return false
 	end
-	
+
 	local text = ""
 	for i = 1, #v["items"] do
 		local itemType = ItemType(v["items"][i][1])
 		text = text .. (i ~= 1 and (i == #v["items"] and " and " or ", ") or "") .. (v["items"][i][2] > 1 and v["items"][i][2] or itemType:getArticle()) .. " " .. (v["items"][i][2] > 1 and itemType:getPluralName() or itemType:getName())
 	end
-	
+
 	for i = 1, #v["items"] do
 		if player:getItemCount(v["items"][i][1]) < v["items"][i][2] then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need " .. text .. " for the whole " .. param .. " outfit.")
 			return false
 		end
 	end
-	
+
 	for i = 1, #v["items"] do
 		player:removeItem(unpack(v["items"][i]))
 	end

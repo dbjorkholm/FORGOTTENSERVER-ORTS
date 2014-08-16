@@ -421,7 +421,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 17
 		else
 			npcHandler:say("You don't have my scroll.", cid)
-			npcHandler.topic[cid] = 0		
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

@@ -2,7 +2,7 @@
 <raids>
 	<!-- Special -->
 	<raid name="Orc SamBP" file="Special/OrcSamBP.xml" interval2="150" margin="60"/>
-	
+
 	<!-- Ab'Dendriel -->
 	<raid name="Badger" file="Ab'Dendriel/Badger.xml" interval2="150" margin="60"/>
 	<raid name="Dragon" file="Ab'Dendriel/Dragon.xml" interval2="150" margin="60"/>

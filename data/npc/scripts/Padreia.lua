@@ -21,7 +21,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 and player:removeMoney(50) then
 			npcHandler:say("Thank you. Here it is.", cid)
-			player:addItem(4839, 1)	
+			player:addItem(4839, 1)
 			player:setStorageValue(Storage.TheApeCity.Questline, 6)
 			player:setStorageValue(Storage.TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
 		else

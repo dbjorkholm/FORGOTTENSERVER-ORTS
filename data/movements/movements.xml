@@ -52,27 +52,27 @@
 	<!-- Children of the Revolution -->
 	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/temple.lua"/>
 	<movevent event="StepIn" uniqueid="3166" script="children of the revolution quest/symbols.lua"/>
-	<movevent event="StepIn" fromaid="8009" toaid="8011"  script="children of the revolution quest/spy.lua"/>
-	<movevent event="StepIn" fromuid="3167" touid="3168"  script="children of the revolution quest/teleport.lua"/>
+	<movevent event="StepIn" fromaid="8009" toaid="8011" script="children of the revolution quest/spy.lua"/>
+	<movevent event="StepIn" fromuid="3167" touid="3168" script="children of the revolution quest/teleport.lua"/>
 	<movevent event="StepIn" uniqueid="3169" script="children of the revolution quest/stairs.lua"/>
 	<movevent event="StepIn" actionid="8014" script="children of the revolution quest/click.lua"/>
 
 	<!-- Wrath of the Emperor -->
 	<movevent event="StepIn" uniqueid="3175" script="wrath of the emperor quest/prison.lua"/>
 	<movevent event="StepIn" fromaid="8015" toaid="8023" script="wrath of the emperor quest/crate.lua"/>
-	<movevent event="StepIn" actionid="32362"  script="wrath of the emperor quest/crate.lua"/>
-	<movevent event="StepIn" fromaid="12380" toaid="12381"  script="wrath of the emperor quest/teleportsmuggyplains.lua"/>
-	<movevent event="StepIn" itemid="12334"  script="wrath of the emperor quest/keeper.lua"/>
+	<movevent event="StepIn" actionid="32362" script="wrath of the emperor quest/crate.lua"/>
+	<movevent event="StepIn" fromaid="12380" toaid="12381" script="wrath of the emperor quest/teleportsmuggyplains.lua"/>
+	<movevent event="StepIn" itemid="12334" script="wrath of the emperor quest/keeper.lua"/>
 
 	<!--- The New Frontier Quest -->
-	<movevent event="StepIn" actionid="8000"  script="the new frontier quest/wayOut.lua"/>
-	<movevent event="StepIn" actionid="8007"  script="the new frontier quest/trap.lua"/>
-	<movevent event="StepIn" fromaid="12135" toaid="12136"  script="the new frontier quest/minotaurBoss.lua"/>
-	<movevent event="StepIn" actionid="12138"  script="the new frontier quest/jailExit.lua"/>
+	<movevent event="StepIn" actionid="8000" script="the new frontier quest/wayOut.lua"/>
+	<movevent event="StepIn" actionid="8007" script="the new frontier quest/trap.lua"/>
+	<movevent event="StepIn" fromaid="12135" toaid="12136" script="the new frontier quest/minotaurBoss.lua"/>
+	<movevent event="StepIn" actionid="12138" script="the new frontier quest/jailExit.lua"/>
 
 	<!--- Unnatural Selection -->
-	<movevent event="StepIn" actionid="12332"  script="unnatural selection/Mission2AllAroundtheWorld.lua"/>
-	<movevent event="StepIn" actionid="12333"  script="unnatural selection/Mission3DanceDanceEvolution.lua"/>
+	<movevent event="StepIn" actionid="12332" script="unnatural selection/Mission2AllAroundtheWorld.lua"/>
+	<movevent event="StepIn" actionid="12333" script="unnatural selection/Mission3DanceDanceEvolution.lua"/>
 
 	<!-- Teleports -->
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua"/>
@@ -502,7 +502,7 @@
 	<movevent event="Equip" itemid="18407" slot="necklace" level="150" function="onEquipItem"/>
 	<movevent event="DeEquip" itemid="18407" slot="necklace" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="21691" slot="necklace" level="150" function="onEquipItem"/>
-    <movevent event="DeEquip" itemid="21691" slot="necklace" function="onDeEquipItem"/>
+	<movevent event="DeEquip" itemid="21691" slot="necklace" function="onDeEquipItem"/>
 
 	<!-- Rings -->
 	<movevent event="Equip" itemid="2164" slot="ring" function="onEquipItem"/>
@@ -961,14 +961,14 @@
 	</movevent>
 	<movevent event="DeEquip" itemid="18404" slot="armor" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="21706" slot="armor" function="onEquipItem"/>
-   <movevent event="DeEquip" itemid="21706" slot="armor" function="onDeEquipItem"/>
-   <movevent event="Equip" itemid="21725" slot="armor" level="130" function="onEquipItem">
-	    <vocation name="Sorcerer"/>
-	    <vocation name="Master Sorcerer" showInDescription="0"/>
-	    <vocation name="Druid"/>
-	    <vocation name="Elder Druid" showInDescription="0"/>
-   </movevent>
-   <movevent event="DeEquip" itemid="21725" slot="armor" function="onDeEquipItem"/>
+	<movevent event="DeEquip" itemid="21706" slot="armor" function="onDeEquipItem"/>
+	<movevent event="Equip" itemid="21725" slot="armor" level="130" function="onEquipItem">
+		<vocation name="Sorcerer"/>
+		<vocation name="Master Sorcerer" showInDescription="0"/>
+		<vocation name="Druid"/>
+	<vocation name="Elder Druid" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="21725" slot="armor" function="onDeEquipItem"/>
 
 	<!-- Legs -->
 	<movevent event="Equip" itemid="2477" slot="legs" function="onEquipItem">
@@ -1061,12 +1061,12 @@
 	</movevent>
 	<movevent event="DeEquip" itemid="18405" slot="legs" function="onDeEquipItem"/>
 	<movevent event="Equip" itemid="21700" slot="legs" function="onEquipItem">
-	    <vocation name="Sorcerer"/>
-	    <vocation name="Master Sorcerer" showInDescription="0"/>
-	    <vocation name="Druid"/>
-	    <vocation name="Elder Druid" showInDescription="0"/>
-    </movevent>
-    <movevent event="DeEquip" itemid="21700" slot="legs" function="onDeEquipItem"/>
+		<vocation name="Sorcerer"/>
+		<vocation name="Master Sorcerer" showInDescription="0"/>
+		<vocation name="Druid"/>
+		<vocation name="Elder Druid" showInDescription="0"/>
+	</movevent>
+	<movevent event="DeEquip" itemid="21700" slot="legs" function="onDeEquipItem"/>
 
 	<!-- Weapons -->
 	<movevent event="Equip" itemid="18390" slot="hand" level="65" function="onEquipItem">

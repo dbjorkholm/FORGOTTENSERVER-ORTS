@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.OutfitQuest.DruidBodyAddon, 2)
 				player:addOutfitAddon(148, 1)
 				player:addOutfitAddon(144, 1)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end

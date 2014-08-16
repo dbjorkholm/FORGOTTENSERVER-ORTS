@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, 'spark of the phoenix') then
 		npcHandler:say('The Spark of the Phoenix is given by me and by the great geomancer of the local earth temple. Do you wish to receive my part of the Spark of the Phoenix for ' .. getBlessingsCost(Player(cid):getLevel()) .. ' gold?', cid)
 		npcHandler.topic[cid] = 1

@@ -16,7 +16,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if targetWall.requireSoil then	
+	if targetWall.requireSoil then
 		if not (player:removeItem(8298, 1) or player:removeItem(8299, 1) or player:removeItem(8302, 1) or player:removeItem(8303, 1)) then
 			player:teleportTo(targetWall.pushbackPosition)
 			player:say('You may not enter without a sacrifice of elemental soil.', TALKTYPE_MONSTER_SAY)

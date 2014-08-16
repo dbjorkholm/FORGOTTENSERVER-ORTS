@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	local storage = Storage.OutfitQuest.PirateSabreAddon
-	
+
 	if isInArray({"outfit", "addon"}, msg) then
 		npcHandler:say("You're talking about my sabre? Well, even though you earned our trust, you'd have to fulfill a task first before you are granted to wear such a sabre.", cid)
 	elseif msgcontains(msg, "task") then
@@ -80,8 +80,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
-	return true	
+	return true
 end
-	
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

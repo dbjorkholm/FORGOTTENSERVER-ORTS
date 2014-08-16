@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	
+
 	if item.uid == 50083 then
 		if player:getItemCount(8710) < 3 then
 			player:sendTutorial(39)
@@ -15,6 +15,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 	fromPosition.y = fromPosition.y + 1
 	fromPosition.z = fromPosition.z - 1
-	player:teleportTo(fromPosition, false)		
+	player:teleportTo(fromPosition, false)
 	return true
 end	

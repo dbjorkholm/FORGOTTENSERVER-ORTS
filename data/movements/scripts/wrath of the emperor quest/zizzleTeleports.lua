@@ -11,7 +11,7 @@ function onStepIn(cid, item, position, fromPosition)
 			else
 				doTeleportThing(cid, fromPosition)
 				return true
-			end	
+			end
 			doTeleportThing(cid, teleports[item.uid][1])
 			doSendMagicEffect(teleports[item.uid][1], CONST_ME_TELEPORT)
 		end

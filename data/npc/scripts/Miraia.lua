@@ -15,8 +15,8 @@ local config = {
 		count = 100,
 		storageValue = 1,
 		text = {
-			'Have you really managed to fulfil the task and brought me 100 pieces of ape fur?', 
-			'Only ape fur is good enough to touch the feet of our Caliph.', 
+			'Have you really managed to fulfil the task and brought me 100 pieces of ape fur?',
+			'Only ape fur is good enough to touch the feet of our Caliph.',
 			'Ahhh, this softness! I\'m impressed, |PLAYERNAME|. You\'re on the best way to earn that turban. Now, please retrieve 100 fish fins.'
 		}
 	},
@@ -25,8 +25,8 @@ local config = {
 		count = 100,
 		storageValue = 2,
 		text = {
-			'Were you able to discover the undersea race and retrieved 100 fish fins?', 
-			'I really wonder what the explorer society is up to. Actually I have no idea how they managed to dive unterwater.', 
+			'Were you able to discover the undersea race and retrieved 100 fish fins?',
+			'I really wonder what the explorer society is up to. Actually I have no idea how they managed to dive unterwater.',
 			'I never thought you\'d make it, |PLAYERNAME|. Now we only need two enchanted chicken wings to start our waterwalking test!'
 		}
 	},
@@ -35,8 +35,8 @@ local config = {
 		count = 2,
 		storageValue = 3,
 		text = {
-			'Were you able to get hold of two enchanted chicken wings?', 
-			'Enchanted chicken wings are actually used to make boots of haste, so they could be magically extracted again. Djinns are said to be good at that.', 
+			'Were you able to get hold of two enchanted chicken wings?',
+			'Enchanted chicken wings are actually used to make boots of haste, so they could be magically extracted again. Djinns are said to be good at that.',
 			'Great, thank you very much. Just bring me 100 pieces of blue cloth now and I will happily show you how to make a turban.'
 		}
 	},
@@ -45,8 +45,8 @@ local config = {
 		count = 100,
 		storageValue = 4,
 		text = {
-			'Ah, have you brought the 100 pieces of blue cloth?', 
-			'It\'s a great material for turbans.', 
+			'Ah, have you brought the 100 pieces of blue cloth?',
+			'It\'s a great material for turbans.',
 			'Ah! Congratulations - I hope this veil will turn out as beautiful as you are. Here, I\'ll do it for you.'
 		}
 	}

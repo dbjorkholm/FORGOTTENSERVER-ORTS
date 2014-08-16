@@ -19,7 +19,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	
+
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.OreWagon) == 1 then
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

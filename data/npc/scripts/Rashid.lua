@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable()
-local list = 
+local list =
 {
 	{name = 'Abyss Hammer',			id = 7414,		sell = 20000,		buy = 0},
 	{name = 'Amber Staff',			id = 7426,		sell = 8000,		buy = 0},
@@ -255,7 +255,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-		
+
 			npcHandler:say(
 			{
 			"Very good! I need talented people who are able to handle my wares with care, find good offers and the like, so I'm going to test you. ...",
@@ -264,7 +264,7 @@ local function creatureSayCallback(cid, type, msg)
 			"Okay, all I want from you is one of these rare deer trophies. I have a customer here in Svargrond who ordered one, so I'd like you to deliver it tome while I'm in Svargrond. ...",
 			"Everything clear and understood?"
 			}, cid)
-			
+
 			npcHandler.topic[cid] = 2
 		elseif(npcHandler.topic[cid] == 2) then
 			npcHandler:say("Fine. Then get a hold of that deer trophy and bring it to me while I'm in Svargrond. Just ask me about your mission.", cid)

@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if itemEx.itemid ~= 7178 then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if player:getStorageValue(Storage.TheIceIslands.Questline) == 8 then
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
@@ -21,7 +21,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 		player:say('You painted a baby seal.', TALKTYPE_MONSTER_SAY)
 		Item(itemEx.uid):transform(7252)
-		addEvent(transformBack, 30 * 1000, toPosition, 7252, 7178)			
+		addEvent(transformBack, 30 * 1000, toPosition, 7252, 7178)
 	end
 	return true
 end

@@ -4,7 +4,7 @@
   <look type="128" head="77" body="43" legs="38" feet="76" addons="0" />
 <voices>
 <voice text="Welcome to the house of fashion, Iron Sparrow!" interval2="100" margin="1" yell="no"/>
-</voices>  
+</voices>
 	<parameters>
     <parameter key="message_greet" value="Hey |PLAYERNAME|, what'cha want?" />
     <parameter key="message_farewell" value="Thanks and see ya." />

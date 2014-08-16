@@ -3,7 +3,7 @@ local playerexhaust = Condition(CONDITION_EXHAUST_WEAPON)
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player= Player(cid)
-	
+
 	if itemEx.itemid == 8600 then
 		Item(item.uid):remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)

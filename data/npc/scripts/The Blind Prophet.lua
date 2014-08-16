@@ -7,7 +7,7 @@ function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
 function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
-        
+
 -- Don't forget npcHandler = npcHandler in the parameters. It is required for all StdModule functions!
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Me put name away name long ago. Now only blind prophet of ape people are.'})
 keywordHandler:addKeyword({'blind prophet'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Me is who in dreams speak to holy banana. Me divine the will of banana.'})
@@ -57,10 +57,10 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
-		
-		
 
-		
+
+
+
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

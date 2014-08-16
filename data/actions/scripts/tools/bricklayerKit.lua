@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	
+
 	if itemEx.actionid == 50113 then
 		player:removeItem(5901, 3)
 		player:removeItem(8309, 3)

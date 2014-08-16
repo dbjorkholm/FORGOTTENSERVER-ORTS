@@ -35,7 +35,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Item(itemEx.uid):remove()
 		Item(item.uid):transform(12303)
 	-- sacred bowl of purification
-	elseif item.itemid == 12303 and itemEx.itemid == 11450 then 
+	elseif item.itemid == 12303 and itemEx.itemid == 11450 then
 		player:say("Filling the corrupted water into the sacred bowl completly purifies the fluid.", TALKTYPE_MONSTER_SAY)
 		Item(item.uid):transform(12289)
 	-- bowl with sacred water
@@ -49,7 +49,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 4 then
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 5)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission02, 2) --Questlog, Wrath of the Emperor "Mission 02: First Contact"
-		end 
+		end
 		for i = 1, 4 do
 			waterpos[i]:sendMagicEffect(CONST_ME_GREEN_RINGS)
 		end

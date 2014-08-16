@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, "Svargrond") or msgcontains(msg, "passage") then
 		npcHandler:say("Do you want to Svargrond?", cid)
 		npcHandler.topic[cid] = 10
@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
-	
+
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 20 then
 			npcHandler:say({"I am in dire need of help. A plague has befallen my dogs. I even called a druid of Carlin for help but all he could do was to recommend some strong medicine ...",
@@ -40,14 +40,14 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) > 20 and player:getStorageValue(Storage.TheIceIslands.Questline) < 28 then
 		npcHandler:say("What for ingredient do you have?", cid)
 		npcHandler.topic[cid] = 0
-		else 
+		else
 		npcHandler:say("I have now no mission for you.", cid)
 		npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "waterskin") then
 		npcHandler:say("Do you want to buy a waterskin for 25 gold?", cid)
 		npcHandler.topic[cid] = 2
-	
+
 	elseif msgcontains(msg, "cactus") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 21 then
 			npcHandler:say("You will find this kind of cactus at places that are called deserts. Only an ordinary kitchen knife will be precise enough to produce the ingredient weneed. Do you have a part of that cactus with you?", cid)
@@ -102,7 +102,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have enough money.", cid)
 			end
 			npcHandler.topic[cid] = 0
-			
+
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getItemCount(7245) >= 1 then
 				player:removeItem(7245, 1)
@@ -181,6 +181,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -21,13 +21,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if thing then
 				thing:transform(item.itemid == 1945 and config.bridgeID or config.waterID)
 			end
-			
+
 			if creature then
 				creature:teleportTo(config.removeCreaturePosition)
 			end
 		end
-	end	
-	
+	end
+
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

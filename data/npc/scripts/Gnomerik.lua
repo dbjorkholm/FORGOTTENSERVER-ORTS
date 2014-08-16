@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("We are hiring people to fight in our so called Bigfoot company against the foes of gnomekind. Are you interested in joining?", cid)
 			npcHandler.topic[cid] = 1
 		end
-		
+
 	-- TEST
 	elseif msgcontains(msg, "test") then
 		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 2 then
@@ -177,6 +177,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

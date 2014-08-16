@@ -28,10 +28,10 @@ local function greetCallback(cid)
 		end
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
-	elseif player:getStorageValue(258) == 1 then	
+	elseif player:getStorageValue(258) == 1 then
 		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now. ")
 		player:setStorageValue(258, 2)
-	elseif player:getStorageValue(258) == 2 then	
+	elseif player:getStorageValue(258) == 2 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh its you again. What du you want, hornless messenger?")
 	end
 	return true
@@ -42,7 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, "letter") then
 		if player:getStorageValue(Storage.postman.Mission10) == 1 then
 			if player:getItemCount(2333) > 0 then

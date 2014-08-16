@@ -37,6 +37,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 		Item(item.uid):transform(item.itemid - 4)
-	end	
+	end
 	return true
 end

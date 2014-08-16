@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler.topic[cid] = 0
 	end
-   return true
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
