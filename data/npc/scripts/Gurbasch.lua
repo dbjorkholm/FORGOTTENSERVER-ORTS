@@ -5,7 +5,6 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-
 local lastSound = 0
 function onThink()
 	if lastSound < os.time() then
@@ -17,10 +16,6 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to go to Kazordoon to try the beer there? 160 gold?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 160, destination = {x=32660, y=31957, z=15}})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Then not.'})
-
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -31,21 +26,27 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
-			if player:removeMoney(210) then
+			if player:removeMoney(110) then
 				if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest "Mission 05: Getting Things Busy" complete then Stage 3
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					player:teleportTo({x=33025, y=31553, z=10})
+					player:teleportTo((x=33025, 31553, 10))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+					npcHandler:say('Set the sails!', cid)
+					npcHandler.topic[cid] = 0
 					return true
 				elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest "Mission 03: Strangers in the Night" complete then Stage 2
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					player:teleportTo({x=33025, y=31553, z=12})
+					player:teleportTo(Position(33025, 31553, 12))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+					npcHandler:say('Set the sails!', cid)
+					npcHandler.topic[cid] = 0
 					return true
 				else --if nothing done Stage 1
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					player:teleportTo({x=33025, y=31553, z=14})
+					player:teleportTo(Position(33025, 31553, 14))
 					player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+					npcHandler:say('Set the sails!', cid)
+					npcHandler.topic[cid] = 0
 				end
 			else
 			npcHandler:say('You don\'t have enough money.', cid)
@@ -57,7 +58,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	end
 	return true
-end      
+end
+
+local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to go to Kazordoon to try the beer there? 160 gold?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 160, destination = {x=32660, y=31957, z=15}})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Then not.'})    
+
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Do you want me take you to {Kazordoon} or {Farmine}?"})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Welcome, |PLAYERNAME|! May Earth protect you, even whilst sailing!")

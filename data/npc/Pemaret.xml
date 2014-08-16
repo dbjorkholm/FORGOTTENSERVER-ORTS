@@ -5,6 +5,6 @@
 	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="fish,2667,5;"/>
-		<parameter key="shop_sellable" value="green perch,7159,100;marlin,7963,800;northern pike,2669,100;rainbow trout,7158,100;shimmer swimmer,13546,300;"/>
+		<parameter key="shop_sellable" value="green perch,7159,100;marlin,7963,800;northern pike,2669,100;rainbow trout,7158,100;shimmer swimmer,13546,3000;"/>
 	</parameters>
 </npc>
