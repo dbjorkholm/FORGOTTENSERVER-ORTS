@@ -171,7 +171,7 @@ if Modules == nil then
 		end
 
 		local travelCost = parameters.cost
-		if travelCost > 0 then
+		if travelCost and travelCost > 0 then
 			if player:getStorageValue(Storage.postman.Rank) >= 3 then -- Grand Postman (boat discounts)
 				travelCost = travelCost - 10
 			end
