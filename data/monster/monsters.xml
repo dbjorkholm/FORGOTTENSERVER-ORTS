@@ -832,6 +832,7 @@
 	<monster name="Plaguethrower" file="traps/plaguethrower.xml"/>
 	<monster name="Pillar" file="traps/pillar.xml"/>
 	<monster name="Shredderthrower" file="traps/shredderthrower.xml"/>
+	<monster name="Demon Summoner" file="traps/demon summoner.xml"/>
 
 	<!-- Trolls -->
 	<monster name="Frost Troll" file="trolls/frost troll.xml"/>
