@@ -90,7 +90,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif npcHandler.topic[cid] == 1 then
-		local cityTable = config.towns[string.lower(msg)]
+		local cityTable = config.towns[msg:lower()]
 		if cityTable then
 			town[cid] = cityTable
 			npcHandler:say("IN ".. string.upper(msg) .."! AND WHAT PROFESSION HAVE YOU CHOSEN: {KNIGHT}, {PALADIN}, {SORCERER}, OR {DRUID}?", cid)
@@ -99,7 +99,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {CARLIN}, {THAIS}, OR {VENORE}?", cid)
 		end
 	elseif npcHandler.topic[cid] == 2 then
-		local vocationTable = config.vocations[string.lower(msg)]
+		local vocationTable = config.vocations[msg:lower()]
 		if vocationTable then
 			npcHandler:say(vocationTable.text, cid)
 			npcHandler.topic[cid] = 3
@@ -115,7 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Town(town[cid]):getTemplePosition())
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local targetVocation = config.vocations[string.lower(Vocation(vocation[cid]):getName())]
+			local targetVocation = config.vocations[Vocation(vocation[cid]):getName():lower()]
 			for i = 1, #targetVocation[1] do
 				player:addItem(targetVocation[1][i][1], targetVocation[1][i][2])
 			end
