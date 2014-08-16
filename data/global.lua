@@ -178,19 +178,19 @@ function getDistanceBetween(firstPosition, secondPosition)
 	return posDif
 end
 
-function self.isSorcerer(self)
+function Player.isSorcerer(self)
 	return isInArray({1, 5}, self:getVocation():getId())
 end
 
-function self.isDruid(self)
+function Player.isDruid(self)
 	return isInArray({2, 6}, self:getVocation():getId())
 end
 
-function self.isPaladin(self)
+function Player.isPaladin(self)
 	return isInArray({3, 7}, self:getVocation():getId())
 end
 
-function self.isKnight(self)
+function Player.isKnight(self)
 	return isInArray({4, 8}, self:getVocation():getId())
 end
 
