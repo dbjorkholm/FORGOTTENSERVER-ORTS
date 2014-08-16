@@ -822,6 +822,7 @@
 	<monster name="a carved stone tile" file="traps/a carved stone tile.xml"/>
 	<monster name="Deathslicer" file="traps/deathslicer.xml"/>
 	<monster name="Deaththrower" file="traps/deaththrower.xml"/>
+	<monster name="Demon Summoner" file="traps/demon summoner.xml"/>
 	<monster name="Dwarf Dispenser" file="traps/dwarf dispenser.xml"/>
 	<monster name="Flamethrower" file="traps/flamethrower.xml"/>
 	<monster name="Hell Hole" file="traps/hell hole.xml"/>
@@ -832,7 +833,6 @@
 	<monster name="Plaguethrower" file="traps/plaguethrower.xml"/>
 	<monster name="Pillar" file="traps/pillar.xml"/>
 	<monster name="Shredderthrower" file="traps/shredderthrower.xml"/>
-	<monster name="Demon Summoner" file="traps/demon summoner.xml"/>
 
 	<!-- Trolls -->
 	<monster name="Frost Troll" file="trolls/frost troll.xml"/>
