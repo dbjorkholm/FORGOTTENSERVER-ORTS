@@ -1,5 +1,5 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50139
+Last Used Storage = 50142
 Last Used Aid = 50161
 Last Used Uid = 50134
 ---//////////////////////////////////////////----
@@ -212,3 +212,5 @@ Kaz wagons aid = 50136-50159
 PoI Maze Stone aid = 50160
 
 Vengoth Teleports (strange whirl's) aid = 50220-50229
+
+Svarground Arena Quest Quest Log Storages = 50140-50142

@@ -26,7 +26,7 @@ function onStepIn(cid, item, position, fromPosition)
 
 	SvargrondArena.resetPit(pitId)
 	SvargrondArena.scheduleKickPlayer(cid, pitId)
-	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, true, true)
+	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)
 	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
