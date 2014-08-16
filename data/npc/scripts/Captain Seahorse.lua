@@ -11,28 +11,27 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
-	if msgcontains(msg, "venore") then
-		npcHandler:say("Do you seek a passage to Venore for 40 gold?", cid)
+
+	if msgcontains(msg, 'venore') then
+		npcHandler:say('Do you seek a passage to Venore for 40 gold?', cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			if player:removeMoney(40) then
-				if player:getStorageValue(Storage.postman.Mission01) == 3 then
-					player:setStorageValue(Storage.postman.Mission01, 4)
-					player:teleportTo(Position(32954, 32022, 6))
-					npcHandler:say('Set the sails!', cid)
-					npcHandler.topic[cid] = 0
-				else
-					player:teleportTo(Position(32954, 32022, 6))
-					npcHandler:say('Set the sails!', cid)
-					npcHandler.topic[cid] = 0
-				end
-			else
-				npcHandler:say("You don't have enough money.", cid)
-			end
-		end
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
 		npcHandler.topic[cid] = 0
+		local player = Player(cid)
+		if not player:removeMoney(40) then
+			npcHandler:say('You don\'t have enough money.', cid)
+			return true
+		end
+		
+		if player:getStorageValue(Storage.postman.Mission01) == 3 then
+			player:setStorageValue(Storage.postman.Mission01, 4)
+		end
+		
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		local position = Position(32954, 32022, 6)
+		player:teleportTo(position)
+		position:sendMagicEffect(CONST_ME_TELEPORT)
+		npcHandler:say('Set the sails!', cid)
 	end
 	return true
 end
@@ -76,7 +75,7 @@ keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, on
 keywordHandler:addKeyword({'yalahar'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I\'m sorry, but we don\'t serve this route. However, I heard that Wyrdin here in Edron is looking for adventurers to go on a trip to Yalahar for him.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, |PLAYERNAME|. Where may I {sail} you today?")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye. Recommend us if you were satisfied with our service.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye then.")
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {sail} you today?')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye. Recommend us if you were satisfied with our service.')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye then.')
 npcHandler:addModule(FocusModule:new())
