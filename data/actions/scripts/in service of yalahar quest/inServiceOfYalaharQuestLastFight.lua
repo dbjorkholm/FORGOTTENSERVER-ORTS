@@ -24,16 +24,16 @@ end
 function doChangeAzerus()
 	local azeruses = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
 	for _, azerus in ipairs(azeruses) do
-		if azerus:isMonster() and string.lower(azerus:getName()) == "azerus" then
+		if azerus:isMonster() and azerus:getName():lower() == "azerus" then
 			azerus:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
 			local azeruspos = azerus:getPosition()
 			azerus:remove()
-			Game.createMonster("Azerus", azeruspos) 
+			Game.createMonster("Azerus", azeruspos)
 			return true
 		end
 	end
 	return false
-end		
+end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.uid == 3086 then
@@ -58,13 +58,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				elseif i == 4 then
 					azeruswavemonster = "war golem"
 				end
-				for k = 1, table.maxn(waves) do			
+				for k = 1, table.maxn(waves) do
 					addEvent(doSummonCreature, i * 20 * 1000, azeruswavemonster, waves[k])
 					addEvent(doSendMagicEffect, i * 20 * 1000, waves[k], CONST_ME_TELEPORT)
 				end
 			end
 			for x = 32779, 32787, 8 do
-				for y = 31161, 31171, 10 do      
+				for y = 31161, 31171, 10 do
 					doSendMagicEffect({x=x, y=y, z=10}, CONST_ME_HOLYAREA)
 				end
 			end
