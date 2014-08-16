@@ -1,5 +1,17 @@
+local waterpos = {
+	Position({x = 33282, y = 31036, z = 10}),
+	Position({x = 33282, y = 31037, z = 10}),
+	Position({x = 33283, y = 31037, z = 10}),
+	Position({x = 33283, y = 31036, z = 10}),
+	Position({x = 33283, y = 31038, z = 10}),
+	Position({x = 33283, y = 31035, z = 10})
+}
+
 local function revertWater(position)
-	Tile(position):getItemById(11030):transform(11450)
+	local waterTile = Tile(position):getItemById(11030)
+	if waterTile then
+		waterTile:transform(11450)
+	end
 end
 
 
@@ -38,21 +50,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 5)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission02, 2) --Questlog, Wrath of the Emperor "Mission 02: First Contact"
 		end 
-		local pos = {
-			Position({x = 33282, y = 31036, z = 10}),
-			Position({x = 33282, y = 31037, z = 10}),
-			Position({x = 33283, y = 31037, z = 10}),
-			Position({x = 33283, y = 31036, z = 10}),
-			Position({x = 33283, y = 31038, z = 10}),
-			Position({x = 33283, y = 31035, z = 10})
-		}
 		for i = 1, 4 do
-			pos[i]:sendMagicEffect(CONST_ME_GREEN_RINGS)
+			waterpos[i]:sendMagicEffect(CONST_ME_GREEN_RINGS)
 		end
 		for i = 1, 6 do
-			Tile(pos[i]):getItemById(11450):transform(11030)
-			doTransformItem(getTileItemById(pos[i], 11450).uid, 11030)
-			addEvent(revertWater, 60 * 1000, pos[i])
+			Tile(waterpos[i]):getItemById(11450):transform(11030)
+			addEvent(revertWater, 60 * 1000, waterpos[i])
 		end
 	end
 	return true
