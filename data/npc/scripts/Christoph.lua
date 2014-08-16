@@ -14,7 +14,7 @@ condition:addDamage(10, 1000, -10)
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
-	end 
+	end
 	if isInArray({"fuck", "idiot", "asshole", "ass", "fag", "stupid", "tyrant", "shit", "lunatic"}, msg) then
 		npcHandler:say("Take this!", cid)
 		local player = Player(cid)
@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end
-	return true	
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

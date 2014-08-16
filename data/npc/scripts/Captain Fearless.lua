@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, 'darashia') then
 		npcHandler:say('Do you seek a passage to Darashia for 60 gold?', cid)
 		npcHandler.topic[cid] = 1
@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('You don\'t have enough money.', cid)
 				return true
 			end
-			
+
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			local position = math.random(10) == 1 and Position(33324, 32173, 6) or Position(33289, 32481, 6)
 			player:teleportTo(position)

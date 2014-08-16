@@ -43,7 +43,7 @@ local function getTable()
 	}
 	return itemsList
 end
- 
+
 local function setNewTradeTable(table)
 	local items = {}
 	for _, v in ipairs(table) do
@@ -64,7 +64,7 @@ local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 		end
 		count = i
 	end
-	
+
 	if count == 0 then
 		return true
 	end
@@ -88,7 +88,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, 'equipment') then
 		npcHandler:say({'You can buy different equipment for minor or for major tokens. So, which is the equipment you are interested in, the one for {minor} or {major} tokens? ...', 'By the way, if you want to have a look on the prismatic and gill items first, just head over to the depot and check the market.'}, cid)
 	elseif msgcontains(msg, 'major') then
@@ -127,11 +127,11 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			local item = Game.createItem(targetTable.itemid, 1)
 			local weight = 0
 			weight = ItemType(item:getId()):getWeight(item:getCount())
-			
+
 			if player:addItemEx(item) ~= RETURNVALUE_NOERROR then
 				if player:getFreeCapacity() < weight then
 					npcHandler:say('First make sure you have enough capacity to hold it.', cid)
@@ -141,7 +141,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:removeItem(targetTable.token.id, targetTable.token.count)
 			npcHandler:say('Here have one of our ' .. item:getPluralName() .. '.', cid)
 			npcHandler.topic[cid] = 0

@@ -14,6 +14,6 @@ local function creatureSayCallback(cid, type, msg)
 		player:addMoney(100000)
 	end
 end
- 
+
 npcHandler:setMessage(MESSAGE_FAREWELL, "Happy hunting, old chap!")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

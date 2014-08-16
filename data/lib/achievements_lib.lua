@@ -20,7 +20,7 @@ Functions:
 	Player:getAchievements()
 	isAchievementSecret(achievement_id/name)
 	Player:getAchievementPoints()
-	
+
 Note: 	This lib was created following the data found in tibia.wikia.com.
 		Achievements with no points (or points equal to 0) are achievements with no available info about points in tibia.wikia.com. These achievements should be updated
 ]]
@@ -357,7 +357,7 @@ achievements =
 	[322] = {name = "Umbral Marksman", grade = 2, points = 6, description = "You managed to transform, improve and sacrify your crossbow into a master state and have proven yourself worthy in a nightmarish world."},
 	[323] = {name = "Umbral Master", grade = 3, points = 8, description = "You managed to transform, improve and sacrify all kinds of weapons into a master state and have proven yourself worthy in a nightmarish world. Respect!"},
 	[324] = {name = "Umbral Swordsman", grade = 2, points = 6, description = "You managed to transform, improve and sacrify your blade into a master state and have proven yourself worthy in a nightmarish world."},
-	
+
 	--10.5
 	[325] = {name = "Combo Master", grade = 1, points = 1, description = "You accomplished 10 or more consecutive chains in a row! That's killing at least 39 creatures in the correct order - now that's combinatorics!"},
 	[326] = {name = "Elementary, My Dear", grade = 1, points = 1, description = "Through the spirit of science and exploration, you have discovered how to enter the secret hideout of the renowned Dr Merlay."},
@@ -433,7 +433,7 @@ function isAchievementSecret(ach)
 		achievement = getAchievementInfoByName(ach)
 	end
 	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
+
 	return achievement.secret
 end
 
@@ -445,8 +445,8 @@ function Player.hasAchievement(self, ach)
 		achievement = getAchievementInfoByName(ach)
 	end
 	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
-	
+
+
 	return self:getStorageValue(ACHIEVEMENTS_BASE + achievement.id) > 0
 end
 
@@ -468,7 +468,7 @@ function Player.addAchievement(self, ach, denyMsg)
 		achievement = getAchievementInfoByName(ach)
 	end
 	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
+
 	if not self:hasAchievement(achievement.id) then
 		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, 1)
 		if not denyMsg then
@@ -486,7 +486,7 @@ function Player.removeAchievement(self, ach)
 		achievement = getAchievementInfoByName(ach)
 	end
 	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
-	
+
 	if self:hasAchievement(achievement.id) then
 		self:setStorageValue(ACHIEVEMENTS_BASE + achievement.id, -1)
 	end

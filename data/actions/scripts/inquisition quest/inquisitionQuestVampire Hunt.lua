@@ -3,7 +3,7 @@ local altars = {
 	{x = 32779, y = 31977, z = 9},
 	{x = 32781, y = 31982, z = 9}
 }
- 
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.actionid == 2002) then
 	local player = Player(cid)

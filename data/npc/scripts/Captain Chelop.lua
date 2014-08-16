@@ -28,7 +28,7 @@ keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Chelop and I am a captain of this {inquisition} ship."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Can't you see? I'm captain of the Pesadilla, the proud {inquisition} ship which anchors here."})
 keywordHandler:addKeyword({'inquisition'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "By edict of the honorable Henricus himself, we are ordered to give passage to all recruits of the Roshamuul mission for a small fee."})
-keywordHandler:addKeyword({'roshamuul'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This is the island you are currently on, just in case you forgot."})	
+keywordHandler:addKeyword({'roshamuul'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This is the island you are currently on, just in case you forgot."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, recruit |PLAYERNAME|. Where can I {sail} you today?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "On behalf of the inquisition, I bid you farewell.")

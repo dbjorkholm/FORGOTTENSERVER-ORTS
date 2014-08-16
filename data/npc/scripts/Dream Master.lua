@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "join") then
 		if player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) < 1 and player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) < 1 then

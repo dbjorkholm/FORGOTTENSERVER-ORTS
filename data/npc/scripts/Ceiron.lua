@@ -78,14 +78,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 12
 		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 3 then	
+		if npcHandler.topic[cid] == 3 then
 			npcHandler:say({"I hope that I am not asking too much of you with this task. I heard of a flower which is currently unique in Tibia and can survive at only one place. ...",
 							"This place is somewhere in the bleak mountains of Nargor. I would love to have a sample of its blossom, but the problem is that it seldom actually blooms. ...",
 							"I cannot afford to travel there each day just to check whether the time has already come, besides I have no idea where to start looking. ...",
 							"I would be deeply grateful if you could support me in this matter and collect a sample of the blooming Griffinclaw for me. ...",
 							"Have you understood everything I told you and will fullfil this task for me?"}, cid)
 			npcHandler.topic[cid] = 4
-		elseif npcHandler.topic[cid] == 4 then	
+		elseif npcHandler.topic[cid] == 4 then
 			npcHandler:say("Alright then. Take this botanist's container and return to me once you were able to retrieve a sample. Don't lose patience!", cid)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
@@ -95,9 +95,9 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(5937, 1) then
 				npcHandler:say("Crunor be praised! The Griffinclaw really exists! Now, I will make sure that it will not become extinct. If you are ready to help me again, just ask me for a {task}.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 2)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
-		elseif npcHandler.topic[cid] == 6 then	
+		elseif npcHandler.topic[cid] == 6 then
 			npcHandler:say("Great! Here, take my waterskin and try to fill it with water from this special trickle. Don't lose my waterskin, I will not accept some random dirty waterskin.", cid)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 3)
 			player:addItem(5938, 1)
@@ -106,9 +106,9 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(5939, 1) then
 				npcHandler:say("Good work, " .. player:getName() .. "! This water looks indeed extremely clear. I will examine it right away. If you are ready to help me again, just ask me for a {task}.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 4)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
-		elseif npcHandler.topic[cid] == 8 then	
+		elseif npcHandler.topic[cid] == 8 then
 			npcHandler:say("Good! I will eagerly await your return.", cid)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 5)
 			npcHandler.topic[cid] = 0
@@ -116,17 +116,17 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(6550, 100) then
 				npcHandler:say("I'm very impressed, " .. player:getName() .. ". With this task you have proven that you are on the right side and are powerful as well. If you are ready to help me again, just ask me for a {task}.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 6)
-				npcHandler.topic[cid] = 0	
-			end	
-		elseif npcHandler.topic[cid] == 10 then	
+				npcHandler.topic[cid] = 0
+			end
+		elseif npcHandler.topic[cid] == 10 then
 			npcHandler:say("Thank you so much. I can't wait to wear it around my neck again, it was a special present from Faolan.", cid)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 7)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
 			if player:removeItem(5940, 1) then
 				npcHandler:say("Crunor be praised! You found my beloved chain! " .. player:getName() .. ", you really earned my respect and I consider you as a friend from now on. Remind me to tell you about {Faolan} sometime.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 8)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 12 then
 			npcHandler:say("I can give you a new one, but I fear that I have to take a small fee for it. Would you like to buy a waterskin for 1000 gold?", cid)

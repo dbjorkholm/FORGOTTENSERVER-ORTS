@@ -4,7 +4,7 @@
 	<parameters>
 		<parameter key="message_greet" value="Yasu me halaka. greets you friendly" />
 		<parameter key="module_shop" value="1" />
-    		<parameter key="shop_sellable" value="				
+    		<parameter key="shop_sellable" value="
 					Acorn,11213,10;
 					Antlers,11214,50;
 					Ape Fur,5883,120;

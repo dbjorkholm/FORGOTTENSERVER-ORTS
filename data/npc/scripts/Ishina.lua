@@ -11,15 +11,15 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, 'outfit') then
 		if player:getSex() ~= 0 then
 			npcHandler:say('My jewelled belt? <giggles> That\'s not very manly. Maybe you\'d prefer a scimitar like Habdel has.', cid)
 			return true
 		end
-		
+
 		if player:getStorageValue(Storage.OutfitQuest.firstOrientalAddon) < 1 then
 			npcHandler:say('My jewelled belt? Of course I could make one for you, but I have a small request. Would you fulfil a task for me?', cid)
 			npcHandler.topic[cid] = 1
@@ -29,7 +29,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Comb? This is a jewellery shop.', cid)
 			return true
 		end
-		
+
 		if player:getStorageValue(Storage.OutfitQuest.firstOrientalAddon) == 1 then
 			npcHandler:say('Have you brought me a mermaid\'s comb?', cid)
 			npcHandler.topic[cid] = 3
@@ -49,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:setStorageValue(Storage.OutfitQuest.firstOrientalAddon, 2)
 			player:addOutfitAddon(150, 1)
 			player:addOutfitAddon(146, 1)
@@ -61,7 +61,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Oh... okay.', cid)
 		npcHandler.topic[cid] = 0
 	end
-	
+
 	return true
 end
 

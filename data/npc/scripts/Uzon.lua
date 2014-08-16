@@ -68,7 +68,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then	
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say('Hold on!', cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(32659, 31915, 0), false)

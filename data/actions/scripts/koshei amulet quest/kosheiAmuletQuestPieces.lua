@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not useItem then
 		return true
 	end
-	
+
 	local player = Player(cid)
 	if player:getStorageValue(item.uid) ~= 1 then
 		player:setStorageValue(item.uid, 1)

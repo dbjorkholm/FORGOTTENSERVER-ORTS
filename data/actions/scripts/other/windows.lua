@@ -46,6 +46,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	Item(item.uid):transform(window) 
+	Item(item.uid):transform(window)
 	return true
 end

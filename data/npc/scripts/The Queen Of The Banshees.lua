@@ -21,7 +21,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, "seventh seal") then
 		npcHandler:say("If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my {kiss} ... It will open the last seal. Do you think you are ready?", cid)
 		npcHandler.topic[cid] = 1
@@ -47,7 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:GetStorageValue(Storage.OutfitQuest.WizardAddon) == 6 then
 			npcHandler:say("Have you really brought me 50 holy orchids?", cid)
 			npcHandler.topic[cid] = 11
-		end	
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getStorageValue(50016) == 1 then
@@ -132,7 +132,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Then try to be better prepared next time we meet.", cid)
 		elseif npcHandler.topic[cid] == 8 then
 			npcHandler:say("Perhaps it is the better choice for you, my dear.", cid)
-		end		
+		end
 	end
 	return true
 end

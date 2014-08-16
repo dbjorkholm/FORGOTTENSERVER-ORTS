@@ -71,6 +71,6 @@
 		<item id="2214" chance="1100"/>					<!-- ring of healing -->
 		<item id="2189" chance="960"/>					<!-- wand of cosmic energy -->
 		<item id="2476" chance="230"/>					<!-- knight armor -->
-		
+
 	</loot>
 </monster>

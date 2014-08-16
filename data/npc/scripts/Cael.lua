@@ -101,11 +101,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 51
 		elseif npcHandler.topic[cid] == 33 then	--more than tome12
 			npcHandler:say("I've learnt many things from your books. Still, I guess that's just a fragment of what I could still discover about this interesting continent.", cid)
-			npcHandler.topic[cid] = 0		
+			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "lizard")) then --tome1
-		if npcHandler.topic[cid] == 40 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 40 then
+				npcHandler:say(
 							{
 								"Did you know that the lizardmen were among the first races roaming this continent? They were waging war against the orcs, minotaurs and humans on Zao and for a long time it seemed that the forces were even. ...",
 								"However, a while later, also a race of dragons arrived on this continent. Seeing the lizards as distant relatives, they decided to support their war, and together they drove all other races back into the steppe. ...",
@@ -115,8 +115,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "minotaur")) then --tome2
-		if npcHandler.topic[cid] == 41 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 41 then
+				npcHandler:say(
 							{
 								"Did you know that most of the minotaurs you might have met by now do not originally come from Zao? The original minotaur race stood no chance against the united force of dragons and lizards. ...",
 								"Most of them were killed and captured, but a few of them were able to flee the continent. They found other minotaurs, mighty Mooh'Tah masters, and told them their story. ...",
@@ -127,8 +127,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "draken")) then --tome3
-		if npcHandler.topic[cid] == 42 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 42 then
+				npcHandler:say(
 							{
 								"According to what I've read in that tome, the Draken seem to be a crossbreed between lizards and dragons, combining the dragons' strength with the lizards' swiftness. They seem to be the main figures in the dragons' internal quarrels. ...",
 								"They can't fly and are stuck with walking on two feet, but else they combine the best of two worlds - they are intelligent, powerful and both strong magic users and skilled weapon wielders. ...",
@@ -137,8 +137,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "food")) then --tome4
-		if npcHandler.topic[cid] == 43 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 43 then
+				npcHandler:say(
 							{
 								"I discovered an interesting recipe in this Tome of Knowledge. Maybe you've seen the large rice terraces in Muggy Plains - that is how the lizardmen apparently call that region. ...",
 								"The book is a lot of blabla about how they cultivate and harvest their rice, but there's something we could actually learn, and that is a certain way to prepare that rice. ...",
@@ -147,8 +147,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "zzaion")) then --tome5
-		if npcHandler.topic[cid] == 44 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 44 then
+				npcHandler:say(
 							{
 								"Have you ever seen the towers of the large lizard city south-east of Zao? It's the last one south of the mountains and who knows how long they are able to hold it. ...",
 								"It's under constant and heavy siege by the steppe orcs and minotaurs. Sometimes they manage to crush the gates and storm the city. Watch out, you probably don't want to stumble right into the middle of a war. Or maybe you do? ...",
@@ -157,8 +157,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "human")) then --tome6
-		if npcHandler.topic[cid] == 45 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 45 then
+				npcHandler:say(
 							{
 								"Well, to be honest it doesn't say much about humans in this book. However, it seems that the humans on this continent used to live in the steppe. ...",
 								"In the great war against dragons and lizards, they didn't stand the slightest chance due to lack of equipment and well, let's face it, intelligence. The other races were superior in every way. ...",
@@ -168,8 +168,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "steppe")) then --tome7
-		if npcHandler.topic[cid] == 46 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 46 then
+				npcHandler:say(
 							{
 								"Maybe you don't know that the great steppe was once a fertile ground. Well, to be precise - in the distant past it probably did not look any different from what it looks today. ...",
 								"But when the lizard civilisation was at its peak, they apparently developed advanced irrigation systems to water the steppe and used this area as major source for their supplies on rice and other food. ...",
@@ -181,8 +181,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "corruption")) then --tome8
-		if npcHandler.topic[cid] == 47 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 47 then
+				npcHandler:say(
 							{
 								"You know, while all this talk about growing and preparing rice might sound boring, there are actually some bits of vital information hidden in all those lists. ...",
 								"It seems that not only the loss of the southern area hampered the rice harvest of the lizards. ...",
@@ -197,8 +197,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "origin")) then --tome9
-		if npcHandler.topic[cid] == 48 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 48 then
+				npcHandler:say(
 							{
 								"I think the origin of the Draken sheds some new light on certain aspects of the lizard society. It is obvious from the books that the Draken appeared only after the dragon kings revealed themselves to the lizards. ...",
 								"It is specifically mentioned that the tide of the battle turned when they joined the army of the lizards. Parts of the tome were obviously erased and later overwritten. ...",
@@ -213,8 +213,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "founder")) then --tome10
-		if npcHandler.topic[cid] == 49 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 49 then
+				npcHandler:say(
 							{
 								"It seems that some parts of the tome are just copies from other sources and rather unrelated to each other. As far as I could piece them together, there was a mythical founder of the lizard civilisation. ...",
 								"His name was Zao and his deeds and exploits are immortalised in lizard folklore. Some of the earliest records in the tomes suggest a slightly different story though. ...",
@@ -227,8 +227,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "dragons")) then --tome11
-		if npcHandler.topic[cid] == 50 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 50 then
+				npcHandler:say(
 							{
 								"Dragons are of great symbolism for this land. Even before the dragons came here and took control over Zao, the lizards worshipped the dragons as strong mythical beasts. ...",
 								"When the future dragon kings came here - seemingly from a distant and foreign land - they probably took some advantage of this cult. ...",
@@ -241,8 +241,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "thrones")) then --tome12
-		if npcHandler.topic[cid] == 51 then	
-				npcHandler:say(	
+		if npcHandler.topic[cid] == 51 then
+				npcHandler:say(
 							{
 								"In the modern lizard culture thrones seem to be only a reminiscent of the past. Whereas in the past the rulers of the lizardmen used thrones and other insignia to show their status, in our days they are ruled by dragon kings. ...",
 								"Those kings seem to be massive dragons of immense power. Of course they do not actually 'use' thrones anymore, but claim them nonetheless as symbol for their position. ...",
@@ -329,13 +329,13 @@ local function creatureSayCallback(cid, type, msg)
 						local container = Game.createItem(1988, 1)
 						local bp = player:addItemEx(container)
 						if(bp ~= 1) then
-							return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')	
+							return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough container.')
 						end
 						for i = 1, amount do
 							container:addItem(items[item].itemId, items[item])
 						end
 					else
-						return 
+						return
 						player:addItem(items[item].itemId, amount, false, items[item]) and
 						player:removeMoney(amount * items[item].buyPrice) and
 						player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
@@ -347,19 +347,19 @@ local function creatureSayCallback(cid, type, msg)
 				end
 				return true
 			end
-				
+
 			local function onSell(cid, item, subType, amount, ignoreEquipped)
 				if items[item].sellPrice then
 					return
 					player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
 					player:addMoney(items[item].sellPrice * amount) and
-			
+
 					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
 				end
 				return true
 			end
 				openShopWindow(cid, getTable(player), onBuy, onSell)
-				
+
 				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 		else
 			npcHandler:say("Sorry, I don't have Items to trade now.", cid)

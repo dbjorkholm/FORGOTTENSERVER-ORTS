@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if (isInRange(toPosition, {x=33238, y=31806, z=12}, {x=33297, y=31865, z=12}) == false) then 
+	if (isInRange(toPosition, {x=33238, y=31806, z=12}, {x=33297, y=31865, z=12}) == false) then
 		return false
 	end
 	if (isInArray({7913, 7914}, item.itemid) == TRUE) then
@@ -14,6 +14,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		doTransformItem(get.uid, get.itemid - 4)
 		doTransformItem(item.uid, item.itemid - 4)
 		doCreatureSay(cid, "OFF", TALKTYPE_MONSTER_SAY, false, cid, (toPosition or getCreaturePosition(cid)))
-	end	
+	end
 	return TRUE
 end

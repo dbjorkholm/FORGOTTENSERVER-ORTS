@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("whoooosh There!", cid)
 			player:addItem(13941, 1)
 		else
-			npcHandler:say("There is no gold ingot with you.", cid)	
+			npcHandler:say("There is no gold ingot with you.", cid)
 		end
 		npcHandler.topic[cid] = 0
 	end
@@ -77,7 +77,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5887, 1)
-			end	
+			end
 		-- Dragon Shield
 		elseif npcHandler.topic[cid] == 5 then
 			if player:getItemCount(2516) > 0 then
@@ -85,23 +85,23 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5889, 1)
-			end	
-		-- Devil Helmet	
+			end
+		-- Devil Helmet
 		elseif npcHandler.topic[cid] == 6 then
 			if player:getItemCount(2462) > 0 then
 				player:removeItem(2462, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5888, 1)
-			end	
-		-- Giant Sword	
+			end
+		-- Giant Sword
 		elseif npcHandler.topic[cid] == 7 then
 			if player:getItemCount(2393) > 0 then
 				player:removeItem(2393, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5892, 1)
-			end	
+			end
 		-- Soul Orb
 		elseif npcHandler.topic[cid] == 8 then
 			if player:getItemCount(5944) > 0 then
@@ -117,7 +117,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
-			end	
+			end
 		elseif npcHandler.topic[cid] == 9 then
 			if player:getItemCount(8262) > 0 and player:getItemCount(8263) > 0 and player:getItemCount(8264) > 0 and player:getItemCount(8265) > 0 and player:getMoney() >= 5000 then
 				player:removeItem(8262, 1)

@@ -82,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
 		if npcHandler.topic[cid] == 3 then
-			npcHandler:say('No then.', cid)	
+			npcHandler:say('No then.', cid)
 		else
 			npcHandler:say('You shouldn\'t miss the experience.', cid)
 		end

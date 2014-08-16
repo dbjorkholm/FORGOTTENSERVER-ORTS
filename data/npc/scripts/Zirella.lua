@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 local voices = {
 	"I wish someone could spare a minute and help me...",
-	"This is too hard for an old woman like me.", 
+	"This is too hard for an old woman like me.",
 	"Hello, young adventurer, you look strong enough to help me!"
 }
 
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if isInArray({"yes", "quest", "ok"}, msg) then
 		if storeTalkCid[cid] == 0 then

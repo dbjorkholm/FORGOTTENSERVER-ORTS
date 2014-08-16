@@ -32,9 +32,9 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif(npcHandler.topic[cid] == 1) then 
-		if(msgcontains(msg, "no")) then 
-			npcHandler:say("No then.", cid)	
+	elseif(npcHandler.topic[cid] == 1) then
+		if(msgcontains(msg, "no")) then
+			npcHandler:say("No then.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	-- WAGON TICKET

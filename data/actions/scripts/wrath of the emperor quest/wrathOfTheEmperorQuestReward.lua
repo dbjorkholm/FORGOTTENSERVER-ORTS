@@ -41,7 +41,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found 100 platinum coins.")
 		else
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end	
+		end
 	elseif(item.uid == 3205) then
 		if(getPlayerStorageValue(cid, 1095) < 1) then
 			setPlayerStorageValue(cid, 1095, 1)
@@ -54,7 +54,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You've found a backpack.")
 		else
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The chest is empty.")
-		end	
+		end
 	end
 	return true
 end

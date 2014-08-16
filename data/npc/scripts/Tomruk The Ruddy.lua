@@ -78,7 +78,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:addItem(21250, 1)
 		npcHandler.topic[cid] = 0
 	end
-	return true	
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

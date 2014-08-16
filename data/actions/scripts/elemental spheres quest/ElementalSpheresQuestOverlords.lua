@@ -16,5 +16,5 @@ local function Reset(pos)
 	end
 	return true
 end
-		
+
 		

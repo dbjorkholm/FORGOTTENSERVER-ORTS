@@ -111,7 +111,7 @@ Hot Cuisine Quest:
 
 Thais Exhibition:
 	aid 50030 - 50056
-	
+
 6 Small Rubies Quest: aid = 50057
 
 Naginata Quest (Stone): aid = 50058

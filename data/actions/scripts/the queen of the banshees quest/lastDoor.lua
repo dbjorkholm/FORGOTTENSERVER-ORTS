@@ -7,6 +7,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	else
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "The door seems to be sealed against unwanted intruders.")
-	end		
+	end
 	return true
 end

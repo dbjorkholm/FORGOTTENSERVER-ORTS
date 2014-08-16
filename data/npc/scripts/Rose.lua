@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "Hydra Tongue") then
 		npcHandler:say("Do you want to buy a Hydra Tongue for 100 gold?", cid)
@@ -35,6 +35,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

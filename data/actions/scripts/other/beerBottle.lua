@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if itemEx.itemid ~= 8176 then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	player:removeItem(7496, 1)
 	player:addItem(7495, 1)

@@ -4,7 +4,6 @@ NpcSystem.parseParameters(npcHandler)
 
 local count = {}
 local transfer = {}
-local pin = {}
 
 function onCreatureAppear(cid)       npcHandler:onCreatureAppear(cid)     end
 function onCreatureDisappear(cid)     npcHandler:onCreatureDisappear(cid)     end
@@ -12,7 +11,7 @@ function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, m
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	count[cid], transfer[cid], pin[cid] = nil, nil, nil
+	count[cid], transfer[cid] = nil, nil
 	return true
 end
 
@@ -97,7 +96,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Please tell me how much gold it is you would like to deposit.", cid)
 				npcHandler.topic[cid] = 1
 				return true
-			end      
+			end
 		end
 
 		if not isValidMoney(count[cid]) then

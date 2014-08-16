@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	if(msgcontains(msg, "prison")) then
 		if player:getStorageValue(GreenDjinn.MissionStart+1) == 2 then
 			npcHandler:say("You mean that's a JAIL? They told me it's the finest hotel in town! THAT explains the lousy roomservice!", cid)
@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	return true
 end
 

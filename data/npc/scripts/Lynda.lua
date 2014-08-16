@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) == 1 then
 			npcHandler:say({"Angelina had been imprisoned? My, these are horrible news, but I am so glad to hear that she is safe now. ...",
 							"I will happily carry out her wish and reward you, but I fear I need some important ingredients for my blessing spell first....",
-							"Will you gather them for me?"}, cid, 0, 1, 4000)			
+							"Will you gather them for me?"}, cid, 0, 1, 4000)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "wand") or msgcontains(msg, "rod") then
@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 6
 		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then	
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({"Thank you, I promise that your efforts won't be in vain! Listen closely now: First, I need a sample of five druid rods and five sorcerer wands. ...",
 							"I need a snakebite rod, a moonlight rod, a necrotic rod, a terra rod and a hailstorm rod. Then, I need a wand of vortex, a wand of dragonbreath ...",
 							"... a wand of decay, a wand of cosmic energy and a wand of inferno. Please bring them all at once so that their energy will be balanced. ...",
@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Lastly, I need a lot of holy energy. I can extract it from ankhs, but only a small amount each time. I will need about 20 ankhs. ...",
 							"Did you understand everything I told you and will help me with my blessing?"}, cid, 0, 1, 4000)
 			npcHandler.topic[cid] = 2
-		elseif npcHandler.topic[cid] == 2 then	
+		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Alright then. Come back to with a sample of all five wands and five rods, please.", cid)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 2)
 			npcHandler.topic[cid] = 0
@@ -68,21 +68,21 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(2190, 1)
 				player:removeItem(2191, 1)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 3)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
 			if player:getItemCount(5904) >= 10 then
 				npcHandler:say("Very good. I will immediately start to prepare the ritual and extract the elemental energy from the wands and rods. Please bring me the Necromancer's soul stone now.", cid)
 				player:removeItem(5904, 10)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 4)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
 			if player:getItemCount(5809) >= 1 then
 				npcHandler:say("You have found a rarity there, " .. player:getName() .. ". This will become the tip of your blessed wand. Please bring me 20 ankhs now to complete the ritual.", cid)
 				player:removeItem(5809, 1)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 5)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
 			if player:getItemCount(2193) >= 20 then
@@ -92,7 +92,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(141, 1)
 				player:addOutfitAddon(130, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end

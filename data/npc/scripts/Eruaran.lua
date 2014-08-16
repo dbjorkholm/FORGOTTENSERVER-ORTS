@@ -12,10 +12,10 @@ local weapon = {}
 local weapon_sub = {}
 
 
-local Config = 
+local Config =
 {
 	Greet_Storage = 3250,
-	Create = 
+	Create =
 	{
 		Clusters = 20,
 		DreamMatter = 1,
@@ -27,7 +27,7 @@ local Config =
 		Chance = 30, --30%
 		BreakChance = 50 --50% of chance that when failing the improvement, the weapons is destroyed but you keep the clusters. Else, you keep the weapon and lose the clusters
 	},
-	Transform = 
+	Transform =
 	{
 		Clusters = 150,
 		Chance = 10, --10%
@@ -39,45 +39,45 @@ local IDS =
 {
 	DREAM_MATTER = 22397,
 	CLUSTER_OF_SOLACE = 22396,
-	
+
 	--weapons
 	CRUDE_UMBRAL_BLADE = 22398,
 	UMBRAL_BLADE = 22399,
 	UMBRAL_MASTER_BLADE = 22400,
-	
+
 	CRUDE_UMBRAL_SLAYER = 22401,
 	UMBRAL_SLAYER = 22402,
 	UMBRAL_MASTER_SLAYER = 22403,
-	
+
 	CRUDE_UMBRAL_AXE = 22404,
 	UMBRAL_AXE = 22405,
 	UMBRAL_MASTER_AXE = 22406,
-	
-	CRUDE_UMBRAL_CHOPPER = 22407, 
+
+	CRUDE_UMBRAL_CHOPPER = 22407,
 	UMBRAL_CHOPPER = 22408,
 	UMBRAL_MASTER_CHOPPER = 22409,
-	
+
 	CRUDE_UMBRAL_MACE = 22410,
 	UMBRAL_MACE = 22411,
 	UMBRAL_MASTER_MACE = 22412,
-	
+
 	CRUDE_UMBRAL_HAMMER = 22413,
 	UMBRAL_HAMMER = 22414,
 	UMBRAL_MASTER_HAMMER = 22415,
-	
+
 	CRUDE_UMBRAL_BOW = 22416,
 	UMBRAL_BOW = 22417,
 	UMBRAL_MASTER_BOW = 22418,
-	
+
 	CRUDE_UMBRAL_CROSSBOW = 22419,
 	UMBRAL_CROSSBOW = 22420,
 	UMBRAL_MASTER_CROSSBOW = 22421,
-	
+
 	CRUDE_UMBRAL_SPELLBOOK = 22422,
 	UMBRAL_SPELLBOOK = 22423,
 	UMBRAL_MASTER_SPELLBOOK = 22424
 }
-local TYPES = 
+local TYPES =
 {
 	SWORD = 1,
 	AXE = 2,
@@ -99,13 +99,13 @@ local SUB_TYPES =
 	SPELLBOOK = 9
 }
 
-local ACTION = 
+local ACTION =
 {
 	CREATE = 1,
 	IMPROVE = 2,
 	TRANSFORM = 3
 }
-	
+
 
 
 local function greetCallback(cid)
@@ -122,7 +122,7 @@ end
 local function creatureSayCallback(cid, type, msg)
 
 	if not npcHandler:isFocused(cid) then return false end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "create") then
 		npcHandler:say("You can try to create {sword}s, {axe}s, {club}s, {bow}s, {crossbow}s and {spellbook}s.", cid)
@@ -245,7 +245,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 3 then
-	
+
 		if action[cid] == ACTION.CREATE then --create
 			if player:getItemCount(IDS.DREAM_MATTER) >= 1 and player:getItemCount(IDS.CLUSTER_OF_SOLACE) >= Config.Create.Clusters then
 				if math.random(100) <= Config.Create.Chance then
@@ -264,7 +264,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			else
 				npcHandler:say("Sorry, you don't have the required ingredients.", cid)
-			end			
+			end
 		elseif action[cid] == ACTION.IMPROVE then --improve
 			local oldItemId = (weapon[cid] == TYPES.SWORD and (weapon_sub[cid] == SUB_TYPES.BLADE and IDS.CRUDE_UMBRAL_BLADE or IDS.CRUDE_UMBRAL_SLAYER) or weapon[cid] == TYPES.AXE and (weapon_sub[cid] == SUB_TYPES.AXE and IDS.CRUDE_UMBRAL_AXE or IDS.CRUDE_UMBRAL_CHOPPER) or weapon[cid] == TYPES.CLUB and (weapon_sub[cid] == SUB_TYPES.MACE and IDS.CRUDE_UMBRAL_MACE or IDS.CRUDE_UMBRAL_HAMMER) or weapon[cid] == TYPES.BOW and IDS.CRUDE_UMBRAL_BOW or weapon[cid] == TYPES.CROSSBOW and IDS.CRUDE_UMBRAL_CROSSBOW or weapon[cid] == TYPES.SPELLBOOK and IDS.CRUDE_UMBRAL_SPELLBOOK or false)
 			local newItemId = (oldItemId and oldItemId + 1 or false)
@@ -308,7 +308,7 @@ local function creatureSayCallback(cid, type, msg)
 								player:removeItem(oldItemId, 1)
 								player:addItem(oldItemId - 1, 1)
 								player:removeItem(IDS.CLUSTER_OF_SOLACE, Config.Transform.Clusters / 2)
-							end							
+							end
 						end
 					else
 						npcHandler:say("You do not have " .. ItemType(oldItemId):getArticle() .. " " .. ItemType(oldItemId):getName() .. " with you.", cid)
@@ -320,7 +320,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc()
-	end			
+	end
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)

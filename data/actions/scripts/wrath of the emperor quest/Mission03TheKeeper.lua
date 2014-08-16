@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.itemid == 12320 and itemEx.actionid == 8026 then
 		if getGlobalStorageValue(Storage.WrathoftheEmperor.Mission03) < 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, getGlobalStorageValue(Storage.WrathoftheEmperor.Mission03) + 1)
-			player:say("The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY) 
+			player:say("The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY)
 		elseif getGlobalStorageValue(Storage.WrathoftheEmperor.Mission03) == 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, 6)
 			toPosition:sendMagicEffect(CONST_ME_YELLOWRINGS)

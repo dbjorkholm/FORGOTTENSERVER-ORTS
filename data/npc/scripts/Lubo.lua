@@ -27,8 +27,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 2 then	
-			npcHandler:say("Alright then, if you bring me 100 pieces of fine minotaur leather I will see what I can do for you. You probably have to kill really many minotaurs though... so good luck!", cid)			
+		if npcHandler.topic[cid] == 2 then
+			npcHandler:say("Alright then, if you bring me 100 pieces of fine minotaur leather I will see what I can do for you. You probably have to kill really many minotaurs though... so good luck!", cid)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.OutfitQuest.CitizenBackpackAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(136, 1)
 				player:addOutfitAddon(128, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have it...", cid)
 			end

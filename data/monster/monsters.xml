@@ -691,7 +691,7 @@
 	<monster name="Orc Marauder" file="orcs/orc marauder.xml"/>
 	<monster name="Rorc" file="orcs/rorc.xml"/>
 	<monster name="Running Elite Orc Guard" file="orcs/running elite orc guard.xml"/>
-	
+
 	<!-- Raid Orcs -->
 	<monster name="Orcarmor" file="orcs/raid/orcarmor.xml"/>
 	<monster name="Orchelmet" file="orcs/raid/orchelmet.xml"/>

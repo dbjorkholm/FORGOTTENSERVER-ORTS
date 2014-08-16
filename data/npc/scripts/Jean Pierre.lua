@@ -30,14 +30,14 @@ local function playerHasIngredients(cid)
 	if table ~= nil then
 		for i = 1, #table do
 			local itemCount = player:getItemCount(table[i][1], table[i][3] or -1)
-        		if itemCount < table[i][2] then
-                		itemCount = table[i][2] - itemCount
+				if itemCount < table[i][2] then
+						itemCount = table[i][2] - itemCount
 				return false
 			end
-       		end
+			end
 	end
 	for i = 1, #table do
-        	player:removeItem(unpack(table[i]))
+			player:removeItem(unpack(table[i]))
 	end
 	return true
 end
@@ -49,7 +49,7 @@ local function greetCallback(cid)
 		npcHandler:setMessage(MESSAGE_GREET, "Greetings, "..player:getName()..". What are you doing out here?")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Hello there again, "..player:getName().."! I guess you're back for some cooking - let's get going then!")
-	end	
+	end
 	return true
 end
 
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "cook") then
 		if player:getStorageValue(50022) < 1 then
 			npcHandler:say("Well, I'm not a simple cook. I travel the whole Tibian continent for the most artfully seasoned {recipes} and constantly develop new ones.", cid)
-			npcHandler.topic[cid] = 1	
+			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "recipe") or msgcontains(msg, "menu") then
 		if npcHandler.topic[cid] == 1 then
@@ -85,7 +85,7 @@ local function creatureSayCallback(cid, type, msg)
 						"The 'dragon' part derives from the fiery afterburn of this meal, but the wings we use are much smaller, though similar in shape. Bring me the following ingredients and I'll show you how it's done. ...",
 						"One fresh dead bat, three jalapeño peppers, five brown breads, two eggs, one powder herb and five red mushrooms."
 						}, cid, 0, 1, 4000)
-				npcHandler.topic[cid] = 8	
+				npcHandler.topic[cid] = 8
 			elseif player:getStorageValue(50023) == 4 then
 				npcHandler:say({"The next dish we are going to prepare together is called {Tropical Fried Terrorbird}. You might have guessed it, we're not going to use a terrorbird. But! ...",
 						"The dish is quite fried and tropical. Bring me the following ingredients and we're going to prepare it: One fresh dead chicken, two lemons, two oranges, two mangos, one stone herb and two vials of coconut milk."
@@ -174,7 +174,7 @@ local function creatureSayCallback(cid, type, msg)
 						"And voilà, we're done. I developed this recipe while talking to Maryza in the Jolly Axeman. She said to eat it when one's health is low. Enjoy!"
 						}, cid, 0, 1, 4000)
 				player:setStorageValue(50023, 2)
-				player:setStorageValue(50024, 2) --QuestLog	
+				player:setStorageValue(50024, 2) --QuestLog
 				player:addItem(9992, 1)
 				npcHandler.topic[cid] = 0
 			else
@@ -387,10 +387,10 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Make sure that you have all the ingredients, with you.", cid)
 				npcHandler.topic[cid] = 0
-			end	
+			end
 		end
 	--Dishes first time
-	elseif msgcontains(msg, "rotworm stew") then	
+	elseif msgcontains(msg, "rotworm stew") then
 		if npcHandler.topic[cid] == 4 or player:getStorageValue(50022) == 2 then
 			npcHandler:say("Did you gather all necessary ingredients to cook Rotworm Stew with me?", cid)
 			player:setStorageValue(50023, 1)
@@ -476,7 +476,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "no") then
 		npcHandler:say("No?, come back when you are ready to cook.", cid)
-		npcHandler.topic[cid] = 0	
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end

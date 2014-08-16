@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable()
-	local list = 
+	local list =
 	{
 		{id = 7436,		sell = 5000,		buy = 0,		name = 'Angelic Axe'},
 		{id = 2656,		sell = 10000,		buy = 0,		name = 'Blue Robe'},
@@ -59,7 +59,7 @@ end
 local function onTradeRequest(cid)
 	TradeRequest(cid, npcHandler, getTable(), BlueDjinn, 4)
 end
- 
+
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "What do you want from me, |PLAYERNAME|?")

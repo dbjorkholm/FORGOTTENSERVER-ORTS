@@ -180,7 +180,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Did you acquire the sample of the giant jungle rose we are looking for?", cid)
 			npcHandler.topic[cid] = 14
 		end
-	-- PLANT COLLECTION	
+	-- PLANT COLLECTION
 
 	-- LIZARD URN
 	elseif msgcontains(msg, "lizard urn") then
@@ -230,7 +230,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 22
 		end
 	-- ELVEN POETRY
-	
+
 	-- MEMORY STONE
 	elseif msgcontains(msg, "memory stone") then
 		if player:getStorageValue(90) == 38 then
@@ -325,7 +325,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		-- BUTTERFLY HUNT
 
-		-- PLANT COLLECTION	
+		-- PLANT COLLECTION
 		elseif npcHandler.topic[cid] == 11 then
 			player:setStorageValue(90, 16)
 			npcHandler:say("Fine! Here take this botanist's container. Use it on a jungle bells plant to collect a sample for us. Report about your plant collection when you have been successful.", cid)

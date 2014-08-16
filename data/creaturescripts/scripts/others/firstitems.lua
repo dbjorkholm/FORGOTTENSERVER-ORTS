@@ -1,6 +1,6 @@
 -- With Rookgaard
 
---[[ 
+--[[
 local firstItems = {2050, 2382}
 
 function onLogin(cid)

@@ -27,7 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end
-			
+
 		if player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) < 1 then
 			if player:getStorageValue(Storage.OutfitQuest.DefaultStart) ~= 1 then
 				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
@@ -53,7 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end
-			
+
 		if player:getStorageValue(Storage.OutfitQuest.KnightSwordAddon) < 1 then
 			if player:getStorageValue(Storage.OutfitQuest.DefaultStart) ~= 1 then
 				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)

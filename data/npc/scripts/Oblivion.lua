@@ -46,18 +46,18 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 3
 	elseif(msgcontains(msg, 'bronze')) and npcHandler.topic[cid] == 3 and player:getStorageValue(9924) == 1 and player:getStorageValue(9925) < 1 then
 		npcHandler:say({"Yes. The shadows say this is true. The beauty of House Dunesea, name it."}, cid)
-		npcHandler.topic[cid] = 4	
+		npcHandler.topic[cid] = 4
 	elseif(msgcontains(msg, 'floating')) and npcHandler.topic[cid] == 4 and player:getStorageValue(9924) == 1 and player:getStorageValue(9925) < 1 then
 		npcHandler:say({"The floating gardens. Too beautiful to lie asleep in the memory of men. Yes. The name that is no more in Darkstone?"}, cid)
-		npcHandler.topic[cid] = 5	
+		npcHandler.topic[cid] = 5
 	elseif(msgcontains(msg, 'Takesha Antishu')) and npcHandler.topic[cid] == 5 and player:getStorageValue(9924) == 1 and player:getStorageValue(9925) < 1 then
 		npcHandler:say({"Ah, the Lady of Darkstone. You have done well to remember her name. ...",
 			"Now, the shadows say the thing you seek lies next to Akab, the Quarrelsome. ...",
 			"No coal is burned in his honour. Find his resting place and dig near it. Now go."}, cid)
 		player:setStorageValue(9925, 1)
-		npcHandler.topic[cid] = 0	
+		npcHandler.topic[cid] = 0
 	end
-	return true	
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

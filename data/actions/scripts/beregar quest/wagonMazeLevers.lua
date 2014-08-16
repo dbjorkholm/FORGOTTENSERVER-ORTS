@@ -14,7 +14,7 @@ local levers = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	
+
 	for i = 1, #config do
 		local table = config[i]
 		if item.uid == table.uniqueId then

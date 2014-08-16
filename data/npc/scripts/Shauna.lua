@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "job") then
 		if Player(cid):getStorageValue(GreenDjinn.MissionStart + 1) == 1 then
 			npcHandler:say("What do you think? I am the sheriff of Carlin.", cid)
@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	end
-	-- Mission 1 - The Supply Thief 
+	-- Mission 1 - The Supply Thief
 	return true
 end
 

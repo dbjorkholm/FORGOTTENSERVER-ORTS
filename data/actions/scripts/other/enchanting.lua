@@ -57,7 +57,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return true
 		end
 	end
-	
+
 	if item.itemid == 2147 and itemEx.itemid == 2342 then
 		local targetItem = Item(itemEx.uid)
 		targetItem:transform(2343)
@@ -73,13 +73,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
 		return true
 	end
-	
+
 	if isInArray(enchantableGems, item.itemid) then
 		local subtype = item.type
 		if subtype == 0 then
 			subtype = 1
 		end
-	
+
 		local mana = config.manaCost * subtype
 		if player:getMana() < mana then
 			player:sendCancelMessage(RETURNVALUE_NOTENOUGHMANA)
@@ -91,7 +91,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendCancelMessage(RETURNVALUE_NOTENOUGHSOUL)
 			return false
 		end
-	
+
 		local targetId = table.find(enchantableGems, item.itemid)
 		if targetId == nil or not isInArray(enchantingAltars[targetId], itemEx.itemid) then
 			return false
@@ -104,7 +104,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
 		return true
 	end
-	
+
 	if item.itemid == 7761 and isInArray({9949, 9954}, itemEx.itemid) then
 		local targetItem = Item(itemEx.uid)
 		targetItem:transform(itemEx.itemid - 1)
@@ -113,7 +113,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		return true
 	end
-	
+
 	if isInArray(enchantedGems, item.itemid) then
 		if not isInArray(enchantableItems, itemEx.itemid) then
 			fromPosition:sendMagicEffect(CONST_ME_POFF)

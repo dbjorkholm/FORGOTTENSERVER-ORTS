@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.itemid == 1946 then
 		return false
 	end
-	
+
 	local thing
 	for i = 1, #wall do
 		thing = Tile(wall[i]):getItemById(1304)
@@ -18,7 +18,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			thing:remove()
 		end
 	end
-	
+
 	Item(item.uid):transform(1946)
 	return true
 end

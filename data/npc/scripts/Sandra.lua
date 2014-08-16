@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Are you here to claim a prize?", cid)
 		npcHandler.topic[cid] = 4
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then	
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
 				"The Edron academy has introduced a bonus system. Each time you deposit 100 vials without claiming the money for it, you will receive a lottery ticket. ...",
 				"Some of these lottery tickets will grant you a special potion belt accessory, if you bring the ticket to me. ...",
@@ -48,12 +48,12 @@ local function creatureSayCallback(cid, type, msg)
 				"Would you like to join the bonus system now?"
 			}, cid)
 			npcHandler.topic[cid] = 2
-		elseif npcHandler.topic[cid] == 2 then	
+		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Great! I've signed you up for our bonus system. From now on, you will have the chance to win the potion belt addon!", cid)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 3 then	
+		elseif npcHandler.topic[cid] == 3 then
 			if player:removeItem(7634, 100) or player:removeItem(7635, 100) or player:removeItem(7636, 100) then
 				npcHandler:say("Ok here take this lottery ticket!", cid)
 				player:addItem(5957, 1)
@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have 100 vials.", cid)
 				npcHandler.topic[cid] = 0
 			end
-		elseif npcHandler.topic[cid] == 4 then	
+		elseif npcHandler.topic[cid] == 4 then
 			if player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) == 1 and player:getItemCount(5958) > 0 then
 				npcHandler:say("Congratulations! Here, from now on you can wear our lovely potion belt as accessory.", cid)
 				player:removeItem(5958, 1)

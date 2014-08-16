@@ -41,7 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(90, 52)
 			npcHandler.topic[cid] = 0
 		end
-	-- SPECTRAL STONE	
+	-- SPECTRAL STONE
 
 	-- MISSION CHECK
 	elseif msgcontains(msg, "mission") then
@@ -51,37 +51,37 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(90) > 26 and player:getStorageValue(90) <  35 then
 			npcHandler:say("The missions available for your rank are lizard urn, bonelord secrets and orc powder.", cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(90) > 34 and player:getStorageValue(90) <  44 then	
+		elseif player:getStorageValue(90) > 34 and player:getStorageValue(90) <  44 then
 			npcHandler:say("The missions available for your rank are elven poetry, memory stone and rune writings.", cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(90) == 44 then	
+		elseif player:getStorageValue(90) == 44 then
 			npcHandler:say("The explorer society needs a great deal of help in the research of astral travel. Are you willing to help?", cid)
 			npcHandler.topic[cid] = 26
-		elseif player:getStorageValue(90) == 46 then	
+		elseif player:getStorageValue(90) == 46 then
 			npcHandler:say("Do you have some collected ectoplasm with you?", cid)
 			npcHandler.topic[cid] = 28
-		elseif player:getStorageValue(90) == 47 then	
+		elseif player:getStorageValue(90) == 47 then
 			npcHandler:say({"The research on ectoplasm makes good progress. Now we need some spectral article. Our scientists think a spectral dress would be a perfect object for their studies ...",
 							"The bad news is that the only source to got such a dress is the queen of the banshees. Do you dare to seek her out?"}, cid)
 			npcHandler.topic[cid] = 29
-		elseif player:getStorageValue(90) == 49 then	
+		elseif player:getStorageValue(90) == 49 then
 			npcHandler:say("Did you bring the dress?", cid)
 			npcHandler.topic[cid] = 30
-		elseif player:getStorageValue(90) == 50 then	
+		elseif player:getStorageValue(90) == 50 then
 			npcHandler:say({"With the objects you've provided our researchers will make steady progress. Still we are missing some test results from fellow explorers ...",
 							"Please travel to our base in Northport and ask them to mail us their latest research reports. Then return here and ask about new missions."}, cid)
 			player:setStorageValue(90, 51)
-		elseif player:getStorageValue(90) == 52 then	
+		elseif player:getStorageValue(90) == 52 then
 			npcHandler:say("The reports from Northport have already arrived here and our progress is astonishing. We think it is possible to create an astral bridge between our bases. Are you interested to assist us with this?", cid)
 			npcHandler.topic[cid] = 31
-		elseif player:getStorageValue(90) == 53 then	
+		elseif player:getStorageValue(90) == 53 then
 			npcHandler:say({"Both carvings are now charged and harmonised. In theory you should be able to travel in zero time from one base to the other ...",
 							"However, you will need to have an orichalcum pearl in your possession to use it as power source. It will be destroyed during the process. I will give you 6 of such pearls and you can buy new ones in our bases ...",
 							"In addition, you need to be a premium explorer to use the astral travel. ...",
 							"And remember: it's a small teleport for you, but a big teleport for all Tibians! Here is a small present for your efforts!"}, cid)
 			player:setStorageValue(90, 54)
 			player:addItem(7242, 1)
-		elseif player:getStorageValue(90) == 56 then	
+		elseif player:getStorageValue(90) == 56 then
 			npcHandler:say("Ah, you've just come in time. An experienced explorer is just what we need here! Would you like to go on a mission for us?", cid)
 			npcHandler.topic[cid] = 32
 		elseif player:getStorageValue(90) == 57 then
@@ -94,7 +94,7 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("You're not done yet...", cid)
 			end
-		elseif player:getStorageValue(90) == 59 then	
+		elseif player:getStorageValue(90) == 59 then
 			npcHandler:say({"Ah, yes, the mission. Let me tell you about something called ice music. ...",
 							"There is a cave on Hrodmir, north of the southernmost barbarian camp Krimhorn. ...",
 							"In this cave, there are a waterfall and a lot of stalagmites. ...",
@@ -180,7 +180,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Did you acquire the sample of the giant jungle rose we are looking for?", cid)
 			npcHandler.topic[cid] = 14
 		end
-	-- PLANT COLLECTION	
+	-- PLANT COLLECTION
 
 	-- LIZARD URN
 	elseif msgcontains(msg, "lizard urn") then
@@ -325,7 +325,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		-- BUTTERFLY HUNT
 
-		-- PLANT COLLECTION	
+		-- PLANT COLLECTION
 		elseif npcHandler.topic[cid] == 11 then
 			player:setStorageValue(90, 16)
 			npcHandler:say("Fine! Here take this botanist's container. Use it on a jungle bells plant to collect a sample for us. Report about your plant collection when you have been successful.", cid)
@@ -451,7 +451,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 27 then
 			npcHandler:say({"Good! Take this container and use it on a ghost that was recently slain. Return with the collected ectoplasm and hand me that container ...",
 							"Don't lose the container. They are expensive!"}, cid)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 			player:setStorageValue(90, 45)
 			player:addItem(4863, 1)
 		elseif npcHandler.topic[cid] == 28 then
@@ -461,13 +461,13 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Phew, I had no idea that ectoplasm would smell that ... oh, it's you, well, sorry. Thank you for the ectoplasm.", cid)
 				npcHandler.topic[cid] = 0
 			end
-		-- ECTOPLASM	
+		-- ECTOPLASM
 
 		-- SPECTRAL DRESS
 		elseif npcHandler.topic[cid] == 29 then
 			npcHandler:say({"That is quite courageous. We know, it's much we are asking for. The queen of the banshees lives in the so called Ghostlands, south west of Carlin. It is rumoured that her lair is located in the deepest dungeons beneath that cursed place ...",
 							"Any violence will probably be futile, you will have to negotiate with her. Try to get a spectral dress from her. Good luck."}, cid)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 			player:setStorageValue(90, 48)
 		elseif npcHandler.topic[cid] == 30 then
 			if player:getItemCount(4847) > 0 then
@@ -482,7 +482,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 31 then
 			npcHandler:say({"Good, just take this spectral essence and use it on the strange carving in this building as well as on the corresponding tile in our base at Northport ...",
 							"As soon as you have charged the portal tiles that way, report about the spectral portals."}, cid)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 			player:setStorageValue(90, 53)
 		-- SPECTRAL STONE
 
@@ -492,7 +492,7 @@ local function creatureSayCallback(cid, type, msg)
 							"Okolnir is the home of a new and fierce dragon race, the so-called frost dragons. However, we have no idea where they originate from. ...",
 							"Rumours say that dragon lords, that roamed on this isle, were somehow turned into frost dragons when the great frost covered Okolnir. ...",
 							"Travel to Okolnir and try to find a proof for the existence of dragon lords there in the old times. I think old Buddel might be able to bring you there."}, cid)
-			npcHandler.topic[cid] = 0	
+			npcHandler.topic[cid] = 0
 			player:setStorageValue(90, 57)
 		-- ISLAND OF DRAGONS
 

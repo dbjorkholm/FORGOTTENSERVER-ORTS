@@ -5,27 +5,27 @@ local config = {
 	[9808] = { -- common rusty armor
 		{{1, 30000}},
 		{{30001, 60000}, CHAIN_ARMOR},
-		{{60001, 90000}, SCALE_ARMOR}, 
-		{{90001, 97000}, BRASS_ARMOR}, 
-		{{97001, 99000}, PLATE_ARMOR}, 
+		{{60001, 90000}, SCALE_ARMOR},
+		{{90001, 97000}, BRASS_ARMOR},
+		{{97001, 99000}, PLATE_ARMOR},
 		{{99001, 100000}, KNIGHT_ARMOR}
 	},
 	[9809] = { -- semi-rare rusty armor
 		{{1, 40000}},
 		{{40001, 57500}, CHAIN_ARMOR},
-		{{57501, 70000}, SCALE_ARMOR}, 
-		{{70001, 81000}, BRASS_ARMOR}, 
-		{{81001, 90000}, PLATE_ARMOR}, 
+		{{57501, 70000}, SCALE_ARMOR},
+		{{70001, 81000}, BRASS_ARMOR},
+		{{81001, 90000}, PLATE_ARMOR},
 		{{90001, 96500}, KNIGHT_ARMOR},
 		{{96501, 99500}, PALADIN_ARMOR},
 		{{99501, 100000}, CROWN_ARMOR}
 	},
 	[9810] = { -- rare rusty armor
-		{{1, 50000}}, 
+		{{1, 50000}},
 		{{50001, 60000}, CHAIN_ARMOR},
-		{{60001, 70000}, SCALE_ARMOR}, 
-		{{70001, 80000}, BRASS_ARMOR}, 
-		{{80001, 87500}, PLATE_ARMOR}, 
+		{{60001, 70000}, SCALE_ARMOR},
+		{{70001, 80000}, BRASS_ARMOR},
+		{{80001, 87500}, PLATE_ARMOR},
 		{{87501, 93000}, KNIGHT_ARMOR},
 		{{93001, 96000}, PALADIN_ARMOR},
 		{{96000, 97000}, CROWN_ARMOR},
@@ -67,7 +67,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not targetItem then
 		return true
 	end
-	
+
 	local chance = math.random(100000)
 	for i = 1, #targetItem do
 		if chance >= targetItem[i][1][1] and chance <= targetItem[i][1][2] then

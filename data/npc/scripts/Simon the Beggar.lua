@@ -49,7 +49,7 @@ function BeggarSecond(cid, message, keywords, parameters, node)
 	end
 	local player = Player(cid)
 	if player:isPremium() == true then
-		if player:getStorageValue(22030) == -1 then	
+		if player:getStorageValue(22030) == -1 then
 			if player:getItemCount(6107) >= 1 then
 				if player:removeItem(6107, 1) then
 					npcHandler:say("Ah, right! The beggar staff! Here you go.", cid)

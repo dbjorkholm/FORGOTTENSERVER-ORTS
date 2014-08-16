@@ -22,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then	
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({"Okay, here we go, listen closely! I need a few things...",
 							"a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers...",
 							"and 50 honeycombs as glue. That's it, come back to me once you gathered it!"}, cid, 0, 1, 3500)
@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(136, 2)
 				player:addOutfitAddon(128, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler.topic[cid] = 0	
+				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have it...", cid)
 			end

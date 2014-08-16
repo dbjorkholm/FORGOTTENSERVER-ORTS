@@ -17,7 +17,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Do you want to Nibelor?", cid)
 			npcHandler.topic[cid] = 2
 	elseif msgcontains(msg, "mission") then
-		if player:getStorageValue(Storage.BarbarianTest.Questline) >= 8 then -- if Barbarian Test absolved 
+		if player:getStorageValue(Storage.BarbarianTest.Questline) >= 8 then -- if Barbarian Test absolved
 			if player:getStorageValue(Storage.TheIceIslands.Questline) < 1 then
 				npcHandler:say({"Well, one of the boys has run away. I think he got the scent of some beast. He's young and inexperienced so I can't blame the cub ...",
 								"I would like you to see after him. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Are you willing to do that?"}, cid, 0, 1, 4000)
@@ -27,7 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 3)
 				player:setStorageValue(Storage.TheIceIslands.Mission01, 3) -- Questlog The Ice Islands Quest, Befriending the Musher
 				npcHandler.topic[cid] = 0
-			else 
+			else
 			npcHandler:say("I have now no mission for you.", cid)
 			npcHandler.topic[cid] = 0
 			end
@@ -55,6 +55,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			for i = 1, #items do
 				bag:addItem(items[i][1], items[i][2] or 1)
 			end
-			
+
 			local key = bag:addItem(2091, 1)
 			if key then
 				key:setActionId(6010)

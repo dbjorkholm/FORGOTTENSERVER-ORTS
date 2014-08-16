@@ -13,26 +13,26 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif msgcontains(msg, "exit") then
 		if player:getStorageValue(Storage.WrathoftheEmperor.ZumtahStatus) ~= 1 then
-			if npcHandler.topic[cid] < 1 then	
+			if npcHandler.topic[cid] < 1 then
 				npcHandler:say("Oh of course, may I show you around a bit before? You want to go straight to the exit? Would you please follow me. Oh right, I am terribly sorry but THERE IS NONE. Will you finally give it up please?", cid)
 				npcHandler.topic[cid] = 1
-			elseif npcHandler.topic[cid] == 3 then	
+			elseif npcHandler.topic[cid] == 3 then
 				npcHandler.topic[cid] = 4
-			elseif npcHandler.topic[cid] == 6 then	
+			elseif npcHandler.topic[cid] == 6 then
 				npcHandler.topic[cid] = 7
-			elseif npcHandler.topic[cid] == 10 then	
+			elseif npcHandler.topic[cid] == 10 then
 				npcHandler:say("Oh, you mean - if I have ever been out of here in those 278 years? Well, I - I can't remember. No, I can't remember. Sorry.", cid)
 				npcHandler.topic[cid] = 11
-			elseif npcHandler.topic[cid] == 11 then	
+			elseif npcHandler.topic[cid] == 11 then
 				npcHandler:say("No, I really can't remember. I enjoyed my stay here so much that I forgot how it looks outside of this hole. Outside. The air, the sky, the light. Oh well... well.", cid)
 				npcHandler.topic[cid] = 12
 			elseif npcHandler.topic[cid] == 12 then
 				npcHandler:say("Oh yes, yes. I... I never really thought about how you creatures feel in here I guess. I... just watched all these beings die here. ...", cid)
 				npcHandler.topic[cid] = 13
-			elseif npcHandler.topic[cid] == 13 then	
+			elseif npcHandler.topic[cid] == 13 then
 				npcHandler:say("Oh, excuse me of course, you... wanted to go. Like all... the others. I am sorry, so sorry. You... you can leave. Yes. You can go. You are free. I shall stay here and help every poor soul which ever gets thrown in here from this day onward. ...", cid)
 				npcHandler.topic[cid] = 14
-			elseif npcHandler.topic[cid] == 14 then	
+			elseif npcHandler.topic[cid] == 14 then
 				npcHandler:say({"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...", "Oh and I recovered the strange crate you where hiding in, it will wait for you at the exit since you can't carry it as... a beetle, muhaha. Yes, you shall now crawl through the passage as a beetle. There you go."}, cid, 0, 1, 4000)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.WrathoftheEmperor.ZumtahStatus, 1)

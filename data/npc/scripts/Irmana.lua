@@ -18,7 +18,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(1008) < 1 then
 			npcHandler:say("Currently we are offering accessories for the nobleman - and, of course, noblewoman - outfit. Would you like to hear more about our offer?", cid)
-			npcHandler.topic[cid] = 1	
+			npcHandler.topic[cid] = 1
 		else
 			npcHandler:say("You have already bought the two addons.", cid)
 		end

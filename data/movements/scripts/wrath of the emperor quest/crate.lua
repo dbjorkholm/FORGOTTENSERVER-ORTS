@@ -9,7 +9,7 @@ end
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
-	if not player then 
+	if not player then
 		return true
 	end
 	if item.actionid == 8015 then

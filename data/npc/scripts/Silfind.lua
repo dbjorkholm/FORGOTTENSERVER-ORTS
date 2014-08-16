@@ -45,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 15 then
 			npcHandler:say("Do you have the 3 bonelord eyes I requested?", cid)
-			npcHandler.topic[cid] = 7 
+			npcHandler.topic[cid] = 7
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 16 then
 			npcHandler:say("The next things needed are 2 fish fins. Bring them to me and Ill tell you the next ingredients we need.", cid)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 17)
@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 19 then
 			npcHandler:say("Do you have the green dragon scale I requested?", cid)
 			npcHandler.topic[cid] = 9
-		else 
+		else
 		npcHandler:say("I have now no mission for you.", cid)
 		npcHandler.topic[cid] = 0
 		end
@@ -156,7 +156,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 13 then
 		if npcHandler.topic[cid] == 13 and player:removeMoney(400) then
-			player:addItem(9734, 1)	
+			player:addItem(9734, 1)
 			npcHandler:say("Here you go.", cid)
 			npcHandler.topic[cid] = 0
 		else
@@ -166,6 +166,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

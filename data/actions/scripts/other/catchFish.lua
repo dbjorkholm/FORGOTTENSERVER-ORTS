@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Player(cid):say("The golden fish escaped.", TALKTYPE_MONSTER_SAY)
 		return true
 	end
-	
+
 	Player(cid):say("You catch a golden fish in the bowl.", TALKTYPE_MONSTER_SAY)
 	Item(item.uid):transform(8766)
 	toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

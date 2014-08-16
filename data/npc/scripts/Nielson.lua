@@ -22,5 +22,5 @@ local travelNode = keywordHandler:addKeyword({'vega'}, StdModule.say, {npcHandle
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Where do you want to go? To {Folda}, {Senja} or {Vega}?'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
 keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the captain of this ship.'})
-	
+
 npcHandler:addModule(FocusModule:new())

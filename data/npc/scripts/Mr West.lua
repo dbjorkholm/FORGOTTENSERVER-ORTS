@@ -11,7 +11,7 @@ local function greetCallback(cid)
 	local player = Player(cid)
 	if(player:getStorageValue(Storage.InServiceofYalahar.MrWestDoor) == 1) then
 		npcHandler:setMessage(MESSAGE_GREET, "Wh .. What? How did you get here? Where are all the guards? You .. you could have killed me but yet you chose to talk? What a relief! ... So what brings you here my friend, if I might call you like that? ")
-	elseif(player:getStorageValue(Storage.InServiceofYalahar.MrWestDoor) == 2) then	
+	elseif(player:getStorageValue(Storage.InServiceofYalahar.MrWestDoor) == 2) then
 		npcHandler:setMessage(MESSAGE_GREET, "Murderer! But .. I give in, you won! ... Dictate me your conditions but please, I beg you, spare my life. What do you want?")
 	end
 	return true

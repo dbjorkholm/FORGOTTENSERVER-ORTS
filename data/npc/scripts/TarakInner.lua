@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
 		return false
 	end
-	
+
 	if(msgcontains(msg, "monument tower")) then
 		npcHandler:say("Do you want to travel to the {monument tower} for a 50 gold fee?", cid)
 		npcHandler.topic[cid] = 1

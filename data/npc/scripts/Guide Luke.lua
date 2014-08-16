@@ -46,7 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then
 		npcHandler:say("Well, nothing wrong about exploring the town on your own. Let me know if you need something!", player)
-		npcHandler.topic[cid] = 0	
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end

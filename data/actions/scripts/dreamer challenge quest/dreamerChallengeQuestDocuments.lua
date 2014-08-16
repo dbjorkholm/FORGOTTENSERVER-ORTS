@@ -1,16 +1,16 @@
 local config = {
 	[7844] = {
-		[1] = {female = 269, male = 268, msg = 'nightmare'}, 
+		[1] = {female = 269, male = 268, msg = 'nightmare'},
 		[2] = {female = 279, male = 278, msg = 'brotherhood'}
 	},
 	[7845] = {
-		[1] = {female = 269, male = 268, addon = 1, msg = 'first nightmare'}, 
-		[2] = {female = 279, male = 278, addon = 1, msg = 'first brotherhood'}, 
+		[1] = {female = 269, male = 268, addon = 1, msg = 'first nightmare'},
+		[2] = {female = 279, male = 278, addon = 1, msg = 'first brotherhood'},
 		storageValue = 2
 	},
 	[7846] = {
-		[1] = {female = 269, male = 268, addon = 2, msg = 'second nightmare'}, 
-		[2] = {female = 279, male = 278, addon = 2, msg = 'second brotherhood'}, 
+		[1] = {female = 269, male = 268, addon = 2, msg = 'second nightmare'},
+		[2] = {female = 279, male = 278, addon = 2, msg = 'second brotherhood'},
 		storageValue = 3
 	}
 }

@@ -4,7 +4,7 @@
   <look type="134" head="116" body="57" legs="97" feet="59" addons="0" />
 <voices>
 <voice text="Support your local weapon dealer!" interval2="100" margin="1" yell="no"/>
-</voices>  
+</voices>
 <parameters>
 <parameter key="module_keywords" value="1" />
         <parameter key="keywords" value="wares;" />

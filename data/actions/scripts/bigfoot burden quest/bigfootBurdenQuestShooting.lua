@@ -11,15 +11,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			pos:sendMagicEffect(CONST_ME_FIREATTACK)
 			for i = 2, 4 do
 				Position(playerPos.x, playerPos.y - i, 10):sendMagicEffect(CONST_ME_TELEPORT)
-			end	
+			end
 		elseif tile:getItemById(18227) then
 			player:setStorageValue(Storage.BigfootBurden.Shooting, player:getStorageValue(Storage.BigfootBurden.Shooting) < 1 and 0 or player:getStorageValue(Storage.BigfootBurden.Shooting) - 1)
 			tile:getItemById(18227):remove()
 			pos:sendMagicEffect(CONST_ME_FIREATTACK)
 			for i = 2, 4 do
 				Position(playerPos.x, playerPos.y - i, 10):sendMagicEffect(CONST_ME_TELEPORT)
-			end	
+			end
 		end
-	end	
+	end
 	return true
 end

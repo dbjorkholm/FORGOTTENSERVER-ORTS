@@ -10,9 +10,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not isInArray(waterIds, itemEx.itemid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if targetId == 10499 then
 		local targetItem = Item(itemEx.uid)
 		local owner = targetItem:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)

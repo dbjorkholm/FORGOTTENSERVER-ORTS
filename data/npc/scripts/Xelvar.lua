@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, "adventures") then
 		if Player(cid):getStorageValue(Storage.BigfootBurden.QuestLine) < 1 then
 			npcHandler:say("Right now I am sort of {recruiting} people.", cid)
@@ -48,6 +48,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
- 
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

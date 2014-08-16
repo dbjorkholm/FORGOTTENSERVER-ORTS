@@ -30,9 +30,9 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, 'addon') then
 		if player:hasOutfit(player:getSex() == 0 and 156 or 152, 1) and player:getStorageValue(Storage.OutfitQuest.AssassinSecondAddon) < 1 then
 			npcHandler:say('You managed to deceive Erayo? Impressive. Well, I guess, since you have come that far, I might as well give you a task too, eh?', cid)

@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
-		end	
+		end
 	elseif(msgcontains(msg, "lash")) then
 		if(npcHandler.topic[cid] == 3) then
 			if player:getItemCount(18496) >= 1 then
@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
-		end	
+		end
 	elseif(msgcontains(msg, "hat")) then
 		if(npcHandler.topic[cid] == 3) then
 			if player:getItemCount(18495) >= 1 then
@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
-		end	
+		end
 	elseif(msgcontains(msg, "mission")) then
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Fine, I grant you the permission to enter the warzones. Be warned though, this will be not a picnic. Better bring some friends with you. Bringing a lot of them sounds like a good idea.", cid)

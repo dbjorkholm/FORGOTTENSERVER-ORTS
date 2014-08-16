@@ -1,5 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)	
+	local player = Player(cid)
 	if item.uid == 3154 then
 		local destination = Position({x = 33020, y = 31536, z = 4})
 		player:teleportTo(destination)

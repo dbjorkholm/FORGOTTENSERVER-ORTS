@@ -15,7 +15,7 @@ local pos = {
 	[2063] = {text = "You flipped the fourteenth level. Hurry up and find the next one!", number = 14},
 	[2064] = {text = "You flipped the fifteenth level. Hurry up and find the next one!", number = 15}
 }
- 
+
 local stones = {
 	{x = 32851, y = 32333, z = 12},
 	{x = 32852, y = 32333, z = 12}
