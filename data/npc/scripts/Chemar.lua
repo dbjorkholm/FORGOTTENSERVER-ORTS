@@ -58,7 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 		local player = Player(cid)
 		if not player:removeMoney(60) then
-			npcHandler:say('You don\'t have enough money.', cid
+			npcHandler:say('You don\'t have enough money.', cid)
 			return true
 		end
 
