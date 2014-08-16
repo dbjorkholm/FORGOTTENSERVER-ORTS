@@ -1,22 +1,22 @@
 function onKill(cid, target)
 	local targetMonster = Monster(target)
 	if not targetMonster then
-		return true
+		return
 	end
 
 	local player = Player(cid)
 	local pit = player:getStorageValue(Storage.SvargrondArena.Pit)
 	if pit < 1 or pit > 10 then
-		return true
+		return
 	end
 
 	local arena = player:getStorageValue(Storage.SvargrondArena.Arena)
 	if arena < 1 then
-		return true
+		return
 	end
 
 	if not isInArray(ARENA[arena].creatures, targetMonster:getName():lower()) then
-		return true
+		return
 	end
 
 	-- Remove pillar and create teleport

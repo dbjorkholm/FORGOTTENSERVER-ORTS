@@ -1,4 +1,6 @@
 local condition = Condition(CONDITION_OUTFIT, CONDITIONID_COMBAT)
+condition:setTicks(120000)
+condition:addOutfit({lookType = 111})
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
@@ -6,15 +8,13 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	SvargrondArena.cancelEvents(cid)
 	if item.actionid == 25300 then
-		condition:setTicks(120000)
-		condition:addOutfit({lookType = 111})
 		player:addCondition(condition)
 
 		player:setStorageValue(Storage.SvargrondArena.Pit, 0)
 		player:teleportTo(SvargrondArena.kickPosition)
 		player:say('Coward!', TALKTYPE_MONSTER_SAY)
+		SvargrondArena.cancelEvents(cid)
 		return true
 	end
 
@@ -28,19 +28,22 @@ function onStepIn(cid, item, position, fromPosition)
 		player:setStorageValue(Storage.SvargrondArena.Arena, player:getStorageValue(Storage.SvargrondArena.Arena) + 1)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, 'Congratulations! You completed ' .. ARENA[arenaId].name .. ' arena, you should take your reward now.')
 		player:say(arenaId == 1 and 'Welcome back, little hero!' or arenaId == 2 and 'Congratulations, brave warrior!' or 'Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
+		player:setStorageValue(ARENA[arenaId].questLog, 2)
+		SvargrondArena.cancelEvents(cid)
 		return true
 	end
 
 	local occupant = SvargrondArena.getPitOccupant(pitId, player)
 	if occupant then
 		player:sendTextMessage(MESSAGE_INFO_DESCR, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == 0 and 's' or '') .. 'he is done fighting.')
-		player:teleportTo(fromPosition)
+		player:teleportTo(fromPosition, true)
 		return true
 	end
 
+	SvargrondArena.cancelEvents(cid)
 	SvargrondArena.resetPit(pitId)
 	SvargrondArena.scheduleKickPlayer(cid, pitId)
-	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, true, true)
+	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)
 	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)

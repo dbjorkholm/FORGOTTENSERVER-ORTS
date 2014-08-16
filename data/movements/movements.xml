@@ -130,10 +130,10 @@
 	<movevent event="StepIn" actionid="980" script="demon helmet quest/walls.lua"/>
 
 	<!--Svargrond Arena Quest-->
- 	<movevent event="StepIn" actionid="25100" script="svargrond arena quest/arena_enter.lua"/>
-	<movevent event="StepIn" actionid="25200" script="svargrond arena quest/arena_pit.lua"/>
-	<movevent event="StepIn" actionid="25300" script="svargrond arena quest/arena_pit.lua"/>
-	<movevent event="StepIn" fromuid="23201" touid="23203" script="svargrond arena quest/arena_trophy.lua"/>
+ 	<movevent event="StepIn" actionid="25100" script="svargrond arena quest/arenaEnter.lua"/>
+	<movevent event="StepIn" actionid="25200" script="svargrond arena quest/arenaPit.lua"/>
+	<movevent event="StepIn" actionid="25300" script="svargrond arena quest/arenaPit.lua"/>
+	<movevent event="StepIn" fromuid="23201" touid="23203" script="svargrond arena quest/arenaTrophy.lua"/>
 
 	<!-- Dreamer Challenge Quest -->
 	<movevent event="StepIn" fromuid="2241" touid="2242" script="dreamer challenge quest/carrot.lua"/>

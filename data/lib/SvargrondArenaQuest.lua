@@ -124,6 +124,7 @@ ARENA = {
 	[1] = {
 		name = 'Greenhorn',
 		price = 1000,
+		questLog = 50140,
 		creatures = {
 			[1] = 'frostfur',
 			[2] = 'bloodpaw',
@@ -174,6 +175,7 @@ ARENA = {
 	[2] = {
 		name = 'Scrapper',
 		price = 5000,
+		questLog = 50141,
 		creatures = {
 			[1] = 'avalanche',
 			[2] = 'kreebosh the exile',
@@ -225,6 +227,7 @@ ARENA = {
 	[3] = {
 		name = 'Warlord',
 		price = 10000,
+		questLog = 50142,
 		creatures = {
 			[1] = 'webster',
 			[2] = 'darakan the executioner',
@@ -294,18 +297,9 @@ function SvargrondArena.getPitCreatures(pitId)
 	end
 
 	local ret = {}
-	for x = PITS[pitId].fromPos.x, PITS[pitId].toPos.x do
-		for y = PITS[pitId].fromPos.y, PITS[pitId].toPos.y do
-			for z = PITS[pitId].fromPos.z, PITS[pitId].toPos.z do
-				local tile = Tile({x=x, y=y, z=z})
-				if tile then
-					local creature = tile:getTopCreature()
-					if creature then
-						table.insert(ret, creature)
-					end
-				end
-			end
-		end
+	local specs = Game.getSpectators(PITS[pitId].center, false, false, 5, 5, 5, 5)
+	for i = 1, #specs do
+		ret[#ret+1] = specs[i]
 	end
 
 	return ret
@@ -357,16 +351,6 @@ function SvargrondArena.getPitOccupant(pitId, ignorePlayer)
 	for i = 1, #creatures do
 		if creatures[i]:isPlayer() and creatures[i]:getId() ~= ignorePlayer:getId() then
 			return creatures[i]
-		end
-	end
-
-	if not occupant then
-		local tile = Tile(PITS[pitId].pillar)
-		if tile then
-			local creature = tile:getTopCreature()
-			if creature and creature:isPlayer() then
-				return creature
-			end
 		end
 	end
 
