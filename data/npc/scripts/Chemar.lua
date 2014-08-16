@@ -47,7 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, 'farmine') then
-		if player:getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
+		if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
 			npcHandler:say('Never heard about a place like this.', cid)
 			return true
 		end
