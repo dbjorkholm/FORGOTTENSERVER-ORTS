@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local items = {[1] = 2190, [2] = 2182, [5] = 2190, [6] = 2182}
 	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
-		if isSorcerer(cid) or isDruid(cid) then
+		if player:isSorcerer() or player:isDruid() then
 			if player:getStorageValue(50079) == -1 then
 				npcHandler:say('So you ask me for a {' .. ItemType(items[player:getVocation():getId()]):getName() .. '} to begin your adventure?', cid)
 				npcHandler.topic[cid] = 1
