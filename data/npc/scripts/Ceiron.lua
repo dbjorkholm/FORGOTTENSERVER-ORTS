@@ -33,28 +33,34 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "task") then
 		if player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 2 then
-			npcHandler:say({"Listen, my next task for you is not exactly easy either. ...",
-							"In the mountains between Ankrahmun and Tiquanda are two hydra lairs. The nothern one has many waterfalls whereas the southern one has just tiny water trickles. ...",
-							"However, these trickles are said to contain water as pure and clean as nowhere else in Tibia. ...",
-							"If you could reach one of these trickles and retrieve a water sample for me, it would be a great help. ...",
-							"It is important that you take the water directly from the trickle, not from the pond - else it will not be as pure anymore. ...",
-							"Have you understood everything I told you and will fulfil this task for me?"}, cid)
+			npcHandler:say({
+				"Listen, my next task for you is not exactly easy either. ...",
+				"In the mountains between Ankrahmun and Tiquanda are two hydra lairs. The nothern one has many waterfalls whereas the southern one has just tiny water trickles. ...",
+				"However, these trickles are said to contain water as pure and clean as nowhere else in Tibia. ...",
+				"If you could reach one of these trickles and retrieve a water sample for me, it would be a great help. ...",
+				"It is important that you take the water directly from the trickle, not from the pond - else it will not be as pure anymore. ...",
+				"Have you understood everything I told you and will fulfil this task for me?"
+			}, cid)
 			npcHandler.topic[cid] = 6
 		elseif player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 4 then
-			npcHandler:say({"I'm glad that you are still with me, " .. player:getName() .. ". Especially because my next task might require even more patience from your side than the ones before. ...",
-							"Demons... these unholy creatures should have never been able to walk the earth. They are a brood fueled only by hatred and malice. ...",
-							"Even if slain, their evil spirit is not fully killed. It needs a blessed stake to release their last bit of fiendishness and turn them into dust. ...",
-							"It does not work all the time, but if you succeed, their vicious spirit is finally defeated. ...",
-							"I want proof that you are on the right side, against Zathroth. Bring me 100 ounces of demon dust and I shall be convinced. ...",
-							"You will probably need to ask a priest for help to obtain a blessed stake. ...",
-							"Have you understood everything I told you and will fulfil this task for me?"}, cid)
+			npcHandler:say({
+				"I'm glad that you are still with me, " .. player:getName() .. ". Especially because my next task might require even more patience from your side than the ones before. ...",
+				"Demons... these unholy creatures should have never been able to walk the earth. They are a brood fueled only by hatred and malice. ...",
+				"Even if slain, their evil spirit is not fully killed. It needs a blessed stake to release their last bit of fiendishness and turn them into dust. ...",
+				"It does not work all the time, but if you succeed, their vicious spirit is finally defeated. ...",
+				"I want proof that you are on the right side, against Zathroth. Bring me 100 ounces of demon dust and I shall be convinced. ...",
+				"You will probably need to ask a priest for help to obtain a blessed stake. ...",
+				"Have you understood everything I told you and will fulfil this task for me?"
+			}, cid)
 			npcHandler.topic[cid] = 8
 		elseif player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 6 then
-			npcHandler:say({"I have one final task for you, " .. player:getName() .. ". Many months ago, I was trying to free the war wolves which are imprisoned inside the orc fortress.",
-							"Unfortunately, my intrusion was discovered and I had to run for my life. During my escape, I lost my favourite wolf tooth chain.",
-							"It should still be somewhere in the fortress, if the orcs did not try to eat it. I really wish you could retrieve it for me.",
-							"It has the letter 'C' carved into one of the teeth. Please look for it.",
-							"Have you understood everything I told you and will fulfil this task for me?"}, cid)
+			npcHandler:say({
+				"I have one final task for you, " .. player:getName() .. ". Many months ago, I was trying to free the war wolves which are imprisoned inside the orc fortress.",
+				"Unfortunately, my intrusion was discovered and I had to run for my life. During my escape, I lost my favourite wolf tooth chain.",
+				"It should still be somewhere in the fortress, if the orcs did not try to eat it. I really wish you could retrieve it for me.",
+				"It has the letter 'C' carved into one of the teeth. Please look for it.",
+				"Have you understood everything I told you and will fulfil this task for me?"
+			}, cid)
 			npcHandler.topic[cid] = 10
 		end
 	elseif msgcontains(msg, "waterskin") then
@@ -79,11 +85,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
-			npcHandler:say({"I hope that I am not asking too much of you with this task. I heard of a flower which is currently unique in Tibia and can survive at only one place. ...",
-							"This place is somewhere in the bleak mountains of Nargor. I would love to have a sample of its blossom, but the problem is that it seldom actually blooms. ...",
-							"I cannot afford to travel there each day just to check whether the time has already come, besides I have no idea where to start looking. ...",
-							"I would be deeply grateful if you could support me in this matter and collect a sample of the blooming Griffinclaw for me. ...",
-							"Have you understood everything I told you and will fullfil this task for me?"}, cid)
+			npcHandler:say({
+				"I hope that I am not asking too much of you with this task. I heard of a flower which is currently unique in Tibia and can survive at only one place. ...",
+				"This place is somewhere in the bleak mountains of Nargor. I would love to have a sample of its blossom, but the problem is that it seldom actually blooms. ...",
+				"I cannot afford to travel there each day just to check whether the time has already come, besides I have no idea where to start looking. ...",
+				"I would be deeply grateful if you could support me in this matter and collect a sample of the blooming Griffinclaw for me. ...",
+				"Have you understood everything I told you and will fullfil this task for me?"
+			}, cid)
 			npcHandler.topic[cid] = 4
 		elseif npcHandler.topic[cid] == 4 then
 			npcHandler:say("Alright then. Take this botanist's container and return to me once you were able to retrieve a sample. Don't lose patience!", cid)

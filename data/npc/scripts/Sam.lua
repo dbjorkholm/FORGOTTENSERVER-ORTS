@@ -30,8 +30,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(3960) > 0 then
-				npcHandler:say({"Thank you very much! This brings back good old memories! Please, as a reward, travel to Kazordoon and ask my old friend Kroox to provide you a special dwarven armor. ...",
-								"I will mail him about you immediately. Just tell him, his old buddy Sam is sending you."}, cid)
+				npcHandler:say({
+					"Thank you very much! This brings back good old memories! Please, as a reward, travel to Kazordoon and ask my old friend Kroox to provide you a special dwarven armor. ...",
+					"I will mail him about you immediately. Just tell him, his old buddy Sam is sending you."
+				}, cid)
 				player:setStorageValue(330, 1)
 				player:removeItem(3960, 1)
 			else

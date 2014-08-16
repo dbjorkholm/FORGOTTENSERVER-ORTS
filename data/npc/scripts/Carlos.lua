@@ -139,10 +139,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "outfit") then
 		if storeTalkCid[cid] == 1 then
-			npcHandler:say({"Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, ".. player:getName() .."! ...",
-					"And by the way: if you thought all of this was boring and you'd rather skip the tutorial with your next character, just say 'skip tutorial' to Santiago. ...",
-					"Then you'll miss out on those nice items and experience though. Hehehe! It's your choice. Well, take care for now!"
-			}, cid, 0, 1, 1)
+			npcHandler:say({
+				"Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, ".. player:getName() .."! ...",
+				"And by the way: if you thought all of this was boring and you'd rather skip the tutorial with your next character, just say 'skip tutorial' to Santiago. ...",
+				"Then you'll miss out on those nice items and experience though. Hehehe! It's your choice. Well, take care for now!"
+			}, cid)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
 			addEvent(releasePlayer, 1000, cid)
@@ -168,10 +169,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "ready") then
 		if storeTalkCid[cid] == 7 then
-			npcHandler:say({"Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, ".. player:getName() .."! ...",
-					"And by the way: if you thought all of this was boring and you'd rather skip the tutorial with your next character, just say 'skip tutorial' to Santiago. ...",
-					"Then you'll miss out on those nice items and experience though. Hehehe! It's your choice. Well, take care for now!"
-			}, cid, 0, 1, 1)
+			npcHandler:say({
+				"Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, ".. player:getName() .."! ...",
+				"And by the way: if you thought all of this was boring and you'd rather skip the tutorial with your next character, just say 'skip tutorial' to Santiago. ...",
+				"Then you'll miss out on those nice items and experience though. Hehehe! It's your choice. Well, take care for now!"
+			}, cid)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 7)
 			player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
 			addEvent(releasePlayer, 5000, cid)

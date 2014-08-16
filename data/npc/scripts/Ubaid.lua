@@ -26,8 +26,10 @@ local function creatureSayCallback(cid, type, msg)
 	-- JOINING
 	if msgcontains(msg, "passage") then
 		if player:getStorageValue(GreenDjinn.MissionStart) < 1 then
-			npcHandler:say({"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...",
-							"All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"}, cid)
+			npcHandler:say({
+				"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...",
+				"All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	-- JOINING
@@ -36,17 +38,21 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("So you pledge loyalty to king Malor and you are willing to never ever set foot on Marids' territory, unless you want to kill them? Yes?", cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 3 then
-			npcHandler:say({"Well then - welcome to Mal'ouquah. ...",
-							"Go now to general Baa'leal and don't forget to greet him correctly! ...",
-							"And don't touch anything!"}, cid)
+			npcHandler:say({
+				"Well then - welcome to Mal'ouquah. ...",
+				"Go now to general Baa'leal and don't forget to greet him correctly! ...",
+				"And don't touch anything!"
+			}, cid)
 			player:setStorageValue(GreenDjinn.MissionStart, 1)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Of cour... Huh!? No!? I can't believe it! ...",
-							"You... you got some nerves... Hmm. ...",
-							"Maybe we have some use for someone like you. Would you be interested in working for us. Helping to fight the Marid?"}, cid)
+			npcHandler:say({
+				"Of cour... Huh!? No!? I can't believe it! ...",
+				"You... you got some nerves... Hmm. ...",
+				"Maybe we have some use for someone like you. Would you be interested in working for us. Helping to fight the Marid?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		end
 	end

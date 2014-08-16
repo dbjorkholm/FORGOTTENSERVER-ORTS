@@ -33,7 +33,10 @@ local function creatureSayCallback(cid, type, msg)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
 		if player:getStorageValue(GreenDjinn.MissionStart + 3) == 1 or player:getStorageValue(BlueDjinn.MissionStart + 3) == 1 then
-			npcHandler:say({'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...', 'Who do you want to trap in this cursed lamp?'}, cid)
+			npcHandler:say({
+				'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...', 
+				'Who do you want to trap in this cursed lamp?'
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	-- Mission 3 - Orc Fortress

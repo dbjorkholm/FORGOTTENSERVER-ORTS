@@ -31,11 +31,13 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(30) < 1 and player:getStorageValue(120) == 7 and player:getStorageValue(121) >= 5 then
-			npcHandler:say({"There is indeed something that needs our attention. In the far north, a new city named Yalahar was discovered. It seems to be incredibly huge. ...",
-							"According to travelers, it's a city of glory and wonders. We need to learn as much as we can about this city and its inhabitants. ...",
-							"Gladly the explorer's society already sent a representative there. Still, we need someone to bring us the information he was able to gather until now. ...",
-							"Please look for the explorer's society's captain Maximilian in Liberty Bay. Ask him for a passage to Yalahar. There visit Timothy of the explorer's society and get his research notes. ...",
-							"It might be a good idea to explore the city a bit on your own before you deliver the notes here, but please make sure you don't lose them."}, cid)
+			npcHandler:say({
+				"There is indeed something that needs our attention. In the far north, a new city named Yalahar was discovered. It seems to be incredibly huge. ...",
+				"According to travelers, it's a city of glory and wonders. We need to learn as much as we can about this city and its inhabitants. ...",
+				"Gladly the explorer's society already sent a representative there. Still, we need someone to bring us the information he was able to gather until now. ...",
+				"Please look for the explorer's society's captain Maximilian in Liberty Bay. Ask him for a passage to Yalahar. There visit Timothy of the explorer's society and get his research notes. ...",
+				"It might be a good idea to explore the city a bit on your own before you deliver the notes here, but please make sure you don't lose them."
+			}, cid)
 			player:setStorageValue(30, 1)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(30) == 2 then

@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 			{
 				"Oh, there's a waterpipe in one of my cells? ...",
 				"I guess my last {prisoner} forgot it there."
-			}, cid, 0, 1, 2500)
+			}, cid)
 			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, "prisoner") then
@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 				"He was here just for one night, because he got drunk and annoyed our citizens. ...",
 				"Obviously he wasn't pleased with this place, because he headed for Thais the next day. ...",
 				"Something tells me that he won't stay out of trouble for too long."
-			}, cid, 0, 1, 3500)
+			}, cid)
 			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 2)
 			npcHandler.topic[cid] = 0
 		end

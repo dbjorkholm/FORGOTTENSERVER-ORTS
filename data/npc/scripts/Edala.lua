@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You aren't looking that bad. Sorry, I can't help you.", cid)
 		end
 	elseif msgcontains(msg, "suns") then
-		npcHandler:say({"Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?"}, cid)
+		npcHandler:say("Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		if not player:hasBlessing(3) then

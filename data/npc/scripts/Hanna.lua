@@ -23,9 +23,11 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"Okay, here we go, listen closely! I need a few things...",
-							"a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers...",
-							"and 50 honeycombs as glue. That's it, come back to me once you gathered it!"}, cid, 0, 1, 3500)
+			npcHandler:say({
+				"Okay, here we go, listen closely! I need a few things...",
+				"a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers...",
+				"and 50 honeycombs as glue. That's it, come back to me once you gathered it!"
+			}, cid)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.OutfitQuest.CitizenHatAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests

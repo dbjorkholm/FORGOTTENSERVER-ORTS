@@ -27,13 +27,17 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 20 then
-			npcHandler:say({"I am in dire need of help. A plague has befallen my dogs. I even called a druid of Carlin for help but all he could do was to recommend some strong medicine ...",
-							"The thing is the ingredients of the medicine are extremely rare and some only exist in far away and distant lands. If you could help me collecting the ingredients, I would be eternally grateful ...",
-							"Are you willing to help me?"}, cid, 0, 1, 3500)
+			npcHandler:say({
+				"I am in dire need of help. A plague has befallen my dogs. I even called a druid of Carlin for help but all he could do was to recommend some strong medicine ...",
+				"The thing is the ingredients of the medicine are extremely rare and some only exist in far away and distant lands. If you could help me collecting the ingredients, I would be eternally grateful ...",
+				"Are you willing to help me?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 28 then
-			npcHandler:say({"Thank you. Now I have all necessary ingredients. As a reward I grant you the use of our dog sled, which is located to the east of here. ...",
-							"The dogs can be a bit moody, but if you always carry some ham with you there shouldnt be any problems. Oh, and Hjaern might have a mission for you. So maybe you go and talk to him."}, cid, 0, 1, 3500)
+			npcHandler:say({
+				"Thank you. Now I have all necessary ingredients. As a reward I grant you the use of our dog sled, which is located to the east of here. ...",
+				"The dogs can be a bit moody, but if you always carry some ham with you there shouldnt be any problems. Oh, and Hjaern might have a mission for you. So maybe you go and talk to him."
+			}, cid)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 29)
 			player:setStorageValue(Storage.TheIceIslands.Mission07, 1) -- Questlog The Ice Islands Quest, The Secret of Helheim
 			npcHandler.topic[cid] = 0
@@ -55,8 +59,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "water") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 22 then
-			npcHandler:say({"You will need a specially prepared waterskin to collect the water. You can buy one from me ...",
-							"Use it on a geyser that is NOT active. The water of active geysers is far too hot. You can find inactive geysers on Okolnir. Do you have some geyser water with you?"}, cid, 0, 1, 2500)
+			npcHandler:say({
+				"You will need a specially prepared waterskin to collect the water. You can buy one from me ...",
+				"Use it on a geyser that is NOT active. The water of active geysers is far too hot. You can find inactive geysers on Okolnir. Do you have some geyser water with you?"
+			}, cid)
 			npcHandler.topic[cid] = 4
 		end
 	elseif msgcontains(msg, "sulphur") then
@@ -87,9 +93,11 @@ local function creatureSayCallback(cid, type, msg)
 
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say({"A thousand thanks in advance. I need no less than 7 ingredients for the cure. You can ask me about each specifically ...",
-							"I need a part of the sun adorer cactus, a vial of geyser water, sulphur of a lava hole, a frostbite herb, a blossom of a purple kiss, a hydra tongue and spores of a giant glimmercap mushroom ...",
-							"Turn them in individually by talking about them to me. As soon as I obtained them all, talk to me about the medicine. First time bring a Part of the Sun Adorer {Cactus}. "}, cid, 0, 1, 3500)
+			npcHandler:say({
+				"A thousand thanks in advance. I need no less than 7 ingredients for the cure. You can ask me about each specifically ...",
+				"I need a part of the sun adorer cactus, a vial of geyser water, sulphur of a lava hole, a frostbite herb, a blossom of a purple kiss, a hydra tongue and spores of a giant glimmercap mushroom ...",
+				"Turn them in individually by talking about them to me. As soon as I obtained them all, talk to me about the medicine. First time bring a Part of the Sun Adorer {Cactus}."
+			}, cid)
 			player:setStorageValue(Storage.TheIceIslands.Questline, 21)
 			player:setStorageValue(Storage.TheIceIslands.Mission06, 1) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
 			npcHandler.topic[cid] = 0

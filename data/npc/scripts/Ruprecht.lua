@@ -55,19 +55,20 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	end
 	if msgcontains(msg, "santa claus") then
-		npcHandler:say({"Well, he does not really like it if someone tells his story ... but I do! A long, long time ago Santa was nothing but a greedy little dwarf. A real miser, I tell ya ...",
-				"He was greedy even by dwarven standards. He would never share anything or give away the cheapest thing in his possession ...",
-				"One day a woman came to his house and asked him for a cup of water ...",
-				"Of course he refused. He even mocked her for being so naive. But what he did not know was that this woman was some kind of mighty faery or perhaps a goddess in disguise ...",
-				"Be it as it may, the woman cursed old Santa, forcing him to share his fortune with everyone he met ...",
-				"Santa was horrified. Of course, he could not bear the thought of sharing anything at all. So he went into hiding ...",
-				"He hid in the most remote places in the world, but time and again someone found him out, and the curse made him share his wealth ...",
-				"And know something? Old Santa actually came to like it! He saw the joy his presents brought, and this opened his old stony heart ...",
-				"And he learned that this way his fortune gave him more joy and pleasure than it ever did when he locked it away. ...",
-				"Over the years he turned it into a game. He hid somewhere to reward those who found him ...",
-				"But once every year, on a very special day which happens to be his curse's anniversary, he goes out and brings presents to the people, and especially to the children ...",
-				"Well, that is his story ... Nah, that's not a tear in my eye. It's just the wind, you know."
-			}, cid, 0, 1, 5000)
+		npcHandler:say({
+			"Well, he does not really like it if someone tells his story ... but I do! A long, long time ago Santa was nothing but a greedy little dwarf. A real miser, I tell ya ...",
+			"He was greedy even by dwarven standards. He would never share anything or give away the cheapest thing in his possession ...",
+			"One day a woman came to his house and asked him for a cup of water ...",
+			"Of course he refused. He even mocked her for being so naive. But what he did not know was that this woman was some kind of mighty faery or perhaps a goddess in disguise ...",
+			"Be it as it may, the woman cursed old Santa, forcing him to share his fortune with everyone he met ...",
+			"Santa was horrified. Of course, he could not bear the thought of sharing anything at all. So he went into hiding ...",
+			"He hid in the most remote places in the world, but time and again someone found him out, and the curse made him share his wealth ...",
+			"And know something? Old Santa actually came to like it! He saw the joy his presents brought, and this opened his old stony heart ...",
+			"And he learned that this way his fortune gave him more joy and pleasure than it ever did when he locked it away. ...",
+			"Over the years he turned it into a game. He hid somewhere to reward those who found him ...",
+			"But once every year, on a very special day which happens to be his curse's anniversary, he goes out and brings presents to the people, and especially to the children ...",
+			"Well, that is his story ... Nah, that's not a tear in my eye. It's just the wind, you know."
+		}, cid)
 	end
 	return true
 end

@@ -33,8 +33,10 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 		return true
 	elseif msgcontains(msg, 'bank account') then
-		npcHandler:say({'Every Tibian has one. The big advantage is that you can access your money in every branch of the Tibian Bank! ...',
-		'Would you like to know more about the {basic} functions of your bank account, the {advanced} functions, or are you already bored, perhaps?'}, cid)
+		npcHandler:say({
+			'Every Tibian has one. The big advantage is that you can access your money in every branch of the Tibian Bank! ...',
+			'Would you like to know more about the {basic} functions of your bank account, the {advanced} functions, or are you already bored, perhaps?'
+		}, cid)
 		npcHandler.topic[cid] = 0
 		return true
 	elseif msgcontains(msg, 'basic') then

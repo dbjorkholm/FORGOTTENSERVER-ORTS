@@ -35,7 +35,12 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes or get the protection of the {twist of fate} here.", cid)
 		end
 	elseif msgcontains(msg, "twist of fate") then
-		npcHandler:say({"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...", "It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...", "The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...", "Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"}, cid)
+		npcHandler:say({
+			"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...", 
+			"It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...", 
+			"The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...", 
+			"Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"
+		}, cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "wooden stake") then
 		if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 then

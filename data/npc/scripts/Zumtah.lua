@@ -33,7 +33,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Oh, excuse me of course, you... wanted to go. Like all... the others. I am sorry, so sorry. You... you can leave. Yes. You can go. You are free. I shall stay here and help every poor soul which ever gets thrown in here from this day onward. ...", cid)
 				npcHandler.topic[cid] = 14
 			elseif npcHandler.topic[cid] == 14 then
-				npcHandler:say({"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...", "Oh and I recovered the strange crate you where hiding in, it will wait for you at the exit since you can't carry it as... a beetle, muhaha. Yes, you shall now crawl through the passage as a beetle. There you go."}, cid, 0, 1, 4000)
+				npcHandler:say({
+					"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...", 
+					"Oh and I recovered the strange crate you where hiding in, it will wait for you at the exit since you can't carry it as... a beetle, muhaha. Yes, you shall now crawl through the passage as a beetle. There you go."
+				}, cid)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.WrathoftheEmperor.ZumtahStatus, 1)
 				player:setStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus, 1)
