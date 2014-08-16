@@ -21,5 +21,5 @@ keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, 
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings, daring adventurer. If you need a {passage}, let me know.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Oh well")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Oh well.")
 npcHandler:addModule(FocusModule:new())
