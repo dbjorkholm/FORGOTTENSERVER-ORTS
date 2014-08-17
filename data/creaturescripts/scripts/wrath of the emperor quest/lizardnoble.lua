@@ -9,8 +9,9 @@ function onKill(cid, target)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(Storage.WrathoftheEmperor.Mission07) >= 0 and player:getStorageValue(Storage.WrathoftheEmperor.Mission07) < 6 then
-		player:setStorageValue(Storage.WrathoftheEmperor.Mission07, player:getStorageValue(Storage.WrathoftheEmperor.Mission07) + 1)
+	local storage = player:getStorageValue(Storage.WrathoftheEmperor.Mission07)
+	if storage >= 0 and storage < 6 then
+		player:setStorageValue(Storage.WrathoftheEmperor.Mission07, math.max(1, storage) + 1)
 	end
 
 	return true

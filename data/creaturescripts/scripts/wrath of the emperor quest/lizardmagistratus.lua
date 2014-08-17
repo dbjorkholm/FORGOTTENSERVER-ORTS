@@ -7,10 +7,11 @@ function onKill(cid, target)
 	if targetMonster:getName():lower() ~= 'lizard magistratus' then
 		return true
 	end
-
+	
 	local player = Player(cid)
-	if player:getStorageValue(Storage.WrathoftheEmperor.Mission06) >= 0 and player:getStorageValue(Storage.WrathoftheEmperor.Mission06) < 4 then
-		player:setStorageValue(Storage.WrathoftheEmperor.Mission06, player:getStorageValue(Storage.WrathoftheEmperor.Mission06) + 1)
+	local storage = player:getStorageValue(Storage.WrathoftheEmperor.Mission06)
+	if storage >= 0 and storage < 4 then
+		player:setStorageValue(Storage.WrathoftheEmperor.Mission06, math.max(1, storage) + 1)
 	end
 
 	return true
