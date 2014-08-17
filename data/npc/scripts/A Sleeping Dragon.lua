@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(Storage.WrathoftheEmperor.Questline) == 29 then
+	if Player(cid):getStorageValue(Storage.WrathoftheEmperor.Questline) == 27 then
 		npcHandler:setMessage(MESSAGE_GREET, "ZzzzZzzZz...chrrr...")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Greetings, wayfarer.")
@@ -21,7 +21,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 29 then
+	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 27 then
 		if(msg == "SOLOSARASATIQUARIUM") then
 			npcHandler:say({
 				"Dragon dreams are golden. ...",
@@ -155,9 +155,9 @@ local function creatureSayCallback(cid, type, msg)
 				"Blending the rays, the mirror directs pure white light directly towards the part where you assume the face of the creature. ...", 
 				"The growl transforms into a scream, everything around you seems to compress. As you press yourself tightly against the bluff, everything falls silent and in a split second, the dark being dissolves into bursts of blackness. You wake."
 			}, cid)
-			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 30)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 28)
 		end
-	elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 30 then
+	elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 28 then
 		if(msgcontains(msg, "wayfarer")) then
 			npcHandler:say("I call you the wayfarer. You travelled through my dreams. You ultimately freed my mind. My mind accepted you and so will I.", cid)
 			npcHandler.topic[cid] = 1
@@ -177,7 +177,7 @@ local function creatureSayCallback(cid, type, msg)
 				"The transfer was successful. ...",
 				"You are now prepared to enter the realm of the evildoer. I am grateful for your help, wayfarer. Should you seek my council, use this charm I cede to you. For my spirit will guide you wherever you are. May you enjoy a sheltered future, you shall prevail."
 			}, cid)
-			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 31)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 29)
 			npcHandler.topic[cid] = 0
 		end
 	end
