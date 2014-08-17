@@ -94,10 +94,12 @@ local function creatureSayCallback(cid, type, msg)
 	-- Mushroom Digger
 	elseif(msgcontains(msg, "digging")) then
 		if player:getStorageValue(939) < 1 and player:getStorageValue(941) < os.time() and player:getStorageValue(900) >= 15 then
-			npcHandler:say("Take this little piggy here. It will one day become a great mushroom hunter for sure. For now it is depended on you and other pigs. ... ", cid)
-			npcHandler:say("Well other pigs then itself of course. I was not comparing you with a pig of course! Go to the truffels area and follow the truffel pigs there. When they dig up some truffels let the little pig eat the mushrooms. ... ", cid)
-			npcHandler:say("You'll have to feed it three times. Then return it to me. ... ", cid)
-			npcHandler:say("Keep in mind that the pig has to be returned to his mother after a while. When you don't do it, the gnomes will recall it via teleport cryrstals. ", cid)
+			npcHandler:say({
+				"Take this little piggy here. It will one day become a great mushroom hunter for sure. For now it is depended on you and other pigs. ...",
+				"Well other pigs then itself of course. I was not comparing you with a pig of course! Go to the truffels area and follow the truffel pigs there. When they dig up some truffels let the little pig eat the mushrooms. ...",
+				"You'll have to feed it three times. Then return it to me. ...",
+				"Keep in mind that the pig has to be returned to his mother after a while. When you don't do it, the gnomes will recall it via teleport cryrstals."
+			}, cid)
 			player:setStorageValue(939, 1)
 			player:setStorageValue(940, 0)
 			player:addItem(18339, 1)

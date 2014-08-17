@@ -23,9 +23,11 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "package for rashid") then
 		if player:getStorageValue(Rashid.MissionStart+1) >= 1 and player:getStorageValue(Rashid.MissionStart+1) < 3 then
-			npcHandler:say("Oooh, damn, I completely forgot about that. I was supposed to pick it up from the Outlaw Camp. ...", cid)
-			npcHandler:say("I can't leave my shop here right now, please go and talk to Snake Eye about that package... I promise he won't make any trouble. ...", cid)
-			npcHandler:say("Don't tell Rashid! I really don't want him to know that I forgot his order. Okay?", cid)
+			npcHandler:say({
+				"Oooh, damn, I completely forgot about that. I was supposed to pick it up from the Outlaw Camp. ...",
+				"I can't leave my shop here right now, please go and talk to Snake Eye about that package... I promise he won't make any trouble. ...",
+				"Don't tell Rashid! I really don't want him to know that I forgot his order. Okay?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") then

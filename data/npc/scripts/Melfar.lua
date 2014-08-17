@@ -14,15 +14,14 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	elseif(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 4) then
-			npcHandler:say(
-						{
-						"Ha! Men and wood you say? Well, I might be able to relocate some of our miners to the base. Acquiring wood is an entirely different matter though. ... ",
-						"I can't spare any men for woodcutting right now but I have an unusual idea that might help. ... ",
-						"As you might know, this area is troubled by giant beavers. Once a year, the miners decide to have some fun, so they lure the beavers and jump on them to have some sort of rodeo. ... ",
-						"However, I happen to have some beaver bait left from the last year's competition. ... ",
-						"If you place it on trees on some strategic locations, we could let the beavers do the work and later on, I'll send men to get the fallen trees. ... ",
-						"Does this sound like something you can handle? "
-						}, cid, true)
+			npcHandler:say({
+				"Ha! Men and wood you say? Well, I might be able to relocate some of our miners to the base. Acquiring wood is an entirely different matter though. ... ",
+				"I can't spare any men for woodcutting right now but I have an unusual idea that might help. ... ",
+				"As you might know, this area is troubled by giant beavers. Once a year, the miners decide to have some fun, so they lure the beavers and jump on them to have some sort of rodeo. ... ",
+				"However, I happen to have some beaver bait left from the last year's competition. ... ",
+				"If you place it on trees on some strategic locations, we could let the beavers do the work and later on, I'll send men to get the fallen trees. ... ",
+				"Does this sound like something you can handle? "
+			}, cid)
 			npcHandler.topic[cid] = 1
 		elseif(player:getStorageValue(Storage.TheNewFrontier.Questline) == 6) then
 			npcHandler:say("Yes, I can hear them even from here. It has to be a legion of beavers! I'll send the men to get the wood as soon as their gnawing frenzy has settled! You can report to Ongulf that men and wood will be on their way!", cid)
@@ -31,11 +30,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say(
-						{
-							"So take this beaver bait. It will work best on dwarf trees. I'll mark the three trees on your map. Here .. here .. and here! So now mark those trees with the beaver bait. ... ",
-							"If you're unlucky enough to meet one of the giant beavers, try to stay calm. Don't do any hectic moves, don't yell, don't draw any weapon, and if you should carry anything wooden on you, throw it away as far as you can. "
-						}, cid, true)
+			npcHandler:say({
+				"So take this beaver bait. It will work best on dwarf trees. I'll mark the three trees on your map. Here .. here .. and here! So now mark those trees with the beaver bait. ... ",
+				"If you're unlucky enough to meet one of the giant beavers, try to stay calm. Don't do any hectic moves, don't yell, don't draw any weapon, and if you should carry anything wooden on you, throw it away as far as you can. "
+			}, cid)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 5)
 			player:setStorageValue(Storage.TheNewFrontier.Mission02, 2) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
 			player:addItem(11100, 1)
