@@ -27,6 +27,15 @@ function destroyItem(cid, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
+	--large amphora
+	if itemEx.itemid == 4996 then
+		if math.random(3) == 1 then
+			Item(itemEx.uid):transform(4997)
+			Item(itemEx.uid):decay()
+		end
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		return true
+	end
 	--spiderweb
 	if itemEx.itemid == 7538 or itemEx.itemid == 7539 then
 		if math.random(7) == 1 then

@@ -8,10 +8,11 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, "mission") then
 		-- CHILDREN OF REVOLUTION QUEST
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) < 1 then
 			npcHandler:say({
@@ -143,6 +144,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Find it. Retrieve it. And bring it back to me. "
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 10)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission04, 1) --Questlog, Wrath of the Emperor "Mission 04: Sacrament of the Snake"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 11 then
 			npcHandler:say("You - azzembled zze zzeptre? Hand it out, give it to me, will you? ", cid)
@@ -349,6 +351,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(12327) >= 1 then
 				player:removeItem(12327, 1)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 12)
+				player:setStorageValue(Storage.WrathoftheEmperor.Mission04, 3) --Questlog, Wrath of the Emperor "Mission 04: Sacrament of the Snake"
 				npcHandler:say("Finally. At lazzt. Zze zzeptre izz - ourzz. Ourzz of courzze. A weapon we should uzze wizzely for our cauzze. I need a zzecond or two. Do you leave me already? ", cid)
 				npcHandler.topic[cid] = 0
 			end

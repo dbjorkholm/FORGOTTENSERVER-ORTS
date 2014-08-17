@@ -400,9 +400,9 @@
 			<missionstate id="3" description="You brought the tail of the Keeper to Zalamon and completed the mission. Ask for the next mission."/>
 		</mission>
 		<mission name="Mission 04: Sacrament of the Snake" storageid="12354" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Zalamon now wants you to go to Deeper Banuta and get an Ancient Sceptre that will help in the fight against the emperor. On each floor under Deeper Banuta you collect a sceptre part from a Ghost of a Priest. On the 4th and final floor you need to assemble the sceptre.."/>
+			<missionstate id="2" description="After you've assembled the Snake Sceptre and fought your way back out, head back to Zalamon and give it to him."/>
+			<missionstate id="3" description="You brought the Snake Sceptre to Zalamon and completed the mission. Ask for the next mission."/>
 		</mission>
 		<mission name="Mission 05: New in Town" storageid="12355" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
