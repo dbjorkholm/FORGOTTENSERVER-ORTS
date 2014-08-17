@@ -159,6 +159,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Zzizz way you will be able to enter zze zzity of zze dragon emperor and meet our contact zzere in zze imperial offizze. He will give you zze next inzztructionzz. "
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 13)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission05, 1) --Questlog, Wrath of the Emperor "Mission 05: New in Town"
 			npcHandler.topic[cid] = 0
 		-- WRATH OF THE EMPEROR QUEST
 		end

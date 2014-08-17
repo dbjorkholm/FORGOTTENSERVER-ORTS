@@ -405,15 +405,11 @@
 			<missionstate id="3" description="You brought the Snake Sceptre to Zalamon and completed the mission. Ask for the next mission."/>
 		</mission>
 		<mission name="Mission 05: New in Town" storageid="12355" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="1" description="Zalamon tells you that you have to go inside the city. From the rebel hideout go out to the gray road and follow it to the southwest. Find the Gate Guardian and ask him for a mission to enter the city."/>
+			<missionstate id="2" description="Now you only have to walk west until you find Zlak inside the big green building."/>
+			<missionstate id="3" description="You went deep inside the city to find Zlak and completed the mission. Ask for the next mission."/>
 		</mission>
-		<mission name="Mission 06: The Office Job" storageid="12356" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
-		</mission>
+		<mission name="Mission 06: The Office Job" storageid="12356" startvalue="0" endvalue="4" description="Explore the area where Zlak is to find Lizard Magistratus and kill 4 of them. You currently have |STATE| killed. Report back to Zlak if you finished it." />
 		<mission name="Mission 07: A Noble Cause" storageid="12357" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>

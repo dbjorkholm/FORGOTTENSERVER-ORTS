@@ -62,6 +62,7 @@
 	<movevent event="StepIn" fromaid="8015" toaid="8023" script="wrath of the emperor quest/crate.lua"/>
 	<movevent event="StepIn" actionid="32362" script="wrath of the emperor quest/crate.lua"/>
 	<movevent event="StepIn" fromaid="12380" toaid="12381" script="wrath of the emperor quest/teleportsmuggyplains.lua"/>
+	<movevent event="StepIn" fromaid="12382" toaid="12383" script="wrath of the emperor quest/teleportsRebeltoZlak.lua"/>
 	<movevent event="StepIn" itemid="12334" script="wrath of the emperor quest/keeper.lua"/>
 
 	<!--- The New Frontier Quest -->
