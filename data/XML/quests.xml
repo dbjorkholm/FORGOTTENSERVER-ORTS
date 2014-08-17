@@ -410,11 +410,7 @@
 			<missionstate id="3" description="You went deep inside the city to find Zlak and completed the mission. Ask for the next mission."/>
 		</mission>
 		<mission name="Mission 06: The Office Job" storageid="12356" startvalue="0" endvalue="4" description="Explore the area where Zlak is to find Lizard Magistratus and kill 4 of them. You currently have |STATE| killed. Report back to Zlak if you finished it." />
-		<mission name="Mission 07: A Noble Cause" storageid="12357" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
-		</mission>
+		<mission name="Mission 07: A Noble Cause" storageid="12357" startvalue="0" endvalue="6" description="Explore the area where Zlak is to find Lizard Noble and kill 6 of them. You currently have |STATE| killed. Report back to Zlak if you finished it." />
 		<mission name="Mission 08: Uninvited Guests" storageid="12358" startvalue="1" endvalue="3">
 			<missionstate id="1" description="..."/>
 			<missionstate id="2" description="..."/>
