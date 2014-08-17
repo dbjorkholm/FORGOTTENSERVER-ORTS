@@ -14,10 +14,12 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msgcontains(msg, "warzones")) then
 		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
-			npcHandler:say("There are three warzones. In each warzone you will find fearsome foes. At the end you'll find their mean master. The masters is well protected though. ...", cid)
-			npcHandler:say("Make sure to talk to our gnomish agent in there for specifics of its' protection. ...", cid)
-			npcHandler:say("Oh, and to be able to enter the second warzone you have to best the first. To enter the third you have to best the second. ...", cid)
-			npcHandler:say("And you can enter each one only once every twenty hours. Your normal teleport crystals won't work on these teleporters. You will have to get mission crystals from Gnomally.", cid)
+			npcHandler:say({
+				"There are three warzones. In each warzone you will find fearsome foes. At the end you'll find their mean master. The masters is well protected though. ...",
+				"Make sure to talk to our gnomish agent in there for specifics of its' protection. ...",
+				"Oh, and to be able to enter the second warzone you have to best the first. To enter the third you have to best the second. ...",
+				"And you can enter each one only once every twenty hours. Your normal teleport crystals won't work on these teleporters. You will have to get mission crystals from Gnomally."
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "job")) then
@@ -27,8 +29,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "heroes")) then
 		if(npcHandler.topic[cid] == 2) then
-			npcHandler:say("You can trade special spoils of war to get a permission to use the war teleporters to the area of the corresponding boss without need of mission crystals. ...", cid)
-			npcHandler:say("Which one would you like to trade: the deathstrike's snippet, gnomevil's hat or the abyssador lash?", cid)
+			npcHandler:say({
+				"You can trade special spoils of war to get a permission to use the war teleporters to the area of the corresponding boss without need of mission crystals. ...",
+				"Which one would you like to trade: the deathstrike's snippet, gnomevil's hat or the abyssador lash?"
+			}, cid)
 			npcHandler.topic[cid] = 3
 		end
 	elseif(msgcontains(msg, "snippet")) then

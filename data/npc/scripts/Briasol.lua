@@ -24,9 +24,11 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "fine vase") then
 		if player:getStorageValue(Rashid.MissionStart+3) == 1 then
-			npcHandler:say("Rashid sent you, I suppose. Before I sell you that vase, one word of advice. ...", cid)
-			npcHandler:say("Make room in your backpack so that I can place the vase carefully inside it. If it falls to the floor, it will most likely shatter or break if you try to pick it up again. ...", cid)
-			npcHandler:say("This vase it not meant to be touched by human hands, so just keep your hands off it. Are you ready to buy that vase for 1000 gold?", cid)
+			npcHandler:say({
+				"Rashid sent you, I suppose. Before I sell you that vase, one word of advice. ...",
+				"Make room in your backpack so that I can place the vase carefully inside it. If it falls to the floor, it will most likely shatter or break if you try to pick it up again. ...",
+				"This vase it not meant to be touched by human hands, so just keep your hands off it. Are you ready to buy that vase for 1000 gold?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") then

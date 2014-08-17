@@ -15,10 +15,12 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "join") then
 		if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) < 1 and player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) < 1 then
-			npcHandler:say("The Brotherhood of Bones has suffered greatly in the past, but we did survive as we always will ... ", cid)
-			npcHandler:say("You have proven resourceful by beating the silly riddles the Nightmare Knights set up to test their candidates ... ", cid)
-			npcHandler:say("It's an amusing thought that after passing their test you might choose to join the ranks of their sworn enemies ...", cid)
-			npcHandler:say("For the irony of this I ask you, " .. player:getName() .. ": Do you want to join the Brotherhood of Bones? ", cid)
+			npcHandler:say({
+				"The Brotherhood of Bones has suffered greatly in the past, but we did survive as we always will ...",
+				"You have proven resourceful by beating the silly riddles the Nightmare Knights set up to test their candidates ...",
+				"It's an amusing thought that after passing their test you might choose to join the ranks of their sworn enemies ...",
+				"For the irony of this I ask you, " .. player:getName() .. ": Do you want to join the Brotherhood of Bones?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "advancement") then
@@ -34,13 +36,17 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("But know that your decision will be irrevocable. You will abandon the opportunity to join any order whose doctrine is incontrast to our own ... ", cid)
-			npcHandler:say("Do you still want to join the Brotherhood?", cid)
+			npcHandler:say({
+				"But know that your decision will be irrevocable. You will abandon the opportunity to join any order whose doctrine is incontrast to our own ...",
+				"Do you still want to join the Brotherhood?"
+			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
-			npcHandler:say("Welcome to the Brotherhood! From now on you will walk the path of Bones. A life full of promises and power has just beenoffered to you ... ", cid)
-			npcHandler:say("Take it, if you are up to that challenge ... or perish in agony if you deserve this fate ... ", cid)
-			npcHandler:say("You can always ask me about your current rank and about the privileges the ranks grant to those who hold them. ", cid)
+			npcHandler:say({
+				"Welcome to the Brotherhood! From now on you will walk the path of Bones. A life full of promises and power has just beenoffered to you ...",
+				"Take it, if you are up to that challenge ... or perish in agony if you deserve this fate ...",
+				"You can always ask me about your current rank and about the privileges the ranks grant to those who hold them."
+			}, cid)
 			player:setStorageValue(Storage.OutfitQuest.BrotherhoodOutfit, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then

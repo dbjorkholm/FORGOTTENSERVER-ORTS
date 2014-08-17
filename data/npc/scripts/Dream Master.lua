@@ -15,9 +15,11 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "join") then
 		if player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) < 1 and player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) < 1 then
-			npcHandler:say("The Nightmare Knights are almost extinct now, and as far as I know I am the only teacher that is left. But you might beright and its time to accept new disciples ... ", cid)
-			npcHandler:say("After all you have passed the Dream Challenge to reach this place, which used to be the process of initiation in the past... ", cid)
-			npcHandler:say("So I ask you: do you wish to become a member of the ancient order of the Nightmare Knights, " .. player:getName() .. "?", cid)
+			npcHandler:say({
+				"The Nightmare Knights are almost extinct now, and as far as I know I am the only teacher that is left. But you might beright and its time to accept new disciples ...",
+				"After all you have passed the Dream Challenge to reach this place, which used to be the process of initiation in the past...",
+				"So I ask you: do you wish to become a member of the ancient order of the Nightmare Knights, " .. player:getName() .. "?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "advancement") then
@@ -37,8 +39,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Do you still want to join our order?", cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
-			npcHandler:say("So I welcome you as the latest member of the order of the Nightmare Knights. You entered this place as a stranger, butyou will leave this place as a friend ... ", cid)
-			npcHandler:say("You can always ask me about your current rank and about the privileges the ranks grant to those who hold them. ", cid)
+			npcHandler:say({
+				"So I welcome you as the latest member of the order of the Nightmare Knights. You entered this place as a stranger, butyou will leave this place as a friend ...",
+				"You can always ask me about your current rank and about the privileges the ranks grant to those who hold them."
+			}, cid)
 			player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then

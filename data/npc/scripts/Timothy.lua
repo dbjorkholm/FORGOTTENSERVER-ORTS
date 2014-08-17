@@ -14,10 +14,12 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msgcontains(msg, "research notes")) then
 		if player:getStorageValue(30) == 1 then
-			npcHandler:say("Oh, you are the contact person of the academy? Here are the notes that contain everything I have found out so far. ...", cid)
-			npcHandler:say("This city is absolutely fascinating, I tell you! If there hadn't been all this trouble and chaos in the past, this city would certainly be the greatest centre of knowledge in the world. ...", cid)
-			npcHandler:say("Oh, by the way, speaking about all the trouble here reminds me of Palimuth, a friend of mine. He is a native who was quite helpful in gathering all these information. ...", cid)
-			npcHandler:say("I'd like to pay him back for his kindness by sending him some experienced helper that assists him in his effort to restore some order in this city. Maybe you are interested in this job?", cid)
+			npcHandler:say({
+				"Oh, you are the contact person of the academy? Here are the notes that contain everything I have found out so far. ...",
+				"This city is absolutely fascinating, I tell you! If there hadn't been all this trouble and chaos in the past, this city would certainly be the greatest centre of knowledge in the world. ...",
+				"Oh, by the way, speaking about all the trouble here reminds me of Palimuth, a friend of mine. He is a native who was quite helpful in gathering all these information. ...",
+				"I'd like to pay him back for his kindness by sending him some experienced helper that assists him in his effort to restore some order in this city. Maybe you are interested in this job?"
+			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "yes")) then
