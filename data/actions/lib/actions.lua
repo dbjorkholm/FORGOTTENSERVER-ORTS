@@ -30,8 +30,9 @@ function destroyItem(cid, itemEx, toPosition)
 	--large amphora
 	if itemEx.itemid == 4996 then
 		if math.random(3) == 1 then
-			Item(itemEx.uid):transform(4997)
-			Item(itemEx.uid):decay()
+			local targetItem = Item(itemEx.uid)
+			targetItem:transform(4997)
+			targetItem:decay()
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true

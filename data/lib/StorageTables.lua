@@ -240,7 +240,10 @@ Storage = {
 		CrateStatus = 12363, --1068
 		GuardcaughtYou = 12364, --1062
 		ZumtahStatus = 12365, --1066
-		PrisonReleaseStatus = 12366 --1067
+		PrisonReleaseStatus = 12366, --1067
+		GhostOfAPriest01 = 12367, --1070
+		GhostOfAPriest02 = 12368, --1071
+		GhostOfAPriest03 = 12369 --1072
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
