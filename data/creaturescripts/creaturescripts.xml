@@ -40,6 +40,9 @@
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
 
+	<!-- Wrath of the Emperor Quest -->
+	<event type="kill" name="LizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
+
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
