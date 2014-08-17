@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Wiz ze relic you gained from Zalamon we were able to create powerful replicaz of ze zeptre. Take ziz wiz you. ...",
 				"You will have to realign ze cryztalz one after ze ozer. Ztart wiz ze one in ze norz-wezt and work your way clockwize zrough ze room. ...",
 				"Uzing ze zeptre will forze a part of ze emperor'z willpower out of ze cryztal. You will have to kill zoze manifeztationz. ...",
-				"Zen uze your zeptre on ze remainz to deztroy ze emperor'z influenze over ze cryztal. ...",)
+				"Zen uze your zeptre on ze remainz to deztroy ze emperor'z influenze over ze cryztal. ...",
 				"I recommend not to go alone becauze it will be very dangerouz - but ALL of you will have to uze zeir zeptre replicaz on ze emperor'z remainz to prozeed! ...",
 				"Good luck. You will need it."
 			}, cid)
