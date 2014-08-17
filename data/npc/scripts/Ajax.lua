@@ -105,12 +105,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
 		elseif npcHandler.topic[cid] == 6 then
-			npcHandler:say(
-						{
-							"Good! Me make shiny weapon. If you help me, I make one for you too. Like axe I wear. I need stuff. Listen. ...",
-							"Me need 100 iron ore. Then need crude iron. Then after that 50 behemoth fangs. And 50 lizard leather. You understand?",
-							"Help me yes or no?"
-						}, cid)
+			npcHandler:say({
+				"Good! Me make shiny weapon. If you help me, I make one for you too. Like axe I wear. I need stuff. Listen. ...",
+				"Me need 100 iron ore. Then need crude iron. Then after that 50 behemoth fangs. And 50 lizard leather. You understand?",
+				"Help me yes or no?"
+			}, cid)
 			npcHandler.topic[cid] = 7
 		elseif npcHandler.topic[cid] == 7 then
 			npcHandler:say("Good. You get 100 iron ore first. Come back.", cid)

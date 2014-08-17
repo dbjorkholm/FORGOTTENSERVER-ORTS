@@ -9,7 +9,7 @@ function onSay(cid, words, param)
 	end
 
 	local orig = player:getPosition()
-	local creatureId = doSummonCreature(param, orig)
+	local creatureId = Game.createMonster(param, orig)
 	if creatureId ~= false then
 		local monster = Monster(creatureId)
 		monster:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

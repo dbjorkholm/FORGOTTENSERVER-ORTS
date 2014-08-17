@@ -8,8 +8,8 @@ local boss = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 12318 and boss[itemEx.uid] and itemEx.itemid == 12383) then
 		doTransformItem(itemEx.uid, 11753)
-		doSummonCreature(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
-		setGlobalStorageValue(itemEx.uid - 4, 1)
+		Game.createMonster(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
+		Game.setStorageValue(itemEx.uid - 4, 1)
 	elseif(item.itemid == 12318 and itemEx.itemid == 12317) then
 		if(toPosition.x > 33034 and toPosition.x < 33071 and
 			toPosition.y > 31079 and toPosition.y < 31102) then

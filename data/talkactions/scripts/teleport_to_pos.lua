@@ -6,7 +6,7 @@ function onSay(cid, words, param, channel)
 	end
 	
 	if(param == '') then
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
 		return true
 	end
 
@@ -16,13 +16,13 @@ function onSay(cid, words, param, channel)
 	if(tile[2] and tile[3]) then
 		pos = {x = tile[1], y = tile[2], z = tile[3]}
 	else
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Invalid param specified.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Invalid param specified.")
 		return true
 	end
 
 
-	local tmp = getCreaturePosition(cid)
-	if(doTeleportThing(cid, pos, true) and not isPlayerGhost(cid)) then
+	local tmp = Creature(cid):getPosition()
+	if(doTeleportThing(cid, pos, true) and not player:isInGhostMode()) then
 		doSendMagicEffect(tmp, CONST_ME_POFF)
 		doSendMagicEffect(pos, CONST_ME_TELEPORT)
 	end

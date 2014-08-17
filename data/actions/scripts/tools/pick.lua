@@ -81,7 +81,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(Storage.TheIceIslands.Mission02) > 0 and player:getStorageValue(Storage.TheIceIslands.PickAmount) < 3 and player:getStorageValue(Storage.TheIceIslands.Questline) == 3  then
 			player:setStorageValue(Storage.TheIceIslands.PickAmount, player:getStorageValue(Storage.TheIceIslands.PickAmount) + 1)
 			player:setStorageValue(Storage.TheIceIslands.Mission02, player:getStorageValue(Storage.TheIceIslands.Mission02) + 1) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
-			doSummonCreature(chakoyas[math.random(3)], toPosition)
+			Game.createMonster(chakoyas[math.random(3)], toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 			thing1:transform(7186)
 			addEvent(revertIce, 60 * 1000, toPosition)

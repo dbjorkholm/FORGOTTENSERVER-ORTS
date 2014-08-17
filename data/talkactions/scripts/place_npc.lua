@@ -9,7 +9,7 @@ function onSay(cid, words, param)
 	end
 
 	local orig = player:getPosition()
-	local npcId = doCreateNpc(param, orig)
+	local npcId = Game.createNpc(param, orig)
 	if npcId ~= false then
 		orig:sendMagicEffect(CONST_ME_MAGIC_RED)
 	else

@@ -6,6 +6,7 @@ local spores = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	if(spores[item.itemid]) then
 		spore = math.random(18221, 18224)
 		doCreateItem(spore, 1, {x = toPosition.x, y = toPosition.y, z = toPosition.z, stackpos = toPosition.stackpos + 1})
@@ -14,17 +15,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(spores[item.itemid] and itemEx.itemid == spores[item.itemid]) then
 		if(getPlayerStorageValue(cid, 949) < 4 and getPlayerStorageValue(cid, 948) == 1) then
 			setPlayerStorageValue(cid, 949, getPlayerStorageValue(cid, 949) + 1)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have gathered the correct spores.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have gathered the correct spores.")
 			doTransformItem(item.uid, item.itemid + 1)
 			doSendMagicEffect(toPosition, CONST_ME_POFF)
 		end
 	elseif(spores[item.itemid] and itemEx.itemid ~= spores[item.itemid]) then
 		if(getPlayerStorageValue(cid, 949) < 4 and getPlayerStorageValue(cid, 948) == 1) then
 			setPlayerStorageValue(cid, 949, 0)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You have gathered the wrong spores.You ruined your collection.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have gathered the wrong spores.You ruined your collection.")
 			doTransformItem(item.uid, 18328)
 			doSendMagicEffect(toPosition, CONST_ME_POFF)
 		end
 	end
 	return true
 end
+

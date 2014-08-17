@@ -31,7 +31,7 @@ local function creatureSayCallback(cid, type, msg)
 			if(player:getStorageValue(Storage.TheInquisition.WalterGuard) < 1) then
 				player:setStorageValue(Storage.TheInquisition.WalterGuard, 1)
 				player:setStorageValue(Storage.TheInquisition.Mission01, player:getStorageValue(Storage.TheInquisition.Mission01) + 1) -- The Inquisition Questlog- "Mission 1: Interrogation"
-				doSendMagicEffect(getCreaturePosition(cid), CONST_ME_HOLYAREA)
+				player:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
 			end
 		end
 	end

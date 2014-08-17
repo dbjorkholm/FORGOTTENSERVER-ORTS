@@ -9,7 +9,7 @@ local function removeMinion(mid)
 end
 
 local function executeVersperothBattle(mid)
-	if getGlobalStorageValue(3147) ~= 1 then
+	if Game.getStorageValue(3147) ~= 1 then
 		return
 	end
 
@@ -19,7 +19,7 @@ local function executeVersperothBattle(mid)
 			return
 		end
 
-		setGlobalStorageValue(3148, monster:getMaxHealth() - monster:getHealth())
+		Game.setStorageValue(3148, monster:getMaxHealth() - monster:getHealth())
 		monster:remove()
 		versperothPosition:sendMagicEffect(CONST_ME_POFF)
 
@@ -39,7 +39,7 @@ local function executeVersperothBattle(mid)
 	local monster = Game.createMonster('Versperoth', versperothPosition, false, true)
 	if monster then
 		versperothPosition:sendMagicEffect(CONST_ME_GROUNDSHAKER)
-		monster:addHealth(-getGlobalStorageValue(3148))
+		monster:addHealth(-Game.getStorageValue(3148))
 
 		addEvent(executeVersperothBattle, 20 * 1000, monster:getId())
 	end
@@ -52,13 +52,13 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if false and getGlobalStorageValue(3147) >= 1 then
+	if false and Game.getStorageValue(3147) >= 1 then
 		return true
 	end
 
 	player:teleportTo(Position(33072, 31877, 12))
-	setGlobalStorageValue(3147, 1)
-	setGlobalStorageValue(3148, 0)
+	Game.setStorageValue(3147, 1)
+	Game.setStorageValue(3148, 0)
 	executeVersperothBattle()
 	Item(item.uid):transform(18462)
 	return true
