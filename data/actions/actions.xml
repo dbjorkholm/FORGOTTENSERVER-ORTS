@@ -48,6 +48,7 @@
 	<action itemid="12303" script="wrath of the emperor quest/Mission02FirstContactRepairTeleport.lua"/>
 	<action itemid="12316" script="wrath of the emperor quest/Mission03TheKeeper.lua"/>
 	<action itemid="12320" script="wrath of the emperor quest/Mission03TheKeeper.lua"/>
+	<action uniqueid="12354" script="wrath of the emperor quest/Mission04SacramentoftheSnakeSceptre.lua"/>
 
 	<!-- Unnatural Selection -->
 	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
