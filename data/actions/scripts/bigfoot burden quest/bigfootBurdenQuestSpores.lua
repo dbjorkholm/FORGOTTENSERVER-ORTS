@@ -22,11 +22,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(spores[item.itemid] and itemEx.itemid ~= spores[item.itemid]) then
 		if(getPlayerStorageValue(cid, 949) < 4 and getPlayerStorageValue(cid, 948) == 1) then
 			setPlayerStorageValue(cid, 949, 0)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have gathered the wrong spores.You ruined your collection.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have gathered the wrong spores. You ruined your collection.")
 			doTransformItem(item.uid, 18328)
 			doSendMagicEffect(toPosition, CONST_ME_POFF)
 		end
 	end
 	return true
 end
-
