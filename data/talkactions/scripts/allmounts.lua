@@ -26,7 +26,7 @@ function onSay(cid, words, param, channel)
 	end
 
 	for i = 1, 47 do
-		player:addMount(i)
+		target:addMount(i)
 	end
 
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'All mounts unlocked for: ' .. target:getName())

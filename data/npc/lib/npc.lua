@@ -57,7 +57,7 @@ end
 
 local func = function(pars)
 	if isPlayer(pars.pcid) == true then
-		Creature(cid):say(pars.text, pars.type, false, pars.pcid, Creature(pars.cid):getPosition())
+		Creature(pars.cid):say(pars.text, pars.type, false, pars.pcid, Creature(pars.cid):getPosition())
 		pars.e.done = true
 	end
 end

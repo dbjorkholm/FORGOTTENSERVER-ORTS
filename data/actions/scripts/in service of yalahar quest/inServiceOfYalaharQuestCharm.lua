@@ -7,8 +7,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(47)
 			local ret = Game.createMonster("Tormented Ghost", getThingPos(cid))
 			local ret2 = Game.createMonster("Tormented Ghost", getThingPos(cid))
-			getThingPos(ret):sendMagicEffect(CONST_ME_TELEPORT)
-			getThingPos(re2t):sendMagicEffect(CONST_ME_TELEPORT)
+			ret:getPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			ret2:getPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	end
 	return true
