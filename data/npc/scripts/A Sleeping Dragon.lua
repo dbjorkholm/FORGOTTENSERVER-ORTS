@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 29 then
 		if(msg == "SOLOSARASATIQUARIUM") then
 			npcHandler:say({
-				"Dragon dreams are golden. ..." , cid)
+				"Dragon dreams are golden. ...",
 				"A broad darkness surrounds you as if a heavy curtain is closing before your eyes. After what seems like minutes of floating through emptiness, you get the feeling as if a hole opens in the dark before you. ...",
 				"The hole grows larger, you cannot close your eyes. An unimaginable black. Deeper and darker than any nothingness you could possibly imagine drags you into it. ...",
 				"You feel as if you cannot breathe anymore. The very second you let loose of your consciousness, you sense all heaviness around you lifted. ...",
