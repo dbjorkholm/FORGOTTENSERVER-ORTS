@@ -35,7 +35,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if item.itemid == antidotePot then
-		if not doCombat(cid, antidote, numberToVariant(cid)) then
+		if not doCombat(cid, antidote, Variant(cid)) then
 			return false
 		end
 		player:addCondition(exhaust)

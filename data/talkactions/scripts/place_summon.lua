@@ -9,9 +9,8 @@ function onSay(cid, words, param)
 	end
 
 	local orig = player:getPosition()
-	local creatureId = doSummonCreature(param, orig)
-	if creatureId ~= false then
-		local monster = Monster(creatureId)
+	local monster = Game.createMonster(param, orig)
+	if monster then
 		monster:setMaster(player)
 		orig:sendMagicEffect(CONST_ME_MAGIC_RED)
 	else

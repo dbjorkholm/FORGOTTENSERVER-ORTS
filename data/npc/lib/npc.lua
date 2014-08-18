@@ -13,9 +13,9 @@ function msgcontains(message, keyword)
 end
 
 function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
-	local amount, subType, ignoreCap, item = amount or 1, subType or 0, ignoreCap and TRUE or FALSE, 0
-	ignoreCap = FALSE
-	if isItemStackable(itemid) then
+	local amount, subType, ignoreCap, item = amount or 1, subType or 0, ignoreCap and true or false, 0
+	ignoreCap = false
+	if ItemType(itemid):isStackable() then
 		if(inBackpacks) then
 			stuff = doCreateItemEx(backpack, 1)
 			item = doAddContainerItem(stuff, itemid, math.min(100, amount))
@@ -30,7 +30,7 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 		local container, b = doCreateItemEx(backpack, 1), 1
 		for i = 1, amount do
 			local item = doAddContainerItem(container, itemid, subType)
-			if(isInArray({(getContainerCapById(backpack) * b), amount}, i) == TRUE) then
+			if(isInArray({(ItemType(backpack):getCapacity() * b), amount}, i) == true) then
 				if(doPlayerAddItemEx(cid, container, ignoreCap) ~= RETURNVALUE_NOERROR) then
 					b = b - 1 --
 					break
@@ -56,33 +56,34 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 end
 
 local func = function(pars)
-	if isPlayer(pars.pcid) == TRUE then
-		doCreatureSay(pars.cid, pars.text, pars.type, false, pars.pcid, getCreaturePosition(pars.cid))
-		pars.e.done = TRUE
+	if isPlayer(pars.pcid) == true then
+		Creature(pars.cid):say(pars.text, pars.type, false, pars.pcid, Creature(pars.cid):getPosition())
+		pars.e.done = true
 	end
 end
 
 function doCreatureSayWithDelay(cid, text, type, delay, e, pcid)
-	if isPlayer(pcid) == TRUE then
-		e.done = FALSE
+	if isPlayer(pcid) == true then
+		e.done = false
 		e.event = addEvent(func, delay < 1 and 1000 or delay, {cid=cid, text=text, type=type, e=e, pcid=pcid})
 	end
 end
 
 function doPlayerTakeItem(cid, itemid, count)
-	if getPlayerItemCount(cid,itemid) < count then
+	local player = Player(cid)
+	if player:getItemCount(itemid) < count then
 		return LUA_ERROR
 	end
 
 	while count > 0 do
 		local tempcount = 0
-		if isItemStackable(itemid) then
+		if ItemType(itemid):isStackable() then
 			tempcount = math.min (100, count)
 		else
 			tempcount = 1
 		end
 
-		local ret = doPlayerRemoveItem(cid, itemid, tempcount)
+		local ret = player:removeItem(itemid, tempcount)
 		if ret ~= LUA_ERROR then
 			count = count - tempcount
 		else
@@ -97,9 +98,10 @@ function doPlayerTakeItem(cid, itemid, count)
 end
 
 function doPlayerSellItem(cid, itemid, count, cost)
+	local player = Player(cid)
 	if doPlayerTakeItem(cid, itemid, count) == LUA_NO_ERROR then
-		if not doPlayerAddMoney(cid, cost) then
-			error('Could not add money to ' .. getPlayerName(cid) .. '(' .. cost .. 'gp)')
+		if not player:addMoney(cost) then
+			error('Could not add money to ' .. player:getName() .. '(' .. cost .. 'gp)')
 		end
 		return LUA_NO_ERROR
 	end
@@ -107,13 +109,13 @@ function doPlayerSellItem(cid, itemid, count, cost)
 end
 
 function doPlayerBuyItemContainer(cid, containerid, itemid, count, cost, charges)
-	if not doPlayerRemoveMoney(cid, cost) then
+	if not Player(cid):removeMoney(cost) then
 		return LUA_ERROR
 	end
 
 	for i = 1, count do
 		local container = doCreateItemEx(containerid, 1)
-		for x = 1, getContainerCapById(containerid) do
+		for x = 1, ItemType(containerid):getCapacity() do
 			doAddContainerItem(container, itemid, charges)
 		end
 

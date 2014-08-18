@@ -1,10 +1,11 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	if(item.itemid == 18313 and itemEx.itemid == 18321) then
 		chance = math.random(3)
 		if(getPlayerStorageValue(cid, 943) < 1 and getPlayerStorageValue(cid, 942) == 1) then
 			if(chance == 3) then
 				setPlayerStorageValue(cid, 943, getPlayerStorageValue(cid, 943) + 1)
-				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Congratulations! The crystals seem to have fallen in love and your mission is done!")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! The crystals seem to have fallen in love and your mission is done!")
 				doTransformItem(item.uid, 18312)
 			else
 				doSendMagicEffect(toPosition, CONST_ME_POFF)

@@ -34,7 +34,7 @@ function onSay(cid, words, param, channel)
 	end
 
 	for i = 1, #looktypes do
-		doPlayerAddOutfit(pid, looktypes[i], 3)
+		target:addOutfitAddon(looktypes[i], 3)
 	end
 
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'All addons unlocked for ' .. target:getName() .. '.')

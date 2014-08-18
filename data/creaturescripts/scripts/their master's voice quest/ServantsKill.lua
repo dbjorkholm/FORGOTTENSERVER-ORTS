@@ -71,17 +71,17 @@ function onKill(cid, target)
 		return true
 	end
 
-	local storage984, storage985 = getGlobalStorageValue(984), getGlobalStorageValue(985)
+	local storage984, storage985 = Game.getStorageValue(984), Game.getStorageValue(985)
 	if storage985 == #positions and storage984 < 25 then
-		setGlobalStorageValue(985, 0)
-		setGlobalStorageValue(984, storage + 1)
+		Game.setStorageValue(985, 0)
+		Game.setStorageValue(984, storage + 1)
 
 		for i = 1, #positions do
 			addEvent(summonServant, 5 * 1000, positions[i])
 		end
 
 	elseif storage985 < #positions and storage984 < 25 then
-		setGlobalStorageValue(985, storage985 + 1)
+		Game.setStorageValue(985, storage985 + 1)
 
 	elseif storage985 == #positions and storage984 == 25 then
 		Game.createMonster('mad mage', magePositions[math.random(#magePositions)])

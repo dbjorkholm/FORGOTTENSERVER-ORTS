@@ -60,8 +60,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		shadowNexusPosition:sendMagicEffect(CONST_ME_HOLYAREA)
 
 	elseif itemEx.itemid == 8759 then
-		if getGlobalStorageValue(210) < 1 then
-			addEvent(setGlobalStorageValue, 20 * 1000, 210, 0)
+		if Game.getStorageValue(210) ~= 0 then
+			addEvent(Game.setStorageValue, 20 * 1000, 210, 0)
 		end
 
 		if player:getStorageValue(cid, Storage.TheInquisition.Questline) < 22 then

@@ -15,7 +15,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if item.actionid == 8015 then
 		player:say("You hear guards moving behind doors in the distance. If you have any sort of disguise with you, this is the moment to use it.", TALKTYPE_MONSTER_SAY)
 	elseif item.actionid == 8016 then
-		if getTileItemById({x = getPlayerPosition(cid).y < 31094 and 33080 or 33385, y = getPlayerPosition(cid).y, z = 8}, 12213).uid > 0 then
+		if getTileItemById({x = player:getPosition().y < 31094 and 33080 or 33385, y = player:getPosition().y, z = 8}, 12213).uid > 0 then
 			catchPlayer(cid)
 		end
 	elseif item.actionid == 8017 or item.actionid == 32362 or item.itemid == 11436 then

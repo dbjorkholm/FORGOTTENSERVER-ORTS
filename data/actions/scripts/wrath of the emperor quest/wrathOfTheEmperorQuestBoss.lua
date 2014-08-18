@@ -8,8 +8,8 @@ local boss = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.itemid == 12318 and boss[itemEx.uid] and itemEx.itemid == 12383) then
 		doTransformItem(itemEx.uid, 11753)
-		doSummonCreature(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
-		setGlobalStorageValue(itemEx.uid - 4, 1)
+		Game.createMonster(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
+		Game.setStorageValue(itemEx.uid - 4, 1)
 	elseif(item.itemid == 12318 and itemEx.itemid == 12317) then
 		if(toPosition.x > 33034 and toPosition.x < 33071 and
 			toPosition.y > 31079 and toPosition.y < 31102) then
@@ -39,10 +39,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	elseif(item.itemid == 12318 and itemEx.itemid == 12385) then
-		if(getPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline) == 31) then
+		if(getPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline) == 33) then
 			doCreatureSay(cid, "NOOOoooooooo...!", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 			doCreatureSay(cid, "This should have dealt the deathblow to the snake things' ambitions.", TALKTYPE_MONSTER_SAY)
-			setPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline, 32)
+			setPlayerStorageValue(cid, Storage.WrathoftheEmperor.Questline, 34)
 		end
 	end
 	return true
