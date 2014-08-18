@@ -87,7 +87,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 13
 		end
 	elseif msgcontains(msg, "advancement") then
-		if player:getStorageValue(Storage.postman.Mission04) == 2 and player:getStorageValue(Storage.postman.rank) == 1 then
+		if player:getStorageValue(Storage.postman.Mission04) == 2 and player:getStorageValue(Storage.postman.Rank) == 1 then
 			npcHandler:say("You are worthy indeed. Do you want to advance in our guild?", cid)
 			npcHandler.topic[cid] = 14
 		elseif player:getStorageValue(Storage.postman.Mission06) == 13 and player:getStorageValue(Storage.postman.Rank) == 2 then
