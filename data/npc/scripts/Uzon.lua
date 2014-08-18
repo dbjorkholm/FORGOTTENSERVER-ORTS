@@ -20,7 +20,8 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	
+	local player = Player(cid)
 	if msgcontains(msg, "eclipse") then
 		if player:getStorageValue(Storage.TheInquisition.Questline) == 4 then
 			npcHandler:say('Oh no, so the time has come? Do you really want me to fly you to this unholy place?', cid)
@@ -39,7 +40,6 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 3
 
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] > 0 then
-		local player = Player(cid)
 		if npcHandler.topic(cid) == 1 then	
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			local position = Position(32659, 31915, 0)
