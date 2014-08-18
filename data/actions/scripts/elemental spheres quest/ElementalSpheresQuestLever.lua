@@ -38,17 +38,17 @@ local function reset()
 			end
 		end
 	end
-	setGlobalStorageValue(10004, 0)
-	setGlobalStorageValue(10005, 0)
-	setGlobalStorageValue(10006, 0)
-	setGlobalStorageValue(10007, 0)
-	setGlobalStorageValue(10008, 0)
+	Game.setStorageValue(10004, 0)
+	Game.setStorageValue(10005, 0)
+	Game.setStorageValue(10006, 0)
+	Game.setStorageValue(10007, 0)
+	Game.setStorageValue(10008, 0)
 	return true
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if (item.itemid == 1945) then
-		if (isPlayerInArea(Area_fromPos, Area_toPos) or getGlobalStorageValue(10004) > 0) then
+		if (isPlayerInArea(Area_fromPos, Area_toPos) or Game.getStorageValue(10004) > 0) then
 			return (doCreatureSay(cid, 'Wait for the current team to exit.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 		end
 		for k, v in pairs(t) do

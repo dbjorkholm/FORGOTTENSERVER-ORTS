@@ -105,11 +105,11 @@ local function reset()
 		end
 	end
 
-	setGlobalStorageValue(10004, 0)
-	setGlobalStorageValue(10005, 0)
-	setGlobalStorageValue(10006, 0)
-	setGlobalStorageValue(10007, 0)
-	setGlobalStorageValue(10008, 0)
+	Game.setStorageValue(10004, 0)
+	Game.setStorageValue(10005, 0)
+	Game.setStorageValue(10006, 0)
+	Game.setStorageValue(10007, 0)
+	Game.setStorageValue(10008, 0)
 	return true
 end
 
@@ -124,7 +124,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = {}
 	local failed = true
 	if (item.itemid == 1945) then
-		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getGlobalStorageValue(10005) > 0 and getGlobalStorageValue(10006) > 0 and getGlobalStorageValue(10007) > 0 and getGlobalStorageValue(10008) > 0) then
+		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and Game.getStorageValue(10005) > 0 and Game.getStorageValue(10006) > 0 and Game.getStorageValue(10007) > 0 and Game.getStorageValue(10008) > 0) then
 			failed = false
 		else
 			doCreatureSay(cid, 'Charge the four machines and stand at the marked spots beside the levers.', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
@@ -144,11 +144,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return true
 		end
 		if (failed == false) then
-			doSummonCreature('Lord of the Elements', {x=33267, y=31836, z=12})
+			Game.createMonster('Lord of the Elements', {x=33267, y=31836, z=12})
 			addEvent(reset, 10 * 60 * 1000)
 			addEvent(warn, 5 * 60 * 1000, cid)
 			doCreatureSay(cid, 'You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
-			setGlobalStorageValue(10004, 1)
+			Game.setStorageValue(10004, 1)
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31828, z=12})
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31843, z=12})
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33260, y=31836, z=12})

@@ -1,5 +1,4 @@
 local teleportPosition = Position(33075, 31878, 12)
-local abyssadorPosition = Position(33086, 31907, 12)
 
 local function transformTeleport()
 	local teleportItem = Tile(teleportPosition):getItemById(1387)
@@ -20,14 +19,14 @@ function onKill(cid, target)
 		return true
 	end
 
-	setGlobalStorageValue(3147, 2)
-	addEvent(setGlobalStorageValue, 30 * 60 * 1000, 3147, 0)
+	Game.setStorageValue(3147, 2)
+	addEvent(Game.setStorageValue, 30 * 60 * 1000, 3147, 0)
 
 	local holeItem = Tile(teleportPosition):getItemById(18462)
 	if holeItem then
 		holeItem:transform(1387)
 	end
-	Game.createMonster('abyssador', abyssadorPosition)
+	Game.createMonster('abyssador', Position(33086, 31907, 12))
 
 	addEvent(transformTeleport, 30 * 60 * 1000)
 	addEvent(teleportAllPlayersFromArea,6 * 20 * 1000 + 30 * 60 * 1000, {

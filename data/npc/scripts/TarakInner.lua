@@ -8,22 +8,23 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
-	if(msgcontains(msg, "monument tower")) then
+	if msgcontains(msg, "monument tower") then
 		npcHandler:say("Do you want to travel to the {monument tower} for a 50 gold fee?", cid)
 		npcHandler.topic[cid] = 1
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
-			if(getPlayerMoney(cid) >= 50) then
-				doPlayerRemoveMoney(cid, 50)
-				doTeleportThing(cid, {x = 32940, y = 31182, z = 7})
-				doSendMagicEffect({x = 32940, y = 31182, z = 7}, CONST_ME_TELEPORT)
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			if player:getMoney() >= 50 then
+				player:removeMoney(50)
+				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				player:teleportTo(Position(32940, 31182, 7), false)
+				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have enought money.", cid)
+				npcHandler.topic[cid] = 0
 			end
 		end
 	end
