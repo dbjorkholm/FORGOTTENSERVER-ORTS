@@ -53,7 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
+
 	if msgcontains(msg, "eclipse") then
 		if player:getStorageValue(Storage.TheInquisition.Questline) == 4 then
 			npcHandler:say('Oh no, so the time has come? Do you really want me to fly you to this unholy place?', cid)
@@ -67,36 +67,50 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Never heard about a place like this.", cid)
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
+	elseif msgcontains(msg, "edron") then
+		npcHandler:say("Do you seek a ride to Edron for 60 gold?", cid)
+		npcHandler.topic[cid] = 3
+
+	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] > 0 then
+		local player = Player(cid)
+		if npcHandler.topic(cid) == 1 then	
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = Position(32659, 31915, 0)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(Position(32659, 31915, 0), false)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+
 		elseif npcHandler.topic[cid] == 2 then
-			if player:removeMoney(60) then
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				player:teleportTo(Position(32983, 31539, 1), false)
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				npcHandler:say("Hold on!", cid)
-			else
-				npcHandler:say("You don't have enough money.", cid)
+			if not player:removeMoney(60) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
 			end
+
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = Position(32983, 31539, 1)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Hold on!', cid)
+
 		elseif npcHandler.topic[cid] == 3 then
+			if not player:removeMoney(60) then
+				npcHandler:say('You don\'t have enough money.', cid)
+				return true
+			end
+
 			if player:getStorageValue(Storage.postman.Mission01) == 2 then
 				player:setStorageValue(Storage.postman.Mission01, 3)
-				player:teleportTo(Position(33193, 31783, 3))
-			else
-				player:teleportTo(Position(33193, 31783, 3))
 			end
-			npcHandler.topic[cid] = 0
+
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			local position = Position(33193, 31783, 3)
+			player:teleportTo(position)
+			position:sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Hold on!', cid)
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
 		npcHandler:say("You shouldn't miss the experience.", cid)
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "edron") then
-		npcHandler:say("Do you seek a ride to Edron?", cid)
-		npcHandler.topic[cid] = 3
 	end
 	return true
 end
