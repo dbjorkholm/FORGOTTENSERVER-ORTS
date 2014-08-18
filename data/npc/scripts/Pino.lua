@@ -33,7 +33,7 @@ local travelNode = keywordHandler:addKeyword({'hills'}, StdModule.say, {npcHandl
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Kazordoon for 80 gold?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 80, destination = {x=32588, y=31941, z=0} })
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 80, destination = {x=32588, y=31941, z=0} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
 
 local function creatureSayCallback(cid, type, msg)
@@ -68,7 +68,10 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Greetings, traveller |PLAYERNAME|. Where do you want me to fly you?")
+keywordHandler:addKeyword({'fly'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I\'m a carpet pilot. I can give you a {passage} to many places.'})
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to {Darashia} on Darama, {Femor Hills}, {Kazordoon} or {Svargrond} if you like. Where do you want to go?"})
+
+npcHandler:setMessage(MESSAGE_GREET, "Greetings, traveller |PLAYERNAME|. Where do you want me to {fly} you?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye!")
 
