@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, "eclipse") then
 		if player:getStorageValue(Storage.TheInquisition.Questline) == 4 then
