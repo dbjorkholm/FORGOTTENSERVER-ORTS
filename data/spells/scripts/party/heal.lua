@@ -52,7 +52,7 @@ function onCastSpell(creature, var)
 	player:addMana(-(mana - 120), false)
 	player:addManaSpent((mana - 120) * configManager.getNumber(configKeys.RATE_MAGIC))
 	for _, pid in ipairs(affectedList) do
-		doAddCondition(pid, condition)
+		Player(pid):addCondition(condition)
 	end
 
 	return LUA_NO_ERROR
