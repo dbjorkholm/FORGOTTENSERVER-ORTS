@@ -45,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 			local playerPos = player:getPosition()
 			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(32659, 31915, 0))
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
 		elseif npcHandler.topic[cid] == 2 then
 			if not player:removeMoney(60) then
@@ -56,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 			local playerPos = player:getPosition()
 			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(32983, 31539, 1))
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
 		elseif npcHandler.topic[cid] == 3 then
 			if not player:removeMoney(60) then
@@ -71,7 +71,7 @@ local function creatureSayCallback(cid, type, msg)
 			local playerPos = player:getPosition()
 			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(33193, 31783, 3))
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
