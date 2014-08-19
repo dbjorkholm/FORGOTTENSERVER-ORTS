@@ -1,0 +1,19 @@
+local pump = {
+[13822] = 13823,
+[13823] = 13822
+}
+
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if pump[itemEx.itemid] ~= nil then
+		doTransformItem(itemEx.uid, pump[itemEx.itemid])
+		local subtype = item.type
+		if(subtype == 0) then
+			subtype = 1
+		end
+		setGlobalStorage_old(12000, getGlobalStorage_old(12000) + subtype)
+		doSendMagicEffect(getThingPos(itemEx.uid), CONST_ME_POFF)
+		doRemoveItem(item.uid, subtype)
+		return true
+	end
+	return false
+end
