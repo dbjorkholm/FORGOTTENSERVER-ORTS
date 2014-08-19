@@ -74,6 +74,7 @@ local function creatureSayCallback(cid, type, msg)
 			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
 		end
+		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
 		npcHandler:say("You shouldn't miss the experience.", cid)
 		npcHandler.topic[cid] = 0
