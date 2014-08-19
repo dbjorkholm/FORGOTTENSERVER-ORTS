@@ -41,8 +41,7 @@
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
 
 	<!-- Wrath of the Emperor Quest -->
-	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
-	<event type="kill" name="WotELizardNoble" script="wrath of the emperor quest/lizardnoble.lua"/>
+	<event type="kill" name="LizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
