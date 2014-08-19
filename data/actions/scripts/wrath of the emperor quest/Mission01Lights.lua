@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3171) then
-		if Game.getStorageValue(8018) ~= 1 then
+		if(Game.getStorageValue(8018) or -1) ~= 1 then
 			Game.setStorageValue(8018, 1)
 			addEvent(Game.setStorageValue, 20 * 1000, 8018, 0)
 			pos = {
@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 	elseif(item.uid == 3172) then
-		if Game.getStorageValue(8019) ~= 1 then
+		if(Game.getStorageValue(8019) or -1) ~= 1 then
 			Game.setStorageValue(8019, 1)
 			addEvent(Game.setStorageValue, 20 * 1000, 8019, 0)
 			pos = {x = 33360, y = 31079, z = 8}
@@ -21,7 +21,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doTransformItem, 20 * 1000, getTileItemById(pos, 11463).uid, 11449)
 		end
 	elseif(item.uid == 3173) then
-		if Game.getStorageValue(8020) ~= 1 then
+		if(Game.getStorageValue(8020) or -1) ~= 1 then
 			Game.setStorageValue(8020, 1)
 			addEvent(Game.setStorageValue, 20 * 1000, 8020, 0)
 			pos = {x = 33346, y = 31074, z = 8}
@@ -29,7 +29,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doTransformItem, 20 * 1000, getTileItemById(pos, 11463).uid, 11449)
 		end
 	elseif(item.uid == 3174) then
-		if Game.getStorageValue(8021) ~= 1 then
+		if(Game.getStorageValue(8021) or -1) ~= 1 then
 			Game.setStorageValue(8021, 1)
 			addEvent(Game.setStorageValue, 20 * 1000, 8021, 0)
 			for i = 1, 4 do

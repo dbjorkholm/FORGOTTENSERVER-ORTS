@@ -9,7 +9,7 @@ local function removeMinion(mid)
 end
 
 local function executeVersperothBattle(mid)
-	if Game.getStorageValue(3147) ~= 1 then
+	if (Game.getStorageValue(3147) or -1) ~= 1 then
 		return
 	end
 
@@ -39,7 +39,7 @@ local function executeVersperothBattle(mid)
 	local monster = Game.createMonster('Versperoth', versperothPosition, false, true)
 	if monster then
 		versperothPosition:sendMagicEffect(CONST_ME_GROUNDSHAKER)
-		monster:addHealth(-Game.getStorageValue(3148))
+		monster:addHealth(-(Game.getStorageValue(3148) or -1))
 
 		addEvent(executeVersperothBattle, 20 * 1000, monster:getId())
 	end
@@ -52,7 +52,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if false and Game.getStorageValue(3147) >= 1 then
+	if false and (Game.getStorageValue(3147) or -1) >= 1 then
 		return true
 	end
 

@@ -46,26 +46,26 @@ end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if (item.itemid == 1945) then
-		if (isPlayerInArea(Area_fromPos, Area_toPos) or Game.getStorageValue(10004) > 0) then
+		if (isPlayerInArea(Area_fromPos, Area_toPos) or (Game.getStorageValue(10004) or -1) > 0) then
 			return (doCreatureSay(cid, 'Wait for the current team to exit.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 		end
 		for k, v in pairs(t) do
-			local player = getTopCreature(v[1]).uid
-			if isPlayer(player) == FALSE then
+			local teamPlayer = getTopCreature(v[1]).uid
+			if isPlayer(teamPlayer) == false then
 				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 			end
-			local voc = getPlayerVocation(player)
+			local voc = getPlayerVocation(teamPlayer)
 			if voc > 4 then
 				voc = voc - 4
 			end
-			if voc ~= k or getPlayerItemCount(player, v[2]) < 1 or getPlayerStorageValue(player, 10000) < 2 then
+			if voc ~= k or getPlayerItemCount(teamPlayer, v[2]) < 1 or getPlayerStorageValue(teamPlayer, 10000) < 2 then
 				return (doCreatureSay(cid, 'You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31835, z=10}))
 			end
 		end
 		local effectTable = {}
 		for k, v in pairs(t) do
-			local player = getTopCreature(v[1]).uid
-			doTeleportThing(player, v[3])
+			local teamPlayer = getTopCreature(v[1]).uid
+			doTeleportThing(teamPlayer, v[3])
 			doSendMagicEffect(v[1], CONST_ME_TELEPORT)
 			table.insert(effectTable, v[3])
 			doTransformItem(item.uid, 1946)

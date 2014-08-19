@@ -118,10 +118,10 @@ local function warn(cid)
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = {}
+	local teamPlayer = {}
 	local failed = true
 	if (item.itemid == 1945) then
-		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and Game.getStorageValue(10005) > 0 and Game.getStorageValue(10006) > 0 and Game.getStorageValue(10007) > 0 and Game.getStorageValue(10008) > 0) then
+		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and (Game.getStorageValue(10005) or -1) > 0 and (Game.getStorageValue(10006) or -1) > 0 and (Game.getStorageValue(10007) or -1) > 0 and (Game.getStorageValue(10008) or -1) > 0) then
 			failed = false
 		else
 			doCreatureSay(cid, 'Charge the four machines and stand at the marked spots beside the levers.', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
@@ -152,9 +152,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33275, y=31836, z=12})
 			doTransformItem(item.uid, 1946)
 			for i = 1, 4 do
-				player[i] = getThingfromPos(players_pos[i])
-				if (player[i].itemid > 0) then
-					if (isPlayer(player[i].uid) == TRUE) then
+				teamPlayer[i] = getThingfromPos(players_pos[i])
+				if (teamPlayer[i].itemid > 0) then
+					if (isPlayer(teamPlayer[i].uid) == true) then
 						addEvent(kick, 10 * 60 * 1000, cid)
 					end
 				end

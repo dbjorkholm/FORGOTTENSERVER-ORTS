@@ -21,7 +21,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'parasite' or Game.getStorageValue(3144) >= 1 then
+	if targetMonster:getName():lower() ~= 'parasite' or (Game.getStorageValue(3144) or -1) >= 1 then
 		return true
 	end
 

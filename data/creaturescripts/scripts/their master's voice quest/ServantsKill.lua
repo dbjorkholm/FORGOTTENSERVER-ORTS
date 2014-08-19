@@ -71,7 +71,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	local storage984, storage985 = Game.getStorageValue(984), Game.getStorageValue(985)
+	local storage984, storage985 = (Game.getStorageValue(984) or -1), (Game.getStorageValue(985) or -1)
 	if storage985 == #positions and storage984 < 25 then
 		Game.setStorageValue(985, 0)
 		Game.setStorageValue(984, storage + 1)
