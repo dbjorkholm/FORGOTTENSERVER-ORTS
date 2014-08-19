@@ -1,18 +1,28 @@
-local t = {
-	[50011] = {{x = 32636, y = 31881, z = 7}, {x = 32636, y = 31881, z = 2}, effect = true},
-	[50012] = {{x = 32636, y = 31881, z = 2}, {x = 32636, y = 31881, z = 7}, effect = true}
+local config = {
+	[50011] = Position(32636, 31881, 2),
+	[50012] = Position(32636, 31881, 7)
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local k = t[item.actionid]
-	local thing = getTopCreature(k[1]).uid
-	if(k and item.itemid == 1945) then
-		if(isPlayer(thing)) then
-			doTeleportThing(thing, k[2], false)
-			if(k.effect) then
-				doSendMagicEffect(k[2], CONST_ME_TELEPORT)
-			end
-		end
+	local targetPosition = config[item.actionid]
+	if not targetPosition then
+		return true
 	end
-	return doTransformItem(item.uid, item.itemid == 1945 and 1946 or 1945)
+
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
+	toPosition.x = toPosition.x - 1
+	local creature = Tile(toPosition):getTopCreature()
+	if not creature or not creature:isPlayer() then
+		return true
+	end
+
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	creature:teleportTo(targetPosition)
+	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)
+	return true
 end

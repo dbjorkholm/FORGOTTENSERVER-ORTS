@@ -40,11 +40,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(Storage.wagonTicket) >= os.time() then
-		player:teleportTo(targetPosition)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	else
+	if player:getStorageValue(Storage.wagonTicket) < os.time() then
 		player:say("Purchase a weekly ticket from Gewen, Lokur in the post office, The Lukosch brothers or from Brodrosch on the steamboat.", TALKTYPE_MONSTER_SAY)
+		return true
 	end
+	
+	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	player:teleportTo(targetPosition)
+	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

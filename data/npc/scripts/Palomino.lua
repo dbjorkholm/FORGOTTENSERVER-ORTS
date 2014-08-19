@@ -32,9 +32,9 @@ local function creatureSayCallback(cid, type, msg)
 			end
 
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local position = Position(32850, 32124, 7)
-			player:teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
+			local destination = Position(32850, 32124, 7)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Have a nice trip!', cid)
 		elseif npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(50561) >= os.time() then

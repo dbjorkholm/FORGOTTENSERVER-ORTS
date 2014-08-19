@@ -38,15 +38,15 @@ local function creatureSayCallback(cid, type, msg)
 
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
-		local position = Position(33025, 31553, 14)
+		local destination = Position(33025, 31553, 14)
 		if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
-			position.z = 10
+			destination.z = 10
 		elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
-			position.z = 12
+			destination.z = 12
 		end
 
-		player:teleportTo(position)
-		position:sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(destination)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:say('Full speed ahead!', cid)
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
 		npcHandler:say('You shouldn\'t miss the experience.', cid)

@@ -4,22 +4,25 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local Elevatoruser = Tile(Position({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z})):getTopCreature() -- get player who stand on the Startposition elevator
-	
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
-	
-	if not Elevatoruser or not Elevatoruser:isPlayer() then -- creature and player check
+	local targetPosition = config[item.uid]
+	if not targetPosition then
 		return true
 	end
 
-	local lever = config[item.uid]
-	if not lever then
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
+	toPosition.y = toPosition.y + 1
+	local creature = Tile(toPosition):getTopCreature()
+	if not creature or not creature:isPlayer() then
 		return true
 	end
-	if item.itemid == 1945 then
-		Elevatoruser:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		Elevatoruser:teleportTo(lever)
-		lever:sendMagicEffect(CONST_ME_TELEPORT)
+
+	if item.itemid ~= 1945 then
+		return true
 	end
+
+	creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	creature:teleportTo(targetPosition)
+	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

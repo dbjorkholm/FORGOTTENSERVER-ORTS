@@ -20,7 +20,9 @@ local function creatureSayCallback(cid, type, msg)
 		end
 
 		npcHandler:say('And here we go!', cid)
-		player:teleportTo(Position(32390, 32195, 8))
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		local exhibitionPosition = Position(32390, 32195, 8)
+		player:teleportTo(exhibitionPosition)
 		exhibitionPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	else
 		npcHandler:say('Then not.', cid)

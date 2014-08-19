@@ -24,14 +24,14 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'magician') then
-			local position = Position(32885, 31157, 7)
-			Player(cid):teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
+			local destination = Position(32885, 31157, 7)
+			Player(cid):teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		elseif msgcontains(msg, 'sunken') then
-			local position = Position(32884, 31162, 7)
-			Player(cid):teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
+			local destination = Position(32884, 31162, 7)
+			Player(cid):teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	end

@@ -37,9 +37,9 @@ local function creatureSayCallback(cid, type, msg)
 		end
 
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		local position = Position(32387, 31820, 6)
-		player:teleportTo(position)
-		position:sendMagicEffect(CONST_ME_TELEPORT)
+		local destination = Position(32387, 31820, 6)
+		player:teleportTo(destination)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:say('Set the sails!', cid)
 	end
 	return true
