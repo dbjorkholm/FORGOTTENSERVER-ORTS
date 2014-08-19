@@ -40,25 +40,24 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 3
 
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] > 0 then
-		if npcHandler.topic(cid) == 1 then	
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local position = Position(32659, 31915, 0)
-			player:teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler:say('Hold on!', cid)
+		if npcHandler.topic[cid] == 1 then
 
+			local playerPos = player:getPosition()
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(Position(32659, 31915, 0))
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			npcHandler:say('Hold on!', cid)
 		elseif npcHandler.topic[cid] == 2 then
 			if not player:removeMoney(60) then
 				npcHandler:say('You don\'t have enough money.', cid)
 				return true
 			end
 
+			local playerPos = player:getPosition()
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(Position(32983, 31539, 1))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local position = Position(32983, 31539, 1)
-			player:teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
-
 		elseif npcHandler.topic[cid] == 3 then
 			if not player:removeMoney(60) then
 				npcHandler:say('You don\'t have enough money.', cid)
@@ -69,10 +68,10 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.postman.Mission01, 3)
 			end
 
+			local playerPos = player:getPosition()
+			playerPos:sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(Position(33193, 31783, 3))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local position = Position(33193, 31783, 3)
-			player:teleportTo(position)
-			position:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Hold on!', cid)
 		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
