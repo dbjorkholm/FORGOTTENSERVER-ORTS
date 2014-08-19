@@ -83,6 +83,7 @@
 
 	<!-- Kazordoon -->
 	<action fromaid="50136" toaid="50159" script="kazordoon/kazordoonOreWagons.lua"/>
+	<action fromaid="50230" toaid="50233" script="kazordoon/kazordoonOreWagons.lua"/>
 	<action fromaid="50011" toaid="50012" script="kazordoon/kazordoonElevatorLever.lua"/>
 
 	<!-- Addons -->

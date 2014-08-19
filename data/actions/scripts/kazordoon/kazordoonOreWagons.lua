@@ -30,7 +30,13 @@ local config = {
 	[50156] = Position(32678, 31975, 15), -- Steamboat
 	[50157] = Position(32630, 31921, 11), -- Temple
 	[50158] = Position(32659, 31902, 8), -- Depot
-	[50159] = Position(32575, 31971, 9) -- Main gate
+	[50159] = Position(32575, 31971, 9), -- Main gate
+-- inside to outside wagons --
+	[50230] = Position(32600, 31874, 7), -- Kazordoon Surface North
+	[50231] = Position(32578, 31929, 0), -- Colossus Top
+	[50232] = Position(32619, 31945, 7), -- Kazordoon Surface South
+	[50233] = Position(32553, 31932, 7)  -- Kazordoon Surface West
+
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
