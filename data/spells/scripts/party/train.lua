@@ -11,49 +11,48 @@ condition:setParameter(CONDITION_PARAM_TICKS, 2 * 60 * 1000)
 condition:setParameter(CONDITION_PARAM_SKILL_MELEE, 3)
 condition:setParameter(CONDITION_PARAM_SKILL_DISTANCE, 3)
 
-local baseMana = 60
 function onCastSpell(creature, var)
 	local cid = creature:getId()
-	local pos = getCreaturePosition(cid)
-
+	local pos = creature:getPosition()
 	local membersList = getPartyMembers(cid)
-	if(membersList == nil or type(membersList) ~= 'table' or #membersList <= 1) then
-		doPlayerSendCancel(cid, "No party members in range.")
-		doSendMagicEffect(pos, CONST_ME_POFF)
+	local player = Player(cid)
+	if membersList == nil or type(membersList) ~= 'table' or #membersList <= 1 then
+		player:sendCancelMessage("No party members in range.")
+		pos:sendMagicEffect(CONST_ME_POFF)
 		return LUA_ERROR
 	end
 
 	local affectedList = {}
 	for _, pid in ipairs(membersList) do
-		if(getDistanceBetween(getCreaturePosition(pid), pos) <= 36) then
+		if getDistanceBetween(Creature(pid):getPosition(), pos) <= 36 then
 			table.insert(affectedList, pid)
 		end
 	end
 
 	local tmp = #affectedList
 	if(tmp <= 1) then
-		doPlayerSendCancel(cid, "No party members in range.")
-		doSendMagicEffect(pos, CONST_ME_POFF)
+		player:sendCancelMessage("No party members in range.")
+		pos:sendMagicEffect(CONST_ME_POFF)
 		return LUA_ERROR
 	end
 
-	local mana = math.ceil((0.9 ^ (tmp - 1) * baseMana) * tmp)
-	if(getPlayerMana(cid) < mana) then
-		doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTENOUGHMANA)
-		doSendMagicEffect(pos, CONST_ME_POFF)
+	local mana = math.ceil((0.9 ^ (tmp - 1) * 60) * tmp)
+	if player:getMana() < mana then
+		player:sendCancelMessage(RETURNVALUE_NOTENOUGHMANA)
+		pos:sendMagicEffect(CONST_ME_POFF)
 		return LUA_ERROR
 	end
 
-	if(doCombat(cid, combat, var) ~= LUA_NO_ERROR) then
-		doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
-		doSendMagicEffect(pos, CONST_ME_POFF)
+	if not combat:execute(creature, var) then
+		player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		pos:sendMagicEffect(CONST_ME_POFF)
 		return LUA_ERROR
 	end
 
-	doPlayerAddMana(cid, -(mana - baseMana), FALSE)
-	doPlayerAddManaSpent(cid, (mana - baseMana))
+	player:addMana(-(mana - 60), false)
+	player:addManaSpent((mana - 60) * configManager.getNumber(configKeys.RATE_MAGIC))
 	for _, pid in ipairs(affectedList) do
-		doAddCondition(pid, condition)
+		Player(pid):addCondition(condition)
 	end
 
 	return LUA_NO_ERROR

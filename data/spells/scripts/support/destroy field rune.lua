@@ -1,5 +1,5 @@
 function onCastSpell(creature, var)
-	local position = variantToPosition(var)
+	local position = Variant.getPosition(var)
 	local tile = position:getTile()
 	local field = tile and tile:getItemByType(ITEM_TYPE_MAGICFIELD)
 	if field and isInArray(FIELDS, field:getId()) then

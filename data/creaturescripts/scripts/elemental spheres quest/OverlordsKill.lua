@@ -18,7 +18,7 @@ function onKill(cid, target)
 	end
 
 	if bossConfig.globalStorage then
-		setGlobalStorageValue(bossConfig.globalStorage, 0)
+		Game.setStorageValue(bossConfig.globalStorage, 0)
 	end
 
 	local player = Player(cid)

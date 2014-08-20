@@ -24,7 +24,7 @@ local stones = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 2065) then
 		if(item.itemid == 1945) or (item.itemid == 1946) then
-			if(getGlobalStorageValue(1000) == 14) then
+			if Game.getStorageValue(1000) == 14 then
 				for i = 1, 2 do
 					doRemoveItem(getTileItemById(stones[i], 1304).uid, 1)
 					doSendMagicEffect(stones[i], CONST_ME_EXPLOSIONAREA)
@@ -36,12 +36,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return true
 		end
 	end
-	if(getGlobalStorageValue(1000) < 0) then
-		setGlobalStorageValue(1000, 0)
+	if Game.getStorageValue(1000) ~= 0 then
+		Game.setStorageValue(1000, 0)
 	end
 	if(item.itemid == 1945) or (item.itemid == 1946) then
-		if((getGlobalStorageValue(1000) + 1) == pos[item.uid].number) then
-			setGlobalStorageValue(1000, pos[item.uid].number)
+		if (Game.getStorageValue(1000) + 1) == pos[item.uid].number then
+			Game.setStorageValue(1000, pos[item.uid].number)
 			doCreatureSay(cid, pos[item.uid].text, TALKTYPE_MONSTER_SAY)
 			doTransformItem(item.uid, 1946)
 		else

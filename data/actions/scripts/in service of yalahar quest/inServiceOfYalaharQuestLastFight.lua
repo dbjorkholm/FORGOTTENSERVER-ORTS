@@ -47,7 +47,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 			Game.setStorageValue(982, 1)
-			addEvent(doSummonCreature, 18 * 1000, "Azerus2", {x = 32783, y = 31167, z = 10})
+			addEvent(Game.createMonster, 18 * 1000, "Azerus2", {x = 32783, y = 31167, z = 10})
 			for i = 1, 4 do
 				if i == 1 then
 					azeruswavemonster = "rift worm"
@@ -59,7 +59,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					azeruswavemonster = "war golem"
 				end
 				for k = 1, table.maxn(waves) do
-					addEvent(doSummonCreature, i * 20 * 1000, azeruswavemonster, waves[k])
+					addEvent(Game.createMonster, i * 20 * 1000, azeruswavemonster, waves[k])
 					addEvent(doSendMagicEffect, i * 20 * 1000, waves[k], CONST_ME_TELEPORT)
 				end
 			end

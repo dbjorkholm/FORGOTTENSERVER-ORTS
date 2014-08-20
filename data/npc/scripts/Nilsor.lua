@@ -8,18 +8,16 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
-	if msgcontains(msg, "Svargrond") or msgcontains(msg, "passage") then
-		npcHandler:say("Do you want to Svargrond?", cid)
+	local player = Player(cid)
+	if msgcontains(msg, "svargrond") or msgcontains(msg, "passage") then
+		npcHandler:say("Do you want to go back to Svargrond?", cid)
 		npcHandler.topic[cid] = 10
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 10 then
-			local port = {x = 32306, y = 31082, z = 7}
-			player:teleportTo(port)
+			player:teleportTo(Position(32306, 31082, 7))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
@@ -42,11 +40,11 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission07, 1) -- Questlog The Ice Islands Quest, The Secret of Helheim
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) > 20 and player:getStorageValue(Storage.TheIceIslands.Questline) < 28 then
-		npcHandler:say("What for ingredient do you have?", cid)
-		npcHandler.topic[cid] = 0
+			npcHandler:say("What for ingredient do you have?", cid)
+			npcHandler.topic[cid] = 0
 		else
-		npcHandler:say("I have now no mission for you.", cid)
-		npcHandler.topic[cid] = 0
+			npcHandler:say("I have now no mission for you.", cid)
+			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "waterskin") then
 		npcHandler:say("Do you want to buy a waterskin for 25 gold?", cid)

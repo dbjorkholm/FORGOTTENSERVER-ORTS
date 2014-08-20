@@ -1,8 +1,9 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.uid == 3198) then
+		local player = Player(cid)
 		for x = 33357, 33362 do
 			for y = 31404, 31409 do
-				pos = {x = x, y = y, z = getCreaturePosition(cid).z}
+				pos = {x = x, y = y, z = player:getPosition().z}
 				if(isPlayer(getTopCreature(pos).uid)) then
 					doTeleportThing(getTopCreature(pos).uid, {x = 33364, y = 31413, z = 10})
 					doSendMagicEffect({x = 33364, y = 31413, z = 10}, CONST_ME_TELEPORT)
@@ -10,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 		if(not(getCreatureByName("snake god essence"))) then
-			doSummonCreature("snake god essence", {x = 33359, y = 31406, z = 10})
+			Game.createMonster("snake god essence", {x = 33359, y = 31406, z = 10})
 		end
 	end
 	return true
