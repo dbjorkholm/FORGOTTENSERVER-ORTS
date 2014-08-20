@@ -41,7 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:teleportTo(destination)
 		destination:sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:say('Set the sails!', cid)
-    elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
 		npcHandler:say('You shouldn\'t miss the experience.', cid)
 		npcHandler.topic[cid] = 0
 	end
