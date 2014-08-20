@@ -1,11 +1,9 @@
-local gate = Position(32575, 31973, 9)
-
 local config = {
 -- outside wagons --
-	[50136] = gate,
-	[50137] = gate,
-	[50138] = gate,
-	[50139] = gate,
+	[50136] = Position(32618, 31899, 9),
+	[50137] = Position(32620, 31899, 9),
+	[50138] = Position(32614, 31899, 9),
+	[50139] = Position(32616, 31899, 9),
 -- kaz main gate wagons --
 	[50140] = Position(32673, 31975, 15), -- Steamboat
 	[50141] = Position(32625, 31921, 11), -- Temple
@@ -32,10 +30,10 @@ local config = {
 	[50158] = Position(32659, 31902, 8), -- Depot
 	[50159] = Position(32575, 31971, 9), -- Main gate
 -- inside to outside wagons --
-	[50230] = Position(32600, 31874, 7), -- Kazordoon Surface North
-	[50231] = Position(32578, 31929, 0), -- Colossus Top
-	[50232] = Position(32619, 31945, 7), -- Kazordoon Surface South
-	[50233] = Position(32553, 31932, 7)  -- Kazordoon Surface West
+	[50230] = Position(32600, 31875, 7), -- Kazordoon Surface North
+	[50231] = Position(32577, 31929, 0), -- Colossus Top
+	[50232] = Position(32619, 31944, 7), -- Kazordoon Surface South
+	[50233] = Position(32553, 31930, 7)  -- Kazordoon Surface West
 
 }
 
