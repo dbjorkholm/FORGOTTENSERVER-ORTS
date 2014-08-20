@@ -9,7 +9,7 @@ local function removeMinion(mid)
 end
 
 local function executeVersperothBattle(mid)
-	if (Game.getStorageValue(3147) or -1) ~= 1 then
+	if Game.getStorageValue(3147) ~= 1 then
 		return
 	end
 
