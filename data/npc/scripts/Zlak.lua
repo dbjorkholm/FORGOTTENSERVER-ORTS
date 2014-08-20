@@ -30,8 +30,9 @@ local function creatureSayCallback(cid, type, msg)
 				"Zat should enable uz to give you at leazt a chanze to attack ze palaze."
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 24)
-			player:setStorageValue(Storage.WrathoftheEmperor.Mission07, 0) --Questlog, Wrath of the Emperor "Mission 07: A Noble Cause"
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission07, 1) --Questlog, Wrath of the Emperor "Mission 07: A Noble Cause"
 			npcHandler.topic[cid] = 0
+<<<<<<< HEAD
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 24 and player:getStorageValue(Storage.WrathoftheEmperor.Mission07) == 6 then
 			if npcHandler.topic[cid] ~= 1 then
 				npcHandler:say({
@@ -50,6 +51,24 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 25)
 				npcHandler.topic[cid] = 0
 			end
+=======
+		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 25 then
+			npcHandler:say({
+				"Word of your deedz iz already zpreading like a wildfire. Zalamon'z plan to unleash zome murderouz beaztz in ze zity workz almozt too well. You are already becoming zome kind of legend with which motherz frighten zeir unruly hatchlingz. ...",
+				"Your next {mizzion} will be a ztrike into ze heart of ze empire."
+			}, cid)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 26)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 26 then
+			npcHandler:say({
+				"Your eagernezz for killing and bloodshed iz frightening, but your next mizzion will zuit your tazte. Wiz ze zity in chaoz and defenzez diverted, ze ztage iz zet for our final ztrike. ...",
+				"A large number of rebelz have arrived undercover in ze zity. Zey will attack ze palaze and zome loyal palaze guardz will let zem in. ...",
+				"Meanwhile, you will take ze old ezcape tunnel zat leadz from ze abandoned bazement in ze norz of ze miniztry to a lift zat endz zomewhere in ze palaze. ...",
+				"When everyzing workz according to ze plan, you will meet Zalamon zomewhere in the underground part of ze palaze."
+			}, cid)
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 27)
+			npcHandler.topic[cid] = 0
+>>>>>>> parent of 9f83170... wote mission 07
 		end
 	end
 	return true
