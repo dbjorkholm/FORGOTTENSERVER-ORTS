@@ -21,31 +21,28 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	local player = Player(cid)
-	if msgcontains(msg, "farmine") then
-		if player:getStorageValue(Storage.TheNewFrontier.Mission10) == 1 then
-			npcHandler:say("Do you seek a ride to Farmine for 60 gold?", cid)
-			npcHandler.topic[cid] = 1
-		else
-			npcHandler:say("Never heard about a place like this.", cid)
-			npcHandler.topic[cid] = 0
+	if msgcontains(msg, 'farmine') then
+		if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
+			npcHandler:say('Never heard about a place like this.', cid)
+			return true
 		end
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] > 0 then
-		if npcHandler.topic[cid] == 1 then
-			if not player:removeMoney(60) then
-				npcHandler:say('You don\'t have enough money.', cid)
-				return true
-			end
 
-			local destination = Position(32983, 31539, 1)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(destination)
-			destination:sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler:say('Set the sails!', cid)
+		npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
+		npcHandler.topic[cid] = 1
+	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
+		local player = Player(cid)
+		if not player:removeMoney(60) then
+			npcHandler:say('You don\'t have enough money.', cid)
+			return true
 		end
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
-		npcHandler:say("You shouldn't miss the experience.", cid)
+
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		local destination = Position(32983, 31539, 1)
+		player:teleportTo(destination)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
+		npcHandler:say('Set the sails!', cid)
+    elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		npcHandler:say('You shouldn\'t miss the experience.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
