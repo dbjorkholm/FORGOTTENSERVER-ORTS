@@ -35,6 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
+		npcHandler.topic[cid] = 0
 		local player = Player(cid)
 		if not player:removeMoney(60) then
 			npcHandler:say('You don\'t have enough money.', cid)
