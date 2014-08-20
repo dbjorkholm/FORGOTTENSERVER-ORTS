@@ -39,7 +39,7 @@
   <missionstate id="1" description="You found your very own soul melody. You should talk to Gnomelvis about it!" /> 
   <missionstate id="2" description="You are now a true member of the Bigfoot company." /> 
   </mission>
-- <mission name="Mission Log Awaryjny" storageid="11151" startvalue="0" endvalue="999">
+- <mission name="Mission correct" storageid="11151" startvalue="0" endvalue="999">
   <missionstate id="0" description="Ask Gnomette about {recruit}." /> 
   <missionstate id="1" description="The dwarf Xelvar has sent you to meet the gnome Gnomerik. He can recruit you to the Bigfoot Company. Use the teleporter near Xelvar to enter the gnomish base and start looking for Gnomerik." /> 
   <missionstate id="2" description="You have found the gnomish recruiter and are ready to become a Bigfoot." /> 
