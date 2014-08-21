@@ -16,7 +16,7 @@ local config = {
 		removeItems = {
 			{position = Position(32393, 31814, 6), itemId = 10408},
 			{position = Position(32393, 31815, 6), itemId = 10408},
-			{position = Position(32393, 31816, 6), itemId = 10408},
+			{position = Position(32393, 31816, 6), itemId = 10408}
 		},
 		fromPosition = {x = 32397, y = 31806, z = 7},
 		toPosition = {x = 32403, y = 31824, z = 7},

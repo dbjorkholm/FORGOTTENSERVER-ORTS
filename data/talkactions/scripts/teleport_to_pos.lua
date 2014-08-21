@@ -1,31 +1,28 @@
 function onSay(cid, words, param, channel)
-
 	local player = Player(cid)
 	if not player:getGroup():getAccess() then
 		return true
 	end
-	
-	if(param == '') then
+
+	if param == '' then
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Command param required.")
-		return true
+		return false
 	end
 
-	local tile = string.split(param, ",")
-	local pos = {x = 0, y = 0, z = 0}
-
-	if(tile[2] and tile[3]) then
-		pos = {x = tile[1], y = tile[2], z = tile[3]}
+	local tile = param:split(",")
+	local pos
+	if tile[2] and tile[3] then
+		pos = Position(tile[1], tile[2], tile[3])
 	else
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Invalid param specified.")
-		return true
+		return false
 	end
-
 
 	local tmp = player:getPosition()
-	if(doTeleportThing(cid, pos, true) and not player:isInGhostMode()) then
-		doSendMagicEffect(tmp, CONST_ME_POFF)
-		doSendMagicEffect(pos, CONST_ME_TELEPORT)
+	if player:teleportTo(pos) and not player:isInGhostMode() then
+		tmp:sendMagicEffect(CONST_ME_POFF)
+		pos:sendMagicEffect(CONST_ME_TELEPORT)
 	end
 
-	return true
+	return false
 end
