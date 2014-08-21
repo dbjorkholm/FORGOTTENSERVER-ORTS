@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			setPlayerStorageValue(cid, 940, getPlayerStorageValue(cid, 940) + 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The little pig happily eats the truffles.")
 			doTransformItem(itemEx.uid, 18340)
-			doSendMagicEffect(toPosition, CONST_ME_POFF)
+			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	end
 	return true

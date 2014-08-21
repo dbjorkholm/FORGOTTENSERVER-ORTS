@@ -188,17 +188,18 @@
 	<action uniqueid="2007" script="behemoth quest/behemothQuestLever.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<action itemid="18219" script="bigfoot burden quest/bigfootBurdenQuestCrystal.lua"/>
-	<action itemid="18213" script="bigfoot burden quest/bigfootBurdenQuestExtractor.lua"/>
-	<action itemid="18313" script="bigfoot burden quest/bigfootBurdenQuestMatchmaker.lua"/>
-	<action fromuid="3124" touid="3127" script="bigfoot burden quest/bigfootBurdenQuestMusic.lua"/>
-	<action itemid="18339" script="bigfoot burden quest/bigfootBurdenQuestPig.lua"/>
-	<action itemid="18343" script="bigfoot burden quest/bigfootBurdenQuestRepair.lua"/>
-	<action fromuid="3148" touid="3150" script="bigfoot burden quest/bigfootBurdenQuestRewards.lua"/>
-	<action itemid="18225" script="bigfoot burden quest/bigfootBurdenQuestShooting.lua"/>
-	<action fromid="18328" toid="18331" script="bigfoot burden quest/bigfootBurdenQuestSpores.lua"/>
-	<action itemid="18336" script="bigfoot burden quest/bigfootBurdenQuestStone.lua"/>
-	<action uniqueid="3143" script="bigfoot burden quest/bigfootBurdenQuestWarzones.lua"/>
+	<action fromuid="3124" touid="3127" script="bigfoot burden quest/music.lua"/>
+	<action uniqueid="3143" script="bigfoot burden quest/warzones.lua"/>
+	<action fromuid="3148" touid="3150" script="bigfoot burden quest/rewards.lua"/>
+	<action itemid="18213" script="bigfoot burden quest/extractor.lua"/>
+	<action itemid="18219" script="bigfoot burden quest/crystal.lua"/>
+	<action itemid="18220" script="bigfoot burden quest/mushroom.lua" />
+	<action itemid="18225" script="bigfoot burden quest/shooting.lua"/>
+	<action itemid="18313" script="bigfoot burden quest/matchmaker.lua"/>
+	<action fromid="18328" toid="18331" script="bigfoot burden quest/spores.lua"/>
+	<action itemid="18336" script="bigfoot burden quest/stone.lua"/>
+	<action itemid="18339" script="bigfoot burden quest/pig.lua"/>
+	<action itemid="18343" script="bigfoot burden quest/repair.lua"/>
 
 	<!-- Black Knight Quest -->
 	<action uniqueid="9055" script="black knight quest/blackKnightQuestReward.lua"/>

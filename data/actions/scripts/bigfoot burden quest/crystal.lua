@@ -6,7 +6,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				setPlayerStorageValue(cid, 932, getPlayerStorageValue(cid, 932) + 1)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have repaired a damaged crystal.")
 				doTransformItem(itemEx.uid, 18311)
-				doSendMagicEffect(toPosition, CONST_ME_ENERGYHIT)
+				toPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 			end
 		end
 	elseif(itemEx.itemid == 18311) then

@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doCreateItem(v.create, 1, toPosition)
 		end
 		if v.effect then
-			doSendMagicEffect(toPosition, v.effect)
+			toPosition:sendMagicEffect(v.effect)
 		end
 		doDecayItem(itemEx.uid)
 		doChangeTypeItem(item.uid, item.type - 1)

@@ -2,7 +2,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local pos = getThingPos(itemEx.uid)
 	if(itemEx.itemid == 8572) then
 		doTransformItem(itemEx.uid, 8576)
-		doSendMagicEffect(toPosition, CONST_ME_BIGPLANTS)
+		toPosition:sendMagicEffect(CONST_ME_BIGPLANTS)
 		addEvent(Reset, 10 * 1000, pos)
 	end
 	return true

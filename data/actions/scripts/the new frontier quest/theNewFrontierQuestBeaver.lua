@@ -20,7 +20,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 				end
 				Game.createMonster("war wolf", toPosition)
-				doSendMagicEffect(toPosition, CONST_ME_TELEPORT)
+				toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 				player:setStorageValue(Storage.TheNewFrontier.Beaver2, 1)
 				player:setStorageValue(Storage.TheNewFrontier.Mission02, player:getStorageValue(Storage.TheNewFrontier.Mission02) + 1) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
 				player:say("You have marked the tree but it seems someone marked it already! He is not happy with your actions and he brought friends!", TALKTYPE_MONSTER_SAY)

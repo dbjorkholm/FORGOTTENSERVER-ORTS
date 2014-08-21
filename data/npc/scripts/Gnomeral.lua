@@ -88,7 +88,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18328, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(949) == 5 and player:getItemCount(18332) >= 1 then
+			if player:getStorageValue(949) == 4 and player:getItemCount(18332) > 0 then
 				player:removeItem(18332, 1)
 				player:setStorageValue(921, player:getStorageValue(921) + 10)
 				player:addItem(18422, 2)

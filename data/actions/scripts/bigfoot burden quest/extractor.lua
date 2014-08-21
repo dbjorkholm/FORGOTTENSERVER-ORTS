@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			setPlayerStorageValue(cid, 934, getPlayerStorageValue(cid, 934) + 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You gathered a spark.")
 			doTransformItem(itemEx.uid, 18485)
-			doSendMagicEffect(toPosition, CONST_ME_POFF)
+			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	end
 	return true

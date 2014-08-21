@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! The crystals seem to have fallen in love and your mission is done!")
 				doTransformItem(item.uid, 18312)
 			else
-				doSendMagicEffect(toPosition, CONST_ME_POFF)
+				toPosition:sendMagicEffect(CONST_ME_POFF)
 			end
 			doTransformItem(itemEx.uid, 18320)
 			addEvent(doTransformItem, 40 * 1000, itemEx.uid, 18321)
