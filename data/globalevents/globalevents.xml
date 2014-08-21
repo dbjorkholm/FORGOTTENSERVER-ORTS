@@ -14,6 +14,7 @@
 
 	<!-- World Changes -->
 	<globalevent name="FuryGates" type="startup" script="worldchanges/furygates.lua"/>
+	<globalevent name="Yasir" type="startup" script="worldchanges/yasir.lua"/>
 
 	<!-- Others -->
 	<globalevent type="startup" name="ServerStartup" script="startup.lua"/>
