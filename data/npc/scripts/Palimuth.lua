@@ -65,8 +65,9 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission03, 1) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 16)
+			player:setStorageValue(Storage.InServiceofYalahar.NotesPalimuth, 0)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(649) == 1 and player:getStorageValue(Storage.InServiceofYalahar.Questline) == 16 then
+		elseif player:getStorageValue(Storage.InServiceofYalahar.NotesPalimuth) == 1 and player:getStorageValue(Storage.InServiceofYalahar.Questline) == 16 then
 			npcHandler:say({
 				"Now you know as much as we do about the things happening in Yalahar. It's up to you what you do with this information. ...", 
 				"Now leave and talk to my superior Azerus in the city centre to get your next mission. I urge you, though, to talk to me whenever he sends you on a new mission. ...", 
@@ -74,6 +75,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission03, 2) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 17)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToAzerus, 1)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 20 then
 			npcHandler:say({

@@ -278,14 +278,10 @@
 	<action actionid="7814" script="ice islands quest/iceIslandsQuestYakchalDoor.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
-	<action uniqueid="3078" script="in service of yalahar quest/inServiceOfYalaharQuestAzerusNotes.lua"/>
 	<action actionid="7801" script="in service of yalahar quest/inServiceOfYalaharQuestBogDoor.lua"/>
 	<action uniqueid="3079" script="in service of yalahar quest/inServiceOfYalaharQuestBogDoorReward.lua"/>
 	<action uniqueid="3080" script="in service of yalahar quest/inServiceOfYalaharQuestBogReward.lua"/>
 	<action itemid="9737" script="in service of yalahar quest/inServiceOfYalaharQuestCharm.lua"/>
-	<action actionid="7800" script="in service of yalahar quest/inServiceOfYalaharQuestDoorAzerus.lua"/>
-	<action uniqueid="3077" script="in service of yalahar quest/inServiceOfYalaharQuestDoorAzerusNotes.lua"/>
-	<action uniqueid="3075" script="in service of yalahar quest/inServiceOfYalaharQuestDoorPalimuth.lua"/>
 	<action itemid="9733" script="in service of yalahar quest/inServiceOfYalaharQuestFormula.lua"/>
 	<action itemid="9741" script="in service of yalahar quest/inServiceOfYalaharQuestGhost.lua"/>
 	<action uniqueid="7807" script="in service of yalahar quest/inServiceOfYalaharQuestLastDoor.lua"/>
@@ -298,7 +294,6 @@
 	<action fromuid="9235" touid="9236" script="in service of yalahar quest/inServiceOfYalaharQuestMechanism.lua"/>
 	<action uniqueid="7801" script="in service of yalahar quest/inServiceOfYalaharQuestMorikDoor.lua"/>
 	<action fromuid="3081" touid="3082" script="in service of yalahar quest/inServiceOfYalaharQuestMrWestDoor.lua"/>
-	<action uniqueid="3076" script="in service of yalahar quest/inServiceOfYalaharQuestPalimuthNotes.lua"/>
 	<action actionid="7804" script="in service of yalahar quest/inServiceOfYalaharQuestQuaraDoor.lua"/>
 	<action fromuid="3088" touid="3090" script="in service of yalahar quest/inServiceOfYalaharQuestReward.lua"/>
 	<action actionid="7811" script="in service of yalahar quest/inServiceOfYalaharQuestRewardDoor.lua"/>

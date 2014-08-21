@@ -198,7 +198,10 @@ Storage = {
 		QuaraInky = 12268,
 		MatrixState = 12269,
 		SideDecision = 12270,
-		MatrixReward = 12271
+		MatrixReward = 12271,
+		NotesPalimuth = 12272,
+		NotesAzerus = 12273,
+		DoorToAzerus = 12274
 	},
 	ChildrenoftheRevolution = {
 		Questline = 12300, -- Storage through the Quest
