@@ -33,13 +33,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18313, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(943) == 1 and player:getItemCount(18312) >= 1 then
-				player:removeItem(18312, 1)
+			if player:getStorageValue(943) == 1 then
 				player:setStorageValue(921, player:getStorageValue(921) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
 				player:setStorageValue(942, 0)
-				player:setStorageValue(944, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(943, -1)
+				player:setStorageValue(944, os.time() + 72000)
+				player:addAchievement('Crystals in Love')
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -61,13 +62,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18343, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(946) == 4 and player:getItemCount(18343) >= 1 then
-				player:removeItem(18343, 1)
+			if player:getStorageValue(946) == 4 and player:removeItem(18343, 1) then
 				player:setStorageValue(921, player:getStorageValue(921) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
 				player:setStorageValue(945, 0)
-				player:setStorageValue(947, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(946, -1)
+				player:setStorageValue(947, os.time() + 72000)
+				player:addAchievement('Substitute Tinker')
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -88,13 +90,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18328, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(949) == 4 and player:getItemCount(18332) > 0 then
-				player:removeItem(18332, 1)
+			if player:getStorageValue(949) == 4 and player:removeItem(18332, 1) then
 				player:setStorageValue(921, player:getStorageValue(921) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
 				player:setStorageValue(948, 0)
-				player:setStorageValue(950, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(949, -1)
+				player:setStorageValue(950, os.time() + 72000)
+				player:addAchievement('Spore Hunter')
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -113,13 +116,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(952, 0)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(952) == 1 and player:getItemCount(18337) >= 1 then
-				player:removeItem(18337, 1)
+			if player:getStorageValue(952) == 1 and player:removeItem(18337, 1) then
 				player:setStorageValue(921, player:getStorageValue(921) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
 				player:setStorageValue(951, 0)
-				player:setStorageValue(953, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(952, -1)
+				player:setStorageValue(953, os.time() + 72000)
+				player:addAchievement('Grinding Again')
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0

@@ -1,18 +1,29 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	if(item.itemid == 18313 and itemEx.itemid == 18321) then
-		chance = math.random(3)
-		if(getPlayerStorageValue(cid, 943) < 1 and getPlayerStorageValue(cid, 942) == 1) then
-			if(chance == 3) then
-				setPlayerStorageValue(cid, 943, getPlayerStorageValue(cid, 943) + 1)
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! The crystals seem to have fallen in love and your mission is done!")
-				doTransformItem(item.uid, 18312)
-			else
-				toPosition:sendMagicEffect(CONST_ME_POFF)
-			end
-			doTransformItem(itemEx.uid, 18320)
-			addEvent(doTransformItem, 40 * 1000, itemEx.uid, 18321)
-		end
+local function revertCrystal(position, itemId, transformId)
+	local item = Tile(position):getItemById(itemId)
+	if item then
+		item:transform(transformId)
 	end
+end
+
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if itemEx.itemid ~= 18321 then
+		return false
+	end
+
+	local player = Player(cid)
+	if player:getStorageValue(943) == 1 or player:getStorageValue(942) ~= 1 then
+		return false
+	end
+
+	Item(itemEx.uid):transform(18320)
+	addEvent(revertCrystal, 40000, toPosition, 18320, 18321)
+
+	if math.random(5) ~= 5 then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This is not the crystal you\'re looking for!')
+		return true
+	end
+
+	player:setStorageValue(943, 1)
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Congratulations! The crystals seem to have fallen in love and your mission is done!')
 	return true
 end

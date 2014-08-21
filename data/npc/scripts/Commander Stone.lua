@@ -32,13 +32,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18219, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(932) == 5 and player:getItemCount(18219) >= 1 then
-				player:removeItem(18219, 1)
+			if player:getStorageValue(932) == 5 and player:removeItem(18219, 1) then
 				player:setStorageValue(921, player:getStorageValue(921) + 5)
 				player:addItem(18422, 1)
 				player:addItem(18215, 1)
 				player:setStorageValue(930, 0)
-				player:setStorageValue(931, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(931, os.time() + 72000)
+				player:setStorageValue(932, -1)
+				player:addAchievement('Crystal Keeper')
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -56,13 +57,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18213, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(934) == 7 and player:getItemCount(18213) >= 1 then
-				player:removeItem(18213, 1)
+			if player:getStorageValue(934) == 7 then
 				player:setStorageValue(921, player:getStorageValue(921) + 5)
 				player:addItem(18422, 1)
 				player:addItem(18215, 1)
 				player:setStorageValue(930, 0)
-				player:setStorageValue(935, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(934, -1)
+				player:setStorageValue(935, os.time() + 72000)
+				player:addAchievement('Call Me Sparky')
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -83,7 +85,9 @@ local function creatureSayCallback(cid, type, msg)
 				player:addItem(18422, 1)
 				player:addItem(18215, 1)
 				player:setStorageValue(936, 0)
-				player:setStorageValue(938, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(937, -1)
+				player:setStorageValue(938, os.time() + 72000)
+				player:addAchievement('One Foot Vs. Many')
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -105,13 +109,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(18339, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(940) == 3 and player:getItemCount(18339) >= 1 then
-				player:removeItem(18339, 1)
+			if player:getStorageValue(940) == 3 and player:removeItem(18339, 1) then
 				player:setStorageValue(921, player:getStorageValue(921) + 5)
 				player:addItem(18422, 1)
 				player:addItem(18215, 1)
 				player:setStorageValue(939, 0)
-				player:setStorageValue(941, os.time() + 20 * 60 * 1000)
+				player:setStorageValue(940, -1)
+				player:setStorageValue(941, os.time() + 72000)
+				player:addAchievement('The Picky Pig')
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0

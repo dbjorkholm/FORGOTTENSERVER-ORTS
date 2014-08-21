@@ -195,7 +195,8 @@
 	<action itemid="18219" script="bigfoot burden quest/crystal.lua"/>
 	<action itemid="18220" script="bigfoot burden quest/mushroom.lua" />
 	<action itemid="18225" script="bigfoot burden quest/shooting.lua"/>
-	<action itemid="18313" script="bigfoot burden quest/matchmaker.lua"/>
+	<action itemid="18312" script="bigfoot burden quest/matchmaker.lua"/>
+	<action itemid="18313" script="bigfoot burden quest/package.lua"/>
 	<action fromid="18328" toid="18331" script="bigfoot burden quest/spores.lua"/>
 	<action itemid="18336" script="bigfoot burden quest/stone.lua"/>
 	<action itemid="18339" script="bigfoot burden quest/pig.lua"/>

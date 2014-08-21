@@ -446,7 +446,6 @@ function Player.hasAchievement(self, ach)
 	end
 	if not achievement then return print("[!] -> Invalid achievement \"" .. ach .. "\".") and false end
 
-
 	return self:getStorageValue(ACHIEVEMENTS_BASE + achievement.id) > 0
 end
 
@@ -494,7 +493,6 @@ function Player.removeAchievement(self, ach)
 end
 
 function Player.addAllAchievements(self, denyMsg)
-
 	for i = ACHIEVEMENT_FIRST, ACHIEVEMENT_LAST do
 		self:addAchievement(i, denyMsg)
 	end
@@ -502,7 +500,6 @@ function Player.addAllAchievements(self, denyMsg)
 end
 
 function Player.removeAllAchievements(self)
-
 	for k, v in pairs(achievements) do
 		if self:hasAchievement(k) then
 			self:removeAchievement(k)
@@ -525,16 +522,6 @@ function Player.getPublicAchievements(self)
 	local t = {}
 	for k, v in pairs(achievements) do
 		if self:hasAchievement(k) and not v.secret then
-			table.insert(t, k)
-		end
-	end
-	return t
-end
-
-function Player.getAchievements(self)
-	local t = {}
-	for k, v in pairs(achievements) do
-		if self:hasAchievement(k) then
 			table.insert(t, k)
 		end
 	end
