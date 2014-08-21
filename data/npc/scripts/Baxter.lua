@@ -22,4 +22,9 @@ function onThink()
 	npcHandler:onThink()
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "LONG LIVE KING TIBIANUS!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "LONG LIVE THE KING!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "LONG LIVE THE KING!")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Do you bring freshly killed rats for a bounty of 1 gold each? By the way, I also buy orc teeth and other stuff you ripped from their bloody corp... I mean... well, you know what I mean.")
+
 npcHandler:addModule(FocusModule:new())

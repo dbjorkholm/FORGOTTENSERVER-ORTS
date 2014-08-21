@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Eddy" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="22" body="63" legs="19" feet="95" addons="0" />
-  <parameters>
-        <parameter key="keywords" value="furniture;" />
-        <parameter key="keyword_reply1" value="I have {beds}, {chairs}, {containers}, {decoration}, {flowers}, {instruments}, {pillows}, {pottery}, {statues}, {tapestries} and {tables}. Which of those would you like to see?" />
-        <parameter key="message_greet" value="Hello |PLAYERNAME|! Do you need some equipment for your house?"/>
-        <parameter key="message_farewell" value="Good bye."/>
-		<parameter key="message_walkaway" value="Good bye." />
-		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
-    <parameter key="module_shop" value="1" />
-<parameter key="shop_buyable" value="
+<npc name="Eddy" script="Eddy.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="128" head="22" body="63" legs="19" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
 			barrel kit,3919,12;
@@ -82,9 +76,6 @@
 			trough kit,3918,7;
 			trunk kit,3920,10;
 			vase,2008,3,0;
-			venorean cabinet kit,20254,90;
-			venorean drawer kit,20257,40;
-			venorean wardrobe kit,20255,50;
 			wall mirror,1851,40;
 			wall mirror,1848,40;
 			wall mirror,1845,40;
