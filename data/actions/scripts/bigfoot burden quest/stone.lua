@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_HITBYFIRE)
-	doTransformItem(item.uid, 18335)
+	Item(item.uid):transform(18335)
 	
 	if math.random(15) ~= 15 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You had no luck this time.')

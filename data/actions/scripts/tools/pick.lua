@@ -152,7 +152,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			tile:getItemById(1304):remove()
 		end
 		for i = 1, #positions do
-			local ground = Tile(psoitions[i]):getGround()
+			local ground = Tile(positions[i]):getGround()
 			if ground and ground:getId() == 598 then
 				ground:transform(5815)
 			end
