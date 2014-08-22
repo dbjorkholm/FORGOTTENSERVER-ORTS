@@ -49,14 +49,18 @@ keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, only
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if msgcontains(msg, "hail") or msgcontains(msg, "salutations") or msgcontains(msg, "king") and not npcHandler:isFocused(cid) then
+	if msgcontains(msg, "hail") or msgcontains(msg, "salutations") and msgcontains(msg, "king") and not npcHandler:isFocused(cid) then
 		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
 		npcHandler:addFocus(cid)
-		npcHandler.topic[cid] = 0
 		return true
 	end
 	if not npcHandler:isFocused(cid) then
 		return false
+	end
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Farewell, ' .. player:getName() ..'!', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	if isInArray({"tibia", "land"}, msg) then
 		npcHandler:say("Soon the whole land will be ruled by me once again!", cid)
@@ -147,7 +151,4 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_WALKAWAY, "How rude!")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|!")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:addModule(FocusModule:new())

@@ -9,7 +9,6 @@ function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	-- GREET
 	if msg == "DJANNI'HAH" and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
@@ -19,11 +18,14 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-	-- GREET
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Farewell, human.', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
+	end
 	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(GreenDjinn.MissionStart) == 1 and player:getStorageValue(GreenDjinn.MissionStart+1) < 1 then
@@ -74,4 +76,3 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:addModule(FocusModule:new())
