@@ -49,7 +49,7 @@ keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, only
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if msgcontains(msg, "hail") or msgcontains(msg, "salutations") and msgcontains(msg, "king") and not npcHandler:isFocused(cid) then
+	if (msg:lower() == "hail king") or (msg:lower() == "salutations king") and not npcHandler:isFocused(cid) then
 		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
 		npcHandler:addFocus(cid)
 		return true

@@ -43,7 +43,7 @@ end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi") then
+	if msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then

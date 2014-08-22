@@ -38,7 +38,7 @@ end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi") and not npcHandler:isFocused(cid) then
+	if msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
 		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", cid)
 		npcHandler:addFocus(cid)
 		return true
@@ -85,8 +85,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 5) then
 		npcHandler:say('Ok then.', cid)
 		npcHandler.topic[cid] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
 	end
 	return true
 end
