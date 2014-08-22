@@ -9,7 +9,7 @@
 		 <parameter key="message_farewell" value="Grace our home with another visit soon, |PLAYERNAME|."/>
 		<parameter key="message_walkaway" value="What a strange person." />
     <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="			Cheese,8368,5;			Cherry,2679,1;			Melon,2682,8;			Pumpkin,2683,10		" />
+    <parameter key="shop_buyable" value="			Cheese,2696,5;			Cherry,2679,1;			Melon,2682,8;			Pumpkin,2683,10		" />
     <parameter key="shop_sellable" value="			Bread,2689,2		" />
   </parameters>
 </npc>

@@ -11,9 +11,9 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	local player = Player(cid)
 	if msgcontains(msg, "riddle") then
-		if Player(cid):getStorageValue(Storage.madMageQuest) ~= 1 then
+		if player:getStorageValue(Storage.madMageQuest) ~= 1 then
 			npcHandler:say("Great riddle, isn´t it? If you can tell me the correct answer, I will give you something. Hehehe!", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -24,7 +24,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
-			local player = Player(cid)
 			if player:getItemCount(2674) >= 7 then
 				player:removeItem(2674, 7)
 				npcHandler:say("Mnjam - excellent apples. Now - about that key. You are sure want it?", cid)
@@ -40,7 +39,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Really, really, really, really?", cid)
 			npcHandler.topic[cid] = 5
 		elseif npcHandler.topic[cid] == 5 then
-			local player = Player(cid)
 			player:setStorageValue(Storage.madMageQuest, 1)
 			npcHandler:say("Then take it and get happy - or die, hehe.", cid)
 			local key = player:addItem(2088, 1)
@@ -55,8 +53,9 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Next time we should talk about my surreal numbers.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Wait! Don't leave! I want to tell you about my surreal numbers.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Next time we should talk about my surreal numbers.")
-npcHandler:setMessage(MESSAGE_GREET, "Huh? What? I can see! Wow! A non-mino. Did they capture you as well?")
+npcHandler:setMessage(MESSAGE_GREET, "Huh? What? I can see! Wow! A non-mino. Did they {capture} you as well?")
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

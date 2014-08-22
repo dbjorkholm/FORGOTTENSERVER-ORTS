@@ -5,6 +5,6 @@
   <parameters>
     <parameter key="module_shop" value="1" />
 	<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell all kind of food, say {trade} to see what I got to offer!" />
-    <parameter key="shop_buyable" value="			Bread,2689,4;			Cheese,8368,6;			Ham,2671,8;			Meat,2666,5		" />
+    <parameter key="shop_buyable" value="			Bread,2689,4;			Cheese,2696,6;			Ham,2671,8;			Meat,2666,5		" />
   </parameters>
 </npc>
