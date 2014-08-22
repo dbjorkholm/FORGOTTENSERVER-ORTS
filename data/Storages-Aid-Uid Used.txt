@@ -37,7 +37,7 @@ FriendsandTraders storage:		12400-12449
 postman storage:			12450-12500
 Thieves Guild storage:			12501-12513
 Captain Haba storage:			12514
-Secret Service storage:			12515-12549
+Secret Service storage:			12550-12599
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
@@ -52,7 +52,7 @@ The Ape City Aid/Uid:			12120-12130
 
 postman Aid/Uid:			12450-12500
 Thieves Guild Aid/Uid:			12501-12513
-Secret Service Aid/Uid:			12515-12549
+Secret Service Aid/Uid:			12550-12599
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012

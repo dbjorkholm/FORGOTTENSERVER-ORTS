@@ -200,7 +200,7 @@
 	<movevent event="StepIn" actionid="50126" script="hidden city of beregar/pythiusBossTeleport.lua"/>
 	
 	<!-- Secret Service Quest -->
-	<movevent event="StepIn" actionid="12536" script="secret service/pirates.lua"/>
+	<movevent event="StepIn" actionid="12571" script="secret service/pirates.lua"/>
 
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>

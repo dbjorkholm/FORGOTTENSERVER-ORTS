@@ -71,7 +71,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 	-- Secret Service Quest
-	if itemEx.actionid == 12531 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
+	if itemEx.actionid == 12566 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
 		local playerOutfit = player:getOutfit()
 		local yelling = Position(32204, 31157, 8)
 		if playerOutfit.lookType == 137 then -- amazon lookType

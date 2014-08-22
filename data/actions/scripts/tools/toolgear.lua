@@ -216,7 +216,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(Storage.postman.Mission02, 2)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
-		elseif itemEx.actionid == 12531 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then -- Secret Service Quest
+			-- Secret Service Quest
+		elseif itemEx.actionid == 12566 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
 			local playerOutfit = player:getOutfit()
 			local yelling = Position(32204, 31157, 8)
 			if playerOutfit.lookType == 137 then -- amazon lookType

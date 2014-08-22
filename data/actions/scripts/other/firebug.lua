@@ -26,7 +26,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif itemEx.itemid == 1485 then --Light Up empty coal basins
 			toPosition:sendMagicEffect(CONST_ME_HITBYFIRE)
 			targetItem:transform(1484)
-		elseif itemEx.actionid == 12515 or itemEx.actionid == 12516 then
+		elseif itemEx.actionid == 12550 or itemEx.actionid == 12551 then -- Secret Service Quest
 			local player = Player(cid)
 			if player:getStorageValue(Storage.secretService.TBIMission01) < 2 then
 				Game.createItem(1487, 1, Position(32893, 32012, 6))
