@@ -13335,7 +13335,7 @@
 	<item id="7696" article="a" name="parchment">
 		<attribute key="weight" value="120" />
 	</item>
-	<item id="7697" article="a" name="signet ring">
+	<item id="7697" article="a" name="suspicious signet ring">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ring" />
 	</item>

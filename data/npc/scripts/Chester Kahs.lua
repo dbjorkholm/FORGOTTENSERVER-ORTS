@@ -46,14 +46,64 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Then I welcome you to the TBI. This is a great moment for you, remember it well. Talk to me about your missions whenever you feel ready.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
-			player:setStorageValue(Storage.secretService.TBIMission01, 3)
-			player:setStorageValue(Storage.secretService.Quest, 3)
-			npcHandler:say('I think they understood the warning the way it was meant. If not, you will have to visit Venore soon again. But for now it\'s settled.', cid)
+				player:setStorageValue(Storage.secretService.TBIMission01, 3)
+				player:setStorageValue(Storage.secretService.Quest, 3)
+				npcHandler:say('I think they understood the warning the way it was meant. If not, you will have to visit Venore soon again. But for now it\'s settled.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
-			player:setStorageValue(Storage.secretService.TBIMission02, 3)
-			player:setStorageValue(Storage.SecretService.Quest, 5)
-			npcHandler:say('Thank you, we can finally let them have some closure regarding this.', cid)
+			if player:removeItem(7696, 1) then
+				player:setStorageValue(Storage.secretService.TBIMission02, 2)
+				player:setStorageValue(Storage.secretService.Quest, 5)
+				npcHandler:say('Thank you, we can finally let them have some closure regarding this.', cid)
+			else
+				npcHandler:say('Please bring me some proof of his whereabouts.', cid)
+			end
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 8 then
+			if player:removeItem(14324, 1) then
+				player:setStorageValue(Storage.secretService.TBIMission03, 2)
+				player:setStorageValue(Storage.secretService.Quest, 7)
+				npcHandler:say('I can only hope that this information are as valuable as we expected it. A good man died for them.', cid)
+			else
+				npcHandler:say('Please bring me some valuable information!', cid)
+			end
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 9 then
+			if player:removeItem(14325, 1) then
+				player:setStorageValue(Storage.secretService.TBIMission04, 2)
+				player:setStorageValue(Storage.secretService.Quest, 9)
+				npcHandler:say('Ah yes, very interesting. Almost as I suspected. It\'s a good thing that we got those documents in our hands.', cid)
+			else
+				npcHandler:say('We need those intelligence reports, do whatever you need to do agent!', cid)
+			end
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 10 then
+			player:setStorageValue(Storage.secretService.TBIMission05, 3)
+			player:setStorageValue(Storage.secretService.Quest, 11)
+			npcHandler:say('Now that Venore is of nearly no importance anymore, there is only Carlin left to deal with.', cid)
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 11 then
+			player:setStorageValue(Storage.secretService.TBIMission06, 3)
+			player:setStorageValue(Storage.secretService.Quest, 13)
+			npcHandler:say('I already heard that our little trick worked quite well. Several officials of Carlin are already on their way to repair the damage done to their diplomatic efforts. It will not only cost them much money but also quite some time.', cid)
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 12 then
+			if player:removeMoney(1000) then
+				player:addItem(7700, 1)
+				npcHandler:say('Here you are. Better don\'t loose it again.', cid)
+			else
+				npcHandler:say('You don\'t have enough money', cid)
+			end
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 13 then
+			if player:removeItem(7699, 1) then
+				player:setStorageValue(Storage.secretService.Mission07, 2)
+				player:setStorageValue(Storage.secretService.Quest, 15)
+				player:addItem(7960, 1)
+				npcHandler:say('You have done superb work agent, I grant you the title of Top Agent! Here\'s a little gift you might find useful.', cid)
+			else
+				npcHandler:say('Please bring me proof of the mad technomancers defeat!', cid)
+			end
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') then
@@ -118,10 +168,10 @@ local function creatureSayCallback(cid, type, msg)
 				'As a small incentive I think its worthy to mention that he was wearing a quite impressive armor. You may keep it for yourself if you stumble across it.'
 			}, cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 2 then
+		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 1 then
 			npcHandler:say('Have you fulfilled your current mission?', cid)
 			npcHandler.topic[cid] = 7
-		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 3 and player:getStorageValue(Storage.secretService.Quest) == 5 then
+		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 2 and player:getStorageValue(Storage.secretService.Quest) == 5 then
 			player:setStorageValue(Storage.secretService.Quest, 6)
 			player:setStorageValue(Storage.secretService.TBIMission03, 1)
 			npcHandler:say({
@@ -130,6 +180,65 @@ local function creatureSayCallback(cid, type, msg)
 				'Search their personal belongings to find some sort of evidence that we could need!'
 			}, cid)
 			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 1 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 8
+		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 2 and player:getStorageValue(Storage.secretService.Quest) == 7 then
+			player:setStorageValue(Storage.secretService.Quest, 8)
+			player:setStorageValue(Storage.secretService.TBIMission04, 1)
+			npcHandler:say({
+				'Just recently we were able to secretly help our elven friends to exposure an agitator sent by Carlin to poison our connections with them. The elves\' reaction wasswift and without compromise ...',
+				'They banished the delinquent in a place they call \'Hellgate\'. Unfortunately, we learnt later that the convict was sent there with several of his belongings and it is very likely that he took vital papers with him ...',
+				'These papers can tell us much about Carlin\'s plans in the North. We need you to enter \'Hellgate\' and to retrieve the papers for us ...',
+				'We don\'t care how you get them. Do whatever you think is necessary.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission04) == 1 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 9
+		elseif player:getStorageValue(Storage.secretService.TBIMission04) == 2 and player:getStorageValue(Storage.secretService.Quest) == 9 then
+			player:setStorageValue(Storage.secretService.Quest, 10)
+			player:setStorageValue(Storage.secretService.TBIMission05, 1)
+			player:addItem(7697, 1)
+			npcHandler:say({
+				'It\'s bad enough that Carlin got a solid foothold in the far North but now the Venoreans also try to move in. They try to gain influence on the barbarian raiders by bribing their leaders or making them great promises ...',
+				'We want you to cause some bad blood in this relationship. Travel to their most southern camp, enter the ice tower of their leaders and kill some of them ...',
+				'Here is a signet ring that the Venorean emissaries use to wear. \'Lose\' the ring in the north-western corner of the highest level of the tower. They will surely find it there.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission05) == 2 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 10
+		elseif player:getStorageValue(Storage.secretService.TBIMission05) == 3 and player:getStorageValue(Storage.secretService.Quest) == 11 then
+			player:setStorageValue(Storage.secretService.Quest, 12)
+			player:setStorageValue(Storage.secretService.TBIMission06, 1)
+			player:addItem(7700, 1)
+			npcHandler:say({
+				'The women of Carlin have the northern city Svargrond in the firm grip of her manicured hands. At the moment, there is little we can do about it but there is one thing that plays into our hands ...',
+				'The barbarians have surely at least heard about the fact that alcohol is outlawed in Carlin ...',
+				'If some amazonian warrior would smash a beer or ale cask in front of some witnesses, the relationship would surely suffer a bit. So go and disguise yourself as an amazon. Then use a crowbar to destroy a cask.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission06) == 2 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 11
+		elseif player:getStorageValue(Storage.secretService.TBIMission06) == 3 and player:getStorageValue(Storage.secretService.Quest) == 13 then
+			player:setStorageValue(Storage.secretService.Quest, 14)
+			player:setStorageValue(Storage.secretService.Mission07, 1)
+			npcHandler:say({
+				'Great, you are here. We need your service in a mission of utmost urgency ...',
+				'A mad dwarven technomancer that listens to the name of Blowbeard sent us a blackmailing letter. He demands to deliver all of Thais\'s gold to him. Else he will destroy the city with an artificial earthquake caused by one of his machines! ...',
+				'We need you to find his base in Kazordoon and to kill him before he can use his infernal machine. Bring us his beard as proof of your success.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission06) == 3 and player:getStorageValue(Storage.secretService.Mission07) == 1 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 13
+		end
+	elseif msgcontains(msg, 'disguise') then
+		if player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
+			npcHandler:say('If you lost or wasted your disguise kit I can replace it. It will cost you 1000 gold though since you lost royal property. Is that ok for you?', cid)
+			npcHandler.topic[cid] = 12
 		end
 	end
 	return true
