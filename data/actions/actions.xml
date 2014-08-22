@@ -364,6 +364,7 @@
 	<!-- Secret Service Quest -->
 	<action itemid="7700" script="secret service/amazonDisguiseKit.lua"/>
 	<action itemid="7697" script="secret service/ring.lua"/>
+	<action itemid="7960" script="secret service/tbi.lua"/>
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
