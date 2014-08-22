@@ -110,5 +110,7 @@ local function onTradeRequest(cid)
 	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
 end
 
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Finally.")
+
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
