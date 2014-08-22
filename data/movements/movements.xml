@@ -186,7 +186,7 @@
 	<movevent event="StepIn" fromaid="28810" toaid="28834" script="pits of inferno quest/tileTeleports.lua"/>
 	<movevent event="StepIn" actionid="7799" script="pits of inferno quest/trap.lua"/>
 	<movevent event="StepIn" uniqueid="3303" script="pits of inferno quest/secondTrap.lua"/>
-	<movevent event="StepIn" fromaid="16773" toaid="16774" script="pits of inferno quest/bazirTiles.lua"/>
+	<movevent event="StepIn" fromaid="16772" toaid="16774" script="pits of inferno quest/bazirTiles.lua"/>
 	<movevent event="StepIn" fromaid="50082" toaid="50083" script="pits of inferno quest/bazirTiles.lua"/>
 	<movevent event="StepIn" actionid="50087" script="pits of inferno quest/puminTeleport.lua"/>
 
