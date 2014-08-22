@@ -42,6 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Good luck. You will need it."
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 30)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission10, 2) --Questlog, Wrath of the Emperor "Mission 10: A Message of Freedom"
 			player:setStorageValue(1090, 1)
 			player:addItem(12318, 1)
 			npcHandler.topic[cid] = 0
@@ -56,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Drink it and when you are cloze to ze dragon zpeak: Z...z.. well, juzt take ze sheet wiz ze word and read it yourzelf. A lot of rebelz have died to retrieve ziz information, uze it wizely. ...",
 				"Now go and try to find a way to reach ze emperor and to free ze land from it'z opprezzor. Onze you have found a way, return to me and I will explain what to do wiz ze cryztalz. May ze Great Znake guide you!"
 			}, cid)
-			player:setStorageValue(Storage.WrathoftheEmperor.Mission09, 1)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission09, 1) --Questlog, Wrath of the Emperor "Mission 08: Uninvited Guests"
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 27)
 			player:addItem(12328, 1)
 			player:addItem(12382, 1)

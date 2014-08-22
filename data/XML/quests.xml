@@ -426,14 +426,13 @@
 			<missionstate id="1" description="Your mission is to reach your rebel contact Zizzle in the imperial palace. You need to take the old escape tunnel that leads from the abandoned basement in the north of the ministry to a lift that ends somewhere in the palace."/>
 			<missionstate id="2" description="You have reached your rebel contact Zizzle in the imperial palace."/>
 		</mission>
-		<mission name="Mission 09: The Sleeping Dragon" storageid="12359" startvalue="1" endvalue="3">
+		<mission name="Mission 09: The Sleeping Dragon" storageid="12359" startvalue="1" endvalue="2">
 			<missionstate id="1" description="To enter the inner realms of the Emperor you need to free the mind of a dragon. An interdimensional potion will help you to enter this dream and unleash his consciousness."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+			<missionstate id="2" description="You travelled through the Sleeping Dragon dreams and freed his mind."/>
 		</mission>
 		<mission name="Mission 10: A Message of Freedom" storageid="12360" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
+			<missionstate id="1" description="After solving the riddle, and talking again to the Sleeping Dragon you got a Spiritual Charm. Report back to Zizzle."/>
+			<missionstate id="2" description="You freed the dragon! And you poses the key to enter the inner realms of the emperor. Start with the one in the north-west and work your way clockwise trough the room and kill those manifestation. Then use your sceptre on the remain to destroy the emperor's influence over the crystal."/>
 			<missionstate id="3" description="..."/>
 		</mission>
 		<mission name="Mission 11: Payback Time" storageid="12361" startvalue="1" endvalue="3">

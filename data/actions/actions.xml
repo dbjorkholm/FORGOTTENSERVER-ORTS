@@ -50,6 +50,7 @@
 	<action itemid="12320" script="wrath of the emperor quest/Mission03TheKeeper.lua"/>
 	<action uniqueid="12354" script="wrath of the emperor quest/Mission04SacramentoftheSnakeSceptre.lua"/>
 	<action fromuid="3184" touid="3185" script="wrath of the emperor quest/Mission08UninvitedGuestsLever.lua"/>
+	<action itemid="12328" script="wrath of the emperor quest/Mission10AMessageofFreedomMixture.lua"/>
 
 	<!-- Unnatural Selection -->
 	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>

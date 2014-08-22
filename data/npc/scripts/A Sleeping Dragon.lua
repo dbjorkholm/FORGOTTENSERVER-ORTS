@@ -11,7 +11,7 @@ local function greetCallback(cid)
 	if Player(cid):getStorageValue(Storage.WrathoftheEmperor.Questline) == 27 then
 		npcHandler:setMessage(MESSAGE_GREET, "ZzzzZzzZz...chrrr...")
 	else
-		npcHandler:setMessage(MESSAGE_GREET, "Greetings, wayfarer.")
+		npcHandler:setMessage(MESSAGE_GREET, "Greetings, {wayfarer}.")
 	end
 	return true
 end
@@ -22,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 27 then
-		if(msg == "SOLOSARASATIQUARIUM") then
+		if(msg == "SOLOSARASATIQUARIUM") and player:getStorageValue(Storage.WrathoftheEmperor.InterdimensionalPotion) == 1 then
 			npcHandler:say({
 				"Dragon dreams are golden. ...",
 				"A broad darkness surrounds you as if a heavy curtain is closing before your eyes. After what seems like minutes of floating through emptiness, you get the feeling as if a hole opens in the dark before you. ...",
@@ -36,9 +36,11 @@ local function creatureSayCallback(cid, type, msg)
 				"A majestic dragon in his sleep is surrounded by what seems the warmth and energy of a thousand suns. The tranquillity of its sight makes you smile gently. ...",
 				"You feel a perfect mixture of joy, compassion and sudden peacefulness. Bright xanthous impressions of topaz, orange and white welcome you at the final halt of your journey. ...",
 				"Dragon dreams are golden. ...",
-				"You find yourself inside the dragon's dream. You can look around or go into a specific direction. You can also take or use an object. Enter help to display this information at any time."
+				"You find yourself inside the dragon's dream. You can {look} around or {go} into a specific direction. You can also {take} or {use} an object. Enter {help} to display this information at any time."
 			}, cid)
 			npcHandler.topic[cid] = 1
+		elseif(msg:lower() == "help" and npcHandler.topic[cid] > 0 and npcHandler.topic[cid] < 34) then
+			npcHandler:say("You find yourself inside the dragon's dream. You can {look} around or {go} into a specific direction. You can also {take} or {use} an object. Enter {help} to display this information at any time.", cid)
 		elseif(msg:lower() == "west" and npcHandler.topic[cid] == 1) then
 			npcHandler:say("Advancing to the west, you recognise an increase of onyx on the ground.", cid)
 			npcHandler.topic[cid] = 2
@@ -119,7 +121,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You leave the massive open gate behind you and go to the west. ", cid)
 			npcHandler.topic[cid] = 24
 		elseif(msg:lower() == "bastesh" and npcHandler.topic[cid] == 24) then
-			npcHandler:say("This huge statue of Bastesh is made from onyx, and thrones on a large plateau which can be reached by a sprawling stairway. She holds a large sapphire in her hands. ", cid)
+			npcHandler:say("This huge statue of Bastesh is made from onyx, and thrones on a large plateau which can be reached by a sprawling stairway. She holds a large {sapphire} in her hands. ", cid)
 			npcHandler.topic[cid] = 25
 		elseif(msg:lower() == "take sapphire" and npcHandler.topic[cid] == 25) then
 			npcHandler:say("You carefully remove the sapphire from Bastesh's grasp. ", cid)
@@ -156,19 +158,21 @@ local function creatureSayCallback(cid, type, msg)
 				"The growl transforms into a scream, everything around you seems to compress. As you press yourself tightly against the bluff, everything falls silent and in a split second, the dark being dissolves into bursts of blackness. You wake."
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 28)
-		end
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission09, 2) --Questlog, Wrath of the Emperor "Mission 09: The Sleeping Dragon"
+			npcHandler.topic[cid] = 0
+	end
 	elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 28 then
 		if(msgcontains(msg, "wayfarer")) then
 			npcHandler:say("I call you the wayfarer. You travelled through my dreams. You ultimately freed my mind. My mind accepted you and so will I.", cid)
-			npcHandler.topic[cid] = 1
-		elseif(msgcontains(msg, "mission") and npcHandler.topic[cid] == 1) then
+			npcHandler.topic[cid] = 40
+		elseif(msgcontains(msg, "mission") and npcHandler.topic[cid] == 40) then
 			npcHandler:say({
 				"Aaaah... free at last. Hmmm. ...",
 				"I assume you need to get through the gate to reach the evildoer. I can help you if you trust me, wayfarer. I will share a part of my mind with you which should enable you to step through the gate. ...",
 				"This procedure may be exhausting. Are you prepared to receive my key?"
 			}, cid)
-			npcHandler.topic[cid] = 2
-		elseif(msgcontains(msg, "yes") and npcHandler.topic[cid] == 2) then
+			npcHandler.topic[cid] = 41
+		elseif(msgcontains(msg, "yes") and npcHandler.topic[cid] == 41) then
 			npcHandler:say({
 				"SAETHELON TORILUN GARNUM. ...",
 				"SLEEP. ...",
@@ -178,6 +182,8 @@ local function creatureSayCallback(cid, type, msg)
 				"You are now prepared to enter the realm of the evildoer. I am grateful for your help, wayfarer. Should you seek my council, use this charm I cede to you. For my spirit will guide you wherever you are. May you enjoy a sheltered future, you shall prevail."
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 29)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission10, 1) --Questlog, Wrath of the Emperor "Mission 10: A Message of Freedom"
+			player:addItem(11260, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end

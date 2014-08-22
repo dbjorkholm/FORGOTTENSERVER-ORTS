@@ -246,7 +246,8 @@ Storage = {
 		PrisonReleaseStatus = 12366, --1067
 		GhostOfAPriest01 = 12367, --1070
 		GhostOfAPriest02 = 12368, --1071
-		GhostOfAPriest03 = 12369 --1072
+		GhostOfAPriest03 = 12369, --1072
+		InterdimensionalPotion = 12370 --1084
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
