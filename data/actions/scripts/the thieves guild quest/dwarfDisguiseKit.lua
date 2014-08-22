@@ -5,6 +5,7 @@ condition:addOutfit({lookType = 66}) -- dwarf geomancer looktype
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	Player(cid):addCondition(condition)
+	Item(item.uid):remove()
 
 	return true
 end
