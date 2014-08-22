@@ -46,9 +46,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Then I welcome you to the TBI. This is a great moment for you, remember it well. Talk to me about your missions whenever you feel ready.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
-			player:setStorageValue(Storage.secretService.Mission01, 3)
+			player:setStorageValue(Storage.secretService.TBIMission01, 3)
 			player:setStorageValue(Storage.secretService.Quest, 3)
 			npcHandler:say('I think they understood the warning the way it was meant. If not, you will have to visit Venore soon again. But for now it\'s settled.', cid)
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 7 then
+			player:setStorageValue(Storage.secretService.TBIMission02, 3)
+			player:setStorageValue(Storage.SecretService.Quest, 5)
+			npcHandler:say('Thank you, we can finally let them have some closure regarding this.', cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') then
@@ -86,7 +91,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		end
 	elseif msgcontains(msg, 'mission') then
-		if player:getStorageValue(Storage.secretService.Quest) == 1 then
+		if player:getStorageValue(Storage.secretService.Quest) == 1 and player:getStorageValue(Storage.secretService.AVINMission01) == 0 and player:getStorageValue(Storage.secretService.CGBMission01) == 0 then
 			player:setStorageValue(Storage.secretService.Quest, 2)
 			player:setStorageValue(Storage.secretService.TBIMission01, 1)
 			npcHandler:say({
@@ -100,7 +105,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.secretService.TBIMission01) == 2 then
 			npcHandler:say('Have you fulfilled your current mission?', cid)
 			npcHandler.topic[cid] = 6
-		elseif player:getStorageValue(Storage.secretService.Quest) == 3 then
+		elseif player:getStorageValue(Storage.secretService.TBIMission01) == 3 and player:getStorageValue(Storage.secretService.Quest) == 3 then
 			player:setStorageValue(Storage.secretService.Quest, 4)
 			player:setStorageValue(Storage.secretService.TBIMission02, 1)
 			npcHandler:say({
@@ -111,6 +116,18 @@ local function creatureSayCallback(cid, type, msg)
 				'He used to write diaries, maybe you can find one of those, or some other hints, or even his remains. You have to understand that he was a member of a prestigious Thaian family. Very influential people are interested in his whereabouts ...',
 				'The Green Claw Swamp is treacherous and dangerous. You will have a hard time to find any clues ...',
 				'As a small incentive I think its worthy to mention that he was wearing a quite impressive armor. You may keep it for yourself if you stumble across it.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 2 then
+			npcHandler:say('Have you fulfilled your current mission?', cid)
+			npcHandler.topic[cid] = 7
+		elseif player:getStorageValue(Storage.secretService.TBIMission02) == 3 and player:getStorageValue(Storage.secretService.Quest) == 5 then
+			player:setStorageValue(Storage.secretService.Quest, 6)
+			player:setStorageValue(Storage.secretService.TBIMission03, 1)
+			npcHandler:say({
+				'One of our agents is missing. He was investigating the cause for the slow growth of our colony Port Hope ...',
+				'You will continue these investigations at the point where the information that the lost agent has sent us ends. Some of the traders in Port Hope must have connections to persons who are interested in sabotaging our efforts in Tiquanda ...',
+				'Search their personal belongings to find some sort of evidence that we could need!'
 			}, cid)
 			npcHandler.topic[cid] = 0
 		end
