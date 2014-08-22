@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 	
 	if msgcontains(msg, "mission") then
 		local player = Player(cid)
-		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 30 and player:getStorageValue(1090) == 5 then
+		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 30 and player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) == 5 then
 			if npcHandler.topic[cid] ~= 1 then
 				npcHandler:say({
 					"The amplified force of the snake god is tearing the land apart. It is using my crystals in a reverse way to drain the vital force from the land and its inhabitants to fuel its power. ...",
@@ -27,6 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 1
 			else
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 31)
+				player:setStorageValue(Storage.WrathoftheEmperor.Mission11, 1) --Questlog, Wrath of the Emperor "Mission 11: Payback Time"
 				npcHandler:say("So be it!", cid)
 				npcHandler.topic[cid] = 0
 			end

@@ -43,6 +43,8 @@
 	<!-- Wrath of the Emperor Quest -->
 	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
 	<event type="kill" name="WotELizardNoble" script="wrath of the emperor quest/lizardnoble.lua"/>
+	<event type="kill" name="WotEKeeper" script="wrath of the emperor quest/keeper.lua"/>
+	<event type="kill" name="WotEBosses" script="wrath of the emperor quest/bosses.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>

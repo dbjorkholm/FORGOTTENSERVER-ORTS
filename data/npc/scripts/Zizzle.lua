@@ -43,7 +43,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 30)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission10, 2) --Questlog, Wrath of the Emperor "Mission 10: A Message of Freedom"
-			player:setStorageValue(1090, 1)
+			player:setStorageValue(Storage.WrathoftheEmperor.BossStatus, 1)
 			player:addItem(12318, 1)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 33 then

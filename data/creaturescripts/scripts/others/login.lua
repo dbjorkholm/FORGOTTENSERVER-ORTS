@@ -15,11 +15,13 @@ local events = {
 	'InquisitionBosses',
 	'InquisitionUngreez',
 	'KillingInTheNameOfKills',
-	'WotELizardMagistratus',
-	'WotELizardNoble',
 	'MastersVoiceServants',
 	'PharaoKillPortal',
 	'ThievesGuildNomad',
+	'WotELizardMagistratus',
+	'WotELizardNoble',
+	'WotEKeeper',
+	'WotEBosses',
 	'PlayerDeath',
 	'AdvanceSave'
 }
