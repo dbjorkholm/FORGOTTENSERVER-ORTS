@@ -20,21 +20,21 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			player:setStorageValue(Storage.secretService.Quest, 1)
-			npcHandler:say('Then welcome to the family.', cid)
+			npcHandler:say('I am still a bit sceptical, but well, welcome to the girls brigade.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			player:setStorageValue(Storage.secretService.AVINMission01, 3)
-			player:setStorageValue(Storage.secretService.Quest, 3)
-			npcHandler:say('I hope you did not make this little pest too nervous. He isn\'t serving us too well by hiding under some stone or something like that. However, nicely done for your first job.', cid)
+			if player:removeItem(8190, 1) then
+				player:setStorageValue(Storage.secretService.CGBMission01, 2)
+				player:setStorageValue(Storage.secretService.Quest, 3)
+				npcHandler:say('How unnecessarily complicated, but that\'s the way those Thaians are. In the end we got what we wanted and they can\'t do anything about it.', cid)
+			else
+				npcHandler:say('Bring me the spellbook.', cid)
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:removeItem(7705, 1) then
-				player:setStorageValue(Storage.secretService.AVINMission02, 2)
-				player:setStorageValue(Storage.secretService.Quest, 5)
-				npcHandler:say('Ah, yes. This will be a most interesting lecture.', cid)
-			else
-				npcHandler:say('Please bring me the file AH-X17L89.', cid)
-			end
+			player:setStorageValue(Storage.secretService.CGBMission02, 3)
+			player:setStorageValue(Storage.secretService.Quest, 5)
+			npcHandler:say('I think the druids will be pleased to hear that the immediate threat has been averted.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
 			player:setStorageValue(Storage.secretService.AVINMission03, 3)
@@ -80,34 +80,45 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'join') then
 		if player:getStorageValue(Storage.secretService.Quest) < 1 then
 			npcHandler:say({
-				'Well, well, well! As you might know, we are entrusted by the Venorean tradesmen to ensure the safety of their ventures ...',
-				'This task often puts our representatives in rather dangerous and challenging situations. On the other hand, you can expect a generous compensation for your efforts on our behalf...',
-				'Just keep in mind though that we expect quick action and that we are rather intolerant to needless questions and moral doubts ...',
-				'If you join our ranks, you cannot join the service of another city! So do I understand you correctly, you want to join our small business?'
+				player:getSex() == 0 and 
+				'The girls brigade is the foremost front on which we fight the numerous enemies of our city ...',
+				'It\'s a constant race to stay ahead of our enemies. Absolute loyalty and the willingness to put ones life at stake are attributes that are vital for this brigade ...',
+				'If you join, you dedicate your service to Carlin alone! Do you truly think that you are girl enough to join the brigade?'
+				or
+				'A man in the girls brigade? Come on this is hilarious, this is outright stupid, this is ...'
+				'exactly what no one would expect. Mhm, on second thought the element of surprise might offset your male inferiority.'
+				'If you join, you dedicate your service to Carlin alone! Do you truly think that you are girl enough to join the brigade?'
 			}, cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, 'mission') then
 		if player:getStorageValue(Storage.secretService.Quest) == 1 and player:getStorageValue(Storage.secretService.TBIMission01) == 0 and player:getStorageValue(Storage.secretService.CGBMission01) == 0 then
 			player:setStorageValue(Storage.secretService.Quest, 2)
-			player:setStorageValue(Storage.secretService.AVINMission01, 1)
-			player:addItem(14326, 1)
-			npcHandler:say('Let\'s start with a rather simple job. There is a contact in Thais with that we need to get in touch again. Deliver this note to Gamel in Thais. Get an answer from him. If he is a bit reluctant, be \'persuasive\'.', cid)
-			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 2 then
-			npcHandler:say('Do you have news to make old Uncle happy?', cid)
-			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 3 and player:getStorageValue(Storage.secretService.Quest) == 3 then
-			player:setStorageValue(Storage.secretService.Quest, 4)
-			player:setStorageValue(Storage.secretService.AVINMission02, 1)
+			player:setStorageValue(Storage.secretService.CGBMission01, 1)
 			npcHandler:say({
-				'Our Thaian allies are sometimes a bit forgetful. For this reason we are not always informed timely about certain activities. We won\'t insult our great king by pointing out this flaw ...',
-				'Still, we are in dire need of these information so we are forced to take action on our own. Travel to the Thaian castle and \'find\' the documents we need. They have the file name AH-X17L89. ...',
-				'Now go to Thaian castle and get the File.'
+			'Our relations with Thais can be called strained at best. Therefore, it\'s not really astounding that the Thaian financed Edron\'s academy but refuse to share some knowledge with our druids ..',
+			'But we won\'t accept this so easily. With the help of divination, we learnt that the knowledge our druids are looking for is found in a certain book ...',
+			'It will be your task to enter the academy and to steal this book for us.'
 			}, cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.AVINMission02) == 1 then
-			npcHandler:say('Do you have news to make old Uncle happy?', cid)
+		elseif player:getStorageValue(Storage.secretService.CGBMission01) == 1 then
+			npcHandler:say('Have you been successful?', cid)
+			npcHandler.topic[cid] = 2
+		elseif player:getStorageValue(Storage.secretService.CGBMission01) == 2 and player:getStorageValue(Storage.secretService.Quest) == 3 then
+			player:setStorageValue(Storage.secretService.Quest, 4)
+			player:setStorageValue(Storage.secretService.CGBMission02, 1)
+			npcHandler:say({
+				'The druids have asked the brigade for a favour. Given that we heavily rely on their resources and they are important supporters of our cities, we can\'t deny them the request ...',
+				'A wandering druid has recently visited the Green Claw Swamp, located north west of that corrupted hell hole Venore. While gathering herbs, he noticed some malignant presence in the said area ...',
+				'Searching for the source of evil there, he detected some old ruin. Suddenly, he was attacked by bonelords and their undead minions. He barely managed to escape alive ...',
+				'The evidence he found let him conclude that the bonelords in the ruins were raising so-called death trees.These trees are full of negative energy and slowly but steadily corrupt their surrounding ...',
+				'After the druid\'s return to Carlin, divination confirmed his upsetting assumptions about the existence of these trees ...',
+				'Over the years, hundreds have fallen victim to the swamp, conserved by mud and water for eternity. With the help of the death trees, the bonelords strive for an army of undeads. This cannot be tolerated ...',
+				'Travel to Green Claw Swamp and rip out the heart out of the master tree. Without it, the unnatural trees will wither soon. Bring me the heart as proof.'
+			}, cid)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.secretService.CGBMission02) == 2 then
+			npcHandler:say('Have you been successful?', cid)
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.secretService.AVINMission02) == 2 and player:getStorageValue(Storage.secretService.Quest) == 5 then
 			player:setStorageValue(Storage.secretService.Quest, 6)
