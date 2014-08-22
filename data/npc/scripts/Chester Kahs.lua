@@ -152,6 +152,7 @@ local function creatureSayCallback(cid, type, msg)
 				'Use the fire bug on some flammable material there to start the fire. It might take a while to find some wood that\'s dry enough for the fire to spread. Just keep trying ... ',
 				'If you get captured or killed during your mission, we will deny any contact with you.'
 			}, cid)
+			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.secretService.TBIMission01) == 2 then
 			npcHandler:say('Have you fulfilled your current mission?', cid)
 			npcHandler.topic[cid] = 6
