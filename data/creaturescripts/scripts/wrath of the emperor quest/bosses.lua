@@ -1,8 +1,8 @@
 local bosses = {
-	['fury of the emperor'] =  {position = Position(33049, 31089, 15), storage = 3189},
-	['wrath of the emperor'] = {position = Position(33095, 31090, 15), storage = 3190},
-	['scorn of the emperor'] = {position = Position(33095, 31114, 15), storage = 3191},
-	['spite of the emperor'] = {position = Position(33049, 31115, 15), storage = 3192},
+	['fury of the emperor'] =  {position = Position(33048, 31085, 15), storage = 3189},
+	['wrath of the emperor'] = {position = Position(33094, 31087, 15), storage = 3190},
+	['scorn of the emperor'] = {position = Position(33095, 31110, 15), storage = 3191},
+	['spite of the emperor'] = {position = Position(33048, 31111, 15), storage = 3192},
 }
 
 function onKill(cid, target)
