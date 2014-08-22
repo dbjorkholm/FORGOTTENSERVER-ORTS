@@ -361,6 +361,9 @@
 	<action uniqueid="12507" script="the thieves guild quest/fishnapping.lua"/>
 	<action actionid="12513" script="quests/system.lua"/>
 
+	<!-- Secret Service Quest -->
+	<action itemid="7700" script="secret service/amazonDisguiseKit.lua"/>
+
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
 	<action uniqueid="9226" script="sam old backpack/reward.lua"/>
