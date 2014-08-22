@@ -217,7 +217,8 @@
 	<action uniqueid="2005" script="demon helmet quest/lever.lua"/>
 
 	<!-- Dreamer Challenge Quest -->
-	<action fromuid="3041" touid="3047" script="dreamer challenge quest/documentsLever.lua"/>
+	<action fromuid="3041" touid="3043" script="dreamer challenge quest/documentsLever.lua"/>
+	<action fromuid="3045" touid="3047" script="dreamer challenge quest/documentsLever.lua"/>
 	<action uniqueid="3044" script="dreamer challenge quest/brotherhoodQuestDoor.lua"/>
 	<action fromid="7844" toid="7846" script="dreamer challenge quest/documents.lua"/>
 	<action uniqueid="2004" script="dreamer challenge quest/stoneTeleport.lua"/>
