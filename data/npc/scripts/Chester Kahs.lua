@@ -42,12 +42,12 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then
-			player:setStorageValue(Storage.secretService.Side, 1)
+			player:setStorageValue(Storage.secretService.Quest, 1)
 			npcHandler:say('Then I welcome you to the TBI. This is a great moment for you, remember it well. Talk to me about your missions whenever you feel ready.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
 			player:setStorageValue(Storage.secretService.Mission01, 3)
-			player:setStorageValue(Storage.secretService.Quest, 2)
+			player:setStorageValue(Storage.secretService.Quest, 3)
 			npcHandler:say('I think they understood the warning the way it was meant. If not, you will have to visit Venore soon again. But for now it\'s settled.', cid)
 			npcHandler.topic[cid] = 0
 		end
@@ -77,7 +77,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Do you need the healing now?', cid)
 		npcHandler.topic[cid] = 4
 	elseif msgcontains(msg, 'join') then
-		if player:getStorageValue(Storage.secretService.Side) < 1 then
+		if player:getStorageValue(Storage.secretService.Quest) < 1 then
 			npcHandler:say({
 				'Our bureau is an old and traditional branch of the Thaian government. It takes more than lip service to join our ranks ...',
 				'Absolute loyalty to the crown and the Thaian cause as well as courage face-to-face with the enemy is the least we expect from our members ...',
@@ -86,8 +86,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		end
 	elseif msgcontains(msg, 'mission') then
-		if player:getStorageValue(Storage.secretService.Quest) < 1 then
-			player:setStorageValue(Storage.secretService.Quest, 1)
+		if player:getStorageValue(Storage.secretService.Quest) == 1 then
+			player:setStorageValue(Storage.secretService.Quest, 2)
 			player:setStorageValue(Storage.secretService.TBIMission01, 1)
 			npcHandler:say({
 				'Your first task is to deliver a warning. Illegally, the Venoreans are crafting more ships than the Thaian authorities have allowed them ...',
@@ -100,8 +100,8 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.secretService.TBIMission01) == 2 then
 			npcHandler:say('Have you fulfilled your current mission?', cid)
 			npcHandler.topic[cid] = 6
-		elseif player:getStorageValue(Storage.secretService.Quest) == 2 then
-			player:setStorageValue(Storage.secretService.Quest, 3)
+		elseif player:getStorageValue(Storage.secretService.Quest) == 3 then
+			player:setStorageValue(Storage.secretService.Quest, 4)
 			player:setStorageValue(Storage.secretService.TBIMission02, 1)
 			npcHandler:say({
 				'Your next mission concerns an internal matter for our agency. Some decades ago, one of our most talented field agents vanished in the Green Claw Swamp ...',
