@@ -70,5 +70,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
 	end
+	-- Secret Service Quest
+	if itemEx.actionid == 12531 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
+		local playerOutfit = player:getOutfit()
+		local yelling = Position(32204, 31157, 8)
+		if playerOutfit.lookType == 137 then -- amazon lookType
+			player:setStorageValue(Storage.secretService.TBIMission06, 2)
+			Game.createMonster('barbarian skullhunter', yelling) -- say
+			player:say("Nooooo! What have you done??", TALKTYPE_MONSTER_SAY, false, 0, yelling)
+			Game.createMonster('barbarian skullhunter', Position(32204, 31156, 8))
+		end
+	end
 	return true
 end

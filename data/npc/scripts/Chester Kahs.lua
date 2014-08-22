@@ -61,7 +61,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then
 			if player:removeItem(14324, 1) then
-				player:setStorageValue(Storage.secretService.TBIMission03, 2)
+				player:setStorageValue(Storage.secretService.TBIMission03, 3)
 				player:setStorageValue(Storage.secretService.Quest, 7)
 				npcHandler:say('I can only hope that this information are as valuable as we expected it. A good man died for them.', cid)
 			else
@@ -180,10 +180,10 @@ local function creatureSayCallback(cid, type, msg)
 				'Search their personal belongings to find some sort of evidence that we could need!'
 			}, cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 1 then
+		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 2 then
 			npcHandler:say('Have you fulfilled your current mission?', cid)
 			npcHandler.topic[cid] = 8
-		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 2 and player:getStorageValue(Storage.secretService.Quest) == 7 then
+		elseif player:getStorageValue(Storage.secretService.TBIMission03) == 3 and player:getStorageValue(Storage.secretService.Quest) == 7 then
 			player:setStorageValue(Storage.secretService.Quest, 8)
 			player:setStorageValue(Storage.secretService.TBIMission04, 1)
 			npcHandler:say({
