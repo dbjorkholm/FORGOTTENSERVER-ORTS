@@ -26,7 +26,7 @@ function onCastSpell(creature, var)
 			table.insert(affectedList, members)
 		end
 	end
-	
+
 	local tmp = #affectedList
 	if tmp < 1 then
 		creature:sendCancelMessage('No party members in range.')
@@ -40,13 +40,13 @@ function onCastSpell(creature, var)
 		position:sendMagicEffect(CONST_ME_POFF)
 		return false
 	end
-	
+
 	if not combat:execute(creature, var) then
 		creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		position:sendMagicEffect(CONST_ME_POFF)
 		return false
 	end
-	
+
 	creature:addMana(-(mana - 90), false)
 	creature:addManaSpent((mana - 90) * configManager.getNumber(configKeys.RATE_MAGIC))
 	creature:addCondition(condition)
