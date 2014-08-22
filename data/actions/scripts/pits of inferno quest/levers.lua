@@ -1,52 +1,69 @@
-local pos = {
-	[2050] = {text = "You flipped the first level. Hurry up and find the next one!", number = 1},
-	[2051] = {text = "You flipped the second level. Hurry up and find the next one!", number = 2},
-	[2052] = {text = "You flipped the third level. Hurry up and find the next one!", number = 3},
-	[2053] = {text = "You flipped the fourth level. Hurry up and find the next one!", number = 4},
-	[2054] = {text = "You flipped the fifth level. Hurry up and find the next one!", number = 5},
-	[2055] = {text = "You flipped the sixth level. Hurry up and find the next one!", number = 6},
-	[2056] = {text = "You flipped the seventh level. Hurry up and find the next one!", number = 7},
-	[2057] = {text = "You flipped the eighth level. Hurry up and find the next one!", number = 8},
-	[2058] = {text = "You flipped the ninth level. Hurry up and find the next one!", number = 9},
-	[2059] = {text = "You flipped the tenth level. Hurry up and find the next one!", number = 10},
-	[2060] = {text = "You flipped the eleventh level. Hurry up and find the next one!", number = 11},
-	[2061] = {text = "You flipped the twelfth level. Hurry up and find the next one!", number = 12},
-	[2062] = {text = "You flipped the thirteenth level. Hurry up and find the next one!", number = 13},
-	[2063] = {text = "You flipped the fourteenth level. Hurry up and find the next one!", number = 14},
-	[2064] = {text = "You flipped the fifteenth level. Hurry up and find the next one!", number = 15}
+local text = {
+	[1] = 'first', [2] = 'second', [3] = 'third', [4] = 'fourth', [5] = 'fifth',
+	[6] = 'sixth', [7] = 'seventh', [8] = 'eighth', [9] = 'ninth', [10] = 'tenth',
+	[11] = 'eleventh', [12] = 'twelfth', [13] = 'thirteenth', [14] = 'fourteenth', [15] = 'fifteenth'
 }
 
-local stones = {
-	{x = 32851, y = 32333, z = 12},
-	{x = 32852, y = 32333, z = 12}
+local stonePositions = {
+	Position(32851, 32333, 12),
+	Position(32852, 32333, 12)
 }
+
+local function createStones()
+	for i = 1, #stonePositions do
+		Game.createItem(1304, 1, stonePositions[i])
+	end
+
+	Game.setStorageValue(1000)
+end
+
+local function revertLever(position)
+	local leverItem = Tile(position):getItemById(1946)
+	if leverItem then
+		leverItem:transform(1945)
+	end
+
+	if Game.getStorageValue(1000) > 0 then
+		Game.setStorageValue(1000, Game.getStorageValue(1000) - 1)
+	end
+end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 2065) then
-		if(item.itemid == 1945) or (item.itemid == 1946) then
-			if Game.getStorageValue(1000) == 14 then
-				for i = 1, 2 do
-					doRemoveItem(getTileItemById(stones[i], 1304).uid, 1)
-					doSendMagicEffect(stones[i], CONST_ME_EXPLOSIONAREA)
-				end
-				doTransformItem(item.uid, 1946)
-			else
-				doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
-			end
+	if item.itemid ~= 1945 then
+		return false
+	end
+
+	if item.uid > 2049 and item.uid < 2065 then
+		if (Game.getStorageValue(1000) or -1) < 0 then
+			Game.setStorageValue(1000, 0)
+		end
+
+		local number = item.uid - 2049
+		if (Game.getStorageValue(1000) + 1) ~= number then
+			return false
+		end
+
+		Game.setStorageValue(1000, number)
+		Player(cid):say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
+	elseif item.uid == 2065 then
+		if Game.getStorageValue(1000) ~= 15 then
+			Player(cid):say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
-	end
-	if Game.getStorageValue(1000) ~= 0 then
-		Game.setStorageValue(1000, 0)
-	end
-	if(item.itemid == 1945) or (item.itemid == 1946) then
-		if (Game.getStorageValue(1000) + 1) == pos[item.uid].number then
-			Game.setStorageValue(1000, pos[item.uid].number)
-			doCreatureSay(cid, pos[item.uid].text, TALKTYPE_MONSTER_SAY)
-			doTransformItem(item.uid, 1946)
-		else
-			doCreatureSay(cid, "The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
+
+		local stone
+		for i = 1, #stonePositions do
+			stone = Tile(stonePositions[i]):getItemById(1304)
+			if stone then
+				stone:remove()
+				stonePositions[i]:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+			end
 		end
+
+		addEvent(createStones, 15 * 60 * 1000)
 	end
+
+	Item(item.uid):transform(1946)
+	addEvent(revertLever, 15 * 60 * 1000, toPosition)
 	return true
 end
