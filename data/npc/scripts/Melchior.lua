@@ -7,10 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, Player(cid):getSex() == 0 and "Welcome, |PLAYERNAME|! The lovely sound of your voice shines like a beam of light through my solitary darkness!" or "Greetings, |PLAYERNAME|. I do not see your face, but I can read a thousand things in your voice!")
-end
-
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -33,7 +29,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+npcHandler:setMessage(MESSAGE_GREET, Player(cid):getSex() == 0 and "Welcome, |PLAYERNAME|! The lovely sound of your voice shines like a beam of light through my solitary darkness!" or "Greetings, |PLAYERNAME|. I do not see your face, but I can read a thousand things in your voice!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, stranger. May Uman the Wise guide your steps in this treacherous land.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, stranger. May Uman the Wise guide your steps in this treacherous land.")
 npcHandler:addModule(FocusModule:new())
