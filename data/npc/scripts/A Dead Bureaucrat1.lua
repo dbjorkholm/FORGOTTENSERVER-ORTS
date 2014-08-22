@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 	local vocationId = getBaseVocation(player:getVocation():getId())
 
 	if msgcontains(msg, "pumin") then
-		if npcHandler.topic[cid] < 1 then
+		if npcHandler.topic[cid] == 0 and player:getStorageValue(Storage.pitsOfInfernoPumin) < 1 then
 			npcHandler:say("Sure, where else. Everyone likes to meet my master, he is a great demon, isn't he? Your name is ...?", cid)
 			npcHandler.topic[cid] = 1
 		elseif npcHandler.topic[cid] == 3 then
