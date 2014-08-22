@@ -22,33 +22,36 @@ local stones = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if item.itemid ~= 1945 then
+		return false
+	end
 	local player = Player(cid)
 
 	if item.uid == 2065  then
-		if item.itemid == 1945 or item.itemid == 1946 then
-			if Game.getStorageValue(1000) == 15 then
-				for i = 1, 2 do
-					Tile(stones[i]):getItemById(1304):remove()
+		if Game.getStorageValue(1000) == 15 then
+			local stone
+			for i = 1, #stones do
+				stone = Tile(stones[i]):getItemById(1304)
+				if stone then
+					stone:remove()
 					stones[i]:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
 				end
-				Item(item.uid):transform(1946)
-			else
-				player:say("The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
 			end
-			return true
-		end
-	end
-	if Game.getStorageValue(1000) or -1 < 0 then
-		Game.setStorageValue(1000, 0)
-	end
-	if item.itemid == 1945 or item.itemid == 1946 then
-		if (Game.getStorageValue(1000) + 1) == levers[item.uid].number then
-			Game.setStorageValue(1000, levers[item.uid].number)
-			player:say(levers[item.uid].text, TALKTYPE_MONSTER_SAY)
 			Item(item.uid):transform(1946)
 		else
 			player:say("The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
 		end
+		return true
+	end
+	if Game.getStorageValue(1000) or -1 < 0 then
+		Game.setStorageValue(1000, 0)
+	end
+	if (Game.getStorageValue(1000) + 1) == levers[item.uid].number then
+		Game.setStorageValue(1000, levers[item.uid].number)
+		player:say(levers[item.uid].text, TALKTYPE_MONSTER_SAY)
+		Item(item.uid):transform(1946)
+	else
+		player:say("The final lever won't budge... yet.", TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end
