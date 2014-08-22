@@ -38,7 +38,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return true
 		end
 	end
-	if Game.getStorageValue(1000) < 1 then
+	if Game.getStorageValue(1000) or -1 < 0 then
 		Game.setStorageValue(1000, 0)
 	end
 	if item.itemid == 1945 or item.itemid == 1946 then
