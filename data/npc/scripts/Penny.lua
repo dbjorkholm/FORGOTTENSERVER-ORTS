@@ -9,6 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, "Welcome home, " .. Player(cid):getSex() == 0 and "Lady" or "Sir" .. " |PLAYERNAME|.")
+	return true
 end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am miss Penny, your secretary."})
