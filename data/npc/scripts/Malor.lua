@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("Greetings, human " .. player:getName() .. ". My patience with your kind is limited, so speak quickly and choose your words well.?", cid)
+				npcHandler:say("Greetings, human " .. player:getName() .. ". My patience with your kind is limited, so speak quickly and choose your words well.", cid)
 				npcHandler:addFocus(cid)
 			end
 		end
@@ -23,7 +23,11 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Farewell, human. When I have taken my rightful place I shall remember those who served me well. Even if they are only humans.', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
+	end
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(GreenDjinn.MissionStart+2) == 3 and player:getStorageValue(GreenDjinn.MissionStart+3) < 1 then
@@ -67,7 +71,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, human. When I have taken my rightful place I shall remember those who served me well. Even if they are only humans.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
-npcHandler:addModule(FocusModule:new())
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

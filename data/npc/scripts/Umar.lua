@@ -9,7 +9,6 @@ function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	-- GREET
 	if msg == "DJANNI'HAH" and (player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen) and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
@@ -24,9 +23,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		return true
 	end
-	-- GREET
 	if not npcHandler:isFocused(cid) then
 		return false
+	end
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('<salutes>Aaaa -tention!', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	-- JOINING
 	if msgcontains(msg, "passage") then
@@ -54,7 +57,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_FAREWELL, "<salutes>Aaaa -tention!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "<salutes>Aaaa -tention!")
-npcHandler:addModule(FocusModule:new())
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

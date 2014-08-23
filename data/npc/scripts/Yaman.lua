@@ -33,17 +33,23 @@ local list =
 		{id = 2181,		buy = 0,		sell = 2000,	name = 'Terra Rod'},
 		{id = 8910,		buy = 0,		sell = 4400,	name = 'Underworld Rod'}
 	}
-return list
+	return list
 end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if msg == "DJANNI'HAH" or player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi" then
-		npcHandler:addFocus(cid)
+	if (msg == "DJANNI'HAH" or player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
 		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", cid)
+		npcHandler:addFocus(cid)
+		return true
 	end
 	if not npcHandler:isFocused(cid) then
 		return false
+	end
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Farewell, human.', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
 	end
 	if isInArray({"enchanted chicken wing", "boots of haste"}, msg) then
 		npcHandler:say('Do you want to trade Boots of haste for Enchanted Chicken Wing?', cid)
@@ -79,8 +85,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg,'no') and (npcHandler.topic[cid] >= 1 and npcHandler.topic[cid] <= 5) then
 		npcHandler:say('Ok then.', cid)
 		npcHandler.topic[cid] = 0
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
 	end
 	return true
 end
@@ -89,8 +93,7 @@ local function onTradeRequest(cid)
 	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
 end
 
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
+
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, human.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
-npcHandler:addModule(FocusModule:new())

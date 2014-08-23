@@ -43,8 +43,7 @@ end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	-- GREET
-	if msg == "DJANNI'HAH" or (player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg == "hi") then
+	if (msg == "DJANNI'HAH" or player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
 			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
@@ -53,11 +52,14 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-	-- GREET
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Finally.', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
+	end
 	-- Mission 2 - The Tear of Daraman
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(GreenDjinn.MissionStart+1) == 4 and player:getStorageValue(GreenDjinn.MissionStart+2) < 1 then
@@ -108,9 +110,7 @@ local function onTradeRequest(cid)
 	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
 end
 
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Finally.")
+
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "What do you want from me, |PLAYERNAME|?")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Finally.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Finally.")
-npcHandler:addModule(FocusModule:new())

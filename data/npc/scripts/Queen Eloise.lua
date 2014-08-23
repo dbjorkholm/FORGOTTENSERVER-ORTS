@@ -69,13 +69,20 @@ keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, on
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if (msgcontains(msg, 'hail') and msgcontains(msg, 'queen')) and not npcHandler:isFocused(cid) then
-		npcHandler:say('I greet thee, my loyal subject.', cid)
+	if (msg:lower() == "hail queen" or msg:lower() == "salutations queen") and not npcHandler:isFocused(cid) then
+		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
 		npcHandler:addFocus(cid)
-		npcHandler.topic[cid] = 0
-	elseif not npcHandler:isFocused(cid) then
+		return true
+	end
+	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "promot") then
+	end
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Farewell, ' .. player:getName() ..'!', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
+	end
+	if msgcontains(msg, "promot") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
@@ -109,7 +116,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, |PLAYERNAME|!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, |PLAYERNAME|!")
-npcHandler:addModule(FocusModule:new())
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

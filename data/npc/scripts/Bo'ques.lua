@@ -19,7 +19,6 @@ end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	-- GREET
 	if msg == "DJANNI'HAH" and not npcHandler:isFocused(cid) then
 		if player:getStorageValue(Factions) > 0 then
 			npcHandler:addFocus(cid)
@@ -29,11 +28,14 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-	-- GREET
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-
+	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
+		npcHandler:say('Goodbye. I am sure you will come back for more. They all do.', cid)
+		npcHandler:releaseFocus(cid)
+		npcHandler:resetNpc(cid)
+	end
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(BlueDjinn.MissionStart) == 1 and player:getStorageValue(BlueDjinn.MissionStart+1) < 1 then
 			npcHandler:say({
@@ -71,7 +73,6 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_FAREWELL, "Goodbye. I am sure you will come back for more. They all do.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Goodbye. I am sure you will come back for more. They all do.")
-npcHandler:addModule(FocusModule:new())
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

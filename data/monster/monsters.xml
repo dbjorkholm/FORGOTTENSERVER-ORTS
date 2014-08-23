@@ -182,6 +182,7 @@
 	<monster name="Ethershreck" file="bosses/ethershreck.xml"/>
 	<monster name="Evil Mastermind" file="bosses/evil mastermind.xml"/>
 	<monster name="Fatality" file="bosses/fatality.xml"/>
+	<monster name="Fazzrah" file="bosses/fazzrah.xml"/>
 	<monster name="Fernfang" file="bosses/fernfang.xml"/>
 	<monster name="Ferumbras" file="bosses/ferumbras.xml"/>
 	<monster name="Fluffy" file="bosses/fluffy.xml"/>
@@ -232,8 +233,10 @@
 	<monster name="Morik The Gladiator" file="bosses/morik the gladiator.xml"/>
 	<monster name="Mr. Punish" file="bosses/mr. punish.xml"/>
 	<monster name="Munster" file="bosses/munster.xml"/>
+	<monster name="Mutated Zalamon" file="bosses/mutated zalamon.xml"/>
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>
 	<monster name="Obujos" file="bosses/obujos.xml"/>
+	<monster name="Paiz The Pauperizer" file="bosses/paiz the pauperizer.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
 	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
 	<monster name="Renegade Orc" file="bosses/renegade orc.xml"/>
@@ -294,6 +297,7 @@
 	<monster name="Xenia" file="bosses/xenia.xml"/>
 	<monster name="Yaga The Crone" file="bosses/yaga the crone.xml"/>
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
+	<monster name="Zanakeph" file="bosses/zanakeph.xml"/>
 	<monster name="Zarabustor" file="bosses/zarabustor.xml"/>
 	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
