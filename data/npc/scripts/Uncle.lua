@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(Storage.secretService.AVINMission03, 3)
+			player:setStorageValue(Storage.secretService.AVINMission03, 4)
 			player:setStorageValue(Storage.secretService.Quest, 7)
 			npcHandler:say('Does it not warm up your heart if you can bring a little joy to the people while doing your job? Well, don\'t get carried away, most part of your job is not warming up hearts but tearing them out.', cid)
 			npcHandler.topic[cid] = 0
@@ -118,7 +118,7 @@ local function creatureSayCallback(cid, type, msg)
 				'The poor guys have some speakeasy in the sewers. Bring them this barrel of beer with our kind regards to strengthen their resistance.'
 			}, cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 2 then
+		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 3 then
 			npcHandler:say('Do you have news to make old Uncle happy?', cid)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 3 and player:getStorageValue(Storage.secretService.Quest) == 7 then

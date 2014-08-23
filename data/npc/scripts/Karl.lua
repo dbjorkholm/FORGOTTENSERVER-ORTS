@@ -15,14 +15,14 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, "barrel") then
-		if player:getStorageValue(Storage.secretService.AVINMission03) == 1 then
+		if player:getStorageValue(Storage.secretService.AVINMission03) == 2 then
 			npcHandler:say("Do you bring me a barrel of beer??", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(7706, 1) then
-				player:setStorageValue(Storage.secretService.AVINMission03, 2)
+				player:setStorageValue(Storage.secretService.AVINMission03, 3)
 				npcHandler:say("Three cheers for the noble " .. player:getName() .. ".", cid)
 			else
 				npcHandler:say("You don't have any barrel of beer!", cid)

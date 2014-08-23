@@ -201,6 +201,7 @@
 	
 	<!-- Secret Service Quest -->
 	<movevent event="StepIn" actionid="12571" script="secret service/pirates.lua"/>
+	<movevent event="StepIn" fromaid="12583" toaid="12584" script="secret service/amazons.lua"/>
 
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>
