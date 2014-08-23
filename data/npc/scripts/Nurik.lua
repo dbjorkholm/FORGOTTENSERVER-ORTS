@@ -10,13 +10,11 @@ function onThink()				npcHandler:onThink()					end
 local function greetCallback(cid)
 	local player = Player(cid)
 	local playerOutfit = player:getOutfit()
-	if playerOutfit.lookType == 66 then -- dwarf geomancer looktype
-		if player:getStorageValue(Storage.thievesGuild.Mission04) == 6 then
-			npcHandler:say('It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?', cid)
-			npcHandler.topic[cid] = 1
-		end
-	else
-		npcHandler:say('Greetings, ' .. player:getName() .. '', cid)
+	if player:getStorageValue(Storage.thievesGuild.Mission04) == 6 and playerOutfit.lookType == 66 then
+		npcHandler:say('It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?', cid)
+		npcHandler:addFocus(cid)
+		npcHandler.topic[cid] = 1
+		return false
 	end
 	return true
 end
@@ -60,4 +58,6 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, 'Greetings, |PLAYERNAME|!')
 npcHandler:addModule(FocusModule:new())
