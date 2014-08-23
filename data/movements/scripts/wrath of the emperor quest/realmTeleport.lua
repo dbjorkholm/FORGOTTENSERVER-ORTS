@@ -1,7 +1,7 @@
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
-		Creature(cid):teleportTo(fromPosition)
+		player:teleportTo(fromPosition)
 		return true
 	end
 

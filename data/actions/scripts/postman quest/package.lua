@@ -3,7 +3,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if item.uid == 3120  then
 		if player:getStorageValue(Storage.postman.Mission09) == 1 then
-			if player:getCapacity() >= 500 then
+			if player:getFreeCapacity() >= 500 then
 				player:setStorageValue(Storage.postman.Mission09, 2)
 				player:addItem(2330, 1)
 				player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a letterbag.")

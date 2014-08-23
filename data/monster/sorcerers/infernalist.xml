@@ -18,6 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-100"/>
+		<attack script="monster/infernalist skill reducer.lua" interval="3000" chance="15" target="1" range="6"/>
 		<attack name="fire" interval="2000" chance="40" range="4" target="1" min="-65" max="-180">
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="firearea"/>

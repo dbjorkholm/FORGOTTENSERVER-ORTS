@@ -1,7 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if item.uid == 3156 then
-		Player(cid):teleportTo({x = 33170, y = 31247, z = 11})
-		Position({x = 33170, y = 31247, z = 11}):sendMagicEffect(CONST_ME_POFF)
-	end
+	local destination = Position(33170, 31247, 11)
+	Player(cid):teleportTo(destination)
+	destination:sendMagicEffect(CONST_ME_POFF)
 	return true
 end

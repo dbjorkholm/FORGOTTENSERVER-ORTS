@@ -18,6 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-50" poison="3"/>
+		<attack script="monster/dreadbeast skill increaser.lua" interval="3000" chance="15" target="1" range="1"/>
 		<attack name="drown" interval="4000" chance="30" range="1" target="1" min="-70" max="-90">
 			<attribute key="areaEffect" value="bluebubble"/>
 			<attribute key="shootEffect" value="ice"/>

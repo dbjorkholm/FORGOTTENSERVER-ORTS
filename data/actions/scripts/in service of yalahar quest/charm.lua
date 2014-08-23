@@ -3,12 +3,15 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		local player = Player(cid)
 		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 36 then
 			player:removeItem(9737, 1)
-			doCreateItem(9738, 1, toPosition)
-			toPosition:sendMagicEffect(47)
-			local ret = Game.createMonster("Tormented Ghost", getThingPos(cid))
-			local ret2 = Game.createMonster("Tormented Ghost", getThingPos(cid))
-			doSendMagicEffect(getThingPos(ret), CONST_ME_TELEPORT)
-			doSendMagicEffect(getThingPos(ret2), CONST_ME_TELEPORT)
+			Game.createItem(9738, 1, toPosition)
+			toPosition:sendMagicEffect(CONST_ME_CARNIPHILA)
+			local monster
+			for i = 1, 2 do
+				monster = Game.createMonster('Tormented Ghost', player:getPosition())
+				if monster then
+					monster:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				end
+			end
 		end
 	end
 	return true
