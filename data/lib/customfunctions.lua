@@ -79,6 +79,15 @@ function getMoneyCount(string)
 	return -1
 end
 
+function getMoneyWeight(money)
+	local gold = money
+	local crystal = math.floor(gold / 10000)
+	gold = gold - crystal * 10000
+	local platinum = math.floor(gold / 100)
+	gold = gold - platinum * 100
+	return (ItemType(2160):getWeight() * crystal) + (ItemType(2152):getWeight() * platinum) + (ItemType(2148):getWeight() * gold)
+end
+
 function getRealTime()
 	local hours = tonumber(os.date("%H", os.time()))
 	local minutes = tonumber(os.date("%M", os.time()))
