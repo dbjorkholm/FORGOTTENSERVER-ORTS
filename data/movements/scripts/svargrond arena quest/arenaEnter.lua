@@ -6,7 +6,7 @@ function onStepIn(cid, item, position, fromPosition)
 
 	local pitId = player:getStorageValue(Storage.SvargrondArena.Pit)
 	if pitId < 1 or pitId > 10 then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You cannot enter without Halvar\'s permission.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You cannot enter without Halvar\'s permission.')
 		player:teleportTo(fromPosition)
 		return true
 	end
@@ -19,7 +19,7 @@ function onStepIn(cid, item, position, fromPosition)
 
 	local occupant = SvargrondArena.getPitOccupant(pitId, player)
 	if occupant then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == 0 and 's' or '') .. 'he is done fighting.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == 0 and 's' or '') .. 'he is done fighting.')
 		player:teleportTo(fromPosition)
 		return true
 	end

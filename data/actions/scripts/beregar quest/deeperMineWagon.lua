@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local targetPosition = config[player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue)]
 	if not targetPosition then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't have permission to use this yet.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have permission to use this yet.")
 		return true
 	end
 

@@ -24,7 +24,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't know how to use this yet.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't know how to use this yet.")
 	end
 	return true
 end

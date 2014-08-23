@@ -34,7 +34,7 @@ function onStepIn(cid, item, position, fromPosition)
 			player:addCondition(condition)
 			player:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 5)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You\'ve been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!')
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have been succesfully g-rayed. Now let Doctor Gnomedix inspect your ears!')
 			player:say('*Rrrrrrrrrrr...*', TALKTYPE_MONSTER_SAY)
 		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) < 4 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The x-ray is not ready.')

@@ -4,9 +4,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, 90) == 33) then
 			setPlayerStorageValue(cid, 90, 34)
 			doPlayerAddItem(cid, 15389, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a strange powder.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a strange powder.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	end
 	return true

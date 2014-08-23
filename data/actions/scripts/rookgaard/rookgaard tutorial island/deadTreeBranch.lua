@@ -4,7 +4,7 @@ local playerexhaust = Condition(CONDITION_EXHAUST_WEAPON)
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player= Player(cid)
 	if player:getCondition(CONDITION_EXHAUST_WEAPON) then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have to wait a few seconds until this tree can be used again.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have to wait a few seconds until this tree can be used again.")
 		return true
 	end
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage) > 5 and player:getStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage) < 7 then

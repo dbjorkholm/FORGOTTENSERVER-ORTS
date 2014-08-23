@@ -3,7 +3,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if player:getStorageValue(item.uid) ~= 1 then
 		player:addItem(2789, 10)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found 10 brown mushrooms.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found 10 brown mushrooms.")
 		player:setStorageValue(item.uid, 1)
 	end
 	return true

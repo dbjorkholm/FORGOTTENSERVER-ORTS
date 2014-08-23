@@ -1,14 +1,14 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.SvargrondArena.Arena) < 1 then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'This door seems to be sealed against unwanted intruders.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This door seems to be sealed against unwanted intruders.')
 		return true
 	end
 
 	-- Doors to rewards
 	if isInArray({SvargrondArena.actionGreenhorn, SvargrondArena.actionScrapper, SvargrondArena.actionWarlord}, item.actionid) then
 		if player:getStorageValue(item.actionid) <= 0 then
-			player:sendTextMessage(MESSAGE_INFO_DESCR, 'It\'s locked.')
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'It\'s locked.')
 			return true
 		end
 
@@ -22,7 +22,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	-- Arena entrance doors
 	else
 		if player:getStorageValue(Storage.SvargrondArena.Pit) ~= 1 then
-			player:sendTextMessage(MESSAGE_INFO_DESCR, 'This door seems to be sealed against unwanted intruders.')
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This door seems to be sealed against unwanted intruders.')
 			return true
 		end
 

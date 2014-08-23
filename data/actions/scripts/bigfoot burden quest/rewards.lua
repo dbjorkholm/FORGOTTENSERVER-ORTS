@@ -38,9 +38,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, 954) == 4) then
 			setPlayerStorageValue(cid, 954, 5)
 			doPlayerAddItem(cid, 2137, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found some golden fruits.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found some golden fruits.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif(item.uid == 3148) then
 		if(getPlayerStorageValue(cid, 958) == 1) then
@@ -54,9 +54,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					doPlayerAddItem(cid, reward[item.uid][1], reward[item.uid][2])
 				end
 			end
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a reward for defeating Warzone 1.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 1.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif(item.uid == 3149) then
 		if(getPlayerStorageValue(cid, 959) == 1) then
@@ -71,12 +71,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 			setPlayerStorageValue(cid, 959, 0)
 			doPlayerAddItem(cid, 2493, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a reward for defeating Warzone 2.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 2.")
 			if(math.random(25) == 1) then
 				doPlayerAddItem(cid, 16619, 1)
 			end
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif(item.uid == 3150) then
 		if(getPlayerStorageValue(cid, 960) == 1) then
@@ -91,9 +91,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 			setPlayerStorageValue(cid, 960, 0)
 			doPlayerAddItem(cid, 2493, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a reward for defeating Warzone 3.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 3.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	end
 	return true

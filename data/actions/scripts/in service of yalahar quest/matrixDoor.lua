@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:teleportTo(toPosition, true)
 				doTransformItem(item.uid, 9280)
 			else
-				player:sendTextMessage(MESSAGE_INFO_DESCR, "This door seems to be sealed against unwanted intruders.")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This door seems to be sealed against unwanted intruders.")
 			end
 		end
 	end

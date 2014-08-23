@@ -14,7 +14,7 @@ end
 
 function onUse(cid, item, position, itemEx, toPosition)
 	if item.itemid == 1243 then
-		Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, 'You first must find the Carrot under one of the three hats to get the access!')
+		Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You first must find the Carrot under one of the three hats to get the access!')
 		return true
 	end
 
@@ -29,7 +29,7 @@ function onUse(cid, item, position, itemEx, toPosition)
 		doorPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		Game.createItem(2684, 1, hatPosition)
 
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You found the carrot! The door is open!')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found the carrot! The door is open!')
 		Item(item.uid):transform(1946)
 		addEvent(revertCarrotAndLever, 4 * 1000, position, hatPosition)
 
@@ -40,7 +40,7 @@ function onUse(cid, item, position, itemEx, toPosition)
 		return true
 	end
 
-	player:sendTextMessage(MESSAGE_INFO_DESCR, 'You guessed wrong! Take this! Carrot changed now the Hat!')
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You guessed wrong! Take this! Carrot changed now the Hat!')
 	doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -200, -200, CONST_ME_POFF)
 	return true
 end

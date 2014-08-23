@@ -15,17 +15,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif item.itemid == 2369 and player:getStorageValue(Storage.TheAncientTombs.VashresamunInstruments) == 4 then
 		player:setStorageValue(Storage.TheAncientTombs.VashresamunInstruments, 5)
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_BLUE)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You played them in correct order and got the access through door!")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You played them in correct order and got the access through door!")
 	elseif item.itemid == 1241 then
 		if player:getStorageValue(Storage.TheAncientTombs.VashresamunInstruments) == 5 then
 			player:teleportTo(toPosition, true)
 			Item(item.uid):transform(item.itemid + 1)
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You first must play the instruments in correct order to get the access!")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You first must play the instruments in correct order to get the access!")
 		end
 	else
 		player:setStorageValue(Storage.TheAncientTombs.VashresamunInstruments, 0)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You played them wrong, now you must begin with first again! ")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You played them wrong, now you must begin with first again! ")
 		doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, Player(cid):getPosition(), 0, -20, -20, CONST_ME_GROUNDSHAKER)
 	end
 	return true

@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, GreenDjinn.MissionStart+2) == 1) then
 			setPlayerStorageValue(cid, GreenDjinn.MissionStart+2, 2)
 			doPlayerAddItem(cid, 2346, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a tear of daraman.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a tear of daraman.")
 		end
 	end
 	return true

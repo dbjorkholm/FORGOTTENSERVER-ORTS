@@ -3,7 +3,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 3 then
 		player:addItem(14348, 1)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found Rerun's ring.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found Rerun's ring.")
 		player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 4)
 	end
 	return true

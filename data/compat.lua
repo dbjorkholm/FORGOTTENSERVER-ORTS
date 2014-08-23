@@ -182,7 +182,7 @@ function doPlayerJoinParty(cid, leaderId)
 	end
 
 	if player:getParty() ~= nil then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "You are already in a party.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are already in a party.")
 		return true
 	end
 

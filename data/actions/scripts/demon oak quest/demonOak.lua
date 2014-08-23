@@ -67,7 +67,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local isDefeated = totalProgress == (#config.demonOakIds * (config.waves + 1))
 	if (config.killAllBeforeCut or isDefeated)
 			and isMonsterInArea(config.questArea.fromPosition, config.questArea.toPosition, true) then
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You need to kill all monsters first.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You need to kill all monsters first.')
 		return true
 	end
 

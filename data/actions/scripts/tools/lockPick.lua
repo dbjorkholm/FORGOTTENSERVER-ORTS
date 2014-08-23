@@ -11,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	else
 		Item(item.uid):remove(1)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "Your lock pick broke.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your lock pick broke.")
 	end
 	return true
 end

@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if player:getStorageValue(targetTree.storageKey) ~= 1 then
 		player:setStorageValue(targetTree.storageKey, 1)
 		player:addItem(targetTree.rewardId, 1)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a ' .. ItemType(targetTree.rewardId):getName() .. '.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a ' .. ItemType(targetTree.rewardId):getName() .. '.')
 	else
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The dead tree is empty.')
 	end

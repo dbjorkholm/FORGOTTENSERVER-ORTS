@@ -13,7 +13,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'No brains')
 		end
 	else
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You\'ve already got your brain')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have already got your brain')
 	end
 	return true
 end

@@ -6,12 +6,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if player:getFreeCapacity() >= 500 then
 				player:setStorageValue(Storage.postman.Mission09, 2)
 				player:addItem(2330, 1)
-				player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a letterbag.")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a letterbag.")
 			else
-				player:sendTextMessage(MESSAGE_INFO_DESCR, "You don't have enought capacity. The letterbag weights 500 oz.")
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have enought capacity. The letterbag weights 500 oz.")
 			end
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif item.itemid == 2330 then
 		if itemEx.actionid == 101 and itemEx.itemid == 2334 then

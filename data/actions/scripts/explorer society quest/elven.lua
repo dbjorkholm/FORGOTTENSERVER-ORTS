@@ -4,9 +4,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, 90) == 36) then
 			setPlayerStorageValue(cid, 90, 37)
 			doPlayerAddItem(cid, 4855, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found an elven poetry book.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found an elven poetry book.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	end
 	return true

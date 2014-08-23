@@ -16,10 +16,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if key then
 			key:setActionId(item.uid - 10)
 		end
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found a key.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a key.')
 		player:setStorageValue(item.uid, 1)
 	else
-		player:sendTextMessage(MESSAGE_INFO_DESCR, 'The dead tree is empty.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The dead tree is empty.')
 	end
 	return true
 end

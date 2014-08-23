@@ -15,7 +15,7 @@ function onSay(cid, words, param)
 	end
 
 	house:setOwnerGuid(0)
-	player:sendTextMessage(MESSAGE_INFO_DESCR, "You have successfully left your house.")
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have successfully left your house.")
 	player:getPosition():sendMagicEffect(CONST_ME_POFF)
 
 	return false

@@ -17,7 +17,7 @@ function onStepIn(cid, item, position, fromPosition)
 		if player:getLevel() < item.actionid - 1000 then
 			player:teleportTo(fromPosition, false)
 			position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The tile seems to be protected against unwanted intruders.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The tile seems to be protected against unwanted intruders.")
 		end
 		return true
 	end
@@ -36,7 +36,7 @@ function onStepIn(cid, item, position, fromPosition)
 	if item.actionid ~= 0 and player:getStorageValue(item.actionid) <= 0 then
 		player:teleportTo(fromPosition, false)
 		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "The tile seems to be protected against unwanted intruders.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The tile seems to be protected against unwanted intruders.")
 		return true
 	end
 

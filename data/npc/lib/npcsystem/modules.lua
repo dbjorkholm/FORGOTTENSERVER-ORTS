@@ -928,10 +928,11 @@ if Modules == nil then
 			[TAG_ITEMNAME] = shopItem.name
 		}
 
-		if Player(cid):getMoney() < totalCost then
+		local player = Player(cid)
+		if player:getMoney() < totalCost then
 			local msg = self.npcHandler:getMessage(MESSAGE_NEEDMONEY)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
-			Player(cid):sendCancelMessage(msg)
+			player:sendCancelMessage(msg)
 			return false
 		end
 
@@ -946,11 +947,11 @@ if Modules == nil then
 			local msg = self.npcHandler:getMessage(msgId)
 			parseInfo[TAG_ITEMCOUNT] = a
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
-			Player(cid):sendCancelMessage(msg)
+			player:sendCancelMessage(msg)
 			self.npcHandler.talkStart[cid] = os.time()
 
 			if(a > 0) then
-				Player(cid):removeMoney((a * shopItem.buy) + (b * 20))
+				player:removeMoney((a * shopItem.buy) + (b * 20))
 				return true
 			end
 
@@ -958,8 +959,8 @@ if Modules == nil then
 		else
 			local msg = self.npcHandler:getMessage(MESSAGE_BOUGHT)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
-			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, msg)
-			Player(cid):removeMoney(totalCost)
+			player:sendTextMessage(MESSAGE_INFO_DESCR, msg)
+			player:removeMoney(totalCost)
 			self.npcHandler.talkStart[cid] = os.time()
 			return true
 		end
@@ -989,17 +990,18 @@ if Modules == nil then
 			subType = -1
 		end
 
-		if doPlayerRemoveItem(cid, itemid, amount, subType, ignoreEquipped) then
+		local player = Player(cid)
+		if player:removeItem(itemid, amount, subType, ignoreEquipped) then
 			local msg = self.npcHandler:getMessage(MESSAGE_SOLD)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
-			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, msg)
-			Player(cid):addMoney(amount * shopItem.sell)
+			player:sendTextMessage(MESSAGE_INFO_DESCR, msg)
+			player:addMoney(amount * shopItem.sell)
 			self.npcHandler.talkStart[cid] = os.time()
 			return true
 		else
 			local msg = self.npcHandler:getMessage(MESSAGE_NEEDITEM)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
-			Player(cid):sendCancelMessage(msg)
+			player:sendCancelMessage(msg)
 			self.npcHandler.talkStart[cid] = os.time()
 			return false
 		end

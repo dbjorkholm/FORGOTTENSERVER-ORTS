@@ -4,9 +4,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(getPlayerStorageValue(cid, 90) == 39) then
 			setPlayerStorageValue(cid, 90, 40)
 			doPlayerAddItem(cid, 4852, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You have found a memory stone.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a memory stone.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	end
 	return true

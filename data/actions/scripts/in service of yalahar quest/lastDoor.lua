@@ -7,7 +7,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Creature(cid):teleportTo(toPosition, true)
 		Item(item.uid):transform(1258)
 	else
-		player:sendTextMessage(MESSAGE_INFO_DESCR, "This door seems to be sealed against unwanted intruders.")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This door seems to be sealed against unwanted intruders.")
 	end
 return true
 end

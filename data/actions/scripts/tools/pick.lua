@@ -125,7 +125,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
 			Tile(Position(32619, 31514, 9)):getItemById(5709):remove()
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You can't remove this pile since it's currently holding up the tunnel.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You can't remove this pile since it's currently holding up the tunnel.")
 		end
 	elseif itemEx.actionid == 50127 then
 		local positions = {

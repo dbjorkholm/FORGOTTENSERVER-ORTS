@@ -9,7 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if chests[item.uid] then
 		local player = Player(cid)
 		if player:getStorageValue(Storage.DemonOak.Done) ~= 2 then
-			player:sendTextMessage(MESSAGE_INFO_DESCR, 'It\'s empty.')
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'It\'s empty.')
 			return true
 		end
 
@@ -17,7 +17,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		local itemType = ItemType(chest.itemid)
 		if itemType then
 			local article = itemType:getArticle()
-			player:sendTextMessage(MESSAGE_INFO_DESCR, 'You have found ' .. (#article > 0 and article .. ' ' or '') .. itemType:getName() .. '.')
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. (#article > 0 and article .. ' ' or '') .. itemType:getName() .. '.')
 		end
 
 		player:addItem(chest.itemid, chest.count)

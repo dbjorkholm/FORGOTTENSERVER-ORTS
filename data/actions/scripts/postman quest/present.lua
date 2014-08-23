@@ -5,9 +5,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(Storage.postman.Mission05) == 1 then
 			player:setStorageValue(Storage.postman.Mission05, 2)
 			player:addItem(2331, 1)
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "You've found a present.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a present.")
 		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif item.itemid == 2331 then
 		player:removeItem(item.uid, 1)
