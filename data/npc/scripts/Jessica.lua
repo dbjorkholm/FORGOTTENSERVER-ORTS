@@ -8,12 +8,17 @@ local transfer = {}
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+local voices = {
+	'Leave your money with me where it\'s safe!',
+	'Gems, jewels... all a woman could dream of is right here.'
+}
+
 local lastSound = 0
 function onThink()
 	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say("Leave your money in the bank during your hunt - trust me, it's safer that way.", TALKTYPE_SAY)
+		lastSound = (os.time() + 10)
+		if math.random(100) < 20 then
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -321,9 +326,10 @@ keywordHandler:addKeyword({'functions'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'basic'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I work in this bank. I can change money for you and help you with your bank account.'})
 
-npcHandler:setMessage(MESSAGE_GREET, "Welcome to the Tibian Bank, |PLAYERNAME|! Daraman's blessings.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Daraman's blessings.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Daraman's blessings.")
+npcHandler:setMessage(MESSAGE_GREET, 'Greetings stranger. Let me know if you want to {trade} gems or jewellery.')
+npcHandler:setMessage(MESSAGE_FAREWELL, "May enlightenment be your path, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye.")
+npcHandler:setMessage(MESSAGE_SENDTRADE, "Here, take a look.")
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

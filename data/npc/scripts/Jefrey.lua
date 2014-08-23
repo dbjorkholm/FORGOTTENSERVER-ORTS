@@ -13,7 +13,7 @@ function onThink()
 	if lastSound < os.time() then
 		lastSound = (os.time() + 5)
 		if math.random(100) < 25 then
-			Npc():say("Leave your money in the bank during your hunt - trust me, it's safer that way.", TALKTYPE_SAY)
+			Npc():say("You'll sleep much better after a hunt once you have sold your loot and brought your money to our bank.", TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -321,9 +321,9 @@ keywordHandler:addKeyword({'functions'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'basic'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I work in this bank. I can change money for you and help you with your bank account.'})
 
-npcHandler:setMessage(MESSAGE_GREET, "Welcome to the Tibian Bank, |PLAYERNAME|! Daraman's blessings.")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Daraman's blessings.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Daraman's blessings.")
+npcHandler:setMessage(MESSAGE_GREET, 'Hello, what can I do for you? Welcome to the Tibian {Bank}.')
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "What else should I have expected other than that?")
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
