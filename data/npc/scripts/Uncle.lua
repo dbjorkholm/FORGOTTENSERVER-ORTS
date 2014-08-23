@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Then welcome to the family.', cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			player:setStorageValue(Storage.secretService.AVINMission01, 3)
+			player:setStorageValue(Storage.secretService.AVINMission01, 4)
 			player:setStorageValue(Storage.secretService.Quest, 3)
 			npcHandler:say('I hope you did not make this little pest too nervous. He isn\'t serving us too well by hiding under some stone or something like that. However, nicely done for your first job.', cid)
 			npcHandler.topic[cid] = 0
@@ -94,10 +94,10 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(14326, 1)
 			npcHandler:say('Let\'s start with a rather simple job. There is a contact in Thais with that we need to get in touch again. Deliver this note to Gamel in Thais. Get an answer from him. If he is a bit reluctant, be \'persuasive\'.', cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 2 then
+		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 3 then
 			npcHandler:say('Do you have news to make old Uncle happy?', cid)
 			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 3 and player:getStorageValue(Storage.secretService.Quest) == 3 then
+		elseif player:getStorageValue(Storage.secretService.AVINMission01) == 4 and player:getStorageValue(Storage.secretService.Quest) == 3 then
 			player:setStorageValue(Storage.secretService.Quest, 4)
 			player:setStorageValue(Storage.secretService.AVINMission02, 1)
 			npcHandler:say({

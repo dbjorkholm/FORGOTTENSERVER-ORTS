@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.secretService.AVINMission03, 2)
 				npcHandler:say("Three cheers for the noble " .. player:getName() .. ".", cid)
 			else
-				npcHandler:say("You don't have any baarrel of beer!", cid)
+				npcHandler:say("You don't have any barrel of beer!", cid)
 			end
 			npcHandler.topic[cid] = 0
 		end
