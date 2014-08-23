@@ -32,9 +32,13 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			player:setStorageValue(Storage.secretService.CGBMission02, 3)
-			player:setStorageValue(Storage.secretService.Quest, 5)
-			npcHandler:say('I think the druids will be pleased to hear that the immediate threat has been averted.', cid)
+			if player:removeItem(7736, 1) then
+				player:setStorageValue(Storage.secretService.CGBMission02, 2)
+				player:setStorageValue(Storage.secretService.Quest, 5)
+				npcHandler:say('I think the druids will be pleased to hear that the immediate threat has been averted.', cid)
+			else
+				npcHandler:say('Bring me the heart as proof.', cid)
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
 			player:setStorageValue(Storage.secretService.CGBMission03, 3)
@@ -125,10 +129,10 @@ local function creatureSayCallback(cid, type, msg)
 				'Travel to Green Claw Swamp and rip out the heart out of the master tree. Without it, the unnatural trees will wither soon. Bring me the heart as proof.'
 			}, cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.secretService.CGBMission02) == 2 then
+		elseif player:getStorageValue(Storage.secretService.CGBMission02) == 1 then
 			npcHandler:say('Have you been successful?', cid)
 			npcHandler.topic[cid] = 3
-		elseif player:getStorageValue(Storage.secretService.CGBMission02) == 3 and player:getStorageValue(Storage.secretService.Quest) == 5 then
+		elseif player:getStorageValue(Storage.secretService.CGBMission02) == 2 and player:getStorageValue(Storage.secretService.Quest) == 5 then
 			player:setStorageValue(Storage.secretService.Quest, 6)
 			player:setStorageValue(Storage.secretService.CGBMission03, 1)
 			player:addItem(7698, 1)
