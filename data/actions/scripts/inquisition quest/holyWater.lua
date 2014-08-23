@@ -40,7 +40,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Item(item.uid):remove(1)
 
 		-- The Inquisition Questlog- 'Mission 4: The Haunted Ruin'
-		player:setStorageValue(cid, Storage.TheInquisition.Questline, 13)
+		player:setStorageValue(Storage.TheInquisition.Questline, 13)
 		player:setStorageValue(Storage.TheInquisition.Mission04, 2)
 
 		local doorItem = Tile(doorPosition):getItemById(8697)
