@@ -18,6 +18,7 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.secretService.AVINMission03) == 1 then
 			npcHandler:say("Do you bring me a barrel of beer??", cid)
 			npcHandler.topic[cid] = 1
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(7706, 1) then
