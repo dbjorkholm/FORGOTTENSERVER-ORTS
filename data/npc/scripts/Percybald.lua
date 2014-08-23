@@ -47,7 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 2 then
-		if msg:lower() == 'I don\'t think so, dear doctor!' then
+		if msgcontains(msg, 'I don\'t think so, dear doctor!') then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 3
 		else
@@ -55,7 +55,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 4 then
-		if msg:lower() == 'Watch out! It\'s a trap!' then
+		if msgcontains(msg, 'Watch out! It\'s a trap!') then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 5
 		else
@@ -63,7 +63,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 6 then
-		if msg:lower() == 'Look! It\'s Lucky, the wonder dog!' then
+		if msgcontains(msg, 'Look! It\'s Lucky, the wonder dog!') then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 7
 		else
@@ -71,7 +71,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 8 then
-		if msg:lower() == 'Ahhhhhh!' then
+		if msgcontains(msg, 'Ahhhhhh!') then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 9
 		else
@@ -79,7 +79,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 10 then
-		if msg:lower() == 'Hahaha! Now drop your weapons or else...' then
+		if msgcontains(msg, 'Hahaha! Now drop your weapons or else...') then
 			npcHandler:say('Ok, ok. You\'ve got this one right! Ready for the next one?', cid)
 			npcHandler.topic[cid] = 11
 		else
@@ -91,4 +91,5 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setMessage(MESSAGE_GREET, "Be greeted |PLAYERNAME|!")
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

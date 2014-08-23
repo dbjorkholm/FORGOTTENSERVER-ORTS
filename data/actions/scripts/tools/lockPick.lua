@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if itemEx.uid ~= 12503 then
+	if itemEx.actionid ~= 12503 then
 		return false
 	end
 
@@ -10,7 +10,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:setStorageValue(Storage.thievesGuild.Mission02, 2)
 		end
 	else
-		player:removeItem(8717, 1)
+		Item(item.uid):remove(1)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "Your lock pick broke.")
 	end
 	return true

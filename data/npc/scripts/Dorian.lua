@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(Storage.thievesGuild.Quest) == 1 then
+		if player:getStorageValue(Storage.thievesGuild.Quest) == 1 and player:getStorageValue(Storage.thievesGuild.Mission01) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission01, 1)
 			npcHandler:say({
 				'Your first job is quite easy. The Thaian officials are unwilling to share the wealth they\'ve accumulated in their new town Port Hope. ...',
@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission01) == 1 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 2 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 2 and player:getStorageValue(Storage.thievesGuild.Mission02) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission02, 1)
 			npcHandler:say({
 				'A client of our guild would like to get a certain vase. Unfortunately, it\'s not for sale. Well, by the original owner, that is. ...',
@@ -36,7 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission02) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 3
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 3 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 3 and player:getStorageValue(Storage.thievesGuild.Mission03) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission03, 1)
 			npcHandler:say({
 				'Our beloved king will hold a great festivity at the end of the month. Unfortunately he forgot to invite one of our guild\'s representatives. ...',
@@ -46,7 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission03) == 2 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 4
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 4 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 4 and player:getStorageValue(Storage.thievesGuild.Mission04) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission04, 1)
 			npcHandler:say({
 				'Your next mission is somewhat bigger and I\'m sure much fun for you. Some new-rich merchant is being a bit more greedy than it\'s good for him. ...',
@@ -59,13 +59,13 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission04) == 7 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 5
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 5 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 5 and player:getStorageValue(Storage.thievesGuild.Mission05) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission05, 1)
 			npcHandler:say('Some smugglers underneath Tiquanda, north west of Port Hope owe us some debts. Go there and steal their Golden Goblet and bring it to me.', cid)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission05) == 1 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 6
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 6 and player:getStorageValue(Storage.thievesGuild.Mission06) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission06, 1)
 			npcHandler:say({
 				'Your next job will be kidnapping. You\'ll get us the only creature that this scrupulous trader Theodore Loveless in Liberty Bay holds dear. ...',
@@ -75,16 +75,16 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.thievesGuild.Mission06) == 3 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 7
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 7 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 7 and player:getStorageValue(Storage.thievesGuild.Mission07) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission07, 1)
 			npcHandler:say({
 				'We\'d like to ease our lives somewhat. Therefore, we would appreciate the cooperation with one of the Venore city guards. ...',
 				'Find some dirt about one of them. It\'s unimportant what it is. As soon as we have a foothold, we\'ll convince him to cooperate. Bring me whatever you may find.'
 			}, cid)
-		elseif player:getStorageValue(Storage.theivesGuild.Mission07) == 1 then
+		elseif player:getStorageValue(Storage.thievesGuild.Mission07) == 1 then
 			npcHandler:say('Have you finished your mission?', cid)
 			npcHandler.topic[cid] = 8
-		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 then
+		elseif player:getStorageValue(Storage.thievesGuild.Quest) == 8 and player:getStorageValue(Storage.thievesGuild.Mission08) < 1 then
 			player:setStorageValue(Storage.thievesGuild.Mission08, 1)
 			player:addItem(8701, 1)
 			npcHandler:say({
@@ -172,7 +172,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, 'thieves') then
 		if player:getStorageValue(Storage.thievesGuild.Quest) < 1 then
-			npcHandler:say('Hm. Well, we could use some fresh blood. Ahum. Do you want to join the thieves guild, |PLAYERNAME|?', cid)
+			npcHandler:say('Hm. Well, we could use some fresh blood. Ahum. Do you want to join the thieves guild, ' .. player:getName() .. '?', cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, 'lock pick') then
