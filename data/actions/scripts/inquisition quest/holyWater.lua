@@ -47,7 +47,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if doorItem then
 			doorItem:transform(8696)
 		end
-		addEvent(revertItem, 10 * 1000, toPosition, 8696, 8697)
+		addEvent(revertItem, 10 * 1000, doorPosition, 8696, 8697)
 		return true
 	end
 
