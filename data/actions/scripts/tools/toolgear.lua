@@ -216,6 +216,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(Storage.postman.Mission02, 2)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
+		-- Secret Service Quest
+		elseif itemEx.actionid == 12566 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
+			local playerOutfit = player:getOutfit()
+			local yelling = Position(32204, 31157, 8)
+			if playerOutfit.lookType == 137 then -- amazon lookType
+				player:setStorageValue(Storage.secretService.TBIMission06, 2)
+				Game.createMonster('barbarian skullhunter', yelling) -- say
+				player:say("Nooooo! What have you done??", TALKTYPE_MONSTER_SAY, false, 0, yelling)
+				Game.createMonster('barbarian skullhunter', Position(32204, 31156, 8))
+			end
 		end
 	elseif itemEx.itemid == 1304 then
 		if itemEx.uid == 1022 then --The Pits of Inferno Quest
