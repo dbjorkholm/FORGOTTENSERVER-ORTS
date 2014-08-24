@@ -2,21 +2,32 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
+		if math.random(100) < 25 then
+			Npc():say("Gather around me, young knights! I'm going to teach you some spells!", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
 		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) < 1 then
 			npcHandler:say("Only the bravest warriors may wear adorned helmets. They are traditionally awarded after having completed a difficult {task} for our guild.", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif msgcontains(msg, "Task") then
+	elseif msgcontains(msg, "task") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("You mean, you would like to prove that you deserve to wear such a helmet?", cid)
 			npcHandler.topic[cid] = 2
@@ -64,21 +75,21 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5924) >= 1 then
+			if player:getItemCount(5924) > 0 then
 				npcHandler:say("Good work, (brave Knight) " .. player:getName() .. "! Even though it is damaged, it has a lot of sentimental value. Now, please bring me warrior's sweat.", cid)
 				player:removeItem(5924, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(5885) >= 1 then
+			if player:getItemCount(5885) > 0 then
 				npcHandler:say("Now that is a pleasant surprise, (brave Knight) " .. player:getName() .. "! There is only one task left now: Obtain royal steel to have your helmet refined.", cid)
 				player:removeItem(5885, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 4)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5887) >= 1 then
+			if player:getItemCount(5887) > 0 then
 				npcHandler:say("You truly deserve to wear an adorned helmet, (brave Knight) " .. player:getName() .. ". Please talk to Sam and tell him I sent you. I'm sure he will be glad to refine your helmet.", cid)
 				player:removeItem(5887, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 5)
@@ -86,8 +97,12 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-return true
+	return true
 end
+
+npcHandler:setMessage(MESSAGE_GREET, "Greetings, |PLAYERNAME|. What do you want?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Be careful on your journeys.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Be careful on your journeys.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
