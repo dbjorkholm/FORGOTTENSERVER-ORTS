@@ -63,6 +63,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	if item.actionid == 50089 then
+		player:setTown(Town(6)) -- set rookgaard citizen
 		player:setStorageValue(Storage.RookgaardTutorialIsland.CarlosQuestLog, 8)
 		player:sendTutorial(14)
 		local playerPos = player:getPosition()
