@@ -1,12 +1,10 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3024) then
-		if(getPlayerStorageValue(cid, BlueDjinn.MissionStart+3) == 2 and getPlayerItemCount(cid, 2344) > 0) then
-			doPlayerRemoveItem(cid, 2344, 1)
-			setPlayerStorageValue(cid, BlueDjinn.MissionStart+3, 3)
-			toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			doPlayerAddItem(cid,2356,1)
-
-		end
+	local player = Player(cid)
+	if player:getStorageValue(BlueDjinn.MissionStart+3) == 2 and player:getItemCount(2344) > 0 then
+		player:removeItem(2344, 1)
+		player:setStorageValue(BlueDjinn.MissionStart+3, 3)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		player:addItem(2356,1)
 	end
 	return true
 end
