@@ -989,7 +989,7 @@ if Modules == nil then
 			subType = -1
 		end
 
-		if Player(cid):removeItem(itemid, amount, subType, ignoreEquipped) then
+		if doPlayerRemoveItem(cid, itemid, amount, subType, ignoreEquipped) then
 			local msg = self.npcHandler:getMessage(MESSAGE_SOLD)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
 			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, msg)
