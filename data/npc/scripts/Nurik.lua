@@ -59,5 +59,4 @@ end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, 'Greetings, |PLAYERNAME|!')
 npcHandler:addModule(FocusModule:new())
