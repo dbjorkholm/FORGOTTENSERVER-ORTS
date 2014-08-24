@@ -281,8 +281,10 @@ Storage = {
 		Mission07 = 12508,
 		Mission08 = 12509,
 		Door = 12510,
-		Reward = 12513
+		Reward = 12513,
+		TheatreScript = 12514
 	},
+	CaptainHaba = 12540,
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,

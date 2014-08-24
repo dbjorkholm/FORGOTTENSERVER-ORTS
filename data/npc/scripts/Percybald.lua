@@ -13,11 +13,12 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'disguise') then
-		if player:getStorageValue(Storage.thievesGuild.Mission04) == 5 then
+		if player:getStorageValue(Storage.thievesGuild.TheatreScript) < 0 then
 			npcHandler:say({
 				'Hmpf. Why should I waste my time to help some amateur? I\'m afraid I can only offer my assistance to actors that are as great as I am. ...',
 				'Though, your futile attempt to prove your worthiness could be amusing. Grab a copy of a script from the prop room at the theatre cellar. Then talk to me again about your test!'
 			}, cid)
+			player:setStorageValue(Storage.thievesGuild.TheatreScript, 0)
 		end
 	elseif msgcontains(msg, 'test') then
 		if player:getStorageValue(Storage.thievesGuild.Mission04) == 5 then
