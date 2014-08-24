@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Gamon" script="Gamon.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="59" body="39" legs="67" feet="120" addons="0" />
-<voices>
-<voice text="Any time's a good time to buy some furniture!" interval2="100" margin="1" yell="no"/>
-</voices>
- <parameters>
-  <parameter key="message_greet" value=" Nice to meet you, Mister |PLAYERNAME|! Looking for furniture? You've come to the right place!"/>
-        <parameter key="message_farewell" value="You'll come back. They all do."/>
-		<parameter key="message_walkaway" value="Good bye." />
-		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain type of furniture?" />
-   <parameter key="module_shop" value="1"/>
+	<health now="100" max="100" />
+	<look type="128" head="59" body="58" legs="67" feet="120" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1"/>
 		<parameter key="shop_buyable" value="
 			amphora,2023,4,0;
 			armor rack kit,6114,90;
@@ -83,9 +76,6 @@
 			trough kit,3918,7;
 			trunk kit,3920,10;
 			vase,2008,3,0;
-			venorean cabinet kit,20254,90;
-			venorean drawer kit,20257,40;
-			venorean wardrobe kit,20255,50;
 			wall mirror,1851,40;
 			wall mirror,1848,40;
 			wall mirror,1845,40;
