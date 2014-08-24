@@ -220,13 +220,3 @@ function clearArena(fromPos, toPos)
 	end
 	return true
 end
-
-function postmanDiscount( cid, cost )
-	local player = Player(cid)
-	
-	if player:getStorageValue(Storage.postman.Rank) >= 3 then
-			return 10
-	end
-   
-	return 0
-end

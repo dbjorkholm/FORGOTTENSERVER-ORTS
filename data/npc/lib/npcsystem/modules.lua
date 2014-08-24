@@ -58,50 +58,6 @@ if Modules == nil then
 
 		return true
 	end
-	
-	-- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
-	-- Notice: The members of StdModule have not yet been tested. If you find any bugs, please report them to me.
-	-- Usage:
-		-- keywordHandler:addKeyword({"offer"}, StdModule.say, {npcHandler = npcHandler, text = "I sell many powerful melee weapons."})
-	function StdModule.sayTravel(cid, message, keywords, parameters, node)
-		local npcHandler = parameters.npcHandler
-		if npcHandler == nil then
-			error("StdModule.say called without any npcHandler instance.")
-		end
-		local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
-		if not npcHandler:isFocused(cid) and onlyFocus then
-			return false
-		end
-		
-		local costMsg = "%d gold coins"
-	   
-		if parameters.cost > 0 then
-	   
-			local cost = parameters.cost
-		   
-			if parameters.discount then
-					cost = cost - parameters.discount(cid,cost)
-			end
-		   
-			costMsg = string.format(costMsg, cost)
-		else   
-			costMsg = "free"
-		end
-	   
-		local parseInfo = {[TAG_PLAYERNAME] = Player(cid):getName()}
-	   
-		local msg = string.format(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), costMsg)
-	   
-		npcHandler:say(msg, cid, parameters.publicize and true)		
-
-		if not parameters.reset == false then
-			npcHandler:resetNpc(cid)
-		elseif parameters.moveup ~= nil then
-			npcHandler.keywordHandler:moveUp(parameters.moveup)
-		end
-
-		return true
-	end
 
 	--Usage:
 		-- local node1 = keywordHandler:addKeyword({"promot"}, StdModule.say, {npcHandler = npcHandler, text = "I can promote you for 20000 gold coins. Do you want me to promote you?"})
@@ -186,9 +142,9 @@ if Modules == nil then
 				Player(cid):addBlessing(parameters.bless)
 			end
 		else
-			npcHandler:say("You need a premium account in order to be blessed.", cid)
+            npcHandler:say("You need a premium account in order to be blessed.", cid)
 		end
-
+        
 		npcHandler:resetNpc(cid)
 		return true
 	end
@@ -204,48 +160,25 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		
-		local costTravel = parameters.cost
-		if costTravel > 0 then
-			if parameters.discount then
-				costTravel = costTravel - parameters.discount(cid,costTravel)
-			end
-		end
-		
-		if parameters.questCheck then
-			if not parameters.questCheck(cid) then
-				npcHandler:resetNpc(cid)
-				return true
-			end
-		end
-
-		if not player:removeMoney(costTravel) then
-			npcHandler:say("You don't have enough money.", cid)
-		elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
-			npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
-		elseif parameters.premium and not player:isPremium() then
+        
+		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
-		elseif player:isPzLocked() then
-			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
-		else
-			npcHandler:releaseFocus(cid)
-			npcHandler:say(parameters.msg or "Set the sails!", cid)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			
-			local destination = parameters.destination
-			if type( destination ) == 'function' then
-				destination = destination( cid )
-			end
-			player:teleportTo(destination)
-			Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
-			
-			if parameters.onTravelCallback then
-				parameters.onTravelCallback(cid)
-			end
-		end
-		
-		npcHandler:resetNpc(cid)
-		return true
+        elseif not player:removeMoney(parameters.cost) then
+            npcHandler:say("You don't have enough money.", cid)
+        elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
+            npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
+        elseif player:isPzLocked() then
+            npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+        else
+            npcHandler:releaseFocus(cid)
+            npcHandler:say(parameters.msg or "Set the sails!", cid)
+            player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+            player:teleportTo(parameters.destination)
+            Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
+        end
+        
+        npcHandler:resetNpc(cid)
+        return true
 	end
 
 	FocusModule = {

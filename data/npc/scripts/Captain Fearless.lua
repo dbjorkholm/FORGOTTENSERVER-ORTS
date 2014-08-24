@@ -20,57 +20,55 @@ function onThink()
 end
 
 
-local function getDarashiaGhostPosition( cid )
+local function getDarashiaGhostPosition(cid)
 	local position = math.random(10) == 1 and Position(33324, 32173, 6) or Position(33289, 32481, 6)
 	return position
 end
 
-local travelNode = keywordHandler:addKeyword({'darashia'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Darashia for %s?', cost = 60, discount = postmanDiscount})
-	
+local travelNode = keywordHandler:addKeyword({'darashia'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Darashia for %s?', cost = 60, discount = TravelLib.postmanDiscount})
 	local childTravelNode = travelNode:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I warn you! This route is haunted by a ghostship. Do you really want to go there?'})
-		childTravelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, discount = postmanDiscount, destination = getDarashiaGhostPosition})
+		childTravelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, discount = TravelLib.postmanDiscount, destination = getDarashiaGhostPosition})
 		childTravelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
-
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'thais'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Thais for %s?', cost = 170, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 170, discount = postmanDiscount, destination = {x=32310, y=32210, z=6} })
+travelNode = keywordHandler:addKeyword({'thais'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Thais for %s?', cost = 170, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 170, discount = TravelLib.postmanDiscount, destination = {x=32310, y=32210, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'carlin'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Carlin for %s?', cost = 130, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 130, discount = postmanDiscount, destination = {x=32387, y=31820, z=6} })
+travelNode = keywordHandler:addKeyword({'carlin'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Carlin for %s?', cost = 130, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 130, discount = TravelLib.postmanDiscount, destination = {x=32387, y=31820, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'gray island'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Gray Island for %s?', cost = 150, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, destination = {x=33196, y=31984, z=7} })
+travelNode = keywordHandler:addKeyword({'gray island'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Gray Island for %s?', cost = 150, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, destination = {x=33196, y=31984, z=7} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'ab\'dendriel'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Ab\'Dendriel for %s?', cost = 90, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 90, discount = postmanDiscount, destination = {x=32734, y=31668, z=6} })
+travelNode = keywordHandler:addKeyword({'ab\'dendriel'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Ab\'Dendriel for %s?', cost = 90, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 90, discount = TravelLib.postmanDiscount, destination = {x=32734, y=31668, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'edron'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Edron for %s?', cost = 40, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 40, discount = postmanDiscount, destination = {x=33173, y=31764, z=6} })
+travelNode = keywordHandler:addKeyword({'edron'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Edron for %s?', cost = 40, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 40, discount = TravelLib.postmanDiscount, destination = {x=33173, y=31764, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'port hope'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Port Hope for %s?', cost = 160, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 160, discount = postmanDiscount, destination = {x=32527, y=32784, z=6} })
+travelNode = keywordHandler:addKeyword({'port hope'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Port Hope for %s?', cost = 160, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = {x=32527, y=32784, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'svargrond'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Svargrond for %s?', cost = 150, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, discount = postmanDiscount, destination = {x=32341, y=31108, z=6} })
+travelNode = keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Svargrond for %s?', cost = 150, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, discount = TravelLib.postmanDiscount, destination = {x=32341, y=31108, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'liberty bay'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Liberty Bay for %s?', cost = 180, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 180, discount = postmanDiscount, destination = {x=32285, y=32892, z=6} })
+travelNode = keywordHandler:addKeyword({'liberty bay'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Liberty Bay for %s?', cost = 180, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 180, discount = TravelLib.postmanDiscount, destination = {x=32285, y=32892, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'yalahar'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Yalahar for %s?', cost = 185, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 185, discount = postmanDiscount, destination = {x=32816, y=31272, z=6} })
+travelNode = keywordHandler:addKeyword({'yalahar'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Yalahar for %s?', cost = 185, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 185, discount = TravelLib.postmanDiscount, destination = {x=32816, y=31272, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'ankrahmun'}, StdModule.sayTravel, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Ankrahmun for %s?', cost = 150, discount = postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, discount = postmanDiscount, destination = {x=33092, y=32883, z=6} })
+travelNode = keywordHandler:addKeyword({'ankrahmun'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Ankrahmun for %s?', cost = 150, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 150, discount = TravelLib.postmanDiscount, destination = {x=33092, y=32883, z=6} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
 keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Where do you want to go? To {Thais}, {Carlin}, {Ab\'Dendriel}, {Port Hope}, {Edron}, {Darashia}, {Liberty Bay}, {Svargrond}, {Yalahar}, {Gray Island} or {Ankrahmun}?'})
