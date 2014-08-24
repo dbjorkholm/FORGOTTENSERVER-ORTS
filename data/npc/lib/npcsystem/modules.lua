@@ -161,20 +161,20 @@ if Modules == nil then
 
 		local player = Player(cid)
         
-		if parameters.premium and not player:isPremium() then
-			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
+	if parameters.premium and not player:isPremium() then
+		npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
         elseif not player:removeMoney(parameters.cost) then
-            npcHandler:say("You don't have enough money.", cid)
+		npcHandler:say("You don't have enough money.", cid)
         elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
-            npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
+		npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
         elseif player:isPzLocked() then
-            npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+		npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
         else
-            npcHandler:releaseFocus(cid)
-            npcHandler:say(parameters.msg or "Set the sails!", cid)
-            player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-            player:teleportTo(parameters.destination)
-            Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
+		npcHandler:releaseFocus(cid)
+		npcHandler:say(parameters.msg or "Set the sails!", cid)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(parameters.destination)
+		Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
         end
         
         npcHandler:resetNpc(cid)
