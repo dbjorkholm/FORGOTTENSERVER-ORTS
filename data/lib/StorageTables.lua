@@ -250,7 +250,8 @@ Storage = {
 		InterdimensionalPotion = 12370, --1084
 		BossStatus = 12371, --1090
 		platinumReward = 12372,
-		backpackReward = 12373
+		backpackReward = 12373,
+		mainReward = 12374
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,

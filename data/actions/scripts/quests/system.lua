@@ -3,6 +3,7 @@ local specialQuests = {
 	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
 	[10544] = 10544,
 	[12513] = Storage.thievesGuild.Reward,
+	[12374] = Storage.WrathoftheEmperor.mainReward,
 	[26300] = 26300,
 	[27300] = 27300,
 	[28300] = 28300

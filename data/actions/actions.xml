@@ -53,6 +53,8 @@
 	<action itemid="12328" script="wrath of the emperor quest/Mission09TheSleepingDragonMixture.lua"/>
 	<action itemid="12318" script="wrath of the emperor quest/Mission10AMessageofFreedomSceptre.lua"/>
 	<action uniqueid="3198" script="wrath of the emperor quest/Mission11PaybackTimeLever.lua"/>
+	<action uniqueid="3200" script="wrath of the emperor quest/Mission12JustRewards.lua"/>
+	<action actionid="12374" script="quests/system.lua"/>
 
 	<!-- Unnatural Selection -->
 	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
