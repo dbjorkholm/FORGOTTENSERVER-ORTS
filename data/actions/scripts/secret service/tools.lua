@@ -1,11 +1,11 @@
 local config = {
-	[7960] = 10515 -- TBI
+	[7960] = 10515, -- TBI
 	[7961] = 10513, -- CGB
-	[7962] = 10511, -- AVIN
+	[7962] = 10511 -- AVIN
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local useItem = config[item.uid]
+	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end

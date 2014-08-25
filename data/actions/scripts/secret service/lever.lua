@@ -23,7 +23,7 @@ local monsters = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.itemid == 1945 then
 		for i = 1, #monsters do
-			Game.createMonster(monster, monsterPos)
+			Game.createMonster(monsters[i]monster, monsters[i]monsterPos)
 		end
 	end
 
