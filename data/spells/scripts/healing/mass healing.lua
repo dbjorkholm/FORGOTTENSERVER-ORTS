@@ -7,9 +7,9 @@ local area = createCombatArea(AREA_CIRCLE3X3)
 combat:setArea(area)
 
 function onTargetCreature(cid, target)
-    local player = Player(cid)
-    local min = ((player:getLevel() / 5) + (player:getMagicLevel() * 4.6) + 100)
-    local max = ((player:getLevel() / 5) + (player:getMagicLevel() * 9.6) + 125)
+	local player = Player(cid)
+	local min = ((player:getLevel() / 5) + (player:getMagicLevel() * 4.6) + 100)
+	local max = ((player:getLevel() / 5) + (player:getMagicLevel() * 9.6) + 125)
 
 	local targetCreature = Creature(target)
 	local master = targetCreature:getMaster()
@@ -18,8 +18,8 @@ function onTargetCreature(cid, target)
 		return true
 	end
 
-    doTargetCombatHealth(0, target, COMBAT_HEALING, min, max, CONST_ME_NONE)
-    return true
+	doTargetCombatHealth(0, target, COMBAT_HEALING, min, max, CONST_ME_NONE)
+	return true
 end
 
 combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
