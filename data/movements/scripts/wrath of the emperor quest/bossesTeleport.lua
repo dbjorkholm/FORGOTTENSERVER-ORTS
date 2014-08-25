@@ -10,12 +10,19 @@ function onStepIn(cid, item, position, fromPosition)
 	if not player then
 		return true
 	end
+	
+	if player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) == 5 then
+		local destination = Position(33072, 31151, 15)
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		player:teleportTo(destination)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
+		return true
+	end
 
 	if player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) ~= item.uid - 3188 then
 		player:teleportTo(fromPosition)
 		return true
 	end
-
 	if Game.getStorageValue(item.uid) ~= 1 then
 		player:teleportTo(positions[item.uid])
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

@@ -48,6 +48,7 @@
 	<event type="kill" name="WotELizardNoble" script="wrath of the emperor quest/lizardnoble.lua"/>
 	<event type="kill" name="WotEKeeper" script="wrath of the emperor quest/keeper.lua"/>
 	<event type="kill" name="WotEBosses" script="wrath of the emperor quest/bosses.lua"/>
+	<event type="kill" name="WotEZalamon" script="wrath of the emperor quest/zalamon.lua"/>
 
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>

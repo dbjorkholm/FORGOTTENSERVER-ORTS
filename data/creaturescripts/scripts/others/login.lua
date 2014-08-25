@@ -23,6 +23,7 @@ local events = {
 	'WotELizardNoble',
 	'WotEKeeper',
 	'WotEBosses',
+	'WotEZalamon',
 	'PlayerDeath',
 	'AdvanceSave'
 }

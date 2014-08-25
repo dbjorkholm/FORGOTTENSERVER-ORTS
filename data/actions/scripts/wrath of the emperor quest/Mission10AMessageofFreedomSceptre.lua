@@ -47,10 +47,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	elseif itemEx.itemid == 12385 then
 		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 31 then
+			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 32)
+			player:setStorageValue(Storage.WrathoftheEmperor.Mission11, 2) --Questlog, Wrath of the Emperor "Mission 11: Payback Time"
+		end
 			player:say("NOOOoooooooo...!", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 			player:say("This should have dealt the deathblow to the snake things' ambitions.", TALKTYPE_MONSTER_SAY)
-			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 32)
-		end
 	end
 	return true
 end

@@ -248,7 +248,9 @@ Storage = {
 		GhostOfAPriest02 = 12368, --1071
 		GhostOfAPriest03 = 12369, --1072
 		InterdimensionalPotion = 12370, --1084
-		BossStatus = 12371 --1090
+		BossStatus = 12371, --1090
+		platinumReward = 12372,
+		backpackReward = 12373
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,

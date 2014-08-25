@@ -1008,21 +1008,19 @@
 		</mission>
 		<mission name="Mission 10: A Message of Freedom" storageid="12360" startvalue="1" endvalue="6">
 			<missionstate id="1" description="After solving the riddle, and talking again to the Sleeping Dragon you got a Spiritual Charm. Report back to Zizzle."/>
-			<missionstate id="2" description="You poses the key to enter the inner realms of the emperor. Start with the one in the north-west and work your way clockwise trough the room and kill those manifestation. Then use your sceptre on the remain to destroy the emperor's influence over the crystal."/>
-			<missionstate id="3" description="You poses the key to enter the inner realms of the emperor. You destroyed 1 of 4 emperor's influences."/>
-			<missionstate id="4" description="You poses the key to enter the inner realms of the emperor. You destroyed 2 of 4 emperor's influences."/>
-			<missionstate id="5" description="You poses the key to enter the inner realms of the emperor. You destroyed 3 of 4 emperor's influences."/>
-			<missionstate id="6" description="You poses the key to enter the inner realms of the emperor. You destroyed all emperor's influences."/>
+			<missionstate id="2" description="You possess the key to enter the inner realms of the emperor. Start with the one in the north-west and work your way clockwise trough the room and kill those manifestation. Then use your sceptre on the remain to destroy the emperor's influence over the crystal."/>
+			<missionstate id="3" description="You possess the key to enter the inner realms of the emperor. You destroyed 1 of 4 emperor's influences."/>
+			<missionstate id="4" description="You possess the key to enter the inner realms of the emperor. You destroyed 2 of 4 emperor's influences."/>
+			<missionstate id="5" description="You possess the key to enter the inner realms of the emperor. You destroyed 3 of 4 emperor's influences."/>
+			<missionstate id="6" description="You possess the key to enter the inner realms of the emperor. You destroyed all emperor's influences."/>
 		</mission>
-		<mission name="Mission 11: Payback Time" storageid="12361" startvalue="1" endvalue="3">
-			<missionstate id="1" description="..."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 11: Payback Time" storageid="12361" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your Mission is to kill Zalamon. Step into the teleporter to confront him. Finally use your sceptre on the death body."/>
+			<missionstate id="2" description="Go back to Awareness Of The Emperor and report him your success!"/>
 		</mission>
-		<mission name="Mission 12: Just Rewards" storageid="12362" startvalue="1" endvalue="3">
-			<missionstate id="1" description="The Emperor has promised you wealth beyond measure. Go claim it in the ministry."/>
-			<missionstate id="2" description="..."/>
-			<missionstate id="3" description="..."/>
+		<mission name="Mission 12: Just Rewards" storageid="12362" startvalue="0" endvalue="1">
+			<missionstate id="0" description="The Emperor has promised you wealth beyond measure. Go claim it in the ministry."/>
+			<missionstate id="1" description="You completed this Quest!"/>
 		</mission>
 	</quest>
 </quests>
