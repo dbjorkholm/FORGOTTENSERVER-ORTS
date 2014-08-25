@@ -53,7 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.postman.Mission08) == 2 then
 			npcHandler:say("So Waldo is dead? This is grave news indeed. Did you recover his posthorn?", cid)
 			npcHandler.topic[cid] = 23
-		elseif player:getStorageValue(Storage.postman.Rank) == 4 then
+		elseif player:getStorageValue(Storage.postman.Rank) == 4 and player:getStorageValue(Storage.postman.Mission09) == 0 then
 			npcHandler:say("So are you ready for another mission?", cid)
 			npcHandler.topic[cid] = 25
 		elseif player:getStorageValue(Storage.postman.Mission09) == 3 then
@@ -187,6 +187,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 23 then
 			npcHandler:say("Thank you. We will honour this. Your next mission will be a very special one. Good thing you are a special person as well. Are you ready?", cid)
 			player:setStorageValue(Storage.postman.Mission08, 3)
+			player:setStorageValue(Storage.postman.Mission09, 0)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 24 then
 			npcHandler:say("From now on you are a grand postman for special operations. You are an honoured member of our guild and earned the privilege of your own post horn. Here, take it.", cid)
