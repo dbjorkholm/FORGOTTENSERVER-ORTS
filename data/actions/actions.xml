@@ -337,9 +337,9 @@
 
 	<!-- Postman Quest -->
 	<action actionid="7815" script="postman quest/mailbox.lua"/>
-	<action uniqueid="3120" script="postman quest/package.lua"/>
+	<action uniqueid="3116" script="postman quest/package.lua"/>
 	<action itemid="2330" script="postman quest/package.lua"/>
-	<action uniqueid="3116" script="postman quest/present.lua"/>
+	<action uniqueid="3120" script="postman quest/present.lua"/>
 	<action itemid="2331" script="postman quest/present.lua"/>
 	<action uniqueid="3118" script="postman quest/waldo.lua"/>
 
