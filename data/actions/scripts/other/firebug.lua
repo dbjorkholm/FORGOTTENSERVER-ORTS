@@ -28,7 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(1484)
 		elseif itemEx.actionid == 12550 or itemEx.actionid == 12551 then -- Secret Service Quest
 			local player = Player(cid)
-			if player:getStorageValue(Storage.secretService.TBIMission01) < 2 then
+			if player:getStorageValue(Storage.secretService.TBIMission01) == 1 then
 				Game.createItem(1487, 1, Position(32893, 32012, 6))
 				player:setStorageValue(Storage.secretService.TBIMission01, 2)
 			end
