@@ -39,6 +39,9 @@
 
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
+	
+	<!-- Secret Service Quest -->
+	<event type="kill" name="SecretServiceBlackKnight" script="others/blackKnight.lua"/>
 
 	<!-- Wrath of the Emperor Quest -->
 	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
