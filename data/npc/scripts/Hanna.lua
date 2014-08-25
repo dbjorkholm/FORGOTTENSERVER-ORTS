@@ -2,16 +2,27 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
+		if math.random(100) < 25 then
+			Npc():say("Gems and jewellery! Best prices in town!", TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
 		if player:getStorageValue(Storage.OutfitQuest.CitizenHatAddon) < 1 then
 			npcHandler:say("Pretty, isn't it? My friend Amber taught me how to make it, but I could help you with one if you like. What do you say?", cid)
 			npcHandler.topic[cid] = 1
@@ -28,11 +39,11 @@ local function creatureSayCallback(cid, type, msg)
 				"a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers...",
 				"and 50 honeycombs as glue. That's it, come back to me once you gathered it!"
 			}, cid)
-			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.OutfitQuest.CitizenHatAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
+			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount( 5890) >= 100 and player:getItemCount( 5902) >= 50 and player:getItemCount( 2480) >= 1  then
+			if player:getItemCount(5890) >= 100 and player:getItemCount(5902) >= 50 and player:getItemCount(2480) > 0  then
 				npcHandler:say("Great job! That must have taken a lot of work. Okay, you put it like this... then glue like this... here!", cid)
 				player:removeItem(5890, 100)
 				player:removeItem(5902, 50)
@@ -51,9 +62,15 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Then no.", cid)
 			npcHandler.topic[cid] = 0
 		end
-	return true
 	end
+	return true
 end
+
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a jeweler. Maybe you want to have a look at my wonderful offers."})
+
+npcHandler:setMessage(MESSAGE_GREET, "Oh, please come in, |PLAYERNAME|. What do you need? Have a look at my wonderful offers in gems and jewellery.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
