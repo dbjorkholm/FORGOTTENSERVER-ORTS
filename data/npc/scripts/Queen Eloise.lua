@@ -69,7 +69,7 @@ keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, on
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
-	if (msg:lower() == "hail queen" or msg:lower() == "salutations queen") and not npcHandler:isFocused(cid) then
+	if (msg:lower() == "hail queen" or msg:lower() == "hail queen eloise" or msg:lower() == "salutations queen") and not npcHandler:isFocused(cid) then
 		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
 		npcHandler:addFocus(cid)
 		return true
