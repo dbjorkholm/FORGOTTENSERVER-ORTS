@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 
-	if item.uid == 3116 then
+	if item.uid == 3120 then
 		if player:getStorageValue(Storage.postman.Mission05) == 1 then
 			player:setStorageValue(Storage.postman.Mission05, 2)
 			player:addItem(2331, 1)
