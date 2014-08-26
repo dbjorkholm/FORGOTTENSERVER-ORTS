@@ -1,5 +1,5 @@
 local ACTION_RUN, ACTION_BREAK, ACTION_NONE, ACTION_ALL = 1, 2, 3, 4
-local TYPE_MONSTER, TYPE_NPC, TYPE_ACTION, TYPE_UNIQUE = 1, 2, 3, 4
+local TYPE_MONSTER, TYPE_NPC, TYPE_ITEM, TYPE_ACTION, TYPE_UNIQUE = 1, 2, 3, 4, 5
 
 local config = {
 	[5907] =	{NAME = 'Bear',					ID = 3,		TYPE = TYPE_MONSTER,  CHANCE = 20,  FAIL_MSG = { {1, "The bear ran away."}, {2, "Oh no! The slingshot broke."}, {3, "The bear is trying to hit you with its claws."} }, SUCCESS_MSG = "You have tamed the bear."},
