@@ -43,6 +43,7 @@ if Modules == nil then
 		if npcHandler == nil then
 			error("StdModule.say called without any npcHandler instance.")
 		end
+
 		local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
 		if not npcHandler:isFocused(cid) and onlyFocus then
 			return false
@@ -50,7 +51,7 @@ if Modules == nil then
 
 		local parseInfo = {[TAG_PLAYERNAME] = Player(cid):getName()}
 		npcHandler:say(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), cid, parameters.publicize and true)
-		if not parameters.reset == false then
+		if parameters.reset then
 			npcHandler:resetNpc(cid)
 		elseif parameters.moveup ~= nil then
 			npcHandler.keywordHandler:moveUp(parameters.moveup)
@@ -72,16 +73,16 @@ if Modules == nil then
 			return false
 		end
 
-		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
-			local promotedVoc = getPromotedVocation(Player(cid):getVocation():getId())
-			if(getPlayerStorageValue(cid, 30018) == 1) then
+		local player = Player(cid)
+		if parameters.premium and player:isPremium() then
+			if player:getStorageValue(30018) == 1 then
 				npcHandler:say("You are already promoted!", cid)
-			elseif Player(cid):getLevel() < parameters.level then
+			elseif player:getLevel() < parameters.level then
 				npcHandler:say("I am sorry, but I can only promote you once you have reached level " .. parameters.level .. ".", cid)
-			elseif(Player(cid):removeMoney(parameters.cost) ~= TRUE) then
+			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			else
-				Player(cid):setVocation(Vocation(promotedVoc))
+				player:setVocation(Vocation(getPromotedVocation(player:getVocation():getId())))
 				npcHandler:say(parameters.text, cid)
 			end
 		else
@@ -101,18 +102,19 @@ if Modules == nil then
 			return false
 		end
 
-		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) or not parameters.premium) then
-			if getPlayerLearnedInstantSpell(cid, parameters.spellName) == TRUE then
+		local player = Player(cid)
+		if parameters.premium and player:isPremium() then
+			if player:hasLearnedSpell(parameters.spellName) then
 				npcHandler:say("You already know this spell.", cid)
-			elseif Player(cid):getLevel() < parameters.level then
+			elseif player:getLevel() < parameters.level then
 				npcHandler:say("You need to obtain a level of " .. parameters.level .. " or higher to be able to learn " .. parameters.spellName .. ".", cid)
-			elseif getPlayerVocation(cid) ~= parameters.vocation and getPlayerVocation(cid) ~= parameters.vocation + 4 and vocation ~= 9 then
+			elseif player:getVocation():getId() ~= parameters.vocation and player:getVocation():getId() ~= parameters.vocation + 4 and vocation ~= 9 then
 				npcHandler:say("This spell is not for your vocation", cid)
-			elseif Player(cid):removeMoney(parameters.price) == FALSE then
+			elseif not player:removeMoney(parameters.price) then
 				npcHandler:say("You do not have enough money, this spell costs " .. parameters.price .. " gold.", cid)
 			else
 				npcHandler:say("You have learned " .. parameters.spellName .. ".", cid)
-				Player(cid):learnSpell(parameters.spellName)
+				player:learnSpell(parameters.spellName)
 			end
 		else
 			npcHandler:say("You need a premium account in order to buy " .. parameters.spellName .. ".", cid)
@@ -132,14 +134,15 @@ if Modules == nil then
 			return false
 		end
 
-		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
-			if getPlayerBlessing(cid, parameters.bless) then
+		local player = Player(cid)
+		if parameters.premium and player:isPremium() then
+			if player:hasBlessing(parameters.bless) then
 				npcHandler:say("Gods have already blessed you with this blessing!", cid)
-			elseif Player(cid):removeMoney(parameters.cost) == false then
+			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You don't have enough money for blessing.", cid)
 			else
 				npcHandler:say("You have been blessed by one of the five gods!", cid)
-				Player(cid):addBlessing(parameters.bless)
+				player:addBlessing(parameters.bless)
 			end
 		else
 			npcHandler:say("You need a premium account in order to be blessed.", cid)
@@ -165,7 +168,7 @@ if Modules == nil then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
 		elseif not player:removeMoney(parameters.cost) then
 			npcHandler:say("You don't have enough money.", cid)
-		elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
+		elseif parameters.level ~= nil and player:getLevel() < parameters.level then
 			npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
 		elseif player:isPzLocked() then
 			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)

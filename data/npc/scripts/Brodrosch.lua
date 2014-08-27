@@ -76,11 +76,11 @@ end
 
 local function newFrontierDiscount(cid, cost)
 	local discount = 0
-	
+
 	if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission03) > 0 then
 		discount = 50
 	end
-	
+
 	return discount + TravelLib.postmanDiscount(cid, cost)
 end
 
@@ -88,14 +88,15 @@ local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHan
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 210, discount = newFrontierDiscount, destination = getFarmineDestinationCallback})
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
-travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = {x = 33311,y = 31989,z = 15}, onTravelCallback = cormayaOnTravelCallback})
+local travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = {x = 33311, y = 31989,z = 15}, onTravelCallback = cormayaOnTravelCallback})
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want me take you to {Cormaya} or {Farmine}?'})
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome, |PLAYERNAME|! May earth protect you on the rocky grounds. If you need a {passage}, I can help you.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye.')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye then.')
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

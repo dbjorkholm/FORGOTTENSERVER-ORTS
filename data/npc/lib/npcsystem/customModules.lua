@@ -11,7 +11,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 	local npcHandler = parameters.npcHandler
 
 	if npcHandler == nil then
-		error("StdModule.say called without any npcHandler instance.")
+		error('TravelLib.say called without any npcHandler instance.')
 	end
 
 	local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
@@ -19,14 +19,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 		return false
 	end
 
-	if parameters.questCheck then
-		if not parameters.questCheck(cid) then
-			npcHandler:resetNpc(cid)
-			return true
-		end
-	end
-
-	local costMsg = "%d gold coins"
+	local costMessage = '%d gold coins'
 
 	if parameters.cost > 0 then
 		local cost = parameters.cost
@@ -35,18 +28,18 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 			cost = cost - parameters.discount(cid, cost)
 		end
 
-		costMsg = string.format(costMsg, cost)
+		costMessage = string.format(costMessage, cost)
 	else   
-		costMsg = "free"
+		costMessage = 'free'
 	end
 
 	local parseInfo = {[TAG_PLAYERNAME] = Player(cid):getName()}
 
-	local msg = string.format(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), costMsg)
+	local msg = string.format(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), costMessage)
 
 	npcHandler:say(msg, cid, parameters.publicize and true)		
 
-	if not parameters.reset == false then
+	if parameters.reset then
 		npcHandler:resetNpc(cid)
 	elseif parameters.moveup ~= nil then
 		npcHandler.keywordHandler:moveUp(parameters.moveup)
@@ -57,50 +50,42 @@ end
 
 -- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
 -- Usage:
-	-- keywordHandler:addKeyword({"yes"}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 180, discount = TravelLib.postmanDiscount, destination = {x=32341, y=31108, z=6} })
+	-- keywordHandler:addKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 180, discount = TravelLib.postmanDiscount, destination = {x=32341, y=31108, z=6} })
 
 function TravelLib.travel(cid, message, keywords, parameters, node)
 	local npcHandler = parameters.npcHandler
 	if npcHandler == nil then
-		error("StdModule.travel called without any npcHandler instance.")
+		error('TravelLib.travel called without any npcHandler instance.')
 	end
 
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	local player = Player(cid)
-
-	local costTravel = parameters.cost
-	if costTravel > 0 then
+	local travelCost = parameters.cost
+	if travelCost > 0 then
 		if parameters.discount then
-			costTravel = costTravel - parameters.discount(cid, costTravel)
+			travelCost = travelCost - parameters.discount(cid, travelCost)
 		end
 	end
 
-	if parameters.questCheck then
-		if not parameters.questCheck(cid) then
-			npcHandler:resetNpc(cid)
-			return true
-		end
-	end
-
+	local player = Player(cid)
 	if parameters.premium and not player:isPremium() then
-		npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
-	elseif not player:removeMoney(costTravel) then
-		npcHandler:say("You don't have enough money.", cid)
-	elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
-		npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
+		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.', cid)
+	elseif not player:removeMoney(travelCost) then
+		npcHandler:say('You don\'t have enough money.', cid)
+	elseif parameters.level ~= nil and player:getLevel() < parameters.level then
+		npcHandler:say('You must reach level ' .. parameters.level .. ' before I can let you go there.', cid)
 	elseif player:isPzLocked() then
-		npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+		npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!', cid)
 	else
 		npcHandler:releaseFocus(cid)
-		npcHandler:say(parameters.msg or "Set the sails!", cid)
+		npcHandler:say(parameters.msg or 'Set the sails!', cid)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
 		local destination = parameters.destination
-		if type( destination ) == 'function' then
-			destination = destination( cid )
+		if type(destination) == 'function' then
+			destination = destination(cid)
 		end
 
 		player:teleportTo(destination)
