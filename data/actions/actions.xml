@@ -368,6 +368,14 @@
 	<action itemid="8762" script="the thieves guild quest/fishnappingKey.lua"/>
 	<action actionid="12505" script="the thieves guild quest/fishnappingDoor.lua"/>
 	<action actionid="12513" script="quests/system.lua"/>
+	
+	<!-- Secret Service Quest -->
+	<action itemid="7700" script="secret service/amazonDisguiseKit.lua"/>
+	<action itemid="7697" script="secret service/ring.lua"/>
+	<action fromid="7960" toid="7962" script="secret service/tools.lua"/>
+	<action uniqueid="12578" script="secret service/rottenTree.lua"/>
+	<action itemid="7698" script="secret service/rustBugs.lua"/>
+	<action actionid="12574" script="secret service/lever.lua"/>
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
