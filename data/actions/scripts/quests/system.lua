@@ -10,7 +10,7 @@ local specialQuests = {
 }
 
 local questsExperience = {
-	[2216] = 1 -- dummy values
+	[2217] = 1 -- dummy values
 }
 
 local tutorialIds = {
