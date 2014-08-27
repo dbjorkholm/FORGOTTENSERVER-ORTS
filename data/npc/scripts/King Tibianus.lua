@@ -58,7 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, ' .. player:getName() ..'!', cid)
+		npcHandler:say('Good bye, ' .. player:getName() ..'!', cid)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end
@@ -123,15 +123,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 1 then
 		npcHandler:say("Ok, whatever.", cid)
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "fan club membership") and player:getStorageValue(100000) == 15 and player:removeItem(10308, 1) then
-		npcHandler:say({
-			"Ah, {A fan club premium membership card}! You must be that intelligent fellow who wrote me all those flattering letters! Nice to finally meet my greatest admirer in person. Here, take this little token of appreciation. ...",
-			"And now if you will excuse me, I have to attend urgent affairs of state."
-		}, cid)
-		player:setStorageValue(100000, 16)
-		player:addItem(10306,1)
-		player:setStorageValue(100063, 24)
-		player:setStorageValue(100162, 9)
 	end
 	--The New Frontier
 	if msgcontains(msg, "farmine") then
