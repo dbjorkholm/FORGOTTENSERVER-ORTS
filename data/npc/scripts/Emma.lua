@@ -70,6 +70,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('I hope this old book will do those researches any good. Personally I see little use to proof some bloodlines after we cut all ties to Thais.', cid)
 			else
 				npcHandler:say('You need to bring us that book of family trees!', cid)
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then
 			if player:removeItem(7699, 1) then
@@ -97,8 +98,8 @@ local function creatureSayCallback(cid, type, msg)
 				'It\'s a constant race to stay ahead of our enemies. Absolute loyalty and the willingness to put ones life at stake are attributes that are vital for this brigade ...',
 				'If you join, you dedicate your service to Carlin alone! Do you truly think that you are girl enough to join the brigade?'
 				or
-				'A man in the girls brigade? Come on this is hilarious, this is outright stupid, this is ...'
-				'exactly what no one would expect. Mhm, on second thought the element of surprise might offset your male inferiority.'
+				'A man in the girls brigade? Come on this is hilarious, this is outright stupid, this is ...',
+				'exactly what no one would expect. Mhm, on second thought the element of surprise might offset your male inferiority.',
 				'If you join, you dedicate your service to Carlin alone! Do you truly think that you are girl enough to join the brigade?'
 			}, cid)
 			npcHandler.topic[cid] = 1
