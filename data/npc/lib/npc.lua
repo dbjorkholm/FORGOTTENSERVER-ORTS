@@ -1,5 +1,6 @@
 -- Including the Advanced NPC System
 dofile('data/npc/lib/npcsystem/npcsystem.lua')
+dofile('data/npc/lib/npcsystem/CustomModules.lua')
 
 isPlayerPremiumCallback = isPremium
 

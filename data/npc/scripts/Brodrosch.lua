@@ -1,11 +1,14 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
+
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
-function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)            end
+function onCreatureDisappear(cid)      npcHandler:onCreatureDisappear(cid)         end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)    end
+
 local lastSound = 0
+
 function onThink()
 	if lastSound < os.time() then
 		lastSound = (os.time() + 5)
@@ -17,62 +20,25 @@ function onThink()
 end
 
 local function creatureSayCallback(cid, type, msg)
+
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	if msgcontains(msg, 'farmine') then
-		npcHandler:say('Do you seek a ride to Farmine for 210 gold coins?', cid)
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, 'cormaya') then
-		npcHandler:say('Do you seek a ride to Cormaya for 160 gold coins?', cid)
-		npcHandler.topic[cid] = 2
-	elseif msgcontains(msg, 'ticket') then
+	if msgcontains(msg, 'ticket') then
 		if Player(cid):getStorageValue(Storage.wagonTicket) >= os.time() then
 			npcHandler:say('Your weekly ticket is still valid. Would be a waste of money to purchase a second one', cid)
 			return true
 		end
 
 		npcHandler:say('Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?', cid)
-		npcHandler.topic[cid] = 3
+		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] > 0 then
 		local player = Player(cid)
 		if npcHandler.topic[cid] == 1 then
-			if not player:removeMoney(210) then
-				npcHandler:say('You don\'t have enough money.', cid)
-				return true
-			end
-
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-
-			local destination = Position(33025, 31553, 14)
-			if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
-				destination.z = 10
-			elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
-				destination.z = 12
-			end
-
-			player:teleportTo(destination)
-			destination:sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler:say('Full steam ahead!', cid)
-		elseif npcHandler.topic[cid] == 2 then
-			if not player:removeMoney(160) then
-				npcHandler:say('You don\'t have enough money.', cid)
-				return true
-			end
-
-			if player:getStorageValue(Storage.postman.Mission01) == 4 then
-				player:setStorageValue(Storage.postman.Mission01, 5)
-			end
-
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			local destination = Position(33311, 31989, 15)
-			player:teleportTo(destination)
-			destination:sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler:say('Full steam ahead!', cid)
-		elseif npcHandler.topic[cid] == 3 then
 			if not player:removeMoney(250) then
 				npcHandler:say('You don\'t have enough money.', cid)
+				npcHandler.topic[cid] = 0
 				return true
 			end
 
@@ -81,15 +47,50 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then
-		if npcHandler.topic[cid] == 3 then
-			npcHandler:say('No then.', cid)
-		else
-			npcHandler:say('You shouldn\'t miss the experience.', cid)
-		end
+		npcHandler:say('No then.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
+
+local function getFarmineDestinationCallback(cid)
+	local player = Player(cid)
+	
+	local destination = Position(33025, 31553, 14)
+	if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
+		destination.z = 10
+	elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
+		destination.z = 12
+	end
+	
+	return destination
+end
+
+local function cormayaOnTravelCallback(cid)
+	local player = Player(cid)
+	
+	if player:getStorageValue(Storage.postman.Mission01) == 4 then
+		player:setStorageValue(Storage.postman.Mission01, 5)
+	end
+end
+
+local function newFrontierDiscount(cid, cost)
+	local discount = 0
+	
+	if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission03) > 0 then
+		discount = 50
+	end
+	
+	return discount + TravelLib.postmanDiscount(cid, cost)
+end
+
+local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Farmine for %s?', cost = 210, discount = newFrontierDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 210, discount = newFrontierDiscount, destination = getFarmineDestinationCallback})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
+
+travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = {x = 33311,y = 31989,z = 15}, onTravelCallback = cormayaOnTravelCallback})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want me take you to {Cormaya} or {Farmine}?'})
 

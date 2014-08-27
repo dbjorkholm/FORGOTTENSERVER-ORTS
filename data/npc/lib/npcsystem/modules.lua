@@ -135,7 +135,7 @@ if Modules == nil then
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
 			if getPlayerBlessing(cid, parameters.bless) then
 				npcHandler:say("Gods have already blessed you with this blessing!", cid)
-			elseif Player(cid):removeMoney(parameters.cost) == FALSE then
+			elseif Player(cid):removeMoney(parameters.cost) == false then
 				npcHandler:say("You don't have enough money for blessing.", cid)
 			else
 				npcHandler:say("You have been blessed by one of the five gods!", cid)
@@ -144,11 +144,11 @@ if Modules == nil then
 		else
 			npcHandler:say("You need a premium account in order to be blessed.", cid)
 		end
-
+        
 		npcHandler:resetNpc(cid)
 		return true
 	end
-
+	
 	function StdModule.travel(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
@@ -160,34 +160,24 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
+        
 		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
-			return false
-		end
-
-		if player:isPzLocked() then
+		elseif not player:removeMoney(parameters.cost) then
+			npcHandler:say("You don't have enough money.", cid)
+		elseif(parameters.level ~= nil and player:getLevel() < parameters.level) then
+			npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
+		elseif player:isPzLocked() then
 			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
-			return false
+		else
+			npcHandler:releaseFocus(cid)
+			npcHandler:say(parameters.msg or "Set the sails!", cid)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(parameters.destination)
+			Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
 		end
 
-		local travelCost = parameters.cost
-		if travelCost and travelCost > 0 then
-			if player:getStorageValue(Storage.postman.Rank) >= 3 then -- Grand Postman (boat discounts)
-				travelCost = travelCost - 10
-			end
-
-			if not player:removeMoney(travelCost) then
-				npcHandler:say("You don't have enough money.", cid)
-				return false
-			end
-		end
-
-		npcHandler:say(parameters.msg or "Set the sails!", cid)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:teleportTo(parameters.destination)
-		Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
 		npcHandler:resetNpc(cid)
-		npcHandler:releaseFocus(cid)
 		return true
 	end
 
