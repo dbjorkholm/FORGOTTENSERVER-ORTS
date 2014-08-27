@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Gamel" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="129" head="79" body="115" legs="115" feet="115" addons="0" />
+<npc name="Gamel" script="Gamel.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="129" head="79" body="115" legs="115" feet="115" addons="0" />
 <voices>
 <voice text="Pssst!" interval2="100" margin="1" yell="no"/>
 </voices>
@@ -17,4 +17,3 @@
     <parameter key="shop_sellable" value="			Axe,2386,7;			Battle Axe,2378,80;			Battle Hammer,2417,120;			Bone Club,2449,5;			Bone Sword,2450,20;			Brass Helmet,2460,30;			Carlin Sword,2395,118;			Chain Helmet,2458,17;			Club,2382,1;			Crowbar,2416,50;			Dagger,2379,2;			Double Axe,2387,260;			Fire Sword,2392,1000;			Halberd,2381,400;			Hand Axe,2380,4;			Hatchet,2388,25;			Iron Helmet,2459,150;			Katana,2412,35;			Leather Helmet,2461,4;			Legion Helmet,2480,22;			Longsword,2397,51;			Mace,2398,30;			Morning Star,2394,100;			Orcish Axe,2428,350;			Rapier,2384,5;			Sabre,2385,12;			Short Sword,2406,10;			Sickle,2405,3;			Small Axe,2559,5;			Soldier Helmet,2481,16;			Spike Sword,2383,240;			Steel Helmet,2457,293;			Studded Club,2448,10;			Studded Helmet,2482,20;			Swampling Club,20104,40;			Throwing Knife,2410,2;			Two Handed Sword,2377,450;			Viking Helmet,2473,66;			War Hammer,2391,470		" />
   </parameters>
 </npc>
-
