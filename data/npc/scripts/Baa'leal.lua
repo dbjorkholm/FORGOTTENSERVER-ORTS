@@ -7,20 +7,31 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local condition = Condition(CONDITION_FIRE)
+condition:setParameter(CONDITION_PARAM_DELAYED, 1)
+condition:addDamage(150, 2000, -10)
+
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if msg == "DJANNI'HAH" and not npcHandler:isFocused(cid) then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("You know the code human! Very well then... What do you want, " .. player:getName() .. "?", cid)
+	if not npcHandler:isFocused(cid) then
+		local player = Player(cid)
+		if msg == "hi" then
+			player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+			player:addCondition(condition)
+		elseif msg == "DJANNI'HAH" then
+			if player:getStorageValue(Factions) > 0 then
 				npcHandler:addFocus(cid)
+				if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
+					npcHandler:say("You know the code human! Very well then... What do you want, " .. player:getName() .. "?", cid)
+					npcHandler:addFocus(cid)
+				end
 			end
 		end
 	end
+
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
 		npcHandler:say('Farewell, human.', cid)
 		npcHandler:releaseFocus(cid)
@@ -28,14 +39,15 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(GreenDjinn.MissionStart) == 1 and player:getStorageValue(GreenDjinn.MissionStart+1) < 1 then
+		local player = Player(cid)
+		if player:getStorageValue(GreenDjinn.MissionStart) == 1 and player:getStorageValue(GreenDjinn.MissionStart + 1) < 1 then
 			npcHandler:say({
 				"Each mission and operation is a crucial step towards our victory! ...",
 				"Now that we speak of it ...",
 				"Since you are no djinn, there is something you could help us with. Are you interested, human?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(GreenDjinn.MissionStart+1) == 3 then
+		elseif player:getStorageValue(GreenDjinn.MissionStart + 1) == 3 then
 			npcHandler:say("Did you find the thief of our supplies?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -51,7 +63,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "hail malor") then
 		if npcHandler.topic[cid] == 4 then
 			npcHandler:say("Hail to our great leader!", cid)
-			player:setStorageValue(GreenDjinn.MissionStart+1, 4)
+			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 4)
 			npcHandler.topic[cid] = 0
 		end
 	-- Mission 1 - The Supply Thief
@@ -66,7 +78,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Now go! Travel to the northern city Carlin! Keep your eyes open and look around for something that might give you a clue!"
 			}, cid)
 			npcHandler.topic[cid] = 0
-			player:setStorageValue(GreenDjinn.MissionStart+1, 1)
+			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 1)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Finally! What is his name then?", cid)
 			npcHandler.topic[cid] = 3
