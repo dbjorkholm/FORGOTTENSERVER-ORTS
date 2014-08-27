@@ -144,11 +144,11 @@ if Modules == nil then
 		else
 			npcHandler:say("You need a premium account in order to be blessed.", cid)
 		end
-        
+
 		npcHandler:resetNpc(cid)
 		return true
 	end
-	
+
 	function StdModule.travel(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
