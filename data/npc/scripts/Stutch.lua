@@ -10,9 +10,9 @@ function onThink()				npcHandler:onThink()					end
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		if msg == 'hi' then
-			npcHandler:say('MIND YOUR MANNERS COMMONER! To address the queen greet with her title!', cid)
-		elseif msg == 'hail queen' or msg == 'salutations queen' then
-			npcHandler:say('HAIL TO THE QUEEN!', cid)
+			npcHandler:say('MIND YOUR MANNERS COMMONER! To address the king greet with his title!!', cid)
+		elseif msg == 'hail king' or msg == 'salutations king' then
+			npcHandler:say('HAIL TO THE KING!.', cid)
 			npcHandler:addFocus(cid)
 		end
 	end
@@ -34,13 +34,13 @@ local function creatureSayCallback(cid, type, msg)
 		selfSay('Take this!', cid)
 		Npc():getPosition():sendMagicEffect(CONST_ME_YELLOW_RINGS)
 	elseif msgcontains(msg, 'bye') or msgcontains(msg, 'farewell') then
-		npcHandler:say('LONG LIVE THE QUEEN! You may leave now!', cid)
+		npcHandler:say('LONG LIVE THE KING! You may leave now!', cid)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	end
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_WALKAWAY, 'LONG LIVE THE QUEEN!')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'LONG LIVE THE KING!')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
