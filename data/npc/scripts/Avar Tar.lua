@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('Receive the base outfit, ' .. player:getName() .. '.', cid)
 			end
 		elseif msgcontains(msg, 'shield') then
-			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(2217) == 1 then
+			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(2213) == 1 then
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
