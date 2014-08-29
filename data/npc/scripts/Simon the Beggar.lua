@@ -5,7 +5,23 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+
+local voices = {
+	'Alms! Alms for the poor!',
+	'Sir, Ma\'am, have a gold coin to spare?',
+	'I need help! Please help me!'
+}
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 10)
+		if math.random(100) < 20 then
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 function SimonBeggarStaffStorage(cid, message, keywords, parameters, node)
 	if not npcHandler:isFocused(cid) then
@@ -100,5 +116,9 @@ node3:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus
 node4 = keywordHandler:addKeyword({'key'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To get the fibula key you need to give me 800 gold coins, do you have them with you?'})
 node4:addChildKeyword({'yes'}, key, {})
 node4:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true})
+
+npcHandler:setMessage(MESSAGE_GREET, "Hello |PLAYERNAME|. I am a poor man. Please help me.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Have a nice day.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Have a nice day.")
 
 npcHandler:addModule(FocusModule:new())

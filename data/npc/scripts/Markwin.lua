@@ -29,7 +29,7 @@ local function greetCallback(cid)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)
 	elseif player:getStorageValue(258) == 1 then
-		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now. ")
+		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now.")
 		player:setStorageValue(258, 2)
 	elseif player:getStorageValue(258) == 2 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh its you again. What du you want, hornless messenger?")
@@ -46,19 +46,19 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, "letter") then
 		if player:getStorageValue(Storage.postman.Mission10) == 1 then
 			if player:getItemCount(2333) > 0 then
-				npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
+				npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me?", cid)
 				npcHandler.topic[cid] = 1
 			end
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("Uhm, well thank you, hornless being. ", cid)
+			npcHandler:say("Uhm, well thank you, hornless being.", cid)
 			player:setStorageValue(Storage.postman.Mission10, 2)
 			player:removeItem(2333, 1)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "bye") then
-		npcHandler:say("Hm ... good bye. ", cid)
+		npcHandler:say("Hm ... good bye.", cid)
 		player:addCondition(condition)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)

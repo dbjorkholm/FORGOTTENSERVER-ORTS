@@ -2,18 +2,10 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)
-	npcHandler:onCreatureAppear(cid)
-end
-function onCreatureDisappear(cid)
-	npcHandler:onCreatureDisappear(cid)
-end
-function onCreatureSay(cid, type, msg)
-	npcHandler:onCreatureSay(cid, type, msg)
-end
-function onThink()
-	npcHandler:onThink()
-end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 keywordHandler:addKeyword({'gods'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I think the gods are too busy to care about us mortals, hmm... that makes me feel godlike, too."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am honored to be the assistant of the great, the illustrious, the magnificent {Durin}!"})
@@ -82,6 +74,10 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|. What is it?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Finally!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, and don't come back too soon.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

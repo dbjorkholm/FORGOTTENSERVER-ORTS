@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Gamel" script="Gamel.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="129" head="79" body="115" legs="115" feet="115" addons="0" />
-<voices>
-<voice text="Pssst!" interval2="100" margin="1" yell="no"/>
-</voices>
-  <parameters>
-<parameter key="module_keywords" value="1" />
-        <parameter key="keywords" value="buy;" />
-        <parameter key="keyword_reply1" value="I sell maces, staffs, daggers and brass helmets. Ask me for a {trade}."/>
-        <parameter key="message_greet" value="Pssst! Be silent. Do you wish to {buy} something?"/>
-        <parameter key="message_farewell" value="Bye. Tell others about... my little shop here."/>
-		<parameter key="message_walkaway" value="Bye. Tell others about... my little shop here." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="Axe,2386,20;Battle Axe,2378,235;Battle Hammer,2417,350;Bone Sword,2450,75;Brass Helmet,2460,120;Carlin Sword,2395,473;			Chain Helmet,2458,52;			Club,2382,5;			Crowbar,2416,260;			Dagger,2379,5;			Hand Axe,2380,8;			Iron Helmet,2459,390;			Leather Helmet,2461,12;			Longsword,2397,160;			Mace,2398,90;			Morning Star,2394,430;			Rapier,2384,15;			Sabre,2385,35;			Short Sword,2406,26;			Sickle,2405,7;			Soldier Helmet,2481,110;			Spike Sword,2383,8000;			Staff,6107,40;			Steel Helmet,2457,580;			Studded Helmet,2482,63;			Throwing Knife,2410,25;			Two Handed Sword,2377,950;			Viking Helmet,2473,265;			War Hammer,2391,10000		" />
-    <parameter key="shop_sellable" value="			Axe,2386,7;			Battle Axe,2378,80;			Battle Hammer,2417,120;			Bone Club,2449,5;			Bone Sword,2450,20;			Brass Helmet,2460,30;			Carlin Sword,2395,118;			Chain Helmet,2458,17;			Club,2382,1;			Crowbar,2416,50;			Dagger,2379,2;			Double Axe,2387,260;			Fire Sword,2392,1000;			Halberd,2381,400;			Hand Axe,2380,4;			Hatchet,2388,25;			Iron Helmet,2459,150;			Katana,2412,35;			Leather Helmet,2461,4;			Legion Helmet,2480,22;			Longsword,2397,51;			Mace,2398,30;			Morning Star,2394,100;			Orcish Axe,2428,350;			Rapier,2384,5;			Sabre,2385,12;			Short Sword,2406,10;			Sickle,2405,3;			Small Axe,2559,5;			Soldier Helmet,2481,16;			Spike Sword,2383,240;			Steel Helmet,2457,293;			Studded Club,2448,10;			Studded Helmet,2482,20;			Swampling Club,20104,40;			Throwing Knife,2410,2;			Two Handed Sword,2377,450;			Viking Helmet,2473,66;			War Hammer,2391,470		" />
-  </parameters>
+	<look type="129" head="79" body="115" legs="115" feet="116" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			axe,2386,20;
+			battle axe,2378,235;
+			battle hammer,2417,350;
+			bone sword,2450,75;
+			brass helmet,2460,120;
+			carlin sword,2395,473;
+			chain helmet,2458,52;
+			club,2382,5;
+			crowbar,2416,260;
+			dagger,2379,5;
+			hand axe,2380,8;
+			iron helmet,2459,390;
+			leather helmet,2461,12;
+			longsword,2397,160;
+			mace,2398,90;
+			morning star,2394,430;
+			rapier,2384,15;
+			sabre,2385,35;
+			short sword,2406,26;
+			sickle,2405,7;
+			soldier helmet,2481,110;
+			spike sword,2383,8000;
+			staff,6107,40;
+			steel helmet,2457,580;
+			studded helmet,2482,63;
+			throwing knife,2410,25;
+			two handed sword,2377,950;
+			viking helmet,2473,265;
+			war hammer,2391,10000;" />
+		<parameter key="shop_sellable" value="
+			axe,2386,7;
+			battle axe,2378,80;
+			battle hammer,2417,120;
+			bone club,2449,5;
+			bone sword,2450,20;
+			brass helmet,2460,30;
+			carlin sword,2395,118;
+			chain helmet,2458,17;
+			club,2382,1;
+			crowbar,2416,50;
+			dagger,2379,2;
+			double axe,2387,260;
+			fire sword,2392,1000;
+			halberd,2381,400;
+			hand axe,2380,4;
+			hatchet,2388,25;
+			iron helmet,2459,150;
+			katana,2412,35;
+			leather helmet,2461,4;
+			legion helmet,2480,22;
+			longsword,2397,51;
+			mace,2398,30;
+			morning star,2394,100;
+			orcish axe,2428,350;
+			rapier,2384,5;
+			sabre,2385,12;
+			short sword,2406,10;
+			sickle,2405,3;
+			small axe,2559,5;
+			soldier helmet,2481,16;
+			spike sword,2383,240;
+			steel helmet,2457,293;
+			studded club,2448,10;
+			studded helmet,2482,20;
+			swampling club,20104,40;
+			throwing knife,2410,2;
+			two handed sword,2377,450;
+			viking helmet,2473,66;
+			war hammer,2391,470;" />
+	</parameters>
 </npc>
