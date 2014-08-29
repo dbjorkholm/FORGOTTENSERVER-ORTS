@@ -23,6 +23,7 @@ Storage = {
 		-- Barbarian-outfit Quest
 		BarbarianAddon = 12015,
 		BarbarianAddonWaitTimer = 12016,
+		CitizenBackpackAddonWaitTimer = 12017,
 
 		-- Hunter-outfit Quest
 		HunterMusicSheet01 = 12050,

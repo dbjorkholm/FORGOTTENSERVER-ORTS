@@ -15,6 +15,18 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.OutfitQuest.CitizenBackpackAddon) < 1 then
 			npcHandler:say("Sorry, the backpack I wear is not for sale. It's handmade from rare {minotaur leather}.", cid)
 			npcHandler.topic[cid] = 1
+		elseif player:getStorageValue(Storage.OutfitQuest.CitizenBackpackAddon) == 2 then
+			if player:getStorageValue(Storage.OutfitQuest.CitizenBackpackAddonWaitTimer) < os.time() then
+				npcHandler:say("Just in time! Your backpack is finished. Here you go, I hope you like it.", cid)
+				player:setStorageValue(Storage.OutfitQuest.CitizenBackpackAddon, 3)
+				player:addOutfitAddon(136, 1)
+				player:addOutfitAddon(128, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler.topic[cid] = 0
+			else
+				npcHandler:say("Uh... I didn't expect you to return that early. Sorry, but I'm not finished yet with your backpack. I'm doing the best I can, promised.", cid)
+				npcHandler.topic[cid] = 0
+			end
 		end
 	elseif msgcontains(msg, "minotaur leather") then
 		if npcHandler.topic[cid] == 1 then
@@ -33,13 +45,11 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.CitizenBackpackAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount( 5878) >= 100 then
-				npcHandler:say("Your backpack is finished. Here you go, I hope you like it.", cid)
+			if player:getItemCount(5878) >= 100 then
+				npcHandler:say("Great! Alright, I need a while to finish this backpack for you. Come ask me later, okay?", cid)
 				player:removeItem(5878, 100)
 				player:setStorageValue(Storage.OutfitQuest.CitizenBackpackAddon, 2)
-				player:addOutfitAddon(136, 1)
-				player:addOutfitAddon(128, 1)
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:setStorageValue(Storage.OutfitQuest.CitizenBackpackAddonWaitTimer, os.time() + 2 * 60 * 60) -- 2 hour
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You don't have it...", cid)

@@ -348,9 +348,10 @@
 			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
 			<missionstate id="2" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Citizen Outfit Quest (Backpack)" storageid="12012" startvalue="1" endvalue="2">
+		<mission name="Citizen Outfit Quest (Backpack)" storageid="12012" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Bring Lubo in northeast of Thais 100 minotaur leather to get the Backpack"/>
-			<missionstate id="2" description="You got the Outfit!"/>
+			<missionstate id="2" description="Lubo need a while to finish this backpack for you. Ask him later for the backpack."/>
+			<missionstate id="3" description="You got the Outfit!"/>
 		</mission>
 		<mission name="Barbarian Outfit Quest" storageid="12015" startvalue="1" endvalue="17">
 			<missionstate id="1" description="Bron told you that his brother Ajax in Northport needs to learn that violence is not always the answer. He told you to make his brother angry, then show him that all he needed to do was say 'please' to fix the situation."/>
@@ -469,6 +470,95 @@
 			<missionstate id="1" description="Sam sends you to see Kroox in Kazordoon to get a special dwarven armor. Just tell him, his old buddy Sam is sending you."/>
 			<missionstate id="2" description="You have the permission to retrive a dwarven armor from the mines. The problem is, some giant spiders made the tunnels where the storage is their new home."/>
 			<missionstate id="3" description="You have completed Dwarven Armor Quest!"/>
+		</mission>
+	</quest>
+	<quest name="Secret Service" startstorageid="12550" startstoragevalue="1">
+		<mission name="Mission 1: From Thais with Love" storageid="12551" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your first mission is to deliver a warning to the Venoreans. Get a fire bug from Liberty Bay and set their shipyard on fire."/>
+			<missionstate id="2" description="You have set the Venoreans shipyard on fire, report back to Chester!"/>
+			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
+		</mission>
+		<mission name="Mission 1: For Your Eyes Only" storageid="12552" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Your first task is to deliver a letter to Gamel in thais, If he is a bit reluctant, be persuasive."/>
+			<missionstate id="2" description="Gamel sent his thugs on you, defeat them and deliver the letter to Gamel!"/>
+			<missionstate id="3" description="After defeating Gamel's thugs, he found you to be persuasive enough to accept the letter. Report back to Uncle!"/>
+			<missionstate id="4" description="You have reported back that you have completed your task. Ask Uncle for a new mission!"/>
+		</mission>
+		<mission name="Mission 1: Borrowed Knowledge" storageid="12553" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Emma has requested that you steal a Nature Magic Spellbook in the Edron academy."/>
+			<missionstate id="2" description="You have delivered the Nature Magic Spellbook to Emma, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 2: Operation Green Claw" storageid="12554" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your next mission is to find some information about one of their missing agents in The Green Claw Swamp."/>
+			<missionstate id="2" description="You have delivered the Black Knight's notes to Chester, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 2: A File Between Friends" storageid="12555" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your next task is to retrieve a file named AH-X17L89."/>
+			<missionstate id="2" description="You have delivered the file named AH-X17L89 to Uncle, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 2: Codename:Lumberjack" storageid="12556" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Emma has requested that you retrieve a Rotten Heart of a Tree from the Black Knight Villa in Greenclaw swamp north-west of Venore."/>
+			<missionstate id="2" description="You have delivered the Rotten Heart of a Tree to Emma, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 3: Treachery in Port Hope" storageid="12557" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your next mission is to retrieve some evidence that the traders in Port Hope are up to no good!"/>
+			<missionstate id="2" description="You have found the evidence, report back to Chester!"/>
+			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
+		</mission>
+		<mission name="Mission 3: What Men are Made of" storageid="12558" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Your next task is to bring a barrel of beer to the Secret Tavern in the sewers of Carlin."/>
+			<missionstate id="2" description="On your way to the Secret Tavern in the sewers you were attacked by amazons trying to stop you! Deliver the barrel of beer to Karl."/>
+			<missionstate id="3" description="You have delivered the barrel of beer to Karl, report back to Uncle!"/>
+			<missionstate id="4" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
+		</mission>
+		<mission name="Mission 3: Rust in Peace" storageid="12559" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Emma has requested that you damage the Ironhouse of Venore, use the Case of Rust Bugs on the keyhole in the cellar of the ironhouse."/>
+			<missionstate id="2" description="The bugs are at work! Report back to Emma."/>
+			<missionstate id="3" description="You have reported back that you have completed your mission, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 4: Objective Hellgate" storageid="12560" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your next mission is to investigate for some documents in Hellgate."/>
+			<missionstate id="2" description="You have delivered the documents to Chester, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 4: Pawn Captures Knight" storageid="12561" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your next task is to travel to the Black Knight's Villa and kill the Black Knight!"/>
+			<missionstate id="2" description="You have killed the Black Knight, report back to Uncle!"/>
+			<missionstate id="3" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
+		</mission>
+		<mission name="Mission 4: Plot for A Plan" storageid="12562" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Emma has requested that you retrieve the Building Plans for a ship from the Venore shipyard."/>
+			<missionstate id="2" description="You have delivered the Building Plans to Emma, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 5: Coldfinger" storageid="12563" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your next mission is to travel to the southern barbarians camp and place false evidence!"/>
+			<missionstate id="2" description="You have placed the false evidence! Report back to Chester."/>
+			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
+		</mission>
+		<mission name="Mission 5: A Cryptic Mission" storageid="12564" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your next task is to travel to the Isle of the Kings and find a ring."/>
+			<missionstate id="2" description="You have delivered the ring to Uncle, ask him for a new mission!"/>
+		</mission>
+		<mission name="Mission 5: No Admittance" storageid="12565" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Emma has requested that you find some hints in the ruins of Dark Cathedral."/>
+			<missionstate id="2" description="You have delivered the Suspicious Documents to Emma, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 6: The Weakest Spot" storageid="12566" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your next mission is to disguise yourself as an amazon and destroy a beer casket in the north-east corner in the cellar of Svargrond's Tavern."/>
+			<missionstate id="2" description="You have succesfully destroyed the beer casket disguised as an amazon, report back to Chester!"/>
+			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
+		</mission>
+		<mission name="Mission 6: A Little Bribe Won't Hurt" storageid="12567" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Your next task is to bribe a barbarian in the large barbarian camp with a weapons crate."/>
+			<missionstate id="2" description="You have bribed Freezhild with the weapons create! Report back to Uncle."/>
+			<missionstate id="3" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
+		</mission>
+		<mission name="Mission 6: News From the Past" storageid="12568" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Emma has requested that you go to the Isle of the Kings and retrieve a book."/>
+			<missionstate id="2" description="You have delivered the book to Emma, ask her for a new mission!"/>
+		</mission>
+		<mission name="Mission 7: Licence to Kill" storageid="12569" startvalue="1" endvalue="2">
+			<missionstate id="1" description="A Mad Technomancer in Kazordoon is trying to blackmail the city! Kill him and bring back his beard as proof."/>
+			<missionstate id="2" description="You have reported back that you have completed your mission, you are now a Special Agent!"/>
 		</mission>
 	</quest>
 	<quest name="The Ancient Tombs" startstorageid="12100" startstoragevalue="1">
@@ -869,95 +959,6 @@
 			<missionstate id="1" description="Dorian wants you to deliver a message to his competitors in the dark cathedral."/>
 			<missionstate id="2" description="You have put up the message, report back to Dorian."/>
 			<missionstate id="3" description="You have reported back that you have completed the mission, Dorian now allows you to trade with Black Bert."/>
-		</mission>
-	</quest>
-	<quest name="Secret Service" startstorageid="12550" startstoragevalue="1">
-		<mission name="Mission 1: From Thais with Love" storageid="12551" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your first mission is to deliver a warning to the Venoreans. Get a fire bug from Liberty Bay and set their shipyard on fire."/>
-			<missionstate id="2" description="You have set the Venoreans shipyard on fire, report back to Chester!"/>
-			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
-		</mission>
-		<mission name="Mission 1: For Your Eyes Only" storageid="12552" startvalue="1" endvalue="4">
-			<missionstate id="1" description="Your first task is to deliver a letter to Gamel in thais, If he is a bit reluctant, be persuasive."/>
-			<missionstate id="2" description="Gamel sent his thugs on you, defeat them and deliver the letter to Gamel!"/>
-			<missionstate id="3" description="After defeating Gamel's thugs, he found you to be persuasive enough to accept the letter. Report back to Uncle!"/>
-			<missionstate id="4" description="You have reported back that you have completed your task. Ask Uncle for a new mission!"/>
-		</mission>
-		<mission name="Mission 1: Borrowed Knowledge" storageid="12553" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Emma has requested that you steal a Nature Magic Spellbook in the Edron academy."/>
-			<missionstate id="2" description="You have delivered the Nature Magic Spellbook to Emma, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 2: Operation Green Claw" storageid="12554" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Your next mission is to find some information about one of their missing agents in The Green Claw Swamp."/>
-			<missionstate id="2" description="You have delivered the Black Knight's notes to Chester, ask him for a new mission!"/>
-		</mission>
-		<mission name="Mission 2: A File Between Friends" storageid="12555" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Your next task is to retrieve a file named AH-X17L89."/>
-			<missionstate id="2" description="You have delivered the file named AH-X17L89 to Uncle, ask him for a new mission!"/>
-		</mission>
-		<mission name="Mission 2: Codename:Lumberjack" storageid="12556" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Emma has requested that you retrieve a Rotten Heart of a Tree from the Black Knight Villa in Greenclaw swamp north-west of Venore."/>
-			<missionstate id="2" description="You have delivered the Rotten Heart of a Tree to Emma, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 3: Treachery in Port Hope" storageid="12557" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your next mission is to retrieve some evidence that the traders in Port Hope are up to no good!"/>
-			<missionstate id="2" description="You have found the evidence, report back to Chester!"/>
-			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
-		</mission>
-		<mission name="Mission 3: What Men are Made of" storageid="12558" startvalue="1" endvalue="4">
-			<missionstate id="1" description="Your next task is to bring a barrel of beer to the Secret Tavern in the sewers of Carlin."/>
-			<missionstate id="2" description="On your way to the Secret Tavern in the sewers you were attacked by amazons trying to stop you! Deliver the barrel of beer to Karl."/>
-			<missionstate id="3" description="You have delivered the barrel of beer to Karl, report back to Uncle!"/>
-			<missionstate id="4" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
-		</mission>
-		<mission name="Mission 3: Rust in Peace" storageid="12559" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Emma has requested that you damage the Ironhouse of Venore, use the Case of Rust Bugs on the keyhole in the cellar of the ironhouse."/>
-			<missionstate id="2" description="The bugs are at work! Report back to Emma."/>
-			<missionstate id="3" description="You have reported back that you have completed your mission, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 4: Objective Hellgate" storageid="12560" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Your next mission is to investigate for some documents in Hellgate."/>
-			<missionstate id="2" description="You have delivered the documents to Chester, ask him for a new mission!"/>
-		</mission>
-		<mission name="Mission 4: Pawn Captures Knight" storageid="12561" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your next task is to travel to the Black Knight's Villa and kill the Black Knight!"/>
-			<missionstate id="2" description="You have killed the Black Knight, report back to Uncle!"/>
-			<missionstate id="3" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
-		</mission>
-		<mission name="Mission 4: Plot for A Plan" storageid="12562" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Emma has requested that you retrieve the Building Plans for a ship from the Venore shipyard."/>
-			<missionstate id="2" description="You have delivered the Building Plans to Emma, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 5: Coldfinger" storageid="12563" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your next mission is to travel to the southern barbarians camp and place false evidence!"/>
-			<missionstate id="2" description="You have placed the false evidence! Report back to Chester."/>
-			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
-		</mission>
-		<mission name="Mission 5: A Cryptic Mission" storageid="12564" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Your next task is to travel to the Isle of the Kings and find a ring."/>
-			<missionstate id="2" description="You have delivered the ring to Uncle, ask him for a new mission!"/>
-		</mission>
-		<mission name="Mission 5: No Admittance" storageid="12565" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Emma has requested that you find some hints in the ruins of Dark Cathedral."/>
-			<missionstate id="2" description="You have delivered the Suspicious Documents to Emma, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 6: The Weakest Spot" storageid="12566" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your next mission is to disguise yourself as an amazon and destroy a beer casket in the north-east corner in the cellar of Svargrond's Tavern."/>
-			<missionstate id="2" description="You have succesfully destroyed the beer casket disguised as an amazon, report back to Chester!"/>
-			<missionstate id="3" description="You have reported back that you have completed your mission, ask Chester for a new mission!"/>
-		</mission>
-		<mission name="Mission 6: A Little Bribe Won't Hurt" storageid="12567" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Your next task is to bribe a barbarian in the large barbarian camp with a weapons crate."/>
-			<missionstate id="2" description="You have bribed Freezhild with the weapons create! Report back to Uncle."/>
-			<missionstate id="3" description="You have reported back that you have completed your task, ask Uncle for a new mission!"/>
-		</mission>
-		<mission name="Mission 6: News From the Past" storageid="12568" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Emma has requested that you go to the Isle of the Kings and retrieve a book."/>
-			<missionstate id="2" description="You have delivered the book to Emma, ask her for a new mission!"/>
-		</mission>
-		<mission name="Mission 7: Licence to Kill" storageid="12569" startvalue="1" endvalue="2">
-			<missionstate id="1" description="A Mad Technomancer in Kazordoon is trying to blackmail the city! Kill him and bring back his beard as proof."/>
-			<missionstate id="2" description="You have reported back that you have completed your mission, you are now a Special Agent!"/>
 		</mission>
 	</quest>
 	<quest name="The Travelling Trader Quest" startstorageid="101" startstoragevalue="1">
