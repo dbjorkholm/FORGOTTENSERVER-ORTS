@@ -12,19 +12,14 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	local blessings = 0
-	for i = 1, 5 do
-		if player:hasBlessing(i) then
-			blessings = blessings + 1
-		end
-	end
+
 	if msgcontains(msg, "heal") then
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
 			local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 			for i = 1, #conditions do
-				if player:getCondition(conditions[i], CONDITIONID_COMBAT) then
-					player:removeCondition(conditions[i], CONDITIONID_COMBAT)
+				if player:getCondition(conditions[i]) then
+					player:removeCondition(conditions[i])
 				end
 			end
 			npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
@@ -48,7 +43,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if blessings >= 1 or player:getItemCount(2173) > 0 then
+			if player:getBlessings() > 0 or player:getItemCount(2173) > 0 then
 				if not player:hasBlessing(6) then
 					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
 						player:addBlessing(6)

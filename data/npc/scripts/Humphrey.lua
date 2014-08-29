@@ -19,8 +19,8 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getHealth() < 50 then
 			player:addHealth(50 - player:getHealth())
 			for i = 1, #conditions do
-				if player:getCondition(conditions[i], CONDITIONID_COMBAT) then
-					player:removeCondition(conditions[i], CONDITIONID_COMBAT)
+				if player:getCondition(conditions[i]) then
+					player:removeCondition(conditions[i])
 				end
 			end
 			npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
