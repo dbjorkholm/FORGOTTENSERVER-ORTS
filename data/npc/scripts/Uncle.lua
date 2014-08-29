@@ -121,7 +121,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 3 then
 			npcHandler:say('Do you have news to make old Uncle happy?', cid)
 			npcHandler.topic[cid] = 4
-		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 3 and player:getStorageValue(Storage.secretService.Quest) == 7 then
+		elseif player:getStorageValue(Storage.secretService.AVINMission03) == 4 and player:getStorageValue(Storage.secretService.Quest) == 7 then
 			player:setStorageValue(Storage.secretService.Quest, 8)
 			player:setStorageValue(Storage.secretService.AVINMission04, 1)
 			npcHandler:say({
