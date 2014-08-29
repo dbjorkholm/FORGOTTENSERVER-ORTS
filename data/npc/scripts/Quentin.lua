@@ -2,10 +2,10 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid)	end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -51,14 +51,14 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 2 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				npcHandler:say("Ah, I see you brought a stake with you. Are you ready to receive my line of the prayer then?", cid)
 				npcHandler.topic[cid] = 3
 			end
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if blessings >= 1 or player:getItemCount(2173) >= 1 then
+			if blessings >= 1 or player:getItemCount(2173) > 0 then
 				if not player:hasBlessing(6) then
 					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
 						player:addBlessing(6)
@@ -77,13 +77,13 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 			npcHandler:say("Alright, I guess you need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to me.", cid)
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 3)
 				npcHandler:say("So receive my prayer: 'Light shall be near - and darkness afar'. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer. I will inform her what to do. ", cid)
 			end
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then
+	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 0 then
 		npcHandler:say("Fine. You are free to decline my offer.", cid)
 		npcHandler.topic[cid] = 0
 	end

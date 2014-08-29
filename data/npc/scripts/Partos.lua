@@ -8,37 +8,42 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 	local player = Player(cid)
 	-- Mission 1 - The Supply Thief
-	if(msgcontains(msg, "prison")) then
-		if player:getStorageValue(GreenDjinn.MissionStart+1) == 2 then
+	if msgcontains(msg, "prison") then
+		if player:getStorageValue(GreenDjinn.MissionStart + 1) == 2 then
 			npcHandler:say("You mean that's a JAIL? They told me it's the finest hotel in town! THAT explains the lousy roomservice!", cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif(msgcontains(msg, "ankrahmun")) then
-		if(npcHandler.topic[cid] == 1) then
+	elseif msgcontains(msg, "ankrahmun") then
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
 				"Yes, I've lived in Ankrahmun for quite some time. Ahh, good old times! ...", 
-				"Unfortunately I had to relocate. <sigh> ...", "Business reasons - you know."
+				"Unfortunately I had to relocate. <sigh> ...",
+				"Business reasons - you know."
 			}, cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif(msgcontains(msg, "supplies")) then
-		if(npcHandler.topic[cid] == 2) then
+	elseif msgcontains(msg, "supplies") then
+		if npcHandler.topic[cid] == 2 then
 			npcHandler:say({
 				"What!? I bet, Baa'leal sent you! ...", 
 				"I won't tell you anything! Shove off!"
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart+1, 3)
+			player:setStorageValue(GreenDjinn.MissionStart + 1, 3)
 			npcHandler.topic[cid] = 0
 		end
 	end
 	-- Mission 1 - The Supply Thief
 	return true
 end
+
+npcHandler:setMessage(MESSAGE_GREET, "Welcome to my little kingdom, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, visit me again. I will be here, promised.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, visit me again. I will be here, promised.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
