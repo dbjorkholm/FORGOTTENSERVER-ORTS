@@ -194,14 +194,14 @@
 	<movevent event="StepIn" fromaid="50082" toaid="50083" script="pits of inferno quest/bazirTiles.lua"/>
 	<movevent event="StepIn" actionid="50087" script="pits of inferno quest/puminTeleport.lua"/>
 
-	<!-- Hidden City of Beregar Quest -->
-	<movevent event="StepIn" actionid="50091" script="hidden city of beregar/oreWagon.lua"/>
-	<movevent event="StepIn" fromaid="50092" toaid="50093" script="hidden city of beregar/elevator.lua"/>
-	<movevent event="StepIn" actionid="50111" script="hidden city of beregar/gap.lua"/>
-	<movevent event="StepIn" actionid="50116" script="hidden city of beregar/tunnel.lua"/>
-	<movevent event="StepIn" uniqueid="50107" script="hidden city of beregar/bellow.lua"/>
-	<movevent event="StepIn" uniqueid="50127" script="hidden city of beregar/pythiusTeleport.lua"/>
-	<movevent event="StepIn" actionid="50126" script="hidden city of beregar/pythiusBossTeleport.lua"/>
+	<!-- the hidden city of beregar Quest -->
+	<movevent event="StepIn" actionid="50091" script="the hidden city of beregar/oreWagon.lua"/>
+	<movevent event="StepIn" fromaid="50092" toaid="50093" script="the hidden city of beregar/elevator.lua"/>
+	<movevent event="StepIn" actionid="50111" script="the hidden city of beregar/gap.lua"/>
+	<movevent event="StepIn" actionid="50116" script="the hidden city of beregar/tunnel.lua"/>
+	<movevent event="StepIn" uniqueid="50107" script="the hidden city of beregar/bellow.lua"/>
+	<movevent event="StepIn" uniqueid="50127" script="the hidden city of beregar/pythiusTeleport.lua"/>
+	<movevent event="StepIn" actionid="50126" script="the hidden city of beregar/pythiusBossTeleport.lua"/>
 	
 	<!-- Secret Service Quest -->
 	<movevent event="StepIn" actionid="12571" script="secret service/pirates.lua"/>

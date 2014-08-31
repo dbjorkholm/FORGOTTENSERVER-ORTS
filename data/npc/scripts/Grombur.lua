@@ -16,12 +16,12 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "nokmir") then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 2 then
-			npcHandler:say("Oh well, I liked Nokmir. He used to be a good dwarf until that day on which he stole the ring from Rerun.", cid)
+			npcHandler:say("Oh well, I liked Nokmir. He used to be a good dwarf until that day on which he stole the ring from {Rerun}.", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "rerun") then
 		if npcHandler.topic[cid] == 1 then
-			player:setStorageValue(Storage.hiddenCityOfBeregar.GoingDown, 3)
+			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 3)
 			npcHandler:say("Yeah, he's the lucky guy in this whole story. I heard rumours that emperor Rehal had plans to promote Nokmir, but after this whole thievery story, he might pick Rerun instead.", cid)
 			npcHandler.topic[cid] = 0
 		end

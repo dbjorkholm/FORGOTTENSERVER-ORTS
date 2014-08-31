@@ -347,19 +347,19 @@
 	<action itemid="2331" script="postman quest/present.lua"/>
 	<action uniqueid="3118" script="postman quest/waldo.lua"/>
 
-	<!-- Hidden City of Beregar Quest -->
-	<action uniqueid="50125" script="beregar quest/ring.lua"/>
-	<action fromaid="50095" toaid="50097" script="beregar quest/doors.lua"/>
-	<action actionid="50128" script="beregar quest/deeperMineWagon.lua"/>
-	<action fromaid="50098" toaid="50108" script="beregar quest/oreWagon.lua"/>
-	<action actionid="50112" script="beregar quest/gapWagon.lua"/>
-	<action actionid="50115" script="beregar quest/tunnelWagon.lua"/>
-	<action actionid="50117" script="beregar quest/coalWagon.lua"/>
-	<action fromuid="50108" touid="50111" script="beregar quest/coalLevers.lua"/>
-	<action fromaid="50122" toaid="50125" script="beregar quest/coalExitWagons.lua"/>
-	<action uniqueid="50112" script="beregar quest/mushroom.lua"/>
-	<action fromuid="50113" touid="50123" script="beregar quest/wagonMazeLevers.lua"/>
-	<action uniqueid="50124" script="beregar quest/wagonMazeExit.lua"/>
+	<!-- Hidden City of the hidden city of beregar -->
+	<action uniqueid="50125" script="the hidden city of beregar/ring.lua"/>
+	<action fromaid="50095" toaid="50097" script="the hidden city of beregar/doors.lua"/>
+	<action actionid="50128" script="the hidden city of beregar/deeperMineWagon.lua"/>
+	<action fromaid="50098" toaid="50108" script="the hidden city of beregar/oreWagon.lua"/>
+	<action actionid="50112" script="the hidden city of beregar/gapWagon.lua"/>
+	<action actionid="50115" script="the hidden city of beregar/tunnelWagon.lua"/>
+	<action actionid="50117" script="the hidden city of beregar/coalWagon.lua"/>
+	<action fromuid="50108" touid="50111" script="the hidden city of beregar/coalLevers.lua"/>
+	<action fromaid="50122" toaid="50125" script="the hidden city of beregar/coalExitWagons.lua"/>
+	<action uniqueid="50112" script="the hidden city of beregar/mushroom.lua"/>
+	<action fromuid="50113" touid="50123" script="the hidden city of beregar/wagonMazeLevers.lua"/>
+	<action uniqueid="50124" script="the hidden city of beregar/wagonMazeExit.lua"/>
 
 	<!-- Thieves Guild Quest -->
 	<action itemid="8693" script="the thieves guild quest/dwarfDisguiseKit.lua"/>

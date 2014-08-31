@@ -16,7 +16,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) < 1 then
-			npcHandler:say("I don't see how you could help me. I'm in deep, deep trouble. I'm accused of having stolen a ring from Rerun, but I haven't.", cid)
+			npcHandler:say("I don't see how you could help me. I'm in deep, deep trouble. I'm accused of having stolen a {ring} from Rerun, but I haven't.", cid)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 5 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 6)
@@ -26,12 +26,12 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say(
 			{
-			"He said he still had it after work. On that evening, Grombur, Rerun and me opened a cask of beer in one of the mine tunnels. We had a fun evening there. ...",
+			"He said he still had it after work. On that evening, {Grombur}, Rerun and me opened a cask of beer in one of the mine tunnels. We had a fun evening there. ...",
 			"On the next day, the guards brought me to emperor Rehal, and Rerun was there, too. He said I had stolen his ring. I'd never steal, you have to believe me."
 			}, cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif msgcontains(msg, "Grombur") then
+	elseif msgcontains(msg, "grombur") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say("Maybe Grombur knows more than me. The thing is he won't talk to me, and he will surely not accuse his best friend as a liar. What a dilemma!", cid)
 			npcHandler.topic[cid] = 3

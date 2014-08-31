@@ -653,6 +653,20 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
+	<quest name="The Hidden City of Beregar" startstorageid="50101" startstoragevalue="1">
+		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Deliver 3 Gear Wheels to Xorlosh."/>
+			<missionstate id="2" description="You delivered the 3 Gear Wheels to Xorlosh. You are able to use the elevator to enter the eastern mine now."/>
+		</mission>
+		<mission name="Justice for All" storageid="50102" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Nokmir told you that he is falsely accused of being a thief. You could help him by talking to Grombur about the case. Furthermore you should try to find that ring which belongs to Rerun."/>
+			<missionstate id="2" description="You should talking to Grombur about Nokmir."/>
+			<missionstate id="3" description="You should try to find that ring which belongs to Rerun everywhere in the mine."/>
+			<missionstate id="4" description="You have found Rerun's ring. Bring the ring to the emperor Rehal and talk to him about Nokmir."/>
+			<missionstate id="5" description="You informed emperor Rehal about your recent discoveries and he acquitted Nokmir of being a thief."/>
+			<missionstate id="6" description="You told Nokmir about his acquittal and he granted you acces to the northern mine."/>
+		</mission>
+	</quest>
 	<quest name="The Ice Islands Quest" startstorageid="12200" startstoragevalue="1">
 		<mission name="Befriending the Musher" storageid="12201" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Find Sniffler the husky of Iskan. He should be somewhere north west of the town. He is probably marking his territory so you should be able to find his trace. Call him sniffler and feed him with meat."/>
