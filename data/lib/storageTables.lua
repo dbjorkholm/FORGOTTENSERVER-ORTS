@@ -311,6 +311,21 @@ Storage = {
 		CGBMission06 = 12568,
 		Mission07 = 12569
 	},
+	hiddenCityOfBeregar = {
+		DefaultStart = 12600,
+		WayToBeregar = 12601,
+		OreWagon = 12602,
+		GoingDown = 12603,
+		JusticeForAll = 12604,
+		GearWheel = 12605,
+		SweetAsChocolateCake = 12606,
+		RoyalRescue = 12607,
+		TheGoodGuard = 12608,
+		PythiusTheRotten = 12609,
+		DoorNorthMine = 12610,
+		DoorWestMine = 12611,
+		DoorSouthMine = 12612
+	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,
@@ -335,17 +350,6 @@ Storage = {
 		Pit = 1101
 	},
 	pitsOfInfernoPumin = 50096,
-	hiddenCityOfBeregar = {
-		WayToBeregar = 50099,
-		OreWagon = 50100,
-		GoingDown = 50101,
-		JusticeForAll = 50102,
-		GearWheel = 50103,
-		SweetAsChocolateCake = 50104,
-		RoyalRescue = 50105,
-		TheGoodGuard = 50106,
-		PythiusTheRotten = 50107
-	},
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
 	madMageQuest = 50136,

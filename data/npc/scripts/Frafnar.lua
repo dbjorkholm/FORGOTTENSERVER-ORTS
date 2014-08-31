@@ -23,11 +23,13 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 1)
+			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.DefaultStart, 1)
 			npcHandler:say("Great! She works in the tavern of Beregar. It's situated in the western part of the city. Bring her a chocolate cake and tell her that it was me who sent it.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 3)
-			npcHandler:say("Great! That's my breakthrough. Now she can't refuse to go out with me. I grant you access to the western part of the mine.", cid)
+			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.DoorWestMine, 1)
+		npcHandler:say("Great! That's my breakthrough. Now she can't refuse to go out with me. I grant you access to the western part of the mine.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	end

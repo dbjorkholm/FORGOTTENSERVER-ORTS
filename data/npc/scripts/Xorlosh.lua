@@ -26,6 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.GoingDown, 1)
+			player:setStorageValue(Storage.hiddenCityOfBeregar.DefaultStart, 1)
 			npcHandler:say("That would be great! Maybe a blacksmith can forge you some. Come back when you got them and ask me about your mission.", cid)
 			npcHandler.topic[cid] = 0
 		end

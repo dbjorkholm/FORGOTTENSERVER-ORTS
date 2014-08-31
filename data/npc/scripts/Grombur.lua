@@ -26,17 +26,19 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "mission") then
-		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) > 1 and player:getStorageValue(Storage.ultimateBoozeQuest) == 2 then
+		if player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) < 1 then
 			npcHandler:say("Got any dwarven brown ale?? I DON'T THINK SO....and Bolfana, the tavern keeper, won't sell you anything. I'm sure about that...she doesn't like humans... I tell you what, if you get me a cask of dwarven brown ale, I allow you to enter the mine. Alright?", cid)
 			npcHandler.topic[cid] = 2
-		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 2 and player:getItemCount(9689) == 1 then
-			player:setStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard, 3)
+		elseif player:getStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard) == 1 and player:getItemCount(9689) == 1 then
+			player:setStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard, 2)
+			player:setStorageValue(Storage.hiddenCityOfBeregar.DoorSouthMine, 1)
 			player:removeItem(9689, 1)
 			npcHandler:say("HOW?....WHERE?....AHHHH, I don't mind....SLUUUUUURP....tastes a little flat but I had worse. Thank you. Just don't tell anyone that I let you in.", cid)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.TheGoodGuard, 1)
+			player:setStorageValue(Storage.hiddenCityOfBeregar.DefaultStart, 1)
 			npcHandler:say("Haha, fine! Don't waste time and get me the ale. See you.", cid)
 			npcHandler.topic[cid] = 0
 		end

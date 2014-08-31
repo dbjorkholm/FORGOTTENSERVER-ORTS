@@ -653,18 +653,27 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
-	<quest name="The Hidden City of Beregar" startstorageid="50101" startstoragevalue="1">
-		<mission name="Going Down" storageid="50101" startvalue="1" endvalue="2">
+	<quest name="The Hidden City of Beregar" startstorageid="12600" startstoragevalue="1">
+		<mission name="Going Down" storageid="12603" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Deliver 3 Gear Wheels to Xorlosh."/>
-			<missionstate id="2" description="You delivered the 3 Gear Wheels to Xorlosh. You are able to use the elevator to enter the eastern mine now."/>
+			<missionstate id="2" description="You sucessfully helped Xorlosh in repairing the elevator. You can now enter the teleporter to the eastern part of the mine."/>
 		</mission>
-		<mission name="Justice for All" storageid="50102" startvalue="1" endvalue="6">
+		<mission name="Justice for All" storageid="12604" startvalue="1" endvalue="6">
 			<missionstate id="1" description="Nokmir told you that he is falsely accused of being a thief. You could help him by talking to Grombur about the case. Furthermore you should try to find that ring which belongs to Rerun."/>
 			<missionstate id="2" description="You should talking to Grombur about Nokmir."/>
 			<missionstate id="3" description="You should try to find that ring which belongs to Rerun everywhere in the mine."/>
 			<missionstate id="4" description="You have found Rerun's ring. Bring the ring to the emperor Rehal and talk to him about Nokmir."/>
 			<missionstate id="5" description="You informed emperor Rehal about your recent discoveries and he acquitted Nokmir of being a thief."/>
-			<missionstate id="6" description="You told Nokmir about his acquittal and he granted you acces to the northern mine."/>
+			<missionstate id="6" description="You told Nokmir about his acquittal and he granted you access to the northern mine."/>
+		</mission>
+		<mission name="Sweet as Chocolate Cake" storageid="12606" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Bake a Chocolate Cake and bring it to Bolfona at the bar."/>
+			<missionstate id="2" description="Report back to Frafnar by telling him about the mission."/>
+			<missionstate id="3" description="You told Frafnar that you did everything he asked you to do. You may now enter the western part of the mine."/>
+		</mission>
+		<mission name="The Good Guard" storageid="12608" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Grombur asked you to get him a cask of dwarven brown ale. You heard that Boozer in Venore tried to brew some. Maybe you should pay him a visit."/>
+			<missionstate id="2" description="Grombur liked the ale and you are now allowed to enter his part of the mine."/>
 		</mission>
 	</quest>
 	<quest name="The Ice Islands Quest" startstorageid="12200" startstoragevalue="1">

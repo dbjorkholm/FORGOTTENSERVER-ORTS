@@ -285,7 +285,6 @@
 	<!-- In Service Of Yalahar Quest -->
 	<action actionid="7801" script="in service of yalahar quest/bogDoor.lua"/>
 	<action uniqueid="3079" script="in service of yalahar quest/bogDoorReward.lua"/>
-	<action uniqueid="3080" script="in service of yalahar quest/bogReward.lua"/>
 	<action itemid="9737" script="in service of yalahar quest/charm.lua"/>
 	<action itemid="9733" script="in service of yalahar quest/formula.lua"/>
 	<action itemid="9741" script="in service of yalahar quest/ghost.lua"/>
@@ -347,9 +346,9 @@
 	<action itemid="2331" script="postman quest/present.lua"/>
 	<action uniqueid="3118" script="postman quest/waldo.lua"/>
 
-	<!-- Hidden City of the hidden city of beregar -->
+	<!-- The Hidden City of Beregar -->
+	<action actionid="12606" script="the hidden city of beregar/bargateLever.lua"/>
 	<action uniqueid="50125" script="the hidden city of beregar/ring.lua"/>
-	<action fromaid="50095" toaid="50097" script="the hidden city of beregar/doors.lua"/>
 	<action actionid="50128" script="the hidden city of beregar/deeperMineWagon.lua"/>
 	<action fromaid="50098" toaid="50108" script="the hidden city of beregar/oreWagon.lua"/>
 	<action actionid="50112" script="the hidden city of beregar/gapWagon.lua"/>
