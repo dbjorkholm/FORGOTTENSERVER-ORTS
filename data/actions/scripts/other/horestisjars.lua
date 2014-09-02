@@ -15,8 +15,9 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
+
 	if itemEx.itemid == 13500 then
-		local player = Player(cid)
 		if player:getStorageValue(item.actionid) > os.time() then
 			player:say('You are too afraid to destroy this object', TALKTYPE_MONSTER_SAY)
 			return true
@@ -50,7 +51,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Game.createMonster(config.bossName, config.bossPosition)
 		end
 	else
-		Player(cid):say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
+		player:say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end
