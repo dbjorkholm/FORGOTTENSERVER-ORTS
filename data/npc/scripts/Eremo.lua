@@ -12,32 +12,31 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if isInArray({"cormaya", "back", "pemaret", "passage"}, msg) then
-		npcHandler:say("Should I teleport you back to Pemaret?", cid)
+	if isInArray({'cormaya', 'back', 'pemaret', 'passage'}, msg) then
+		npcHandler:say('Should I teleport you back to Pemaret?', cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			player:teleportTo(Position(33288, 31956, 6))
-		end
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "solitude") then
-		npcHandler:say("Would you like to receive that protection for a sacrifice of " .. getBlessingsCost(player:getLevel()) .. " gold, child?", cid)
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if not player:hasBlessing(5) then
-			if player:removeMoney(getBlessingsCost(player:getLevel())) then
-				player:addBlessing(5)
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler:say("So receive the wisdom of solitude, pilgrim.", cid)
+		elseif npcHandler.topic[cid] == 2 then
+			if not player:hasBlessing(5) then
+				if player:removeMoney(getBlessingsCost(player:getLevel())) then
+					player:addBlessing(5)
+					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+					npcHandler:say('So receive the wisdom of solitude, pilgrim.', cid)
+				else
+					npcHandler:say('Oh, you do not have enough money.', cid)
+				end
 			else
-				npcHandler:say("Oh. You do not have enough money.", cid)
+				npcHandler:say('You already possess this blessing.', cid)
 			end
-		else
-			npcHandler:say("You already possess this blessing.", cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] == 1 then
-		npcHandler:say("Fine. You are free to decline my offer.", cid)
+	elseif msgcontains(msg, 'solitude') then
+		npcHandler:say('Would you like to receive that protection for a sacrifice of ' .. getBlessingsCost(player:getLevel()) .. ' gold, child?', cid)
+		npcHandler.topic[cid] = 2
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
+		npcHandler:say('Fine. You are free to decline my offer.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
@@ -51,7 +50,7 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am Eremo, an old man who has seen many things.'})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:setMessage(MESSAGE_GREET, "Welcome to my little garden, adventurer |PLAYERNAME|!")
-npcHandler:setMessage(MESSAGE_FAREWELL, "It was a pleasure to help you, |PLAYERNAME|.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "It was a pleasure to help you, |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome to my little garden, adventurer |PLAYERNAME|!')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'It was a pleasure to help you, |PLAYERNAME|.')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'It was a pleasure to help you, |PLAYERNAME|.')
 npcHandler:addModule(FocusModule:new())
