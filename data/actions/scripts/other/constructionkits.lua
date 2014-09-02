@@ -14,15 +14,16 @@ local constructionKits = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	local kit = constructionKits[item.itemid]
 	if not kit then
 		return false
 	end
 
 	if fromPosition.x == CONTAINER_POSITION then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "Put the construction kit on the floor first.")
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, "Put the construction kit on the floor first.")
 	elseif not fromPosition:getTile():getHouse() then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "You may construct this only inside a house.")
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, "You may construct this only inside a house.")
 	else
 		Item(item.uid):transform(kit)
 		fromPosition:sendMagicEffect(CONST_ME_POFF)

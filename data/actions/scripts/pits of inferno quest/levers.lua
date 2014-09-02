@@ -29,6 +29,7 @@ local function revertLever(position)
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	if item.itemid ~= 1945 then
 		return false
 	end
@@ -44,10 +45,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		Game.setStorageValue(1000, number)
-		Player(cid):say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
+		player:say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
 	elseif item.uid == 2065 then
 		if Game.getStorageValue(1000) ~= 15 then
-			Player(cid):say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
+			player:say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
 

@@ -1,6 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
+
 	if isInArray(questDoors, item.itemid) then
-		local player = Player(cid)
 		if player:getStorageValue(item.actionid) ~= -1 then
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
@@ -8,9 +9,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The door seems to be sealed against unwanted intruders.")
 		end
 		return true
-
 	elseif isInArray(levelDoors, item.itemid) then
-		local player = Player(cid)
 		if item.actionid > 0 and player:getLevel() >= item.actionid - 1000 then
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
@@ -18,7 +17,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Only the worthy may pass.")
 		end
 		return true
-
 	elseif isInArray(keys, item.itemid) then
 		if itemEx.actionid > 0 then
 			if item.actionid == itemEx.actionid then
@@ -27,7 +25,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					return true
 				end
 			end
-			Player(cid):sendCancelMessage("The key does not match.")
+			player:sendCancelMessage("The key does not match.")
 			return true
 		end
 		return false
@@ -51,7 +49,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 
 			if query ~= RETURNVALUE_NOERROR then
-				Player(cid):sendCancelMessage(query)
+				player:sendCancelMessage(query)
 				return true
 			end
 
@@ -67,10 +65,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if item.actionid == 0 then
 			Item(item.uid):transform(doors[item.itemid])
 		else
-			Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "It is locked.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "It is locked.")
 		end
 		return true
 	end
-
 	return false
 end

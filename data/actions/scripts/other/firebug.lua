@@ -1,4 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	local targetItem = Item(itemEx.uid)
 
 	--Dreamer Challenge Quest
@@ -27,7 +28,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_HITBYFIRE)
 			targetItem:transform(1484)
 		elseif itemEx.actionid == 12550 or itemEx.actionid == 12551 then -- Secret Service Quest
-			local player = Player(cid)
 			if player:getStorageValue(Storage.secretService.TBIMission01) == 1 then
 				Game.createItem(1487, 1, Position(32893, 32012, 6))
 				player:setStorageValue(Storage.secretService.TBIMission01, 2)
@@ -38,7 +38,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif random == 1 then --it explode on the user 1% chance
 		doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -5, -5, CONST_ME_HITBYFIRE)
-		Player(cid):say('OUCH!', TALKTYPE_MONSTER_SAY)
+		player:say('OUCH!', TALKTYPE_MONSTER_SAY)
 		Item(item.uid):remove(1)
 	else
 		toPosition:sendMagicEffect(CONST_ME_POFF) --it fails, but dont get removed 3% chance

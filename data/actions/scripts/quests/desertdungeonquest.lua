@@ -1,4 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local player = Player(cid)
 	local paladinbasin = Tile(Position({x = 32673, y = 32083, z = 8}))
 	local sorcererbasin = Tile(Position({x = 32679, y = 32089, z = 8}))
 	local knightbasin = Tile(Position({x = 32673, y = 32094, z = 8}))
@@ -25,10 +26,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				knight:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 				druid:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			else
-				Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have the required items.")
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have the required items.")
 			end
 		else
-			Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have the right Vocations.")
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You don't have the right Vocations.")
 		end
 	else
 		Item(item.uid):transform(1945)
