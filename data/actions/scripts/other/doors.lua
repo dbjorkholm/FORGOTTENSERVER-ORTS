@@ -1,3 +1,48 @@
+unlockedDoors = { }
+
+local function isDoorLocked(keyId, position)
+	if keyId == 0 then
+		return false
+	end
+
+	if unlockedDoors[keyId] then
+		for i = 1, #unlockedDoors[keyId] do
+			print(unlockedDoors[keyId][i].x)
+			if position == unlockedDoors[keyId][i] then
+				return false
+			end
+		end
+	end
+
+	return true
+end
+
+local function toggleDoorLock(doorItem, locked)
+	local doorId = doorItem:getId()
+	local keyId = doorItem:getActionId()
+	local doorPosition = doorItem:getPosition()
+
+	if locked then
+		for i = #unlockedDoors[keyId], 1, -1 do
+			if unlockedDoors[keyId][i] == doorPosition then
+				table.remove(unlockedDoors[keyId], i)
+			end
+		end
+
+		if not doors[doorId] then
+			doorItem:transform(doorId - 1)
+		end
+		return
+	end
+
+	if not unlockedDoors[keyId] then
+		unlockedDoors[keyId] = {}
+	end
+
+	doorItem:transform(doors[doorId])
+	table.insert(unlockedDoors[keyId], doorPosition)
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if isInArray(questDoors, item.itemid) then
 		local player = Player(cid)
@@ -20,17 +65,22 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 
 	elseif isInArray(keys, item.itemid) then
-		if itemEx.actionid > 0 then
-			if item.actionid == itemEx.actionid then
-				if doors[itemEx.itemid] then
-					Item(itemEx.uid):transform(doors[itemEx.itemid])
-					return true
-				end
-			end
-			Player(cid):sendCancelMessage("The key does not match.")
-			return true
+		if not ItemType(itemEx.itemid):isDoor() or isInArray(openSpecialDoors, itemEx.itemid)
+				or isInArray(questDoors, itemEx.itemid) or isInArray(levelDoors, itemEx.itemid)
+				or Tile(toPosition):getHouse() then
+			return false
 		end
-		return false
+
+		if itemEx.actionid > 0 and item.actionid == itemEx.actionid then
+			if not isDoorLocked(itemEx.actionid, toPosition) then
+				toggleDoorLock(Item(itemEx.uid), true)
+			elseif doors[itemEx.itemid] then
+				toggleDoorLock(Item(itemEx.uid), false)
+			end
+		else
+			Player(cid):sendCancelMessage("The key does not match.")
+		end
+		return true
 	end
 
 	local tileToPos = toPosition:getTile()
@@ -64,10 +114,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if doors[item.itemid] then
-		if item.actionid == 0 then
+		if not isDoorLocked(item.actionid, toPosition) then
 			Item(item.uid):transform(doors[item.itemid])
 		else
-			Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, "It is locked.")
+			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")
 		end
 		return true
 	end
