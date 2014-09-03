@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 				return true
 			end
 
-			if not playerRemoveMoney(125) then
+			if not player:removeMoney(125) then
 				npcHandler:say('You don\'t have enough money.', cid)
 				return true
 			end
@@ -42,7 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 				return true
 			end
 
-			if not playerRemoveMoney(500) then
+			if not player:removeMoney(500) then
 				npcHandler:say('You do not have enough money to rent a horse!', cid)
 				return true
 			end
