@@ -22,14 +22,14 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	local items = {[1] = 2190, [2] = 2182, [5] = 2190, [6] = 2182}
+	local items = {[1] = 2190, [2] = 2182}
 	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
-		if player:isSorcerer() or player:isDruid() then
+		if player:isMage() then
 			if player:getStorageValue(50079) == -1 then
-				npcHandler:say('So you ask me for a {' .. ItemType(items[player:getVocation():getId()]):getName() .. '} to begin your adventure?', cid)
+				npcHandler:say('So you ask me for a {' .. ItemType(items[getBaseVocation(player:getVocation():getId())]):getName() .. '} to begin your adventure?', cid)
 				npcHandler.topic[cid] = 1
 			else
-				npcHandler:say('What? I have already gave you one {' .. ItemType(items[player:getVocation():getId()]):getName() .. '}!', cid)
+				npcHandler:say('What? I have already gave you one {' .. ItemType(items[getBaseVocation(player:getVocation():getId())]):getName() .. '}!', cid)
 			end
 		else
 			npcHandler:say('Sorry, you aren\'t a druid either a sorcerer.', cid)

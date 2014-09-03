@@ -239,3 +239,7 @@ function Player.getBlessings(self)
 	end
 	return blessings
 end
+
+function Player.isMage(self)
+	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
+end

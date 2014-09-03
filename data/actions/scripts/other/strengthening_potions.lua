@@ -27,7 +27,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local player = Player(cid)
 	if item.itemid == 7440 then
-		if not player:isSorcerer() or player:isDruid() then
+		if not player:isMage() then
 			player:say('Only sorcerers and druids may drink this fluid.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
