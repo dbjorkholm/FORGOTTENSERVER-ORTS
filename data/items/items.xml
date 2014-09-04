@@ -8023,7 +8023,7 @@
 	<item id="4861" article="a" name="cobra statue"/>
 	<item id="4862" name="destroyed cobra statue" >
 		<attribute key="decayTo" value="4861" />
-		<attribute key="duration" value="30" />
+		<attribute key="duration" value="60" />
 	</item>
 	<item id="4863" article="an" name="ectoplasm container">
 		<attribute key="description" value="It is empty." />
