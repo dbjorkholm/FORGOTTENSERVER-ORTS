@@ -24,15 +24,21 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			player:setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 1)
-			player:removeItem(8847, 1)
-			npcHandler:say("Err, thanks. I doubt it's from you. Who sent it?", cid)
-			npcHandler.topic[cid] = 2
+			if player:removeItem(8847, 1) then
+				npcHandler:say("Err, thanks. I doubt it's from you. Who sent it?", cid)
+				npcHandler.topic[cid] = 2
+				player:setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 2)
+			else
+				npcHandler:say("Oh, I thought you have one.", cid)
+				npcHandler.topic[cid] = 0
+			end
 		end
-	elseif msgcontains(msg, "Frafnar") then
-		if npcHandler.topic[cid] == 2 then
+	elseif npcHandler.topic[cid] == 2 then
+		if msgcontains(msg, "Frafnar") then
 			npcHandler:say("Oh, Frafnar. That's so nice of him. I gotta invite him for a beer.", cid)
-			player:setStorageValue(Storage.hiddenCityOfBeregar.SweetAsChocolateCake, 2)
+			npcHandler.topic[cid] = 0
+		else
+			npcHandler:say("Never heard that name. Well, I don't mind, thanks for the cake.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	end
