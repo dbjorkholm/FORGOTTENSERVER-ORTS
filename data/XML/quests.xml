@@ -344,6 +344,10 @@
 		<mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
 	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
+		<mission name="Assassin Addon: The Red Death" storageid="50082" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Atrad wants only two items from you for his old katana: a behemoth claw and a nose ring, both at the same time. He also told you about a &quot;horned fox&quot; who wears such as nose ring"/>
+			<missionstate id="2" description="You have received the second assassin addon."/>
+		</mission>
 		<mission name="Citizen Outfit Quest (Feather Hat)" storageid="12011" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
 			<missionstate id="2" description="You got the Outfit!"/>
