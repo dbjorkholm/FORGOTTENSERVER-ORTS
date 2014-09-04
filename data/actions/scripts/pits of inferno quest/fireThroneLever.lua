@@ -6,16 +6,15 @@ local lava = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local lavaTile
 	for i = 1, #lava do
-		local lavaTile = Tile(lava[i])
-		if lavaTile:getItemById(598) then
-			lavaTile:getItemById(598):transform(407)
-			lava[i]:sendMagicEffect(CONST_ME_SMOKE)
-		elseif lavaTile:getItemById(407) then
-			lavaTile:getItemById(407):transform(598)
+		lavaTile = Tile(lava[i]):getGround()
+		if lavaTile and isInArray({407, 598}, lavaTile:getId()) then
+			lavaTile:transform(lavaTile:getId() == 598 and 407 or 598)
 			lava[i]:sendMagicEffect(CONST_ME_SMOKE)
 		end
 	end
+
 	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

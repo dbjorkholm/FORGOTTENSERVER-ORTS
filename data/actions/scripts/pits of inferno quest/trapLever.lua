@@ -1,11 +1,14 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
-		if(getTileItemById({x = 32826, y = 32274, z = 11}, 1285).uid > 0) then
-			doRemoveItem(getTileItemById({x = 32826, y = 32274, z = 11}, 1285).uid, 1)
-		end
-		doTransformItem(item.uid, 1946)
-	else
-		doTransformItem(item.uid, 1945)
+
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	local stoneItem = Tile(Position(32826, 32274, 11)):getItemById(1285)
+	if stoneItem then
+		stoneItem:remove()
 	end
 	return true
 end

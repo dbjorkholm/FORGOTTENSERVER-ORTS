@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	if(item.itemid == 8266 and itemEx.itemid == 8272) then
-		if(player:getStorageValue(49) == 2 and player:getStorageValue(3066) < 1) then
+	if itemEx.itemid == 8272 then
+		local player = Player(cid)
+		if player:getStorageValue(49) == 2 and player:getStorageValue(3066) ~= 1 then
 			player:removeItem(8266, 1)
 			player:setStorageValue(3066, 1)
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
