@@ -213,6 +213,7 @@
 	<monster name="Inky" file="bosses/inky.xml"/>
 	<monster name="Jaul" file="bosses/jaul.xml"/>
 	<monster name="Jesse The Wicked" file="bosses/jesse the wicked.xml"/>
+	<monster name="Kerberos" file="bosses/kerberos.xml"/>
 	<monster name="Koshei The Deathless" file="bosses/koshei the deathless.xml"/>
 	<monster name="Kraknaknork'S Demon" file="bosses/kraknaknork's demon.xml"/>
 	<monster name="Kraknaknork" file="bosses/kraknaknork.xml"/>
