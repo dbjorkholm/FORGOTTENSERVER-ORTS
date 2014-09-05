@@ -14,7 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	local player = Player(cid)
 
-	if player:getPremiumDays() == 0 then
+	if not player:isPremium() then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUNEEDPREMIUMACCOUNT))
 		return true
 	end
