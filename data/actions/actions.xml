@@ -283,27 +283,17 @@
 	<action actionid="7814" script="ice islands quest/yakchalDoor.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
-	<action actionid="7801" script="in service of yalahar quest/bogDoor.lua"/>
-	<action uniqueid="3079" script="in service of yalahar quest/bogDoorReward.lua"/>
 	<action itemid="9737" script="in service of yalahar quest/charm.lua"/>
 	<action itemid="9733" script="in service of yalahar quest/formula.lua"/>
 	<action itemid="9741" script="in service of yalahar quest/ghost.lua"/>
-	<action uniqueid="7807" script="in service of yalahar quest/lastDoor.lua"/>
 	<action uniqueid="3086" script="in service of yalahar quest/lastFight.lua"/>
-	<action actionid="7806" script="in service of yalahar quest/machineDoor.lua"/>
 	<action fromid="9743" toid="9744" script="in service of yalahar quest/matrix.lua"/>
-	<action actionid="7805" script="in service of yalahar quest/matrixDoor.lua"/>
 	<action fromuid="3084" touid="3085" script="in service of yalahar quest/matrixReward.lua"/>
 	<action fromuid="3091" touid="3102" script="in service of yalahar quest/mechanism.lua"/>
 	<action fromuid="9235" touid="9236" script="in service of yalahar quest/mechanism.lua"/>
-	<action uniqueid="7801" script="in service of yalahar quest/morikDoor.lua"/>
 	<action fromuid="3081" touid="3082" script="in service of yalahar quest/mrWestDoor.lua"/>
-	<action actionid="7804" script="in service of yalahar quest/quaraDoor.lua"/>
 	<action fromuid="3088" touid="3090" script="in service of yalahar quest/reward.lua"/>
-	<action actionid="7811" script="in service of yalahar quest/rewardDoor.lua"/>
-	<action uniqueid="9012" script="in service of yalahar quest/tamerinDoor.lua"/>
 	<action uniqueid="9031" script="in service of yalahar quest/morikSummon.lua"/>
-	<action uniqueid="3083" script="in service of yalahar quest/morikDoor.lua"/>
 	<action fromaid="23700" toaid="23701" script="in service of yalahar quest/YalaharMachineWargolems.lua"/>
 
 	<!-- Inquisition Quest -->

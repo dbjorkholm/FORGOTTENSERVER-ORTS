@@ -58,6 +58,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:setStorageValue(Storage.UnnaturalSelection.Mission03, 3)
 		player:setStorageValue(Storage.UnnaturalSelection.Questline, 7)
 		player:say('Krunus should be pleased.', TALKTYPE_MONSTER_SAY)
+		player:addAchievement('Talented Dancer')
 	end
 	return true
 end

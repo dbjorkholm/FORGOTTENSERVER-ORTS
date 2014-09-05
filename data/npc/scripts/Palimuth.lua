@@ -85,6 +85,7 @@ local function creatureSayCallback(cid, type, msg)
 				"I beg you to destroy these notes. Just put them into some burning oven to get rid of them and report that you did not find the notes."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 21)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToBog, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission03, 5) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 23 then
@@ -113,6 +114,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Instead of breeding warbeasts, this druid should breed cattle to feed our people. Please I beg you, convince him to do that!"
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 29)
+			player:setStorageValue(Storage.InServiceofYalahar.TamerinStatus, 0)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 2) -- StorageValue for Questlog "Mission 05: Food or Fight"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 32 and player:getStorageValue(Storage.InServiceofYalahar.TamerinStatus) == 1 then
@@ -149,6 +151,7 @@ local function creatureSayCallback(cid, type, msg)
 				"It would be much more useful to find out what the quara are so upset about. Better avoid slaying their leaders as this will only further the animosities."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 41)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToQuara, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission07, 2) -- StorageValue for Questlog "Mission 07: A Fishy Mission"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 42 and player:getStorageValue(Storage.InServiceofYalahar.QuaraState) == 1 then
@@ -164,6 +167,7 @@ local function creatureSayCallback(cid, type, msg)
 				"If you use it on the controls instead of the weapon pattern, you will ensure that our people are supplied with the desperately needed food. ..."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 45)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToMatrix, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission08, 2) -- StorageValue for Questlog "Mission 08: Dangerous Machinations"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 48 then
@@ -184,6 +188,7 @@ local function creatureSayCallback(cid, type, msg)
 				"The entrance to their inner sanctum has been opened for you. Please hurry and stop them before it's too late. Be prepared for a HARD battle! Better gather some friends to assist you."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 51)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToLastFight, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 2) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 52 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 1 then
@@ -197,6 +202,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Also, take this Yalaharian outfit. Depending on which side you chose previously, you can also acquire one specific addon. Thank you again for your help."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 53)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToReward, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			player:addOutfit(324, 0)
 			player:addOutfit(325, 0)

@@ -188,12 +188,13 @@ local function creatureSayCallback(cid, type, msg)
 				"I'm convinced your reward will be beyond your wildest dreams. And that is just the beginning!"
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 51)
-			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 1) -- StorageValue for Questlog "Mission 10: The Final Battle"
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToLastFight, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 2) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 52 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 2 then
 			npcHandler:say("Great work, take this outfit and you are able to open the door to the reward room.", cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 53)
+			player:setStorageValue(Storage.InServiceofYalahar.DoorToReward, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission10, 4) -- StorageValue for Questlog "Mission 10: The Final Battle"
 			player:addOutfit(324, 0)
 			player:addOutfit(325, 0)

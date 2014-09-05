@@ -202,7 +202,12 @@ Storage = {
 		MatrixReward = 12271,
 		NotesPalimuth = 12272,
 		NotesAzerus = 12273,
-		DoorToAzerus = 12274
+		DoorToAzerus = 12274,
+		DoorToBog = 12275,
+		DoorToLastFight = 12276,
+		DoorToMatrix = 12277,
+		DoorToQuara = 12278,
+		DoorToReward = 12279
 	},
 	ChildrenoftheRevolution = {
 		Questline = 12300, -- Storage through the Quest
