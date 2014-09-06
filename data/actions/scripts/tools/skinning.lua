@@ -26,7 +26,7 @@ local config = {
 		[2881] = {value = 25000, newItem = 5948},
 
 		-- Behemoths
-		[2931] = { {value = 10000, newItem = 5930 }, {value = 35000, newItem = 5893 } },
+		[2931] = {value = 35000, newItem = 5893},
 
 		-- Bone Beasts
 		[3031] = {value = 25000, newItem = 5925},
@@ -71,14 +71,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local random, effect, transform = math.random(1, 100000), CONST_ME_MAGIC_GREEN, true
-	if type(skin.value) == 'table' then
+	if type(skin[1]) == 'table' then
 		local added = false
 		for _, _skin in ipairs(skin) do
 			if random <= _skin.value then
 				if itemEx.itemid == 11343 then
 					effect = CONST_ME_ICEAREA
 					local goblet = player:addItem(_skin.newItem, _skin.amount or 1)
-					goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, skin.desc)
+					goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, _skin.desc:gsub('|PLAYERNAME|', player:getName()))
 					added = true
 				elseif isInArray({7441, 7442, 7444, 7445}, itemEx.itemid) then
 					player:addItem(_skin.newItem, _skin.amount or 1)
@@ -100,7 +100,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if itemEx.itemid == 11343 then
 			effect = CONST_ME_ICEAREA
 			local goblet = player:addItem(skin.newItem, skin.amount or 1)
-			goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, skin.desc)
+			goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, skin.desc:gsub('|PLAYERNAME|', player:getName()))
 		elseif isInArray({7441, 7442, 7444, 7445}, itemEx.itemid) then
 			player:addItem(skin.newItem, skin.amount or 1)
 			effect = CONST_ME_HITAREA
