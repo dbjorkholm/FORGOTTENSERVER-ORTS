@@ -7,13 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Queen Eloise. It is my duty to reign over this marvellous city and the lands of the north."})
+keywordHandler:addKeyword({'subject'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am {Queen} Eloise. It is my duty to reign over this marvellous {city} and the {lands} of the north."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am {Queen} Eloise. It is my duty to reign over this marvellous {city} and the {lands} of the north."})
 keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We women try to bring justice and wisdom to all, even to males."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Queen Eloise. For you it's 'My Queen' or 'Your Majesty', of course."})
 keywordHandler:addKeyword({'news'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I don't care about gossip like a simpleminded male would do."})
 keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Soon the whole land will be ruled by women at last!"})
-keywordHandler:addKeyword({'land'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Soon the whole land will be ruled by women at last!"})
-keywordHandler:addKeyword({'you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Thank you, I'm fine."})
+keywordHandler:addKeyword({'land'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Soon the whole land will be ruled by {women} at last!"})
+keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Thank you, I'm fine."})
 keywordHandler:addKeyword({'castle'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's my humble domain."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Sell? Your question shows that you are a typical member of your gender!"})
 keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We honor the gods of good in our fair city, especially Crunor, of course."})
@@ -39,7 +40,7 @@ keywordHandler:addKeyword({'collector'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'queen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the Queen, the only rightful ruler on the continent!"})
 keywordHandler:addKeyword({'army'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ask one of the soldiers about that."})
 keywordHandler:addKeyword({'enemy'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our enemies are numerous. We have to fight vile monsters and have to watch this silly king in the south carefully."})
-keywordHandler:addKeyword({'enemi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our enemies are numerous. We have to fight vile monsters and have to watch this silly king in the south carefully."})
+keywordHandler:addKeyword({'enemies'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our enemies are numerous. We have to fight vile monsters and have to watch this silly king in the south carefully."})
 keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They dare to reject my reign over them!"})
 keywordHandler:addKeyword({'south'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They dare to reject my reign over them!"})
 keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Isn't our city marvellous? Have you noticed the lovely gardens on the roofs?"})
@@ -68,44 +69,39 @@ keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, only
 keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if msgcontains(msg, 'hail') and msgcontains(msg, 'queen') and not npcHandler:isFocused(cid) then
-		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
-		npcHandler:addFocus(cid)
-		return true
-	end
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, ' .. player:getName() ..'!', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
-	if msgcontains(msg, "promot") then
+
+	if msgcontains(msg, "promote") or msgcontains(msg, "promotion") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(30018) == 1 then
-			npcHandler:say('You are already promoted.', cid)
-		elseif player:getLevel() < 20 then
-			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
-		elseif player:getMoney() < 20000 then
-			npcHandler:say('You do not have enough money.', cid)
-		elseif player:isPremium() then
-			npcHandler:say("Congratulations! You are now promoted.", cid)
-			local promotedVoc = getPromotedVocation(player:getVocation():getId())
-			player:setVocation(Vocation(promotedVoc))
-			player:removeMoney(20000)
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, "yes") then
+			local player = Player(cid)
+			if player:getStorageValue(30018) == 1 then
+				npcHandler:say('You are already promoted.', cid)
+			elseif player:getLevel() < 20 then
+				npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
+			elseif player:getMoney() < 20000 then
+				npcHandler:say('You do not have enough money.', cid)
+			elseif player:isPremium() then
+				npcHandler:say("Congratulations! You are now promoted.", cid)
+				local promotedVoc = getPromotedVocation(player:getVocation():getId())
+				player:setVocation(Vocation(promotedVoc))
+				player:removeMoney(20000)
+			else
+				npcHandler:say("You need a premium account in order to promote.", cid)
+			end
 		else
-			npcHandler:say("You need a premium account in order to promote.", cid)
+			npcHandler:say('Ok, whatever.', cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif npcHandler.topic[cid] == 1 then
-		npcHandler:say('Ok, whatever.', cid)
-		npcHandler.topic[cid] = 0
+		return true
 	end
+
 	if msgcontains(msg, "uniforms") then
+		local player = Player(cid)
 		if player:getStorageValue(Storage.postman.Mission06) == 5 then
 			npcHandler:say("I remember about those uniforms, they had a camouflage inlay so they could be worn the inside out too. I will send some color samples via mail to Mr. Postner. ", cid)
 			player:setStorageValue(Storage.postman.Mission06, 6)
@@ -116,6 +112,11 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "I greet thee, my loyal {subject}.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, |PLAYERNAME|!")
-
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hail queen')
+focusModule:addGreetMessage('salutations queen')
+npcHandler:addModule(focusModule)

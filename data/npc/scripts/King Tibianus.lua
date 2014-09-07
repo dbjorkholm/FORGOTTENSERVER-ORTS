@@ -48,20 +48,11 @@ keywordHandler:addKeyword({'chester'}, StdModule.say, {npcHandler = npcHandler, 
 keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This organisation is an essential tool for holding our enemies in check. Its headquarter is located in the bastion in the northwall."})
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if (msg:lower() == "hail king" or msg:lower() == "salutations king") and not npcHandler:isFocused(cid) then
-		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
-		npcHandler:addFocus(cid)
-		return true
-	end
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Good bye, ' .. player:getName() ..'!', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	if isInArray({"tibia", "land"}, msg) then
 		npcHandler:say("Soon the whole land will be ruled by me once again!", cid)
 		npcHandler.topic[cid] = 0
@@ -101,7 +92,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif isInArray({"druid", "marvik"}, msg) then
 		npcHandler:say("We need the druidic healing powers to fight evil.", cid)
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "promot") then
+	elseif msgcontains(msg, "promote") or msgcontains(msg, "promotion") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
@@ -124,6 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Ok, whatever.", cid)
 		npcHandler.topic[cid] = 0
 	end
+
 	--The New Frontier
 	if msgcontains(msg, "farmine") then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 15 then
@@ -142,6 +134,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "I greet thee, my loyal subject |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "How rude!")
-
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hail king')
+focusModule:addGreetMessage('salutations king')
+npcHandler:addModule(focusModule)

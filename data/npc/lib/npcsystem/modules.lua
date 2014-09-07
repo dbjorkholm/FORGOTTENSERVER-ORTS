@@ -44,8 +44,16 @@ if Modules == nil then
 			error("StdModule.say called without any npcHandler instance.")
 		end
 
-		local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
+		if parameters.onlyFocus == true and parameters.onlyUnfocus == true then
+			error("StdModule.say conflicting parameters 'onlyFocus' and 'onlyUnfocus' both true")
+		end
+
+		local onlyFocus = (parameters.onlyFocus == nil and parameters.onlyUnfocus == nil or parameters.onlyFocus == true)
 		if not npcHandler:isFocused(cid) and onlyFocus then
+			return false
+		end
+
+		if npcHandler:isFocused(cid) and parameters.onlyUnfocus == true then
 			return false
 		end
 
@@ -163,7 +171,6 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-        
 		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
 		elseif not player:removeMoney(parameters.cost) then
@@ -185,7 +192,11 @@ if Modules == nil then
 	end
 
 	FocusModule = {
-		npcHandler = nil
+		npcHandler = nil,
+		greetWords = nil,
+		farewellWords = nil,
+		greetCallback = nil,
+		farewellCallback = nil
 	}
 
 	-- Creates a new instance of FocusModule without an associated NpcHandler.
@@ -199,21 +210,52 @@ if Modules == nil then
 	-- Inits the module and associates handler to it.
 	function FocusModule:init(handler)
 		self.npcHandler = handler
-		for i, word in pairs(FOCUS_GREETWORDS) do
+
+		local greetWords = self.greetWords or FOCUS_GREETWORDS
+		for i, word in pairs(greetWords) do
 			local obj = {}
 			obj[#obj + 1] = word
-			obj.callback = FOCUS_GREETWORDS.callback or FocusModule.messageMatcher
+			obj.callback = self.greetCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 		end
 
-		for i, word in pairs(FOCUS_FAREWELLWORDS) do
+		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
+		for i, word in pairs(farewellWords) do
 			local obj = {}
 			obj[#obj + 1] = word
-			obj.callback = FOCUS_FAREWELLWORDS.callback or FocusModule.messageMatcher
+			obj.callback = self.farewellCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
 		end
 
 		return true
+	end
+
+	-- Set custom greeting messages
+	function FocusModule:addGreetMessage(message)
+		if not self.greetWords then
+			self.greetWords = {}
+		end
+
+		table.insert(self.greetWords, message)
+	end
+
+	-- Set custom farewell messages
+	function FocusModule:addFarewellMessage(message)
+		if not self.farewellWords then
+			self.farewellWords = {}
+		end
+
+		table.insert(self.farewellWords, message)
+	end
+
+	-- Set custom greeting callback
+	function FocusModule:setGreetCallback(callback)
+		self.greetCallback = callback
+	end
+
+	-- Set custom farewell callback
+	function FocusModule:setFarewellCallback(callback)
+		self.farewellCallback = callback
 	end
 
 	-- Greeting callback function.
@@ -233,10 +275,21 @@ if Modules == nil then
 	end
 
 	-- Custom message matching callback function for greeting messages.
-	function FocusModule.messageMatcher(keywords, message)
+	function FocusModule.messageMatcherDefault(keywords, message)
 		for i, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
+					return true
+				end
+			end
+		end
+		return false
+	end
+
+	function FocusModule.messageMatcherStart(keywords, message)
+		for i, word in pairs(keywords) do
+			if type(word) == "string" then
+				if string.starts(message, word) then
 					return true
 				end
 			end
@@ -424,7 +477,7 @@ if Modules == nil then
 
 	function TravelModule.onConfirm(cid, message, keywords, parameters, node)
 		local module = parameters.module
-		if(not module.npcHandler:isFocused(cid)) then
+		if not module.npcHandler:isFocused(cid) then
 			return false
 		end
 
@@ -439,14 +492,16 @@ if Modules == nil then
 		local destination = shop_destination[cid]
 		local premium = shop_premium[cid]
 
-		if(not isPlayerPremiumCallback or isPlayerPremiumCallback(cid) or shop_premium[cid] ~= true) then
-			if Player(cid):removeMoney(cost) ~= TRUE then
+		local player = Player(cid)
+		if not isPlayerPremiumCallback or isPlayerPremiumCallback(player) or shop_premium[cid] ~= true then
+			if player:removeMoney(cost) ~= TRUE then
 				npcHandler:say("You do not have enough money!", cid)
-			elseif Player(cid):isPzLocked() then
+			elseif player:isPzLocked() then
 				npcHandler:say("Get out of there with this blood.", cid)
 			else
 				npcHandler:say("It was a pleasure doing business with you.", cid)
 				npcHandler:releaseFocus(cid)
+				-- Todo convert all destionation parameters to Position(x, y, z) instead of lua tables
 				doTeleportThing(cid, destination, 0)
 				doSendMagicEffect(destination, CONST_ME_TELEPORT)
 			end
