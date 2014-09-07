@@ -243,3 +243,22 @@ end
 function Player.isMage(self)
 	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
 end
+
+function Party.getVocationCount(self)
+	local count = 1 
+	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
+
+	local members = self:getMembers()
+	for i = 1, #members do
+		local vocationId = getBaseVocation(members[i]:getVocation():getId())
+		local vocation = bit.lshift(1, vocationId)
+		if bit.band(bits, vocation) == vocation then
+			return false
+		end
+
+		bits = bit.bor(bits, bit.lshift(1, vocationId))
+		count = count + 1
+	end
+
+	return count
+end
