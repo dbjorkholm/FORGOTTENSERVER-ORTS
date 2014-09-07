@@ -8,8 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable()
-local list =
-	{
+	local list = {
 		{id = 2201,		buy = 1000,		sell = 100,		name = 'Dragon Necklace'},
 		{id = 2213,		buy = 2000,		sell = 100,		name = 'Dwarven Ring'},
 		{id = 2167,		buy = 2000,		sell = 100,		name = 'Energy Ring'},
@@ -33,24 +32,23 @@ local list =
 		{id = 2181,		buy = 0,		sell = 2000,	name = 'Terra Rod'},
 		{id = 8910,		buy = 0,		sell = 4400,	name = 'Underworld Rod'}
 	}
+
 	return list
 end
 
-local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if (msg == "DJANNI'HAH" or player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
-		npcHandler:say("Be greeted, human " .. player:getName() .. ". How can a humble djinn be of service?", cid)
-		npcHandler:addFocus(cid)
-		return true
+local function greetCallback(cid, message)
+	if not msgcontains(message, 'djjanni\'hah') and Player(cid):getStorageValue(GreenDjinn.MissionEnd) < 3 then
+		return false
 	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, human.', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
 	if isInArray({"enchanted chicken wing", "boots of haste"}, msg) then
 		npcHandler:say('Do you want to trade Boots of haste for Enchanted Chicken Wing?', cid)
 		npcHandler.topic[cid] = 1
@@ -75,6 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 				{ NeedItem = 2392, Ncount = 3, GiveItem = 5904, Gcount = 1}  -- Magic Sulphur
 		}
 
+		local player = Player(cid)
 		if player:getItemCount(trade[npcHandler.topic[cid]].NeedItem) >= trade[npcHandler.topic[cid]].Ncount then
 			player:removeItem(trade[npcHandler.topic[cid]].NeedItem, trade[npcHandler.topic[cid]].Ncount)
 			player:addItem(trade[npcHandler.topic[cid]].GiveItem, trade[npcHandler.topic[cid]].Gcount)
@@ -93,7 +92,16 @@ local function onTradeRequest(cid)
 	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Be greeted, human |PLAYERNAME|. How can a humble djinn be of service?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, human.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

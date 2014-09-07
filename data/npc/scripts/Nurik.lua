@@ -9,13 +9,12 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	local playerOutfit = player:getOutfit()
-	if player:getStorageValue(Storage.thievesGuild.Mission04) == 6 and playerOutfit.lookType == 66 then
-		npcHandler:say('It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?', cid)
-		npcHandler:addFocus(cid)
-		npcHandler.topic[cid] = 1
+	if player:getStorageValue(Storage.thievesGuild.Mission04) ~= 6 or player:getOutfit().lookType ~= 66 then
+		npcHandler:say('Excuse me, but I\'m waiting for someone important!', cid)
 		return false
 	end
+
+	npcHandler.topic[cid] = 1
 	return true
 end
 
@@ -23,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
+
 	if msgcontains(msg, 'dwarven bridge') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say('Wait a minute! Do I get that right? You\'re the owner of the dwarven bridge and you are willing to sell it to me??', cid)
@@ -43,6 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Oh my, oh my. I\'m so excited! So let\'s seal this deal as fast as possible so I can visit my very own dwarven bridge. Are you ready for the transaction?', cid)
 			npcHandler.topic[cid] = 5
 		elseif npcHandler.topic[cid] == 5 then
+			local player = Player(cid)
 			if player:removeItem(8694, 1) then
 				player:addItem(8699, 1)
 				player:setStorageValue(Storage.thievesGuild.Mission04, 7)
@@ -57,6 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, 'It\'s .. It\'s YOU! At last!! So what\'s this special proposal you would like to make, my friend?')
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

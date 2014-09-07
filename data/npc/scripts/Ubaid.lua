@@ -7,26 +7,20 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if msg == "DJANNI'HAH" and player:getStorageValue(BlueDjinn.MissionStart) < 1 and not npcHandler:isFocused(cid) then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("What? You know the word, " .. player:getName() .. "? All right then - I won't kill you. At least, not now.", cid)
-				npcHandler:addFocus(cid)
-			end
-		end
+local function greetCallback(cid, message)
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) > 0 then
+		return false
 	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell human!', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
-	-- JOINING
+
+	local player = Player(cid)
 	if msgcontains(msg, "passage") then
 		if player:getStorageValue(GreenDjinn.MissionStart) < 1 then
 			npcHandler:say({
@@ -35,7 +29,6 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			npcHandler.topic[cid] = 1
 		end
-	-- JOINING
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say("So you pledge loyalty to king Malor and you are willing to never ever set foot on Marids' territory, unless you want to kill them? Yes?", cid)
@@ -62,6 +55,13 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "What? You know the word, |PLAYERNAME|? All right then - I won't kill you. At least, not now.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell human!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell human!")
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

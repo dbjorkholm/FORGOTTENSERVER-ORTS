@@ -11,32 +11,25 @@ local condition = Condition(CONDITION_FIRE)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:addDamage(150, 2000, -10)
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		local player = Player(cid)
-		if msg == "hi" then
-			player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
-			player:addCondition(condition)
-		elseif msg == "DJANNI'HAH" then
-			if player:getStorageValue(Factions) > 0 then
-				npcHandler:addFocus(cid)
-				if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-					npcHandler:say("You know the code human! Very well then... What do you want, " .. player:getName() .. "?", cid)
-					npcHandler:addFocus(cid)
-				end
-			end
-		end
+local function greetCallback(cid, message)
+	if not msgcontains(message, 'djanni\'hah') then
+		player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+		player:addCondition(condition)
+		return false
 	end
 
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(GreenDjinn.MissionStart) < 1 and BlueOrGreen then
+		return false
+	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, human.', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
 	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "mission") then
 		local player = Player(cid)
@@ -87,4 +80,13 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "You know the code human! Very well then... What do you want, |PLAYERNAME|?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Stand down, soldier!")
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

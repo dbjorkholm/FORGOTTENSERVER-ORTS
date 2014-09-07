@@ -17,25 +17,20 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if msg == "DJANNI'HAH" and not npcHandler:isFocused(cid) then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("Hey! A human! What are you doing in my kitchen, " .. player:getName() .. "?", cid)
-				npcHandler:addFocus(cid)
-			end
-		end
+local function greetCallback(cid, message)
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and not BlueOrGreen then
+		return false
 	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Goodbye. I am sure you will come back for more. They all do.', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(BlueDjinn.MissionStart) == 1 and player:getStorageValue(BlueDjinn.MissionStart+1) < 1 then
 			npcHandler:say({
@@ -73,6 +68,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Hey! A human! What are you doing in my kitchen, |PLAYERNAME|?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Goodbye. I am sure you will come back for more. They all do.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Goodbye. I am sure you will come back for more. They all do.")
-
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

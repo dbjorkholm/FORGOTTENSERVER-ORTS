@@ -7,17 +7,16 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	-- GREET
-	if msg == "PIEDPIPER" and not npcHandler:isFocused(cid) then
-		if player:getStorageValue(BlueDjinn.MissionStart+2) == 1 then
-			npcHandler:addFocus(cid)
-			npcHandler:say("Meep? I mean - hello! Sorry, " .. player:getName() .. "... Being a rat has kind of grown on me.", cid)
-			npcHandler.topic[cid] = 1
-		end
+local function greetCallback(cid)
+	if Player(cid):getStorageValue(BlueDjinn.MissionStart + 2) ~= 1 then
+		return false
 	end
-	-- GREET
+
+	npcHandler.topic[cid] = 1
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
@@ -38,6 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
+			local player = Player(cid)
 			if player:removeItem(2696, 1) then
 				npcHandler:say({
 					"Meep! Meep! Great! Here is the spyreport for you!",
@@ -55,7 +55,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, "Meep? I mean - hello! Sorry, |PLAYERNAME|... Being a rat has kind of grown on me.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Meep!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Meep!")
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('piedpiper')
+npcHandler:addModule(focusModule)

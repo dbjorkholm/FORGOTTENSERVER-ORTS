@@ -7,25 +7,20 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if msg == "DJANNI'HAH" and not npcHandler:isFocused(cid) then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("Welcome, human " .. player:getName() .. ", to our humble abode.", cid)
-				npcHandler:addFocus(cid)
-			end
-		end
+local function greetCallback(cid)
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and BlueOrGreen then
+		return false
 	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, stranger. May Uman open your minds and your hearts to Daramanz\'s wisdom!', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(BlueDjinn.MissionStart+2) == 3 and player:getStorageValue(BlueDjinn.MissionStart+3) < 1 then
 			npcHandler:say({
@@ -53,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({
-				"Daraman shall bless you and all humans! You have done us all a huge service! Soon, this awful war will be over! ...", 
+				"Daraman shall bless you and all humans! You have done us all a huge service! Soon, this awful war will be over! ...",
 				"Know, that from now on you are considered one of us and are welcome to trade with Haroun and Nah'bob whenever you want to!"
 			}, cid)
 			player:setStorageValue(BlueDjinn.MissionStart+3, 4)
@@ -63,6 +58,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Welcome, human |PLAYERNAME|, to our humble abode.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, stranger. May Uman open your minds and your hearts to Daramanz\'s wisdom!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, stranger. May Uman open your minds and your hearts to Daraman's wisdom!")
-
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

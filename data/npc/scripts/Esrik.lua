@@ -59,6 +59,7 @@ local function getTable(player)
 		{name="steel helmet", id=2457, sell=190},
 		{name="two handed sword", id=2377, sell=450}
 	}
+
 	local tomes = {
 		{
 			-- 3 tomes
@@ -100,6 +101,7 @@ local function getTable(player)
 			table.insert(itemsList, tomes[1][i])
 		end
 	end
+
 	if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 9 then
 		-- 9 tomes
 		for i = 1, #tomes[2] do
@@ -120,21 +122,12 @@ end
 
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-
-	if (msgcontains(msg, "hello") or msgcontains(msg, "hi")) and (not npcHandler:isFocused(cid)) then
-		npcHandler:say("Hello, ".. player:getName() .." and welcome to my little forge.", cid, true)
-		npcHandler:addFocus(cid)
-	elseif(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say("Bye.", cid, true)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	elseif msgcontains(msg, "trade") then
+	end
 
+	if msgcontains(msg, "trade") then
 		local player = Player(cid)
-
 		local items = setNewTradeTable(getTable(player))
 
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
@@ -163,7 +156,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
 			end
 			return true
-			end
+		end
 
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
 			if items[item].sellPrice then
@@ -175,11 +168,15 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			return true
 		end
-		openShopWindow(cid, getTable(player), onBuy, onSell)
 
+		openShopWindow(cid, getTable(player), onBuy, onSell)
 		npcHandler:say("Of course, just browse through my wares.", cid)
 	end
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, 'Hello, |PLAYERNAME| and welcome to my little forge.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Bye.')
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+npcHandler:addModule(FocusModule:new())

@@ -103,18 +103,11 @@ local function setNewTradeTable(table)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	if (msgcontains(msg, 'hello') or msgcontains(msg, 'hi')) and not npcHandler:isFocused(cid) then
-		npcHandler:say('Hello.', cid, TRUE)
-		npcHandler:addFocus(cid)
-	elseif not npcHandler:isFocused(cid) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	if msgcontains(msg, 'bye') or msgcontains(msg, 'farewell') then
-		npcHandler:say('It was a pleasure to help you, ' .. Player(cid):getName() .. '.', cid, TRUE)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	elseif msgcontains(msg, 'trade') then
+	if msgcontains(msg, 'trade') then
 		local player = Player(cid)
 		local items = setNewTradeTable(getTable(player))
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
@@ -143,7 +136,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
 			end
 			return true
-			end
+		end
 
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
 			if items[item].sellPrice then
@@ -155,11 +148,13 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			return true
 		end
-		openShopWindow(cid, getTable(player), onBuy, onSell)
 
+		openShopWindow(cid, getTable(player), onBuy, onSell)
 		npcHandler:say('Keep in mind you won\'t find better offers here. Just browse through my wares.', cid)
 	end
 	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:setMessage(MESSAGE_GREET, 'Hello.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'It was a pleasure to help you, |PLAYERNAME|.')

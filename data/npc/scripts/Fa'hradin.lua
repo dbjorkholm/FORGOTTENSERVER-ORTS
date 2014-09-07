@@ -11,29 +11,26 @@ local condition = Condition(CONDITION_FIRE)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:addDamage(150, 2000, -10)
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		local player = Player(cid)
-		if msg == "hi" then
-			player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
-			player:addCondition(condition)
-		elseif msg == "DJANNI'HAH" then
-			if player:getStorageValue(Factions) > 0 then
-				npcHandler:addFocus(cid)
-				if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
-					npcHandler:say("Aaaah... what have we here. A human - interesting. And such an ugly specimen, too... All right, human " .. player:getName() .. ". How can I help you?", cid)
-					npcHandler:addFocus(cid)
-				end
-			end
-		end
+local function greetCallback(cid, message)
+	if not msgcontains(message, 'djanni\'hah') then
+		player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+		player:addCondition(condition)
+		return false
 	end
 
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and not BlueOrGreen then
+		return false
+	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
 	local player = Player(cid)
-	
 	if msgcontains(msg, "mission") then
 		if player:getStorageValue(BlueDjinn.MissionStart + 1) == 3 and player:getStorageValue(BlueDjinn.MissionStart + 2) < 1 then
 			npcHandler:say({
@@ -69,6 +66,13 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Aaaah... what have we here. A human - interesting. And such an ugly specimen, too... All right, human |PLAYERNAME|. How can I help you?")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human. I will always remember you. Unless I forget you, of course.")
-
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)
