@@ -145,7 +145,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		if party:isSharedExperienceEnabled() and party:isSharedExperienceActive() then
 			local bonus = config[party:getVocationCount()]
 			if not bonus then
-				return true
+				return exp
 			end
 
 			exp = exp * bonus
