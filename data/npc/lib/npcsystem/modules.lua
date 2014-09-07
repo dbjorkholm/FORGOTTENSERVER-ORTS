@@ -236,7 +236,14 @@ if Modules == nil then
 			self.greetWords = {}
 		end
 
-		table.insert(self.greetWords, message)
+
+		if type(message) == 'string' then
+			table.insert(self.greetWords, message)
+		else
+			for i = 1, #message do
+				table.insert(self.greetWords, message[i])
+			end
+		end
 	end
 
 	-- Set custom farewell messages
@@ -245,7 +252,13 @@ if Modules == nil then
 			self.farewellWords = {}
 		end
 
-		table.insert(self.farewellWords, message)
+		if type(message) == 'string' then
+			table.insert(self.farewellWords, message)
+		else
+			for i = 1, #message do
+				table.insert(self.farewellWords, message[i])
+			end
+		end
 	end
 
 	-- Set custom greeting callback

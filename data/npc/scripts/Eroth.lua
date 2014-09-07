@@ -18,4 +18,8 @@ keywordHandler:addKeyword({'spell'}, StdModule.say, {npcHandler = npcHandler, on
 npcHandler:setMessage(MESSAGE_GREET, "I greet thee, outsider.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Asha Thrazi. Go, where you have to go.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Asha Thrazi.")
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)

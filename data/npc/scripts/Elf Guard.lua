@@ -19,4 +19,8 @@ keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, on
 npcHandler:setMessage(MESSAGE_GREET, "Ashari |PLAYERNAME|.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Asha Thrazi.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Asha Thrazi.")
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)

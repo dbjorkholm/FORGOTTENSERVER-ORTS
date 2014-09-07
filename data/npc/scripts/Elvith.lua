@@ -28,6 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	if msgcontains(msg, 'songs of the forest') then
 		npcHandler:say({
 			'The last issue I had was bought by Randor Swiftfinger. He was banished through the hellgate and probably took the book with him ...',
@@ -44,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('You don\'t have enough money.', cid)
 				return true
 			end
-			
+
 			player:addItem(5952, 1)
 			npcHandler:say('Here it is.', cid)
 		end
@@ -56,4 +57,8 @@ npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, 'Ashari |PLAYERNAME|.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Asha Thrazi.')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Asha Thrazi.')
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)

@@ -11,9 +11,7 @@ local action = {}
 local weapon = {}
 local weapon_sub = {}
 
-
-local Config =
-{
+local Config = {
 	Greet_Storage = 3250,
 	Create =
 	{
@@ -35,8 +33,7 @@ local Config =
 	}
 }
 
-local IDS =
-{
+local IDS = {
 	DREAM_MATTER = 22397,
 	CLUSTER_OF_SOLACE = 22396,
 
@@ -77,8 +74,8 @@ local IDS =
 	UMBRAL_SPELLBOOK = 22423,
 	UMBRAL_MASTER_SPELLBOOK = 22424
 }
-local TYPES =
-{
+
+local TYPES = {
 	SWORD = 1,
 	AXE = 2,
 	CLUB = 3,
@@ -86,8 +83,8 @@ local TYPES =
 	CROSSBOW = 5,
 	SPELLBOOK = 6
 }
-local SUB_TYPES =
-{
+
+local SUB_TYPES = {
 	BLADE = 1,
 	SLAYER = 2,
 	AXE = 3,
@@ -99,29 +96,27 @@ local SUB_TYPES =
 	SPELLBOOK = 9
 }
 
-local ACTION =
-{
+local ACTION = {
 	CREATE = 1,
 	IMPROVE = 2,
 	TRANSFORM = 3
 }
 
-
-
 local function greetCallback(cid)
 	local player = Player(cid)
-	npcHandler:setMessage(MESSAGE_GREET, 'Welcome ' .. player:getName() .. '.')
 	if player:getStorageValue(Config.Greet_Storage) > 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Ashari Lillithy, so we meet {again}! What brings you here this time, general {information}, {transform}, {improve}, {create}, {outfit}, or {talk}?")
 	else
-		player:setStorageValue(Config.Greet_Storage)
+		npcHandler:setMessage(MESSAGE_GREET, 'Welcome ' .. player:getName() .. '.')
+		player:setStorageValue(Config.Greet_Storage, 1)
 	end
 	return true
 end
 
 local function creatureSayCallback(cid, type, msg)
-
-	if not npcHandler:isFocused(cid) then return false end
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
 
 	local player = Player(cid)
 	if msgcontains(msg, "create") then
@@ -323,7 +318,12 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye!")
+
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)
