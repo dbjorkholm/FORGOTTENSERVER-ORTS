@@ -12,15 +12,15 @@ end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	local iEx = Item(itemEx.uid)
+	local targetItem = Item(itemEx.uid)
 	if isInArray(holes, itemEx.itemid) then
-		iEx:transform(itemEx.itemid + 1)
-		iEx:decay()
+		targetItem:transform(itemEx.itemid + 1)
+		targetItem:decay()
 	elseif itemEx.itemid == 231 or itemEx.itemid == 9059 then
 		local rand = math.random(100)
-		if(itemEx.actionid  == 100 and rand <= 20) then
-		iEx:transform(489)
-		iEx:decay()
+		if itemEx.actionid  == 100 and rand <= 20 then
+			targetItem:transform(489)
+			targetItem:decay()
 		elseif rand == 1 then
 			Game.createItem(2159, 1, toPosition)
 		elseif rand > 95 then
@@ -37,7 +37,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 19)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
-		iEx:transform(469)
+		targetItem:transform(469)
 		addEvent(revertHole, 30 * 1000, toPosition)
 	-- Gravedigger Quest
 	elseif itemEx.aid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
@@ -63,6 +63,27 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			tile:getItemById(8749):remove()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
+		end
+	elseif isInArray({50234, 50235, 50236}, itemEx.actionid) then
+		if player:getStorageValue(50143) >= os.time() then
+			return false
+		end
+		
+		local config, chance = {
+			{from = 1, to = 39, itemId = 2817},
+			{from = 40, to = 79, itemId = 2145},
+			{from = 80, to = 100, itemId = 20138}
+		}, math.random(100)
+
+		for i = 1, #config do
+			local randItem = config[i]
+			if chance >= randItem.from and chance <= randItem.to then
+				player:addItem(randItem.itemId, 1)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You dug up a ' .. ItemType(randItem.itemId):getName() .. '.')
+				player:setStorageValue(50143, os.time() + 604800)
+				toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
+				break
+			end
 		end
 	end
 	return true

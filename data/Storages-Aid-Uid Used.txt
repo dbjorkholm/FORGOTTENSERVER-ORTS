@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50142
-Last Used Aid = 50233
+Last Used Storage = 50143
+Last Used Aid = 50236
 Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -219,3 +219,5 @@ Vengoth Teleports (strange whirl's) aid = 50220-50229
 Kaz wagons aid = 50230-50233
 
 Svarground Arena Quest Quest Log Storages = 50140-50142
+
+Diggable Swamp Tiles AID: 50234-50236, Storage Key: 50143
