@@ -616,6 +616,10 @@ if NpcHandler == nil then
 		stopEvent(self.eventSay[focus])
 		self.eventSay[focus] = addEvent(function(npcId, message, focusId)
 			local npc = Npc(npcId)
+			if npc == nil then
+				return
+			end
+
 			local player = Player(focusId)
 			if player then
 				npc:say(message, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())

@@ -12,6 +12,7 @@ condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:addDamage(150, 2000, -10)
 
 local function greetCallback(cid, message)
+	local player = Player(cid)
 	if not msgcontains(message, 'djanni\'hah') then
 		player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
 		player:addCondition(condition)

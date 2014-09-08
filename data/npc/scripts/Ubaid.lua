@@ -8,6 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid, message)
+	local player = Player(cid)
 	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) > 0 then
 		return false
 	end
