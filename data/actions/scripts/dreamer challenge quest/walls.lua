@@ -26,8 +26,8 @@ local walls = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(getGlobalStorageValue(400) < 0) then
-		setGlobalStorageValue(400, 0)
+	if (Game.getStorageValue(400) or -1) < 0 then
+		Game.setStorageValue(400, 0)
 	end
 	if(isInArray({2246, 2247, 2248, 2249}, item.uid) and item.itemid == 1945) then
 		doTransformItem(item.uid, 1946)
@@ -39,8 +39,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				addEvent(doCreateItem, 7 * 1000, walls[item.uid][i].id, 1 , walls[item.uid][i].pos)
 			end
 		end
-		setGlobalStorageValue(400, getGlobalStorageValue(400) + 1)
-		addEvent(setGlobalStorageValue, 7 * 1000, 400, getGlobalStorageValue(400) - 1)
+		Game.setStorageValue(400, Game.getStorageValue(400) + 1)
+		addEvent(Game.setStorageValue, 7 * 1000, 400, Game.getStorageValue(400) - 1)
 	end
 	return true
 end
