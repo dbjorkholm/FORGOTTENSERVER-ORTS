@@ -982,14 +982,14 @@ if Modules == nil then
 			totalCost = isItemStackable(itemid) == TRUE and totalCost + 20 or totalCost + (math.max(1, math.floor(amount / ItemType(backpack):getCapacity())) * 20)
 		end
 
+		local player = Player(cid)
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = player:getName(),
 			[TAG_ITEMCOUNT] = amount,
 			[TAG_TOTALCOST] = totalCost,
 			[TAG_ITEMNAME] = shopItem.name
 		}
 
-		local player = Player(cid)
 		if player:getMoney() < totalCost then
 			local msg = self.npcHandler:getMessage(MESSAGE_NEEDMONEY)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
@@ -1040,8 +1040,9 @@ if Modules == nil then
 			return false
 		end
 
+		local player = Player(cid)
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = player:getName(),
 			[TAG_ITEMCOUNT] = amount,
 			[TAG_TOTALCOST] = amount * shopItem.sell,
 			[TAG_ITEMNAME] = shopItem.name
@@ -1051,7 +1052,6 @@ if Modules == nil then
 			subType = -1
 		end
 
-		local player = Player(cid)
 		if player:removeItem(itemid, amount, subType, ignoreEquipped) then
 			local msg = self.npcHandler:getMessage(MESSAGE_SOLD)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
@@ -1085,13 +1085,13 @@ if Modules == nil then
 		end
 
 		if(itemWindow[1] == nil) then
-			local parseInfo = { [TAG_PLAYERNAME] = getPlayerName(cid) }
+			local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
 			local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_NOSHOP), parseInfo)
 			module.npcHandler:say(msg, cid)
 			return true
 		end
 
-		local parseInfo = { [TAG_PLAYERNAME] = getPlayerName(cid) }
+		local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
 		local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_SENDTRADE), parseInfo)
 		openShopWindow(cid, itemWindow,
 			function(cid, itemid, subType, amount, ignoreCap, inBackpacks) module.npcHandler:onBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks) end,
@@ -1110,7 +1110,7 @@ if Modules == nil then
 
 		local parentParameters = node:getParent():getParameters()
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]
@@ -1191,7 +1191,7 @@ if Modules == nil then
 
 		local parentParameters = node:getParent():getParameters()
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]
@@ -1227,7 +1227,7 @@ if Modules == nil then
 		shop_subtype[cid] = parameters.subType
 
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]

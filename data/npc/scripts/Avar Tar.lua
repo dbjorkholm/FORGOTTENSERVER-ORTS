@@ -39,7 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(541, 1)
 				player:addOutfitAddon(542, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:setStorageValue(2217, 2)
+				player:setStorageValue(2213, 2)
 				npcHandler:say('Receive the shield, ' .. player:getName() .. '.', cid)
 			end
 		elseif msgcontains(msg, 'helmet') then

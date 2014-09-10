@@ -19,12 +19,12 @@ function onSay(cid, words, param)
 		return false
 	end
 
-	local tguid = getPlayerGUIDByName(param)
-	if tguid == 0 then
+	local targetPlayer = Player(param)
+	if not targetPlayer then
 		player:sendCancelMessage("Player not found.")
 		return false
 	end
 
-	house:setOwnerGuid(tguid)
+	house:setOwnerGuid(targetPlayer:getGuid())
 	return false
 end

@@ -14,10 +14,10 @@ function onSay(cid, words, param)
 	local ip = result.getDataInt(resultId, "lastip")
 	result.free(resultId)
 
-	local targetCid = getPlayerByName(param)
-	if targetCid ~= false then
-		ip = getIpByPlayerName(param)
-		doRemoveCreature(targetCid)
+	local targetPlayer = Player(param)
+	if targetPlayer then
+		ip = targetPlayer:getIp()
+		targetPlayer:remove()
 	end
 
 	if ip == 0 then

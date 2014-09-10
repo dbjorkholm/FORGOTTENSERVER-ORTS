@@ -1,7 +1,7 @@
 local savingEvent = 0
 
 function onSay(cid, words, param)
-	if getPlayerAccess(cid) ~= 0 then
+	if Player(cid):getGroup():getAccess() then
 		if isNumber(param) == TRUE then
 			stopEvent(savingEvent)
 			save(tonumber(param) * 60 * 1000)

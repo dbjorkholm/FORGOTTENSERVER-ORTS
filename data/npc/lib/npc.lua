@@ -57,14 +57,15 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 end
 
 local func = function(pars)
-	if isPlayer(pars.pcid) == true then
-		Creature(pars.cid):say(pars.text, pars.type, false, pars.pcid, Creature(pars.cid):getPosition())
+	local player = Player(pars.pcid)
+	if player then
+		player:say(pars.text, pars.type, false, player, player:getPosition())
 		pars.e.done = true
 	end
 end
 
 function doCreatureSayWithDelay(cid, text, type, delay, e, pcid)
-	if isPlayer(pcid) == true then
+	if Player(pcid) then
 		e.done = false
 		e.event = addEvent(func, delay < 1 and 1000 or delay, {cid=cid, text=text, type=type, e=e, pcid=pcid})
 	end
