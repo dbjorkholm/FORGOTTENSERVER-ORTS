@@ -46,7 +46,6 @@ end
 function getPlayerMaxMana(cid) local p = Player(cid) return p ~= nil and p:getMaxMana() or false end
 function getPlayerVocation(cid) local p = Player(cid) return p ~= nil and p:getVocation():getId() or false end
 function getPlayerSex(cid) local p = Player(cid) return p ~= nil and p:getSex() or false end
-function getPlayerStorageValue(cid, key) local p = Player(cid) return p ~= nil and p:getStorageValue(key) or false end
 function getPlayerGroupId(cid) local p = Player(cid) return p ~= nil and p:getGroup():getId() or false end
 function getPlayerLookDir(cid) local p = Player(cid) return p ~= nil and p:getDirection() or false end
 function getPlayerLight(cid) local p = Player(cid) return p ~= nil and p:getLight() or false end
@@ -171,7 +170,6 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
-function setPlayerStorageValue(cid, key, value) local p = Player(cid) return p ~= nil and p:setStorageValue(key, value) or false end
 function doPlayerAddItemEx(cid, uid, ...) local p = Player(cid) return p ~= nil and p:addItemEx(Item(uid), ...) or false end
 function canPlayerWearOutfit(cid, lookType, addons) local p = Player(cid) return p ~= nil and p:hasOutfit(lookType, addons) or false end
 function doPlayerAddManaSpent(cid, mana) local p = Player(cid) return p ~= nil and p:addManaSpent(mana * configManager.getNumber(configKeys.RATE_MAGIC)) or false end
@@ -357,12 +355,6 @@ function getGuildId(guildName)
 	result.free(resultId)
 	return guildId
 end
-
-function getHouseName(houseId) local h = House(houseId) return h ~= nil and h:getName() or false end
-function getHouseOwner(houseId) local h = House(houseId) return h ~= nil and h:getOwnerGuid() or false end
-function getHouseEntry(houseId) local h = House(houseId) return h ~= nil and h:getExitPosition() or false end
-function getHouseTown(houseId) local h = House(houseId) if h == nil then return false end local t = h:getTown() return t ~= nil and t:getId() or false end
-function getHouseTilesSize(houseId) local h = House(houseId) return h ~= nil and h:getTileCount() or false end
 
 function isItemStackable(itemId) return ItemType(itemId):isStackable() end
 function isItemRune(itemId) return ItemType(itemId):isRune() end

@@ -1,11 +1,12 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3022) then
-		if(getPlayerStorageValue(cid, BlueDjinn.MissionStart+2) >= 1) then
-			if(item.itemid == 1255) then
-				doTeleportThing(cid, toPosition, true)
-				doTransformItem(item.uid, 1256)
-			end
-		end
+	if item.itemid ~= 1255 then
+		return true
+	end
+
+	local player = Player(cid)
+	if player:getStorageValue(BlueDjinn.MissionStart + 2) >= 1 then
+		player:teleportTo(toPosition, true)
+		Item(item.uid):transform(1256)
 	end
 	return true
 end
