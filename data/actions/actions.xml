@@ -200,7 +200,7 @@
 	<!-- Bigfoot Burden Quest -->
 	<action fromuid="3124" touid="3127" script="bigfoot burden quest/music.lua"/>
 	<action uniqueid="3143" script="bigfoot burden quest/warzones.lua"/>
-	<action fromuid="3148" touid="3150" script="bigfoot burden quest/rewards.lua"/>
+	<action fromuid="3147" touid="3150" script="bigfoot burden quest/rewards.lua"/>
 	<action itemid="18213" script="bigfoot burden quest/extractor.lua"/>
 	<action itemid="18219" script="bigfoot burden quest/crystal.lua"/>
 	<action itemid="18220" script="bigfoot burden quest/mushroom.lua" />
