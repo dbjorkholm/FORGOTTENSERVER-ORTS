@@ -1,5 +1,3 @@
-
-
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then

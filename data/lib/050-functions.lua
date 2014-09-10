@@ -207,6 +207,8 @@ function Player.isMage(self)
 	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
 end
 
+
+-- Party --
 function Party.getVocationCount(self)
 	local count = 1
 	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
@@ -224,4 +226,39 @@ function Party.getVocationCount(self)
 	end
 
 	return count
+end
+
+
+-- Tile --
+function Tile.relocateTo(self, toPosition)
+	if self:getPosition() == toPosition then
+		return false
+	end
+
+	if not Tile(toPosition) then
+		return false
+	end
+
+	for i = self:getThingCount() - 1, 0, -1 do
+		local thing = self:getThing(i)
+		if thing then
+			if thing:isItem() then
+				if ItemType(thing:getId()):isMovable() then
+					thing:moveTo(toPosition)
+				end
+			elseif thing:isCreature() then
+				thing:teleportTo(toPosition)
+			end
+		end
+	end
+	return true
+end
+
+function Tile.isPz(self)
+	return self:hasFlag(TILESTATE_PROTECTIONZONE)
+end
+
+function Tile.isHouse(self)
+	local house = self:getHouse()
+	return house and true or false
 end

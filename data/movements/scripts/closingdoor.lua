@@ -11,8 +11,9 @@ function onStepOut(cid, item, position, fromPosition)
 		newPosition.y = newPosition.y + 1
 		query = Tile(newPosition):queryAdd(cid)
 	end
+
 	if query == RETURNVALUE_NOERROR and query ~= RETURNVALUE_NOTENOUGHROOM then
-		doRelocate(position, newPosition)
+		tile:relocateTo(newPosition)
 	end
 
 	local i, tileItem, tileCount = 1, true, tile:getThingCount()

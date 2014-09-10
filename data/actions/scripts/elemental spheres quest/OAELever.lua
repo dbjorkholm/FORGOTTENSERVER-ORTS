@@ -1,179 +1,169 @@
-local players_pos =  {
-	{x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33263, y = 31840, z = 12, stackpos = STACKPOS_TOP_CREATURE},
-	{x = 33272, y = 31840, z = 12, stackpos = STACKPOS_TOP_CREATURE}
+local config = {
+	exitPosition = Position(33265, 31838, 10),
+	area = {
+		from = Position(33238, 31806, 12),
+		to = Position(33297, 31865, 12)
+	},
+	positions = {
+		Position(33272, 31840, 12),
+		Position(33263, 31840, 12),
+		Position(33263, 31831, 12),
+		Position(33272, 31831, 12)
+	},
+	leverPositions = {
+		Position(33273, 31831, 12),
+		Position(33273, 31840, 12),
+		Position(33262, 31840, 12),
+		Position(33262, 31831, 12)
+	},
+	walls = {
+		{from = Position(33275, 31834, 12), to = Position(33275, 31838, 12), wallId = 5072, soundPosition = Position(33275, 31836, 12)},
+		{from = Position(33266, 31843, 12), to = Position(33270, 31843, 12), wallId = 5071, soundPosition = Position(33268, 31843, 12)},
+		{from = Position(33260, 31834, 12), to = Position(33260, 31838, 12), wallId = 5072, soundPosition = Position(33260, 31836, 12)},
+		{from = Position(33266, 31828, 12), to = Position(33270, 31828, 12), wallId = 5071, soundPosition = Position(33268, 31828, 12)}
+	},
+	roomArea = {
+		from = Position(33261, 31829, 12),
+		to = Position(33274, 31842, 12)
+	},
+	machineStorages = {10005, 10006, 10007, 10008},
+	centerPosition = Position(33267, 31836, 12),
+	effectPositions = {
+		Position(33261, 31829, 12), Position(33262, 31830, 12), Position(33263, 31831, 12),
+		Position(33264, 31832, 12), Position(33265, 31833, 12), Position(33266, 31834, 12),
+		Position(33267, 31835, 12), Position(33268, 31836, 12), Position(33269, 31837, 12),
+		Position(33270, 31838, 12), Position(33271, 31839, 12), Position(33272, 31840, 12),
+		Position(33273, 31841, 12), Position(33274, 31842, 12), Position(33274, 31829, 12),
+		Position(33273, 31830, 12), Position(33272, 31831, 12), Position(33271, 31832, 12),
+		Position(33270, 31833, 12), Position(33269, 31834, 12), Position(33268, 31835, 12),
+		Position(33267, 31836, 12), Position(33266, 31837, 12), Position(33265, 31838, 12),
+		Position(33264, 31839, 12), Position(33263, 31840, 12), Position(33262, 31841, 12),
+		Position(33261, 31842, 12)
+	}
 }
 
-local walls_NS = -- walls positions
-	{
-	{x=33266, y=31828, z=12, stackpos=1},
-	{x=33267, y=31828, z=12, stackpos=1},
-	{x=33268, y=31828, z=12, stackpos=1},
-	{x=33269, y=31828, z=12, stackpos=1},
-	{x=33270, y=31828, z=12, stackpos=1},
-	{x=33266, y=31843, z=12, stackpos=1},
-	{x=33267, y=31843, z=12, stackpos=1},
-	{x=33268, y=31843, z=12, stackpos=1},
-	{x=33269, y=31843, z=12, stackpos=1},
-	{x=33270, y=31843, z=12, stackpos=1}
-}
 
-local levers_pos = -- lever positions
-	{
-	{x=33273, y=31831, z=12},
-	{x=33262, y=31831, z=12},
-	{x=33273, y=31840, z=12},
-	{x=33262, y=31840, z=12}
-}
-
-local walls_WE = -- walls positions
-	{
-	{x=33260, y=31834, z=12, stackpos=1},
-	{x=33260, y=31835, z=12, stackpos=1},
-	{x=33260, y=31836, z=12, stackpos=1},
-	{x=33260, y=31837, z=12, stackpos=1},
-	{x=33260, y=31838, z=12, stackpos=1},
-	{x=33275, y=31834, z=12, stackpos=1},
-	{x=33275, y=31835, z=12, stackpos=1},
-	{x=33275, y=31836, z=12, stackpos=1},
-	{x=33275, y=31837, z=12, stackpos=1},
-	{x=33275, y=31838, z=12, stackpos=1},
-}
-
-local effects = {
-	{x=33261, y=31829, z=12}, {x=33262, y=31830, z=12}, {x=33263, y=31831, z=12},
-	{x=33264, y=31832, z=12}, {x=33265, y=31833, z=12}, {x=33266, y=31834, z=12},
-	{x=33267, y=31835, z=12}, {x=33268, y=31836, z=12}, {x=33269, y=31837, z=12},
-	{x=33270, y=31838, z=12}, {x=33271, y=31839, z=12}, {x=33272, y=31840, z=12},
-	{x=33273, y=31841, z=12}, {x=33274, y=31842, z=12}, {x=33274, y=31829, z=12},
-	{x=33273, y=31830, z=12}, {x=33272, y=31831, z=12}, {x=33271, y=31832, z=12},
-	{x=33270, y=31833, z=12}, {x=33269, y=31834, z=12}, {x=33268, y=31835, z=12},
-	{x=33267, y=31836, z=12}, {x=33266, y=31837, z=12}, {x=33265, y=31838, z=12},
-	{x=33264, y=31839, z=12}, {x=33263, y=31840, z=12}, {x=33262, y=31841, z=12},
-	{x=33261, y=31842, z=12}
-}
-
-local room = {
-	fromX = 33260,
-	fromY = 31828,
-	fromZ = 12,
-
-	toX = 33275,
-	toY = 31843,
-	toZ = 12
-}
-
-local function kick(cid)
-	if (isPlayer(cid)) then
-		if (isInRange(getThingPos(cid), {x=33238, y=31806, z=12}, {x=33297, y=31865, z=12})) then
-			doTeleportThing(cid, {x=33265, y=31838, z=10})
-			doSendMagicEffect({x=33265, y=31838, z=10}, CONST_ME_TELEPORT)
+local function resetRoom(players)
+	for i = 1, #players do
+		local player = Player(players[i])
+		if player and isInRange(player:getPosition(), config.area.from, config.area.to) then
+			player:teleportTo(config.exitPosition)
+			config.exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	end
-	return true
-end
 
-local function reset()
-	for i = 1, #walls_NS do
-		local wns = getTileItemById(walls_NS[i], 8861).uid
-		if (wns ~= 0) then
-			doRemoveItem(wns)
-		end
-	end
-	for i = 1, #walls_WE do
-		local wwe = getTileItemById(walls_WE[i], 8862).uid
-		if (wwe ~= 0) then
-			doRemoveItem(wwe)
-		end
-	end
-	for i = 1, 4 do
-		local lever = getTileItemById(levers_pos[i], 1946).uid
-		if (lever > 0) then
-			doTransformItem(lever, 1945)
-		end
-	end
-	local creature
-	for x = room.fromX, room.toX do
-		for y = room.fromY, room.toY do
-			for z = room.fromZ, room.toZ do
-				creature = Tile(Position(x, y, z)):getTopCreature()
-				if creature and creature:isMonster() and creature:getName():lower() == 'lord of the elements' then
-					creature:remove()
+	for i = 1, #config.walls do
+		local wall = config.walls[i]
+		for x = wall.from.x, wall.to.x do
+			for y = wall.from.y, wall.to.y do
+				local wallItem = Tile(Position(x, y, wall.from.z)):getItemById(wall.wallId)
+				if wallItem then
+					wallItem:remove()
 				end
 			end
 		end
 	end
-	for i = 10005, 10008 do
-		Game.setStorageValue(i, 0)
+
+	local creature = Creature('lord of the elements')
+	if creature then
+		creature:remove()
+	end
+
+	for i = 1, #config.leverPositions do
+		local leverItem = Tile(config.leverPositions[i]):getItemById(1946)
+		if leverItem then
+			leverItem:transform(1945)
+		end
+	end
+
+	Game.setStorageValue(10004, -1)
+	for i = 1, #config.machineStorages do
+		Game.setStorageValue(config.machineStorages[i], -1)
 	end
 	return true
 end
 
-local function warn(cid)
-	if (isPlayer(cid)) then
-		doCreatureSay(cid, 'You have 5 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
+local function warnPlayers(players)
+	local player
+	for i = 1, #players do
+		player = Player(players[i])
+		if player and isInRange(player:getPosition(), config.roomArea.from, config.roomArea.to) then
+			break
+		end
+		player = nil
+	end
+
+	if not player then
+		return
+	end
+
+	player:say('You have 5 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, Position(33266, 31835, 13))
+end
+
+local function areMachinesCharged()
+	for i = 1, #config.machineStorages do
+		if (Game.getStorageValue(config.machineStorages[i]) or -1) <= 0 then
+			return false
+		end
 	end
 	return true
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local teamPlayer = {}
-	local failed = true
-	if (item.itemid == 1945) then
-		if (getTopCreature({x = 33272, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and getTopCreature({x = 33263, y = 31831, z = 12, stackpos = STACKPOS_TOP_CREATURE}).itemid > 0 and (Game.getStorageValue(10005) or -1) > 0 and (Game.getStorageValue(10006) or -1) > 0 and (Game.getStorageValue(10007) or -1) > 0 and (Game.getStorageValue(10008) or -1) > 0) then
-			failed = false
-		else
-			doCreatureSay(cid, 'Charge the four machines and stand at the marked spots beside the levers.', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
-			failed = true
-			return true
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	for i = 1, #config.machineStorages do
+		Game.setStorageValue(config.machineStorages[i], 1)
+	end
+
+	if not areMachinesCharged() then
+		return false
+	end
+
+	local player = Player(cid)
+	local index = table.find(config.positions, player:getPosition())
+	if not index then
+		return false
+	end
+
+	Item(item.uid):transform(1946)
+	local leverCount = 0
+	for i = 1, #config.leverPositions do
+		if Tile(config.leverPositions[i]):getItemById(1946) then
+			leverCount = leverCount + 1
 		end
-		local lever1 = getTileItemById({x=33273, y=31831, z=12}, 1946).uid
-		local lever2 = getTileItemById({x=33262, y=31831, z=12}, 1946).uid
-		local lever3 = getTileItemById({x=33273, y=31840, z=12}, 1946).uid
-		local lever4 = getTileItemById({x=33262, y=31840, z=12}, 1946).uid
-		if (lever1 > 0 and lever2 > 0 and lever3 > 0) or (lever1 > 0 and lever2 > 0 and lever4 > 0) or (lever1 > 0 and lever3 > 0 and lever4 > 0) or (lever2 > 0 and lever3 > 0 and lever4 > 0) then
-			failed = false
-		else
-			doTransformItem(item.uid, 1946)
-			doCreatureSay(cid, 'Everyone have to use the switches!', TALKTYPE_MONSTER_SAY, false, cid, getThingPos(cid))
-			failed = true
-			return true
+	end
+
+	local walls = config.walls[index]
+	for x = walls.from.x, walls.to.x do
+		for y = walls.from.y, walls.to.y do
+			Game.createItem(walls.wallId, 1, Position(x, y, walls.from.z))
 		end
-		if (failed == false) then
-			Game.createMonster('Lord of the Elements', {x=33267, y=31836, z=12})
-			addEvent(reset, 10 * 60 * 1000)
-			addEvent(warn, 5 * 60 * 1000, cid)
-			doCreatureSay(cid, 'You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31828, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31843, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33260, y=31836, z=12})
-			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33275, y=31836, z=12})
-			doTransformItem(item.uid, 1946)
-			for i = 1, 4 do
-				teamPlayer[i] = getThingfromPos(players_pos[i])
-				if (teamPlayer[i].itemid > 0) then
-					if (isPlayer(teamPlayer[i].uid) == true) then
-						addEvent(kick, 10 * 60 * 1000, cid)
-					end
-				end
-			end
-			for i = 1, #walls_NS do
-				local wns = getTileItemById(walls_NS[i], 8861).uid
-				if (wns == 0) then
-					doCreateItem(8861, 1, walls_NS[i])
-				end
-			end
-			for i = 1, #walls_WE do
-				local wwe = getTileItemById(walls_WE[i], 8862).uid
-				if (wwe == 0) then
-					doCreateItem(8862, 1, walls_WE[i])
-				end
-			end
-			for _, v in ipairs(effects) do
-				doSendMagicEffect(v, CONST_ME_ENERGYHIT)
-			end
+	end
+	player:say('ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, walls.soundPosition)
+
+	if leverCount ~= #config.leverPositions then
+		return true
+	end
+
+	local players = {}
+	for i = 1, #config.positions do
+		local creature = Tile(config.positions[i]):getTopCreature()
+		if creature then
+			table.insert(players, creature:getId())
 		end
+	end
+
+	Game.setStorageValue(10004, 1)
+	Game.createMonster('Lord of the Elements', config.centerPosition)
+	player:say('You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, config.centerPosition)
+	addEvent(warnPlayers, 5 * 60 * 1000, players)
+	addEvent(resetRoom, 10 * 60 * 1000, players)
+
+	for i = 1, #config.effectPositions do
+		config.effectPositions[i]:sendMagicEffect(CONST_ME_ENERGYHIT)
 	end
 	return true
 end

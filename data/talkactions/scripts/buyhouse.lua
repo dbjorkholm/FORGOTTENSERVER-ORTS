@@ -13,8 +13,14 @@ function onSay(cid, words, param)
 	local position = player:getPosition()
 	position:getNextPosition(player:getDirection())
 
-	local house = House(getTileHouseInfo(position))
-	if house == nil then
+	local tile = Tile(position)
+	if not tile then
+		player:sendCancelMessage("You have to be looking at the door of the house you would like to buy.")
+		return false
+	end
+
+	local house = tile:getHouse()
+	if not house then
 		player:sendCancelMessage("You have to be looking at the door of the house you would like to buy.")
 		return false
 	end

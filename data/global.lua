@@ -128,11 +128,9 @@ function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 		position = getCreaturePosition(cid)
 	end
 
-	local spectators = getSpectators(position, radiusx, radiusy, false, true)
-	if spectators ~= nil then
-		for _, spectator in ipairs(spectators) do
-			doCreatureSay(cid, text, type, false, spectator, position)
-		end
+	local spectators = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
+	for _, spectator in ipairs(spectators) do
+		spectator:say(text, type, false, spectator, position)
 	end
 end
 
