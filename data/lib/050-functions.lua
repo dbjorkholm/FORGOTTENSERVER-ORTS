@@ -1,16 +1,4 @@
-stopMoveStorage = 100000
-
-function Player.allowMovement(self, param)
-	return self:setStorageValue(stopMoveStorage, param and 0 or 1)
-end
-
-function Player.hasAllowMovement(self)
-	if self:getStorageValue(stopMoveStorage) == 1 then
-		return false
-	end
-	return true
-end
-
+-- Basic --
 function getBaseVocation(vocationId)
 	if vocationId == 0 then
 		return 0
@@ -19,55 +7,17 @@ function getBaseVocation(vocationId)
 	return (vocationId - 1) % 4 + 1
 end
 
-function Player.withdrawMoney(self, amount)
-	local balance = self:getBankBalance()
-	if amount > balance or not self:addMoney(amount) then
-		return false
-	end
-
-	self:setBankBalance(balance - amount)
-	return true
-end
-
-function Player.depositMoney(self, amount)
-	if not self:removeMoney(amount) then
-		return false
-	end
-
-	self:setBankBalance(self:getBankBalance() + amount)
-	return true
-end
-
 function playerExists(name)
-	local a = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
-	if a then
-		result.free(a)
+	local resultId = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
+	if resultId then
+		result.free(resultId)
 		return true
 	end
 end
 
-function Player.transferMoneyTo(self, target, amount)
-	local balance = self:getBankBalance()
-	if amount > balance then
-		return false
-	end
-
-	local targetPlayer = Player(target)
-	if targetPlayer then
-		targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
-	else
-		if not playerExists(target) then
-			return false
-		end
-		db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = " .. db.escapeString(target))
-	end
-
-	self:setBankBalance(self:getBankBalance() - amount)
-	return true
-end
 
 function isValidMoney(money)
-	return (isNumber(money) and money > 0 and money < 4294967296)
+	return isNumber(money) and money > 0 and money < 4294967296
 end
 
 function getMoneyCount(string)
@@ -112,42 +62,6 @@ function getRealDate()
 		day = '0' .. day
 	end
 	return day .. '/' .. month
-end
-
-function isPlayerInArea(fromPos, toPos)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = fromPos.z, toPos.z do
-				local tile = Tile(Position(x, y, z))
-				if tile then
-					local creature = tile:getTopCreature()
-					if creature and creature:isPlayer() then
-						return true
-					end
-				end
-			end
-		end
-	end
-
-	return false
-end
-
-function isMonsterInArea(fromPos, toPos, ignoreSummons)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = fromPos.z, toPos.z do
-				local tile = Tile(Position(x, y, z))
-				if tile then
-					local creature = tile:getTopCreature()
-					if creature and creature:isMonster() and not(ignoreSummons and creature:getMaster()) then
-						return true
-					end
-				end
-			end
-		end
-	end
-
-	return false
 end
 
 function doPlayerGnomishRank(cid)
@@ -225,8 +139,57 @@ function clearArena(fromPos, toPos)
 				end
 			end
 		end
-	Game.setStorageValue(3157, 0)
+		Game.setStorageValue(3157, 0)
 	end
+	return true
+end
+
+
+-- Player --
+function Player.allowMovement(self, allow)
+	return self:setStorageValue(Storage.blockMovementStorage, allow and -1 or 1)
+end
+
+function Player.hasAllowMovement(self)
+	return self:getStorageValue(Storage.blockMovementStorage) ~= 1
+end
+
+function Player.withdrawMoney(self, amount)
+	local balance = self:getBankBalance()
+	if amount > balance or not self:addMoney(amount) then
+		return false
+	end
+
+	self:setBankBalance(balance - amount)
+	return true
+end
+
+function Player.depositMoney(self, amount)
+	if not self:removeMoney(amount) then
+		return false
+	end
+
+	self:setBankBalance(self:getBankBalance() + amount)
+	return true
+end
+
+function Player.transferMoneyTo(self, target, amount)
+	local balance = self:getBankBalance()
+	if amount > balance then
+		return false
+	end
+
+	local targetPlayer = Player(target)
+	if targetPlayer then
+		targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
+	else
+		if not playerExists(target) then
+			return false
+		end
+		db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = " .. db.escapeString(target))
+	end
+
+	self:setBankBalance(self:getBankBalance() - amount)
 	return true
 end
 

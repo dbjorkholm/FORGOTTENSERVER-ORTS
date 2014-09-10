@@ -1,3 +1,5 @@
+
+
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
 	if not player then
@@ -17,7 +19,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(Storage.DemonOak.Squares) == 5 and not isPlayerInArea({x = 32706, y = 32345, z = 7, stackpos = 255}, {x = 32725, y = 32357, z = 7, stackpos = 255}) then
+	if player:getStorageValue(Storage.DemonOak.Squares) == 5 and #Game.getSpectators(DEMON_OAK_POSITION, false, true, 9, 9, 6, 6) == 0 then
 		player:teleportTo(DEMON_OAK_ENTER_POSITION)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:setStorageValue(Storage.DemonOak.Progress, 1)

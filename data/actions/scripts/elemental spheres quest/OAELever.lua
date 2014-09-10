@@ -104,7 +104,7 @@ local function reset()
 			end
 		end
 	end
-	for i = 10004, 10008 do
+	for i = 10005, 10008 do
 		Game.setStorageValue(i, 0)
 	end
 	return true
@@ -145,7 +145,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(reset, 10 * 60 * 1000)
 			addEvent(warn, 5 * 60 * 1000, cid)
 			doCreatureSay(cid, 'You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, {x=33266, y=31835, z=13})
-			Game.setStorageValue(10004, 1)
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31828, z=12})
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33268, y=31843, z=12})
 			doCreatureSay(cid, 'ZOOOOOOOOM', TALKTYPE_MONSTER_SAY, false, 0, {x=33260, y=31836, z=12})

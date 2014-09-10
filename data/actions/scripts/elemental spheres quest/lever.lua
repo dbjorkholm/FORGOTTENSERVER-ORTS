@@ -17,7 +17,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local spectators = Game.getSpectators(Position(33268, 31836, 12), false, true, 30, 30, 30, 30)
-	if #spectators > 0 or (Game.getStorageValue(10004) or -1) > 0 then
+	if #spectators > 0 then
 		player:say('Wait for the current team to exit.', TALKTYPE_MONSTER_SAY, false, 0, Position(33268, 31835, 10))
 		return true
 	end

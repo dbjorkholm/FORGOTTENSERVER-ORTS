@@ -64,9 +64,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		totalProgress = totalProgress + math.max(0, player:getStorageValue(config.demonOakIds[i]))
 	end
 
+	local spectators, hasMonsters = Game.getSpectators(DEMON_OAK_POSITION, false, false, 9, 9, 6, 6), false
+	for i = 1, #spectators do
+		if spectators[i]:isMonster() then
+			hasMonsters = true
+			break
+		end
+	end
+
 	local isDefeated = totalProgress == (#config.demonOakIds * (config.waves + 1))
 	if (config.killAllBeforeCut or isDefeated)
-			and isMonsterInArea(config.questArea.fromPosition, config.questArea.toPosition, true) then
+			and hasMonsters then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You need to kill all monsters first.')
 		return true
 	end

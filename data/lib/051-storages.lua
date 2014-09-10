@@ -358,5 +358,7 @@ Storage = {
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
 	madMageQuest = 50136,
-	KawillBlessing = 50139
+	KawillBlessing = 50139,
+
+	blockMovementStorage = 100000
 }
