@@ -27,7 +27,7 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 				byPlayer = 1
 			end
 		end
-		killerName = killerCreature:getName()
+		killerName = killerCreature:isMonster() and killerCreature:getType():getNameDescription() or killerCreature:getName()
 	end
 
 	local byPlayerMostDamage = 0
@@ -44,7 +44,7 @@ function onDeath(cid, corpse, killer, mostDamage, unjustified, mostDamage_unjust
 				byPlayerMostDamage = 1
 			end
 		end
-		mostDamageName = mostDamageKiller:getName()
+		mostDamageName = mostDamageKiller:isMonster() and mostDamageKiller:getType():getNameDescription() or mostDamageKiller:getName()
 	end
 
 	local playerGuid = player:getGuid()
