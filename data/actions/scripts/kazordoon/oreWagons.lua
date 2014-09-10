@@ -48,7 +48,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:say("Purchase a weekly ticket from Gewen, Lokur in the post office, The Lukosch brothers or from Brodrosch on the steamboat.", TALKTYPE_MONSTER_SAY)
 		return true
 	end
-	
+
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(targetPosition)
 	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)

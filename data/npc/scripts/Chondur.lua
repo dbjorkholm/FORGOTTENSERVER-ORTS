@@ -25,8 +25,8 @@ local function creatureSayCallback(cid, type, msg)
 		if player:hasOutfit(player:getSex() == 0 and 158 or 154) then
 			if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) < 1 then
 				npcHandler:say({
-					"Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...", 
-					"This monster, if slain, carries a rare root called Mandrake. If you find it, bring it to me. Also, gather 5 of the voodoo dolls used by the mysterious dworc voodoomasters. ...", 
+					"Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...",
+					"This monster, if slain, carries a rare root called Mandrake. If you find it, bring it to me. Also, gather 5 of the voodoo dolls used by the mysterious dworc voodoomasters. ...",
 					"If you manage to fulfil this task, I will grant you your own staff. Have you understood everything and are ready for this test?"
 				}, cid)
 				npcHandler.topic[cid] = 4
@@ -49,9 +49,9 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(13299, 50) and player:removeItem(13301, 30) and player:removeItem(13300, 100) then
 				npcHandler:say({
-					"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...", 
-					"Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...", 
-					"Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...", 
+					"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...",
+					"Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...",
+					"Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...",
 					"So, since me are done here... I need to prepare another ritual, so please let me work, cuild."
 				}, cid)
 				player:addMount(11)
@@ -89,15 +89,15 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
 			npcHandler:say({
-				"The dworcs of Tiquanda like to wear certain tribal masks which I would like to take a look at. Please bring me 5 of these masks. ...", 
-				"Secondly, the high ape magicians of Banuta use banana staves. I would love to learn more about theses staves, so pleasebring me 5 of them also. ...", 
+				"The dworcs of Tiquanda like to wear certain tribal masks which I would like to take a look at. Please bring me 5 of these masks. ...",
+				"Secondly, the high ape magicians of Banuta use banana staves. I would love to learn more about theses staves, so pleasebring me 5 of them also. ...",
 				"If you manage to fulfil this task, I will grant you your own mask. Have you understood everything and are ready for this test?"
 			}, cid)
 			npcHandler.topic[cid] = 7
 		elseif npcHandler.topic[cid] == 7 then
 			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 3)
 			npcHandler:say({
-				"Good! Come back once you have collected 5 tribal masks and 5 banana staves. ...", 
+				"Good! Come back once you have collected 5 tribal masks and 5 banana staves. ...",
 				"I shall grant you a sign of your progress as shaman if you can fulfil my task."
 			}, cid)
 			npcHandler.topic[cid] = 0

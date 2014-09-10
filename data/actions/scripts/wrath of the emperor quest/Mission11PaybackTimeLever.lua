@@ -22,7 +22,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	Game.setStorageValue(Storage.WrathoftheEmperor.Mission11, 1)
-	
+
 	local monsters = Game.getSpectators(config.arenaPosition, false, true, 10, 10, 10, 10)
 	for _, monster in ipairs(monsters) do
 		monster:remove()
@@ -34,7 +34,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		spectator:teleportTo(config.arenaPosition)
 		config.arenaPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	end
-	
+
 	for i = 1, #config.trapPositions do
 		Game.createMonster(config.trap, config.trapPositions[i])
 	end

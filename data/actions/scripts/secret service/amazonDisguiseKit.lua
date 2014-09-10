@@ -8,6 +8,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	player:addCondition(condition)
 	player:say('You disguise yourself as a beautiful amazon!', TALKTYPE_MONSTER_SAY)
 	Item(item.uid):remove()
-	
+
 	return true
 end

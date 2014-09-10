@@ -23,8 +23,8 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "musical") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				"Ah well. Everyone has a very personal melody in his soul. Only if you know your soul melody then you know yourself. And only if you know yourself will you be admitted to the Bigfoot company. ...", 
-				"So what you have to do is to find your soul melody. Do you see the huge crystals in this room? Those are harmonic crystals. Use them to deduce your soul melody. Simply use them to create a sound sequence. ...", 
+				"Ah well. Everyone has a very personal melody in his soul. Only if you know your soul melody then you know yourself. And only if you know yourself will you be admitted to the Bigfoot company. ...",
+				"So what you have to do is to find your soul melody. Do you see the huge crystals in this room? Those are harmonic crystals. Use them to deduce your soul melody. Simply use them to create a sound sequence. ...",
 				"Every soul melody consists of seven sound sequences. You will have to figure out your correct soul melody by trial and error. If you hit a wrong note, you will have to start over."
 			}, cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 12)
@@ -34,7 +34,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({
-				"Congratulations on finding your soul melody. And a pretty one as far as I can tell. Now you are a true recruit of the Bigfoot company! Commander Stone might have some tasks for you to do! ...", 
+				"Congratulations on finding your soul melody. And a pretty one as far as I can tell. Now you are a true recruit of the Bigfoot company! Commander Stone might have some tasks for you to do! ...",
 				"Look for him in the central chamber. I marked your map where you will find him."
 			}, cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 14)

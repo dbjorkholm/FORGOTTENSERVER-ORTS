@@ -1,6 +1,5 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	
 	if itemEx.uid == 12579 and player:getStorageValue(Storage.secretService.CGBMission03) == 1 then
 		player:setStorageValue(Storage.secretService.CGBMission03, 2)
 		Item(item.uid):remove()

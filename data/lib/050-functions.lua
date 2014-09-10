@@ -245,7 +245,7 @@ function Player.isMage(self)
 end
 
 function Party.getVocationCount(self)
-	local count = 1 
+	local count = 1
 	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
 
 	local members = self:getMembers()

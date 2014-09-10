@@ -45,20 +45,20 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if msgcontains(msg, "alverus") then
 		npcHandler:say({
-			"It happened while he carried out an experiment concerning the creation of the elemental {shrines}. I still get goose bumps just by thinking of it. ...", 
-			"You need to know about the process of creating an elemental shrine to understand it completely, but I don't want to go into detail now. ...", 
+			"It happened while he carried out an experiment concerning the creation of the elemental {shrines}. I still get goose bumps just by thinking of it. ...",
+			"You need to know about the process of creating an elemental shrine to understand it completely, but I don't want to go into detail now. ...",
 			"Anyway, his spell had a different outcome than he had planned. He accidentally created an Ice Overlord, pure living elemental ice, who froze him in a blink of an eye."
 		}, cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "shrine") then
 		npcHandler:say({
-			"The creation of the elemental shrines is a really complex matter. They are actually nodes, locations where the matching elemental sphere is very close. ...", 
+			"The creation of the elemental shrines is a really complex matter. They are actually nodes, locations where the matching elemental sphere is very close. ...",
 			"The shrine itself is like a portal between our world and the elemental {sphere} and enables us to use the elemental energy emerging from it."
 		}, cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "sphere") and player:getLevel() >= 80 then
 		npcHandler:say({
-			"There are four spheres we know of: ice, fire, earth and energy. ....<mumbles> Hmmm, should I ask or not?....The heck with it! Now that you know about the spheres ...", 
+			"There are four spheres we know of: ice, fire, earth and energy. ....<mumbles> Hmmm, should I ask or not?....The heck with it! Now that you know about the spheres ...",
 			"I found a way to visit them. It's VERY dangerous and there is a decent chance that you won't come back BUT if you succeed you'll write history!!! Ask me about that {mission} if you're interested."
 		}, cid)
 		npcHandler.topic[cid] = 0
@@ -68,30 +68,30 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getLevel() >= 80 then
 				if player:isSorcerer() then
 					npcHandler:say({
-						"Okay, listen closely: First of all, you need to gather 20 enchanted rubies in order to go to the fire sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", 
-						"Once you got there, find a way to gather elemental fire in any form. You will face fire elementals, that's for sure, but I don't know how the fire is stored. ...", 
-						"Anyway, there should be a way to use that elemental fire and strengthen one of the elementals. If my calculations are right, you will create a Fire Overlord who hopefully will consist of some sort of 'concentrated' fire or something similar. ...", 
+						"Okay, listen closely: First of all, you need to gather 20 enchanted rubies in order to go to the fire sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...",
+						"Once you got there, find a way to gather elemental fire in any form. You will face fire elementals, that's for sure, but I don't know how the fire is stored. ...",
+						"Anyway, there should be a way to use that elemental fire and strengthen one of the elementals. If my calculations are right, you will create a Fire Overlord who hopefully will consist of some sort of 'concentrated' fire or something similar. ...",
 						"THAT'S what we need!! Are you in on it?"
 					}, cid)
 				elseif player:isDruid() then
 					npcHandler:say({
-						"Okay, listen closely: First of all, you need to gather 20 enchanted emeralds in order to go to the earth sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", 
-						"Once you got there, find a way to gather elemental earth in any form. You will face earth elementals, that's for sure, but I don't know how the earth is stored. ...", 
-						"Anyway, there should be a way to use that elemental earth and strengthen one of the elementals. If my calculations are right, you will create an Earth Overlord who hopefully will consist of some sort of 'concentrated' earth or something similar. ...", 
+						"Okay, listen closely: First of all, you need to gather 20 enchanted emeralds in order to go to the earth sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...",
+						"Once you got there, find a way to gather elemental earth in any form. You will face earth elementals, that's for sure, but I don't know how the earth is stored. ...",
+						"Anyway, there should be a way to use that elemental earth and strengthen one of the elementals. If my calculations are right, you will create an Earth Overlord who hopefully will consist of some sort of 'concentrated' earth or something similar. ...",
 						"THAT'S what we need!! Are you in on it?"
 					}, cid)
 				elseif player:isPaladin() then
 					npcHandler:say({
-						"Okay, listen closely: First of all, you need to gather 20 enchanted sapphires in order to go to the ice sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", 
-						"Once you got there, find a way to gather elemental ice in any form. You will face ice elementals, that's for sure, but I don't know how the ice is stored. ...", 
-						"Anyway, there should be a way to use that elemental ice and strengthen one of the elementals. If my calculations are right, you will create an Ice Overlord who hopefully will consist of some sort of 'concentrated' ice or something similar. ...", 
+						"Okay, listen closely: First of all, you need to gather 20 enchanted sapphires in order to go to the ice sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...",
+						"Once you got there, find a way to gather elemental ice in any form. You will face ice elementals, that's for sure, but I don't know how the ice is stored. ...",
+						"Anyway, there should be a way to use that elemental ice and strengthen one of the elementals. If my calculations are right, you will create an Ice Overlord who hopefully will consist of some sort of 'concentrated' ice or something similar. ...",
 						"THAT'S what we need!! Are you in on it?"
 					}, cid)
 				elseif player:isKnight() then
 					npcHandler:say({
-						"Okay, listen closely: First of all, you need to gather 20 enchanted amethysts in order to go to the energy sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...", 
-						"Once you got there, find a way to gather elemental energy in any form. You will face energy elementals, that's for sure, but I don't know how the energy is stored. ...", 
-						"Anyway, there should be a way to use that energy and strengthen one of the elementals. If my calculations are right, you will create an Energy Overlord who hopefully will consist of some sort of 'concentrated' energy. ...", 
+						"Okay, listen closely: First of all, you need to gather 20 enchanted amethysts in order to go to the energy sphere. Deep under the academy, one floor below the elemental shrines, there is a machine. Put the gems in there and activate it. ...",
+						"Once you got there, find a way to gather elemental energy in any form. You will face energy elementals, that's for sure, but I don't know how the energy is stored. ...",
+						"Anyway, there should be a way to use that energy and strengthen one of the elementals. If my calculations are right, you will create an Energy Overlord who hopefully will consist of some sort of 'concentrated' energy. ...",
 						"THAT'S what we need!! Are you in on it?"
 					}, cid)
 				end
@@ -105,8 +105,8 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(player:isSorcerer() and 8304 or player:isDruid() and 8305 or player:isPaladin() and 8300 or player:isKnight() and 8306) > 0 then
 				player:setStorageValue(storageMain, 2)
 				npcHandler:say({
-					"Impressive!! Let me take a look.......Ahh, " .. (player:isSorcerer() and "an ETERNAL FLAME! Now you need to find a knight, a druid, and a paladin who also completed this first task. ..." or player:isDruid() and "MOTHER SOIL! Now you need to find a knight, a paladin, and a sorcerer who also completed this first task. ..." or player:isPaladin() and "a FLAWLESS ICE CRYSTAL! Now you need to find a knight, a druid, and a sorcerer who also completed this first task. ..." or player:isKnight() and "PURE ENERGY! Now you need to find a druid, a paladin, and a sorcerer who also completed this first task. ..."), 
-					"Go down in the cellar again. I prepared a room under the academy where it should be safe. Your task is to charge the machines with the elemental substances and summon the LORD OF THE ELEMENTS. ...", 
+					"Impressive!! Let me take a look.......Ahh, " .. (player:isSorcerer() and "an ETERNAL FLAME! Now you need to find a knight, a druid, and a paladin who also completed this first task. ..." or player:isDruid() and "MOTHER SOIL! Now you need to find a knight, a paladin, and a sorcerer who also completed this first task. ..." or player:isPaladin() and "a FLAWLESS ICE CRYSTAL! Now you need to find a knight, a druid, and a sorcerer who also completed this first task. ..." or player:isKnight() and "PURE ENERGY! Now you need to find a druid, a paladin, and a sorcerer who also completed this first task. ..."),
+					"Go down in the cellar again. I prepared a room under the academy where it should be safe. Your task is to charge the machines with the elemental substances and summon the LORD OF THE ELEMENTS. ...",
 					"When you use an obsidian knife on it's corpse you hopefully get some of the precious neutral matter. It's the only way to revive my dear friend Alverus!!"
 				}, cid)
 			else

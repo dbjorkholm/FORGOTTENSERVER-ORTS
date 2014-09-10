@@ -705,7 +705,7 @@
 	<action fromid="10264" toid="10267" script="other/windows.lua" />
 	<action fromid="10488" toid="10491" script="other/windows.lua" />
 	<action fromid="11258" toid="11262" script="other/blessingCharms.lua" />
-	
+
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
 

@@ -29,9 +29,9 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "twist of fate") then
 		npcHandler:say({
-			"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...", 
-			"It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...", 
-			"The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...", 
+			"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...",
+			"It only works when you're killed by other adventurers, which means that at least half of the damage leading to your death was caused by others, not by monsters or the environment. ...",
+			"The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...",
 			"Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"
 		}, cid)
 		npcHandler.topic[cid] = 1

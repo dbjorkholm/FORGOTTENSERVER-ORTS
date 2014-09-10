@@ -19,7 +19,7 @@ end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	
+
 	if player:getStorageValue(Storage.secretService.AVINMission01) == 1 and player:getItemCount(14326) > 0 then
 		player:setStorageValue(Storage.secretService.AVINMission01, 2)
 		npcHandler:say("I don't like the way you look. Help me boys!", cid)

@@ -34,7 +34,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 14
 			elseif npcHandler.topic[cid] == 14 then
 				npcHandler:say({
-					"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...", 
+					"Alright, as I said you are free now. There will not be an outside for the next three centuries, but you - go. ...",
 					"Oh and I recovered the strange crate you where hiding in, it will wait for you at the exit since you can't carry it as... a beetle, muhaha. Yes, you shall now crawl through the passage as a beetle. There you go."
 				}, cid)
 				npcHandler.topic[cid] = 0

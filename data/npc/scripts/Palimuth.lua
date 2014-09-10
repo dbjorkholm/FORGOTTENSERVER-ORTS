@@ -27,7 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 3 then
 			npcHandler:say({
-				"You probably heard that we have numerous problems in different quarters of our city. Our forces are limited, so we really could need some help from outsiders. ...", 
+				"You probably heard that we have numerous problems in different quarters of our city. Our forces are limited, so we really could need some help from outsiders. ...",
 				"Would you like to assist us in re-establishing order in our city?"
 			}, cid)
 			npcHandler.topic[cid] = 1
@@ -35,8 +35,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission01, 1) -- StorageValue for Questlog "Mission 01: Something Rotten"
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 5)
 			npcHandler:say({
-				"I hope your first mission will not scare you off. Even though, we cut off our sewer system from other parts of the city to prevent the worst, it still has deteriorated in the last decades. ...", 
-				"Certain parts of the controls are rusty and the drains are stuffed with garbage. Get yourself a crowbar, loosen the controls and clean the pipes from the garbage. ...", 
+				"I hope your first mission will not scare you off. Even though, we cut off our sewer system from other parts of the city to prevent the worst, it still has deteriorated in the last decades. ...",
+				"Certain parts of the controls are rusty and the drains are stuffed with garbage. Get yourself a crowbar, loosen the controls and clean the pipes from the garbage. ...",
 				"We were able to locate the 4 worst spots in the sewers. I will mark them for you on your map so you have no trouble finding them. Report to me when you have finished your {mission}. ..."
 			}, cid)
 			player:addMapMark({x=32823, y=31161, z=8}, 4, "Sewer Problem 1")
@@ -49,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 6 then
 			npcHandler:say({
-				"We are still present at each quarter's city wall, even though we can do little to stop the chaos from spreading. Still, our garrisons are necessary to maintain some sort of order in the city. ...", 
+				"We are still present at each quarter's city wall, even though we can do little to stop the chaos from spreading. Still, our garrisons are necessary to maintain some sort of order in the city. ...",
 				"My superiors ask for a first hand report about the current situation in the single city quarters. I need someone to travel to our garrisons to get the reports from the guards. Are you willing to do that?"
 			}, cid)
 			npcHandler.topic[cid] = 3
@@ -58,9 +58,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 15 then
 			npcHandler:say({
-				"I did my best to impress my superiors with your accomplishments and it seems that it worked quite well. They want you for their own missions now. ...", 
-				"Missions that are more important than the ones you've fulfilled for me. However, before you leave, there are still some things I need to tell you. ...", 
-				"Listen, I can't explain you everything in detail right now and here. You never know who might be eavesdropping. ...", 
+				"I did my best to impress my superiors with your accomplishments and it seems that it worked quite well. They want you for their own missions now. ...",
+				"Missions that are more important than the ones you've fulfilled for me. However, before you leave, there are still some things I need to tell you. ...",
+				"Listen, I can't explain you everything in detail right now and here. You never know who might be eavesdropping. ...",
 				"I left some notes in the small room there. Get them and read them. Talk to me again when you've read the notes."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission03, 1) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"
@@ -69,8 +69,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.NotesPalimuth) == 1 and player:getStorageValue(Storage.InServiceofYalahar.Questline) == 16 then
 			npcHandler:say({
-				"Now you know as much as we do about the things happening in Yalahar. It's up to you what you do with this information. ...", 
-				"Now leave and talk to my superior Azerus in the city centre to get your next mission. I urge you, though, to talk to me whenever he sends you on a new mission. ...", 
+				"Now you know as much as we do about the things happening in Yalahar. It's up to you what you do with this information. ...",
+				"Now leave and talk to my superior Azerus in the city centre to get your next mission. I urge you, though, to talk to me whenever he sends you on a new mission. ...",
 				"I think it is important that you hear my opinion about them. Now hurry. I suppose Azerus is already waiting."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission03, 2) -- StorageValue for Questlog "Mission 03: Death to the Deathbringer"
@@ -79,9 +79,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 20 then
 			npcHandler:say({
-				"This quarter has been sealed off years ago. To send someone there poses a high risk to spread the plague. I assume these research notes you've mentioned must be very important. ...", 
-				"After all those years it is more than strange that someone shows interest in these notes now. Considering what has happened to the alchemists, it is rather unlikely that they contain harmless information. ...", 
-				"I fear these notes will be used to turn the plague into some kind of weapon. Someone with this plague at his disposal could subdue the whole city by blackmailing. ...", 
+				"This quarter has been sealed off years ago. To send someone there poses a high risk to spread the plague. I assume these research notes you've mentioned must be very important. ...",
+				"After all those years it is more than strange that someone shows interest in these notes now. Considering what has happened to the alchemists, it is rather unlikely that they contain harmless information. ...",
+				"I fear these notes will be used to turn the plague into some kind of weapon. Someone with this plague at his disposal could subdue the whole city by blackmailing. ...",
 				"I beg you to destroy these notes. Just put them into some burning oven to get rid of them and report that you did not find the notes."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 21)
@@ -90,9 +90,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 23 then
 			npcHandler:say({
-				"Mr. West is a little paranoid. That's the reason for his immense private army of bodyguards. He could surely be helpful, especially as he rules over the former trade quarter. ...", 
-				"If you were able to reach him without killing his henchmen, you could probably convince him that you mean no harm to him. ...", 
-				"That would certainly cement our relationship without any needless bloodshed. Perhaps you could use the way through the sewers to avoid his men. ...", 
+				"Mr. West is a little paranoid. That's the reason for his immense private army of bodyguards. He could surely be helpful, especially as he rules over the former trade quarter. ...",
+				"If you were able to reach him without killing his henchmen, you could probably convince him that you mean no harm to him. ...",
+				"That would certainly cement our relationship without any needless bloodshed. Perhaps you could use the way through the sewers to avoid his men. ...",
 				"Mr. West is not a bad man. We should be able to work out some plans to reconstruct the city's safety as soon as he overcomes his paranoia towards us."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 24)
@@ -100,7 +100,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 25 and player:getStorageValue(Storage.InServiceofYalahar.MrWestStatus) == 1 then
 			npcHandler:say({
-				"You did quite well in gaining a new friend who will work together with us. ...", 
+				"You did quite well in gaining a new friend who will work together with us. ...",
 				"I'm sure he'll still try to gain some profit but that's still better than his former one-man rule during which he dictated his own laws."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.GoodSide, player:getStorageValue(Storage.InServiceofYalahar.GoodSide) >= 0 and player:getStorageValue(Storage.InServiceofYalahar.GoodSide) + 1 or 0)
@@ -109,8 +109,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 28 then
 			npcHandler:say({
-				"Warbeasts? Is this true? People are already starving. ...", 
-				"How can we afford to feed an army of hungry beasts? They will not only strengthen the power of the Yalahari over the citizens, they also mean starvation and deathfor the poor. ...", 
+				"Warbeasts? Is this true? People are already starving. ...",
+				"How can we afford to feed an army of hungry beasts? They will not only strengthen the power of the Yalahari over the citizens, they also mean starvation and deathfor the poor. ...",
 				"Instead of breeding warbeasts, this druid should breed cattle to feed our people. Please I beg you, convince him to do that!"
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 29)
@@ -125,7 +125,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 35 then
 			npcHandler:say({
-				"What a sick idea to misuse tortured souls to power some device! Though, this charm might be useful to free these poor souls. ...", 
+				"What a sick idea to misuse tortured souls to power some device! Though, this charm might be useful to free these poor souls. ...",
 				"Please capture the souls as you have been instructed and then bring the charm to me. I will see to it that the souls are freed to go to the afterlife in peace."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 36)
@@ -135,7 +135,7 @@ local function creatureSayCallback(cid, type, msg)
 			if player:getItemCount(9742) >= 1 then
 				player:removeItem( 9742, 1)
 				npcHandler:say({
-					"I thank you also in the name of these poor lost souls. I will send the charm to a priest who is able to release them. ...", 
+					"I thank you also in the name of these poor lost souls. I will send the charm to a priest who is able to release them. ...",
 					"Tell the Yalahari that the charm was destroyed by the energy it contained."
 				}, cid)
 				player:setStorageValue(Storage.InServiceofYalahar.Questline, 38)
@@ -146,8 +146,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 40 then
 			npcHandler:say({
-				"The quara are indeed a threat. Yet, they are numerous and reproduce quickly. Slaying some of them will only enrage them even more. ...", 
-				"The quara have been there for many generations. They have never threatened anyone who stayed out of their watery realm. ...", 
+				"The quara are indeed a threat. Yet, they are numerous and reproduce quickly. Slaying some of them will only enrage them even more. ...",
+				"The quara have been there for many generations. They have never threatened anyone who stayed out of their watery realm. ...",
 				"It would be much more useful to find out what the quara are so upset about. Better avoid slaying their leaders as this will only further the animosities."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 41)
@@ -162,8 +162,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 44 then
 			npcHandler:say({
-				"The constant unrest in the city is to a great extent caused by the lack of food. Weapons will only serve to suppress the poor. ...", 
-				"The factory you were sent to was once used for the production of food. Somewhere in the factory you might find an old pattern crystal for the production of food. ...", 
+				"The constant unrest in the city is to a great extent caused by the lack of food. Weapons will only serve to suppress the poor. ...",
+				"The factory you were sent to was once used for the production of food. Somewhere in the factory you might find an old pattern crystal for the production of food. ...",
 				"If you use it on the controls instead of the weapon pattern, you will ensure that our people are supplied with the desperately needed food. ..."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 45)
@@ -172,7 +172,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 48 then
 			npcHandler:say({
-				"Listen, I know you have worked for Azerus and his friends, but it is not too late to change your mind! I beg you to rethink your loyalties. ...", 
+				"Listen, I know you have worked for Azerus and his friends, but it is not too late to change your mind! I beg you to rethink your loyalties. ...",
 				"The fate of the whole city might depend on your decision! Think about your options carefully."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 49)
@@ -182,9 +182,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 50 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 1 then
 			npcHandler:say({
-				"I cannot tell you how we acquired this information, but we have heard that a circle of Yalahari is planning some kind of ritual. ...", 
-				"They plan to create a portal for some powerful demons and to unleash them in the city to 'purge' it once and for all. ...", 
-				"I doubt those poor fools will be able to control such entities. I can't figure out how they came up with such an insane idea, but they have to be stopped. ...", 
+				"I cannot tell you how we acquired this information, but we have heard that a circle of Yalahari is planning some kind of ritual. ...",
+				"They plan to create a portal for some powerful demons and to unleash them in the city to 'purge' it once and for all. ...",
+				"I doubt those poor fools will be able to control such entities. I can't figure out how they came up with such an insane idea, but they have to be stopped. ...",
 				"The entrance to their inner sanctum has been opened for you. Please hurry and stop them before it's too late. Be prepared for a HARD battle! Better gather some friends to assist you."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 51)
@@ -193,12 +193,12 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 52 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 1 then
 			npcHandler:say({
-				"So the Yalahari that opposed us are dead or fled from the city. This should bring us more stability and perhaps a true chance to rebuild the city. ...", 
-				"Still, I wonder from where they gained some of the Yalahari secrets. Did they find some source of knowledge? ...", 
-				"And if so, is this source still around so that we can use it for the benefit of our city? What really troubles me is that none of those false Yalahari had the personality of agreat leader. ...", 
-				"Quite the opposite, they were opportunistic and not exactly bold. Perhaps they were led by some greater power which stayed behind the scenes. ...", 
-				"I'm afraid we have not seen the last chapter of Yalahar's drama. But anyhow, I wish to thank you for putting your life at stake for our cause. ...", 
-				"I allow you to enter the Yalaharian treasure room. I'm sure that you can put what you find inside to better use than them. Choose one chest, but think before takingone! ...", 
+				"So the Yalahari that opposed us are dead or fled from the city. This should bring us more stability and perhaps a true chance to rebuild the city. ...",
+				"Still, I wonder from where they gained some of the Yalahari secrets. Did they find some source of knowledge? ...",
+				"And if so, is this source still around so that we can use it for the benefit of our city? What really troubles me is that none of those false Yalahari had the personality of agreat leader. ...",
+				"Quite the opposite, they were opportunistic and not exactly bold. Perhaps they were led by some greater power which stayed behind the scenes. ...",
+				"I'm afraid we have not seen the last chapter of Yalahar's drama. But anyhow, I wish to thank you for putting your life at stake for our cause. ...",
+				"I allow you to enter the Yalaharian treasure room. I'm sure that you can put what you find inside to better use than them. Choose one chest, but think before takingone! ...",
 				"Also, take this Yalaharian outfit. Depending on which side you chose previously, you can also acquire one specific addon. Thank you again for your help."
 			}, cid)
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 53)
@@ -213,8 +213,8 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 4)
 			npcHandler:say({
-				"I'm pleased to hear that. Rarely we meet outsiders that care about our problems. Most people come here looking for wealth and luxury. ...", 
-				"However, I have to tell you that our ranking system is quite rigid. So, I'm not allowed to entrust you with important missions as long as you haven't proven yourself as reliable. ...", 
+				"I'm pleased to hear that. Rarely we meet outsiders that care about our problems. Most people come here looking for wealth and luxury. ...",
+				"However, I have to tell you that our ranking system is quite rigid. So, I'm not allowed to entrust you with important missions as long as you haven't proven yourself as reliable. ...",
 				"If you are willing to work for the city of Yalahar, you can ask me for a {mission} any time, be it night or day."
 			}, cid)
 			npcHandler.topic[cid] = 0
@@ -229,7 +229,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission02, 1) -- StorageValue for Questlog "Mission 02: Watching the Watchmen"
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 7)
 			npcHandler:say({
-				"You'll find our seven guards at the gates of each quarter. Just ask them for their report and they will tell you all you need to know.", 
+				"You'll find our seven guards at the gates of each quarter. Just ask them for their report and they will tell you all you need to know.",
 				"I must warn you, the quarters are in a horrible state. I strongly advise you to stay on the main roads whenever possible while you get those reports. ..."
 			}, cid)
 			npcHandler.topic[cid] = 0

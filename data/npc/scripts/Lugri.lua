@@ -43,16 +43,16 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "task") then
 		if player:getStorageValue(50000) <= 0 then
 			npcHandler:say({
-				"What? Who are you to imply I need help from a worm like you? ...", 
-				"I don't need help. But if you desperately wish to do something to earn the favour of Zathroth, feel free. Don't expect any reward though. ...", 
+				"What? Who are you to imply I need help from a worm like you? ...",
+				"I don't need help. But if you desperately wish to do something to earn the favour of Zathroth, feel free. Don't expect any reward though. ...",
 				"Do you want to help and serve Zathroth out of your own free will, without demanding payment or recognition?"
 			}, cid)
 			npcHandler.topic[cid] = 7
 		elseif player:getStorageValue(50000) == 1 then
 			if player:getStorageValue(50001) >= 4000 then
 				npcHandler:say({
-					"You've slain a mere {4000 necromancers and priestesses}. Still, you've shown some dedication. Maybe that means you can kill one of those so-called 'leaders' too. ...", 
-					"Deep under Drefia, a necromancer called Necropharus is hiding in the Halls of Sacrifice. I'll place a spell on you with which you will be able to pass his weak protective gate. ...", 
+					"You've slain a mere {4000 necromancers and priestesses}. Still, you've shown some dedication. Maybe that means you can kill one of those so-called 'leaders' too. ...",
+					"Deep under Drefia, a necromancer called Necropharus is hiding in the Halls of Sacrifice. I'll place a spell on you with which you will be able to pass his weak protective gate. ...",
 					"Know that this will be your only chance to enter his room. If you leave it or die, you won't be able to return. We'll see if you really dare enter those halls."
 				}, cid)
 				player:setStorageValue(50000, 2)
@@ -61,7 +61,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif player:getStorageValue(50000) == 2 then
 			npcHandler:say({
-				"So you had the guts to enter that room. Well, it's all fake magic anyway and no real threat. ...", 
+				"So you had the guts to enter that room. Well, it's all fake magic anyway and no real threat. ...",
 				"What are you looking at me for? Waiting for something? I told you that there was no reward. Despite being allowed to stand before me without being squashed like a bug. Get out of my sight!"
 			}, cid)
 			player:setStorageValue(50000, 3)
@@ -119,8 +119,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 7 then
 			npcHandler:say({
-				"You do? I mean - wise decision. Let me explain. By now, Tibia has been overrun by numerous followers of different cults and beliefs. The true Necromancers died or left Tibia long ago, shortly after their battle was lost. ...", 
-				"What is left are mainly pseudo-dark pretenders, the old wisdom and power being far beyond their grasp. They think they have the right to tap that dark power, but they don't. ...", 
+				"You do? I mean - wise decision. Let me explain. By now, Tibia has been overrun by numerous followers of different cults and beliefs. The true Necromancers died or left Tibia long ago, shortly after their battle was lost. ...",
+				"What is left are mainly pseudo-dark pretenders, the old wisdom and power being far beyond their grasp. They think they have the right to tap that dark power, but they don't. ...",
 				"I want you to eliminate them. As many as you can. All of the upstart necromancer orders, and those priestesses. And as I said, don't expect a reward - this is what has to be done to cleanse Tibia of its false dark prophets."
 			}, cid)
 			player:setStorageValue(50000, 1)

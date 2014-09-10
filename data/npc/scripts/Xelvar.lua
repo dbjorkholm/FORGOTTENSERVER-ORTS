@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "gnomes") then
 		if npcHandler.topic[cid] == 3 then
 			npcHandler:say({
-				"The gnomes preferred to keep our alliance and their whole {existence} a secret. They are a bit distrustful of others. ...", 
+				"The gnomes preferred to keep our alliance and their whole {existence} a secret. They are a bit distrustful of others. ...",
 				"They are quite self-sufficient and the fact that they are actually accepting some help is more than alarming. The gnomes are in real trouble and I am kind of an ambassador to find some people willing to {help}."
 			}, cid)
 			npcHandler.topic[cid] = 4
@@ -38,7 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "help") then
 		if npcHandler.topic[cid] == 4 then
 			npcHandler:say({
-				"The gnomes are locked in a war with an enemy that thins out their resources but foremost their manpower. We have suggested that people like you could be just the specialists they are looking for. ...", 
+				"The gnomes are locked in a war with an enemy that thins out their resources but foremost their manpower. We have suggested that people like you could be just the specialists they are looking for. ...",
 				"If you are interested to {join} the gnomish cause I can arrange a meeting with their recruiter."
 			}, cid)
 			npcHandler.topic[cid] = 5
@@ -46,11 +46,11 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "join") then
 		if npcHandler.topic[cid] == 5 then
 			npcHandler:say({
-				"I am glad to hear that. In the spirit of our own foreign legion we suggested the gnomes might hire heroes like you to build some kind of troop. They gave me that strange crystal to allow people passage to their realm. ...", 
-				"I hereby grant you permission to use the basic gnomish teleporters. I also give you four gnomish teleport crystals. One will be used up each time you use the teleporter. ...", 
-				"You can stock up your supply by buying more from me. Just ask me for a {trade}. Gnomette in the teleport chamber of the gnome outpost will sell them too. ...", 
-				"The teleporter here will transport you to one of the bigger gnomish outposts. ...", 
-				"There you will meet Gnomerik, the recruitment officer of the Gnomes. If you are lost, Gnomette in the teleport chamber might be able to help you with directions. ...", 
+				"I am glad to hear that. In the spirit of our own foreign legion we suggested the gnomes might hire heroes like you to build some kind of troop. They gave me that strange crystal to allow people passage to their realm. ...",
+				"I hereby grant you permission to use the basic gnomish teleporters. I also give you four gnomish teleport crystals. One will be used up each time you use the teleporter. ...",
+				"You can stock up your supply by buying more from me. Just ask me for a {trade}. Gnomette in the teleport chamber of the gnome outpost will sell them too. ...",
+				"The teleporter here will transport you to one of the bigger gnomish outposts. ...",
+				"There you will meet Gnomerik, the recruitment officer of the Gnomes. If you are lost, Gnomette in the teleport chamber might be able to help you with directions. ...",
 				"Good luck to you and don't embarrass your race down there! Keep in mind that you are a representative of the big people."
 			}, cid)
 			local player = Player(cid)

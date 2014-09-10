@@ -32,7 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "mission") or msgcontains(msg, "report") then
 		if player:getStorageValue(Storage.TheInquisition.Questline) == 1 then
 			npcHandler:say({
-				"Let's see if you are worthy. Take an inquisitor's field guide from the box in the back room. ...", 
+				"Let's see if you are worthy. Take an inquisitor's field guide from the box in the back room. ...",
 				"Follow the instructions in the guide to talk to the Thaian guards that protect the walls and gates of the city and test their loyalty. Then report to me about your {mission}."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 2)
@@ -43,9 +43,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 3 then
 			npcHandler:say({
-				"Listen, we have information about a heretic coven that hides in a mountain called the Big Old One. The witches reach this cursed place on flying brooms and think they are safe there. ...", 
-				"I've arranged a flying carpet that will bring you to their hideout. Travel to Femor Hills and tell the carpet pilot the codeword 'eclipse' ...", 
-				"He'll bring you to your destination. At their meeting place, you'll find a cauldron in which they cook some forbidden brew ...", 
+				"Listen, we have information about a heretic coven that hides in a mountain called the Big Old One. The witches reach this cursed place on flying brooms and think they are safe there. ...",
+				"I've arranged a flying carpet that will bring you to their hideout. Travel to Femor Hills and tell the carpet pilot the codeword 'eclipse' ...",
+				"He'll bring you to your destination. At their meeting place, you'll find a cauldron in which they cook some forbidden brew ...",
 				"Use this vial of holy water to destroy the brew. Also steal their grimoire and bring it to me."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 4)
@@ -55,9 +55,9 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 5 then
 			if player:removeItem(8702, 1) then
 				npcHandler:say({
-					"I think it's time to truly test your abilities. One of our allies has requested assistance. I think you are just the right person to help him ...", 
-					"Storkus is an old and grumpy dwarf who works as a vampire hunter since many, many decades. He's quite successful but even hehas his limits. ...", 
-					"So occasionally, we send him help. In return he trains and tests our recruits. It's an advantageous agreement for both sides ...", 
+					"I think it's time to truly test your abilities. One of our allies has requested assistance. I think you are just the right person to help him ...",
+					"Storkus is an old and grumpy dwarf who works as a vampire hunter since many, many decades. He's quite successful but even hehas his limits. ...",
+					"So occasionally, we send him help. In return he trains and tests our recruits. It's an advantageous agreement for both sides ...",
 					"You'll find him in his cave at the mountain outside of Kazordoon. He'll tell you about your next mission."
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 6)
@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 4
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 11 then
 			npcHandler:say({
-				"We've got a report about an abandoned and haunted house in Liberty Bay. I want you to examine this house. It's the only ruin in Liberty Bay so you should have no trouble finding it. ...", 
+				"We've got a report about an abandoned and haunted house in Liberty Bay. I want you to examine this house. It's the only ruin in Liberty Bay so you should have no trouble finding it. ...",
 				"There's an evil being somewhere. I assume that it will be easier to find the right spot at night. Use this vial of holy water on that spot to drive out the evil being."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 12)
@@ -84,7 +84,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 14 then
 			npcHandler:say({
-				"You've handled heretics, witches, vampires and ghosts. Now be prepared to face the most evil creatures we are fighting - demons. Your new task is extremely simple, though far from easy. ...", 
+				"You've handled heretics, witches, vampires and ghosts. Now be prepared to face the most evil creatures we are fighting - demons. Your new task is extremely simple, though far from easy. ...",
 				"Go and slay demonic creatures wherever you find them. Bring me 20 of their essences as a proof of your accomplishments."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 15)
@@ -93,7 +93,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 15 then
 			if player:getItemCount(6500) >= 20 then
 				npcHandler:say({
-					"You're indeed a dedicated protector of the true believers. Don't stop now. Kill as many of these creatures as you can. ...", 
+					"You're indeed a dedicated protector of the true believers. Don't stop now. Kill as many of these creatures as you can. ...",
 					"I also have a reward for your great efforts. Talk to me about your {demon hunter outfit} anytime from now on. Afterwards, let's talk about the next mission that's awaiting you."
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 16)
@@ -105,8 +105,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 17 then
 			npcHandler:say({
-				"We've got information about something very dangerous going on on the isle of Edron. The demons are preparing something there ...", 
-				"Something that is a threat to all of us. Our investigators were able to acquire vital information before some of them were slain by a demon named Ungreez. ...", 
+				"We've got information about something very dangerous going on on the isle of Edron. The demons are preparing something there ...",
+				"Something that is a threat to all of us. Our investigators were able to acquire vital information before some of them were slain by a demon named Ungreez. ...",
 				"It'll be your task to take revenge and to kill that demon. You'll find him in the depths of Edron. Good luck."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 18)
@@ -114,7 +114,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 19 then
 			npcHandler:say({
-				"So the beast is finally dead! Thank the gods. At least some things work out in our favour ...", 
+				"So the beast is finally dead! Thank the gods. At least some things work out in our favour ...",
 				"Our other operatives were not that lucky, though. But you will learn more about that in your next {mission}."
 			}, cid)
 			player:setStorageValue(Storage.TheInquisition.Questline, 20)
@@ -141,7 +141,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getStorageValue(Storage.TheInquisition.WalterGuard) == 1 and player:getStorageValue(Storage.TheInquisition.KulagGuard) == 1 and player:getStorageValue(Storage.TheInquisition.GrofGuard) == 1 and player:getStorageValue(Storage.TheInquisition.MilesGuard) == 1 and player:getStorageValue(Storage.TheInquisition.TimGuard) == 1 then
 				npcHandler:say({
-					"Indeed, this is exactly what my other sources told me. Of course I knew the outcome of this investigation in advance. This was just a test. ...", 
+					"Indeed, this is exactly what my other sources told me. Of course I knew the outcome of this investigation in advance. This was just a test. ...",
 					"Well, now that you've proven yourself as useful, you can ask me for another mission. Let's see if you can handle some field duty, too."
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 3)
@@ -171,7 +171,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 6 then
 			if player:getStorageValue(Storage.TheInquisition.Questline) == 22 then
 				npcHandler:say({
-					"Incredible! You're a true defender of faith! I grant you the title of a High Inquisitor for your noble deeds. From now on you can obtain the blessing of the inquisition which makes the pilgrimage of ashes obsolete ...", 
+					"Incredible! You're a true defender of faith! I grant you the title of a High Inquisitor for your noble deeds. From now on you can obtain the blessing of the inquisition which makes the pilgrimage of ashes obsolete ...",
 					"The blessing of the inquisition will bestow upon you all available blessings for the price of 60000 gold. Also, don't forget to ask me about your {outfit} to receive the final addon as demon hunter."
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 23)

@@ -21,7 +21,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "ankrahmun") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				"Yes, I've lived in Ankrahmun for quite some time. Ahh, good old times! ...", 
+				"Yes, I've lived in Ankrahmun for quite some time. Ahh, good old times! ...",
 				"Unfortunately I had to relocate. <sigh> ...",
 				"Business reasons - you know."
 			}, cid)
@@ -30,7 +30,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "supplies") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say({
-				"What!? I bet, Baa'leal sent you! ...", 
+				"What!? I bet, Baa'leal sent you! ...",
 				"I won't tell you anything! Shove off!"
 			}, cid)
 			player:setStorageValue(GreenDjinn.MissionStart + 1, 3)

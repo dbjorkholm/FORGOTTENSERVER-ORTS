@@ -18,7 +18,7 @@ function onKill(cid, target)
 	if not targetMonster then
 		return true
 	end
-	
+
 	if targetMonster:getName():lower() == 'mutated zalamon' then
 		Game.setStorageValue(Storage.WrathoftheEmperor.Mission11, -1)
 		return true

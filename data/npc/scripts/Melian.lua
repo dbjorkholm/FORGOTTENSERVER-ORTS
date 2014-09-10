@@ -30,5 +30,5 @@ local travelNode = keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcH
 npcHandler:setMessage(MESSAGE_GREET, "Ah, the wind brings in another visitor. Feel welcome |PLAYERNAME|. Where do you want me to {fly} you?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Daraman's blessings!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Daraman's blessings!")
-	
+
 npcHandler:addModule(FocusModule:new())

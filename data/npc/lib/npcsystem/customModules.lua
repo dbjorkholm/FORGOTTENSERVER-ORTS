@@ -29,7 +29,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 		end
 
 		costMessage = string.format(costMessage, cost)
-	else   
+	else
 		costMessage = 'free'
 	end
 
@@ -37,7 +37,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 
 	local msg = string.format(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), costMessage)
 
-	npcHandler:say(msg, cid, parameters.publicize and true)		
+	npcHandler:say(msg, cid, parameters.publicize and true)
 
 	if parameters.reset then
 		npcHandler:resetNpc(cid)
@@ -100,10 +100,10 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 	return true
 end
 
-function TravelLib.postmanDiscount(cid, cost)	
+function TravelLib.postmanDiscount(cid, cost)
 	if Player(cid):getStorageValue(Storage.postman.Rank) >= 3 then
 		return 10
 	end
-   
+
 	return 0
 end

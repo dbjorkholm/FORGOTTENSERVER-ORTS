@@ -9,6 +9,5 @@ function onStepIn(cid, item, position, fromPosition)
 		Game.createMonster('amazon', Position(32326, 31803, 8))
 		Game.createMonster('amazon', Position(32330, 31803, 8))
 	end
-	
 	return true
 end

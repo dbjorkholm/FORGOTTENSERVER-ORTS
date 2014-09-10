@@ -132,7 +132,7 @@ function Player:onTradeAccept(target, item, targetItem)
 	return true
 end
 
-local config =  { 
+local config =  {
 	[1] = 1.10, -- +10%
 	[2] = 1.20, -- +20%
 	[3] = 1.50, -- +50%

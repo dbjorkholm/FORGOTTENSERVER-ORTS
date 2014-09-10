@@ -32,7 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Storage.OutfitQuest.WarriorShoulderAddon, 6)
 			npcHandler:say({
-				"Ah, you must be the hero Trisha talked about. I'll prepare the shoulder spikes for you.", 
+				"Ah, you must be the hero Trisha talked about. I'll prepare the shoulder spikes for you.",
 				"Finished! Since you are a man, I thought you probably wanted two. Men always want that little extra status symbol. <giggles>"
 			}, cid)
 		end

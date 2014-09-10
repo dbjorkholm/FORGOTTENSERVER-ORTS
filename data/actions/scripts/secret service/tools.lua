@@ -9,12 +9,11 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if not useItem then
 		return true
 	end
-	
-	local player = Player(cid)
 
+	local player = Player(cid)
 	player:addItem(useItem)
 	player:say('You\'ve found a useful little tool for secret agents in the parcel.', TALKTYPE_MONSTER_SAY)
+
 	Item(item.uid):remove()
-	
 	return true
 end

@@ -55,20 +55,20 @@ end
 
 local function getFarmineDestinationCallback(cid)
 	local player = Player(cid)
-	
+
 	local destination = Position(33025, 31553, 14)
 	if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
 		destination.z = 10
 	elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
 		destination.z = 12
 	end
-	
+
 	return destination
 end
 
 local function cormayaOnTravelCallback(cid)
 	local player = Player(cid)
-	
+
 	if player:getStorageValue(Storage.postman.Mission01) == 4 then
 		player:setStorageValue(Storage.postman.Mission01, 5)
 	end

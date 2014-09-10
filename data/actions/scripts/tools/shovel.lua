@@ -68,7 +68,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if player:getStorageValue(50143) >= os.time() then
 			return false
 		end
-		
+
 		local config, chance = {
 			{from = 1, to = 39, itemId = 2817},
 			{from = 40, to = 79, itemId = 2145},

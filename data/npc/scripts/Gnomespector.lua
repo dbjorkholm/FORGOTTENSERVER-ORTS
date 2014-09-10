@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, "recruit") then
 		if Player(cid):getStorageValue(Storage.BigfootBurden.QuestLine) == 3 then
 			npcHandler:say({
-				"Your examination is quite easy. Just step through the green crystal {apparatus} in the south! We will examine you with what we call g-rays. Where g stands for gnome of course ...", 
+				"Your examination is quite easy. Just step through the green crystal {apparatus} in the south! We will examine you with what we call g-rays. Where g stands for gnome of course ...",
 				"Afterwards walk up to Gnomedix for your ear examination."
 			}, cid)
 			npcHandler.topic[cid] = 1
