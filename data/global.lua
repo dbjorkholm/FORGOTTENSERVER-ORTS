@@ -124,8 +124,8 @@ CONTAINER_POSITION = 0xFFFF
 ITEMCOUNT_MAX = 100
 
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
-	if position == nil then
-		position = getCreaturePosition(cid)
+	if not position then
+		position = Creature(cid):getPosition()
 	end
 
 	local spectators = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
@@ -140,7 +140,7 @@ function getBlessingsCost(level)
 	elseif level >= 120 then
 		return 20000
 	else
-		return ((level - 20) * 200)
+		return (level - 20) * 200
 	end
 end
 
@@ -150,7 +150,7 @@ function getPvpBlessingCost(level)
 	elseif level >= 270 then
 		return 50000
 	else
-		return ((level - 20) * 200)
+		return (level - 20) * 200
 	end
 end
 

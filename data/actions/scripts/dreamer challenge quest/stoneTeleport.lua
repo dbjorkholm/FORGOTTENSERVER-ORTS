@@ -9,8 +9,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 		local tp = getTileItemById({x = 32881, y = 32270, z = 14}, 1387).uid
 		if (tp == 0) then
-			local item = doCreateItem(1387, 1, {x = 32881, y = 32270, z = 14})
-			doSetItemActionId(item, 9031)
+			local newItem = Game.createItem(1387, 1, Position(32881, 32270, 14))
+			if newItem then
+				newItem:setActionId(9031)
+			end
 		end
 		doTransformItem(item.uid, 1946)
 		doTransformItem(getTileItemById({x = 32874, y = 32263, z = 14}, 3729).uid, 3733)

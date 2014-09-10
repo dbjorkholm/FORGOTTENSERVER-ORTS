@@ -134,7 +134,7 @@ function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(
 		local items = setNewTradeTable(ItemTable)
 
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-			if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+			if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 				return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 			end
 			if items[item].buyPrice <= player:getMoney() then

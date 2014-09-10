@@ -15,7 +15,6 @@ function playerExists(name)
 	end
 end
 
-
 function isValidMoney(money)
 	return isNumber(money) and money > 0 and money < 4294967296
 end
@@ -62,6 +61,21 @@ function getRealDate()
 		day = '0' .. day
 	end
 	return day .. '/' .. month
+end
+
+function getAccountNumberByPlayerName(name)
+	local player = Player(name)
+	if player ~= nil then
+		return player:getAccountId()
+	end
+
+	local resultId = db.storeQuery("SELECT `account_id` FROM `players` WHERE `name` = " .. db.escapeString(name))
+	if resultId ~= false then
+		local accountId = result.getDataInt(resultId, "account_id")
+		result.free(resultId)
+		return accountId
+	end
+	return 0
 end
 
 function doPlayerGnomishRank(cid)
@@ -127,13 +141,13 @@ function clearArena(fromPos, toPos)
 		for x = fromPos.x, toPos.x do
 			for y = fromPos.y, toPos.y do
 				for z = fromPos.z, toPos.z do
-					local creature = getTopCreature({x = x, y = y, z = z})
-					if creature and creature.uid > 0 then
-						if isPlayer(creature.uid) then
-							doTeleportThing(creature.uid, {x = 33049, y = 31017, z = 2})
-							doSendMagicEffect({x = 33049, y = 31017, z = 2}, CONST_ME_TELEPORT)
+					local creature = Tile(x, y, z):getTopCreature()
+					if creature then
+						if creature:isPlayer() then
+							creature:teleportTo(Position(33049, 31017, 2))
+							Position(33049, 31017, 2):sendMagicEffect(CONST_ME_TELEPORT)
 						else
-							doRemoveCreature(creature.uid)
+							creature:remove()
 						end
 					end
 				end
@@ -141,7 +155,78 @@ function clearArena(fromPos, toPos)
 		end
 		Game.setStorageValue(3157, 0)
 	end
-	return true
+end
+
+
+-- Game --
+function Game.getPlayersByIPAddress(ip, mask)
+	if not mask then mask = 0xFFFFFFFF end
+	local masked = bit.band(ip, mask)
+	local result = {}
+	for _, player in ipairs(Game.getPlayers()) do
+		if bit.band(player:getIp(), mask) == masked then
+			result[#result + 1] = player
+		end
+	end
+	return result
+end
+
+function Game.getPlayersByAccountNumber(accountNumber)
+	local result = {}
+	for _, player in ipairs(Game.getPlayers()) do
+		if player:getAccountId() == accountNumber then
+			result[#result + 1] = player
+		end
+	end
+	return result
+end
+
+function Game.getHouseByPlayerGUID(playerGUID)
+	for _, house in ipairs(Game.getHouses()) do
+		if house:getOwnerGuid() == playerGUID then
+			return house
+		end
+	end
+	return nil
+end
+
+
+-- Item --
+function Item.setText(self, text)
+	if text ~= '' then
+		self:setAttribute(ITEM_ATTRIBUTE_TEXT, text)
+	else
+		self:removeAttribute(ITEM_ATTRIBUTE_TEXT)
+	end
+end
+
+function Item.setDescription(self, description)
+	if description ~= '' then
+		self:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, description)
+	else
+		self:removeAttribute(ITEM_ATTRIBUTE_DESCRIPTION)
+	end
+end
+
+
+-- Party --
+function Party.getVocationCount(self)
+	local count = 1
+	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
+
+	local members = self:getMembers()
+	for i = 1, #members do
+		local vocationId = getBaseVocation(members[i]:getVocation():getId())
+		local vocation = bit.lshift(1, vocationId)
+		if bit.band(bits, vocation) == vocation then
+			return false
+		end
+
+		bits = bit.bor(bits, bit.lshift(1, vocationId))
+		count = count + 1
+	end
+
+	return count
 end
 
 
@@ -205,27 +290,6 @@ end
 
 function Player.isMage(self)
 	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
-end
-
-
--- Party --
-function Party.getVocationCount(self)
-	local count = 1
-	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
-
-	local members = self:getMembers()
-	for i = 1, #members do
-		local vocationId = getBaseVocation(members[i]:getVocation():getId())
-		local vocation = bit.lshift(1, vocationId)
-		if bit.band(bits, vocation) == vocation then
-			return false
-		end
-
-		bits = bit.bor(bits, bit.lshift(1, vocationId))
-		count = count + 1
-	end
-
-	return count
 end
 
 

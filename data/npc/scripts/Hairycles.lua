@@ -8,39 +8,41 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function getTable(player)
-local itemsList = {
+	local itemsList = {
 		{name="Banana", id=2676, buy=2},
-		}
-local statues = {
-		{{name="Monkey Statue (No Seeing)", id=5086, buy=65},
-		{name="Monkey Statue (No Hearing)", id=5087, buy=65},
-		{name="Monkey Statue (No Speaking)", id=5088, buy=65}}
-		}
+	}
 
-if player:getStorageValue(Storage.TheApeCity.Questline) >= 23 then
-	for i = 1, #statues[1] do
-		table.insert(itemsList, statues[1][i])
+	local statues = {
+		{name="Monkey Statue (No Seeing)", id=5086, buy=65},
+		{name="Monkey Statue (No Hearing)", id=5087, buy=65},
+		{name="Monkey Statue (No Speaking)", id=5088, buy=65}
+	}
+
+	if player:getStorageValue(Storage.TheApeCity.Questline) >= 23 then
+		for i = 1, #statues do
+			table.insert(itemsList, statues[i])
+		end
 	end
-end
-return itemsList
+	return itemsList
 end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if(player:getStorageValue(Storage.TheApeCity.Questline) <= 14) then
+	if player:getStorageValue(Storage.TheApeCity.Questline) <= 14 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello! Did not notice!")
-	elseif(player:getStorageValue(Storage.TheApeCity.Questline) >= 15) then
+	elseif player:getStorageValue(Storage.TheApeCity.Questline) >= 15 then
 		npcHandler:setMessage(MESSAGE_GREET, "Be greeted, friend of the ape people. If you want to trade, just ask for my offers. If you are injured, ask for healing.")
 	end
 	return true
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
+	end
 
-	elseif msgcontains(msg, "heal") then
+	local player = Player(cid)
+	if msgcontains(msg, "heal") then
 		if player:getStorageValue(Storage.TheApeCity.Mission06) >= 3 then
 			local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 			if player:getHealth() < 50 then
@@ -313,7 +315,7 @@ local function creatureSayCallback(cid, type, msg)
 			local player = Player(cid)
 			local items = setNewTradeTable(getTable(player))
 			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-				if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+				if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 				end
 				if items[item].buyPrice <= player:getMoney() then
@@ -350,9 +352,9 @@ local function creatureSayCallback(cid, type, msg)
 				end
 				return true
 			end
-				openShopWindow(cid, getTable(player), onBuy, onSell)
 
-				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
+			openShopWindow(cid, getTable(player), onBuy, onSell)
+			npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 		else
 			npcHandler:say("I only trade with friends of ape...", cid)
 		end

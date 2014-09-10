@@ -12,12 +12,12 @@ local rewards = {
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if(player:getStorageValue(Storage.TheInquisition.Reward) < 1) then
+	if player:getStorageValue(Storage.TheInquisition.Reward) < 1 then
 		player:setStorageValue(Storage.TheInquisition.Reward, 1)
 		player:setStorageValue(Storage.TheInquisition.Questline, 25)
 		player:setStorageValue(Storage.TheInquisition.Mission07, 5) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
 		player:addItem(rewards[item.uid], 1)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found " .. getItemName(rewards[item.uid]) .. ".")
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found " .. ItemType(rewards[item.uid]):getName() .. ".")
 	else
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 	end

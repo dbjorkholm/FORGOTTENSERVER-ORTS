@@ -8,18 +8,20 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function getTable(player)
-local itemsList = {
+	local itemsList = {
 		{name="Didgeridoo", id=3952, buy=5,000},
 		{name="War Drum", id=3953, buy=1,000}
-		}
-return itemsList
+	}
+	return itemsList
 end
 
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "tome") or msgcontains(msg, "knowledge") then
+	end
+
+	if msgcontains(msg, "tome") or msgcontains(msg, "knowledge") then
 		--The first 8 missions of The New Frontier Quest completed to be able to trade 6 Tomes of Knowledge with NPC Cael.
 		if player:getStorageValue(Storage.TheNewFrontier.Mission08) == 2 then
 			if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) < 1 then --tome1
@@ -309,7 +311,7 @@ local function creatureSayCallback(cid, type, msg)
 			local player = Player(cid)
 			local items = setNewTradeTable(getTable(player))
 			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-				if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+				if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 				end
 				if items[item].buyPrice <= player:getMoney() then
