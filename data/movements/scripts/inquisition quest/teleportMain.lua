@@ -39,13 +39,13 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	local teleport = teleports[item.uid]
-	if teleport.alwaysSetStorage and player:getStorageValue(Storage.TheInquisition.EnterTeleport) <= teleport.storage then
+	if teleport.alwaysSetStorage and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
 		player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleport.storage)
 	end
 
 	if teleport.bossStorage then
 		if Game.getStorageValue(teleport.bossStorage) == 2 then
-			if player:getStorageValue(Storage.TheInquisition.EnterTeleport) <= teleport.storage then
+			if player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
 				player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleport.storage)
 			end
 		else
