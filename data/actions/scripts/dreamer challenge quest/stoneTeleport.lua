@@ -34,7 +34,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local stonePosition = Position(32881, 32270, 14)
-	local stoneItem = Tile(position):getItemById(1355)
+	local stoneItem = Tile(stonePosition):getItemById(1355)
 	if stoneItem then
 		stoneItem:remove()
 	end

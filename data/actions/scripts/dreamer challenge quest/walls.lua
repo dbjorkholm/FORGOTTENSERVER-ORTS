@@ -50,7 +50,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	addEvent(revertLever, 8 * 1000, toPosition)
 
 	local wallItem
-	for i = 1, #wall do
+	for i = 1, #walls do
 		wallItem = Tile(walls[i].pos):getItemById(walls[i].id)
 		if wallItem then
 			wallItem:remove()
