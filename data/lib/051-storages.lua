@@ -2,11 +2,43 @@
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it in Values -
 Storage = {
+	ExplorerSociety = {
+		QuestLine = 90
+	},
 	BigfootBurden = {
 		QuestLine = 900,
 		Test = 901,
 		Shooting = 902,
-		Rank = 921
+
+		MelodyTone1 = 904,
+		MelodyTone2 = 905,
+		MelodyTone3 = 906,
+		MelodyTone4 = 907,
+		MelodyTone5 = 908,
+		MelodyTone6 = 909,
+		MelodyTone7 = 910,
+
+		MelodyStatus = 911,
+
+		Rank = 921,
+		MissionRaidersOfTheLostSpark = 933,
+		ExtractedCount = 934,
+
+		MissionMushroomDigger = 939,
+		MushroomCount = 940,
+		MushroomDiggerTimeout = 941,
+
+		MissionMatchmaker = 942,
+		MatchmakerStatus = 943,
+
+		MissionTinkersBell = 945,
+		GolemCount = 946,
+
+		MissionSporeGathering = 948,
+		SporeCount = 949,
+
+		MissionGrindstoneHunt = 951,
+		GrindstoneStatus = 952
 	},
 	wagonTicket = 1131,
 	OutfitQuest = {
@@ -354,6 +386,7 @@ Storage = {
 		Arena = 1100,
 		Pit = 1101
 	},
+	firstMageWeapon = 50079,
 	pitsOfInfernoPumin = 50096,
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,

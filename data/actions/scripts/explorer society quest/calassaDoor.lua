@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(90) >= 63 then
+	if player:getStorageValue(Storage.ExplorerSociety.QuestLine) >= 63 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(5749)
 	end

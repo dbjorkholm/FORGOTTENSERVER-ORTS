@@ -111,7 +111,7 @@ local function creatureSayCallback(cid, type, msg)
 		t[cid] = msg
 	elseif msgcontains(msg, 'relations') then
 		local player = Player(cid)
-		if player:getStorageValue(900) >= 14 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 14 then
 			npcHandler:say('Our relations improve with every mission you undertake on our behalf. Another way to improve your relations with us gnomes is to trade in minor crystal tokens. ...', cid)
 			npcHandler:say('Your renown amongst us gnomes is currently {' .. math.max(0, player:getStorageValue(921)) .. '}. Do you want to improve your standing by sacrificing tokens? One token will raise your renown by 5 points. ', cid)
 			npcHandler.topic[cid] = 2

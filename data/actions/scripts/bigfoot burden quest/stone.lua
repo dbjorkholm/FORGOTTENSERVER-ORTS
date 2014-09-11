@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(952) == 1 or player:getStorageValue(951) ~= 1 then
+	if player:getStorageValue(Storage.BigfootBurden.GrindstoneStatus) == 1 or player:getStorageValue(Storage.BigfootBurden.MissionGrindstoneHunt) ~= 1 then
 		return false
 	end
 
@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	player:setStorageValue(952, 1)
+	player:setStorageValue(Storage.BigfootBurden.GrindstoneStatus, 1)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your skill allowed you to grab a whetstone before the stone sinks into lava.')
 	player:addItem(18337, 1)
 	return true

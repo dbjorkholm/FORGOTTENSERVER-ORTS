@@ -11,15 +11,17 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
-		if player:getStorageValue(90) == 61 then
+	end
+
+	if msgcontains(msg, "mission") then
+		if player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 61 then
 			npcHandler:say({
 				"Ah! You did it! I can't wait to hear the sound... but I will do that in a silent moment. ...",
 				"You helped as much in our research here. As a reward, you may use our astral portal in the upper room from now on. ...",
 				"For just one orichalcum pearl, you can travel between Liberty Bay and Svargrond. Thank you again!"
 			}, cid)
 			npcHandler.topic[cid] = 0
-			player:setStorageValue(90, 62)
+			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 62)
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 32 then
 			npcHandler:say({
 				"You are the one who became an honorary barbarian! The one who made friends with the grim local musher and helped the shamans of Nibelor! The one they call old bearhugg ... erm ... I mean indeed I might have a mission for someone like you ...",

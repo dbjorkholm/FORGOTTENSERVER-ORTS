@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 5 then
 			local player = Player(cid)
 			if player:removeItem(6124, 1) then
-				player:setStorageValue(90, 65)
+				player:setStorageValue(Storage.ExplorerSociety.QuestLine, 65)
 				npcHandler:say("Yes! That's the logbook! However... it seems that the water has already destroyed many of the pages. This is not your fault though, you did your best. Thank you!", cid)
 				npcHandler.topic[cid] = 0
 			end

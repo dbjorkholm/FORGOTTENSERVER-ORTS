@@ -24,7 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 	local items = {[1] = 2190, [2] = 2182}
 	if msgcontains(msg, 'first rod') or msgcontains(msg, 'first wand') then
 		if player:isMage() then
-			if player:getStorageValue(50079) == -1 then
+			if player:getStorageValue(Storage.firstMageWeapon) == -1 then
 				npcHandler:say('So you ask me for a {' .. ItemType(items[getBaseVocation(player:getVocation():getId())]):getName() .. '} to begin your adventure?', cid)
 				npcHandler.topic[cid] = 1
 			else
@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			player:addItem(items[player:getVocation():getId()], 1)
 			npcHandler:say('Here you are young adept, take care yourself.', cid)
-			player:setStorageValue(50079, 1)
+			player:setStorageValue(Storage.firstMageWeapon, 1)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'no') and isInArray({1}, npcHandler.topic[cid]) == true then

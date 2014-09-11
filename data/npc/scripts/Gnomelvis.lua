@@ -28,9 +28,9 @@ local function creatureSayCallback(cid, type, msg)
 				"Every soul melody consists of seven sound sequences. You will have to figure out your correct soul melody by trial and error. If you hit a wrong note, you will have to start over."
 			}, cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 12)
-			player:setStorageValue(911, 1)
-			for i = 1, 7 do
-				player:setStorageValue(903 + i, math.random(3124, 3127))
+			player:setStorageValue(Storage.BigfootBurden.MelodyStatus, 1)
+			for i = 0, 6 do
+				player:setStorageValue(Storage.BigfootBurden.MelodyTone1 + i, math.random(3124, 3127))
 			end
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({
