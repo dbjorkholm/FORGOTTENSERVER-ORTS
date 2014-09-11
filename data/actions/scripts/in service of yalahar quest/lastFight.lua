@@ -1,15 +1,22 @@
 local waves = {
-	{x = 32779, y = 31166, z = 10},
-	{x = 32787, y = 31166, z = 10},
-	{x = 32782, y = 31162, z = 10},
-	{x = 32784, y = 31162, z = 10},
-	{x = 32782, y = 31170, z = 10},
-	{x = 32784, y = 31170, z = 10},
+	Position(32779, 31166, 10),
+	Position(32787, 31166, 10),
+	Position(32782, 31162, 10),
+	Position(32784, 31162, 10),
+	Position(32782, 31170, 10),
+	Position(32784, 31170, 10)
+}
+
+local creatureName = {
+	[1] = 'rift worm',
+	[2] = 'rift scythe',
+	[3] = 'rift brood',
+	[4] = 'war golem'
 }
 
 function doClearAreaAzerus()
 	if Game.getStorageValue(982) == 1 then
-		local othermonsters = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
+		local othermonsters = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
 		for _, othermonster in ipairs(othermonsters) do
 			if othermonster:isMonster() then
 				othermonster:getPosition():sendMagicEffect(CONST_ME_POFF)
@@ -22,7 +29,7 @@ function doClearAreaAzerus()
 end
 
 function doChangeAzerus()
-	local azeruses = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
+	local azeruses = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
 	for _, azerus in ipairs(azeruses) do
 		if azerus:isMonster() and azerus:getName():lower() == "azerus" then
 			azerus:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
@@ -35,11 +42,16 @@ function doChangeAzerus()
 	return false
 end
 
+local function summonMonster(name, position)
+	Game.createMonster(name, position)
+	position:sendMagicEffect(CONST_ME_TELEPORT)
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.uid == 3086 then
 		if Game.getStorageValue(982) ~= 1 then -- Fight
 			local amountOfPlayers = 3
-			local spectators = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, true, 10, 10, 10, 10)
+			local spectators = Game.getSpectators(Position(32783, 31166, 10), false, true, 10, 10, 10, 10)
 			if #spectators < amountOfPlayers then
 				for _, spectator in ipairs(spectators) do
 					spectator:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need atleast "..amountOfPlayers.." players inside the quest room.")
@@ -47,26 +59,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 			Game.setStorageValue(982, 1)
-			addEvent(Game.createMonster, 18 * 1000, "Azerus2", {x = 32783, y = 31167, z = 10})
+			addEvent(Game.createMonster, 18 * 1000, "Azerus2", Position(32783, 31167, 10))
+			local azeruswavemonster
 			for i = 1, 4 do
-				local azeruswavemonster
-				if i == 1 then
-					azeruswavemonster = "rift worm"
-				elseif i == 2 then
-					azeruswavemonster = "rift scythe"
-				elseif i == 3 then
-					azeruswavemonster = "rift brood"
-				elseif i == 4 then
-					azeruswavemonster = "war golem"
-				end
-				for k = 1, table.maxn(waves) do
-					addEvent(Game.createMonster, i * 60 * 1000, azeruswavemonster, waves[k])
-					addEvent(doSendMagicEffect, i * 60 * 1000, waves[k], CONST_ME_TELEPORT)
+				azeruswavemonster = creatureName[i]
+				for k = 1, #waves do
+					addEvent(summonMonster, (i - 1) * 60 * 1000, azeruswavemonster, waves[k])
 				end
 			end
 			for x = 32779, 32787, 8 do
 				for y = 31161, 31171, 10 do
-					doSendMagicEffect({x=x, y=y, z=10}, CONST_ME_HOLYAREA)
+					Position(x, y, 10):sendMagicEffect(CONST_ME_HOLYAREA)
 				end
 			end
 			addEvent(doChangeAzerus, 4 * 20 * 1000)

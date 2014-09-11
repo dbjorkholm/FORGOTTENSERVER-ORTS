@@ -1,4 +1,3 @@
-dofile('data/compat.lua')
 dofile('data/libs.lua')
 
 TRUE = true

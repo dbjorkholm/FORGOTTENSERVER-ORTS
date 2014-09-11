@@ -1,6 +1,18 @@
+local creatureName = {
+	[1] = 'ice golem',
+	[2] = 'ice witch',
+	[3] = 'crystal spider',
+	[4] = 'frost dragon'
+}
+
+local function summonMonster(name, position)
+	Game.createMonster(name, position)
+	position:sendMagicEffect(CONST_ME_TELEPORT)
+end
+
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	local sarcophagus = {x = 32205, y = 31002, z = 14}
+	local sarcophagus = Position(32205, 31002, 14)
 	if toPosition.x == sarcophagus.x and toPosition.y == sarcophagus.y and toPosition.z == sarcophagus.z and itemEx.itemid == 7362 and item.itemid == 2361 then
 		if (Game.getStorageValue(987) or -1) < os.time() then
 			Game.setStorageValue(987, os.time() + 24 * 60 * 60)
@@ -8,25 +20,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:say("You have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
 			else
 				player:say("The frozen starlight shattered, but you have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
-				doRemoveItem(item.uid, 1)
+				Item(item.uid):remove(1)
 			end
 			Game.createMonster("Yakchal", toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			local creature, pos
 			for i = 1, 4 do
-				if i == 1 then
-					creature = "ice golem"
-				elseif i == 2 then
-					creature = "ice witch"
-				elseif i == 3 then
-					creature = "crystal spider"
-				elseif i == 4 then
-					creature = "frost dragon"
-				end
+				creature = creatureName[i]
 				for k = 1, 70 do
-					pos = {x = math.random(32193, 32215), y = math.random(30985, 31014), z = 14}
+					pos = Position(math.random(32193, 32215), math.random(30985, 31014), 14)
 					if math.random(i + 1) == 1 then
-						addEvent(Game.createMonster, i * 10 * 1000, creature, pos)
-						addEvent(doSendMagicEffect, i * 10 * 1000, pos, CONST_ME_TELEPORT)
+						addEvent(summonMonster, (i - 1) * 10 * 1000, creature, pos)
 					end
 				end
 			end

@@ -23,8 +23,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You do not have enough money.', cid)
 		elseif player:isPremium() then
 			npcHandler:say("Congratulations! You are now promoted.", cid)
-			local promotedVoc = getPromotedVocation(player:getVocation():getId())
-			player:setVocation(Vocation(promotedVoc))
+			local promotion = player:getVocation():getPromotion()
+			player:setVocation(Vocation(promotion and promotion:getId() or 0))
 			player:removeMoney(20000)
 		else
 			npcHandler:say("You need a premium account in order to promote.", cid)

@@ -17,10 +17,6 @@ local travelNode = keywordHandler:addKeyword({'center'}, StdModule.say, {npcHand
 	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = {x=32628, y=32771, z=7} })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Maybe another time.'})
 
-local darama = {x=32987, y=32729, z=7}
-local chor = {x=32968, y=32799, z=7}
-local banuta = {x=32826, y=32631, z=7}
-
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -41,14 +37,14 @@ local function creatureSayCallback(cid, type, msg)
 		if msgcontains(msg, 'yes') then
 			local pos
 			if npcHandler.topic[cid] == 1 then
-				pos = darama
+				pos = Position(32987, 32729, 7)
 			elseif npcHandler.topic[cid] == 2 then
-				pos = chor
+				pos = Position(32968, 32799, 7)
 			elseif npcHandler.topic[cid] == 3 then
-				pos = banuta
+				pos = Position(32826, 32631, 7)
 			end
-			doTeleportThing(cid, pos)
-			doSendMagicEffect(pos, CONST_ME_TELEPORT)
+			Player(cid):teleportTo(pos)
+			pos:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 
 	else

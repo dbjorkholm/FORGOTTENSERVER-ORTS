@@ -16,7 +16,10 @@ function onKill(cid, target)
 
 	local position = targetMonster:getPosition()
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	doCreateTeleport(1387, teleportToPosition, position)
+	local item = Game.createItem(1387, 1, position)
+	if item:isTeleport() then
+		item:setDestination(teleportToPosition)
+	end
 	targetMonster:say('Azerus ran into teleporter! It will disappear in 2 minutes. Enter it!', TALKTYPE_MONSTER_SAY, 0, 0, position)
 
 	--remove portal after 2 min

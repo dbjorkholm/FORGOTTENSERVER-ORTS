@@ -23,14 +23,16 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "factory")) then
 		if(npcHandler.topic[cid] == 1) then
-			player:teleportTo({x=32859, y=31302, z=7})
-			doSendMagicEffect({x=32859, y=31302, z=7}, CONST_ME_TELEPORT)
+			local destination = Position(32859, 31302, 7)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "trade")) then
 		if(npcHandler.topic[cid] == 1) then
-			player:teleportTo({x=32854, y=31302, z=7})
-			doSendMagicEffect({x=32854, y=31302, z=7}, CONST_ME_TELEPORT)
+			local destination = Position(32854, 31302, 7)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	end

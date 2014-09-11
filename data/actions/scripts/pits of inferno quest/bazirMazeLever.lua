@@ -1,7 +1,10 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local portal = Tile(Position(32816, 32345, 13)):getItemById(1387)
 	if not portal then
-		doCreateTeleport(1387, Position(32767, 32366, 15), Position(32816, 32345, 13))
+		local item = Game.createItem(1387, 1, Position(32816, 32345, 13))
+		if item:isTeleport() then
+			item:setDestination(Position(32767, 32366, 15))
+		end
 	else
 		portal:remove()
 	end

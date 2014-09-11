@@ -108,14 +108,11 @@ function teleportAllPlayersFromArea(fromArea, toPos)
 	for x = fromArea[1].x, fromArea[2].x do
 		for y = fromArea[1].y, fromArea[2].y do
 			for z = fromArea[1].z, fromArea[2].z do
-				if(getThingfromPos({x = x, y = y, z = z, stackpos = 255}).uid > 0) then
-					local thing = getThingfromPos({x = x, y = y, z = z, stackpos = 255})
-					local player = Player(thing.uid)
-					if thing and player then
-						doTeleportThing(thing.uid, toPos)
-						doSendMagicEffect(toPos, CONST_ME_TELEPORT)
-						player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You were teleported out by the gnomish emergency device.")
-					end
+				local creature = Tile(Position(x, y, z)):getTopCreature()
+				if creature and creature:isPlayer() then
+					creature:teleportTo(toPos)
+					toPos:sendMagicEffect(CONST_ME_TELEPORT)
+					creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You were teleported out by the gnomish emergency device.")
 				end
 			end
 		end

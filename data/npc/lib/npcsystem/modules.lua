@@ -90,7 +90,8 @@ if Modules == nil then
 			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			else
-				player:setVocation(Vocation(getPromotedVocation(player:getVocation():getId())))
+				local promotion = player:getVocation():getPromotion()
+				player:setVocation(Vocation(promotion and promotion:getId() or 0))
 				npcHandler:say(parameters.text, cid)
 			end
 		else
@@ -515,8 +516,8 @@ if Modules == nil then
 				npcHandler:say("It was a pleasure doing business with you.", cid)
 				npcHandler:releaseFocus(cid)
 				-- Todo convert all destionation parameters to Position(x, y, z) instead of lua tables
-				doTeleportThing(cid, destination, 0)
-				doSendMagicEffect(destination, CONST_ME_TELEPORT)
+				player:teleportTo(destination)
+				Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		else
 			npcHandler:say("I can only allow premium players to travel there.", cid)
@@ -551,9 +552,10 @@ if Modules == nil then
 		local premium = parameters.premium
 
 		if(not isPlayerPremiumCallback or isPlayerPremiumCallback(cid) or parameters.premium ~= true) then
-			if(Player(cid):removeMoney(cost) == TRUE) then
-				doTeleportThing(cid, destination, 0)
-				doSendMagicEffect(destination, CONST_ME_TELEPORT)
+			local player = Player(cid)
+			if player:removeMoney(cost) then
+				player:teleportTo(destination)
+				Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		end
 		return true
