@@ -24,10 +24,7 @@ function pushThing(thing)
 	return t
 end
 
-function doCreatureSay(cid, text, type, ...) local c = Creature(cid) return c ~= nil and c:say(text, type, ...) or false end
-
 -- used by Npcs
-function doPlayerAddItemEx(cid, uid, ...) local p = Player(cid) return p ~= nil and p:addItemEx(Item(uid), ...) or false end
 
 function doTransformItem(uid, newItemId, ...) local i = Item(uid) return i ~= nil and i:transform(newItemId, ...) or false end
 function doRemoveItem(uid, ...) local i = Item(uid) return i ~= nil and i:remove(...) or false end

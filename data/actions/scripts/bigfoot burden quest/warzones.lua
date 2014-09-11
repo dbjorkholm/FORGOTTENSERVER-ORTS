@@ -1,33 +1,66 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 3143) then
-		if Game.getStorageValue(item.uid) ~= 1 then
-			Game.setStorageValue(item.uid, 1)
-			for i = 1, 6 do
-				for k = 1, 10 do
-					creatures = {
-						"humongous fungus",
-						"hideous fungus"
-					}
-					pos = {x = math.random(33091, 33101), y = math.random(31899, 31916), z = 10}
-					addEvent(Game.createMonster, i * 20 * 1000, creatures[math.random(2)], pos)
-					addEvent(doSendMagicEffect, i * 20 * 1000, pos, CONST_ME_TELEPORT)
+local creatureNames, crystalPosition = { 'humongous fungus', 'hideous fungus' }, Position(33104, 31908, 10)
+
+local function summonMonster(name, position)
+	Game.createMonster(name, position)
+	position:sendMagicEffect(CONST_ME_TELEPORT)
+end
+
+local function chargingText(cid, text, position)
+	local player = Player(cid)
+	player:say(text, TALKTYPE_MONSTER_SAY, false, player, position)
+end
+
+local function revertTeleport(position)
+	local teleportItem = Tile(position):getItemById(1387)
+	if teleportItem then
+		teleportItem:transform(17999)
+	end
+end
+
+local function clearArea(fromPosition, toPosition, bossName, exitPosition)
+	for x = fromPosition.x, toPosition.x do
+		for y = fromPosition.y, toPosition.y do
+			for z = fromPosition.z, toPosition.z do
+				local creature = Tile(Position(x, y, z)):getTopCreature()
+				if creature then
+					if creature:isPlayer() then
+						creature:teleportTo(exitPosition)
+						exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+						creature:say('You were teleported out by the gnomish emergency device.', TALKTYPE_MONSTER_SAY)
+					end
+
+					if creature:isMonster() and creature:getName():lower() == bossName:lower() then
+						creature:remove()
+					end
 				end
-				addEvent(doCreatureSay, i * 20 * 1000, cid, "The crystals are charging.", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
 			end
-			addEvent(doTransformItem, 6 * 20 * 1000, getTileItemById({x = 33104, y = 31908, z = 10}), 17999, 1387)
-			addEvent(doTransformItem, 6 * 20 * 1000, getTileItemById({x = 33104, y = 31908, z = 10}), 1387, 17999)
-			addEvent(Game.createMonster, 6 * 20 * 1000, "deathstrike", {x = 33100, y = 31955, z = 10})
-			addEvent(doSendMagicEffect, 6 * 20 * 1000, {x = 33100, y = 31955, z = 10}, CONST_ME_TELEPORT)
-			addEvent(teleportAllPlayersFromArea, 6 * 20 * 1000 + 30 * 60 * 1000, {
-				{x = 33089, y = 31946, z = 10},
-				{x = 33124, y = 31983, z = 10}
-			}, {x = 33002, y = 31918, z = 10})
-			addEvent(removeBoss, 6 * 20 * 1000 + 30 * 60 * 1000, {
-				{x = 33089, y = 31946, z = 10},
-				{x = 33124, y = 31983, z = 10}
-			}, "deathstrike")
-			addEvent(Game.setStorageValue, 6 * 20 * 1000 + 30 * 60 * 1000, item.uid, 0)
 		end
 	end
+end
+
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if Game.getStorageValue(item.uid) == 1 then
+		return false
+	end
+
+	Game.setStorageValue(item.uid, 1)
+	addEvent(Game.setStorageValue, 32 * 60 * 1000, item.uid, 0)
+	local pos
+	for i = 1, 6 do
+		for k = 1, 10 do
+			pos = Position(math.random(33091, 33101), math.random(31899, 31916), 10)
+			addEvent(summonMonster, (i - 1) * 20000, creatureNames[math.random(#creatureNames)], pos)
+		end
+		addEvent(chargingText, (i - 1) * 20000, cid, 'The crystals are charging.', toPosition)
+	end
+
+	local crystalItem = Tile(crystalPosition):getItemById(17999)
+	if crystalItem then
+		crystalItem:transform(1387)
+		addEvent(revertTeleport, 6 * 20 * 1000, crystalPosition)
+	end
+
+	addEvent(summonMonster, 6 * 20 * 1000, 'deathstrike', Position(33100, 31955, 10))
+	addEvent(clearArea, 32 * 60 * 1000, Position(33089, 31946, 10), Position(33124, 31983, 10), 'deathstrike', Position(33002, 31918, 10))
 	return true
 end
