@@ -72,8 +72,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		-- Crown Armor
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(2Storage.SweetyCyclops.AmuletTimer7) > 0 then
-				player:removeItem(2Storage.SweetyCyclops.AmuletTimer7, 1)
+			if player:getItemCount(Storage.SweetyCyclops.AmuletTimer7) > 0 then
+				player:removeItem(Storage.SweetyCyclops.AmuletTimer7, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5887, 1)
