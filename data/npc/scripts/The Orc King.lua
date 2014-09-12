@@ -7,11 +7,11 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local creatures = { 'Slime', 'Slime', 'Slime', 'Orc Warlord', 'Orc Warlord', 'Orc Leader', 'Orc Leader', 'Orc Leader' }
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(83) ~= 1 then
-		player:setStorageValue(83, 1)
-		local creatures = { 'Slime', 'Slime', 'Slime', 'Orc Warlord', 'Orc Warlord', 'Orc Leader', 'Orc Leader', 'Orc Leader' }
+	if player:getStorageValue(Storage.OrcKingGreeting) ~= 1 then
+		player:setStorageValue(Storage.OrcKingGreeting, 1)
 		for i = 1, #creatures do
 			Game.createMonster(creatures[i], Npc():getPosition())
 		end
@@ -29,7 +29,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
 		if player:getStorageValue(GreenDjinn.MissionStart + 3) == 1 or player:getStorageValue(BlueDjinn.MissionStart + 3) == 1 then

@@ -96,7 +96,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(30018) == 1 then
+		if player:getStorageValue(Storage.Promotion) == 1 then
 			npcHandler:say('You are already promoted.', cid)
 		elseif player:getLevel() < 20 then
 			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)

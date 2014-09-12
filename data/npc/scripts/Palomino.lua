@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('Have a nice trip!', cid)
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(50561) >= os.time() then
+			if player:getStorageValue(Storage.RentedHorseTimer) >= os.time() then
 				npcHandler:say('You already have a horse.', cid)
 				return true
 			end
@@ -49,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 
 			local mountId = {22, 25, 26}
 			player:addMount(mountId[math.random(#mountId)])
-			player:setStorageValue(50561, os.time() + 86400)
+			player:setStorageValue(Storage.RentedHorseTimer, os.time() + 86400)
 			npcHandler:say('I\'ll give you one of our experienced ones. Take care! Look out for low hanging branches.', cid)
 		end
 		npcHandler.topic[cid] = 0

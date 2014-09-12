@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my {kiss} ... It will open the last seal. Do you think you are ready?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "kiss") and npcHandler.topic[cid] == 7 then
-		if player:getStorageValue(50020) < 1 then
+		if player:getStorageValue(Storage.QueenOfBansheesQuest.Kiss) < 1 then
 			npcHandler:say("Are you prepared to receive my kiss, even though this will mean that your death as well as a part of your soul will forever belong to me, my dear?", cid)
 			npcHandler.topic[cid] = 8
 		else
@@ -50,7 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getStorageValue(50016) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.FourthSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: Yessss, I can sense you have passed the seal of sacrifice. Have you passed any other seal yet?", cid)
 				npcHandler.topic[cid] = 2
 			else
@@ -58,7 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getStorageValue(50013) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.FirstSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: I sense you have passed the hidden seal as well. Have you passed any other seal yet?", cid)
 				npcHandler.topic[cid] = 3
 			else
@@ -66,7 +66,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getStorageValue(50019) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.SecondSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: Oh yes, you have braved the plague seal. Have you passed any other seal yet?", cid)
 				npcHandler.topic[cid] = 4
 			else
@@ -74,7 +74,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getStorageValue(50018) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.ThirdSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: Ah, I can sense the power of the seal of demonrage burning in your heart. Have you passed any other seal yet?", cid)
 				npcHandler.topic[cid] = 5
 			else
@@ -82,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getStorageValue(50015) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.FifthSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: So, you have managed to pass the seal of the true path. Have you passed any other seal yet?", cid)
 				npcHandler.topic[cid] = 6
 			else
@@ -90,7 +90,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getStorageValue(50014) == 1 then
+			if player:getStorageValue(Storage.QueenOfBansheesQuest.SixthSeal) == 1 then
 				npcHandler:say("The Queen of the Banshee: I see! You have mastered the seal of logic. You have made the sacrifice, you have seen the unseen, you possess fortitude, you have filled yourself with power and found your path. You may ask me for my {kiss} now.", cid)
 				npcHandler.topic[cid] = 7
 			else
@@ -101,9 +101,9 @@ local function creatureSayCallback(cid, type, msg)
 			if not player:isPzLocked() then
 				npcHandler:say("So be it! Hmmmmmm...", cid)
 				npcHandler.topic[cid] = 0
-				player:teleportTo({x = 32202, y = 31812, z = 8}, false)
+				player:teleportTo(Position(32202, 31812, 8), false)
 				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				player:setStorageValue(50020, 1)
+				player:setStorageValue(Storage.QueenOfBansheesQuest.Kiss, 1)
 			else
 				npcHandler:say("You have spilled too much blood recently and the dead are hungry for your soul. Perhaps return when you regained you inner balance.", cid)
 				npcHandler.topic[cid] = 0

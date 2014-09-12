@@ -5,6 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
 local voices = {
 	"...the arithmetical paradox has the same value in a metaphysical way, then...",
 	"Oh my! Alverus!! Did you really...?!?! I have to recalculate it to make sure that I made no mistake.",
@@ -25,7 +26,6 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local storageMain = 10000
 local greetMsg = {
 	"...if the expected constant is higher than... Hmmm, who are you?? What do you want?",
 	"...then I could transform a spell to bend... How can anyone expect me to work under these conditions?? What do you want?",
@@ -42,6 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	local player = Player(cid)
 	if msgcontains(msg, "alverus") then
 		npcHandler:say({
@@ -63,8 +64,8 @@ local function creatureSayCallback(cid, type, msg)
 		}, cid)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "mission") or msgcontains(msg, "quest") then
-		local v = player:getStorageValue(storageMain)
-		if v < 1 then
+		local value = player:getStorageValue(Storage.ElementalSphere.QuestLine)
+		if value < 1 then
 			if player:getLevel() >= 80 then
 				if player:isSorcerer() then
 					npcHandler:say({
@@ -101,9 +102,9 @@ local function creatureSayCallback(cid, type, msg)
 				return false
 			end
 			npcHandler.topic[cid] = 1
-		elseif v == 1 then
+		elseif value == 1 then
 			if player:getItemCount(player:isSorcerer() and 8304 or player:isDruid() and 8305 or player:isPaladin() and 8300 or player:isKnight() and 8306) > 0 then
-				player:setStorageValue(storageMain, 2)
+				player:setStorageValue(Storage.ElementalSphere.QuestLine, 2)
 				npcHandler:say({
 					"Impressive!! Let me take a look.......Ahh, " .. (player:isSorcerer() and "an ETERNAL FLAME! Now you need to find a knight, a druid, and a paladin who also completed this first task. ..." or player:isDruid() and "MOTHER SOIL! Now you need to find a knight, a paladin, and a sorcerer who also completed this first task. ..." or player:isPaladin() and "a FLAWLESS ICE CRYSTAL! Now you need to find a knight, a druid, and a sorcerer who also completed this first task. ..." or player:isKnight() and "PURE ENERGY! Now you need to find a druid, a paladin, and a sorcerer who also completed this first task. ..."),
 					"Go down in the cellar again. I prepared a room under the academy where it should be safe. Your task is to charge the machines with the elemental substances and summon the LORD OF THE ELEMENTS. ...",
@@ -113,16 +114,16 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You need some kind of pure elemental soil from the " .. (player:isSorcerer() and "Fire" or player:isDruid() and "Earth" or player:isPaladin() and "Ice" or player:isKnight() and "Energy") .. " Overlord. Come back when you've got it.", cid)
 			end
 			npcHandler.topic[cid] = 0
-		elseif v == 2 then
+		elseif value == 2 then
 			if player:removeItem(8310, 1) == true then
 				npcHandler:say("AMAZING!! I'm going to start immediately with the research. If it turns out the way I expect it, Alverus will be revived soon!! Here, take this as a reward and try to collect more of this substance. I'll make you a good offer, I promise. ", cid)
 				player:addItem(player:isSorcerer() and 8867 or player:isDruid() and 8869 or player:isPaladin() and 8853 or player:isKnight() and 8883, 1)
-				player:setStorageValue(storageMain, 3)
+				player:setStorageValue(Storage.ElementalSphere.QuestLine, 3)
 				player:setStorageValue(10029, 1)
 			end
 		end
 	elseif npcHandler.topic[cid] == 1 and msgcontains(msg, "yes") then
-		player:setStorageValue(storageMain, 1)
+		player:setStorageValue(Storage.ElementalSphere.QuestLine, 1)
 		npcHandler:say("Good, don't waste time! Come back here when you have the elemental object!", cid)
 		npcHandler.topic[cid] = 0
 	end

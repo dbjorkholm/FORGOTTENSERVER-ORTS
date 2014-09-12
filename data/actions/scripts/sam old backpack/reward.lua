@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(330) == 2 then
-		player:setStorageValue(330, 3)
+	if player:getStorageValue(Storage.SamsOldBackpack) == 2 then
+		player:setStorageValue(Storage.SamsOldBackpack, 3)
 		player:addItem(2503, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a dwarven armor.")
 	else

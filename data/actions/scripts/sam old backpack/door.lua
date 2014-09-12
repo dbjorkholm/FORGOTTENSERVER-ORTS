@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(330) == 2 then
+	if player:getStorageValue(Storage.SamsOldBackpack) == 2 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(1226)
 	end

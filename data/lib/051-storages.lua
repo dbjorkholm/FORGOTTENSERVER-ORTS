@@ -1,7 +1,12 @@
 -- STORAGES --
 -- (HIGHLY RECOMMENDED -> ONE mission per STORAGE) --
 -- Sort it in Values -
+
 Storage = {
+	SweetyCyclops = {
+		AmuletTimer = 48,
+		AmuletStatus = 49
+	},
 	ExplorerSociety = {
 		QuestLine = 90
 	},
@@ -38,9 +43,100 @@ Storage = {
 		SporeCount = 949,
 
 		MissionGrindstoneHunt = 951,
-		GrindstoneStatus = 952
+		GrindstoneStatus = 952,
+
+		WarzoneStatus = 954,
+		Warzone1Reward = 958,
+		Warzone2Reward = 959,
+		Warzone3Reward = 960
 	},
-	wagonTicket = 1131,
+	KosheiTheDeathless = {
+		RewardDoor = 3066,
+	},
+	ElementalSpheres = {
+		QuestLine = 10000,
+		MachineGemStorage = 10002
+	},
+	GravediggerOfDrefia = {
+		-- Just numbered the storages by the order they are used in the quest
+		-- should be renamed to the correct mission names etc.
+		QuestStart = 9990,
+		Mission01 = 9991,
+		Mission02 = 9992,
+		Mission03 = 9993,
+		Mission04 = 9994,
+		Mission05 = 9995,
+		Mission06 = 9996,
+		Mission07 = 9997,
+		Mission08 = 9998,
+		Mission09 = 9999,
+		Mission10 = 9950,
+		Mission11 = 9951,
+		Mission12 = 9952,
+		Mission13 = 9953,
+		Mission14 = 9954,
+		Mission15 = 9955,
+		Mission16 = 9956,
+		Mission17 = 9957,
+		Mission18 = 9958,
+		Mission19 = 9959,
+		Mission20 = 9960,
+		Mission21 = 9961,
+		Mission22 = 9962,
+		Mission23 = 9963,
+		Mission24 = 9964,
+		Mission25 = 9965,
+		Mission26 = 9966,
+		Mission27 = 9967,
+		Mission28 = 9968,
+		Mission29 = 9969,
+		Mission30 = 9970,
+		Mission31 = 9971,
+		Mission32 = 9972,
+		Mission33 = 9975,
+		Mission34 = 9976,
+		Mission35 = 9977,
+		Mission36 = 9978,
+		Mission37 = 9980,
+		Mission38 = 9981,
+		Mission39 = 9985,
+		Mission40 = 9986,
+		Mission41 = 9987,
+		Mission42 = 9988,
+		Mission43 = 9989,
+		Mission44 = 9920,
+		Mission45 = 9921,
+		Mission46 = 9922,
+		Mission47 = 9923,
+		Mission48 = 9924,
+		Mission49 = 9925,
+		Mission50 = 9926,
+		Mission51 = 9927,
+		Mission52 = 9928,
+		Mission53 = 9929,
+		Mission54 = 9930,
+		Mission55 = 9931,
+		Mission56 = 9932,
+		Mission57 = 9933,
+		Mission58 = 9934,
+		Mission59 = 9935,
+		Mission60 = 9936,
+		Mission61 = 9937,
+		Mission62 = 9938,
+		Mission63 = 9939,
+		Mission64 = 9940,
+		Mission65 = 9941,
+		Mission66 = 9942,
+		Mission67 = 9943,
+		Mission68 = 9944,
+		Mission69 = 9945,
+		Mission70 = 9946,
+		Mission71 = 9947,
+		Mission72 = 9948,
+		Mission73 = 9949,
+		Mission74 = 9876,
+
+	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
@@ -363,6 +459,28 @@ Storage = {
 		DoorWestMine = 12611,
 		DoorSouthMine = 12612
 	},
+	KillingInTheNameOf = {
+		LugriNecromancers = 50000,
+		LugriNecromancerCount = 50001
+	},
+	QueenOfBansheesQuest = {
+		FirstSeal = 50013,
+		SecondSeal = 50019,
+		ThirdSeal = 50018,
+		FourthSeal = 50016,
+		FifthSeal = 50015,
+		SixthSeal = 50014,
+		LastSeal = 50021,
+
+		ThirdSealWarlocks = 50017,
+		Kiss = 50020
+	},
+	HotCuisineQuest = {
+		QuestStart = 50022,
+		CurrentDish = 50023,
+		QuestLog = 50024,
+		CookbookDoor = 50028
+	},
 	RookgaardTutorialIsland = {
 		tutorialHintsStorage = 50085,
 		SantiagoNpcGreetStorage = 50086,
@@ -386,12 +504,30 @@ Storage = {
 		Arena = 1100,
 		Pit = 1101
 	},
+	QuestChests = {
+		-- Todo: Move to a seperate range
+		KosheiTheDeathlessLegs = 3067,
+		KosheiTheDeathlessGold = 3068,
+
+		TutorialShovel = 50093,
+		TutorialRope = 50094
+	},
+
+	-- Promotion Storage cannot be changed, it is set in source code
+	Promotion = 30018,
+
+	OrcKingGreeting = 83,
+	MarkwinGreeting = 258,
+	SamsOldBackpack = 330,
+	wagonTicket = 1131,
+	BloodHerbQuest = 50032,
 	firstMageWeapon = 50079,
 	pitsOfInfernoPumin = 50096,
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
 	madMageQuest = 50136,
 	KawillBlessing = 50139,
+	RentedHorseTimer = 50561,
 
 	blockMovementStorage = 100000
 }

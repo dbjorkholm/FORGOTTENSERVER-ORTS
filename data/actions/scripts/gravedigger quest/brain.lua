@@ -2,9 +2,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local rightbrain = Tile(Position(33025, 32332, 10))
 	local leftbrain = Tile(Position(33020, 32332, 10))
 	local player = Player(cid)
-	if player:getStorageValue(9998) == 1 and player:getStorageValue(9999) < 1 then
+	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission08) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission09) < 1 then
 		if leftbrain:getItemById(10576) and rightbrain:getItemById(10576) then
-			player:setStorageValue(9999, 1)
+			player:setStorageValue(Storage.GravediggerOfDrefia.Mission09, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<brzzl> <frzzp> <fsssh>')
 			leftbrain:getItemById(10576):remove()
 			rightbrain:getItemById(10576):remove()

@@ -83,7 +83,7 @@ if Modules == nil then
 
 		local player = Player(cid)
 		if parameters.premium and player:isPremium() then
-			if player:getStorageValue(30018) == 1 then
+			if player:getStorageValue(Storage.Promotion) == 1 then
 				npcHandler:say("You are already promoted!", cid)
 			elseif player:getLevel() < parameters.level then
 				npcHandler:say("I am sorry, but I can only promote you once you have reached level " .. parameters.level .. ".", cid)

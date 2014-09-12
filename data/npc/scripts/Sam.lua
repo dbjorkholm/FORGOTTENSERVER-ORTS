@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, "old backpack") then
-		if player:getStorageValue(330) < 1 then
+		if player:getStorageValue(Storage.SamsOldBackpack) < 1 then
 			npcHandler:say("What? Are you telling me you found my old adventurer's backpack that I lost years ago??", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 					"Thank you very much! This brings back good old memories! Please, as a reward, travel to Kazordoon and ask my old friend Kroox to provide you a special dwarven armor. ...",
 					"I will mail him about you immediately. Just tell him, his old buddy Sam is sending you."
 				}, cid)
-				player:setStorageValue(330, 1)
+				player:setStorageValue(Storage.SamsOldBackpack, 1)
 				player:removeItem(3960, 1)
 			else
 				npcHandler:say("You don't have it...", cid)

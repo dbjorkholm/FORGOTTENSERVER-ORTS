@@ -35,16 +35,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	tmpTable = {}
 	if item.uid == 3147 then
-		if player:getStorageValue(954) == 4 then
-			player:setStorageValue(954, 5)
+		if player:getStorageValue(Storage.BigfootBurden.WarzoneStatus) == 4 then
+			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 5)
 			player:addItem(2137, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found some golden fruits.")
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif item.uid == 3148 then
-		if player:getStorageValue(958) == 1 then
-			player:setStorageValue(958, 0)
+		if player:getStorageValue(Storage.BigfootBurden.Warzone1Reward) == 1 then
+			player:setStorageValue(Storage.BigfootBurden.Warzone1Reward, 0)
 			while(tmpTable[1] ~= tmpTable[2]) do
 				tmpTable[1] = math.random(#reward[item.uid])
 				tmpTable[2] = math.random(#reward[item.uid])
@@ -59,7 +59,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif item.uid == 3149 then
-		if player:getStorageValue(959) == 1 then
+		if player:getStorageValue(Storage.BigfootBurden.Warzone2Reward) == 1 then
 			while(tmpTable[1] ~= tmpTable[2]) do
 				tmpTable[1] = math.random(#reward[item.uid])
 				tmpTable[2] = math.random(#reward[item.uid])
@@ -69,7 +69,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					player:addItem(reward[item.uid][1], reward[item.uid][2])
 				end
 			end
-			player:setStorageValue(959, 0)
+			player:setStorageValue(Storage.BigfootBurden.Warzone2Reward, 0)
 			player:addItem(2493, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 2.")
 			if math.random(25) == 1 then
@@ -79,7 +79,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
 	elseif item.uid == 3150 then
-		if player:getStorageValue(960) == 1 then
+		if player:getStorageValue(Storage.BigfootBurden.Warzone3Reward) == 1 then
 			while(tmpTable[1] ~= tmpTable[2]) do
 				tmpTable[1] = math.random(#reward[item.uid])
 				tmpTable[2] = math.random(#reward[item.uid])
@@ -89,7 +89,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 					player:addItem(reward[item.uid][1], reward[item.uid][2])
 				end
 			end
-			player:setStorageValue(960, 0)
+			player:setStorageValue(Storage.BigfootBurden.Warzone3Reward, 0)
 			player:addItem(2493, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 3.")
 		else

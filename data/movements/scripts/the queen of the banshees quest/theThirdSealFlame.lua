@@ -35,13 +35,13 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(50018) >= 1 or Game.getStorageValue('switchNum') ~= 5 then
+	if player:getStorageValue(Storage.QueenOfBansheesQuest.ThirdSeal) >= 1 or Game.getStorageValue('switchNum') ~= 5 then
 		player:teleportTo(fromPosition)
 		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
 
-	player:setStorageValue(50018, 1)
+	player:setStorageValue(Storage.QueenOfBansheesQuest.ThirdSeal, 1)
 	Game.setStorageValue('switchNum', 0)
 	player:teleportTo(config.destination)
 	config.destination:sendMagicEffect(CONST_ME_TELEPORT)

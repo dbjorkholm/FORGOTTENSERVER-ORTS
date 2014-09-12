@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, "mission") then
-		if Player(cid):getStorageValue(90) > 34 then
+		if Player(cid):getStorageValue(Storage.ExplorerSociety.QuestLine) > 34 then
 			npcHandler:say("The most important mission we currently have is an expedition to Calassa.", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -23,9 +23,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 4 then
 			npcHandler:say("Captain Max will bring you to Calassa whenever you are ready. Please try to retrieve the missing logbook which must be in one of the sunken shipwrecks.", cid)
-			Player(cid):setStorageValue(90, 63)
+			Player(cid):setStorageValue(Storage.ExplorerSociety.QuestLine, 63)
 			npcHandler.topic[cid] = 0
-		elseif Player(cid):getStorageValue(90) == 64 then
+		elseif Player(cid):getStorageValue(Storage.ExplorerSociety.QuestLine) == 64 then
 			npcHandler:say("OH! So you have safely returned from Calassa! Congratulations, were you able to retrieve the logbook?", cid)
 			npcHandler.topic[cid] = 5
 		end

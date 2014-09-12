@@ -71,7 +71,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(50085, 1)
+			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 1)
 			npcHandler:say("Good! Come back once you found a mandrake and collected 5 dworcish voodoo dolls.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then

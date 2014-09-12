@@ -66,7 +66,7 @@ local function creatureSayCallback(cid, type, msg)
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Fine, I grant you the permission to enter the warzones. Be warned though, this will be not a picnic. Better bring some friends with you. Bringing a lot of them sounds like a good idea.", cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
-			player:setStorageValue(954, 1)
+			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end

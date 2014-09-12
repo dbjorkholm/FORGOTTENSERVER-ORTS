@@ -8,12 +8,13 @@ local config = {
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if isInArray({7911, 7912}, item.itemid) then
 		local player = Player(cid)
-		if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and player:getStorageValue(10002) >= 20 then
+		local gemCount = player:getStorageValue(Storage.ElementalSphere.MachineGemCount)
+		if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and gemCount >= 20 then
 			local vocation = player:getVocation():getId()
 			if vocation > 4 then
 				vocation = vocation - 4
 			end
-			player:setStorageValue(10002, player:getStorageValue(10002) - 20)
+			player:setStorageValue(Storage.ElementalSphere.MachineGemCount, gemCount - 20)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(config[vocation], false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
