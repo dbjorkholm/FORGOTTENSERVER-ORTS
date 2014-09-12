@@ -7,7 +7,8 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'here', 'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the leader of the true sons of {Daraman}.'})
+keywordHandler:addKeyword({'here'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the leader of the true sons of {Daraman}.'})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the leader of the true sons of {Daraman}.'})
 keywordHandler:addKeyword({'daraman'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'This is our home - the land of the desert.'})
 keywordHandler:addKeyword({'ankrahmun'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'We will fight that city until we get back what belongs to us.'})
 keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'We avoid these places you call cities.'})
@@ -22,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
+	--TODO
 
 	return true
 end
