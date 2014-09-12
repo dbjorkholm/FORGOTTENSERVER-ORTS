@@ -94,7 +94,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Then, place the hallowed bone on the firebasin of the Bonemarrow Altar so the Dark Lord can consume it and grants us his power. Return to me after that."
 			}, cid)
 			player:setStorageValue(Storage.GravediggerOfDrefia.Mission17, 1)
-		elseif player:getStorageValue(Storage.GravediggerOfDrefia.Mission17) == 1 and playerStorage.GravediggerOfDrefia.Mission18) < 1 then
+		elseif player:getStorageValue(Storage.GravediggerOfDrefia.Mission17) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission18) < 1 then
 			npcHandler:say({
 				"Are you still here? Come on, let's not laze about, go to the Gardens of Night - where? ...",
 				"East of the Necromancer Halls, you can't miss it, just look for a lot of dark and white sand, dried trees, and priestesses! ...",
