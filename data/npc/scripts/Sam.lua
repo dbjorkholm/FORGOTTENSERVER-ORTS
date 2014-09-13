@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if isInArray({"adorn", "helmet", "outfit", "addon"}, msg) then
-		if player:getStorageValue( Storage.OutfitQuest.KnightHatAddon) == 5 then
+		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 5 then
 			npcHandler:say("Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Your helmet is finished, I hope you like it.", cid)
 			player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 6)
 			player:addOutfitAddon(139, 2)

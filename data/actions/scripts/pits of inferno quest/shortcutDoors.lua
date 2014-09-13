@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(8817) >= 1 then
+	if player:getStorageValue(Storage.PitsOfInferno.ShortcutLevers) >= 1 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(5133)
 	end

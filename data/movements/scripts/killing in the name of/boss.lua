@@ -57,8 +57,8 @@ local bosses = {
 	[3257] = {bossName = 'zanakeph', storage = 35027, playerPosition = Position(33077, 31040, 12), bossPosition = Position(33082, 31056, 12), fromPosition = Position(33059, 31039, 12), toPosition = Position(33093, 31064, 12), flamePosition = Position(33070, 31039, 12)},
 	[17521] = {bossName = 'necropharus', storage = 17521, playerPosition = Position(33028, 32426, 12), bossPosition = Position(33026, 32422, 12), fromPosition = Position(33017, 32415, 12), toPosition = Position(33036, 32432, 12), flamePosition = Position(33070, 31035, 12)},
 	[17522] = {bossName = 'the horned fox', storage = 17522, playerPosition = Position(32458, 31994, 9), bossPosition = Position(32458, 32005, 9), fromPosition = Position(32449, 31991, 9), toPosition = Position(32466, 32010, 9), flamePosition = Position(33070, 31029, 12)},
-	[3258] = {bossName = 'demodras', storage = 22556, playerPosition = Position(32748, 32287, 10), bossPosition = Position(32747, 32294, 10), fromPosition = Position(32738, 32285, 10), toPosition = Position(32757, 32300, 10), flamePosition = Position(33076, 31029, 12)},
-	[3259] = {bossName = 'tiquandas revenge', storage = 22555, playerPosition = Position(32888, 32580, 4), bossPosition = Position(32888, 32586, 4), fromPosition = Position(32877, 32573, 4), toPosition = Position(32892, 32587, 4), flamePosition = Position(33076, 31029, 11)},
+	[3258] = {bossName = 'demodras', storage = Storage.KillingInTheNameOf.DemodrasTeleport, playerPosition = Position(32748, 32287, 10), bossPosition = Position(32747, 32294, 10), fromPosition = Position(32738, 32285, 10), toPosition = Position(32757, 32300, 10), flamePosition = Position(33076, 31029, 12)},
+	[3259] = {bossName = 'tiquandas revenge', storage = Storage.KillingInTheNameOf.TiquandasRevengeTeleport, playerPosition = Position(32888, 32580, 4), bossPosition = Position(32888, 32586, 4), fromPosition = Position(32877, 32573, 4), toPosition = Position(32892, 32587, 4), flamePosition = Position(33076, 31029, 11)},
 }
 
 function onStepIn(cid, item, position, fromPosition)

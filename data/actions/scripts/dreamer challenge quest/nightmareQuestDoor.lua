@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(66) >= 4 then
+	if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) >= 4 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(5115)
 	end

@@ -39,10 +39,10 @@ local function creatureSayCallback(cid, type, msg)
 				"Certain parts of the controls are rusty and the drains are stuffed with garbage. Get yourself a crowbar, loosen the controls and clean the pipes from the garbage. ...",
 				"We were able to locate the 4 worst spots in the sewers. I will mark them for you on your map so you have no trouble finding them. Report to me when you have finished your {mission}. ..."
 			}, cid)
-			player:addMapMark({x=32823, y=31161, z=8}, 4, "Sewer Problem 1")
-			player:addMapMark({x=32795, y=31152, z=8}, 4, "Sewer Problem 2")
-			player:addMapMark({x=32842, y=31250, z=8}, 4, "Sewer Problem 3")
-			player:addMapMark({x=32796, y=31192, z=8}, 4, "Sewer Problem 4")
+			player:addMapMark(Position(32823, 31161, 8), 4, "Sewer Problem 1")
+			player:addMapMark(Position(32795, 31152, 8), 4, "Sewer Problem 2")
+			player:addMapMark(Position(32842, 31250, 8), 4, "Sewer Problem 3")
+			player:addMapMark(Position(32796, 31192, 8), 4, "Sewer Problem 4")
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 5 then
 			npcHandler:say("So are you done with your work?", cid)

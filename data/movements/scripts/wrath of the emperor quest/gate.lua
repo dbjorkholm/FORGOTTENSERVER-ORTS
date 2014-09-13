@@ -4,7 +4,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(1060) >= 32 then
+	if player:getStorageValue(Storage.WrathoftheEmperor.TeleportAccess) >= 32 then
 		player:teleportTo(Position(33027, 31084, 13))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end

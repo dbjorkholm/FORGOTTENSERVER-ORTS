@@ -26,13 +26,14 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "bluff") then
 		if npcHandler.topic[cid] == 30 then
-			if player:getStorageValue(Storage.TheNewFrontier.BribeAngus) < 1 then
+			if player:getStorageValue(Storage.TheNewFrontier.BribeExplorerSociety) < 1 then
 				npcHandler:say({
 					"Those stories are just amazing! Men with faces on their stomach instead of heads you say? And hens that lay golden eggs? Whereas, most amazing is this fountain of youth you've mentioned! ...",
 					"I'll immediately send some of our most dedicated explorers to check those things out!"
 				}, cid)
-				player:setStorageValue(Storage.TheNewFrontier.BribeAngus, 1)
-				player:setStorageValue(Storage.TheNewFrontier.Mission05, player:getStorageValue(Storage.TheNewFrontier.Mission05) + 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
+				player:setStorageValue(Storage.TheNewFrontier.BribeExplorerSociety, 1)
+				--Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
+				player:setStorageValue(Storage.TheNewFrontier.Mission05, player:getStorageValue(Storage.TheNewFrontier.Mission05) + 1)
 			end
 		end
 

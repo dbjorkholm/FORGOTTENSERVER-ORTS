@@ -10,6 +10,9 @@ Storage = {
 	ExplorerSociety = {
 		QuestLine = 90
 	},
+	VampireHunter = {
+		Rank = 402
+	},
 	BigfootBurden = {
 		QuestLine = 900,
 		Test = 901,
@@ -26,8 +29,18 @@ Storage = {
 		MelodyStatus = 911,
 
 		Rank = 921,
+
+		MissionCrystalKeeper = 930,
+		CrystalKeeperTimout = 931,
+		RepairedCrystalCount = 932,
+
 		MissionRaidersOfTheLostSpark = 933,
 		ExtractedCount = 934,
+		RaidersOfTheLostSparkTimeout = 935,
+
+		MissionExterminators = 936,
+		ExterminatedCount = 937,
+		ExterminatorsTimeout = 938,
 
 		MissionMushroomDigger = 939,
 		MushroomCount = 940,
@@ -35,21 +48,33 @@ Storage = {
 
 		MissionMatchmaker = 942,
 		MatchmakerStatus = 943,
+		MatchmakerTimeout = 944,
 
 		MissionTinkersBell = 945,
 		GolemCount = 946,
+		TinkerBellTimeout = 947,
 
 		MissionSporeGathering = 948,
 		SporeCount = 949,
+		SporeGatheringTimeout = 950,
 
 		MissionGrindstoneHunt = 951,
 		GrindstoneStatus = 952,
+		GrindstoneTimeout = 953,
 
 		WarzoneStatus = 954,
+		Warzone1Access = 955,
+		Warzone2Access = 956,
+		Warzone3Access = 957,
+
 		Warzone1Reward = 958,
 		Warzone2Reward = 959,
 		Warzone3Reward = 960
 	},
+	TheirMastersVoice = {
+		SlimeGobblerTimeout = 984,
+		SlimeGobblerReceived = 985
+	}
 	KosheiTheDeathless = {
 		RewardDoor = 3066,
 	},
@@ -140,6 +165,10 @@ Storage = {
 	OutfitQuest = {
 		DefaultStart = 12010, -- Is needed for each Quest to start the log
 
+		-- Begger Outfit Quest
+		BeggarFirstAddon = 22029,
+		BeggarSecondAddon = 22030,
+
 		-- Citizen-outfit Quest
 		CitizenHatAddon = 12011,
 		CitizenBackpackAddon = 12012,
@@ -170,6 +199,10 @@ Storage = {
 		MageSummonerTiaraCloakAddon = 12063,
 		MageSummonerFluidBeltAddon = 12064,
 
+		-- Nobleman Outfit
+		NoblemanFirstAddon = 1007,
+		NoblemanSecondAddon = 1008,
+
 		-- Norseman-outfit Quest
 		NorsemanAddon = 12065,
 
@@ -182,6 +215,7 @@ Storage = {
 
 		-- Pirate-outfit Quest
 		PirateSabreAddon = 50002,
+		PirateHatAddon = 22034,
 
 		-- Assassin Outfit
 		AssassinBaseOutfit = 50080,
@@ -237,7 +271,7 @@ Storage = {
 		Beaver3 = 12144,
 		BribeKing = 12145,
 		BribeLeeland = 12146,
-		BribeAngus = 12147,
+		BribeExplorerSociety = 12147,
 		BribeWydrin = 12148,
 		BribeTelas = 12149,
 		BribeHumgolf = 12150
@@ -294,6 +328,9 @@ Storage = {
 		Obelisk02 = 12222,
 		Obelisk03 = 12223,
 		Obelisk04 = 12224
+	},
+	TheWayToYalahar = {
+		QuestLine = 30
 	},
 	InServiceofYalahar = {
 		Questline = 12240, -- Storage through the Quest
@@ -385,7 +422,10 @@ Storage = {
 		BossStatus = 12371, --1090
 		platinumReward = 12372,
 		backpackReward = 12373,
-		mainReward = 12374
+		mainReward = 12374,
+
+		-- never set just added here
+		TeleportAccess = 1060
 	},
 	FriendsandTraders = {
 		DefaultStart = 12400,
@@ -461,7 +501,13 @@ Storage = {
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,
-		LugriNecromancerCount = 50001
+		LugriNecromancerCount = 50001,
+
+		MissionTiquandasRevenge = 22222,
+		TiquandasRevengeTeleport = 22555,
+		MissionDemodras = 22223,
+		DemodrasTeleport = 22556
+
 	},
 	QueenOfBansheesQuest = {
 		FirstSeal = 50013,
@@ -510,12 +556,26 @@ Storage = {
 		KosheiTheDeathlessGold = 3068,
 
 		TutorialShovel = 50093,
-		TutorialRope = 50094
+		TutorialRope = 50094,
+
+		DemonHelmetQuestDemonShield = 2212,
+		DemonHelmetQuestDemonHelmet = 2213,
+		DemonHelmetQuestSteelBoots = 2214,
+
+		FormorgarMinesHoistSkeleton = 3057,
+		FormorgarMinesHoistChest = 3058,
+	},
+	PitsOfInferno = {
+		ShortcutHub = 8816,
+		ShortcutLevers = 8817
 	},
 
 	-- Promotion Storage cannot be changed, it is set in source code
 	Promotion = 30018,
 
+	SwampDiggingTimeout = 50143,
+	HydraEggQuest = 320,
+	GhostShipQuest = 5556,
 	OrcKingGreeting = 83,
 	MarkwinGreeting = 258,
 	SamsOldBackpack = 330,
@@ -530,4 +590,11 @@ Storage = {
 	RentedHorseTimer = 50561,
 
 	blockMovementStorage = 100000
+}
+
+GlobalStorage = {
+	TheirMastersVoice = {
+		CurrentServantWave = 984,
+		ServantsKilled = 985
+	}
 }

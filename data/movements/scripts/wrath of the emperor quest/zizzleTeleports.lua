@@ -11,7 +11,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(1060) >= 29 then
+	if player:getStorageValue(Storage.WrathoftheEmperor.TeleportAccess) >= 29 then
 		if player:removeItem(12629, 1) then
 			player:teleportTo(teleports[item.uid])
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

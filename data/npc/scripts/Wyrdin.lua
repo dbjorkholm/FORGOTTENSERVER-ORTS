@@ -28,9 +28,10 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	local player = Player(cid)
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(30) < 1 and player:getStorageValue(120) == 7 and player:getStorageValue(121) >= 5 then
+		if player:getStorageValue(Storage.TheWayToYalahar.QuestLine) < 1 and player:getStorageValue(120) == 7 and player:getStorageValue(121) >= 5 then
 			npcHandler:say({
 				"There is indeed something that needs our attention. In the far north, a new city named Yalahar was discovered. It seems to be incredibly huge. ...",
 				"According to travelers, it's a city of glory and wonders. We need to learn as much as we can about this city and its inhabitants. ...",
@@ -38,9 +39,9 @@ local function creatureSayCallback(cid, type, msg)
 				"Please look for the explorer's society's captain Maximilian in Liberty Bay. Ask him for a passage to Yalahar. There visit Timothy of the explorer's society and get his research notes. ...",
 				"It might be a good idea to explore the city a bit on your own before you deliver the notes here, but please make sure you don't lose them."
 			}, cid)
-			player:setStorageValue(30, 1)
+			player:setStorageValue(Storage.TheWayToYalahar.QuestLine, 1)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(30) == 2 then
+		elseif player:getStorageValue(Storage.TheWayToYalahar.QuestLine) == 2 then
 			npcHandler:say("Did you bring the papers I asked you for?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -48,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(10090) > 0 then
 				player:removeItem(10090, 1)
-				player:setStorageValue(30, 3)
+				player:setStorageValue(Storage.TheWayToYalahar.QuestLine, 3)
 				npcHandler:say("Oh marvellous, please excuse me. I need to read this text immediately. Here, take this small reward of 500 gold pieces for your efforts.", cid)
 				player:addMoney(500)
 				npcHandler.topic[cid] = 0

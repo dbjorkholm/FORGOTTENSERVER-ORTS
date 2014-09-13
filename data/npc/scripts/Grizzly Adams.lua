@@ -314,24 +314,24 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'special task'}, msg:lower()) then
 		if player:getPawAndFurPoints() >= 90 then -- Tiquandas Revenge 90 points
-			if player:getStorageValue(22222) == 1 then  -- Check if he has already started the task.
+			if player:getStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the task. Go find Tiquandas Revenge and take revenge yourself!', cid)
-				else
+			else
 				npcHandler:say({
 					'Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...',
 					'I myself believe that there is some truth in this clap trap. Something \'real\' which therefore must have a hideout somewhere. Go find it and take revenge yourself!'
 				}, cid)
-				player:setStorageValue(22555, 1) -- Task needed to enter Tiquandas Revenge TP
-				player:setStorageValue(22222, 1) -- Won't give this task again.
+				player:setStorageValue(Storage.KillingInTheNameOf.TiquandasRevengeTeleport, 1) -- Task needed to enter Tiquandas Revenge TP
+				player:setStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge, 1) -- Won't give this task again.
 			end
 		end
 		if player:getPawAndFurPoints() >= 100 then -- Demodras 100 points
-			if player:getStorageValue(22223) == 1 then  -- Check if he has already started the task.
+			if player:getStorageValue(Storage.KillingInTheNameOf.MissionDemodras) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the special task. Find Demodras and kill it.', cid)
 			else
 				npcHandler:say('This task is a very dangerous one. I want you to look for Demodras\' hideout. It might be somewhere under the Plains of Havoc. Good luck, old chap.', cid)
-				player:setStorageValue(22556, 1) -- Task needed to enter Demodras TP
-				player:setStorageValue(22223, 1) -- Won't give this task again.
+				player:setStorageValue(Storage.KillingInTheNameOf.DemodrasTeleport, 1) -- Task needed to enter Demodras TP
+				player:setStorageValue(Storage.KillingInTheNameOf.MissionDemodras, 1) -- Won't give this task again.
 			end
 		end
 		npcHandler.topic[cid] = 0

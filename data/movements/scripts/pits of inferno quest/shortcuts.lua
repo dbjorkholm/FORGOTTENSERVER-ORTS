@@ -1,6 +1,6 @@
 local storages = {
-	[8816] = 8816,
-	[8817] = 8817
+	[8816] = Storage.PitsOfInferno.ShortcutHub,
+	[8817] = Storage.PitsOfInferno.ShortcutLevers
 }
 
 function onStepIn(cid, item, position, fromPosition)
@@ -9,9 +9,9 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	local storage = storages[item.actionid]
-	if player:getStorageValue(storage) ~= 1 then
-		player:setStorageValue(storage, 1)
+	local cutoffStorage = storages[item.actionid]
+	if player:getStorageValue(cutoffStorage) ~= 1 then
+		player:setStorageValue(cutoffStorage, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You discovered a shortcut to the pits of inferno.')
 	end
 	return true

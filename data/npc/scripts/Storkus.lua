@@ -52,22 +52,22 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "vampire lord token") and player:getStorageValue(Storage.TheInquisition.Questline) == 10) then
-		if(player:getStorageValue(402) < 1) then
+		if(player:getStorageValue(Storage.VampireHunter.Rank) < 1) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 3
-		elseif(player:getStorageValue(402) == 1) then
+		elseif(player:getStorageValue(Storage.VampireHunter.Rank) == 1) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 4
-		elseif(player:getStorageValue(402) == 2) then
+		elseif(player:getStorageValue(Storage.VampireHunter.Rank) == 2) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 5
-		elseif(player:getStorageValue(402) == 3) then
+		elseif(player:getStorageValue(Storage.VampireHunter.Rank) == 3) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 6
-		elseif(player:getStorageValue(402) == 4) then
+		elseif(player:getStorageValue(Storage.VampireHunter.Rank) == 4) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 7
-		elseif(player:getStorageValue(402) == 5) then
+		elseif(player:getStorageValue(Storage.VampireHunter.Rank) == 5) then
 			npcHandler:say("Would ye' like to give me vampire tokens?", cid)
 			npcHandler.topic[cid] = 8
 		end
@@ -85,7 +85,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 3) then
 			if(player:getItemCount(9020) >= 1) then
 				npcHandler:say("Ye' brought the token needed to advance to the first vampire hunter rank. I consider that a fluke, but still, congrats! Let me share some of my experience with ye'.", cid)
-				player:setStorageValue(402, 1)
+				player:setStorageValue(Storage.VampireHunter.Rank, 1)
 				player:removeItem(9020, 1)
 				player:addExperience( 1000, false, true)
 			else
@@ -95,7 +95,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 4) then
 			if(player:getItemCount(9020) >= 4) then
 				npcHandler:say("Ye' brought the four tokens needed to advance to the second vampire hunter rank. Pretty lucky ye' are! Let me share some of my experience with ye'.", cid)
-				player:setStorageValue(402, 2)
+				player:setStorageValue(Storage.VampireHunter.Rank, 2)
 				player:removeItem(9020, 4)
 				player:addExperience( 5 * 1000, false, true)
 			else
@@ -105,7 +105,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 5) then
 			if(player:getItemCount(9020) >= 5) then
 				npcHandler:say("Ye' brought the five tokens needed to advance to the third vampire hunter rank. Wow, you're pretty determined! Let me share some of my experience with ye'.", cid)
-				player:setStorageValue(402, 3)
+				player:setStorageValue(Storage.VampireHunter.Rank, 3)
 				player:removeItem(9020, 5)
 				player:addExperience( 10 * 1000, false, true)
 			else
@@ -115,7 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 6) then
 			if(player:getItemCount(9020) >= 10) then
 				npcHandler:say("Ye' brought the ten tokens needed to advance to the fourth vampire hunter rank. You're absolutely painstaking! Let me share some of my experience with ye'.", cid)
-				player:setStorageValue(402, 4)
+				player:setStorageValue(Storage.VampireHunter.Rank, 4)
 				player:removeItem(9020, 10)
 				player:addExperience( 20 * 1000, false, true)
 			else
@@ -125,7 +125,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 7) then
 			if(player:getItemCount(9020) >= 30) then
 				npcHandler:say("Ye' brought the thirty tokens needed to advance to the fifth vampire hunter rank. You're completely obliterative, kid! Let me share some of my experience with ye'.", cid)
-				player:setStorageValue(402, 5)
+				player:setStorageValue(Storage.VampireHunter.Rank, 5)
 				player:removeItem(9020, 30)
 				player:addExperience( 50 * 1000, false, true)
 			else
@@ -135,7 +135,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif(npcHandler.topic[cid] == 8) then
 			if(player:getItemCount(9020) >= 50) then
 				npcHandler:say("Ye' brought the fifty tokens needed to advance to the last vampire hunter rank. Now that's something. You're razing-amazing! Let me share some of my experience and a little something with ye'!", cid)
-				player:setStorageValue(402, 6)
+				player:setStorageValue(Storage.VampireHunter.Rank, 6)
 				player:removeItem(9020, 50)
 				player:addItem(9019, 1)
 				player:addExperience( 100 * 1000, false, true)

@@ -65,7 +65,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
 		end
 	elseif isInArray({50234, 50235, 50236}, itemEx.actionid) then
-		if player:getStorageValue(50143) >= os.time() then
+		if player:getStorageValue(Storage.SwampDiggingTimeout) >= os.time() then
 			return false
 		end
 
@@ -80,7 +80,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if chance >= randItem.from and chance <= randItem.to then
 				player:addItem(randItem.itemId, 1)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You dug up a ' .. ItemType(randItem.itemId):getName() .. '.')
-				player:setStorageValue(50143, os.time() + 604800)
+				player:setStorageValue(Storage.SwampDiggingTimeout, os.time() + 604800)
 				toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
 				break
 			end

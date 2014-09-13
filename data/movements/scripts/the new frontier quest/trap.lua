@@ -8,7 +8,7 @@ function onStepIn(cid, item, position, fromPosition)
 
 	if player:getStorageValue(Storage.TheNewFrontier.Questline) == 22 then
 		--Questlog, The New Frontier Quest 'Mission 07: Messengers Of Peace'
-		player:setStorageValue(12137, 2)
+		player:setStorageValue(Storage.TheNewFrontier.Mission07, 2)
 		player:setStorageValue(Storage.TheNewFrontier.Questline, 23)
 	end
 

@@ -4,7 +4,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(3057) ~= 1 or player:getStorageValue(3058) ~= 1 then
+	if player:getStorageValue(Storage.QuestChests.FormorgarMinesHoistSkeleton) ~= 1 or player:getStorageValue(Storage.QuestChests.FormorgarMinesHoistChest) ~= 1 then
 		player:teleportTo(fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You must first find the hoist instruction before using it.')
