@@ -5,6 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
 local voices = {
 	'Hum hum, huhum',
 	'Silly lil\' human'
@@ -72,8 +73,8 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		-- Crown Armor
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(2Storage.SweetyCyclops.AmuletTimer7) > 0 then
-				player:removeItem(2Storage.SweetyCyclops.AmuletTimer7, 1)
+			if player:getItemCount(2487) > 0 then
+				player:removeItem(2487, 1)
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5887, 1)

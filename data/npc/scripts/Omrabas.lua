@@ -94,7 +94,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Then, place the hallowed bone on the firebasin of the Bonemarrow Altar so the Dark Lord can consume it and grants us his power. Return to me after that."
 			}, cid)
 			player:setStorageValue(Storage.GravediggerOfDrefia.Mission17, 1)
-		elseif player:getStorageValue(Storage.GravediggerOfDrefia.Mission17) == 1 and playerStorage.GravediggerOfDrefia.Mission18) < 1 then
+		elseif player:getStorageValue(Storage.GravediggerOfDrefia.Mission17) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission18) < 1 then
 			npcHandler:say({
 				"Are you still here? Come on, let's not laze about, go to the Gardens of Night - where? ...",
 				"East of the Necromancer Halls, you can't miss it, just look for a lot of dark and white sand, dried trees, and priestesses! ...",
@@ -408,7 +408,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:setStorageValue(Storage.GravediggerOfDrefia.Mission17, 1)
 	elseif msgcontains(msg, 'problem') and player:getStorageValue(Storage.GravediggerOfDrefia.Mission17) == 1 and npcHandler.topic[cid] == 8 then
 		npcHandler:say("What? No bones around you say? Hrmmm. Wait. Check the skull heap here - that's right - hah! There! Now get to work!", cid)
-		playerStorage.GravediggerOfDrefia.Mission18, 1)
+		player:setStorageValue(Storage.GravediggerOfDrefia.Mission18, 1)
 		player:addItem(21407, 3)
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'blood') and player:getStorageValue(Storage.GravediggerOfDrefia.Mission21) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission22) < 1 then
