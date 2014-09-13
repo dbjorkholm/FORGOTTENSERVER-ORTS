@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50143
-Last Used Aid = 50236
-Last Used Uid = 50134
+Last Used Aid = 50238
+Last Used Uid = 50135
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 allowMovement Storage	=		100000 --Reserved to cancel player movement
@@ -221,3 +221,6 @@ Kaz wagons aid = 50230-50233
 Svarground Arena Quest Quest Log Storages = 50140-50142
 
 Diggable Swamp Tiles AID: 50234-50236, Storage Key: 50143
+
+Kazordoon exit AID: 50237-50238
+Wooden coffin (Family Brooch Quest) UID: 2286

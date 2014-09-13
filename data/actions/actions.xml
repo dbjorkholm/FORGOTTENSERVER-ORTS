@@ -90,6 +90,8 @@
 	<action fromaid="50136" toaid="50159" script="kazordoon/oreWagons.lua"/>
 	<action fromaid="50230" toaid="50233" script="kazordoon/oreWagons.lua"/>
 	<action fromaid="50011" toaid="50012" script="kazordoon/elevatorLever.lua"/>
+	<action actionid="50237" script="kazordoon/stone.lua"/>
+	<action actionid="50238" script="kazordoon/trapdoor.lua"/>
 
 	<!-- Addons -->
 	<action fromid="13925" toid="13926" script="addons/addons.lua"/>
@@ -410,6 +412,7 @@
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
 	<action itemid="7496" script="other/beerBottle.lua"/>
 	<action actionid="50161" script="quests/calassaCombDoor.lua"/>
+	<action uniqueid="2286" script="quests/familybrooch.lua"/>
 
 	<!-- Tools -->
 	<action itemid="8717" script="tools/lockPick.lua"/>
@@ -705,6 +708,9 @@
 	<action fromid="10264" toid="10267" script="other/windows.lua" />
 	<action fromid="10488" toid="10491" script="other/windows.lua" />
 	<action fromid="11258" toid="11262" script="other/blessingCharms.lua" />
+	<action itemid="7737" script="other/costumebags.lua" />
+	<action itemid="7739" script="other/costumebags.lua" />
+	<action itemid="9076" script="other/costumebags.lua" />
 
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
