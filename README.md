@@ -46,7 +46,6 @@ doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 
 **Scripting related links:**
 - [List of metatable functions](http://pastebin.com/nws8xHmK)
-- [compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua) (which contains additional functions)
 
 ### Map Contributions
 In order to contribute map updates read this [article](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map) first.
