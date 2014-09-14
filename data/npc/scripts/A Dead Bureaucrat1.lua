@@ -62,10 +62,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		end
 	elseif msgcontains(msg, "411") then
-		if Player(cid):getStorageValue(Storage.PitsOfInferno.Pumin) == 3 then
+		if player:getStorageValue(Storage.PitsOfInferno.Pumin) == 3 then
 			npcHandler:say("Form 411? You need Form 287 to get that! Do you have it?", cid)
 			npcHandler.topic[cid] = 4
-		elseif Player(cid):getStorageValue(Storage.PitsOfInferno.Pumin) == 5 then
+		elseif player:getStorageValue(Storage.PitsOfInferno.Pumin) == 5 then
 			npcHandler:say("Form 411? You need Form 287 to get that! Do you have it?", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -80,7 +80,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Great. Here you are. Form 411. Come back anytime you want to talk. Bye.", cid)
 		end
 	elseif msgcontains(msg, "356") then
-		if Player(cid):getStorageValue(Storage.PitsOfInferno.Pumin) == 8 then
+		if player:getStorageValue(Storage.PitsOfInferno.Pumin) == 8 then
 			player:setStorageValue(Storage.PitsOfInferno.Pumin, 9)
 			npcHandler:say("INCREDIBLE, you did it!! Have fun at Pumin's Domain!", cid)
 		end

@@ -33,8 +33,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, "287") then
-		if Player(cid):getStorageValue(Storage.PitsOfInferno.Pumin) == 4 then
-			Player(cid):setStorageValue(Storage.PitsOfInferno.Pumin, 5)
+		local player = Player(cid)
+		if player:getStorageValue(Storage.PitsOfInferno.Pumin) == 4 then
+			player:setStorageValue(Storage.PitsOfInferno.Pumin, 5)
 			npcHandler:say("Sure, you can get it from me. Here you are. Bye", cid)
 		end
 	end
