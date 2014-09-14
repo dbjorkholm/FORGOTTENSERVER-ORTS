@@ -97,7 +97,7 @@ Storage = {
 	TheirMastersVoice = {
 		SlimeGobblerTimeout = 984,
 		SlimeGobblerReceived = 985
-	}
+	},
 	KosheiTheDeathless = {
 		RewardDoor = 3066,
 	},
