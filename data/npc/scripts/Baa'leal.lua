@@ -19,7 +19,7 @@ local function greetCallback(cid, message)
 		return false
 	end
 
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(GreenDjinn.MissionStart) < 1 and BlueOrGreen then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) < 1 and BlueOrGreen then
 		return false
 	end
 
@@ -34,14 +34,14 @@ local function creatureSayCallback(cid, type, msg)
 	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "mission") then
 		local player = Player(cid)
-		if player:getStorageValue(GreenDjinn.MissionStart) == 1 and player:getStorageValue(GreenDjinn.MissionStart + 1) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) == 1 then
 			npcHandler:say({
 				"Each mission and operation is a crucial step towards our victory! ...",
 				"Now that we speak of it ...",
 				"Since you are no djinn, there is something you could help us with. Are you interested, human?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(GreenDjinn.MissionStart + 1) == 3 then
+		elseif player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) == 4 then
 			npcHandler:say("Did you find the thief of our supplies?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "hail malor") then
 		if npcHandler.topic[cid] == 4 then
 			npcHandler:say("Hail to our great leader!", cid)
-			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 4)
+			Player(cid):setStorageValue(Storage.DjinnWar.EfreetFaction.Mission01, 5)
 			npcHandler.topic[cid] = 0
 		end
 	-- Mission 1 - The Supply Thief
@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Now go! Travel to the northern city Carlin! Keep your eyes open and look around for something that might give you a clue!"
 			}, cid)
 			npcHandler.topic[cid] = 0
-			Player(cid):setStorageValue(GreenDjinn.MissionStart + 1, 1)
+			Player(cid):setStorageValue(Storage.DjinnWar.EfreetFaction.Mission01, 2)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Finally! What is his name then?", cid)
 			npcHandler.topic[cid] = 3

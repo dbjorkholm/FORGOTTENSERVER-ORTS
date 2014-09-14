@@ -19,7 +19,7 @@ end
 
 local function greetCallback(cid, message)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and not BlueOrGreen then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and not BlueOrGreen then
 		return false
 	end
 
@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(BlueDjinn.MissionStart) == 1 and player:getStorageValue(BlueDjinn.MissionStart+1) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) == 1 then
 			npcHandler:say({
 				"My collection of recipes is almost complete. There are only but a few that are missing. ...",
 				"Mmmm... now that we talk about it. There is something you could help me with. Are you interested?"
@@ -41,7 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "cookbook") then
-		if player:getStorageValue(BlueDjinn.MissionStart+1) == 2 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) == 3 then
 			npcHandler:say("Do you have the cookbook of the dwarven kitchen with you? Can I have it?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -52,7 +52,7 @@ local function creatureSayCallback(cid, type, msg)
 				"So, if you could bring me a cookbook of the dwarven kitchen I will reward you well."
 			}, cid)
 			npcHandler.topic[cid] = 0
-			player:setStorageValue(BlueDjinn.MissionStart+1, 1)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission01, 2)
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeItem(2347, 1) then
 				npcHandler:say({
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 					"Dragon Egg Omelette, Dwarven beer sauce... it's all there. This is great! Here is your well-deserved reward. ...",
 					"Incidentally, I have talked to Fa'hradin about you during dinner. I think he might have some work for you. Why don't you talk to him about it?"
 				}, cid)
-				player:setStorageValue(BlueDjinn.MissionStart+1, 3)
+				player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission01, 4)
 				player:addItem(2146, 3)
 				npcHandler.topic[cid] = 0
 			end

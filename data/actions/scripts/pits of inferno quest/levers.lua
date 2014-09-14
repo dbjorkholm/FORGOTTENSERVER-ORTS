@@ -9,12 +9,14 @@ local stonePositions = {
 	Position(32852, 32333, 12)
 }
 
+local leverCount = Game.getStorageValue(GlobalStorage.PitsOfInferno.Levers)
+
 local function createStones()
 	for i = 1, #stonePositions do
 		Game.createItem(1304, 1, stonePositions[i])
 	end
 
-	Game.setStorageValue(1000)
+	Game.setStorageValue(GlobalStorage.PitsOfInferno.Levers)
 end
 
 local function revertLever(position)
@@ -23,8 +25,8 @@ local function revertLever(position)
 		leverItem:transform(1945)
 	end
 
-	if Game.getStorageValue(1000) > 0 then
-		Game.setStorageValue(1000, Game.getStorageValue(1000) - 1)
+	if leverCount > 0 then
+		Game.setStorageValue(GlobalStorage.PitsOfInferno.Levers, leverCount - 1)
 	end
 end
 
@@ -34,19 +36,19 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if item.uid > 2049 and item.uid < 2065 then
-		if (Game.getStorageValue(1000) or -1) < 0 then
-			Game.setStorageValue(1000, 0)
+		if leverCount == nil then
+			Game.setStorageValue(GlobalStorage.PitsOfInferno.Levers, 0)
 		end
 
 		local number = item.uid - 2049
-		if (Game.getStorageValue(1000) + 1) ~= number then
+		if leverCount + 1 ~= number then
 			return false
 		end
 
-		Game.setStorageValue(1000, number)
+		Game.setStorageValue(GlobalStorage.PitsOfInferno.Levers, number)
 		Player(cid):say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
 	elseif item.uid == 2065 then
-		if Game.getStorageValue(1000) ~= 15 then
+		if leverCount ~= 15 then
 			Player(cid):say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
 			return true
 		end

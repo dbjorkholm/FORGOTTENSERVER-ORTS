@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid, message)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) > 0 then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) > 0 then
 		return false
 	end
 
@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "passage") then
-		if player:getStorageValue(GreenDjinn.MissionStart) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) < 1 then
 			npcHandler:say({
 				"Only the mighty Efreet, the true djinn of Tibia, may enter Mal'ouquah! ...",
 				"All Marids and little worms like yourself should leave now or something bad may happen. Am I right?"
@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Go now to general Baa'leal and don't forget to greet him correctly! ...",
 				"And don't touch anything!"
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart, 1)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission01, 1)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then

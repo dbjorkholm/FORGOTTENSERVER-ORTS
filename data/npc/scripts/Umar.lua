@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and BlueOrGreen then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and BlueOrGreen then
 		return false
 	end
 
@@ -29,7 +29,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "passage") then
-		if player:getStorageValue(BlueDjinn.MissionStart) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 then
 			npcHandler:say({
 				"If you want to enter our fortress you have to become one of us and fight the Efreet. ...",
 				"So, are you willing to do so?"
@@ -46,7 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 				"And don't forget to kill some Efreets, now and then."
 			}, cid)
 			npcHandler.topic[cid] = 3
-			player:setStorageValue(BlueDjinn.MissionStart, 1)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission01, 1)
 		end
 	end
 	return true

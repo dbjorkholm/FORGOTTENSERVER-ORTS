@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and BlueOrGreen then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and BlueOrGreen then
 		return false
 	end
 
@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(BlueDjinn.MissionStart+2) == 3 and player:getStorageValue(BlueDjinn.MissionStart+3) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) == 3 and player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) < 1 then
 			npcHandler:say({
 				"Sooo. Fa'hradin has told me about your extraordinary exploit, and I must say I am impressed. ...",
 				"Your fragile human form belies your courage and your fighting spirit. ...",
@@ -31,7 +31,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Think carefully, human, for this mission will bring you into real danger. Are you prepared to do us that final favour?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(BlueDjinn.MissionStart+3) == 3 then
+		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 3 then
 			npcHandler:say("Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -45,14 +45,14 @@ local function creatureSayCallback(cid, type, msg)
 				"Once you have acquired the lamp you must enter Mal'ouquah again. Sneak into Malor's personal chambersand exchange his sleeping lamp with Fa'hradin's lamp! ...",
 				"If you succeed, the war could be over one night later! I and all djinn will be in your debt forever! May Daraman watch over you!"
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart+3, 1)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({
 				"Daraman shall bless you and all humans! You have done us all a huge service! Soon, this awful war will be over! ...",
 				"Know, that from now on you are considered one of us and are welcome to trade with Haroun and Nah'bob whenever you want to!"
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart+3, 4)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 4)
 			npcHandler.topic[cid] = 0
 		end
 	end

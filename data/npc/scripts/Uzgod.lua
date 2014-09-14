@@ -34,7 +34,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "crimson sword")) then
-		if player:getStorageValue(Rashid.MissionStart + 4) == 1 then
+		if player:getStorageValue(Storage.TravellingTrader.Mission05) == 1 then
 			npcHandler:say("Me don't sell crimson sword.", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -76,7 +76,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(5880, 3)
 				npcHandler:say("Ah, that's how me like me customers. Ok, me do this... <pling pling> ... another fine swing of the hammer here and there... <ploing>... here you have it!", cid)
 				player:addItem(7385, 1)
-				player:setStorageValue(Rashid.MissionStart + 4, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission05, 2)
 				npcHandler.topic[cid] = 0
 			end
 		end

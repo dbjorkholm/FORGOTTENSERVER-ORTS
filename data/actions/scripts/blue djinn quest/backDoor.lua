@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(BlueDjinn.MissionStart + 2) >= 1 then
+	if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) >= 1 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(1256)
 	end

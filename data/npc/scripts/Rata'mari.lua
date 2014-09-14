@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(BlueDjinn.MissionStart + 2) ~= 1 then
+	if Player(cid):getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) ~= 1 then
 		return false
 	end
 
@@ -43,7 +43,7 @@ local function creatureSayCallback(cid, type, msg)
 					"Meep! Meep! Great! Here is the spyreport for you!",
 					"Meep!"
 				}, cid)
-				player:setStorageValue(BlueDjinn.MissionStart+2, 2)
+				player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 2)
 				player:addItem(2345, 1)
 				npcHandler.topic[cid] = 0
 			else

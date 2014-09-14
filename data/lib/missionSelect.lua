@@ -21,7 +21,6 @@ Rashid = {
 ]]
 Rashid = {
 			NeedMission = true,
-			MissionStart = 101,
 			MissionEnd = 107,
 			WithoutMissionPrice = 0.5
 		}
@@ -58,51 +57,18 @@ Factions = 110	-- shared storage between blue and green djinn quest and others.
 
 BlueDjinn = {
 				NeedMission = true,
-				MissionStart = 111,
-				MissionEnd = 114,
+				MissionEnd = 113,
 				WithoutMissionPrice = 0.5
 			}
 
---[[
-	STORAGE VALUE = STORAGE VALUE
-	Factions 2 = 80 1
-	BlueDjinn.MissionStart 1 = 82 1
-	BlueDjinn.MissionStart+1 1 = 82 2
-	BlueDjinn.MissionStart+1 2 = 82 3
-	BlueDjinn.MissionStart+1 3 = 82 4
-	BlueDjinn.MissionStart+2 1 = 82 5
-	BlueDjinn.MissionStart+2 2 = 82 6
-	BlueDjinn.MissionStart+2 3 = 82 7
-	BlueDjinn.MissionStart+3 1 = 82 8
-	BlueDjinn.MissionStart+3 2 = 82 9
-	BlueDjinn.MissionStart+3 3 = 82 10
-	BlueDjinn.MissionStart+3 4 = 82 11
-
-]]
 
 GreenDjinn = {
 				NeedMission = true,
-				MissionStart = 121,
-				MissionEnd = 124,
+				MissionEnd = 123,
 				WithoutMissionPrice = 0.5
 			}
 
---[[
-	STORAGE VALUE = STORAGE VALUE
-	Factions 2 = 80 1
-	GreenDjinn.MissionStart 1 = 81 1
-	GreenDjinn.MissionStart+1 1 = 81 2
-	GreenDjinn.MissionStart+1 2 = 81 3
-	GreenDjinn.MissionStart+1 3 = 81 4
-	GreenDjinn.MissionStart+1 4 = 81 5
-	GreenDjinn.MissionStart+2 1 = 81 6
-	GreenDjinn.MissionStart+2 2 = 81 7
-	GreenDjinn.MissionStart+2 3 = 81 8
-	GreenDjinn.MissionStart+3 1 = 81 9
-	GreenDjinn.MissionStart+3 2 = 81 10
-	GreenDjinn.MissionStart+3 3 = 81 11
-	GreenDjinn.MissionStart+3 4 = 81 12
-]]
+
 
 
 -- Function used on this script and npcs system --

@@ -31,7 +31,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
-		if player:getStorageValue(GreenDjinn.MissionStart + 3) == 1 or player:getStorageValue(BlueDjinn.MissionStart + 3) == 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 1 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 1 then
 			npcHandler:say({
 				'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...',
 				'Who do you want to trap in this cursed lamp?'
@@ -40,10 +40,10 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	-- Mission 3 - Orc Fortress
 	elseif msgcontains(msg, 'malor') and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(GreenDjinn.MissionStart + 3) == 1 then
-			player:setStorageValue(GreenDjinn.MissionStart + 3, 2)
-		elseif player:getStorageValue(BlueDjinn.MissionStart + 3) == 1 then
-			player:setStorageValue(BlueDjinn.MissionStart + 3, 2)
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 1 then
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 2)
+		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 1 then
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 2)
 		end
 		player:addItem(2344, 1)
 		npcHandler:say('I was waiting for this day! Take the lamp and let Malor feel my wrath!', cid)

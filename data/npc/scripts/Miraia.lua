@@ -77,9 +77,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say(config[msg].text[2], cid)
 		end
 	elseif msgcontains(msg, 'scarab cheese') then
-		if player:getStorageValue(Rashid.MissionStart + 2) == 1 then
+		if player:getStorageValue(Storage.TravellingTrader.Mission03) == 1 then
 			npcHandler:say('Let me cover my nose before I get this for you... Would you REALLY like to buy scarab cheese for 100 gold?', cid)
-		elseif player:getStorageValue(Rashid.MissionStart + 2) == 2 then
+		elseif player:getStorageValue(Storage.TravellingTrader.Mission03) == 2 then
 			npcHandler:say('Oh the last cheese molded? Would you like to buy another one for 100 gold?', cid)
 		end
 		npcHandler.topic[cid] = 4
@@ -118,7 +118,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
 			if player:getMoney() >= 100 then
-				player:setStorageValue(Rashid.MissionStart + 2, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission03, 2)
 				player:addItem(8112, 1)
 				player:removeMoney(100)
 				npcHandler:say('Here it is.', cid)

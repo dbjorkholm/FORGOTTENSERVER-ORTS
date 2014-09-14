@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(81) >= 12 then
+	if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) >= 4 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(1258)
 	end

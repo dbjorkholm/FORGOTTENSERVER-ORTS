@@ -19,7 +19,7 @@ local function greetCallback(cid, message)
 		return false
 	end
 
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(BlueDjinn.MissionStart) < 1 and not BlueOrGreen then
+	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and not BlueOrGreen then
 		return false
 	end
 
@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(BlueDjinn.MissionStart + 1) == 3 and player:getStorageValue(BlueDjinn.MissionStart + 2) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) == 4 and player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) < 1 then
 			npcHandler:say({
 				"I have heard some good things about you from Bo'ques. But I don't know. ...",
 				"Well, all right. I do have a job for you. ...",
@@ -44,8 +44,8 @@ local function creatureSayCallback(cid, type, msg)
 				"I need you to infiltrate Mal'ouqhah, contact our man there and get his latest spyreport. The password is {PIEDPIPER}. Remember it well! ...",
 				"I do not have to add that this is a dangerous mission, do I? If you are discovered expect to be attacked! So goodluck, human!"
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart + 2, 1)
-		elseif player:getStorageValue(BlueDjinn.MissionStart + 2) == 2 then
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 1)
+		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) == 2 then
 			npcHandler:say("Did you already retrieve the spyreport?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -56,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Well, let's see. ...",
 				"I think I need to talk to Gabel about this. I am sure he will know what to do. Perhaps you should have aword with him, too."
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart + 2, 3)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 3)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then

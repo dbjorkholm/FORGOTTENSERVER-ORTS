@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- Mission 1 - The Supply Thief
 	if msgcontains(msg, "prison") then
-		if player:getStorageValue(GreenDjinn.MissionStart + 1) == 2 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) == 3 then
 			npcHandler:say("You mean that's a JAIL? They told me it's the finest hotel in town! THAT explains the lousy roomservice!", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 				"What!? I bet, Baa'leal sent you! ...",
 				"I won't tell you anything! Shove off!"
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart + 1, 3)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission01, 4)
 			npcHandler.topic[cid] = 0
 		end
 	end

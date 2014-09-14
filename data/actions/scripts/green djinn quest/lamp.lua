@@ -1,8 +1,8 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(GreenDjinn.MissionStart + 3) == 2 and player:getItemCount(2344) > 0 then
+	if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 2 and player:getItemCount(2344) > 0 then
 		player:removeItem(2344, 1)
-		player:setStorageValue(GreenDjinn.MissionStart + 3, 3)
+		player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 3)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		player:addItem(2356,1)
 	end

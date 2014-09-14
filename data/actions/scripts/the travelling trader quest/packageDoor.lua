@@ -4,7 +4,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(Rashid.MissionStart + 1) >= 3 then
+	if player:getStorageValue(Storage.TravellingTrader.secondMission) >= 3 then
 		player:teleportTo(toPosition, true)
 		Item(item.uid):transform(1224)
 	end

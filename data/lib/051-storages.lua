@@ -10,6 +10,29 @@ Storage = {
 	ExplorerSociety = {
 		QuestLine = 90
 	},
+	TravellingTrader = {
+		Mission01 = 101,
+		Mission02 = 102,
+		Mission03 = 103,
+		Mission04 = 104,
+		Mission05 = 105,
+		Mission06 = 106,
+		Mission07 = 107
+	},
+	DjinnWar = {
+		-- blue djinn
+		MaridFaction = {
+			Mission01 = 111,
+			Mission02 = 112,
+			Mission03 = 113
+		},
+		-- green djinn
+		EfreetFaction = {
+			Mission01 = 121,
+			Mission02 = 122,
+			Mission03 = 123
+		}
+	},
 	VampireHunter = {
 		Rank = 402
 	},
@@ -596,5 +619,8 @@ GlobalStorage = {
 	TheirMastersVoice = {
 		CurrentServantWave = 984,
 		ServantsKilled = 985
+	},
+	PitsOfInferno = {
+		Levers = 1000
 	}
 }

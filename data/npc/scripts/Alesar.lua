@@ -57,7 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	-- Mission 2 - The Tear of Daraman
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(GreenDjinn.MissionStart+1) == 4 and player:getStorageValue(GreenDjinn.MissionStart+2) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) == 5 and player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) < 1 then
 			npcHandler:say({
 				"So Baa'leal thinks you are up to do a mission for us? ...",
 				"I think he is getting old, entrusting human scum such as you are with an important mission like that. ...",
@@ -65,7 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Anyway. Are you prepared to embark on a dangerous mission for us?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(GreenDjinn.MissionStart+2) == 2 then
+		elseif player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) == 2 then
 			npcHandler:say("Did you find the tear of Daraman?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -82,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Well... to cut a long story short, your mission is to sneak into Ashta'daramai and to steal it. ...",
 				"Needless to say, the Marid won't be too eager to part with it. Try not to get killed until you have delivered the stone to me."
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart+2, 1)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission02, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeItem(2346, 1) then
@@ -93,7 +93,7 @@ local function creatureSayCallback(cid, type, msg)
 					"Baa'leal, wants you to talk to Malor concerning some new mission. ...",
 					"Looks like you have managed to extended your life expectancy - for just a bit longer."
 				}, cid)
-				player:setStorageValue(GreenDjinn.MissionStart+2, 3)
+				player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission02, 3)
 				npcHandler.topic[cid] = 0
 			end
 		end

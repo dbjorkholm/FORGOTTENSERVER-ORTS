@@ -198,57 +198,57 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
 		if(os.date("%A") == "Monday") then
-			if(player:getStorageValue(Rashid.MissionStart) < 1) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission01) < 1) then
 				npcHandler:say("Well, you could attempt the mission to become a recognised trader, but it requires a lot of travelling. Are you willing to try?", cid)
 				npcHandler.topic[cid] = 1
-			elseif(player:getStorageValue(Rashid.MissionStart) == 1) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission01) == 1) then
 				npcHandler:say("Have you managed to obtain a rare deer trophy for my customer?", cid)
 				npcHandler.topic[cid] = 3
 			end
 		elseif(os.date("%A") == "Tuesday") then
-			if(player:getStorageValue(Rashid.MissionStart) == 2 and player:getStorageValue(Rashid.MissionStart+1) < 1 ) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission01) == 2 and player:getStorageValue(Storage.TravellingTrader.Mission02) < 1 ) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
 				npcHandler.topic[cid] = 4
-			elseif(player:getStorageValue(Rashid.MissionStart + 1) == 4) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission02) == 4) then
 				npcHandler:say("Did you bring me the package?", cid)
 				npcHandler.topic[cid] = 6
 			end
 		elseif(os.date("%A") == "Wednesday") then
-			if(player:getStorageValue(Rashid.MissionStart + 1) == 5 and player:getStorageValue(Rashid.MissionStart + 2) < 1 ) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission02) == 5 and player:getStorageValue(Storage.TravellingTrader.Mission03) < 1 ) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
 				npcHandler.topic[cid] = 7
-			elseif(player:getStorageValue(Rashid.MissionStart + 2) == 2) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission03) == 2) then
 				npcHandler:say("Have you brought the cheese?", cid)
 				npcHandler.topic[cid] = 9
 			end
 		elseif(os.date("%A") == "Thursday") then
-			if(player:getStorageValue(Rashid.MissionStart + 2) == 3 and player:getStorageValue(Rashid.MissionStart + 3) < 1) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission03) == 3 and player:getStorageValue(Storage.TravellingTrader.Mission04) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
 				npcHandler.topic[cid] = 10
-			elseif(player:getStorageValue(Rashid.MissionStart + 3) == 2) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission04) == 2) then
 				npcHandler:say("Have you brought the vase?", cid)
 				npcHandler.topic[cid] = 12
 			end
 		elseif(os.date("%A") == "Friday") then
-			if(player:getStorageValue(Rashid.MissionStart + 3) == 3 and player:getStorageValue(Rashid.MissionStart + 4) < 1) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission04) == 3 and player:getStorageValue(Storage.TravellingTrader.Mission05) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
 				npcHandler.topic[cid] = 13
-			elseif(player:getStorageValue(Rashid.MissionStart + 4) == 2) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission05) == 2) then
 				npcHandler:say("Have you brought a cheap but good crimson sword?", cid)
 				npcHandler.topic[cid] = 15
 			end
 		elseif(os.date("%A") == "Saturday") then
-			if(player:getStorageValue(Rashid.MissionStart + 4) == 3 and player:getStorageValue(Rashid.MissionStart + 5) < 1) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission05) == 3 and player:getStorageValue(Storage.TravellingTrader.Mission06) < 1) then
 				npcHandler:say("So, my friend, are you willing to proceed to the next mission to become a recognised trader?", cid)
 				npcHandler.topic[cid] = 16
-			elseif(player:getStorageValue(Rashid.MissionStart + 5) == 1) then
+			elseif(player:getStorageValue(Storage.TravellingTrader.Mission06) == 1) then
 				npcHandler:say("Have you brought me a gold fish??", cid)
 				npcHandler.topic[cid] = 18
 			end
 		elseif(os.date("%A") == "Sunday") then
-			if(player:getStorageValue(Rashid.MissionStart + 5) == 2 and player:getStorageValue(Rashid.MissionStart + 6) < 1) then
+			if(player:getStorageValue(Storage.TravellingTrader.Mission06) == 2 and player:getStorageValue(Storage.TravellingTrader.Mission07) ~= 1) then
 				npcHandler:say("Ah, right. <ahem> I hereby declare you - one of my recognised traders! Feel free to offer me your wares!", cid)
-				player:setStorageValue(Rashid.MissionStart + 6, 1)
+				player:setStorageValue(Storage.TravellingTrader.Mission07, 1)
 				--player:AddArchie(id or name)
 				npcHandler.topic[cid] = 0
 			end
@@ -268,13 +268,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif(npcHandler.topic[cid] == 2) then
 			npcHandler:say("Fine. Then get a hold of that deer trophy and bring it to me while I'm in Svargrond. Just ask me about your mission.", cid)
-			player:setStorageValue(Rashid.MissionStart, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission01, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
 			if(player:getItemCount(7397) >= 1) then
 				player:removeItem(7397, 1)
 				npcHandler:say("Well done! I'll take that from you. <snags it> Come see me another day, I'll be busy for a while now. ", cid)
-				player:setStorageValue(Rashid.MissionStart, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission01, 2)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 4) then
@@ -287,13 +287,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		elseif(npcHandler.topic[cid] == 5) then
 			npcHandler:say("Fine. Then off you go, just ask Willard about the 'package for Rashid'.", cid)
-			player:setStorageValue(Rashid.MissionStart + 1, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission02, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 6) then
 			if(player:getItemCount(7503) >= 1) then
 				player:removeItem(7503, 1)
 				npcHandler:say("Great. Just place it over there - yes, thanks, that's it. Come see me another day, I'll be busy for a while now. ", cid)
-				player:setStorageValue(Rashid.MissionStart + 1, 5)
+				player:setStorageValue(Storage.TravellingTrader.Mission02, 5)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 7) then
@@ -308,7 +308,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 8
 		elseif(npcHandler.topic[cid] == 8) then
 			npcHandler:say("Okay, then please find Miraia in Darashia and ask her about the {'scarab cheese'}.", cid)
-			player:setStorageValue(Rashid.MissionStart + 2, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission03, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 9) then
 			if(player:getItemCount(8112) >= 1) then
@@ -317,7 +317,7 @@ local function creatureSayCallback(cid, type, msg)
 					--player:AddArchie(Just in Time)
 				--end
 				npcHandler:say("Mmmhh, the lovely odeur of scarab cheese! I really can't understand why most people can't stand it. Thanks, well done! ", cid)
-				player:setStorageValue(Rashid.MissionStart + 2, 3)
+				player:setStorageValue(Storage.TravellingTrader.Mission03, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 10) then
@@ -330,14 +330,14 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 11
 		elseif(npcHandler.topic[cid] == 11) then
 			npcHandler:say("Okay, then please find {Briasol} in {Ab'Dendriel} and ask for a {'fine vase'}.", cid)
-			player:setStorageValue(Rashid.MissionStart + 3, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission04, 1)
 			player:addMoney(1000)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 12) then
 			if(player:getItemCount(8760) >= 1) then
 				player:removeItem(8760, 1)
 				npcHandler:say("I'm surprised that you managed to bring this vase without a single crack. That was what I needed to know, thank you. ", cid)
-				player:setStorageValue(Rashid.MissionStart + 3, 3)
+				player:setStorageValue(Storage.TravellingTrader.Mission04, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 13) then
@@ -353,13 +353,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 14
 		elseif(npcHandler.topic[cid] == 14) then
 			npcHandler:say("Okay, I'm curious how you will do with {Uzgod}. Good luck!", cid)
-			player:setStorageValue(Rashid.MissionStart + 4, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission05, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 15) then
 			if(player:getItemCount(7385) >= 1) then
 				player:removeItem(7385, 1)
 				npcHandler:say("Ha! You are clever indeed, well done! I'll take this from you. Come see me tomorrow, I think we two might get into business after all.", cid)
-				player:setStorageValue(Rashid.MissionStart + 4, 3)
+				player:setStorageValue(Storage.TravellingTrader.Mission05, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 16) then
@@ -373,13 +373,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 17
 		elseif(npcHandler.topic[cid] == 17) then
 			npcHandler:say("Thanks so much! I'll be waiting eagerly for your return then.", cid)
-			player:setStorageValue(Rashid.MissionStart + 5, 1)
+			player:setStorageValue(Storage.TravellingTrader.Mission06, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 18) then
 			if(player:getItemCount(8766) >= 1) then
 				player:removeItem(8766, 1)
 				npcHandler:say("Thank you!! Ah, this makes my day! I'll take the rest of the day off to get to know this little guy. Come see me tomorrow, if you like.", cid)
-				player:setStorageValue(Rashid.MissionStart + 5, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission06, 2)
 				npcHandler.topic[cid] = 0
 			end
 		end
