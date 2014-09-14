@@ -15,7 +15,7 @@ local creatureName = {
 }
 
 function doClearAreaAzerus()
-	if Game.getStorageValue(982) == 1 then
+	if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) == 1 then
 		local othermonsters = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
 		for _, othermonster in ipairs(othermonsters) do
 			if othermonster:isMonster() then
@@ -23,7 +23,7 @@ function doClearAreaAzerus()
 				othermonster:remove()
 			end
 		end
-		Game.setStorageValue(982, 0)
+		Game.setStorageValue(GlobalStorage.InServiceOfYalahar.LastFight, 0)
 	end
 	return true
 end
@@ -49,7 +49,7 @@ end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.uid == 3086 then
-		if Game.getStorageValue(982) ~= 1 then -- Fight
+		if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) ~= 1 then -- Fight
 			local amountOfPlayers = 3
 			local spectators = Game.getSpectators(Position(32783, 31166, 10), false, true, 10, 10, 10, 10)
 			if #spectators < amountOfPlayers then
@@ -58,7 +58,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				end
 				return true
 			end
-			Game.setStorageValue(982, 1)
+			Game.setStorageValue(GlobalStorage.InServiceOfYalahar.LastFight, 1)
 			addEvent(Game.createMonster, 18 * 1000, "Azerus2", Position(32783, 31167, 10))
 			local azeruswavemonster
 			for i = 1, 4 do

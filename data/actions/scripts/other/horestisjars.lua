@@ -24,31 +24,27 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 		player:setStorageValue(item.actionid, os.time() + config.time)
 
-		local rand = math.random(100)
-		if rand > config.chance then
+		if math.random(100) > config.chance then
 			player:say(config.randomText[math.random(#config.randomText)], TALKTYPE_MONSTER_SAY)
 			return true
 		end
 
 		Item(item.uid):transform(config.brokenJarId)
 
-		local tile, thing
+		local jarsBroken, jarItem = true
 		for i = 1, #config.jarPositions do
-			tile = Tile(config.jarPositions[i])
-			if tile then
-				thing = tile:getItemById(config.brokenJarId)
-				if thing then
-					broken = 1
-				else
-					broken = 0
-					break
-				end
+			jarItem = Tile(config.jarPositions[i]):getItemById(config.brokenJarId)
+			if not jarItem then
+				jarsBroken = false
+				break
 			end
 		end
 
-		if broken > 0 then
-			Game.createMonster(config.bossName, config.bossPosition)
+		if not jarsBroken then
+			return true
 		end
+
+		Game.createMonster(config.bossName, config.bossPosition)
 	else
 		Player(cid):say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
 	end

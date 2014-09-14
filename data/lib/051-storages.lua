@@ -620,7 +620,18 @@ GlobalStorage = {
 		CurrentServantWave = 984,
 		ServantsKilled = 985
 	},
-	PitsOfInferno = {
-		Levers = 1000
+	InServiceOfYalahar = {
+		LastFight = 982
+	},
+	Yakchal = 987,
+	PitsOfInfernoLevers = 1000,
+	WrathOfTheEmperor = {
+		Light01 = 8018,
+		Light02 = 8019,
+		Light03 = 8020,
+		Light04 = 8021
+	},
+	ElementalSphere = {
+		BossRoom = 10004
 	}
 }

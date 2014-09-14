@@ -2,7 +2,7 @@ local config = {
 	[2246] = {
 		[1] = {pos = Position(32763, 32292, 14), id = 1026},
 		[2] = {pos = Position(32762, 32292, 14), id = 1026},
-		[3] = {pos = Position(32761, 32292, 14), id = 1026},
+		[3] = {pos = Position(32761, 32292, 14), id = 1026}
 	},
 	[2247] = {
 		[1] = {pos = Position(32760, 32289, 14), id = 1025},
@@ -38,10 +38,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	if (Game.getStorageValue(400) or -1) < 0 then
-		Game.setStorageValue(400, 0)
-	end
-
 	if item.itemid ~= 1945 then
 		return false
 	end
@@ -58,7 +54,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	Game.setStorageValue(400, Game.getStorageValue(400) + 1)
-	addEvent(Game.setStorageValue, 7 * 1000, 400, Game.getStorageValue(400) - 1)
 	return true
 end

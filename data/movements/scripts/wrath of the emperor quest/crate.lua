@@ -21,15 +21,15 @@ function onStepIn(cid, item, position, fromPosition)
 	elseif item.actionid == 8017 or item.actionid == 32362 or item.itemid == 11436 then
 		catchPlayer(cid)
 	elseif item.actionid == 8018 then
-		if Game.getStorageValue(8018) ~= 1 then
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light01) ~= 1 then
 			catchPlayer(cid)
 		end
 	elseif item.actionid == 8019 then
-		if Game.getStorageValue(8019) ~= 1 then
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light02) ~= 1 then
 			catchPlayer(cid)
 		end
 	elseif item.actionid == 8020 then
-		if Game.getStorageValue(8020) ~= 1 then
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light03) ~= 1 then
 			catchPlayer(cid)
 		end
 	elseif item.actionid == 8021 then

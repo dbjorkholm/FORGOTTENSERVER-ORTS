@@ -76,7 +76,7 @@ local function resetRoom(players)
 		end
 	end
 
-	Game.setStorageValue(10004, -1)
+	Game.setStorageValue(GlobalStorage.ElementalSphere.BossRoom, -1)
 	for i = 1, #config.machineStorages do
 		Game.setStorageValue(config.machineStorages[i], -1)
 	end
@@ -156,7 +156,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	Game.setStorageValue(10004, 1)
+	Game.setStorageValue(GlobalStorage.ElementalSphere.BossRoom, 1)
 	Game.createMonster('Lord of the Elements', config.centerPosition)
 	player:say('You have 10 minutes from now on until you get teleported out.', TALKTYPE_MONSTER_YELL, false, 0, config.centerPosition)
 	addEvent(warnPlayers, 5 * 60 * 1000, players)

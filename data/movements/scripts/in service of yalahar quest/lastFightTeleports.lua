@@ -14,7 +14,7 @@ function onStepIn(cid, item, position, fromPosition)
 			player:teleportTo(fromPosition)
 		end
 	elseif item.uid == 7810 then
-		if Game.getStorageValue(982) ~= 1 then
+		if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) ~= 1 then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(Position(32784, 31178, 9))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

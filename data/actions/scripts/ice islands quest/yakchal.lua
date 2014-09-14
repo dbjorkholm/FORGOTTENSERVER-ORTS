@@ -14,8 +14,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local sarcophagus = Position(32205, 31002, 14)
 	if toPosition.x == sarcophagus.x and toPosition.y == sarcophagus.y and toPosition.z == sarcophagus.z and itemEx.itemid == 7362 and item.itemid == 2361 then
-		if (Game.getStorageValue(987) or -1) < os.time() then
-			Game.setStorageValue(987, os.time() + 24 * 60 * 60)
+		if (Game.getStorageValue(GlobalStorage.Yakchal) or -1) < os.time() then
+			Game.setStorageValue(GlobalStorage.Yakchal, os.time() + 24 * 60 * 60)
 			if math.random(2) == 2 then
 				player:say("You have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
 			else
