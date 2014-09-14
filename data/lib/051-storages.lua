@@ -594,7 +594,8 @@ Storage = {
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8816,
-		ShortcutLevers = 8817
+		ShortcutLevers = 8817,
+		Pumin = 50096
 	},
 
 	-- Promotion Storage cannot be changed, it is set in source code
@@ -609,7 +610,6 @@ Storage = {
 	wagonTicket = 1131,
 	BloodHerbQuest = 50032,
 	firstMageWeapon = 50079,
-	pitsOfInfernoPumin = 50096,
 	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
 	madMageQuest = 50136,
