@@ -115,11 +115,10 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif value == 2 then
-			if player:removeItem(8310, 1) == true then
+			if player:removeItem(8310, 1) then
 				npcHandler:say("AMAZING!! I'm going to start immediately with the research. If it turns out the way I expect it, Alverus will be revived soon!! Here, take this as a reward and try to collect more of this substance. I'll make you a good offer, I promise. ", cid)
 				player:addItem(player:isSorcerer() and 8867 or player:isDruid() and 8869 or player:isPaladin() and 8853 or player:isKnight() and 8883, 1)
 				player:setStorageValue(Storage.ElementalSphere.QuestLine, 3)
-				player:setStorageValue(10029, 1)
 			end
 		end
 	elseif npcHandler.topic[cid] == 1 and msgcontains(msg, "yes") then
