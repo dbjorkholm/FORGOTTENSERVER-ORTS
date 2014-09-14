@@ -57,6 +57,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Farewell, human!"
 			}, cid)
 			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 4)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToMaridTerritory, 1)
 			npcHandler.topic[cid] = 0
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)

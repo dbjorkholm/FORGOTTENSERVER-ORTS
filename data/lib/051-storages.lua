@@ -24,13 +24,17 @@ Storage = {
 		MaridFaction = {
 			Mission01 = 111,
 			Mission02 = 112,
-			Mission03 = 113
+			Mission03 = 113,
+			DoorToLamp = 114,
+			DoorToEfreetTerritory = 115
 		},
 		-- green djinn
 		EfreetFaction = {
 			Mission01 = 121,
 			Mission02 = 122,
-			Mission03 = 123
+			Mission03 = 123,
+			DoorToLamp = 124,
+			DoorToMaridTerritory = 125
 		}
 	},
 	VampireHunter = {

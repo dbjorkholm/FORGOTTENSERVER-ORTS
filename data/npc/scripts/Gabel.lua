@@ -53,6 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Know, that from now on you are considered one of us and are welcome to trade with Haroun and Nah'bob whenever you want to!"
 			}, cid)
 			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 4)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToEfreetTerritory, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end

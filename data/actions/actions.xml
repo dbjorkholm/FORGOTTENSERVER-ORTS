@@ -219,11 +219,7 @@
 	<action uniqueid="3027" script="black knight quest/reward.lua"/>
 
 	<!-- Blue Djinn Quest -->
-	<action uniqueid="9022" script="blue djinn quest/door.lua"/>
-	<action uniqueid="3022" script="blue djinn quest/backDoor.lua"/>
 	<action uniqueid="3024" script="blue djinn quest/lamp.lua"/>
-	<action uniqueid="3023" script="blue djinn quest/lampDoor.lua"/>
-	<action actionid="3027" script="blue djinn quest/yalaharDoor.lua"/>
 
 	<!-- Demon Helmet Quest -->
 	<action uniqueid="2005" script="demon helmet quest/lever.lua"/>
@@ -269,12 +265,8 @@
 	<action uniqueid="3002" script="explorer society quest/urnDoor.lua"/>
 
 	<!-- Green Djinn Quest -->
-	<action uniqueid="9023" script="green djinn quest/door.lua"/>
-	<action uniqueid="3025" script="green djinn quest/backDoor.lua"/>
-	<action uniqueid="3026" script="green djinn quest/lampDoor.lua"/>
 	<action uniqueid="2285" script="green djinn quest/lamp.lua"/>
 	<action actionid="5390" script="green djinn quest/tear.lua"/>
-	<action actionid="3026" script="green djinn quest/yalaharDoor.lua"/>
 
 	<!-- Hydra Egg Quest -->
 	<action uniqueid="12125" script="hydra egg quest/reward.lua"/>

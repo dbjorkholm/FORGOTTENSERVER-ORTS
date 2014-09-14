@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50143
 Last Used Aid = 50238
-Last Used Uid = 50135
+Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 allowMovement Storage	=		100000 --Reserved to cancel player movement

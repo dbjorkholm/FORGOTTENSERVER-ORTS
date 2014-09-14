@@ -42,8 +42,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'malor') and npcHandler.topic[cid] == 1 then
 		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 1 then
 			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 2)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.DoorToLamp, 1)
 		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 1 then
 			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 2)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToLamp, 1)
 		end
 		player:addItem(2344, 1)
 		npcHandler:say('I was waiting for this day! Take the lamp and let Malor feel my wrath!', cid)
