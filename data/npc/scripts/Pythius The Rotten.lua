@@ -32,8 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
 			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"HAHAHA, WHO WOULD SAY SOMETHING ELSE?....BUT....NOTHING'S FOR FREE AND SO WASN'T THE TREASURE BEHIND ME. ...",
 				"BRING ME SOMETHING VALUABLE IN EXCHANGE. SOMETHING YOU THINK I'D LIKE AND THEN.....HAHAHAHA......WE CAN CONTINUE OUR SMALL CONVERSATION.",
 				"EVERYTHING YOU CARRY WITH YOU CAN ALSO BE FOUND IN MY TREASURE. BRING ME SOMETHING I DON'T OWN!!!"

@@ -21,10 +21,9 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'mistrock') then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) ~= 1 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar, 1)
-			npcHandler:say(
-			{
-			"Do you smell this? It's the smell of fire... the fire of a forge. Many people searched this rock here for a hidden path, but they haven't found anything. ...",
-			"I'd search on Fenrock if I were you. Even though there's snow on the surface, it's still warm underground. There are often caves under fresh lava streams."
+			npcHandler:say({
+				"Do you smell this? It's the smell of fire... the fire of a forge. Many people searched this rock here for a hidden path, but they haven't found anything. ...",
+				"I'd search on Fenrock if I were you. Even though there's snow on the surface, it's still warm underground. There are often caves under fresh lava streams."
 			}, cid)
 		end
 	end

@@ -255,14 +255,12 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-
-			npcHandler:say(
-			{
-			"Very good! I need talented people who are able to handle my wares with care, find good offers and the like, so I'm going to test you. ...",
-			"First, I'd like to see if you can dig up rare wares. Something like a ... mastermind shield! ...",
-			"Haha, just kidding, fooled you there, didn't I? Always control your nerves, that's quite important during bargaining. ...",
-			"Okay, all I want from you is one of these rare deer trophies. I have a customer here in Svargrond who ordered one, so I'd like you to deliver it tome while I'm in Svargrond. ...",
-			"Everything clear and understood?"
+			npcHandler:say({
+				"Very good! I need talented people who are able to handle my wares with care, find good offers and the like, so I'm going to test you. ...",
+				"First, I'd like to see if you can dig up rare wares. Something like a ... mastermind shield! ...",
+				"Haha, just kidding, fooled you there, didn't I? Always control your nerves, that's quite important during bargaining. ...",
+				"Okay, all I want from you is one of these rare deer trophies. I have a customer here in Svargrond who ordered one, so I'd like you to deliver it tome while I'm in Svargrond. ...",
+				"Everything clear and understood?"
 			}, cid)
 
 			npcHandler.topic[cid] = 2
@@ -278,11 +276,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 4) then
-			npcHandler:say(
-			{
-			"Alright, that's good to hear. From you as my trader and deliveryman, I expect more than finding rare items. ...",
-			"You also need to be able to transport heavy wares, weaklings won't get far here. I have ordered a special package from Edron. ...",
-			"Pick it up from Willard and bring it back to me while I'm in Liberty Bay. Everything clear and understood?"
+			npcHandler:say({
+				"Alright, that's good to hear. From you as my trader and deliveryman, I expect more than finding rare items. ...",
+				"You also need to be able to transport heavy wares, weaklings won't get far here. I have ordered a special package from Edron. ...",
+				"Pick it up from Willard and bring it back to me while I'm in Liberty Bay. Everything clear and understood?"
 			}, cid)
 			npcHandler.topic[cid] = 5
 		elseif(npcHandler.topic[cid] == 5) then
@@ -297,13 +294,12 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 7) then
-			npcHandler:say(
-			{
-			"Well, that's good to hear. From you as my trader and deliveryman, I expect more than carrying heavy packages. ...",
-			"You also need to be fast and deliver wares in time. I have ordered a very special cheese wheel made from Darashian milk. ...",
-			"Unfortunately, the high temperature in the desert makes it rot really fast, so it must not stay in the sun for too long. ...",
-			"I'm also afraid that you might not be able to use ships because of the smell of the cheese. ...",
-			"Please get the cheese from Miraia and bring it to me while I'm in Port Hope. Everything clear and understood?"
+			npcHandler:say({
+				"Well, that's good to hear. From you as my trader and deliveryman, I expect more than carrying heavy packages. ...",
+				"You also need to be fast and deliver wares in time. I have ordered a very special cheese wheel made from Darashian milk. ...",
+				"Unfortunately, the high temperature in the desert makes it rot really fast, so it must not stay in the sun for too long. ...",
+				"I'm also afraid that you might not be able to use ships because of the smell of the cheese. ...",
+				"Please get the cheese from Miraia and bring it to me while I'm in Port Hope. Everything clear and understood?"
 			}, cid)
 			npcHandler.topic[cid] = 8
 		elseif(npcHandler.topic[cid] == 8) then
@@ -321,11 +317,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 10) then
-			npcHandler:say(
-			{
-			"Well, that's good to hear. From you as my trader and deliveryman, I expect more than bringing stinky cheese. ...",
-			"I wonder if you are able to deliver goods so fragile they almost break when looked at. ...",
-			"I have ordered a special elven vase from Briasol in Ab'Dendriel. Get it from him and don't even touch it, just bring it to me while I'm in Ankrahmun. Everything clear and understood?"
+			npcHandler:say({
+				"Well, that's good to hear. From you as my trader and deliveryman, I expect more than bringing stinky cheese. ...",
+				"I wonder if you are able to deliver goods so fragile they almost break when looked at. ...",
+				"I have ordered a special elven vase from Briasol in Ab'Dendriel. Get it from him and don't even touch it, just bring it to me while I'm in Ankrahmun. Everything clear and understood?"
 			}, cid)
 			npcHandler.topic[cid] = 11
 		elseif(npcHandler.topic[cid] == 11) then
@@ -341,14 +336,13 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 13) then
-			npcHandler:say(
-			{
-			"Fine! There's one more skill that I need to test and which is cruicial for a successful trader. ...",
-			"Of course you must be able to haggle, else you won't survive long in this business. To make things as hard as possible for you, I have the perfect trade partner for you. ...",
-			"Dwarves are said to be the most stubborn of all traders. Travel to {Kazordoon} and try to get the smith {Uzgod} to sell a {crimson sword} to you. ...",
-			"Of course, it has to be cheap. Don't come back with anything more expensive than 400 gold. ...",
-			"And the quality must not suffer, of course! Everything clear and understood?",
-			"Dwarves are said to be the most stubborn of all traders. Travel to Kazordoon and try to get the smith Uzgod to sell a crimson sword to you. ..."
+			npcHandler:say({
+				"Fine! There's one more skill that I need to test and which is cruicial for a successful trader. ...",
+				"Of course you must be able to haggle, else you won't survive long in this business. To make things as hard as possible for you, I have the perfect trade partner for you. ...",
+				"Dwarves are said to be the most stubborn of all traders. Travel to {Kazordoon} and try to get the smith {Uzgod} to sell a {crimson sword} to you. ...",
+				"Of course, it has to be cheap. Don't come back with anything more expensive than 400 gold. ...",
+				"And the quality must not suffer, of course! Everything clear and understood?",
+				"Dwarves are said to be the most stubborn of all traders. Travel to Kazordoon and try to get the smith Uzgod to sell a crimson sword to you. ..."
 			}, cid)
 			npcHandler.topic[cid] = 14
 		elseif(npcHandler.topic[cid] == 14) then
@@ -363,12 +357,11 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 16) then
-			npcHandler:say(
-			{
-			"My friend, it seems you have already learnt a lot about the art of trading. I think you are more than worthy to become a recognised trader. ...",
-			"There is just one little favour that I would ask from you... something personal, actually, forgive my boldness. ...",
-			"I have always dreamed to have a small pet, one that I could take with me and which wouldn't cause problems. ...",
-			"Could you - just maybe - bring me a small goldfish in a bowl? I know that you would be able to get one, wouldn't you?"
+			npcHandler:say({
+				"My friend, it seems you have already learnt a lot about the art of trading. I think you are more than worthy to become a recognised trader. ...",
+				"There is just one little favour that I would ask from you... something personal, actually, forgive my boldness. ...",
+				"I have always dreamed to have a small pet, one that I could take with me and which wouldn't cause problems. ...",
+				"Could you - just maybe - bring me a small goldfish in a bowl? I know that you would be able to get one, wouldn't you?"
 			}, cid)
 			npcHandler.topic[cid] = 17
 		elseif(npcHandler.topic[cid] == 17) then

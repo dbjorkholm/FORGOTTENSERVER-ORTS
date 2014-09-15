@@ -20,8 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "water pipe") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"Oh, there's a waterpipe in one of my cells? ...",
 				"I guess my last {prisoner} forgot it there."
 			}, cid)
@@ -29,8 +28,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "prisoner") then
 		if npcHandler.topic[cid] == 2 then
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"My last prisoner? Hmm. ...", "I think he was some guy from Darama. Can't remember his name. ...",
 				"He was here just for one night, because he got drunk and annoyed our citizens. ...",
 				"Obviously he wasn't pleased with this place, because he headed for Thais the next day. ...",
