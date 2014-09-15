@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.PitsOfInferno.Pumin, 2)
 			npcHandler:say("Sorry, you need Form 145 to get Form 356. Come back when you have it", cid)
 			npcHandler.topic[cid] = 0
-		elseif player::getStorageValue(Storage.PitsOfInferno.Pumin) == 7 then
+		elseif player:getStorageValue(Storage.PitsOfInferno.Pumin) == 7 then
 			player:setStorageValue(Storage.PitsOfInferno.Pumin, 8)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
 		end
