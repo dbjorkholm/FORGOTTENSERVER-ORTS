@@ -103,7 +103,7 @@ Storage = {
 		SlimeGobblerReceived = 985
 	},
 	KosheiTheDeathless = {
-		RewardDoor = 3066,
+		RewardDoor = 3066
 	},
 	ElementalSpheres = {
 		QuestLine = 10000,
@@ -186,7 +186,7 @@ Storage = {
 		Mission71 = 9947,
 		Mission72 = 9948,
 		Mission73 = 9949,
-		Mission74 = 9876,
+		Mission74 = 9876
 
 	},
 	OutfitQuest = {
