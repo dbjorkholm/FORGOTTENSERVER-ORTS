@@ -134,23 +134,22 @@ function removeBoss(fromArea, bossName)
 end
 
 function clearArena(fromPos, toPos)
-	if Game.getStorageValue(3157) == 1 then
-		for x = fromPos.x, toPos.x do
-			for y = fromPos.y, toPos.y do
-				for z = fromPos.z, toPos.z do
-					local creature = Tile(x, y, z):getTopCreature()
-					if creature then
-						if creature:isPlayer() then
-							creature:teleportTo(Position(33049, 31017, 2))
-							Position(33049, 31017, 2):sendMagicEffect(CONST_ME_TELEPORT)
-						else
-							creature:remove()
-						end
+	local exitPosition = Position(33049, 31017, 2)
+	for x = fromPos.x, toPos.x do
+		for y = fromPos.y, toPos.y do
+			for z = fromPos.z, toPos.z do
+				local creature = Tile(x, y, z):getTopCreature()
+				if creature then
+					if creature:isPlayer() then
+						position
+						creature:teleportTo(exitPosition)
+						exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+					else
+						creature:remove()
 					end
 				end
 			end
 		end
-		Game.setStorageValue(3157, 0)
 	end
 end
 

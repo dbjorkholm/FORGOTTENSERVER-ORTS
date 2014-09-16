@@ -381,7 +381,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	TradeRequest(cid, npcHandler, getTable(), Rashid, 1)
+	TradeRequest(cid, Npc(), getTable(), Rashid, 1)
 end
 
 

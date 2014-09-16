@@ -105,9 +105,9 @@ Storage = {
 	KosheiTheDeathless = {
 		RewardDoor = 3066
 	},
-	ElementalSpheres = {
+	ElementalSphere = {
 		QuestLine = 10000,
-		MachineGemStorage = 10002
+		MachineGemCount = 10002
 	},
 	GravediggerOfDrefia = {
 		-- Just numbered the storages by the order they are used in the quest
@@ -629,6 +629,11 @@ GlobalStorage = {
 	},
 	Yakchal = 987,
 	PitsOfInfernoLevers = 1000,
+	Weeper = 3144,
+	Versperoth = {
+		Battle = 3147,
+		Health = 3148
+	},
 	WrathOfTheEmperor = {
 		Light01 = 8018,
 		Light02 = 8019,

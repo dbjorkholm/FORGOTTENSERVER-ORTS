@@ -60,10 +60,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		shadowNexusPosition:sendMagicEffect(CONST_ME_HOLYAREA)
 
 	elseif itemEx.itemid == 8759 then
-		if Game.getStorageValue(210) ~= 0 then
-			addEvent(Game.setStorageValue, 20 * 1000, 210, 0)
-		end
-
 		if player:getStorageValue(cid, Storage.TheInquisition.Questline) < 22 then
 			-- The Inquisition Questlog- 'Mission 7: The Shadow Nexus'
 			player:setStorageValue(Storage.TheInquisition.Mission07, 2)

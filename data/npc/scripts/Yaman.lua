@@ -89,7 +89,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
+	TradeRequest(cid, Npc(), getTable(), GreenDjinn, 4)
 end
 
 npcHandler:setMessage(MESSAGE_GREET, "Be greeted, human |PLAYERNAME|. How can a humble djinn be of service?")

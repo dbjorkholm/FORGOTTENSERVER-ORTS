@@ -137,9 +137,9 @@ function TradeRequest(cid, npc, table, STORAGE, Fvalue) -- exemple TradeRequest(
 			return true
 		end
 		openShopWindow(cid, ItemTable, onBuy, onSell)
-		return npc:say('It\'s my offer.', player)
+		npc:say('It\'s my offer.', TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 	else
-		npc:say("I don't trade with not recognized traders.", player)
+		npc:say("I don't trade with not recognized traders.", TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 		return false
 	end
 end
