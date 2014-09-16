@@ -141,7 +141,6 @@ function clearArena(fromPos, toPos)
 				local creature = Tile(x, y, z):getTopCreature()
 				if creature then
 					if creature:isPlayer() then
-						position
 						creature:teleportTo(exitPosition)
 						exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
 					else

@@ -1,13 +1,13 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission72) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission73) < 1 then
-		local tile = Tile(Position({x = 33071, y = 32442, z = 11}))
-		if tile:getItemById(21476) then
+		local skullItem = Tile(Position(33071, 32442, 11)):getItemById(21476)
+		if skullItem then
+			skullItem:remove()
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The scroll burns to dust. The magic stutters. Omrabas\' soul flees to his old hideaway.')
 			player:removeItem(21251, 1)
 			player:setStorageValue(Storage.GravediggerOfDrefia.Mission73, 1)
-			tile:getItemById(21476):remove()
-			Game.createItem("Chicken", Position({x = 33015, y = 32418, z = 11}))
+			Game.createMonster("Chicken", Position(33015, 32418, 11))
 		end
 	end
 	return true
