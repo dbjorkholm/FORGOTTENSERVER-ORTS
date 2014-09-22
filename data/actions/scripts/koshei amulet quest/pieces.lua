@@ -1,6 +1,6 @@
 local config = {
-	[3062] = 8262,
-	[3064] = 8264
+	[3062] = {itemId = 8262, storage = Storage.QuestChests.KosheiAmulet1},
+	[3064] = {itemId = 8264, storage = Storage.QuestChests.KosheiAmulet2}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -10,9 +10,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(item.uid) ~= 1 then
-		player:setStorageValue(item.uid, 1)
-		player:addItem(useItem, 1)
+	local cStorage = useItem.storage
+	if player:getStorageValue(cStorage) ~= 1 then
+		player:setStorageValue(cStorage, 1)
+		player:addItem(useItem.itemId, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a piece of an amulet.')
 	else
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')

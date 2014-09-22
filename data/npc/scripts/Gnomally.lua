@@ -74,11 +74,6 @@ local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 	return true
 end
 
-local function getTokenCount(s)
-	local b, e = s:find("%d+")
-	return b and e and math.min(4294967295, tonumber(s:sub(b, e))) or -1
-end
-
 local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, 'Oh, hello! I\'m the gnome-human relations assistant. I am here for you to trade your tokens for {equipment}, resupply you with mission {items} and talk to you about your {relations} to us gnomes! ...')
 	return true
@@ -119,7 +114,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You are not even a recruit of the Bigfoots. Sorry I can\'t help you.', cid)
 		end
 	elseif npcHandler.topic[cid] == 3 then
-		local amount = getTokenCount(msg)
+		local amount = getMoneyCount(msg)
 		if amount > 0 then
 			npcHandler:say('Do you really want to trade ' .. amount .. ' minor tokens for ' .. amount * 5 .. ' renown?', cid)
 			renown[cid] = amount

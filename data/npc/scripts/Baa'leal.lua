@@ -19,7 +19,7 @@ local function greetCallback(cid, message)
 		return false
 	end
 
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) < 1 and BlueOrGreen then
+	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) < 1 and BlueOrGreen then
 		return false
 	end
 

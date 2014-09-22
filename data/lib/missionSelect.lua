@@ -53,7 +53,6 @@ descrip
 ]]
 
 BlueOrGreen = false		-- blue djinn or green djinn quest, true = only one. -- NOT IMPLEMENTED YET
-Factions = 110	-- shared storage between blue and green djinn quest and others.
 
 BlueDjinn = {
 				NeedMission = true,

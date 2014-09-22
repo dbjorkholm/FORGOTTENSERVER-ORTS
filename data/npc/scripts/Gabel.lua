@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and BlueOrGreen then
+	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and BlueOrGreen then
 		return false
 	end
 

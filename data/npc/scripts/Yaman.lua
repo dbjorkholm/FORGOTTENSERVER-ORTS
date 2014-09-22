@@ -37,7 +37,7 @@ local function getTable()
 end
 
 local function greetCallback(cid, message)
-	if not msgcontains(message, 'djjanni\'hah') and Player(cid):getStorageValue(GreenDjinn.MissionEnd) < 3 then
+	if not msgcontains(message, 'djjanni\'hah') and Player(cid):getStorageValue(Storage.DjinnWar.Mission03) < 3 then
 		return false
 	end
 

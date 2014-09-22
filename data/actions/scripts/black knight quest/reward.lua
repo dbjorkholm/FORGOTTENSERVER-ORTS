@@ -1,6 +1,6 @@
 local config = {
-	[3027] = {storageKey = 491, rewardId = 2487},
-	[9055] = {storageKey = 490, rewardId = 2519}
+	[3027] = {storage = Storage.QuestChests.BlackKnightTreeCrownArmor, rewardId = 2487},
+	[9055] = {storage = Storage.QuestChests.BlackKnightTreeCrownShield, rewardId = 2519}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -10,8 +10,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(targetTree.storageKey) ~= 1 then
-		player:setStorageValue(targetTree.storageKey, 1)
+	local cStorage = targetTree.storage
+	if player:getStorageValue(cStorage) ~= 1 then
+		player:setStorageValue(cStorage, 1)
 		player:addItem(targetTree.rewardId, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a ' .. ItemType(targetTree.rewardId):getName() .. '.')
 	else

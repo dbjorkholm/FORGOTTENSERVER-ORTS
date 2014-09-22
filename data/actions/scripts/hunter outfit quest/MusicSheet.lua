@@ -1,8 +1,8 @@
 local config = {
-	[6087] = {storageKey = Storage.OutfitQuest.HunterMusicSheet01, text = 'first'},
-	[6088] = {storageKey = Storage.OutfitQuest.HunterMusicSheet02, text = 'second'},
-	[6089] = {storageKey = Storage.OutfitQuest.HunterMusicSheet03, text = 'third'},
-	[6090] = {storageKey = Storage.OutfitQuest.HunterMusicSheet04, text = 'fourth'}
+	[6087] = {storage = Storage.OutfitQuest.HunterMusicSheet01, text = 'first'},
+	[6088] = {storage = Storage.OutfitQuest.HunterMusicSheet02, text = 'second'},
+	[6089] = {storage = Storage.OutfitQuest.HunterMusicSheet03, text = 'third'},
+	[6090] = {storage = Storage.OutfitQuest.HunterMusicSheet04, text = 'fourth'}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -12,8 +12,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
-	if player:getStorageValue(useItem.storageKey) ~= 1 then
-		player:setStorageValue(useItem.storageKey, 1)
+	local cStorage = useItem.storage
+	if player:getStorageValue(cStorage) ~= 1 then
+		player:setStorageValue(cStorage, 1)
 		player:sendTextMessage(MESSAGE_STATUS_WARNING, 'You have learned the ' .. useItem.text .. ' part of a hymn.')
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 		Item(item.uid):remove(1)

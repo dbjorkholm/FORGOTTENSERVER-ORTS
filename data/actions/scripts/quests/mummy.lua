@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if player:getStorageValue(item.uid) ~= 1 then
-		player:setStorageValue(item.uid, 1)
+	if player:getStorageValue(Storage.QuestChests.SilverBrooch) ~= 1 then
+		player:setStorageValue(Storage.QuestChests.SilverBrooch, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a bag.")
 		local bag = player:addItem(1987, 1)
 		local items = {{2134}, {2147, 2}, {2145, 3}}

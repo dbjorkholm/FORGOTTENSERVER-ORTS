@@ -45,6 +45,12 @@ local config = {
 			[5] = {'Giant Spider', 'Giant Spider', 'Lich'},
 			[10] = {'Undead Dragon', 'Hand of Cursed Fate'}
 		}
+	},
+	storages = {
+		[8288] = Storage.DemonOak.AxeBlowsBird,
+		[8289] = Storage.DemonOak.AxeBlowsLeft,
+		[8290] = Storage.DemonOak.AxeBlowsRight,
+		[8291] = Storage.DemonOak.AxeBlowsFace
 	}
 }
 
@@ -60,8 +66,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 
 	local totalProgress = 0
-	for i = 1, #config.demonOakIds do
-		totalProgress = totalProgress + math.max(0, player:getStorageValue(config.demonOakIds[i]))
+	for _, cStorage in pairs(config.storages) do
+		totalProgress = totalProgress + math.max(0, player:getStorageValue(cStorage))
 	end
 
 	local spectators, hasMonsters = Game.getSpectators(DEMON_OAK_POSITION, false, false, 9, 9, 6, 6), false
@@ -87,7 +93,8 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	local progress = math.max(player:getStorageValue(itemEx.itemid), 1)
+	local cStorage = config.storages[itemEx.itemid]
+	local progress = math.max(player:getStorageValue(cStorage), 1)
 	if progress >= config.waves + 1 then
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
@@ -116,7 +123,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	player:say(isLastCut and 'HOW IS THAT POSSIBLE?!? MY MASTER WILL CRUSH YOU!! AHRRGGG!' or config.sounds[math.random(#config.sounds)], TALKTYPE_MONSTER_YELL, false, player, DEMON_OAK_POSITION)
 	toPosition:sendMagicEffect(CONST_ME_DRAWBLOOD)
-	player:setStorageValue(itemEx.itemid, progress + 1)
+	player:setStorageValue(cStorage, progress + 1)
 	player:say('-krrrrak-', TALKTYPE_MONSTER_YELL, false, player, toPosition)
 	doTargetCombatHealth(0, cid, COMBAT_EARTHDAMAGE, -170, -210, CONST_ME_BIGPLANTS)
 	return true

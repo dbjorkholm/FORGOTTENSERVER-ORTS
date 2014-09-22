@@ -11,42 +11,51 @@ local config = {
 	chance = 5,
 	randomText = {'Waaaaaah', 'You are too afraid to destroy this object'},
 	bossName = 'Horestis',
-	bossPosition = Position(32941, 32793, 12)
+	bossPosition = Position(32941, 32793, 12),
+	storages = {
+		[50006] = Storage.HorestisTomb.JarFloor1,
+		[50007] = Storage.HorestisTomb.JarFloor2,
+		[50008] = Storage.HorestisTomb.JarFloor3,
+		[50009] = Storage.HorestisTomb.JarFloor4,
+		[50010] = Storage.HorestisTomb.JarFloor5
+	}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if itemEx.itemid == 13500 then
-		local player = Player(cid)
-		if player:getStorageValue(item.actionid) > os.time() then
-			player:say('You are too afraid to destroy this object', TALKTYPE_MONSTER_SAY)
-			return true
-		end
-
-		player:setStorageValue(item.actionid, os.time() + config.time)
-
-		if math.random(100) > config.chance then
-			player:say(config.randomText[math.random(#config.randomText)], TALKTYPE_MONSTER_SAY)
-			return true
-		end
-
-		Item(item.uid):transform(config.brokenJarId)
-
-		local jarsBroken, jarItem = true
-		for i = 1, #config.jarPositions do
-			jarItem = Tile(config.jarPositions[i]):getItemById(config.brokenJarId)
-			if not jarItem then
-				jarsBroken = false
-				break
-			end
-		end
-
-		if not jarsBroken then
-			return true
-		end
-
-		Game.createMonster(config.bossName, config.bossPosition)
-	else
+	if item.itemid ~= 13500 then
 		Player(cid):say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
+		return true
 	end
+
+	local player = Player(cid)
+	local cStorage = config.storages[item.actionid]
+	if player:getStorageValue(cStorage) > os.time() then
+		player:say('You are too afraid to destroy this object', TALKTYPE_MONSTER_SAY)
+		return true
+	end
+
+	player:setStorageValue(cStorage, os.time() + config.time)
+
+	if math.random(100) > config.chance then
+		player:say(config.randomText[math.random(#config.randomText)], TALKTYPE_MONSTER_SAY)
+		return true
+	end
+
+	Item(item.uid):transform(config.brokenJarId)
+
+	local jarsBroken, jarItem = true
+	for i = 1, #config.jarPositions do
+		jarItem = Tile(config.jarPositions[i]):getItemById(config.brokenJarId)
+		if not jarItem then
+			jarsBroken = false
+			break
+		end
+	end
+
+	if not jarsBroken then
+		return true
+	end
+
+	Game.createMonster(config.bossName, config.bossPosition)
 	return true
 end

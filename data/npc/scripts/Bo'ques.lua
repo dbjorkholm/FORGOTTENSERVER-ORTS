@@ -19,7 +19,7 @@ end
 
 local function greetCallback(cid, message)
 	local player = Player(cid)
-	if player:getStorageValue(Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and not BlueOrGreen then
+	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and not BlueOrGreen then
 		return false
 	end
 

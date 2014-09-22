@@ -20,6 +20,8 @@ Storage = {
 		Mission07 = 107
 	},
 	DjinnWar = {
+		Factions = 110,
+
 		-- blue djinn
 		MaridFaction = {
 			Mission01 = 111,
@@ -145,12 +147,18 @@ Storage = {
 		Mission30 = 9970,
 		Mission31 = 9971,
 		Mission32 = 9972,
+		Mission32a = 9973,
+		Mission32b = 9974,
 		Mission33 = 9975,
 		Mission34 = 9976,
 		Mission35 = 9977,
 		Mission36 = 9978,
+		Mission36a = 9979,
 		Mission37 = 9980,
 		Mission38 = 9981,
+		Mission38a = 9982,
+		Mission38b = 9983,
+		Mission38c = 9984,
 		Mission39 = 9985,
 		Mission40 = 9986,
 		Mission41 = 9987,
@@ -571,7 +579,12 @@ Storage = {
 	DemonOak = {
 		Done = 1010,
 		Progress = 1013,
-		Squares = 1014
+		Squares = 1014,
+
+		AxeBlowsBird = 8288,
+		AxeBlowsLeft = 8289,
+		AxeBlowsRight = 8290,
+		AxeBlowsFace = 8291
 	},
 	SvargrondArena = {
 		Arena = 1100,
@@ -591,11 +604,31 @@ Storage = {
 
 		FormorgarMinesHoistSkeleton = 3057,
 		FormorgarMinesHoistChest = 3058,
+
+		-- Custom Quests, currently not using system.lua (aid 2000)
+		BlackKnightTreeCrownShield = 490,
+		BlackKnightTreeCrownArmor = 491,
+		BlackKnightTreeKey = 9196,
+
+		KosheiAmulet1 = 3062,
+		KosheiAmulet2 = 3064,
+
+		SilverBrooch = 9185,
+		FamilyBrooch = 2286,
+
+		DCQGhoul = 9155
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8816,
 		ShortcutLevers = 8817,
 		Pumin = 50096
+	},
+	HorestisTomb = {
+		JarFloor1 = 50006,
+		JarFloor2 = 50007,
+		JarFloor3 = 50008,
+		JarFloor4 = 50009,
+		JarFloor5 = 50010
 	},
 
 	-- Promotion Storage cannot be changed, it is set in source code
