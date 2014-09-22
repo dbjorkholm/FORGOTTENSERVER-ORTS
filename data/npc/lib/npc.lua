@@ -58,9 +58,13 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 end
 
 local func = function(pars)
+	local npc = Npc(pars.cid)
+	if npc == nil then
+		return
+	end
+
 	local player = Player(pars.pcid)
 	if player then
-		local npc = Npc(pars.cid)
 		npc:say(pars.text, pars.type, false, player, npc:getPosition())
 		pars.e.done = true
 	end
