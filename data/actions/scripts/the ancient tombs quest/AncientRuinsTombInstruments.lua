@@ -26,7 +26,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	else
 		player:setStorageValue(Storage.TheAncientTombs.VashresamunInstruments, 0)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You played them wrong, now you must begin with first again! ")
-		doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, Player(cid):getPosition(), 0, -20, -20, CONST_ME_GROUNDSHAKER)
+		doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -20, -20, CONST_ME_GROUNDSHAKER)
 	end
 	return true
 end

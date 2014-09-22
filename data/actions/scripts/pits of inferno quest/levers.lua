@@ -24,10 +24,6 @@ local function revertLever(position)
 	if leverItem then
 		leverItem:transform(1945)
 	end
-
-	if leverCount > 0 then
-		Game.setStorageValue(GlobalStorage.PitsOfInfernoLevers, leverCount - 1)
-	end
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)

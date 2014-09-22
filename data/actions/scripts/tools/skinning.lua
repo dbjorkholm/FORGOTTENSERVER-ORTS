@@ -77,8 +77,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			if random <= _skin.value then
 				if itemEx.itemid == 11343 then
 					effect = CONST_ME_ICEAREA
-					local goblet = player:addItem(_skin.newItem, _skin.amount or 1)
-					goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, _skin.desc:gsub('|PLAYERNAME|', player:getName()))
+					local gobletItem = player:addItem(_skin.newItem, _skin.amount or 1)
+					if gobletItem then
+						gobletItem:setDescription(_skin.desc:gsub('|PLAYERNAME|', player:getName()))
+					end
 					added = true
 				elseif isInArray({7441, 7442, 7444, 7445}, itemEx.itemid) then
 					player:addItem(_skin.newItem, _skin.amount or 1)
@@ -99,8 +101,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif random <= skin.value then
 		if itemEx.itemid == 11343 then
 			effect = CONST_ME_ICEAREA
-			local goblet = player:addItem(skin.newItem, skin.amount or 1)
-			goblet:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, skin.desc:gsub('|PLAYERNAME|', player:getName()))
+			local gobletItem = player:addItem(skin.newItem, skin.amount or 1)
+			if gobletItem then
+				gobletItem:setDescription(skin.desc:gsub('|PLAYERNAME|', player:getName()))
+			end
 		elseif isInArray({7441, 7442, 7444, 7445}, itemEx.itemid) then
 			player:addItem(skin.newItem, skin.amount or 1)
 			effect = CONST_ME_HITAREA

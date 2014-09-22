@@ -43,7 +43,6 @@ local function creatureSayCallback(cid, type, msg)
 				player:addAchievement('Crystal Keeper')
 				player:checkGnomeRank()
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end

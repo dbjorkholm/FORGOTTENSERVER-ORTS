@@ -12,7 +12,7 @@ function onStepIn(cid, item, position, fromPosition)
 
 		local rewardItem = Game.createItem(ARENA[arenaId].reward.trophy, 1, rewardPosition)
 		if rewardItem then
-			rewardItem:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, string.format(ARENA[arenaId].reward.desc, player:getName()))
+			rewardItem:setDescription(string.format(ARENA[arenaId].reward.desc, player:getName()))
 		end
 
 		player:setStorageValue(ARENA[arenaId].reward.trophyStorage, 1)
