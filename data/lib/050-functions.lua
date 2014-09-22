@@ -78,32 +78,6 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
-function doPlayerGnomishRank(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.BigfootBurden.Rank) >= 30 and player:getStorageValue(Storage.BigfootBurden.Rank) < 120 then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 14 then
-			player:setStorageValue(Storage.BigfootBurden.QuestLine, 15)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		end
-	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 120 and player:getStorageValue(Storage.BigfootBurden.Rank) < 480 then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 15 then
-			player:setStorageValue(Storage.BigfootBurden.QuestLine, 16)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		end
-	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 480 and player:getStorageValue(Storage.BigfootBurden.Rank) < 1440 then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 16 then
-			player:setStorageValue(Storage.BigfootBurden.QuestLine, 17)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		end
-	elseif player:getStorageValue(Storage.BigfootBurden.Rank) >= 1440 then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
-			player:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		end
-	end
-	return true
-end
-
 function teleportAllPlayersFromArea(fromArea, toPos)
 	for x = fromArea[1].x, fromArea[2].x do
 		for y = fromArea[1].y, fromArea[2].y do
@@ -285,6 +259,35 @@ end
 
 function Player.isMage(self)
 	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
+end
+
+function Player.checkGnomeRank(self)
+	if self:getStorageValue(Storage.BigfootBurden.Rank) >= 30 and self:getStorageValue(Storage.BigfootBurden.Rank) < 120 then
+		if self:getStorageValue(Storage.BigfootBurden.QuestLine) == 14 then
+			self:setStorageValue(Storage.BigfootBurden.QuestLine, 15)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnome Little Helper')
+	elseif self:getStorageValue(Storage.BigfootBurden.Rank) >= 120 and self:getStorageValue(Storage.BigfootBurden.Rank) < 480 then
+		if self:getStorageValue(Storage.BigfootBurden.QuestLine) == 15 then
+			self:setStorageValue(Storage.BigfootBurden.QuestLine, 16)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnome Friend')
+	elseif self:getStorageValue(Storage.BigfootBurden.Rank) >= 480 and self:getStorageValue(Storage.BigfootBurden.Rank) < 1440 then
+		if self:getStorageValue(Storage.BigfootBurden.QuestLine) == 16 then
+			self:setStorageValue(Storage.BigfootBurden.QuestLine, 17)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnomelike')
+	elseif self:getStorageValue(Storage.BigfootBurden.Rank) >= 1440 then
+		if self:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
+			self:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Honorary Gnome')
+	end
+	return true
 end
 
 

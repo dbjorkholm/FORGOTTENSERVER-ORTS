@@ -41,6 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.CrystalKeeperTimout, os.time() + 72000)
 				player:setStorageValue(Storage.BigfootBurden.RepairedCrystalCount, -1)
 				player:addAchievement('Crystal Keeper')
+				player:checkGnomeRank()
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
 				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
@@ -66,8 +67,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.ExtractedCount, -1)
 				player:setStorageValue(Storage.BigfootBurden.RaidersOfTheLostSparkTimeout, os.time() + 72000)
 				player:addAchievement('Call Me Sparky')
+				player:checkGnomeRank()
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -89,8 +90,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.ExterminatedCount, -1)
 				player:setStorageValue(Storage.BigfootBurden.ExterminatorsTimeout, os.time() + 72000)
 				player:addAchievement('One Foot Vs. Many')
+				player:checkGnomeRank()
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -118,8 +119,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.MushroomCount, -1)
 				player:setStorageValue(Storage.BigfootBurden.MushroomDiggerTimeout, os.time() + 72000)
 				player:addAchievement('The Picky Pig')
+				player:checkGnomeRank()
 				npcHandler:say("You did well. That will help us a lot. Take your token and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end

@@ -42,8 +42,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.MatchmakerStatus, -1)
 				player:setStorageValue(Storage.BigfootBurden.MatchmakerTimeout, os.time() + 72000)
 				player:addAchievement('Crystals in Love')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -71,8 +71,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.GolemCount, -1)
 				player:setStorageValue(Storage.BigfootBurden.TinkerBellTimeout, os.time() + 72000)
 				player:addAchievement('Substitute Tinker')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -99,8 +99,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.SporeCount, -1)
 				player:setStorageValue(Storage.BigfootBurden.SporeGatheringTimeout, os.time() + 72000)
 				player:addAchievement('Spore Hunter')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -125,8 +125,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.BigfootBurden.GrindstoneStatus, -1)
 				player:setStorageValue(Storage.BigfootBurden.GrindstoneTimeout, os.time() + 72000)
 				player:addAchievement('Grinding Again')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
