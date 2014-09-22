@@ -60,7 +60,8 @@ end
 local func = function(pars)
 	local player = Player(pars.pcid)
 	if player then
-		player:say(pars.text, pars.type, false, player, player:getPosition())
+		local npc = Npc(pars.cid)
+		npc:say(pars.text, pars.type, false, player, npc:getPosition())
 		pars.e.done = true
 	end
 end
