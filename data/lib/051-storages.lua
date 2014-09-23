@@ -517,7 +517,8 @@ Storage = {
 		TBIMission06 = 12566,
 		AVINMission06 = 12567,
 		CGBMission06 = 12568,
-		Mission07 = 12569
+		Mission07 = 12569,
+		RottenTree = 12578
 	},
 	hiddenCityOfBeregar = {
 		DefaultStart = 12600,
@@ -532,7 +533,8 @@ Storage = {
 		PythiusTheRotten = 12609,
 		DoorNorthMine = 12610,
 		DoorWestMine = 12611,
-		DoorSouthMine = 12612
+		DoorSouthMine = 12612,
+		BrownMushrooms = 50112
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,
@@ -616,7 +618,17 @@ Storage = {
 		SilverBrooch = 9185,
 		FamilyBrooch = 2286,
 
-		DCQGhoul = 9155
+		DCQGhoul = 9155,
+
+		DeeperFibulaKey = 9136,
+
+		SixRubiesQuest = 50057,
+
+		ParchmentRoomQuest = 60994,
+		
+		WarzoneReward1 = 9172,
+		WarzoneReward2 = 9173,
+		WarzoneReward3 = 9174
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8816,
@@ -658,10 +670,13 @@ GlobalStorage = {
 		ServantsKilled = 985
 	},
 	InServiceOfYalahar = {
-		LastFight = 982
+		LastFight = 982,
+		WarGolemsMachine1 = 23700,
+		WarGolemsMachine2 = 23701
 	},
 	Yakchal = 987,
 	PitsOfInfernoLevers = 1000,
+	Warzones = 3143,
 	Weeper = 3144,
 	Versperoth = {
 		Battle = 3147,
@@ -671,9 +686,27 @@ GlobalStorage = {
 		Light01 = 8018,
 		Light02 = 8019,
 		Light03 = 8020,
-		Light04 = 8021
+		Light04 = 8021,
+		
+		Bosses = {
+			Fury = 3189,
+			Wrath = 3190,
+			Scorn = 3191,
+			Spite = 3192
+		}
 	},
 	ElementalSphere = {
-		BossRoom = 10004
-	}
+		BossRoom = 10004,
+		
+		KnightBoss = 8568,
+		SorcererBoss = 8569,
+		PaladinBoss = 8570,
+		DruidBoss = 8578,
+		
+		Machine1 = 10005,
+		Machine2 = 10006,
+		Machine3 = 10007,
+		Machine4 = 10008
+	},
+	NaginataStone = 50058
 }

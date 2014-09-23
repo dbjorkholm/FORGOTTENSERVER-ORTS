@@ -43,7 +43,7 @@ end
 
 local function greetCallback(cid, message)
 	local player = Player(cid)
-	if not msgcontains(message, 'DJANNI\'HAH') and player:getStorageValue(GreenDjinn.MissionEnd) < 3 or player:getStorageValue(Storage.DjinnWar.Factions) <= 0 and not BlueOrGreen then
+	if not msgcontains(message, 'DJANNI\'HAH') and player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) < 3 or player:getStorageValue(Storage.DjinnWar.Factions) <= 0 and not BlueOrGreen then
 		return false
 	end
 	return true

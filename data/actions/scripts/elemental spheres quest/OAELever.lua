@@ -26,7 +26,7 @@ local config = {
 		from = Position(33261, 31829, 12),
 		to = Position(33274, 31842, 12)
 	},
-	machineStorages = {10005, 10006, 10007, 10008},
+	machineStorages = {GlobalStorage.ElementalSphere.Machine1, GlobalStorage.ElementalSphere.Machine2, GlobalStorage.ElementalSphere.Machine3, GlobalStorage.ElementalSphere.Machine4},
 	centerPosition = Position(33267, 31836, 12),
 	effectPositions = {
 		Position(33261, 31829, 12), Position(33262, 31830, 12), Position(33263, 31831, 12),
