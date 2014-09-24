@@ -33,6 +33,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
+	local cStorage = player:getStorageValue(Storage.Achievements.PotionAddict)
+	if cStorage < 100000 then
+		player:setStorageValue(Storage.Achievements.PotionAddict, math.max(0, cStorage) + 1)
+	elseif cStorage == 100000 then
+		player:addAchievement('Potion Addict')
+		player:setStorageValue(Storage.Achievements.PotionAddict, 100001)
+	end
+
 	player:addCondition(useItem)
 	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 	Item(item.uid):remove(1)

@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	local vocation = Vocation(getBaseVocation(player:getVocation():getId()))
+	local vocation = Vocation(player:getVocation():getBase():getId())
 
 	if msgcontains(msg, "pumin") then
 		if player:getStorageValue(Storage.PitsOfInferno.Pumin) == 2 then

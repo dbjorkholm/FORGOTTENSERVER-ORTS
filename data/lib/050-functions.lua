@@ -1,12 +1,4 @@
 -- Basic --
-function getBaseVocation(vocationId)
-	if vocationId == 0 then
-		return 0
-	end
-
-	return (vocationId - 1) % 4 + 1
-end
-
 function playerExists(name)
 	local resultId = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
 	if resultId then
@@ -181,11 +173,11 @@ end
 -- Party --
 function Party.getVocationCount(self)
 	local count = 1
-	local bits = bit.lshift(1, getBaseVocation(self:getLeader():getVocation():getId()))
+	local bits = bit.lshift(1, self:getLeader():getVocation():getBase():getId())
 
 	local members = self:getMembers()
 	for i = 1, #members do
-		local vocationId = getBaseVocation(members[i]:getVocation():getId())
+		local vocationId = members[i]:getVocation():getBase():getId()
 		local vocation = bit.lshift(1, vocationId)
 		if bit.band(bits, vocation) == vocation then
 			return false
@@ -323,4 +315,22 @@ end
 function Tile.isHouse(self)
 	local house = self:getHouse()
 	return house and true or false
+end
+
+-- Vocation --
+function Vocation.getBase(self)
+	local demotion = self:getDemotion()
+	while demotion do
+		local tmp = demotion:getDemotion()
+		if not tmp then
+			return demotion
+		end
+		demotion = tmp
+	end
+	return self
+end
+
+function Vocation.getPromotionId(self)
+	local promotion = self:getPromotion()
+	return promotion and promotion:getId() or 0
 end

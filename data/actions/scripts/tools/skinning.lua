@@ -106,6 +106,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				gobletItem:setDescription(skin.desc:gsub('|PLAYERNAME|', player:getName()))
 			end
 		elseif isInArray({7441, 7442, 7444, 7445}, itemEx.itemid) then
+			if skin.newItem == 7446 then
+				player:addAchievement('Ice Sculptor')
+			end
 			player:addItem(skin.newItem, skin.amount or 1)
 			effect = CONST_ME_HITAREA
 		else

@@ -42,6 +42,13 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(142, 2)
 				player:setStorageValue(Storage.OutfitQuest.WarriorSwordAddon, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				local cStorage = player:getStorageValue(Storage.Achievements.WildWarrior)
+				if cStorage < 2 then
+					player:setStorageValue(Storage.Achievements.WildWarrior, math.max(0, cStorage) + 1)
+				elseif cStorage == 2 then
+					player:addAchievement('Wild Warrior')
+					player:setStorageValue(Storage.Achievements.WildWarrior, 3)
+				end
 				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', cid)
 			else
 				npcHandler:say('You do not have all the required items.', cid)

@@ -53,7 +53,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if (potion.level and player:getLevel() < potion.level)
-			or (type(potion.vocations) == 'table' and not isInArray(potion.vocations, getBaseVocation(player:getVocation():getId())))
+			or (type(potion.vocations) == 'table' and not isInArray(potion.vocations, player:getVocation():getBase():getId()))
 			and not (player:getGroup():getId() >= 2) then
 		player:say(string.format('This potion can only be consumed by %s of level %d or higher.', potion.text, potion.level), TALKTYPE_MONSTER_SAY)
 		return true
@@ -65,6 +65,14 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if type(potion.mana) == 'table' and not doTargetCombatMana(0, itemEx.uid, potion.mana[1], potion.mana[2], CONST_ME_MAGIC_BLUE) then
 		return false
+	end
+
+	local cStorage = player:getStorageValue(Storage.Achievements.PotionAddict)
+	if cStorage < 100000 then
+		player:setStorageValue(Storage.Achievements.PotionAddict, math.max(0, cStorage) + 1)
+	elseif cStorage == 100000 then
+		player:addAchievement('Potion Addict')
+		player:setStorageValue(Storage.Achievements.PotionAddict, 100001)
 	end
 
 	player:addCondition(exhaust)

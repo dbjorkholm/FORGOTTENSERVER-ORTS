@@ -50,6 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 			local mountId = {22, 25, 26}
 			player:addMount(mountId[math.random(#mountId)])
 			player:setStorageValue(Storage.RentedHorseTimer, os.time() + 86400)
+			player:addAchievement('Natural Born Cowboy')
 			npcHandler:say('I\'ll give you one of our experienced ones. Take care! Look out for low hanging branches.', cid)
 		end
 		npcHandler.topic[cid] = 0

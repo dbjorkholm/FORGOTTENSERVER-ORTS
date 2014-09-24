@@ -89,6 +89,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(147, 2)
 			player:addOutfitAddon(143, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+			player:addAchievement('Brutal Politeness')
 		else
 			npcHandler:say("Axe is not done yet!", cid)
 		end

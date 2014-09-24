@@ -39,6 +39,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 14)
 			player:setStorageValue(Storage.BigfootBurden.Rank)
+			player:addAchievement('Becoming a Bigfoot')
 		end
 		npcHandler.topic[cid] = 0
 	end

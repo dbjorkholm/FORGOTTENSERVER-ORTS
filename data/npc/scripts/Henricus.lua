@@ -176,6 +176,7 @@ local function creatureSayCallback(cid, type, msg)
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 23)
 				player:setStorageValue(Storage.TheInquisition.Mission07, 3) -- The Inquisition Questlog- "Mission 7: The Shadow Nexus"
+				player:addAchievement('High Inquisitor')
 			else
 				npcHandler:say("Come back when you have destroyed the shadow nexus.", cid)
 			end
@@ -215,6 +216,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(288, 2)
 			player:addOutfitAddon(289, 2)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+			player:addAchievement('Demonbane')
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'dark') then

@@ -40,7 +40,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	local vocationId = getBaseVocation(player:getVocation():getId())
+	local vocationId = player:getVocation():getBase():getId()
 
 	if msgcontains(msg, "pumin") then
 		if npcHandler.topic[cid] == 0 and player:getStorageValue(Storage.PitsOfInferno.Pumin) < 1 then

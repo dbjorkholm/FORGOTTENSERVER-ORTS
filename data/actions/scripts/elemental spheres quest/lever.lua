@@ -30,7 +30,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return true
 		end
 
-		local vocationId = getBaseVocation(creature:getVocation():getId())
+		local vocationId = creature:getVocation():getBase():getId()
 		if vocationId ~= config[i].vocationId or creature:getItemCount(config[i].itemid) < 1 or creature:getStorageValue(Storage.ElementalSphere.QuestLine) < 2 then
 			player:say('You need one player of each vocation having completed the Elemental Spheres quest and also carrying the elemental rare item.', TALKTYPE_MONSTER_SAY, false, 0, Position(33268, 31835, 10))
 			return true

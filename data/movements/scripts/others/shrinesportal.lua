@@ -79,7 +79,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	local portal = portals[item.uid]
-	if not portal or getBaseVocation(player:getVocation():getId()) ~= portal.vocation or player:getLevel() < 30 then
+	if not portal or player:getVocation():getBase():getId() ~= portal.vocation or player:getLevel() < 30 then
 		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:say('Only ' .. (portal.vocation == 1 and 'Sorcerers' or 'Druids') .. ' of level 30 or higher may enter this portal.', TALKTYPE_MONSTER_SAY)

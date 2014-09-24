@@ -61,6 +61,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.BarbarianTest.Questline, 8)
 			player:setStorageValue(Storage.BarbarianTest.Mission03, 3) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
+			player:addAchievement('Honorary Barbarian')
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") then

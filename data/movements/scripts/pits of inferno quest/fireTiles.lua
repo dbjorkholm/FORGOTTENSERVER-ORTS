@@ -41,7 +41,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if getBaseVocation(player:getVocation():getId()) == fire.vocationId then
+	if player:getVocation():getBase():getId() == fire.vocationId then
 		doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -300, -300, CONST_ME_HITBYFIRE)
 	else
 		local combatType = COMBAT_FIREDAMAGE

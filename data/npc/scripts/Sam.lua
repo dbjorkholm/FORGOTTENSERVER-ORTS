@@ -46,6 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 				}, cid)
 				player:setStorageValue(Storage.SamsOldBackpack, 1)
 				player:removeItem(3960, 1)
+				player:addAchievement('Backpack Tourist')
 			else
 				npcHandler:say("You don't have it...", cid)
 			end

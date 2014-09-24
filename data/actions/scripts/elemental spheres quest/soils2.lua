@@ -33,7 +33,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_PURPLEENERGY)
-	Game.setStorageValue(globalTable[getBaseVocation(player:getVocation():getId())], 1)
+	Game.setStorageValue(globalTable[player:getVocation():getBase():getId()], 1)
 	Item(item.uid):remove(1)
 	return true
 end

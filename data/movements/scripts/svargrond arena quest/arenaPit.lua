@@ -29,6 +29,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, 'Congratulations! You completed ' .. ARENA[arenaId].name .. ' arena, you should take your reward now.')
 		player:say(arenaId == 1 and 'Welcome back, little hero!' or arenaId == 2 and 'Congratulations, brave warrior!' or 'Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
 		player:setStorageValue(ARENA[arenaId].questLog, 2)
+		player:addAchievement(ARENA[arenaId].achievement)
 		SvargrondArena.cancelEvents(cid)
 		return true
 	end

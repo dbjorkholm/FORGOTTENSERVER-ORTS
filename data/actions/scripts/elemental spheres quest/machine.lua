@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and gemCount >= 20 then
 			player:setStorageValue(Storage.ElementalSphere.MachineGemCount, gemCount - 20)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(config[getBaseVocation(player:getVocation():getId())], false)
+			player:teleportTo(config[player:getVocation():getBase():getId()], false)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 		toPosition.x = toPosition.x + (item.itemid == 7911 and 1 or -1)

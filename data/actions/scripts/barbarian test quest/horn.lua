@@ -18,6 +18,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:say('You hug the unconcious bear.', TALKTYPE_MONSTER_SAY)
 			player:setStorageValue(Storage.BarbarianTest.Questline, 5)
 			player:setStorageValue(Storage.BarbarianTest.Mission02, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
+			player:addAchievement('Bearhugger')
 			local targetItem = Item(itemEx.uid)
 			targetItem:transform(7174)
 			targetItem:decay()

@@ -28,6 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
+	player:addAchievement('Natural Born Cowboy')
 	player:addMount(monsterConfig.mountId)
 	player:say(monsterConfig.tameMessage, TALKTYPE_MONSTER_SAY)
 	toPosition:sendMagicEffect(CONST_ME_SOUND_RED)

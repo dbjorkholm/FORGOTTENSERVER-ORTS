@@ -44,6 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 				"You can always ask me about your current rank and about the privileges the ranks grant to those who hold them."
 			}, cid)
 			player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 1)
+			player:addAchievement('Nightmare Knight')
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getItemCount(6500) >= 500 then
@@ -61,6 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 3)
 				player:addItem(6391, 1)
+				player:addAchievement('Nightmare Walker')
 				npcHandler:say("You advanced to {Dreamer} rank!", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
@@ -71,6 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(6500, 1500)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 4)
+				player:addAchievement('Lord Protector')
 				npcHandler:say("You advanced to {Lord Protector} rank! You are now able to use teleports of fourth floor of Knightwatch Tower and to create addon scrolls.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)

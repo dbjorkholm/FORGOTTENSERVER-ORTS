@@ -249,7 +249,7 @@ local function creatureSayCallback(cid, type, msg)
 			if(player:getStorageValue(Storage.TravellingTrader.Mission06) == 2 and player:getStorageValue(Storage.TravellingTrader.Mission07) ~= 1) then
 				npcHandler:say("Ah, right. <ahem> I hereby declare you - one of my recognised traders! Feel free to offer me your wares!", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission07, 1)
-				--player:AddArchie(id or name)
+				player:addAchievement('Recognised Trader')
 				npcHandler.topic[cid] = 0
 			end
 		end

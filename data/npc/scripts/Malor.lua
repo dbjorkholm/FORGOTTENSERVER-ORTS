@@ -58,6 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 4)
 			player:setStorageValue(Storage.DjinnWar.EfreetFaction.DoorToMaridTerritory, 1)
+			player:addAchievement('Efreet Ally')
 			npcHandler.topic[cid] = 0
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)

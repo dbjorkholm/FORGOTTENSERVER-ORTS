@@ -642,6 +642,16 @@ Storage = {
 		JarFloor4 = 50009,
 		JarFloor5 = 50010
 	},
+	-- Achievement storages
+	Achievements = {
+		PotionAddict = 50562,
+		AllowanceCollector = 50563,
+		Bluebarian = 50564,
+		WildWarrior = 50565,
+		DoctorDoctor = 50566,
+		Masquerader = 50567,
+		InteriorDecorator = 50568
+	},
 
 	-- Promotion Storage cannot be changed, it is set in source code
 	Promotion = 30018,

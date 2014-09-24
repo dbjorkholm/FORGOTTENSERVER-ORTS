@@ -71,6 +71,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 
+			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 			targetMonster:remove()
@@ -87,6 +88,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 
+			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
@@ -102,6 +104,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 
+			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
@@ -117,6 +120,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 
+			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
@@ -132,6 +136,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				return true
 			end
 
+			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 

@@ -125,6 +125,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.OutfitQuest.WizardAddon, 7)
 				player:addOutfitAddon(145, 1)
 				player:addOutfitAddon(149, 1)
+				player:addAchievement('Warlock')
 				npcHandler.topic[cid] = 0
 			else
 				npcHandler:say("You need 50 holy orchid.", cid)

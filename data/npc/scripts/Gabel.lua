@@ -54,6 +54,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 4)
 			player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToEfreetTerritory, 1)
+			player:addAchievement('Marid Ally')
 			npcHandler.topic[cid] = 0
 		end
 	end
