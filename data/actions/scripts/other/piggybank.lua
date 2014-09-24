@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 		local cStorage = player:getStorageValue(Storage.Achievements.AllowanceCollector)
 		if cStorage < 50 then
-			player:setStorageValue(Storage.Achievements.AllowanceCollector, math.max(0, cStorage) + 1)
+			player:setStorageValue(Storage.Achievements.AllowanceCollector, math.max(1, cStorage) + 1)
 		elseif cStorage == 50 then
 			player:addAchievement('Allowance Collector')
 			player:setStorageValue(Storage.Achievements.AllowanceCollector, 51)

@@ -15,7 +15,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
 	local cStorage = player:getStorageValue(Storage.Achievements.Masquerader)
 	if cStorage < 100 then
-		player:setStorageValue(Storage.Achievements.Masquerader, math.max(0, cStorage) + 1)
+		player:setStorageValue(Storage.Achievements.Masquerader, math.max(1, cStorage) + 1)
 	elseif cStorage == 100 then
 		player:addAchievement('Doctor! Doctor!')
 		player:setStorageValue(Storage.Achievements.Masquerader, 101)

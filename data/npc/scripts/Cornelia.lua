@@ -31,12 +31,12 @@ local function creatureSayCallback(cid, type, msg)
 			player:addOutfitAddon(134, 1)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			player:setStorageValue(Storage.OutfitQuest.WarriorShoulderAddon, 6)
-			local cStorage = player:getStorageValue(Storage.Achievements.WildWarrior)
-			if cStorage < 2 then
-				player:setStorageValue(Storage.Achievements.WildWarrior, math.max(0, cStorage) + 1)
-			elseif cStorage == 2 then
+			local cStorage = Storage.Achievements.WildWarrior
+			if player:getStorageValue(cStorage) < 1 then
+				player:setStorageValue(cStorage, 1)
+			elseif player:getStorageValue(cStorage) == 1 then
 				player:addAchievement('Wild Warrior')
-				player:setStorageValue(Storage.Achievements.WildWarrior, 3)
+				player:setStorageValue(cStorage, 2)
 			end
 			npcHandler:say({
 				"Ah, you must be the hero Trisha talked about. I'll prepare the shoulder spikes for you.",
