@@ -235,8 +235,8 @@ Storage = {
 		MageSummonerFluidBeltAddon = 12064,
 
 		-- Nobleman Outfit
-		NoblemanFirstAddon = 1007,
-		NoblemanSecondAddon = 1008,
+		NoblemanFirstAddon = 12069,
+		NoblemanSecondAddon = 12070,
 
 		-- Norseman-outfit Quest
 		NorsemanAddon = 12065,
