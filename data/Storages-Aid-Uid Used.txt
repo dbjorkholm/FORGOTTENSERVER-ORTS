@@ -23,6 +23,7 @@ Norseman Outfits Quest:			12065
 Wizard Outfits Quest:			12066
 Warrior Shoulder Outfits:		12067
 Warrior Sword Outfits:			12068
+Nobleman Addons:			12069-12070
 the ancient tombs storage:		12100-12109
 The Ape City storage:			12120-12129
 The New Frontier Quest:			12130-12150
