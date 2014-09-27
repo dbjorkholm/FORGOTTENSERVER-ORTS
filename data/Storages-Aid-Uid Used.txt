@@ -224,3 +224,4 @@ Diggable Swamp Tiles AID: 50234-50236, Storage Key: 50143
 
 Kazordoon exit AID: 50237-50238
 Wooden coffin (Family Brooch Quest) UID: 2286
+A Father's Burden Quest, UID: 3500-3505

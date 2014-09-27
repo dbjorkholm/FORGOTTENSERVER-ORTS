@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
+	<quest name="A Father's Burden" startstorageid="50203" startstoragevalue="1">
+		<mission name="The Birthday Presents" storageid="50205" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Gather the material Tereban listed. Talk to him about your mission when you have given him everything he was looking for."/>
+			<missionstate id="2" description="You brought all the required materials to Tereban and guaranteed his sons a great birthday party."/>
+		</mission>
+		<mission name="The Magic Bow - Sinew" storageid="50206" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find the wyvern Heoni in the Edron mountains and take his sinew to Tereban."/>
+			<missionstate id="2" description="You delivered Heoni's sinew to Tereban."/>
+		</mission>
+		<mission name="The Magic Bow - Wood" storageid="50207" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find the special wood in the barbarian camps of Hrodmir and bring it to Tereban. It might be a good idea to start looking in the northernmost camp."/>
+			<missionstate id="2" description="You delivered the Wood to Tereban."/>
+		</mission>
+		<mission name="The Magic Robe - Cloth" storageid="50208" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find the spectral cloth hidden deep in the crypts of the isle of the kings and bring it to Tereban. You might have to look for a secret entrance."/>
+			<missionstate id="2" description="You delivered the spectral cloth to Tereban."/>
+		</mission>
+		<mission name="The Magic Robe - Silk" storageid="50209" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find exquisite silk in the spider caves of southern Zao and deliver it to Tereban."/>
+			<missionstate id="2" description="You brought Tereban the required silk."/>
+		</mission>
+		<mission name="The Magic Rod - Crystal" storageid="50210" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find a magic crystal in the tomb buried under the sand east of Ankrahmun and bring it to Tereban."/>
+			<missionstate id="2" description="Tereban received the magic crystal he was looking for."/>
+		</mission>
+		<mission name="The Magic Rod - Root" storageid="50211" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find the mystic root under the city of Banuta and bring it to Tereban."/>
+			<missionstate id="2" description="The magic root was delievered to Tereban."/>
+		</mission>
+		<mission name="The Magic Shield - Iron" storageid="50212" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find some old iron in the mines of Kazordoon for Tereban. Don't get lost - start searching close to the city."/>
+			<missionstate id="2" description="Tereban got the old iron he required."/>
+		</mission>
+		<mission name="The Magic Shield - Scale" storageid="50213" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Find the dragon Glitterscale in the caves north of Thais and take its scale to Tereban."/>
+			<missionstate id="2" description="You handed the looted scale to Tereban."/>
+		</mission>
+	</quest>
 	<quest name="Bigfoot's Burden" startstorageid="900" startstoragevalue="1">
 		<mission name="Daily Minor: Crystal Keeper" storageid="932" startvalue="0" endvalue="5" description="Use the repair crystal to repair five damaged blue crystal in the crystal caves. Damaged crystals will not glow. |STATE| / 5" />
 		<mission name="Daily Minor: Raiders of the lost Spark" storageid="934" startvalue="0" endvalue="7" description="Kill crystal crushers and use discharger item on the corpse to collect their charges. Gather 7 charges and report back. |STATE| / 7" />
@@ -1044,6 +1082,15 @@
 				<mission name="Barbarian Arena - Warlord Mode" storageid="50142" startvalue="1" endvalue="2">
 				<missionstate id="1" description="You have to defeat all enemies in this mode."/>
 				<missionstate id="2" description="You have defeated all enemies in this mode."/>
+		</mission>
+	</quest>
+	<quest name="The White Raven Monastery" startstorageid="50200" startstoragevalue="1">
+		<mission name="Access to the Isle of Kings" storageid="50201" endvalue="1">
+			<missionstate id="1" description="You are a friend of Dalbrect. Since you returned his family brooch he will sail you to the Isle of Kings unless you do something stupid."/>
+		</mission>
+		<mission name="The Investigation" storageid="50202" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Investigate the catacombs. Abbot Costello should be interested in information about brother Fugio."/>
+			<missionstate id="2" description="You returned Fugio's Diary. Costello was very thankful about your help and gave you a blessed ankh as reward."/>
 		</mission>
 	</quest>
 	<quest name="Unnatural Selection" startstorageid="12330" startstoragevalue="1">

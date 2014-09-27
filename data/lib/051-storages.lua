@@ -625,10 +625,17 @@ Storage = {
 		SixRubiesQuest = 50057,
 
 		ParchmentRoomQuest = 60994,
-		
+
 		WarzoneReward1 = 9172,
 		WarzoneReward2 = 9173,
-		WarzoneReward3 = 9174
+		WarzoneReward3 = 9174,
+
+		FathersBurdenQuestWood = 3500,
+		FathersBurdenQuestIron = 3501,
+		FathersBurdenQuestRoot = 3502,
+		FathersBurdenQuestCrystal = 3503,
+		FathersBurdenQuestSilk = 3504,
+		FathersBurdenQuestCloth = 3505
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8816,
@@ -642,6 +649,30 @@ Storage = {
 		JarFloor4 = 50009,
 		JarFloor5 = 50010
 	},
+	WhiteRavenMonasteryQuest = {
+		QuestLog = 50200,
+		Passage = 50201, 
+		Diary = 50202
+	},
+	FathersBurdenQuest = {
+		QuestLog = 50203,
+		Progress = 50204,
+		Status = 50205,
+		Sinew = 50206,
+		Wood = 50207,
+		Cloth = 50208,
+		Silk = 50209,
+		Crystal = 50210,
+		Root = 50211,
+		Iron = 50212,
+		Scale = 50213,
+
+		Corpse = {
+			Scale = 3006,
+			Sinew = 3007
+		}
+	},
+
 	-- Achievement storages
 	Achievements = {
 		PotionAddict = 50562,
@@ -697,7 +728,7 @@ GlobalStorage = {
 		Light02 = 8019,
 		Light03 = 8020,
 		Light04 = 8021,
-		
+
 		Bosses = {
 			Fury = 3189,
 			Wrath = 3190,
@@ -707,12 +738,12 @@ GlobalStorage = {
 	},
 	ElementalSphere = {
 		BossRoom = 10004,
-		
+
 		KnightBoss = 8568,
 		SorcererBoss = 8569,
 		PaladinBoss = 8570,
 		DruidBoss = 8578,
-		
+
 		Machine1 = 10005,
 		Machine2 = 10006,
 		Machine3 = 10007,
