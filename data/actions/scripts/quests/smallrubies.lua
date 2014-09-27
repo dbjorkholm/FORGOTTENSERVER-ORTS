@@ -1,7 +1,7 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player, cStorage = Player(cid), Storage.QuestChests.SixRubiesQuest
-	if player:getStorageValue(cStorage) ~= 1 then
-		player:setStorageValue(cStorage, 1)
+	local player = Player(cid)
+	if player:getStorageValue(Storage.QuestChests.SixRubiesQuest) ~= 1 then
+		player:setStorageValue(Storage.QuestChests.SixRubiesQuest, 1)
 		player:addItem(2147, 6)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found 6 small rubies.")
 	else

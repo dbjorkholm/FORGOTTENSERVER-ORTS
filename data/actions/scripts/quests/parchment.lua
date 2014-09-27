@@ -1,6 +1,6 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player, cStorage = Player(cid), Storage.QuestChests.ParchmentRoomQuest
-	if player:getStorageValue(cStorage) ~= 1 then
+	local player = Player(cid)
+	if player:getStorageValue(Storage.QuestChests.ParchmentRoomQuest) ~= 1 then
 		local bag = player:addItem(1987, 1)
 		if not bag then
 			return true
@@ -16,7 +16,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			key:setActionId(6010)
 		end
 
-		player:setStorageValue(cStorage, 1)
+		player:setStorageValue(Storage.QuestChests.ParchmentRoomQuest, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found a bag.')
 	else
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE,  'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
