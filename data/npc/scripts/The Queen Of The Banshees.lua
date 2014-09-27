@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 9
 		end
 	elseif msgcontains(msg, "orchid") then
-		if player:GetStorageValue(Storage.OutfitQuest.WizardAddon) == 6 then
+		if player:getStorageValue(Storage.OutfitQuest.WizardAddon) == 6 then
 			npcHandler:say("Have you really brought me 50 holy orchids?", cid)
 			npcHandler.topic[cid] = 11
 		end
