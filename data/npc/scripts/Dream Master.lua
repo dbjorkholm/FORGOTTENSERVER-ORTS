@@ -45,12 +45,16 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 1)
 			player:addAchievement('Nightmare Knight')
+			player:addOutfitAddon(268)
+			player:addOutfitAddon(269)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			if player:getItemCount(6500) >= 500 then
 				player:removeItem(6500, 500)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 2)
+				player:addOutfitAddon(268, 1)
+				player:addOutfitAddon(269, 1)
 				npcHandler:say("You advanced to {Initiate} rank! You are now able to use teleports of second floor of Knightwatch Tower.", cid)
 			else
 				npcHandler:say("Come back when you gather all essences.", cid)
@@ -62,6 +66,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 3)
 				player:addItem(6391, 1)
+				player:addOutfitAddon(268, 2)
+				player:addOutfitAddon(269, 2)
 				player:addAchievement('Nightmare Walker')
 				npcHandler:say("You advanced to {Dreamer} rank!", cid)
 			else
