@@ -125,7 +125,7 @@ function creatureSayCallback(cid, type, msg)
 				player:addItem(12657, 1)
 				player:addExperience(8000, true)
 				npcHandler:say({
-					'I\'m so glad I finally have all the parts for the presents. Your reward is my eternal gratitude. Well, that and some gold of course. ...'
+					'I\'m so glad I finally have all the parts for the presents. Your reward is my eternal gratitude. Well, that and some gold of course. ...',
 					'Take this sachet over there, I wrapped the coins into this old cape I had still lying around here from a barter with a stranger, it is of no use for me anyway. Farewell and thank you once again.'
 				}, cid)
 			elseif player:getStorageValue(Storage.FathersBurdenQuest.Status) == 2 then
