@@ -30,8 +30,8 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 3 then
 			if player:removeMoney(150000) and player:getStorageValue(Storage.OutfitQuest.NoblemanFirstAddon) < 1 then
 				npcHandler:say("Congratulations! Here is your brand-new accessory, I hope you like it. Please visit us again!", cid)
-				player:addOutfitAddon(140, 1)
-				player:addOutfitAddon(132, 1)
+				player:addOutfitAddon(140, 2)
+				player:addOutfitAddon(132, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NoblemanFirstAddon, 1)
 				npcHandler.topic[cid] = 0
@@ -39,8 +39,8 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 4 then
 			if player:removeMoney(150000) and player:getStorageValue(Storage.OutfitQuest.NoblemanSecondAddon) < 1 then
 				npcHandler:say("Congratulations! Here is your brand-new accessory, I hope you like it. Please visit us again!", cid)
-				player:addOutfitAddon(140, 2)
-				player:addOutfitAddon(132, 2)
+				player:addOutfitAddon(140, 1)
+				player:addOutfitAddon(132, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NoblemanSecondAddon, 1)
 				npcHandler.topic[cid] = 0
