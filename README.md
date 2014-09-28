@@ -1,7 +1,7 @@
 ### What is FORGOTTENSERVER-ORTS
 We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.0](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
 
-For more information about TFS 1.0 (including compiling guides) visit the link above.
+For more information abbout TFS 1.0 (including compiling guides) visit the link above.
 
 You can download TFS 1.0 Windows binaries from http://nightlies.otland.net.
 
