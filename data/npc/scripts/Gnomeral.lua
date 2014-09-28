@@ -15,10 +15,10 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
 		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 and player:getStorageValue(Storage.BigfootBurden.QuestLine) < 17 then
-			npcHandler:say("For your rank there are two missions available: matchmaker and golem repair. You can undertake each mission, but you can turn in a specific mission only once every 20 hours. ", cid)
+			npcHandler:say("For your rank there are two missions available: {matchmaker} and {golem repair}. You can undertake each mission, but you can turn in a specific mission only once every 20 hours. ", cid)
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
-			npcHandler:say("For your rank there are four missions available: matchmaker, golem repair, spore gathering and grindstone hunt. You can undertake each mission, but you can turn in a specific mission only once every 20 hours.", cid)
+			npcHandler:say("For your rank there are four missions available: {matchmaker}, {golem repair}, {spore gathering} and {grindstone hunt}. You can undertake each mission, but you can turn in a specific mission only once every 20 hours.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	--  Matchmaker
@@ -133,11 +133,11 @@ local function creatureSayCallback(cid, type, msg)
 	-- Grindstone Hunt
 
 	elseif(msgcontains(msg, "report")) then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 116 and player:getStorageValue(Storage.BigfootBurden.QuestLine) < 17 then
-			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}?", cid)
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 and player:getStorageValue(Storage.BigfootBurden.QuestLine) < 17 then
+			npcHandler:say("Which mission do you want to report: {matchmaker}, {golem repair}?", cid)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
-			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}, {extermination} or {mushroom digging}?", cid)
+			npcHandler:say("Which mission do you want to report: {matchmaker}, {golem repair}, {spore gathering} or {grindstone hunt}?", cid)
 			npcHandler.topic[cid] = 2
 		end
 	end
