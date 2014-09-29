@@ -14,7 +14,7 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if  player:removeItem(7495, 1) then
+		if player:getStorageValue(Storage.ultimateBoozeQuest) == 1 and player:removeItem(7495, 1) then
 			player:setStorageValue(Storage.ultimateBoozeQuest, 2)
 			npcHandler.topic[cid] = 0
 			player:addItem(5710, 1)
