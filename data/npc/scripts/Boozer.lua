@@ -13,21 +13,22 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if(msgcontains(msg, "mission")) then
-		if player:getStorageValue(Storage.ultimateBoozeQuest) == 1 and player:removeItem(7495, 1) then
-			player:setStorageValue(Storage.ultimateBoozeQuest, 2)
+	if msgcontains(msg, "mission") then
+		if player:getStorageValue(Storage.TibiaTales.ultimateBoozeQuest) == 2 and player:removeItem(7495, 1) then
+			player:setStorageValue(Storage.TibiaTales.ultimateBoozeQuest, 3)
 			npcHandler.topic[cid] = 0
 			player:addItem(5710, 1)
 			player:addItem(2152, 10)
 			player:addExperience(100, true)
 			npcHandler:say("Yessss! Now I only need to build my own small brewery, figure out the secret recipe, duplicate the dwarvish brew and BANG I'll be back in business! Here take this as a reward.", cid)
-		elseif player:getStorageValue(Storage.ultimateBoozeQuest) < 1 then
+		elseif player:getStorageValue(Storage.TibiaTales.ultimateBoozeQuest) < 1 then
 			npcHandler.topic[cid] = 1
 			npcHandler:say("Shush!! I don't want everybody to know what I am up to. Listen, things are not going too well, I need a new attraction. Do you want to help me?", cid)
 		end
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
-			player:setStorageValue(Storage.ultimateBoozeQuest, 1)
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			player:setStorageValue(Storage.TibiaTales.DefaultStart, 1)
+			player:setStorageValue(Storage.TibiaTales.ultimateBoozeQuest, 1)
 			player:addItem(7496, 1)
 			npcHandler:say("Good! Listen closely. Take this bottle and go to Kazordoon. I need a sample of their very special brown ale. You may find a cask in their brewery. Come back as soon as you got it.", cid)
 		end

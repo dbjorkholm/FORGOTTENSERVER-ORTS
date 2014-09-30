@@ -4,6 +4,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
+	if player:getStorageValue(Storage.TibiaTales.ultimateBoozeQuest) == 1 then
+		player:setStorageValue(Storage.TibiaTales.ultimateBoozeQuest, 2)
+	end
 	player:removeItem(7496, 1)
 	player:addItem(7495, 1)
 	player:say("GULP, GULP, GULP", TALKTYPE_MONSTER_SAY, false, 0, toPosition)

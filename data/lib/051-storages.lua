@@ -534,7 +534,11 @@ Storage = {
 		DoorNorthMine = 12610,
 		DoorWestMine = 12611,
 		DoorSouthMine = 12612,
-		BrownMushrooms = 50112
+		BrownMushrooms = 12613
+	},
+	TibiaTales = {
+		DefaultStart = 12650,
+		ultimateBoozeQuest = 12651
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,
@@ -696,7 +700,6 @@ Storage = {
 	wagonTicket = 1131,
 	BloodHerbQuest = 50032,
 	firstMageWeapon = 50079,
-	ultimateBoozeQuest = 50108,
 	toOutfoxAFoxQuest = 50135,
 	madMageQuest = 50136,
 	KawillBlessing = 50139,

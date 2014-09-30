@@ -1093,6 +1093,13 @@
 			<missionstate id="2" description="You returned Fugio's Diary. Costello was very thankful about your help and gave you a blessed ankh as reward."/>
 		</mission>
 	</quest>
+	<quest name="Tibia Tales" startstorageid="12650" startstoragevalue="1">
+		<mission name="The Ultimate Booze" storageid="12651" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Boozer in Vernore asked you to bring him some special dwarven brown ale. You may find some in the brewery in Kazordoon."/>
+			<missionstate id="2" description="You found the special dwarven brown ale. Bring it to Boozer in Vernore."/>
+			<missionstate id="3" description="You have completed The Ultimate Booze Quest!"/>
+		</mission>
+	</quest>
 	<quest name="Unnatural Selection" startstorageid="12330" startstoragevalue="1">
 		<mission name="Mission 1: Skulled" storageid="12331" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Your mission is to find the Holy Skull. It is in a cave in the northern orc settlement, which is located north-west on the Zao Steppe."/>
