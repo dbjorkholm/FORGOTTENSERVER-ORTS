@@ -13131,7 +13131,10 @@
 	</item>
 	<item id="7584" article="a" name="ship cabin wall" />
 	<item id="7585" article="a" name="spider egg" />
-	<item id="7586" name="the remains of a spider egg" />
+	<item id="7586" name="the remains of a spider egg">
+		<attribute key="decayTo" value="7585" />
+		<attribute key="duration" value="180" />
+	</item>
 	<item id="7587" article="a" name="bag">
 		<attribute key="weight" value="40000" />
 		<attribute key="description" value="It contains Ahmet's stolen property." />

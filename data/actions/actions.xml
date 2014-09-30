@@ -373,6 +373,9 @@
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
 	<action uniqueid="9226" script="sam old backpack/reward.lua"/>
+	
+	<!-- Tibia Tales Quest -->
+	<action itemid="7496" script="tibia tales quest/UltimateBoozebeerBottle.lua"/>
 
 	<!-- The Travelling Trader Quest -->
 	<action uniqueid="3019" script="the travelling trader quest/packageDoor.lua"/>
@@ -407,7 +410,6 @@
 	<action actionid="27300" script="quests/system.lua"/>
 	<action actionid="28300" script="quests/system.lua"/>
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
-	<action itemid="7496" script="other/beerBottle.lua"/>
 	<action actionid="50161" script="quests/calassaCombDoor.lua"/>
 	<action uniqueid="2286" script="quests/familybrooch.lua"/>
 

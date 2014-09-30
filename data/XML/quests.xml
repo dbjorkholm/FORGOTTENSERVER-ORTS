@@ -1094,6 +1094,14 @@
 		</mission>
 	</quest>
 	<quest name="Tibia Tales" startstorageid="12650" startstoragevalue="1">
+		<mission name="Against the Spider Cult" storageid="12652" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Daniel Steelsoul in Edron wants you to infiltrate the Edron Orc Cave and destroy 4 Spider Eggs."/>
+			<missionstate id="2" description="You destroyed 1 of 4 Spider Eggs in the Edron Orc Cave"/>
+			<missionstate id="3" description="You destroyed 2 of 4 Spider Eggs in the Edron Orc Cave"/>
+			<missionstate id="4" description="You destroyed 3 of 4 Spider Eggs in the Edron Orc Cave"/>
+			<missionstate id="5" description="You destroyed all Spider Eggs in the Edron Orc Cave, report back to Daniel Steelsoul!"/>
+			<missionstate id="6" description="You have completed the Quest!"/>
+		</mission>
 		<mission name="The Ultimate Booze" storageid="12651" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Boozer in Vernore asked you to bring him some special dwarven brown ale. You may find some in the brewery in Kazordoon."/>
 			<missionstate id="2" description="You found the special dwarven brown ale. Bring it to Boozer in Vernore."/>

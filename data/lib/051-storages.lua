@@ -538,7 +538,8 @@ Storage = {
 	},
 	TibiaTales = {
 		DefaultStart = 12650,
-		ultimateBoozeQuest = 12651
+		ultimateBoozeQuest = 12651,
+		AgainstTheSpiderCult = 12652
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,

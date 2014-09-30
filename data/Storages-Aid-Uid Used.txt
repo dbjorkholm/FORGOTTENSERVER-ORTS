@@ -39,6 +39,7 @@ Thieves Guild storage:			12501-12513
 Captain Haba storage:			12540
 Secret Service storage:			12550-12599
 The Hidden City of Beregar storage:	12600-12649
+Tibia Tales Quest storage:		12650-12699
 
 Lugri necromancer task storage: 	50000/50001
 The Pirate Outfits (Sabre): 		50002
@@ -50,11 +51,20 @@ Assassin Outfit Quest: 50080-50082
 ---/////////////////////Aid/Uid/////////////////////----
 the ancient tombs storage Uid:		12100-12109
 The Ape City Aid/Uid:			12120-12130
-
+The New Frontier Quest:			12130-12150
+inquisition storage:			12160-12180
+barbarian test quest:			12190-12199
+ice islands quest storage:		12200-12230
+in service of yalahar storage:		12240-12280
+ChildrenoftheRevolution storage:	12300-12329
+UnnaturalSelection storage:		12330-12349
+WrathoftheEmperor storage:		12350-12399
+FriendsandTraders storage:		12400-12449
 postman Aid/Uid:			12450-12500
 Thieves Guild Aid/Uid:			12501-12513
 Secret Service Aid/Uid:			12550-12599
 The Hidden City of BeregarAid/Uid:	12600-12649
+Tibia Tales Quest Aid/Uid:		12650-12699
 
 horestisjars Aid:			50006-50010
 kazordoonElevatorLever Aid:		50011-50012

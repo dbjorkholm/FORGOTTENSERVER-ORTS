@@ -50,6 +50,19 @@ function destroyItem(cid, itemEx, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
+	--spideregg AgainstTheSpiderCult
+	if itemEx.itemid == 7585 then
+		local player = Player(cid)
+		local storage = player:getStorageValue(Storage.TibiaTales.AgainstTheSpiderCult)
+		if storage >= 1 and storage < 5 then
+			player:setStorageValue(Storage.TibiaTales.AgainstTheSpiderCult, math.max(1, storage) + 1)
+		end
+		Game.createMonster("giant spider", Position(33181, 31869, 12))
+		Item(itemEx.uid):transform(7586)
+		Item(itemEx.uid):decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		return true
+	end
 	--wooden bar
 	if itemEx.itemid == 3798 or itemEx.itemid == 3799 then
 		if math.random(3) == 1 then
