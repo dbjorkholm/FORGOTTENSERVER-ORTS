@@ -20188,16 +20188,24 @@
 	<item fromid="11549" toid="11560" name="acid" />
 	<item id="11561" name="mud" />
 	<item fromid="11562" toid="11570" name="dead bamboo" />
+	<item fromid="11571" toid="11604" article="a" name="giant verminous" />
 	<item fromid="11631" toid="11637" article="a" name="small mudpit" />
 	<item fromid="11647" toid="11649" article="a" name="sulphur puddle" />
+	<item fromid="11650" toid="11661" article="a" name="giant verminous" />
 	<item fromid="11662" toid="11666" article="a" name="sulphur puddle" />
+	<item fromid="11667" toid="11668" article="a" name="bitter calyx" />
+	<item fromid="11669" toid="11670" article="a" name="doomato" />
 	<item id="11671" article="a" name="witherstem" />
 	<item id="11672" article="a" name="carnivortex" />
 	<item id="11673" article="a" name="toxic tulip" />
 	<item id="11674" article="a" name="sprocketwhip" />
 	<item id="11676" article="a" name="wraithtongue" />
+	<item fromid="11677" toid="11678" article="a" name="acid foxglove" />
+	<item id="11679" article="a" name="dark delight" />
 	<item id="11683" article="a" name="dreadcoil" />
-	<item fromid="11691" toid="11696" article="a" name="purple plant" />
+	<item fromid="11691" toid="11693" article="a" name="giant dreadcoil" />
+	<item fromid="11694" toid="11695" article="a" name="giant verminous" />
+	<item id="11696" article="a" name="giant dreadcoil" />
 	<item id="11700" article="a" name="stone wall" />
 	<item id="11702" article="a" name="stone wall" />
 	<item fromid="11729" toid="11752" name="ground" />

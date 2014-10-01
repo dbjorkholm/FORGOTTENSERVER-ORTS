@@ -63,6 +63,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if item.itemid == 5908 and itemEx.itemid == 12295 then
 		Item(itemEx.uid):transform(12287)
 		player:say("You carve a solid bowl of the chunk of wood.", TALKTYPE_MONSTER_SAY)
+	-- An Interest In Botany Quest
+	elseif item.itemid == 5908 and itemEx.itemid == 11691 and player:getItemCount(12655) > 0 and player:getStorageValue(Storage.TibiaTales.AnInterestInBotany) == 1 then
+		player:say("The plant feels cold but dry and very soft. You streak the plant gently with your knife and put a fragment in the almanach.", TALKTYPE_MONSTER_SAY)
+		player:setStorageValue(Storage.TibiaTales.AnInterestInBotany, 2)
+	elseif item.itemid == 5908 and itemEx.itemid == 11653 and player:getItemCount(12655) > 0 and player:getStorageValue(Storage.TibiaTales.AnInterestInBotany) == 2 then
+		player:say("You cut a leaf from a branch and put it in the almanach. It smells strangely sweet and awfully bitter at the same time.", TALKTYPE_MONSTER_SAY)
+		player:setStorageValue(Storage.TibiaTales.AnInterestInBotany, 3)
 	end
 
 	if not skin then
