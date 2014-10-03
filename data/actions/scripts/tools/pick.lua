@@ -113,7 +113,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	 --The Banshee Quest
-	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then
+	elseif itemEx.itemid == 9025 and itemEx.actionid == 100 then
 		targetItem:transform(392)
 		targetItem:decay()
 		toPosition:sendMagicEffect(CONT_ME_POFF)

@@ -414,6 +414,14 @@
 			<missionstate id="16" description="Come later in 2 hours and ask Ajax for the axe."/>
 			<missionstate id="17" description="You got the Axe Addon!"/>
 		</mission>
+		<mission name="Beggar Outfit: The Newest Fashion" storageid="12018" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Your current task is to bring Hugo 20 pieces of brown cloth, like the worn and ragged ghoul clothing."/>
+			<missionstate id="2" description="Your current task is to bring 50 pieces of minotaur leather to Hugo. If you don't know how to get leather, you should ask Kalvin."/>
+			<missionstate id="3" description="Your current task is to bring 10 bat wings to Hugo."/>
+			<missionstate id="4" description="Your current task is to bring 30 heaven blossoms to Hugo. Elves are said to cultivate these flowers."/>
+			<missionstate id="5" description="You brought all items required for the &quot;poor man's look&quot; to Hugo. He told you to come back to him after a whole day has passed, then the outfit should be finished."/>
+			<missionstate id="6" description="You got the outfit!"/>
+		</mission>
 		<mission name="Druid Outfit Quest" storageid="12013" startvalue="1" endvalue="10">
 			<missionstate id="1" description="Ceiron sends you to collect a sample of the blooming Griffinclaw."/>
 			<missionstate id="2" description="Ask Ceiron for task."/>
