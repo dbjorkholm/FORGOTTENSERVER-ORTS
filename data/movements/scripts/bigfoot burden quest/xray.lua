@@ -21,7 +21,7 @@ end
 
 local condition = Condition(CONDITION_OUTFIT)
 condition:setTicks(2000)
-condition:addOutfit({lookType = 33}) -- skeleton looktype
+condition:setOutfit({lookType = 33}) -- skeleton looktype
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)

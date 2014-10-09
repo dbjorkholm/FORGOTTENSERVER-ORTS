@@ -55,7 +55,7 @@
 		<item id="11221" chance="100000"/><!-- hellspawn tail -->
 		<item id="7368" countmax="5" chance="19350"/><!-- assassin stars -->
 		<item id="8473" chance="77420"/><!-- ultimate health potion -->
-		<item id="10000" chance="35480"/><!-- demonic essence -->
+		<item id="6500" chance="35480"/><!-- demonic essence -->
 		<item id="2788" countmax="2" chance="67740"/><!-- red mushroom -->
 		<item id="9970" countmax="4" chance="43550"/><!-- small topaz -->
 		<item id="2477" chance="67740"/><!-- knight legs -->

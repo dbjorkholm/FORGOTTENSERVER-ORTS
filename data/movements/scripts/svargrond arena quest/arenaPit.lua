@@ -1,6 +1,6 @@
-local condition = Condition(CONDITION_OUTFIT, CONDITIONID_COMBAT)
+local condition = Condition(CONDITION_OUTFIT)
 condition:setTicks(120000)
-condition:addOutfit({lookType = 111})
+condition:setOutfit({lookType = 111})
 
 function onStepIn(cid, item, position, fromPosition)
 	local player = Player(cid)
