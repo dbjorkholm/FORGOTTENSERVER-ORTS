@@ -14,17 +14,18 @@ local config = {
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
 	if item.itemid ~= 1945 then
-		Item(item.uid):transform(1945)
 		return true
 	end
 
-	local sacrificeItems = false
+	local sacrificeItems, sacrificeItem = true
 	for i = 1, #config.sacrifices do
 		local sacrifice = config.sacrifices[i]
-		local sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
-		if sacrificeItem then
-			sacrificeItems = true
+		sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
+		if not sacrificeItem then
+			sacrificeItems = false
 			break
 		end
 	end
@@ -47,8 +48,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	Item(item.uid):transform(1946)
-	local wellItem, sacrificeItem
+	local wellItem
 	for i = 1, #config.wells do
 		local well = config.wells[i]
 		wellItem = Tile(well.position):getItemById(well.itemId)
@@ -59,10 +59,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	for i = 1, #config.sacrifices do
 		local sacrifice = config.sacrifices[i]
-		sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
-		if sacrificeItem then
-			sacrificeItem:remove()
-		end
+		Tile(sacrifice.position):getItemById(sacrifice.itemId):remove()
 	end
 	return true
 end

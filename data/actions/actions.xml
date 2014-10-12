@@ -104,9 +104,6 @@
 	<!-- Ghost Ship (Plate armor quest) -->
 	<action actionid="5556" script="other/ghostship.lua"/>
 
-	<!-- Venore -->
-	<action fromaid="9743" toaid="9744" script="other/venorelever.lua"/>
-
 	<!-- Farmine -->
 	<action fromaid="9118" toaid="9121" script="farmine/elevatorLever.lua"/>
 
@@ -710,6 +707,8 @@
 	<action itemid="7737" script="other/costumebags.lua" />
 	<action itemid="7739" script="other/costumebags.lua" />
 	<action itemid="9076" script="other/costumebags.lua" />
+	<action itemid="20220" script="other/rafzanElevator.lua" />
+	<action itemid="20224" script="other/rafzanElevator.lua" />
 
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
