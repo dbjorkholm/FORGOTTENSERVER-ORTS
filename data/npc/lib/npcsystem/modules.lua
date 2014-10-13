@@ -184,7 +184,7 @@ if Modules == nil then
 			npcHandler:say(parameters.msg or "Set the sails!", cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(parameters.destination)
-			Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
+			parameters.destination:sendMagicEffect(CONST_ME_TELEPORT)
 		end
 
 		npcHandler:resetNpc(cid)

@@ -19,9 +19,16 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 		return false
 	end
 
+	if parameters.storage then
+		if Player(cid):getStorageValue(parameters.storage) ~= (parameters.value or 1) then
+			npcHandler:say(parameters.wrongValueMessage or 'Never heard about a place like this.', cid)
+			return true
+		end
+	end
+
 	local costMessage = '%d gold coins'
 
-	if parameters.cost > 0 then
+	if parameters.cost and parameters.cost > 0 then
 		local cost = parameters.cost
 
 		if parameters.discount then
@@ -63,7 +70,7 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 	end
 
 	local travelCost = parameters.cost
-	if travelCost > 0 then
+	if travelCost and travelCost > 0 then
 		if parameters.discount then
 			travelCost = travelCost - parameters.discount(cid, travelCost)
 		end
@@ -89,7 +96,7 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 		end
 
 		player:teleportTo(destination)
-		Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
 
 		if parameters.onTravelCallback then
 			parameters.onTravelCallback(cid)

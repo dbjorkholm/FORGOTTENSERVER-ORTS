@@ -33,10 +33,12 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "transport") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "transport") then
 		if player:getStorageValue(Storage.TheApeCity.Questline) >= 19 then
 			npcHandler:say("You want me to transport you to forbidden land?", cid)
 			npcHandler.topic[cid] = 1
@@ -45,21 +47,18 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 1 then
-		if  msgcontains(msg, 'yes') then
+		if msgcontains(msg, 'yes') then
 			npcHandler:say("Take care!", cid)
+			local destination = Position(33025, 32580, 6)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x=33025, y=32580, z=6})
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		end
-		if  msgcontains(msg, 'no') then
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
+		elseif msgcontains(msg, 'no') then
 			npcHandler:say("Then no!", cid)
 		end
 	end
 	return true
 end
-
-
-
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

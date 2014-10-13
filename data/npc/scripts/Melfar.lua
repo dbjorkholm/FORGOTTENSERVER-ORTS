@@ -8,6 +8,12 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 function onThink() npcHandler:onThink() end
 
+local config = {
+	{position = Position(32474, 31947, 7), type = 2, description = 'Tree 1'},
+	{position = Position(32515, 31927, 7), type = 2, description = 'Tree 2'},
+	{position = Position(32458, 31997, 7), type = 2, description = 'Tree 3'}
+}
+
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
@@ -37,9 +43,9 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 5)
 			player:setStorageValue(Storage.TheNewFrontier.Mission02, 2) --Questlog, The New Frontier Quest "Mission 02: From Kazordoon With Love"
 			player:addItem(11100, 1)
-			player:addMapMark({x = 32474, y = 31947, z = 7}, 2, "Tree 1")
-			player:addMapMark({x = 32515, y = 31927, z = 7}, 2, "Tree 2")
-			player:addMapMark({x = 32458, y = 31997, z = 7}, 2, "Tree 3")
+			for i = 1, #config do
+				player:addMapMark(config[i].position, config[i].type, config[i].description)
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeMoney(100) then

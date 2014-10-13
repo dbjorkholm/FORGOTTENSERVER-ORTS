@@ -1,4 +1,3 @@
-
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
@@ -19,10 +18,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("It'zz your doom you travel to.", cid)
-			local player = Player(cid)
+			local player, destination = Player(cid), Position(33158, 31228, 7)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 33158, y = 31228, z = 7})
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then

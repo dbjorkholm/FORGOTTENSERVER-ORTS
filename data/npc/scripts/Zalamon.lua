@@ -2,10 +2,23 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid) npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() npcHandler:onThink() end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
+
+local marks = {
+	ChildrenOfTheRevolution = {
+		{position = Position(33235, 31177, 7), type = 4, description = 'entrance of the camp'},
+		{position = Position(33257, 31172, 7), type = 3, description = 'building 1 which you have to spy'},
+		{position = Position(33227, 31163, 7), type = 3, description = 'building 2 which you have to spy'},
+		{position = Position(33230, 31156, 7), type = 3, description = 'building 3 which you have to spy'}
+	},
+	WrathOfTheEmperor = {
+		{position = Position(33356, 31180, 7), description = 'tunnel to hideout'},
+		{position = Position(33173, 31076, 7), description = 'the rebel hideout'}
+	},
+}
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -223,7 +236,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("I've marked itzz location on your map. Go and find out what happened zzere. In zze pazzt it wazz known azz zze Temple of Equilibrium. ", cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 4)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission01, 1) --Questlog, Children of the Revolution "Mission 1: Corruption"
-			player:addMapMark({x = 33177, y = 31193, z = 7}, 5, "Temple of Equilibrium")
+			player:addMapMark(Position(33177, 31193, 7), 5, "Temple of Equilibrium")
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
 			npcHandler:say({
@@ -232,10 +245,10 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 7)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission02, 1) --Questlog, Children of the Revolution "Mission 2: Imperial Zzecret Weaponzz"
-			player:addMapMark({x = 33235, y = 31177, z = 7}, 4, "entrance of the camp")
-			player:addMapMark({x = 33257, y = 31172, z = 7}, 3, "building 1 which you have to spy")
-			player:addMapMark({x = 33227, y = 31163, z = 7}, 3, "building 2 which you have to spy")
-			player:addMapMark({x = 33230, y = 31156, z = 7}, 3, "building 3 which you have to spy")
+			for i = 1, #marks.ChildrenOfTheRevolution do
+				local mark = marks.ChildrenOfTheRevolution[i]
+				player:addMapMark(mark.position, mark.type, mark.description)
+			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
 			npcHandler:say({
@@ -326,8 +339,10 @@ local function creatureSayCallback(cid, type, msg)
 					"Uzze zze dizzguizze wizzely, try to hide in zze dark and avoid being zzeen at all cozzt. ... ",
 					"Onzze you have reached zze norzz, you can find zze rezzizztanzze hideout at zze ozzer zzpot I marked on your map. Now hurry. "
 				}, cid)
-				player:addMapMark({x = 33356, y = 31180, z = 7}, 19, "tunnel to hideout")
-				player:addMapMark({x = 33173, y = 31076, z = 7}, 19, "the rebel hideout")
+				for i = 1, #marks.WrathOfTheEmperor do
+					local mark = marks.WrathOfTheEmperor[i]
+					player:addMapMark(mark.position, 19, mark.description)
+				end
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 19 then

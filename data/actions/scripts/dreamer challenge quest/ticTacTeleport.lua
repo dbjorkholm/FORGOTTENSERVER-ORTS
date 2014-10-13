@@ -31,13 +31,20 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	for i = 1, #config do
-		Tile(config[i].position):getItemById(config[i].itemId):remove()
+		ticTacToeItem = Tile(config[i].position):getItemById(config[i].itemId)
+		if ticTacToeItem then
+			ticTacToeItem:remove()
+		end
 	end
 
-	local crack = Tile(Position(32836, 32288, 14)):getItemById(6299)
+	local crackPosition = Position(32836, 32288, 14)
+	local crack = Tile(crackPosition):getItemById(6299)
 	if crack then
-		crack:transform(1387)
-		crack:setActionId(9032)
+		crack:remove()
+		local teleport = Game.createItem(1387, 1, crackPosition)
+		if teleport then
+			teleport:setActionId(9032)
+		end
 	end
 	return true
 end

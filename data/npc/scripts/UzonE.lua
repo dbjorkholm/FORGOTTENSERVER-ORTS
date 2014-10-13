@@ -31,10 +31,10 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			local player = Player(cid)
+			local player, destination = Player(cid), Position(32535, 31837, 4)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 32535, y = 31837, z = 4}, false)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('So be it!', cid)
 			npcHandler.topic[cid] = 0
 		end

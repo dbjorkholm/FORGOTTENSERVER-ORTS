@@ -59,7 +59,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	for i = 1, #config.sacrifices do
 		local sacrifice = config.sacrifices[i]
-		Tile(sacrifice.position):getItemById(sacrifice.itemId):remove()
+		sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
+		if sacrificeItem then
+			sacrificeItem:remove()
+		end
 	end
 	return true
 end

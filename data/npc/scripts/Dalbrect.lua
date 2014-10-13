@@ -7,10 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local travelNode = keywordHandler:addKeyword({'isle of the kings'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to the isle of the kings for 10 gold coins?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 10, destination = {x = 32190, y = 31957, z = 6} })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
-	
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -26,14 +22,6 @@ local function creatureSayCallback(cid, type, msg)
 
 		npcHandler:say('What? You want me to examine a brooch?', cid)
 		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, 'passage') then
-		if player:getStorageValue(Storage.WhiteRavenMonasteryQuest.Passage) ~= 1 then
-			npcHandler:say('I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission.', cid)
-			return true
-		end
-
-		npcHandler:say('Since you are my friend now I will sail you to the isle of the kings for 10 gold. Is that okay for you?', cid)
-		npcHandler.topic[cid] = 3
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			if player:getItemCount(2318) == 0 then
@@ -54,31 +42,21 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Thank you! I shall consider you my friend from now on! Just let me know if you {need} something!', cid)
 			player:setStorageValue(Storage.WhiteRavenMonasteryQuest.Passage, 1)
 			player:setStorageValue(Storage.WhiteRavenMonasteryQuest.QuestLog, 1) -- Quest log
-		elseif npcHandler.topic[cid] == 3 then
-			npcHandler.topic[cid] = 0
-			if not player:removeMoney(10) then
-				npcHandler:say('You don\'t have enough money.', cid)
-				return true
-			end
-
-			local destination = Position(32190, 31957, 6)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(destination)
-			destination:sendMagicEffect(CONST_ME_TELEPORT)
-			npcHandler:say('Have a nice trip!', cid)
 		end
 	elseif msgcontains(msg, 'no') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say('Then stop being a fool. I am poor and I have to work the whole day through!', cid)
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say('I should have known better than to ask for an act of kindness in this cruel, selfish, world!', cid)
-		elseif npcHandler.topic[cid] == 3 then
-			npcHandler:say('Well, I\'ll be here if you change your mind.', cid)
 		end
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
+
+local travelNode = keywordHandler:addKeyword({'passage'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to the isle of the kings for 10 gold coins?', storage = Storage.WhiteRavenMonasteryQuest.Passage, wrongValueMessage = 'I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission.'})
+	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, msg = 'Have a nice trip!', cost = 10, destination = Position(32190, 31957, 6) })
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'Well, I\'ll be here if you change your mind.'})
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Dalbrect Windtrouser, of the once proud Windtrouser family."})
 keywordHandler:addKeyword({'hut'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am merely a humble fisher now that nothing is left of my noble {legacy}."})
