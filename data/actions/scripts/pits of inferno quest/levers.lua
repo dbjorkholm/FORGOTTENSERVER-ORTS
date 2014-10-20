@@ -37,7 +37,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		local number = item.uid - 2049
-		if leverCount + 1 ~= number then
+		if (leverCount + 1) ~= number then
 			return false
 		end
 
