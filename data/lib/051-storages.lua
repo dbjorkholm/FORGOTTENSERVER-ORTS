@@ -198,15 +198,22 @@ Storage = {
 
 	},
 	OutfitQuest = {
-		DefaultStart = 12010, -- Is needed for each Quest to start the log
+		DefaultStart = 12010, -- until all outfit quests are completed
+		Ref = 12010,
+
+		Citizen = {
+			-- Mission storages for temporary questlog entries
+			MissionHat = 12009,
+			AddonHat = 12011,
+
+			MissionBackpack = 12008,
+			AddonBackpack = 12012,
+			AddonBackpackTimer = 12017
+		},
 
 		-- Begger Outfit Quest
 		BeggarFirstAddon = 22029,
 		BeggarSecondAddon = 22030,
-
-		-- Citizen-outfit Quest
-		CitizenHatAddon = 12011,
-		CitizenBackpackAddon = 12012,
 
 		-- Druid-outfit Quest
 		DruidHatAddon = 12013,
@@ -215,7 +222,6 @@ Storage = {
 		-- Barbarian-outfit Quest
 		BarbarianAddon = 12015,
 		BarbarianAddonWaitTimer = 12016,
-		CitizenBackpackAddonWaitTimer = 12017,
 
 		-- Beggar
 		BeggarOutfit = 12018,

@@ -386,14 +386,12 @@
 			<missionstate id="1" description="Atrad wants only two items from you for his old katana: a behemoth claw and a nose ring, both at the same time. He also told you about a &quot;horned fox&quot; who wears such as nose ring"/>
 			<missionstate id="2" description="You have received the second assassin addon."/>
 		</mission>
-		<mission name="Citizen Outfit Quest (Feather Hat)" storageid="12011" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Bring Hanna in Thais 100 chicken feathers, 50 honeycombs and a legion helmet to get the hat"/>
-			<missionstate id="2" description="You got the Outfit!"/>
+		<mission name="Citizen Addon: Backpack" storageid="12008" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Collect 100 pieces of minotaur leather and bring it to either Amber or Lubo to have them make a backpack addon for you."/>
+			<missionstate id="2" description="You delivered 100 pieces of minotaur leather. Some time is needed to make the backpack for you though. You should check back later and ask either Amber or Lubo for your backpack."/>
 		</mission>
-		<mission name="Citizen Outfit Quest (Backpack)" storageid="12012" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Bring Lubo in northeast of Thais 100 minotaur leather to get the Backpack"/>
-			<missionstate id="2" description="Lubo need a while to finish this backpack for you. Ask him later for the backpack."/>
-			<missionstate id="3" description="You got the Outfit!"/>
+		<mission name="Citizen Addon: Feather Hat" storageid="12009" startvalue="1" endvalue="1">
+			<missionstate id="1" description="Collect a legion helmet, 100 chicken feathers and 50 honeycombs and bring them to either Hanna or Norma to have them make a feather hat addon for you."/>
 		</mission>
 		<mission name="Barbarian Outfit Quest" storageid="12015" startvalue="1" endvalue="17">
 			<missionstate id="1" description="Bron told you that his brother Ajax in Northport needs to learn that violence is not always the answer. He told you to make his brother angry, then show him that all he needed to do was say 'please' to fix the situation."/>
