@@ -17,7 +17,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'acorn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Chh? Chhh?? <though you don't understand squirrelish, that one seems really excited>"})
+keywordHandler:addKeyword({'acorn'}, StdModule.say, {npcHandler = npcHandler, text = "Chh? Chhh?? <though you don't understand squirrelish, that one seems really excited>"})
 
 npcHandler:setMessage(MESSAGE_GREET, "Chhchh?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Chh...")

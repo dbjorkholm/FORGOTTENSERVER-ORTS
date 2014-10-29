@@ -27,14 +27,14 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a great and famous actor! Not a princess, at all. I was only PRETENDING to be a princess. But try explaining that to those stupid pirates."})
-keywordHandler:addKeyword({'actor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Stage acting was a waste of my immense talent. Not only am I a born leader, my talent is more profitable when it is used for conning people."})
-keywordHandler:addKeyword({'stage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Stage acting was a waste of my immense talent. Not only am I a born leader, my talent is more profitable when it is used for conning people."})
-keywordHandler:addKeyword({'kid'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He was always a fool with a heart too soft to become a feared pirate."})
-keywordHandler:addKeyword({'princess'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Me playing a princess was just part of a cunning plan we had."})
-keywordHandler:addKeyword({'cell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "If you find some way to release me I might even let you live as reward! So you'd better do your best or I'll kill you!"})
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "How dare you? I left to rot in this dirty cell and you have nothing better to do than chit chat?"})
-keywordHandler:addKeyword({'rot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "YOU .. YOU .. You are as good as dead! I will get you! Do you hear me? I will have your head! On a platter!"})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am a great and famous actor! Not a princess, at all. I was only PRETENDING to be a princess. But try explaining that to those stupid pirates."})
+keywordHandler:addKeyword({'actor'}, StdModule.say, {npcHandler = npcHandler, text = "Stage acting was a waste of my immense talent. Not only am I a born leader, my talent is more profitable when it is used for conning people."})
+keywordHandler:addKeyword({'stage'}, StdModule.say, {npcHandler = npcHandler, text = "Stage acting was a waste of my immense talent. Not only am I a born leader, my talent is more profitable when it is used for conning people."})
+keywordHandler:addKeyword({'kid'}, StdModule.say, {npcHandler = npcHandler, text = "He was always a fool with a heart too soft to become a feared pirate."})
+keywordHandler:addKeyword({'princess'}, StdModule.say, {npcHandler = npcHandler, text = "Me playing a princess was just part of a cunning plan we had."})
+keywordHandler:addKeyword({'cell'}, StdModule.say, {npcHandler = npcHandler, text = "If you find some way to release me I might even let you live as reward! So you'd better do your best or I'll kill you!"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "How dare you? I left to rot in this dirty cell and you have nothing better to do than chit chat?"})
+keywordHandler:addKeyword({'rot'}, StdModule.say, {npcHandler = npcHandler, text = "YOU .. YOU .. You are as good as dead! I will get you! Do you hear me? I will have your head! On a platter!"})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then

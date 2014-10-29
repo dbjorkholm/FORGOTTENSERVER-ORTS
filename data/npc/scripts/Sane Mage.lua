@@ -23,12 +23,12 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I AM THE... I mean... I am - what is a mage, if he is not {mad}? If he isn't... raging? I am... I am just sane. A sane mage."})
-keywordHandler:addKeyword({'mad'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am not mad... I- YES, that's the whole problem, isn't it? What's going on, what's happening to me? I don't even know anymore."})
-keywordHandler:addKeyword({'vacation'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Yes, well... I'm taking a break. It will take some time. I don't know how long I just... I want to get away from all this for some time, that's it."})
-keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Slime is my mission. Is there anything more important? There isn't. To me. Right now at least."})
-keywordHandler:addKeyword({'quest'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Slime is my mission. Is there anything more important? There isn't. To me. Right now at least."})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You want to help me? HELP me? You? Who... who are you anyway? Ah nevermind."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I AM THE... I mean... I am - what is a mage, if he is not {mad}? If he isn't... raging? I am... I am just sane. A sane mage."})
+keywordHandler:addKeyword({'mad'}, StdModule.say, {npcHandler = npcHandler, text = "I am not mad... I- YES, that's the whole problem, isn't it? What's going on, what's happening to me? I don't even know anymore."})
+keywordHandler:addKeyword({'vacation'}, StdModule.say, {npcHandler = npcHandler, text = "Yes, well... I'm taking a break. It will take some time. I don't know how long I just... I want to get away from all this for some time, that's it."})
+keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = "Slime is my mission. Is there anything more important? There isn't. To me. Right now at least."})
+keywordHandler:addKeyword({'quest'}, StdModule.say, {npcHandler = npcHandler, text = "Slime is my mission. Is there anything more important? There isn't. To me. Right now at least."})
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "You want to help me? HELP me? You? Who... who are you anyway? Ah nevermind."})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then

@@ -5,7 +5,7 @@ TravelLib = {}
 
 -- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
 -- Usage:
-	-- keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Svargrond for %s?', cost = 180, discount = TravelLib.postmanDiscount})
+	-- keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Svargrond for %s?', cost = 180, discount = TravelLib.postmanDiscount})
 
 function TravelLib.say(cid, message, keywords, parameters, node)
 	local npcHandler = parameters.npcHandler

@@ -84,15 +84,15 @@ local function newFrontierDiscount(cid, cost)
 	return discount + TravelLib.postmanDiscount(cid, cost)
 end
 
-local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a ride to Farmine for %s?', cost = 210, discount = newFrontierDiscount})
+local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Farmine for %s?', cost = 210, discount = newFrontierDiscount})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 210, discount = newFrontierDiscount, destination = getFarmineDestinationCallback})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 
-local travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
+local travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = Position(33311, 31989, 15), onTravelCallback = cormayaOnTravelCallback})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'We would like to serve you some time.'})
+	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want me take you to {Cormaya} or {Farmine}?'})
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want me take you to {Cormaya} or {Farmine}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome, |PLAYERNAME|! May earth protect you on the rocky grounds. If you need a {passage}, I can help you.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye.')

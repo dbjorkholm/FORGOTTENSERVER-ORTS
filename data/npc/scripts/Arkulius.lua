@@ -129,12 +129,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "How dare you asking me this?!? I'm Arkulius - Master of Elements, the HEADMASTER of this academy!!"})
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm Arkulius - Master of Elements, the headmaster of this academy."})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I have better things to do than helping you. See that ice statue over there? My dear friend Alverus needs to be revived!"})
-keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Time is an illusion and completely irrelevant to me."})
-keywordHandler:addKeyword({'weapon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Weapons are for those people who aren't able to use their heads or better what's INSIDE their heads. No offence <coughs>."}) -- < Knight; FIXME !!!
-keywordHandler:addKeyword({'pits of inferno'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Yeye, I believe you almost feel like home among all those brainless creatures!"})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "How dare you asking me this?!? I'm Arkulius - Master of Elements, the HEADMASTER of this academy!!"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I'm Arkulius - Master of Elements, the headmaster of this academy."})
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "I have better things to do than helping you. See that ice statue over there? My dear friend Alverus needs to be revived!"})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "Time is an illusion and completely irrelevant to me."})
+keywordHandler:addKeyword({'weapon'}, StdModule.say, {npcHandler = npcHandler, text = "Weapons are for those people who aren't able to use their heads or better what's INSIDE their heads. No offence <coughs>."}) -- < Knight; FIXME !!!
+keywordHandler:addKeyword({'pits of inferno'}, StdModule.say, {npcHandler = npcHandler, text = "Yeye, I believe you almost feel like home among all those brainless creatures!"})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye and please stay away, okay?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "At last! Good things come to those who wait.")

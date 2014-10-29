@@ -23,10 +23,10 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'master'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our. Master. Is. Gone. You. Can. Not. Visit. Him! We. Stand. {Sentry}!"})
-keywordHandler:addKeyword({'sentry'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
-keywordHandler:addKeyword({'slime'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "{Slime}. Dangerous. We. Have. It. Under. Control. ... We. Will. Stand. {Sentry}."})
+keywordHandler:addKeyword({'master'}, StdModule.say, {npcHandler = npcHandler, text = "Our. Master. Is. Gone. You. Can. Not. Visit. Him! We. Stand. {Sentry}!"})
+keywordHandler:addKeyword({'sentry'}, StdModule.say, {npcHandler = npcHandler, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
+keywordHandler:addKeyword({'slime'}, StdModule.say, {npcHandler = npcHandler, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "{Slime}. Dangerous. We. Have. It. Under. Control. ... We. Will. Stand. {Sentry}."})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then

@@ -15,7 +15,7 @@ local function greetCallback(cid)
 	return true
 end
 
-keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
+keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
 
 local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then

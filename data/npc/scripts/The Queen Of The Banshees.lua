@@ -142,14 +142,14 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'stay'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's my curse to be the eternal {guardian} of this ancient {place}."})
-keywordHandler:addKeyword({'guardian'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm the {guardian} of the {SEVENTH} and final seal. The seal to open the last door before ... but perhaps it's better to see it with your own eyes."})
-keywordHandler:addKeyword({'place'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It served as a temple, a source of power and ... as a sender for an ancient {race} which lived a long time ago and has long been forgotten."})
-keywordHandler:addKeyword({'race'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The race that built this edifice came to this place from the stars. They ran from an enemy even more horrible than themselves. But they carried the {seed} of their own destruction in them."})
-keywordHandler:addKeyword({'seed'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This ancient race was annihilated by its own doings, that's all I know. Aeons have passed since then, but the sheer presence of this {complex} is still defiling and desecrating this area."})
-keywordHandler:addKeyword({'complex'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Its constructors were too strange for you or even me to understand. We don't know what this ... thing they built was supposed to be good for. I feel a constant twisting and binding of souls, though, that is probably only a side-effect."})
-keywordHandler:addKeyword({'ghostlands'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The place you know as the Ghostlands had a different name once ... and many names after. Too many to remember them all."})
-keywordHandler:addKeyword({'banshee'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They are my maidens. They give me comfort in my eternal watch over the last seal."})
+keywordHandler:addKeyword({'stay'}, StdModule.say, {npcHandler = npcHandler, text = "It's my curse to be the eternal {guardian} of this ancient {place}."})
+keywordHandler:addKeyword({'guardian'}, StdModule.say, {npcHandler = npcHandler, text = "I'm the {guardian} of the {SEVENTH} and final seal. The seal to open the last door before ... but perhaps it's better to see it with your own eyes."})
+keywordHandler:addKeyword({'place'}, StdModule.say, {npcHandler = npcHandler, text = "It served as a temple, a source of power and ... as a sender for an ancient {race} which lived a long time ago and has long been forgotten."})
+keywordHandler:addKeyword({'race'}, StdModule.say, {npcHandler = npcHandler, text = "The race that built this edifice came to this place from the stars. They ran from an enemy even more horrible than themselves. But they carried the {seed} of their own destruction in them."})
+keywordHandler:addKeyword({'seed'}, StdModule.say, {npcHandler = npcHandler, text = "This ancient race was annihilated by its own doings, that's all I know. Aeons have passed since then, but the sheer presence of this {complex} is still defiling and desecrating this area."})
+keywordHandler:addKeyword({'complex'}, StdModule.say, {npcHandler = npcHandler, text = "Its constructors were too strange for you or even me to understand. We don't know what this ... thing they built was supposed to be good for. I feel a constant twisting and binding of souls, though, that is probably only a side-effect."})
+keywordHandler:addKeyword({'ghostlands'}, StdModule.say, {npcHandler = npcHandler, text = "The place you know as the Ghostlands had a different name once ... and many names after. Too many to remember them all."})
+keywordHandler:addKeyword({'banshee'}, StdModule.say, {npcHandler = npcHandler, text = "They are my maidens. They give me comfort in my eternal watch over the last seal."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Be greeted, dear visitor. Come and {stay} ... a while.")

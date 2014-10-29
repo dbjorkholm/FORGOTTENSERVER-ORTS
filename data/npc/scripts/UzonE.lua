@@ -16,11 +16,11 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am known as Uzon Ibn Kalith."})
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I am known as Uzon Ibn Kalith."})
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then

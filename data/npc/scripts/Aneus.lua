@@ -7,10 +7,10 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'soldiers'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It was the elite of the whole army. They were called the Red Legion (also known as the bloody legion)."})
-keywordHandler:addKeyword({'orcs'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The orcs attacked the workers from time to time and so they disturbed the WORKS on the city."})
-keywordHandler:addKeyword({'cruelty'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The soldiers treated the workers like slaves."})
-keywordHandler:addKeyword({'island'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The General of the Red Legion became very angry about these attacks and after some months he STROKE back!"})
+keywordHandler:addKeyword({'soldiers'}, StdModule.say, {npcHandler = npcHandler, text = "It was the elite of the whole army. They were called the Red Legion (also known as the bloody legion)."})
+keywordHandler:addKeyword({'orcs'}, StdModule.say, {npcHandler = npcHandler, text = "The orcs attacked the workers from time to time and so they disturbed the WORKS on the city."})
+keywordHandler:addKeyword({'cruelty'}, StdModule.say, {npcHandler = npcHandler, text = "The soldiers treated the workers like slaves."})
+keywordHandler:addKeyword({'island'}, StdModule.say, {npcHandler = npcHandler, text = "The General of the Red Legion became very angry about these attacks and after some months he STROKE back!"})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then

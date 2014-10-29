@@ -88,8 +88,8 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.'})
-keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?'})
+keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, text = 'I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.'})
+keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Hello there.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye.')
