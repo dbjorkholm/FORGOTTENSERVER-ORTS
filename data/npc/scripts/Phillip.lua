@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'how are you?'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am fine, thank you very much."})
+keywordHandler:addKeyword({'how', 'are', 'you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am fine, thank you very much."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My business is knowlegde and it is for free."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am honored to be teacher in this school."})
 keywordHandler:addKeyword({'teacher'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I run this school, there are other travelling teachers who we call Loremasters."})

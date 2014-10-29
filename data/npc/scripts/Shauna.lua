@@ -45,7 +45,7 @@ end
 keywordHandler:addKeyword({'news'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "No news are good news."})
 keywordHandler:addKeyword({'queen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "HAIL TO QUEEN ELOISE!"})
 keywordHandler:addKeyword({'leader'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "HAIL TO QUEEN ELOISE!"})
-keywordHandler:addKeyword({'how are you?'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Just fine."})
+keywordHandler:addKeyword({'how', 'are', 'you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Just fine."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Would you like to buy the general key to the town?"})
 keywordHandler:addKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Yeah, I bet you'd like to do that! HO, HO, HO!"})
 keywordHandler:addKeyword({'army'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "If they make trouble, I'll put them behind bars like all others."})
