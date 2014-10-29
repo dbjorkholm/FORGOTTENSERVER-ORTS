@@ -1,19 +1,62 @@
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local player = Player(cid)
-	if not player:hasOutfit(player:getSex() == 0 and 431 or 430) then
-		if player:getItemCount(13540) > 0 and player:getItemCount(13541) > 0 and player:getItemCount(13542) > 0 and player:getItemCount(13543) > 0 and player:getItemCount(13544) > 0 and player:getItemCount(13545) > 0 then
-			for i = 13540, 13545 do
-				player:removeItem(i, 1)
-			end
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received the Afflicted outfit!")
-			player:addOutfit(430)
-			player:addOutfit(431)
-			player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
-		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have all required items!")
+	local hasOutfit = player:getStorageValue(Storage.OutfitQuest.Afflicted.Outfit) == 1
+
+	-- Plgue Mask
+	if item.itemid == 13925 then
+		if not hasOutfit then
+			return false
 		end
+
+		if player:getStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueMask) == 1 then
+			return false
+		end
+
+		player:addOutfitAddon(430, 1)
+		player:addOutfitAddon(431, 1)
+		player:getPosition():sendMagicEffect(CONST_ME_POFF)
+		player:setStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueMask, 1)
+		player:say('You gained a plague mask for your outfit.', TALKTYPE_MONSTER_SAY, false, player)
+		Item(item.uid):remove()
+
+	-- Plague Bell
+	elseif item.itemid == 13926 then
+		if not hasOutfit then
+			return false
+		end
+
+		if player:getStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueBell) == 1 then
+			return false
+		end
+
+		player:addOutfitAddon(430, 2)
+		player:addOutfitAddon(431, 2)
+		player:getPosition():sendMagicEffect(CONST_ME_POFF)
+		player:setStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueBell, 1)
+		player:say('You gained a plague bell for your outfit.', TALKTYPE_MONSTER_SAY, false, player)
+		Item(item.uid):remove()
+
+	-- Outfit
 	else
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained this outfit!")
+		if hasOutfit then
+			return false
+		end
+
+		for id = 13540, 13545 do
+			if player:getItemCount(id) < 1 then
+				return false
+			end
+		end
+
+		for id = 13540, 13545 do
+			player:removeItem(id, 1)
+		end
+
+		player:addOutfit(430)
+		player:addOutfit(431)
+		player:getPosition():sendMagicEffect(CONST_ME_POFF)
+		player:setStorageValue(Storage.OutfitQuest.Afflicted.Outfit, 1)
+		player:say('You have restored an outfit.', TALKTYPE_MONSTER_SAY, false, player)
 	end
 	return true
 end

@@ -201,6 +201,12 @@ Storage = {
 		DefaultStart = 12010, -- until all outfit quests are completed
 		Ref = 12010,
 
+		Afflicted = {
+			Outfit = 12005,
+			AddonPlagueMask = 12006,
+			AddonPlagueBell = 12007
+		},
+
 		Citizen = {
 			-- Mission storages for temporary questlog entries
 			MissionHat = 12009,
@@ -669,7 +675,7 @@ Storage = {
 	},
 	WhiteRavenMonasteryQuest = {
 		QuestLog = 50200,
-		Passage = 50201, 
+		Passage = 50201,
 		Diary = 50202
 	},
 	FathersBurdenQuest = {

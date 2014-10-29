@@ -1,6 +1,4 @@
 local config = {
-	[13925] = {female = 431, male = 430, addon = 1, msg = 'first afflicted'},
-	[13926] = {female = 431, male = 430, addon = 2, msg = 'second afflicted'},
 	[18517] = {female = 514, male = 516, msg = 'soil guardian'}, -- soil guardian (base outfit)
 	[18518] = {female = 514, male = 516, addon = 1, msg = 'first soil guardian'},
 	[18519] = {female = 514, male = 516, addon = 2, msg = 'second soil guardian'},
