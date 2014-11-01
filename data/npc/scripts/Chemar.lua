@@ -30,10 +30,10 @@ local function creatureSayCallback(cid, type, msg)
 		if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 then
 			npcHandler:say('Never heard about a place like this.', cid)
 			return true
+		else
+			npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
+			npcHandler.topic[cid] = 1
 		end
-
-		npcHandler:say('Do you seek a ride to Farmine for 60 gold?', cid)
-		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
 		npcHandler.topic[cid] = 0
 		local player = Player(cid)
