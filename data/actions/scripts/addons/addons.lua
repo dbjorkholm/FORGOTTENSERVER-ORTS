@@ -1,10 +1,12 @@
 local config = {
-	[18517] = {female = 514, male = 516, msg = 'soil guardian'}, -- soil guardian (base outfit)
-	[18518] = {female = 514, male = 516, addon = 1, msg = 'first soil guardian'},
-	[18519] = {female = 514, male = 516, addon = 2, msg = 'second soil guardian'},
-	[18520] = {female = 513, male = 512, msg = 'crystal warlord'}, -- crystal warlord (base outfit)
-	[18521] = {female = 513, male = 512, addon = 1, msg = 'first crystal warlord'},
-	[18522] = {female = 513, male = 512, addon = 2, msg = 'second crystal warlord'}
+	-- soil guardian
+	[18517] = {female = 514, male = 516, effect = CONST_ME_GREEN_RINGS},
+	[18518] = {female = 514, male = 516, addon = 1, effect = CONST_ME_GREEN_RINGS, achievement = 'Funghitastic'},
+	[18519] = {female = 514, male = 516, addon = 2, effect = CONST_ME_GREEN_RINGS, achievement = 'Funghitastic'},
+	-- crystal warlord
+	[18520] = {female = 513, male = 512, effect = CONST_ME_GIANTICE},
+	[18521] = {female = 513, male = 512, addon = 1, effect = CONST_ME_GIANTICE, achievement = 'Crystal Clear'},
+	[18522] = {female = 513, male = 512, addon = 2, effect = CONST_ME_GIANTICE, achievement = 'Crystal Clear'}
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
@@ -14,30 +16,33 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local player = Player(cid)
+	local looktype = player:getSex() == PLAYERSEX_FEMALE and useItem.female or useItem.male
+
 	if useItem.addon then
-		if player:hasOutfit(player:getSex() == 0 and useItem.female or useItem.male) then
-			if not player:hasOutfit(player:getSex() == 0 and useItem.female or useItem.male, useItem.addon) then
-				player:addOutfitAddon(useItem.female, useItem.addon)
-				player:addOutfitAddon(useItem.male, useItem.addon)
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. useItem.msg .. ' addon!')
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-				Item(item.uid):remove(1)
-			else
-				player:sendCancelMessage('You have already obtained this addon!')
-			end
-		else
-			return false
+		if not player:isPremium()
+				or not player:hasOutfit(looktype)
+				or player:hasOutfit(looktype, useItem.addon) then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You own no premium account, lack the base outfit or already own this outfit part.')
+			return true
 		end
+
+		player:addOutfitAddon(useItem.female, useItem.addon)
+		player:addOutfitAddon(useItem.male, useItem.addon)
+		player:getPosition():sendMagicEffect(useItem.effect)
+		if player:hasOutfit(looktype, 3) then
+			player:addAchievement(useItem.achievement)
+		end
+		Item(item.uid):remove()
 	else
-		if not player:hasOutfit(player:getSex() == 0 and useItem.female or useItem.male) then
-			player:addOutfit(useItem.female)
-			player:addOutfit(useItem.male)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. useItem.msg .. ' outfit!')
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
-		else
-			player:sendCancelMessage('You have already obtained this outfit!')
+		if not player:isPremium() or player:hasOutfit(looktype) then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You own no premium account or already own this outfit part.')
+			return true
 		end
+
+		player:addOutfit(useItem.female)
+		player:addOutfit(useItem.male)
+		player:getPosition():sendMagicEffect(useItem.effect)
+		Item(item.uid):remove()
 	end
 	return true
 end
