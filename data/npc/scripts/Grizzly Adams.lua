@@ -65,10 +65,8 @@ end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	npcHandler.topic[cid] = 0
 	if player:getStorageValue(JOIN_STOR) == -1 then
 		npcHandler:setMessage(MESSAGE_GREET, 'Welcome ' .. player:getName() .. '. Would you like to join the \'Paw and Fur - Hunting Elite\'?')
-		npcHandler.topic[cid] = 5
 	else
 		npcHandler:setMessage(MESSAGE_GREET, 'Welcome back old chap. What brings you here this time?')
 	end
@@ -109,10 +107,11 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			return npcHandler:say('You don\'t have any rank.', cid)
 		end
-	elseif msgcontains('join', msg) or msgcontains('yes', msg) and npcHandler.topic[cid] == 5 then
+	elseif (msgcontains('join', msg) or msgcontains('yes', msg))
+			and npcHandler.topic[cid] == 0
+			and player:getStorageValue(JOIN_STOR) ~= 1 then
 		player:setStorageValue(JOIN_STOR, 1)
 		npcHandler:say('Great!, now you can start tasks.', cid) --I'm not sure if this is as real tibia. I let this piece of code because it was in the original file.
-		npcHandler.topic[cid] = 0
 	elseif isInArray({'tasks', 'task', 'mission'}, msg:lower()) then
 		local can = player:getTasks()
 		if player:getStorageValue(JOIN_STOR) == -1 then
