@@ -1,6 +1,6 @@
 ---//////////////////////////////////////////----
 Last Used Storage = 50213
-Last Used Aid = 50238
+Last Used Aid = 50241
 Last Used Uid = 50134
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
@@ -236,3 +236,6 @@ Diggable Swamp Tiles AID: 50234-50236, Storage Key: 50143
 Kazordoon exit AID: 50237-50238
 Wooden coffin (Family Brooch Quest) UID: 2286
 A Father's Burden Quest, UID: 3500-3505
+Rookgard levers aid 50239
+Rookgard level2check tiles aid 50240
+Rookgard premiumcheck tiles aid 50241
