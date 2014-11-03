@@ -132,26 +132,7 @@ function Player:onTradeAccept(target, item, targetItem)
 	return true
 end
 
-local config =  {
-	[1] = 1.10, -- +10%
-	[2] = 1.20, -- +20%
-	[3] = 1.50, -- +50%
-	[4] = 1.90 -- +90%
-}
-
 function Player:onGainExperience(source, exp, rawExp)
-	local party = self:getParty()
-	if party then
-		if party:isSharedExperienceEnabled() and party:isSharedExperienceActive() then
-			local bonus = config[party:getVocationCount()]
-			if not bonus then
-				return exp
-			end
-
-			exp = exp * bonus
-		end
-	end
-
 	return exp
 end
 
