@@ -13,6 +13,12 @@
 	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 
+	<!-- Yalahar Demons -->
+	<movevent event="StepIn" fromaid="4244" toaid ="4245" script="others/yalaharDemons.lua"/>
+
+	<!-- The Spike Portals -->
+	<movevent event="StepIn" fromaid="4226" toaid ="4243" script="others/spikeTeleports.lua"/>
+
 	<!-- Magician Quarter (Warlock & Infernalist Area) -->
 	<movevent event="StepIn" actionid="7813" script="others/magicianquarter.lua"/>
 
@@ -47,7 +53,8 @@
 	<movevent event="AddItem" tileitem="1" itemid="1485" script="others/tombCoalBasin.lua"/>
 
 	<!--- KillingOfTheNameOf -->
-	<movevent event="StepIn" fromuid="3230" touid="3257" script="killing in the name of/boss.lua"/>
+	<movevent event="StepIn" fromuid="3230" touid="3259" script="killing in the name of/boss.lua"/>
+	<movevent event="StepIn" fromuid="17521" touid="17522" script="killing in the name of/boss.lua"/>
 
 	<!-- Children of the Revolution -->
 	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/temple.lua"/>

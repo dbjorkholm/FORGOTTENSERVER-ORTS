@@ -485,7 +485,7 @@
 	<item id="1397" article="a" name="mystic flame">
 		<attribute key="description" value="You feel drawn to the mesmerizing light." />
 		<attribute key="type" value="teleport" />
-		<attribute key="effect" value="teleport" />
+		<attribute key="effect" value="energy" />
 	</item>
 	<item id="1398" article="a" name="ramp">
 		<attribute key="floorchange" value="east" />
