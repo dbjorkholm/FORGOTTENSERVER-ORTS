@@ -15,8 +15,8 @@ local barrierPositions = {
 
 -- This script is unfinished after conversion, but I doubt that it was working as intended before
 -- 'last' can never be true
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end

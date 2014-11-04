@@ -19,13 +19,12 @@ local config = {
 	[7443] = bullseye
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	if item.itemid == 7440 then
 		if not player:isMage() then
 			player:say('Only sorcerers and druids may drink this fluid.', TALKTYPE_MONSTER_SAY)

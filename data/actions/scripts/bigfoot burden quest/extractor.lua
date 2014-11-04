@@ -1,9 +1,8 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 18484 then
 		return false
 	end
 
-	local player = Player(cid)
 	local extractedCount = player:getStorageValue(Storage.BigfootBurden.ExtractedCount)
 	if extractedCount == 7
 			or player:getStorageValue(Storage.BigfootBurden.MissionRaidersOfTheLostSpark) ~= 1 then

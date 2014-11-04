@@ -11,8 +11,8 @@ local config = {
 
 local allowPass = {}
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end
@@ -25,17 +25,18 @@ function onStepIn(cid, item, position, fromPosition)
 		return
 	end
 
+	local playerId = player:getId()
 	if item.actionid == 50070 then
 		if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) == 5 then
 			return true
 		end
 	elseif item.actionid == 50071 then
-		allowPass[cid] = true
+		allowPass[playerId] = true
 	elseif item.actionid == 50074 then
-		if allowPass[cid] then
+		if allowPass[playerId] then
 			local playerPos = player:getPosition()
 			player:teleportTo(Position(playerPos.x + 1, playerPos.y, playerPos.z), false)
-			allowPass[cid] = nil
+			allowPass[playerId] = nil
 			return true
 		end
 	end

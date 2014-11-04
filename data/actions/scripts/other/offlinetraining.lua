@@ -6,13 +6,12 @@ local statues = {
 	[18492] = SKILL_MAGLEVEL
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local skill = statues[item.itemid]
 	if not skill then
 		return false
 	end
 
-	local player = Player(cid)
 
 	if not player:isPremium() then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUNEEDPREMIUMACCOUNT))
@@ -23,7 +22,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	doPlayerSetOfflineTrainingSkill(cid, skill)
+	doPlayerSetOfflineTrainingSkill(player, skill)
 	player:remove()
 	return true
 end

@@ -59,8 +59,7 @@ local function revertIce(toPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = Item(itemEx.uid)
 	if (itemEx.uid <= 65535 or itemEx.actionid > 0) then
 		if (itemEx.itemid == 354 or itemEx.itemid == 355) then
@@ -110,7 +109,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	 --The Banshee Quest
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then

@@ -7,9 +7,8 @@ local function transformBack(position, itemId, transformId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = Item(itemEx.uid)
-	local player = Player(cid)
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if itemEx.itemid == 7261 then

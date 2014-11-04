@@ -4,13 +4,12 @@ local config = {
 	[4643] = {storageKey = {Storage.GravediggerOfDrefia.Mission32b, Storage.GravediggerOfDrefia.Mission33}, message = 'A shade emerges and snatches the candle from your hands.'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = config[itemEx.actionid]
 	if not targetItem then
 		return true
 	end
 
-	local player = Player(cid)
 	local cStorages = targetItem.storageKey
 	if player:getStorageValue(cStorages[1]) == 1 and player:getStorageValue(cStorages[2]) < 1 then
 		player:setStorageValue(cStorages[2], 1)

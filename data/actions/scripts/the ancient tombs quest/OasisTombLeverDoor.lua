@@ -12,9 +12,9 @@ local function revertCarrotAndLever(position, carrotPosition)
 	end
 end
 
-function onUse(cid, item, position, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1243 then
-		Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You first must find the Carrot under one of the three hats to get the access!')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You first must find the Carrot under one of the three hats to get the access!')
 		return true
 	end
 
@@ -22,7 +22,6 @@ function onUse(cid, item, position, itemEx, toPosition)
 		return true
 	end
 
-	local player = Player(cid)
 	if math.random(3) == 1 then
 		local hatPosition = Position(toPosition.x - 1, toPosition.y, toPosition.z)
 		hatPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
@@ -41,6 +40,6 @@ function onUse(cid, item, position, itemEx, toPosition)
 	end
 
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You guessed wrong! Take this! Carrot changed now the Hat!')
-	doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -200, -200, CONST_ME_POFF)
+	doAreaCombatHealth(player, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -200, -200, CONST_ME_POFF)
 	return true
 end

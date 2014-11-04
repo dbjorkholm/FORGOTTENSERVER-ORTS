@@ -5,8 +5,8 @@ local bosses = {
 	['spite of the emperor'] = {position = Position(33048, 31111, 15), storage = GlobalStorage.WrathOfTheEmperor.Bosses.Spite},
 }
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end

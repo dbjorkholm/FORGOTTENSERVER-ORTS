@@ -1,5 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player= Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local player= player
 	if item.itemid == 6898 then
 		if player:getStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage) > 7 then
 			Item(item.uid):transform(item.itemid + 1)

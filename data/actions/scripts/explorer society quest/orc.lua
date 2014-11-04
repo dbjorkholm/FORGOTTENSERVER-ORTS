@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 33 then
 		player:setStorageValue(Storage.ExplorerSociety.QuestLine, 34)
 		player:addItem(15389, 1)

@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	local power1 = Tile(Position({x = 32613, y = 32220, z = 10}))
 	local barrel = Tile(Position({x = 32614, y = 32209, z = 10}))

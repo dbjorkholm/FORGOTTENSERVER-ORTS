@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.SamsOldBackpack) == 2 then
 		player:setStorageValue(Storage.SamsOldBackpack, 3)
 		player:addItem(2503, 1)

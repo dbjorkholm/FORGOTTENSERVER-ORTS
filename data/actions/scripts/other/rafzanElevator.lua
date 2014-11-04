@@ -39,7 +39,7 @@ local winch = {
 
 local relocate = true
 
-local function moveElevator(config, cid)
+local function moveElevator(config, player)
 	for i = 1, #config.itemIds do
 		local item = Tile(config.fromPosition):getItemById(config.itemIds[i])
 		if item then
@@ -54,13 +54,12 @@ local function moveElevator(config, cid)
 		end
 	end
 
-	local player = Player(cid)
 	if player then
 		player:say(config.sound, TALKTYPE_MONSTER_YELL, false, player, config.soundPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = winch[item.itemid]
 	if not useItem then
 		return true
@@ -74,18 +73,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Tile(option.fromPosition):relocateTo(option.relocatePosition)
 		end
 
-		moveElevator(option, cid)
+		moveElevator(option, player)
 		return true
 	end
 
 	local creature = tile:getTopCreature()
-	if not creature or creature:getId() ~= cid then
-		Player(cid):sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Step inside the elevator to use it.')
+	if not creature or creature:getId() ~= player:getId() then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Step inside the elevator to use it.')
 		return true
 	end
 
 	local option = useItem[2]
-	moveElevator(option, cid)
-	Player(cid):teleportTo(option.toPosition)
+	moveElevator(option, player)
+	player:teleportTo(option.toPosition)
 	return true
 end

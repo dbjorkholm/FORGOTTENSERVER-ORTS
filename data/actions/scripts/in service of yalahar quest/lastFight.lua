@@ -47,7 +47,7 @@ local function summonMonster(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.uid == 3086 then
 		if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) ~= 1 then -- Fight
 			local amountOfPlayers = 3
@@ -75,7 +75,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			addEvent(doChangeAzerus, 4 * 20 * 1000)
 			addEvent(doClearAreaAzerus, 5 * 60 * 1000)
 		else
-			Player(cid):say('You have to wait some time before this globe charges.', TALKTYPE_MONSTER_SAY)
+			player:say('You have to wait some time before this globe charges.', TALKTYPE_MONSTER_SAY)
 		end
 	end
 	return true

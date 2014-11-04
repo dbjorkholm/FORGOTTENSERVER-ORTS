@@ -16,8 +16,8 @@ local config = {
 	[50079] = {text = 'Caves like this one are common in Tibia. To climb out again, you need something which you can find in this chest.', storageValue = 20, effPos = Position(32067, 32264, 8)}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end

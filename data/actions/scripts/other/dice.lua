@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local dice = Item(item.uid)
 	local dicePosition = dice:getPosition()
 	local value = math.random(6)

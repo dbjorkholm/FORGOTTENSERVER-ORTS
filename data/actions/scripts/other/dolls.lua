@@ -49,13 +49,12 @@ local dolls = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local sounds = dolls[item.itemid]
 	if not sounds then
 		return false
 	end
 
-	local player = Player(cid)
 	if fromPosition.x == CONTAINER_POSITION then
 		fromPosition = player:getPosition()
 	end
@@ -68,7 +67,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif random == 4 then
 			fromPosition:sendMagicEffect(CONST_ME_FIREAREA)
 		elseif random == 5 then
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
 		end
 	elseif item.itemid == 5669 then
 		local targetItem = Item(item.uid)

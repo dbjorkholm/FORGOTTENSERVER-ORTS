@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid == 4313 and player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 11 then -- blue butterfly
 		player:setStorageValue(Storage.ExplorerSociety.QuestLine, 12)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

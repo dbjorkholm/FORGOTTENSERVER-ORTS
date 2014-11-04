@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 2 and player:getItemCount(2344) > 0 then
 		player:removeItem(2344, 1)
 		player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 3)

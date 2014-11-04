@@ -4,8 +4,8 @@ local bosses = {
 	[3146] = {position = Position(33081, 31902, 12), name = 'abyssador', checkItemId = 18463},
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

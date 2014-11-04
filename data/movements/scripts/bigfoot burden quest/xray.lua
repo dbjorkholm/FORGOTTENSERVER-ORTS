@@ -23,8 +23,8 @@ local condition = Condition(CONDITION_OUTFIT)
 condition:setTicks(2000)
 condition:setOutfit({lookType = 33}) -- skeleton looktype
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -46,7 +46,7 @@ function onStepIn(cid, item, position, fromPosition)
 		end
 
 		for i = 1, #messages do
-			addEvent(sendTextMessages, (i - 1) * 2000, cid, messages[i], player:getPosition())
+			addEvent(sendTextMessages, (i - 1) * 2000, player:getId(), messages[i], player:getPosition())
 		end
 
 		player:setStorageValue(Storage.BigfootBurden.QuestLine, 7)

@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue (Storage.TheIceIslands.Questline) == 35 then
 		player:setStorageValue(Storage.TheIceIslands.Questline, 36)
 		player:setStorageValue(Storage.TheIceIslands.Mission09, 2) -- Questlog The Ice Islands Quest, Formorgar Mines 1: The Mission

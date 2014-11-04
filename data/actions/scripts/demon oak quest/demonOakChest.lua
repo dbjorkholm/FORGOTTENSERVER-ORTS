@@ -5,9 +5,8 @@ local chests = {
 	[9011] = {itemid = 16112, count = 1}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if chests[item.uid] then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.DemonOak.Done) ~= 2 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'It\'s empty.')
 			return true

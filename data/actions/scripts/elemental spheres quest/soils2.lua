@@ -12,7 +12,7 @@ local globalTable = {
 	[4] = 10008
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if not isInArray({7917, 7918, 7913, 7914}, itemEx.itemid) then
 		return false
 	end
@@ -21,7 +21,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	local player = Player(cid)
 
 	if not isInArray(spheres[item.itemid], player:getVocation():getId()) then
 		return false

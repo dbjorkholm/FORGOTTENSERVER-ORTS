@@ -2,19 +2,20 @@ local condition = Condition(CONDITION_OUTFIT)
 condition:setTicks(120000)
 condition:setOutfit({lookType = 111})
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
+	local playerId = player:getId()
 	if item.actionid == 25300 then
 		player:addCondition(condition)
 
 		player:setStorageValue(Storage.SvargrondArena.Pit, 0)
 		player:teleportTo(SvargrondArena.kickPosition)
 		player:say('Coward!', TALKTYPE_MONSTER_SAY)
-		SvargrondArena.cancelEvents(cid)
+		SvargrondArena.cancelEvents(playerId)
 		return true
 	end
 
@@ -30,7 +31,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:say(arenaId == 1 and 'Welcome back, little hero!' or arenaId == 2 and 'Congratulations, brave warrior!' or 'Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
 		player:setStorageValue(ARENA[arenaId].questLog, 2)
 		player:addAchievement(ARENA[arenaId].achievement)
-		SvargrondArena.cancelEvents(cid)
+		SvargrondArena.cancelEvents(playerId)
 		return true
 	end
 
@@ -41,9 +42,9 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	SvargrondArena.cancelEvents(cid)
+	SvargrondArena.cancelEvents(playerId)
 	SvargrondArena.resetPit(pitId)
-	SvargrondArena.scheduleKickPlayer(cid, pitId)
+	SvargrondArena.scheduleKickPlayer(playerId, pitId)
 	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)

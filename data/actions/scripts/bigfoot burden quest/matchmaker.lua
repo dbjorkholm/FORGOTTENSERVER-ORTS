@@ -5,12 +5,11 @@ local function revertCrystal(position, itemId, transformId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 18321 then
 		return false
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.BigfootBurden.MatchmakerStatus) == 1 or player:getStorageValue(Storage.BigfootBurden.MissionMatchmaker) ~= 1 then
 		return false
 	end

@@ -1,9 +1,8 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 8176 then
 		return false
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.TibiaTales.ultimateBoozeQuest) == 1 then
 		player:setStorageValue(Storage.TibiaTales.ultimateBoozeQuest, 2)
 	end

@@ -2,8 +2,7 @@ local function revertKeeperstorage()
 	Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, 0)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 12320 and itemEx.actionid == 8026 then
 		if (Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or -1) < 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, math.max(0, Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or 0) + 1)

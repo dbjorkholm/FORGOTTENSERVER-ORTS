@@ -69,7 +69,7 @@ local config = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetLever = config[item.uid]
 	if not targetLever then
 		return true

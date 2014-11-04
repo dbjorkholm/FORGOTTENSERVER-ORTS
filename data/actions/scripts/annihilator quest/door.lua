@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.AnnihilatorDone) ~= 1 then
 		if item.itemid == 5114 then
 			player:teleportTo(toPosition, true)

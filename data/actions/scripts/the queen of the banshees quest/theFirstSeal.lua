@@ -28,9 +28,9 @@ local function removeWall(position)
 	end
 end
 
-function onUse(cid, item, position, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
-		Player(cid):sendCancelMessage('The lever has already been used.')
+		player:sendCancelMessage('The lever has already been used.')
 		return true
 	end
 

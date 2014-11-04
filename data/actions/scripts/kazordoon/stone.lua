@@ -5,7 +5,7 @@ local config = {
 	{position = Position(32605, 31905, 3), itemId = 1303}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		local stoneItem
 		for i = 1, #config do

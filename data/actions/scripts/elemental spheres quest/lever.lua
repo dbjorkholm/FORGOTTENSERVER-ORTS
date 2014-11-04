@@ -5,13 +5,12 @@ local config = {
 	{position = Position(33268, 31833, 10), itemid = 8304, toPosition = Position(33268, 31833, 12), vocationId = 1}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		Item(item.uid):transform(1945)
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getPosition() ~= Position(33270, 31835, 10) then
 		return false
 	end

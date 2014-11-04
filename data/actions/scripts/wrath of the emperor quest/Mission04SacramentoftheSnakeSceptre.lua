@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getItemCount(12324) >= 1 and player:getItemCount(12325) >= 1 and player:getItemCount(12326) >= 1 and player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 10 then
 		player:removeItem(12324, 1)
 		player:removeItem(12325, 1)

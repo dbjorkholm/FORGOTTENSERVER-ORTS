@@ -109,7 +109,7 @@ local function areMachinesCharged()
 	return true
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return true
 	end
@@ -122,7 +122,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	local player = Player(cid)
 	local index = table.find(config.positions, player:getPosition())
 	if not index then
 		return false

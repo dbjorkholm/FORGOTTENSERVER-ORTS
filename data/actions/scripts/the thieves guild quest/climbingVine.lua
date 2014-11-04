@@ -3,13 +3,13 @@ local config = {
 	[12502] = Position(32337, 31815, 7) -- outside the room
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true
 	end
 
-	Player(cid):teleportTo(targetPosition)
+	player:teleportTo(targetPosition)
 
 	return true
 end

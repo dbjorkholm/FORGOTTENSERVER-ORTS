@@ -58,12 +58,11 @@ local function getRandomSummonPosition()
 	return config.summonPositions[math.random(#config.summonPositions)]
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if not isInArray(config.demonOakIds, itemEx.itemid) then
 		return true
 	end
 
-	local player = Player(cid)
 
 	local totalProgress = 0
 	for _, cStorage in pairs(config.storages) do
@@ -125,6 +124,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	toPosition:sendMagicEffect(CONST_ME_DRAWBLOOD)
 	player:setStorageValue(cStorage, progress + 1)
 	player:say('-krrrrak-', TALKTYPE_MONSTER_YELL, false, player, toPosition)
-	doTargetCombatHealth(0, cid, COMBAT_EARTHDAMAGE, -170, -210, CONST_ME_BIGPLANTS)
+	doTargetCombatHealth(0, player, COMBAT_EARTHDAMAGE, -170, -210, CONST_ME_BIGPLANTS)
 	return true
 end

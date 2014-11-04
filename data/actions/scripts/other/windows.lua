@@ -21,7 +21,7 @@ local windows = {
 	[20182] = 19974, [20183] = 19445, [20184] = 19446, [20185] = 19975
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local window = windows[item.itemid]
 	if window == nil then
 		return false
@@ -40,7 +40,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 	if house then
-		local player = Player(cid)
 		if player:getPosition():getTile():getHouse() ~= house and player:getAccountType() < ACCOUNT_TYPE_GAMEMASTER then
 			return false
 		end

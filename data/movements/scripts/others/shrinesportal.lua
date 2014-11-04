@@ -72,8 +72,8 @@ local portals = {
 	[9116] = {position = Position(33059, 32716, 5), vocation = 1, storage = 10028} --electric
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

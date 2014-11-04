@@ -30,7 +30,7 @@ local function summonBoss(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local player1 = Tile(Position({x = 33080, y = 31014, z = 2})):getTopCreature()
 	if not(player1 and player1:isPlayer()) then
 		return true

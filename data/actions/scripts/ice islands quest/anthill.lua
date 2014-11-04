@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 local mast = {x = 32360, y = 31365, z = 7}
 	if itemEx.itemid == 3323 and item.itemid == 7243 then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 6 then

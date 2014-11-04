@@ -4,13 +4,12 @@ local config = {
 	[3313] = 2089
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(item.uid) ~= 1 then
 		local key = player:addItem(useItem)
 		if key then

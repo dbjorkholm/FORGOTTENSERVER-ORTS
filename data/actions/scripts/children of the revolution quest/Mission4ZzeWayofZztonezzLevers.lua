@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 8013 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 14 then
 			lever = toPosition.y - 31122
 			leverChange = {

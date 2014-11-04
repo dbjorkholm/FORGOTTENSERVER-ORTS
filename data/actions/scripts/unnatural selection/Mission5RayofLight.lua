@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.UnnaturalSelection.Mission05) == 1 then
 		player:setStorageValue(Storage.UnnaturalSelection.Questline, 11)
 		player:setStorageValue(Storage.UnnaturalSelection.Mission05, 2) --Questlog, Unnatural Selection Quest "Mission 5: Ray of Light"

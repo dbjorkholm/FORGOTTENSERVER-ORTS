@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if((itemEx.itemid == 7915 or itemEx.itemid == 7916) and itemEx.actionid == 100) then
-		local player = Player(cid)
 		if item.itemid == 9744 and player:getStorageValue(Storage.InServiceofYalahar.MatrixState) < 1 then
 			player:setStorageValue(Storage.InServiceofYalahar.MatrixState, 1)
 			Item(item.uid):remove(1)

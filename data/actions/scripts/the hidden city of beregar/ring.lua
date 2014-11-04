@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 3 then
 		player:addItem(14348, 1)

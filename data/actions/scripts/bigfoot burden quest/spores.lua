@@ -5,13 +5,12 @@ local config = {
 	[18331] = 18224
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local spores = config[item.itemid]
 	if not spores then
 		return true
 	end
 
-	local player = Player(cid)
 	local sporeCount = player:getStorageValue(Storage.BigfootBurden.SporeCount)
 	if sporeCount == 4 or player:getStorageValue(Storage.BigfootBurden.MissionSporeGathering) ~= 1 then
 		return false

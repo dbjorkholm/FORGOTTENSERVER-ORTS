@@ -5,13 +5,12 @@ local config = {
 	[6090] = {storage = Storage.OutfitQuest.HunterMusicSheet04, text = 'fourth'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	local cStorage = useItem.storage
 	if player:getStorageValue(cStorage) ~= 1 then
 		player:setStorageValue(cStorage, 1)

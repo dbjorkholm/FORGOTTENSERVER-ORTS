@@ -4,13 +4,13 @@ local config = {
 	[9174] = {items = {{18402}, {18413, 10}, {18396}, {18508}, {2160, 4}, {18423, 2}}, storage = Storage.QuestChests.WarzoneReward3, containerId = 18394}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true
 	end
 
-	local player, cStorage = Player(cid), useItem.storage
+	local player, cStorage = player, useItem.storage
 	if player:getStorageValue(cStorage) > os.time() then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'It is empty.')
 		return true

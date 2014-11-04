@@ -7,8 +7,8 @@ local teleports = {
 	[2255] = Position(32753, 32344, 14)
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return false
 	end

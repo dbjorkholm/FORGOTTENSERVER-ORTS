@@ -6,8 +6,7 @@ local looktypes = {
 	471, 472, 512, 513, 514, 516, 541, 542, 574, 575, 577, 578
 }
 
-function onSay(cid, words, param, channel)
-	local player = Player(cid)
+function onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end

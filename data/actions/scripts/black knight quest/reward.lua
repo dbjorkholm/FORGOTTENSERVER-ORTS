@@ -3,13 +3,12 @@ local config = {
 	[9055] = {storage = Storage.QuestChests.BlackKnightTreeCrownShield, rewardId = 2519}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetTree = config[item.uid]
 	if not targetTree then
 		return true
 	end
 
-	local player = Player(cid)
 	local cStorage = targetTree.storage
 	if player:getStorageValue(cStorage) ~= 1 then
 		player:setStorageValue(cStorage, 1)

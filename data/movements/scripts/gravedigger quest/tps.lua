@@ -1,8 +1,8 @@
 local amfora = Position(32988, 32397, 9)
 local amfora2 = Position(32987, 32401, 9)
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

@@ -5,7 +5,7 @@ local lava = {
 	Position(32913, 32210, 15)
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local lavaTile
 	for i = 1, #lava do
 		lavaTile = Tile(lava[i]):getGround()

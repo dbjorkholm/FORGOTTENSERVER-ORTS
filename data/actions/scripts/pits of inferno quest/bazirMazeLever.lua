@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local portal = Tile(Position(32816, 32345, 13)):getItemById(1387)
 	if not portal then
 		local item = Game.createItem(1387, 1, Position(32816, 32345, 13))

@@ -1,8 +1,8 @@
 local brain = Position(33022, 32338, 10)
 local brain2 = Position(33022, 32334, 10)
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

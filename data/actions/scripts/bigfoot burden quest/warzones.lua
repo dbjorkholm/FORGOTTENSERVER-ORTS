@@ -38,7 +38,7 @@ local function clearArea(fromPosition, toPosition, bossName, exitPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if Game.getStorageValue(GlobalStorage.Warzones) == 1 then
 		return false
 	end
@@ -51,7 +51,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			pos = Position(math.random(33091, 33101), math.random(31899, 31916), 10)
 			addEvent(summonMonster, (i - 1) * 20000, creatureNames[math.random(#creatureNames)], pos)
 		end
-		addEvent(chargingText, (i - 1) * 20000, cid, 'The crystals are charging.', toPosition)
+		addEvent(chargingText, (i - 1) * 20000, player:getId(), 'The crystals are charging.', toPosition)
 	end
 
 	local crystalItem = Tile(crystalPosition):getItemById(17999)

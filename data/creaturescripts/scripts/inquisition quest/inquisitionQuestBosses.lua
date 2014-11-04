@@ -8,8 +8,8 @@ local bosses = {
 	['hellgorak'] = 205
 }
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(player, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -27,7 +27,7 @@ function onKill(cid, target)
 	Game.setStorageValue(bossStorage, newValue)
 
 	if newValue == 2 then
-		Player(cid):say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the next room.', TALKTYPE_MONSTER_SAY)
+		player:say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the next room.', TALKTYPE_MONSTER_SAY)
 		addEvent(Game.setStorageValue, 3 * 60 * 1000, bossStorage, 0)
 	end
 	return true

@@ -2,8 +2,7 @@ local liquidContainers = {1775, 2005, 2006, 2007, 2008, 2009, 2011, 2012, 2013, 
 local millstones = {1381, 1382, 1383, 1384}
 local dough = {6277, 8846}
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = Item(item.uid)
 	local targetItem = Item(itemEx.uid)
 

@@ -8,8 +8,7 @@ local cToneStorages = {
 	Storage.MelodyTone7
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 12 then
 		local value = player:getStorageValue(Storage.BigfootBurden.MelodyStatus)
 		if player:getStorageValue(cToneStorages[value]) == item.uid then

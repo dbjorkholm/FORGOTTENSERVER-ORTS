@@ -1,8 +1,8 @@
 local dormitori = Position(33018, 32437, 10)
 local dormitori2 = Position(33015, 32440, 10)
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -10,7 +10,7 @@ function onStepIn(cid, item, position, fromPosition)
 			player:removeItem(2684, 1)
 		else
 			player:teleportTo(fromPosition)
-			doAreaCombatHealth(cid, COMBAT_FIREDAMAGE, fromPosition, 0, -10, -20, CONST_ME_HITBYFIRE)
+			doAreaCombatHealth(player, COMBAT_FIREDAMAGE, fromPosition, 0, -10, -20, CONST_ME_HITBYFIRE)
 		end
 	elseif item.uid == 2242 then
 		player:teleportTo(Position(32861, 32240, 9))

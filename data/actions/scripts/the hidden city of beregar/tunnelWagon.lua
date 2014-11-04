@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if Tile(Position(32619, 31514, 9)):getItemId(5709) then
 		player:teleportTo(Position(32580, 31487, 9))

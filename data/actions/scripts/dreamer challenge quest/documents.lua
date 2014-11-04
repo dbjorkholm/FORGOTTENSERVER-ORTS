@@ -15,13 +15,12 @@ local config = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	local choice = useItem[1]
 	if player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) > player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) then
 		choice = useItem[2]

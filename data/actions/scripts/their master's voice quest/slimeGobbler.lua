@@ -52,12 +52,11 @@ local function summonMonster(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if not isInArray({13585, 13586, 13587, 13588, 13589}, itemEx.itemid) then
 		return false
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout) < os.time() then
 		Item(itemEx.uid):transform(13590)
 		player:setStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout, os.time() + 15)

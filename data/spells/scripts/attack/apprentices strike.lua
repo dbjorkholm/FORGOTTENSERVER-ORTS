@@ -3,7 +3,7 @@ combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREATTACK)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_FIRE)
 
-function onGetFormulaValues(cid, level, maglevel)
+function onGetFormulaValues(player, level, maglevel)
 	min = -10
 	max = -20
 	return min, max

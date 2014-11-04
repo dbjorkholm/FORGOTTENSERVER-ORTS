@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.QuestChests.SilverBrooch) ~= 1 then
 		player:setStorageValue(Storage.QuestChests.SilverBrooch, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a bag.")

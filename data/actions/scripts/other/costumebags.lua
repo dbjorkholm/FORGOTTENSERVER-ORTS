@@ -4,15 +4,14 @@ local config = {
 	[9076] = {'quara hydromancer', 'diabolical imp', 'banshee', 'frost giant', 'lich'} -- deluxe
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local monsterNames = config[item.itemid]
 	if not monsterNames then
 		return true
 	end
 
-	doSetMonsterOutfit(cid, monsterNames[math.random(#monsterNames)], 5 * 60 * 60 * 1000)
+	doSetMonsterOutfit(player, monsterNames[math.random(#monsterNames)], 5 * 60 * 60 * 1000)
 
-	local player = Player(cid)
 	local cStorage = player:getStorageValue(Storage.Achievements.Masquerader)
 	if cStorage < 100 then
 		player:setStorageValue(Storage.Achievements.Masquerader, math.max(1, cStorage) + 1)

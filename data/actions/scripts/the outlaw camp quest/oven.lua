@@ -3,7 +3,7 @@ local config = {
 	[1946] = {position = {Position(32623, 32189, 9), Position(32623, 32188, 9)}}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true

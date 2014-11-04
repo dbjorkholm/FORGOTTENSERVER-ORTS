@@ -43,9 +43,8 @@ local function toggleDoorLock(doorItem, locked)
 	table.insert(unlockedDoors[keyId], doorPosition)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if isInArray(questDoors, item.itemid) then
-		local player = Player(cid)
 		if player:getStorageValue(item.actionid) ~= -1 then
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
@@ -55,7 +54,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 
 	elseif isInArray(levelDoors, item.itemid) then
-		local player = Player(cid)
 		if item.actionid > 0 and player:getLevel() >= item.actionid - 1000 then
 			Item(item.uid):transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
@@ -78,7 +76,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				toggleDoorLock(Item(itemEx.uid), false)
 			end
 		else
-			Player(cid):sendCancelMessage("The key does not match.")
+			player:sendCancelMessage("The key does not match.")
 		end
 		return true
 	end
@@ -101,7 +99,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 
 			if query ~= RETURNVALUE_NOERROR then
-				Player(cid):sendCancelMessage(query)
+				player:sendCancelMessage(query)
 				return true
 			end
 
@@ -117,7 +115,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if not isDoorLocked(item.actionid, toPosition) then
 			Item(item.uid):transform(doors[item.itemid])
 		else
-			Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")
 		end
 		return true
 	end

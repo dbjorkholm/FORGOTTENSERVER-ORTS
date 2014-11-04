@@ -8,8 +8,8 @@ local function removeTeleport(position)
 	end
 end
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster or targetMonster:getName():lower() ~= 'azerus' then
 		return true
 	end

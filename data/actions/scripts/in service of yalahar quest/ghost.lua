@@ -5,7 +5,7 @@ local config = {
 	[9773] = 9742
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local transformId = config[itemEx.itemid]
 	if not transformId then
 		return true
@@ -22,10 +22,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	toPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 	Item(item.uid):remove()
-	Player(cid):say('The ghost charm is charging.', TALKTYPE_MONSTER_SAY)
+	player:say('The ghost charm is charging.', TALKTYPE_MONSTER_SAY)
 
 	if itemEx.itemid == 9773 then
-		local player = Player(cid)
 		player:setStorageValue(Storage.InServiceofYalahar.Questline, 37)
 		player:setStorageValue(Storage.InServiceofYalahar.Mission06, 3) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
 		player:removeItem(9737, 1)

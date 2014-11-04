@@ -1,9 +1,8 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if math.random(6) == 1 then
 		fromPosition:sendMagicEffect(CONST_ME_POFF)
 		Item(item.uid):transform(2115)
 
-		local player = Player(cid)
 		player:addItem(ITEM_GOLD_COIN, 1)
 
 		local cStorage = player:getStorageValue(Storage.Achievements.AllowanceCollector)
@@ -15,7 +14,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	else
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_YELLOW)
-		Player(cid):addItem(ITEM_PLATINUM_COIN, 1)
+		player:addItem(ITEM_PLATINUM_COIN, 1)
 	end
 	return true
 end

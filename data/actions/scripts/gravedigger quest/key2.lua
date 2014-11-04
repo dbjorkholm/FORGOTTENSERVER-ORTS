@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 4661 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.GravediggerOfDrefia.Mission52) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission53) < 1 then
 			player:setStorageValue(Storage.GravediggerOfDrefia.Mission53, 1)
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "An invisible hand pulls you inside.")

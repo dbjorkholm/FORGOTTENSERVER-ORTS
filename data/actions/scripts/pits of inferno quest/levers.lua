@@ -26,7 +26,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return false
 	end
@@ -42,10 +42,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 
 		Game.setStorageValue(GlobalStorage.PitsOfInfernoLevers, number)
-		Player(cid):say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
+		player:say('You flipped the ' .. text[number] .. ' lever. Hurry up and find the next one!', TALKTYPE_MONSTER_SAY)
 	elseif item.uid == 2065 then
 		if leverCount ~= 15 then
-			Player(cid):say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
+			player:say('The final lever won\'t budge... yet.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
 

@@ -20,7 +20,7 @@ local tutorialIds = {
 	[50086] = 11
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local storage = specialQuests[item.actionid]
 	if not storage then
 		storage = item.uid
@@ -29,7 +29,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(storage) > 0 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 		return true

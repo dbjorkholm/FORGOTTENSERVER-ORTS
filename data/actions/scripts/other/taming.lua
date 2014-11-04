@@ -30,7 +30,7 @@ local config = {
 	[22608]	=	{NAME = 'Shock Head', 				ID = 42,	TYPE = TYPE_MONSTER,	CHANCE = 30,	FAIL_MSG = { {1, 'The shock head ran away.'}, {3, 'The shock head is growling at you.'} }, SUCCESS_MSG = 'You tamed the shock head.'}
 }
 
-local function doFailAction(cid, mount, pos, item, itemEx)
+local function doFailAction(player, mount, pos, item, itemEx)
 	local action, effect = mount.FAIL_MSG[math.random(#mount.FAIL_MSG)], CONST_ME_POFF
 	if(action[1] == ACTION_RUN) then
 		Creature(itemEx.uid):remove()
@@ -43,12 +43,11 @@ local function doFailAction(cid, mount, pos, item, itemEx)
 	end
 
 	pos:sendMagicEffect(effect)
-	Player(cid):say(action[2], TALKTYPE_MONSTER_SAY)
+	player:say(action[2], TALKTYPE_MONSTER_SAY)
 	return action
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetMonster = Monster(itemEx.uid)
 	local targetNpc = Npc(itemEx.uid)
 	local targetItem = Item(itemEx.uid)
@@ -67,7 +66,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 		if mount.NAME == targetMonster:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(cid, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, itemEx)
 				return true
 			end
 
@@ -84,7 +83,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif targetNpc ~= nil and mount.TYPE == TYPE_NPC then
 		if mount.NAME == targetNpc:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(cid, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, itemEx)
 				return true
 			end
 
@@ -100,7 +99,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif targetItem ~= nil and mount.TYPE == TYPE_ITEM then
 		if mount.NAME == targetItem:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(cid, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, itemEx)
 				return true
 			end
 
@@ -116,7 +115,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif itemEx.actionid > 0 and mount.TYPE == TYPE_ACTION then
 		if(mount.NAME == itemEx.actionid) then
 			if rand > mount.CHANCE then
-				doFailAction(cid, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, itemEx)
 				return true
 			end
 
@@ -132,7 +131,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif itemEx.uid <= 65535 and mount.TYPE == TYPE_UNIQUE then
 		if mount.NAME == itemEx.uid then
 			if rand > mount.CHANCE then
-				doFailAction(cid, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, itemEx)
 				return true
 			end
 

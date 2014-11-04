@@ -32,7 +32,7 @@ local exhaust = Condition(CONDITION_EXHAUST_HEAL)
 exhaust:setParameter(CONDITION_PARAM_TICKS, (configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL) - 100))
 -- 1000 - 100 due to exact condition timing. -100 doesn't hurt us, and players don't have reminding ~50ms exhaustion.
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local potion = config[item.itemid]
 	if not potion then
 		return true
@@ -42,13 +42,12 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getCondition(CONDITION_EXHAUST_HEAL) then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUAREEXHAUSTED))
 		return true
 	end
 
-	if potion.antidote and not antidote:execute(itemEx.uid, Variant(itemEx.uid)) then
+	if potion.antidote and not antidote:execute(Player(itemEx.uid), Variant(itemEx.uid)) then
 		return false
 	end
 

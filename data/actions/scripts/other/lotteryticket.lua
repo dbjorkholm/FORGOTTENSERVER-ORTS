@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if math.random(50) == 1 then
 		player:getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
 		player:say("You get the Prize!", TALKTYPE_MONSTER_SAY)

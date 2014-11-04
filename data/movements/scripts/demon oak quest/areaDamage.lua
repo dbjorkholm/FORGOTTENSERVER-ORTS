@@ -1,6 +1,11 @@
-function onStepIn(cid, item, position, fromPosition)
-	if Player(cid) and math.random(24) == 1 then
-		doTargetCombatHealth(0, cid, COMBAT_EARTHDAMAGE, -270, -310, CONST_ME_BIGPLANTS)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	if not player then
+		return true
+	end
+
+	if math.random(24) == 1 then
+		doTargetCombatHealth(0, player, COMBAT_EARTHDAMAGE, -270, -310, CONST_ME_BIGPLANTS)
 	end
 	return true
 end

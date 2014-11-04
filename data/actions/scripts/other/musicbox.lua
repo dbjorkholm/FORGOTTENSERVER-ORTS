@@ -10,7 +10,7 @@ local config = {
 	['panda'] = {mountId = 19, tameMessage = 'You have tamed the panda.', sound = 'Rrrrr...'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetMonster = Monster(itemEx.uid)
 	if not targetMonster or targetMonster:getMaster() then
 		return false
@@ -22,7 +22,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	local player = Player(cid)
 	if player:hasMount(monsterConfig.mountId) then
 		player:say('You already tamed a ' .. (monsterConfig.mountName or targetName) .. '.', TALKTYPE_MONSTER_SAY)
 		return true

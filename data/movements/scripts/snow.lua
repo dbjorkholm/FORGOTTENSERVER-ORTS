@@ -1,5 +1,5 @@
-function onStepOut(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepOut(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if player and player:isInGhostMode() then
 		return true
 	end

@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	local wall = Tile(Position({x=32604, y=32216, z=9}))
 	local power2pos = Position({x = 32613, y = 32220, z = 10})

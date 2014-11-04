@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.actionid == 7814 then
 		if player:getStorageValue (Storage.TheIceIslands.Questline) >= 40 then
 			if item.itemid == 7036 then

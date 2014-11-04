@@ -32,7 +32,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local walls = config[item.uid]
 	if not walls then
 		return true

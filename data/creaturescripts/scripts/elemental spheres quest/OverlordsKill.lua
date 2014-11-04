@@ -6,8 +6,8 @@ local overlords = {
 	['lord of the elements'] = {}
 }
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -21,7 +21,7 @@ function onKill(cid, target)
 		Game.setStorageValue(bossConfig.globalStorage, 0)
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	if bossConfig.storage and player:getStorageValue(bossConfig.storage) < 1 then
 		player:setStorageValue(bossConfig.storage, 1)
 	end

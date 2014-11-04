@@ -13,8 +13,8 @@ local bossForms = {
 	}
 }
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(player, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -30,6 +30,6 @@ function onKill(cid, target)
 	end
 
 	Game.createMonster(bossConfig.newForm, targetMonster:getPosition())
-	Player(cid):say(bossConfig.text, TALKTYPE_MONSTER_SAY)
+	player:say(bossConfig.text, TALKTYPE_MONSTER_SAY)
 	return true
 end

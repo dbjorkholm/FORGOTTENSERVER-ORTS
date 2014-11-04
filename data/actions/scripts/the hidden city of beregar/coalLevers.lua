@@ -5,7 +5,7 @@ local config = {
 	[50111] = {actionId = 50125, wagonPos = Position(32690, 31495, 11)}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true

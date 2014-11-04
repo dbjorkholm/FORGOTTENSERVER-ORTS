@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid ~= 2023 then
 		return false
 	end
@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	toPosition.z = toPosition.z + 1
-	Player(cid):teleportTo(toPosition)
+	player:teleportTo(toPosition)
 	toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

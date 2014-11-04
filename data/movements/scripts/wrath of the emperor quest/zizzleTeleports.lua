@@ -3,14 +3,13 @@ local teleports = {
 	[3187] = Position(33093, 31122, 12)
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local creature = Creature(cid)
-	if not creature:isPlayer() then
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	if not player then
 		creature:teleportTo(fromPosition)
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.WrathoftheEmperor.TeleportAccess) >= 29 then
 		if player:removeItem(12629, 1) then
 			player:teleportTo(teleports[item.uid])

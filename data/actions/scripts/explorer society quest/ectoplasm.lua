@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid == 2913 and player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 45 then
 		player:setStorageValue(Storage.ExplorerSociety.QuestLine, 46)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

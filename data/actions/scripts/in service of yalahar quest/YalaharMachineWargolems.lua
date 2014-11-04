@@ -23,7 +23,7 @@ local function disableMachine(storage)
 	Game.setStorageValue(storage, -1)
 end
 
-function onUse(cid, item, position, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local machineGroup = config[item.actionid]
 	if not machineGroup then
 		return true
@@ -33,7 +33,6 @@ function onUse(cid, item, position, itemEx, toPosition)
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getItemCount(9690) < 4 then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough gear wheels to activate the machine.')
 		return true
@@ -43,7 +42,7 @@ function onUse(cid, item, position, itemEx, toPosition)
 	addEvent(disableMachine, 60 * 60 * 1000, machineGroup.storage)
 	player:removeItem(9690, 4)
 	for i = 1, #machineGroup.machines do
-		player:say('*CLICK*', TALKTYPE_MONSTER_YELL, false, cid, machineGroup.machines[i])
+		player:say('*CLICK*', TALKTYPE_MONSTER_YELL, false, player, machineGroup.machines[i])
 	end
 
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You insert all 4 gear wheels, them adjusting the teleporter to transport you to the deeper floor')

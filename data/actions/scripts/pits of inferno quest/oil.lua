@@ -11,13 +11,13 @@ local function revertLever(position)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return false
 	end
 
 	if not Tile(Position(32800, 32339, 11)):getItemById(2016, 11) then
-		Player(cid):say('The lever is creaking and rusty.', TALKTYPE_MONSTER_SAY)
+		player:say('The lever is creaking and rusty.', TALKTYPE_MONSTER_SAY)
 		return true
 	end
 

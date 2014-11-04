@@ -12,8 +12,7 @@ local levers = {
 	{uniqueId = 50123, railPos = Position(32688, 31469, 13)}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	for i = 1, #config do
 		local table = config[i]

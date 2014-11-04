@@ -61,8 +61,8 @@ local bosses = {
 	[3259] = {bossName = 'tiquandas revenge', storage = Storage.KillingInTheNameOf.TiquandasRevengeTeleport, playerPosition = Position(32888, 32580, 4), bossPosition = Position(32888, 32586, 4), fromPosition = Position(32877, 32573, 4), toPosition = Position(32892, 32587, 4), flamePosition = Position(33076, 31029, 11)},
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -78,7 +78,7 @@ function onStepIn(cid, item, position, fromPosition)
 	boss.playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
 
 	local monster = Game.createMonster(boss.bossName, boss.bossPosition)
-	addEvent(clearBossRoom, 60 * 10 * 1000, cid, monster:getId(), boss.fromPosition, boss.toPosition, fromPosition)
+	addEvent(clearBossRoom, 60 * 10 * 1000, player:getId(), monster:getId(), boss.fromPosition, boss.toPosition, fromPosition)
 	player:say('You have ten minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
 	return true
 end

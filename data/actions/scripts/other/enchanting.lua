@@ -41,8 +41,7 @@ local enchantedItems = {
 	[8905] = {8906, 8907, 8909, 8908}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and player:getStorageValue(Storage.ElementalSphere.QuestLine) > 0 then
 		if not isInArray(spheres[item.itemid], player:getVocation():getId()) then
 			return false

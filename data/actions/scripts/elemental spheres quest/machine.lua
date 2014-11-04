@@ -5,9 +5,8 @@ local config = {
 	[4] = Position(33087, 32096, 13)
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if isInArray({7911, 7912}, item.itemid) then
-		local player = Player(cid)
 		local gemCount = player:getStorageValue(Storage.ElementalSphere.MachineGemCount)
 		if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and gemCount >= 20 then
 			player:setStorageValue(Storage.ElementalSphere.MachineGemCount, gemCount - 20)

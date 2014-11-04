@@ -15,7 +15,7 @@ local function revertCoffin()
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local statuesInOrder, statueItem = true
 	for i = 1, #config do
 		local statue = config[i]
@@ -27,7 +27,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if not statuesInOrder or Tile(coffinPosition):getItemById(7525) then
-		Player(cid):say('Nothing happens', TALKTYPE_MONSTER_SAY, false, cid, toPosition)
+		player:say('Nothing happens', TALKTYPE_MONSTER_SAY, false, player, toPosition)
 		return true
 	end
 
@@ -35,7 +35,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if coffinItem then
 		coffinItem:transform(7525)
 		addEvent(revertCoffin, 2 * 60 * 1000)
-		Player(cid):say('CLICK', TALKTYPE_MONSTER_SAY, false, cid, coffinPosition)
+		player:say('CLICK', TALKTYPE_MONSTER_SAY, false, player, coffinPosition)
 	end
 	return true
 end

@@ -17,8 +17,8 @@ local walls = {
 	Position(32760, 32289, 14)
 }
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

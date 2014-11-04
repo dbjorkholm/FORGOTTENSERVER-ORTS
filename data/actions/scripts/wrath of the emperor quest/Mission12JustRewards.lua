@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.WrathoftheEmperor.Mission12) == 0 then
 		player:addOutfit(366, 0)
 		player:addOutfit(367, 0)

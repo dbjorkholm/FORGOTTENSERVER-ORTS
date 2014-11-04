@@ -13,7 +13,7 @@ local config = {
 	tileID = 3154
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile, thing, thing2 , creature, lever, leverstatus
 	leverstatus = item.itemid
 	for i = 1, #config.leverPositions do

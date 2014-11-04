@@ -4,8 +4,8 @@ local bosses = {
 	['abyssador'] = {status = 4, storage = Storage.BigfootBurden.Warzone3Reward},
 }
 
-function onKill(cid, target, lastHit)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end

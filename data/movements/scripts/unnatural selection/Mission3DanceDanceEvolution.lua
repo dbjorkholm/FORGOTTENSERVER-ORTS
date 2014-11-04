@@ -22,8 +22,8 @@ local config = {
 		- CONST_ME_CARNIPHILA effects when dancing (pattern unknown)
 ]]
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

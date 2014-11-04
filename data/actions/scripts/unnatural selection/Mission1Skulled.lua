@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.UnnaturalSelection.Mission01) == 1 then
 		player:setStorageValue(Storage.UnnaturalSelection.Mission01, 2) -- Questlog, Unnatural Selection Quest "Mission 1: Skulled"
 		player:addItem(11076, 1)

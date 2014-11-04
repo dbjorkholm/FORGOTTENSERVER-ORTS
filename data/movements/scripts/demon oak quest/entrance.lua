@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -11,7 +11,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	if player:getLevel() < 120 then
-		player:say("LEAVE LITTLE FISH, YOU ARE NOT WORTH IT!", TALKTYPE_MONSTER_YELL, false, cid, DEMON_OAK_POSITION)
+		player:say("LEAVE LITTLE FISH, YOU ARE NOT WORTH IT!", TALKTYPE_MONSTER_YELL, false, player, DEMON_OAK_POSITION)
 		player:teleportTo(DEMON_OAK_KICK_POSITION)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true
@@ -21,7 +21,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:teleportTo(DEMON_OAK_ENTER_POSITION)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:setStorageValue(Storage.DemonOak.Progress, 1)
-		player:say("I AWAITED YOU! COME HERE AND GET YOUR REWARD!", TALKTYPE_MONSTER_YELL, false, cid, DEMON_OAK_POSITION)
+		player:say("I AWAITED YOU! COME HERE AND GET YOUR REWARD!", TALKTYPE_MONSTER_YELL, false, player, DEMON_OAK_POSITION)
 	else
 		player:teleportTo(DEMON_OAK_KICK_POSITION)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

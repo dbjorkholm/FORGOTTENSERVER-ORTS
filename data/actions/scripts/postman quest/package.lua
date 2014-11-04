@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if item.uid == 3116  then
 		if player:getStorageValue(Storage.postman.Mission09) == 1 then

@@ -4,8 +4,8 @@ local quaraLeaders = {
 	['splasher'] = Storage.InServiceofYalahar.QuaraSplasher
 }
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -15,7 +15,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	if player:getStorageValue(bossStorage) < 1 then
 		player:setStorageValue(bossStorage, 1)
 		player:say('You slayed ' .. targetMonster:getName() .. '.', TALKTYPE_MONSTER_SAY)

@@ -78,13 +78,12 @@ local config = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useId = config[item.itemid]
 	if not useId then
 		return false
 	end
 
-	local player = Player(cid)
 	local chance = math.random(10001)
 	for i = 1, #useId.chances do
 		local randomItem = useId.chances[i]

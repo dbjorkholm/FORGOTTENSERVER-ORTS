@@ -1,6 +1,6 @@
 local exitPosition = Position(32605, 31902, 4)
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local ground = Tile(exitPosition):getGround()
 	if ground and isInArray({369, 413}, ground:getId()) then
 		ground:transform(ground:getId() == 369 and 413 or 369)

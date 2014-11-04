@@ -5,7 +5,7 @@ local config = {
 	[8303] = {targetId = 8567, createId = 1495}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local soil = config[item.itemid]
 	if not soil then
 		return true

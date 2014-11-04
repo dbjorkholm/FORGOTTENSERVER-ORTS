@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile = Tile(Position({ x = 32780 , y = 32231 , z = 8}))
 	if item.itemid == 1945 then
 		if tile:getItemById(387) then

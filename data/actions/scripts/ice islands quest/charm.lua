@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 local obelisk1 = {x = 32138, y = 31113, z = 14}
 local obelisk2 = {x = 32119, y = 30992, z = 14}
 local obelisk3 = {x = 32180, y = 31069, z = 14}

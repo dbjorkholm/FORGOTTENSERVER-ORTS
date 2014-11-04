@@ -9,7 +9,7 @@ local config = {
 	waterID = 493
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile, thing, creature
 	for i = 1, #config.bridgePositions do
 		tile = Tile(config.bridgePositions[i])

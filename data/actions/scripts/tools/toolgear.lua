@@ -79,8 +79,7 @@ local function revertIce(toPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	local targetItem = Item(itemEx.uid)
@@ -166,7 +165,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif item.itemid == 10515 then
 		if itemEx.uid == 3071 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then
-				doSetMonsterOutfit(cid, 'skeleton', 3 * 1000)
+				doSetMonsterOutfit(player, 'skeleton', 3 * 1000)
 				fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe01, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
@@ -197,7 +196,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		elseif itemEx.uid == 3074 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1 then
-				doSetMonsterOutfit(cid, 'bog raider', 5 * 1000)
+				doSetMonsterOutfit(player, 'bog raider', 5 * 1000)
 				player:say('You have used the crowbar on a knot.', TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
@@ -245,7 +244,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
 		targetItem:transform(392)

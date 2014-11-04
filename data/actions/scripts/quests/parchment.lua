@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.QuestChests.ParchmentRoomQuest) ~= 1 then
 		local bag = player:addItem(1987, 1)
 		if not bag then

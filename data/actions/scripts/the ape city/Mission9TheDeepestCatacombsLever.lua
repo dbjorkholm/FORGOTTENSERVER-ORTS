@@ -35,9 +35,9 @@ local function revertWalls(leverPosition)
 end
 
 
-function onUse(cid, item, position, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 1945 then
-		Player(cid):sendTextMessage(MESSAGE_INFO_DESCR, 'It doesn\'t move.')
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'It doesn\'t move.')
 		return true
 	end
 
@@ -73,7 +73,7 @@ function onUse(cid, item, position, itemEx, toPosition)
 	for i = 1, #config.walls do
 		local wallItem = Tile(config.walls[i].position):getItemById(config.walls[i].itemId)
 		if not wallItem then
-			Player(cid):say('The lever won\'t budge', TALKTYPE_MONSTER_SAY, false, nil, position)
+			player:say('The lever won\'t budge', TALKTYPE_MONSTER_SAY, false, nil, position)
 			return true
 		end
 

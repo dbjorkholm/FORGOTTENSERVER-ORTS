@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -25,7 +25,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	SvargrondArena.resetPit(pitId)
-	SvargrondArena.scheduleKickPlayer(cid, pitId)
+	SvargrondArena.scheduleKickPlayer(player:getId(), pitId)
 	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)

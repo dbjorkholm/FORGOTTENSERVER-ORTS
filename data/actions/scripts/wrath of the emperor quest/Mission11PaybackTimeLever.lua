@@ -14,10 +14,10 @@ local config = {
 }
 
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if Game.getStorageValue(Storage.WrathoftheEmperor.Mission11) == 1 then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, 'The arena is already in use.')
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, 'The arena is already in use.')
 		return true
 	end
 

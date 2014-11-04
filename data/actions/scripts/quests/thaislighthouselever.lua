@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	--first lever to open the ladder
 	if item.actionid == 50023 then
 		local laddertile = Tile(Position({x = 32225, y = 32276, z = 8}))

@@ -17,7 +17,7 @@ local function internalBedTransform(item, itemEx, toPosition, ids)
 	Item(item.uid):remove()
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local newBed = BEDS[item.itemid]
 	if not newBed then
 		return false
@@ -28,7 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if itemEx.itemid == newBed[1][1] or itemEx.itemid == newBed[2][1] then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, "You already have this bed modification.")
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, "You already have this bed modification.")
 		return true
 	end
 

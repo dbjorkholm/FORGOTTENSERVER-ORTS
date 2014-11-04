@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.TravellingTrader.secondMission) == 3 then
 		player:setStorageValue(Storage.TravellingTrader.secondMission, 4)
 		player:addItem(7503, 1)

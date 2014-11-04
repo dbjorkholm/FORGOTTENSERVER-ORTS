@@ -5,8 +5,8 @@ local travel = {
 	[7844] = {storage = 254, message = 'You visited Cormaya. Now head to the Kevin\'s Post Office.'},
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

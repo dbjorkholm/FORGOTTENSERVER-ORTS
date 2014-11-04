@@ -2,8 +2,7 @@ local function sendSleepEffect(position)
 	position:sendMagicEffect(CONST_ME_SLEEP)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.uid == 3110 and item.itemid == 7140 then
 		player:say('You fill your horn with ale.', TALKTYPE_MONSTER_SAY)
 		Item(item.uid):transform(7141)
@@ -29,7 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif item.itemid == 7174 then
 		player:say('Grr.', TALKTYPE_MONSTER_SAY)
 		player:say('The bear is not amused by the disturbance.', TALKTYPE_MONSTER_SAY)
-		doAreaCombatHealth(cid, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -10, -30, CONST_ME_POFF)
+		doAreaCombatHealth(player, COMBAT_PHYSICALDAMAGE, player:getPosition(), 0, -10, -30, CONST_ME_POFF)
 	elseif item.itemid == 7176 then
 		if player:getStorageValue(Storage.BarbarianTest.Questline) == 6 then
 			if player:getCondition(CONDITION_DRUNK) then

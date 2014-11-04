@@ -9,13 +9,12 @@ local config = {
 	[18522] = {female = 513, male = 512, addon = 2, effect = CONST_ME_GIANTICE, achievement = 'Crystal Clear'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	local looktype = player:getSex() == PLAYERSEX_FEMALE and useItem.female or useItem.male
 
 	if useItem.addon then

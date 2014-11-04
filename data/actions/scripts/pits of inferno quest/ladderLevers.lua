@@ -1,6 +1,6 @@
 local pos = { Position(32861, 32305, 11), Position(32860, 32313, 11) }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return false
 	end

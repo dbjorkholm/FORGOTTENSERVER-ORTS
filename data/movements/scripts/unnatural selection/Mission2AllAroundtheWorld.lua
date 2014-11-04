@@ -12,8 +12,8 @@ local config = {
 	[11] = {text = 'What a beautiful view. Worthy of a Queen indeed! Time to head back to Lazaran and show him what you got.', position = Position(32316, 31752, 0)}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

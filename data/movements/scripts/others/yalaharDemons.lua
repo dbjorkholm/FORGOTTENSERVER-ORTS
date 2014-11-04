@@ -5,8 +5,8 @@ local config = {
 	[4245] = { sacrificePosition = Position(32894, 31044, 9), pushPosition = Position(32895, 31046, 9), destination = Position(32888, 31044, 9) }
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

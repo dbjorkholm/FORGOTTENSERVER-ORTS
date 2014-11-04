@@ -3,7 +3,7 @@ local config = {
 	{wagon = 8749, stopPos = Position(32699, 31492, 11)}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	for i = 1, #config do
 		local table = config[i]
 		local wagonPos = table.wagon:getPosition()
@@ -12,7 +12,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		elseif table.wagon == 8749 and wagonPos ~= table.stopPos then
 			Tile(wagonPos):getTopTopItem():moveTo(wagonPos, x - 2)
 		end
-	Player(cid):say("SQUEEEEAK", TALKTYPE_MONSTER_SAY, false, 0, wagonPos)
+	player:say("SQUEEEEAK", TALKTYPE_MONSTER_SAY, false, 0, wagonPos)
 	end
 	return true
 end

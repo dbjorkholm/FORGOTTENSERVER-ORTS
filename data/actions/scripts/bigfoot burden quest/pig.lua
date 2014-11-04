@@ -1,9 +1,8 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 18341 then
 		return false
 	end
 
-	local player = Player(cid)
 	local mushroomCount = player:getStorageValue(Storage.BigfootBurden.MushroomCount)
 	if mushroomCount == 3 or player:getStorageValue(Storage.BigfootBurden.MissionMushroomDigger) ~= 1 then
 		return false

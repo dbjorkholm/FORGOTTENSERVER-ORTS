@@ -8,13 +8,12 @@ local config = {
 	[12107] = {storageKey = Storage.TheAncientTombs.Rahemos, itemId = 2340, removeId = 2348}-- Oasis 	Rahemos 	 Ancient Rune 	 Helmet Piece
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = config[itemEx.uid]
 	if not targetItem then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:removeItem(targetItem.removeId, 1) then
 		player:setStorageValue(targetItem.storageKey, 1)
 		player:setStorageValue(Storage.TheAncientTombs.DefaultStart, 1) -- default start of The Ancient Tombs Quest

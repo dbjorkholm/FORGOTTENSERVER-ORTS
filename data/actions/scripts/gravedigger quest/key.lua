@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 4639 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.GravediggerOfDrefia.Mission31) == 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<swoosh> <oomph> <cough, cough>')
 			Item(item.uid):remove(1)

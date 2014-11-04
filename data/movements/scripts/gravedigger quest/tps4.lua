@@ -1,8 +1,8 @@
 local sacrifice = Position(33021, 32419, 11)
 local sacrifice2 = Position(33015, 32422, 11)
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

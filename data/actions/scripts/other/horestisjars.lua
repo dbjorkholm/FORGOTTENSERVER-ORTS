@@ -21,13 +21,12 @@ local config = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid ~= 13500 then
-		Player(cid):say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
+		player:say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
 		return true
 	end
 
-	local player = Player(cid)
 	local cStorage = config.storages[item.actionid]
 	if player:getStorageValue(cStorage) > os.time() then
 		player:say('You are too afraid to destroy this object', TALKTYPE_MONSTER_SAY)

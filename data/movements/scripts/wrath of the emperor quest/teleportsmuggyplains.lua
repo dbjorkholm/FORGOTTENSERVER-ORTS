@@ -3,8 +3,8 @@ local config = {
 	[12381] = {storageKey = Storage.WrathoftheEmperor.Questline, toPosition = {Position(33211, 31065, 9), Position(33138, 31248, 6)}}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

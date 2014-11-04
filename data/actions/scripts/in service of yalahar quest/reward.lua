@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if(item.uid == 3088) then
 		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) == 53) then
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 54)

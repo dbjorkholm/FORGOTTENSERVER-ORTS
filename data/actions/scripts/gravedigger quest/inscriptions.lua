@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission45) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission46) < 1 then
 		player:setStorageValue(Storage.GravediggerOfDrefia.Mission46, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The words seem to breathe, stangely. One word stays in your mind: bronze')

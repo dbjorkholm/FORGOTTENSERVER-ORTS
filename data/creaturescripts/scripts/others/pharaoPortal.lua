@@ -9,8 +9,7 @@ local pharaohs = {
 	['ashmunrah'] = Storage.TheAncientTombs.Ashmunrah
 }
 
-function onKill(cid, target)
-	local target = Creature(target)
+function onKill(player, target)
 	local pharaohStorage = pharaohs[target:getName():lower()]
 	if not pharaohStorage then
 		return true
@@ -18,6 +17,6 @@ function onKill(cid, target)
 
 	Game.setStorageValue(pharaohStorage, 1)
 	addEvent(Game.setStorageValue, 3 * 60 * 1000, pharaohStorage, 0)
-	Player(cid):say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the reward room.', TALKTYPE_MONSTER_SAY)
+	player:say('You now have 3 minutes to exit this room through the teleporter. It will bring you to the reward room.', TALKTYPE_MONSTER_SAY)
 	return true
 end

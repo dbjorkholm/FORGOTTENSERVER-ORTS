@@ -3,13 +3,12 @@ local config = {
 	[3064] = {itemId = 8264, storage = Storage.QuestChests.KosheiAmulet2}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	local cStorage = useItem.storage
 	if player:getStorageValue(cStorage) ~= 1 then
 		player:setStorageValue(cStorage, 1)

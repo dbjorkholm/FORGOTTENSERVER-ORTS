@@ -19,8 +19,7 @@ local function nexusMessage(player, message)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	-- Eclipse
 	if itemEx.actionid == 2000 then
 		Item(item.uid):remove(1)

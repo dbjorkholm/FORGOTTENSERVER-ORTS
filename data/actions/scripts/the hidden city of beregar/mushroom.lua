@@ -1,5 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player, cStorage = Player(cid), Storage.hiddenCityOfBeregar.BrownMushrooms
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local player, cStorage = player, Storage.hiddenCityOfBeregar.BrownMushrooms
 	if player:getStorageValue(cStorage) ~= 1 then
 		player:addItem(2789, 10)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found 10 brown mushrooms.")

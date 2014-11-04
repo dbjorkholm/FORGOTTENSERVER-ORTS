@@ -5,13 +5,12 @@ local config = {
 	[4649] = {Storage.GravediggerOfDrefia.Mission38c, Storage.GravediggerOfDrefia.Mission39}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local cStorages = config[itemEx.actionid]
 	if not cStorages then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(cStorages[1]) == 1 and player:getStorageValue(cStorages[2]) < 1 then
 		player:setStorageValue(cStorages[2], 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<sizzle> <fizz>')

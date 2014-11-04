@@ -237,6 +237,14 @@ function Creature.getClosestFreePosition(self, position, extended)
 	return Position()
 end
 
+function Creature.getPlayer(self)
+	return self:isPlayer() and self or nil
+end
+
+function Creature.getMonster(self)
+	return self:isMonster() and self or nil
+end
+
 function Player.sendCancelMessage(self, message)
 	if type(message) == "number" then
 		message = Game.getReturnMessage(message)

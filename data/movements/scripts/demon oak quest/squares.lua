@@ -9,8 +9,8 @@ local voices = {
 }
 
 local startUid = 9000
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -18,7 +18,7 @@ function onStepIn(cid, item, position, fromPosition)
 	local status = math.max(player:getStorageValue(Storage.DemonOak.Squares), 0)
 	if item.uid - startUid == status + 1 then
 		player:setStorageValue(Storage.DemonOak.Squares, status + 1)
-		player:say(voices[math.random(#voices)], TALKTYPE_MONSTER_YELL, false, cid, DEMON_OAK_POSITION)
+		player:say(voices[math.random(#voices)], TALKTYPE_MONSTER_YELL, false, player, DEMON_OAK_POSITION)
 	end
 	return true
 end

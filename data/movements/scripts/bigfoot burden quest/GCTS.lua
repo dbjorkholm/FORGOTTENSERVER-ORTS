@@ -19,8 +19,8 @@ local destination = {
 	[3219] = {position = Position(33217, 31814, 8), storageValue = 1, needCrystal = true}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end
