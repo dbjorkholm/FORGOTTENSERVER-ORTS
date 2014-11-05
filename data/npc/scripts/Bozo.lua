@@ -756,7 +756,7 @@ local function creatureSayCallback(cid, type, msg)
 					'Still, as a small recognition of your accomplishments I\'m willing to tell you how to get your own jester outfit. If you are interested in more fun and adventures, ask me for more missions.'
 				}, cid)
 			elseif player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 30 then
-				npcHandler:say('You won\'t be [3]ful in the fool\'s world with such an attitude.', cid)
+				npcHandler:say('You won\'t be successful in the fool\'s world with such an attitude.', cid)
 			elseif player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 35
 					and player:getStorageValue(Storage.WhatAFoolishQuest.LostDisguise) ~= 1 then
 				player:addItem(7502, 1)
