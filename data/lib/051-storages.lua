@@ -8,7 +8,14 @@ Storage = {
 		AmuletStatus = 49
 	},
 	ExplorerSociety = {
-		QuestLine = 90
+		QuestLine = 90,
+		bansheeDoor = 91,
+		bonelordsDoor = 92,
+		calassaDoor = 93,
+		edronDoor = 94,
+		elvenDoor = 95,
+		orcDoor = 96,
+		urnDoor = 97
 	},
 	TravellingTrader = {
 		Mission01 = 101,
@@ -17,7 +24,8 @@ Storage = {
 		Mission04 = 104,
 		Mission05 = 105,
 		Mission06 = 106,
-		Mission07 = 107
+		Mission07 = 107,
+		packageDoor = 108
 	},
 	DjinnWar = {
 		Factions = 110,
@@ -224,6 +232,7 @@ Storage = {
 		-- Druid-outfit Quest
 		DruidHatAddon = 12013,
 		DruidBodyAddon = 12014,
+		DruidAmuletDoor = 12020,
 
 		-- Barbarian-outfit Quest
 		BarbarianAddon = 12015,
@@ -275,7 +284,9 @@ Storage = {
 		AssassinSecondAddon = 50082,
 
 		NightmareOutfit = 50083,
+		NightmareDoor = 3040,
 		BrotherhoodOutfit = 50084,
+		BrotherhoodDoor = 3044,
 
 		ShamanAddons = 50085,
 		firstOrientalAddon = 50137,
@@ -379,7 +390,8 @@ Storage = {
 		Obelisk01 = 12221,
 		Obelisk02 = 12222,
 		Obelisk03 = 12223,
-		Obelisk04 = 12224
+		Obelisk04 = 12224,
+		yakchalDoor = 7814
 	},
 	TheWayToYalahar = {
 		QuestLine = 30
@@ -660,11 +672,15 @@ Storage = {
 		FathersBurdenQuestRoot = 3502,
 		FathersBurdenQuestCrystal = 3503,
 		FathersBurdenQuestSilk = 3504,
-		FathersBurdenQuestCloth = 3505
+		FathersBurdenQuestCloth = 3505,
+
+		OutlawCampKey1 = 3301,
+		OutlawCampKey2 = 3302,
+		OutlawCampKey3 = 3303,
 	},
 	PitsOfInferno = {
-		ShortcutHub = 8816,
-		ShortcutLevers = 8817,
+		ShortcutHub = 8818,
+		ShortcutLevers = 8819,
 		Pumin = 50096
 	},
 	HorestisTomb = {
@@ -767,6 +783,7 @@ Storage = {
 	madMageQuest = 50136,
 	KawillBlessing = 50139,
 	RentedHorseTimer = 50561,
+	KnightwatchTowerDoor = 9054,
 
 	blockMovementStorage = 100000
 }

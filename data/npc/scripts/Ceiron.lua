@@ -129,6 +129,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 10 then
 			npcHandler:say("Thank you so much. I can't wait to wear it around my neck again, it was a special present from Faolan.", cid)
 			player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 7)
+			player:setStorageValue(Storage.OutfitQuest.DruidAmuletDoor, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
 			if player:removeItem(5940, 1) then

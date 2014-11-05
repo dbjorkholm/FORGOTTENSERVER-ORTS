@@ -43,7 +43,6 @@
 	<action actionid="33216" script="hunter outfit quest/allHymnPianoTeleport.lua"/>
 
 	<!-- Children of the Revolution -->
-	<action uniqueid="3162" script="children of the revolution quest/Mission0ProveYourWorzzTacticalMap.lua"/>
 	<action uniqueid="3164" script="children of the revolution quest/Mission3ZeeKillingFieldzzChest.lua"/>
 	<action itemid="10760" 	script="children of the revolution quest/Mission3ZeeKillingFieldzzPoisonWater.lua"/>
 	<action actionid="8013" script="children of the revolution quest/Mission4ZzeWayofZztonezzLevers.lua"/>
@@ -70,7 +69,6 @@
 	<action actionid="12374" script="quests/system.lua"/>
 
 	<!-- Unnatural Selection -->
-	<action uniqueid="12331" script="unnatural selection/Mission1Skulled.lua"/>
 	<action uniqueid="12335" script="unnatural selection/Mission5RayofLight.lua"/>
 
 	<!-- The New Frontier Quest -->
@@ -81,13 +79,11 @@
 	<action uniqueid="3156" script="the new frontier quest/retreat.lua"/>
 
 	<!-- The Outlaw Camp Quest -->
-	<action fromuid="3311" touid="3313" script="the outlaw camp quest/OutlawCampKeys.lua" />
 	<action uniqueid="3400" script="the outlaw camp quest/oven.lua" />
 	<action uniqueid="3401" script="the outlaw camp quest/powerswitch.lua" />
 	<action uniqueid="3402" script="the outlaw camp quest/powerburn.lua" />
 
 	<!--- The Ape City Quest -->
-	<action uniqueid="12126" script="the ape city/Mission6WitchesCapSpotDoorReward.lua" />
 	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
 	<action actionid="12129" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
 	<action uniqueid="12131" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
@@ -184,7 +180,6 @@
 	<action itemid="18516" script="other/taming.lua"/>
 	<action itemid="20138" script="other/taming.lua"/>
 	<action itemid="22608" script="other/taming.lua"/>
-	
 
 	<!-- Offline Training -->
 	<action fromid="18488" toid="18492" script="other/offlinetraining.lua"/>
@@ -228,71 +223,39 @@
 	<action itemid="18339" script="bigfoot burden quest/pig.lua"/>
 	<action itemid="18343" script="bigfoot burden quest/repair.lua"/>
 
-	<!-- Black Knight Quest -->
-	<action uniqueid="9055" script="black knight quest/reward.lua"/>
-	<action uniqueid="3027" script="black knight quest/reward.lua"/>
-
-	<!-- Blue Djinn Quest -->
-	<action uniqueid="3024" script="blue djinn quest/lamp.lua"/>
-
 	<!-- Demon Helmet Quest -->
 	<action uniqueid="2005" script="demon helmet quest/lever.lua"/>
 
 	<!-- Dreamer Challenge Quest -->
 	<action fromuid="3041" touid="3043" script="dreamer challenge quest/documentsLever.lua"/>
 	<action fromuid="3045" touid="3047" script="dreamer challenge quest/documentsLever.lua"/>
-	<action uniqueid="3044" script="dreamer challenge quest/brotherhoodQuestDoor.lua"/>
 	<action fromid="7844" toid="7846" script="dreamer challenge quest/documents.lua"/>
 	<action uniqueid="2004" script="dreamer challenge quest/stoneTeleport.lua"/>
 	<action uniqueid="2272" script="dreamer challenge quest/ticTac.lua"/>
 	<action uniqueid="2003" script="dreamer challenge quest/ticTacTeleport.lua"/>
 	<action fromuid="2246" touid="2249" script="dreamer challenge quest/walls.lua"/>
-	<action uniqueid="3040" script="dreamer challenge quest/nightmareQuestDoor.lua"/>
-	<action actionid="9054" script="dreamer challenge quest/teleportsDoor.lua"/>
 
 	<!-- Druid Outfit Quest -->
-	<action uniqueid="8001" script="druid outfit quest/amuletDoor.lua"/>
 	<action itemid="5938" script="druid outfit quest/waterskin.lua"/>
 
 	<!-- Explorer Society Quest -->
-	<action uniqueid="3009" script="explorer society quest/elven.lua"/>
-	<action uniqueid="3014" script="explorer society quest/banshee.lua"/>
-	<action uniqueid="3013" script="explorer society quest/bansheeDoor.lua"/>
-	<action uniqueid="3005" script="explorer society quest/bonelords.lua"/>
-	<action uniqueid="3004" script="explorer society quest/bonelordsDoor.lua"/>
 	<action itemid="4869" script="explorer society quest/botanist.lua"/>
 	<action itemid="4865" script="explorer society quest/butterfly.lua"/>
-	<action uniqueid="3113" script="explorer society quest/calassaDoor.lua"/>
-	<action uniqueid="3114" script="explorer society quest/calassaItem.lua"/>
 	<action uniqueid="3017" script="explorer society quest/dragon.lua"/>
 	<action itemid="4863" script="explorer society quest/ectoplasm.lua"/>
-	<action uniqueid="3012" script="explorer society quest/edron.lua"/>
-	<action uniqueid="3011" script="explorer society quest/edronDoor.lua"/>
-	<action uniqueid="3008" script="explorer society quest/elvenDoor.lua"/>
 	<action itemid="4856" script="explorer society quest/icicle.lua"/>
-	<action uniqueid="3010" script="explorer society quest/obelisk.lua"/>
-	<action uniqueid="3007" script="explorer society quest/orc.lua"/>
-	<action uniqueid="3006" script="explorer society quest/orcDoor.lua"/>
 	<action itemid="7281" script="explorer society quest/resonance.lua"/>
 	<action itemid="7242" script="explorer society quest/stone.lua"/>
-	<action uniqueid="3003" script="explorer society quest/urn.lua"/>
-	<action uniqueid="3002" script="explorer society quest/urnDoor.lua"/>
 
 	<!-- Green Djinn Quest -->
-	<action uniqueid="2285" script="green djinn quest/lamp.lua"/>
 	<action actionid="5390" script="green djinn quest/tear.lua"/>
-
-	<!-- Hydra Egg Quest -->
-	<action uniqueid="12125" script="hydra egg quest/reward.lua"/>
 
 	<!-- Ice Islands Quest -->
 	<action fromid="7243" toid="7244" script="ice islands quest/anthill.lua"/>
 	<action itemid="7289" script="ice islands quest/charm.lua"/>
 	<action itemid="7286" script="ice islands quest/cure.lua"/>
-	<action uniqueid="3112" script="ice islands quest/skeleton.lua"/>
 	<action itemid="7253" script="ice islands quest/paint.lua"/>
 	<action itemid="2361" script="ice islands quest/yakchal.lua"/>
-	<action actionid="7814" script="ice islands quest/yakchalDoor.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
 	<action itemid="9737" script="in service of yalahar quest/charm.lua"/>
@@ -300,7 +263,6 @@
 	<action itemid="9741" script="in service of yalahar quest/ghost.lua"/>
 	<action uniqueid="3086" script="in service of yalahar quest/lastFight.lua"/>
 	<action fromid="9743" toid="9744" script="in service of yalahar quest/matrix.lua"/>
-	<action fromuid="3084" touid="3085" script="in service of yalahar quest/matrixReward.lua"/>
 	<action fromuid="3091" touid="3102" script="in service of yalahar quest/mechanism.lua"/>
 	<action fromuid="9235" touid="9236" script="in service of yalahar quest/mechanism.lua"/>
 	<action fromuid="3081" touid="3082" script="in service of yalahar quest/mrWestDoor.lua"/>
@@ -318,8 +280,6 @@
 
 	<!-- Koshei Amulet Quest -->
 	<action itemid="8266" script="koshei amulet quest/boss.lua"/>
-	<action uniqueid="3062" script="koshei amulet quest/pieces.lua"/>
-	<action uniqueid="3064" script="koshei amulet quest/pieces.lua"/>
 	<action uniqueid="3070" script="koshei amulet quest/switch.lua"/>
 
 	<!-- Pits Of Inferno Quest -->
@@ -332,8 +292,6 @@
 	<action fromuid="2025" touid="2028" script="pits of inferno quest/walls.lua"/>
 	<action fromuid="3301" touid="3302" script="pits of inferno quest/ladderLevers.lua"/>
 	<action uniqueid="3304" script="pits of inferno quest/trapLever.lua"/>
-	<action actionid="8818" script="pits of inferno quest/shortcutDoors.lua"/>
-	<action uniqueid="3305" script="pits of inferno quest/shortcutDoor.lua"/>
 	<action fromaid="39511" toaid="39512" script="pits of inferno quest/bazirMirror.lua"/>
 	<action fromuid="50095" touid="50104" script="pits of inferno quest/bazirWrongLevers.lua"/>
 	<action uniqueid="50105" script="pits of inferno quest/bazirMazeLever.lua"/>
@@ -341,16 +299,11 @@
 	<action actionid="50160" script="pits of inferno quest/mazeStone.lua"/>
 
 	<!-- Postman Quest -->
-	<action actionid="7815" script="postman quest/mailbox.lua"/>
-	<action uniqueid="3116" script="postman quest/package.lua"/>
 	<action itemid="2330" script="postman quest/package.lua"/>
-	<action uniqueid="3120" script="postman quest/present.lua"/>
 	<action itemid="2331" script="postman quest/present.lua"/>
-	<action uniqueid="3118" script="postman quest/waldo.lua"/>
 
 	<!-- The Hidden City of Beregar -->
 	<action actionid="12606" script="the hidden city of beregar/bargateLever.lua"/>
-	<action uniqueid="50125" script="the hidden city of beregar/ring.lua"/>
 	<action actionid="50128" script="the hidden city of beregar/deeperMineWagon.lua"/>
 	<action fromaid="50098" toaid="50108" script="the hidden city of beregar/oreWagon.lua"/>
 	<action actionid="50112" script="the hidden city of beregar/gapWagon.lua"/>
@@ -358,7 +311,6 @@
 	<action actionid="50117" script="the hidden city of beregar/coalWagon.lua"/>
 	<action fromuid="50108" touid="50111" script="the hidden city of beregar/coalLevers.lua"/>
 	<action fromaid="50122" toaid="50125" script="the hidden city of beregar/coalExitWagons.lua"/>
-	<action uniqueid="50112" script="the hidden city of beregar/mushroom.lua"/>
 	<action fromuid="50113" touid="50123" script="the hidden city of beregar/wagonMazeLevers.lua"/>
 	<action uniqueid="50124" script="the hidden city of beregar/wagonMazeExit.lua"/>
 
@@ -366,7 +318,6 @@
 	<action itemid="8693" script="the thieves guild quest/dwarfDisguiseKit.lua"/>
 	<action itemid="8701" script="the thieves guild quest/note.lua"/>
 	<action fromaid="12501" toaid="12502" script="the thieves guild quest/climbingVine.lua"/>
-	<action uniqueid="12507" script="the thieves guild quest/fishnapping.lua"/>
 	<action itemid="8762" script="the thieves guild quest/fishnappingKey.lua"/>
 	<action actionid="12505" script="the thieves guild quest/fishnappingDoor.lua"/>
 	<action actionid="12513" script="quests/system.lua"/>
@@ -375,20 +326,14 @@
 	<action itemid="7700" script="secret service/amazonDisguiseKit.lua"/>
 	<action itemid="7697" script="secret service/ring.lua"/>
 	<action fromid="7960" toid="7962" script="secret service/tools.lua"/>
-	<action uniqueid="12578" script="secret service/rottenTree.lua"/>
 	<action itemid="7698" script="secret service/rustBugs.lua"/>
 	<action actionid="12574" script="secret service/lever.lua"/>
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
-	<action uniqueid="9226" script="sam old backpack/reward.lua"/>
 	
 	<!-- Tibia Tales Quest -->
 	<action itemid="7496" script="tibia tales quest/UltimateBoozebeerBottle.lua"/>
-
-	<!-- The Travelling Trader Quest -->
-	<action uniqueid="3019" script="the travelling trader quest/packageDoor.lua"/>
-	<action uniqueid="3020" script="the travelling trader quest/package.lua"/>
 
 	<!-- Their Masters Voice Quest -->
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
@@ -397,20 +342,13 @@
 	<action itemid="13176" script="rottin wood and the married men quest/capturedMerchant.lua"/>
 
 	<!-- Quests -->
-	<action actionid="50057" script="quests/smallrubies.lua"/>
-	<action actionid="60994" script="quests/parchment.lua"/>
-	<action uniqueid="9196" script="quests/bkkey.lua"/>
-	<action uniqueid="9155" script="quests/dcq_dead.lua"/>
 	<action fromuid="9172" touid="9174" script="quests/warzone_rewards.lua"/>
 	<action uniqueid="9177" script="quests/iron_helmet.lua"/>
-	<action uniqueid="9136" script="quests/key3980.lua"/>
-	<action uniqueid="9185" script="quests/mummy.lua"/>
 	<action uniqueid="9192" script="quests/orcedron.lua"/>
 	<action uniqueid="1912" script="quests/desertdungeonquest.lua"/>
 	<action uniqueid="50023" script="quests/triangletowerlever.lua"/>
 	<action fromaid="50023" toaid="50024" script="quests/thaislighthouselever.lua"/>
 	<action actionid="50027" script="quests/hellgatelever.lua"/>
-	<action uniqueid="50032" script="quests/bloodherbquestRewards.lua"/>
 	<action actionid="50129" script="quests/liferinglever.lua"/>
 	<action actionid="2000" script="quests/system.lua"/>
 	<action actionid="2215" script="quests/system.lua"/>
@@ -420,7 +358,7 @@
 	<action actionid="28300" script="quests/system.lua"/>
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
 	<action actionid="50161" script="quests/calassaCombDoor.lua"/>
-	<action uniqueid="2286" script="quests/familybrooch.lua"/>
+	<action actionid="2001" script="quests/system2.lua"/>
 
 	<!-- Tools -->
 	<action itemid="8717" script="tools/lockPick.lua"/>

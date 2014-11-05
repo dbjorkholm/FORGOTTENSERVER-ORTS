@@ -394,6 +394,7 @@ local function creatureSayCallback(cid, type, msg)
 		-- LIZARD URN
 		elseif npcHandler.topic[cid] == 15 then
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 27)
+			player:setStorageValue(Storage.ExplorerSociety.urnDoor, 1)
 			npcHandler:say({
 				"You have indeed the spirit of an adventurer! In the south-east of Tiquanda is a small settlement of the lizard people ...",
 				"Beneath the newly constructed temple there, the lizards hide the said urn. Our attempts to acquire this item were without success ...",
@@ -412,6 +413,7 @@ local function creatureSayCallback(cid, type, msg)
 		-- BONELORDS
 		elseif npcHandler.topic[cid] == 17 then
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 30)
+			player:setStorageValue(Storage.ExplorerSociety.bonelordsDoor, 1)
 			npcHandler:say({
 				"Excellent! So travel to the city of Darashia and then head north-east for the pyramid ...",
 				"If any documents are left, you probably find them in the catacombs beneath. Good luck!"
@@ -429,6 +431,7 @@ local function creatureSayCallback(cid, type, msg)
 		-- ORC POWDER
 		elseif npcHandler.topic[cid] == 19 then
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 33)
+			player:setStorageValue(Storage.ExplorerSociety.orcDoor, 1)
 			npcHandler:say({
 				"You are a brave soul. As far as we can tell, the orcs maintain some sort of training facility in some hill in the north-east of their city ...",
 				"There you should find lots of their war wolves and hopefully also some of the orcish powder. Good luck!"
@@ -460,6 +463,7 @@ local function creatureSayCallback(cid, type, msg)
 		-- MEMORY STONE
 		elseif npcHandler.topic[cid] == 23 then
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 39)
+			player:setStorageValue(Storage.ExplorerSociety.edronDoor, 1)
 			npcHandler:say("In the ruins of north-western Edron you should be able to find a memory stone. Good luck.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 24 then

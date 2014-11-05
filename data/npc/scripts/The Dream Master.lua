@@ -73,6 +73,8 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(6500, 1500)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.NightmareOutfit, 4)
+				player:setStorageValue(Storage.OutfitQuest.NightmareDoor, 1)
+				player:setStorageValue(Storage.KnightwatchTowerDoor, 1)
 				player:addAchievement('Lord Protector')
 				npcHandler:say("You advanced to {Lord Protector} rank! You are now able to use teleports of fourth floor of Knightwatch Tower and to create addon scrolls.", cid)
 			else
