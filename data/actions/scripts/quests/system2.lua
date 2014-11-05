@@ -309,8 +309,10 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 	
-	if useItem.needItemId and player:getItemCount(useItem.needItemId) < 1 then
-		return false
+	if useItem.needItem then
+		if player:getItemCount(useItem.needItem.itemId) < (useItem.needItem.count or 1) then
+			return false
+		end
 	end
 
 	local items, reward = useItem.items
@@ -382,8 +384,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		player:say(useItem.say, TALKTYPE_MONSTER_SAY)
 	end
 
-	if useItem.needItemId then
-		player:removeItem(useItem.needItemId, 1)
+	if useItem.needItem then
+		player:removeItem(useItem.needItem.itemId, useItem.needItem.count or 1)
 	end
 
 	if useItem.effect then

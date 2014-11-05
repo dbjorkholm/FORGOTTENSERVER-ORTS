@@ -18908,6 +18908,11 @@
 	<item id="10611" article="a" name="snake skin">
 		<attribute key="weight" value="100" />
 	</item>
+	<item id="10612" article="a" name="slain ice golem">
+		<attribute key="decayTo" value="7283" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="undead" />
+	</item>
 	<item id="10613" name="plans for a strange device">
 		<attribute key="description" value="You should bring them to Spectulus in Edron." />
 		<attribute key="weight" value="250" />

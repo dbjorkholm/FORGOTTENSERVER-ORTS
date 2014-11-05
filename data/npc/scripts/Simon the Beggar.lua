@@ -169,4 +169,5 @@ npcHandler:setMessage(MESSAGE_GREET, "Hello |PLAYERNAME|. I am a poor man. Pleas
 npcHandler:setMessage(MESSAGE_FAREWELL, "Have a nice day.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Have a nice day.")
 
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

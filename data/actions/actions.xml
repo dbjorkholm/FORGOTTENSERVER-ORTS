@@ -18,6 +18,11 @@
 	<action itemid="7502" script="what a foolish quest/disguise.lua" />
 	<action itemid="8187" script="what a foolish quest/watch.lua" />
 
+	<!-- Sea of Light Quest -->
+	<action itemid="10614" script="sea of light/rareCrystal.lua" />
+	<action itemid="10615" script="sea of light/collectorCorpse.lua" />
+	<action actionid="4225" script="sea of light/iceCube.lua" />
+
 	<!-- Father's Burden Quest -->
 	<action fromid="12545" toid="12546" script="fathers burden quest/corpse.lua" />
 
@@ -242,7 +247,6 @@
 	<action itemid="4869" script="explorer society quest/botanist.lua"/>
 	<action itemid="4865" script="explorer society quest/butterfly.lua"/>
 	<action uniqueid="3017" script="explorer society quest/dragon.lua"/>
-	<action itemid="4863" script="explorer society quest/ectoplasm.lua"/>
 	<action itemid="4856" script="explorer society quest/icicle.lua"/>
 	<action itemid="7281" script="explorer society quest/resonance.lua"/>
 	<action itemid="7242" script="explorer society quest/stone.lua"/>
@@ -272,7 +276,6 @@
 
 	<!-- Inquisition Quest -->
 	<action fromuid="1300" touid="1308" script="inquisition quest/rewards.lua"/>
-	<action itemid="7494" script="inquisition quest/holyWater.lua"/>
 	<action actionid="1004" script="inquisition quest/ungreez.lua"/>
 	<action actionid="2002" script="inquisition quest/vampireHunt.lua"/>
 	<action fromuid="9017" touid="9020" script="inquisition quest/brotherLever.lua"/>
@@ -334,6 +337,7 @@
 	
 	<!-- Tibia Tales Quest -->
 	<action itemid="7496" script="tibia tales quest/UltimateBoozebeerBottle.lua"/>
+	<action itemid="8205" script="tibia tales quest/exterminatorFlask.lua"/>
 
 	<!-- Their Masters Voice Quest -->
 	<action itemid="13601" script="their master's voice quest/slimeGobbler.lua"/>
@@ -351,6 +355,7 @@
 	<action actionid="50027" script="quests/hellgatelever.lua"/>
 	<action actionid="50129" script="quests/liferinglever.lua"/>
 	<action actionid="2000" script="quests/system.lua"/>
+	<action actionid="2016" script="quests/system.lua"/>
 	<action actionid="2215" script="quests/system.lua"/>
 	<action actionid="10544" script="quests/system.lua"/>
 	<action actionid="26300" script="quests/system.lua"/>
@@ -359,6 +364,8 @@
 	<action itemid="10523" script="other/deeperBanutaShortcut.lua"/>
 	<action actionid="50161" script="quests/calassaCombDoor.lua"/>
 	<action actionid="2001" script="quests/system2.lua"/>
+	<action itemid="4863" script="quests/ectoplasmContainer.lua"/>
+	<action itemid="7494" script="quests/holyWater.lua"/>
 
 	<!-- Tools -->
 	<action itemid="8717" script="tools/lockPick.lua"/>

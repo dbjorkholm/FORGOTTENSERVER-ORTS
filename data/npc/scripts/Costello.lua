@@ -22,6 +22,18 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Do you want me to inspect a diary?', cid)
 			npcHandler.topic[cid] = 2
 		end
+	elseif msgcontains(msg, 'holy water') then
+		local cStorage = player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline)
+		if cStorage == 1 then
+			npcHandler:say('Who are you to demand holy water from the White Raven Monastery? Who sent you??', cid)
+			npcHandler.topic[cid] = 3
+		elseif cStorage == 2 then
+			npcHandler:say('I already filled your vial with holy water.', cid)
+		end
+	elseif msgcontains(msg, 'amanda') and npcHandler.topic[cid] == 0 then
+		if player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline) == 1 then
+			npcHandler:say('Ahh, Amanda from Edron sent you! I hope she\'s doing well. So why did she send you here?', cid)
+		end
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say('Thank you very much! From now on you may open the warded doors to the catacombs.', cid)
@@ -36,7 +48,18 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(2327, 1)
 			player:setStorageValue(Storage.WhiteRavenMonasteryQuest.Diary, 2)
 		end
-	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] ~= 0 then
+	elseif npcHandler.topic[cid] == 3 then
+		if not msgcontains(msg, 'amanda') then
+			npcHandler:say('I never heard that name and you won\'t get holy water for some stranger.', cid)
+			npcHandler.topic[cid] = 0
+			return true
+		end
+		
+		player:addItem(7494, 1)
+		player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 2)
+		npcHandler:say('Ohh, why didn\'t you tell me before? Sure you get some holy water if it\'s for Amanda! Here you are.', cid)
+		npcHandler.topic[cid] = 0
+	elseif msgcontains(msg, 'no') and isInArray({1, 2}, npcHandler.topic[cid]) then
 		npcHandler:say('Uhm, as you wish.', cid)
 		npcHandler.topic[cid] = 0
 	end

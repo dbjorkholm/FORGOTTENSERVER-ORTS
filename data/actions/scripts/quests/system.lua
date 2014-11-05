@@ -1,6 +1,6 @@
 local specialQuests = {
 	[2215] = Storage.AnnihilatorDone, -- Annihilator
-	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
+	[2016] = 9050, -- Dreamer's Challenge Quest Boxes
 	[10544] = 10544,
 	[12513] = Storage.thievesGuild.Reward,
 	[12374] = Storage.WrathoftheEmperor.mainReward,

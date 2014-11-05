@@ -42,6 +42,25 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 2
 			end
 		end
+	elseif msgcontains(msg, 'mission') then
+		local cStorage = player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline)
+		if cStorage == -1 then
+			npcHandler:say('Well, I would do it myself but I can\'t leave town for a longer time. Would you be so kind to bring me a vial of holy water from the White Raven Monastery?', cid)
+			npcHandler.topic[cid] = 3
+		elseif cStorage == 1 then
+			npcHandler:say('First of all, you have to find a way to enter the Isle of the Kings and get some holy water from the White Raven Monastery.', cid)
+		elseif cStorage == 2 then
+			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 3)
+			npcHandler:say('Have you heard about the unholy graveyard north of Edron? Go there and spill some holy water on every grave. Once you are done, come back to me.', cid)
+		elseif cStorage == 3 then
+			npcHandler:say('I feel that the spirits have not come to a rest yet. There must still be some graves left to sanctify.', cid)
+		elseif cStorage == 4 then
+			player:addItem(7498, 1)
+			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 5)
+			npcHandler:say('I appreciate your help. May Banor be always on your side. Here, your reward is this package which contains five mana and five health potions.', cid)
+		else
+			npcHandler:say('Your mission here on Tibia is to be polite and friendly. The gods will reward you, I promise!', cid)
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getBlessings() > 0 or player:getItemCount(2173) > 0 then
@@ -63,10 +82,17 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 8)
 				npcHandler:say("So receive my prayer: 'Wicked curses shall be broken'. Now, bring your stake to Kasmir in Darashia for the next line of the prayer. I will inform him what to do. ", cid)
 			end
+		elseif npcHandler.topic[cid] == 3 then
+			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 1)
+			npcHandler:say('I thank you a lot in advance. The power of the holy water from the White Raven Monastery is legendary. For my task it is indispensable. We talk about that when you get back.', cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then
-		npcHandler:say("Fine. You are free to decline my offer.", cid)
+	elseif msgcontains(msg, "no") and npcHandler.topic[cid] ~= 0 then
+		if isInArray({1, 2}, npcHandler.topic[cid]) then
+			npcHandler:say("Fine. You are free to decline my offer.", cid)
+		elseif npcHandler.topic[cid] == 4 then
+			npcHandler:say('It\'s your decision. I will ask the next believing mind that visits the temple of Banor\'s blood.', cid)
+		end
 		npcHandler.topic[cid] = 0
 	end
 	return true

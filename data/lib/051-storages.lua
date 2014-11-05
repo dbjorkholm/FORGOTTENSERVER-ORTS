@@ -571,7 +571,31 @@ Storage = {
 		ultimateBoozeQuest = 12651,
 		AgainstTheSpiderCult = 12652,
 		AnInterestInBotany = 12653,
-		AnInterestInBotanyChest = 12654
+		AnInterestInBotanyChest = 12654,
+		IntoTheBonePit = 3938,
+		TheExterminator = 3939,
+		RestInHallowedGround = {
+			Questline = 3940,
+			HolyWater = 3941,
+			Graves = {
+				Grave1 = 3942,
+				Grave2 = 3943,
+				Grave3 = 3944,
+				Grave4 = 3945,
+				Grave5 = 3946,
+				Grave6 = 3947,
+				Grave7 = 3948,
+				Grave8 = 3949,
+				Grave9 = 3950,
+				Grave10 = 3951,
+				Grave11 = 3952,
+				Grave12 = 3953,
+				Grave13 = 3954,
+				Grave14 = 3955,
+				Grave15 = 3956,
+				Grave16 = 3957
+			}
+		}
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,
@@ -754,6 +778,15 @@ Storage = {
 		OldWornCloth = 3935,
 		LostDisguise = 3936,
 		ScaredKazzan = 3937
+	},
+
+	SeaOfLightQuest = {
+		Questline = 50250,
+		Mission1 = 50251,
+		Mission2 = 50252,
+		Mission3 = 50253,
+		StudyTimer = 50254,
+		LostMinesCrystal = 50255
 	},
 
 	-- Achievement storages

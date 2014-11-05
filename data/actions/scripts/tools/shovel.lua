@@ -10,6 +10,13 @@ local function revertHole(toPosition)
 	end
 end
 
+local function removeRemains(toPosition)
+	local item = Tile(toPosition):getItemById(2248)
+	if item then
+		item:remove()
+	end
+end
+
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = Item(itemEx.uid)
 	if isInArray(holes, itemEx.itemid) then
@@ -83,6 +90,19 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
 				break
 			end
+		end
+	elseif itemEx.itemid == 103 then
+		if itemEx.actionid == 4205 then
+			if player:getStorageValue(Storage.TibiaTales.IntoTheBonePit) ~= 1 then
+				return false
+			end
+
+			local remains = Game.createItem(2248, 1, toPosition)
+			if remains then
+				remains:setActionId(4206)
+			end
+			toPosition:sendMagicEffect(CONST_ME_HITAREA)
+			addEvent(removeRemains, 60000, toPosition)
 		end
 	end
 	return true
