@@ -352,7 +352,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureAppear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_APPEAR callback.
-	function NpcHandler:onCreatureAppear(cid)
+	function NpcHandler:onCreatureAppear(creature)
+		local cid = creature:getId()
 		if cid == getNpcCid() then
 			local npc = Npc()
 			if next(self.shopItems) then
@@ -378,7 +379,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureDisappear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_DISAPPEAR callback.
-	function NpcHandler:onCreatureDisappear(cid)
+	function NpcHandler:onCreatureDisappear(creature)
+		local cid = creature:getId()
 		if getNpcCid() == cid then
 			return
 		end
@@ -394,7 +396,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureSay events. If you with to handle this yourself, please use the CALLBACK_CREATURE_SAY callback.
-	function NpcHandler:onCreatureSay(cid, msgtype, msg)
+	function NpcHandler:onCreatureSay(creature, msgtype, msg)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_CREATURE_SAY)
 		if callback == nil or callback(cid, msgtype, msg) then
 			if self:processModuleCallback(CALLBACK_CREATURE_SAY, cid, msgtype, msg) then
@@ -420,7 +423,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onPlayerEndTrade events. If you wish to handle this yourself, use the CALLBACK_PLAYER_ENDTRADE callback.
-	function NpcHandler:onPlayerEndTrade(cid)
+	function NpcHandler:onPlayerEndTrade(creature)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_ENDTRADE)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_ENDTRADE, cid, msgtype, msg) then
@@ -434,7 +438,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onPlayerCloseChannel events. If you wish to handle this yourself, use the CALLBACK_PLAYER_CLOSECHANNEL callback.
-	function NpcHandler:onPlayerCloseChannel(cid)
+	function NpcHandler:onPlayerCloseChannel(creature)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_CLOSECHANNEL)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_CLOSECHANNEL, cid, msgtype, msg) then
@@ -446,7 +451,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onBuy events. If you wish to handle this yourself, use the CALLBACK_ONBUY callback.
-	function NpcHandler:onBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onBuy(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONBUY)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
@@ -456,7 +462,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onSell events. If you wish to handle this yourself, use the CALLBACK_ONSELL callback.
-	function NpcHandler:onSell(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onSell(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONSELL)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONSELL, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
