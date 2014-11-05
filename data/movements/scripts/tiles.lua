@@ -48,7 +48,7 @@ function onStepOut(creature, item, position, fromPosition)
 		return false
 	end
 
-	if creature:isPlayer and creature:isInGhostMode() then
+	if creature:isPlayer() and creature:isInGhostMode() then
 		return true
 	end
 
