@@ -470,6 +470,7 @@
 
 	<!-- Felines -->
 	<monster name="Cat" file="felines/cat.xml"/>
+	<monster name="Kitty" file="felines/kitty.xml"/>
 	<monster name="Lion" file="felines/lion.xml"/>
 	<monster name="Tiger" file="felines/tiger.xml"/>
 	<monster name="Midnight Panther" file="felines/midnight panther.xml"/>

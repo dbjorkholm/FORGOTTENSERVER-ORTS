@@ -207,6 +207,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 27 then
 			npcHandler:say("I grant you the title of archpostman. You are a legend in our guild. As privilege of your newly aquired status you are allowed to make use of certain mailboxes in dangerous areas. Just look out for them and you'll see.", cid)
 			player:setStorageValue(Storage.postman.Rank, 5)
+			player:setStorageValue(Storage.postman.Door, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end

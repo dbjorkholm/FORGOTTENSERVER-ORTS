@@ -8,6 +8,16 @@
 	<action itemid="8583" script="rookgaard/rookgaard tutorial island/deadTreeBranch.lua"/>
 	<action uniqueid="50085" script="rookgaard/rookgaard tutorial island/zirellaDoor.lua"/>
 
+	<!-- What a foolish Quest -->
+	<action itemid="7478" script="what a foolish quest/flask.lua" />
+	<action itemid="7482" script="what a foolish quest/crate.lua" />
+	<action itemid="7485" script="what a foolish quest/cushion.lua" />
+	<action itemid="7486" script="what a foolish quest/catbasket.lua" />
+	<action itemid="7490" script="what a foolish quest/contract.lua" />
+	<action itemid="7500" script="what a foolish quest/worncloth.lua" />
+	<action itemid="7502" script="what a foolish quest/disguise.lua" />
+	<action itemid="8187" script="what a foolish quest/watch.lua" />
+
 	<!-- Father's Burden Quest -->
 	<action fromid="12545" toid="12546" script="fathers burden quest/corpse.lua" />
 

@@ -1162,6 +1162,68 @@
 			<missionstate id="3" description="You brought Lazaran the beer and got a Serpent Crest as reward!"/>
 		</mission>
 	</quest>
+	<quest name="What a foolish Quest" startstorageid="3900" startstoragevalue="1">
+		<mission name="What a foolish Quest - Tasks of a Fool" storageid="3901" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Cut a flower at the Whiteflower Temple south of Thais. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="You have finished your first mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - That stinks!" storageid="3902" startvalue="1" endvalue="2">
+			<missionstate id="1" description="It sometimes stinks to be a fool. Collect some noxious fumes from a recently slain slime with the special vial. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="You have finished your second mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - A Piece of Cake" storageid="3903" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Get 12 pies from Mirabell in Edron. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="You have finished your third mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - Fool Spirits" storageid="3904" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Get 18 vials of wine for Bozo. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="Exchange the crates in front of Xodet's house and return to Bozo with the swapped crate."/>
+			<missionstate id="3" description="You have finished your fourth mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - Watch out for the foolish" storageid="3905" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Steal the magic watch from the Triangle Tower west of Jakundaf Desert. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="Use the magic watch to steal the beard of the sleeping dwarven emperor."/>
+			<missionstate id="3" description="You have already finished five missions for that fool. You should definitely talk to Bozo about your jester outfit now!"/>
+		</mission>
+		<mission name="What a foolish Quest - The queen of farts" storageid="3906" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Get Bozo 4 pieces of minotaur leather."/>
+			<missionstate id="2" description="Get Bozo a piece of giant spider silk."/>
+			<missionstate id="3" description="Ask Bozo about your mission, he might be finished with the whoopee cushion by now."/>
+			<missionstate id="4" description="Place the whoopee cushion on the queen's throne in Carlin by using the cushion with the throne."/>
+			<missionstate id="5" description="You have finished your sixth mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - For your mice only" storageid="3907" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Get the toy mouse of Queen Eloise's cat and show it to Carina, the jeweller in Venore, to scare her."/>
+			<missionstate id="2" description="You have finished your seventh mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - Smoking is a foolish thing" storageid="3908" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Gather some easily inflammable sulphur using a spoon on an inactive lava hole."/>
+			<missionstate id="2" description="You brought Bozo the sulphur. Now cut him some leaves of the jungle dweller bush with a kitchen knife."/>
+			<missionstate id="3" description="You have gathered the ordered ingredients and should ask Bozo for the next mission."/>
+			<missionstate id="4" description="Deliver the exploding cigar to Theodore Loveless in Liberty Bay."/>
+			<missionstate id="5" description="You have finished your eighth mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - A fool's bargain" storageid="3909" startvalue="1" endvalue="5">
+			<missionstate id="1" description="Bozo wants you to fill a vial with the blood of a stalker. Use the vial on a slain stalker immediately after his death. Then report to Bozo about your mission."/>
+			<missionstate id="2" description="Bozo wants you to fill a vial with the ink of a quara constrictor. Use the vial on a slain constrictor immediately after its death. Then report to Bozo about your mission."/>
+			<missionstate id="3" description="You have gathered the ordered ingredients and should ask Bozo for the next mission."/>
+			<missionstate id="4" description="Order 2000 steel shields from Sam. Sign his contract with the magic ink."/>
+			<missionstate id="5" description="You have finished your ninth mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - A sweet surprise" storageid="3910" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Deliver a cookie to Avar Tar, Simon, Ariella, Lorbas, King Markwin, Hjaern, Wyda, Hairycles, the orc king and EITHER Yaman OR Nah'Bob. Then report to Bozo about the mission."/>
+			<missionstate id="2" description="You have finished your tenth mission and should ask Bozo for the next mission."/>
+		</mission>
+		<mission name="What a foolish Quest - The final foolishness" storageid="3911" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Gather 5 pieces of white cloth for Bozo. Then report about your mission."/>
+			<missionstate id="2" description="Travel to Darama and climb the highest point of the Plague Spike to give these pieces of white cloth an old and worn look. Some ancient altar should suit your needs best - use the white cloth on it."/>
+			<missionstate id="3" description="Use your mummy disguise to scare the caliph Kazzan in Darashia. DON'T use the disguise too early or you will fail the quest."/>
+			<missionstate id="4" description="You have finished all of Bozo's missions and you are a complete fool now. Yay!"/>
+		</mission>
+		<mission name="What a foolish Quest - To become a complete fool" storageid="3915" startvalue="4" endvalue="4">
+			<missionstate id="4" description="Now that you have a basic outfit, you should talk to Bozo about your missions to gain further rewards."/>
+		</mission>
+	</quest>
 	<quest name="Wrath of the Emperor" startstorageid="12350" startstoragevalue="1">
 		<mission name="Mission 01: Catering the Lions Den" storageid="12351" startvalue="1" endvalue="3">
 			<missionstate id="1" description="You must bring Zalamon 3 nails and a piece of wood so that he can make a Marked Crate for you."/>

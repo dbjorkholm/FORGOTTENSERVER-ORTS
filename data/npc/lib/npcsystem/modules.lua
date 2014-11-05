@@ -260,6 +260,13 @@ if Modules == nil then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(parameters.destination)
 			parameters.destination:sendMagicEffect(CONST_ME_TELEPORT)
+			
+			-- What a foolish Quest - Mission 3
+			if parameters.destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
+				if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+					player:setStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer, 1)
+				end
+			end
 		end
 
 		npcHandler:resetNpc(cid)

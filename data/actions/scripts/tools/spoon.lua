@@ -17,5 +17,17 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			end
 		end
 	end
+
+	-- What a foolish Quest - Mission 8 (Sulphur)
+	if itemEx.itemid == 8573 then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 21
+				or player:getStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur) == 1 then
+			return true
+		end
+		
+		player:setStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur, 1)
+		player:addItem(8204, 1)
+		toPosition:sendMagicEffect(CONST_ME_YELLOWRINGS)
+	end
 	return true
 end

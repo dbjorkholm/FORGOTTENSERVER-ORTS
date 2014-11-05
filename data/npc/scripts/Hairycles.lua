@@ -59,7 +59,6 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say("I only heal friends of ape...", cid)
 		end
-
 	elseif msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheApeCity.Questline) < 1 then
 			npcHandler:say("These are dire times for our people. Problems plenty are in this times. But me people not grant trust easy. Are you willing to prove you friend of ape people?", cid)
@@ -168,6 +167,12 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 18 then
 			npcHandler:say("Me truly proud of you, friend. You learn many about plants, charms and ape people. Me want grant you shamanic power now. You ready?", cid)
 			npcHandler.topic[cid] = 19
+		end
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hairycles) ~= 1 then
+			npcHandler:say('Oh you bring cookie for old Hairycles?', cid)
+			npcHandler.topic[cid] = 20
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
@@ -304,10 +309,29 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Questline, 23)
 			player:setStorageValue(Storage.TheApeCity.Mission09, 3) -- The Ape City Questlog - Mission 9: The Deepest Catacombs
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 20 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hairycles, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('Thank you, you are ... YOU SON OF LIZARD!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "no") then
-		if npcHandler.topic[cid] > 1 then
+		if npcHandler.topic[cid] > 0 and npcHandler.topic[cid] < 20 then
 			npcHandler:say("Then no.", cid)
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 20 then
+			npcHandler:say("I see.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "trade") then
@@ -315,7 +339,7 @@ local function creatureSayCallback(cid, type, msg)
 			local player = Player(cid)
 			local items = setNewTradeTable(getTable(player))
 			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-				if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
+				if (ignoreCap == false and ((player:getFreeCapacity() / 100) < (ItemType(items[item].itemId):getWeight(amount) / 100) or inBackpacks and (player:getFreeCapacity() / 100) < ((ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight() / 100)))) then
 					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 				end
 				if items[item].buyPrice <= player:getMoney() then

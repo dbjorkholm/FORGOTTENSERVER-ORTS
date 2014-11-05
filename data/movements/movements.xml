@@ -4,6 +4,9 @@
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua" />
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua" />
 
+	<!-- What a foolish Quest -->
+	<movevent event="StepIn" actionid="4201" script="what a foolish quest/destroypies.lua"/>
+
 	<!-- Rookgaard -->
 	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>
 	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>

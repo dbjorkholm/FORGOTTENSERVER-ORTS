@@ -49,12 +49,34 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 1
 			end
 		end
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Markwin) ~= 1 then
+			npcHandler:say('You bring me ... a cookie???', cid)
+			npcHandler.topic[cid] = 2
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Uhm, well thank you, hornless being.", cid)
 			player:setStorageValue(Storage.postman.Mission10, 2)
 			player:removeItem(2333, 1)
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 2 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.SimonTheBeggar, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('I understand this as a peace-offering, human ... UNGH ... THIS IS AN OUTRAGE! THIS MEANS WAR!!!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "bye") then
 		npcHandler:say("Hm ... good bye.", cid)

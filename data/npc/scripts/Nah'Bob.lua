@@ -53,6 +53,39 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
+	local player = Player(cid)
+
+	if msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Djinn) ~= 1 then
+			npcHandler:say('You brought cookies! How nice of you! Can I have one?', cid)
+			npcHandler.topic[cid] = 1
+		end
+	elseif msgcontains(msg, 'yes') then
+		if npcHandler.topic[cid] == 1 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Djinn, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('You see, good deeds like this will ... YOU ... YOU SPAWN OF EVIL! I WILL MAKE SURE THE MASTER LEARNS ABOUT THIS!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
+		end
+	elseif msgcontains(msg, 'no') then
+		if npcHandler.topic[cid] == 1 then
+			npcHandler:say('I see.', cid)
+			npcHandler.topic[cid] = 0
+		end
+	end
 	return true
 end
 

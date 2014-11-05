@@ -95,6 +95,13 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 			destination = destination(cid)
 		end
 
+		-- What a foolish Quest - Mission 3
+		if destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
+			if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+				player:setStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer, 1)
+			end
+		end
+
 		player:teleportTo(destination)
 		destination:sendMagicEffect(CONST_ME_TELEPORT)
 

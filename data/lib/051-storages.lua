@@ -497,7 +497,8 @@ Storage = {
 		Mission08 = 12457,
 		Mission09 = 12458,
 		Mission10 = 12459,
-		Rank = 12460
+		Rank = 12460,
+		Door = 12461
 	},
 	thievesGuild = {
 		Quest = 12501,
@@ -695,6 +696,48 @@ Storage = {
 			Scale = 3006,
 			Sinew = 3007
 		}
+	},
+	WhatAFoolishQuest = {
+		Questline = 3900,
+		Mission1 = 3901,
+		Mission2 = 3902,
+		Mission3 = 3903,
+		Mission4 = 3904,
+		Mission5 = 3905,
+		Mission6 = 3906,
+		Mission7 = 3907,
+		Mission8 = 3908,
+		Mission9 = 3909,
+		Mission10 = 3910,
+		Mission11 = 3911,
+		PieBuying = 3912,
+		PieBoxTimer = 3913,
+		TriangleTowerDoor = 3914
+		EmperorBeardShave = 3915,
+		JesterOutfit = 3916,
+		WhoopeeCushion = 3917,
+		QueenEloiseCatDoor = 3918,
+		CatBasket = 3919,
+		ScaredCarina = 3920,
+		InflammableSulphur = 3921,
+		SpecialLeaves = 3922,
+		Cigar = 3923,
+		Contract = 3924,
+		CookieDelivery = {
+			SimonTheBeggar = 3925,
+			Markwin = 3926,
+			Ariella = 3927,
+			Hairycles = 3928,
+			Djinn = 3929,
+			AvarTar = 3930,
+			OrcKing = 3931,
+			Lorbas = 3932,
+			Wyda = 3933,
+			Hjaern = 3934
+		},
+		OldWornCloth = 3935,
+		LostDisguise = 3936,
+		ScaredKazzan = 3937
 	},
 
 	-- Achievement storages

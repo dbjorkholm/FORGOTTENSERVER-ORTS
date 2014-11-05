@@ -282,6 +282,20 @@ function Player.checkGnomeRank(self)
 	return true
 end
 
+function Player.getCookiesDelivered(self)
+	local storage, amount = {
+		Storage.WhatAFoolishQuest.CookieDelivery.SimonTheBeggar, Storage.WhatAFoolishQuest.CookieDelivery.Markwin, Storage.WhatAFoolishQuest.CookieDelivery.Ariella,
+		Storage.WhatAFoolishQuest.CookieDelivery.Hairycles, Storage.WhatAFoolishQuest.CookieDelivery.Djinn, Storage.WhatAFoolishQuest.CookieDelivery.AvarTar,
+		Storage.WhatAFoolishQuest.CookieDelivery.OrcKing, Storage.WhatAFoolishQuest.CookieDelivery.Lorbas, Storage.WhatAFoolishQuest.CookieDelivery.Wyda,
+		Storage.WhatAFoolishQuest.CookieDelivery.Hjaern
+	}, 0
+	for i = 1, #storage do
+		if self:getStorageValue(storage[i]) == 1 then
+			amount = amount + 1
+		end
+	end
+	return amount
+end
 
 -- Tile --
 function Tile.relocateTo(self, toPosition)
