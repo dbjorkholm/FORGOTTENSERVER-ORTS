@@ -38,8 +38,7 @@ local storages = {
 	[4023] = Storage.TibiaTales.RestInHallowedGround.Graves.Grave16
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	-- Eclipse
 	if itemEx.actionid == 2000 then
 		Item(item.uid):remove(1)
@@ -98,7 +97,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			return false
 		end
 
-		Game.setStorageValue(graveStorage, 1)
+		player:setStorageValue(graveStorage, 1)
 
 		local cStorage = player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.HolyWater)
 		if cStorage < 14 then
