@@ -90,7 +90,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('I need gold. Can you spare 100 gold pieces for me?', cid)
 		npcHandler.topic[cid] = 2
 	elseif msgcontains(msg, 'yes') then
-		elseif npcHandler.topic[cid] == 1 then
+		if npcHandler.topic[cid] == 1 then
 			if not player:removeItem(8111, 1) then
 				npcHandler:say('You have no cookie that I\'d like.', cid)
 				npcHandler.topic[cid] = 0
