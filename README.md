@@ -1,11 +1,11 @@
 [Realera based on ORTS! Play the server here:] (http://realera.servegame.com/)
 
 ### What is FORGOTTENSERVER-ORTS
-We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.0](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
+We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.1](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
 
-For more information about TFS 1.0 (including compiling guides) visit the link above.
+For more information about TFS 1.1 (including compiling guides) visit the link above.
 
-You can download TFS 1.0 Windows binaries from http://nightlies.otland.net.
+You can download TFS 1.1 Windows binaries from http://nightlies.otland.net. (not always up to date!)
 
 To login you can use [Otclient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart).
 
