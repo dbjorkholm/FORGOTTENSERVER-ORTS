@@ -1,5 +1,3 @@
-[Realera based on ORTS! Play the server here:] (http://realera.servegame.com/)
-
 ### What is FORGOTTENSERVER-ORTS
 We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.1](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
 
@@ -24,7 +22,7 @@ In order to contribute scripts to this project [create a pull request](http://ot
 **Important:**
 - Scripts should follow this [lua style guide](https://github.com/Olivine-Labs/lua-style-guide) and be as efficient as possible.
 - Use tabs as indentation.
-- Use new metatable function whenever possible or you might have to revise your pull request.
+- Use new metatable functions or you have to revise your pull request.
 
 **Example script (using metatables):**
 ```lua
@@ -47,7 +45,7 @@ doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 ```
 
 **Scripting related links:**
-- [List of metatable functions](http://pastebin.com/nws8xHmK)
+- [Script Interface](https://github.com/otland/forgottenserver/wiki/Script-Interface)
 
 ### Map Contributions
 In order to contribute map updates read this [article](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map) first.

@@ -797,7 +797,10 @@ Storage = {
 		WildWarrior = 50565,
 		DoctorDoctor = 50566,
 		Masquerader = 50567,
-		InteriorDecorator = 50568
+		InteriorDecorator = 50568,
+		DeathOnStrike = 50569,
+		FallOfTheFallen = 50570,
+		DiplomaticImmunity = 50571
 	},
 
 	-- Promotion Storage cannot be changed, it is set in source code

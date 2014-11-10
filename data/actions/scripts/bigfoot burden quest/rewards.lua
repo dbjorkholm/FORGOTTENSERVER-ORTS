@@ -1,98 +1,102 @@
-local reward = {
+local rewards = {
 	[3148] = {
-		{18501, 1},
-		{18502, 1},
-		{18503, 1},
-		{18402, 1},
-		{18396, 1},
-		{2160, 3},
-		{18415, 7},
-		{18423, 2},
+		storage = Storage.BigfootBurden.Warzone1Reward,
+		bossName = 'Deathstrike',
+		items = {
+			{rand = true, itemId = {18396, 18501, 18502, 18503}},
+			{itemId = 18402},
+			{itemId = 18396},
+			{itemId = 2160, count = 3},
+			{itemId = 18415, count = 7},
+			{itemId = 18423, count = 2}
+		},
+		achievement = {'Final Strike', 'Death on Strike'},
+		achievementStorage = Storage.Achievements.DeathOnStrike
 	},
 	[3149] = {
-		{18407, 1},
-		{18505, 1},
-		{18506, 1},
-		{18507, 1},
-		{18396, 1},
-		{2160, 4},
-		{18413, 10},
-		{18423, 2},
+		storage = Storage.BigfootBurden.Warzone2Reward,
+		bossName = 'Gnomevil',
+		items = {
+			{rand = true, itemId = {18505, 18506, 18507}},
+			{itemId = 18407},
+			{itemId = 18396},
+			{itemId = 2160, count = 4},
+			{itemId = 18413, count = 10},
+			{itemId = 18423, count = 2}
+		},
+		miniatureHouse = true,
+		achievement = {'Gnomebane\'s Bane', 'Fall of the Fallen'},
+		achievementStorage = Storage.Achievements.FallOfTheFallen
 	},
 	[3150] = {
-		{18500, 1},
-		{18501, 1},
-		{18502, 1},
-		{18408, 1},
-		{18396, 1},
-		{2160, 5},
-		{18414, 12},
-		{18423, 2},
-	},
+		storage = Storage.BigfootBurden.Warzone3Reward,
+		bossName = 'Abyssador',
+		items = {
+			{rand = true, itemId = {18497, 18498, 18499}},
+			{itemId = 18408},
+			{itemId = 18396},
+			{itemId = 2160, count = 5},
+			{itemId = 18414, count = 12},
+			{itemId = 18423, count = 2}
+		},
+		achievement = {'Death from Below', 'Diplomatic Immunity'},
+		achievementStorage = Storage.Achievements.DiplomaticImmunity
+	}
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	tmpTable = {}
 	if item.uid == 3147 then
 		if player:getStorageValue(Storage.BigfootBurden.WarzoneStatus) == 4 then
 			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 5)
 			player:addItem(2137, 1)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found some golden fruits.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found some golden fruits.')
 		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The chest is empty.')
 		end
-	elseif item.uid == 3148 then
-		if player:getStorageValue(Storage.BigfootBurden.Warzone1Reward) == 1 then
-			player:setStorageValue(Storage.BigfootBurden.Warzone1Reward, 0)
-			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(#reward[item.uid])
-				tmpTable[2] = math.random(#reward[item.uid])
-			end
-			for i = 1, #reward[item.uid] do
-				if not isInArray(tmpTable, i) then
-					player:addItem(reward[item.uid][1], reward[item.uid][2])
-				end
-			end
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 1.")
-		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
+	elseif item.uid > 3147 and item.uid < 3151 then
+		local reward = rewards[item.uid]
+		if not reward then
+			return true
 		end
-	elseif item.uid == 3149 then
-		if player:getStorageValue(Storage.BigfootBurden.Warzone2Reward) == 1 then
-			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(#reward[item.uid])
-				tmpTable[2] = math.random(#reward[item.uid])
-			end
-			for i = 1, #reward[item.uid] do
-				if not isInArray(tmpTable, i) then
-					player:addItem(reward[item.uid][1], reward[item.uid][2])
+
+		if player:getStorageValue(reward.storage) ~= 1 then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, reward.bossName .. ' defends his belongings and will not let you open his chest.')
+			return true
+		end
+
+		local backpack = player:getSlotItem(CONST_SLOT_BACKPACK)
+		if backpack and backpack:getEmptySlots(false) < 5
+				or player:getFreeCapacity() < 100 then
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Please make sure that you have at least 5 free inventory slots and that you can carry on additional 100 oz.')
+			return true
+		end
+
+		for i = 1, #reward.items do
+			local items = reward.items[i]
+			if items.rand then
+				if math.random(10) == 1 then
+					player:addItem(items.itemId[math.random(#items.itemId)], 1)
 				end
+			else
+				player:addItem(items.itemId, items.count or 1)
 			end
-			player:setStorageValue(Storage.BigfootBurden.Warzone2Reward, 0)
-			player:addItem(2493, 1)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 2.")
+		end
+
+		if reward.miniatureHouse then
 			if math.random(25) == 1 then
 				player:addItem(16619, 1)
 			end
-		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
 		end
-	elseif item.uid == 3150 then
-		if player:getStorageValue(Storage.BigfootBurden.Warzone3Reward) == 1 then
-			while(tmpTable[1] ~= tmpTable[2]) do
-				tmpTable[1] = math.random(#reward[item.uid])
-				tmpTable[2] = math.random(#reward[item.uid])
-			end
-			for i = 1, #reward[item.uid] do
-				if not isInArray(tmpTable, i) then
-					player:addItem(reward[item.uid][1], reward[item.uid][2])
-				end
-			end
-			player:setStorageValue(Storage.BigfootBurden.Warzone3Reward, 0)
-			player:addItem(2493, 1)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a reward for defeating Warzone 3.")
-		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The chest is empty.")
+
+		player:setStorageValue(reward.storage, 0)
+		player:addAchievement(reward.achievement[1])
+
+		local cStorage = player:getStorageValue(reward.achievementStorage)
+		if cStorage < 50 then
+			player:setStorageValue(reward.achievementStorage, math.max(0, cStorage) + 1)
+		elseif cStorage == 50 then
+			player:addAchievement(reward.achievement[2])
+			player:setStorageValue(reward.achievementStorage, 51)
 		end
 	end
 	return true
