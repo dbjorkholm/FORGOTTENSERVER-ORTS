@@ -29421,6 +29421,10 @@
 	<item id="21925" article="a" name="ruined stair">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item id="22363" name="broken dream">
+		<attribute key="description" value="The fragment of a dream. Strange pictures seem to flit through the shards." />
+		<attribute key="weight" value="10" />
+	</item>
 	<item id="22381" name="ancient dream">
 		<attribute key="description" value="The dream glows as if alive." />
 		<attribute key="weight" value="15" />
