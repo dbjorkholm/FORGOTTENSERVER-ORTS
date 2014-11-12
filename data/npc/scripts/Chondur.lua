@@ -22,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "addon") then
-		if player:hasOutfit(player:getSex() == 0 and 158 or 154) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 158 or 154) then
 			if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) < 1 then
 				npcHandler:say({
 					"Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...",

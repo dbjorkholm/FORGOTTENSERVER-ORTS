@@ -272,10 +272,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "crest") then
-		if player:hasOutfit(player:getSex() == 0 and 336 or 335) and player:getItemCount(11116) >= 1 then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 336 or 335) and player:getItemCount(11116) >= 1 then
 		 	npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that serpent crest?", cid)
 			npcHandler.topic[cid] = 60
-		elseif player:hasOutfit(player:getSex() == 0 and 336 or 335) and player:getItemCount(11115) >= 1 then
+		elseif player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 336 or 335) and player:getItemCount(11115) >= 1 then
 			npcHandler:say("Oh, wow! Now THAT is an interesting relic! Can I have that tribal crest?", cid)
 			npcHandler.topic[cid] = 61
 		else
@@ -284,7 +284,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] >= 60 and npcHandler.topic[cid] <= 61 then
 		if npcHandler.topic[cid] == 60 then
-			if not player:hasOutfit(player:getSex() == 0 and 336 or 335, 1) and player:removeItem(11116, 1) then
+			if not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 336 or 335, 1) and player:removeItem(11116, 1) then
 				player:addOutfitAddon(335, 1)
 				player:addOutfitAddon(336, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -295,7 +295,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 61 then
-			if not player:hasOutfit(player:getSex() == 0 and 336 or 335, 2) and player:removeItem(11115, 1) then
+			if not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 336 or 335, 2) and player:removeItem(11115, 1) then
 				player:addOutfitAddon(335, 2)
 				player:addOutfitAddon(336, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)

@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ahh. So Duncan sent you, eh? You must have done something really impressive. Okay, take this fine sabre from me, mate.', cid)
 		end
 	elseif msgcontains(msg, 'warrior\'s sword') then
-		if player:hasOutfit(player:getSex() == 0 and 142 or 134, 2) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 142 or 134, 2) then
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end
@@ -56,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'knight\'s sword') then
-		if player:hasOutfit(player:getSex() == 0 and 139 or 131, 1) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end

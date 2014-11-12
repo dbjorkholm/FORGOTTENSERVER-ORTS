@@ -27,7 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'addon') then
-		if player:hasOutfit(player:getSex() == 0 and 156 or 152) and player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) < 1 then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 156 or 152) and player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) < 1 then
 			npcHandler:say('Vescu gave you an assassin outfit? Haha. Noticed it lacks the head piece? You look a bit silly. Want my old head piece?', cid)
 			npcHandler.topic[cid] = 1
 		end

@@ -58,9 +58,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'outfit') then
-		npcHandler:say(player:getSex() == 0 and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
+		npcHandler:say(player:getSex() == PLAYERSEX_FEMALE and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
 	elseif msgcontains(msg, 'task') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('Uh... I don\'t think that I have work for you right now. If you need a job, go talk to Razan.', cid)
 			return true
 		end

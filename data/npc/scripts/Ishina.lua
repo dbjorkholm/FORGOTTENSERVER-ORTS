@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'outfit') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('My jewelled belt? <giggles> That\'s not very manly. Maybe you\'d prefer a scimitar like Habdel has.', cid)
 			return true
 		end
@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, 'comb') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('Comb? This is a jewellery shop.', cid)
 			return true
 		end

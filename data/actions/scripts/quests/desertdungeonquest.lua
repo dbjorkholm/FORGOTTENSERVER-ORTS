@@ -32,7 +32,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 		local sacrificeItem = Tile(config[i].sacrificePosition):getItemById(config[i].sacrificeId)
 		if not sacrificeItem then
-			player:sendCancelMessage(creature:getName() .. ' is missing ' .. (creature:getSex() == 0 and 'her' or 'his') .. ' sacrifice on the altar.')
+			player:sendCancelMessage(creature:getName() .. ' is missing ' .. (creature:getSex() == PLAYERSEX_FEMALE and 'her' or 'his') .. ' sacrifice on the altar.')
 			position:sendMagicEffect(CONST_ME_POFF)
 			return true
 		end

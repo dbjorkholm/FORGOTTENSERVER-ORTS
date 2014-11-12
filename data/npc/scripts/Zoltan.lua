@@ -24,11 +24,11 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 		end
 	elseif msgcontains(msg, "proof") then
-		if not player:hasOutfit(player:getSex() == 0 and 141 or 130, 2) then
+		if not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 141 or 130, 2) then
 			npcHandler:say("... I cannot believe my eyes. You retrieved this hat from Ferumbras' remains? That is incredible. If you give it to me, I will grant you the right to wear this hat as addon. What do you say?", cid)
 			npcHandler.topic[cid] = 1
 		else
-			npcHandler:say("You already have second " .. (player:getSex() == 0 and "summoner" or "mage") .. " addon.", cid)
+			npcHandler:say("You already have second " .. (player:getSex() == PLAYERSEX_FEMALE and "summoner" or "mage") .. " addon.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then

@@ -547,7 +547,7 @@ if NpcHandler == nil then
 					local msg_female = self:getMessage(MESSAGE_WALKAWAY_FEMALE)
 					local message_female = self:parseMessage(msg_female, parseInfo)
 					if message_female ~= message_male then
-						if Player(cid):getSex() == 0 then
+						if Player(cid):getSex() == PLAYERSEX_FEMALE then
 							selfSay(message_female)
 						else
 							selfSay(message_male)

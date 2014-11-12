@@ -27,8 +27,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	if choice.addon then
-		if player:hasOutfit(player:getSex() == 0 and choice.female or choice.male) then
-			if not player:hasOutfit(player:getSex() == 0 and choice.female or choice.male, choice.addon) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and choice.female or choice.male) then
+			if not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and choice.female or choice.male, choice.addon) then
 				if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) >= useItem.storageValue or player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) >= useItem.storageValue then
 					player:addOutfitAddon(choice.female, choice.addon)
 					player:addOutfitAddon(choice.male, choice.addon)
@@ -45,7 +45,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			return false
 		end
 	else
-		if not player:hasOutfit(player:getSex() == 0 and choice.female or choice.male) then
+		if not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and choice.female or choice.male) then
 			if player:getStorageValue(Storage.OutfitQuest.NightmareOutfit) >= 1 or player:getStorageValue(Storage.OutfitQuest.BrotherhoodOutfit) >= 1 then
 				player:addOutfit(choice.female)
 				player:addOutfit(choice.male)

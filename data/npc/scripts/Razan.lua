@@ -60,9 +60,9 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'outfit') then
-		npcHandler:say(player:getSex() == 0 and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
+		npcHandler:say(player:getSex() == PLAYERSEX_FEMALE and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
 	elseif msgcontains(msg, 'task') then
-		if player:getSex() ~= 1 then
+		if player:getSex() == PLAYERSEX_FEMALE then
 			npcHandler:say('I really don\'t want to make girls work for me. If you are looking for a job, ask Miraia.', cid)
 			return true
 		end

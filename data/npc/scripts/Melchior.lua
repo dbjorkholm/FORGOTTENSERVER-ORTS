@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function greetCallback(cid)
-	npcHandler:setMessage(MESSAGE_GREET, Player(cid):getSex() == 0 and "Welcome, |PLAYERNAME|! The lovely sound of your voice shines like a beam of light through my solitary darkness!" or "Greetings, |PLAYERNAME|. I do not see your face, but I can read a thousand things in your voice!")
+	npcHandler:setMessage(MESSAGE_GREET, Player(cid):getSex() == PLAYERSEX_FEMALE and "Welcome, |PLAYERNAME|! The lovely sound of your voice shines like a beam of light through my solitary darkness!" or "Greetings, |PLAYERNAME|. I do not see your face, but I can read a thousand things in your voice!")
 	return true
 end
 
