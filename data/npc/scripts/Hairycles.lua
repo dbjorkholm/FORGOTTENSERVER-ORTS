@@ -190,8 +190,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission01, 1) -- The Ape City Questlog - Mission 1: Whisper Moss
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(4838) >= 1 then
-				player:removeItem(4838, 1)
+			if player:removeItem(4838, 1) then
 				npcHandler:say("Ah yes! That's it. Thank you for bringing mighty whisper moss to Hairycles. It will help but still much is to be done. Just ask for other {mission} if you ready.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 2)
 				player:setStorageValue(Storage.TheApeCity.Mission01, 2) -- The Ape City Questlog - Mission 1: Whisper Moss
@@ -200,8 +199,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(4839) >= 1 then
-				player:removeItem(4839, 1)
+			if player:removeItem(4839, 1) then
 				npcHandler:say("You so good! Brought syrup to me! Thank you, will prepare cure now. Just ask for {mission} if you want help again.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 7)
 				player:setStorageValue(Storage.TheApeCity.Mission02, 5) -- The Ape City Questlog - Mission 2: The Cure
@@ -222,8 +220,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission03, 1) -- The Ape City Questlog - Mission 3: Lizard Parchment
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5956) >= 1 then
-				player:removeItem(5956, 1)
+			if player:removeItem(5956, 1) then
 				npcHandler:say("You brought scroll with lizard text? Good! I will see what text tells me! Come back when ready for other {mission}.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 9)
 				player:setStorageValue(Storage.TheApeCity.Mission03, 2) -- The Ape City Questlog - Mission 3: Lizard Parchment
@@ -251,8 +248,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission05, 1) -- The Ape City Questlog - Mission 5: Hydra Egg
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(4850) >= 1 then
-				player:removeItem(4850, 1)
+			if player:removeItem(4850, 1) then
 				npcHandler:say("Ah, the egg! Mighty warrior you be! Thank you. Hairycles will put it at safe place immediately.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 13)
 				player:setStorageValue(Storage.TheApeCity.Mission05, 3) -- The Ape City Questlog - Mission 5: Hydra Egg
@@ -266,8 +262,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission06, 1) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 13 then
-			if player:getItemCount(4840) >= 1 then
-				player:removeItem(4840, 1)
+			if player:removeItem(4840, 1) then
 				npcHandler:say("Incredible, you brought a witches cap! Now me can prepare mighty charm of life. Yet still other missions will await you,friend.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 15)
 				player:setStorageValue(Storage.TheApeCity.Mission06, 3) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
@@ -286,8 +281,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission08, 1) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
-			if player:getItemCount(4843) >= 1 then
-				player:removeItem(4843, 1)
+			if player:removeItem(4843, 1) then
 				npcHandler:say("Incredible! You got a hair of holy Bong! This will raise the spirit of my people. You are truly a friend. But one last mission awaits you.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 20)
 				player:setStorageValue(Storage.TheApeCity.Mission08, 3) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape

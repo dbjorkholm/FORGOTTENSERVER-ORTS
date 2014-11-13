@@ -81,8 +81,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.BarbarianTest.Questline, 1)
 			player:setStorageValue(Storage.BarbarianTest.Mission01, 1) -- Questlog Barbarian Test Quest Barbarian Test 1: Barbarian Booze
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(5902) > 0 then
-				player:removeItem(5902, 1)
+			if player:removeItem(5902, 1) then
 				npcHandler:say("Good, for this honeycomb I allow you 20 sips from the mead bucket over there. Talk to me again about barbarian mead if you have passed the test.", cid)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.BarbarianTest.Questline, 2)

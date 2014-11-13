@@ -22,8 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 2
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getItemCount(2331) > 0 then
-				player:removeItem(2331, 1)
+			if player:removeItem(2331, 1) then
 				npcHandler:say("Thank you very much!", cid)
 				player:setStorageValue(Storage.postman.Mission05, 3)
 				npcHandler.topic[cid] = 0

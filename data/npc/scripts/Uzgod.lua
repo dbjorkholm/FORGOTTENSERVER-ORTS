@@ -60,8 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 2)
 		elseif(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(2318) >= 1 then
-				player:removeItem(2318, 1)
+			if player:removeItem(2318, 1) then
 				npcHandler:say("Thanking you for brooch. Me guessing you now want your pickaxe?", cid)
 				npcHandler.topic[cid] = 4
 			end

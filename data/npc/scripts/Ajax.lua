@@ -117,30 +117,26 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 12)
 		elseif npcHandler.topic[cid] == 8 then
-			if player:getItemCount(5880) >= 100 then
+			if player:removeItem(5880, 100) then
 				npcHandler:say("Good! Now bring crude iron.", cid)
-				player:removeItem(5880, 100)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 13)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getItemCount(5892) >= 1 then
+			if player:removeItem(5892, 1) then
 				npcHandler:say("Good! Now bring 50 behemoth fangs.", cid)
-				player:removeItem(5892, 1)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 14)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 10 then
-			if player:getItemCount(5893) >= 50 then
+			if player:removeItem(5893, 50) then
 				npcHandler:say("Good! Now bring 50 lizard leather.", cid)
-				player:removeItem(5893, 50)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 15)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(5876) >= 50 then
+			if player:removeItem(5876, 50) then
 				npcHandler:say("Ah! All stuff there. I will start making axes now. Come later and ask me for axe.", cid)
-				player:removeItem(5876, 50)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 16)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddonWaitTimer, os.time() + 2 * 60 * 60) -- 2 hours
 				npcHandler.topic[cid] = 0

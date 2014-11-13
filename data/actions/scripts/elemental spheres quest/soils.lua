@@ -20,7 +20,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		targetItem:transform(soil.transformId)
 		targetItem:decay()
 	elseif soil.createId then
-		local newItem = Game.createItem(soild.createId, 1, toPosition)
+		local newItem = Game.createItem(soil.createId, 1, toPosition)
 		if newItem then
 			newItem:decay()
 		end

@@ -13,6 +13,6 @@ end
 
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
-function onCastSpell(creature, var)
+function onCastSpell(creature, var, isHotkey)
 	return combat:execute(creature, var)
 end

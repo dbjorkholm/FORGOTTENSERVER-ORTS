@@ -50,8 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "golden mug") then
 		if npcHandler.topic[cid] == 4 then
 			local player = Player(cid)
-			if player:getItemCount(2033) > 0 then
-				player:removeItem(2033, 1)
+			if player:removeItem(2033, 1) then
 				player:setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 2)
 				npcHandler:say("I LIKE THAT AND GRANT YOU ACCESS TO THE DUNGEON IN THE NORTH FOR THE NEXT FEW MINUTES. COME BACK ANYTIME AND BRING ME MORE TREASURES.", cid)
 			end

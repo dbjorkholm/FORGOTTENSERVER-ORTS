@@ -63,9 +63,8 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) == 1 and player:getItemCount(5958) > 0 then
+			if player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) == 1 and player:removeItem(5958, 1) then
 				npcHandler:say("Congratulations! Here, from now on you can wear our lovely potion belt as accessory.", cid)
-				player:removeItem(5958, 1)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon, 2)
 				player:addOutfitAddon(138, 1)
 				player:addOutfitAddon(133, 1)

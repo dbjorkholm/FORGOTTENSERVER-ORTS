@@ -68,30 +68,26 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(5893) >= 100 then
+			if player:removeItem(5893, 100) then
 				npcHandler:say("I'm deeply impressed, (brave Knight) " .. player:getName() .. ". (Even if you are not a knight, you certainly possess knight qualities.) Now, please retrieve Ramsay's helmet.", cid)
-				player:removeItem(5893, 100)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 2)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5924) > 0 then
+			if player:removeItem(5924, 1) then
 				npcHandler:say("Good work, (brave Knight) " .. player:getName() .. "! Even though it is damaged, it has a lot of sentimental value. Now, please bring me warrior's sweat.", cid)
-				player:removeItem(5924, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(5885) > 0 then
+			if player:removeItem(5885, 1) then
 				npcHandler:say("Now that is a pleasant surprise, (brave Knight) " .. player:getName() .. "! There is only one task left now: Obtain royal steel to have your helmet refined.", cid)
-				player:removeItem(5885, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 4)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5887) > 0 then
+			if player:removeItem(5887, 1) then
 				npcHandler:say("You truly deserve to wear an adorned helmet, (brave Knight) " .. player:getName() .. ". Please talk to Sam and tell him I sent you. I'm sure he will be glad to refine your helmet.", cid)
-				player:removeItem(5887, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 5)
 				npcHandler.topic[cid] = 0
 			end

@@ -36,29 +36,33 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "wooden stake") then
 		if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 8 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				npcHandler:say("Yes, I was informed what to do. Are you prepared to receive my line of the prayer?", cid)
 				npcHandler.topic[cid] = 2
 			end
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getBlessings() > 0 or player:getItemCount(2173) > 0 then
-				if not player:hasBlessing(6) then
-					if player:removeMoney(getPvpBlessingCost(player:getLevel())) then
-						player:addBlessing(6)
-						npcHandler:say("So receive the protection of the twist of fate, pilgrim.", cid)
-					else
-						npcHandler:say("Oh. You do not have enough money.", cid)
-					end
-				else
-					npcHandler:say("You already possess this blessing.", cid)
-				end
-			else
-				npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
+			if player:getBlessings() == 0
+					or player:getItemCount(2173) == 0 then
+				npcHandler:say('You don\'t have any of the other blessings nor an amulet of loss, so it wouldn\'t make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!', cid)
+				return true
 			end
+
+			if player:hasBlessing(6) then
+				npcHandler:say('You already possess this blessing.', cid)
+				return true
+			end
+
+			if not player:removeMoney(getPvpBlessingCost(player:getLevel())) then
+				npcHandler:say('Oh. You do not have enough money.', cid)
+				return true
+			end
+
+			player:addBlessing(6)
+			npcHandler:say('So receive the protection of the twist of fate, pilgrim.', cid)
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 9)
 				npcHandler:say("So receive my prayer: 'Let there be honour and humility'. Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer. I will inform him what to do.", cid)
 			end

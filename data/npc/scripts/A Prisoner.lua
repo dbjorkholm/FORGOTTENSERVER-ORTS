@@ -24,8 +24,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
-			if player:getItemCount(2674) >= 7 then
-				player:removeItem(2674, 7)
+			if player:removeItem(2674, 7) then
 				npcHandler:say("Mnjam - excellent apples. Now - about that key. You are sure want it?", cid)
 				npcHandler.topic[cid] = 3
 			else

@@ -65,40 +65,35 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 			player:setStorageValue(Storage.FriendsandTraders.TheSweatyCyclops, 1)
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(3983) >= 3 then
-				player:removeItem(3983, 3)
+			if player:removeItem(3983, 3) then
 				npcHandler:say("Good good! Woman happy will be. Now me happy too and help you.", cid)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.FriendsandTraders.TheSweatyCyclops, 2)
 			end
 		-- Crown Armor
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(2487) > 0 then
-				player:removeItem(2487, 1)
+			if player:removeItem(2487, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5887, 1)
 			end
 		-- Dragon Shield
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(2516) > 0 then
-				player:removeItem(2516, 1)
+			if player:removeItem(2516, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5889, 1)
 			end
 		-- Devil Helmet
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(2462) > 0 then
-				player:removeItem(2462, 1)
+			if player:removeItem(2462, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5888, 1)
 			end
 		-- Giant Sword
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(2393) > 0 then
-				player:removeItem(2393, 1)
+			if player:removeItem(2393, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5892, 1)
@@ -132,9 +127,8 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(5880) > 0 then
+			if player:removeItem(5880, 1) then
 				player:setStorageValue(Storage.hiddenCityOfBeregar.GearWheel, player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) + 1)
-				player:removeItem(5880, 1)
 				player:addItem(9690, 1)
 			else
 				npcHandler:say("Lil' one does not have any iron ores.", cid)

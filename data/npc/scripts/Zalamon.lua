@@ -222,12 +222,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Exzztraordinary. We are mozzt fortunate to have zzezze documentzz in our handzz now. Zzizz would zzertainly help me to build an effective rezzizztanzze. Will you give zzem to me? ", cid)
 			npcHandler.topic[cid] = 4
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(11101) >= 1 then
+			if player:removeItem(11101, 1) then
 				npcHandler:say({
 					"Aaah, zzezze look zzertainly interezzting. Zzezze manuzzcriptzz show uzz zzeveral locationzz of zze enemy troopzz. ... ",
 					"I'm imprezzed, zzoftzzkin. Maybe you can be of zzome more help. "
 				}, cid)
-				player:removeItem(11101, 1)
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 3)
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission00, 2) --Questlog, Children of the Revolution "Prove Your Worzz!"
 				npcHandler.topic[cid] = 0
@@ -355,8 +354,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(12320, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 20 then
-			if player:getItemCount(12323) >= 1 then
-				player:removeItem(12323, 1)
+			if player:removeItem(12323, 1) then
 				npcHandler:say("Zzizz izz not hizz head but clearly belonged to zze keeper. I - I am imprezzed. You can go now. Leave me alone for a zzecond. ", cid)
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 9)
 				player:setStorageValue(Storage.WrathoftheEmperor.Mission03, 3) --Questlog, Wrath of the Emperor "Mission 03: The Keeper"
@@ -364,8 +362,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 
 		elseif npcHandler.topic[cid] == 21 then
-			if player:getItemCount(12327) >= 1 then
-				player:removeItem(12327, 1)
+			if player:removeItem(12327, 1) then
 				player:setStorageValue(Storage.WrathoftheEmperor.Questline, 12)
 				player:setStorageValue(Storage.WrathoftheEmperor.Mission04, 3) --Questlog, Wrath of the Emperor "Mission 04: Sacrament of the Snake"
 				npcHandler:say("Finally. At lazzt. Zze zzeptre izz - ourzz. Ourzz of courzze. A weapon we should uzze wizzely for our cauzze. I need a zzecond or two. Do you leave me already? ", cid)

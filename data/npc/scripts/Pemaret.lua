@@ -18,10 +18,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getItemCount(7963) > 0 then
+		if player:removeItem(7963, 1) then
 			npcHandler:say("Yeah! Now let's see... <fumble fumble> There you go, I hope you like it!", cid)
 			player:addItem(7964, 1)
-			player:removeItem(7963, 1)
 		else
 			npcHandler:say("You don't have the fish.", cid)
 		end

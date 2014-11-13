@@ -52,10 +52,9 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission08, 2) -- Questlog The Ice Islands Quest, The Contact
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(7281) >= 1 then
+			if player:removeItem(7281, 1) then
 				npcHandler:say("Ah, great. Please give me some time to evaluate the information. Then talk to me again about your mission. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 34)
-				player:removeItem(7281, 1)
 				player:setStorageValue(Storage.TheIceIslands.Mission08, 4) -- Questlog The Ice Islands Quest, The Contact
 				player:setStorageValue(Storage.TheIceIslands.MemoryCrystal, os.time() + 5 * 60)
 				npcHandler.topic[cid] = 0

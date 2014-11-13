@@ -16,18 +16,20 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Do you want to repair your worn soft boots for 10000 gold coins?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		if player:getItemCount(10021) >= 1 then
-			if player:removeMoney(10000) then
-				player:removeItem(10021, 1)
-				player:addItem(6132, 1)
-				npcHandler:say("Here you are.", cid)
-			else
-				npcHandler:say("Sorry, you don't have enough gold.", cid)
-			end
-		else
-			npcHandler:say("Sorry, you don't have the item.", cid)
-		end
 		npcHandler.topic[cid] = 0
+		if player:getItemCount(10021) == 0 then
+			npcHandler:say("Sorry, you don't have the item.", cid)
+			return true
+		end
+
+		if not player:removeMoney(10000) then
+			npcHandler:say("Sorry, you don't have enough gold.", cid)
+			return true
+		end
+
+		player:removeItem(10021, 1)
+		player:addItem(6132, 1)
+		npcHandler:say("Here you are.", cid)
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
 		npcHandler.topic[cid] = 0
 		npcHandler:say("Ok then.", cid)

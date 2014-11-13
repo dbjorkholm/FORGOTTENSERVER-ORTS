@@ -65,8 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 				and player:getStorageValue(Storage.TheIceIslands.Obelisk02) == 5
 				and player:getStorageValue(Storage.TheIceIslands.Obelisk03) == 5
 				and player:getStorageValue(Storage.TheIceIslands.Obelisk04) == 5 then
-			if player:getItemCount(7289) >= 1 then
-				player:removeItem(7289, 1)
+			if player:removeItem(7289, 1) then
 				player:setStorageValue(Storage.TheIceIslands.Questline, 40)
 				player:setStorageValue(Storage.TheIceIslands.yakchalDoor, 1)
 				player:setStorageValue(Storage.TheIceIslands.Mission12, 6) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
@@ -148,22 +147,20 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission08, 1) -- Questlog The Ice Islands Quest, The Contact
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(7290) >= 5 then
-				player:removeItem(7290, 5)
+			if layer:removeItem(7290, 5) then
 				npcHandler:say("Excellent, you collected 5 of them. If you have collected 5 or more, talk to me about your {reward}. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 41)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(7290) >= 10 then
-				player:removeItem(7290, 10)
+			if player:removeItem(7290, 10) then
 				npcHandler:say("Excellent, you collected 10 of them. If you have collected 15 or more, talk to me about your {reward}. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 43)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(7290) >= 1 then
-				count = player:getItemCount(7290)
+			if player:getItemCount(7290) > 0 then
+				local count = player:getItemCount(7290)
 				player:addMoney(count * 2000)
 				player:removeItem(7290, count)
 				npcHandler:say("Here your are. " .. count * 2000 .. " gold coins for " .. count .. " shards.", cid)

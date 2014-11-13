@@ -36,8 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.FriendsandTraders.TheMermaidMarina, 1)
 			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 		elseif(npcHandler.topic[cid] == 4) then
-			if player:getItemCount(5902) >= 50 then
-				player:removeItem(5902, 50)
+			if player:removeItem(5902, 50) then
 				npcHandler:say("Oh goodie! Thank you! Okay... I guess since my fingers are sticky now anyway, I will help you. From now on, if you bring me {10 pieces of spider silk}, I will create one {spool of yarn}.", cid)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.FriendsandTraders.TheMermaidMarina, 2)
@@ -46,8 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 5) then
-			if player:getItemCount(5879) >= 10 then
-				player:removeItem(5879, 10)
+			if player:removeItem(5879, 10) then
 				player:addItem(5886, 1)
 				npcHandler:say("Ew... gooey... there you go.", cid)
 				npcHandler.topic[cid] = 0

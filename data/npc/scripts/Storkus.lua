@@ -73,7 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			count = player:getItemCount(5905)
+			local count = player:getItemCount(5905)
 			requiredCount = 20 - player:getStorageValue(Storage.TheInquisition.StorkusVampiredust)
 			if(count > requiredCount) then
 				count = requiredCount
@@ -83,62 +83,56 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ye've brought me " .. count .. " vampire dusts. " .. (20 - player:getStorageValue(Storage.TheInquisition.StorkusVampiredust)) == 0 and ("Ask me for a {mission} to continue your quest.") or ("Ye' need to bring " .. (20 - player:getStorageValue(Storage.TheInquisition.StorkusVampiredust)) .. " more."), cid)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
-			if(player:getItemCount(9020) >= 1) then
+			if player:removeItem(9020, 1) then
 				npcHandler:say("Ye' brought the token needed to advance to the first vampire hunter rank. I consider that a fluke, but still, congrats! Let me share some of my experience with ye'.", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 1)
-				player:removeItem(9020, 1)
-				player:addExperience( 1000, false, true)
+				player:addExperience(1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 4) then
-			if(player:getItemCount(9020) >= 4) then
+			if player:removeItem(9020, 4) then
 				npcHandler:say("Ye' brought the four tokens needed to advance to the second vampire hunter rank. Pretty lucky ye' are! Let me share some of my experience with ye'.", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 2)
-				player:removeItem(9020, 4)
-				player:addExperience( 5 * 1000, false, true)
+				player:addExperience(5 * 1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 5) then
-			if(player:getItemCount(9020) >= 5) then
+			if player:removeItem(9020, 5) then
 				npcHandler:say("Ye' brought the five tokens needed to advance to the third vampire hunter rank. Wow, you're pretty determined! Let me share some of my experience with ye'.", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 3)
-				player:removeItem(9020, 5)
-				player:addExperience( 10 * 1000, false, true)
+				player:addExperience(10 * 1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 6) then
-			if(player:getItemCount(9020) >= 10) then
+			if player:removeItem(9020, 10) then
 				npcHandler:say("Ye' brought the ten tokens needed to advance to the fourth vampire hunter rank. You're absolutely painstaking! Let me share some of my experience with ye'.", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 4)
-				player:removeItem(9020, 10)
-				player:addExperience( 20 * 1000, false, true)
+				player:addExperience(20 * 1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 7) then
-			if(player:getItemCount(9020) >= 30) then
+			if player:removeItem(9020, 30) then
 				npcHandler:say("Ye' brought the thirty tokens needed to advance to the fifth vampire hunter rank. You're completely obliterative, kid! Let me share some of my experience with ye'.", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 5)
-				player:removeItem(9020, 30)
-				player:addExperience( 50 * 1000, false, true)
+				player:addExperience(50 * 1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 8) then
-			if(player:getItemCount(9020) >= 50) then
+			if player:removeItem(9020, 50) then
 				npcHandler:say("Ye' brought the fifty tokens needed to advance to the last vampire hunter rank. Now that's something. You're razing-amazing! Let me share some of my experience and a little something with ye'!", cid)
 				player:setStorageValue(Storage.VampireHunter.Rank, 6)
-				player:removeItem(9020, 50)
 				player:addItem(9019, 1)
-				player:addExperience( 100 * 1000, false, true)
+				player:addExperience(100 * 1000, true)
 			else
 				npcHandler:say("Ye' don't have enought tokens.", cid)
 			end

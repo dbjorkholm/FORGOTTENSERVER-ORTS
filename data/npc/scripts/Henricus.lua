@@ -91,14 +91,13 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheInquisition.Mission05, 1) -- The Inquisition Questlog- "Mission 5: Essential Gathering"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 15 then
-			if player:getItemCount(6500) >= 20 then
+			if player:removeItem(6500, 20) then
 				npcHandler:say({
 					"You're indeed a dedicated protector of the true believers. Don't stop now. Kill as many of these creatures as you can. ...",
 					"I also have a reward for your great efforts. Talk to me about your {demon hunter outfit} anytime from now on. Afterwards, let's talk about the next mission that's awaiting you."
 				}, cid)
 				player:setStorageValue(Storage.TheInquisition.Questline, 16)
 				player:setStorageValue(Storage.TheInquisition.Mission05, 2) -- The Inquisition Questlog- "Mission 5: Essential Gathering"
-				player:removeItem(6500, 20)
 			else
 				npcHandler:say("You need 20 of them.", cid)
 			end

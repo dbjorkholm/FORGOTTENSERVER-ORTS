@@ -61,10 +61,9 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(5941) >= 1 then
+			if player:removeItem(5941, 1) then
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, os.time())
 				npcHandler:say("<mumblemumble> Sha Kesh Mar!", cid)
-				player:removeItem(5941, 1)
 				player:addItem(5942, 1)
 			else
 				npcHandler:say("You don't have the required items.", cid)
@@ -127,7 +126,7 @@ local function creatureSayCallback(cid, type, msg)
 				end
 			end
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(5941) >= 1 then
+			if player:getItemCount(5941) > 0 then
 				npcHandler:say("Would you like to receive a spiritual prayer to bless your stake?", cid)
 				npcHandler.topic[cid] = 3
 			end

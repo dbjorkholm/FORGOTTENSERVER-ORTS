@@ -37,8 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "snippet")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18430) >= 1 then
-				player:removeItem(18430, 1)
+			if player:removeItem(18430, 1) then
 				player:setStorageValue(Storage.BigfootBurden.Warzone1Access, 1)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
 				npcHandler.topic[cid] = 0
@@ -46,8 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "lash")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18496) >= 1 then
-				player:removeItem(18496, 1)
+			if player:removeItem(18496, 1) then
 				player:setStorageValue(Storage.BigfootBurden.Warzone2Access, 1)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter two for free!", cid)
 				npcHandler.topic[cid] = 0
@@ -55,8 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "hat")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18495) >= 1 then
-				player:removeItem(18495, 1)
+			if player:removeItem(18495, 1) then
 				player:setStorageValue(Storage.BigfootBurden.Warzone3Access, 1)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter three for free!", cid)
 				npcHandler.topic[cid] = 0

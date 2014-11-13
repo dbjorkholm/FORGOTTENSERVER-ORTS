@@ -51,8 +51,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Good! Come back to me once you have gathered 100 eye patches.", cid)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(6098) >= 100 then
-				player:removeItem(6098, 100)
+			if player:removeItem(6098, 100) then
 				player:setStorageValue(storage, 2)
 				npcHandler:say("Good job. Alright, now bring me 100 peg legs.", cid)
 				npcHandler.topic[cid] = 0
@@ -60,8 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(6126) >= 100 then
-				player:removeItem(6126, 100)
+			if player:removeItem(6126, 100) then
 				player:setStorageValue(storage, 3)
 				npcHandler:say("Nice. Lastly, bring me 100 pirate hooks. That should be enough to earn your sabre.", cid)
 				npcHandler.topic[cid] = 0
@@ -69,8 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(6097) >= 100 then
-				player:removeItem(6097, 100)
+			if player:removeItem(6097, 100) then
 				player:setStorageValue(storage, 4)
 				npcHandler:say("I see, I see. Well done. Go to Morgan and tell him this codeword: 'firebird'. He'll know what to do.", cid)
 				npcHandler.topic[cid] = 0

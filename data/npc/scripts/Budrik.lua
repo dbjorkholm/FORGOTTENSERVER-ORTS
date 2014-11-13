@@ -22,9 +22,8 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			npcHandler.topic[cid] = 1
 		elseif player:getStorageValue(Storage.toOutfoxAFoxQuest) == 1 then
-			if player:getItemCount(7497) > 0 then
+			if player:removeItem(7497, 1) then
 				player:setStorageValue(Storage.toOutfoxAFoxQuest, 2)
-				player:removeItem(7497, 1)
 				player:addItem(7939, 1)
 				npcHandler:say("I always said it to the others 'This brave fellow will bring me my mining helmet back' and here you are with it!! Here take my spare helmet, I don't need it anymore!", cid)
 			else

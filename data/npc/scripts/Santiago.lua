@@ -103,7 +103,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
 		elseif storeTalkCid[cid] == 2 then
-			if player:getItemCount(2651) >= 1 then
+			if player:getItemCount(2651) > 0 then
 				local coatSlot = player:getSlotItem(CONST_SLOT_ARMOR)
 				if coatSlot then
 					npcHandler:say("Ah, no need to say anything, I can see it suits you perfectly. Now we're getting to the fun part, let's get you armed! Are you ready for some {action}?", cid)

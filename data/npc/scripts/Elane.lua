@@ -65,9 +65,8 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(5947) > 0 then
+			if player:removeItem(5947, 1) then
 				npcHandler:say("Yeah! I could kiss you right here and there! Besides, you're a handsome one. <giggles> Please bring me 100 pieces of lizard leather and 100 pieces of red dragon leather now!", cid)
-				player:removeItem(5947, 1)
 				player:setStorageValue(Storage.OutfitQuest.HunterHatAddon, 2)
 				npcHandler.topic[cid] = 0
 			else
@@ -84,9 +83,8 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(5891) >= 5 then
+			if player:removeItem(5891, 5) then
 				npcHandler:say("Great! Now we can create a few more Tiaras. If only they weren't that expensive... Well anyway, please obtain one piece of royal steel, draconian steel and hell steel each.", cid)
-				player:removeItem(5891, 5)
 				player:setStorageValue(Storage.OutfitQuest.HunterHatAddon, 4)
 				npcHandler.topic[cid] = 0
 			else
@@ -107,9 +105,8 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 8 then
-			if player:getItemCount(5875) >= 1 then
+			if player:removeItem(5875, 1) then
 				npcHandler:say("Great! I hereby grant you the right to wear the sniper gloves as accessory. Congratulations!", cid)
-				player:removeItem(5875, 1)
 				player:setStorageValue(Storage.OutfitQuest.HunterBodyAddon, 1)
 				player:addOutfitAddon(129, 2)
 				player:addOutfitAddon(137, 1)

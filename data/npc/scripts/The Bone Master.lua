@@ -51,8 +51,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addAchievement('Bone Brother')
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(6500) >= 500 then
-				player:removeItem(6500, 500)
+			if player:removeItem(6500, 500) then
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.BrotherhoodOutfit, 2)
 				npcHandler:say("You advanced to {Hyaena} rank! You are now able to use teleports of second floor of Knightwatch Tower.", cid)
@@ -61,8 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(6500) >= 1000 then
-				player:removeItem(6500, 1000)
+			if player:removeItem(6500, 1000) then
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.BrotherhoodOutfit, 3)
 				player:addItem(6433, 1)
@@ -73,8 +71,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(6500) >= 1500 then
-				player:removeItem(6500, 1500)
+			if player:removeItem(6500, 1500) then
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.BrotherhoodOutfit, 4)
 				player:setStorageValue(Storage.OutfitQuest.BrotherhoodDoor, 1)

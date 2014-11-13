@@ -154,8 +154,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 4 then
 			local player = Player(cid)
-			if player:getItemCount(18422) >= renown[cid] then
-				player:removeItem(18422, renown[cid])
+			if player:removeItem(18422, renown[cid]) then
 				player:setStorageValue(Storage.BigfootBurden.Rank, math.max(0, player:getStorageValue(Storage.BigfootBurden.Rank)) + renown[cid] * 5)
 				npcHandler:say('As you wish! Your new renown is {' .. player:getStorageValue(Storage.BigfootBurden.Rank) .. '}.', cid)
 			else

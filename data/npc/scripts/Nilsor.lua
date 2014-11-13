@@ -110,8 +110,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(7245) >= 1 then
-				player:removeItem(7245, 1)
+			if player:removeItem(7245, 1) then
 				npcHandler:say("Thank you for this ingredient. Now bring me Geyser {Water} in a Waterskin. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 22)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 2) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -120,8 +119,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(7246) >= 1 then
-				player:removeItem(7246, 1)
+			if player:removeItem(7246, 1) then
 				npcHandler:say("Thank you for this ingredient. Now bring me Fine {Sulphur}.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 23)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 3) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -130,8 +128,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(8301) >= 1 then
-				player:removeItem(8301, 1)
+			if player:removeItem(8301, 1) then
 				npcHandler:say("Thank you for this ingredient. Now bring me the Frostbite {Herb}", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 24)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 4) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -140,8 +137,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(7248) >= 1 then
-				player:removeItem(7248, 1)
+			if player:removeItem(7248, 1) then
 				npcHandler:say("Thank you for this ingredient Now bring me Purple Kiss {Blossom}.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 25)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 5) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -150,8 +146,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(7249) >= 1 then
-				player:removeItem(7249, 1)
+			if player:removeItem(7249, 1) then
 				npcHandler:say("Thank you for this ingredient. Now bring me the {Hydra Tongue}", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 26)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 6) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -160,8 +155,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then
-			if player:getItemCount(7250) >= 1 then
-				player:removeItem(7250, 1)
+			if player:removeItem(7250, 1) then
 				npcHandler:say("Thank you for this ingredient. Now bring me {Spores} of a Giant Glimmercap Mushroom.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 27)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 7) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs
@@ -170,8 +164,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then
-			if player:getItemCount(7251) >= 1 then
-				player:removeItem(7251, 1)
+			if player:removeItem(7251, 1) then
 				npcHandler:say("Thank you for this ingredient. Now you finish your {mission}", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 28)
 				player:setStorageValue(Storage.TheIceIslands.Mission06, 8) -- Questlog The Ice Islands Quest, Nibelor 5: Cure the Dogs

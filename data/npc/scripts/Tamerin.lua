@@ -36,8 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, "animal cure") then
-		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 30 and player:getItemCount(9734) > 0 then
-			player:removeItem(9734, 1)
+		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 30 and player:removeItem(9734, 1) then
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 31)
 			player:setStorageValue(Storage.InServiceofYalahar.MorikSummon, 0)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 4) -- StorageValue for Questlog "Mission 05: Food or Fight"
@@ -61,8 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "morik") then
-		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 31 and player:getItemCount(9735) > 0 then
-			player:removeItem(9735, 1)
+		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 31 and player:removeItem(9735, 1) then
 			player:setStorageValue(Storage.InServiceofYalahar.Questline, 32)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission05, 5) -- StorageValue for Questlog "Mission 05: Food or Fight"
 			npcHandler:say("So he finally got what he deserved. As I said, as soon as you have helped me to solve both of my problems, we will talk about your {mission}.", cid)

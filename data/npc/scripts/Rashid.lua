@@ -269,8 +269,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TravellingTrader.Mission01, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 3) then
-			if(player:getItemCount(7397) >= 1) then
-				player:removeItem(7397, 1)
+			if player:removeItem(7397, 1) then
 				npcHandler:say("Well done! I'll take that from you. <snags it> Come see me another day, I'll be busy for a while now. ", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission01, 2)
 				npcHandler.topic[cid] = 0
@@ -287,8 +286,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TravellingTrader.Mission02, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 6) then
-			if(player:getItemCount(7503) >= 1) then
-				player:removeItem(7503, 1)
+			if player:removeItem(7503, 1) then
 				npcHandler:say("Great. Just place it over there - yes, thanks, that's it. Come see me another day, I'll be busy for a while now. ", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission02, 5)
 				npcHandler.topic[cid] = 0
@@ -307,8 +305,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TravellingTrader.Mission03, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 9) then
-			if(player:getItemCount(8112) >= 1) then
-				player:removeItem(8112, 1)
+			if player:removeItem(8112, 1) then
 				--if (player:getStorageValue(ExplorerSocietySTORAGE) == 1) then
 					--player:AddArchie(Just in Time)
 				--end
@@ -329,8 +326,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addMoney(1000)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 12) then
-			if(player:getItemCount(8760) >= 1) then
-				player:removeItem(8760, 1)
+			if player:removeItem(8760, 1) then
 				npcHandler:say("I'm surprised that you managed to bring this vase without a single crack. That was what I needed to know, thank you. ", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission04, 3)
 				npcHandler.topic[cid] = 0
@@ -350,8 +346,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TravellingTrader.Mission05, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 15) then
-			if(player:getItemCount(7385) >= 1) then
-				player:removeItem(7385, 1)
+			if player:removeItem(7385, 1) then
 				npcHandler:say("Ha! You are clever indeed, well done! I'll take this from you. Come see me tomorrow, I think we two might get into business after all.", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission05, 3)
 				npcHandler.topic[cid] = 0
@@ -369,8 +364,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TravellingTrader.Mission06, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 18) then
-			if(player:getItemCount(8766) >= 1) then
-				player:removeItem(8766, 1)
+			if player:removeItem(8766, 1) then
 				npcHandler:say("Thank you!! Ah, this makes my day! I'll take the rest of the day off to get to know this little guy. Come see me tomorrow, if you like.", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission06, 2)
 				npcHandler.topic[cid] = 0

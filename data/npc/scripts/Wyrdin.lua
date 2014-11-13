@@ -47,8 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getItemCount(10090) > 0 then
-				player:removeItem(10090, 1)
+			if player:removeItem(10090, 1) then
 				player:setStorageValue(Storage.TheWayToYalahar.QuestLine, 3)
 				npcHandler:say("Oh marvellous, please excuse me. I need to read this text immediately. Here, take this small reward of 500 gold pieces for your efforts.", cid)
 				player:addMoney(500)
