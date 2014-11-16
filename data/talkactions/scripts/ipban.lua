@@ -1,7 +1,6 @@
 local ipBanDays = 7
 
-function onSay(cid, words, param)
-	local player = Player(cid)
+function onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
@@ -11,13 +10,13 @@ function onSay(cid, words, param)
 		return false
 	end
 
-	local ip = result.getDataInt(resultId, "lastip")
+	local ip = result.getDataLong(resultId, "lastip")
 	result.free(resultId)
 
-	local targetCid = getPlayerByName(param)
-	if targetCid ~= false then
-		ip = getIpByPlayerName(param)
-		doRemoveCreature(targetCid)
+	local targetPlayer = Player(param)
+	if targetPlayer then
+		ip = targetPlayer:getIp()
+		targetPlayer:remove()
 	end
 
 	if ip == 0 then

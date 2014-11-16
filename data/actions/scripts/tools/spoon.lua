@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if itemEx.itemid == 388 then
@@ -17,6 +16,18 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:say('You retrive spores from a mushroom.', TALKTYPE_MONSTER_SAY)
 			end
 		end
+	end
+
+	-- What a foolish Quest - Mission 8 (Sulphur)
+	if itemEx.itemid == 8573 then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 21
+				or player:getStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur) == 1 then
+			return true
+		end
+		
+		player:setStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur, 1)
+		player:addItem(8204, 1)
+		toPosition:sendMagicEffect(CONST_ME_YELLOWRINGS)
 	end
 	return true
 end

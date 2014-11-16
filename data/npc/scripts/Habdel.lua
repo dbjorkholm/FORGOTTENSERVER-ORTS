@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'outfit') then
-		if player:getSex() ~= 1 then
+		if player:getSex() == PLAYERSEX_FEMALE then
 			npcHandler:say('My scimitar? Well, mylady, I do not want to sound rude, but I don\'t think a scimitar would fit to your beautiful outfit. If you are looking for an accessory, why don\'t you talk to Ishina?', cid)
 			return true
 		end
@@ -22,7 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, 'comb') then
-		if player:getSex() ~= 1 then
+		if player:getSex() == PLAYERSEX_FEMALE then
 			npcHandler:say('Comb? This is a weapon shop.', cid)
 			return true
 		end
@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I sell the finest weapons in town. If you\'d like to see my offers, ask me for a {trade}.'})
+keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, text = 'I sell the finest weapons in town. If you\'d like to see my offers, ask me for a {trade}.'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|! See the fine {weapons} I sell.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye. Come back soon.')

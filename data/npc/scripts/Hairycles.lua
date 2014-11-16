@@ -8,46 +8,48 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function getTable(player)
-local itemsList = {
+	local itemsList = {
 		{name="Banana", id=2676, buy=2},
-		}
-local statues = {
-		{{name="Monkey Statue (No Seeing)", id=5086, buy=65},
-		{name="Monkey Statue (No Hearing)", id=5087, buy=65},
-		{name="Monkey Statue (No Speaking)", id=5088, buy=65}}
-		}
+	}
 
-if player:getStorageValue(Storage.TheApeCity.Questline) >= 23 then
-	for i = 1, #statues[1] do
-		table.insert(itemsList, statues[1][i])
+	local statues = {
+		{name="Monkey Statue (No Seeing)", id=5086, buy=65},
+		{name="Monkey Statue (No Hearing)", id=5087, buy=65},
+		{name="Monkey Statue (No Speaking)", id=5088, buy=65}
+	}
+
+	if player:getStorageValue(Storage.TheApeCity.Questline) >= 23 then
+		for i = 1, #statues do
+			table.insert(itemsList, statues[i])
+		end
 	end
-end
-return itemsList
+	return itemsList
 end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if(player:getStorageValue(Storage.TheApeCity.Questline) <= 14) then
+	if player:getStorageValue(Storage.TheApeCity.Questline) <= 14 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello! Did not notice!")
-	elseif(player:getStorageValue(Storage.TheApeCity.Questline) >= 15) then
+	elseif player:getStorageValue(Storage.TheApeCity.Questline) >= 15 then
 		npcHandler:setMessage(MESSAGE_GREET, "Be greeted, friend of the ape people. If you want to trade, just ask for my offers. If you are injured, ask for healing.")
 	end
 	return true
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
+	end
 
-	elseif msgcontains(msg, "heal") then
+	local player = Player(cid)
+	if msgcontains(msg, "heal") then
 		if player:getStorageValue(Storage.TheApeCity.Mission06) >= 3 then
 			local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
 			if player:getHealth() < 50 then
 				player:addHealth(50 - player:getHealth())
 				for i = 1, #conditions do
-					if player:getCondition(conditions[i], CONDITIONID_COMBAT) then
-						player:removeCondition(conditions[i], CONDITIONID_COMBAT)
+					if player:getCondition(conditions[i]) then
+						player:removeCondition(conditions[i])
 					end
 				end
 				npcHandler:say("You are hurt. I will heal your wounds.", cid)
@@ -57,7 +59,6 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say("I only heal friends of ape...", cid)
 		end
-
 	elseif msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheApeCity.Questline) < 1 then
 			npcHandler:say("These are dire times for our people. Problems plenty are in this times. But me people not grant trust easy. Are you willing to prove you friend of ape people?", cid)
@@ -167,6 +168,12 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Me truly proud of you, friend. You learn many about plants, charms and ape people. Me want grant you shamanic power now. You ready?", cid)
 			npcHandler.topic[cid] = 19
 		end
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hairycles) ~= 1 then
+			npcHandler:say('Oh you bring cookie for old Hairycles?', cid)
+			npcHandler.topic[cid] = 20
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("To become friend of ape people a long and difficult way is. We do not trust easy but help is needed. Will you listen to story of Hairycles?", cid)
@@ -183,8 +190,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission01, 1) -- The Ape City Questlog - Mission 1: Whisper Moss
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(4838) >= 1 then
-				player:removeItem(4838, 1)
+			if player:removeItem(4838, 1) then
 				npcHandler:say("Ah yes! That's it. Thank you for bringing mighty whisper moss to Hairycles. It will help but still much is to be done. Just ask for other {mission} if you ready.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 2)
 				player:setStorageValue(Storage.TheApeCity.Mission01, 2) -- The Ape City Questlog - Mission 1: Whisper Moss
@@ -193,8 +199,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You don't have it...", cid)
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(4839) >= 1 then
-				player:removeItem(4839, 1)
+			if player:removeItem(4839, 1) then
 				npcHandler:say("You so good! Brought syrup to me! Thank you, will prepare cure now. Just ask for {mission} if you want help again.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 7)
 				player:setStorageValue(Storage.TheApeCity.Mission02, 5) -- The Ape City Questlog - Mission 2: The Cure
@@ -215,8 +220,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission03, 1) -- The Ape City Questlog - Mission 3: Lizard Parchment
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5956) >= 1 then
-				player:removeItem(5956, 1)
+			if player:removeItem(5956, 1) then
 				npcHandler:say("You brought scroll with lizard text? Good! I will see what text tells me! Come back when ready for other {mission}.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 9)
 				player:setStorageValue(Storage.TheApeCity.Mission03, 2) -- The Ape City Questlog - Mission 3: Lizard Parchment
@@ -244,8 +248,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission05, 1) -- The Ape City Questlog - Mission 5: Hydra Egg
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(4850) >= 1 then
-				player:removeItem(4850, 1)
+			if player:removeItem(4850, 1) then
 				npcHandler:say("Ah, the egg! Mighty warrior you be! Thank you. Hairycles will put it at safe place immediately.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 13)
 				player:setStorageValue(Storage.TheApeCity.Mission05, 3) -- The Ape City Questlog - Mission 5: Hydra Egg
@@ -259,8 +262,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission06, 1) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 13 then
-			if player:getItemCount(4840) >= 1 then
-				player:removeItem(4840, 1)
+			if player:removeItem(4840, 1) then
 				npcHandler:say("Incredible, you brought a witches cap! Now me can prepare mighty charm of life. Yet still other missions will await you,friend.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 15)
 				player:setStorageValue(Storage.TheApeCity.Mission06, 3) -- The Ape City Questlog - Mission 6: Witches' Cap Spot
@@ -279,8 +281,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Mission08, 1) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 16 then
-			if player:getItemCount(4843) >= 1 then
-				player:removeItem(4843, 1)
+			if player:removeItem(4843, 1) then
 				npcHandler:say("Incredible! You got a hair of holy Bong! This will raise the spirit of my people. You are truly a friend. But one last mission awaits you.", cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 20)
 				player:setStorageValue(Storage.TheApeCity.Mission08, 3) -- The Ape City Questlog - Mission 8: Looking for a hair of holy ape
@@ -302,10 +303,29 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheApeCity.Questline, 23)
 			player:setStorageValue(Storage.TheApeCity.Mission09, 3) -- The Ape City Questlog - Mission 9: The Deepest Catacombs
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 20 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hairycles, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('Thank you, you are ... YOU SON OF LIZARD!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "no") then
-		if npcHandler.topic[cid] > 1 then
+		if npcHandler.topic[cid] > 0 and npcHandler.topic[cid] < 20 then
 			npcHandler:say("Then no.", cid)
+			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 20 then
+			npcHandler:say("I see.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "trade") then
@@ -313,7 +333,7 @@ local function creatureSayCallback(cid, type, msg)
 			local player = Player(cid)
 			local items = setNewTradeTable(getTable(player))
 			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-				if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+				if (ignoreCap == false and ((player:getFreeCapacity() / 100) < (ItemType(items[item].itemId):getWeight(amount) / 100) or inBackpacks and (player:getFreeCapacity() / 100) < ((ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight() / 100)))) then
 					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 				end
 				if items[item].buyPrice <= player:getMoney() then
@@ -350,9 +370,9 @@ local function creatureSayCallback(cid, type, msg)
 				end
 				return true
 			end
-				openShopWindow(cid, getTable(player), onBuy, onSell)
 
-				npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
+			openShopWindow(cid, getTable(player), onBuy, onSell)
+			npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 		else
 			npcHandler:say("I only trade with friends of ape...", cid)
 		end

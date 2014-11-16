@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, "fine vase") then
-		if player:getStorageValue(Rashid.MissionStart+3) == 1 then
+		if player:getStorageValue(Storage.TravellingTrader.Mission04) == 1 then
 			npcHandler:say({
 				"Rashid sent you, I suppose. Before I sell you that vase, one word of advice. ...",
 				"Make room in your backpack so that I can place the vase carefully inside it. If it falls to the floor, it will most likely shatter or break if you try to pick it up again. ...",
@@ -35,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 1 then
 			if player:getMoney() >= 1000 then
 				npcHandler:say("Here it is.", cid)
-				player:setStorageValue(Rashid.MissionStart+3, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission04, 2)
 				player:addItem(8760, 1)
 				player:removeMoney(1000)
 			else
@@ -48,4 +48,8 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
-npcHandler:addModule(FocusModule:new())
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)

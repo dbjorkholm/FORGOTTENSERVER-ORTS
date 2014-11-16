@@ -5,18 +5,17 @@ local lootRare = {2143, 2146, 2149, 7158, 7159}
 local lootVeryRare = {7632, 7633, 10220}
 local useWorms = true
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetId = itemEx.itemid
 	if not isInArray(waterIds, itemEx.itemid) then
 		return false
 	end
 
-	local player = Player(cid)
 
 	if targetId == 10499 then
 		local targetItem = Item(itemEx.uid)
 		local owner = targetItem:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
-		if owner ~= 0 and owner ~= cid then
+		if owner ~= 0 and owner ~= player:getId() then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You are not the owner.")
 			return true
 		end

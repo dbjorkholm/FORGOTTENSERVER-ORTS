@@ -1,21 +1,43 @@
 function onStepIn(cid, item, position, fromPosition)
 	Item(item.uid):transform(425)
-		--[[if(item.actionid == 2245) then
-			doTeleportThing(getThingFromPos({x = position.x + 2, y = position.y, z = position.z, stackpos = 1}).uid, {x = 32842, y = 32340, z = 9})
-			for i = 1, 5 do
-					doTeleportThing(getThingFromPos({x = position.x + 2 + i, y = position.y, z = position.z, stackpos = 1}).uid, {x = position.x + 1 + i, y = position.y, z = position.z})
+
+	if item.actionid == 2245 then
+		local new_position = Position(0, position.y, position.z)
+		for i = 5, 0, -1 do
+			new_position.x = position.x + 2 + i
+			local tile = new_position:getTile()
+			if i == 5 then
+				new_position.x = position.x + 2
+			else
+				new_position.x = new_position.x + 1
 			end
-			doTeleportThing(getThingFromPos({x = 32842, y = 32340, z = 9, stackpos = 1}).uid, {x = position.x + 7, y = position.y, z = position.z})
-	elseif(item.actionid == 2246) then
-			doTeleportThing(getThingFromPos({x = position.x, y = position.y + 2, z = position.z, stackpos = 1}).uid, {x = 32842, y = 32340, z = 9})
-			for i = 1, 5 do
-					doTeleportThing(getThingFromPos({x = position.x, y = position.y + 2 + i, z = position.z, stackpos = 1}).uid, {x = position.x, y = position.y + 1 + i, z = position.z})
+
+			local itemCount = tile:getDownItemCount()
+			if itemCount > 0 then
+				tile:getThing(tile:getTopItemCount() + tile:getCreatureCount() + itemCount):moveTo(new_position)
 			end
-			doTeleportThing(getThingFromPos({x = 32842, y = 32340, z = 9, stackpos = 1}).uid, {x = position.x, y = position.y + 7, z = position.z})
 		end
-		return true]]--
+	elseif item.actionid == 2246 then
+		local new_position = Position(position.x, 0, position.z)
+		for i = 5, 0, -1 do
+			new_position.y = position.y + 2 + i
+			local tile = new_position:getTile()
+			if i == 5 then
+				new_position.y = position.y + 2
+			else
+				new_position.y = new_position.y + 1
+			end
+
+			local itemCount = tile:getDownItemCount()
+			if itemCount > 0 then
+				tile:getThing(tile:getTopItemCount() + tile:getCreatureCount() + itemCount):moveTo(new_position)
+			end
+		end
+	end
+	return true
 end
 
 function onStepOut(cid, item, position, fromPosition)
 	Item(item.uid):transform(426)
+	return true
 end

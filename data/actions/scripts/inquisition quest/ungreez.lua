@@ -1,11 +1,11 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.actionid == 1004) then
-		if(getPlayerStorageValue(cid, Storage.TheInquisition.Questline) == 18) then
-			if(item.itemid == 5114) then
-				doTeleportThing(cid, toPosition, true)
-				doTransformItem(item.uid, 5115)
-			end
-		end
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	if item.itemid ~= 5114 then
+		return true
+	end
+
+	if player:getStorageValue(Storage.TheInquisition.Questline) == 18 then
+		player:teleportTo(toPosition, true)
+		Item(item.uid):transform(5115)
 	end
 	return true
 end

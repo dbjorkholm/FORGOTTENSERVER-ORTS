@@ -6,12 +6,11 @@ local function transformBack(position, itemId, transformId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 7178 then
 		return false
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.TheIceIslands.Questline) == 8 then
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 		player:setStorageValue(Storage.TheIceIslands.PaintSeal, player:getStorageValue(Storage.TheIceIslands.PaintSeal) + 1)

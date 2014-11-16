@@ -6,13 +6,12 @@ local config = {
 	[11262] = {blessId = 5, text = 'The Wisdom of Solitude'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:hasBlessing(useItem.blessId) then
 		player:say('You already possess this blessing.', TALKTYPE_MONSTER_SAY)
 		return true

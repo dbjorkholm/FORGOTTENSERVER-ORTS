@@ -22,8 +22,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 2
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getItemCount(2331) > 0 then
-				player:removeItem(2331, 1)
+			if player:removeItem(2331, 1) then
 				npcHandler:say("Thank you very much!", cid)
 				player:setStorageValue(Storage.postman.Mission05, 3)
 				npcHandler.topic[cid] = 0
@@ -43,6 +42,14 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am the magistrate of this isle."})
+keywordHandler:addKeyword({'magistrate'}, StdModule.say, {npcHandler = npcHandler, text = "Thats me."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I am Dermot, the magistrate of this isle."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "Time is not important on Fibula."})
+keywordHandler:addKeyword({'fibula'}, StdModule.say, {npcHandler = npcHandler, text = "You are at Fibula. This isle is not very dangerous. Just the wolves bother outside the village."})
+keywordHandler:addKeyword({'dungeon'}, StdModule.say, {npcHandler = npcHandler, text = "Oh, my god. In the dungeon of Fibula are a lot of monsters. That's why we have sealed it with a solid door."})
+keywordHandler:addKeyword({'monsters'}, StdModule.say, {npcHandler = npcHandler, text = "Oh, my god. In the dungeon of Fibula are a lot of monsters. That's why we have sealed it with a solid door."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Hello, traveller |PLAYERNAME|. How can I help you?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "See you again.")

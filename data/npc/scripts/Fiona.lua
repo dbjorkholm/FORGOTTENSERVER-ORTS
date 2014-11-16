@@ -17,7 +17,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'magical ingredients'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Oof, there are too many to list. Magical ingredients can sometimes be found when you defeat a monster, for example bat wings. I buy many of these things if you don't want to use them for quests, just ask me for a {trade}."})
+keywordHandler:addKeyword({'magical ingredients'}, StdModule.say, {npcHandler = npcHandler, text = "Oof, there are too many to list. Magical ingredients can sometimes be found when you defeat a monster, for example bat wings. I buy many of these things if you don't want to use them for quests, just ask me for a {trade}."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Good day, |PLAYERNAME|. I hope you bring a lot of {magical ingredients} with you.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye and please come back soon.")

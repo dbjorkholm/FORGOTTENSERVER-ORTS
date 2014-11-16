@@ -10,8 +10,8 @@ local config = {
 	[3056] = {storageValue = 4, toPosition = Position(32417, 32139, 15)} -- Mintwalin
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

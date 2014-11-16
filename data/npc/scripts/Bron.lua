@@ -15,7 +15,7 @@ local function greetCallback(cid)
 	return true
 end
 
-keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
+keywordHandler:addKeyword({'gelagos'}, StdModule.say, {npcHandler = npcHandler, text = "This... person... makes me want to... say something bad... must... control myself. <sweats>"})
 
 local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then
@@ -46,8 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "fighting spirit")) then
 		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 5 then
-			if player:getItemCount(5884) >= 1 then
-				player:removeItem(5884, 1)
+			if player:removeItem(5884, 1) then
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 6)
 				npcHandler:say("Fighting spirit? What am I supposed to do with this fi... - oh! I feel strange... ME MIGHTY! ME WILL CHASE OFF ANNOYING KIDS!GROOOAARR!! RRRRRRRRRRRRAAAAAAAGE!!", cid)
 				npcHandler.topic[cid] = 0
@@ -116,16 +115,14 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 9) then
-			if player:getItemCount(5886) >= 10 then
+			if player:removeItem(5886, 10) then
 				npcHandler:say("I'm impressed! You really managed to get spider silk yarn for me! I will immediately start to work on this shirt. Please don't forget to bring me warrior's sweat!", cid)
-				player:removeItem(5886, 10)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 9)
 				npcHandler.topic[cid] = 0
 			end
 		elseif(npcHandler.topic[cid] == 10) then
-			if player:getItemCount(5885) >= 1 then
+			if player:removeItem(5885, 1) then
 				npcHandler:say("Good work, " .. player:getName() .. "! Now I can finally finish this present for Ajax. Because you were such a great help, I have also a present for you. Will you accept it?", cid)
-				player:removeItem(5885, 1)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 10)
 				npcHandler.topic[cid] = 0
 			end

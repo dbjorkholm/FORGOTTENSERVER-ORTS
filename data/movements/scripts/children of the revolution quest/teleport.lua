@@ -3,8 +3,8 @@ local config = {
 	[3168] = {storageKey = Storage.ChildrenoftheRevolution.Questline, toPosition = {Position(33356, 31125, 7), Position(33261, 31079, 8)}}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

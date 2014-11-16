@@ -30,8 +30,8 @@ local fires = {
 
 
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -41,14 +41,14 @@ function onStepIn(cid, item, position, fromPosition)
 		return true
 	end
 
-	if getBaseVocation(player:getVocation():getId()) == fire.vocationId then
-		doTargetCombatHealth(0, cid, COMBAT_FIREDAMAGE, -300, -300, CONST_ME_HITBYFIRE)
+	if player:getVocation():getBase():getId() == fire.vocationId then
+		doTargetCombatHealth(0, player, COMBAT_FIREDAMAGE, -300, -300, CONST_ME_HITBYFIRE)
 	else
 		local combatType = COMBAT_FIREDAMAGE
 		if fire.damage > 300 then
 			combatType = COMBAT_PHYSICALDAMAGE
 		end
-		doTargetCombatHealth(0, cid, combatType, -fire.damage, -fire.damage, CONST_ME_FIREATTACK)
+		doTargetCombatHealth(0, player, combatType, -fire.damage, -fire.damage, CONST_ME_FIREATTACK)
 	end
 	return true
 end

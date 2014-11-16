@@ -4,6 +4,9 @@
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua" />
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua" />
 
+	<!-- What a foolish Quest -->
+	<movevent event="StepIn" actionid="4201" script="what a foolish quest/destroypies.lua"/>
+
 	<!-- Rookgaard -->
 	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>
 	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>
@@ -12,6 +15,12 @@
 	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
+
+	<!-- Yalahar Demons -->
+	<movevent event="StepIn" fromaid="4244" toaid ="4245" script="others/yalaharDemons.lua"/>
+
+	<!-- The Spike Portals -->
+	<movevent event="StepIn" fromaid="4226" toaid ="4243" script="others/spikeTeleports.lua"/>
 
 	<!-- Magician Quarter (Warlock & Infernalist Area) -->
 	<movevent event="StepIn" actionid="7813" script="others/magicianquarter.lua"/>
@@ -47,7 +56,8 @@
 	<movevent event="AddItem" tileitem="1" itemid="1485" script="others/tombCoalBasin.lua"/>
 
 	<!--- KillingOfTheNameOf -->
-	<movevent event="StepIn" fromuid="3230" touid="3257" script="killing in the name of/boss.lua"/>
+	<movevent event="StepIn" fromuid="3230" touid="3259" script="killing in the name of/boss.lua"/>
+	<movevent event="StepIn" fromuid="17521" touid="17522" script="killing in the name of/boss.lua"/>
 
 	<!-- Children of the Revolution -->
 	<movevent event="StepIn" uniqueid="3163" script="children of the revolution quest/temple.lua"/>
@@ -194,15 +204,15 @@
 	<movevent event="StepIn" fromaid="50082" toaid="50083" script="pits of inferno quest/bazirTiles.lua"/>
 	<movevent event="StepIn" actionid="50087" script="pits of inferno quest/puminTeleport.lua"/>
 
-	<!-- Hidden City of Beregar Quest -->
-	<movevent event="StepIn" actionid="50091" script="hidden city of beregar/oreWagon.lua"/>
-	<movevent event="StepIn" fromaid="50092" toaid="50093" script="hidden city of beregar/elevator.lua"/>
-	<movevent event="StepIn" actionid="50111" script="hidden city of beregar/gap.lua"/>
-	<movevent event="StepIn" actionid="50116" script="hidden city of beregar/tunnel.lua"/>
-	<movevent event="StepIn" uniqueid="50107" script="hidden city of beregar/bellow.lua"/>
-	<movevent event="StepIn" uniqueid="50127" script="hidden city of beregar/pythiusTeleport.lua"/>
-	<movevent event="StepIn" actionid="50126" script="hidden city of beregar/pythiusBossTeleport.lua"/>
-	
+	<!-- the hidden city of beregar Quest -->
+	<movevent event="StepIn" actionid="50091" script="the hidden city of beregar/oreWagon.lua"/>
+	<movevent event="StepIn" fromaid="50092" toaid="50093" script="the hidden city of beregar/elevator.lua"/>
+	<movevent event="StepIn" actionid="50111" script="the hidden city of beregar/gap.lua"/>
+	<movevent event="StepIn" actionid="50116" script="the hidden city of beregar/tunnel.lua"/>
+	<movevent event="StepIn" uniqueid="50107" script="the hidden city of beregar/bellow.lua"/>
+	<movevent event="StepIn" uniqueid="50127" script="the hidden city of beregar/pythiusTeleport.lua"/>
+	<movevent event="StepIn" actionid="50126" script="the hidden city of beregar/pythiusBossTeleport.lua"/>
+
 	<!-- Secret Service Quest -->
 	<movevent event="StepIn" actionid="12571" script="secret service/pirates.lua"/>
 	<movevent event="StepIn" fromaid="12583" toaid="12584" script="secret service/amazons.lua"/>

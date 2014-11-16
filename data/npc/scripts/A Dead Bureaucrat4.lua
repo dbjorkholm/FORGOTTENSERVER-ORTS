@@ -5,7 +5,22 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+
+local voices = {
+	'Now where did I put that form?',
+	'Hail Pumin. Yes, hail.'
+}
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 10)
+		if math.random(100) < 20 then
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
 
 local config = {
 	[1] = "S O R C E R E R",
@@ -15,12 +30,7 @@ local config = {
 }
 
 local function greetCallback(cid)
-	if Player(cid):getStorageValue(Storage.pitsOfInfernoPumin) == 7 then
-		npcHandler:say("Hey! You are back!! How can I help you this time?", cid)
-		npcHandler.topic[cid] = 4
-	else
-		npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == 0 and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
-	end
+	npcHandler:setMessage(MESSAGE_GREET, "Hello " .. (Player(cid):getSex() == PLAYERSEX_FEMALE and "beautiful lady" or "handsome gentleman") .. ", welcome to the atrium of Pumin's Domain. We require some information from you before we can let you pass. Where do you want to go?")
 	return true
 end
 
@@ -30,10 +40,10 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	local vocationId = getBaseVocation(player:getVocation():getId())
+	local vocationId = player:getVocation():getBase():getId()
 
 	if msgcontains(msg, "pumin") then
-		if player:getStorageValue(Storage.pitsOfInfernoPumin) == 1 then
+		if player:getStorageValue(Storage.PitsOfInferno.Pumin) == 1 then
 			npcHandler:say("I'm not sure if you know what you are doing but anyway. Your name is?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -49,13 +59,13 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "356") then
 		if npcHandler.topic[cid] == 3 then
-			player:setStorageValue(Storage.pitsOfInfernoPumin, 2)
+			player:setStorageValue(Storage.PitsOfInferno.Pumin, 2)
 			npcHandler:say("Sorry, you need Form 145 to get Form 356. Come back when you have it", cid)
-		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(Storage.pitsOfInfernoPumin, 8)
+			npcHandler.topic[cid] = 0
+		elseif player:getStorageValue(Storage.PitsOfInferno.Pumin) == 7 then
+			player:setStorageValue(Storage.PitsOfInferno.Pumin, 8)
 			npcHandler:say("You are better than I thought! Congratulations, here you are: Form 356!", cid)
 		end
-		npcHandler.topic[cid] = 0
 	end
 	return true
 end

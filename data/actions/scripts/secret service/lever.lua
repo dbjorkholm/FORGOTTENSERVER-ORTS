@@ -20,7 +20,7 @@ local monsters = {
 	{monster = 'mad technomancer', monsterPos = Position(32571, 31859, 14)}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		for i = 1, #monsters do
 			Game.createMonster(monsters[i].monster, monsters[i].monsterPos)

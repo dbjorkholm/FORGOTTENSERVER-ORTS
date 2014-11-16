@@ -74,11 +74,6 @@ local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 	return true
 end
 
-local function getTokenCount(s)
-	local b, e = s:find("%d+")
-	return b and e and math.min(4294967295, tonumber(s:sub(b, e))) or -1
-end
-
 local function greetCallback(cid)
 	npcHandler:setMessage(MESSAGE_GREET, 'Oh, hello! I\'m the gnome-human relations assistant. I am here for you to trade your tokens for {equipment}, resupply you with mission {items} and talk to you about your {relations} to us gnomes! ...')
 	return true
@@ -91,17 +86,17 @@ local function creatureSayCallback(cid, type, msg)
 
 	if msgcontains(msg, 'equipment') then
 		npcHandler:say({
-			'You can buy different equipment for minor or for major tokens. So, which is the equipment you are interested in, the one for {minor} or {major} tokens? ...', 
+			'You can buy different equipment for minor or for major tokens. So, which is the equipment you are interested in, the one for {minor} or {major} tokens? ...',
 			'By the way, if you want to have a look on the prismatic and gill items first, just head over to the depot and check the market.'
 		}, cid)
 	elseif msgcontains(msg, 'major') then
 		npcHandler:say({
-			'For ten major tokens, I can offer you a {gill gugel}, a {gill coat}, {gill legs}, a {spellbook} of vigilance, a {prismatic helmet}, a {prismatic armor}, {prismatic legs}, {prismatic boots} or a {prismatic shield} ...', 
+			'For ten major tokens, I can offer you a {gill gugel}, a {gill coat}, {gill legs}, a {spellbook} of vigilance, a {prismatic helmet}, a {prismatic armor}, {prismatic legs}, {prismatic boots} or a {prismatic shield} ...',
 			'For twenty major tokens, I can offer you a {basic soil guardian outfit}, a {basic crystal warlord outfit}, an {iron loadstone} or a {glow wine}.'
 		}, cid)
 	elseif msgcontains(msg, 'minor') then
 		npcHandler:say({
-			'For two minor tokens, you can buy one gnomish {supply} package! For eight tokens, you can buy a {muck} remover! For ten tokens, you can buy a {mission} crystal. For fifteen tokens, you can buy a crystal {lamp} or a mushroom {backpack}. ...', 
+			'For two minor tokens, you can buy one gnomish {supply} package! For eight tokens, you can buy a {muck} remover! For ten tokens, you can buy a {mission} crystal. For fifteen tokens, you can buy a crystal {lamp} or a mushroom {backpack}. ...',
 			'For seventy tokens, I can offer you a voucher for an {addition to the soil guardian outfit}, or a voucher for an {addition to the crystal warlord armor outfit}.'
 		}, cid)
 	elseif config[msg] then
@@ -111,15 +106,15 @@ local function creatureSayCallback(cid, type, msg)
 		t[cid] = msg
 	elseif msgcontains(msg, 'relations') then
 		local player = Player(cid)
-		if player:getStorageValue(900) >= 14 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 14 then
 			npcHandler:say('Our relations improve with every mission you undertake on our behalf. Another way to improve your relations with us gnomes is to trade in minor crystal tokens. ...', cid)
-			npcHandler:say('Your renown amongst us gnomes is currently {' .. math.max(0, player:getStorageValue(921)) .. '}. Do you want to improve your standing by sacrificing tokens? One token will raise your renown by 5 points. ', cid)
+			npcHandler:say('Your renown amongst us gnomes is currently {' .. math.max(0, player:getStorageValue(Storage.BigfootBurden.Rank)) .. '}. Do you want to improve your standing by sacrificing tokens? One token will raise your renown by 5 points. ', cid)
 			npcHandler.topic[cid] = 2
 		else
 			npcHandler:say('You are not even a recruit of the Bigfoots. Sorry I can\'t help you.', cid)
 		end
 	elseif npcHandler.topic[cid] == 3 then
-		local amount = getTokenCount(msg)
+		local amount = getMoneyCount(msg)
 		if amount > 0 then
 			npcHandler:say('Do you really want to trade ' .. amount .. ' minor tokens for ' .. amount * 5 .. ' renown?', cid)
 			renown[cid] = amount
@@ -159,10 +154,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 4 then
 			local player = Player(cid)
-			if player:getItemCount(18422) >= renown[cid] then
-				player:removeItem(18422, renown[cid])
-				player:setStorageValue(921, math.max(0, player:getStorageValue(921)) + renown[cid] * 5)
-				npcHandler:say('As you wish! Your new renown is {' .. player:getStorageValue(921) .. '}.', cid)
+			if player:removeItem(18422, renown[cid]) then
+				player:setStorageValue(Storage.BigfootBurden.Rank, math.max(0, player:getStorageValue(Storage.BigfootBurden.Rank)) + renown[cid] * 5)
+				npcHandler:say('As you wish! Your new renown is {' .. player:getStorageValue(Storage.BigfootBurden.Rank) .. '}.', cid)
 			else
 				npcHandler:say('You don\'t have these many tokens.', cid)
 			end

@@ -156,6 +156,7 @@
 	<monster name="Bibby Bloodbath" file="bosses/bibby bloodbath.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
+	<monster name="Bretzecutioner" file="bosses/bretzecutioner.xml"/>
 	<monster name="Bruise Payne" file="bosses/bruise payne.xml"/>
 	<monster name="Brutus Bloodbeard" file="bosses/brutus bloodbeard.xml"/>
 	<monster name="Bullwark" file="bosses/bullwark.xml"/>
@@ -185,6 +186,8 @@
 	<monster name="Fazzrah" file="bosses/fazzrah.xml"/>
 	<monster name="Fernfang" file="bosses/fernfang.xml"/>
 	<monster name="Ferumbras" file="bosses/ferumbras.xml"/>
+	<monster name="Flameborn" file="bosses/flameborn.xml"/>
+	<monster name="Fleshcrawler" file="bosses/fleshcrawler.xml"/>
 	<monster name="Fluffy" file="bosses/fluffy.xml"/>
 	<monster name="Foreman Kneebiter" file="bosses/foreman kneebiter.xml"/>
 	<monster name="Freegoiz" file="bosses/freegoiz.xml"/>
@@ -213,6 +216,7 @@
 	<monster name="Inky" file="bosses/inky.xml"/>
 	<monster name="Jaul" file="bosses/jaul.xml"/>
 	<monster name="Jesse The Wicked" file="bosses/jesse the wicked.xml"/>
+	<monster name="Kerberos" file="bosses/kerberos.xml"/>
 	<monster name="Koshei The Deathless" file="bosses/koshei the deathless.xml"/>
 	<monster name="Kraknaknork'S Demon" file="bosses/kraknaknork's demon.xml"/>
 	<monster name="Kraknaknork" file="bosses/kraknaknork.xml"/>
@@ -258,6 +262,7 @@
 	<monster name="Spite Of The Emperor" file="bosses/spite of the emperor.xml"/>
 	<monster name="Splasher" file="bosses/splasher.xml"/>
 	<monster name="Stonecracker" file="bosses/stonecracker.xml"/>
+	<monster name="Sulphur Scuttler" file="bosses/sulphur scuttler.xml"/>
 	<monster name="Tanjis" file="bosses/tanjis.xml"/>
 	<monster name="Teleskor" file="bosses/teleskor.xml"/>
 	<monster name="Terofar" file="bosses/terofar.xml"/>
@@ -465,6 +470,7 @@
 
 	<!-- Felines -->
 	<monster name="Cat" file="felines/cat.xml"/>
+	<monster name="Kitty" file="felines/kitty.xml"/>
 	<monster name="Lion" file="felines/lion.xml"/>
 	<monster name="Tiger" file="felines/tiger.xml"/>
 	<monster name="Midnight Panther" file="felines/midnight panther.xml"/>

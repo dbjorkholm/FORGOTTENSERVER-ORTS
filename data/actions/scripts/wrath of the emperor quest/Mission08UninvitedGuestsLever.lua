@@ -3,7 +3,7 @@ local config = {
 	[3185] = Position(33078, 31080, 13)
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetPosition = config[item.uid]
 	if not targetPosition then
 		return true

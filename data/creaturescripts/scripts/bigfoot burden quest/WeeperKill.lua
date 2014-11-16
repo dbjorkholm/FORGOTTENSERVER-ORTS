@@ -15,13 +15,13 @@ local barrierPositions = {
 
 -- This script is unfinished after conversion, but I doubt that it was working as intended before
 -- 'last' can never be true
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'parasite' or (Game.getStorageValue(3144) or -1) >= 1 then
+	if targetMonster:getName():lower() ~= 'parasite' or (Game.getStorageValue(GlobalStorage.Weeper) or -1) >= 1 then
 		return true
 	end
 
@@ -68,8 +68,8 @@ function onKill(cid, target)
 		return true
 	end
 
-	Game.setStorageValue(3144, 1)
-	addEvent(Game.setStorageValue, 30 * 60 * 1000, 3144, 0)
+	Game.setStorageValue(GlobalStorage.Weeper, 1)
+	addEvent(Game.setStorageValue, 30 * 60 * 1000, GlobalStorage.Weeper, 0)
 	Game.createMonster('gnomevil', Position(33114, 31953, 11))
 	addEvent(teleportAllPlayersFromArea, 6 * 20 * 1000 + 30 * 60 * 1000, {
 		{x = 33102, y = 31942, z = 11},

@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "undead") then
 		if npcHandler.topic[cid] == 1 then
-			if Player(cid):getStorageValue(50020) == 1 then
+			if Player(cid):getStorageValue(Storage.QueenOfBansheesQuest.Kiss) == 1 then
 				npcHandler:say("BOON AND BANE. I HAVE CHOSEN THIS LIFE VOLUNTARILLY AND I NEVER REGRET IT. MY TREASURE IS GROWING BIGGER EACH DAY.", cid)
 				npcHandler.topic[cid] = 2
 			end
@@ -32,8 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 3 then
 			Player(cid):setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 1)
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"HAHAHA, WHO WOULD SAY SOMETHING ELSE?....BUT....NOTHING'S FOR FREE AND SO WASN'T THE TREASURE BEHIND ME. ...",
 				"BRING ME SOMETHING VALUABLE IN EXCHANGE. SOMETHING YOU THINK I'D LIKE AND THEN.....HAHAHAHA......WE CAN CONTINUE OUR SMALL CONVERSATION.",
 				"EVERYTHING YOU CARRY WITH YOU CAN ALSO BE FOUND IN MY TREASURE. BRING ME SOMETHING I DON'T OWN!!!"
@@ -51,8 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "golden mug") then
 		if npcHandler.topic[cid] == 4 then
 			local player = Player(cid)
-			if player:getItemCount(2033) > 0 then
-				player:removeItem(2033, 1)
+			if player:removeItem(2033, 1) then
 				player:setStorageValue(Storage.hiddenCityOfBeregar.PythiusTheRotten, 2)
 				npcHandler:say("I LIKE THAT AND GRANT YOU ACCESS TO THE DUNGEON IN THE NORTH FOR THE NEXT FEW MINUTES. COME BACK ANYTIME AND BRING ME MORE TREASURES.", cid)
 			end

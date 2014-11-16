@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "cookbook")) then
-		if player:getStorageValue(BlueDjinn.MissionStart+1) == 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) == 2 then
 			npcHandler:say("Would you like to buy a cookbook for 150 gold?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -21,7 +21,7 @@ local function creatureSayCallback(cid, type, msg)
 		if(npcHandler.topic[cid] == 1) then
 			if player:getMoney() >= 150 then
 				npcHandler:say("Here it is.", cid)
-				player:setStorageValue(BlueDjinn.MissionStart+1, 2)
+				player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission01, 3)
 				player:addItem(2347, 1)
 				player:removeMoney(150)
 				npcHandler.topic[cid] = 0

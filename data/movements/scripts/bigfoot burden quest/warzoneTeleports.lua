@@ -4,8 +4,8 @@ local destinations = {
 	[3142] = {teleportPosition = Position(32989, 31909, 12), storage = 957, value = 3},
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

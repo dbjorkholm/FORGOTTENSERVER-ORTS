@@ -1,10 +1,10 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
-	if player:getStorageValue(Storage.pitsofInfernoPumin) >= 9 then
+	if player:getStorageValue(Storage.PitsOfInferno.Pumin) > 8 then
 		player:teleportTo(Position(32786, 32308, 15))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else

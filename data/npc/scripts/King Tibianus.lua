@@ -7,61 +7,52 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am your sovereign, King Tibianus III, and it's my duty to uphold {justice} and provide guidance for my subjects."})
-keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I try my best to be just and fair to our citizens. The army and the {TBI} are a great help in fulfilling this duty."})
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Preposterous! You must know the name of your own King!"})
-keywordHandler:addKeyword({'news'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The latest news is usually brought to our magnificent town by brave adventurers. They recount tales of their journeys at Frodo's tavern."})
-keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Thank you, I'm fine."})
-keywordHandler:addKeyword({'castle'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Rain Castle is my home."})
-keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Sell? Sell what? My kingdom isn't for sale!"})
-keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Honour the Gods and above all pay your {taxes}."})
-keywordHandler:addKeyword({'zathroth'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Please ask a priest about the gods."})
-keywordHandler:addKeyword({'citizen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The citizens of Tibia are my subjects. Ask the old monk Quentin if you want to learn more about them."})
-keywordHandler:addKeyword({'sam'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is a skilled blacksmith and a loyal subject."})
-keywordHandler:addKeyword({'frodo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is the owner of Frodo's Hut and a faithful tax-payer."})
-keywordHandler:addKeyword({'gorn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He was once one of Tibia's greatest fighters. Now he sells equipment."})
-keywordHandler:addKeyword({'benjamin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He was once my greatest general. Now he is very old and senile so we assigned him to work for the Royal Tibia Mail."})
-keywordHandler:addKeyword({'noodles'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The royal poodle Noodles is my greatest {treasure}!"})
-keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is a follower of the evil God Zathroth and responsible for many attacks on us. Kill him on sight!"})
-keywordHandler:addKeyword({'bozo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is my royal jester and cheers me up now and then."})
-keywordHandler:addKeyword({'treasure'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The royal poodle Noodles is my greatest treasure!"})
-keywordHandler:addKeyword({'monster'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Go and hunt them! For king and country!"})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Visit Quentin the monk for help."})
-keywordHandler:addKeyword({'sewer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What a disgusting topic!"})
-keywordHandler:addKeyword({'dungeon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Dungeons are no places for kings."})
-keywordHandler:addKeyword({'equipment'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Feel free to buy it in our town's fine shops."})
-keywordHandler:addKeyword({'food'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ask the royal cook for some food."})
-keywordHandler:addKeyword({'tax collector'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "That tax collector is the bane of my life. He is so lazy. I bet you haven't payed any taxes at all."})
-keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the king, so watch what you say!"})
-keywordHandler:addKeyword({'army'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ask the soldiers about that."})
-keywordHandler:addKeyword({'shop'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Visit the shops of our merchants and craftsmen."})
-keywordHandler:addKeyword({'guild'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The four major guilds are the knights, the paladins, the druids, and the sorcerers."})
-keywordHandler:addKeyword({'minotaur'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Vile monsters, but I must admit they are strong and sometimes even cunning ... in their own bestial way."})
-keywordHandler:addKeyword({'good'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The forces of good are hard pressed in these dark times."})
-keywordHandler:addKeyword({'evil'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We need all strength we can muster to smite evil!"})
-keywordHandler:addKeyword({'order'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We need order to survive!"})
-keywordHandler:addKeyword({'chaos'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Chaos arises from selfishness."})
-keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's the sword of the Kings. If you return this weapon to me I will {reward} you beyond your wildest dreams."})
-keywordHandler:addKeyword({'reward'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well, if you want a reward, go on a quest to bring me Excalibug!"})
-keywordHandler:addKeyword({'chester'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "A very competent person. A little nervous but very competent."})
-keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This organisation is an essential tool for holding our enemies in check. Its headquarter is located in the bastion in the northwall."})
+keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am your sovereign, King Tibianus III, and it's my duty to uphold {justice} and provide guidance for my subjects."})
+keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, text = "I try my best to be just and fair to our citizens. The army and the {TBI} are a great help in fulfilling this duty."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "Preposterous! You must know the name of your own King!"})
+keywordHandler:addKeyword({'news'}, StdModule.say, {npcHandler = npcHandler, text = "The latest news is usually brought to our magnificent town by brave adventurers. They recount tales of their journeys at Frodo's tavern."})
+keywordHandler:addKeyword({'how', 'are', 'you'}, StdModule.say, {npcHandler = npcHandler, text = "Thank you, I'm fine."})
+keywordHandler:addKeyword({'castle'}, StdModule.say, {npcHandler = npcHandler, text = "Rain Castle is my home."})
+keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, text = "Sell? Sell what? My kingdom isn't for sale!"})
+keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, text = "Honour the Gods and above all pay your {taxes}."})
+keywordHandler:addKeyword({'zathroth'}, StdModule.say, {npcHandler = npcHandler, text = "Please ask a priest about the gods."})
+keywordHandler:addKeyword({'citizen'}, StdModule.say, {npcHandler = npcHandler, text = "The citizens of Tibia are my subjects. Ask the old monk Quentin if you want to learn more about them."})
+keywordHandler:addKeyword({'sam'}, StdModule.say, {npcHandler = npcHandler, text = "He is a skilled blacksmith and a loyal subject."})
+keywordHandler:addKeyword({'frodo'}, StdModule.say, {npcHandler = npcHandler, text = "He is the owner of Frodo's Hut and a faithful tax-payer."})
+keywordHandler:addKeyword({'gorn'}, StdModule.say, {npcHandler = npcHandler, text = "He was once one of Tibia's greatest fighters. Now he sells equipment."})
+keywordHandler:addKeyword({'benjamin'}, StdModule.say, {npcHandler = npcHandler, text = "He was once my greatest general. Now he is very old and senile so we assigned him to work for the Royal Tibia Mail."})
+keywordHandler:addKeyword({'noodles'}, StdModule.say, {npcHandler = npcHandler, text = "The royal poodle Noodles is my greatest {treasure}!"})
+keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, text = "He is a follower of the evil God Zathroth and responsible for many attacks on us. Kill him on sight!"})
+keywordHandler:addKeyword({'bozo'}, StdModule.say, {npcHandler = npcHandler, text = "He is my royal jester and cheers me up now and then."})
+keywordHandler:addKeyword({'treasure'}, StdModule.say, {npcHandler = npcHandler, text = "The royal poodle Noodles is my greatest treasure!"})
+keywordHandler:addKeyword({'monster'}, StdModule.say, {npcHandler = npcHandler, text = "Go and hunt them! For king and country!"})
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "Visit Quentin the monk for help."})
+keywordHandler:addKeyword({'sewer'}, StdModule.say, {npcHandler = npcHandler, text = "What a disgusting topic!"})
+keywordHandler:addKeyword({'dungeon'}, StdModule.say, {npcHandler = npcHandler, text = "Dungeons are no places for kings."})
+keywordHandler:addKeyword({'equipment'}, StdModule.say, {npcHandler = npcHandler, text = "Feel free to buy it in our town's fine shops."})
+keywordHandler:addKeyword({'food'}, StdModule.say, {npcHandler = npcHandler, text = "Ask the royal cook for some food."})
+keywordHandler:addKeyword({'tax collector'}, StdModule.say, {npcHandler = npcHandler, text = "That tax collector is the bane of my life. He is so lazy. I bet you haven't payed any taxes at all."})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, text = "I am the king, so watch what you say!"})
+keywordHandler:addKeyword({'army'}, StdModule.say, {npcHandler = npcHandler, text = "Ask the soldiers about that."})
+keywordHandler:addKeyword({'shop'}, StdModule.say, {npcHandler = npcHandler, text = "Visit the shops of our merchants and craftsmen."})
+keywordHandler:addKeyword({'guild'}, StdModule.say, {npcHandler = npcHandler, text = "The four major guilds are the knights, the paladins, the druids, and the sorcerers."})
+keywordHandler:addKeyword({'minotaur'}, StdModule.say, {npcHandler = npcHandler, text = "Vile monsters, but I must admit they are strong and sometimes even cunning ... in their own bestial way."})
+keywordHandler:addKeyword({'good'}, StdModule.say, {npcHandler = npcHandler, text = "The forces of good are hard pressed in these dark times."})
+keywordHandler:addKeyword({'evil'}, StdModule.say, {npcHandler = npcHandler, text = "We need all strength we can muster to smite evil!"})
+keywordHandler:addKeyword({'order'}, StdModule.say, {npcHandler = npcHandler, text = "We need order to survive!"})
+keywordHandler:addKeyword({'chaos'}, StdModule.say, {npcHandler = npcHandler, text = "Chaos arises from selfishness."})
+keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler, text = "It's the sword of the Kings. If you return this weapon to me I will {reward} you beyond your wildest dreams."})
+keywordHandler:addKeyword({'reward'}, StdModule.say, {npcHandler = npcHandler, text = "Well, if you want a reward, go on a quest to bring me Excalibug!"})
+keywordHandler:addKeyword({'chester'}, StdModule.say, {npcHandler = npcHandler, text = "A very competent person. A little nervous but very competent."})
+keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, text = "This organisation is an essential tool for holding our enemies in check. Its headquarter is located in the bastion in the northwall."})
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if (msg:lower() == "hail king" or msg:lower() == "salutations king") and not npcHandler:isFocused(cid) then
-		npcHandler:say('I greet thee, my loyal subject ' .. player:getName() .. '.', cid)
-		npcHandler:addFocus(cid)
-		return true
-	end
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Good bye, ' .. player:getName() ..'!', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	if isInArray({"tibia", "land"}, msg) then
 		npcHandler:say("Soon the whole land will be ruled by me once again!", cid)
 		npcHandler.topic[cid] = 0
@@ -101,11 +92,11 @@ local function creatureSayCallback(cid, type, msg)
 	elseif isInArray({"druid", "marvik"}, msg) then
 		npcHandler:say("We need the druidic healing powers to fight evil.", cid)
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "promot") then
+	elseif msgcontains(msg, "promote") or msgcontains(msg, "promotion") then
 		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", cid)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(30018) == 1 then
+		if player:getStorageValue(Storage.Promotion) == 1 then
 			npcHandler:say('You are already promoted.', cid)
 		elseif player:getLevel() < 20 then
 			npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
@@ -113,8 +104,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You do not have enough money.', cid)
 		elseif player:isPremium() then
 			npcHandler:say("Congratulations! You are now promoted.", cid)
-			local promotedVoc = getPromotedVocation(player:getVocation():getId())
-			player:setVocation(Vocation(promotedVoc))
+			player:setVocation(Vocation(player:getVocation():getPromotionId()))
 			player:removeMoney(20000)
 		else
 			npcHandler:say("You need a premium account in order to promote.", cid)
@@ -124,6 +114,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Ok, whatever.", cid)
 		npcHandler.topic[cid] = 0
 	end
+
 	--The New Frontier
 	if msgcontains(msg, "farmine") then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 15 then
@@ -142,6 +133,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "I greet thee, my loyal subject |PLAYERNAME|.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "How rude!")
-
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hail king')
+focusModule:addGreetMessage('salutations king')
+npcHandler:addModule(focusModule)

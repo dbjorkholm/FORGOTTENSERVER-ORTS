@@ -8,21 +8,22 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable(player)
-local itemsList = {
-			{name="metal fitting", id=10034, buy=500},
-			{name="nail", id=8309, sell=10}
-		}
-local rustremover = {
-			{name="flask of rust remover", id=9930, buy=50},
-		}
+	local itemsList = {
+		{name="metal fitting", id=10034, buy=500},
+		{name="nail", id=8309, sell=10}
+	}
 
-if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 6 then
-	for i = 1, #rustremover do
-		table.insert(itemsList, rustremover[i])
+	local rustremover = {
+		{name="flask of rust remover", id=9930, buy=50},
+	}
+
+	if player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 6 then
+		for i = 1, #rustremover do
+			table.insert(itemsList, rustremover[i])
+		end
 	end
-end
 
-return itemsList
+	return itemsList
 end
 
 local function setNewTradeTable(table)
@@ -33,23 +34,16 @@ local function setNewTradeTable(table)
 	return items
 end
 
-
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
 
-	if msgcontains(msg, "hello") or msgcontains(msg, "hi") then
-		npcHandler:say("Hello.", cid, TRUE)
-		npcHandler:addFocus(cid)
-	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say("It was a pleasure to help you, "..player:getName()..".", cid, TRUE)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	elseif msgcontains(msg, "trade") then
-
+	if msgcontains(msg, "trade") then
+		local player = Player(cid)
 		local items = setNewTradeTable(getTable(player))
-
 		local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-			if (ignoreCap == false and (player:getFreeCapacity() < getItemWeight(items[item].itemId, amount) or inBackpacks and player:getFreeCapacity() < (getItemWeight(items[item].itemId, amount) + getItemWeight(1988, 1)))) then
+			if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 				return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 			end
 			if items[item].buyPrice <= player:getMoney() then
@@ -74,7 +68,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
 			end
 			return true
-			end
+		end
 
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
 			if items[item].sellPrice then
@@ -86,12 +80,15 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			return true
 		end
-		openShopWindow(cid, getTable(player), onBuy, onSell)
 
+		openShopWindow(cid, getTable(player), onBuy, onSell)
 		npcHandler:say("Keep in mind you won't find better offers here. Just browse through my wares.", cid)
 	end
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, 'Hello.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'It was a pleasure to help you, |PLAYERNAME|.')
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
 npcHandler:addModule(FocusModule:new())

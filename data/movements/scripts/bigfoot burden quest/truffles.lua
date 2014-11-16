@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	if Creature(cid):getName():lower() ~= 'mushroom sniffer' then
+function onStepIn(creature, item, position, fromPosition)
+	if creature:getName():lower() ~= 'mushroom sniffer' then
 		return true
 	end
 

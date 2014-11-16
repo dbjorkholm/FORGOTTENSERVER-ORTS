@@ -16,11 +16,11 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am known as Uzon Ibn Kalith."})
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
-keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I am known as Uzon Ibn Kalith."})
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
+keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, text = "You'll have to leave this unholy place first!"})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -31,10 +31,10 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "yes")) then
 		if(npcHandler.topic[cid] == 1) then
-			local player = Player(cid)
+			local player, destination = Player(cid), Position(32535, 31837, 4)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 32535, y = 31837, z = 4}, false)
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler:say('So be it!', cid)
 			npcHandler.topic[cid] = 0
 		end

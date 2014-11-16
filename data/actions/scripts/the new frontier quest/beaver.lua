@@ -1,7 +1,6 @@
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if(item.itemid == 11100) then
-	local player = Player(cid)
 		if(itemEx.actionid == 8002) then
 			if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 5) and (player:getStorageValue(Storage.TheNewFrontier.Beaver1) < 1) then
 				Game.createMonster("thieving squirrel", toPosition)

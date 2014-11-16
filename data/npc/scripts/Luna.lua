@@ -17,7 +17,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'offers'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm selling various herbs, mushrooms, and flowers. If you'd like to see my offers, ask me for a {trade}."})
+keywordHandler:addKeyword({'offers'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling various herbs, mushrooms, and flowers. If you'd like to see my offers, ask me for a {trade}."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings, traveller. Maybe you'd like to take a look at my {offers}...")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Goodbye, traveller.")

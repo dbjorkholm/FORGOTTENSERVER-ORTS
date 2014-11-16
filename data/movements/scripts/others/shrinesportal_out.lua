@@ -13,8 +13,8 @@ local config = {
 	{storageKey = 10028, teleportPosition = Position(32786, 31245, 5)}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end

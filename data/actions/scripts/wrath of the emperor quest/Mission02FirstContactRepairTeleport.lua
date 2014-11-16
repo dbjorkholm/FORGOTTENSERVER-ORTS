@@ -15,8 +15,7 @@ local function revertWater(position)
 end
 
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	-- Rake
 	if item.itemid == 2549 then
 		if itemEx.itemid == 12322 then

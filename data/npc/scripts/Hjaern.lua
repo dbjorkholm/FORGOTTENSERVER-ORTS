@@ -8,10 +8,13 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
+	end
+
+	local player = Player(cid)
+
+	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 3 then
 			if player:getStorageValue(Storage.TheIceIslands.Mission02) < 1 then
 			npcHandler:say({
@@ -57,10 +60,14 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission12, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
 			player:addItem(7289, 1)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 39 and player:getStorageValue(Storage.TheIceIslands.Obelisk01) == 5 and player:getStorageValue(Storage.TheIceIslands.Obelisk02) == 5 and player:getStorageValue(Storage.TheIceIslands.Obelisk03) == 5 and player:getStorageValue(Storage.TheIceIslands.Obelisk04) == 5 then
-			if player:getItemCount(7289) >= 1 then
-				player:removeItem(7289, 1)
+		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 39
+				and player:getStorageValue(Storage.TheIceIslands.Obelisk01) == 5
+				and player:getStorageValue(Storage.TheIceIslands.Obelisk02) == 5
+				and player:getStorageValue(Storage.TheIceIslands.Obelisk03) == 5
+				and player:getStorageValue(Storage.TheIceIslands.Obelisk04) == 5 then
+			if player:removeItem(7289, 1) then
 				player:setStorageValue(Storage.TheIceIslands.Questline, 40)
+				player:setStorageValue(Storage.TheIceIslands.yakchalDoor, 1)
 				player:setStorageValue(Storage.TheIceIslands.Mission12, 6) -- Questlog The Ice Islands Quest, Formorgar Mines 4: Retaliation
 				player:setStorageValue(Storage.OutfitQuest.NorsemanAddon, 1) -- Questlog Norseman Outfit Quest
 				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
@@ -118,6 +125,12 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission10, 1) -- Questlog The Ice Islands Quest, Formorgar Mines 2: Ghostwhisperer
 			npcHandler.topic[cid] = 0
 		end
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hjaern) ~= 1 then
+			npcHandler:say('You want to sacrifice a cookie to the spirits?', cid)
+			npcHandler.topic[cid] = 6
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("This is good news. As I explained, travel to Helheim, seek the reason for the unrest there and then report to me about your mission. ", cid)
@@ -134,27 +147,46 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission08, 1) -- Questlog The Ice Islands Quest, The Contact
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(7290) >= 5 then
-				player:removeItem(7290, 5)
+			if layer:removeItem(7290, 5) then
 				npcHandler:say("Excellent, you collected 5 of them. If you have collected 5 or more, talk to me about your {reward}. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 41)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(7290) >= 10 then
-				player:removeItem(7290, 10)
+			if player:removeItem(7290, 10) then
 				npcHandler:say("Excellent, you collected 10 of them. If you have collected 15 or more, talk to me about your {reward}. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 43)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(7290) >= 1 then
-				count = player:getItemCount(7290)
+			if player:getItemCount(7290) > 0 then
+				local count = player:getItemCount(7290)
 				player:addMoney(count * 2000)
 				player:removeItem(7290, count)
 				npcHandler:say("Here your are. " .. count * 2000 .. " gold coins for " .. count .. " shards.", cid)
 				npcHandler.topic[cid] = 0
 			end
+		elseif npcHandler.topic[cid] == 6 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hjaern, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('In the name of the spirits I accept this offer ... UHNGH ... The spirits are not amused!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
+		end
+	elseif msgcontains(msg, 'no') then
+		if npcHandler.topic[cid] == 6 then
+			npcHandler:say('I see.', cid)
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

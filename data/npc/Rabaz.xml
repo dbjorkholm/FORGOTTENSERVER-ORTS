@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Rabaz" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Rabaz" script="Rabaz.lua" walkinterval="2000" floorchange="0">
 	<health now="185" max="185"/>
 	<look type="130" head="39" body="38" legs="1" feet="1" addons="0"/>
 	<voices>
@@ -61,6 +61,6 @@ Hailstorm Rod,2183,15000;
 Magic Wall Rune,2293,116;
 Paralyze Rune,2278,700;
 Wand of Inferno,2187,15000" />
-    <parameter key="shop_sellable" value="			Spellwand,7735,299;			Vial,9078,5		" />
+    <parameter key="shop_sellable" value="			Spellwand,7735,299;			Vial,2006,5		" />
   </parameters>
 </npc>

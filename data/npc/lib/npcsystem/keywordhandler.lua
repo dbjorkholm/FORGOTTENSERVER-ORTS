@@ -31,12 +31,15 @@ if KeywordHandler == nil then
 		if self.keywords.callback ~= nil then
 			return self.keywords.callback(self.keywords, message)
 		end
+
+		local last = 0
 		for i,v in ipairs(self.keywords) do
 			if type(v) == 'string' then
 				local a, b = string.find(message, v)
-				if a == nil or b == nil then
+				if a == nil or b == nil or a < last then
 					return false
 				end
+				last = a
 			end
 		end
 		return true
@@ -72,13 +75,14 @@ if KeywordHandler == nil then
 
 	KeywordHandler = {
 		root = nil,
-		lastNode = {}
+		lastNode = nil
 	}
 
 	-- Creates a new keywordhandler with an empty rootnode.
 	function KeywordHandler:new()
 		local obj = {}
 		obj.root = KeywordNode:new(nil, nil, nil)
+		obj.lastNode = {}
 		setmetatable(obj, self)
 		self.__index = self
 		return obj

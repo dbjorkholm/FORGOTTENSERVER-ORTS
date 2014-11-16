@@ -1,20 +1,21 @@
-local condition = Condition(CONDITION_OUTFIT, CONDITIONID_COMBAT)
+local condition = Condition(CONDITION_OUTFIT)
 condition:setTicks(120000)
-condition:addOutfit({lookType = 111})
+condition:setOutfit({lookType = 111})
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
+	local playerId = player:getId()
 	if item.actionid == 25300 then
 		player:addCondition(condition)
 
 		player:setStorageValue(Storage.SvargrondArena.Pit, 0)
 		player:teleportTo(SvargrondArena.kickPosition)
 		player:say('Coward!', TALKTYPE_MONSTER_SAY)
-		SvargrondArena.cancelEvents(cid)
+		SvargrondArena.cancelEvents(playerId)
 		return true
 	end
 
@@ -29,20 +30,21 @@ function onStepIn(cid, item, position, fromPosition)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, 'Congratulations! You completed ' .. ARENA[arenaId].name .. ' arena, you should take your reward now.')
 		player:say(arenaId == 1 and 'Welcome back, little hero!' or arenaId == 2 and 'Congratulations, brave warrior!' or 'Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
 		player:setStorageValue(ARENA[arenaId].questLog, 2)
-		SvargrondArena.cancelEvents(cid)
+		player:addAchievement(ARENA[arenaId].achievement)
+		SvargrondArena.cancelEvents(playerId)
 		return true
 	end
 
 	local occupant = SvargrondArena.getPitOccupant(pitId, player)
 	if occupant then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == 0 and 's' or '') .. 'he is done fighting.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == PLAYERSEX_FEMALE and 's' or '') .. 'he is done fighting.')
 		player:teleportTo(fromPosition, true)
 		return true
 	end
 
-	SvargrondArena.cancelEvents(cid)
+	SvargrondArena.cancelEvents(playerId)
 	SvargrondArena.resetPit(pitId)
-	SvargrondArena.scheduleKickPlayer(cid, pitId)
+	SvargrondArena.scheduleKickPlayer(playerId, pitId)
 	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)

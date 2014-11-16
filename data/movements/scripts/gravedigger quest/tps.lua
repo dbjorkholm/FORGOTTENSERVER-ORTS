@@ -1,13 +1,13 @@
 local amfora = Position(32988, 32397, 9)
 local amfora2 = Position(32987, 32401, 9)
 
-function onStepIn(cid, item, position)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
-	if item.actionid == 4530 and player:getStorageValue(9995) == 1 and player:getStorageValue(9996) < 1 then
+	if item.actionid == 4530 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission05) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission06) < 1 then
 		player:teleportTo(amfora2)
 	else
 		player:teleportTo(amfora)

@@ -1,10 +1,10 @@
 local t = {
-	Position(33314, 31592, 15), -- stone position
-	Position(33316, 31591, 15), -- teleport creation position
+	Position(33314, 31575, 15), -- stone position
+	Position(33316, 31574, 15), -- teleport creation position
 	Position(33322, 31592, 14) -- where the teleport takes you
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		local tile = t[1]:getTile()
 		if tile then

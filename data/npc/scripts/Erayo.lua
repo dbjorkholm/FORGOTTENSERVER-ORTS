@@ -27,7 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'addon') then
-		if player:hasOutfit(player:getSex() == 0 and 156 or 152) and player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) < 1 then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 156 or 152) and player:getStorageValue(Storage.OutfitQuest.AssassinFirstAddon) < 1 then
 			npcHandler:say('Vescu gave you an assassin outfit? Haha. Noticed it lacks the head piece? You look a bit silly. Want my old head piece?', cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -40,9 +40,9 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				'Thought so. Could use some help anyway. Listen, I need stuff. Someone gave me a strange assignment - sneak into Thais castle at night and shroud it with cloth without anyone noticing it. ...', 
-				'I wonder why anyone would want to shroud a castle, but as long as long as the guy pays, no problem, I\'ll do the sneaking part. Need a lot of cloth though. ...', 
-				'Gonna make it colourful. Bring me 50 pieces of {blue cloth}, 50 pieces of {green cloth}, 50 pieces of {red cloth}, 50 pieces of {brown cloth}, 50 pieces of {yellow cloth} and 50 pieces of {white cloth}. ...', 
+				'Thought so. Could use some help anyway. Listen, I need stuff. Someone gave me a strange assignment - sneak into Thais castle at night and shroud it with cloth without anyone noticing it. ...',
+				'I wonder why anyone would want to shroud a castle, but as long as long as the guy pays, no problem, I\'ll do the sneaking part. Need a lot of cloth though. ...',
+				'Gonna make it colourful. Bring me 50 pieces of {blue cloth}, 50 pieces of {green cloth}, 50 pieces of {red cloth}, 50 pieces of {brown cloth}, 50 pieces of {yellow cloth} and 50 pieces of {white cloth}. ...',
 				'Besides, gonna need 10 {spools of yarn}. Understood?'
 			}, cid)
 			npcHandler.topic[cid] = 2
@@ -67,7 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(152, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
-			npcHandler:say(targetMessage.message[2]:gsub('|PLAYERNAME|', player:getName()), cid)
+			npcHandler:say(targetMessage.text[2]:gsub('|PLAYERNAME|', player:getName()), cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then

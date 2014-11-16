@@ -22,8 +22,8 @@ local config = {
 		- CONST_ME_CARNIPHILA effects when dancing (pattern unknown)
 ]]
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -58,6 +58,7 @@ function onStepIn(cid, item, position, fromPosition)
 		player:setStorageValue(Storage.UnnaturalSelection.Mission03, 3)
 		player:setStorageValue(Storage.UnnaturalSelection.Questline, 7)
 		player:say('Krunus should be pleased.', TALKTYPE_MONSTER_SAY)
+		player:addAchievement('Talented Dancer')
 	end
 	return true
 end

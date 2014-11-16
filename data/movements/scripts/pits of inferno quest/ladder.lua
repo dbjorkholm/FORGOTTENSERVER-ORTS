@@ -1,7 +1,7 @@
 local ladderPosition = Position(32854, 32321, 11)
 
-function onStepIn(cid, item, position, fromPosition)
-	if not Player(cid) then
+function onStepIn(creature, item, position, fromPosition)
+	if not creature:isPlayer() then
 		return true
 	end
 
@@ -12,8 +12,8 @@ function onStepIn(cid, item, position, fromPosition)
 	return true
 end
 
-function onStepOut(cid, item)
-	if not Player(cid) then
+function onStepOut(creature, item, position, fromPosition)
+	if not creature:isPlayer() then
 		return true
 	end
 

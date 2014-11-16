@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if player:getStorageValue(Storage.TheNewFrontier.Mission08) >= 2 and player:getStorageValue(Storage.WrathoftheEmperor.Mission11) < 2 then
 		if item.itemid == 10791 then
 			player:teleportTo(toPosition, true)

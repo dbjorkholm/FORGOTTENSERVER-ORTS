@@ -29,7 +29,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's my duty to protect the city."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "It's my duty to protect the city."})
 
 npcHandler:setMessage(MESSAGE_GREET, "LONG LIVE THE KING!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "LONG LIVE THE KING!")

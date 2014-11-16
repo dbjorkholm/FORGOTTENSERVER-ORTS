@@ -6,7 +6,11 @@ local demonPositions = {
 }
 
 function onRemoveItem(item, tile, position)
-	local targetItem = Item(item.actionid)
+	local targetItem = Item(item.uid)
+	if not targetItem then
+		return true
+	end
+
 	Game.createItem(item.itemid, 1, targetItem:getPosition())
 	targetItem:remove()
 
@@ -15,4 +19,3 @@ function onRemoveItem(item, tile, position)
 	end
 	return true
 end
-

@@ -19,8 +19,8 @@ local destination = {
 	[3219] = {position = Position(33217, 31814, 8), storageValue = 1, needCrystal = true}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end
@@ -30,7 +30,7 @@ function onStepIn(cid, item, position, fromPosition)
 		return
 	end
 
-	if player:getStorageValue(900) >= teleportCrystal.storageValue then
+	if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= teleportCrystal.storageValue then
 		if not teleportCrystal.needCrystal or player:removeItem(18457, 1) then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(teleportCrystal.position)

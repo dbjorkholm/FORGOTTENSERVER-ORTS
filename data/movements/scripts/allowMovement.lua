@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end
@@ -10,8 +10,8 @@ function onStepIn(cid, item, position, fromPosition)
 	return true
 end
 
-function onStepOut(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepOut(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end

@@ -17,7 +17,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I gather wisdom and knowledge. I am also an astrologer."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I gather wisdom and knowledge. I am also an astrologer."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|! How nice of you to visit an old man like me.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Come back whenever you're in need of wisdom.")

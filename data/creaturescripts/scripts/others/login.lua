@@ -28,9 +28,7 @@ local events = {
 	'AdvanceSave'
 }
 
-function onLogin(cid)
-	local player = Player(cid)
-
+function onLogin(player)
 	local loginStr = 'Welcome to ' .. configManager.getString(configKeys.SERVER_NAME) .. '!'
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. ' Please choose your outfit.'

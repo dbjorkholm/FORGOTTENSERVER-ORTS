@@ -1,22 +1,22 @@
 local teleports = {
-	[3186] = {{x = 33084, y = 31214, z = 8}, scale = true},
-	[3187] = {{x = 33093, y = 31122, z = 12}, scale = true},
+	[3186] = Position(33084, 31214, 8),
+	[3187] = Position(33093, 31122, 12)
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	if(isPlayer(cid)) then
-		if(getPlayerStorageValue(cid, 1060) >= 29) then
-			if(getPlayerItemCount(cid, 12629) >= 1) then
-				doRemoveItem(cid, 12629, 1)
-			else
-				doTeleportThing(cid, fromPosition)
-				return true
-			end
-			doTeleportThing(cid, teleports[item.uid][1])
-			doSendMagicEffect(teleports[item.uid][1], CONST_ME_TELEPORT)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	if not player then
+		creature:teleportTo(fromPosition)
+		return true
+	end
+
+	if player:getStorageValue(Storage.WrathoftheEmperor.TeleportAccess) >= 29 then
+		if player:removeItem(12629, 1) then
+			player:teleportTo(teleports[item.uid])
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		else
+			player:teleportTo(fromPosition)
 		end
-	else
-		doTeleportThing(cid, fromPosition)
 	end
 	return true
 end

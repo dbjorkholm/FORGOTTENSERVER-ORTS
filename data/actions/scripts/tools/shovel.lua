@@ -10,17 +10,23 @@ local function revertHole(toPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	local iEx = Item(itemEx.uid)
+local function removeRemains(toPosition)
+	local item = Tile(toPosition):getItemById(2248)
+	if item then
+		item:remove()
+	end
+end
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local targetItem = Item(itemEx.uid)
 	if isInArray(holes, itemEx.itemid) then
-		iEx:transform(itemEx.itemid + 1)
-		iEx:decay()
+		targetItem:transform(itemEx.itemid + 1)
+		targetItem:decay()
 	elseif itemEx.itemid == 231 or itemEx.itemid == 9059 then
 		local rand = math.random(100)
-		if(itemEx.actionid  == 100 and rand <= 20) then
-		iEx:transform(489)
-		iEx:decay()
+		if itemEx.actionid  == 100 and rand <= 20 then
+			targetItem:transform(489)
+			targetItem:decay()
 		elseif rand == 1 then
 			Game.createItem(2159, 1, toPosition)
 		elseif rand > 95 then
@@ -37,19 +43,19 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 19)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
-		iEx:transform(469)
+		targetItem:transform(469)
 		addEvent(revertHole, 30 * 1000, toPosition)
 	-- Gravedigger Quest
-	elseif itemEx.aid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
+	elseif itemEx.aid == 4654 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission49) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission50) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
-		player:setStorageValue(9926, 1)
-	elseif itemEx.aid == 4668 and player:getStorageValue(9943) == 1 and player:getStorageValue(9944) < 1 then
+		player:setStorageValue(Storage.GravediggerOfDrefia.Mission50, 1)
+	elseif itemEx.aid == 4668 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission67) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission68) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'A torn scroll piece emerges. Probably gnawed off by rats.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
-		player:setStorageValue(9944, 1)
+		player:setStorageValue(Storage.GravediggerOfDrefia.Mission68, 1)
 	-- ???
 	elseif itemEx.actionid == 50118 then
 		local position = Position(32717, 31492, 11)
@@ -63,6 +69,40 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			tile:getItemById(8749):remove()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
+		end
+	elseif isInArray({50234, 50235, 50236}, itemEx.actionid) then
+		if player:getStorageValue(Storage.SwampDiggingTimeout) >= os.time() then
+			return false
+		end
+
+		local config, chance = {
+			{from = 1, to = 39, itemId = 2817},
+			{from = 40, to = 79, itemId = 2145},
+			{from = 80, to = 100, itemId = 20138}
+		}, math.random(100)
+
+		for i = 1, #config do
+			local randItem = config[i]
+			if chance >= randItem.from and chance <= randItem.to then
+				player:addItem(randItem.itemId, 1)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You dug up a ' .. ItemType(randItem.itemId):getName() .. '.')
+				player:setStorageValue(Storage.SwampDiggingTimeout, os.time() + 604800)
+				toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
+				break
+			end
+		end
+	elseif itemEx.itemid == 103 then
+		if itemEx.actionid == 4205 then
+			if player:getStorageValue(Storage.TibiaTales.IntoTheBonePit) ~= 1 then
+				return false
+			end
+
+			local remains = Game.createItem(2248, 1, toPosition)
+			if remains then
+				remains:setActionId(4206)
+			end
+			toPosition:sendMagicEffect(CONST_ME_HITAREA)
+			addEvent(removeRemains, 60000, toPosition)
 		end
 	end
 	return true

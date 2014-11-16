@@ -3,13 +3,13 @@ local config = {
 	{position = Position(32180, 31871, 15), pearlId = 2144}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
-	if player:getStorageValue(50019) >= 1 then
+	if player:getStorageValue(Storage.QueenOfBansheesQuest.SecondSeal) >= 1 then
 		player:teleportTo(fromPosition, true)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		return true

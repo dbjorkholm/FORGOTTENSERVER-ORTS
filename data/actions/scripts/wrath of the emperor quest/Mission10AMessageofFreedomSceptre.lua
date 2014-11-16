@@ -5,8 +5,7 @@ local boss = {
 	[3196] = "spite of the emperor",
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if boss[itemEx.uid] and itemEx.itemid == 12383 then
 		Item(itemEx.uid):transform(11753)
 		Game.createMonster(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
@@ -50,7 +49,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 32)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission11, 2) --Questlog, Wrath of the Emperor "Mission 11: Payback Time"
 		end
-			player:say("NOOOoooooooo...!", TALKTYPE_MONSTER_SAY, false, cid, toPosition)
+			player:say("NOOOoooooooo...!", TALKTYPE_MONSTER_SAY, false, player, toPosition)
 			player:say("This should have dealt the deathblow to the snake things' ambitions.", TALKTYPE_MONSTER_SAY)
 	end
 	return true

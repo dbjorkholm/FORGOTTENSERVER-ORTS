@@ -16,8 +16,8 @@ local config = {
 	[50079] = {text = 'Caves like this one are common in Tibia. To climb out again, you need something which you can find in this chest.', storageValue = 20, effPos = Position(32067, 32264, 8)}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return
 	end
@@ -40,12 +40,12 @@ function onStepIn(cid, item, position, fromPosition)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This is Zirella\'s door. Right-click on the lower part of the door and select \'Use\' to open it.')
 				player:setStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage, 17)
 			end
-			if player:getStorageValue(50093) == 1 then
+			if player:getStorageValue(Storage.QuestChests.TutorialShovel) == 1 then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Good, now continue to the east to find a place to try out your shovel.')
-				player:setStorageValue(50093, 2)
+				player:setStorageValue(Storage.QuestChests.TutorialShovel, 2)
 			end
 		elseif item.actionid == 50081 then
-			if player:getStorageValue(50094) == 1 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 21 then
+			if player:getStorageValue(Storage.QuestChests.TutorialRope) == 1 and player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 21 then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'To climb out of this cave right-click your rope, select \'Use with\' then left-click on the dark spot on the floor, the ropespot.')
 				Position(32070, 32266, 8):sendMagicEffect(CONST_ME_TUTORIALARROW)
 				Position(32070, 32266, 8):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
@@ -56,7 +56,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 
 	if item.actionid == 50078 then
-		if player:getStorageValue(50093) < 1 then
+		if player:getStorageValue(Storage.QuestChests.TutorialShovel) < 1 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have not claimed your reward from Zirella house.')
 			player:teleportTo(fromPosition, true)
 			return

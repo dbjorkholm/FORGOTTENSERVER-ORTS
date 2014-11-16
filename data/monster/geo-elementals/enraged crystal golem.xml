@@ -34,7 +34,7 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="100" chance="100000"/><!-- gold coin -->
-		<item id="18451" countmax="5" chance="5008"/><!-- crystalline arrows -->
+		<item id="18304" countmax="5" chance="5008"/><!-- crystalline arrows -->
 		<item id="18432" chance="7980"/><!-- crystaline spikes -->
 		<item id="7588" chance="7140"/><!-- SHP -->
 		<item id="7589" chance="8270"/><!-- SMP -->

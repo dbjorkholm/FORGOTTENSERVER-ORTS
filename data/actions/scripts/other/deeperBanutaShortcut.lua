@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if player:getStorageValue(Storage.DeeperBanutaShortcut) ~= 1 and itemEx.actionid == 62378 then
 		player:removeItem(10523, 1)

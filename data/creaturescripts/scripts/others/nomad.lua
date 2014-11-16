@@ -1,5 +1,5 @@
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -8,7 +8,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	if player:getStorageValue(Storage.thievesGuild.Mission04) == 3 then
 		player:setStorageValue(Storage.thievesGuild.Mission04, 4)
 	end

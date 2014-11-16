@@ -1,18 +1,18 @@
 local config = {
-	[4641] = {storageKey = {9972, 9973}, message = 'Shadows rise and engulf the candle. The statue flickers in an unearthly light.'},
-	[4642] = {storageKey = {9973, 9974}, message = 'The shadows of the statue swallow the candle hungrily.'},
-	[4643] = {storageKey = {9974, 9975}, message = 'A shade emerges and snatches the candle from your hands.'}
+	[4641] = {storageKey = {Storage.GravediggerOfDrefia.Mission32, Storage.GravediggerOfDrefia.Mission32a}, message = 'Shadows rise and engulf the candle. The statue flickers in an unearthly light.'},
+	[4642] = {storageKey = {Storage.GravediggerOfDrefia.Mission32a, Storage.GravediggerOfDrefia.Mission32b}, message = 'The shadows of the statue swallow the candle hungrily.'},
+	[4643] = {storageKey = {Storage.GravediggerOfDrefia.Mission32b, Storage.GravediggerOfDrefia.Mission33}, message = 'A shade emerges and snatches the candle from your hands.'}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = config[itemEx.actionid]
 	if not targetItem then
 		return true
 	end
 
-	local player = Player(cid)
-	if player:getStorageValue(targetItem.storageKey[1]) == 1 and player:getStorageValue(targetItem.storageKey[2]) < 1 then
-		player:setStorageValue(targetItem.storageKey[2], 1)
+	local cStorages = targetItem.storageKey
+	if player:getStorageValue(cStorages[1]) == 1 and player:getStorageValue(cStorages[2]) < 1 then
+		player:setStorageValue(cStorages[2], 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetItem.message)
 		Item(item.uid):remove(1)
 	end

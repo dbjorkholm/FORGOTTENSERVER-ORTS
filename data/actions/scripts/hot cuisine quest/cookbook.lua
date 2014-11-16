@@ -11,11 +11,11 @@ local config = {
 	[10] = "Carrot Cake\n- 5 Carrots\n- 1 Vial of milk\n- 1 Lemon\n- 10 Ounces of flour\n- 2 Eggs\n- 10 Cookies\n- 2 Peanuts"
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local text = {}
 	for i = 1, 10 do
 		table.insert(text, config[i])
 	end
-	Player(cid):showTextDialog(item.itemid, table.concat(text))
+	player:showTextDialog(item.itemid, table.concat(text))
 	return true
 end

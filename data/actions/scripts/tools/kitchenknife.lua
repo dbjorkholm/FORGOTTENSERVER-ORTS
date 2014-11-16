@@ -7,9 +7,8 @@ local function transformBack(position, itemId, transformId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = Item(itemEx.uid)
-	local player = Player(cid)
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if itemEx.itemid == 7261 then
@@ -38,6 +37,40 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:say('You cut a flower from a bush.', TALKTYPE_MONSTER_SAY)
 			end
 		end
+	end
+	
+	-- What a foolish Quest (Mission 1)
+	if itemEx.actionid == 4200 then
+		if toPosition.x == 32349 and toPosition.y == 32361 and toPosition.z == 7 then
+			player:addItem(7476, 1)
+			player:say('The stubborn flower has ruined your knife but at least you got it.', TALKTYPE_MONSTER_SAY, false, player, toPosition)
+			Item(item.uid):remove()
+		else
+			player:say('This flower is too pathetic.', TALKTYPE_MONSTER_SAY, false, player, toPosition)
+		end
+	end
+
+	-- What a foolish Quest (Mission 5)
+	if itemEx.itemid == 7480 then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.EmperorBeardShave) == 1 then
+			player:say('God shave the emperor. Some fool already did it.', TALKTYPE_MONSTER_SAY)
+			return true
+		end
+
+		player:setStorageValue(Storage.WhatAFoolishQuest.EmperorBeardShave, 1)
+		player:say('This is probably the most foolish thing you\'ve ever done!', TALKTYPE_MONSTER_SAY)
+		player:addItem(7479, 1)
+		Game.createMonster('dwarf guard', Position(32656, 31853, 13))
+	-- What a foolish Quest (Mission 8)
+	elseif itemEx.itemid == 4008 then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 22
+				or player:getStorageValue(Storage.WhatAFoolishQuest.SpecialLeaves) == 1 then
+			return false
+		end
+
+		player:setStorageValue(Storage.WhatAFoolishQuest.SpecialLeaves, 1)
+		player:addItem(8109, 1)
+		toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 	end
 
 	if isInArray(fruits, itemEx.itemid) and player:removeItem(6278, 1) then

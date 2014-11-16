@@ -18,15 +18,16 @@ local function completeTest(cid)
 	end
 end
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
+	local playerId = player:getId()
 	if item.actionid == 12135 then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 18 then
-			events[cid] = addEvent(completeTest, 2 * 60 * 1000, cid)
+			events[playerId] = addEvent(completeTest, 2 * 60 * 1000, playerId)
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 19)
 			player:teleportTo(config.arenaPosition)
 			config.arenaPosition:sendMagicEffect(CONST_ME_TELEPORT)
@@ -37,9 +38,9 @@ function onStepIn(cid, item, position, fromPosition)
 		end
 
 	elseif item.actionid == 12136 then
-		if events[cid] then
-			stopEvent(events[cid])
-			events[cid] = nil
+		if events[playerId] then
+			stopEvent(events[playerId])
+			events[playerId] = nil
 		end
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 19 then
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 17)

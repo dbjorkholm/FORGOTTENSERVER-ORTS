@@ -1,6 +1,6 @@
 local specialQuests = {
 	[2215] = Storage.AnnihilatorDone, -- Annihilator
-	[2216] = 9050, -- Dreamer's Challenge Quest Boxes
+	[2016] = 9050, -- Dreamer's Challenge Quest Boxes
 	[10544] = 10544,
 	[12513] = Storage.thievesGuild.Reward,
 	[12374] = Storage.WrathoftheEmperor.mainReward,
@@ -20,7 +20,7 @@ local tutorialIds = {
 	[50086] = 11
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local storage = specialQuests[item.actionid]
 	if not storage then
 		storage = item.uid
@@ -29,7 +29,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		end
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(storage) > 0 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 		return true
@@ -102,8 +101,10 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		weight = weight + ItemType(reward:getId()):getWeight()
 	end
 
+	weight = weight / 100
+
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
-		if player:getFreeCapacity() < weight then
+		if (player:getFreeCapacity() / 100) < weight then
 			player:sendCancelMessage('You have found ' .. result .. ' weighing ' .. string.format('%.2f', weight) .. ' oz. You have no capacity.')
 		else
 			player:sendCancelMessage('You have found ' .. result .. ', but you have no room to take it.')

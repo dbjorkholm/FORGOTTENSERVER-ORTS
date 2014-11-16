@@ -6,8 +6,8 @@ local config = {
 	[12028] = {destination = Position(32301, 31080, 7), storage = Storage.TheIceIslands.Mission03, value = 3}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end

@@ -1,5 +1,5 @@
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -8,10 +8,10 @@ function onKill(cid, target)
 		return true
 	end
 
-	local player = Player(cid)
-	local value = player:getStorageValue(937)
-	if value < 10 and player:getStorageValue(936) == 1 then
-		player:setStorageValue(937, value + 1)
+	local player = creature:getPlayer()
+	local value = player:getStorageValue(Storage.BigfootBurden.ExterminatedCount)
+	if value < 10 and player:getStorageValue(Storage.BigfootBurden.MissionExterminators) == 1 then
+		player:setStorageValue(Storage.BigfootBurden.ExterminatedCount, value + 1)
 	end
 	return true
 end

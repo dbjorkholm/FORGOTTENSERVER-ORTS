@@ -65,10 +65,8 @@ end
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	npcHandler.topic[cid] = 0
 	if player:getStorageValue(JOIN_STOR) == -1 then
 		npcHandler:setMessage(MESSAGE_GREET, 'Welcome ' .. player:getName() .. '. Would you like to join the \'Paw and Fur - Hunting Elite\'?')
-		npcHandler.topic[cid] = 5
 	else
 		npcHandler:setMessage(MESSAGE_GREET, 'Welcome back old chap. What brings you here this time?')
 	end
@@ -109,10 +107,11 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			return npcHandler:say('You don\'t have any rank.', cid)
 		end
-	elseif msgcontains('join', msg) or msgcontains('yes', msg) and npcHandler.topic[cid] == 5 then
+	elseif (msgcontains('join', msg) or msgcontains('yes', msg))
+			and npcHandler.topic[cid] == 0
+			and player:getStorageValue(JOIN_STOR) ~= 1 then
 		player:setStorageValue(JOIN_STOR, 1)
 		npcHandler:say('Great!, now you can start tasks.', cid) --I'm not sure if this is as real tibia. I let this piece of code because it was in the original file.
-		npcHandler.topic[cid] = 0
 	elseif isInArray({'tasks', 'task', 'mission'}, msg:lower()) then
 		local can = player:getTasks()
 		if player:getStorageValue(JOIN_STOR) == -1 then
@@ -314,24 +313,24 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'special task'}, msg:lower()) then
 		if player:getPawAndFurPoints() >= 90 then -- Tiquandas Revenge 90 points
-			if player:getStorageValue(22222) == 1 then  -- Check if he has already started the task.
+			if player:getStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the task. Go find Tiquandas Revenge and take revenge yourself!', cid)
-				else
+			else
 				npcHandler:say({
-					'Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...', 
+					'Have you heard about Tiquandas Revenge? It is said that the jungle itself is alive and takes revenge for all the bad things people have done to it. ...',
 					'I myself believe that there is some truth in this clap trap. Something \'real\' which therefore must have a hideout somewhere. Go find it and take revenge yourself!'
 				}, cid)
-				setPlayerStorageValue(cid, 22555, 1) -- Task needed to enter Tiquandas Revenge TP
-				setPlayerStorageValue(cid, 22222, 1) -- Won't give this task again.
+				player:setStorageValue(Storage.KillingInTheNameOf.TiquandasRevengeTeleport, 1) -- Task needed to enter Tiquandas Revenge TP
+				player:setStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge, 1) -- Won't give this task again.
 			end
 		end
-		if getPlayerTasksPoints(cid) >= 100 then -- Demodras 100 points
-			if player:getStorageValue(22223) == 1 then  -- Check if he has already started the task.
+		if player:getPawAndFurPoints() >= 100 then -- Demodras 100 points
+			if player:getStorageValue(Storage.KillingInTheNameOf.MissionDemodras) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the special task. Find Demodras and kill it.', cid)
 			else
 				npcHandler:say('This task is a very dangerous one. I want you to look for Demodras\' hideout. It might be somewhere under the Plains of Havoc. Good luck, old chap.', cid)
-				setPlayerStorageValue(cid, 22556, 1) -- Task needed to enter Demodras TP
-				setPlayerStorageValue(cid, 22223, 1) -- Won't give this task again.
+				player:setStorageValue(Storage.KillingInTheNameOf.DemodrasTeleport, 1) -- Task needed to enter Demodras TP
+				player:setStorageValue(Storage.KillingInTheNameOf.MissionDemodras, 1) -- Won't give this task again.
 			end
 		end
 		npcHandler.topic[cid] = 0
@@ -340,7 +339,7 @@ end
 
 local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 	local player = Player(cid)
-	if not ignoreCap and player:getFreeCapacity() < getItemWeight(items[item].id, amount) then
+	if not ignoreCap and player:getFreeCapacity() < ItemType(items[item].id):getWeight(amount) then
 		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'You don\'t have enough cap.')
 	end
 	if items[item].buy then

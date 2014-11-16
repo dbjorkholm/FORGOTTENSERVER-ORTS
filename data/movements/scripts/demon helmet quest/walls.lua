@@ -9,7 +9,7 @@ local wallPositions = {
 	Position(33212, 31630, 13)
 }
 
-function onStepIn(cid, item, position, fromPosition)
+function onStepIn(creature, item, position, fromPosition)
 	for i = 1, #positions do
 		local creature = Tile(positions[i]):getTopCreature()
 		if not creature or not creature:isPlayer() then

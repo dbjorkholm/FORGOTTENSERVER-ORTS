@@ -1,4 +1,4 @@
-local DOLLS = {
+local dolls = {
 	[5080] = {"Hug me."},
 	[5669] = {
 		"It's not winning that matters, but winning in style.",
@@ -19,7 +19,7 @@ local DOLLS = {
 		"Aaa... CHOO!",
 		"You... will.... burn!!"
 	},
-	[6388] = {"Merry Christmas "},
+	[6388] = {"Merry Christmas |PLAYERNAME|."},
 	[6512] = {
 		"Ho ho ho",
 		"Jingle bells, jingle bells...",
@@ -49,26 +49,25 @@ local DOLLS = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local doll = DOLLS[item.itemid]
-	if not doll then
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local sounds = dolls[item.itemid]
+	if not sounds then
 		return false
 	end
 
 	if fromPosition.x == CONTAINER_POSITION then
-		fromPosition = getThingPosition(cid)
+		fromPosition = player:getPosition()
 	end
 
-	local random = math.random(1, table.maxn(doll))
-	local sound = doll[random]
-	local player = Player(cid)
+	local random = math.random(#sounds)
+	local sound = sounds[random]
 	if item.itemid == 6566 then
 		if random == 3 then
 			fromPosition:sendMagicEffect(CONST_ME_POFF)
 		elseif random == 4 then
 			fromPosition:sendMagicEffect(CONST_ME_FIREAREA)
 		elseif random == 5 then
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
 		end
 	elseif item.itemid == 5669 then
 		local targetItem = Item(item.uid)
@@ -77,9 +76,9 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		targetItem:decay()
 	elseif item.itemid == 6388 then
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_YELLOW)
-		sound = sound .. player:getName() .. "."
 	end
 
+	sound = sound:gsub('|PLAYERNAME|', player:getName())
 	player:say(sound, TALKTYPE_MONSTER_SAY, false, 0, fromPosition)
 	return true
 end

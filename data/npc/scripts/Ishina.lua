@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'outfit') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('My jewelled belt? <giggles> That\'s not very manly. Maybe you\'d prefer a scimitar like Habdel has.', cid)
 			return true
 		end
@@ -25,7 +25,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif msgcontains(msg, 'comb') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('Comb? This is a jewellery shop.', cid)
 			return true
 		end
@@ -37,7 +37,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				'Listen, um... I have been wanting a comb for a long time... not just any comb, but a mermaid\'s comb. Having a mermaid\'s comb means never having split ends again! ...', 
+				'Listen, um... I have been wanting a comb for a long time... not just any comb, but a mermaid\'s comb. Having a mermaid\'s comb means never having split ends again! ...',
 				'You know what that means to a girl! Could you please bring me such a comb? I really would appreciate it.'
 			}, cid)
 			npcHandler.topic[cid] = 2
@@ -68,9 +68,9 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'need'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am a jeweller. Maybe you want to have a look at my wonderful {offers}.'})
-keywordHandler:addKeyword({'offers'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Well, I sell gems and {goblets}. If you\'d like to see my offers, ask me for a {trade}.'})
-keywordHandler:addKeyword({'goblets'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ah, our newest import! We have golden goblets, silver goblets and bronze goblets. All of them have space for a hand-written dedication.'})
+keywordHandler:addKeyword({'need'}, StdModule.say, {npcHandler = npcHandler, text = 'I am a jeweller. Maybe you want to have a look at my wonderful {offers}.'})
+keywordHandler:addKeyword({'offers'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, I sell gems and {goblets}. If you\'d like to see my offers, ask me for a {trade}.'})
+keywordHandler:addKeyword({'goblets'}, StdModule.say, {npcHandler = npcHandler, text = 'Ah, our newest import! We have golden goblets, silver goblets and bronze goblets. All of them have space for a hand-written dedication.'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Be greeted, |PLAYERNAME|. Which of my fine gems do you {need}?')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Daraman\'s blessings and good bye.')

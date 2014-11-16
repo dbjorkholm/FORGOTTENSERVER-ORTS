@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		return false
 	end

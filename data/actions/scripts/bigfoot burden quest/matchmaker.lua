@@ -5,13 +5,12 @@ local function revertCrystal(position, itemId, transformId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid ~= 18321 then
 		return false
 	end
 
-	local player = Player(cid)
-	if player:getStorageValue(943) == 1 or player:getStorageValue(942) ~= 1 then
+	if player:getStorageValue(Storage.BigfootBurden.MatchmakerStatus) == 1 or player:getStorageValue(Storage.BigfootBurden.MissionMatchmaker) ~= 1 then
 		return false
 	end
 
@@ -23,7 +22,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return true
 	end
 
-	player:setStorageValue(943, 1)
+	player:setStorageValue(Storage.BigfootBurden.MatchmakerStatus, 1)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Congratulations! The crystals seem to have fallen in love and your mission is done!')
 	return true
 end

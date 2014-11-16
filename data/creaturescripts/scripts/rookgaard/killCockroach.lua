@@ -1,4 +1,4 @@
-function onKill(cid, target)
+function onKill(creature, target)
 	local monsterTarget = Monster(target)
 	if not monsterTarget then
 		return true
@@ -8,7 +8,7 @@ function onKill(cid, target)
 		return true
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.cockroachKillStorage) < 1 then
 		player:sendTutorial(8)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.cockroachKillStorage, 1)

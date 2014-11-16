@@ -3,7 +3,7 @@ combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_SMALLICE)
 
-function onGetFormulaValues(cid, level, maglevel)
+function onGetFormulaValues(player, level, maglevel)
 	min = -((level / 5) + (maglevel * 1.4) + 8)
 	max = -((level / 5) + (maglevel * 2.2) + 14)
 	return min, max

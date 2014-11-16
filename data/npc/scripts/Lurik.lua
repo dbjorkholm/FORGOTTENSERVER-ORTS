@@ -11,15 +11,17 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
-		if player:getStorageValue(90) == 61 then
+	end
+
+	if msgcontains(msg, "mission") then
+		if player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 61 then
 			npcHandler:say({
 				"Ah! You did it! I can't wait to hear the sound... but I will do that in a silent moment. ...",
 				"You helped as much in our research here. As a reward, you may use our astral portal in the upper room from now on. ...",
 				"For just one orichalcum pearl, you can travel between Liberty Bay and Svargrond. Thank you again!"
 			}, cid)
 			npcHandler.topic[cid] = 0
-			player:setStorageValue(90, 62)
+			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 62)
 		elseif player:getStorageValue(Storage.TheIceIslands.Questline) == 32 then
 			npcHandler:say({
 				"You are the one who became an honorary barbarian! The one who made friends with the grim local musher and helped the shamans of Nibelor! The one they call old bearhugg ... erm ... I mean indeed I might have a mission for someone like you ...",
@@ -50,10 +52,9 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission08, 2) -- Questlog The Ice Islands Quest, The Contact
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(7281) >= 1 then
+			if player:removeItem(7281, 1) then
 				npcHandler:say("Ah, great. Please give me some time to evaluate the information. Then talk to me again about your mission. ", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 34)
-				player:removeItem(7281, 1)
 				player:setStorageValue(Storage.TheIceIslands.Mission08, 4) -- Questlog The Ice Islands Quest, The Contact
 				player:setStorageValue(Storage.TheIceIslands.MemoryCrystal, os.time() + 5 * 60)
 				npcHandler.topic[cid] = 0

@@ -10,14 +10,13 @@ local config = {
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.actionid]
 	if not useItem then
 		return true
 	end
 
 	if useItem.teleportPlayer then
-		local player = Player(cid)
 		player:teleportTo(Position(32712, 32392, 13))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:say('Beauty has to be rewarded! Muahahaha!', TALKTYPE_MONSTER_SAY)

@@ -5,6 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
 local voices = {
 	'Hum hum, huhum',
 	'Silly lil\' human'
@@ -41,14 +42,14 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, "amulet") then
-		if player:getStorageValue(49) < 1 then
+		if player:getStorageValue(Storage.SweetyCyclops.AmuletStatus) < 1 then
 			npcHandler:say("Me can do unbroken but Big Ben want gold 5000 and Big Ben need a lil' time to make it unbroken. Yes or no??", cid)
 			npcHandler.topic[cid] = 9
-		elseif player:getStorageValue(49) == 1 then
-			if player:getStorageValue(48) + 24 * 60 * 60 < os.time() then
+		elseif player:getStorageValue(Storage.SweetyCyclops.AmuletStatus) == 1 then
+			if player:getStorageValue(Storage.SweetyCyclops.AmuletTimer) + 24 * 60 * 60 < os.time() then
 				npcHandler:say("Ahh, lil' one wants amulet. Here! Have it! Mighty, mighty amulet lil' one has. Don't know what but mighty, mighty it is!!!", cid)
 				player:addItem(8266, 1)
-				player:setStorageValue(49, 2)
+				player:setStorageValue(Storage.SweetyCyclops.AmuletStatus, 2)
 			else
 				npcHandler:say("Me need more time!!!", cid)
 			end
@@ -64,40 +65,35 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1)
 			player:setStorageValue(Storage.FriendsandTraders.TheSweatyCyclops, 1)
 		elseif npcHandler.topic[cid] == 3 then
-			if player:getItemCount(3983) >= 3 then
-				player:removeItem(3983, 3)
+			if player:removeItem(3983, 3) then
 				npcHandler:say("Good good! Woman happy will be. Now me happy too and help you.", cid)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.FriendsandTraders.TheSweatyCyclops, 2)
 			end
 		-- Crown Armor
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(2487) > 0 then
-				player:removeItem(2487, 1)
+			if player:removeItem(2487, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5887, 1)
 			end
 		-- Dragon Shield
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(2516) > 0 then
-				player:removeItem(2516, 1)
+			if player:removeItem(2516, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5889, 1)
 			end
 		-- Devil Helmet
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(2462) > 0 then
-				player:removeItem(2462, 1)
+			if player:removeItem(2462, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5888, 1)
 			end
 		-- Giant Sword
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(2393) > 0 then
-				player:removeItem(2393, 1)
+			if player:removeItem(2393, 1) then
 				npcHandler:say("Cling clang!", cid)
 				npcHandler.topic[cid] = 0
 				player:addItem(5892, 1)
@@ -125,15 +121,14 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(8264, 1)
 				player:removeItem(8265, 1)
 				player:removeMoney(5000)
-				player:setStorageValue(48, os.time())
-				player:setStorageValue(49, 1)
+				player:setStorageValue(Storage.SweetyCyclops.AmuletTimer, os.time())
+				player:setStorageValue(Storage.SweetyCyclops.AmuletStatus, 1)
 				npcHandler:say("Well, well, I do that! Big Ben makes lil' amulet unbroken with big hammer in big hands! No worry! Come back after sun hits the horizon 24 times and ask me for amulet.", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 11 then
-			if player:getItemCount(5880) > 0 then
+			if player:removeItem(5880, 1) then
 				player:setStorageValue(Storage.hiddenCityOfBeregar.GearWheel, player:getStorageValue(Storage.hiddenCityOfBeregar.GearWheel) + 1)
-				player:removeItem(5880, 1)
 				player:addItem(9690, 1)
 			else
 				npcHandler:say("Lil' one does not have any iron ores.", cid)
@@ -210,31 +205,31 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am smith."})
-keywordHandler:addKeyword({'smith'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Working steel is my profession."})
-keywordHandler:addKeyword({'steel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Manny kinds of. Like {Mesh Kaha Rogh'}, {Za'Kalortith}, {Uth'Byth}, {Uth'Morc}, {Uth'Amon}, {Uth'Maer}, {Uth'Doon}, and {Zatragil}."})
-keywordHandler:addKeyword({'zatragil'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most ancients use dream silver for different stuff. Now ancients most gone. Most not know about."})
-keywordHandler:addKeyword({'uth\'doon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's high steel called. Only lil' lil' ones know how make."})
-keywordHandler:addKeyword({'za\'kalortith'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's evil. Demon iron is. No good cyclops goes where you can find and need evil flame to melt."})
-keywordHandler:addKeyword({'mesh kaha rogh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Steel that is singing when forged. No one knows where find today."})
-keywordHandler:addKeyword({'uth\'byth'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Not good to make stuff off. Bad steel it is. But eating magic, so useful is."})
-keywordHandler:addKeyword({'uth\'maer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Brightsteel is. Much art made with it. Sorcerers too lazy and afraid to enchant much."})
-keywordHandler:addKeyword({'uth\'amon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Heartiron from heart of big old mountain, found very deep. Lil' lil ones fiercely defend. Not wanting to have it used for stuff but holy stuff."})
-keywordHandler:addKeyword({'ab\'dendriel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Me parents live here before town was. Me not care about lil' ones."})
-keywordHandler:addKeyword({'lil\' lil\''}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Lil' lil' ones are so fun. We often chat."})
-keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "One day I'll go and look."})
-keywordHandler:addKeyword({'teshial'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Is one of elven family or such thing. Me not understand lil' ones and their business."})
-keywordHandler:addKeyword({'cenath'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Is one of elven family or such thing. Me not understand lil' ones and their business."})
-keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I called Bencthyclthrtrprr by me people. Lil' ones me call Big Ben."})
-keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You shut up. Me not want to hear."})
-keywordHandler:addKeyword({'fire sword'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Do lil' one want to trade a fire sword?"})
-keywordHandler:addKeyword({'dragon shield'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Do lil' one want to trade a dragon shield?"})
-keywordHandler:addKeyword({'sword of valor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Do lil' one want to trade a sword of valor?"})
-keywordHandler:addKeyword({'warlord sword'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Do lil' one want to trade a warlord sword?"})
-keywordHandler:addKeyword({'minotaurs'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They were friend with me parents. Long before elves here, they often made visit. No longer come here."})
-keywordHandler:addKeyword({'elves'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Me not fight them, they not fight me."})
-keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Me wish I could make weapon like it."})
-keywordHandler:addKeyword({'cyclops'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Me people not live here much. Most are far away."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am smith."})
+keywordHandler:addKeyword({'smith'}, StdModule.say, {npcHandler = npcHandler, text = "Working steel is my profession."})
+keywordHandler:addKeyword({'steel'}, StdModule.say, {npcHandler = npcHandler, text = "Manny kinds of. Like {Mesh Kaha Rogh'}, {Za'Kalortith}, {Uth'Byth}, {Uth'Morc}, {Uth'Amon}, {Uth'Maer}, {Uth'Doon}, and {Zatragil}."})
+keywordHandler:addKeyword({'zatragil'}, StdModule.say, {npcHandler = npcHandler, text = "Most ancients use dream silver for different stuff. Now ancients most gone. Most not know about."})
+keywordHandler:addKeyword({'uth\'doon'}, StdModule.say, {npcHandler = npcHandler, text = "It's high steel called. Only lil' lil' ones know how make."})
+keywordHandler:addKeyword({'za\'kalortith'}, StdModule.say, {npcHandler = npcHandler, text = "It's evil. Demon iron is. No good cyclops goes where you can find and need evil flame to melt."})
+keywordHandler:addKeyword({'mesh kaha rogh'}, StdModule.say, {npcHandler = npcHandler, text = "Steel that is singing when forged. No one knows where find today."})
+keywordHandler:addKeyword({'uth\'byth'}, StdModule.say, {npcHandler = npcHandler, text = "Not good to make stuff off. Bad steel it is. But eating magic, so useful is."})
+keywordHandler:addKeyword({'uth\'maer'}, StdModule.say, {npcHandler = npcHandler, text = "Brightsteel is. Much art made with it. Sorcerers too lazy and afraid to enchant much."})
+keywordHandler:addKeyword({'uth\'amon'}, StdModule.say, {npcHandler = npcHandler, text = "Heartiron from heart of big old mountain, found very deep. Lil' lil ones fiercely defend. Not wanting to have it used for stuff but holy stuff."})
+keywordHandler:addKeyword({'ab\'dendriel'}, StdModule.say, {npcHandler = npcHandler, text = "Me parents live here before town was. Me not care about lil' ones."})
+keywordHandler:addKeyword({'lil\' lil\''}, StdModule.say, {npcHandler = npcHandler, text = "Lil' lil' ones are so fun. We often chat."})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, text = "One day I'll go and look."})
+keywordHandler:addKeyword({'teshial'}, StdModule.say, {npcHandler = npcHandler, text = "Is one of elven family or such thing. Me not understand lil' ones and their business."})
+keywordHandler:addKeyword({'cenath'}, StdModule.say, {npcHandler = npcHandler, text = "Is one of elven family or such thing. Me not understand lil' ones and their business."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I called Bencthyclthrtrprr by me people. Lil' ones me call Big Ben."})
+keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, text = "You shut up. Me not want to hear."})
+keywordHandler:addKeyword({'fire sword'}, StdModule.say, {npcHandler = npcHandler, text = "Do lil' one want to trade a fire sword?"})
+keywordHandler:addKeyword({'dragon shield'}, StdModule.say, {npcHandler = npcHandler, text = "Do lil' one want to trade a dragon shield?"})
+keywordHandler:addKeyword({'sword of valor'}, StdModule.say, {npcHandler = npcHandler, text = "Do lil' one want to trade a sword of valor?"})
+keywordHandler:addKeyword({'warlord sword'}, StdModule.say, {npcHandler = npcHandler, text = "Do lil' one want to trade a warlord sword?"})
+keywordHandler:addKeyword({'minotaurs'}, StdModule.say, {npcHandler = npcHandler, text = "They were friend with me parents. Long before elves here, they often made visit. No longer come here."})
+keywordHandler:addKeyword({'elves'}, StdModule.say, {npcHandler = npcHandler, text = "Me not fight them, they not fight me."})
+keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler, text = "Me wish I could make weapon like it."})
+keywordHandler:addKeyword({'cyclops'}, StdModule.say, {npcHandler = npcHandler, text = "Me people not live here much. Most are far away."})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Hum Humm! Welcume lil' |PLAYERNAME|.")

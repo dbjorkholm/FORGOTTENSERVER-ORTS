@@ -1,10 +1,10 @@
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	local pit = player:getStorageValue(Storage.SvargrondArena.Pit)
 	if pit < 1 or pit > 10 then
 		return

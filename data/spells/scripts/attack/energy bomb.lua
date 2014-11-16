@@ -7,6 +7,6 @@ combat:setParameter(COMBAT_PARAM_CREATEITEM, ITEM_ENERGYFIELD_PVP)
 local area = createCombatArea(AREA_SQUARE1X1)
 combat:setArea(area)
 
-function onCastSpell(creature, var)
+function onCastSpell(creature, var, isHotkey)
 	return combat:execute(creature, var)
 end

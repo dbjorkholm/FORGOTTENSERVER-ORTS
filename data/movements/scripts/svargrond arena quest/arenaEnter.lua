@@ -1,5 +1,5 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -19,13 +19,13 @@ function onStepIn(cid, item, position, fromPosition)
 
 	local occupant = SvargrondArena.getPitOccupant(pitId, player)
 	if occupant then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == 0 and 's' or '') .. 'he is done fighting.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, occupant:getName() .. ' is currently in the next arena pit. Please wait until ' .. (occupant:getSex() == PLAYERSEX_FEMALE and 's' or '') .. 'he is done fighting.')
 		player:teleportTo(fromPosition)
 		return true
 	end
 
 	SvargrondArena.resetPit(pitId)
-	SvargrondArena.scheduleKickPlayer(cid, pitId)
+	SvargrondArena.scheduleKickPlayer(player:getId(), pitId)
 	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)

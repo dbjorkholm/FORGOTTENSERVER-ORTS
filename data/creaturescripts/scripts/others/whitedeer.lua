@@ -4,8 +4,8 @@ local config = {
 	{chance = 100, monster = 'Desperate White Deer', message = 'The white deer desperately tries to escape!'}
 }
 
-function onDeath(cid, corpse, lasthitkiller, mostdamagekiller, lasthitunjustified, mostdamageunjustified)
-	local targetMonster = Monster(cid)
+function onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
+	local targetMonster = creature:getMonster()
 	if not targetMonster or targetMonster:getMaster() then
 		return true
 	end

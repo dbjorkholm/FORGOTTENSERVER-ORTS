@@ -5,11 +5,10 @@ local holeId = {
 	8252, 8253, 8254, 8255, 8256, 8592, 8972, 9606, 9625, 13190, 14461, 19519, 21536
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
-		local player = Player(cid)
 		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
 		if itemEx.itemid == 8592 then
 			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 22 then
@@ -29,7 +28,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		end
 
-		Player(cid):sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return true
 	end
 

@@ -1,11 +1,13 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
-		doTransformItem(item.uid, 1946)
-		doSendMagicEffect({x = 32838, y = 32264, z = 14}, CONST_ME_MAGIC_BLUE)
-		doCreateItem(2638, 1, {x = 32838, y = 32264, z = 14})
-		doCreateItem(2639, 1, {x = 32838, y = 32264, z = 14})
-	else
-		doTransformItem(item.uid, 1945)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
+	if item.itemid ~= 1945 then
+		return true
 	end
+
+	local ticTacPosition = Position(32838, 32264, 14)
+	Game.createItem(2638, 1, ticTacPosition)
+	Game.createItem(2639, 1, ticTacPosition)
+	ticTacPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	return true
 end

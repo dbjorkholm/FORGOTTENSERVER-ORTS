@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if player:getStorageValue(Storage.thievesGuild.Mission06) == 2 then
 		player:addItem(8766, 1)

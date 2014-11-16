@@ -79,8 +79,7 @@ local function revertIce(toPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	local targetItem = Item(itemEx.uid)
@@ -133,16 +132,16 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			Game.createMonster('Scarab', toPosition)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
-	elseif itemEx.actionid == 4654 and player:getStorageValue(9925) == 1 and player:getStorageValue(9926) < 1 then
+	elseif itemEx.actionid == 4654 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission49) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission50) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
-		player:setStorageValue(9926, 1)
-	elseif itemEx.actionid == 4668 and player:getStorageValue(9943) == 1 and player:getStorageValue(9944) < 1 then
+		player:setStorageValue(Storage.GravediggerOfDrefia.Mission50, 1)
+	elseif itemEx.actionid == 4668 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission67) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission68) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'A torn scroll piece emerges. Probably gnawed off by rats.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
-		player:setStorageValue(9944, 1)
+		player:setStorageValue(Storage.GravediggerOfDrefia.Mission68, 1)
 	elseif itemEx.actionid == 50118 then
 		local position = Position(32717, 31492, 11)
 		if Tile(position):getItemById(7131) then
@@ -166,7 +165,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif item.itemid == 10515 then
 		if itemEx.uid == 3071 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then
-				doSetMonsterOutfit(cid, 'skeleton', 3 * 1000)
+				doSetMonsterOutfit(player, 'skeleton', 3 * 1000)
 				fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe01, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
@@ -197,7 +196,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 		elseif itemEx.uid == 3074 then -- In Service Of Yalahar Quest
 			if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1 then
-				doSetMonsterOutfit(cid, 'bog raider', 5 * 1000)
+				doSetMonsterOutfit(player, 'bog raider', 5 * 1000)
 				player:say('You have used the crowbar on a knot.', TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
@@ -235,16 +234,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			targetItem:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
 		elseif itemEx.actionid == 50058 then -- naginata quest
-			local stoneStorage = Game.getStorageValue(itemEx.actionid)
+			local cStorage = GlobalStorage.NaginataStone
+			local stoneStorage = Game.getStorageValue(cStorage)
 			if stoneStorage ~= 5 then
-				Game.setStorageValue(itemEx.actionid, math.max(0, stoneStorage or 0) + 1)
+				Game.setStorageValue(cStorage, math.max(0, stoneStorage or 0) + 1)
 			elseif stoneStorage == 5 then
 				Item(itemEx.uid):remove()
-				Game.setStorageValue(itemEx.actionid)
+				Game.setStorageValue(cStorage)
 			end
 
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then --The Banshee Quest
 		targetItem:transform(392)

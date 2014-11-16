@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 8013 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 13 then
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 14)
 			player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 4) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"

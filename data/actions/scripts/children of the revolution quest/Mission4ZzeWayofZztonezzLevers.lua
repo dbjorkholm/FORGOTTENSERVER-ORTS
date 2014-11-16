@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 8013 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 14 then
 			lever = toPosition.y - 31122
 			leverChange = {
@@ -47,7 +46,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				player:setStorageValue(Storage.ChildrenoftheRevolution.Mission04, 5) --Questlog, Children of the Revolution "Mission 4: Zze Way of Zztonezz"
 				player:say("After a cracking noise a deep humming suddenly starts from somewhere below.", TALKTYPE_MONSTER_SAY)
 			end
-			doTransformItem(itemEx.uid, itemEx.itemid == 10044 and 10045 or 10044, 1)
+			Item(itemEx.uid):transform(itemEx.itemid == 10044 and 10045 or 10044, 1)
 		else
 			player:say("The lever does not budge.", TALKTYPE_MONSTER_SAY)
 		end

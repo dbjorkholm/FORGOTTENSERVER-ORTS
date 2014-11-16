@@ -297,7 +297,7 @@ local function resetLever(leverPos)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		return false
 	end
@@ -331,7 +331,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	if settings.sounds and #settings.sounds > 0 then
-		local player = Player(cid)
 		local sound = settings.sounds[math.random(#settings.sounds)]
 		if sound.text then
 			player:say(sound.text:gsub('|PLAYERNAME|', player:getName()), TALKTYPE_MONSTER_SAY, false, nil, exhibitPosition)

@@ -59,8 +59,7 @@ local function revertIce(toPosition)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetItem = Item(itemEx.uid)
 	if (itemEx.uid <= 65535 or itemEx.actionid > 0) then
 		if (itemEx.itemid == 354 or itemEx.itemid == 355) then
@@ -100,16 +99,17 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
 		-- naginata quest
 		elseif itemEx.actionid == 50058 then
-			local stoneStorage = Game.getStorageValue(itemEx.actionid)
+			local cStorage = GlobalStorage.NaginataStone
+			local stoneStorage = Game.getStorageValue(cStorage)
 			if stoneStorage ~= 5 then
-				Game.setStorageValue(itemEx.actionid, math.max(0, stoneStorage or 0) + 1)
+				Game.setStorageValue(cStorage, math.max(0, stoneStorage or 0) + 1)
 			elseif stoneStorage == 5 then
 				Item(itemEx.uid):remove()
-				Game.setStorageValue(itemEx.actionid)
+				Game.setStorageValue(cStorage)
 			end
 
 			toPosition:sendMagicEffect(CONST_ME_POFF)
-			doTargetCombatHealth(0, cid, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
+			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
 	 --The Banshee Quest
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then

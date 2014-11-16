@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.actionid == 100 and itemEx.itemid == 471 then
-		local player = Player(cid)
 		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 36 then
 			player:removeItem(9737, 1)
 			Game.createItem(9738, 1, toPosition)

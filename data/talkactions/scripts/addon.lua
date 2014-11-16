@@ -145,14 +145,13 @@ local config = {
 	}
 }
 
-function onSay(cid, words, param)
+function onSay(player, words, param)
 	local v = config[param:lower()]
 	if not v then
 		return false
 	end
 
-	local player = Player(cid)
-	local outfit = player:getSex() == 0 and v["female"] or v["male"]
+	local outfit = player:getSex() == PLAYERSEX_FEMALE and v["female"] or v["male"]
 	if player:hasOutfit(outfit, 3) then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already obtained the " .. param .. " addons.")
 		return false

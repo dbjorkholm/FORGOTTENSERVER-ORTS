@@ -1,18 +1,26 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
-	if(isInArray({3124, 3125, 3126, 3127}, item.uid)) then
-		if(getPlayerStorageValue(cid, 900) == 12) then
-			if(getPlayerStorageValue(cid, 903 + getPlayerStorageValue(cid, 911)) == item.uid) then
-				setPlayerStorageValue(cid, 911, getPlayerStorageValue(cid, 911) + 1)
-				toPosition:sendMagicEffect(CONST_ME_FIREWORK_BLUE)
-				if(getPlayerStorageValue(cid, 911) == 8) then
-					setPlayerStorageValue(cid, 900, 13)
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found your melody!")
-				end
-			else
-				setPlayerStorageValue(cid, 911, 1)
-				toPosition:sendMagicEffect(CONST_ME_SOUND_RED)
+local cToneStorages = {
+	Storage.MelodyTone1,
+	Storage.MelodyTone2,
+	Storage.MelodyTone3,
+	Storage.MelodyTone4,
+	Storage.MelodyTone5,
+	Storage.MelodyTone6,
+	Storage.MelodyTone7
+}
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 12 then
+		local value = player:getStorageValue(Storage.BigfootBurden.MelodyStatus)
+		if player:getStorageValue(cToneStorages[value]) == item.uid then
+			player:setStorageValue(Storage.BigfootBurden.MelodyStatus, value + 1)
+			toPosition:sendMagicEffect(CONST_ME_FIREWORK_BLUE)
+			if value + 1 == 8 then
+				player:setStorageValue(Storage.BigfootBurden.QuestLine, 13)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found your melody!")
 			end
+		else
+			player:setStorageValue(Storage.BigfootBurden.MelodyStatus, 1)
+			toPosition:sendMagicEffect(CONST_ME_SOUND_RED)
 		end
 	end
 	return true

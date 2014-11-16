@@ -20,7 +20,7 @@ function onThink()
 end
 
 local function greetCallback(cid)
-	if Player(cid):getSex() == 0 then
+	if Player(cid):getSex() == PLAYERSEX_FEMALE then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh, hello |PLAYERNAME|, your hair looks great! Who did it for you?")
 		npcHandler.topic[cid] = 1
 	else
@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 2
 		Price[cid] = 5
 	elseif msgcontains(msg, "name") then
-		if Sex == 0 then
+		if Sex == PLAYERSEX_FEMALE then
 			npcHandler:say("I am Aruda.", cid)
 		else
 			npcHandler:say("I am a little sad, that you seem to have forgotten me, handsome. I am Aruda.", cid)
@@ -80,7 +80,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 2
 		Price[cid] = 5
 	elseif msgcontains(msg, "aruda") then
-		if Sex == 0 then
+		if Sex == PLAYERSEX_FEMALE then
 			npcHandler:say("Yes, that's me!", cid)
 		else
 			npcHandler:say("Oh, I like it, how you say my name.", cid)
@@ -111,7 +111,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 2
 		Price[cid] = 10
 	elseif msgcontains(msg, "sam") then
-		if Sex == 0 then
+		if Sex == PLAYERSEX_FEMALE then
 			npcHandler:say("He is soooo strong! What muscles! What a body! Did you ask him for a date?", cid)
 		else
 			npcHandler:say("He is soooo strong! What muscles! What a body! On the other hand, compared to you he looks quite puny.", cid)
@@ -142,7 +142,7 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("I am a little shy and so don't hear many rumors.", cid)
 		npcHandler.topic[cid] = 2
 		Price[cid] = 5
-	elseif msgcontains(msg, "kiss") and Sex == 1 then
+	elseif msgcontains(msg, "kiss") and Sex == PLAYERSEX_MALE then
 		npcHandler:say("Oh, you little devil, stop talking like that! <blush>", cid)
 		npcHandler.topic[cid] = 2
 		Price[cid] = 20

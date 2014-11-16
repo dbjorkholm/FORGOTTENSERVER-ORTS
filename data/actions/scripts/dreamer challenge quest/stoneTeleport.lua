@@ -1,28 +1,68 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.itemid == 1945) then
-		if(getTileItemById({x = 32878, y = 32270, z = 14}, 2025).uid == 0 or getTileItemById({x = 32881, y = 32267, z = 14}, 2168).uid == 0 or getTileItemById({x = 32881, y = 32273, z = 14}, 6300).uid == 0 or getTileItemById({x = 32884, y = 32270, z = 14}, 1487).uid == 0) then
-			return false
+local config = {
+	sacrifices = {
+		{position = Position(32878, 32270, 14), itemId = 2025},
+		{position = Position(32881, 32267, 14), itemId = 2168},
+		{position = Position(32881, 32273, 14), itemId = 6300},
+		{position = Position(32884, 32270, 14), itemId = 1487}
+	},
+	wells = {
+		{position = Position(32874, 32263, 14), wellId = 3729, transformId = 3733},
+		{position = Position(32875, 32263, 14), wellId = 3730, transformId = 3734},
+		{position = Position(32874, 32264, 14), wellId = 3731, transformId = 3735},
+		{position = Position(32875, 32264, 14), wellId = 3732, transformId = 3736}
+	}
+}
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+
+	if item.itemid ~= 1945 then
+		return true
+	end
+
+	local sacrificeItems, sacrificeItem = true
+	for i = 1, #config.sacrifices do
+		local sacrifice = config.sacrifices[i]
+		sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
+		if not sacrificeItem then
+			sacrificeItems = false
+			break
 		end
-		local stone = getTileItemById({x = 32881, y = 32270, z = 14}, 1355).uid
-		if (stone ~= 0) then
-			doRemoveItem(stone, 1)
+	end
+
+	if not sacrificeItems then
+		return true
+	end
+
+	local stonePosition = Position(32881, 32270, 14)
+	local stoneItem = Tile(stonePosition):getItemById(1355)
+	if stoneItem then
+		stoneItem:remove()
+	end
+
+	local teleportExists = Tile(stonePosition):getItemById(1387)
+	if not teleportExists then
+		local newItem = Game.createItem(1387, 1, stonePosition)
+		if newItem then
+			newItem:setActionId(9031)
 		end
-		local tp = getTileItemById({x = 32881, y = 32270, z = 14}, 1387).uid
-		if (tp == 0) then
-			local item = doCreateItem(1387, 1, {x = 32881, y = 32270, z = 14})
-			doSetItemActionId(item, 9031)
+	end
+
+	local wellItem
+	for i = 1, #config.wells do
+		local well = config.wells[i]
+		wellItem = Tile(well.position):getItemById(well.itemId)
+		if wellItem then
+			wellItem:transform(well.transformId)
 		end
-		doTransformItem(item.uid, 1946)
-		doTransformItem(getTileItemById({x = 32874, y = 32263, z = 14}, 3729).uid, 3733)
-		doTransformItem(getTileItemById({x = 32875, y = 32263, z = 14}, 3730).uid, 3734)
-		doTransformItem(getTileItemById({x = 32874, y = 32264, z = 14}, 3731).uid, 3735)
-		doTransformItem(getTileItemById({x = 32875, y = 32264, z = 14}, 3732).uid, 3736)
-		doRemoveItem(getTileItemById({x = 32878, y = 32270, z = 14}, 2025).uid, 1)
-		doRemoveItem(getTileItemById({x = 32881, y = 32267, z = 14}, 2168).uid, 1)
-		doRemoveItem(getTileItemById({x = 32881, y = 32273, z = 14}, 6300).uid, 1)
-		doRemoveItem(getTileItemById({x = 32884, y = 32270, z = 14}, 1487).uid, 1)
-	else
-		doTransformItem(item.uid, 1945)
+	end
+
+	for i = 1, #config.sacrifices do
+		local sacrifice = config.sacrifices[i]
+		sacrificeItem = Tile(sacrifice.position):getItemById(sacrifice.itemId)
+		if sacrificeItem then
+			sacrificeItem:remove()
+		end
 	end
 	return true
 end

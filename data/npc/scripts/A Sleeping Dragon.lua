@@ -149,12 +149,12 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 33
 		elseif(msg:lower() == "use mirror" and npcHandler.topic[cid] == 33) then
 			npcHandler:say({
-				"With your eyes covered and avoiding direct sight of the rays, you put the mirror into the stand. ...", 
-				"Instinctively you run to a larger emerald bluff near the raise to find cover. Mere seconds after you claimed the sturdy shelter, a deep dark humming starts to swirl through the air. ...", 
-				"Seconds pass as the hum gets louder. The noise is maddening, drowning all other sounds around you. As you cover your ears in pain, the humming explodes into a deafening growl. ...", 
-				"You raise your head above the edge of the emerald to catch a glimpse of what's happening. ...", 
-				"The hand seems to have grown into a fist. In the distance you can now see a blurry scheme of a creature too large for your eyes to get a sharper view of its head. ...", 
-				"Blending the rays, the mirror directs pure white light directly towards the part where you assume the face of the creature. ...", 
+				"With your eyes covered and avoiding direct sight of the rays, you put the mirror into the stand. ...",
+				"Instinctively you run to a larger emerald bluff near the raise to find cover. Mere seconds after you claimed the sturdy shelter, a deep dark humming starts to swirl through the air. ...",
+				"Seconds pass as the hum gets louder. The noise is maddening, drowning all other sounds around you. As you cover your ears in pain, the humming explodes into a deafening growl. ...",
+				"You raise your head above the edge of the emerald to catch a glimpse of what's happening. ...",
+				"The hand seems to have grown into a fist. In the distance you can now see a blurry scheme of a creature too large for your eyes to get a sharper view of its head. ...",
+				"Blending the rays, the mirror directs pure white light directly towards the part where you assume the face of the creature. ...",
 				"The growl transforms into a scream, everything around you seems to compress. As you press yourself tightly against the bluff, everything falls silent and in a split second, the dark being dissolves into bursts of blackness. You wake."
 			}, cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 28)
@@ -184,6 +184,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 29)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission10, 1) --Questlog, Wrath of the Emperor "Mission 10: A Message of Freedom"
 			player:addItem(11260, 1)
+			player:addAchievement('Wayfarer')
 			npcHandler.topic[cid] = 0
 		end
 	end

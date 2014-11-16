@@ -23,7 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ahh. So Duncan sent you, eh? You must have done something really impressive. Okay, take this fine sabre from me, mate.', cid)
 		end
 	elseif msgcontains(msg, 'warrior\'s sword') then
-		if player:hasOutfit(player:getSex() == 0 and 142 or 134, 2) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 142 or 134, 2) then
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end
@@ -42,6 +42,13 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(142, 2)
 				player:setStorageValue(Storage.OutfitQuest.WarriorSwordAddon, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				local cStorage = Storage.Achievements.WildWarrior
+				if player:getStorageValue(cStorage) < 1 then
+					player:setStorageValue(cStorage, 1)
+				elseif player:getStorageValue(cStorage) == 1 then
+					player:addAchievement('Wild Warrior')
+					player:setStorageValue(cStorage, 2)
+				end
 				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', cid)
 			else
 				npcHandler:say('You do not have all the required items.', cid)
@@ -49,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'knight\'s sword') then
-		if player:hasOutfit(player:getSex() == 0 and 139 or 131, 1) then
+		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 139 or 131, 1) then
 			npcHandler:say('You already have this outfit!', cid)
 			return true
 		end
@@ -81,8 +88,8 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.'})
-keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?'})
+keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, text = 'I can forge the finest {weapons} for knights and warriors. They may wear them proudly and visible to everyone.'})
+keywordHandler:addKeyword({'weapons'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you rather be interested in a {knight\'s sword} or in a {warrior\'s sword}?'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Hello there.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye.')

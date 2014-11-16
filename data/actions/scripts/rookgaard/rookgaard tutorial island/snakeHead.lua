@@ -8,7 +8,7 @@ local function doTransformSmallSnakeHead(fromId, toId)
 	end
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		doTransformSmallSnakeHead(5058, 5057)
 	else

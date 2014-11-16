@@ -7,37 +7,31 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
+local function greetCallback(cid)
 	local player = Player(cid)
-	-- GREET
-	if msg == "DJANNI'HAH" then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("Greetings, human " .. player:getName() .. ". My patience with your kind is limited, so speak quickly and choose your words well.", cid)
-				npcHandler:addFocus(cid)
-			end
-		end
+	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) < 1 and BlueOrGreen then
+		return false
 	end
-	-- GREET
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Farewell, human. When I have taken my rightful place I shall remember those who served me well. Even if they are only humans.', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(GreenDjinn.MissionStart+2) == 3 and player:getStorageValue(GreenDjinn.MissionStart+3) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) == 3 and player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) < 1 then
 			npcHandler:say({
 				"I guess this is the first time I entrust a human with a mission. And such an important mission, too. But well, we live in hard times, and I am a bit short of adequate staff. ...",
 				"Besides, Baa'leal told me you have distinguished yourself well in previous missions, so I think you might be the right person for the job. ...",
 				"But think carefully, human, for this mission will bring you close to certain death. Are you prepared to embark on this mission?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(GreenDjinn.MissionStart+3) == 3 then
+		elseif player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 3 then
 			npcHandler:say("Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -51,7 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Once you have found the lamp you must enter Ashta'daramai again. Sneak into Gabel's personal chambers and exchange his sleeping lamp with Fa'hradin's lamp! ...",
 				"If you succeed, the war could be over one night later!"
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart+3, 1)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say({
@@ -62,7 +56,9 @@ local function creatureSayCallback(cid, type, msg)
 				"But that's in the future. For now, I will confine myself to give you the permission to trade with my people whenever you want to. ...",
 				"Farewell, human!"
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart+3, 4)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 4)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.DoorToMaridTerritory, 1)
+			player:addAchievement('Efreet Ally')
 			npcHandler.topic[cid] = 0
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
@@ -71,6 +67,12 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Greetings, human |PLAYERNAME|. My patience with your kind is limited, so speak quickly and choose your words well.")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, human. When I have taken my rightful place I shall remember those who served me well. Even if they are only humans.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

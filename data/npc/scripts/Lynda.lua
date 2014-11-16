@@ -8,14 +8,15 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) 
 function onThink() npcHandler:onThink() end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "angelina") then
+	end
+	local player = Player(cid)
+	if msgcontains(msg, "angelina") then
 		if player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) == 1 then
 			npcHandler:say({
 				"Angelina had been imprisoned? My, these are horrible news, but I am so glad to hear that she is safe now. ...",
-				"I will happily carry out her wish and reward you, but I fear I need some important ingredients for my blessing spell first....",
+				"I will happily carry out her wish and reward you, but I fear I need some important ingredients for my blessing spell first. ...",
 				"Will you gather them for me?"
 			}, cid)
 			npcHandler.topic[cid] = 1
@@ -57,9 +58,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 2)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
-			if  player:getItemCount(2181) >= 1 and player:getItemCount(2182) >= 1 and player:getItemCount(2183) >= 1 and player:getItemCount(2185) >= 1 and player:getItemCount(2186) >= 1 and player:getItemCount(2187) >= 1 and player:getItemCount(2188) >= 1 and player:getItemCount(2189) >= 1 and player:getItemCount(2190) >= 1 and player:getItemCount(2191) >= 1 then
-			-- if  player:getItemCount(wandrod) >= 1 then
-				local wandrod = {2181, 2182, 2183, 2185, 2186, 2187, 2188, 2189, 2190, 2191}
+			if  player:getItemCount(2181) > 0 and player:getItemCount(2182) > 0 and player:getItemCount(2183) > 0 and player:getItemCount(2185) > 0 and player:getItemCount(2186) > 0 and player:getItemCount(2187) > 0 and player:getItemCount(2188) > 0 and player:getItemCount(2189) > 0 and player:getItemCount(2190) > 0 and player:getItemCount(2191) > 0 then
 				npcHandler:say("Thank you, that must have been a lot to carry. Now, please bring me 10 ounces of magic sulphur.", cid)
 				player:removeItem(2181, 1)
 				player:removeItem(2182, 1)
@@ -75,23 +74,20 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(5904) >= 10 then
+			if player:removeItem(5904, 10) then
 				npcHandler:say("Very good. I will immediately start to prepare the ritual and extract the elemental energy from the wands and rods. Please bring me the Necromancer's soul stone now.", cid)
-				player:removeItem(5904, 10)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 4)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5809) >= 1 then
+			if player:removeItem(5809, 1) then
 				npcHandler:say("You have found a rarity there, " .. player:getName() .. ". This will become the tip of your blessed wand. Please bring me 20 ankhs now to complete the ritual.", cid)
-				player:removeItem(5809, 1)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 5)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(2193) >= 20 then
+			if player:removeItem(2193, 20) then
 				npcHandler:say("The ingredients for the ritual are complete! I will start to prepare your blessed wand,... I'm glad to tell you that I have finished the ritual, " .. player:getName() .. ". Here is your new wand. I hope you carry it proudly for everyone to see.", cid)
-				player:removeItem(2193, 20)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 6)
 				player:addOutfitAddon(141, 1)
 				player:addOutfitAddon(130, 1)
@@ -100,8 +96,12 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	end
-return true
+	return true
 end
+
+npcHandler:setMessage(MESSAGE_GREET, "Welcome in the name of the gods, pilgrim |PLAYERNAME|!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Be careful on your journeys.")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Be careful on your journeys.")
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -23,14 +23,16 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif(msgcontains(msg, "arena")) then
 		if(npcHandler.topic[cid] == 1) then
-			player:teleportTo({x=32688, y=31193, z=7})
-			doSendMagicEffect({x=32688, y=31193, z=7}, CONST_ME_TELEPORT)
+			local destination = Position(32688, 31193, 7)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	elseif(msgcontains(msg, "alchemist")) then
 		if(npcHandler.topic[cid] == 1) then
-			player:teleportTo({x=32688, y=31188, z=7})
-			doSendMagicEffect({x=32688, y=31188, z=7}, CONST_ME_TELEPORT)
+			local destination = Position(32688, 31188, 7)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	end

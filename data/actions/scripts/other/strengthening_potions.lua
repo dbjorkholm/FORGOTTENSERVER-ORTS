@@ -19,18 +19,25 @@ local config = {
 	[7443] = bullseye
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
 	end
 
-	local player = Player(cid)
 	if item.itemid == 7440 then
-		if not player:isSorcerer() or player:isDruid() then
+		if not player:isMage() then
 			player:say('Only sorcerers and druids may drink this fluid.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
+	end
+
+	local cStorage = player:getStorageValue(Storage.Achievements.PotionAddict)
+	if cStorage < 100000 then
+		player:setStorageValue(Storage.Achievements.PotionAddict, math.max(1, cStorage) + 1)
+	elseif cStorage == 100000 then
+		player:addAchievement('Potion Addict')
+		player:setStorageValue(Storage.Achievements.PotionAddict, 100001)
 	end
 
 	player:addCondition(useItem)

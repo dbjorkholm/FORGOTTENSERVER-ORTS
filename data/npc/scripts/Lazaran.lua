@@ -14,24 +14,25 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, "mission") and player:getStorageValue(Storage.TheNewFrontier.Questline) == 9 then
-		npcHandler:say("Me people wanting peace. No war with others. No war with little men. We few. We weak. Need help. We not wanting make war. No hurt.", cid)
-		player:setStorageValue(Storage.TheNewFrontier.Questline, 10)
-		player:setStorageValue(Storage.TheNewFrontier.Mission03, 2) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
-		npcHandler.topic[cid] = 0
+		if npcHandler.topic[cid] == 0 then
+			npcHandler:say("Me people wanting peace. No war with others. No war with little men. We few. We weak. Need help. We not wanting make war. No hurt.", cid)
+			npcHandler.topic[cid] = 10
+		elseif npcHandler.topic[cid] == 10 then
+			npcHandler:say("You mean you want help us?", cid)
+			npcHandler.topic[cid] = 11
+		end
 	elseif msgcontains(msg, "help") and player:getStorageValue(Storage.UnnaturalSelection.Questline) < 1 then
-	npcHandler:say(
-			{
+		npcHandler:say({
 				"Big problem we have! Skull of first leader gone. He ancestor of whole tribe but died long ago in war. We have keep his skull on our sacred place. ...",
 				"Then one night, green men came with wolves... and one of wolves took skull and ran off chewing on it! We need back - many wisdom and power is in skull. Maybe they took to north fortress. But can be hard getting in. You try get our holy skull back?"
 			}, cid)
-	npcHandler.topic[cid] = 1
+		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "mission") and player:getStorageValue(Storage.UnnaturalSelection.Questline) >= 1 then
 		if player:getStorageValue(Storage.UnnaturalSelection.Questline) == 1 then
 			npcHandler:say("Oh! You found holy skull? In bone pile you found?! Thank Pandor you brought! Me can have it back?", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 2 then
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"You brought back skull of first leader. Hero of tribe! But we more missions to do. ...",
 				"Me and Ulala talk about land outside. We wanting to see more of land! Land over big water! But us no can leave tribe. No can cross water. Only way is skull of first leader. ...",
 				"What holy skull sees, tribe sees. That we believe. Can you bring holy skull over big water and show places?"
@@ -44,8 +45,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("We been weak for too long! We prepare for great hunt. But still need many doings! You can help us?", cid)
 			npcHandler.topic[cid] = 5
 		elseif player:getStorageValue(Storage.UnnaturalSelection.Questline) == 13 then
-			npcHandler:say(
-			{
+			npcHandler:say({
 				"You well did! Great hunt is under best signs now. We prepare weapons and paint faces and then go! ...",
 				"No no, you no need to help us. But can prepare afterparty! Little men sent us stuff some time ago. Was strange water in there. Brown and stinky! But when we tried all tribe became veeeeeeery happy. ...",
 				"Now brown water is gone and we sad! Can you bring POT of brown water for party after great hunt? Just bring to me and me trade for shiny treasure."
@@ -106,6 +106,10 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("You do not have the brown strange water!", cid)
 				npcHandler.topic[cid] = 0
 			end
+		elseif npcHandler.topic[cid] == 11 then
+			player:setStorageValue(Storage.TheNewFrontier.Questline, 10)
+			player:setStorageValue(Storage.TheNewFrontier.Mission03, 2) --Questlog, The New Frontier Quest "Mission 03: Strangers in the Night"
+			npcHandler.topic[cid] = 0
 		end
 	end
 	return true

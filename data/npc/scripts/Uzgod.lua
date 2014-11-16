@@ -29,12 +29,12 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	if(msgcontains(msg, "pickaxe")) then
-		if player:getStorageValue(90) == 1 then
+		if player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 1 then
 			npcHandler:say("True dwarven pickaxes having to be maded by true weaponsmith! You wanting to get pickaxe for explorer society?", cid)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "crimson sword")) then
-		if player:getStorageValue(Rashid.MissionStart + 4) == 1 then
+		if player:getStorageValue(Storage.TravellingTrader.Mission05) == 1 then
 			npcHandler:say("Me don't sell crimson sword.", cid)
 			npcHandler.topic[cid] = 5
 		end
@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 6
 		end
 	elseif(msgcontains(msg, "brooch")) then
-		if player:getStorageValue(90) == 2 then
+		if player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 2 then
 			npcHandler:say("True dwarven pickaxes having to be maded by true weaponsmith! You wanting to get pickaxe for explorer society?", cid)
 			npcHandler.topic[cid] = 3
 		end
@@ -58,17 +58,16 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Last key should be in the generals quarter near armory. Only General might have key to enter there too. But me not knowing how to enter Generals private room at barracks. You looking on your own ...", cid)
 			npcHandler:say("When got key, then you going down to dwarven prison and getting me that brooch. Tell me that you got brooch when having it.", cid)
 			npcHandler.topic[cid] = 0
-			player:setStorageValue(90, 2)
+			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 2)
 		elseif(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(2318) >= 1 then
-				player:removeItem(2318, 1)
+			if player:removeItem(2318, 1) then
 				npcHandler:say("Thanking you for brooch. Me guessing you now want your pickaxe?", cid)
 				npcHandler.topic[cid] = 4
 			end
 		elseif(npcHandler.topic[cid] == 4) then
 			npcHandler:say("Here you have it.", cid)
 			player:addItem(11421, 1)
-			player:setStorageValue(90, 3)
+			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 3)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 9) then
 			if player:getMoney() >= 250 and player:getItemCount(5880) >= 3 then
@@ -76,7 +75,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(5880, 3)
 				npcHandler:say("Ah, that's how me like me customers. Ok, me do this... <pling pling> ... another fine swing of the hammer here and there... <ploing>... here you have it!", cid)
 				player:addItem(7385, 1)
-				player:setStorageValue(Rashid.MissionStart + 4, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission05, 2)
 				npcHandler.topic[cid] = 0
 			end
 		end

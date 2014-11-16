@@ -25,31 +25,31 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 2 then
 			if npcHandler.topic[cid] < 1 then
 				npcHandler:say({
-					"Imagine, during your travels you come upon a rare and unknown mushroom. Would you {A}) note down its specifics and location and look for a gnome to take care of it. ...", 
+					"Imagine, during your travels you come upon a rare and unknown mushroom. Would you {A}) note down its specifics and location and look for a gnome to take care of it. ...",
 					"Or would you {B}) smash it to an unrecognisable pulp. Or would you {C}) pluck it to take it with you for further examination. Or would you {D}) try to become friends with the mushroom by singing questionable bar-room songs?"
 				}, cid)
 				npcHandler.topic[cid] = 2
 			elseif npcHandler.topic[cid] == 3 then
 				npcHandler:say({
-					"Imagine you wake up one morning and discover you have forgotten how to knot your shoelaces. Would you {A}) admit defeat and go to bed once more. ...", 
+					"Imagine you wake up one morning and discover you have forgotten how to knot your shoelaces. Would you {A}) admit defeat and go to bed once more. ...",
 					"{B}) look for a gnome that can remind you how to do it. {C}) Despite the risk of injuring yourself, try to figure it out on your own. {D}) Use some pottery instead of shoes."
 				}, cid)
 				npcHandler.topic[cid] = 4
 			elseif npcHandler.topic[cid] == 5 then
 				npcHandler:say({
-					"Now let us assume you see a gnome in danger. Would you {A}) not care because you must be imagining things. {B}) Save the gnome despite all odds and risk to your own life. ...", 
+					"Now let us assume you see a gnome in danger. Would you {A}) not care because you must be imagining things. {B}) Save the gnome despite all odds and risk to your own life. ...",
 					"{C}) Inspire the gnome by singing the gnomish national anthem. {D}) Hide and loot his corpse if he dies."
 				}, cid)
 				npcHandler.topic[cid] = 6
 			elseif npcHandler.topic[cid] == 7 then
 				npcHandler:say({
-					"Imagine you were participating in a gnome-throwing competition. Would you {A}) do some physical calculations in advance to increase your chances of winning. ...", 
+					"Imagine you were participating in a gnome-throwing competition. Would you {A}) do some physical calculations in advance to increase your chances of winning. ...",
 					"{B}) throw the gnome as safely as you can to ensure his safety. {C}) Sabotage the throwing gnomes of your competitors. {D}) Never participate in such an abominable competition."
 				}, cid)
 				npcHandler.topic[cid] = 8
 			elseif npcHandler.topic[cid] == 9 then
 				npcHandler:say({
-					"Now imagine you were given the order to guard a valuable and unique mushroom. You guard it for days and no one shows up to release you and you grow hungry. ...", 
+					"Now imagine you were given the order to guard a valuable and unique mushroom. You guard it for days and no one shows up to release you and you grow hungry. ...",
 					"Would you {A}) eat your boots. {B}) eat the mushroom. {C}) eat a bit of the mushroom. {D}) stick to your duty and continue starving."
 				}, cid)
 				npcHandler.topic[cid] = 10
@@ -58,19 +58,19 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 12
 			elseif npcHandler.topic[cid] == 13 then
 				npcHandler:say({
-					"How many bigfoot does it take to change a light crystal? {A}) Only one since it's a piece of mushroom cake. {B}) Light crystals are delicate products of gnomish science and should only be handled by certified gnomish experts. ...", 
+					"How many bigfoot does it take to change a light crystal? {A}) Only one since it's a piece of mushroom cake. {B}) Light crystals are delicate products of gnomish science and should only be handled by certified gnomish experts. ...",
 					"{C}) Three. One to hold the crystal and two to turn him around. {D}) Five. A light crystal turner, a light crystal picker, a light crystal exchanger, a light crystal changing manager and finally a light crystal changing manager assistant."
 				}, cid)
 				npcHandler.topic[cid] = 14
 			elseif npcHandler.topic[cid] == 15 then
 				npcHandler:say({
-					"What is a pollyfluxed quantumresonator? {A}) Something funny. {B}) Something important. {C}) Something to be destroyed. ...", 
+					"What is a pollyfluxed quantumresonator? {A}) Something funny. {B}) Something important. {C}) Something to be destroyed. ...",
 					"{D}) Sadly I am not a gnome and lack the intelligence and education to know about even the simplest of gnomish inventions."
 				}, cid)
 				npcHandler.topic[cid] = 16
 			elseif npcHandler.topic[cid] == 17 then
 				npcHandler:say({
-					"If your mushroom patch is infested with cave worms, would you {A}) place some green light crystals to drive them away. {B}) place some disharmonic crystals to drive them away. ...", 
+					"If your mushroom patch is infested with cave worms, would you {A}) place some green light crystals to drive them away. {B}) place some disharmonic crystals to drive them away. ...",
 					"{C}) burn everything down. {D}) switch your diet to cave worms."
 				}, cid)
 				npcHandler.topic[cid] = 18
@@ -79,7 +79,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 20
 			elseif npcHandler.topic[cid] == 21 then
 				npcHandler:say({
-					"On a military campaign what piece of equipment would you need most? ...", 
+					"On a military campaign what piece of equipment would you need most? ...",
 					"Is it {A}) some tasty mushroom beer to keep the morale high. {B}) A large backpack to carry all the loot. {C}) A mighty weapon to vanquish the foes. {D}) Mushroom earplugs to be spared of the cries of agony of your opponents?"
 				}, cid)
 				npcHandler.topic[cid] = 22
@@ -190,7 +190,7 @@ local function creatureSayCallback(cid, type, msg)
 		if npcHandler.topic[cid] == 33 then
 			if player:getStorageValue(Storage.BigfootBurden.Test) < 100 then
 				npcHandler:say({
-					"You have failed the test with " .. player:getStorageValue(Storage.BigfootBurden.Test) .. " of 112 possible points. You probably were just too nervous. ...", 
+					"You have failed the test with " .. player:getStorageValue(Storage.BigfootBurden.Test) .. " of 112 possible points. You probably were just too nervous. ...",
 					"I suggest you relax a bit with a fresh mushroom beer and we'll start over after that. Gnominus sells some beer. You should find him somewhere in the central chamber."
 				}, cid)
 			else

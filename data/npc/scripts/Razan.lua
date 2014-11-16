@@ -60,9 +60,9 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, 'outfit') then
-		npcHandler:say(player:getSex() == 0 and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
+		npcHandler:say(player:getSex() == PLAYERSEX_FEMALE and 'My turban? I know something better for a pretty girl like you. Why don\'t you go talk to Miraia?' or 'My turban? Eh no, you can\'t have it. Only oriental weaponmasters may wear it after having completed a difficult task.', cid)
 	elseif msgcontains(msg, 'task') then
-		if player:getSex() ~= 1 then
+		if player:getSex() == PLAYERSEX_FEMALE then
 			npcHandler:say('I really don\'t want to make girls work for me. If you are looking for a job, ask Miraia.', cid)
 			return true
 		end
@@ -82,11 +82,11 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				'Alright, then listen to the following requirements. We are currently in dire need of ape fur since the Caliph has requested a new bathroom carpet. ...', 
-				'Thus, please bring me 100 pieces of ape fur. Secondly, it came to our ears that the explorer society has discovered a new undersea race of fishmen. ...', 
-				'Their fins are said to allow humans to walk on water! Please bring us 100 of these fish fin. ...', 
-				'Third, if the plan of walking on water should fail, we need enchanted chicken wings to prevent the testers from drowning. Please bring me two. ...', 
-				'Last but not least, just drop by with 100 pieces of blue cloth and I will happily show you how to make a turban. ...', 
+				'Alright, then listen to the following requirements. We are currently in dire need of ape fur since the Caliph has requested a new bathroom carpet. ...',
+				'Thus, please bring me 100 pieces of ape fur. Secondly, it came to our ears that the explorer society has discovered a new undersea race of fishmen. ...',
+				'Their fins are said to allow humans to walk on water! Please bring us 100 of these fish fin. ...',
+				'Third, if the plan of walking on water should fail, we need enchanted chicken wings to prevent the testers from drowning. Please bring me two. ...',
+				'Last but not least, just drop by with 100 pieces of blue cloth and I will happily show you how to make a turban. ...',
 				'Did you understand everything I told you and are willing to handle this task?'
 			}, cid)
 			npcHandler.topic[cid] = 2

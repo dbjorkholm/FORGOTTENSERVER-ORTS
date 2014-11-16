@@ -1,5 +1,4 @@
-function onSay(cid, words, param)
-	local player = Player(cid)
+function onSay(player, words, param)
 
 	local fragTime = configManager.getNumber(configKeys.FRAG_TIME)
 	if fragTime <= 0 then

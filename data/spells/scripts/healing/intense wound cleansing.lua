@@ -4,7 +4,7 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, 0)
 combat:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 
-function onGetFormulaValues(cid, level, maglevel)
+function onGetFormulaValues(player, level, maglevel)
 	min = ((level / 5) + (maglevel * 70) + 438)
 	max = ((level / 5) + (maglevel * 92) + 544)
 	return min, max

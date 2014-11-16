@@ -8,41 +8,42 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	local player = Player(cid)
 	if(msgcontains(msg, "mission")) then
-		if player:getStorageValue(900) >= 16 and player:getStorageValue(900) < 17 then
-			npcHandler:say("For your rank there are two missions available: matchmaker and golem repair. You can undertake each mission, but you can turn in a specific mission only once every 20 hours. ", cid)
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 and player:getStorageValue(Storage.BigfootBurden.QuestLine) < 17 then
+			npcHandler:say("For your rank there are two missions available: {matchmaker} and {golem repair}. You can undertake each mission, but you can turn in a specific mission only once every 20 hours. ", cid)
 			npcHandler.topic[cid] = 0
-		elseif player:getStorageValue(900) >= 17 then
-			npcHandler:say("For your rank there are four missions available: matchmaker, golem repair, spore gathering and grindstone hunt. You can undertake each mission, but you can turn in a specific mission only once every 20 hours.", cid)
+		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
+			npcHandler:say("For your rank there are four missions available: {matchmaker}, {golem repair}, {spore gathering} and {grindstone hunt}. You can undertake each mission, but you can turn in a specific mission only once every 20 hours.", cid)
 			npcHandler.topic[cid] = 0
 		end
 	--  Matchmaker
 	elseif(msgcontains(msg, "matchmaker")) then
-		if player:getStorageValue(942) < 1 and player:getStorageValue(944) < os.time() and player:getStorageValue(900) >= 16 then
+		if player:getStorageValue(Storage.BigfootBurden.MissionMatchmaker) < 1 and player:getStorageValue(Storage.BigfootBurden.MatchmakerTimeout) < os.time() and player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 then
 			npcHandler:say({
 				"You will have to find a lonely crystal a perfect match. I don't understand the specifics but the gnomes told me that even crystals need a mate to produce offspring. ...",
 				"Be that as it may, in this package you'll find a crystal. Take it out of the package and go to the crystal caves to find it a mate. Just look out for huge red crystals and try your luck. ...",
 				"They should look like one of those seen in your soul melody test. You will find them in the crystal grounds. Report back to me when you are done."
 			}, cid)
-			player:setStorageValue(942, 1)
-			player:setStorageValue(943, 0)
+			player:setStorageValue(Storage.BigfootBurden.MissionMatchmaker, 1)
+			player:setStorageValue(Storage.BigfootBurden.MatchmakerStatus, 0)
 			player:addItem(18313, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(943) == 1 then
-				player:setStorageValue(921, player:getStorageValue(921) + 10)
+			if player:getStorageValue(Storage.BigfootBurden.MatchmakerStatus) == 1 then
+				player:setStorageValue(Storage.BigfootBurden.Rank, player:getStorageValue(Storage.BigfootBurden.Rank) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
-				player:setStorageValue(942, 0)
-				player:setStorageValue(943, -1)
-				player:setStorageValue(944, os.time() + 72000)
+				player:setStorageValue(Storage.BigfootBurden.MissionMatchmaker, 0)
+				player:setStorageValue(Storage.BigfootBurden.MatchmakerStatus, -1)
+				player:setStorageValue(Storage.BigfootBurden.MatchmakerTimeout, os.time() + 72000)
 				player:addAchievement('Crystals in Love')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -50,28 +51,28 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- Golem Repair
 	elseif(msgcontains(msg, "repair")) then
-		if player:getStorageValue(945) < 1 and player:getStorageValue(947) < os.time() and player:getStorageValue(900) >= 16 then
+		if player:getStorageValue(Storage.BigfootBurden.MissionTinkersBell) < 1 and player:getStorageValue(Storage.BigfootBurden.TinkerBellTimeout) < os.time() and player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 then
 			npcHandler:say("Our gnomish crystal golems sometimes go nuts. A recent earthquake has disrupted the entire production of a golem factory. ... ", cid)
 			npcHandler:say({
 				"I'm no expert on how those golems work, but it seems that when the crystals of the golems get out of harmony, they do as they please and even sometimes become violent. The violent ones are lost. ...",
 				"Don't bother with them, though you may decide to kill some to get rid of them. The others can be repaired, but to recall them to the workshops, the golems have to be put into a specific resonance. ...",
 				"Use the bell I gave you on the golems, so the gnomes can recall them to their workshops. Getting four of them should be enough for now. Report back when you are ready."
 			}, cid)
-			player:setStorageValue(945, 1)
-			player:setStorageValue(946, 0)
+			player:setStorageValue(Storage.BigfootBurden.MissionTinkersBell, 1)
+			player:setStorageValue(Storage.BigfootBurden.GolemCount, 0)
 			player:addItem(18343, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 1 or npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(946) == 4 and player:removeItem(18343, 1) then
-				player:setStorageValue(921, player:getStorageValue(921) + 10)
+			if player:getStorageValue(Storage.BigfootBurden.GolemCount) == 4 and player:removeItem(18343, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Rank, player:getStorageValue(Storage.BigfootBurden.Rank) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
-				player:setStorageValue(945, 0)
-				player:setStorageValue(946, -1)
-				player:setStorageValue(947, os.time() + 72000)
+				player:setStorageValue(Storage.BigfootBurden.MissionTinkersBell, 0)
+				player:setStorageValue(Storage.BigfootBurden.GolemCount, -1)
+				player:setStorageValue(Storage.BigfootBurden.TinkerBellTimeout, os.time() + 72000)
 				player:addAchievement('Substitute Tinker')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -79,27 +80,27 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- Spore Gathering
 	elseif(msgcontains(msg, "spore")) then
-		if player:getStorageValue(948) < 1 and player:getStorageValue(950) < os.time() and player:getStorageValue(900) >= 17 then
+		if player:getStorageValue(Storage.BigfootBurden.MissionSporeGathering) < 1 and player:getStorageValue(Storage.BigfootBurden.SporeGatheringTimeout) < os.time() and player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
 			npcHandler:say({
 				"We gnomes want you to gather a special collection of spores. All you have to do is use a puffball mushroom and use the spore gathering kit I gave you to gather the spores. ...",
 				"There is a catch though. You need to collect different spores in a specific sequence to fill your gathering kit. If you mix the spores in the wrong way, you ruin your collection and have to start over. ...",
 				"You have to gather them in this sequence: red, green, blue and yellow. You can see on your kit what is required next."
 			}, cid)
-			player:setStorageValue(948, 1)
-			player:setStorageValue(949, 0)
+			player:setStorageValue(Storage.BigfootBurden.MissionSporeGathering, 1)
+			player:setStorageValue(Storage.BigfootBurden.SporeCount, 0)
 			player:addItem(18328, 1)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(949) == 4 and player:removeItem(18332, 1) then
-				player:setStorageValue(921, player:getStorageValue(921) + 10)
+			if player:getStorageValue(Storage.BigfootBurden.SporeCount) == 4 and player:removeItem(18332, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Rank, player:getStorageValue(Storage.BigfootBurden.Rank) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
-				player:setStorageValue(948, 0)
-				player:setStorageValue(949, -1)
-				player:setStorageValue(950, os.time() + 72000)
+				player:setStorageValue(Storage.BigfootBurden.MissionSporeGathering, 0)
+				player:setStorageValue(Storage.BigfootBurden.SporeCount, -1)
+				player:setStorageValue(Storage.BigfootBurden.SporeGatheringTimeout, os.time() + 72000)
 				player:addAchievement('Spore Hunter')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -107,36 +108,36 @@ local function creatureSayCallback(cid, type, msg)
 
 	-- Grindstone Hunt
 	elseif(msgcontains(msg, "grindstone")) then
-		if player:getStorageValue(951) < 1 and player:getStorageValue(953) < os.time() and player:getStorageValue(900) >= 17 then
+		if player:getStorageValue(Storage.BigfootBurden.MissionGrindstoneHunt) < 1 and player:getStorageValue(Storage.BigfootBurden.GrindstoneTimeout) < os.time() and player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
 			npcHandler:say({
 				"We gnomes need some special grindstones to cut and polish specific crystals. The thing is, they can only be found in a quite dangerous lava cave full of vile monsters. You'll reach it via the hot spot teleporter. ...",
 				"It will be your task to get one such grindstone and bring it back to me."
 			}, cid)
-			player:setStorageValue(951, 1)
-			player:setStorageValue(952, 0)
+			player:setStorageValue(Storage.BigfootBurden.MissionGrindstoneHunt, 1)
+			player:setStorageValue(Storage.BigfootBurden.GrindstoneStatus, 0)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 2) then
-			if player:getStorageValue(952) == 1 and player:removeItem(18337, 1) then
-				player:setStorageValue(921, player:getStorageValue(921) + 10)
+			if player:getStorageValue(Storage.BigfootBurden.GrindstoneStatus) == 1 and player:removeItem(18337, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Rank, player:getStorageValue(Storage.BigfootBurden.Rank) + 10)
 				player:addItem(18422, 2)
 				player:addItem(18215, 1)
-				player:setStorageValue(951, 0)
-				player:setStorageValue(952, -1)
-				player:setStorageValue(953, os.time() + 72000)
+				player:setStorageValue(Storage.BigfootBurden.MissionGrindstoneHunt, 0)
+				player:setStorageValue(Storage.BigfootBurden.GrindstoneStatus, -1)
+				player:setStorageValue(Storage.BigfootBurden.GrindstoneTimeout, os.time() + 72000)
 				player:addAchievement('Grinding Again')
+				player:checkGnomeRank()
 				npcHandler:say("Gnomo arigato " .. player:getName() .. "! You did well. That will help us a lot. Take your tokens and this gnomish supply package as a reward. ", cid)
-				doPlayerGnomishRank(cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
 	-- Grindstone Hunt
 
 	elseif(msgcontains(msg, "report")) then
-		if player:getStorageValue(900) >= 116 and player:getStorageValue(900) < 17 then
-			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}?", cid)
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 16 and player:getStorageValue(Storage.BigfootBurden.QuestLine) < 17 then
+			npcHandler:say("Which mission do you want to report: {matchmaker}, {golem repair}?", cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(900) >= 17 then
-			npcHandler:say("Which mission do you want to report: {crystal keeper}, {spark hunting}, {extermination} or {mushroom digging}?", cid)
+		elseif player:getStorageValue(Storage.BigfootBurden.QuestLine) >= 17 then
+			npcHandler:say("Which mission do you want to report: {matchmaker}, {golem repair}, {spore gathering} or {grindstone hunt}?", cid)
 			npcHandler.topic[cid] = 2
 		end
 	end

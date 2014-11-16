@@ -1,14 +1,14 @@
 local increasing = {[416] = 417, [426] = 425, [446] = 447, [3216] = 3217, [3202] = 3215, [11062] = 11063}
 local decreasing = {[417] = 416, [425] = 426, [447] = 446, [3217] = 3216, [3215] = 3202, [11063] = 11062}
 
-function onStepIn(cid, item, position, fromPosition)
+function onStepIn(creature, item, position, fromPosition)
 	if not increasing[item.itemid] then
 		return false
 	end
 
-	local player = Player(cid)
+	local player = creature:getPlayer()
 	if not player or player:isInGhostMode() then
-		return false
+		return true
 	end
 
 	Item(item.uid):transform(increasing[item.itemid])
@@ -43,14 +43,13 @@ function onStepIn(cid, item, position, fromPosition)
 	return true
 end
 
-function onStepOut(cid, item, position, fromPosition)
+function onStepOut(creature, item, position, fromPosition)
 	if not decreasing[item.itemid] then
 		return false
 	end
 
-	local player = Player(cid)
-	if not player or player:isInGhostMode() then
-		return false
+	if creature:isPlayer() and creature:isInGhostMode() then
+		return true
 	end
 
 	Item(item.uid):transform(decreasing[item.itemid])

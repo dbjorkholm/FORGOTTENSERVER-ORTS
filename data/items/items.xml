@@ -485,7 +485,7 @@
 	<item id="1397" article="a" name="mystic flame">
 		<attribute key="description" value="You feel drawn to the mesmerizing light." />
 		<attribute key="type" value="teleport" />
-		<attribute key="effect" value="teleport" />
+		<attribute key="effect" value="energy" />
 	</item>
 	<item id="1398" article="a" name="ramp">
 		<attribute key="floorchange" value="east" />
@@ -2853,7 +2853,8 @@
 	<item id="2324" article="a" name="broom">
 		<attribute key="weight" value="1100" />
 	</item>
-	<item id="2325" article="a" name="book">
+	<item id="2325" article="a" name="monks diary">
+		<attribute key="readable" value="1" />
 		<attribute key="weight" value="1300" />
 	</item>
 	<item id="2326" article="an" name="annihilation bear">
@@ -8023,7 +8024,7 @@
 	<item id="4861" article="a" name="cobra statue"/>
 	<item id="4862" name="destroyed cobra statue" >
 		<attribute key="decayTo" value="4861" />
-		<attribute key="duration" value="30" />
+		<attribute key="duration" value="60" />
 	</item>
 	<item id="4863" article="an" name="ectoplasm container">
 		<attribute key="description" value="It is empty." />
@@ -13130,7 +13131,10 @@
 	</item>
 	<item id="7584" article="a" name="ship cabin wall" />
 	<item id="7585" article="a" name="spider egg" />
-	<item id="7586" name="the remains of a spider egg" />
+	<item id="7586" name="the remains of a spider egg">
+		<attribute key="decayTo" value="7585" />
+		<attribute key="duration" value="180" />
+	</item>
 	<item id="7587" article="a" name="bag">
 		<attribute key="weight" value="40000" />
 		<attribute key="description" value="It contains Ahmet's stolen property." />
@@ -15933,7 +15937,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="skillShield" value="3" />
 	</item>
@@ -15942,7 +15946,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="39" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 	</item>
 	<item id="8908" article="a" name="sparking rainbow shield">
@@ -15950,7 +15954,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="speed" value="20" />
 	</item>
@@ -15959,7 +15963,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="37" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="healthGain" value="1" />
 		<attribute key="healthTicks" value="3000" />
@@ -18904,6 +18908,11 @@
 	<item id="10611" article="a" name="snake skin">
 		<attribute key="weight" value="100" />
 	</item>
+	<item id="10612" article="a" name="slain ice golem">
+		<attribute key="decayTo" value="7283" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="undead" />
+	</item>
 	<item id="10613" name="plans for a strange device">
 		<attribute key="description" value="You should bring them to Spectulus in Edron." />
 		<attribute key="weight" value="250" />
@@ -20184,16 +20193,24 @@
 	<item fromid="11549" toid="11560" name="acid" />
 	<item id="11561" name="mud" />
 	<item fromid="11562" toid="11570" name="dead bamboo" />
+	<item fromid="11571" toid="11604" article="a" name="giant verminous" />
 	<item fromid="11631" toid="11637" article="a" name="small mudpit" />
 	<item fromid="11647" toid="11649" article="a" name="sulphur puddle" />
+	<item fromid="11650" toid="11661" article="a" name="giant verminous" />
 	<item fromid="11662" toid="11666" article="a" name="sulphur puddle" />
+	<item fromid="11667" toid="11668" article="a" name="bitter calyx" />
+	<item fromid="11669" toid="11670" article="a" name="doomato" />
 	<item id="11671" article="a" name="witherstem" />
 	<item id="11672" article="a" name="carnivortex" />
 	<item id="11673" article="a" name="toxic tulip" />
 	<item id="11674" article="a" name="sprocketwhip" />
 	<item id="11676" article="a" name="wraithtongue" />
+	<item fromid="11677" toid="11678" article="a" name="acid foxglove" />
+	<item id="11679" article="a" name="dark delight" />
 	<item id="11683" article="a" name="dreadcoil" />
-	<item fromid="11691" toid="11696" article="a" name="purple plant" />
+	<item fromid="11691" toid="11693" article="a" name="giant dreadcoil" />
+	<item fromid="11694" toid="11695" article="a" name="giant verminous" />
+	<item id="11696" article="a" name="giant dreadcoil" />
 	<item id="11700" article="a" name="stone wall" />
 	<item id="11702" article="a" name="stone wall" />
 	<item fromid="11729" toid="11752" name="ground" />
@@ -20821,6 +20838,22 @@
 	<item id="12544" article="a" name="sweet mangonaise elixir">
 		<attribute key="description" value="It's said to have incredible effects if you drink it while wearing a magical ring with time limit." />
 		<attribute key="weight" value="300" />
+	</item>
+	<item id="12545" name="the dead glitterscale">
+		<attribute key="decayTo" value="3105" />
+		<attribute key="duration" value="60" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="12546" name="the dead heoni">
+		<attribute key="decayTo" value="6304" />
+		<attribute key="duration" value="60" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="12547" article="a" name="spider victim">
+		<attribute key="description" value="This poor guy has been wrapped up in spider silk." />
+		<attribute key="containerSize" value="10" />
 	</item>
 	<item id="12559" article="a" name="silver rune emblem">
 		<attribute key="description" value="It's an adorned ultimate healing rune." />
@@ -29387,6 +29420,10 @@
 	</item>
 	<item id="21925" article="a" name="ruined stair">
 		<attribute key="floorchange" value="west" />
+	</item>
+	<item id="22363" name="broken dream">
+		<attribute key="description" value="The fragment of a dream. Strange pictures seem to flit through the shards." />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="22381" name="ancient dream">
 		<attribute key="description" value="The dream glows as if alive." />

@@ -1,15 +1,33 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(item.uid == 1021) then
-		if(item.itemid == 1945) then
-			if(getThingfromPos({x = 32800, y = 32339, z = 11, stackpos = STACKPOS_FIRST_ITEM_ABOVE_GROUNDTILE}).type == 11) then
-				doTransformItem(getThingfromPos({x = 32801, y = 32336, z = 11, stackpos = STACKPOS_GROUND}).uid, 5770)
-				addEvent(doTransformItem, 10 * 60 * 1000, getThingfromPos({x = 32801, y = 32336, z = 11, stackpos = STACKPOS_GROUND}).uid, 493)
-				doTransformItem(item.uid, 1946)
-				addEvent(doTransformItem, 10 * 60 * 1000, item.uid, 1946)
-			else
-				doCreatureSay(cid, "The lever is creaking and rusty.", TALKTYPE_MONSTER_SAY)
-			end
-		end
+local bridgePosition = Position(32801, 32336, 11)
+
+local function revertBridge()
+	Tile(bridgePosition):getItemById(5770):transform(493)
+end
+
+local function revertLever(position)
+	local leverItem = Tile(position):getItemById(1946)
+	if leverItem then
+		leverItem:transform(1945)
 	end
+end
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	if item.itemid ~= 1945 then
+		return false
+	end
+
+	if not Tile(Position(32800, 32339, 11)):getItemById(2016, 11) then
+		player:say('The lever is creaking and rusty.', TALKTYPE_MONSTER_SAY)
+		return true
+	end
+
+	local water = Tile(bridgePosition):getItemById(493)
+	if water then
+		water:transform(5770)
+		addEvent(revertBridge, 10 * 60 * 1000)
+	end
+
+	Item(item.uid):transform(1946)
+	addEvent(revertLever, 10 * 60 * 1000, toPosition)
 	return true
 end

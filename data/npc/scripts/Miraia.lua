@@ -58,9 +58,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if msgcontains(msg, 'outfit') then
-		npcHandler:say(player:getSex() == 0 and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
+		npcHandler:say(player:getSex() == PLAYERSEX_FEMALE and 'Hehe, would you like to wear a pretty veil like I do? Well... I could help you, but you would have to complete a task first.' or 'My veil? No, I will definitely not lift it for you! If you are looking for an addon, go talk to Razan.', cid)
 	elseif msgcontains(msg, 'task') then
-		if player:getSex() ~= 0 then
+		if player:getSex() == PLAYERSEX_MALE then
 			npcHandler:say('Uh... I don\'t think that I have work for you right now. If you need a job, go talk to Razan.', cid)
 			return true
 		end
@@ -77,9 +77,9 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say(config[msg].text[2], cid)
 		end
 	elseif msgcontains(msg, 'scarab cheese') then
-		if player:getStorageValue(Rashid.MissionStart + 2) == 1 then
+		if player:getStorageValue(Storage.TravellingTrader.Mission03) == 1 then
 			npcHandler:say('Let me cover my nose before I get this for you... Would you REALLY like to buy scarab cheese for 100 gold?', cid)
-		elseif player:getStorageValue(Rashid.MissionStart + 2) == 2 then
+		elseif player:getStorageValue(Storage.TravellingTrader.Mission03) == 2 then
 			npcHandler:say('Oh the last cheese molded? Would you like to buy another one for 100 gold?', cid)
 		end
 		npcHandler.topic[cid] = 4
@@ -118,7 +118,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
 			if player:getMoney() >= 100 then
-				player:setStorageValue(Rashid.MissionStart + 2, 2)
+				player:setStorageValue(Storage.TravellingTrader.Mission03, 2)
 				player:addItem(8112, 1)
 				player:removeMoney(100)
 				npcHandler:say('Here it is.', cid)
@@ -138,8 +138,8 @@ local function onReleaseFocus(cid)
 	message[cid] = nil
 end
 
-keywordHandler:addKeyword({'drink'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can offer you lemonade, camel milk, and water. If you\'d like to see my offers, ask me for a {trade}.'})
-keywordHandler:addKeyword({'food'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Are you looking for food? I have bread, cheese, ham, and meat. If you\'d like to see my offers, ask me for a {trade}.'})
+keywordHandler:addKeyword({'drink'}, StdModule.say, {npcHandler = npcHandler, text = 'I can offer you lemonade, camel milk, and water. If you\'d like to see my offers, ask me for a {trade}.'})
+keywordHandler:addKeyword({'food'}, StdModule.say, {npcHandler = npcHandler, text = 'Are you looking for food? I have bread, cheese, ham, and meat. If you\'d like to see my offers, ask me for a {trade}.'})
 
 npcHandler:setMessage(MESSAGE_GREET, 'Daraman\'s blessings, |PLAYERNAME|. Welcome to the Enlightened Oasis. Sit down, have a {drink} or some {food}!')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Daraman\'s blessings. Come back soon.')

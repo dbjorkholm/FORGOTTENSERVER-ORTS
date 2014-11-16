@@ -22,8 +22,8 @@ local function doCreateDummy(cid, position)
 	addEvent(doCreateDummy, 2 * 1000, cid, position)
 end
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
@@ -36,6 +36,6 @@ function onStepIn(cid, item, position, fromPosition)
 	local playerPosition = player:getPosition()
 	player:setStorageValue(Storage.BigfootBurden.Shooting, 0)
 	position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	doCreateDummy(cid, Position(playerPosition.x, playerPosition.y - 5, 10))
+	doCreateDummy(player:getId(), Position(playerPosition.x, playerPosition.y - 5, 10))
 	return true
 end

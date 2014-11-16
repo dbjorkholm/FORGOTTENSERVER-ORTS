@@ -1,10 +1,9 @@
-function onSay(cid, words, param)
+function onSay(player, words, param)
 	local housePrice = configManager.getNumber(configKeys.HOUSE_PRICE)
 	if housePrice == -1 then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getPremiumDays() <= 0 then
 		player:sendCancelMessage("You need a premium account.")
 		return false
@@ -13,8 +12,14 @@ function onSay(cid, words, param)
 	local position = player:getPosition()
 	position:getNextPosition(player:getDirection())
 
-	local house = House(getTileHouseInfo(position))
-	if house == nil then
+	local tile = Tile(position)
+	if not tile then
+		player:sendCancelMessage("You have to be looking at the door of the house you would like to buy.")
+		return false
+	end
+
+	local house = tile:getHouse()
+	if not house then
 		player:sendCancelMessage("You have to be looking at the door of the house you would like to buy.")
 		return false
 	end

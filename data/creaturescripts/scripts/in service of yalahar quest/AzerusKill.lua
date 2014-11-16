@@ -8,15 +8,18 @@ local function removeTeleport(position)
 	end
 end
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster or targetMonster:getName():lower() ~= 'azerus' then
 		return true
 	end
 
 	local position = targetMonster:getPosition()
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	doCreateTeleport(1387, teleportToPosition, position)
+	local item = Game.createItem(1387, 1, position)
+	if item:isTeleport() then
+		item:setDestination(teleportToPosition)
+	end
 	targetMonster:say('Azerus ran into teleporter! It will disappear in 2 minutes. Enter it!', TALKTYPE_MONSTER_SAY, 0, 0, position)
 
 	--remove portal after 2 min

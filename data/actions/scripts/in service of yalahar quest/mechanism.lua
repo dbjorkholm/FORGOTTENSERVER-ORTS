@@ -18,8 +18,7 @@ local mechanisms2 = {
 	[9236] = {pos = {x = 32780, y = 31115, z = 7}}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if(mechanisms[item.uid]) then
 		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) >= mechanisms[item.uid].value) then
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

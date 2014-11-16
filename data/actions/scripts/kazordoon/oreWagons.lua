@@ -37,18 +37,17 @@ local config = {
 
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true
 	end
 
-	local player = Player(cid)
 	if player:getStorageValue(Storage.wagonTicket) < os.time() then
 		player:say("Purchase a weekly ticket from Gewen, Lokur in the post office, The Lukosch brothers or from Brodrosch on the steamboat.", TALKTYPE_MONSTER_SAY)
 		return true
 	end
-	
+
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(targetPosition)
 	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)

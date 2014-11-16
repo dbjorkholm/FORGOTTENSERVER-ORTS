@@ -1,16 +1,19 @@
 local teleports = {
-	[3178] = {storage = 6, pos = {x = 33137, y = 31248, z = 6}},
-	[3179] = {storage = 6, pos = {x = 33211, y = 31068, z = 9}},
-	[3180] = {storage = 6, pos = {x = 33211, y = 31068, z = 9}},
+	[3178] = {value = 6, position = Position(33137, 31248, 6)},
+	[3179] = {value = 6, position = Position(33211, 31068, 9)},
+	[3180] = {value = 6, position = Position(33211, 31068, 9)},
 
-function onStepIn(cid, item, position, fromPosition)
-	if(isPlayer(cid)) then
-		if(getPlayerStorageValue(cid, 1060) >= teleports[item.uid].storage) then
-			doTeleportThing(cid, teleports[item.uid].pos)
-			doSendMagicEffect(teleports[item.uid].pos, CONST_ME_TELEPORT)
-		else
-			doTeleportThing(cid, fromPosition)
-		end
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	if not player then
+		return true
+	end
+
+	if player:getStorageValue(Storage.WrathoftheEmperor.TeleportAccess) >= teleports[item.uid].value then
+		player:teleportTo(teleports[item.uid].position)
+		player:getPosition():sendMagicEffect(teleports[item.uid].position, CONST_ME_TELEPORT)
+	else
+		player:teleportTo(fromPosition)
 	end
 	return true
 end

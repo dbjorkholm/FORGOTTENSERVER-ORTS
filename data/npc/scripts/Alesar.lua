@@ -8,61 +8,56 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function getTable()
-local list = {
-	{id = 2532,		buy = 5000,		sell = 900,		name='Ancient Shield'},
-	{id = 2489,		buy = 1500,		sell = 400,		name='Dark Armor'},
-	{id = 2490,		buy = 1000,		sell = 250,		name='Dark Helmet'},
-	{id = 2396,		buy = 5000,		sell = 0,		name='Ice Rapier'},
-	{id = 2409,		buy = 6000,		sell = 900,		name='Serpent Sword'},
-	{id = 2529,		buy = 0,		sell = 800,		name='Black Shield'},
-	{id = 7428,		buy = 0,		sell = 10000,	name='Bonebreaker'},
-	{id = 2434,		buy = 0,		sell = 2000,	name='Dragon Hammer'},
-	{id = 7419,		buy = 0,		sell = 15000,	name='Dreaded Cleaver'},
-	{id = 7860,		buy = 0,		sell = 2000,	name='Earth Knight Axe'},
-	{id = 7875,		buy = 0,		sell = 2000,	name='Energy Knight Axe'},
-	{id = 7750,		buy = 0,		sell = 2000,	name='Fiery Knight Axe'},
-	{id = 2393,		buy = 0,		sell = 17000,	name='Giant Sword'},
-	{id = 7407,		buy = 0,		sell = 8000,	name='Haunted Blade'},
-	{id = 7769,		buy = 0,		sell = 2000,	name='Icy Knight Axe'},
-	{id = 2476,		buy = 0,		sell = 5000,	name='Knight Armor'},
-	{id = 2430,		buy = 0,		sell = 2000,	name='Knight Axe'},
-	{id = 2477,		buy = 0,		sell = 5000,	name='Knight Legs'},
-	{id = 2663,		buy = 0,		sell = 150,		name='Mystic Turban'},
-	{id = 7421,		buy = 0,		sell = 22000,	name='Onyx Flail'},
-	{id = 7411,		buy = 0,		sell = 20000,	name='Ornamented Axe'},
-	{id = 2411,		buy = 0,		sell = 50,		name='Poison Dagger'},
-	{id = 2436,		buy = 0,		sell = 6000,	name='Skull Staff'},
-	{id = 2479,		buy = 0,		sell = 500,		name='Strange Helmet'},
-	{id = 7413,		buy = 0,		sell = 4000,	name='Titan Axe'},
-	{id = 2528,		buy = 0,		sell = 8000,	name='Tower Shield'},
-	{id = 2534,		buy = 0,		sell = 15000,	name='Vampire Shield'},
-	{id = 2475,		buy = 0,		sell = 5000,	name='Warrior Helmet'}
-}
-return list
+	local list = {
+		{id = 2532,		buy = 5000,		sell = 900,		name='Ancient Shield'},
+		{id = 2489,		buy = 1500,		sell = 400,		name='Dark Armor'},
+		{id = 2490,		buy = 1000,		sell = 250,		name='Dark Helmet'},
+		{id = 2396,		buy = 5000,		sell = 0,		name='Ice Rapier'},
+		{id = 2409,		buy = 6000,		sell = 900,		name='Serpent Sword'},
+		{id = 2529,		buy = 0,		sell = 800,		name='Black Shield'},
+		{id = 7428,		buy = 0,		sell = 10000,	name='Bonebreaker'},
+		{id = 2434,		buy = 0,		sell = 2000,	name='Dragon Hammer'},
+		{id = 7419,		buy = 0,		sell = 15000,	name='Dreaded Cleaver'},
+		{id = 7860,		buy = 0,		sell = 2000,	name='Earth Knight Axe'},
+		{id = 7875,		buy = 0,		sell = 2000,	name='Energy Knight Axe'},
+		{id = 7750,		buy = 0,		sell = 2000,	name='Fiery Knight Axe'},
+		{id = 2393,		buy = 0,		sell = 17000,	name='Giant Sword'},
+		{id = 7407,		buy = 0,		sell = 8000,	name='Haunted Blade'},
+		{id = 7769,		buy = 0,		sell = 2000,	name='Icy Knight Axe'},
+		{id = 2476,		buy = 0,		sell = 5000,	name='Knight Armor'},
+		{id = 2430,		buy = 0,		sell = 2000,	name='Knight Axe'},
+		{id = 2477,		buy = 0,		sell = 5000,	name='Knight Legs'},
+		{id = 2663,		buy = 0,		sell = 150,		name='Mystic Turban'},
+		{id = 7421,		buy = 0,		sell = 22000,	name='Onyx Flail'},
+		{id = 7411,		buy = 0,		sell = 20000,	name='Ornamented Axe'},
+		{id = 2411,		buy = 0,		sell = 50,		name='Poison Dagger'},
+		{id = 2436,		buy = 0,		sell = 6000,	name='Skull Staff'},
+		{id = 2479,		buy = 0,		sell = 500,		name='Strange Helmet'},
+		{id = 7413,		buy = 0,		sell = 4000,	name='Titan Axe'},
+		{id = 2528,		buy = 0,		sell = 8000,	name='Tower Shield'},
+		{id = 2534,		buy = 0,		sell = 15000,	name='Vampire Shield'},
+		{id = 2475,		buy = 0,		sell = 5000,	name='Warrior Helmet'}
+	}
+	return list
+end
+
+local function greetCallback(cid, message)
+	local player = Player(cid)
+	if not msgcontains(message, 'DJANNI\'HAH') and player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) < 3 or player:getStorageValue(Storage.DjinnWar.Factions) <= 0 and not BlueOrGreen then
+		return false
+	end
+	return true
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
-	if (msg == "DJANNI'HAH" or player:getStorageValue(GreenDjinn.MissionEnd) >= 3 and msg:lower() == "hi") then
-		if player:getStorageValue(Factions) > 0 then
-			npcHandler:addFocus(cid)
-			if player:getStorageValue(BlueDjinn.MissionStart) < 1 or not BlueOrGreen then
-				npcHandler:say("What do you want from me, " .. player:getName() .."?", cid)
-				npcHandler:addFocus(cid)
-			end
-		end
-	end
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	if msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
-		npcHandler:say('Finally.', cid)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
+
+	local player = Player(cid)
 	-- Mission 2 - The Tear of Daraman
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(GreenDjinn.MissionStart+1) == 4 and player:getStorageValue(GreenDjinn.MissionStart+2) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission01) == 5 and player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) < 1 then
 			npcHandler:say({
 				"So Baa'leal thinks you are up to do a mission for us? ...",
 				"I think he is getting old, entrusting human scum such as you are with an important mission like that. ...",
@@ -70,7 +65,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Anyway. Are you prepared to embark on a dangerous mission for us?"
 			}, cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(GreenDjinn.MissionStart+2) == 2 then
+		elseif player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) == 2 then
 			npcHandler:say("Did you find the tear of Daraman?", cid)
 			npcHandler.topic[cid] = 2
 		end
@@ -87,7 +82,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Well... to cut a long story short, your mission is to sneak into Ashta'daramai and to steal it. ...",
 				"Needless to say, the Marid won't be too eager to part with it. Try not to get killed until you have delivered the stone to me."
 			}, cid)
-			player:setStorageValue(GreenDjinn.MissionStart+2, 1)
+			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission02, 1)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			if player:removeItem(2346, 1) then
@@ -98,7 +93,7 @@ local function creatureSayCallback(cid, type, msg)
 					"Baa'leal, wants you to talk to Malor concerning some new mission. ...",
 					"Looks like you have managed to extended your life expectancy - for just a bit longer."
 				}, cid)
-				player:setStorageValue(GreenDjinn.MissionStart+2, 3)
+				player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission02, 3)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -107,10 +102,19 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	TradeRequest(cid, npcHandler, getTable(), GreenDjinn, 4)
+	TradeRequest(cid, Npc(), getTable(), GreenDjinn, 4)
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "What do you want from me, |PLAYERNAME|?")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Finally.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Finally.")
 
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

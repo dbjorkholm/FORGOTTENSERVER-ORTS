@@ -7,36 +7,38 @@ function catchPlayer(cid)
 	return true
 end
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
+
+	local playerId = player:getId()
 	if item.actionid == 8015 then
 		player:say("You hear guards moving behind doors in the distance. If you have any sort of disguise with you, this is the moment to use it.", TALKTYPE_MONSTER_SAY)
 	elseif item.actionid == 8016 then
-		if getTileItemById({x = player:getPosition().y < 31094 and 33080 or 33385, y = player:getPosition().y, z = 8}, 12213).uid > 0 then
-			catchPlayer(cid)
+		if Tile(Position(player:getPosition().y < 31094 and 33080 or 33385, player:getPosition().y, 8)):getItemById(12213) then
+			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8017 or item.actionid == 32362 or item.itemid == 11436 then
-		catchPlayer(cid)
+		catchPlayer(player:getId())
 	elseif item.actionid == 8018 then
-		if Game.getStorageValue(8018) ~= 1 then
-			catchPlayer(cid)
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light01) ~= 1 then
+			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8019 then
-		if Game.getStorageValue(8019) ~= 1 then
-			catchPlayer(cid)
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light02) ~= 1 then
+			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8020 then
-		if Game.getStorageValue(8020) ~= 1 then
-			catchPlayer(cid)
+		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light03) ~= 1 then
+			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8021 then
 		player:say("Guards heavily patrol this area. Try to stay hidden and do not draw any attention to yourself by trying to attack.", TALKTYPE_MONSTER_SAY)
 	elseif item.actionid == 8022 then
 		if player:getStorageValue(Storage.WrathoftheEmperor.CrateStatus) ~= 1 then
-			catchPlayer(cid)
+			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8023 then
 		-- player:setStorageValue(Storage.WrathoftheEmperor.CrateStatus, 0)

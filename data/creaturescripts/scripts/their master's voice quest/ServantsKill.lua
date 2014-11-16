@@ -61,8 +61,8 @@ local function summonServant(position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onKill(cid, target)
-	local targetMonster = Monster(target)
+function onKill(creature, target)
+	local targetMonster = target:getMonster()
 	if not targetMonster then
 		return true
 	end
@@ -71,19 +71,19 @@ function onKill(cid, target)
 		return true
 	end
 
-	local storage984, storage985 = (Game.getStorageValue(984) or -1), (Game.getStorageValue(985) or -1)
-	if storage985 == #positions and storage984 < 25 then
-		Game.setStorageValue(985, 0)
-		Game.setStorageValue(984, storage + 1)
+	local wave, killedAmount = (Game.getStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave) or -1), (Game.getStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled) or -1)
+	if killedAmount == #positions and wave < 25 then
+		Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, 0)
+		Game.setStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave, wave + 1)
 
 		for i = 1, #positions do
 			addEvent(summonServant, 5 * 1000, positions[i])
 		end
 
-	elseif storage985 < #positions and storage984 < 25 then
-		Game.setStorageValue(985, storage985 + 1)
+	elseif killedAmount < #positions and wave < 25 then
+		Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, killedAmount+ 1)
 
-	elseif storage985 == #positions and storage984 == 25 then
+	elseif killedAmount == #positions and wave == 25 then
 		Game.createMonster('mad mage', magePositions[math.random(#magePositions)])
 		targetMonster:say('The Mad Mage has been spawned!', TALKTYPE_MONSTER_SAY)
 		fillFungus({x = 33306, y = 31847}, {x = 33369, y = 31919})

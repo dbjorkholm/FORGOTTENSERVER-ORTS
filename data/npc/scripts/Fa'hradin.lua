@@ -11,31 +11,29 @@ local condition = Condition(CONDITION_FIRE)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:addDamage(150, 2000, -10)
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		local player = Player(cid)
-		if msg == "hi" then
-			player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
-			player:addCondition(condition)
-		elseif msg == "DJANNI'HAH" then
-			if player:getStorageValue(Factions) > 0 then
-				npcHandler:addFocus(cid)
-				if player:getStorageValue(GreenDjinn.MissionStart) < 1 or not BlueOrGreen then
-					npcHandler:say("Aaaah... what have we here. A human - interesting. And such an ugly specimen, too... All right, human " .. player:getName() .. ". How can I help you?", cid)
-					npcHandler:addFocus(cid)
-				end
-			end
-		end
+local function greetCallback(cid, message)
+	local player = Player(cid)
+	if not msgcontains(message, 'djanni\'hah') then
+		player:getPosition():sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+		player:addCondition(condition)
+		return false
 	end
 
+	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and not BlueOrGreen then
+		return false
+	end
+
+	return true
+end
+
+local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
 	local player = Player(cid)
-	
 	if msgcontains(msg, "mission") then
-		if player:getStorageValue(BlueDjinn.MissionStart + 1) == 3 and player:getStorageValue(BlueDjinn.MissionStart + 2) < 1 then
+		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) == 4 and player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) < 1 then
 			npcHandler:say({
 				"I have heard some good things about you from Bo'ques. But I don't know. ...",
 				"Well, all right. I do have a job for you. ...",
@@ -46,8 +44,8 @@ local function creatureSayCallback(cid, type, msg)
 				"I need you to infiltrate Mal'ouqhah, contact our man there and get his latest spyreport. The password is {PIEDPIPER}. Remember it well! ...",
 				"I do not have to add that this is a dangerous mission, do I? If you are discovered expect to be attacked! So goodluck, human!"
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart + 2, 1)
-		elseif player:getStorageValue(BlueDjinn.MissionStart + 2) == 2 then
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 1)
+		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) == 2 then
 			npcHandler:say("Did you already retrieve the spyreport?", cid)
 			npcHandler.topic[cid] = 1
 		end
@@ -58,7 +56,7 @@ local function creatureSayCallback(cid, type, msg)
 				"Well, let's see. ...",
 				"I think I need to talk to Gabel about this. I am sure he will know what to do. Perhaps you should have aword with him, too."
 			}, cid)
-			player:setStorageValue(BlueDjinn.MissionStart + 2, 3)
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 3)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "bye") or msgcontains(msg, "farewell") then
@@ -69,6 +67,13 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
+npcHandler:setMessage(MESSAGE_GREET, "Aaaah... what have we here. A human - interesting. And such an ugly specimen, too... All right, human |PLAYERNAME|. How can I help you?")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human. I will always remember you. Unless I forget you, of course.")
-
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
+focusModule:addGreetMessage('djanni\'hah')
+npcHandler:addModule(focusModule)

@@ -8,17 +8,18 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	if(not npcHandler:isFocused(cid)) then
+	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
-	if(msgcontains(msg, "passage")) then
+	if msgcontains(msg, "passage") then
 		npcHandler:say("Do you want to go back to {Yalahar}?", cid)
 		npcHandler.topic[cid] = 1
-	elseif(msgcontains(msg, "yes")) then
-		if(npcHandler.topic[cid] == 1) then
-			doTeleportThing(cid, {x = 32916, y = 31199, z = 7})
-			doSendMagicEffect({x = 32916, y = 31199, z = 7}, CONST_ME_TELEPORT)
+	elseif msgcontains(msg, "yes") then
+		if npcHandler.topic[cid] == 1 then
+			local destination = Position(32916, 31199, 7)
+			Player(cid):teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	end

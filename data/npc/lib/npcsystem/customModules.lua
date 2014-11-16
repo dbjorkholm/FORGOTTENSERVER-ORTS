@@ -5,7 +5,7 @@ TravelLib = {}
 
 -- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
 -- Usage:
-	-- keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you seek a passage to Svargrond for %s?', cost = 180, discount = TravelLib.postmanDiscount})
+	-- keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Svargrond for %s?', cost = 180, discount = TravelLib.postmanDiscount})
 
 function TravelLib.say(cid, message, keywords, parameters, node)
 	local npcHandler = parameters.npcHandler
@@ -19,9 +19,16 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 		return false
 	end
 
+	if parameters.storage then
+		if Player(cid):getStorageValue(parameters.storage) ~= (parameters.value or 1) then
+			npcHandler:say(parameters.wrongValueMessage or 'Never heard about a place like this.', cid)
+			return true
+		end
+	end
+
 	local costMessage = '%d gold coins'
 
-	if parameters.cost > 0 then
+	if parameters.cost and parameters.cost > 0 then
 		local cost = parameters.cost
 
 		if parameters.discount then
@@ -29,7 +36,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 		end
 
 		costMessage = string.format(costMessage, cost)
-	else   
+	else
 		costMessage = 'free'
 	end
 
@@ -37,7 +44,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 
 	local msg = string.format(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), costMessage)
 
-	npcHandler:say(msg, cid, parameters.publicize and true)		
+	npcHandler:say(msg, cid, parameters.publicize and true)
 
 	if parameters.reset then
 		npcHandler:resetNpc(cid)
@@ -63,7 +70,7 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 	end
 
 	local travelCost = parameters.cost
-	if travelCost > 0 then
+	if travelCost and travelCost > 0 then
 		if parameters.discount then
 			travelCost = travelCost - parameters.discount(cid, travelCost)
 		end
@@ -88,8 +95,15 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 			destination = destination(cid)
 		end
 
+		-- What a foolish Quest - Mission 3
+		if destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
+			if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+				player:setStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer, 1)
+			end
+		end
+
 		player:teleportTo(destination)
-		Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
+		destination:sendMagicEffect(CONST_ME_TELEPORT)
 
 		if parameters.onTravelCallback then
 			parameters.onTravelCallback(cid)
@@ -100,10 +114,10 @@ function TravelLib.travel(cid, message, keywords, parameters, node)
 	return true
 end
 
-function TravelLib.postmanDiscount(cid, cost)	
+function TravelLib.postmanDiscount(cid, cost)
 	if Player(cid):getStorageValue(Storage.postman.Rank) >= 3 then
 		return 10
 	end
-   
+
 	return 0
 end

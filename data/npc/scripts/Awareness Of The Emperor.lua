@@ -11,7 +11,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	if msgcontains(msg, "mission") then
 		local player = Player(cid)
 		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 30 and player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) == 5 then

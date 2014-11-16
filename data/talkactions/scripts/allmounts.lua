@@ -1,5 +1,4 @@
-function onSay(cid, words, param, channel)
-	local player = Player(cid)
+function onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end

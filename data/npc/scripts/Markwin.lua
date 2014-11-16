@@ -12,13 +12,13 @@ condition:setParameter(CONDITION_PARAM_TICKS, 30 * 1000)
 condition:setParameter(CONDITION_PARAM_MINVALUE, 30)
 condition:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000)
 
+local guards = { "Minotaur Guard", "Minotaur Archer", "Minotaur Mage" }
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(258) < 1 then
+	if player:getStorageValue(Storage.MarkwinGreeting) < 1 then
 		npcHandler:setMessage(MESSAGE_GREET, "Intruder! Guards, take him down!")
-		player:setStorageValue(258, 1)
+		player:setStorageValue(Storage.MarkwinGreeting, 1)
 		local position
-		local guards = { "Minotaur Guard", "Minotaur Archer", "Minotaur Mage" }
 		for x = -1, 1 do
 			for y = -1, 1 do
 				position = Position(32418 + x, 32147 + y, 15)
@@ -26,12 +26,11 @@ local function greetCallback(cid)
 				position:sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		end
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	elseif player:getStorageValue(258) == 1 then
-		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now. ")
-		player:setStorageValue(258, 2)
-	elseif player:getStorageValue(258) == 2 then
+		return false
+	elseif player:getStorageValue(Storage.MarkwinGreeting) == 1 then
+		npcHandler:setMessage(MESSAGE_GREET, "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now.")
+		player:setStorageValue(Storage.MarkwinGreeting, 2)
+	elseif player:getStorageValue(Storage.MarkwinGreeting) == 2 then
 		npcHandler:setMessage(MESSAGE_GREET, "Oh its you again. What du you want, hornless messenger?")
 	end
 	return true
@@ -41,24 +40,46 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
 
+	local player = Player(cid)
 	if msgcontains(msg, "letter") then
 		if player:getStorageValue(Storage.postman.Mission10) == 1 then
 			if player:getItemCount(2333) > 0 then
-				npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me? ", cid)
+				npcHandler:say("A letter from my Moohmy?? Do you have a letter from my Moohmy to me?", cid)
 				npcHandler.topic[cid] = 1
 			end
 		end
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
+				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Markwin) ~= 1 then
+			npcHandler:say('You bring me ... a cookie???', cid)
+			npcHandler.topic[cid] = 2
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("Uhm, well thank you, hornless being. ", cid)
+			npcHandler:say("Uhm, well thank you, hornless being.", cid)
 			player:setStorageValue(Storage.postman.Mission10, 2)
 			player:removeItem(2333, 1)
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 2 then
+			if not player:removeItem(8111, 1) then
+				npcHandler:say('You have no cookie that I\'d like.', cid)
+				npcHandler.topic[cid] = 0
+				return true
+			end
+
+			player:setStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.SimonTheBeggar, 1)
+			if player:getCookiesDelivered() == 10 then
+				player:addAchievement('Allow Cookies?')
+			end
+
+			Npc():getPosition():sendMagicEffect(CONST_ME_GIFT_WRAPS)
+			npcHandler:say('I understand this as a peace-offering, human ... UNGH ... THIS IS AN OUTRAGE! THIS MEANS WAR!!!', cid)
+			npcHandler:releaseFocus(cid)
+			npcHandler:resetNpc(cid)
 		end
 	elseif msgcontains(msg, "bye") then
-		npcHandler:say("Hm ... good bye. ", cid)
+		npcHandler:say("Hm ... good bye.", cid)
 		player:addCondition(condition)
 		npcHandler:releaseFocus(cid)
 		npcHandler:resetNpc(cid)

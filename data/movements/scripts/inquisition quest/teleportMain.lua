@@ -1,5 +1,5 @@
 local teleports = {
-	[2150] = {text = 'Entering Ushuriel\'s ward.', newPos = Position(33158, 31728, 11), storage = 0}, -- to ushuriel ward
+	[2150] = {text = 'Entering Ushuriel\'s ward.', newPos = Position(33158, 31728, 11), storage = 0, alwaysSetStorage = true}, -- to ushuriel ward
 	[2151] = {text = 'Entering the Crystal Caves.', bossStorage = 200, newPos = Position(33069, 31782, 13), storage = 1}, -- from ushuriel ward
 	[2152] = {text = 'Escaping back to the Retreat.', newPos = Position(33165, 31709, 14)}, -- from crystal caves
 	[2153] = {text = 'Entering the Crystal Caves.', newPos = Position(33069, 31782, 13), storage = 1}, -- to crystal caves
@@ -32,30 +32,29 @@ local teleports = {
 	[2180] = {text = 'Entering the Blood Halls.', newPos = Position(33357, 31589, 12)} -- from foundry to blood halls
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
 	local teleport = teleports[item.uid]
-	if item.uid == 2150 and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
+	if teleport.alwaysSetStorage and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
 		player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleport.storage)
 	end
 
 	if teleport.bossStorage then
-		if Game.getStorageValue(teleport.bossStorage) == 2
-				and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
-			player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleport.storage)
+		if Game.getStorageValue(teleport.bossStorage) == 2 then
+			if player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
+				player:setStorageValue(Storage.TheInquisition.EnterTeleport, teleport.storage)
+			end
 		else
 			player:teleportTo(Position(33165, 31709, 14))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:say('Escaping back to the Retreat.', TALKTYPE_MONSTER_SAY)
 			return true
 		end
-	end
-
-	if teleport.storage and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
+	elseif teleport.storage and player:getStorageValue(Storage.TheInquisition.EnterTeleport) < teleport.storage then
 		player:teleportTo(fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		player:say('You don\'t have enough energy to enter this portal', TALKTYPE_MONSTER_SAY)
@@ -67,4 +66,3 @@ function onStepIn(cid, item, position, fromPosition)
 	player:say(teleport.text, TALKTYPE_MONSTER_SAY)
 	return true
 end
-

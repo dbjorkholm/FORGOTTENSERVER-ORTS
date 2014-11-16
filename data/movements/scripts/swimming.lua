@@ -1,18 +1,18 @@
 local outfit = {lookType = 267, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0, lookTypeEx = 0, lookAddons = 0}
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
-		return false
+		return true
 	end
 
-	doSetCreatureOutfit(cid, outfit, -1)
+	doSetCreatureOutfit(player, outfit, -1)
 end
 
-function onStepOut(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepOut(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
-		return false
+		return true
 	end
 
 	player:removeCondition(CONDITION_OUTFIT)

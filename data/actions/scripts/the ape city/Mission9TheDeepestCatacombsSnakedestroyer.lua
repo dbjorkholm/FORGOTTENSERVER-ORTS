@@ -1,6 +1,5 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 local targetItem = Item(itemEx.uid)
-local player = Player(cid)
 	if itemEx.itemid == 4861 and itemEx.actionid == 12130 and player:getStorageValue(Storage.TheApeCity.Mission09) == 1 then -- destroy cobra statue
 		targetItem:transform(4862)
 		targetItem:decay()

@@ -34,6 +34,55 @@ if Modules == nil then
 
 	StdModule = {}
 
+	STDMODULE_IS_MALE = 1
+	STDMODULE_IS_FEMALE = 2
+	STDMODULE_IS_SORCERER = 3
+	STDMODULE_IS_DRUID = 4
+	STDMODULE_IS_PALADIN = 5
+	STDMODULE_IS_KNIGHT = 6
+	STDMODULE_REMOVE_MONEY = 7
+	STDMODULE_ADD_ITEM = 8
+	STDMODULE_RELEASE_FOCUS = 9
+	STDMODULE_EFFECT = 10
+	STDMODULE_CANCEL = 11
+
+	StdModule.conditions = {
+		[STDMODULE_IS_MALE] = function(player)
+			return player:getSex() == PLAYERSEX_MALE
+		end,
+		[STDMODULE_IS_FEMALE] = function(player)
+			return player:getSex() == PLAYERSEX_FEMALE
+		end,
+		[STDMODULE_IS_SORCERER] = function(player)
+			return player:isSorcerer()
+		end,
+		[STDMODULE_IS_DRUID] = function(player)
+			return player:isDruid()
+		end,
+		[STDMODULE_IS_PALADIN] = function(player)
+			return player:isPaladin()
+		end,
+		[STDMODULE_IS_KNIGHT] = function(player)
+			return player:isKnight()
+		end,
+		[STDMODULE_REMOVE_MONEY] = function(player, parameters)
+			return player:removeMoney(parameters.price)
+		end,
+		[STDMODULE_ADD_ITEM] = function(player, parameters)
+			player:addItem(parameters.itemid, parameters.amount or 1)
+			return true
+		end,
+		[STDMODULE_RELEASE_FOCUS] = function(player, parameters)
+			parameters.npcHandler:releaseFocus(player:getId())
+			return true
+		end,
+		[STDMODULE_EFFECT] = function(player, parameters)
+			player:getPosition():sendMagicEffect(parameters.effect)
+			return true
+		end
+	}
+
+
 	-- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
 	-- Notice: The members of StdModule have not yet been tested. If you find any bugs, please report them to me.
 	-- Usage:
@@ -44,13 +93,47 @@ if Modules == nil then
 			error("StdModule.say called without any npcHandler instance.")
 		end
 
-		local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
+		if parameters.onlyFocus == true and parameters.onlyUnfocus == true then
+			error("StdModule.say conflicting parameters 'onlyFocus' and 'onlyUnfocus' both true")
+		end
+
+		local onlyFocus = (parameters.onlyFocus == nil and parameters.onlyUnfocus == nil or parameters.onlyFocus == true)
 		if not npcHandler:isFocused(cid) and onlyFocus then
 			return false
 		end
 
-		local parseInfo = {[TAG_PLAYERNAME] = Player(cid):getName()}
-		npcHandler:say(npcHandler:parseMessage(parameters.text or parameters.message, parseInfo), cid, parameters.publicize and true)
+		if npcHandler:isFocused(cid) and parameters.onlyUnfocus == true then
+			return false
+		end
+
+		local player = Player(cid)
+		local parseInfo = {[TAG_PLAYERNAME] = player:getName()}
+		if type(parameters.text) == 'table' then
+			for i = 1, #parameters.text do
+				local textObj = parameters.text[i]
+				local text = textObj[#textObj]
+				local cancel = false
+				for j = 1, #textObj - 1 do
+					local condition = textObj[j]
+					if condition == STDMODULE_CANCEL then
+						cancel = true
+					elseif not StdModule.conditions[condition](player, parameters) then
+						text = nil
+						break
+					end
+				end
+				if text then
+					npcHandler:say(npcHandler:parseMessage(text, parseInfo), cid, parameters.publicize and true)
+					if cancel then
+						return false
+					end
+					break
+				end
+			end
+		else
+			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
+		end
+
 		if parameters.reset then
 			npcHandler:resetNpc(cid)
 		elseif parameters.moveup ~= nil then
@@ -75,14 +158,14 @@ if Modules == nil then
 
 		local player = Player(cid)
 		if parameters.premium and player:isPremium() then
-			if player:getStorageValue(30018) == 1 then
+			if player:getStorageValue(Storage.Promotion) == 1 then
 				npcHandler:say("You are already promoted!", cid)
 			elseif player:getLevel() < parameters.level then
 				npcHandler:say("I am sorry, but I can only promote you once you have reached level " .. parameters.level .. ".", cid)
 			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			else
-				player:setVocation(Vocation(getPromotedVocation(player:getVocation():getId())))
+				player:setVocation(Vocation(player:getVocation():getPromotionId()))
 				npcHandler:say(parameters.text, cid)
 			end
 		else
@@ -130,7 +213,7 @@ if Modules == nil then
 			error("StdModule.bless called without any npcHandler instance.")
 		end
 
-		if(not npcHandler:isFocused(cid) or Game.getWorldType == WORLD_TYPE_PVP_ENFORCED) then
+		if not npcHandler:isFocused(cid) then
 			return false
 		end
 
@@ -163,7 +246,6 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-        
 		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
 		elseif not player:removeMoney(parameters.cost) then
@@ -177,7 +259,14 @@ if Modules == nil then
 			npcHandler:say(parameters.msg or "Set the sails!", cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			player:teleportTo(parameters.destination)
-			Position(parameters.destination):sendMagicEffect(CONST_ME_TELEPORT)
+			parameters.destination:sendMagicEffect(CONST_ME_TELEPORT)
+			
+			-- What a foolish Quest - Mission 3
+			if parameters.destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
+				if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+					player:setStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer, 1)
+				end
+			end
 		end
 
 		npcHandler:resetNpc(cid)
@@ -185,7 +274,11 @@ if Modules == nil then
 	end
 
 	FocusModule = {
-		npcHandler = nil
+		npcHandler = nil,
+		greetWords = nil,
+		farewellWords = nil,
+		greetCallback = nil,
+		farewellCallback = nil
 	}
 
 	-- Creates a new instance of FocusModule without an associated NpcHandler.
@@ -199,26 +292,70 @@ if Modules == nil then
 	-- Inits the module and associates handler to it.
 	function FocusModule:init(handler)
 		self.npcHandler = handler
-		for i, word in pairs(FOCUS_GREETWORDS) do
+
+		local greetWords = self.greetWords or FOCUS_GREETWORDS
+		for i, word in pairs(greetWords) do
 			local obj = {}
 			obj[#obj + 1] = word
-			obj.callback = FOCUS_GREETWORDS.callback or FocusModule.messageMatcher
+			obj.callback = self.greetCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 		end
 
-		for i, word in pairs(FOCUS_FAREWELLWORDS) do
+		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
+		for i, word in pairs(farewellWords) do
 			local obj = {}
 			obj[#obj + 1] = word
-			obj.callback = FOCUS_FAREWELLWORDS.callback or FocusModule.messageMatcher
+			obj.callback = self.farewellCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
 		end
 
 		return true
 	end
 
+	-- Set custom greeting messages
+	function FocusModule:addGreetMessage(message)
+		if not self.greetWords then
+			self.greetWords = {}
+		end
+
+
+		if type(message) == 'string' then
+			table.insert(self.greetWords, message)
+		else
+			for i = 1, #message do
+				table.insert(self.greetWords, message[i])
+			end
+		end
+	end
+
+	-- Set custom farewell messages
+	function FocusModule:addFarewellMessage(message)
+		if not self.farewellWords then
+			self.farewellWords = {}
+		end
+
+		if type(message) == 'string' then
+			table.insert(self.farewellWords, message)
+		else
+			for i = 1, #message do
+				table.insert(self.farewellWords, message[i])
+			end
+		end
+	end
+
+	-- Set custom greeting callback
+	function FocusModule:setGreetCallback(callback)
+		self.greetCallback = callback
+	end
+
+	-- Set custom farewell callback
+	function FocusModule:setFarewellCallback(callback)
+		self.farewellCallback = callback
+	end
+
 	-- Greeting callback function.
 	function FocusModule.onGreet(cid, message, keywords, parameters)
-		parameters.module.npcHandler:onGreet(cid)
+		parameters.module.npcHandler:onGreet(cid, message)
 		return true
 	end
 
@@ -233,10 +370,21 @@ if Modules == nil then
 	end
 
 	-- Custom message matching callback function for greeting messages.
-	function FocusModule.messageMatcher(keywords, message)
+	function FocusModule.messageMatcherDefault(keywords, message)
 		for i, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
+					return true
+				end
+			end
+		end
+		return false
+	end
+
+	function FocusModule.messageMatcherStart(keywords, message)
+		for i, word in pairs(keywords) do
+			if type(word) == "string" then
+				if string.starts(message, word) then
 					return true
 				end
 			end
@@ -286,10 +434,10 @@ if Modules == nil then
 				if reply ~= nil then
 					self:addKeyword(keywords, reply)
 				else
-					print("[Warning] NpcSystem:", "Parameter '" .. "keyword_reply" .. n .. "' missing. Skipping...")
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter '" .. "keyword_reply" .. n .. "' missing. Skipping...")
 				end
 			else
-				print("[Warning] NpcSystem:", "No keywords found for keyword set #" .. n .. ". Skipping...")
+				print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "No keywords found for keyword set #" .. n .. ". Skipping...")
 			end
 
 			n = n+1
@@ -297,7 +445,7 @@ if Modules == nil then
 	end
 
 	function KeywordModule:addKeyword(keywords, reply)
-		self.npcHandler.keywordHandler:addKeyword(keywords, StdModule.say, {npcHandler = self.npcHandler, onlyFocus = true, text = reply, reset = true})
+		self.npcHandler.keywordHandler:addKeyword(keywords, StdModule.say, {npcHandler = self.npcHandler, text = reply, reset = true})
 	end
 
 	TravelModule = {
@@ -424,7 +572,7 @@ if Modules == nil then
 
 	function TravelModule.onConfirm(cid, message, keywords, parameters, node)
 		local module = parameters.module
-		if(not module.npcHandler:isFocused(cid)) then
+		if not module.npcHandler:isFocused(cid) then
 			return false
 		end
 
@@ -439,16 +587,18 @@ if Modules == nil then
 		local destination = shop_destination[cid]
 		local premium = shop_premium[cid]
 
-		if(not isPlayerPremiumCallback or isPlayerPremiumCallback(cid) or shop_premium[cid] ~= true) then
-			if Player(cid):removeMoney(cost) ~= TRUE then
+		local player = Player(cid)
+		if not isPlayerPremiumCallback or isPlayerPremiumCallback(player) or shop_premium[cid] ~= true then
+			if player:removeMoney(cost) ~= TRUE then
 				npcHandler:say("You do not have enough money!", cid)
-			elseif Player(cid):isPzLocked() then
+			elseif player:isPzLocked() then
 				npcHandler:say("Get out of there with this blood.", cid)
 			else
 				npcHandler:say("It was a pleasure doing business with you.", cid)
 				npcHandler:releaseFocus(cid)
-				doTeleportThing(cid, destination, 0)
-				doSendMagicEffect(destination, CONST_ME_TELEPORT)
+				-- Todo convert all destionation parameters to Position(x, y, z) instead of lua tables
+				player:teleportTo(destination)
+				Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		else
 			npcHandler:say("I can only allow premium players to travel there.", cid)
@@ -483,9 +633,10 @@ if Modules == nil then
 		local premium = parameters.premium
 
 		if(not isPlayerPremiumCallback or isPlayerPremiumCallback(cid) or parameters.premium ~= true) then
-			if(Player(cid):removeMoney(cost) == TRUE) then
-				doTeleportThing(cid, destination, 0)
-				doSendMagicEffect(destination, CONST_ME_TELEPORT)
+			local player = Player(cid)
+			if player:removeMoney(cost) then
+				player:teleportTo(destination)
+				Position(destination):sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		end
 		return true
@@ -591,7 +742,7 @@ if Modules == nil then
 						self:addBuyableItem(nil, itemid, cost, subType, realName)
 					end
 				else
-					print("[Warning] NpcSystem:", "Parameter(s) missing for item:", itemid, cost)
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", itemid, cost)
 				end
 			else
 				if name ~= nil and itemid ~= nil and cost ~= nil then
@@ -603,7 +754,7 @@ if Modules == nil then
 						self:addBuyableItem(names, itemid, cost, subType, realName)
 					end
 				else
-					print("[Warning] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
 				end
 			end
 		end
@@ -641,7 +792,7 @@ if Modules == nil then
 				if itemid ~= nil and cost ~= nil then
 					self:addSellableItem(nil, itemid, cost, realName, subType)
 				else
-					print("[Warning] NpcSystem:", "Parameter(s) missing for item:", itemid, cost)
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", itemid, cost)
 				end
 			else
 				if name ~= nil and itemid ~= nil and cost ~= nil then
@@ -649,7 +800,7 @@ if Modules == nil then
 					names[#names + 1] = name
 					self:addSellableItem(names, itemid, cost, realName, subType)
 				else
-					print("[Warning] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
+					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
 				end
 			end
 		end
@@ -695,7 +846,7 @@ if Modules == nil then
 					self:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
 				end
 			else
-				print("[Warning] NpcSystem:", "Parameter(s) missing for item:", name, container, itemid, cost)
+				print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, container, itemid, cost)
 			end
 		end
 	end
@@ -759,7 +910,7 @@ if Modules == nil then
 	--	itemid = The itemid of the buyable item
 	--	cost = The price of one single item
 	--	subType - The subType of each rune or fluidcontainer item. Can be left out if it is not a rune/fluidcontainer. Default value is 1.
-	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getItemName will be used)
+	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addBuyableItem(names, itemid, cost, itemSubType, realName)
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
 			if itemSubType == nil then
@@ -826,7 +977,7 @@ if Modules == nil then
 	--	itemid = The itemid of the buyable item
 	--	cost = The price of one single item
 	--	subType - The subType of each rune or fluidcontainer item. Can be left out if it is not a rune/fluidcontainer. Default value is 1.
-	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getItemName will be used)
+	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
 		if names ~= nil then
 			for i, name in pairs(names) do
@@ -854,7 +1005,7 @@ if Modules == nil then
 	--	names = A table containing one or more strings of alternative names to this item. Used only by old buy/sell system.
 	--	itemid = The itemid of the sellable item
 	--	cost = The price of one single item
-	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getItemName will be used)
+	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addSellableItem(names, itemid, cost, realName, itemSubType)
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
 			if itemSubType == nil then
@@ -863,7 +1014,7 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or getItemName(itemid)})
+				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or ItemType(itemid):getName()})
 			else
 				shopItem.sell = cost
 			end
@@ -872,12 +1023,12 @@ if Modules == nil then
 		if(names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE) then
 			for i, name in pairs(names) do
 				local parameters = {
-						itemid = itemid,
-						cost = cost,
-						eventType = SHOPMODULE_SELL_ITEM,
-						module = self,
-						realName = realName or getItemName(itemid)
-					}
+					itemid = itemid,
+					cost = cost,
+					eventType = SHOPMODULE_SELL_ITEM,
+					module = self,
+					realName = realName or ItemType(itemid):getName()
+				}
 
 				keywords = {}
 				table.insert(keywords, "sell")
@@ -910,18 +1061,18 @@ if Modules == nil then
 
 		local backpack = 1988
 		local totalCost = amount * shopItem.buy
-		if(inBackpacks) then
-			totalCost = isItemStackable(itemid) == TRUE and totalCost + 20 or totalCost + (math.max(1, math.floor(amount / ItemType(backpack):getCapacity())) * 20)
+		if inBackpacks then
+			totalCost = ItemType(itemid):isStackable() and totalCost + 20 or totalCost + (math.max(1, math.floor(amount / ItemType(backpack):getCapacity())) * 20)
 		end
 
+		local player = Player(cid)
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = player:getName(),
 			[TAG_ITEMCOUNT] = amount,
 			[TAG_TOTALCOST] = totalCost,
 			[TAG_ITEMNAME] = shopItem.name
 		}
 
-		local player = Player(cid)
 		if player:getMoney() < totalCost then
 			local msg = self.npcHandler:getMessage(MESSAGE_NEEDMONEY)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
@@ -972,18 +1123,18 @@ if Modules == nil then
 			return false
 		end
 
+		local player = Player(cid)
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = player:getName(),
 			[TAG_ITEMCOUNT] = amount,
 			[TAG_TOTALCOST] = amount * shopItem.sell,
 			[TAG_ITEMNAME] = shopItem.name
 		}
 
-		if not isItemFluidContainer(itemid) then
+		if not ItemType(itemid):isFluidContainer() then
 			subType = -1
 		end
 
-		local player = Player(cid)
 		if player:removeItem(itemid, amount, subType, ignoreEquipped) then
 			local msg = self.npcHandler:getMessage(MESSAGE_SOLD)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
@@ -1017,13 +1168,13 @@ if Modules == nil then
 		end
 
 		if(itemWindow[1] == nil) then
-			local parseInfo = { [TAG_PLAYERNAME] = getPlayerName(cid) }
+			local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
 			local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_NOSHOP), parseInfo)
 			module.npcHandler:say(msg, cid)
 			return true
 		end
 
-		local parseInfo = { [TAG_PLAYERNAME] = getPlayerName(cid) }
+		local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
 		local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_SENDTRADE), parseInfo)
 		openShopWindow(cid, itemWindow,
 			function(cid, itemid, subType, amount, ignoreCap, inBackpacks) module.npcHandler:onBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks) end,
@@ -1042,7 +1193,7 @@ if Modules == nil then
 
 		local parentParameters = node:getParent():getParameters()
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]
@@ -1123,7 +1274,7 @@ if Modules == nil then
 
 		local parentParameters = node:getParent():getParameters()
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]
@@ -1159,7 +1310,7 @@ if Modules == nil then
 		shop_subtype[cid] = parameters.subType
 
 		local parseInfo = {
-			[TAG_PLAYERNAME] = getPlayerName(cid),
+			[TAG_PLAYERNAME] = Player(cid):getName(),
 			[TAG_ITEMCOUNT] = shop_amount[cid],
 			[TAG_TOTALCOST] = shop_cost[cid] * shop_amount[cid],
 			[TAG_ITEMNAME] = shop_rlname[cid]

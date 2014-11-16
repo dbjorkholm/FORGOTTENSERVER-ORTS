@@ -27,8 +27,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 		elseif player:getStorageValue(Storage.OutfitQuest.MageSummonerWandAddon) >= 1 then
-			local port = {x = 32659, y = 32340, z = 7}
-			player:teleportTo(port)
+			player:teleportTo(Position(32659, 32340, 7))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 	end

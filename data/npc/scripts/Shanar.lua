@@ -22,4 +22,7 @@ function onThink()
 	npcHandler:onThink()
 end
 
-npcHandler:addModule(FocusModule:new())
+local focusModule = FocusModule:new()
+focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
+focusModule:addFarewellMessage({'bye', 'farewell', 'asgha thrazi'})
+npcHandler:addModule(focusModule)

@@ -19,10 +19,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("It'zz your doom you travel to.", cid)
-			local player = Player(cid)
+			local player, destination = Player(cid), Position(33102, 31056, 7)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo({x = 33102, y = 31056, z = 7})
-			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "no") then

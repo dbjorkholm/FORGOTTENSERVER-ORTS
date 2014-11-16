@@ -25,7 +25,7 @@ local position = {
 	Position(33311, 31854, 9),
 	Position(33334, 31889, 9),
 	Position(33340, 31890, 9),
-	Position(33347, 31889, 9),
+	Position(33347, 31889, 9)
 }
 
 local creatureNames = {
@@ -38,7 +38,7 @@ local function getFungusInArea(fromPos, toPos)
 	for x = fromPos.x, toPos.x do
 		for y = fromPos.y, toPos.y do
 			for itemId = 13585, 13589 do
-				if Tile(Position(x, y, 9)):getItemById(itemId) then
+				if Tile(Position(x, y, fromPos.z)):getItemById(itemId) then
 					return true
 				end
 			end
@@ -52,24 +52,23 @@ local function summonMonster(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if not isInArray({13585, 13586, 13587, 13588, 13589}, itemEx.itemid) then
 		return false
 	end
 
-	local player = Player(cid)
-	if player:getStorageValue(984) + 15 * 1000 < os.time() then
+	if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout) < os.time() then
 		Item(itemEx.uid):transform(13590)
-		player:setStorageValue(984, os.time())
+		player:setStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout, os.time() + 15)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
-		if not getFungusInArea(Position(33306, 31847), Position(33369, 31919)) then
+		if not getFungusInArea(Position(33306, 31847, 9), Position(33369, 31919, 9)) then
 			for i = 1, #position do
 				addEvent(summonMonster, 5 * 1000, creatureNames[math.random(#creatureNames)], position[i])
 			end
 			player:getPosition():sendMagicEffect(CONST_ME_FIREWORK_RED)
 			player:say('COME! My servants! RISE!', TALKTYPE_MONSTER_SAY)
-			Game.setStorageValue(985)
-			Game.setStorageValue(984)
+			Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, 0)
+			Game.setStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave, 0)
 		else
 			player:say('The slime gobbler gobbles large chunks of the slime fungus with great satisfaction.', TALKTYPE_MONSTER_SAY)
 			player:addExperience(20, true, true)

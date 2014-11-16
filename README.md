@@ -1,9 +1,9 @@
 ### What is FORGOTTENSERVER-ORTS
-We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.0](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
+We are trying to create the perfect open real tibia server based on [The Forgotten Server 1.1](https://github.com/otland/forgottenserver) by [Mark Samman](https://github.com/marksamman).
 
-For more information about TFS 1.0 (including compiling guides) visit the link above.
+For more information about TFS 1.1 (including compiling guides) visit the link above.
 
-You can download TFS 1.0 Windows binaries from http://nightlies.otland.net.
+You can download TFS 1.1 Windows binaries from http://nightlies.otland.net. (not always up to date!)
 
 To login you can use [Otclient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart).
 
@@ -22,7 +22,7 @@ In order to contribute scripts to this project [create a pull request](http://ot
 **Important:**
 - Scripts should follow this [lua style guide](https://github.com/Olivine-Labs/lua-style-guide) and be as efficient as possible.
 - Use tabs as indentation.
-- Use new metatable function whenever possible or you might have to revise your pull request.
+- Use new metatable functions or you have to revise your pull request.
 
 **Example script (using metatables):**
 ```lua
@@ -45,8 +45,7 @@ doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, 'Here is some cash.')
 ```
 
 **Scripting related links:**
-- [List of metatable functions](http://pastebin.com/nws8xHmK)
-- [compat.lua](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/blob/master/data/compat.lua) (which contains additional functions)
+- [Script Interface](https://github.com/otland/forgottenserver/wiki/Script-Interface)
 
 ### Map Contributions
 In order to contribute map updates read this [article](https://github.com/PrinterLUA/FORGOTTENSERVER-ORTS/wiki/Contributing-to-the-map) first.

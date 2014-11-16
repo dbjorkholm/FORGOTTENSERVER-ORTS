@@ -148,7 +148,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheNewFrontier.Mission05, 1) --Questlog, The New Frontier Quest "Mission 05: Getting Things Busy"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.TheNewFrontier.Questline) == 15 then
-			if player:getStorageValue(Storage.TheNewFrontier.BribeKing) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeLeeland) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeAngus) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeWydrin) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeTelas) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeHumgolf) == 1 then
+			if player:getStorageValue(Storage.TheNewFrontier.BribeKing) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeLeeland) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeExplorerSociety) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeWydrin) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeTelas) == 1 and player:getStorageValue(Storage.TheNewFrontier.BribeHumgolf) == 1 then
 				npcHandler:say("You did an excellent job! With all this help Farmine will grow and prosper. While we put all available resources into building this base, I have another urgent {mission} for you.", cid)
 				player:setStorageValue(Storage.TheNewFrontier.Questline, 16)
 				npcHandler.topic[cid] = 0

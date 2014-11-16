@@ -1,16 +1,16 @@
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
-	if player:getStorageValue(50019) < 1 then
-		player:setStorageValue(50019, 1)
-		player:teleportTo({x = 32272, y = 31849, z = 15})
+	if player:getStorageValue(Storage.QueenOfBansheesQuest.SecondSeal) < 1 then
+		player:setStorageValue(Storage.QueenOfBansheesQuest.SecondSeal, 1)
+		player:teleportTo(Position(32272, 31849, 15))
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	else
 		player:teleportTo(fromPosition, true)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
 end

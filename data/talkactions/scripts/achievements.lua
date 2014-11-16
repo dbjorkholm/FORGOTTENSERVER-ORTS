@@ -1,6 +1,4 @@
-function onSay(cid, words, param)
-	local player = Player(cid)
-
+function onSay(player, words, param)
 
 	if words == "/addach" then
 		local p = param:split(",")

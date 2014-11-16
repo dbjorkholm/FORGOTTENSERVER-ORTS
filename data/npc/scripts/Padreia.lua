@@ -8,33 +8,66 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
+	local player = Player(cid)
 
 	if msgcontains(msg, "cough syrup") then
 		if player:getStorageValue(Storage.TheApeCity.Questline) == 5 then
 			npcHandler:say("Do you want to buy a bottle of cough syrup for 50 gold?", cid)
 			npcHandler.topic[cid] = 1
 		end
+	elseif msgcontains(msg, 'mission') then
+		if player:getStorageValue(Storage.TibiaTales.TheExterminator) == -1 then
+			npcHandler:say({
+				'Oh |PLAYERNAME|, thank god you came to me. Last night, I had a vision about an upcoming plague here in Carlin. ...',
+				'It will originate from slimes that will swarm out of the sewers and infect every citizen with a deadly disease. Are you willing to help me save Carlin?'
+			}, cid)
+			npcHandler.topic[cid] = 2
+		elseif player:getStorageValue(Storage.TibiaTales.TheExterminator) == 1 then
+			npcHandler:say('You MUST find that slime pool immediately or life here in Carlin will not be the same anymore.', cid)
+		elseif player:getStorageValue(Storage.TibiaTales.TheExterminator) == 2 then
+			local itemId = {2150, 2149, 2147, 2146}
+			for i = 1, #itemId do
+				player:addItem(itemId[i], 1)
+			end
+			player:setStorageValue(Storage.TibiaTales.TheExterminator, 3)
+			npcHandler:say('You did it! Even if only few of the Carliners will ever know about that, you saved all of their lives. Here, take this as a reward. Farewell!', cid)
+		else
+			npcHandler:say('Maybe the guards have something to do for you or know someone who could need some help.', cid)
+		end
 	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 and player:removeMoney(50) then
+		if npcHandler.topic[cid] == 1 then
+			if not player:removeMoney(50) then
+				npcHandler:say("You don't have enough money.", cid)
+				return true
+			end
+
 			npcHandler:say("Thank you. Here it is.", cid)
 			player:addItem(4839, 1)
 			player:setStorageValue(Storage.TheApeCity.Questline, 6)
 			player:setStorageValue(Storage.TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
-		else
-			npcHandler:say("You don't have enough money.", cid)
+		elseif npcHandler.topic[cid] == 2 then
+			player:addItem(8205, 1)
+			player:setStorageValue(Storage.TibiaTales.TheExterminator, 1)
+			npcHandler:say({
+				'I knew I could count on you. Take this highly intensified vermin poison. In my vision, I saw some kind of \'pool\' where these slimes came from. ...',
+				'Pour the poison in the water to stop the demise of Carlin. Tell me about your mission after you fulfilled your task.'
+			}, cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "no") then
-		if npcHandler.topic[cid] >= 1 then
+		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Then no.", cid)
 			npcHandler.topic[cid] = 0
+		elseif npcHandler.topic[cid] == 2 then
+			npcHandler:say('Then the downfall of Carlin is inescapable. Please think about it. You know where to find me.', cid)
+			npcHandler.topic[cid] = 0
 		end
-	return true
 	end
+	return true
 end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the grand druid of Carlin. I am responsible for the guild, the fields, and our citizens' health."})
@@ -45,8 +78,9 @@ keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'druids'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We are druids, preservers of life. Our magic is about defence, healing, and nature."})
 keywordHandler:addKeyword({'sorcerers'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Sorcerers are destructive. Their power lies in destruction and pain."})
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:setMessage(MESSAGE_GREET, "Welcome to our humble guild, wanderer. May I be of any assistance to you?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell.")
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

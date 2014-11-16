@@ -4,12 +4,11 @@ local config = {
 	effect = false
 }
 
-function onAdvance(cid, skill, oldLevel, newLevel)
+function onAdvance(player, skill, oldLevel, newLevel)
 	if skill ~= 8 or newLevel <= oldLevel then
 		return true
 	end
 
-	local player = Player(cid)
 	if config.effect then
 		player:getPosition():sendMagicEffect(math.random(CONST_ME_FIREWORK_YELLOW, CONST_ME_FIREWORK_BLUE))
 		player:say('LEVEL UP!', TALKTYPE_MONSTER_SAY)

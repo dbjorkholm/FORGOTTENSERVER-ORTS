@@ -332,10 +332,10 @@ if NpcHandler == nil then
 	end
 
 	-- Greets a new player.
-	function NpcHandler:greet(cid)
+	function NpcHandler:greet(cid, message)
 		if cid ~= 0  then
 			local callback = self:getCallback(CALLBACK_GREET)
-			if callback == nil or callback(cid) then
+			if callback == nil or callback(cid, message) then
 				if self:processModuleCallback(CALLBACK_GREET, cid) then
 					local msg = self:getMessage(MESSAGE_GREET)
 					local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
@@ -352,7 +352,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureAppear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_APPEAR callback.
-	function NpcHandler:onCreatureAppear(cid)
+	function NpcHandler:onCreatureAppear(creature)
+		local cid = creature:getId()
 		if cid == getNpcCid() then
 			local npc = Npc()
 			if next(self.shopItems) then
@@ -378,7 +379,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureDisappear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_DISAPPEAR callback.
-	function NpcHandler:onCreatureDisappear(cid)
+	function NpcHandler:onCreatureDisappear(creature)
+		local cid = creature:getId()
 		if getNpcCid() == cid then
 			return
 		end
@@ -394,7 +396,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onCreatureSay events. If you with to handle this yourself, please use the CALLBACK_CREATURE_SAY callback.
-	function NpcHandler:onCreatureSay(cid, msgtype, msg)
+	function NpcHandler:onCreatureSay(creature, msgtype, msg)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_CREATURE_SAY)
 		if callback == nil or callback(cid, msgtype, msg) then
 			if self:processModuleCallback(CALLBACK_CREATURE_SAY, cid, msgtype, msg) then
@@ -420,7 +423,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onPlayerEndTrade events. If you wish to handle this yourself, use the CALLBACK_PLAYER_ENDTRADE callback.
-	function NpcHandler:onPlayerEndTrade(cid)
+	function NpcHandler:onPlayerEndTrade(creature)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_ENDTRADE)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_ENDTRADE, cid, msgtype, msg) then
@@ -434,7 +438,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onPlayerCloseChannel events. If you wish to handle this yourself, use the CALLBACK_PLAYER_CLOSECHANNEL callback.
-	function NpcHandler:onPlayerCloseChannel(cid)
+	function NpcHandler:onPlayerCloseChannel(creature)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_CLOSECHANNEL)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_CLOSECHANNEL, cid, msgtype, msg) then
@@ -446,7 +451,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onBuy events. If you wish to handle this yourself, use the CALLBACK_ONBUY callback.
-	function NpcHandler:onBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onBuy(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONBUY)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
@@ -456,7 +462,8 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onSell events. If you wish to handle this yourself, use the CALLBACK_ONSELL callback.
-	function NpcHandler:onSell(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onSell(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONSELL)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONSELL, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
@@ -506,10 +513,10 @@ if NpcHandler == nil then
 	end
 
 	-- Tries to greet the player with the given cid.
-	function NpcHandler:onGreet(cid)
+	function NpcHandler:onGreet(cid, message)
 		if self:isInRange(cid) then
 			if not self:isFocused(cid) then
-				self:greet(cid)
+				self:greet(cid, message)
 				return
 			end
 		end
@@ -540,7 +547,7 @@ if NpcHandler == nil then
 					local msg_female = self:getMessage(MESSAGE_WALKAWAY_FEMALE)
 					local message_female = self:parseMessage(msg_female, parseInfo)
 					if message_female ~= message_male then
-						if Player(cid):getSex() == 0 then
+						if Player(cid):getSex() == PLAYERSEX_FEMALE then
 							selfSay(message_female)
 						else
 							selfSay(message_male)
@@ -614,6 +621,16 @@ if NpcHandler == nil then
 		end
 
 		stopEvent(self.eventSay[focus])
-		self.eventSay[focus] = addEvent(function(x) if isPlayer(x[3]) then doCreatureSay(x[1], x[2], TALKTYPE_PRIVATE_NP, false, x[3], getCreaturePosition(x[1])) end end, self.talkDelayTime * 1000, {getNpcCid(), message, focus})
+		self.eventSay[focus] = addEvent(function(npcId, message, focusId)
+			local npc = Npc(npcId)
+			if npc == nil then
+				return
+			end
+
+			local player = Player(focusId)
+			if player then
+				npc:say(message, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
+			end
+		end, self.talkDelayTime * 1000, Npc():getId(), message, focus)
 	end
 end

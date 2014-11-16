@@ -37,28 +37,25 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "snippet")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18430) >= 1 then
-				player:removeItem(18430, 1)
-				player:setStorageValue(955, 1)
+			if player:removeItem(18430, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Warzone1Access, 1)
 				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
 	elseif(msgcontains(msg, "lash")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18496) >= 1 then
-				player:removeItem(18496, 1)
-				player:setStorageValue(956, 1)
-				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
+			if player:removeItem(18496, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Warzone2Access, 1)
+				npcHandler:say("As a war hero you are allowed to use the warzone teleporter two for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
 	elseif(msgcontains(msg, "hat")) then
 		if(npcHandler.topic[cid] == 3) then
-			if player:getItemCount(18495) >= 1 then
-				player:removeItem(18495, 1)
-				player:setStorageValue(957, 1)
-				npcHandler:say("As a war hero you are allowed to use the warzone teleporter one for free!", cid)
+			if player:removeItem(18495, 1) then
+				player:setStorageValue(Storage.BigfootBurden.Warzone3Access, 1)
+				npcHandler:say("As a war hero you are allowed to use the warzone teleporter three for free!", cid)
 				npcHandler.topic[cid] = 0
 			end
 		end
@@ -66,7 +63,7 @@ local function creatureSayCallback(cid, type, msg)
 		if(npcHandler.topic[cid] == 1) then
 			npcHandler:say("Fine, I grant you the permission to enter the warzones. Be warned though, this will be not a picnic. Better bring some friends with you. Bringing a lot of them sounds like a good idea.", cid)
 			player:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
-			player:setStorageValue(954, 1)
+			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 1)
 			npcHandler.topic[cid] = 0
 		end
 	end

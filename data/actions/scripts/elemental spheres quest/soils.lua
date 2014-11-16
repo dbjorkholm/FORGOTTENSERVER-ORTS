@@ -1,22 +1,35 @@
-local t = {
-	[8304] = {useOn = 8572, transform = 8576, effect = CONST_ME_BIGPLANTS},
-	[8305] = {useOn = 8573, transform = 8575},
-	[8306] = {useOn = 8571, transform = 8574, effect = CONST_ME_ICEATTACK},
-	[8307] = {useOn = 8567, create = 1495}
+local config = {
+	[8298] = {targetId = 8572, transformId = 8576, effect = CONST_ME_BIGPLANTS},
+	[8299] = {targetId = 8573, transformId = 8575},
+	[8302] = {targetId = 8571, transformId = 8574, effect = CONST_ME_ICEATTACK},
+	[8303] = {targetId = 8567, createId = 1495}
 }
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local v = t[item.itemid]
-	if v and v.useOn == itemEx.itemid then
-		if v.transform then
-			doTransformItem(itemEx.uid, v.transform)
-		elseif v.create then
-			doCreateItem(v.create, 1, toPosition)
-		end
-		if v.effect then
-			toPosition:sendMagicEffect(v.effect)
-		end
-		doDecayItem(itemEx.uid)
-		doChangeTypeItem(item.uid, item.type - 1)
-		return TRUE
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local soil = config[item.itemid]
+	if not soil then
+		return true
 	end
+
+	if soil.targetId ~= itemEx.itemid then
+		return true
+	end
+
+	if soil.transformId then
+		local targetItem = Item(itemEx.uid)
+		targetItem:transform(soil.transformId)
+		targetItem:decay()
+	elseif soil.createId then
+		local newItem = Game.createItem(soil.createId, 1, toPosition)
+		if newItem then
+			newItem:decay()
+		end
+	end
+
+	if soil.effect then
+		toPosition:sendMagicEffect(soil.effect)
+	end
+
+	Item(item.uid):transform(item.itemid, item.type - 1)
+	return true
 end

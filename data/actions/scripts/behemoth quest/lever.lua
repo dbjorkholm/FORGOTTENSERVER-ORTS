@@ -6,7 +6,7 @@ local wall = {
 	Position(33299, 31677, 15)
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		return false
 	end

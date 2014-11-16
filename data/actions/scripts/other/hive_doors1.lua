@@ -1,13 +1,11 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local pos = getPlayerPosition(cid)
-	if (item.itemid >= 14755 or item.itemid <= 14760) then
-		if pos.y < toPosition.y then
-			doTeleportThing(cid, {x=toPosition.x,y=toPosition.y+1,z=toPosition.z})
-			doSendMagicEffect({x=toPosition.x,y=toPosition.y+1,z=toPosition.z}, CONST_ME_TELEPORT)
-		elseif pos.y > toPosition.y then
-			doTeleportThing(cid, {x=toPosition.x,y=toPosition.y-1,z=toPosition.z})
-			doSendMagicEffect({x=toPosition.x,y=toPosition.y-1,z=toPosition.z}, CONST_ME_TELEPORT)
-		end
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local position = player:getPosition()
+	if position.y == toPosition.y then
+		return false
 	end
+
+	toPosition.y = position.y > toPosition.y and toPosition.y - 1 or toPosition.y + 1
+	player:teleportTo(toPosition)
+	toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

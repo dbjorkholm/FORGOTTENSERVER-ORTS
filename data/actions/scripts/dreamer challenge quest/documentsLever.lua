@@ -14,7 +14,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(cid, item, position, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local altar = config[item.uid]
 	if not altar then
 		return true

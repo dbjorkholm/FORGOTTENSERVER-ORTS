@@ -1,12 +1,12 @@
 local exitPosition = Position(32308, 32267, 7)
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 
-	if getBaseVocation(player:getVocation():getId()) == 1 then
+	if player:getVocation():getBase():getId() == 1 then
 		return true
 	end
 

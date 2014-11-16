@@ -1,46 +1,58 @@
-local walls = {
+local config = {
 	[2246] = {
-		[1] = {pos = {x = 32763, y = 32292, z = 14}, id = 1026},
-		[2] = {pos = {x = 32762, y = 32292, z = 14}, id = 1026},
-		[3] = {pos = {x = 32761, y = 32292, z = 14}, id = 1026},
+		[1] = {pos = Position(32763, 32292, 14), id = 1026},
+		[2] = {pos = Position(32762, 32292, 14), id = 1026},
+		[3] = {pos = Position(32761, 32292, 14), id = 1026}
 	},
 	[2247] = {
-		[1] = {pos = {x = 32760, y = 32289, z = 14}, id = 1025},
-		[2] = {pos = {x = 32760, y = 32290, z = 14}, id = 1025},
-		[3] = {pos = {x = 32760, y = 32291, z = 14}, id = 1025},
-		[4] = {pos = {x = 32760, y = 32292, z = 14}, id = 1030}
+		[1] = {pos = Position(32760, 32289, 14), id = 1025},
+		[2] = {pos = Position(32760, 32290, 14), id = 1025},
+		[3] = {pos = Position(32760, 32291, 14), id = 1025},
+		[4] = {pos = Position(32760, 32292, 14), id = 1030}
 	},
 	[2248] = {
-		[1] = {pos = {x = 32764, y = 32292, z = 14}, id = 1029},
-		[2] = {pos = {x = 32764, y = 32291, z = 14}, id = 1025},
-		[3] = {pos = {x = 32764, y = 32290, z = 14}, id = 1025},
-		[4] = {pos = {x = 32764, y = 32289, z = 14}, id = 1025}
+		[1] = {pos = Position(32764, 32292, 14), id = 1029},
+		[2] = {pos = Position(32764, 32291, 14), id = 1025},
+		[3] = {pos = Position(32764, 32290, 14), id = 1025},
+		[4] = {pos = Position(32764, 32289, 14), id = 1025}
 	},
 	[2249] = {
-		[1] = {pos = {x = 32760, y = 32288, z = 14}, id = 1027},
-		[2] = {pos = {x = 32761, y = 32288, z = 14}, id = 1026},
-		[3] = {pos = {x = 32762, y = 32288, z = 14}, id = 1026},
-		[4] = {pos = {x = 32763, y = 32288, z = 14}, id = 1026},
-		[5] = {pos = {x = 32764, y = 32288, z = 14}, id = 1028}
+		[1] = {pos = Position(32760, 32288, 14), id = 1027},
+		[2] = {pos = Position(32761, 32288, 14), id = 1026},
+		[3] = {pos = Position(32762, 32288, 14), id = 1026},
+		[4] = {pos = Position(32763, 32288, 14), id = 1026},
+		[5] = {pos = Position(32764, 32288, 14), id = 1028}
 	}
 }
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	if(getGlobalStorageValue(400) < 0) then
-		setGlobalStorageValue(400, 0)
+local function revertLever(position)
+	local leverItem = Tile(position):getItemById(1946)
+	if leverItem then
+		leverItem:transform(1945)
 	end
-	if(isInArray({2246, 2247, 2248, 2249}, item.uid) and item.itemid == 1945) then
-		doTransformItem(item.uid, 1946)
-		addEvent(doTransformItem, 8 * 1000, item.uid, 1945)
-		for i = 1, #walls[item.uid] do
-			local check = getTileItemById(walls[item.uid][i].pos, walls[item.uid][i].id).uid
-			if (check ~= 0) then
-				doRemoveItem(getTileItemById(walls[item.uid][i].pos, walls[item.uid][i].id).uid, 1)
-				addEvent(doCreateItem, 7 * 1000, walls[item.uid][i].id, 1 , walls[item.uid][i].pos)
-			end
+end
+
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+	local walls = config[item.uid]
+	if not walls then
+		return true
+	end
+
+	if item.itemid ~= 1945 then
+		return false
+	end
+
+	Item(item.uid):transform(1946)
+	addEvent(revertLever, 8 * 1000, toPosition)
+
+	local wallItem
+	for i = 1, #walls do
+		wallItem = Tile(walls[i].pos):getItemById(walls[i].id)
+		if wallItem then
+			wallItem:remove()
+			addEvent(Game.createItem, 7 * 1000, walls[i].id, 1 , walls[i].pos)
 		end
-		setGlobalStorageValue(400, getGlobalStorageValue(400) + 1)
-		addEvent(setGlobalStorageValue, 7 * 1000, 400, getGlobalStorageValue(400) - 1)
 	end
+
 	return true
 end

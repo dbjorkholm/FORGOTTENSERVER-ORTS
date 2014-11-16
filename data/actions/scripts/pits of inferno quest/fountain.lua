@@ -1,5 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	player:addHealth(player:getMaxHealth())
 	player:addMana(player:getMaxMana())
 	player:addAchievement('Fountain of Life')

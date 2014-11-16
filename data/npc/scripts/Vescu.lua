@@ -60,10 +60,10 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say({
-				'You\'re a true buddy. I promise I will t-try to avoid killing you even if someone asks me to. <hicks> ...', 
-				'Listen, I have this old formula from my grandma. <hicks> It says... 30 {bonelord eyes}... 10 {red dragon scales}. ...', 
-				'Then 30 {lizard scales}... 20 {fish fins} - ew, this sounds disgusting, I wonder if this is really a potion or rather a cleaning agent. ...', 
-				'Add 20 ounces of {vampire dust}, 10 ounces of {demon dust} and mix well with one flask of {warrior\'s sweat}. <hicks> ...', 
+				'You\'re a true buddy. I promise I will t-try to avoid killing you even if someone asks me to. <hicks> ...',
+				'Listen, I have this old formula from my grandma. <hicks> It says... 30 {bonelord eyes}... 10 {red dragon scales}. ...',
+				'Then 30 {lizard scales}... 20 {fish fins} - ew, this sounds disgusting, I wonder if this is really a potion or rather a cleaning agent. ...',
+				'Add 20 ounces of {vampire dust}, 10 ounces of {demon dust} and mix well with one flask of {warrior\'s sweat}. <hicks> ...',
 				'Okayyy, this is a lot... we\'ll take this step by step. <hicks> Will you help me gathering 30 {bonelord eyes}?'
 			}, cid)
 			npcHandler.topic[cid] = 2
@@ -102,13 +102,13 @@ local function onReleaseFocus(cid)
 	message[cid] = nil
 end
 
-keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can give you a <hicks> scar as an addon. Nyahahah.'})
-keywordHandler:addKeyword({'booze'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Did I say booze? I meant, {flamingo}. <hicks> Pink birds are kinda cool, don\'t you think? Especially on a painting.'})
-keywordHandler:addKeyword({'flamingo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You have to enjoy the word. Like, {flayyyminnngoooo}. Say it with me. <hicks>'})
-keywordHandler:addKeyword({'flayyyminnngoooo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes, you got it! Hahaha, we understand each other. Good {job}. <hicks>'})
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I\'m a killer! Yeshindeed! A masterful assassin. I prefer that too \'Peekay\'. <hicks>'})
-keywordHandler:addKeyword({'outfit'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'O-outfit? You already have a t-troll outfit. That\'s good enough for you. <hicks>'})
-keywordHandler:addKeyword({'sober'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I wish there was like a {potion} which makes you sober in an instant. Dwarven rings wear off so fast. <hicks>'})
+keywordHandler:addKeyword({'addon'}, StdModule.say, {npcHandler = npcHandler, text = 'I can give you a <hicks> scar as an addon. Nyahahah.'})
+keywordHandler:addKeyword({'booze'}, StdModule.say, {npcHandler = npcHandler, text = 'Did I say booze? I meant, {flamingo}. <hicks> Pink birds are kinda cool, don\'t you think? Especially on a painting.'})
+keywordHandler:addKeyword({'flamingo'}, StdModule.say, {npcHandler = npcHandler, text = 'You have to enjoy the word. Like, {flayyyminnngoooo}. Say it with me. <hicks>'})
+keywordHandler:addKeyword({'flayyyminnngoooo'}, StdModule.say, {npcHandler = npcHandler, text = 'Yes, you got it! Hahaha, we understand each other. Good {job}. <hicks>'})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m a killer! Yeshindeed! A masterful assassin. I prefer that too \'Peekay\'. <hicks>'})
+keywordHandler:addKeyword({'outfit'}, StdModule.say, {npcHandler = npcHandler, text = 'O-outfit? You already have a t-troll outfit. That\'s good enough for you. <hicks>'})
+keywordHandler:addKeyword({'sober'}, StdModule.say, {npcHandler = npcHandler, text = 'I wish there was like a {potion} which makes you sober in an instant. Dwarven rings wear off so fast. <hicks>'})
 
 npcHandler:setMessage(MESSAGE_FAREWELL, 'T-time for another b-beer. <hicks>')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Oh, two t-trolls. Hellooo, wittle twolls. <hicks>')

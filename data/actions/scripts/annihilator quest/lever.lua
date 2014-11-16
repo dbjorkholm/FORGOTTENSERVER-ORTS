@@ -25,8 +25,7 @@ local config = {
 }
 
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		local players = {}
 		local continue = true

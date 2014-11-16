@@ -36,8 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getItemCount(2544) >= 12 then
-				player:removeItem(2544, 12)
+			if player:removeItem(2544, 12) then
 				npcHandler:say("Great! Now I'll teach them a lesson ... For those measurements ... <tells you her measurements> ", cid)
 				player:setStorageValue(Storage.postman.Mission07, player:getStorageValue(Storage.postman.Mission07) + 1)
 				npcHandler.topic[cid] = 0

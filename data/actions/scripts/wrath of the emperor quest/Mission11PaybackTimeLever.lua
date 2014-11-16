@@ -14,15 +14,15 @@ local config = {
 }
 
 
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	if Game.getStorageValue(Storage.WrathoftheEmperor.Mission11) == 1 then
-		Player(cid):sendTextMessage(MESSAGE_STATUS_SMALL, 'The arena is already in use.')
+		player:sendTextMessage(MESSAGE_STATUS_SMALL, 'The arena is already in use.')
 		return true
 	end
 
 	Game.setStorageValue(Storage.WrathoftheEmperor.Mission11, 1)
-	
+
 	local monsters = Game.getSpectators(config.arenaPosition, false, true, 10, 10, 10, 10)
 	for _, monster in ipairs(monsters) do
 		monster:remove()
@@ -34,7 +34,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		spectator:teleportTo(config.arenaPosition)
 		config.arenaPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	end
-	
+
 	for i = 1, #config.trapPositions do
 		Game.createMonster(config.trap, config.trapPositions[i])
 	end

@@ -39,7 +39,7 @@
 
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
-	
+
 	<!-- Secret Service Quest -->
 	<event type="kill" name="SecretServiceBlackKnight" script="others/blackKnight.lua"/>
 

@@ -47,8 +47,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 2 then
 			if player:getStorageValue(Storage.TheIceIslands.Questline) >= 3 then
-			local port = {x = 32325, y = 31049, z = 7}
-			player:teleportTo(port)
+			player:teleportTo(Position(32325, 31049, 7))
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			npcHandler.topic[cid] = 0
 			else

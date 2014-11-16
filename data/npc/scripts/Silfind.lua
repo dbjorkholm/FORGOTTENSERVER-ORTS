@@ -97,8 +97,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.TheIceIslands.Mission04, 1) -- Questlog The Ice Islands Quest, Nibelor 3: Artful Sabotage
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 5 then -- Wings
-			if player:getItemCount(5894) >= 5 then
-				player:removeItem(5894, 5)
+			if player:removeItem(5894, 5) then
 				npcHandler:say("Thank you very much.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 12)
 				npcHandler.topic[cid] = 0
@@ -107,8 +106,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 6 then -- Paws
-			if player:getItemCount(5896) >= 4 then
-				player:removeItem(5896, 4)
+			if player:removeItem(5896, 4) then
 				npcHandler:say("Thank you very much.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 14)
 				npcHandler.topic[cid] = 0
@@ -117,8 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then -- Eyes
-			if player:getItemCount(5898) >= 3 then
-				player:removeItem(5898, 3)
+			if player:removeItem(5898, 3) then
 				npcHandler:say("Thank you very much.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 16)
 				npcHandler.topic[cid] = 0
@@ -127,8 +124,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 8 then -- Fins
-			if player:getItemCount(5895) >= 2 then
-				player:removeItem(5895, 2)
+			if player:removeItem(5895, 2) then
 				npcHandler:say("Thank you very much.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 18)
 				npcHandler.topic[cid] = 0
@@ -137,8 +133,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then -- Scale
-			if player:getItemCount(5920) >= 1 then
-				player:removeItem(5920, 1)
+			if player:removeItem(5920, 1) then
 				npcHandler:say("Thank you very much. This will help us to defend Svargrond. But I heard young Nilsor is in dire need of help. Please contact him immediately.", cid)
 				player:setStorageValue(Storage.TheIceIslands.Questline, 20)
 				player:setStorageValue(Storage.TheIceIslands.Mission05, 6) -- Questlog The Ice Islands Quest, Nibelor 4: Berserk Brewery

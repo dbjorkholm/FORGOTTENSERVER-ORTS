@@ -1,16 +1,21 @@
-local positions = {
-	[3189] = {x = 33041, y = 31086, z = 15},
-	[3190] = {x = 33091, y = 31083, z = 15},
-	[3191] = {x = 33094, y = 31118, z = 15},
-	[3192] = {x = 33038, y = 31119, z = 15},
+local teleports = {
+	[3189] = {destination = Position(33041, 31086, 15), storage = GlobalStorage.WrathOfTheEmperor.Bosses.Fury},
+	[3190] = {destination = Position(33091, 31083, 15), storage = GlobalStorage.WrathOfTheEmperor.Bosses.Wrath},
+	[3191] = {destination = Position(33094, 31118, 15), storage = GlobalStorage.WrathOfTheEmperor.Bosses.Scorn},
+	[3192] = {destination = Position(33038, 31119, 15), storage = GlobalStorage.WrathOfTheEmperor.Bosses.Spite}
 }
 
-function onStepIn(cid, item, position, fromPosition)
-	local player = Player(cid)
+function onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
 	if not player then
 		return true
 	end
 	
+	local teleport = teleports[item.uid]
+	if not teleport then
+		return true
+	end
+
 	if player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) == 5 then
 		local destination = Position(33072, 31151, 15)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
@@ -23,9 +28,10 @@ function onStepIn(cid, item, position, fromPosition)
 		player:teleportTo(fromPosition)
 		return true
 	end
-	if Game.getStorageValue(item.uid) ~= 1 then
-		player:teleportTo(positions[item.uid])
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+
+	if Game.getStorageValue(teleport.storage) ~= 1 then
+		player:teleportTo(teleport.destination)
+		teleport.destination:sendMagicEffect(CONST_ME_TELEPORT)
 	else
 		player:teleportTo(fromPosition)
 	end

@@ -68,30 +68,26 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getItemCount(5893) >= 100 then
+			if player:removeItem(5893, 100) then
 				npcHandler:say("I'm deeply impressed, (brave Knight) " .. player:getName() .. ". (Even if you are not a knight, you certainly possess knight qualities.) Now, please retrieve Ramsay's helmet.", cid)
-				player:removeItem(5893, 100)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 2)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5924) > 0 then
+			if player:removeItem(5924, 1) then
 				npcHandler:say("Good work, (brave Knight) " .. player:getName() .. "! Even though it is damaged, it has a lot of sentimental value. Now, please bring me warrior's sweat.", cid)
-				player:removeItem(5924, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 3)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
-			if player:getItemCount(5885) > 0 then
+			if player:removeItem(5885, 1) then
 				npcHandler:say("Now that is a pleasant surprise, (brave Knight) " .. player:getName() .. "! There is only one task left now: Obtain royal steel to have your helmet refined.", cid)
-				player:removeItem(5885, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 4)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 7 then
-			if player:getItemCount(5887) > 0 then
+			if player:removeItem(5887, 1) then
 				npcHandler:say("You truly deserve to wear an adorned helmet, (brave Knight) " .. player:getName() .. ". Please talk to Sam and tell him I sent you. I'm sure he will be glad to refine your helmet.", cid)
-				player:removeItem(5887, 1)
 				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 5)
 				npcHandler.topic[cid] = 0
 			end
@@ -99,6 +95,28 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	return true
 end
+
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am the first knight. I trained some of the greatest heroes of Tibia."})
+keywordHandler:addKeyword({'heroes'}, StdModule.say, {npcHandler = npcHandler, text = "Of course, you heard of them. Knights are the best fighters in Tibia."})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, text = "Hail to our King!"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "You are joking, eh? Of course, you know me. I am Gregor, the first knight."})
+keywordHandler:addKeyword({'gregor'}, StdModule.say, {npcHandler = npcHandler, text = "A great name, isn't it?"})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, text = "Beautiful Tibia. And with our help everyone is save."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "It is time to join the Knights!"})
+keywordHandler:addKeyword({'knights'}, StdModule.say, {npcHandler = npcHandler, text = "Knights are the warriors of Tibia. Without us, no one would be safe. Every brave and strong man or woman can join us."})
+keywordHandler:addKeyword({'bozo'}, StdModule.say, {npcHandler = npcHandler, text = "Some day someone will make something happen to him..."})
+keywordHandler:addKeyword({'elane'}, StdModule.say, {npcHandler = npcHandler, text = "A bow might be a fine weapon for someone not strong enough to wield a REAL weapon."})
+keywordHandler:addKeyword({'frodo'}, StdModule.say, {npcHandler = npcHandler, text = "I and my students often share a cask of beer or wine at Frodo's hut."})
+keywordHandler:addKeyword({'gorn'}, StdModule.say, {npcHandler = npcHandler, text = "Always concerned with his profit. What a loss! He was adventuring with baxter in the old days."})
+keywordHandler:addKeyword({'baxter'}, StdModule.say, {npcHandler = npcHandler, text = "He was an adventurer once."})
+keywordHandler:addKeyword({'lynda'}, StdModule.say, {npcHandler = npcHandler, text = "Before she became a priest she won the Miss Tibia contest three times in a row."})
+keywordHandler:addKeyword({'mcronald'}, StdModule.say, {npcHandler = npcHandler, text = "Peaceful farmers."})
+keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, text = "A fine game to hunt. But be careful, he cheats!"})
+keywordHandler:addKeyword({'muriel'}, StdModule.say, {npcHandler = npcHandler, text = "Bah, go away with these sorcerer tricks. Only cowards use tricks."})
+keywordHandler:addKeyword({'oswald'}, StdModule.say, {npcHandler = npcHandler, text = "What an idiot."})
+keywordHandler:addKeyword({'quentin'}, StdModule.say, {npcHandler = npcHandler, text = "I will never understand this peaceful monks and priests."})
+keywordHandler:addKeyword({'sam'}, StdModule.say, {npcHandler = npcHandler, text = "He has the muscles, but lacks the guts."})
+keywordHandler:addKeyword({'tibianus'}, StdModule.say, {npcHandler = npcHandler, text = "Hail to our King!"})
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings, |PLAYERNAME|. What do you want?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Be careful on your journeys.")
