@@ -27,7 +27,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		
 		player:setStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur, 1)
 		player:addItem(8204, 1)
-		toPosition:sendMagicEffect(CONST_ME_YELLOWRINGS)
+		toPosition:sendMagicEffect(CONST_ME_YELLOW_RINGS)
 	end
 	return true
 end

@@ -333,7 +333,7 @@ local function creatureSayCallback(cid, type, msg)
 			local player = Player(cid)
 			local items = setNewTradeTable(getTable(player))
 			local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
-				if (ignoreCap == false and ((player:getFreeCapacity() / 100) < (ItemType(items[item].itemId):getWeight(amount) / 100) or inBackpacks and (player:getFreeCapacity() / 100) < ((ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight() / 100)))) then
+				if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 					return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 				end
 				if items[item].buyPrice <= player:getMoney() then

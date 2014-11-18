@@ -101,11 +101,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		weight = weight + ItemType(reward:getId()):getWeight()
 	end
 
-	weight = weight / 100
-
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
-		if (player:getFreeCapacity() / 100) < weight then
-			player:sendCancelMessage('You have found ' .. result .. ' weighing ' .. string.format('%.2f', weight) .. ' oz. You have no capacity.')
+		if player:getFreeCapacity() < weight then
+			player:sendCancelMessage('You have found ' .. result .. ' weighing ' .. string.format('%.2f', (weight / 100)) .. ' oz. You have no capacity.')
 		else
 			player:sendCancelMessage('You have found ' .. result .. ', but you have no room to take it.')
 		end

@@ -9,7 +9,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:say("The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY)
 		elseif Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) == 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, 6)
-			toPosition:sendMagicEffect(CONST_ME_YELLOWRINGS)
+			toPosition:sendMagicEffect(CONST_ME_YELLOW_RINGS)
 			Game.createMonster('the keeper', {x = 33171, y = 31058, z = 11})
 			Position({x = 33171, y = 31058, z = 11}):sendMagicEffect(CONST_ME_TELEPORT)
 			addEvent(revertKeeperstorage, 60 * 1000)

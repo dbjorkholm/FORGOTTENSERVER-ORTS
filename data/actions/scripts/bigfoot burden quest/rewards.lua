@@ -4,7 +4,7 @@ local rewards = {
 		bossName = 'Deathstrike',
 		items = {
 			{rand = true, itemId = {18396, 18501, 18502, 18503}},
-			{itemId = 18402},
+			{itemId = 18402, count = 750},
 			{itemId = 18396},
 			{itemId = 2160, count = 3},
 			{itemId = 18415, count = 7},
@@ -18,7 +18,7 @@ local rewards = {
 		bossName = 'Gnomevil',
 		items = {
 			{rand = true, itemId = {18505, 18506, 18507}},
-			{itemId = 18407},
+			{itemId = 18407, count = 750},
 			{itemId = 18396},
 			{itemId = 2160, count = 4},
 			{itemId = 18413, count = 10},
