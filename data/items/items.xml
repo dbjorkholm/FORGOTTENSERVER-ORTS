@@ -8985,6 +8985,8 @@
 	</item>
 	<item id="5730" name="" />
 	<item id="5731" article="a" name="hole">
+		<attribute key="decayTo" value="22674" />
+		<attribute key="duration" value="20" />
 		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="5732" article="a" name="closed door">
@@ -30154,6 +30156,7 @@
 	<item id="22670" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="22674" name="sand" />
 	<item id="22696" article="a" name="cake backpack">
 		<attribute key="weight" value="1800" />
 		<attribute key="containerSize" value="20" />
