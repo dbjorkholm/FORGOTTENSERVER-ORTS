@@ -294,6 +294,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if portal then
 			portal:setActionId(50126)
 		end
+	elseif itemEx.itemid == 22674 then
+		if not player:removeItem(5091, 1) then
+			return false
+		end
+
+		targetItem:transform(5731)
+		targetItem:decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 	else
 		return false
 	end

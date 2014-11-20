@@ -24,7 +24,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		targetItem:decay()
 	elseif itemEx.itemid == 231 or itemEx.itemid == 9059 then
 		local rand = math.random(100)
-		if itemEx.actionid  == 100 and rand <= 20 then
+		if itemEx.actionid == 100 and rand <= 20 then
 			targetItem:transform(489)
 			targetItem:decay()
 		elseif rand == 1 then
@@ -46,12 +46,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		targetItem:transform(469)
 		addEvent(revertHole, 30 * 1000, toPosition)
 	-- Gravedigger Quest
-	elseif itemEx.aid == 4654 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission49) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission50) < 1 then
+	elseif itemEx.actionid == 4654 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission49) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission50) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found a piece of the scroll. You pocket it quickly.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
 		player:setStorageValue(Storage.GravediggerOfDrefia.Mission50, 1)
-	elseif itemEx.aid == 4668 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission67) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission68) < 1 then
+	elseif itemEx.actionid == 4668 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission67) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission68) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'A torn scroll piece emerges. Probably gnawed off by rats.')
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:addItem(21250, 1)
@@ -60,7 +60,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	elseif itemEx.actionid == 50118 then
 		local position = Position(32717, 31492, 11)
 		if Tile(position):getItemById(7131) then
-			Game.createItem(8749, 1, Position(32717, 31492, 11))
+			Game.createItem(8749, 1, position)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	elseif itemEx.itemid == 8749 then
@@ -104,6 +104,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			toPosition:sendMagicEffect(CONST_ME_HITAREA)
 			addEvent(removeRemains, 60000, toPosition)
 		end
+	elseif itemEx.itemid == 22674 then
+		if not player:removeItem(5091, 1) then
+			return false
+		end
+
+		targetItem:transform(5731)
+		targetItem:decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 	end
 	return true
 end
