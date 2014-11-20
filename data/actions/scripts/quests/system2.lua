@@ -322,6 +322,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	local result = ''
+	local weight = 0
 	if reward then
 		local ret = ItemType(reward:getId())
 		if ret:isRune() then
@@ -342,7 +343,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			reward:setText(items[1].text)
 		end
 
-		weight = weight + ret:getWeight(reward:getCount())
+		weight = ret:getWeight(reward:getCount())
 	else
 		if size > 8 then
 			reward = Game.createItem(1988, 1)
