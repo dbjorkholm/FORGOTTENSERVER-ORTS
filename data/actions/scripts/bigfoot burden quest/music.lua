@@ -1,11 +1,11 @@
 local cToneStorages = {
-	Storage.MelodyTone1,
-	Storage.MelodyTone2,
-	Storage.MelodyTone3,
-	Storage.MelodyTone4,
-	Storage.MelodyTone5,
-	Storage.MelodyTone6,
-	Storage.MelodyTone7
+	Storage.BigfootBurden.MelodyTone1,
+	Storage.BigfootBurden.MelodyTone2,
+	Storage.BigfootBurden.MelodyTone3,
+	Storage.BigfootBurden.MelodyTone4,
+	Storage.BigfootBurden.MelodyTone5,
+	Storage.BigfootBurden.MelodyTone6,
+	Storage.BigfootBurden.MelodyTone7
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
