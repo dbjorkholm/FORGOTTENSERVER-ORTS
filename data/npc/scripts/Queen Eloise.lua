@@ -79,7 +79,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, "yes") then
 			local player = Player(cid)
-			if player:getStorageValue(Storage.Promotion) == 1 then
+			if player:isPromoted() then
 				npcHandler:say('You are already promoted.', cid)
 			elseif player:getLevel() < 20 then
 				npcHandler:say('You need to be at least level 20 in order to be promoted.', cid)
@@ -87,7 +87,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('You do not have enough money.', cid)
 			elseif player:isPremium() then
 				npcHandler:say("Congratulations! You are now promoted.", cid)
-				player:setVocation(Vocation(player:getVocation():getPromotionId()))
+				player:setVocation(Vocation(player:getVocation():getPromotion():getId()))
 				player:removeMoney(20000)
 			else
 				npcHandler:say("You need a premium account in order to promote.", cid)

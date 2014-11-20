@@ -165,7 +165,7 @@ if Modules == nil then
 			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			else
-				player:setVocation(Vocation(player:getVocation():getPromotionId()))
+				player:setVocation(Vocation(player:getVocation():getPromotion():getId()))
 				npcHandler:say(parameters.text, cid)
 			end
 		else

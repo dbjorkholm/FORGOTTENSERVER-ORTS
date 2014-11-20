@@ -9,12 +9,12 @@ function onThink()				npcHandler:onThink()					end
 
 keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, text = "I heard he is some scary magician or so."})
 
-local travelNode = keywordHandler:addKeyword({'east'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the east end of Port Hope for free?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = Position(32679, 32777, 7) })
+local travelNode = keywordHandler:addKeyword({'west'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the west end of Port Hope for 7 gold?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 7, destination = Position(32558, 32780, 7) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Maybe another time.'})
 
-local travelNode = keywordHandler:addKeyword({'center'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the centre of Port Hope for free?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 0, destination = Position(32628, 32771, 7) })
+local travelNode = keywordHandler:addKeyword({'centre'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the centre of Port Hope for 7 gold?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 7, destination = Position(32628, 32771, 7) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Maybe another time.'})
 
 local function creatureSayCallback(cid, type, msg)

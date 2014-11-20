@@ -800,7 +800,8 @@ Storage = {
 		InteriorDecorator = 50568,
 		DeathOnStrike = 50569,
 		FallOfTheFallen = 50570,
-		DiplomaticImmunity = 50571
+		DiplomaticImmunity = 50571,
+		FountainOfLife = 50572
 	},
 
 	-- Promotion Storage cannot be changed, it is set in source code

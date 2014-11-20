@@ -5,6 +5,7 @@ function playerExists(name)
 		result.free(resultId)
 		return true
 	end
+	return false
 end
 
 function isValidMoney(money)
@@ -297,6 +298,16 @@ function Player.getCookiesDelivered(self)
 	return amount
 end
 
+function Player.isPromoted(self)
+	local vocation = self:getVocation()
+	if vocation:getId() == 0
+			or vocation:getPromotion():getId() == 0 then
+		return true
+	end
+
+	return false
+end
+
 -- Tile --
 function Tile.relocateTo(self, toPosition)
 	if self:getPosition() == toPosition then
@@ -342,9 +353,4 @@ function Vocation.getBase(self)
 		demotion = tmp
 	end
 	return self
-end
-
-function Vocation.getPromotionId(self)
-	local promotion = self:getPromotion()
-	return promotion and promotion:getId() or 0
 end
