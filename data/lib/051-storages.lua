@@ -789,6 +789,13 @@ Storage = {
 		LostMinesCrystal = 50255
 	},
 
+	Diapason = {
+		Lyre = 500,
+		LyreTimer = 501,
+		Edala = 502,
+		EdalaTimer = 503
+	},
+
 	-- Achievement storages
 	Achievements = {
 		PotionAddict = 50562,

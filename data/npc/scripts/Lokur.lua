@@ -320,15 +320,14 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'ticket') then
 		if player:getStorageValue(Storage.wagonTicket) < os.time() then
 			npcHandler:say("Do you want to purchase a weekly ticket for the ore wagons? With it you can travel freely and swiftly through Kazordoon for one week. 250 gold only. Deal?", cid)
-			npcHandler.topic[cid] = 1
+			npcHandler.topic[cid] = 23
 		else
 			npcHandler:say("Your weekly ticket is still valid. Would be a waste of money to purchase a second one", cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'yes') then
-		if npcHandler.topic[cid] == 1 then
-			if player:getMoney() >= 250 then
-				player:removeMoney(250)
+		if npcHandler.topic[cid] == 23 then
+			if player:removeMoney(250) then
 				player:setStorageValue(Storage.wagonTicket, os.time() + 7 * 24 * 60 * 60)
 				npcHandler:say("Here is your stamp. It can't be transferred to another person and will last one week from now. You'll get notified upon using an ore wagon when it isn't valid anymore.", cid)
 			else
@@ -336,7 +335,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif npcHandler.topic[cid] == 1 then
+	elseif npcHandler.topic[cid] == 23 then
 		if msgcontains(msg, 'no') then
 			npcHandler:say("No then.", cid)
 			npcHandler.topic[cid] = 0
