@@ -15,6 +15,8 @@
 	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
+	<movevent event="StepIn" actionid="50241" script="rookgaard/premiumbridge.lua"/>
+	<movevent event="StepIn" actionid="50240" script="rookgaard/levelbridge.lua"/>
 
 	<!-- Yalahar Demons -->
 	<movevent event="StepIn" fromaid="4244" toaid ="4245" script="others/yalaharDemons.lua"/>
