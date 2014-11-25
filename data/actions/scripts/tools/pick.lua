@@ -115,7 +115,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	elseif itemEx.itemid == 9025 and itemEx.actionid == 101 then
 		targetItem:transform(392)
 		targetItem:decay()
-		toPosition:sendMagicEffect(CONT_ME_POFF)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 	 -- The Hidden City of Beregar Quest
 	elseif itemEx.actionid == 50090 then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then

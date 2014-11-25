@@ -37,7 +37,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local wall = config[item.uid]
 	removeWall(wall.position)
 	if wall.revert then
-		addEvent(revertWall, config.time * 1000, wall.position, position)
+		addEvent(revertWall, config.time * 1000, wall.position, toPosition)
 	end
 	Item(item.uid):transform(1946)
 	return true

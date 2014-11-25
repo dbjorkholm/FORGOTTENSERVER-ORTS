@@ -239,3 +239,7 @@ A Father's Burden Quest, UID: 3500-3505
 Rookgard levers aid 50239
 Rookgard level2check tiles aid 50240
 Rookgard premiumcheck tiles aid 50241
+
+Draconia Quest:
+	AID: 4246-4253
+	UID: 4006-4008

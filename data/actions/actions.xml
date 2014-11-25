@@ -18,6 +18,9 @@
 	<action itemid="7502" script="what a foolish quest/disguise.lua" />
 	<action itemid="8187" script="what a foolish quest/watch.lua" />
 
+	<!-- Draconia Quest -->
+	<action fromaid="4249" toaid="4250" script="draconia quest/walls.lua"/>
+
 	<!-- Sea of Light Quest -->
 	<action itemid="10614" script="sea of light/rareCrystal.lua" />
 	<action itemid="10615" script="sea of light/collectorCorpse.lua" />

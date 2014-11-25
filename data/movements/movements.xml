@@ -7,6 +7,13 @@
 	<!-- What a foolish Quest -->
 	<movevent event="StepIn" actionid="4201" script="what a foolish quest/destroypies.lua"/>
 
+	<!-- Draconia Quest -->
+	<movevent event="StepIn" actionid="4246" script="draconia quest/escape.lua"/>
+	<movevent event="StepIn" fromaid="4247" toaid="4248" script="draconia quest/fall.lua"/>
+	<movevent event="StepIn" fromaid="4251" toaid="4252" script="draconia quest/walls.lua"/>
+	<movevent event="StepOut" fromaid="4251" toaid="4252" script="draconia quest/walls.lua"/>
+	<movevent event="StepIn" actionid="4253" script="draconia quest/exit.lua"/>
+
 	<!-- Rookgaard -->
 	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>
 	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua"/>

@@ -12,6 +12,6 @@ function onStepIn(creature, item, position, fromPosition)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(position)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	player:sendTextMessage(MESSAGE_STATUS_SMALL, 'Only premum users have access to this area.')
+	player:sendTextMessage(MESSAGE_STATUS_SMALL, 'Only premium users have access to this area.')
 	return true
 end
