@@ -121,14 +121,13 @@ function Item.setDescription(self, description)
 	end
 end
 
-function Item.setUniqueId(self, uid)
-	if type(uid) ~= 'number' or uid < 0 or uid > 65535 then
-		uid = 0
+function Item.setUniqueId(self, uniqueId)
+	if type(uniqueId) ~= 'number' or uniqueId < 0 or uniqueId > 65535 then
+		return false
 	end
 
-	self:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, uid)
+	self:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, uniqueId)
 end
-
 
 -- Party --
 function Party.getVocationCount(self)

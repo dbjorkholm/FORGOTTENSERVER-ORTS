@@ -834,6 +834,7 @@ Storage = {
 }
 
 GlobalStorage = {
+	FuryGates = 100,
 	TheirMastersVoice = {
 		CurrentServantWave = 984,
 		ServantsKilled = 985

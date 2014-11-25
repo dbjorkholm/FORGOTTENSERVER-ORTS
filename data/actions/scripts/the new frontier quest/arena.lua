@@ -32,12 +32,12 @@ end
 
 local function clearArena()
 	local spectators = Game.getSpectators(Position(33063, 31034, 3), false, false, 10, 10, 10, 10)
-	local kickPosition = Position(33049, 31017, 2)
+	local exitPosition = Position(33049, 31017, 2)
 	for i = 1, #spectators do
 		local spectator = spectators[i]
 		if spectator:isPlayer() then
-			spectator:teleportTo(kickPosition)
-			kickPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			spectator:teleportTo(exitPosition)
+			exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		else
 			spectator:remove()
 		end
