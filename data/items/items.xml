@@ -976,19 +976,19 @@
 	<item fromid="1710" toid="1713" article="a" name="wardrobe">
 		<attribute key="containerSize" value="6" />
 	</item>
-	<item id="1714" name="drawers">
+	<item id="1714" name="chest of drawers">
 		<attribute key="rotateTo" value="1717" />
 		<attribute key="containerSize" value="10" />
 	</item>
-	<item id="1715" name="drawers">
+	<item id="1715" name="chest of drawers">
 		<attribute key="rotateTo" value="1714" />
 		<attribute key="containerSize" value="10" />
 	</item>
-	<item id="1716" name="drawers">
+	<item id="1716" name="chest of drawers">
 		<attribute key="rotateTo" value="1715" />
 		<attribute key="containerSize" value="10" />
 	</item>
-	<item id="1717" name="drawers">
+	<item id="1717" name="chest of drawers">
 		<attribute key="rotateTo" value="1716" />
 		<attribute key="containerSize" value="10" />
 	</item>
@@ -6587,45 +6587,28 @@
 	<item fromid="3122" toid="3127" article="a" name="dead dragon" />
 	<item id="3128" article="a" name="dead human">
 		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="3129" />
-		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3129" article="a" name="dead human">
-		<attribute key="containerSize" value="8" />
-		<attribute key="decayTo" value="3130" />
-		<attribute key="duration" value="900" />
+		<attribute key="containerSize" value="5" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="3130" article="a" name="dead human">
-		<attribute key="weight" value="120000" />
-		<attribute key="decayTo" value="3131" />
-		<attribute key="duration" value="30" />
+	<item id="3130" article="a" name="corpse">
+		<attribute key="weight" value="50000" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="3131" article="a" name="dead human">
-		<attribute key="weight" value="120000" />
-		<attribute key="decayTo" value="3132" />
-		<attribute key="duration" value="30" />
+	<item id="3131" article="a" name="corpse">
+		<attribute key="weight" value="30000" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="3132" article="a" name="dead human">
-		<attribute key="weight" value="120000" />
-		<attribute key="decayTo" value="3133" />
-		<attribute key="duration" value="30" />
-		<attribute key="corpseType" value="blood" />
+	<item id="3132" article="a" name="skeleton">
+		<attribute key="weight" value="15000" />
 	</item>
-	<item id="3133" article="a" name="dead human">
-		<attribute key="weight" value="60000" />
-		<attribute key="decayTo" value="3134" />
-		<attribute key="duration" value="30" />
-		<attribute key="corpseType" value="blood" />
+	<item id="3133" article="a" name="skeleton">
+		<attribute key="weight" value="10000" />
 	</item>
-	<item id="3134" article="a" name="dead human">
-		<attribute key="weight" value="60000" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="600" />
-		<attribute key="corpseType" value="blood" />
+	<item id="3134" article="" name="some bones">
+		<attribute key="weight" value="5000" />
 	</item>
 	<item fromid="3135" toid="3136" article="a" name="ladder">
 		<attribute key="floorchange" value="down" />
@@ -11888,7 +11871,7 @@
 		<attribute key="weight" value="800" />
 	</item>
 	<item fromid="7160" toid="7161" article="a" name="frozen chest" />
-	<item id="7162" name="frozen drawers" />
+	<item id="7162" name="frozen chest of drawers" />
 	<item fromid="7163" toid="7166" article="a" name="frozen chair" />
 	<item fromid="7167" toid="7168" article="a" name="frozen pendulum clock" />
 	<item fromid="7169" toid="7170" article="a" name="frozen trough" />
