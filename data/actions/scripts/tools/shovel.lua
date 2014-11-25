@@ -70,7 +70,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			Tile(Position(32699, 31494, 11)):getItemById(8642):setActionId(50119)
 		end
-	elseif isInArray({50234, 50235, 50236}, itemEx.actionid) then
+	elseif isInArray({9632, 20230}, itemEx.itemid) then
 		if player:getStorageValue(Storage.SwampDiggingTimeout) >= os.time() then
 			return false
 		end

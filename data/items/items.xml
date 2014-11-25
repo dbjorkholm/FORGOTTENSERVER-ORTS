@@ -16779,8 +16779,6 @@
 	<item fromid="9626" toid="9630" article="an" name="old carpet" />
 	<item id="9631" article="an" name="metal piece" />
 	<item id="9632" name="swamp">
-		<attribute key="type" value="trashholder" />
-		<attribute key="effect" value="greenbubble" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
 	<item id="9633" name="the dust of Boreth">
@@ -26586,8 +26584,6 @@
 	<item fromid="20223" toid="20225" article="a" name="winch" />
 	<item fromid="20226" toid="20227" article="an" name="elevator" />
 	<item id="20230" name="swamp">
-		<attribute key="type" value="trashholder" />
-		<attribute key="effect" value="greenbubble" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
 	<item fromid="20243" toid="20246" article="a" name="cord" />
