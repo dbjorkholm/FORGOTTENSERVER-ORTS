@@ -337,7 +337,7 @@
 
 	<!-- Sams Old Backpack Quest -->
 	<action actionid="42535" script="sam old backpack/door.lua"/>
-	
+
 	<!-- Tibia Tales Quest -->
 	<action itemid="7496" script="tibia tales quest/UltimateBoozebeerBottle.lua"/>
 	<action itemid="8205" script="tibia tales quest/exterminatorFlask.lua"/>
@@ -369,6 +369,8 @@
 	<action actionid="2001" script="quests/system2.lua"/>
 	<action itemid="4863" script="quests/ectoplasmContainer.lua"/>
 	<action itemid="7494" script="quests/holyWater.lua"/>
+	<action actionid="5632" script="quests/serpentineTowerTorch.lua"/>
+	<action actionid="5633" script="quests/serpentineTowerLever.lua"/>
 
 	<!-- Tools -->
 	<action itemid="8717" script="tools/lockPick.lua"/>

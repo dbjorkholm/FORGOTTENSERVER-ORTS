@@ -1,3 +1,6 @@
+-- Players cannot throw items on teleports if set to true
+local blockTeleportTrashing = false
+
 function Player:onBrowseField(position)
 	return true
 end
@@ -85,9 +88,8 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
-	local tile = toPosition:getTile()
-	if tile then
-		local thing = tile:getItemByType(ITEM_TYPE_TELEPORT)
+	if blockTeleportTrashing and toPosition.x ~= CONTAINER_POSITION then
+		local thing = Tile(toPosition):getItemByType(ITEM_TYPE_TELEPORT)
 		if thing then
 			self:sendCancelMessage('Sorry, not possible.')
 			self:getPosition():sendMagicEffect(CONST_ME_POFF)
@@ -103,7 +105,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		return false
 	end
 
-	if fromPosition.x == 65535 and toPosition.x == 65535
+	if fromPosition.x == CONTAINER_POSITION and toPosition.x == CONTAINER_POSITION
 			and item:getId() == 8710 and self:getItemCount(8710) == 2 and self:getStorageValue(Storage.RookgaardTutorialIsland.cockroachLegsMsgStorage) ~= 1 then
 		self:sendTextMessage(MESSAGE_INFO_DESCR, 'Well done, you have enough cockroach legs! You should head back to Santiago with them. Climb the ladder to the north to exit.')
 		self:setStorageValue(Storage.RookgaardTutorialIsland.cockroachLegsMsgStorage, 1)

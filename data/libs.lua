@@ -5,6 +5,7 @@ dofile('data/lib/001-string.lua')
 dofile('data/lib/002-tables.lua')
 
 dofile('data/lib/050-functions.lua')
+dofile('data/lib/055-teleport_item_destinations.lua')
 
 dofile('data/lib/demonOakQuest.lua')
 dofile('data/lib/killingInTheNameOfQuest.lua')

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Item Teleport Destinations -->
+	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/itemteleports.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="8058" script="others/itemteleports.lua"/>
+
 	<!-- allowMovement -->
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua" />
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua" />
@@ -57,6 +61,9 @@
 	<movevent event="StepIn" uniqueid="50022" script="the queen of the banshees quest/theLastFlame.lua" />
 
 	<!--- Others -->
+	<!-- Serpentine Tower - White Pearl Quest -->
+	<movevent event="StepIn" fromaid="5630" toaid="5631" script="others/ankrahmun/whitepearlquest.lua"/>
+
 	<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>
 	<movevent event="StepIn" uniqueid="9239" script="others/GrayBeachVortex.lua"/>
 	<movevent event="StepIn" fromaid="50025" toaid="50026" script="others/thaislighthousequest.lua" />

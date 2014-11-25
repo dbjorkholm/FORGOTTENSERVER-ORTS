@@ -6,7 +6,7 @@ local config = {
 	[9037] = {flamePosition = Position(33276, 32553, 14), toPosition = Position(33271, 32553, 14)},
 	[9038] = {flamePosition = Position(33234, 32692, 13), toPosition = Position(33234, 32687, 13)},
 	[9039] = {flamePosition = Position(33135, 32683, 12), toPosition = Position(33130, 32683, 12)},
-	[9040] = {flamePosition = Position(33162, 32831, 10), toPosition = Position(33156, 32832, 10)}
+	[9040] = {flamePosition = Position(33162, 32831, 10), toPosition = Position(33158, 32832, 10)}
 }
 
 function onAddItem(moveitem, tileitem, position)
@@ -20,15 +20,10 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):remove(1)
-	position:sendMagicEffect(CONST_ME_FIREAREA)
+	Item(moveitem.uid):remove()
+	position:sendMagicEffect(CONST_ME_HITBYFIRE)
 
-	local creature = Tile(targetCoalBasin.flamePosition):getTopCreature()
-	if not creature or not creature:isPlayer() then
-		return true
-	end
-
-	creature:teleportTo(targetCoalBasin.toPosition)
+	Tile(targetCoalBasin.flamePosition):relocateTo(targetCoalBasin.toPosition)
 	targetCoalBasin.toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end
