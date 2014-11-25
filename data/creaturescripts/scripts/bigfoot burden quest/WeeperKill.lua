@@ -13,6 +13,21 @@ local barrierPositions = {
 	Position(33098, 31979, 11)
 }
 
+local function clearArena()
+	local spectators = Game.getSpectators(Position(33114, 31956, 11), false, false, 10, 10, 13, 13)
+	local exitPosition = Position(33011, 31937, 11)
+	for i = 1, #spectators do
+		local spectator = spectators[i]
+		if spectator:isPlayer() then
+			spectator:teleportTo(exitPosition)
+			exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			spectator:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You were teleported out by the gnomish emergency device.')
+		else
+			spectator:remove()
+		end
+	end
+end
+
 -- This script is unfinished after conversion, but I doubt that it was working as intended before
 -- 'last' can never be true
 function onKill(creature, target)
@@ -71,14 +86,6 @@ function onKill(creature, target)
 	Game.setStorageValue(GlobalStorage.Weeper, 1)
 	addEvent(Game.setStorageValue, 30 * 60 * 1000, GlobalStorage.Weeper, 0)
 	Game.createMonster('gnomevil', Position(33114, 31953, 11))
-	addEvent(teleportAllPlayersFromArea, 6 * 20 * 1000 + 30 * 60 * 1000, {
-		{x = 33102, y = 31942, z = 11},
-		{x = 33130, y = 31970, z = 11}
-	}, {x = 33011, y = 31937, z = 11})
-
-	addEvent(removeBoss, 6 * 20 * 1000 + 30 * 60 * 1000, {
-		{x = 33102, y = 31942, z = 11},
-		{x = 33130, y = 31970, z = 11}
-	}, 'gnomevil')
+	addEvent(clearArena, 32 * 60 * 1000)
 	return true
 end

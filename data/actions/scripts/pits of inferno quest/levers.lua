@@ -30,7 +30,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	local leverCount = Game.getStorageValue(GlobalStorage.PitsOfInfernoLevers)
-	if leverCount == nil then
+	if not leverCount then
 		Game.setStorageValue(GlobalStorage.PitsOfInfernoLevers, 0)
 		return true
 	end

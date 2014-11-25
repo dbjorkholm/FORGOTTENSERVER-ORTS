@@ -61,10 +61,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			result = ret:getArticle() .. ' ' ..  ret:getName() .. ' (' .. reward:getSubType() .. ' charges)'
 		elseif ret:isStackable() and reward:getCount() > 1 then
 			result = reward:getCount() .. ' ' .. ret:getPluralName()
-		else
+		elseif ret:getArticle() ~= '' then
 			result = ret:getArticle() .. ' ' .. ret:getName()
+		else
+			result = ret:getName()
 		end
-		weight = weight + ret:getWeight(reward:getCount())
+		weight = ret:getWeight(reward:getCount())
 	else
 		if size > 20 then
 			reward = Game.createItem(item.itemid, 1)
@@ -79,26 +81,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			if reward:addItemEx(tmp) ~= RETURNVALUE_NOERROR then
 				print('[Warning] QuestSystem:', 'Could not add quest reward to container')
 			else
-				local ret = ', '
-				if i == size then
-					ret = ' and '
-				elseif i == 1 then
-					ret = ''
-				end
-				result = result .. ret
-
-				local ret = ItemType(tmp:getId())
-				if ret:isRune() then
-					result = result .. ret:getArticle() .. ' ' .. ret:getName() .. ' (' .. tmp:getSubType() .. ' charges)'
-				elseif ret:isStackable() and tmp:getCount() > 1 then
-					result = result .. tmp:getCount() .. ' ' .. ret:getPluralName()
-				else
-					result = result .. ret:getArticle() .. ' ' .. ret:getName()
-				end
-				weight = weight + ret:getWeight(tmp:getCount())
+				weight = weight + ItemType(tmp:getId()):getWeight(tmp:getCount())
 			end
 		end
-		weight = weight + ItemType(reward:getId()):getWeight()
+		local ret = ItemType(reward:getId())
+		result = ret:getArticle() .. ' ' .. ret:getName()
+		weight = weight + ret:getWeight()
 	end
 
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then

@@ -81,7 +81,7 @@ function onKill(creature, target)
 		end
 
 	elseif killedAmount < #positions and wave < 25 then
-		Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, killedAmount+ 1)
+		Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, killedAmount + 1)
 
 	elseif killedAmount == #positions and wave == 25 then
 		Game.createMonster('mad mage', magePositions[math.random(#magePositions)])

@@ -1,4 +1,17 @@
-local exitPosition = Position(33053, 31022, 7)
+local exitPosition = {Position(33053, 31022, 7), Position(33049, 31017, 2)}
+
+local function clearArena()
+	local spectators = Game.getSpectators(Position(33063, 31034, 3), false, false, 10, 10, 10, 10)
+	for i = 1, #spectators do
+		local spectator = spectators[i]
+		if spectator:isPlayer() then
+			spectator:teleportTo(exitPosition[2])
+			exitPosition[2]:sendMagicEffect(CONST_ME_TELEPORT)
+		else
+			spectator:remove()
+		end
+	end
+end
 
 function onKill(creature, target)
 	local targetMonster = target:getMonster()
@@ -12,8 +25,8 @@ function onKill(creature, target)
 
 	local spectators = Game.getSpectators(Position({x = 33063, y = 31034, z = 3}), false, true, 10, 10, 10, 10)
 	for _, spectator in ipairs(spectators) do
-		spectator:teleportTo(exitPosition)
-		exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+		spectator:teleportTo(exitPosition[1])
+		exitPosition[1]:sendMagicEffect(CONST_ME_TELEPORT)
 		spectator:say('You have won! As new champion take the ancient armor as reward before you leave.', TALKTYPE_MONSTER_SAY)
 		if spectator:getStorageValue(Storage.TheNewFrontier.Questline) == 25 then
 			-- Questlog: The New Frontier Quest 'Mission 09: Mortal Combat'
@@ -23,6 +36,6 @@ function onKill(creature, target)
 	end
 
 	Game.setStorageValue(Storage.TheNewFrontier.Mission09, -1)
-	clearArena({x = 33053, y = 31024, z = 3}, {x = 33074, y = 31044, z = 3})
+	clearArena()
 	return true
 end

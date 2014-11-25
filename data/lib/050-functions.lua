@@ -71,55 +71,6 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
-function teleportAllPlayersFromArea(fromArea, toPos)
-	for x = fromArea[1].x, fromArea[2].x do
-		for y = fromArea[1].y, fromArea[2].y do
-			for z = fromArea[1].z, fromArea[2].z do
-				local creature = Tile(Position(x, y, z)):getTopCreature()
-				if creature and creature:isPlayer() then
-					creature:teleportTo(toPos)
-					toPos:sendMagicEffect(CONST_ME_TELEPORT)
-					creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You were teleported out by the gnomish emergency device.")
-				end
-			end
-		end
-	end
-	return true
-end
-
-function removeBoss(fromArea, bossName)
-	for x = fromArea[1].x, fromArea[2].x do
-		for y = fromArea[1].y, fromArea[2].y do
-			for z = fromArea[1].z, fromArea[2].z do
-				local creature = Tile(Position(x, y, z)):getTopCreature()
-				if creature and creature:isMonster() and creature:getName():lower() == bossName:lower() then
-					creature:remove()
-				end
-			end
-		end
-	end
-end
-
-function clearArena(fromPos, toPos)
-	local exitPosition = Position(33049, 31017, 2)
-	for x = fromPos.x, toPos.x do
-		for y = fromPos.y, toPos.y do
-			for z = fromPos.z, toPos.z do
-				local creature = Tile(x, y, z):getTopCreature()
-				if creature then
-					if creature:isPlayer() then
-						creature:teleportTo(exitPosition)
-						exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
-					else
-						creature:remove()
-					end
-				end
-			end
-		end
-	end
-end
-
-
 -- Game --
 function Game.getPlayersByIPAddress(ip, mask)
 	if not mask then mask = 0xFFFFFFFF end
@@ -168,6 +119,14 @@ function Item.setDescription(self, description)
 	else
 		self:removeAttribute(ITEM_ATTRIBUTE_DESCRIPTION)
 	end
+end
+
+function Item.setUniqueId(self, uid)
+	if type(uid) ~= 'number' or uid < 0 or uid > 65535 then
+		uid = 0
+	end
+
+	self:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, uid)
 end
 
 

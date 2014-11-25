@@ -9,6 +9,21 @@ local function transformTeleport()
 	teleportItem:transform(18463)
 end
 
+local function clearArena()
+	local spectators = Game.getSpectators(Position(33088, 31911, 12), false, false, 12, 12, 12, 12)
+	local exitPosition = Position(32993, 31912, 12)
+	for i = 1, #spectators do
+		local spectator = spectators[i]
+		if spectator:isPlayer() then
+			spectator:teleportTo(exitPosition)
+			exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+			spectator:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You were teleported out by the gnomish emergency device.')
+		else
+			spectator:remove()
+		end
+	end
+end
+
 function onKill(creature, target)
 	local targetMonster = target:getMonster()
 	if not targetMonster then
@@ -29,14 +44,6 @@ function onKill(creature, target)
 	Game.createMonster('abyssador', Position(33086, 31907, 12))
 
 	addEvent(transformTeleport, 30 * 60 * 1000)
-	addEvent(teleportAllPlayersFromArea,6 * 20 * 1000 + 30 * 60 * 1000, {
-		{x = 33078, y = 31900, z = 12},
-		{x = 33100, y = 31922, z = 12}
-	}, {x = 32993, y = 31912, z = 12})
-
-	addEvent(removeBoss, 6 * 20 * 1000 + 30 * 60 * 1000, {
-		{x = 33078, y = 31900, z = 12},
-		{x = 33100, y = 31922, z = 12}
-	}, 'abyssador')
+	addEvent(clearArena, 32 * 60 * 1000)
 	return true
 end

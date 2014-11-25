@@ -30,6 +30,20 @@ local function summonBoss(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
+local function clearArena()
+	local spectators = Game.getSpectators(Position(33063, 31034, 3), false, false, 10, 10, 10, 10)
+	local kickPosition = Position(33049, 31017, 2)
+	for i = 1, #spectators do
+		local spectator = spectators[i]
+		if spectator:isPlayer() then
+			spectator:teleportTo(kickPosition)
+			kickPosition:sendMagicEffect(CONST_ME_TELEPORT)
+		else
+			spectator:remove()
+		end
+	end
+end
+
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local player1 = Tile(Position({x = 33080, y = 31014, z = 2})):getTopCreature()
 	if not(player1 and player1:isPlayer()) then
@@ -52,7 +66,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	Game.setStorageValue(Storage.TheNewFrontier.Mission09, 1)
-	addEvent(clearArena, 30 * 60 * 1000, {x = 33053, y = 31024, z = 3}, {x = 33074, y = 31044, z = 3})
+	addEvent(clearArena, 30 * 60 * 1000)
 	player1:teleportTo(config.teleportPositions[1])
 	player1:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player2:teleportTo(config.teleportPositions[2])
