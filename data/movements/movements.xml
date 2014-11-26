@@ -63,7 +63,10 @@
 	<!--- Others -->
 	<!-- Edron Troll Cave - Rope Quest -->
 	<movevent event="StepIn" actionid="4254" script="others/edronropequest.lua"/>
-	
+
+	<!-- Outlaw Camp - Bright Sword Quest entrance -->
+	<movevent event="StepIn" actionid="5634" script="others/brightswordentrance.lua"/>
+
 	<!-- Serpentine Tower - White Pearl Quest -->
 	<movevent event="StepIn" fromaid="5630" toaid="5631" script="others/ankrahmun/whitepearlquest.lua"/>
 

@@ -1,14 +1,17 @@
+local stonePosition = Position(33171, 31897, 8)
+local relocatePosition = Position(33171, 31898, 8)
+
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local tile = Tile(Position({ x = 33171 , y = 31897 , z = 8}))
+	local tile = Tile(Position(33171, 31897, 8))
 	if item.itemid == 1945 then
-		if tile:getItemById(1285) then
-			tile:getItemById(1285):remove()
+		local stoneItem = tile:getItemById(1285)
+		if stoneItem then
+			stoneItem:remove()
 			Item(item.uid):transform(1946)
-		else
-			Game.createItem(1285, 1, { x = 33171 , y = 31897 , z = 8})
 		end
 	else
-		Game.createItem(1285, 1, { x = 33171 , y = 31897 , z = 8})
+		tile:relocateTo(relocatePosition, true)
+		Game.createItem(1285, 1, stonePosition)
 		Item(item.uid):transform(1945)
 	end
 	return true

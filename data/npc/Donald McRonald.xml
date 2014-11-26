@@ -13,6 +13,6 @@
 			cheese,2696,5;
 			corncob,2686,3;
 			cucumber,8842,3;" />
-		<parameter key="shop_sellable" value="dead spider,3068,2;" />
+		<parameter key="shop_sellable" value="dead spider,2807,2;" />
 	</parameters>
 </npc>

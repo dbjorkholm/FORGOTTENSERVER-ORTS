@@ -252,3 +252,6 @@ Serpentine Tower (Lever):
 Edron Rope Quest:
 	aid: 4254
 	uid: 4009
+
+Bright Sword Quest:
+	entrance (aid): 5634

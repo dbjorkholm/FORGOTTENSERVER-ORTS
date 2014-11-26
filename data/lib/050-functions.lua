@@ -267,7 +267,7 @@ function Player.isPromoted(self)
 end
 
 -- Tile --
-function Tile.relocateTo(self, toPosition)
+function Tile.relocateTo(self, toPosition, pushMove)
 	if self:getPosition() == toPosition then
 		return false
 	end
@@ -284,7 +284,7 @@ function Tile.relocateTo(self, toPosition)
 					thing:moveTo(toPosition)
 				end
 			elseif thing:isCreature() then
-				thing:teleportTo(toPosition)
+				thing:teleportTo(toPosition, pushMove)
 			end
 		end
 	end
