@@ -248,3 +248,7 @@ Serpentine Tower (Torchbearer):
 	aid: 5632
 Serpentine Tower (Lever):
 	aid: 5633
+
+Edron Rope Quest:
+	aid: 4254
+	uid: 4009

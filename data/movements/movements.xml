@@ -61,6 +61,9 @@
 	<movevent event="StepIn" uniqueid="50022" script="the queen of the banshees quest/theLastFlame.lua" />
 
 	<!--- Others -->
+	<!-- Edron Troll Cave - Rope Quest -->
+	<movevent event="StepIn" actionid="4254" script="others/edronropequest.lua"/>
+	
 	<!-- Serpentine Tower - White Pearl Quest -->
 	<movevent event="StepIn" fromaid="5630" toaid="5631" script="others/ankrahmun/whitepearlquest.lua"/>
 

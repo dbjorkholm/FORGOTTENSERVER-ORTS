@@ -817,6 +817,7 @@ Storage = {
 	SwampDiggingTimeout = 50143,
 	HydraEggQuest = 320,
 	Dragonfetish = 504,
+	EdronRopeQuest = 505,
 	GhostShipQuest = 5556,
 	OrcKingGreeting = 83,
 	MarkwinGreeting = 258,
