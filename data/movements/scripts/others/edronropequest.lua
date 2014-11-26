@@ -9,6 +9,6 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'In this cave there is a rope. It once belonged to a wanderer who was stuck. Only take it if you\'re stuck as well.')
-	player:setStorageValue(Storage.EdronRopeQuest, os.time() + 15)
+	player:setStorageValue(Storage.EdronRopeQuest, os.time() + 30)
 	return true
 end
