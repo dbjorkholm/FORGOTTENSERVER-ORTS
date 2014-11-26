@@ -25608,7 +25608,7 @@
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
-	<item fromid="18531" toid="18534" name="stairs">
+	<item fromid="18530" toid="18535" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="18550" article="a" name="noble sword">
