@@ -165,6 +165,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	elseif itemEx.itemid == 12296 then
 		player:addItem(12295, 1)
 		player:say("The cracked part of the table lets you cut out a large chunk of wood with your pick.", TALKTYPE_MONSTER_SAY)
+	elseif itemEx.itemid == 22671 then
+		targetItem:transform(392)
+		targetItem:decay()
 	else
 		return false
 	end

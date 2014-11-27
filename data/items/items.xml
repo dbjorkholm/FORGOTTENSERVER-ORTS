@@ -30079,6 +30079,7 @@
 	<item id="22670" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="22671" name="dirt floor" />
 	<item id="22674" name="sand" />
 	<item id="22696" article="a" name="cake backpack">
 		<attribute key="weight" value="1800" />
