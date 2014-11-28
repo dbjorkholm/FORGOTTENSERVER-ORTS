@@ -255,3 +255,7 @@ Edron Rope Quest:
 
 Bright Sword Quest:
 	entrance (aid): 5634
+	
+Alawar's Vault Quest:
+	aid: 4210
+	uid: 9211-9214, 9230
