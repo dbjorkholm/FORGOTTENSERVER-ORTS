@@ -178,7 +178,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.BigfootBurden.Test, player:getStorageValue(Storage.BigfootBurden.Test) + 7)
 			npcHandler.topic[cid] = npcHandler.topic[cid] + 1
 		elseif npcHandler.topic[cid] == 32 then
-			npcHandler:say("Excellent! Well this concludes the test. Now let us see your result.", cid)
+			npcHandler:say("Excellent! Well this concludes the test. Now let us see your {result}.", cid)
 			player:setStorageValue(Storage.BigfootBurden.Test, player:getStorageValue(Storage.BigfootBurden.Test) + 7)
 			npcHandler.topic[cid] = npcHandler.topic[cid] + 1
 		else

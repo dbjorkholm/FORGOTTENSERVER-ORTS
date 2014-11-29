@@ -13,7 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if(msgcontains(msg, "warzones")) then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 20 then
 			npcHandler:say({
 				"There are three warzones. In each warzone you will find fearsome foes. At the end you'll find their mean master. The masters is well protected though. ...",
 				"Make sure to talk to our gnomish agent in there for specifics of its' protection. ...",
@@ -23,15 +23,15 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 1
 		end
 	elseif(msgcontains(msg, "job")) then
-		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 17 then
-			npcHandler:say("I am responsible for our war missions, to trade with seasoned soldiers and rewarding war heroes. You have to be rank 4 to enter the warzones.", cid)
+		if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 20 then
+			npcHandler:say("I am responsible for our war {missions}, to {trade} with seasoned soldiers and rewarding war {heroes}. You have to be rank 4 to enter the {warzones}.", cid)
 			npcHandler.topic[cid] = 2
 		end
 	elseif(msgcontains(msg, "heroes")) then
 		if(npcHandler.topic[cid] == 2) then
 			npcHandler:say({
 				"You can trade special spoils of war to get a permission to use the war teleporters to the area of the corresponding boss without need of mission crystals. ...",
-				"Which one would you like to trade: the deathstrike's snippet, gnomevil's hat or the abyssador lash?"
+				"Which one would you like to trade: the deathstrike's {snippet}, gnomevil's {hat} or the abyssador {lash}?"
 			}, cid)
 			npcHandler.topic[cid] = 3
 		end
@@ -61,8 +61,8 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "mission")) then
 		if(npcHandler.topic[cid] == 1) then
-			npcHandler:say("Fine, I grant you the permission to enter the warzones. Be warned though, this will be not a picnic. Better bring some friends with you. Bringing a lot of them sounds like a good idea.", cid)
-			player:setStorageValue(Storage.BigfootBurden.QuestLine, 18)
+			npcHandler:say("Fine, I grant you the permission to enter the {warzones}. Be warned though, this will be not a picnic. Better bring some friends with you. Bringing a lot of them sounds like a good idea.", cid)
+			-- player:setStorageValue(Storage.BigfootBurden.QuestLine, 21)
 			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 1)
 			npcHandler.topic[cid] = 0
 		end
