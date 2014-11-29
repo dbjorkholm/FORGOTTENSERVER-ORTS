@@ -7,6 +7,7 @@
 	<action itemid="8582" script="rookgaard/rookgaard tutorial island/branch.lua"/>
 	<action itemid="8583" script="rookgaard/rookgaard tutorial island/deadTreeBranch.lua"/>
 	<action uniqueid="50085" script="rookgaard/rookgaard tutorial island/zirellaDoor.lua"/>
+	<action actionid="50239" script="rookgaard/SewerLever.lua" />
 
 	<!-- What a foolish Quest -->
 	<action itemid="7478" script="what a foolish quest/flask.lua" />
