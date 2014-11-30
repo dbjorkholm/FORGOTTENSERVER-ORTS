@@ -9,13 +9,13 @@ local cToneStorages = {
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 12 then
+	if player:getStorageValue(Storage.BigfootBurden.QuestLine) == 14 then
 		local value = player:getStorageValue(Storage.BigfootBurden.MelodyStatus)
 		if player:getStorageValue(cToneStorages[value]) == item.uid then
 			player:setStorageValue(Storage.BigfootBurden.MelodyStatus, value + 1)
 			toPosition:sendMagicEffect(CONST_ME_FIREWORK_BLUE)
 			if value + 1 == 8 then
-				player:setStorageValue(Storage.BigfootBurden.QuestLine, 13)
+				player:setStorageValue(Storage.BigfootBurden.QuestLine, 15)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found your melody!")
 			end
 		else
