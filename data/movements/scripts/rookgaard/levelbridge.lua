@@ -1,3 +1,5 @@
+local failPosition = Position(32092, 32177, 6)
+
 function onStepIn(creature, item, position, fromPosition)
 	local player = creature:getPlayer()
 	if not player then
@@ -8,10 +10,8 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	position.y = position.y + 2
-	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	player:teleportTo(position)
-	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You need level 2 to get access to this area.')
+	player:teleportTo(failPosition)
+	failPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You need to be at least Level 2 in order to pass.')
 	return true
 end

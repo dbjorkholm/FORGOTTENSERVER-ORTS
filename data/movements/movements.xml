@@ -3,6 +3,7 @@
 	<!-- Item Teleport Destinations -->
 	<movevent event="AddItem" tileitem="1" itemid="1387" script="others/itemteleports.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="8058" script="others/itemteleports.lua"/>
+	<movevent event="AddItem" tileitem="1" fromaid="50240" toaid="50241" script="others/itemteleports.lua"/>
 
 	<!-- allowMovement -->
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua" />
@@ -28,6 +29,7 @@
 	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua"/>
 	<movevent event="StepIn" actionid="50241" script="rookgaard/premiumbridge.lua"/>
 	<movevent event="StepIn" actionid="50240" script="rookgaard/levelbridge.lua"/>
+	<movevent event="StepIn" fromaid="5635" toaid="5636" script="rookgaard/sword_of_fury.lua"/>
 
 	<!-- Yalahar Demons -->
 	<movevent event="StepIn" fromaid="4244" toaid ="4245" script="others/yalaharDemons.lua"/>

@@ -701,6 +701,8 @@ Storage = {
 		OutlawCampKey1 = 3301,
 		OutlawCampKey2 = 3302,
 		OutlawCampKey3 = 3303,
+
+		DoubletQuest = 64121
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8818,
@@ -879,5 +881,6 @@ GlobalStorage = {
 		Machine3 = 10007,
 		Machine4 = 10008
 	},
-	NaginataStone = 50058
+	NaginataStone = 50058,
+	SwordOfFury = 5635
 }

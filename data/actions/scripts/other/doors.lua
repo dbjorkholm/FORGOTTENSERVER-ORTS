@@ -7,7 +7,6 @@ local function isDoorLocked(keyId, position)
 
 	if unlockedDoors[keyId] then
 		for i = 1, #unlockedDoors[keyId] do
-			print(unlockedDoors[keyId][i].x)
 			if position == unlockedDoors[keyId][i] then
 				return false
 			end

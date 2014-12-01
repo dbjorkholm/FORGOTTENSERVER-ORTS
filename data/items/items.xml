@@ -51,7 +51,7 @@
 		<attribute key="duration" value="300" />
 		<attribute key="floorchange" value="down" />
 	</item>
-	<item id="405" name="wooden floor" />
+	<item id="405" article="a" name="loose board" />
 	<item id="406" name="white marble floor" />
 	<item id="407" name="black marble floor" />
 	<item fromid="408" toid="409" article="a" name="trapdoor">
@@ -20156,7 +20156,7 @@
 		<attribute key="decayTo" value="11756" />
 		<attribute key="duration" value="2" />
 	</item>
-	<item id="11759" name="branch" />
+	<item fromid="11759" toid="11760" article="a" name="branch" />
 	<item id="11773" article="a" name="bag of oriental spices">
 		<attribute key="description" value="Those spices were gathered all around the Tibian world." />
 		<attribute key="weight" value="1508" />
@@ -30079,7 +30079,7 @@
 	<item id="22670" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
-	<item id="22671" name="dirt floor" />
+	<item id="22671" name="muddy floor" />
 	<item id="22674" name="sand" />
 	<item id="22696" article="a" name="cake backpack">
 		<attribute key="weight" value="1800" />

@@ -167,6 +167,7 @@ Scale Armor Quest UID = 50076
 Isle of the Mists Quest UID = 50077
 Lone Medusa Quest UID = 50078
 First wand/rod storage = 50079
+
 Rook Santiago House Quest Coat UID = 50080
 Rook Santiago Cellar Snake Head Lever UID = 50081
 Rook Santiago Cellar Quest Torch Uid = 50082
@@ -259,3 +260,41 @@ Bright Sword Quest:
 Alawar's Vault Quest:
 	aid: 4210
 	uid: 9211-9214, 9230
+
+Sword Of Fury disappear:
+	aid: 5635, 5636
+
+Katana Quest (Rookgaard):
+	Key Corpse: 64110 (uid)
+	Katana Corpse: 64111 (uid)
+	Viking Helmet Corpse: 64112 (uid)
+	Door: 1002 (aid)
+	Lever: 5637 (aid)
+
+Bear Room Quest (Rookgaard):
+	Key Chest: 64113 (uid)
+	Lever: 5638
+	Reward Chests: 64114, 64115, 64116 (uid)
+
+Present Quest (Rookgaard): 64117 (uid)
+
+Captain Iglue Quest (Rookgaard): 64118 (uid)
+
+Combat Knife Quest (Rookgaard): 64119 (uid)
+
+Rapier Quest (Rookgaard): 64120 (uid)
+
+Double Quest: 5639 (aid)
+
+Dragon Corpse Quest (Rookgaard): 64122 (uid)
+
+Goblin Temple Quest (Rookgaard): 64123, 64124 (uid)
+
+Minotaur Hell Quest (Rookgaard): 64125, 64126, 64127 (uid)
+
+Brown Mushroom Quest (Rookgaard): 64128 (uid)
+
+Student Book Quest (Rookgaard): 64129 (uid)
+
+
+		
