@@ -1,16 +1,16 @@
 local destination = {
 	[4121] = {position = Position(32801, 31766, 9), storageValue = 1, needCrystal = true},
 	[3220] = {position = Position(32627, 31863, 11), storageValue = 1, needCrystal = true},
-	[3128] = {position = Position(33000, 31870, 13), storageValue = 16}, -- Crystal Grounds (Entrada)
-	[3129] = {position = Position(32795, 31762, 10), storageValue = 16}, -- Crystal Grounds (Salida)
-	[3130] = {position = Position(32864, 31844, 11), storageValue = 17}, -- Truffels Garden (Entrada)
-	[3131] = {position = Position(32803, 31746, 10), storageValue = 17}, -- Truffels Garden (Salida)
-	[3132] = {position = Position(32986, 31862, 9), storageValue = 18}, -- Gnomebase Alpha (Entrada)
-	[3133] = {position = Position(32796, 31781, 10), storageValue = 18}, -- Gnomebase Alpha (Salida)
-	[3134] = {position = Position(32959, 31953, 9), storageValue = 18}, -- Golems Workshop (Entrada)
-	[3135] = {position = Position(33001, 31915, 9), storageValue = 18}, -- Golems Workshop (Salida)
-	[3136] = {position = Position(32904, 31894, 13), storageValue = 19}, -- Golem (Entrada)
-	[3137] = {position = Position(32979, 31907, 9), storageValue = 19}, -- Golem (Salida)
+	[3128] = {position = Position(33000, 31870, 13), storageValue = 16}, -- Crystal Grounds (Entrance)
+	[3129] = {position = Position(32795, 31762, 10), storageValue = 16}, -- Crystal Grounds (Exit)
+	[3130] = {position = Position(32864, 31844, 11), storageValue = 17}, -- Truffels Garden (Entrance)
+	[3131] = {position = Position(32803, 31746, 10), storageValue = 17}, -- Truffels Garden (Exit)
+	[3132] = {position = Position(32986, 31862, 9), storageValue = 18}, -- Gnomebase Alpha (Entrance)
+	[3133] = {position = Position(32796, 31781, 10), storageValue = 18}, -- Gnomebase Alpha (Exit)
+	[3134] = {position = Position(32959, 31953, 9), storageValue = 18}, -- Golems Workshop (Entrance)
+	[3135] = {position = Position(33001, 31915, 9), storageValue = 18}, -- Golems Workshop (Exit)
+	[3136] = {position = Position(32904, 31894, 13), storageValue = 19}, -- Golem (Entrance)
+	[3137] = {position = Position(32979, 31907, 9), storageValue = 19}, -- Golem (Exit)
 	[35669] = {position = Position(32986, 31864, 9), storageValue = 1}, -- leave warzone 3
 	[3215] = {position = Position(32369, 32241, 7), storageValue = 1, needCrystal = true}, -- Thais
 	[3216] = {position = Position(32212, 31133, 7), storageValue = 1, needCrystal = true}, -- Svargrond
