@@ -47,7 +47,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	if potion.antidote and not antidote:execute(Player(itemEx.uid), Variant(itemEx.uid)) then
+	local target = Player(itemEx.uid)
+	if potion.antidote and not antidote:execute(target, Variant(itemEx.uid)) then
 		return false
 	end
 
@@ -58,11 +59,11 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	if type(potion.health) == 'table' and not doTargetCombatHealth(0, itemEx.uid, COMBAT_HEALING, potion.health[1], potion.health[2], CONST_ME_MAGIC_BLUE) then
+	if type(potion.health) == 'table' and not doTargetCombatHealth(0, target, COMBAT_HEALING, potion.health[1], potion.health[2], CONST_ME_MAGIC_BLUE) then
 		return false
 	end
 
-	if type(potion.mana) == 'table' and not doTargetCombatMana(0, itemEx.uid, potion.mana[1], potion.mana[2], CONST_ME_MAGIC_BLUE) then
+	if type(potion.mana) == 'table' and not doTargetCombatMana(0, target, potion.mana[1], potion.mana[2], CONST_ME_MAGIC_BLUE) then
 		return false
 	end
 
@@ -75,7 +76,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	player:addCondition(exhaust)
-	doCreatureSayWithRadius(itemEx.uid, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2, toPosition)
+	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2, toPosition)
 	Item(item.uid):remove(1)
 	if fromPosition.x == CONTAINER_POSITION then
 		player:addItem(potion.emptyId, 1)

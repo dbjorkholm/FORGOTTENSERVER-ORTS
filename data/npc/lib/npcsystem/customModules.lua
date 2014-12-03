@@ -22,6 +22,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 	if parameters.storage then
 		if Player(cid):getStorageValue(parameters.storage) ~= (parameters.value or 1) then
 			npcHandler:say(parameters.wrongValueMessage or 'Never heard about a place like this.', cid)
+			npcHandler:resetNpc(cid)
 			return true
 		end
 	end
