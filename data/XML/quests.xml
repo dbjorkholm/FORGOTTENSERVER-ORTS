@@ -38,7 +38,138 @@
 			<missionstate id="2" description="You handed the looted scale to Tereban."/>
 		</mission>
 	</quest>
-	<quest name="Bigfoot's Burden" startstorageid="900" startstoragevalue="1">
+	
+	<!-- Bigfoots Burden -->
+	<quest name="Bigfoot's Burden" startstorageid="900" startstoragevalue="0">  
+		<mission name="01: Looking for Gnomerik" storageid="900" startvalue="0" endvalue="1">
+				<missionstate id="0" description="Ask Gnomette about {recruit}. "/>
+				<missionstate id="1" description="The dwarf Xelvar has sent you to meet the gnome Gnomerik. He can recruit you to the Bigfoot Company. Use the teleporter near Xelvar to enter the gnomish base and start looking for Gnomerik."/>
+		</mission>
+		<mission name="02: A New Recruit" storageid="900" startvalue="2" endvalue="2">
+				<missionstate id="2" description="You have found the gnomish recruiter and are ready to become a Bigfoot."/>
+		</mission>
+		<mission name="03: Recruitment: A Test In Gnomology" storageid="900" startvalue="2" endvalue="3">
+				<missionstate id="2" description="You have found the gnomish recruiter and are ready to become a Bigfoot."/>
+				<missionstate id="3" description="You have passed the gnomish psychology test and can proceed to the medical exam. Talk to Gnomespector about your next examination."/>
+		</mission>
+		<mission name="04: Recruitment: Medical Examination" storageid="900" startvalue="4" endvalue="5">
+				<missionstate id="4" description="Your examination is quite easy. Just step through the green crystal apparatus in the south! We will examine you with what we call g-rays. Where g stands for gnome of course afterwards walk up to Gnomedix for your ear examination."/>
+				<missionstate id="5" description="You have been g-rayed. It has been an ... unexpected experience. Now you are ready for your ear examination. Walk up to doctor Gnomedix and wait for him to finish your ear examination."/>
+		</mission>
+		<mission name="05: Recruitment: Ear Examination" storageid="900" startvalue="5" endvalue="7">
+				<missionstate id="5" description="You have been g-rayed. It has been an ... unexpected experience. Now you are ready for your ear examination. Walk up to doctor Gnomedix and wait for him to finish your ear examination."/>
+				<missionstate id="6" description="You have been g-rayed. It has been an ... unexpected experience. Now you are ready for your ear examination. Walk up to doctor Gnomedix and wait for him to finish your ear examination."/>
+				<missionstate id="7" description="You passed the ear examination. Well, at least most of you did. Now talk to Gnomaticus about your next test."/>
+		</mission>
+		<mission name="06: Recruitment: Gnomish Warfare" storageid="900" startvalue="8" endvalue="10">
+				<missionstate id="8" description="To the left you see our shooting range. Grab a cannon and shoot at the targets. You need five hits to succeed. Shoot at the villain targets that will pop up. DON'T shoot innocent civilians since this will reset your score and you have to start all over. Report to me afterwards."/>
+				<missionstate id="9" description="You are now ready for your endurance test. Report your mission to Gnomaticus."/>
+				<missionstate id="10" description="You are now ready for your endurance test. Talk to Gnomewart about it."/>
+		</mission>
+		<mission name="06: Recruitment: Gnomish Warfare" storageid="902" startvalue="0" endvalue="5">
+				<missionstate id="0" description="Hit five targets in a row. Don't hit an innocent target as it will reset your hit counter. 0/5"/>
+				<missionstate id="1" description="Hit five targets in a row. Don't hit an innocent target as it will reset your hit counter. 1/5"/>
+				<missionstate id="2" description="Hit five targets in a row. Don't hit an innocent target as it will reset your hit counter. 2/5"/>
+				<missionstate id="3" description="Hit five targets in a row. Don't hit an innocent target as it will reset your hit counter. 3/5"/>
+				<missionstate id="4" description="Hit five targets in a row. Don't hit an innocent target as it will reset your hit counter. 4/5"/>
+				<missionstate id="5" description="You are now ready for your endurance test. Report your mission to Gnomaticus."/>
+		</mission>
+		<mission name="07: Recruitment: Endurance Test" storageid="900" startvalue="10" endvalue="13">
+				<missionstate id="10" description="You are now ready for your endurance test. Talk to Gnomewart about it."/>
+				<missionstate id="11" description="Ah, the test is a piece of mushroomcake! Just take the teleporter over there in the south and follow the hallway. You'll need to run quite a bit. It is important that you don't give up! Just keep running and running and running and ... I guess you got the idea. At the end of the hallway you'll find a teleporter. Step on it and you are done! I'm sure you'll do a true gnomerun! Afterwards talk to me."/>
+				<missionstate id="12" description="You have passed the endurance test. Report back to Gnomewart."/>
+				<missionstate id="13" description="You passed the endurance test and are ready to talk to Gnomelvis about your soul melody."/>
+		</mission>
+		<mission name="08: Recruitment: Soul Melody" storageid="900" startvalue="14" endvalue="16">
+				<missionstate id="14" description="Find your personal soul melody by trial and error. Create the complete soul melody of seven notes and then report to Gnomelvis. Red notes indicate a failure."/>
+				<missionstate id="15" description="You found your very own soul melody. You should talk to Gnomelvis about it!"/>
+				<missionstate id="16" description="You are now a true member of the Bigfoot company."/>
+		</mission>
+		<mission name="Mission Log" storageid="900" startvalue="0" endvalue="16">
+				<missionstate id="0" description="Ask Gnomette about {recruit}. "/>
+				<missionstate id="1" description="The dwarf Xelvar has sent you to meet the gnome Gnomerik. He can recruit you to the Bigfoot Company. Use the teleporter near Xelvar to enter the gnomish base and start looking for Gnomerik."/>
+				<missionstate id="2" description="Pass Gnomerik's test by answering his questions. If you fail to get a high enough score drink a mushroom beer and start again."/>
+				<missionstate id="3" description="You have passed the gnomish psychology test and can proceed to the medical exam. Talk to Gnomespector about your next examination."/>
+				<missionstate id="4" description="Walk trough the g-ray apparatus for your g-raying."/>
+				<missionstate id="5" description="You have been g-rayed. It has been an ... unexpected experience. Now you are ready for your ear examination. Walk up to doctor Gnomedix and wait for him to finish your ear examination."/>
+				<missionstate id="7" description="You passed the ear examination. Well, at least most of you did. Now talk to Gnomaticus about your next test."/>
+				<missionstate id="8" description="To the left you see our shooting range. Grab a cannon and shoot at the targets. You need five hits to succeed. Shoot at the villain targets that will pop up. DON'T shoot innocent civilians since this will reset your score and you have to start all over. Report to me afterwards."/>
+				<missionstate id="10" description="You are now ready for your endurance test. Talk to Gnomewart about it."/>
+				<missionstate id="11" description="Enter the lower chamber for your endurance test. Reach the teleporter north of the hall."/>
+				<missionstate id="12" description="You have passed the endurance test. Report back to Gnomewart."/>
+				<missionstate id="13" description="You passed the endurance test and are ready to talk to Gnomelvis about your soul melody."/>
+				<missionstate id="14" description="Find your personal soul melody by trial and error. Create the complete soul melody of seven notes and then report to Gnomelvis. Red notes indicate a failure."/>
+				<missionstate id="15" description="You found your very own soul melody. You should talk to Gnomelvis about it!"/>
+				<missionstate id="16" description="You are now a true member of the Bigfoot company."/>
+		</mission>
+		<mission name="Gnome Reputation" storageid="921" startvalue="0" endvalue="99999999" description="You reputation in the eyes of gnomekind is |STATE|.\n Your standing rises at:\nReputation 30 - I\nReputation 120 - II\nReputation 480 - III\nReputation 1440 - IV"/>
+		<mission name="Repeatable Missions: Crystal Keeper" storageid="932" startvalue="0" endvalue="5">
+				<missionstate id="0" description="Use gnomish repair crystal on damaged blue crystals to fix the problem. You already repaired 0/5 crystals."/>
+				<missionstate id="1" description="Use gnomish repair crystal on damaged blue crystals to fix the problem. You already repaired 1/5 crystals."/>
+				<missionstate id="2" description="Use gnomish repair crystal on damaged blue crystals to fix the problem. You already repaired 2/5 crystals."/>
+				<missionstate id="3" description="Use gnomish repair crystal on damaged blue crystals to fix the problem. You already repaired 3/5 crystals."/>
+				<missionstate id="4" description="Use gnomish repair crystal on damaged blue crystals to fix the problem. You already repaired 4/5 crystals."/>
+				<missionstate id="5" description="You allready repaired 5 crystals, report mission back to Commander Stone."/>
+		</mission>
+		<mission name="Repeatable Missions: Raiders of the Lost Spark" storageid="934" startvalue="0" endvalue="7">
+				<missionstate id="0" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 0/7 sparks."/>
+				<missionstate id="1" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 1/7 sparks."/>
+				<missionstate id="2" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 2/7 sparks."/>
+				<missionstate id="3" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 3/7 sparks."/>
+				<missionstate id="4" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 4/7 sparks."/>
+				<missionstate id="5" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 5/7 sparks."/>
+				<missionstate id="6" description="Use extraction crystal on Crystal Crusher's dead bodys. You already charged 6/7 sparks."/>
+				<missionstate id="7" description="You allready charged 7 sparks, report mission back to Commander Stone."/>
+		</mission>
+	   
+		<mission name="Repeatable Missions: Exterminators" storageid="937" startvalue="0" endvalue="10">
+				<missionstate id="0" description="you have already killed 0/10 wigglers"/>
+				<missionstate id="1" description="you have already killed 1/10 wigglers"/>
+				<missionstate id="2" description="you have already killed 2/10 wigglers"/>
+				<missionstate id="3" description="you have already killed 3/10 wigglers"/>
+				<missionstate id="4" description="you have already killed 4/10 wigglers"/>
+				<missionstate id="5" description="you have already killed 5/10 wigglers"/>
+				<missionstate id="6" description="you have already killed 6/10 wigglers"/>
+				<missionstate id="7" description="you have already killed 7/10 wigglers"/>
+				<missionstate id="8" description="you have already killed 8/10 wigglers"/>
+				<missionstate id="9" description="you have already killed 9/10 wigglers"/>
+				<missionstate id="10" description="You already killed 10 wigglers, report mission back to Commander Stone."/>
+		</mission>
+		<mission name="Repeatable Missions: Mushroom Digger" storageid="940" startvalue="0" endvalue="3">
+				<missionstate id="0" description="Use the baby pig on the truffles to feed it 3 times. You already 0/3 truffles."/>
+				<missionstate id="1" description="Use the baby pig on the truffles to feed it 3 times. You already 1/3 truffles."/>
+				<missionstate id="2" description="Use the baby pig on the truffles to feed it 3 times. You already 2/3 truffles."/>
+				<missionstate id="3" description="You allready 3 truffles, report mission back to Commander Stone."/>
+		</mission>
+	   	<mission name="Repeatable Missions: Matchmaker" storageid="943" startvalue="0" endvalue="1">
+				<missionstate id="0" description="You have to enter the crystal caves and find a crystal that is fitting the crystal you got from the gnomes. Use the crystal on one of the bigger red crystal in the caves to bond them."/>
+				<missionstate id="1" description="Back to Gnomeral"/>
+		</mission>            
+		<mission name="Repeatable Missions: The Tinker's Bell" storageid="946" startvalue="0" endvalue="4">
+				<missionstate id="0" description="Use repair tool on damaged crystal golem. You already repaired 0/4"/>
+				<missionstate id="1" description="Use repair tool on damaged crystal golem. You already repaired 1/4"/>
+				<missionstate id="2" description="Use repair tool on damaged crystal golem. You already repaired 2/4"/>
+				<missionstate id="3" description="Use repair tool on damaged crystal golem. You already repaired 3/4"/>
+				<missionstate id="4" description="Back to Gnomeral"/>
+		</mission>
+		<mission name="Repeatable Missions: Spore Gathering" storageid="949" startvalue="0" endvalue="4">
+				<missionstate id="0" description="Use gnomish spore gatherer on puffball mushroom. You already collected 0/4"/>
+				<missionstate id="1" description="Use gnomish spore gatherer on puffball mushroom. You already collected 1/4"/>
+				<missionstate id="2" description="Use gnomish spore gatherer on puffball mushroom. You already collected 2/4"/>
+				<missionstate id="3" description="Use gnomish spore gatherer on puffball mushroom. You already collected 3/4"/>
+				<missionstate id="4" description="Back to Gnomeral"/>
+		</mission>
+		<mission name="Repeatable Missions: Grindstone Hunt" storageid="952" startvalue="0" endvalue="1">
+				<missionstate id="0" description="The thing is, they can only be found in a quite dangerous lava cave full of vile monsters. You'll reach it via the hot spot teleporter. It will be your task to get one such grindstone and bring it back to me."/>
+				<missionstate id="1" description="Back to Gnomeral"/>
+		</mission>
+	</quest>
+	<!-- <quest name="Bigfoot's Burden" startstorageid="900" startstoragevalue="1">
+		<mission name="Rank" storageid="921" startvalue="0" endvalue="30" description="No Rank. You have |STATE| points."/>
+		<mission name="Rank" storageid="921" startvalue="31" endvalue="119" description="Rank I (Gnome Little Helper). You have |STATE| points."/>
+		<mission name="Rank" storageid="921" startvalue="120" endvalue="479" description="Rank II (Gnome Friend). You have |STATE| points."/>
+		<mission name="Rank" storageid="921" startvalue="480" endvalue="1439" description="Rank III (Gnomelike). You have |STATE| points."/>
+		<mission name="Rank" storageid="921" value="1440" description="Rank IV (Honorary Gnome). You have |STATE| points."/>
 		<mission name="Daily Minor: Crystal Keeper" storageid="932" startvalue="0" endvalue="5" description="Use the repair crystal to repair five damaged blue crystal in the crystal caves. Damaged crystals will not glow. |STATE| / 5" />
 		<mission name="Daily Minor: Raiders of the lost Spark" storageid="934" startvalue="0" endvalue="7" description="Kill crystal crushers and use discharger item on the corpse to collect their charges. Gather 7 charges and report back. |STATE| / 7" />
 		<mission name="Daily Minor Plus: Exterminators" storageid="937" startvalue="0" endvalue="10" description="Kill 10 of the wigglers for the gnomes. Then report back to the gnomes. |STATE| / 10" />
@@ -48,7 +179,7 @@
 			<missionstate id="1" description="You have finished this quest for now."/>
 		</mission>
 		<mission name="Daily Major: The Tinker's Bell" storageid="946" startvalue="0" endvalue="4" description="Use the harmonic bell on the mad golems in the golem workshop so that they will automatically be teleported to the gnomish workshops. Then report back to the gnomes. |STATE| / 4" />
-	</quest>
+	</quest> -->
 	<quest name="Barbarian Test Quest" startstorageid="12190" startstoragevalue="1">
 		<mission name="Barbarian Test 1: Barbarian Booze" storageid="12191" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Talk to Sven about mead and give him a honeycomb. For each honeycomb you will be allowed 20 sips."/>
