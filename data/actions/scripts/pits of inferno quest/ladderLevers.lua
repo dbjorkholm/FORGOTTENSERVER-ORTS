@@ -1,11 +1,11 @@
 local pos = { Position(32861, 32305, 11), Position(32860, 32313, 11) }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return false
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 
 	if item.uid == 3301 then
 		local lava = Tile(pos[1]):getItemById(598)

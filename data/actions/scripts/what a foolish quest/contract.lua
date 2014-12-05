@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 7492 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 7492 then
 		return false
 	end
 
@@ -9,7 +9,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	player:say('You sign the contract', TALKTYPE_MONSTER_SAY)
 	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	Item(item.uid):remove()
-	Item(itemEx.uid):transform(7491)
+	item:remove()
+	target:transform(7491)
 	return true
 end

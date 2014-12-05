@@ -297,7 +297,7 @@ local function resetLever(leverPos)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		return false
 	end
@@ -349,7 +349,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		exhibitItem:transform(settings.transformid)
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	addEvent(resetLever, settings.leverDuration or exhibits.leverDuration, toPosition)
 
 	if not isToggle then

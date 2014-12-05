@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = Position(32791, 32333, 9):getTile()
 	if tile then
 		local thing = tile:getItemById(2016, 2)

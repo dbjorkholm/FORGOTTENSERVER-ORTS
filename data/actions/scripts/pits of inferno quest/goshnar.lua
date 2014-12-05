@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid ~= 2023 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 2023 then
 		return false
 	end
 	

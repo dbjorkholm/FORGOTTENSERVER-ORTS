@@ -1,10 +1,10 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.BigfootBurden.GrindstoneStatus) == 1 or player:getStorageValue(Storage.BigfootBurden.MissionGrindstoneHunt) ~= 1 then
 		return false
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_HITBYFIRE)
-	Item(item.uid):transform(18335)
+	item:transform(18335)
 
 	if math.random(15) ~= 15 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You had no luck this time.')

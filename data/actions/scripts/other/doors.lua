@@ -17,8 +17,8 @@ local function isDoorLocked(keyId, position)
 end
 
 local function toggleDoorLock(doorItem, locked)
-	local doorId = doorItem:getId()
-	local keyId = doorItem:getActionId()
+	local doorId = doorItem.itemid
+	local keyId = doorItem.actionid
 	local doorPosition = doorItem:getPosition()
 
 	if locked then
@@ -42,10 +42,10 @@ local function toggleDoorLock(doorItem, locked)
 	table.insert(unlockedDoors[keyId], doorPosition)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if isInArray(questDoors, item.itemid) then
 		if player:getStorageValue(item.actionid) ~= -1 then
-			Item(item.uid):transform(item.itemid + 1)
+			item:transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The door seems to be sealed against unwanted intruders.")
@@ -54,7 +54,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	elseif isInArray(levelDoors, item.itemid) then
 		if item.actionid > 0 and player:getLevel() >= item.actionid - 1000 then
-			Item(item.uid):transform(item.itemid + 1)
+			item:transform(item.itemid + 1)
 			player:teleportTo(toPosition, true)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Only the worthy may pass.")
@@ -62,17 +62,18 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 
 	elseif isInArray(keys, item.itemid) then
-		if not ItemType(itemEx.itemid):isDoor() or isInArray(openSpecialDoors, itemEx.itemid)
-				or isInArray(questDoors, itemEx.itemid) or isInArray(levelDoors, itemEx.itemid)
+		if not target:isItem()
+				or not target:getType():isDoor() or isInArray(openSpecialDoors, target.itemid)
+				or isInArray(questDoors, target.itemid) or isInArray(levelDoors, target.itemid)
 				or Tile(toPosition):getHouse() then
 			return false
 		end
 
-		if itemEx.actionid > 0 and item.actionid == itemEx.actionid then
-			if not isDoorLocked(itemEx.actionid, toPosition) then
-				toggleDoorLock(Item(itemEx.uid), true)
-			elseif doors[itemEx.itemid] then
-				toggleDoorLock(Item(itemEx.uid), false)
+		if target.actionid > 0 and item.actionid == target.actionid then
+			if not isDoorLocked(target.actionid, toPosition) then
+				toggleDoorLock(target, true)
+			elseif doors[target.itemid] then
+				toggleDoorLock(target, false)
 			end
 		else
 			player:sendCancelMessage("The key does not match.")
@@ -105,14 +106,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			doorCreature:teleportTo(toPosition, true)
 		end
 		if not isInArray(openSpecialDoors, item.itemid) then
-			Item(item.uid):transform(item.itemid - 1)
+			item:transform(item.itemid - 1)
 		end
 		return true
 	end
 
 	if doors[item.itemid] then
 		if not isDoorLocked(item.actionid, toPosition) then
-			Item(item.uid):transform(doors[item.itemid])
+			item:transform(doors[item.itemid])
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")
 		end

@@ -35,14 +35,14 @@ local function revertWalls(leverPosition)
 end
 
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 1945 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 1945 then
 		player:sendTextMessage(MESSAGE_INFO_DESCR, 'It doesn\'t move.')
 		return true
 	end
 
 	if isInArray(config.leverPositions, position) then
-		Item(item.uid):transform(1946)
+		item:transform(1946)
 		addEvent(revertLever, config.leverTime * 1000, position)
 		return true
 	end
@@ -82,6 +82,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	addEvent(revertWalls, gateLever.duration * 1000, position)
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	return true
 end

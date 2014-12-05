@@ -5,18 +5,22 @@ local holeId = {
 	8252, 8253, 8254, 8255, 8256, 8592, 8972, 9606, 9625, 13190, 14461, 19519, 21536
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
 		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
-		if itemEx.itemid == 8592 then
+		if target.itemid == 8592 then
 			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 22 then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have successfully used your rope to climb out of the hole. Congratulations! Now continue to the east.')
 			end
 		end
 		return true
-	elseif isInArray(holeId, itemEx.itemid) then
+	elseif isInArray(holeId, target.itemid) then
 		toPosition.z = toPosition.z + 1
 		tile = toPosition:getTile()
 		if tile then

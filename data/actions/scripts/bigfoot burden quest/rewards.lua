@@ -44,7 +44,7 @@ local rewards = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.uid == 3147 then
 		if player:getStorageValue(Storage.BigfootBurden.WarzoneStatus) == 4 then
 			player:setStorageValue(Storage.BigfootBurden.WarzoneStatus, 5)

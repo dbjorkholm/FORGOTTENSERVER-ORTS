@@ -3,7 +3,7 @@ local config = {
 	[1946] = {position = {Position(32623, 32189, 9), Position(32623, 32188, 9)}}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
@@ -15,6 +15,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		oven:moveTo(useItem.position[2])
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

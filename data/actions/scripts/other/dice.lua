@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local dice = Item(item.uid)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	local dice = item
 	local dicePosition = dice:getPosition()
 	local value = math.random(6)
 	local isInGhostMode = player:isInGhostMode()

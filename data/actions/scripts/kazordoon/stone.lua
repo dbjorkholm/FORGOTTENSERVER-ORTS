@@ -5,7 +5,7 @@ local config = {
 	{position = Position(32605, 31905, 3), itemId = 1303}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		local stoneItem
 		for i = 1, #config do
@@ -20,6 +20,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

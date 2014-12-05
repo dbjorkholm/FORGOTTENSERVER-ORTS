@@ -69,7 +69,7 @@ local config = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetLever = config[item.uid]
 	if not targetLever then
 		return true
@@ -86,6 +86,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

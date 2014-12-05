@@ -109,7 +109,7 @@ local function areMachinesCharged()
 	return true
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return true
 	end
@@ -127,7 +127,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return false
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	local leverCount = 0
 	for i = 1, #config.leverPositions do
 		if Tile(config.leverPositions[i]):getItemById(1946) then

@@ -5,7 +5,7 @@ local lava = {
 	Position(32913, 32210, 15)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local lavaTile
 	for i = 1, #lava do
 		lavaTile = Tile(lava[i]):getGround()
@@ -15,6 +15,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission72) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission73) < 1 then
 		local skullItem = Tile(Position(33071, 32442, 11)):getItemById(21476)
 		if skullItem then

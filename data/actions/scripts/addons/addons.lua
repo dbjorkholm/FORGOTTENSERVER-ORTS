@@ -9,7 +9,7 @@ local config = {
 	[18522] = {female = 513, male = 512, addon = 2, effect = CONST_ME_GIANTICE, achievement = 'Crystal Clear'}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
@@ -31,7 +31,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if player:hasOutfit(looktype, 3) then
 			player:addAchievement(useItem.achievement)
 		end
-		Item(item.uid):remove()
+		item:remove()
 	else
 		if not player:isPremium() or player:hasOutfit(looktype) then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You own no premium account or already own this outfit part.')
@@ -41,7 +41,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		player:addOutfit(useItem.female)
 		player:addOutfit(useItem.male)
 		player:getPosition():sendMagicEffect(useItem.effect)
-		Item(item.uid):remove()
+		item:remove()
 	end
 	return true
 end

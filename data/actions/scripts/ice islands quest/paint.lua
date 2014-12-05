@@ -6,8 +6,8 @@ local function transformBack(position, itemId, transformId)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 7178 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 7178 then
 		return false
 	end
 
@@ -19,7 +19,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:setStorageValue(Storage.TheIceIslands.Mission04, 2) -- Questlog The Ice Islands Quest, Nibelor 3: Artful Sabotage
 		end
 		player:say('You painted a baby seal.', TALKTYPE_MONSTER_SAY)
-		Item(itemEx.uid):transform(7252)
+		target:transform(7252)
 		addEvent(transformBack, 30 * 1000, toPosition, 7252, 7178)
 	end
 	return true

@@ -28,7 +28,7 @@ local function removeWall(position)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		player:sendCancelMessage('The lever has already been used.')
 		return true
@@ -39,6 +39,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if wall.revert then
 		addEvent(revertWall, config.time * 1000, wall.position, toPosition)
 	end
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	return true
 end

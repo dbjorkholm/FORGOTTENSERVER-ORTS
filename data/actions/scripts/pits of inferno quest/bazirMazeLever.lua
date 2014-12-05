@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local portal = Tile(Position(32816, 32345, 13)):getItemById(1387)
 	if not portal then
 		local item = Game.createItem(1387, 1, Position(32816, 32345, 13))
@@ -8,6 +8,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	else
 		portal:remove()
 	end
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

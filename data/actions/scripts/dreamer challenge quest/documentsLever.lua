@@ -14,7 +14,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local altar = config[item.uid]
 	if not altar then
 		return true
@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		diamondItem:remove(1)
 		altar.position:sendMagicEffect(CONST_ME_TELEPORT)
 		Game.createItem(altar.itemId, 1, altar.position)
-		Item(item.uid):transform(1946)
+		item:transform(1946)
 		addEvent(revertLever, 4 * 1000, position)
 	end
 	return true

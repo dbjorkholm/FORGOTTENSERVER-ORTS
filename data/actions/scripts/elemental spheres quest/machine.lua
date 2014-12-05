@@ -5,7 +5,7 @@ local config = {
 	[4] = Position(33087, 32096, 13)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if isInArray({7911, 7912}, item.itemid) then
 		local gemCount = player:getStorageValue(Storage.ElementalSphere.MachineGemCount)
 		if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and gemCount >= 20 then
@@ -22,7 +22,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				thing:transform(thing:getId() + 4)
 			end
 		end
-		Item(item.uid):transform(item.itemid + 4)
+		item:transform(item.itemid + 4)
 	else
 		toPosition.x = toPosition.x + (item.itemid == 7915 and 1 or -1)
 		local tile = toPosition:getTile()
@@ -32,7 +32,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				thing:transform(thing:getId() - 4)
 			end
 		end
-		Item(item.uid):transform(item.itemid - 4)
+		item:transform(item.itemid - 4)
 	end
 	return true
 end

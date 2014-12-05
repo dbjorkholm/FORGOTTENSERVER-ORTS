@@ -30,16 +30,16 @@ local config = {
 	[22608]	=	{NAME = 'Shock Head', 				ID = 42,	TYPE = TYPE_MONSTER,	CHANCE = 30,	FAIL_MSG = { {1, 'The shock head ran away.'}, {3, 'The shock head is growling at you.'} }, SUCCESS_MSG = 'You tamed the shock head.'}
 }
 
-local function doFailAction(player, mount, pos, item, itemEx)
+local function doFailAction(player, mount, pos, item, target)
 	local action, effect = mount.FAIL_MSG[math.random(#mount.FAIL_MSG)], CONST_ME_POFF
 	if(action[1] == ACTION_RUN) then
-		Creature(itemEx.uid):remove()
+		target:remove()
 	elseif(action[1] == ACTION_BREAK) then
 		effect = CONST_ME_BLOCKHIT
-		Item(item.uid):remove(1)
+		item:remove(1)
 	elseif(action[1] == ACTION_ALL) then
-		Creature(itemEx.uid):remove()
-		Item(item.uid):remove(1)
+		target:remove()
+		item:remove(1)
 	end
 
 	pos:sendMagicEffect(effect)
@@ -47,43 +47,40 @@ local function doFailAction(player, mount, pos, item, itemEx)
 	return action
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetMonster = Monster(itemEx.uid)
-	local targetNpc = Npc(itemEx.uid)
-	local targetItem = Item(itemEx.uid)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local mount = config[item.itemid]
-	if mount == nil or player:hasMount(mount.ID) then
+	if not mount or player:hasMount(mount.ID) then
 		return false
 	end
 
 	local rand = math.random(100)
 	--Monster Mount
-	if targetMonster ~= nil and mount.TYPE == TYPE_MONSTER then
-		if Creature(itemEx.uid):getMaster() then
+	if target:isCreature() and target:isMonster() and mount.TYPE == TYPE_MONSTER then
+		if target:getMaster() then
 			player:say('You can\'t tame a summon!', TALKTYPE_MONSTER_SAY)
 			return true
 		end
 
-		if mount.NAME == targetMonster:getName() then
+		if mount.NAME == target:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(player, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, target)
 				return true
 			end
 
 			player:addAchievement('Natural Born Cowboy')
 			player:addMount(mount.ID)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
-			targetMonster:remove()
+			target:remove()
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
+			item:remove(1)
 			return true
 		end
 	--NPC Mount
-	elseif targetNpc ~= nil and mount.TYPE == TYPE_NPC then
-		if mount.NAME == targetNpc:getName() then
+	elseif target:isCreature() and target:isNpc() and mount.TYPE == TYPE_NPC then
+		if mount.NAME == target:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(player, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, target)
 				return true
 			end
 
@@ -92,14 +89,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
+			item:remove(1)
 			return true
 		end
 	--Item Mount
-	elseif targetItem ~= nil and mount.TYPE == TYPE_ITEM then
-		if mount.NAME == targetItem:getName() then
+	elseif target:isItem() and mount.TYPE == TYPE_ITEM then
+		if mount.NAME == target:getName() then
 			if rand > mount.CHANCE then
-				doFailAction(player, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, target)
 				return true
 			end
 
@@ -108,14 +105,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
+			item:remove(1)
 			return true
 		end
 	--Action Mount
-	elseif itemEx.actionid > 0 and mount.TYPE == TYPE_ACTION then
-		if(mount.NAME == itemEx.actionid) then
+	elseif target:isItem() and target.actionid > 0 and mount.TYPE == TYPE_ACTION then
+		if(mount.NAME == target.actionid) then
 			if rand > mount.CHANCE then
-				doFailAction(player, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, target)
 				return true
 			end
 
@@ -124,14 +121,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
+			item:remove(1)
 			return true
 		end
 	--Unique Mount
-	elseif itemEx.uid <= 65535 and mount.TYPE == TYPE_UNIQUE then
-		if mount.NAME == itemEx.uid then
+	elseif target:isItem() and target.uid <= 65535 and mount.TYPE == TYPE_UNIQUE then
+		if mount.NAME == target.uid then
 			if rand > mount.CHANCE then
-				doFailAction(player, mount, toPosition, item, itemEx)
+				doFailAction(player, mount, toPosition, item, target)
 				return true
 			end
 
@@ -140,7 +137,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:say(mount.SUCCESS_MSG, TALKTYPE_MONSTER_SAY)
 
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-			Item(item.uid):remove(1)
+			item:remove(1)
 			return true
 		end
 	end

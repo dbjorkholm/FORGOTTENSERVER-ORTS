@@ -4,7 +4,7 @@ local config = {
 	[9174] = {items = {{18402}, {18413, 10}, {18396}, {18508}, {2160, 4}, {18423, 2}}, storage = Storage.QuestChests.WarzoneReward3, containerId = 18394}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true

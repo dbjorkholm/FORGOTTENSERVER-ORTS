@@ -12,7 +12,7 @@ local function revertCarrotAndLever(position, carrotPosition)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1243 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You first must find the Carrot under one of the three hats to get the access!')
 		return true
@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		Game.createItem(2684, 1, hatPosition)
 
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found the carrot! The door is open!')
-		Item(item.uid):transform(1946)
+		item:transform(1946)
 		addEvent(revertCarrotAndLever, 4 * 1000, position, hatPosition)
 
 		local doorItem = Tile(doorPosition):getItemById(1243)

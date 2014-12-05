@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 8176 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 8176 then
 		return false
 	end
 

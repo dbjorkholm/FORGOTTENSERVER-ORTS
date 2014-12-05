@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	local power1 = Tile(Position({x = 32613, y = 32220, z = 10}))
 	local barrel = Tile(Position({x = 32614, y = 32209, z = 10}))
@@ -12,6 +12,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		stone:getItemById(1304):transform(1025)
 		Game.createItem(1487, 1, burn)
 	end
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

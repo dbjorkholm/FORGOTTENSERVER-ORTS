@@ -15,7 +15,7 @@ local config = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
@@ -34,7 +34,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					player:addOutfitAddon(choice.male, choice.addon)
 					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. choice.msg .. ' addon!')
 					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-					Item(item.uid):remove(1)
+					item:remove(1)
 				else
 					return false
 				end
@@ -51,7 +51,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				player:addOutfit(choice.male)
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have received the ' .. choice.msg .. ' outfit!')
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-				Item(item.uid):remove(1)
+				item:remove(1)
 			else
 				return false
 			end

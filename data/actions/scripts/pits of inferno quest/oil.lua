@@ -11,7 +11,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
 		return false
 	end
@@ -27,7 +27,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		addEvent(revertBridge, 10 * 60 * 1000)
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	addEvent(revertLever, 10 * 60 * 1000, toPosition)
 	return true
 end

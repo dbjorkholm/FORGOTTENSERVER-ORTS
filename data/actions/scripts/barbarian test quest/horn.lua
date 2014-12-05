@@ -2,15 +2,19 @@ local function sendSleepEffect(position)
 	position:sendMagicEffect(CONST_ME_SLEEP)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.uid == 3110 and item.itemid == 7140 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	if target.uid == 3110 and item.itemid == 7140 then
 		player:say('You fill your horn with ale.', TALKTYPE_MONSTER_SAY)
-		Item(item.uid):transform(7141)
+		item:transform(7141)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	elseif itemEx.itemid == 7174 and item.itemid == 7141 then
+	elseif target.itemid == 7174 and item.itemid == 7141 then
 			player:say('The bear is now unconcious.', TALKTYPE_MONSTER_SAY)
-			Item(item.uid):transform(7140)
-			Item(itemEx.uid):transform(7175)
+			item:transform(7140)
+			target:transform(7175)
 			toPosition:sendMagicEffect(CONST_ME_STUN)
 	elseif item.itemid == 7175 then
 		if player:getStorageValue(Storage.BarbarianTest.Questline) == 4 then
@@ -18,9 +22,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:setStorageValue(Storage.BarbarianTest.Questline, 5)
 			player:setStorageValue(Storage.BarbarianTest.Mission02, 2) -- Questlog Barbarian Test Quest Barbarian Test 2: The Bear Hugging
 			player:addAchievement('Bearhugger')
-			local targetItem = Item(itemEx.uid)
-			targetItem:transform(7174)
-			targetItem:decay()
+			target:transform(7174)
+			target:decay()
 			toPosition:sendMagicEffect(CONST_ME_SLEEP)
 		else
 			player:say('You don\'t feel like hugging an unconcious bear.', TALKTYPE_MONSTER_SAY)
@@ -35,9 +38,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				player:say('You hustle the mammoth. What a fun. *hicks*.', TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.BarbarianTest.Questline, 7)
 				player:setStorageValue(Storage.BarbarianTest.Mission03, 2) -- Questlog Barbarian Test Quest Barbarian Test 3: The Mammoth Pushing
-				local targetItem = Item(itemEx.uid)
-				targetItem:transform(7177)
-				targetItem:decay()
+				target:transform(7177)
+				target:decay()
 				addEvent(sendSleepEffect, 60 * 1000, toPosition)
 				toPosition:sendMagicEffect(CONST_ME_SLEEP)
 			else

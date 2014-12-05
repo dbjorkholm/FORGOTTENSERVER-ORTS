@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local partyTrumpet = Item(item.uid)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	local partyTrumpet = item
 	partyTrumpet:transform(13578)
 	partyTrumpet:decay()
 	player:say("TOOOOOOT!", TALKTYPE_MONSTER_SAY)

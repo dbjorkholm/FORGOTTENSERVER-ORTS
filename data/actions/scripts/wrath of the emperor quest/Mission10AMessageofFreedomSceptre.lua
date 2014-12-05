@@ -5,12 +5,16 @@ local boss = {
 	[3196] = "spite of the emperor",
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if boss[itemEx.uid] and itemEx.itemid == 12383 then
-		Item(itemEx.uid):transform(11753)
-		Game.createMonster(boss[itemEx.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
-		Game.setStorageValue(itemEx.uid - 4, 1)
-	elseif itemEx.itemid == 12317 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	if boss[target.uid] and target.itemid == 12383 then
+		target:transform(11753)
+		Game.createMonster(boss[target.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})
+		Game.setStorageValue(target.uid - 4, 1)
+	elseif target.itemid == 12317 then
 		if toPosition.x > 33034 and toPosition.x < 33071 and
 			toPosition.y > 31079 and toPosition.y < 31102 then
 			if player:getStorageValue(Storage.WrathoftheEmperor.BossStatus) == 1 then
@@ -44,7 +48,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				destination:sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		end
-	elseif itemEx.itemid == 12385 then
+	elseif target.itemid == 12385 then
 		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 31 then
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 32)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission11, 2) --Questlog, Wrath of the Emperor "Mission 11: Payback Time"

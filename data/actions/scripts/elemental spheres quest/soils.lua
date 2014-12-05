@@ -5,20 +5,19 @@ local config = {
 	[8303] = {targetId = 8567, createId = 1495}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local soil = config[item.itemid]
 	if not soil then
 		return true
 	end
 
-	if soil.targetId ~= itemEx.itemid then
+	if not target:isItem() or soil.targetId ~= target.itemid then
 		return true
 	end
 
 	if soil.transformId then
-		local targetItem = Item(itemEx.uid)
-		targetItem:transform(soil.transformId)
-		targetItem:decay()
+		target:transform(soil.transformId)
+		target:decay()
 	elseif soil.createId then
 		local newItem = Game.createItem(soil.createId, 1, toPosition)
 		if newItem then
@@ -30,6 +29,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		toPosition:sendMagicEffect(soil.effect)
 	end
 
-	Item(item.uid):transform(item.itemid, item.type - 1)
+	item:transform(item.itemid, item.type - 1)
 	return true
 end

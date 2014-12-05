@@ -8,8 +8,12 @@ local config = {
 	[12107] = {storageKey = Storage.TheAncientTombs.Rahemos, itemId = 2340, removeId = 2348}-- Oasis 	Rahemos 	 Ancient Rune 	 Helmet Piece
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetItem = config[itemEx.uid]
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	local targetItem = config[target.uid]
 	if not targetItem then
 		return true
 	end

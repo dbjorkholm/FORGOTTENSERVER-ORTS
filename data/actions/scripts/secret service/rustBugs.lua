@@ -1,7 +1,11 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.uid == 12579 and player:getStorageValue(Storage.secretService.CGBMission03) == 1 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.uid ~= 12579 then
+		return false
+	end
+
+	if player:getStorageValue(Storage.secretService.CGBMission03) == 1 then
 		player:setStorageValue(Storage.secretService.CGBMission03, 2)
-		Item(item.uid):remove()
+		item:remove()
 		Game.createItem(8016, 1, Position(32909, 32112, 7))
 		player:say('The bugs are at work!', TALKTYPE_MONSTER_SAY)
 	end

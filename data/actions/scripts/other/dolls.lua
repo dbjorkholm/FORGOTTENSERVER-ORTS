@@ -49,7 +49,7 @@ local dolls = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local sounds = dolls[item.itemid]
 	if not sounds then
 		return false
@@ -70,7 +70,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
 		end
 	elseif item.itemid == 5669 then
-		local targetItem = Item(item.uid)
+		local targetItem = item
 		fromPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
 		targetItem:transform(item.itemid + 1)
 		targetItem:decay()

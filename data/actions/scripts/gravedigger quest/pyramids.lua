@@ -5,8 +5,12 @@ local config = {
 	[4649] = {Storage.GravediggerOfDrefia.Mission38c, Storage.GravediggerOfDrefia.Mission39}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local cStorages = config[itemEx.actionid]
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	local cStorages = config[target.actionid]
 	if not cStorages then
 		return true
 	end

@@ -7,7 +7,7 @@ local config = {
 	[50010] = Position(32313, 31976, 13)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true
@@ -18,6 +18,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		campfire:transform(item.itemid == 1945 and 1421 or 1423)
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

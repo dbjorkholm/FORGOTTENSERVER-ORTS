@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local str = {"\nSpiritual Shielding", "\nEmbrace of Tibia", "\nFire of the Suns", "\nSpark of the Phoenix", "\nWisdom of Solitude", "\nTwist of Fate"}
 	local result = "Received blessings:"
 	for i = 1, 6 do

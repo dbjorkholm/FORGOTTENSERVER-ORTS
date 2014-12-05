@@ -23,7 +23,7 @@ local function disableMachine(storage)
 	Game.setStorageValue(storage, -1)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local machineGroup = config[item.actionid]
 	if not machineGroup then
 		return true

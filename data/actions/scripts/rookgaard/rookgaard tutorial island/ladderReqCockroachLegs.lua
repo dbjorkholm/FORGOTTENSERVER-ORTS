@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if item.uid == 50083 then
 		if player:getItemCount(8710) < 3 then

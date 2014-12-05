@@ -32,13 +32,13 @@ local exhaust = Condition(CONDITION_EXHAUST_HEAL)
 exhaust:setParameter(CONDITION_PARAM_TICKS, (configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL) - 100))
 -- 1000 - 100 due to exact condition timing. -100 doesn't hurt us, and players don't have reminding ~50ms exhaustion.
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local potion = config[item.itemid]
 	if not potion then
 		return true
 	end
 
-	if itemEx.itemid ~= 1 or itemEx.type ~= THING_TYPE_PLAYER then
+	if not target:isCreature() or not target:isPlayer() then
 		return true
 	end
 
@@ -47,8 +47,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	local target = Player(itemEx.uid)
-	if potion.antidote and not antidote:execute(target, Variant(itemEx.uid)) then
+	if potion.antidote and not antidote:execute(target, Variant(target.uid)) then
 		return false
 	end
 
@@ -77,7 +76,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	player:addCondition(exhaust)
 	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2, toPosition)
-	Item(item.uid):remove(1)
+	item:remove(1)
 	if fromPosition.x == CONTAINER_POSITION then
 		player:addItem(potion.emptyId, 1)
 	else

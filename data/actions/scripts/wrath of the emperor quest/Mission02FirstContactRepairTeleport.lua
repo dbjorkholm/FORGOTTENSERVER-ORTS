@@ -15,36 +15,40 @@ local function revertWater(position)
 end
 
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
 	-- Rake
 	if item.itemid == 2549 then
-		if itemEx.itemid == 12322 then
+		if target.itemid == 12322 then
 			player:addItem(12285, 1)
 			player:say("You dig out a handful of ordinary clay.", TALKTYPE_MONSTER_SAY)
 		end
 	-- clay with the sacred earth
-	elseif (item.itemid == 12285 and itemEx.itemid == 12297) or (item.itemid == 12297 and itemEx.itemid == 12285) then
+	elseif (item.itemid == 12285 and target.itemid == 12297) or (item.itemid == 12297 and target.itemid == 12285) then
 		player:say("You carefully mix the clay with the sacred earth.", TALKTYPE_MONSTER_SAY)
-		Item(item.uid):remove()
-		Item(itemEx.uid):remove()
+		item:remove()
+		target:remove()
 		player:addItem(12300, 1)
 	-- sacred clay
-	elseif item.itemid == 12300 and itemEx.itemid == 12287 then
+	elseif item.itemid == 12300 and target.itemid == 12287 then
 		player:say("You carefully coat the inside of the wooden bowl with the sacred clay.", TALKTYPE_MONSTER_SAY)
-		Item(itemEx.uid):remove()
-		Item(item.uid):transform(12303)
+		target:remove()
+		item:transform(12303)
 	-- sacred bowl of purification
-	elseif item.itemid == 12303 and itemEx.itemid == 11450 then
+	elseif item.itemid == 12303 and target.itemid == 11450 then
 		player:say("Filling the corrupted water into the sacred bowl completly purifies the fluid.", TALKTYPE_MONSTER_SAY)
-		Item(item.uid):transform(12289)
+		item:transform(12289)
 	-- bowl with sacred water
-	elseif item.itemid == 12289 and itemEx.itemid == 12301 then
-		Item(item.uid):transform(12290)
+	elseif item.itemid == 12289 and target.itemid == 12301 then
+		item:transform(12290)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	-- sacred coal
-	elseif item.itemid == 12290 and itemEx.actionid == 8025 then
+	elseif item.itemid == 12290 and target.actionid == 8025 then
 		player:say("As you give the coal into the pool the corrupted fluid begins to dissolve, leaving purified, refreshing water.", TALKTYPE_MONSTER_SAY)
-		Item(item.uid):remove()
+		item:remove()
 		if player:getStorageValue(Storage.WrathoftheEmperor.Questline) == 4 then
 			player:setStorageValue(Storage.WrathoftheEmperor.Questline, 5)
 			player:setStorageValue(Storage.WrathoftheEmperor.Mission02, 2) --Questlog, Wrath of the Emperor "Mission 02: First Contact"

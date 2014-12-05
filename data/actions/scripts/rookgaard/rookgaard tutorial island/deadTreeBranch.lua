@@ -1,7 +1,7 @@
 local playerexhaust = Condition(CONDITION_EXHAUST_WEAPON)
 	playerexhaust:setParameter(CONDITION_PARAM_TICKS, 5000)
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local player= player
 	if player:getCondition(CONDITION_EXHAUST_WEAPON) then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have to wait a few seconds until this tree can be used again.")

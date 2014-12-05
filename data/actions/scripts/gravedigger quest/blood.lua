@@ -3,8 +3,12 @@ local config = {
 	[4645] = {storageKey = {Storage.GravediggerOfDrefia.Mission36a, Storage.GravediggerOfDrefia.Mission37}, message = 'The blood in the vial is of a strange colour, as if tainted.', itemId = 21419}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetItem = config[itemEx.actionid]
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	local targetItem = config[target.actionid]
 	if not targetItem then
 		return true
 	end
@@ -14,7 +18,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		player:setStorageValue(cStorages[2], 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, targetItem.message)
 		player:addItem(targetItem.itemId, 1)
-		Item(item.uid):remove(1)
+		item:remove(1)
 	end
 	return true
 end

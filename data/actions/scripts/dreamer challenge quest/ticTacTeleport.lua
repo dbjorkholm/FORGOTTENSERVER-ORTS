@@ -10,8 +10,8 @@ local config = {
 	{position = Position(32842, 32267, 14), itemId = 2638}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 
 	if item.itemid ~= 1945 then
 		return true

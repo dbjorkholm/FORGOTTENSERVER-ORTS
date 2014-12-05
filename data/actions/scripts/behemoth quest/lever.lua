@@ -6,7 +6,7 @@ local wall = {
 	Position(33299, 31677, 15)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		return false
 	end
@@ -19,6 +19,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	return true
 end

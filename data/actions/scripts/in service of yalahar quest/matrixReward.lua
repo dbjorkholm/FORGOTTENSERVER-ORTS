@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if(item.uid == 3084) then
 		if(player:getStorageValue(Storage.InServiceofYalahar.MatrixReward) < 1) then
 			player:setStorageValue(Storage.InServiceofYalahar.MatrixReward, 1)

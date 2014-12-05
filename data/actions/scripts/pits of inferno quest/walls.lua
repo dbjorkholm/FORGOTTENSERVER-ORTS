@@ -15,7 +15,7 @@ local function doRemoveFirewalls(fwPos)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if(item.itemid == 1945) then
 		doRemoveFirewalls(pos[item.uid])
 		Position(pos[item.uid]):sendMagicEffect(CONST_ME_FIREAREA)
@@ -23,6 +23,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		Game.createItem(6289, 1, pos[item.uid])
 		Position(pos[item.uid]):sendMagicEffect(CONST_ME_FIREAREA)
 	end
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

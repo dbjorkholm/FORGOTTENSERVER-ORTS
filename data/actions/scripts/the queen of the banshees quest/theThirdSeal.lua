@@ -65,7 +65,7 @@ local config = {
 }
 
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local switchNum = Game.getStorageValue("switchNum")
 	local table = config[switchNum]
 	if not switchNum then
@@ -76,7 +76,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 	if player:getStorageValue(Storage.QueenOfBansheesQuest.ThirdSeal) < 1 then
 		if item.uid == table then
-			Item(item.uid):transform(1945)
+			item:transform(1945)
 			Game.setStorageValue("switchNum", math.max(1, Game.getStorageValue("switchNum") + 1))
 			toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			for i = 1, #config.effects[switchNum] do

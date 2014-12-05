@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission02) == 1 then
 		player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission02, 2)
 		player:addItem(2346, 1)

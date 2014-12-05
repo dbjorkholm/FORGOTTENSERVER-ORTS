@@ -5,8 +5,12 @@ local config = {
 	[9773] = 9742
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local transformId = config[itemEx.itemid]
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	local transformId = config[target.itemid]
 	if not transformId then
 		return true
 	end
@@ -15,16 +19,16 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		Game.createMonster('Tormented Ghost', fromPosition)
 	end
 
-	local charmItem = Tile(Position(32776, 31062, 7)):getItemById(itemEx.itemid)
+	local charmItem = Tile(Position(32776, 31062, 7)):getItemById(target.itemid)
 	if charmItem then
 		charmItem:transform(transformId)
 	end
 
 	toPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
-	Item(item.uid):remove()
+	item:remove()
 	player:say('The ghost charm is charging.', TALKTYPE_MONSTER_SAY)
 
-	if itemEx.itemid == 9773 then
+	if target.itemid == 9773 then
 		player:setStorageValue(Storage.InServiceofYalahar.Questline, 37)
 		player:setStorageValue(Storage.InServiceofYalahar.Mission06, 3) -- StorageValue for Questlog "Mission 06: Frightening Fuel"
 		player:removeItem(9737, 1)

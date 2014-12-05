@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	player:addItem(ITEM_GOLD_COIN, 100)
-	Item(item.uid):remove(1)
+	item:remove(1)
 	return true
 end

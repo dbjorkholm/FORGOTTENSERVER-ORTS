@@ -5,7 +5,7 @@ local config = {
 	[18331] = 18224
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local spores = config[item.itemid]
 	if not spores then
 		return true
@@ -16,17 +16,21 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return false
 	end
 
-	if itemEx.itemid ~= spores then
+	if not target:isItem() then
+		return false
+	end
+
+	if target.itemid ~= spores then
 		player:setStorageValue(Storage.BigfootBurden.SporeCount, 0)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have gathered the wrong spores. You ruined your collection.')
-		Item(item.uid):transform(18328)
+		item:transform(18328)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
 	end
 
 	player:setStorageValue(Storage.BigfootBurden.SporeCount, sporeCount + 1)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have gathered the correct spores.')
-	Item(item.uid):transform(item.itemid + 1)
+	item:transform(item.itemid + 1)
 	toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
 	return true
 end

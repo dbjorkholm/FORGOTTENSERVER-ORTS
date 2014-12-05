@@ -6,7 +6,7 @@ local config = {
 	[11262] = {blessId = 5, text = 'The Wisdom of Solitude'}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
@@ -20,6 +20,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	player:addBlessing(useItem.blessId)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, useItem.text .. ' protects you.')
 	player:getPosition():sendMagicEffect(CONST_ME_LOSEENERGY)
-	Item(item.uid):remove(1)
+	item:remove(1)
 	return true
 end

@@ -5,6 +5,8 @@ For more information about TFS 1.1 (including compiling guides) visit the link a
 
 You can download TFS 1.1 Windows binaries from http://nightlies.otland.net. (not always up to date!)
 
+x86 build (commit 1714): https://www.mediafire.com/?6w86y5loec07oav
+
 To login you can use [Otclient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart).
 
 - Client Version: **10.41**

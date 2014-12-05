@@ -298,7 +298,7 @@ local config = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.uid]
 	if not useItem then
 		return true
@@ -322,7 +322,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	local result = ''
-	local weight = 0
 	if reward then
 		local ret = ItemType(reward:getId())
 		if ret:isRune() then
@@ -343,7 +342,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			reward:setText(items[1].text)
 		end
 
-		weight = ret:getWeight(reward:getCount())
 	else
 		if size > 8 then
 			reward = Game.createItem(1988, 1)
@@ -364,15 +362,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					tmp:setText(items[i].text)
 				end
 
-				weight = weight + ItemType(tmp:getId()):getWeight(tmp:getCount())
 			end
 		end
 		local ret = ItemType(reward:getId())
 		result = ret:getArticle() .. ' ' .. ret:getName()
-		weight = weight + ret:getWeight()
 	end
 
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
+		local weight = reward:getWeight()
 		if player:getFreeCapacity() < weight then
 			player:sendCancelMessage('You have found ' .. result .. '. Weighing ' .. string.format('%.2f', (weight / 100)) .. ' oz, it is too heavy.')
 		else

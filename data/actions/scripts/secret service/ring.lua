@@ -1,7 +1,11 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid == 12563 and player:getStorageValue(Storage.secretService.TBIMission05) == 1 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 12563 then
+		return false
+	end
+
+	if player:getStorageValue(Storage.secretService.TBIMission05) == 1 then
 		player:setStorageValue(Storage.secretService.TBIMission05, 2)
-		Item(item.uid):remove()
+		item:remove()
 		player:say('You have placed the false evidence!', TALKTYPE_MONSTER_SAY)
 	end
 	return true

@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 2367 and player:getStorageValue(Storage.TheAncientTombs.VashresamunInstruments) < 1 then
 		player:setStorageValue(Storage.TheAncientTombs.VashresamunInstruments, 1)
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_BLUE)
@@ -18,7 +18,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	elseif item.itemid == 1241 then
 		if player:getStorageValue(Storage.TheAncientTombs.VashresamunInstruments) == 5 then
 			player:teleportTo(toPosition, true)
-			Item(item.uid):transform(item.itemid + 1)
+			item:transform(item.itemid + 1)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You first must play the instruments in correct order to get the access!")
 		end

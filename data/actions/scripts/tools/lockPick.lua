@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid ~= 12503 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 12503 then
 		return false
 	end
 
@@ -9,7 +9,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			player:setStorageValue(Storage.thievesGuild.Mission02, 2)
 		end
 	else
-		Item(item.uid):remove(1)
+		item:remove(1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your lock pick broke.")
 	end
 	return true

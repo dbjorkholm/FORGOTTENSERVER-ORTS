@@ -3,7 +3,7 @@ local targetDestination = {
 	Position(32646, 31903, 3)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 11 then
 		return false
 	end
@@ -15,7 +15,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	local destination = playerPos == targetDestination[2] and targetDestination[1] or targetDestination[2]
 	if destination.z == 6 then
-		Item(item.uid):remove()
+		item:remove()
 	end
 
 	player:teleportTo(destination)

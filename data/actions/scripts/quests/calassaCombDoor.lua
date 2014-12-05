@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 5745 then
 		return false
 	end
@@ -8,7 +8,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	Item(item.uid):transform(item.itemid + 1)
+	item:transform(item.itemid + 1)
 	player:teleportTo(toPosition, true)
 	return true
 end

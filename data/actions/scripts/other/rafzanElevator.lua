@@ -59,7 +59,7 @@ local function moveElevator(config, player)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = winch[item.itemid]
 	if not useItem then
 		return true

@@ -38,7 +38,7 @@ local function clearArea(fromPosition, toPosition, bossName, exitPosition)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if Game.getStorageValue(GlobalStorage.Warzones) == 1 then
 		return false
 	end

@@ -7,31 +7,34 @@ local function transformBack(position, itemId, transformId)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetItem = Item(itemEx.uid)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
-		if itemEx.itemid == 7261 then
+		if target.itemid == 7261 then
 			if player:getStorageValue(Storage.TheIceIslands.FrostbiteHerb) < 1 then
 				player:addItem(7248, 1)
 				player:setStorageValue(Storage.TheIceIslands.FrostbiteHerb, 1)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:say('You cut a leaf from a frostbite herb.', TALKTYPE_MONSTER_SAY)
 			end
-		elseif itemEx.itemid == 2733 then
+		elseif target.itemid == 2733 then
 			if player:getStorageValue(Storage.TheIceIslands.FlowerCactus) < 1 then
 				player:addItem(7245, 1)
 				player:setStorageValue(Storage.TheIceIslands.FlowerCactus, 1)
-				targetItem:transform(2723)
+				target:transform(2723)
 				addEvent(transformBack, 60 * 1000, toPosition, 2723, 2733)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				player:say('You cut a flower from a cactus.', TALKTYPE_MONSTER_SAY)
 			end
-		elseif itemEx.itemid == 4017 then
+		elseif target.itemid == 4017 then
 			if player:getStorageValue(Storage.TheIceIslands.FlowerBush) < 1 then
 				player:addItem(7249, 1)
 				player:setStorageValue(Storage.TheIceIslands.FlowerBush, 1)
-				targetItem:transform(4014)
+				target:transform(4014)
 				addEvent(transformBack, 60 * 1000, toPosition, 4014, 4017)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 				player:say('You cut a flower from a bush.', TALKTYPE_MONSTER_SAY)
@@ -40,18 +43,18 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 	
 	-- What a foolish Quest (Mission 1)
-	if itemEx.actionid == 4200 then
+	if target.actionid == 4200 then
 		if toPosition.x == 32349 and toPosition.y == 32361 and toPosition.z == 7 then
 			player:addItem(7476, 1)
 			player:say('The stubborn flower has ruined your knife but at least you got it.', TALKTYPE_MONSTER_SAY, false, player, toPosition)
-			Item(item.uid):remove()
+			item:remove()
 		else
 			player:say('This flower is too pathetic.', TALKTYPE_MONSTER_SAY, false, player, toPosition)
 		end
 	end
 
 	-- What a foolish Quest (Mission 5)
-	if itemEx.itemid == 7480 then
+	if target.itemid == 7480 then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.EmperorBeardShave) == 1 then
 			player:say('God shave the emperor. Some fool already did it.', TALKTYPE_MONSTER_SAY)
 			return true
@@ -62,7 +65,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		player:addItem(7479, 1)
 		Game.createMonster('dwarf guard', Position(32656, 31853, 13))
 	-- What a foolish Quest (Mission 8)
-	elseif itemEx.itemid == 4008 then
+	elseif target.itemid == 4008 then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 22
 				or player:getStorageValue(Storage.WhatAFoolishQuest.SpecialLeaves) == 1 then
 			return false
@@ -73,8 +76,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 	end
 
-	if isInArray(fruits, itemEx.itemid) and player:removeItem(6278, 1) then
-		targetItem:remove(1)
+	if isInArray(fruits, target.itemid) and player:removeItem(6278, 1) then
+		target:remove(1)
 		player:addItem(6279, 1)
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 	end

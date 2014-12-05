@@ -58,8 +58,8 @@ local function getRandomSummonPosition()
 	return config.summonPositions[math.random(#config.summonPositions)]
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if not isInArray(config.demonOakIds, itemEx.itemid) then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or not isInArray(config.demonOakIds, target.itemid) then
 		return true
 	end
 
@@ -92,7 +92,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	local cStorage = config.storages[itemEx.itemid]
+	local cStorage = config.storages[target.itemid]
 	local progress = math.max(player:getStorageValue(cStorage), 1)
 	if progress >= config.waves + 1 then
 		toPosition:sendMagicEffect(CONST_ME_POFF)
@@ -100,7 +100,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	local isLastCut = totalProgress == (#config.demonOakIds * (config.waves + 1) - 1)
-	local summons = config.summons[itemEx.itemid]
+	local summons = config.summons[target.itemid]
 	if summons and summons[progress] then
 		-- Summon a single demon on the last hit
 		if isLastCut then

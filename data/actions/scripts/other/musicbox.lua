@@ -10,13 +10,14 @@ local config = {
 	['panda'] = {mountId = 19, tameMessage = 'You have tamed the panda.', sound = 'Rrrrr...'}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetMonster = Monster(itemEx.uid)
-	if not targetMonster or targetMonster:getMaster() then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isCreature()
+			or not target:isMonster()
+			or target:getMaster() then
 		return false
 	end
 
-	local targetName = targetMonster:getName():lower()
+	local targetName = target:getName():lower()
 	local monsterConfig = config[targetName]
 	if not monsterConfig then
 		return true
@@ -32,9 +33,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	player:say(monsterConfig.tameMessage, TALKTYPE_MONSTER_SAY)
 	toPosition:sendMagicEffect(CONST_ME_SOUND_RED)
 
-	targetMonster:say(monsterConfig.sound, TALKTYPE_MONSTER_SAY)
-	targetMonster:remove()
+	target:say(monsterConfig.sound, TALKTYPE_MONSTER_SAY)
+	target:remove()
 
-	Item(item.uid):remove()
+	item:remove()
 	return true
 end

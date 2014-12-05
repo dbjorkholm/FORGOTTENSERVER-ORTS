@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.QuestChests.DoubletQuest) == 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The loose board is empty.')
 	else

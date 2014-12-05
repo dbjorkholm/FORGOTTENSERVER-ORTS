@@ -2,8 +2,12 @@ local function revertKeeperstorage()
 	Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, 0)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if item.itemid == 12320 and itemEx.actionid == 8026 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	if item.itemid == 12320 and target.actionid == 8026 then
 		if (Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or -1) < 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, math.max(0, Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or 0) + 1)
 			player:say("The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY)

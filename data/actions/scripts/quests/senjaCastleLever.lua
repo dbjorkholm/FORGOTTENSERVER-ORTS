@@ -5,7 +5,7 @@ local wallPositions = {
 	Position(32189, 31626, 8)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local wallItem
 	for _, wallPosition in pairs(wallPositions) do
 		wallItem = Tile(wallPosition):getItemById(1498)
@@ -15,6 +15,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):remove()
+	item:remove()
 	return true
 end

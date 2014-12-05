@@ -10,16 +10,20 @@ local function summonMonster(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
 	local sarcophagus = Position(32205, 31002, 14)
-	if toPosition.x == sarcophagus.x and toPosition.y == sarcophagus.y and toPosition.z == sarcophagus.z and itemEx.itemid == 7362 and item.itemid == 2361 then
+	if toPosition.x == sarcophagus.x and toPosition.y == sarcophagus.y and toPosition.z == sarcophagus.z and target.itemid == 7362 and item.itemid == 2361 then
 		if (Game.getStorageValue(GlobalStorage.Yakchal) or -1) < os.time() then
 			Game.setStorageValue(GlobalStorage.Yakchal, os.time() + 24 * 60 * 60)
 			if math.random(2) == 2 then
 				player:say("You have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
 			else
 				player:say("The frozen starlight shattered, but you have awoken the icewitch Yakchal from her slumber! She seems not amused...", TALKTYPE_MONSTER_SAY)
-				Item(item.uid):remove(1)
+				item:remove(1)
 			end
 			Game.createMonster("Yakchal", toPosition)
 			toPosition:sendMagicEffect(CONST_ME_TELEPORT)

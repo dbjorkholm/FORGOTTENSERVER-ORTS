@@ -1,6 +1,6 @@
 local tile = Tile(Position(32571, 31508, 9))
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) == 1 and tile:getItemId(7122) then
 		player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 2)

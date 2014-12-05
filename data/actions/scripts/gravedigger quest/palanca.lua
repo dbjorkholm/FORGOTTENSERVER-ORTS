@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission39) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission40) < 1 then
 		player:setStorageValue(Storage.GravediggerOfDrefia.Mission40, 1)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, '<sizzle> <fizz>')

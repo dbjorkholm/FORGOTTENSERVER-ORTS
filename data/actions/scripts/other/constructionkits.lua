@@ -13,7 +13,7 @@ local constructionKits = {
 	[20254] = 20295, [20255] = 20297, [20257] = 20299
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local kit = constructionKits[item.itemid]
 	if not kit then
 		return false
@@ -24,7 +24,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	elseif not fromPosition:getTile():getHouse() then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, "You may construct this only inside a house.")
 	else
-		Item(item.uid):transform(kit)
+		item:transform(kit)
 		fromPosition:sendMagicEffect(CONST_ME_POFF)
 
 		local cStorage = player:getStorageValue(Storage.Achievements.InteriorDecorator)

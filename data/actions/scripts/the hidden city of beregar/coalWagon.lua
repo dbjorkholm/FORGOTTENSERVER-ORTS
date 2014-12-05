@@ -3,7 +3,7 @@ local config = {
 	{wagon = 8749, stopPos = Position(32699, 31492, 11)}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	for i = 1, #config do
 		local table = config[i]
 		local wagonPos = table.wagon:getPosition()

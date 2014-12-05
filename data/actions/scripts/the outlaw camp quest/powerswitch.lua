@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	local wall = Tile(Position({x=32604, y=32216, z=9}))
 	local power2pos = Position({x = 32613, y = 32220, z = 10})
@@ -10,6 +10,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		wall:getItemById(1026):remove()
 		power1pos:sendMagicEffect(CONST_ME_TELEPORT)
 	end
-		Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+		item:transform(item.itemid == 1945 and 1946 or 1945)
 	return true
 end

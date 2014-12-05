@@ -78,7 +78,7 @@ local config = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useId = config[item.itemid]
 	if not useId then
 		return false
@@ -99,7 +99,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				player:say('You found nothing useful.', TALKTYPE_MONSTER_SAY)
 			end
 
-			local useItem = Item(item.uid)
+			local useItem = item
 			useItem:getPosition():sendMagicEffect(useId.effect)
 			useItem:remove(1)
 			break

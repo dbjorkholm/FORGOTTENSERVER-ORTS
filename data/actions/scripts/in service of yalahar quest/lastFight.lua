@@ -47,7 +47,7 @@ local function summonMonster(name, position)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.uid == 3086 then
 		if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) ~= 1 then -- Fight
 			local amountOfPlayers = 3

@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local playerPos = player:getPosition()
 	if player:getStorageValue(Storage.BigfootBurden.Shooting) < 6 then
 		local pos = Position(playerPos.x, playerPos.y - 5, 10)

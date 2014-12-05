@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.SvargrondArena.Arena) < 1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'This door seems to be sealed against unwanted intruders.')
 		return true
@@ -15,7 +15,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if item.itemid == 5133 then
 			return false
 		end
-		Item(item.uid):transform(item.itemid + 1)
+		item:transform(item.itemid + 1)
 		player:teleportTo(toPosition, true)
 
 	-- Arena entrance doors
@@ -29,7 +29,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if item.itemid == 5133 then
 			return false
 		end
-		Item(item.uid):transform(item.itemid + 1)
+		item:transform(item.itemid + 1)
 		player:teleportTo(toPosition, true)
 	end
 

@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 9 then
 		player:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 10)
 		player:addItem(10760, 1)

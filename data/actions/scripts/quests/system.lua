@@ -20,7 +20,7 @@ local tutorialIds = {
 	[50086] = 11
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local storage = specialQuests[item.actionid]
 	if not storage then
 		storage = item.uid
@@ -34,13 +34,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	local useItem = Item(item.uid)
 	local items = {}
-	local reward = nil
+	local reward
 
-	local size = useItem:isContainer() and Container(item.uid):getSize() or 0
+	local size = item:isContainer() and Container(item.uid):getSize() or 0
 	if size == 0 then
-		reward = useItem:clone()
+		reward = item:clone()
 	else
 		local container = Container(item.uid)
 		for i = 0, container:getSize() - 1 do
@@ -54,7 +53,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	local result = ''
-	local weight = 0
 	if reward then
 		local ret = ItemType(reward:getId())
 		if ret:isRune() then
@@ -66,7 +64,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		else
 			result = ret:getName()
 		end
-		weight = ret:getWeight(reward:getCount())
 	else
 		if size > 20 then
 			reward = Game.createItem(item.itemid, 1)
@@ -80,16 +77,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			local tmp = items[i]
 			if reward:addItemEx(tmp) ~= RETURNVALUE_NOERROR then
 				print('[Warning] QuestSystem:', 'Could not add quest reward to container')
-			else
-				weight = weight + ItemType(tmp:getId()):getWeight(tmp:getCount())
 			end
 		end
 		local ret = ItemType(reward:getId())
 		result = ret:getArticle() .. ' ' .. ret:getName()
-		weight = weight + ret:getWeight()
 	end
 
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
+		local weight = reward:getWeight()
 		if player:getFreeCapacity() < weight then
 			player:sendCancelMessage('You have found ' .. result .. ' weighing ' .. string.format('%.2f', (weight / 100)) .. ' oz. You have no capacity.')
 		else

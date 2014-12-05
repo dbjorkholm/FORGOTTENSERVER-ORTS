@@ -5,8 +5,8 @@ local function revertCrystal(position, itemId, transformId)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 18321 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 18321 then
 		return false
 	end
 
@@ -14,7 +14,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return false
 	end
 
-	Item(itemEx.uid):transform(18320)
+	target:transform(18320)
 	addEvent(revertCrystal, 40000, toPosition, 18320, 18321)
 
 	if math.random(5) ~= 5 then

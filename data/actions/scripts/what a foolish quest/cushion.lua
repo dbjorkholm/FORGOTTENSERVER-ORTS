@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid ~= 4203 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 4203 then
 		return false
 	end
 
@@ -12,6 +12,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	player:say('*chuckles maniacally*', TALKTYPE_MONSTER_SAY)
 	player:getPosition():sendMagicEffect(CONST_ME_POFF)
 	player:say('Woooosh!', TALKTYPE_MONSTER_SAY, false, player, toPosition)
-	Item(item.uid):remove()
+	item:remove()
 	return true
 end

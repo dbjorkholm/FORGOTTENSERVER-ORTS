@@ -21,7 +21,7 @@ local config = {
 	}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 13500 then
 		player:say('This jar is already broken!', TALKTYPE_MONSTER_SAY)
 		return true
@@ -40,7 +40,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 	end
 
-	Item(item.uid):transform(config.brokenJarId)
+	item:transform(config.brokenJarId)
 
 	local jarsBroken, jarItem = true
 	for i = 1, #config.jarPositions do

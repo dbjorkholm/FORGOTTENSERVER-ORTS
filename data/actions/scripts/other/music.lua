@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 2071 then
 		if isInRange(player:getPosition(), Position(32695, 31717, 2), Position(32699, 31719, 2)) then
 			local lyreProgress = player:getStorageValue(Storage.Diapason.Lyre)
@@ -12,6 +12,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):getPosition():sendMagicEffect(CONST_ME_SOUND_BLUE)
+	item:getPosition():sendMagicEffect(CONST_ME_SOUND_BLUE)
 	return true
 end

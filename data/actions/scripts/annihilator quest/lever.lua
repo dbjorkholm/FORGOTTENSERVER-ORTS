@@ -25,7 +25,7 @@ local config = {
 }
 
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1946 then
 		local players = {}
 		local continue = true
@@ -68,6 +68,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 	end
 
-	Item(item.uid):transform(item.itemid == 1946 and 1945 or 1946)
+	item:transform(item.itemid == 1946 and 1945 or 1946)
 	return true
 end

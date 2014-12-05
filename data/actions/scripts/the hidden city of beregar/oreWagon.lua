@@ -12,7 +12,7 @@ local config = {
 	[50108] = Position(32687, 31470, 13)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true

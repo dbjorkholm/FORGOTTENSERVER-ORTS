@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local wallItem = Tile(33151, 32866, 8):getItemById(1100)
 	if wallItem then
 		wallItem:remove()

@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 18484 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 18484 then
 		return false
 	end
 
@@ -11,7 +11,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	player:setStorageValue(Storage.BigfootBurden.ExtractedCount, math.max(0, extractedCount) + 1)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You gathered a spark.')
-	Item(itemEx.uid):transform(18485)
+	target:transform(18485)
 	toPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 	return true
 end

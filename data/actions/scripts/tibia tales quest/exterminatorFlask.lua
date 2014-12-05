@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid ~= 4207 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 4207 then
 		return false
 	end
 
@@ -8,7 +8,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	player:setStorageValue(Storage.TibiaTales.TheExterminator, 2)
-	Item(item.uid):transform(2006, 0)
+	item:transform(2006, 0)
 	toPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
 	return true
 end

@@ -1,15 +1,15 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = Tile(Position({ x = 32780 , y = 32231 , z = 8}))
 	if item.itemid == 1945 then
 		if tile:getItemById(387) then
 			tile:getItemById(387):remove()
-			Item(item.uid):transform(1946)
+			item:transform(1946)
 		else
 			Game.createItem(387, 1, { x = 32780 , y = 32231 , z = 8})
 		end
 	else
 		Game.createItem(387, 1, { x = 32780 , y = 32231 , z = 8})
-		Item(item.uid):transform(1945)
+		item:transform(1945)
 	end
 	return true
 end

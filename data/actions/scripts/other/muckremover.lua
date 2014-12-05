@@ -10,8 +10,8 @@ local config = {
 	{from = 9874, to = 9999, itemId = 18450}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 18396 then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.itemid ~= 18396 then
 		return false
 	end
 
@@ -19,10 +19,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	for i = 1, #config do
 		local randomItem = config[i]
 		if chance >= randomItem.from and chance <= randomItem.to then
-			local targetItem = Item(itemEx.uid)
-			targetItem:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
-			targetItem:remove(1)
-			Item(item.uid):remove(1)
+			target:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
+			target:remove(1)
+			item:remove(1)
 			player:addItem(randomItem.itemId, randomItem.count or 1)
 			break
 		end

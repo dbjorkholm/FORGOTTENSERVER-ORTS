@@ -4,7 +4,7 @@ local t = {
 	Position(33322, 31592, 14) -- where the teleport takes you
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		local tile = t[1]:getTile()
 		if tile then
@@ -30,5 +30,5 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		t[2]:sendMagicEffect(CONST_ME_POFF)
 		Game.createItem(1355, 1, t[1])
 	end
-	return Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	return item:transform(item.itemid == 1945 and 1946 or 1945)
 end

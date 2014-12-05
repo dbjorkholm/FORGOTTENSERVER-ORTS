@@ -4,7 +4,7 @@ local config = {
 	[9076] = {'quara hydromancer', 'diabolical imp', 'banshee', 'frost giant', 'lich'} -- deluxe
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local monsterNames = config[item.itemid]
 	if not monsterNames then
 		return true
@@ -20,7 +20,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		player:setStorageValue(Storage.Achievements.Masquerader, 101)
 	end
 
-	local useItem = Item(item.uid)
+	local useItem = item
 	useItem:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	useItem:remove()
 	return true

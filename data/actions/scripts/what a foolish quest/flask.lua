@@ -8,8 +8,12 @@ local poisonField = Condition(CONDITION_OUTFIT)
 poisonField:setTicks(8000)
 poisonField:setOutfit({lookTypeEx = 1496})
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetItem = config[itemEx.itemid]
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
+	local targetItem = config[target.itemid]
 	if not targetItem then
 		return false
 	end
@@ -20,6 +24,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	player:say(targetItem.text, TALKTYPE_MONSTER_SAY)
 	player:getPosition():sendMagicEffect(CONST_ME_HITBYPOISON)
-	Item(item.uid):transform(targetItem.transformId)
+	item:transform(targetItem.transformId)
 	return true
 end

@@ -32,7 +32,7 @@ local function revertLever(position)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local walls = config[item.uid]
 	if not walls then
 		return true
@@ -42,7 +42,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return false
 	end
 
-	Item(item.uid):transform(1946)
+	item:transform(1946)
 	addEvent(revertLever, 8 * 1000, toPosition)
 
 	local wallItem

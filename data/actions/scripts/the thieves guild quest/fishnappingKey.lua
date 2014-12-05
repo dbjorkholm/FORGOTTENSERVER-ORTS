@@ -1,8 +1,7 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.actionid ~= 12505 then
-		return true
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() or target.actionid ~= 12505 then
+		return false
 	end
-
 
 	if player:getStorageValue(Storage.thievesGuild.Mission06) == 2 then
 		player:removeItem(8762, 1)

@@ -3,7 +3,7 @@ local config = {
 	[12546] = {itemId = 12504, storage = Storage.FathersBurdenQuest.Corpse.Sinew, text = 'Heoni\'s sinew'}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local corpse = config[item.itemid]
 	if not corpse then
 		return true

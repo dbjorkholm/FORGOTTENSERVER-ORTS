@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.GravediggerOfDrefia.Mission05) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission06) ~= 1 then
 		local chances = math.random(30)
 		if chances == 13 then

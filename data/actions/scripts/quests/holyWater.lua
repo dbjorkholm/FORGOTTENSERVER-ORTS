@@ -38,10 +38,14 @@ local storages = {
 	[4023] = Storage.TibiaTales.RestInHallowedGround.Graves.Grave16
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target:isItem() then
+		return false
+	end
+
 	-- Eclipse
-	if itemEx.actionid == 2000 then
-		Item(item.uid):remove(1)
+	if target.actionid == 2000 then
+		item:remove(1)
 		toPosition:sendMagicEffect(CONST_ME_FIREAREA)
 		-- The Inquisition Questlog- 'Mission 2: Eclipse'
 		player:setStorageValue(Storage.TheInquisition.Mission02, 2)
@@ -49,13 +53,13 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		return true
 
 	-- Haunted Ruin
-	elseif itemEx.actionid == 2003 then
+	elseif target.actionid == 2003 then
 		if player:getStorageValue(Storage.TheInquisition.Questline) ~= 12 then
 			return true
 		end
 
 		Game.createMonster('Pirate Ghost', toPosition)
-		Item(item.uid):remove(1)
+		item:remove(1)
 
 		-- The Inquisition Questlog- 'Mission 4: The Haunted Ruin'
 		player:setStorageValue(Storage.TheInquisition.Questline, 13)
@@ -70,14 +74,13 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	end
 
 	-- Shadow Nexus
-	if isInArray({8753, 8755, 8757}, itemEx.itemid) then
-		local nexusItem = Item(itemEx.uid)
-		nexusItem:transform(itemEx.itemid + 1)
-		nexusItem:decay()
+	if isInArray({8753, 8755, 8757}, target.itemid) then
+		target:transform(target.itemid + 1)
+		target:decay()
 		nexusMessage(player, player:getName() .. ' damaged the shadow nexus! You can\'t damage it while it\'s burning.')
 		shadowNexusPosition:sendMagicEffect(CONST_ME_HOLYAREA)
 
-	elseif itemEx.itemid == 8759 then
+	elseif target.itemid == 8759 then
 		if player:getStorageValue(Storage.TheInquisition.Questline) < 22 then
 			-- The Inquisition Questlog- 'Mission 7: The Shadow Nexus'
 			player:setStorageValue(Storage.TheInquisition.Mission07, 2)
@@ -89,9 +92,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 
 		nexusMessage(player, player:getName() .. ' destroyed the shadow nexus! In 20 seconds it will return to its original state.')
-		Item(item.uid):remove(1)
-	elseif itemEx.actionid > 4007 and itemEx.actionid < 4024 then
-		local graveStorage = storages[itemEx.actionid]
+		item:remove(1)
+	elseif target.actionid > 4007 and target.actionid < 4024 then
+		local graveStorage = storages[target.actionid]
 		if player:getStorageValue(graveStorage) == 1
 				or player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline) ~= 3 then
 			return false
@@ -105,7 +108,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		elseif cStorage == 14 then
 			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.HolyWater, -1)
 			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 4)
-			Item(item.uid):transform(2006, 0)
+			item:transform(2006, 0)
 		end
 
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

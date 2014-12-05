@@ -10,7 +10,7 @@ local rewards = {
 	[1308] = 8854
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.TheInquisition.Reward) < 1 then
 		player:setStorageValue(Storage.TheInquisition.Reward, 1)
 		player:setStorageValue(Storage.TheInquisition.Questline, 25)

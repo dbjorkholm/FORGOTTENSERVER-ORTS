@@ -5,7 +5,7 @@ local config = {
 	[50125] = Position(32690, 31495, 11) -- room with lava that I couldn't find, setting destination to the same as mushroom quest
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetPosition = config[item.actionid]
 	if not targetPosition then
 		return true
@@ -13,6 +13,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 
 	player:teleportTo(targetPosition)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	Item(item.uid):remove()
+	item:remove()
 	return true
 end

@@ -5,9 +5,9 @@ local config = {
 	{position = Position(33268, 31833, 10), itemid = 8304, toPosition = Position(33268, 31833, 12), vocationId = 1}
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid ~= 1945 then
-		Item(item.uid):transform(1945)
+		item:transform(1945)
 		return true
 	end
 
@@ -44,6 +44,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		config[i].toPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	end
 
-	Item(item.uid):transform(item.itemid + 1)
+	item:transform(item.itemid + 1)
 	return true
 end

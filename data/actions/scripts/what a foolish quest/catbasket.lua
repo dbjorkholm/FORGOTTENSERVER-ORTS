@@ -14,7 +14,7 @@ local function removeKitty(monsterId)
 	end
 end
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 19
 			or player:getStorageValue(Storage.WhatAFoolishQuest.CatBasket) == 1 then
 		return false

@@ -3,13 +3,13 @@ local config = {
 	[3185] = Position(33078, 31080, 13)
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetPosition = config[item.uid]
 	if not targetPosition then
 		return true
 	end
 
-	Item(item.uid):transform(item.itemid == 1945 and 1946 or 1945)
+	item:transform(item.itemid == 1945 and 1946 or 1945)
 
 	toPosition.y = toPosition.y + 1
 	local creature = Tile(toPosition):getTopCreature()

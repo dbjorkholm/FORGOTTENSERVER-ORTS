@@ -12,7 +12,7 @@ local config = {
 	bridgeId = 5770
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local leverLeft = item.itemid == 1945
 	for _, position in pairs(config.leverPositions) do
 		Tile(position):getItemById(leverLeft and 1945 or 1946):transform(leverLeft and 1946 or 1945)

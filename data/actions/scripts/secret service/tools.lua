@@ -4,7 +4,7 @@ local config = {
 	[7962] = 10511 -- AVIN
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local useItem = config[item.itemid]
 	if not useItem then
 		return true
@@ -13,6 +13,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	player:addItem(useItem)
 	player:say('You\'ve found a useful little tool for secret agents in the parcel.', TALKTYPE_MONSTER_SAY)
 
-	Item(item.uid):remove()
+	item:remove()
 	return true
 end
