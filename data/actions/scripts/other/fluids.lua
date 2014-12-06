@@ -9,12 +9,22 @@ poison:setParameter(CONDITION_PARAM_STARTVALUE, -5)
 poison:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000)
 poison:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
 
-local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19}
-local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!"}
+local fluidMessage = {
+	[3] = 'Aah...', 
+	[4] = 'Urgh!', 
+	[5] = 'Mmmh.', 
+	[7] = 'Aaaah...', 
+	[10] = 'Aaaah...', 
+	[11] = 'Urgh!', 
+	[13] = 'Urgh!', 
+	[15] = 'Aah...', 
+	[19] = 'Urgh!', 
+	[43] = 'Aaaah...'
+}
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetType = ItemType(target.itemid)
-	if targetType and targetType:isFluidContainer() then
+	if targetType:isFluidContainer() then
 		if target.type == 0 and item.type ~= 0 then
 			target:transform(target.itemid, item.type)
 			item:transform(item.itemid, 0)
@@ -28,7 +38,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if target.itemid == 1 then
 		if item.type == 0 then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
 		elseif target.uid == player:getId() then
 			if isInArray({3, 15, 43}, item.type) then
 				player:addCondition(drunk)
@@ -41,24 +51,19 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:addHealth(60)
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
+
+			player:say(fluidMessage[item.type] or 'Gulp.', TALKTYPE_MONSTER_SAY)
 			item:transform(item.itemid, 0)
-			for i = 0, #fluidType do
-				if item.type == fluidType[i] then
-					player:say(fluidMessage[i], TALKTYPE_MONSTER_SAY)
-					return true
-				end
-			end
-			player:say("Gulp.", TALKTYPE_MONSTER_SAY)
 		else
 			item:transform(item.itemid, 0)
 			Game.createItem(2016, item.type, toPosition):decay()
 		end
 	else
-		local fluidSource = targetType and targetType:getFluidSource() or 0
+		local fluidSource = targetType:getFluidSource()
 		if fluidSource ~= 0 then
 			item:transform(item.itemid, fluidSource)
 		elseif item.type == 0 then
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
 		else
 			if toPosition.x == CONTAINER_POSITION then
 				toPosition = player:getPosition()
