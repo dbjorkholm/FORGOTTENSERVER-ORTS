@@ -156,7 +156,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		for i = 1, #positions do
 			local ground = Tile(positions[i]):getGround()
-			if ground and ground:getId() == 598 then
+			if ground and ground.itemid == 598 then
 				ground:transform(5815)
 			end
 		end

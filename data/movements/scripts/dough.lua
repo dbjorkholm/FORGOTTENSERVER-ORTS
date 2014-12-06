@@ -9,7 +9,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):transform(pastryId)
+	moveitem:transform(pastryId)
 	position:sendMagicEffect(CONST_ME_HITBYFIRE)
 	return true
 end

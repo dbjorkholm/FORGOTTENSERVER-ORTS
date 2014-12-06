@@ -11,7 +11,7 @@ function Player:onLook(thing, position, distance)
 		if thing:isItem() then
 			description = string.format('%s\nItemID: [%d]', description, thing:getId())
 
-			local actionId = thing:getActionId()
+			local actionId = thing.actionid
 			if actionId ~= 0 then
 				description = string.format('%s, ActionID: [%d]', description, actionId)
 			end
@@ -97,10 +97,10 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
-	if isInArray({1714, 1715, 1716, 1717, 1738, 1740, 1741, 1747, 1748, 1749}, item:getId()) and item:getActionId() > 0 then
+	if isInArray({1714, 1715, 1716, 1717, 1738, 1740, 1741, 1747, 1748, 1749}, item.itemid) and item.actionid > 0 then
 		self:sendCancelMessage('You cannot move this object.')
 		return false
-	elseif item:getId() == 7466 then
+	elseif item.itemid == 7466 then
 		self:sendCancelMessage('You cannot move this object.')
 		return false
 	end
@@ -123,7 +123,7 @@ function Player:onTurn(direction)
 end
 
 function Player:onTradeRequest(target, item)
-	if isInArray({1738, 1740, 1747, 1748, 1749, 8766}, item:getId()) and item:getActionId() > 0 then
+	if isInArray({1738, 1740, 1747, 1748, 1749, 8766}, item.itemid) and item.actionid > 0 then
 		self:sendCancelMessage('Sorry, not possible.')
 		return false
 	end

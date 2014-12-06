@@ -5,7 +5,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	local headItem = player:getSlotItem(CONST_SLOT_HEAD)
-	if headItem and isInArray({5461, 12541, 15408}, headItem:getId()) then
+	if headItem and isInArray({5461, 12541, 15408}, headItem.itemid) then
 		player:teleportTo(Position(32950, 31181, 9))
 		player:getPosition():sendMagicEffect(CONST_ME_WATERSPLASH)
 		player:say('The vortex throws you out in this vicious place.', TALKTYPE_MONSTER_SAY)

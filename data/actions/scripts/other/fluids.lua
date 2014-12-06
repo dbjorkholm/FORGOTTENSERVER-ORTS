@@ -1,43 +1,36 @@
--- TODO: Rewrite this script using fluidtypes from LIQUIDS doc-file,
---       and correct itemid's to recieve the liquids.
-
 local drunk = Condition(CONDITION_DRUNK)
-	drunk:setParameter(CONDITION_PARAM_TICKS, 60000)
+drunk:setParameter(CONDITION_PARAM_TICKS, 60000)
 
 local poison = Condition(CONDITION_POISON)
-	poison:setParameter(CONDITION_PARAM_DELAYED, true) -- Condition will delay the first damage from when it's added
-	poison:setParameter(CONDITION_PARAM_MINVALUE, -50) -- Minimum damage the condition can do at total
-	poison:setParameter(CONDITION_PARAM_MAXVALUE, -120) -- Maximum damage
-	poison:setParameter(CONDITION_PARAM_STARTVALUE, -5) -- The damage the condition will do on the first hit
-	poison:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000) -- Delay between damages
-	poison:setParameter(CONDITION_PARAM_FORCEUPDATE, true) -- Re-update condition when adding it(ie. min/max value)
+poison:setParameter(CONDITION_PARAM_DELAYED, true)
+poison:setParameter(CONDITION_PARAM_MINVALUE, -50)
+poison:setParameter(CONDITION_PARAM_MAXVALUE, -120)
+poison:setParameter(CONDITION_PARAM_STARTVALUE, -5)
+poison:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000)
+poison:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
 
-local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19, 43}
-local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!", "Aaaah..."}
+local fluidType = {3, 4, 5, 7, 10, 11, 13, 15, 19}
+local fluidMessage = {"Aah...", "Urgh!", "Mmmh.", "Aaaah...", "Aaaah...", "Urgh!", "Urgh!", "Aah...", "Urgh!"}
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
-	local targetItemId = target:getType()
-	if targetItemId:isFluidContainer() and target.type == 0 then
-		target:transform(target.itemid, item.type)
-		item:transform(item.itemid, 0)
-		return true
-	end
-	if targetItemId:isFluidContainer() and item.type == 0 then
-		target:transform(target.itemid, 0)
-		item:transform(item.itemid, target.type)
-		return true
+	local targetType = ItemType(target.itemid)
+	if targetType and targetType:isFluidContainer() then
+		if target.type == 0 and item.type ~= 0 then
+			target:transform(target.itemid, item.type)
+			item:transform(item.itemid, 0)
+			return true
+		elseif target.type ~= 0 and item.type == 0 then
+			target:transform(target.itemid, 0)
+			item:transform(item.itemid, target.type)
+			return true
+		end
 	end
 
 	if target.itemid == 1 then
 		if item.type == 0 then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
 		elseif target.uid == player:getId() then
-			item:transform(item.itemid, 0)
-			if item.type == 3 or item.type == 15 or item.type == 43 then
+			if isInArray({3, 15, 43}, item.type) then
 				player:addCondition(drunk)
 			elseif item.type == 4 then
 				player:addCondition(poison)
@@ -48,6 +41,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:addHealth(60)
 				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
+			item:transform(item.itemid, 0)
 			for i = 0, #fluidType do
 				if item.type == fluidType[i] then
 					player:say(fluidMessage[i], TALKTYPE_MONSTER_SAY)
@@ -60,7 +54,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			Game.createItem(2016, item.type, toPosition):decay()
 		end
 	else
-		local fluidSource = targetItemId:getFluidSource()
+		local fluidSource = targetType and targetType:getFluidSource() or 0
 		if fluidSource ~= 0 then
 			item:transform(item.itemid, fluidSource)
 		elseif item.type == 0 then
@@ -73,5 +67,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			Game.createItem(2016, item.type, toPosition):decay()
 		end
 	end
+
 	return true
 end

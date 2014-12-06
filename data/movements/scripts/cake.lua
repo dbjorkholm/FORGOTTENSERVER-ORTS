@@ -4,8 +4,8 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):remove()
-	Item(tileitem.uid):transform(6280)
+	moveitem:remove()
+	tileitem:transform(6280)
 	position:sendMagicEffect(CONST_ME_MAGIC_RED)
 	return true
 end

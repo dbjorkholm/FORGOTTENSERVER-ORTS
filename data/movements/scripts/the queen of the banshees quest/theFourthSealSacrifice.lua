@@ -10,7 +10,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):transform(2016, 2)
+	moveitem:transform(2016, 2)
 	for i = 1, #positions do
 		positions[i]:sendMagicEffect(CONST_ME_DRAWBLOOD)
 	end

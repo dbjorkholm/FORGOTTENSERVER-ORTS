@@ -28,7 +28,7 @@ function onStepIn(creature, item, position, fromPosition)
 	local groundItem
 	for i = 1, #positions do
 		groundItem = Tile(positions[i]):getGround()
-		if groundItem and groundItem:getId() == 5815 then
+		if groundItem and groundItem.itemid == 5815 then
 			groundItem:transform(598)
 		end
 	end

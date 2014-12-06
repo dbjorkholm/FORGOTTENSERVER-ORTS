@@ -19,7 +19,7 @@ function onStepIn(creature, item, position, fromPosition)
 		wallItem:remove()
 	end
 
-	Item(item.uid):transform(item.itemid - 1)
+	item:transform(item.itemid - 1)
 	return true
 end
 
@@ -38,6 +38,6 @@ function onStepOut(creature, item, position, fromPosition)
 		Game.createItem(wall.itemId, 1, wall.position)
 	end
 
-	Item(item.uid):transform(item.itemid + 1)
+	item:transform(item.itemid + 1)
 	return true
 end

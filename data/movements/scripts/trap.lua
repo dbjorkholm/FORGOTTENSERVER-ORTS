@@ -12,7 +12,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	if trap.transformTo then
-		Item(item.uid):transform(trap.transformTo)
+		item:transform(trap.transformTo)
 	end
 
 	if trap.ignorePlayer and creature:isPlayer() then
@@ -24,15 +24,14 @@ function onStepIn(creature, item, position, fromPosition)
 end
 
 function onStepOut(creature, item, position, fromPosition)
-	Item(item.uid):transform(item.itemid - 1)
+	item:transform(item.itemid - 1)
 	return true
 end
 
 function onRemoveItem(item, tile, position)
-	local trap = Item(item.uid)
-	local thingPos = trap:getPosition()
+	local thingPos = item:getPosition()
 	if thingPos:getDistance(position) > 0 then
-		trap:transform(item.itemid - 1)
+		item:transform(item.itemid - 1)
 		thingPos:sendMagicEffect(CONST_ME_POFF)
 	end
 	return true

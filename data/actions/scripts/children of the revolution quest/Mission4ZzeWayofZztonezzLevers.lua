@@ -35,7 +35,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	for i = 1, #position[1] do
 		ground = Tile(position[1][i]):getGround()
 		if ground then
-			tmp[i] = ground:getId()
+			tmp[i] = ground.itemid
 		end
 	end
 
@@ -50,7 +50,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local groundIds, pass = {10856, 10853, 10855, 10850}, 0
 	for i = 1, #position[2] do
 		ground = Tile(position[2][i]):getGround()
-		if ground and ground:getId() == groundIds[i] then
+		if ground and ground.itemid == groundIds[i] then
 			pass = pass + 1
 		end
 	end

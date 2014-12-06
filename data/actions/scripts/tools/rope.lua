@@ -12,7 +12,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
-	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
+	if ground and isInArray(ropeSpots, ground.itemid) or tile:getItemById(14435) then
 		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
 		if target.itemid == 8592 then
 			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 22 then

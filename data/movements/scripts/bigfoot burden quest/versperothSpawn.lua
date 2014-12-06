@@ -60,6 +60,6 @@ function onStepIn(creature, item, position, fromPosition)
 	Game.setStorageValue(GlobalStorage.Versperoth.Battle, 1)
 	Game.setStorageValue(GlobalStorage.Versperoth.Health, 0)
 	executeVersperothBattle()
-	Item(item.uid):transform(18462)
+	item:transform(18462)
 	return true
 end

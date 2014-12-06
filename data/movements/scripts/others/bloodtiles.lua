@@ -5,7 +5,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):remove()
+	moveitem:remove()
 	position:sendMagicEffect(CONST_ME_DRAWBLOOD)
 	return true
 end

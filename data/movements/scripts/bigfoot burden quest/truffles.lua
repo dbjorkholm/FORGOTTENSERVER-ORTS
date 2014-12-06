@@ -4,7 +4,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	local moldFloor = Tile(position):getItemById(18340)
-	if moldFloor:getActionId() == 100 then
+	if moldFloor.actionid == 100 then
 		return true
 	end
 

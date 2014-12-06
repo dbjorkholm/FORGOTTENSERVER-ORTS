@@ -7,7 +7,7 @@ function onStepIn(creature, item, position, fromPosition)
 		if stairsItem then
 			stairsItem:transform(8280)
 		end
-		Item(item.uid):transform(425)
+		item:transform(425)
 
 	-- created portal (by lever)
 	elseif item.actionid == 50026 then
@@ -30,6 +30,6 @@ function onStepOut(creature, item, position, fromPosition)
 		stairsItem:transform(424)
 	end
 
-	Item(item.uid):transform(426)
+	item:transform(426)
 	return true
 end

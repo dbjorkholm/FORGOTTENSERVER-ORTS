@@ -26,7 +26,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	player:setStorageValue(cStorage, os.time() + 20 * 60 * 60)
-	local itemType = ItemType(container:getId())
+	local itemType = ItemType(container.itemid)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. itemType:getArticle() .. ' ' .. itemType:getName() .. '.')
 	return true
 end

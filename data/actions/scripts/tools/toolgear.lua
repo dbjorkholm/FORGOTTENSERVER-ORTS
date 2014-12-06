@@ -82,7 +82,7 @@ end
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
-	if ground and isInArray(ropeSpots, ground:getId()) or tile:getItemById(14435) then
+	if ground and isInArray(ropeSpots, ground.itemid) or tile:getItemById(14435) then
 		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
 	elseif isInArray(holeId, target.itemid) then
 		toPosition.z = toPosition.z + 1
@@ -285,7 +285,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		for i = 1, #positions do
 			local ground = Tile(positions[i]):getGround()
-			if ground and ground:getId() == 598 then
+			if ground and ground.itemid == 598 then
 				ground:transform(5815)
 			end
 		end

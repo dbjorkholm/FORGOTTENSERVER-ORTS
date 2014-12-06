@@ -1,5 +1,5 @@
 function onEquip(player, item, slot)
-	Item(item.uid):transform(10309)
+	item:transform(10309)
 	if Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
 		return true
 	end

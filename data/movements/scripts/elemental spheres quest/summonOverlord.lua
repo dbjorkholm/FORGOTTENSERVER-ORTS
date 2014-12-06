@@ -95,7 +95,7 @@ function onAddItem(moveitem, tileitem, position)
 		end
 	end
 
-	Item(moveitem.uid):remove()
+	moveitem:remove()
 	position:sendMagicEffect(target.effect)
 	target.summonPos:sendMagicEffect(target.summonEffect or target.effect)
 	Game.createMonster(target.boss, target.summonPos)

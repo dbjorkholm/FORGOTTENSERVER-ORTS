@@ -11,7 +11,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 
 	local oven = Tile(useItem.position[1]):getTopTopItem()
-	if oven and isInArray({1786, 1787}, oven:getId()) then
+	if oven and isInArray({1786, 1787}, oven.itemid) then
 		oven:moveTo(useItem.position[2])
 	end
 

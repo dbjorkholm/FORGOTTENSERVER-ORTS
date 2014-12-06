@@ -33,7 +33,7 @@ end
 local function checkPillows(posX, posY, item)
 	for px = posX, posX + 2 do
 		for py = posY, posY + 2 do
-			if Tile(px, py, 9):getThing(1):getId() ~= item then
+			if Tile(px, py, 9):getThing(1).itemid ~= item then
 				return false
 			end
 		end

@@ -9,8 +9,8 @@ function onCastSpell(creature, var, isHotkey)
 		local desintegrate = false
 		while not isInArray(dead_human, object:getId())
 			and object:getType():isMovable()
-			and object:getUniqueId() > 65535
-			and object:getActionId() == 0
+			and object.uid > 65535
+			and object.actionid == 0
 		do
 			object:remove()
 			desintegrate = true

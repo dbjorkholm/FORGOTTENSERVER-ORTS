@@ -4,7 +4,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):moveTo(setting.destination)
+	moveitem:moveTo(setting.destination)
 	setting.destination:sendMagicEffect(setting.effect)
 	return true
 end

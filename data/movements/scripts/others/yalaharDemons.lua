@@ -16,7 +16,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local sacrificeId, sacrifice = Tile(flame.sacrificePosition):getThing(1):getId(), true
+	local sacrificeId, sacrifice = Tile(flame.sacrificePosition):getThing(1).itemid, true
 	if not isInArray({8298, 8299, 8302, 8303}, sacrificeId) then
 		sacrifice = false
 	end

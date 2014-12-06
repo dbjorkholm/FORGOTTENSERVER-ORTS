@@ -9,7 +9,7 @@ function onAddItem(moveitem, tileitem, position)
 		return true
 	end
 
-	Item(moveitem.uid):remove()
+	moveitem:remove()
 	for i = 1, #trees do
 		local treeItem = Tile(trees[i]):getItemById(2722)
 		if treeItem then

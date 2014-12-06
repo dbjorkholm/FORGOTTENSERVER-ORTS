@@ -12,7 +12,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	local crucible = Tile(Position(32699, 31494, 11)):getItemById(8641)
-	if crucible:getActionId() == 50121 then
+	if crucible.actionid == 50121 then
 		local wagon = Game.createItem(7132, 1, useItem.wagonPos)
 		if wagon then
 			wagon:setActionId(useItem.actionId)

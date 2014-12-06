@@ -7,7 +7,7 @@ local function doCreateDummy(cid, position)
 	local tile = Tile(position)
 	if tile then
 		local thing = tile:getTopVisibleThing()
-		if thing and isInArray({18226, 18227}, thing:getId()) then
+		if thing and isInArray({18226, 18227}, thing.itemid) then
 			thing:remove()
 		end
 	end
