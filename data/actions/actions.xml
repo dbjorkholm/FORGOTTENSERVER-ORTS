@@ -640,12 +640,13 @@
 	<action itemid="6572" script="other/partytrumpet.lua"/>
 	<action itemid="2785" script="other/blueberrybush.lua"/>
 	<action itemid="2579" script="other/trap.lua"/>
-	<action fromid="2070" toid="2078" script="other/music.lua"/>
-	<action fromid="2080" toid="2085" script="other/music.lua"/>
+	<action fromid="2070" toid="2085" script="other/music.lua"/>
 	<action itemid="2332" script="other/music.lua"/>
 	<action itemid="2364" script="other/music.lua"/>
-	<action fromid="2367" toid="2368" script="other/music.lua"/>
-	<action fromid="2370" toid="2373" script="other/music.lua"/>
+	<action fromid="2367" toid="2374" script="other/music.lua"/>
+	<action fromid="3951" toid="3953" script="other/music.lua"/>
+	<action itemid="5786" script="other/music.lua"/>
+	<action itemid="13759" script="other/music.lua"/>
 	<action fromid="2041" toid="2042" script="other/decayto.lua"/>
 	<action fromid="2044" toid="2045" script="other/decayto.lua"/>
 	<action fromid="2047" toid="2048" script="other/decayto.lua"/>
