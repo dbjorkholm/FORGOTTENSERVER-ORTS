@@ -20,14 +20,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	-- Rake
-	if item.itemid == 2549 then
-		if target.itemid == 12322 then
-			player:addItem(12285, 1)
-			player:say("You dig out a handful of ordinary clay.", TALKTYPE_MONSTER_SAY)
-		end
 	-- clay with the sacred earth
-	elseif (item.itemid == 12285 and target.itemid == 12297) or (item.itemid == 12297 and target.itemid == 12285) then
+	if (item.itemid == 12285 and target.itemid == 12297) or (item.itemid == 12297 and target.itemid == 12285) then
 		player:say("You carefully mix the clay with the sacred earth.", TALKTYPE_MONSTER_SAY)
 		item:remove()
 		target:remove()

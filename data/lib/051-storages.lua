@@ -597,6 +597,15 @@ Storage = {
 			}
 		}
 	},
+	TheShatteredIsles = {
+		DefaultStart = 12700,
+		TheGovernorDaughter = 12701,
+		TheErrand = 12702,
+		AccessToMeriana = 12703,
+		APoemForTheMermaid = 12704,
+		ADjinnInLove = 12705,
+		AccessToLagunaIsland = 12706
+	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,
 		LugriNecromancerCount = 50001,

@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local travelNode = keywordHandler:addKeyword({'peg leg'}, TravelLib.say, {npcHandler = npcHandler, text = 'Ohhhh. So... <lowers his voice> \'you know who\' sent you so I sail you to \'you know where\'. <wink> <wink> It will cost %s to cover my expenses. Is it that what you wish?', cost = 50, discount = TravelLib.postmanDiscount})
+local travelNode = keywordHandler:addKeyword({'peg leg'}, TravelLib.say, {npcHandler = npcHandler, text = 'Ohhhh. So... <lowers his voice> \'you know who\' sent you so I sail you to \'you know where\'. <wink> <wink> It will cost %s to cover my expenses. Is it that what you wish?', cost = 50, discount = TravelLib.postmanDiscount, storage = Storage.TheShatteredIsles.AccessToMeriana})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 50, discount = TravelLib.postmanDiscount, destination = Position(32348, 32625, 7) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 

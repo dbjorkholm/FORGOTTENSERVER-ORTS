@@ -1007,6 +1007,27 @@
 			<missionstate id="5" description="Arch Postman"/>
 		</mission>
 	</quest>
+	<quest name="The Shattered Isles" startstorageid="12700" startstoragevalue="1">
+		<mission name="A Djinn in Love" storageid="12705" startvalue="1" endvalue="2">
+			<missionstate id="1" description="xxx"/>
+			<missionstate id="2" description="After reciting the poem to Marina, she decided to date Ocelus and release Ray Striker from her spell."/>
+		</mission>
+		<mission name="A Poem for the Mermaid" storageid="12704" startvalue="1" endvalue="2">
+			<missionstate id="1" description="xxx"/>
+			<missionstate id="2" description="You are a true master in reciting love poems now. No mermaid will be able to resist if you ask for a date!"/>
+		</mission>
+		<mission name="Access to Laguna Island" storageid="12706" startvalue="1" endvalue="1" description="After arranging a date for Marina and Ocelus, you are allowed to use Marina's sea turtles. They will bring you to the idyllic Laguna Islands."/>
+		<mission name="Access to Meriana" storageid="12703" startvalue="1" endvalue="1" description="After earning the trust of the governor's daughter Eleonore, Captain Waverider in Liberty Bay will bring you to Meriana if you tell him the secret codeword 'peg leg'."/>
+		<mission name="The Errand" storageid="12702" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You told Eleonore to run a small errand. Deliver the 200 gold pieces she gave to the herbalist Charlotta in the south-western part of Liberty Bay."/>
+			<missionstate id="2" description="You delivered the gold to Charlotta. Return to Eleonore and tell her the secret password: peg leg"/>
+		</mission>
+		<mission name="The Governor's Daughter" storageid="12701" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You promised to find Eleonore's lost ring. She told you that a parrot stole it from her dressing table and flew to the nearby mountains. You might need a rake to retrieve the ring."/>
+			<missionstate id="2" description="You found the ring. Return it to Eleonore."/>
+			<missionstate id="3" description="You returned the ring to Eleonore."/>
+		</mission>
+	</quest>
 	<quest name="The Thieves Guild" startstorageid="12501" startstoragevalue="1">
 		<mission name="Mission 1: Ivory Poaching" storageid="12502" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Dorian wants you to collect 10 elephant tusks and deliver them to him."/>

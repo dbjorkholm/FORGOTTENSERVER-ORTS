@@ -65,7 +65,6 @@
 	<!-- Wrath of the Emperor -->
 	<action itemid="12284" script="wrath of the emperor quest/Mission01Crate.lua"/>
 	<action fromuid="3171" touid="3174" script="wrath of the emperor quest/Mission01Lights.lua"/>
-	<action itemid="2549"  script="wrath of the emperor quest/Mission02FirstContactRepairTeleport.lua"/>
 	<action itemid="12285" script="wrath of the emperor quest/Mission02FirstContactRepairTeleport.lua"/>
 	<action fromid="12289" toid="12290" script="wrath of the emperor quest/Mission02FirstContactRepairTeleport.lua"/>
 	<action itemid="12297" script="wrath of the emperor quest/Mission02FirstContactRepairTeleport.lua"/>
@@ -388,6 +387,7 @@
 	<action itemid="2420" script="tools/machete.lua"/>
 	<action itemid="2565" script="tools/spoon.lua"/>
 	<action itemid="2566" script="tools/kitchenknife.lua"/>
+	<action itemid="2549" script="tools/rake.lua"/>
 	<action itemid="2550" script="tools/scythe.lua"/>
 	<action itemid="2580" script="tools/fishing.lua" allowfaruse="1"/>
 	<action itemid="5710" script="tools/shovel.lua"/>
