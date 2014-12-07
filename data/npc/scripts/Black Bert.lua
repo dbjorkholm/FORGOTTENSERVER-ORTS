@@ -20,77 +20,77 @@ end
 local function getTable(player)
 	local itemsList = {}
 	local buyList = {
-		{itemId = 10942, price = 600},		-- Almanac of Magic
-		{itemId = 10154, price = 10000},	-- Animal Fetish
-		{itemId = 10943, price = 600},		-- Baby Rotworm
-		{itemId = 7500, price = 6000},		-- Bale of White Cloth
-		{itemId = 2329, price = 8000},		-- Bill
-		{itemId = 9369, price = 50000},		-- Blood Crystal
-		{itemId = 10159, price = 10000},	-- Bloodkiss Flower
-		{itemId = 10109, price = 5000},		-- Bundle of Rags
-		{itemId = 10615, price = 1000},		-- Carrying Device
-		{itemId = 7499, price = 2000},		-- Cigar
-		{itemId = 2347, price = 150},		-- Cookbook
-		{itemId = 14338, price = 40000},	-- Damaged Logbook
-		{itemId = 14352, price = 17000},	-- Dark Essence
-		{itemId = 10158, price = 13000},	-- Deep Crystal
-		{itemId = 10169, price = 8000},		-- Elemental Crystal
-		{itemId = 11397, price = 600},		-- Empty Beer Bottle
-		{itemId = 8111, price = 100},		-- Exploding Cookie
-		{itemId = 12501, price = 4000},		-- Exquisite Silk
-		{itemId = 12503, price = 4000},		-- Exquisite Wood
-		{itemId = 12500, price = 600},		-- Faded Last Will
-		{itemId = 4845, price = 1000},		-- Family Brooch
-		{itemId = 10308, price = 10000},	-- Fan Club Membership Card
-		{itemId = 10616, price = 1000},		-- Filled Carrying Device
-		{itemId = 8766, price = 7000},		-- Fishnapped Goldfish
-		{itemId = 10926, price = 700},		-- Flask of Crown Polisher
-		{itemId = 11106, price = 1000},		-- Flask of Extra Greasy Oil
-		{itemId = 10760, price = 1000},		-- Flask of Poison
-		{itemId = 12506, price = 4000},		-- Flexible Dragon Scale
-		{itemId = 14351, price = 5000},		-- Formula for a Memory Potion
-		{itemId = 4858, price = 6000},		-- Funeral Urn
-		{itemId = 9662, price = 50000},		-- Ghost's Tear
-		{itemId = 4843, price = 24000},		-- Giant Ape's Hair
-		{itemId = 10165, price = 13500},	-- Golem Blueprint
-		{itemId = 10173, price = 25000},	-- Golem Head
-		{itemId = 10454, price = 350},		-- Headache Pill
-		{itemId = 2330, price = 8000},		-- Letterbag
-		{itemId = 12285, price = 1000},		-- Lump of Clay
-		{itemId = 10307, price = 8500},		-- Machine Crate
-		{itemId = 12508, price = 4000},		-- Magic Crystal
-		{itemId = 10167, price = 13000},	-- Mago Mechanic Core
-		{itemId = 10928, price = 650},		-- Map to the Unknown
-		{itemId = 7281, price = 500},		-- Memory Crystal
-		{itemId = 4852, price = 3000},		-- Memory Stone
-		{itemId = 12507, price = 4000},		-- Mystic Root
-		{itemId = 10225, price = 5250},		-- Nautical Map
-		{itemId = 12505, price = 4000},		-- Old Iron
-		{itemId = 10170, price = 13000},	-- Old Power Core
-		{itemId = 10613, price = 1000},		-- Plans for a Strange Device
-		{itemId = 11104, price = 1000},		-- Rare Crystal
-		{itemId = 12297, price = 1000},		-- Sacred Earth
-		{itemId = 10155, price = 12500},	-- Shadow Orb
-		{itemId = 4854, price = 500},		-- Sheet of Tracing Paper
-		{itemId = 7697, price = 15000},		-- Signet Ring
-		{itemId = 4846, price = 8000},		-- Snake Destroyer
-		{itemId = 10945, price = 666},		-- Soul Contract
-		{itemId = 14323, price = 5000},		-- Special Flask
-		{itemId = 12502, price = 4000},		-- Spectral Cloth
-		{itemId = 4847, price = 15000},		-- Spectral Dress
-		{itemId = 10166, price = 12500},	-- Stabilizer
-		{itemId = 15389, price = 5000},		-- Strange Powder
-		{itemId = 12504, price = 4000},		-- Strong Sinew
-		{itemId = 2346, price = 16000},		-- Tear of Daraman
-		{itemId = 7699, price = 5000},		-- Technomancer Beard
-		{itemId = 9733, price = 8000},		-- The Alchemists' Formulas
-		{itemId = 8752, price = 10000},		-- The Ring of the Count
-		{itemId = 7487, price = 16000},		-- Toy Mouse
-		{itemId = 10944, price = 550},		-- Universal Tool
-		{itemId = 12295, price = 1000},		-- Unworked Sacred Wood
-		{itemId = 4838, price = 18000},		-- Whisper Moss
-		{itemId = 10157, price = 12500},	-- Worm Queen Tooth
-		{itemId = 14336, price = 4000}		-- Wrinkled Parchment
+		{id = 10942, buy = 600},		-- Almanac of Magic
+		{id = 10154, buy = 10000},		-- Animal Fetish
+		{id = 10943, buy = 600},		-- Baby Rotworm
+		{id = 7500, buy = 6000},		-- Bale of White Cloth
+		{id = 2329, buy = 8000},		-- Bill
+		{id = 9369, buy = 50000},		-- Blood Crystal
+		{id = 10159, buy = 10000},		-- Bloodkiss Flower
+		{id = 10109, buy = 5000},		-- Bundle of Rags
+		{id = 10615, buy = 1000},		-- Carrying Device
+		{id = 7499, buy = 2000},		-- Cigar
+		{id = 2347, buy = 150},			-- Cookbook
+		{id = 14338, buy = 40000},		-- Damaged Logbook
+		{id = 14352, buy = 17000},		-- Dark Essence
+		{id = 10158, buy = 13000},		-- Deep Crystal
+		{id = 10169, buy = 8000},		-- Elemental Crystal
+		{id = 11397, buy = 600},		-- Empty Beer Bottle
+		{id = 8111, buy = 100},			-- Exploding Cookie
+		{id = 12501, buy = 4000},		-- Exquisite Silk
+		{id = 12503, buy = 4000},		-- Exquisite Wood
+		{id = 12500, buy = 600},		-- Faded Last Will
+		{id = 4845, buy = 1000},		-- Family Brooch
+		{id = 10308, buy = 10000},		-- Fan Club Membership Card
+		{id = 10616, buy = 1000},		-- Filled Carrying Device
+		{id = 8766, buy = 7000},		-- Fishnapped Goldfish
+		{id = 10926, buy = 700},		-- Flask of Crown Polisher
+		{id = 11106, buy = 1000},		-- Flask of Extra Greasy Oil
+		{id = 10760, buy = 1000},		-- Flask of Poison
+		{id = 12506, buy = 4000},		-- Flexible Dragon Scale
+		{id = 14351, buy = 5000},		-- Formula for a Memory Potion
+		{id = 4858, buy = 6000},		-- Funeral Urn
+		{id = 9662, buy = 50000},		-- Ghost's Tear
+		{id = 4843, buy = 24000},		-- Giant Ape's Hair
+		{id = 10165, buy = 13500},		-- Golem Blueprint
+		{id = 10173, buy = 25000},		-- Golem Head
+		{id = 10454, buy = 350},		-- Headache Pill
+		{id = 2330, buy = 8000},		-- Letterbag
+		{id = 12285, buy = 1000},		-- Lump of Clay
+		{id = 10307, buy = 8500},		-- Machine Crate
+		{id = 12508, buy = 4000},		-- Magic Crystal
+		{id = 10167, buy = 13000},		-- Mago Mechanic Core
+		{id = 10928, buy = 650},		-- Map to the Unknown
+		{id = 7281, buy = 500},			-- Memory Crystal
+		{id = 4852, buy = 3000},		-- Memory Stone
+		{id = 12507, buy = 4000},		-- Mystic Root
+		{id = 10225, buy = 5250},		-- Nautical Map
+		{id = 12505, buy = 4000},		-- Old Iron
+		{id = 10170, buy = 13000},		-- Old Power Core
+		{id = 10613, buy = 1000},		-- Plans for a Strange Device
+		{id = 11104, buy = 1000},		-- Rare Crystal
+		{id = 12297, buy = 1000},		-- Sacred Earth
+		{id = 10155, buy = 12500},		-- Shadow Orb
+		{id = 4854, buy = 500},			-- Sheet of Tracing Paper
+		{id = 7697, buy = 15000},		-- Signet Ring
+		{id = 4846, buy = 8000},		-- Snake Destroyer
+		{id = 10945, buy = 666},		-- Soul Contract
+		{id = 14323, buy = 5000},		-- Special Flask
+		{id = 12502, buy = 4000},		-- Spectral Cloth
+		{id = 4847, buy = 15000},		-- Spectral Dress
+		{id = 10166, buy = 12500},		-- Stabilizer
+		{id = 15389, buy = 5000},		-- Strange Powder
+		{id = 12504, buy = 4000},		-- Strong Sinew
+		{id = 2346, buy = 16000},		-- Tear of Daraman
+		{id = 7699, buy = 5000},		-- Technomancer Beard
+		{id = 9733, buy = 8000},		-- The Alchemists' Formulas
+		{id = 8752, buy = 10000},		-- The Ring of the Count
+		{id = 7487, buy = 16000},		-- Toy Mouse
+		{id = 10944, buy = 550},		-- Universal Tool
+		{id = 12295, buy = 1000},		-- Unworked Sacred Wood
+		{id = 4838, buy = 18000},		-- Whisper Moss
+		{id = 10157, buy = 12500},		-- Worm Queen Tooth
+		{id = 14336, buy = 4000}		-- Wrinkled Parchment
 	}
 
 	if player:getStorageValue(Storage.thievesGuild.Quest) >= 9 then
@@ -105,7 +105,7 @@ end
 local function setNewTradeTable(table)
 	local items = {}
 	for _, v in ipairs(table) do
-		items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
+		items[v.id] = {itemId = v.id, buybuy = v.buy, sellbuy = v.sell, subType = 0, realName = v.name}
 	end
 	return items
 end
@@ -118,7 +118,7 @@ local function creatureSayCallback(cid, type, msg)
 			if (ignoreCap == false and (player:getFreeCapacity() < ItemType(items[item].itemId):getWeight(amount) or inBackpacks and player:getFreeCapacity() < (ItemType(items[item].itemId):getWeight(amount) + ItemType(1988):getWeight()))) then
 				return player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You don\'t have enough cap.')
 			end
-			if items[item].buyPrice <= player:getMoney() then
+			if items[item].buybuy <= player:getMoney() then
 				if inBackpacks then
 					local container = Game.createItem(1988, 1)
 					local bp = player:addItemEx(container)
@@ -131,11 +131,11 @@ local function creatureSayCallback(cid, type, msg)
 				else
 					return
 					player:addItem(items[item].itemId, amount, false, items[item]) and
-					player:removeMoney(amount * items[item].buyPrice) and
-					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
+					player:removeMoney(amount * items[item].buybuy) and
+					player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buybuy * amount..' gold coins.')
 				end
-				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buyPrice * amount..' gold coins.')
-				player:removeMoney(amount * items[item].buyPrice)
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You bought '..amount..'x '..items[item].realName..' for '..items[item].buybuy * amount..' gold coins.')
+				player:removeMoney(amount * items[item].buybuy)
 			else
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You do not have enough money.')
 			end
@@ -143,12 +143,12 @@ local function creatureSayCallback(cid, type, msg)
 			end
 
 		local function onSell(cid, item, subType, amount, ignoreEquipped)
-			if items[item].sellPrice then
+			if items[item].sellbuy then
 				return
 				player:removeItem(items[item].itemId, amount, -1, ignoreEquipped) and
-				player:addMoney(items[item].sellPrice * amount) and
+				player:addMoney(items[item].sellbuy * amount) and
 
-				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellPrice * amount..' gold coins.')
+				player:sendTextMessage(MESSAGE_INFO_DESCR, 'You sold '..amount..'x '..items[item].realName..' for '..items[item].sellbuy * amount..' gold coins.')
 			end
 			return true
 		end
@@ -161,5 +161,6 @@ end
 
 npcHandler:setMessage(MESSAGE_GREET, 'Hello.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'It was a pleasure to help you, |PLAYERNAME|.')
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

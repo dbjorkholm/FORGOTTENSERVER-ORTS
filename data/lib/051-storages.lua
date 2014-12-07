@@ -604,7 +604,11 @@ Storage = {
 		AccessToMeriana = 12703,
 		APoemForTheMermaid = 12704,
 		ADjinnInLove = 12705,
-		AccessToLagunaIsland = 12706
+		AccessToLagunaIsland = 12706,
+		AccessToGoroma = 12707,
+		Shipwrecked = 12708,
+		DragahsSpellbook = 12709,
+		TheCounterspell = 12710
 	},
 	KillingInTheNameOf = {
 		LugriNecromancers = 50000,

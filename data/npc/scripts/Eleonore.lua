@@ -12,7 +12,7 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	local player = Player(cid)
-	if msgcontains(msg, "ring") then
+	if msgcontains(msg, "ring") or msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheShatteredIsles.TheGovernorDaughter) < 1 then
 			npcHandler:say({
 				"My ring was stolen by a parrot, directly from my dressing table near the window. It flew to the nearby mountains and I fear my ring will be lost forever. Whoever returns it to me will be rewarded generously. ...",

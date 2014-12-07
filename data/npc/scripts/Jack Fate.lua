@@ -74,7 +74,7 @@ local travelNode = keywordHandler:addKeyword({'ankrahmun'}, TravelLib.say, {npcH
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 90, discount = TravelLib.postmanDiscount, destination = Position(33092,32883, 6) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 
-local travelNode = keywordHandler:addKeyword({'goroma'}, StdModule.say, {npcHandler = npcHandler, text = 'Ugh. You really want to go back to Goroma? I\'ll surely have to repair my ship afterwards, so I won\'t charge. Okay?'})
+local travelNode = keywordHandler:addKeyword({'goroma'}, TravelLib.say, {npcHandler = npcHandler, text = 'Ugh. You really want to go back to Goroma? I\'ll surely have to repair my ship afterwards, so I won\'t charge. Okay?', storage = Storage.TheShatteredIsles.AccessToGoroma})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 500, discount = TravelLib.postmanDiscount, destination = Position(32161,32558, 6) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 

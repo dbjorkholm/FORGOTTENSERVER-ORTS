@@ -177,6 +177,6 @@ end
 
 npcHandler:setMessage(MESSAGE_GREET, 'Hello, |PLAYERNAME| and welcome to my little forge.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Bye.')
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
