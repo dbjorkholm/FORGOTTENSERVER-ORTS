@@ -20,6 +20,13 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
+	if item.uid == 3206 and player:getStorageValue(Storage.TheShatteredIsles.AccessToLagunaIsland) ~= 1 then
+		player:teleportTo(Position(32340, 32540, 7))
+		position:sendMagicEffect(CONST_ME_TELEPORT)
+		Position(32340, 32540, 7):sendMagicEffect(CONST_ME_TELEPORT)
+		return true
+	end
+	
 	player:teleportTo(targetPosition)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)

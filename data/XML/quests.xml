@@ -1008,13 +1008,17 @@
 		</mission>
 	</quest>
 	<quest name="The Shattered Isles" startstorageid="12700" startstoragevalue="1">
-		<mission name="A Djinn in Love" storageid="12705" startvalue="1" endvalue="2">
-			<missionstate id="1" description="xxx"/>
-			<missionstate id="2" description="After reciting the poem to Marina, she decided to date Ocelus and release Ray Striker from her spell."/>
+		<mission name="A Djinn in Love" storageid="12705" startvalue="1" endvalue="5">
+			<missionstate id="1" description="You need to return to Marina and ask her for a date with Ocelus."/>
+			<missionstate id="2" description="You need to return to Ocelus with the bad news."/>
+			<missionstate id="3" description="Ocelus told you to get a poem for him, if you didn't buy one already, head to Ab'Dendriel and buy a Love Poem from Elvith."/>
+			<missionstate id="4" description="You need to go recite the poem to Marina and impress her with the Djinn's romantic and poetic abilities."/>
+			<missionstate id="5" description="After reciting the poem to Marina, she decided to date Ocelus and release Ray Striker from her spell."/>
 		</mission>
-		<mission name="A Poem for the Mermaid" storageid="12704" startvalue="1" endvalue="2">
-			<missionstate id="1" description="xxx"/>
-			<missionstate id="2" description="You are a true master in reciting love poems now. No mermaid will be able to resist if you ask for a date!"/>
+		<mission name="A Poem for the Mermaid" storageid="12704" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You need to find the man-stealing mermaid and try to break her spell over poor Raymond, the mermaid Marina is near the northern coast of the island."/>
+			<missionstate id="2" description="You discovered that she does in fact have a spell on him, and will not release him unless someone better comes along."/>
+			<missionstate id="3" description="You are a true master in reciting love poems now. No mermaid will be able to resist if you ask for a date!"/>
 		</mission>
 		<mission name="Access to Laguna Island" storageid="12706" startvalue="1" endvalue="1" description="After arranging a date for Marina and Ocelus, you are allowed to use Marina's sea turtles. They will bring you to the idyllic Laguna Islands."/>
 		<mission name="Access to Meriana" storageid="12703" startvalue="1" endvalue="1" description="After earning the trust of the governor's daughter Eleonore, Captain Waverider in Liberty Bay will bring you to Meriana if you tell him the secret codeword 'peg leg'."/>

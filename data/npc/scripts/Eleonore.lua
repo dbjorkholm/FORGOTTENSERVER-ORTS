@@ -40,6 +40,16 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You have returned my ring and proven yourself as trustworthy. There is something I have to discuss with you. Are you willing to listen?", cid)
 			npcHandler.topic[cid] = 4
 		end
+	elseif msgcontains(msg, "raymond striker") then
+		if player:getStorageValue(Storage.TheShatteredIsles.AccessToLagunaIsland) == 1 then
+			npcHandler:say("<blushes> Oh, he is so wonderful. A very special man with a special place in my heart.", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif msgcontains(msg, "mermaid") then
+		if player:getStorageValue(Storage.TheShatteredIsles.AccessToLagunaIsland) == 1 then
+			npcHandler:say("I can't thank you enough for freeing my beloved Ray from that evil spell. I am still shocked that a mermaid could steal his love that easily.", cid)
+			npcHandler.topic[cid] = 0
+		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(6093, 1) then

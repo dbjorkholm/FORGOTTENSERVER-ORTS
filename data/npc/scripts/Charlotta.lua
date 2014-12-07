@@ -36,7 +36,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Ah, welcome! Welcome |Player|! If you need druid spells, you've come to the right place. Otherwise it's just nice to have a visitor.")
+npcHandler:setMessage(MESSAGE_GREET, "Ah, welcome! Welcome |PLAYERNAME|! If you need druid spells, you've come to the right place. Otherwise it's just nice to have a visitor.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Oh well.")
 
