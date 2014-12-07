@@ -21,7 +21,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-
 	if not isInArray(spheres[item.itemid], player:getVocation():getId()) then
 		return false
 	end

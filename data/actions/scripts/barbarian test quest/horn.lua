@@ -3,10 +3,6 @@ local function sendSleepEffect(position)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.uid == 3110 and item.itemid == 7140 then
 		player:say('You fill your horn with ale.', TALKTYPE_MONSTER_SAY)
 		item:transform(7141)

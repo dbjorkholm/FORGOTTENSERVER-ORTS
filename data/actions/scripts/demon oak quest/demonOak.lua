@@ -63,7 +63,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-
 	local totalProgress = 0
 	for _, cStorage in pairs(config.storages) do
 		totalProgress = totalProgress + math.max(0, player:getStorageValue(cStorage))

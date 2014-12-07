@@ -3,10 +3,6 @@ local millstones = {1381, 1382, 1383, 1384}
 local dough = {6277, 8846}
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if item.itemid == 2692 and isInArray(liquidContainers, target.itemid) then
 		if target.type == 1 then
 			item:transform(item.itemid, item.type - 1)
