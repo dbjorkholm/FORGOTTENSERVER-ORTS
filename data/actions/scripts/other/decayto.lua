@@ -10,9 +10,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	local decayItem = item
-	decayItem:transform(decayItemId)
-	decayItem:decay()
+	item:transform(decayItemId)
+	item:decay()
 
 	return true
 end

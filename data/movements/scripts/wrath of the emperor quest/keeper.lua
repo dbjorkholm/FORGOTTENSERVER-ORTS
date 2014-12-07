@@ -16,7 +16,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	doTargetCombatHealth(0, monster, COMBAT_PHYSICALDAMAGE, -6000, -8000, CONST_ME_BIGPLANTS)
-	Item(item.uid):transform(12335)
+	item:transform(12335)
 	addEvent(revertItem, math.random(10, 30) * 1000, position, 12335, 12334)
 	return true
 end

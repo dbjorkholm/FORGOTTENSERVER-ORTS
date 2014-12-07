@@ -99,9 +99,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:say('You found nothing useful.', TALKTYPE_MONSTER_SAY)
 			end
 
-			local useItem = item
-			useItem:getPosition():sendMagicEffect(useId.effect)
-			useItem:remove(1)
+			item:getPosition():sendMagicEffect(useId.effect)
+			item:remove(1)
 			break
 		end
 	end

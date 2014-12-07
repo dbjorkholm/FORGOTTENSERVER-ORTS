@@ -20,8 +20,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:setStorageValue(Storage.Achievements.Masquerader, 101)
 	end
 
-	local useItem = item
-	useItem:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	useItem:remove()
+	item:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	item:remove()
 	return true
 end

@@ -31,7 +31,7 @@ local config = {
 	},
 	[3004] = {
 		items = {
-			{itemId = 2165}, {itemId = 2151, count = 2}, {itemId = 2230}, {itemId = 2229}, {itemId = 1948}, {itemId = 2091, actionId = 6010}
+			{itemId = 2229}, {itemId = 2151, count = 2}, {itemId = 2165}, {itemId = 2230}, {itemId = 2091, actionId = 6010}
 		},
 		storage = Storage.QuestChests.ParchmentRoomQuest
 	},

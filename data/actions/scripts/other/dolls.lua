@@ -70,10 +70,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -1, -1, CONST_ME_EXPLOSIONHIT)
 		end
 	elseif item.itemid == 5669 then
-		local targetItem = item
 		fromPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
-		targetItem:transform(item.itemid + 1)
-		targetItem:decay()
+		item:transform(item.itemid + 1)
+		item:decay()
 	elseif item.itemid == 6388 then
 		fromPosition:sendMagicEffect(CONST_ME_SOUND_YELLOW)
 	end

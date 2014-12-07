@@ -1,7 +1,6 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local blueberryBush = item
-	blueberryBush:transform(2786)
-	blueberryBush:decay()
+	item:transform(2786)
+	item:decay()
 	Game.createItem(2677, 3, fromPosition)
 
 	local cStorage = player:getStorageValue(Storage.Achievements.Bluebarian)
