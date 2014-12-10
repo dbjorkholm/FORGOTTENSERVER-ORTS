@@ -256,7 +256,7 @@ Edron Rope Quest:
 
 Bright Sword Quest:
 	entrance (aid): 5634
-	
+
 Alawar's Vault Quest:
 	aid: 4210
 	uid: 9211-9214, 9230
@@ -284,7 +284,7 @@ Combat Knife Quest (Rookgaard): 64119 (uid)
 
 Rapier Quest (Rookgaard): 64120 (uid)
 
-Double Quest: 5639 (aid)
+Double Quest: 5639 (aid) (Storage 64121)
 
 Dragon Corpse Quest (Rookgaard): 64122 (uid)
 
@@ -296,5 +296,7 @@ Brown Mushroom Quest (Rookgaard): 64128 (uid)
 
 Student Book Quest (Rookgaard): 64129 (uid)
 
+Amber's Logbook Quest (Rookgaard): 64130 (uid)
 
-		
+Honey Flower Quest: 5640 (aid, also in events) (Storage 64131)
+Banana Palm Quest: 5641 (aid) (Storage 64132)

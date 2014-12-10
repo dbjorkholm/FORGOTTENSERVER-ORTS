@@ -8,6 +8,7 @@ local transfer = {}
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+
 local voices = {
 	'Deposit your money here in the safety of the Tibian Bank!',
 	'Any questions about the functions of your bank account? Feel free to ask me for help!'
@@ -164,50 +165,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 		return true
----------------------------- transfer --------------------
-	elseif msgcontains(msg, 'transfer') then
-		npcHandler:say('Please tell me the amount of gold you would like to transfer.', cid)
-		npcHandler.topic[cid] = 11
-	elseif npcHandler.topic[cid] == 11 then
-		count[cid] = getMoneyCount(msg)
-		if player:getBankBalance() < count[cid] then
-			npcHandler:say('There is not enough gold on your account.', cid)
-			npcHandler.topic[cid] = 0
-			return true
-		end
-		if isValidMoney(count[cid]) then
-			npcHandler:say('Who would you like transfer ' .. count[cid] .. ' gold to?', cid)
-			npcHandler.topic[cid] = 12
-		else
-			npcHandler:say('There is not enough gold on your account.', cid)
-			npcHandler.topic[cid] = 0
-		end
-	elseif npcHandler.topic[cid] == 12 then
-		transfer[cid] = msg
-		if player:getName() == transfer[cid] then
-			npcHandler:say('Fill in this field with person who receives your gold!', cid)
-			npcHandler.topic[cid] = 0
-			return true
-		end
-		if playerExists(transfer[cid]) then
-			npcHandler:say('So you would like to transfer ' .. count[cid] .. ' gold to ' .. transfer[cid] .. '?', cid)
-			npcHandler.topic[cid] = 13
-		else
-			npcHandler:say('This player does not exist.', cid)
-			npcHandler.topic[cid] = 0
-		end
-	elseif npcHandler.topic[cid] == 13 then
-		if msgcontains(msg, 'yes') then
-			if not player:transferMoneyTo(transfer[cid], count[cid]) then
-				npcHandler:say('You cannot transfer money to this account.', cid)
-			else
-				npcHandler:say('Very well. You have transferred ' .. count[cid] .. ' gold to ' .. transfer[cid] ..'.', cid)
-				transfer[cid] = nil
-			end
-		elseif msgcontains(msg, 'no') then
-			npcHandler:say('Alright, is there something else I can do for you?', cid)
-		end
-		npcHandler.topic[cid] = 0
 ---------------------------- money exchange --------------
 	elseif msgcontains(msg, 'change gold') then
 		npcHandler:say('How many platinum coins would you like to get?', cid)
@@ -317,18 +274,65 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'money'}, StdModule.say, {npcHandler = npcHandler, text = 'We can {change} money for you. You can also access your {bank account}.'})
-keywordHandler:addKeyword({'change'}, StdModule.say, {npcHandler = npcHandler, text = 'There are three different coin types in Tibia: 100 gold coins equal 1 platinum coin, 100 platinum coins equal 1 crystal coin. So if you\'d like to change 100 gold into 1 platinum, simply say \'{change gold}\' and then \'1 platinum\'.'})
-keywordHandler:addKeyword({'bank'}, StdModule.say, {npcHandler = npcHandler, text = 'We can {change} money for you. You can also access your {bank account}.'})
-keywordHandler:addKeyword({'advanced'}, StdModule.say, {npcHandler = npcHandler, text = 'Your bank account will be used automatically when you want to {rent} a house or place an offer on an item on the {market}. Let me know if you want to know about how either one works.'})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'functions'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'basic'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I work in this bank. I can change money for you and help you with your bank account.'})
+-- Basic keywords
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m Paulie.'})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m still a bank clerk-in-training. They say I can work on the mainland of Tibia once I have proven myself!'})
+keywordHandler:addKeyword({'transfer'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m afraid this service is not available to you until you reach mainland.'})
+keywordHandler:addKeyword({'change'}, StdModule.say, {npcHandler = npcHandler, text = 'There are three different coin types in Tibia: 100 gold coins equal 1 platinum coin, 100 platinum coins equal 1 crystal coin. For example, if you like to change 100 gold coins into 1 platinum coin, simply say \'{change gold}\' and then \'1 platinum\'.'})
+keywordHandler:addKeyword({'advanced'}, StdModule.say, {npcHandler = npcHandler, text = 'Once you are on the Tibian mainland, you can access new functions of your bank account, such as transferring money to other players safely or taking part in house auctions.'})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, text = 'HAIL TO THE KING!'})
+keywordHandler:addKeyword({'academy'}, StdModule.say, {npcHandler = npcHandler, text = 'The academy is the big stone building in the town centre. When you are ready to leave Rookgaard, you should visit the {oracle} there.'})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = 'It\'s exactly |TIME|.'})
+keywordHandler:addKeyword({'temple'}, StdModule.say, {npcHandler = npcHandler, text = 'The temple is south of the city. Go there and talk to {Cipfried} if you are in dire need of healing.'})
+keywordHandler:addKeyword({'mainland'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m looking forward to work on the mainland. The great Tibian cities are so much more interesting than this little village of {Rookgaard}.'})
+keywordHandler:addKeyword({'rookgaard'}, StdModule.say, {npcHandler = npcHandler, text = 'What a godforsaken place! Well, at least there are no criminals robbing the bank which would be - me. <gulp>'})
+keywordHandler:addKeyword({'premium'}, StdModule.say, {npcHandler = npcHandler, text = 'Another excellent way of investing your money.'})
 
-npcHandler:setMessage(MESSAGE_GREET, '<beep> <beep> Welcome to the.... crank Tibian {Bank}.')
-npcHandler:setMessage(MESSAGE_FAREWELL, 'Come again if you need something. <beep>')
-npcHandler:setMessage(MESSAGE_WALKAWAY, '<beep>')
+keywordHandler:addKeyword({'trade'}, StdModule.say, {npcHandler = npcHandler, text = 'I don\'t trade. Ask the shop owners for a trade instead. I can only help you with your {bank account}.'})
+keywordHandler:addAliasKeyword({'offer'})
+keywordHandler:addAliasKeyword({'potion'})
+keywordHandler:addAliasKeyword({'sell'})
+keywordHandler:addAliasKeyword({'buy'})
+keywordHandler:addAliasKeyword({'stuff'})
+keywordHandler:addAliasKeyword({'wares'})
+keywordHandler:addAliasKeyword({'weapon'})
+keywordHandler:addAliasKeyword({'equip'})
+keywordHandler:addAliasKeyword({'food'})
+keywordHandler:addAliasKeyword({'armor'})
+keywordHandler:addAliasKeyword({'shield'})
+
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = 'Every Tibian has a bank account. You can {deposit} your gold in one bank and {withdraw} it from the same or any other Tibian bank. Ask me for your {balance} to learn how much money you\'ve already saved. There are also {advanced} functions.'})
+keywordHandler:addAliasKeyword({'function'})
+keywordHandler:addAliasKeyword({'account'})
+
+keywordHandler:addKeyword({'bank'}, StdModule.say, {npcHandler = npcHandler, text = 'You can {deposit} and {withdraw} money from your {bank account} here. I can also {change} money for you.'})
+keywordHandler:addAliasKeyword({'money'})
+
+-- Names
+keywordHandler:addKeyword({'zerbrus'}, StdModule.say, {npcHandler = npcHandler, text = 'Thank god that guy guards our bridge. Without him, I believe all sorts of critters would storm the bank!'})
+keywordHandler:addAliasKeyword({'dallheim'})
+keywordHandler:addKeyword({'al', 'dee'}, StdModule.say, {npcHandler = npcHandler, text = 'He sells general equipment such as ropes or torches.'})
+keywordHandler:addKeyword({'amber'}, StdModule.say, {npcHandler = npcHandler, text = '<blushes> It\'s making me nervous to have her around my working place all the time. Actually it\'s distracting, but I can\'t say why.'})
+keywordHandler:addKeyword({'billy'}, StdModule.say, {npcHandler = npcHandler, text = 'A fine cook and farmer.'})
+keywordHandler:addKeyword({'willie'}, StdModule.say, {npcHandler = npcHandler, text = 'He\'s incredibly rude! I don\'t know what I\'ve done to him. Well, he buys and sells {food}.'})
+keywordHandler:addKeyword({'tom'}, StdModule.say, {npcHandler = npcHandler, text = 'He\'s the local tanner. You could try selling fresh corpses or leather to him and then bring the earnt money to our {bank}.'})
+keywordHandler:addKeyword({'seymour'}, StdModule.say, {npcHandler = npcHandler, text = 'A well-educated man.'})
+keywordHandler:addKeyword({'zirella'}, StdModule.say, {npcHandler = npcHandler, text = 'She\'s a nice old lady, but I guess she prefers keeping her savings in one of her socks. She never comes to my bank.'})
+keywordHandler:addKeyword({'santiago'}, StdModule.say, {npcHandler = npcHandler, text = 'Just a fisherman living outside the village.'})
+keywordHandler:addKeyword({'paulie'}, StdModule.say, {npcHandler = npcHandler, text = 'That\'s me, in all my beauty! <coughs>'})
+keywordHandler:addKeyword({'oracle'}, StdModule.say, {npcHandler = npcHandler, text = 'You can find the oracle on the top floor of the {academy}, just above {Seymour}. Go there when you are level 8.'})
+keywordHandler:addKeyword({'obi'}, StdModule.say, {npcHandler = npcHandler, text = 'He sells {weapons}. His shop is south west of town, close to the {temple}.'})
+keywordHandler:addKeyword({'norma'}, StdModule.say, {npcHandler = npcHandler, text = 'Going to her bar is not so much my cup of tea... I prefer reading a good book about economy.'})
+keywordHandler:addKeyword({'loui'}, StdModule.say, {npcHandler = npcHandler, text = 'I don\'t know that guy.'})
+keywordHandler:addKeyword({'lily'}, StdModule.say, {npcHandler = npcHandler, text = 'Lily sells {potions} in the South of town.'})
+keywordHandler:addKeyword({'lee\'delle'}, StdModule.say, {npcHandler = npcHandler, text = 'Her shop is on the {premium} side of town. She has really good offers.'})
+keywordHandler:addKeyword({'hyacinth'}, StdModule.say, {npcHandler = npcHandler, text = 'Hm, I\'ve never seen him. He\'s supposed to be a druid.'})
+keywordHandler:addKeyword({'dixi'}, StdModule.say, {npcHandler = npcHandler, text = 'She\'s {Obi\'s} granddaughter and deals with {armors} and {shields}. Her shop is southwest of town, close to the {temple}.'})
+keywordHandler:addKeyword({'cipfried'}, StdModule.say, {npcHandler = npcHandler, text = 'He guards the temple and can heal you if you are badly injured or poisoned.'})
+
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|! Here, you can {deposit} or {withdraw} your money from your bank account and {change} gold. I can also explain the {functions} of your bank account to you.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye, and remember: entrusting us with your gold is the safest way of storing it!')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye.')
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

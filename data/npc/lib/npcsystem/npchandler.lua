@@ -59,6 +59,7 @@ if NpcHandler == nil then
 	TAG_ITEMCOUNT = "|ITEMCOUNT|"
 	TAG_TOTALCOST = "|TOTALCOST|"
 	TAG_ITEMNAME = "|ITEMNAME|"
+	TAG_TIME = "|TIME|"
 
 	NpcHandler = {
 		keywordHandler = nil,
@@ -306,8 +307,16 @@ if NpcHandler == nil then
 	-- Translates all message tags found in msg using parseInfo
 	function NpcHandler:parseMessage(msg, parseInfo)
 		local ret = msg
-		for search, replace in pairs(parseInfo) do
-			ret = string.gsub(ret, search, replace)
+		if type(ret) == 'string' then
+			for search, replace in pairs(parseInfo) do
+				ret = string.gsub(ret, search, replace)
+			end
+		else
+			for i = 1, #ret do
+				for search, replace in pairs(parseInfo) do
+					ret[i] = string.gsub(ret[i], search, replace)
+				end
+			end
 		end
 		return ret
 	end

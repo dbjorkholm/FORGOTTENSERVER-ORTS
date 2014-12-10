@@ -107,7 +107,7 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		local parseInfo = {[TAG_PLAYERNAME] = player:getName()}
+		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime()}
 		if type(parameters.text) == 'table' then
 			for i = 1, #parameters.text do
 				local textObj = parameters.text[i]
@@ -130,7 +130,7 @@ if Modules == nil then
 					break
 				end
 			end
-		else
+		elseif parameters.text then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
 

@@ -12,6 +12,8 @@
 	<action actionid="1002" script="rookgaard/katana_quest_door.lua"/>
 	<action actionid="5638" script="rookgaard/bearroom_quest_lever.lua"/>
 	<action actionid="5639" script="rookgaard/doublet_quest.lua"/>
+	<action actionid="5640" script="rookgaard/honeyflower_quest.lua"/>
+	<action actionid="5641" script="rookgaard/banana_quest.lua"/>
 
 	<!-- What a foolish Quest -->
 	<action itemid="7478" script="what a foolish quest/flask.lua" />

@@ -9,6 +9,7 @@ local config = {
 		Position(32104, 32204, 8)
 	},
 	relocatePosition = Position(32102, 32205, 8),
+	relocateMonsterPosition = Position(32103, 32205, 8),
 	bridgeId = 5770
 }
 
@@ -39,7 +40,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		for _, bridge in pairs(config.bridgePositions) do
 			tile = Tile(bridge.position)
 
-			tile:relocateTo(config.relocatePosition, true)
+			tile:relocateTo(config.relocatePosition, true, config.relocateMonsterPosition)
 			tile:getGround():transform(bridge.groundId)
 			Game.createItem(bridge.itemId, 1, bridge.position)
 		end

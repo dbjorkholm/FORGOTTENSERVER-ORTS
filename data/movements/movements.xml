@@ -280,6 +280,7 @@
 	<movevent event="StepIn" fromid="1740" toid="1741" script="walkback.lua"/>
 	<movevent event="StepIn" fromid="1746" toid="1749" script="walkback.lua"/>
 	<movevent event="StepIn" fromid="1714" toid="1717" script="walkback.lua"/>
+	<movevent event="StepIn" actionid="5640" script="walkback.lua"/>
 
 	<!-- (Level & quest) doors -->
 	<movevent event="StepOut" itemid="1224" script="closingdoor.lua"/>

@@ -266,8 +266,17 @@ function Player.isPromoted(self)
 	return false
 end
 
+function Player.hasRookgaardShield(self)
+	-- Wooden Shield, Studded Shield, Brass Shield, Plate Shield, Copper Shield
+	return self:getItemCount(2512) > 0
+			or self:getItemCount(2526) > 0
+			or self:getItemCount(2511) > 0
+			or self:getItemCount(2510) > 0
+			or self:getItemCount(2530) > 0
+end
+
 -- Tile --
-function Tile.relocateTo(self, toPosition, pushMove)
+function Tile.relocateTo(self, toPosition, pushMove, monsterPosition)
 	if self:getPosition() == toPosition then
 		return false
 	end
@@ -284,7 +293,11 @@ function Tile.relocateTo(self, toPosition, pushMove)
 					thing:moveTo(toPosition)
 				end
 			elseif thing:isCreature() then
-				thing:teleportTo(toPosition, pushMove)
+				if monsterPosition and thing:isMonster() then
+					thing:teleportTo(monsterPosition, pushMove)
+				else
+					thing:teleportTo(toPosition, pushMove)
+				end
 			end
 		end
 	end

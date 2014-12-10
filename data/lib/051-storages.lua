@@ -715,7 +715,9 @@ Storage = {
 		OutlawCampKey2 = 3302,
 		OutlawCampKey3 = 3303,
 
-		DoubletQuest = 64121
+		DoubletQuest = 64121,
+		HoneyFlower = 64131,
+		BananaPalm = 64132
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8818,
@@ -845,6 +847,9 @@ Storage = {
 	KawillBlessing = 50139,
 	RentedHorseTimer = 50561,
 	KnightwatchTowerDoor = 9054,
+
+	RookgaardHints = 50700,
+	RookgaardDestiny = 50701,
 
 	blockMovementStorage = 100000
 }
