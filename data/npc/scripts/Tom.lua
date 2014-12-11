@@ -32,8 +32,7 @@ keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, tex
 
 keywordHandler:addKeyword({'troll'}, StdModule.say, {npcHandler = npcHandler, text = 'Troll leather stinks. Can\'t use it.'})
 keywordHandler:addKeyword({'orc'}, StdModule.say, {npcHandler = npcHandler, text = 'I don\'t buy orcs. Their skin is too scratchy.'})
-keywordHandler:addKeyword({'human'}, StdModule.say, {npcHandler = npcHandler, text = 'Are you crazy?!'}, nil,
-	function(player, npcHandler) local cid = player:getId() npcHandler:resetNpc(cid) npcHandler:releaseFocus(cid) end)
+keywordHandler:addKeyword({'human'}, StdModule.say, {npcHandler = npcHandler, text = 'Are you crazy?!', ungreet = true})
 
 keywordHandler:addKeyword({'backpack'}, StdModule.say, {npcHandler = npcHandler, text = 'Nope, sorry, don\'t sell that. Go see {Al Dee} or {Lee\'Delle}.'})
 keywordHandler:addAliasKeyword({'rope'})

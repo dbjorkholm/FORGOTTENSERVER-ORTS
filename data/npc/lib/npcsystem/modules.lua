@@ -134,7 +134,10 @@ if Modules == nil then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
 
-		if parameters.reset then
+		if parameters.ungreet then
+			npcHandler:resetNpc(cid)
+			npcHandler:releaseFocus(cid)
+		elseif parameters.reset then
 			npcHandler:resetNpc(cid)
 		elseif parameters.moveup ~= nil then
 			npcHandler.keywordHandler:moveUp(parameters.moveup)
