@@ -576,7 +576,7 @@
 	<monster name="Insectoid Scout" file="insects/insectoid scout.xml"/>
 	<monster name="Insectoid Worker" file="insects/insectoid worker.xml"/>
 	<monster name="Kollos" file="insects/kollos.xml"/>
-	<monster name="Lady Bug" file="insects/lady bug.xml"/>
+	<monster name="Ladybug" file="insects/ladybug.xml"/>
 	<monster name="Lancer Beetle" file="insects/lancer beetle.xml"/>
 	<monster name="Larva" file="insects/larva.xml"/>
 	<monster name="Lesser Swarmer" file="insects/lesser swarmer.xml"/>
