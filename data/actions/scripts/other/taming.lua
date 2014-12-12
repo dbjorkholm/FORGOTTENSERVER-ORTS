@@ -76,7 +76,7 @@ local config = {
 		chance = 25,
 		fail = { 
 			{run = true, sound = 'Baaaah', text = 'The black sheep ran away.'},
-			{broke = true, 'Oh no! The reins were torn.'},
+			{broke = true, text = 'Oh no! The reins were torn.'},
 			{sound = 'Baaaah', text = 'The black sheep is trying to run away.'}
 		},
 		success = {sound = 'Baaaaaah', text = 'You tamed the black sheep.'}
@@ -146,7 +146,7 @@ local config = {
 		type = TYPE_MONSTER,
 		chance = 40,
 		fail = {
-			{run = true, sound = 'Gruuuuunt!', 'The dromedary flees.'},
+			{run = true, sound = 'Gruuuuunt!', text = 'The dromedary flees.'},
 			{sound = 'Grunt!', text = 'The dromedary remains stubborn.'}
 		},
 		success = {sound = '*blaaammm*', text = 'You tamed the dromedary.'}
