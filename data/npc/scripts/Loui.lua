@@ -7,6 +7,13 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'BEWARE! Beware of that hole!' },
+	{ text = 'STAY AWAY FROM THAT HOLE!' },
+	{ text = 'What are you doing here?? Get away from that hole!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic keywords
 keywordHandler:addKeyword({'hint'}, StdModule.rookgaardHints, {npcHandler = npcHandler})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'My name is Loui.'})

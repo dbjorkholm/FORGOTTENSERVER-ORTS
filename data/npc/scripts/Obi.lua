@@ -7,6 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Only quality steel and wood used for my weapons!' },
+	{ text = 'Buy your weapons here!' },
+	{ text = 'Selling and buying all sorts of weapons, come and have a look!' },
+	{ text = 'Give those monsters a good whipping with my weapons!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic keywords
 keywordHandler:addKeyword({'hint'}, StdModule.rookgaardHints, {npcHandler = npcHandler})
 keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, how can I help you? Do you need some general {hints}? Or, if you\'re interested in a {trade}, just ask.'})

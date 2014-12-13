@@ -7,6 +7,13 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Buying fresh corpses of rats, rabbits and wolves.' },
+	{ text = 'Oh yeah, I\'m also interested in wolf paws and bear paws.' },
+	{ text = 'Also buying minotaur leather.' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Greeting and Farewell
 keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = 'Hey there, |PLAYERNAME|. I\'m Tom the tanner. If you have fresh {corpses}, leather, paws or other animal body parts, {trade} with me.'})
 keywordHandler:addAliasKeyword({'hello'})

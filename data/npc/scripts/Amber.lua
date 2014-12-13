@@ -7,6 +7,15 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'I wish I could eat some salmon right now... best prepared in Liberty Bay style... yummy.' },
+	{ text = 'Wow, I\'m tired. I really should get some sleep... zzzz.' },
+	{ text = 'What was that word again in Orcish language... hmm.' },
+	{ text = 'Hey you! Are you an adventurer, too?' },
+	{ text = '<sings> Stormy weathers, stormy weathers... stormy weathers on the sea!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic keywords
 keywordHandler:addKeyword({'hint'}, StdModule.rookgaardHints, {npcHandler = npcHandler})
 keywordHandler:addKeyword({'how', 'are', 'you'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m recovering from a {sea} passage.'})

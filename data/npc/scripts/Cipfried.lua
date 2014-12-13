@@ -7,6 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Feeling lost, my child? Ask me for hints or help!' },
+	{ text = 'Come to me if you need healing!' },
+	{ text = 'Welcome to the temple of Rookgaard!' },
+	{ text = 'Don\'t despair! Help is near!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Greeting and Farewell
 keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = 'Hello, |PLAYERNAME|! You are looking really bad. Let me heal your wounds. It\'s my job after all.'},
 	function(player) return player:getHealth() < 65 or player:getCondition(CONDITION_POISON) ~= nil end,

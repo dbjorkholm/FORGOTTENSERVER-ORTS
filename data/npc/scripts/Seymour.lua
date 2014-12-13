@@ -8,6 +8,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Newcomers - visit me! I\'ll answer your questions!' },
+	{ text = 'Get some training in the academy!' },
+	{ text = 'Feeling lost? Ask me for help!' },
+	{ text = 'Gain some knowledge in the academy!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Greeting and Farewell
 local hiKeyword = keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = 'Hello, |PLAYERNAME|. Welcome to the Academy of Rookgaard. May I sign you up as a {student}?'})
 	hiKeyword:addChildKeyword({'student'}, StdModule.say, {npcHandler = npcHandler, text = 'Brilliant! We need fine adventurers like you! If you are ready to learn, just ask me for a lesson. You can always ask for the differently coloured words - such as this one - to continue the lesson.', reset = true})

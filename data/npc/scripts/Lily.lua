@@ -7,6 +7,16 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Are you injured or poisoned? Get your potions here! All natural, no artificial ingredients!' },
+	{ text = 'Hey you, over there! Let\'s have a little chat, shall we?' },
+	{ text = 'Oh, just in case you are looking for the marketplace and dungeons, just follow the path to the east.' },
+	{ text = 'Anyone got some cookies for me?' },
+	{ text = 'Do you need help? Just ask me about anything you\'d like to know!' },
+	{ text = 'I\'m buying all of your blueberries for my famous blueberry juice!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic Keywords
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, text = 'Just ask me for a {trade} to see what I buy from you. If you want to sell {blueberries}, ask me about them separately.'})
 keywordHandler:addKeyword({'stuff'}, StdModule.say, {npcHandler = npcHandler, text = 'Just ask me for a {trade} to see my offers. If you want to sell {blueberries}, ask me about them separately.'})

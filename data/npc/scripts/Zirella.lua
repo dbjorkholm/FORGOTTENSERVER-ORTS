@@ -5,25 +5,16 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-local voices = {
-	"I wish someone could spare a minute and help me...",
-	"This is too hard for an old woman like me.",
-	"Hello, young adventurer, you look strong enough to help me!"
-}
+function onThink()			npcHandler:onThink()		end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = {
+	{ text = 'I wish someone could spare a minute and help me...' },
+	{ text = 'This is too hard for an old woman like me.' },
+	{ text = 'Hello, young adventurer, you look strong enough to help me!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 local storeTalkCid = {}
-
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.ZirellaNpcGreetStorage) < 1 then

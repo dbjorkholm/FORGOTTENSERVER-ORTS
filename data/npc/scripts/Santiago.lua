@@ -5,26 +5,17 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-local voices = {
-	"Evil little beasts... I hope someone helps me fight them.",
-	"Nasty creepy crawlies!",
-	"Don't be shy, can't hurt to greet me with 'hello' or 'hi'!",
-	"Hey! You over there, could you help me with a little quest? Just say 'hi' or 'hello' to talk to me!"
-}
+function onThink()		npcHandler:onThink()		end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = {
+	{ text = 'Evil little beasts... I hope someone helps me fight them.' },
+	{ text = 'Nasty creepy crawlies!' },
+	{ text = 'Hey! You over there, could you help me with a little quest? Just say \'hi\' or \'hello\' to talk to me!' },
+	{ text = 'Don\'t be shy, can\'t hurt to greet me with \'hello\' or \'hi\'!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 local storeTalkCid = {}
-
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) < 1 then

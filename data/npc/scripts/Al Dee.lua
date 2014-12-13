@@ -5,7 +5,15 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onThink()		npcHandler:onThink()		end
+
+local voices = {
+	{ text = 'Are you looking for the best trades? Come to my shop!' },
+	{ text = 'Feeling lost? You can always ask me about general hints!' },
+	{ text = 'Tools and general equipment at Al Dee\'s!' },
+	{ text = 'Don\'t head for adventure without a rope and torches! Buy your supplies here!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Basic Keywords
 keywordHandler:addKeyword({'hint'}, StdModule.rookgaardHints, {npcHandler = npcHandler})

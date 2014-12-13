@@ -7,6 +7,15 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Great drinks and snacks at fair prices!' },
+	{ text = 'You know you want a party after all that tiring hunting!' },
+	{ text = '<sings> ... are a girl\'s best friieeend...' },
+	{ text = 'Sing and dance at my bar! Yeah!' },
+	{ text = 'Best place in town! Come to my bar!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 --[[
 addon
 Pretty, isn't it? I made it myself, but I could teach you how to do that if you like. What do you say?

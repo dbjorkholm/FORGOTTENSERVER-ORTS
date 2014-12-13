@@ -7,6 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Ah, what the heck.Make sure you know what you want before you bug me.' },
+	{ text = 'Buying and selling food!' },
+	{ text = 'Make sure you know what you want before you bug me.' },
+	{ text = 'You, over there! Stop sniffing around my farm! Either trade with me or leave!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic keywords
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, text = 'Haven\'t they taught you anything at school? Ask for a {trade} if you want to trade.'})
 keywordHandler:addAliasKeyword({'sell'})

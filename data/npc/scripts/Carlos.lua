@@ -5,23 +5,16 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-local voices = {
-	"Hmm, we should do something about your outfit.",
-	"Ah, another adventurer. Let's talk a little.", "Psst! Come over here for a little trade.",
-	"Hello, hello! Don't be shy, I don't bite.",
-	"By the way, if you want to look at old hints again, find the 'Help' button near your inventory and select 'Tutorial Hints'."
-}
+function onThink()				npcHandler:onThink()			end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = {
+	{ text = 'Hmm, we should do something about your outfit.' },
+	{ text = 'Ah, another adventurer. Let\'s talk a little.' },
+	{ text = 'Psst! Come over here for a little trade.' },
+	{ text = 'Hello, hello! Don\'t be shy, I don\'t bite.' },
+	{ text = 'By the way, if you want to look at old hints again, find the \'Help\' button near your inventory and select \'Tutorial Hints\'.' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function getTable()
 	local itemsList = {
@@ -32,7 +25,6 @@ local function getTable()
 end
 
 local storeTalkCid = {}
-
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.CarlosNpcGreetStorage) < 1 then

@@ -7,6 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Ask me if you need help!' },
+	{ text = 'Buy and sell everything you want here!' },
+	{ text = 'No need to run from shop to shop, my place is all that\'s needed!' },
+	{ text = 'Special offers for premium customers!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
 -- Basic keywords
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'My name is Lee\'Delle.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m a merchant. If you like to see my offers, just ask me for a {trade}.'})
