@@ -5,7 +5,7 @@ local config = {
 }
 
 function onAdvance(player, skill, oldLevel, newLevel)
-	if skill ~= 8 or newLevel <= oldLevel then
+	if skill ~= SKILL_LEVEL or newLevel <= oldLevel then
 		return true
 	end
 

@@ -25,7 +25,8 @@ local events = {
 	'WotEBosses',
 	'WotEZalamon',
 	'PlayerDeath',
-	'AdvanceSave'
+	'AdvanceSave',
+	'AdvanceRookgaard'
 }
 
 function onLogin(player)
