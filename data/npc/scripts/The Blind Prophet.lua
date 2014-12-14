@@ -23,11 +23,11 @@ keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'port hope'}, StdModule.say, {npcHandler = npcHandler, text = 'Hairless apes strange people are. '})
 
 local function greetCallback(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.TheApeCity.Questline) <= 18 then
-		npcHandler:setMessage(MESSAGE_GREET, "Oh! Hello! Hello!")
-	elseif player:getStorageValue(Storage.TheApeCity.Questline) >= 19 then
+	if Player(cid):getStorageValue(Storage.TheApeCity.Questline) > 14 then
 		npcHandler:setMessage(MESSAGE_GREET, "Be greeted, friend of the apes.")
+	else
+		npcHandler:say("You not should be {here}! You go! You go!", cid)
+		return false
 	end
 	return true
 end
@@ -39,13 +39,8 @@ local function creatureSayCallback(cid, type, msg)
 
 	local player = Player(cid)
 	if msgcontains(msg, "transport") then
-		if player:getStorageValue(Storage.TheApeCity.Questline) >= 19 then
-			npcHandler:say("You want me to transport you to forbidden land?", cid)
-			npcHandler.topic[cid] = 1
-		else
-			npcHandler:say("You don't have access to forbidden land.", cid)
-			npcHandler.topic[cid] = 0
-		end
+		npcHandler:say("You want me to transport you to forbidden land?", cid)
+		npcHandler.topic[cid] = 1
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say("Take care!", cid)
@@ -54,7 +49,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:teleportTo(destination)
 			destination:sendMagicEffect(CONST_ME_TELEPORT)
 		elseif msgcontains(msg, 'no') then
-			npcHandler:say("Then no!", cid)
+			npcHandler:say("Wise decision maybe.", cid)
 		end
 	end
 	return true

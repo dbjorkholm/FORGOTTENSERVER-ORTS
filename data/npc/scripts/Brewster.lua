@@ -44,11 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		end
 	elseif msgcontains(msg, "cough syrup") then
-		if player:getStorageValue(Storage.TheApeCity.Questline) == 3 then
-			npcHandler:say("The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... <hicks>", cid)
-			player:setStorageValue(Storage.TheApeCity.Questline, 4)
-			player:setStorageValue(Storage.TheApeCity.Mission02, 2) -- The Ape City Questlog - Mission 2: The Cure
-		end
+		npcHandler:say("The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... <hicks>", cid)
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:getBlessings() == 0

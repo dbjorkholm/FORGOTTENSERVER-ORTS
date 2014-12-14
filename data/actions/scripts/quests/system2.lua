@@ -200,6 +200,12 @@ local config = {
 		},
 		storage = Storage.QuestChests.OutlawCampKey3
 	},
+	[4010] = {
+		items = {
+			{itemId = 4843}
+		},
+		storage = Storage.TheApeCity.HolyApeHair
+	},
 	[5556] = {
 		items = {
 			{itemId = 2463}
@@ -246,11 +252,10 @@ local config = {
 	},
 	[12126] = {
 		items = {
-			{itemId = 4840}
+			{itemId = 4840, decay = true}
 		},
-		storage = Storage.TheApeCity.Mission06,
-		formerValue = 1,
-		newValue = 2
+		storage = Storage.TheApeCity.WitchesCapSpot,
+		time = true
 	},
 	[12331] = {
 		items = {
@@ -304,7 +309,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if player:getStorageValue(useItem.storage) ~= (useItem.formerValue or -1) then
+	if (useItem.time and player:getStorageValue(useItem.storage) > os.time())
+			or player:getStorageValue(useItem.storage) ~= (useItem.formerValue or -1) then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 		return true
 	end
@@ -341,6 +347,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if items[1].text then
 			reward:setText(items[1].text)
 		end
+		
+		if items[1].decay then
+			reward:decay()
+		end
 
 	else
 		if size > 8 then
@@ -360,6 +370,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 				if items[i].text then
 					tmp:setText(items[i].text)
+				end
+
+				if items[i].decay then
+					tmp:decay()
 				end
 
 			end
@@ -395,6 +409,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. result .. '.')
-	player:setStorageValue(useItem.storage, useItem.newValue or 1)
+	if useItem.time then
+		player:setStorageValue(useItem.storage, os.time() + 86400)
+	else
+		player:setStorageValue(useItem.storage, useItem.newValue or 1)
+	end
 	return true
 end

@@ -15,10 +15,8 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, "cough syrup") then
-		if player:getStorageValue(Storage.TheApeCity.Questline) == 5 then
-			npcHandler:say("Do you want to buy a bottle of cough syrup for 50 gold?", cid)
-			npcHandler.topic[cid] = 1
-		end
+		npcHandler:say("Do you want to buy a bottle of cough syrup for 50 gold?", cid)
+		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, 'mission') then
 		if player:getStorageValue(Storage.TibiaTales.TheExterminator) == -1 then
 			npcHandler:say({
@@ -47,8 +45,6 @@ local function creatureSayCallback(cid, type, msg)
 
 			npcHandler:say("Thank you. Here it is.", cid)
 			player:addItem(4839, 1)
-			player:setStorageValue(Storage.TheApeCity.Questline, 6)
-			player:setStorageValue(Storage.TheApeCity.Mission02, 4) -- The Ape City Questlog - Mission 2: The Cure
 		elseif npcHandler.topic[cid] == 2 then
 			player:addItem(8205, 1)
 			player:setStorageValue(Storage.TibiaTales.TheExterminator, 1)

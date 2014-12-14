@@ -639,51 +639,25 @@
 		<mission name="Rahemos' Treasure" storageid="12107" startvalue="1" endvalue="1" description="You defeated Rahemos and received a Helmet Piece"/>
 	</quest>
 	<quest name="The Ape City" startstorageid="12120" startstoragevalue="1">
-		<mission name="Mission 1: Whisper Moss" storageid="12121" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Hairycles wants for you to infiltrate the Dworc Caves and steal some Whisper Moss which is said to be a cure. Find the Dworc Caves anywhere in Trapwood, the southern part of Tiquanda."/>
-			<missionstate id="2" description="You brought Hairycles the Whisper Moss. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 2: The Cure" storageid="12122" startvalue="1" endvalue="5">
-			<missionstate id="1" description="Hairycles now needs Cough Syrup that humans use. He sends you to a local healer in Port hope to ask him for cough syrup."/>
-			<missionstate id="2" description="You now have to find the druid Ustan to ask him about the cough syrup, you will find him in a tavern in port hope."/>
-			<missionstate id="3" description="Ustan fear said I will have to buy Cough Syrup in the druids guild in carlin."/>
-			<missionstate id="4" description="You bought the Cough Syrup from Padreia, bring it to Hairycles."/>
-			<missionstate id="5" description="You brought Hairycles the Cough Syrup. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 3: Lizard Parchment" storageid="12123" startvalue="1" endvalue="2">
-			<missionstate id="1" description="Hairycles wants you to collect an Old Parchment from the lizard city of Chor."/>
-			<missionstate id="2" description="You brought Hairycles the Old Parchment. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 4: Parchment Decyphering" storageid="12124" startvalue="1" endvalue="3">
-			<missionstate id="1" description="You should go east to the big desert. The hidden tomb is in the east of city under sand. You will have to dig until you find it. There you find a stone with signs between two huge red stones. Read them!"/>
-			<missionstate id="2" description="You have decyhered the signs. Return to Hairycles and report you mission."/>
-			<missionstate id="3" description="You reported Hairycles the signs. Ask Hairycles for new mission!."/>
-		</mission>
-		<mission name="Mission 5: Hydra Egg" storageid="12125" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Hairycles needs a Hydra Egg to prepare his charm. Your mission is to bring him one."/>
-			<missionstate id="2" description="You found a Hydraegg! Bring it to Hairycles."/>
-			<missionstate id="3" description="You brought Hairycles a Hydra Egg. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 6: Witches' Cap Spot" storageid="12126" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Hairycles needs a sample of the Witches' Cap Spot for his Charm of Life. This can only be found in the Fibula Dungeon. Bring it to Hairycles!"/>
-			<missionstate id="2" description="Bring the sample back to Hairycles and report about your mission."/>
-			<missionstate id="3" description="You are now a friend of the apes and can purchase Bananas for 2gp. Hairycles will also heal you if you are low in health. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 7: Destroying Casks With Crowbar" storageid="12127" startvalue="1" endvalue="4">
-			<missionstate id="1" description="Hairycles wants you to destroy the Casks below the city left by the Lizard ancestors so that the Apes cannot drink from them."/>
-			<missionstate id="2" description="You destroyed 1 of 3 Casks in Banuta"/>
-			<missionstate id="3" description="You destroyed 2 of 3 Casks in Banuta"/>
-			<missionstate id="4" description="You destroyed 3 of 3 Casks in Banuta! Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 8: Looking for a hair of holy ape" storageid="12128" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Hairycles aims to strengthen the spirit of the apes. He wants for you to find evidence of the holy ape figure Bong existing within the Forbidden Lands. Find and ask the Blind Prophet in North-east of Tiquanda for transport."/>
-			<missionstate id="2" description="You found the Giant Ape's Hair! Bring it to Hairycles."/>
-			<missionstate id="3" description="You brought Hairycles the Giant Ape's Hair! You have now still access to the Forbidden lands. Ask Hairycles for new mission!"/>
-		</mission>
-		<mission name="Mission 9: The Deepest Catacombs" storageid="12129" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Hairycles wants you to go deep under Banuta and find the Lizards' serpent god monument and destroy it. On accepting this mission you will receive a Snake Destroyer (you will need this) and gain entry to Deeper Banuta."/>
-			<missionstate id="2" description="You destroyed the Statue of the Snake God. Return to Hairycles and report your mission."/>
-			<missionstate id="3" description="You completed the Ape City Quest and got the Shamanic Outfit! You can now buy Monkeystatues from Hairycles!"/>
+		<mission name="Hairycles' Missions" storageid="12121" startvalue="1" endvalue="18">
+			<missionstate id="1" description="Find whisper moss in the dworc settlement south of Port Hope and bring it back to Hairycles."/>
+			<missionstate id="2" description="You have completed the first mission. Hairycles was happy about the whisper moss you gave to him. He might have another mission for you."/>
+			<missionstate id="3" description="Hairycles asked you to bring him cough syrup from a human settlement. A healer might know more about this medicine."/>
+			<missionstate id="4" description="You have completed the second mission. Hairycles was happy about the cough syrup you gave to him. He might have another mission for you."/>
+			<missionstate id="5" description="Hairycles asked you to bring him a magical scroll from the lizard settlement Chor."/>
+			<missionstate id="6" description="You have completed the third mission. Hairycles appreciated that you brought the scroll to him and will try to read it. Maybe he has another mission for you later."/>
+			<missionstate id="7" description="Since Hairycles was not able to read the scroll you brought him, he asked you dig for a tomb in the desert to the east. Proceed in this tomb until you find an obelisk between red stones and read it."/>
+			<missionstate id="8" description="You have completed the fourth mission. Hairycles read your mind and can now translate the lizard scroll. He might have another mission for you."/>
+			<missionstate id="9" description="Hairycles wants to create a life charm for the ape people. He needs a hydra egg since it has strong regenerating powers."/>
+			<missionstate id="10" description="You have completed the fifth mission. Hairycles attempts to create a might charm for the protection of the ape people. He might have another mission for you later."/>
+			<missionstate id="11" description="Hairycles need a witches' cap mushroom which is supposed to be hidden in a dungeon deep under Fibula."/>
+			<missionstate id="12" description="You have completed the sixth mission. You brought the witches' cap mushroom back to Hairycles. He might have another mission for you."/>
+			<missionstate id="13" description="Hairycles is worried about an ape cult which drinks some strange fluid that the lizards left behind. Go to the old lizard temple under Banuta and destroy three of the casks there with a crowbar."/>
+			<missionstate id="14" description="You have completed the seventh mission. You found the old lizard ruins under Banuta and destroyed three of the casks with snake blood. Hairycles might have another mission for you."/>
+			<missionstate id="15" description="The apes now need a symbol of their faith. Speak with the blind prophet in a cave to the northeast and go to the Forbidden Land. Find a hair of the giant, holy ape Bong and bring it back."/>
+			<missionstate id="16" description="You completed the eighth mission. Hairycles gladly accepted the hair of the ape god which you brought him. He told you to have one final mission for you."/>
+			<missionstate id="17" description="Go into the deepest catacombs under Banuta and destroy the monument of the snake god with the hammer that Hairycles gave to you."/>
+			<missionstate id="18" description="You successfully destroyed the monument of the snake god. As reward, you can buy sacred statues from Hairycles. If you haven't done so yet, you should also ask him for a shaman outfit."/>
 		</mission>
 	</quest>
 	<quest name="The Beginning" startstorageid="50087" startstoragevalue="1">

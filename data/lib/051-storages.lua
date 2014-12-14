@@ -305,16 +305,18 @@ Storage = {
 		VashresamunInstruments = 12109
 	},
 	TheApeCity = {
-		Questline = 12120, -- Storage through the Quest
-		Mission01 = 12121,
-		Mission02 = 12122,
-		Mission03 = 12123,
-		Mission04 = 12124,
-		Mission05 = 12125,
-		Mission06 = 12126,
-		Mission07 = 12127,
-		Mission08 = 12128,
-		Mission09 = 12129
+		Started = 12120,
+		Questline = 12121, -- Storage through the Quest
+		DworcDoor = 12122,
+		ChorDoor = 12123,
+		ParchmentDecyphering = 12124,
+		FibulaDoor = 12125,
+		WitchesCapSpot = 12126,
+		CasksDoor = 12127,
+		Casks = 12128,
+		HolyApeHair = 12129,
+		SnakeDestroyer = 12130,
+		ShamanOufit = 12131
 	},
 	TheNewFrontier = {
 		Questline = 12130, -- Storage through the Quest
@@ -717,7 +719,10 @@ Storage = {
 
 		DoubletQuest = 64121,
 		HoneyFlower = 64131,
-		BananaPalm = 64132
+		BananaPalm = 64132,
+
+		WhisperMoss = 50033,
+		OldParchment = 50034
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8818,

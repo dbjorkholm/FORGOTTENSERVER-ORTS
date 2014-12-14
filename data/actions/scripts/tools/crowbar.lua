@@ -1,11 +1,8 @@
-function revertCask(toPosition)
-	toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
-	local tile = toPosition:getTile()
-	if tile then
-		local thing = tile:getItemById(2249)
-		if thing then
-			thing:transform(5539)
-		end
+local function revertCask(position)
+	local caskItem = Tile(position):getItemById(2249)
+	if caskItem then
+		caskItem:transform(5539)
+		position:sendMagicEffect(CONST_ME_MAGIC_GREEN)
 	end
 end
 
@@ -58,22 +55,24 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 		end
 	end
-	-- The Ape City - Mission 7: Destroying Casks With Crowbar
-	if target.itemid == 5539 and target.actionid == 12127 and player:getStorageValue(Storage.TheApeCity.Mission07) <= 3 then --hit cask with crowbar
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-		player:setStorageValue(Storage.TheApeCity.Mission07, player:getStorageValue(Storage.TheApeCity.Mission07) + 1) -- The Ape City Questlog - Mission 7: Destroying Casks With Crowbar
-		if player:getStorageValue(Storage.TheApeCity.Mission07) == 4 then
-			player:setStorageValue(Storage.TheApeCity.Questline, 17)
-		end
-		player:say('You destroyed a cask.', TALKTYPE_MONSTER_SAY)
-		target:transform(2249)
-		addEvent(revertCask, 30 * 1000, toPosition)
-	end
-	-- Postman Quest
-	if target.actionid == 100 and target.itemid == 2593 then
-		if player:getStorageValue(Storage.postman.Mission02) == 1 then
-			player:setStorageValue(Storage.postman.Mission02, 2)
-			toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+
+	if target.actionid == 100 then
+		-- Postman Quest
+		if target.itemid == 2593 then
+			if player:getStorageValue(Storage.postman.Mission02) == 1 then
+				player:setStorageValue(Storage.postman.Mission02, 2)
+				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+			end
+
+		-- The Ape City - Mission 7
+		elseif target.itemid == 5539 then
+			local cStorage = player:getStorageValue(Storage.TheApeCity.Casks)
+			if cStorage < 3 then
+				player:setStorageValue(Storage.TheApeCity.Casks, math.max(0, cStorage) + 1)
+				target:transform(2249)
+				toPosition:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+				addEvent(revertCask, 3 * 60 * 1000, toPosition)
+			end
 		end
 	end
 	-- Secret Service Quest

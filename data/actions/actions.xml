@@ -98,7 +98,6 @@
 	<action uniqueid="3402" script="the outlaw camp quest/powerburn.lua" />
 
 	<!--- The Ape City Quest -->
-	<action actionid="12128" script="the ape city/Mission8LookingholyapeReward.lua" />
 	<action actionid="12129" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
 	<action uniqueid="12131" script="the ape city/Mission9TheDeepestCatacombsLever.lua" />
 	<action itemid="4846" 	 script="the ape city/Mission9TheDeepestCatacombsSnakedestroyer.lua"/>

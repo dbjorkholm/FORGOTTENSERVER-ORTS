@@ -13,12 +13,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	elseif msgcontains(msg, "cough syrup") then
-		if player:getStorageValue(Storage.TheApeCity.Questline) == 4 then
-			npcHandler:say("I had some cough syrup a while ago. It was stolen in an ape raid. I fear if you want more cough syrup you will have to buy it in the druids guild in carlin.", cid)
-			player:setStorageValue(Storage.TheApeCity.Questline, 5)
-			player:setStorageValue(Storage.TheApeCity.Mission02, 3) -- The Ape City Questlog - Mission 2: The Cure
-			npcHandler.topic[cid] = 0
-		end
+		npcHandler:say("I had some cough syrup a while ago. It was stolen in an ape raid. I fear if you want more cough syrup you will have to buy it in the druids guild in carlin.", cid)
 	elseif msgcontains(msg, "addon") then
 		if player:getStorageValue(Storage.OutfitQuest.DruidBodyAddon) < 1 then
 			npcHandler:say("Would you like to wear bear paws like I do? No problem, just bring me 50 bear paws and 50 wolf paws and I'll fit them on.", cid)
