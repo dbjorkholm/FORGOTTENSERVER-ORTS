@@ -250,9 +250,14 @@ Storage = {
 		HunterBodyAddon = 12054,
 		HunterHatAddon = 12055,
 
-		-- Knight-outfit Quest
-		KnightHatAddon = 12060,
-		KnightSwordAddon = 12061,
+		Knight = {
+			AddonSword = 12153,
+
+			MissionHelmet = 12154,
+			AddonHelmet = 12155,
+			AddonHelmetTimer = 12156,
+			RamsaysHelmetDoor = 12160
+		},
 
 		-- Mage and Summoner-outfit Quest
 		MageSummonerWandAddon = 12062,
@@ -315,8 +320,8 @@ Storage = {
 		CasksDoor = 12127,
 		Casks = 12128,
 		HolyApeHair = 12129,
-		SnakeDestroyer = 12130,
-		ShamanOufit = 12131
+		SnakeDestroyer = 12151,
+		ShamanOufit = 12152
 	},
 	TheNewFrontier = {
 		Questline = 12130, -- Storage through the Quest

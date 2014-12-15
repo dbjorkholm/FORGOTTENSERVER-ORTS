@@ -21,77 +21,151 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
+
 	local player = Player(cid)
-	if msgcontains(msg, "addon") or msgcontains(msg, "outfit") then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) < 1 then
-			npcHandler:say("Only the bravest warriors may wear adorned helmets. They are traditionally awarded after having completed a difficult {task} for our guild.", cid)
+	local addonProgress = player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmet)
+	if msgcontains(msg, 'task') then
+		if not player:isPremium() then
+			npcHandler:say('Sorry, but our tasks are only for premium warriors.', cid)
+			return true
+		end
+
+		if addonProgress < 1 then
+			npcHandler:say('You mean you would like to prove that you deserve to wear such a helmet?', cid)
+			npcHandler.topic[cid] = 1
+		elseif addonProgress == 1 then
+			npcHandler:say('Your current task is to bring me 100 perfect behemoth fangs, |PLAYERNAME|.', cid)
+		elseif addonProgress == 2 then
+			npcHandler:say('Your current task is to retrieve the helmet of Ramsay the Reckless from Banuta, |PLAYERNAME|.', cid)
+		elseif addonProgress == 3 then
+			npcHandler:say('Your current task is to obtain a flask of warrior\'s sweat, |PLAYERNAME|.', cid)
+		elseif addonProgress == 4 then
+			npcHandler:say('Your current task is to bring me royal steel, |PLAYERNAME|.', cid)
+		elseif addonProgress == 5 then
+			npcHandler:say('Please talk to Sam and tell him I sent you. I\'m sure he will be glad to refine your helmet, |PLAYERNAME|.', cid)
+		else
+			npcHandler:say('You\'ve already completed the task and can consider yourself a mighty warrior, |PLAYERNAME|.', cid)
+		end
+
+	elseif msgcontains(msg, 'behemoth fang') then
+		if addonProgress == 1 then
+			npcHandler:say('Have you really managed to fulfil the task and brought me 100 perfect behemoth fangs?', cid)
+			npcHandler.topic[cid] = 3
+		else
+			npcHandler:say('You\'re not serious asking that, are you? They come from behemoths, of course. Unless there are behemoth rabbits. Duh.', cid)
+		end
+
+	elseif msgcontains(msg, 'ramsay') then
+		if addonProgress == 2 then
+			npcHandler:say('Did you recover the helmet of Ramsay the Reckless?', cid)
+			npcHandler.topic[cid] = 4
+		else
+			npcHandler:say('These pesky apes steal everything they can get their dirty hands on.', cid)
+		end
+
+	elseif msgcontains(msg, 'sweat') then
+		if addonProgress == 3 then
+			npcHandler:say('Were you able to get hold of a flask with pure warrior\'s sweat?', cid)
+			npcHandler.topic[cid] = 5
+		else
+			npcHandler:say('Warrior\'s sweat can be magically extracted from headgear worn by a true warrior, but only in small amounts. Djinns are said to be good at magical extractions.', cid)
+		end
+
+	elseif msgcontains(msg, 'royal steel') then
+		if addonProgress == 4 then
+			npcHandler:say('Ah, have you brought the royal steel?', cid)
+			npcHandler.topic[cid] = 6
+		else
+			npcHandler:say('Royal steel can only be refined by very skilled smiths.', cid)
+		end
+
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, 'yes') then
+			npcHandler:say({
+				'Well then, listen closely. First, you will have to prove that you are a fierce and restless warrior by bringing me 100 perfect behemoth fangs. ...',
+				'Secondly, please retrieve a helmet for us which has been lost a long time ago. The famous Ramsay the Reckless wore it when exploring an ape settlement. ...',
+				'Third, we need a new flask of warrior\'s sweat. We\'ve run out of it recently, but we need a small amount for the show battles in our arena. ...',
+				'Lastly, I will have our smith refine your helmet if you bring me royal steel, an especially noble metal. ...',
+				'Did you understand everything I told you and are willing to handle this task?'
+			}, cid)
+			npcHandler.topic[cid] = 2
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('Bah. Then you will have to wait for the day these helmets are sold in shops, but that will not happen before hell freezes over.', cid)
+			npcHandler.topic[cid] = 0
+		end
+
+	elseif npcHandler.topic[cid] == 2 then
+		if msgcontains(msg, 'yes') then
+			player:setStorageValue(Storage.OutfitQuest.Ref, math.max(0, player:getStorageValue(Storage.OutfitQuest.Ref)) + 1)
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 1)
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 1)
+			npcHandler:say('Alright then. Come back to me once you have collected 100 perfect behemoth fangs.', cid)
+			npcHandler.topic[cid] = 0
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('Would you like me to repeat the task requirements then?', cid)
 			npcHandler.topic[cid] = 1
 		end
-	elseif msgcontains(msg, "task") then
-		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("You mean, you would like to prove that you deserve to wear such a helmet?", cid)
-			npcHandler.topic[cid] = 2
-		end
-	elseif msgcontains(msg, "fang") or msgcontains(msg, "behemoth") then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 1 then
-			npcHandler:say("Have you really managed to fulfil the task and brought me 100 perfect behemoth fangs?", cid)
-			npcHandler.topic[cid] = 4
-		end
-	elseif msgcontains(msg, "helmet") then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 2 then
-			npcHandler:say("Did you recover the helmet of Ramsay the Reckless?", cid)
-			npcHandler.topic[cid] = 5
-		end
-	elseif msgcontains(msg, "sweat")  or msgcontains(msg, "flask") then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 3 then
-			npcHandler:say("Were you able to get hold of a flask with pure warrior's sweat?", cid)
-			npcHandler.topic[cid] = 6
-		end
-	elseif msgcontains(msg, "steel") then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 4 then
-			npcHandler:say("Ah, have you brought the royal steel?", cid)
-			npcHandler.topic[cid] = 7
-		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 2 then
-			npcHandler:say({
-				"Well then, listen closely. First, you will have to prove that you are a fierce and restless warrior by bringing me 100 perfect behemoth fangs. ...",
-				"Secondly, please retrieve a helmet for us which has been lost a long time ago. The famous Ramsay the Reckless wore it when exploring an ape settlement. ...",
-				"Third, we need a new flask of warrior's sweat. We've run out of it recently, but we need a small amount for the show battles in our arena. ...",
-				"Lastly, I will have our smith refine your helmet if you bring me royal steel, an especially noble metal. ...",
-				"Did you understand everything I told you and are willing to handle this task?"
-			}, cid)
-			npcHandler.topic[cid] = 3
-		elseif npcHandler.topic[cid] == 3 then
-			npcHandler:say("Alright then. Come back to me once you have collected 100 perfect behemoth fangs.", cid)
-			player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 1)
-			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
-			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 4 then
-			if player:removeItem(5893, 100) then
-				npcHandler:say("I'm deeply impressed, (brave Knight) " .. player:getName() .. ". (Even if you are not a knight, you certainly possess knight qualities.) Now, please retrieve Ramsay's helmet.", cid)
-				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 2)
-				npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 3 then
+		if msgcontains(msg, 'yes') then
+			if not player:removeItem(5893, 100) then
+				npcHandler:say('Lying is not exactly honourable, |PLAYERNAME|. Shame on you.', cid)
+				return true
 			end
-		elseif npcHandler.topic[cid] == 5 then
-			if player:removeItem(5924, 1) then
-				npcHandler:say("Good work, (brave Knight) " .. player:getName() .. "! Even though it is damaged, it has a lot of sentimental value. Now, please bring me warrior's sweat.", cid)
-				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 3)
-				npcHandler.topic[cid] = 0
-			end
-		elseif npcHandler.topic[cid] == 6 then
-			if player:removeItem(5885, 1) then
-				npcHandler:say("Now that is a pleasant surprise, (brave Knight) " .. player:getName() .. "! There is only one task left now: Obtain royal steel to have your helmet refined.", cid)
-				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 4)
-				npcHandler.topic[cid] = 0
-			end
-		elseif npcHandler.topic[cid] == 7 then
-			if player:removeItem(5887, 1) then
-				npcHandler:say("You truly deserve to wear an adorned helmet, (brave Knight) " .. player:getName() .. ". Please talk to Sam and tell him I sent you. I'm sure he will be glad to refine your helmet.", cid)
-				player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 5)
-				npcHandler.topic[cid] = 0
-			end
+
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 2)
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 2)
+			player:setStorageValue(Storage.OutfitQuest.Knight.RamsaysHelmetDoor, 1)
+			npcHandler:say('I\'m deeply impressed, brave Knight |PLAYERNAME|. I expected nothing less from you. Now, please retrieve Ramsay\'s helmet.', cid)
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('There is no need to rush anyway.', cid)
 		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 4 then
+		if msgcontains(msg, 'yes') then
+			if not player:removeItem(5924, 1) then
+				npcHandler:say('Lying is not exactly honourable, |PLAYERNAME|. Shame on you.', cid)
+				return true
+			end
+
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 3)
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 3)
+			npcHandler:say('Good work, brave Knight |PLAYERNAME|! Even though it is damaged, it has a lot of sentimental value. Now, please bring me warrior\'s sweat.', cid)
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('There is no need to rush anyway.', cid)
+		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 5 then
+		if msgcontains(msg, 'yes') then
+			if not player:removeItem(5885, 1) then
+				npcHandler:say('Lying is not exactly honourable, |PLAYERNAME|. Shame on you.', cid)
+				return true
+			end
+
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 4)
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 4)
+			npcHandler:say('Now that is a pleasant surprise, brave Knight |PLAYERNAME|! There is only one task left now: Obtain royal steel to have your helmet refined.', cid)
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('There is no need to rush anyway.', cid)
+		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 6 then
+		if msgcontains(msg, 'yes') then
+			if not player:removeItem(5887, 1) then
+				npcHandler:say('Lying is not exactly honourable, |PLAYERNAME|. Shame on you.', cid)
+				return true
+			end
+
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 5)
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 5)
+			npcHandler:say('You truly deserve to wear an adorned helmet, brave Knight |PLAYERNAME|. Please talk to Sam and tell him I sent you. I\'m sure he will be glad to refine your helmet.', cid)
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('There is no need to rush anyway.', cid)
+		end
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
@@ -117,6 +191,8 @@ keywordHandler:addKeyword({'oswald'}, StdModule.say, {npcHandler = npcHandler, t
 keywordHandler:addKeyword({'quentin'}, StdModule.say, {npcHandler = npcHandler, text = "I will never understand this peaceful monks and priests."})
 keywordHandler:addKeyword({'sam'}, StdModule.say, {npcHandler = npcHandler, text = "He has the muscles, but lacks the guts."})
 keywordHandler:addKeyword({'tibianus'}, StdModule.say, {npcHandler = npcHandler, text = "Hail to our King!"})
+keywordHandler:addKeyword({'outfit'}, StdModule.say, {npcHandler = npcHandler, text = "Only the bravest warriors may wear adorned helmets. They are traditionally awarded after having completed a difficult task for our guild."})
+keywordHandler:addKeyword({'helmet'}, StdModule.say, {npcHandler = npcHandler, text = "Only the bravest warriors may wear adorned helmets. They are traditionally awarded after having completed a difficult task for our guild."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings, |PLAYERNAME|. What do you want?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Be careful on your journeys.")

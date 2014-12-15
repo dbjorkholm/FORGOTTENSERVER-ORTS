@@ -21,22 +21,41 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	local player = Player(cid)
-	if isInArray({"adorn", "helmet", "outfit", "addon"}, msg) then
-		if player:getStorageValue(Storage.OutfitQuest.KnightHatAddon) == 5 then
-			npcHandler:say("Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Your helmet is finished, I hope you like it.", cid)
-			player:setStorageValue(Storage.OutfitQuest.KnightHatAddon, 6)
-			player:addOutfitAddon(139, 2)
-			player:addOutfitAddon(131, 2)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		end
-	end
 
-	if msgcontains(msg, "old backpack") then
+	local player = Player(cid)
+	if msgcontains(msg, 'adorn')
+			or msgcontains(msg, 'outfit')
+			or msgcontains(msg 'addon') then
+		local addonProgress = player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmet)
+		if addonProgress == 5 then
+			player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 6)
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 6)
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmetTimer, os.time() + 7200)
+			npcHandler:say('Oh, Gregor sent you? I see. It will be my pleasure to adorn your helmet. Please give me some time to finish it.', cid)
+		elseif addonProgress == 6 then
+			if player:getStorageValue(Storage.OutfitQuest.Knight.AddonHelmetTimer) < os.time() then
+				player:setStorageValue(Storage.OutfitQuest.Knight.MissionHelmet, 0)
+				player:setStorageValue(Storage.OutfitQuest.Knight.AddonHelmet, 7)
+				player:setStorageValue(Storage.OutfitQuest.Ref, math.min(0, player:getStorageValue(Storage.OutfitQuest.Ref) - 1))
+				player:addOutfitAddon(131, 2)
+				player:addOutfitAddon(139, 2)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say('Just in time, |PLAYERNAME|. Your helmet is finished, I hope you like it.', cid)
+			else
+				npcHandler:say('Please have some patience, |PLAYERNAME|. Forging is hard work!', cid)
+			end
+		elseif addonProgress == 7 then
+			npcHandler:say('I think it\'s one of my masterpieces.', cid)
+		else
+			npcHandler:say('Sorry, but without the permission of Gregor I cannot help you with this matter.', cid)
+		end
+
+	elseif msgcontains(msg, "old backpack") then
 		if player:getStorageValue(Storage.SamsOldBackpack) < 1 then
 			npcHandler:say("What? Are you telling me you found my old adventurer's backpack that I lost years ago??", cid)
 			npcHandler.topic[cid] = 1
 		end
+
 	elseif msgcontains(msg, '2000 steel shields') then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) ~= 29
 				or player:getStorageValue(Storage.WhatAFoolishQuest.Contract) == 2 then
@@ -46,11 +65,13 @@ local function creatureSayCallback(cid, type, msg)
 
 		npcHandler:say('What? You want to buy 2000 steel shields??', cid)
 		npcHandler.topic[cid] = 2
+
 	elseif msgcontains(msg, 'contract') then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.Contract) == 0 then
 			npcHandler:say('Have you signed the contract?', cid)
 			npcHandler.topic[cid] = 4
 		end
+
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(3960, 1) then
@@ -83,6 +104,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Excellent! I will start working right away! Now that I am going to be rich, I will take the opportunity to tell some people what I REALLY think about them!', cid)
 			npcHandler.topic[cid] = 0
 		end
+
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] == 1 then
 			npcHandler:say("Then no.", cid)

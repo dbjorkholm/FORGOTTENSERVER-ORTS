@@ -439,13 +439,13 @@
 			<missionstate id="4" description="Bring Elane one piece of royal steel, draconian steel and hell steel each."/>
 			<missionstate id="5" description="You got the Outfit!"/>
 		</mission>
-		<mission name="Knight Outfit Quest" storageid="12060" startvalue="1" endvalue="6">
-			<missionstate id="1" description="First you must collect 100 Behemoth Fangs by looting or Skinning Behemoth's. Bring them to Gregor in Thais."/>
-			<missionstate id="2" description="Gregor send you to retrieve the helmet of Ramsay the Reckless found in deeper Banuta"/>
-			<missionstate id="3" description="Bring Gregor a Flask of Warrior's Sweat."/>
-			<missionstate id="4" description="Bring Gregor one piece of royal steel."/>
-			<missionstate id="5" description="Gregor send you to Sam to adorn your helmet."/>
-			<missionstate id="6" description="You got the Outfit!"/>
+		<mission name="Knight Addon: Helmet" storageid="12154" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Your current task is to bring 100 perfect behemoth fangs to Gregor in Thais."/>
+			<missionstate id="2" description="Your current task is to retrieve the helmet of Ramsay the Reckless from Banuta. These pesky apes steal everything they can get their dirty hands on."/>
+			<missionstate id="3" description="Your current task is to obtain a flask of warrior's sweat, which can be magicially extracted from headgear worn by a true warrior, but only in small amounts. Djinns are said to be good at this."/>
+			<missionstate id="4" description="Your current task is to bring royal steel to Gregor in Thais. Royal steel can only be refined by very skilled smiths."/>
+			<missionstate id="5" description="You have delivered all items required for the helmet addon. Go talk to Sam and tell him Gregor sent you. He will be glad to refine your helmet."/>
+			<missionstate id="6" description="Sam is currently creating the helmet for you. Be patient and don't forget to check on it later!"/>
 		</mission>
 		<mission name="Mage &amp; Summoner Outfit Quest (Wand)" storageid="12062" startvalue="1" endvalue="6">
 			<missionstate id="1" description="You found Angelina in a Prison. She told you a secret: Lynda in Thais can create a blessed wand. Greet her from Angelina, maybe she will aid you."/>

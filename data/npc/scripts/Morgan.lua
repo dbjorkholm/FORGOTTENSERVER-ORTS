@@ -29,9 +29,6 @@ local function creatureSayCallback(cid, type, msg)
 		end
 
 		if player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) < 1 then
-			if player:getStorageValue(Storage.OutfitQuest.DefaultStart) ~= 1 then
-				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
-			end
 			player:setStorageValue(Storage.OutfitQuest.WarriorSwordAddon, 1)
 			npcHandler:say('Great! Simply bring me 100 iron ore and one royal steel and I will happily {forge} it for you.', cid)
 		elseif player:getStorageValue(Storage.OutfitQuest.WarriorSwordAddon) == 1 and npcHandler.topic[cid] == 1 then
@@ -61,11 +58,8 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		end
 
-		if player:getStorageValue(Storage.OutfitQuest.KnightSwordAddon) < 1 then
-			if player:getStorageValue(Storage.OutfitQuest.DefaultStart) ~= 1 then
-				player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1)
-			end
-			player:setStorageValue(Storage.OutfitQuest.KnightSwordAddon, 1)
+		if player:getStorageValue(Storage.OutfitQuest.Knight.AddonSword) < 1 then
+			player:setStorageValue(Storage.OutfitQuest.Knight.AddonSword, 1)
 			npcHandler:say('Great! Simply bring me 100 Iron Ore and one Crude Iron and I will happily {forge} it for you.', cid)
 		elseif player:getStorageValue(Storage.OutfitQuest.KnightSwordAddon) == 1 and npcHandler.topic[cid] == 1 then
 			if player:getItemCount(5892) > 0 and player:getItemCount(5880) > 99 then
@@ -73,7 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:removeItem(5880, 100)
 				player:addOutfitAddon(131, 1)
 				player:addOutfitAddon(139, 1)
-				player:setStorageValue(Storage.OutfitQuest.KnightSwordAddon, 2)
+				player:setStorageValue(Storage.OutfitQuest.Knight.AddonSword, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say('Alright! As a matter of fact, I have one in store. Here you go!', cid)
 			else
