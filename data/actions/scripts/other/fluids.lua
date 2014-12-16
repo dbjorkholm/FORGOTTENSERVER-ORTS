@@ -55,8 +55,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			player:say(fluidMessage[item.type] or 'Gulp.', TALKTYPE_MONSTER_SAY)
 			item:transform(item.itemid, 0)
 		else
-			item:transform(item.itemid, 0)
 			Game.createItem(2016, item.type, toPosition):decay()
+			item:transform(item.itemid, 0)
 		end
 	else
 		local fluidSource = targetType:getFluidSource()
@@ -68,8 +68,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if toPosition.x == CONTAINER_POSITION then
 				toPosition = player:getPosition()
 			end
-			item:transform(item.itemid, 0)
 			Game.createItem(2016, item.type, toPosition):decay()
+			item:transform(item.itemid, 0)
 		end
 	end
 
