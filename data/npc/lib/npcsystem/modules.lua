@@ -73,7 +73,7 @@ if Modules == nil then
 			return true
 		end,
 		[STDMODULE_RELEASE_FOCUS] = function(player, parameters)
-			parameters.npcHandler:releaseFocus(player:getId())
+			parameters.npcHandler:releaseFocus(player.uid)
 			return true
 		end,
 		[STDMODULE_EFFECT] = function(player, parameters)

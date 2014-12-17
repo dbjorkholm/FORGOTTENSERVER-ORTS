@@ -46,7 +46,7 @@ function onStepIn(creature, item, position, fromPosition)
 		end
 
 		for i = 1, #messages do
-			addEvent(sendTextMessages, (i - 1) * 2000, player:getId(), messages[i], player:getPosition())
+			addEvent(sendTextMessages, (i - 1) * 2000, player.uid, messages[i], player:getPosition())
 		end
 
 		player:setStorageValue(Storage.BigfootBurden.QuestLine, 7)

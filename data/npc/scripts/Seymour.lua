@@ -28,13 +28,13 @@ keywordHandler:addAliasKeyword({'farewell'})
 
 -- Rats
 local ratsKeyword = keywordHandler:addKeyword({'%d+', 'dead', 'rat'}, StdModule.say, {npcHandler = npcHandler},
-	function(player, data) npcHandler.rats[player:getId()] = data[1] return data[1] and data[1] > 0 and data[1] < 0xFFFFFFFF end,
+	function(player, data) npcHandler.rats[player.uid] = data[1] return data[1] and data[1] > 0 and data[1] < 0xFFFFFFFF end,
 	function(player)
-		npcHandler:say(string.format('Have you brought %d dead rats to me to pick up your reward?', npcHandler.rats[player:getId()]), player:getId())
+		npcHandler:say(string.format('Have you brought %d dead rats to me to pick up your reward?', npcHandler.rats[player.uid]), player.uid)
 	end)
 	ratsKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Thank you! Here is your reward.', reset = true},
-		function(player) return player:getItemCount(2813) >= npcHandler.rats[player:getId()] end,
-		function(player) player:removeItem(2813, npcHandler.rats[player:getId()]) player:addMoney(2 * npcHandler.rats[player:getId()]) end
+		function(player) return player:getItemCount(2813) >= npcHandler.rats[player.uid] end,
+		function(player) player:removeItem(2813, npcHandler.rats[player.uid]) player:addMoney(2 * npcHandler.rats[player.uid]) end
 	)
 	ratsKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'HEY! You don\'t have so many!', reset = true})
 	ratsKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Go and find some rats to kill!', reset = true})
@@ -138,13 +138,13 @@ destinyKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler,
 	function(player)
 		local destiny = math.random(1, 4)
 		if destiny == 1 then
-			npcHandler:say('Hmmm, let me look at you. You got that intelligent sparkle in your eyes and you\'d love to handle great power - that must be a future sorcerer!', player:getId())
+			npcHandler:say('Hmmm, let me look at you. You got that intelligent sparkle in your eyes and you\'d love to handle great power - that must be a future sorcerer!', player.uid)
 		elseif destiny == 2 then
-			npcHandler:say('Hmmm, let me look at you. You have an aura of great wisdom and may have healing hands as well as a sense for the powers of nature - I think you\'re a natural born druid!', player:getId())
+			npcHandler:say('Hmmm, let me look at you. You have an aura of great wisdom and may have healing hands as well as a sense for the powers of nature - I think you\'re a natural born druid!', player.uid)
 		elseif destiny == 3 then
-			npcHandler:say('Hmmm, let me look at you. <missing message, destiny for paladin>!', player:getId())
+			npcHandler:say('Hmmm, let me look at you. <missing message, destiny for paladin>!', player.uid)
 		elseif destiny == 4 then
-			npcHandler:say('Hmmm, let me look at you. Strong and sturdy, with a determined look in your eyes - no doubt the knight profession would be suited for you!', player:getId())
+			npcHandler:say('Hmmm, let me look at you. Strong and sturdy, with a determined look in your eyes - no doubt the knight profession would be suited for you!', player.uid)
 		end
 		player:setStorageValue(Storage.RookgaardDestiny, destiny)
 	end

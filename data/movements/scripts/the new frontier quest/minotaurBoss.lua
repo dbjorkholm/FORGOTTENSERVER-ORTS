@@ -24,7 +24,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local playerId = player:getId()
+	local playerId = player.uid
 	if item.actionid == 12135 then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 18 then
 			events[playerId] = addEvent(completeTest, 2 * 60 * 1000, playerId)

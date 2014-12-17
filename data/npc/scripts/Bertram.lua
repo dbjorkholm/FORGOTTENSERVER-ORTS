@@ -15,7 +15,7 @@ local function creatureSayCallback(cid, type, msg)
 	if msgcontains(msg, 'key') then
 		if player:getStorageValue(Storage.thievesGuild.Mission06) == 1 and player:getSex() == PLAYERSEX_FEMALE then
 			local headItem = player:getSlotItem(CONST_SLOT_HEAD)
-			if headItem and headItem:getId() == 2665 and player:getStorageValue(Storage.postman.Rank) == 5 then
+			if headItem and headItem.itemid == 2665 and player:getStorageValue(Storage.postman.Rank) == 5 then
 				player:addItem(8762, 1)
 				player:setStorageValue(Storage.thievesGuild.Mission06, 2)
 				npcHandler:say('Oh my! You look so great in your uniform! You archpostwomen are not only daring but also beautiful. Here take it, that\'s the key you wanted. Just promise to visit me now and then!', cid)

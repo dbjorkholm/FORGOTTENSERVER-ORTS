@@ -8,7 +8,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local playerId = player:getId()
+	local playerId = player.uid
 	if item.actionid == 25300 then
 		player:addCondition(condition)
 

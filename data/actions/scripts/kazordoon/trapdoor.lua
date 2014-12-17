@@ -3,7 +3,7 @@ local exitPosition = Position(32605, 31902, 4)
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local ground = Tile(exitPosition):getGround()
 	if ground and isInArray({369, 413}, ground.itemid) then
-		ground:transform(ground:getId() == 369 and 413 or 369)
+		ground:transform(ground.itemid == 369 and 413 or 369)
 
 		if ground.itemid == 369 then
 			local items = ground:getTile():getItems()

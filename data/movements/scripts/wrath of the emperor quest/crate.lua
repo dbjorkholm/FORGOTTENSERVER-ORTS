@@ -13,7 +13,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local playerId = player:getId()
+	local playerId = player.uid
 	if item.actionid == 8015 then
 		player:say("You hear guards moving behind doors in the distance. If you have any sort of disguise with you, this is the moment to use it.", TALKTYPE_MONSTER_SAY)
 	elseif item.actionid == 8016 then
@@ -21,7 +21,7 @@ function onStepIn(creature, item, position, fromPosition)
 			catchPlayer(playerId)
 		end
 	elseif item.actionid == 8017 or item.actionid == 32362 or item.itemid == 11436 then
-		catchPlayer(player:getId())
+		catchPlayer(playerId)
 	elseif item.actionid == 8018 then
 		if Game.getStorageValue(GlobalStorage.WrathOfTheEmperor.Light01) ~= 1 then
 			catchPlayer(playerId)

@@ -75,22 +75,22 @@ function onStartup()
 						tile = Tile(Position(x, y, z))
 						if tile then
 							topDownItem = tile:getTopDownItem()
-							if topDownItem and isInArray(itemIds, topDownItem:getId()) then
+							if topDownItem and isInArray(itemIds, topDownItem.itemid) then
 								topDownItem:remove()
 							end
 
 							topTopItem = tile:getTopTopItem()
-							if topTopItem and isInArray(itemIds, topTopItem:getId()) then
+							if topTopItem and isInArray(itemIds, topTopItem.itemid) then
 								topTopItem:remove()
 							end
 
 							topVisibleThing = tile:getTopVisibleThing()
-							if topVisibleThing and isInArray(itemIds, topVisibleThing:getId()) then
+							if topVisibleThing and isInArray(itemIds, topVisibleThing.itemid) then
 								topVisibleThing:remove()
 							end
 
 							ground = tile:getGround()
-							if ground and isInArray(groundIds, ground:getId()) then
+							if ground and isInArray(groundIds, ground.itemid) then
 								ground:remove()
 							end
 						end

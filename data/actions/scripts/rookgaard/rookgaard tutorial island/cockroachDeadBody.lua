@@ -1,6 +1,6 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local owner = item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
-	if owner ~= nil and Player(owner) and player:getId() ~= owner then
+	if owner ~= nil and Player(owner) and player.uid ~= owner then
 		return
 	end
 

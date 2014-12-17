@@ -6,7 +6,7 @@ function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(creature, type, msg)
 	if not (msgcontains(msg, 'hi') or msgcontains(msg, 'hello')) then
-		npcHandler:say('LEAVE THE DRAGONS\' CEMETERY AT ONCE!', creature:getId())
+		npcHandler:say('LEAVE THE DRAGONS\' CEMETERY AT ONCE!', creature.uid)
 	end
 	npcHandler:onCreatureSay(creature, type, msg)
 end

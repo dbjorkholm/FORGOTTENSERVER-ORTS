@@ -78,7 +78,7 @@ function onStepIn(creature, item, position, fromPosition)
 	boss.playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
 
 	local monster = Game.createMonster(boss.bossName, boss.bossPosition)
-	addEvent(clearBossRoom, 60 * 10 * 1000, player:getId(), monster:getId(), boss.fromPosition, boss.toPosition, fromPosition)
+	addEvent(clearBossRoom, 60 * 10 * 1000, player.uid, monster.uid, boss.fromPosition, boss.toPosition, fromPosition)
 	player:say('You have ten minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
 	return true
 end

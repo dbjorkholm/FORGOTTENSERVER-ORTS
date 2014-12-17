@@ -78,7 +78,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	local creature = tile:getTopCreature()
-	if not creature or creature:getId() ~= player:getId() then
+	if not creature or creature.uid ~= player.uid then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Step inside the elevator to use it.')
 		return true
 	end

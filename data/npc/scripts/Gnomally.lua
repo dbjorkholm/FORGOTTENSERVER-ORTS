@@ -134,7 +134,7 @@ local function creatureSayCallback(cid, type, msg)
 
 			local item = Game.createItem(targetTable.itemid, 1)
 			local weight = 0
-			weight = ItemType(item:getId()):getWeight(item:getCount())
+			weight = ItemType(item.itemid):getWeight(item:getCount())
 
 			if player:addItemEx(item) ~= RETURNVALUE_NOERROR then
 				if player:getFreeCapacity() < weight then

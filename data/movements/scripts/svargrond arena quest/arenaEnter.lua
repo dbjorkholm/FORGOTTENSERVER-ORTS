@@ -25,7 +25,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	SvargrondArena.resetPit(pitId)
-	SvargrondArena.scheduleKickPlayer(player:getId(), pitId)
+	SvargrondArena.scheduleKickPlayer(player.uid, pitId)
 	Game.createMonster(ARENA[arenaId].creatures[pitId], PITS[pitId].summon, false, true)
 
 	player:teleportTo(PITS[pitId].center)

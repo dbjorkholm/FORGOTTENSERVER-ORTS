@@ -51,7 +51,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			pos = Position(math.random(33091, 33101), math.random(31899, 31916), 10)
 			addEvent(summonMonster, (i - 1) * 20000, creatureNames[math.random(#creatureNames)], pos)
 		end
-		addEvent(chargingText, (i - 1) * 20000, player:getId(), 'The crystals are charging.', toPosition)
+		addEvent(chargingText, (i - 1) * 20000, player.uid, 'The crystals are charging.', toPosition)
 	end
 
 	local crystalItem = Tile(crystalPosition):getItemById(17999)

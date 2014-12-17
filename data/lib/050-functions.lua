@@ -289,7 +289,7 @@ function Tile.relocateTo(self, toPosition, pushMove, monsterPosition)
 		local thing = self:getThing(i)
 		if thing then
 			if thing:isItem() then
-				if ItemType(thing:getId()):isMovable() then
+				if ItemType(thing.itemid):isMovable() then
 					thing:moveTo(toPosition)
 				end
 			elseif thing:isCreature() then

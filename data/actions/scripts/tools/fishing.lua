@@ -13,7 +13,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId = target.itemid
 	if targetId == 10499 then
 		local owner = target:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
-		if owner ~= 0 and owner ~= player:getId() then
+		if owner ~= 0 and owner ~= player.uid then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "You are not the owner.")
 			return true
 		end

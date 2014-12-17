@@ -39,7 +39,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if target.itemid == 1 then
 		if item.type == 0 then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, 'It is empty.')
-		elseif target.uid == player:getId() then
+		elseif target.uid == player.uid then
 			if isInArray({3, 15, 43}, item.type) then
 				player:addCondition(drunk)
 			elseif item.type == 4 then

@@ -25,7 +25,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	local playerId = player:getId()
+	local playerId = player.uid
 	if item.actionid == 50070 then
 		if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) == 5 then
 			return true

@@ -36,6 +36,6 @@ function onStepIn(creature, item, position, fromPosition)
 	local playerPosition = player:getPosition()
 	player:setStorageValue(Storage.BigfootBurden.Shooting, 0)
 	position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	doCreateDummy(player:getId(), Position(playerPosition.x, playerPosition.y - 5, 10))
+	doCreateDummy(player.uid, Position(playerPosition.x, playerPosition.y - 5, 10))
 	return true
 end
