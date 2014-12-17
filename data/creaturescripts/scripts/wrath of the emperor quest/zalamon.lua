@@ -29,7 +29,7 @@ function onKill(player, target)
 		return true
 	end
 
-	Game.createMonster(bossConfig.newForm, targetMonster:getPosition())
+	Game.createMonster(bossConfig.newForm, targetMonster:getPosition(), false, true)
 	player:say(bossConfig.text, TALKTYPE_MONSTER_SAY)
 	return true
 end
