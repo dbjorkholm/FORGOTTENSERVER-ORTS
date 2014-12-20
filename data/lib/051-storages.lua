@@ -299,15 +299,14 @@ Storage = {
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
-		Omruc = 12101,
-		Thalas = 12102,
-		Diphtrah = 12103,
-		Mahrdis = 12104,
-		Vashresamun = 12105,
-		Morguthis = 12106,
-		Rahemos = 12107,
-		Ashmunrah = 12108,
-		VashresamunInstruments = 12109
+		VashresamunInstruments = 12109,
+		MorguthisBlueFlameStorage1 = 50214,
+		MorguthisBlueFlameStorage2 = 50215,
+		MorguthisBlueFlameStorage3 = 50216,
+		MorguthisBlueFlameStorage4 = 50217,
+		MorguthisBlueFlameStorage5 = 50218,
+		MorguthisBlueFlameStorage6 = 50219,
+		MorguthisBlueFlameStorage7 = 50220
 	},
 	TheApeCity = {
 		Started = 12120,
@@ -908,6 +907,11 @@ GlobalStorage = {
 		Machine2 = 10006,
 		Machine3 = 10007,
 		Machine4 = 10008
+	},
+	TheAncientTombs = {
+		ThalasSwitchesGlobalStorage = 200,
+		DiprathSwitchesGlobalStorage = 201,
+		AshmunrahSwitchesGlobalStorage = 202
 	},
 	NaginataStone = 50058,
 	SwordOfFury = 5635

@@ -103,9 +103,9 @@
 	<action itemid="4846" 	 script="the ape city/Mission9TheDeepestCatacombsSnakedestroyer.lua"/>
 
 	<!--- The Ancient Tombs Quest -->
-	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
 	<action actionid="12107" script="the ancient tombs quest/OasisTombLeverDoor.lua" />
 	<action actionid="12105" script="the ancient tombs quest/AncientRuinsTombInstruments.lua" />
+	<action fromaid="50242" toaid="50244" script="the ancient tombs quest/activeTeleportSwitches.lua" />
 	<action fromaid="50006" toaid="50010" script="other/horestisjars.lua"/>
 
 	<!-- Kazordoon -->
