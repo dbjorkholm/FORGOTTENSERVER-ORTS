@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.actionid == 50109 then
 		if player:getItemCount(5901) >= 3 and player:getItemCount(10033) >= 1 and player:getItemCount(10034) >= 2 and player:getItemCount(8309) >= 6 then
 			player:removeItem(5901, 3)

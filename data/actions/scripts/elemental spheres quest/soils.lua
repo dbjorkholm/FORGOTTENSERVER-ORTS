@@ -11,7 +11,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if not target:isItem() or soil.targetId ~= target.itemid then
+	if soil.targetId ~= target.itemid then
 		return true
 	end
 

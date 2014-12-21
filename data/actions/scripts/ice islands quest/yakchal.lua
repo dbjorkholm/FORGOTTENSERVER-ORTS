@@ -11,10 +11,6 @@ local function summonMonster(name, position)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	local sarcophagus = Position(32205, 31002, 14)
 	if toPosition.x == sarcophagus.x and toPosition.y == sarcophagus.y and toPosition.z == sarcophagus.z and target.itemid == 7362 and item.itemid == 2361 then
 		if (Game.getStorageValue(GlobalStorage.Yakchal) or -1) < os.time() then

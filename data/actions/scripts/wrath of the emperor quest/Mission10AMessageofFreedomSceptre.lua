@@ -6,10 +6,6 @@ local boss = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if boss[target.uid] and target.itemid == 12383 then
 		target:transform(11753)
 		Game.createMonster(boss[target.uid], {x = toPosition.x + 4, y = toPosition.y, z = toPosition.z})

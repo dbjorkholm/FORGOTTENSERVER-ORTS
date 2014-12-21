@@ -6,10 +6,6 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	local transformId = config[target.itemid]
 	if not transformId then
 		return true

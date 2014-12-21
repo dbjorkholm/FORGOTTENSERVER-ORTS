@@ -62,8 +62,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 
 	elseif isInArray(keys, item.itemid) then
-		if not target:isItem()
-				or not target:getType():isDoor() or isInArray(openSpecialDoors, target.itemid)
+		if not ItemType(target.itemid):isDoor() or isInArray(openSpecialDoors, target.itemid)
 				or isInArray(questDoors, target.itemid) or isInArray(levelDoors, target.itemid)
 				or Tile(toPosition):getHouse() then
 			return false

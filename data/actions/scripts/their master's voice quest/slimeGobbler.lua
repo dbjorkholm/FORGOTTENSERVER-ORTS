@@ -53,7 +53,7 @@ local function summonMonster(name, position)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or not isInArray({13585, 13586, 13587, 13588, 13589}, target.itemid) then
+	if not isInArray({13585, 13586, 13587, 13588, 13589}, target.itemid) then
 		return false
 	end
 

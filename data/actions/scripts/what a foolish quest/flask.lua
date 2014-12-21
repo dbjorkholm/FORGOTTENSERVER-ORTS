@@ -9,10 +9,6 @@ poisonField:setTicks(8000)
 poisonField:setOutfit({lookTypeEx = 1496})
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	local targetItem = config[target.itemid]
 	if not targetItem then
 		return false

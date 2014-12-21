@@ -7,7 +7,7 @@ local function transformBack(position, itemId, transformId)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.itemid ~= 7178 then
+	if target.itemid ~= 7178 then
 		return false
 	end
 

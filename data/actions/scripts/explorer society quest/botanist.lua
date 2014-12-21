@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.itemid == 4138 and player:getStorageValue(Storage.ExplorerSociety.QuestLine) == 16 then
 		player:setStorageValue(Storage.ExplorerSociety.QuestLine, 17)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)

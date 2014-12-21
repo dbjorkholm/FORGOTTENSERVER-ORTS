@@ -13,7 +13,7 @@ local globalTable = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or not isInArray({7917, 7918, 7913, 7914}, target.itemid) then
+	if not isInArray({7917, 7918, 7913, 7914}, target.itemid) then
 		return false
 	end
 

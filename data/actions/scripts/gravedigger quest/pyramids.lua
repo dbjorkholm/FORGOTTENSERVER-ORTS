@@ -6,10 +6,6 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	local cStorages = config[target.actionid]
 	if not cStorages then
 		return true

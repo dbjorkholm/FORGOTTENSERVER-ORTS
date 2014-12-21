@@ -39,10 +39,6 @@ local storages = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	-- Eclipse
 	if target.actionid == 2000 then
 		item:remove(1)

@@ -2,7 +2,7 @@ local playerexhaust = Condition(CONDITION_EXHAUST_WEAPON)
 	playerexhaust:setParameter(CONDITION_PARAM_TICKS, 3000)
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.itemid ~= 8600 then
+	if target.itemid ~= 8600 then
 		return false
 	end
 

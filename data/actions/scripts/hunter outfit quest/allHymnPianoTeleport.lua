@@ -1,7 +1,7 @@
 local portpos = Position({x = 32402, y = 32794, z = 9})
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.actionid ~= 33216 then
+	if target.actionid ~= 33216 then
 		return false
 	end
 

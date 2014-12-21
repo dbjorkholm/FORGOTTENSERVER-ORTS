@@ -1,5 +1,5 @@
 function destroyItem(player, target, toPosition)
-	if not target:isItem() or target.uid <= 65535 or target.actionid > 0 then
+	if target.uid <= 65535 or target.actionid > 0 then
 		return false
 	end
 

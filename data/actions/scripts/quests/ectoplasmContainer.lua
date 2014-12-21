@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.actionid == 4206 then
 		if player:getStorageValue(Storage.TibiaTales.IntoTheBonePit) ~= 1 then
 			return false

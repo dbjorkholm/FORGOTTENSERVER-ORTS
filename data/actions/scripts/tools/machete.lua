@@ -2,10 +2,6 @@ local JUNGLE_GRASS = { 2782, 3985, 19433 }
 local WILD_GROWTH = { 1499, 11099 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if isInArray(JUNGLE_GRASS, target.itemid) then
 		target:transform(target.itemid == 19433 and 19431 or target.itemid - 1)
 		target:decay()
