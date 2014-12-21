@@ -729,8 +729,8 @@ Storage = {
 		OldParchment = 50034
 	},
 	PitsOfInferno = {
-		ShortcutHub = 8818,
-		ShortcutLevers = 8819,
+		ShortcutHub = 8819,
+		ShortcutLevers = 8818,
 		Pumin = 50096
 	},
 	HorestisTomb = {
