@@ -63,14 +63,14 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
-			if player:getBlessings() == 0
-					or player:getItemCount(2173) == 0 then
-				npcHandler:say('You don\'t have any of the other blessings nor an amulet of loss, so it wouldn\'t make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!', cid)
+			if player:hasBlessing(6) then
+				npcHandler:say('You already possess this blessing.', cid)
 				return true
 			end
 
-			if player:hasBlessing(6) then
-				npcHandler:say('You already possess this blessing.', cid)
+			if player:getBlessings() == 0
+					and not player:getItemById(2173, true) then
+				npcHandler:say('You don\'t have any of the other blessings nor an amulet of loss, so it wouldn\'t make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!', cid)
 				return true
 			end
 
