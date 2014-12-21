@@ -13,7 +13,7 @@ function onStartup()
 	db.asyncQuery('DELETE FROM `market_history` WHERE `inserted` <= ' .. (os.time() - configManager.getNumber(configKeys.MARKET_OFFER_DURATION)))
 
 	-- Move expired bans to ban history
-	local resultId = db.storeasyncQuery('SELECT * FROM `account_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. os.time())
+	local resultId = db.storeQuery('SELECT * FROM `account_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. os.time())
 	if resultId ~= false then
 		repeat
 			local accountId = result.getDataInt(resultId, 'account_id')
