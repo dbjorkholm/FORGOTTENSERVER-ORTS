@@ -76,7 +76,7 @@ local config = {
 		chance = 25,
 		fail = { 
 			{run = true, sound = 'Baaaah', text = 'The black sheep ran away.'},
-			{broke = true, text = 'Oh no! The reins were torn.'},
+			{broke = true, 'Oh no! The reins were torn.'},
 			{sound = 'Baaaah', text = 'The black sheep is trying to run away.'}
 		},
 		success = {sound = 'Baaaaaah', text = 'You tamed the black sheep.'}
@@ -146,7 +146,7 @@ local config = {
 		type = TYPE_MONSTER,
 		chance = 40,
 		fail = {
-			{run = true, sound = 'Gruuuuunt!', text = 'The dromedary flees.'},
+			{run = true, sound = 'Gruuuuunt!', 'The dromedary flees.'},
 			{sound = 'Grunt!', text = 'The dromedary remains stubborn.'}
 		},
 		success = {sound = '*blaaammm*', text = 'You tamed the dromedary.'}
@@ -163,12 +163,13 @@ local config = {
 		success = {sound = '*kliiiiiiiiiiing* Aooooouuuuu!!', text = 'The smooth sound of the diapason tamed the crystal wolf.'}
 	},
 	[13537]	= {
-		name = 'donkey',
+		mountName = 'donkey',
+		lookType = 399,
 		id = 13,
 		type = TYPE_MONSTER,
 		chance = 40,
 		fail = {
-			{text = 'The donkey transformation suddenly wears off.'},
+			{removeTransformation = true, text = 'The donkey transformation suddenly wears off.'},
 			{broke = true, sound = 'Heeee-haaa-haaa-haaw!', text = 'You did not manage to feed the donkey enough apple slices.'}
 		},
 		success = {sound = 'Heeee-haaaaw!', text = 'Munching a large pile of apple slices tamed the donkey.'}
@@ -233,7 +234,7 @@ local config = {
 		success = {sound = '~~~', text = 'You tamed the manta ray.'}
 	},
 	[15546]	= {
-		name = 'ladybug',
+		name = 'lady bug',
 		id = 27,
 		type = TYPE_MONSTER,
 		chance = 30,
@@ -316,7 +317,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	local targetName = target:getName():lower()
-	if target.type ~= mount.type or targetName ~= mount.name then
+	if (mount.type ~= target.type)
+			or (mount.lookType and mount.lookType ~= target:getOutfit().lookType)
+			or (mount.name and mount.name ~= targetName) then
 		return false
 	end
 
@@ -325,7 +328,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if mount.type == TYPE_MONSTER then
+	if target.type == TYPE_MONSTER then
 		if target:getMaster() then
 			return false
 		end
@@ -338,8 +341,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		elseif action.broke then
 			item:remove(1)
 		elseif action.destroyObject then
-			addEvent(Game.createItem, 60 * 60 * 1000, target.itemid, 1, toPosition)
 			target:remove()
+		elseif action.removeTransformation then
+			target:removeCondition(CONDITION_OUTFIT)
 		end
 
 		doCreatureSayWithRadius(player, action.text, TALKTYPE_MONSTER_SAY, 2, 2)
