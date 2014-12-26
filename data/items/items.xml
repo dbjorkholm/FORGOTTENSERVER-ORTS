@@ -25699,6 +25699,7 @@
 	<item id="19519" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item fromid="19598" toid="19599" article="a" name="magic door" />
 	<item id="19606" article="a" name="pillar railing" />
 	<item fromid="19610" toid="19615" article="an" name="ornament" />
 	<item fromid="19616" toid="19618" article="a" name="pencil tower" />

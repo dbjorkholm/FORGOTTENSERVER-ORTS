@@ -680,6 +680,7 @@
 	<action itemid="20220" script="other/rafzanElevator.lua" />
 	<action itemid="20224" script="other/rafzanElevator.lua" />
 	<action itemid="18395" script="other/muckremover.lua" />
+	<action itemid="18559" script="other/adventurers_stone.lua"/>
 
 	<!-- Market -->
 	<action itemid="14405" function="market"/>
