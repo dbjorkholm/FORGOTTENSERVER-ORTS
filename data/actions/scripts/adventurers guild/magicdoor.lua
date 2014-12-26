@@ -10,7 +10,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			player:setStorageValue(Storage.Adventurers.Guild.MagicDoor, -1)
 			destination = Position(32199, 32309, 7)
 
-		elseif playerPos.x == 32956 then
+		elseif playerPos.x == 32293 then
 			destination = Position(32297, 32293, 7)
 
 		else
