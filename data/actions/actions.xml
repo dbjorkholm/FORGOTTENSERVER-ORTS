@@ -15,6 +15,10 @@
 	<action actionid="5640" script="rookgaard/honeyflower_quest.lua"/>
 	<action actionid="5641" script="rookgaard/banana_quest.lua"/>
 
+	<!-- Adventurer's Guild -->
+	<action itemid="18559" script="adventurers guild/adventurers_stone.lua"/>
+	<action fromid="19598" toid="19599" script="adventurers guild/magicdoor.lua"/>
+
 	<!-- What a foolish Quest -->
 	<action itemid="7478" script="what a foolish quest/flask.lua" />
 	<action itemid="7482" script="what a foolish quest/crate.lua" />
@@ -680,7 +684,6 @@
 	<action itemid="20220" script="other/rafzanElevator.lua" />
 	<action itemid="20224" script="other/rafzanElevator.lua" />
 	<action itemid="18395" script="other/muckremover.lua" />
-	<action itemid="18559" script="other/adventurers_stone.lua"/>
 
 	<!-- Market -->
 	<action itemid="14405" function="market"/>

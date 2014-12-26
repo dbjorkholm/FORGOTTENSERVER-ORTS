@@ -862,7 +862,11 @@ Storage = {
 
 	Adventurers = {
 		Stone = 50702,
-		FreeStone = 50703
+		FreeStone = 50703,
+
+		Guild = {
+			MagicDoor = 50704
+		}
 	},
 
 	blockMovementStorage = 100000
