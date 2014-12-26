@@ -859,8 +859,11 @@ Storage = {
 
 	RookgaardHints = 50700,
 	RookgaardDestiny = 50701,
-	
-	AdventurersStone = 50702,
+
+	Adventurers = {
+		Stone = 50702,
+		FreeStone = 50703
+	},
 
 	blockMovementStorage = 100000
 }

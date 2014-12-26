@@ -16,18 +16,20 @@ local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 
 	if msgcontains(msg, "heal") then
-		if player:getHealth() < 50 then
-			player:addHealth(50 - player:getHealth())
-			local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
-			for i = 1, #conditions do
-				if player:getCondition(conditions[i]) then
-					player:removeCondition(conditions[i])
-				end
-			end
-			npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
-		else
+		if player:getHealth() >= 50 then
 			npcHandler:say("You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes or get the protection of the {twist of fate} here.", cid)
+			return true
 		end
+
+		player:addHealth(50 - player:getHealth())
+		local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
+		for i = 1, #conditions do
+			if player:getCondition(conditions[i]) then
+				player:removeCondition(conditions[i])
+			end
+		end
+		npcHandler:say("You are hurt, my child. I will heal your wounds.", cid)
+
 	elseif msgcontains(msg, "twist of fate") then
 		npcHandler:say({
 			"This is a special blessing I can bestow upon you once you have obtained at least one of the other blessings and which functions a bit differently. ...",
@@ -36,6 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 			"Would you like to receive that protection for a sacrifice of " .. getPvpBlessingCost(player:getLevel()) .. " gold, child?"
 		}, cid)
 		npcHandler.topic[cid] = 1
+
 	elseif msgcontains(msg, "wooden stake") then
 		if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 then
 			if player:getItemCount(5941) > 0 then
@@ -43,10 +46,20 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 2
 			end
 		end
-	elseif msgcontains(msg, "cough syrup") then
-		npcHandler:say("The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... <hicks>", cid)
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
+
+	elseif msgcontains(msg, "adventurer") and msgcontains(msg, "stone") then
+		if player:getItemById(18559, true) then
+			npcHandler:say("Keep your adventurer's stone well.", cid)
+		elseif player:getStorageValue(Storage.Adventurers.FreeStone) ~= 1 then
+			npcHandler:say("Ah, you want to replace your adventurer's stone for free?", cid)
+			npcHandler.topic[cid] = 3
+		else
+			npcHandler:say("Ah, you want to replace your adventurer's stone for 30 gold?", cid)
+			npcHandler.topic[cid] = 4
+		end
+	
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, "yes") then
 			if player:hasBlessing(6) then
 				npcHandler:say('You already possess this blessing.', cid)
 				return true
@@ -65,15 +78,42 @@ local function creatureSayCallback(cid, type, msg)
 
 			player:addBlessing(6)
 			npcHandler:say('So receive the protection of the twist of fate, pilgrim.', cid)
-		elseif npcHandler.topic[cid] == 2 then
+		elseif msgcontains(msg, "no") then
+			npcHandler:say("Fine. You are free to decline my offer.", cid)
+		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 2 then
+		if msgcontains(msg, "yes") then
 			if player:getItemCount(5941) > 0 then
 				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 11)
 				npcHandler:say("So receive my prayer: 'Your hand shall be guided - your feet shall walk in <hicks> harmony'. Now, bring your stake to Tyrias in <hicks> Liberty Bay for the next line of the prayer. I will inform him what to do.", cid)
 			end
+		elseif msgcontains(msg, "no") then
+			npcHandler:say("Fine. You are free to decline my offer.", cid)
 		end
 		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then
-		npcHandler:say("Fine. You are free to decline my offer.", cid)
+
+	elseif npcHandler.topic[cid] == 3 then
+		if msgcontains(msg, "yes") then
+			player:addItem(18559, 1)
+			player:setStorageValue(Storage.Adventurers.FreeStone, 1)
+			npcHandler:say("Here you are. Take care.", cid)
+		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 4 then
+		if msgcontains(msg, "yes") then
+			if not player:removeMoney(30) then
+				npcHandler:say("Sorry, you don't have enough money.", cid)
+				return true
+			end
+
+			player:addItem(18559, 1)
+			npcHandler:say("Here you are. Take care.", cid)
+		else
+			npcHandler:say("No problem.", cid)
+		end
 		npcHandler.topic[cid] = 0
 	end
 	return true
