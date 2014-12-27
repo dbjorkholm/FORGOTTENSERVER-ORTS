@@ -314,7 +314,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The ' .. ItemType(item.itemid):getName() .. ' is empty.')
 		return true
 	end
-	
+
 	if useItem.needItem then
 		if player:getItemCount(useItem.needItem.itemId) < (useItem.needItem.count or 1) then
 			return false
@@ -347,7 +347,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if items[1].text then
 			reward:setText(items[1].text)
 		end
-		
+
 		if items[1].decay then
 			reward:decay()
 		end

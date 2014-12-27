@@ -106,7 +106,7 @@ local config = {
 	},
 	[13307]	= {
 		name = 'wailing widow',
-		id = 1,	
+		id = 1,
 		type = TYPE_MONSTER,
 		chance = 40,
 		fail = {

@@ -23,7 +23,7 @@ local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHan
 local travelNode = keywordHandler:addKeyword({'darashia'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Darashia on Darama for %s?', cost = 60, discount = TravelLib.postmanDiscount})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, msg = 'Hold on!', cost = 60, discount = TravelLib.postmanDiscount, destination = Position(33270, 32441, 6) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-	
+
 local travelNode = keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Svargrond for %s?', cost = 60, discount = TravelLib.postmanDiscount})
 	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, msg = 'Hold on!', cost = 60, discount = TravelLib.postmanDiscount, destination = Position(32253, 31097, 4) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})

@@ -113,7 +113,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say(targetMessage.messages.done, cid)
 			return true
 		end
-		
+
 		npcHandler:say(targetMessage.messages.deliever, cid)
 		npcHandler.topic[cid] = 4
 		message[cid] = targetMessage

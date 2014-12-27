@@ -79,7 +79,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	
+
 	if msgcontains(msg, 'cookie') then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
 				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.SimonTheBeggar) ~= 1 then

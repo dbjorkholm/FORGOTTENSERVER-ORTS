@@ -37,7 +37,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 	end
-	
+
 	-- What a foolish Quest (Mission 1)
 	if target.actionid == 4200 then
 		if toPosition.x == 32349 and toPosition.y == 32361 and toPosition.z == 7 then

@@ -112,7 +112,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Fine. You are free to decline my offer.", cid)
 		end
 		npcHandler.topic[cid] = 0
-		
+
 	elseif npcHandler.topic[cid] == 3 then
 		if msgcontains(msg, "yes") then
 			player:setStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline, 1)

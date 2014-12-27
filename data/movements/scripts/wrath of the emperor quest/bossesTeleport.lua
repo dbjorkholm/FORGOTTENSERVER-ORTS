@@ -10,7 +10,7 @@ function onStepIn(creature, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	
+
 	local teleport = teleports[item.uid]
 	if not teleport then
 		return true

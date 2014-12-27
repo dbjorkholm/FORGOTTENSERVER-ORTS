@@ -30,7 +30,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:say("The lever does not budge.", TALKTYPE_MONSTER_SAY)
 		return true
 	end
-	
+
 	local lever, tmp, ground = toPosition.y - 31122, {}
 	for i = 1, #position[1] do
 		ground = Tile(position[1][i]):getGround()

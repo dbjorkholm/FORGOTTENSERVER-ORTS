@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-	
+
 	local player = Player(cid)
 	if msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 0 then
@@ -32,7 +32,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return false
 			end
-			
+
 			Npc():getPosition():sendMagicEffect(CONST_ME_CRAPS)
 			local realRoll = math.random(30)
 			local roll = math.random(5)
@@ -66,13 +66,13 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 3
 			return false
 		end
-		
+
 		if not player:removeMoney(amount) then
 			npcHandler:say('I am sorry, but you don\'t have so much money.', cid)
 			npcHandler.topic[cid] = 0
 			return false
 		end
-		
+
 		Npc():getPosition():sendMagicEffect(CONST_ME_CRAPS)
 		local roll = math.random(6)
 		if roll < 6 then

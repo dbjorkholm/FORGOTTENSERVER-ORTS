@@ -8,7 +8,7 @@ function onStepIn(creature, item, position, fromPosition)
 		player:teleportTo(fromPosition, true)
 		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		return true
-	end	
+	end
 
 	local destination = Position(33198, 32885, 11)
 	player:teleportTo(destination)
