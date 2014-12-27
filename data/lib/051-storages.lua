@@ -860,13 +860,25 @@ Storage = {
 	RookgaardHints = 50700,
 	RookgaardDestiny = 50701,
 
-	Adventurers = {
+	AdventurersGuild = {
 		Stone = 50702,
-		FreeStone = 50703,
+		MagicDoor = 50703,
 
-		Guild = {
-			MagicDoor = 50704
+		FreeStone = {
+			Alia = 50704,
+			Amanda = 50705,
+			Brewster = 50706,
+			Isimov = 50707,
+			Kasmir = 50708,
+			Kjesse = 50709,
+			Lorietta = 50710,
+			Maealil = 50711,
+			Quentin = 50712,
+			RockWithASoftSpot = 50713,
+			Tyrias = 50714,
+			Yberius = 50715
 		}
+
 	},
 
 	blockMovementStorage = 100000

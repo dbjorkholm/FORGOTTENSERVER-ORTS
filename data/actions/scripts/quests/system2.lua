@@ -174,7 +174,7 @@ local config = {
 	},
 	[3162] = {
 		items = {
-			{itemId = 11076}
+			{itemId = 11101}
 		},
 		storage = Storage.ChildrenoftheRevolution.Questline,
 		formerValue = 1,

@@ -58,14 +58,14 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "adventurer") and msgcontains(msg, "stone") then
 		if player:getItemById(18559, true) then
 			npcHandler:say("Keep your adventurer's stone well.", cid)
-		elseif player:getStorageValue(Storage.Adventurers.FreeStone) ~= 1 then
+		elseif player:getStorageValue(Storage.AdventurersGuild.FreeStone.Quentin) ~= 1 then
 			npcHandler:say("Ah, you want to replace your adventurer's stone for free?", cid)
 			npcHandler.topic[cid] = 4
 		else
 			npcHandler:say("Ah, you want to replace your adventurer's stone for 30 gold?", cid)
 			npcHandler.topic[cid] = 5
 		end
-	
+
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, "yes") then
 			if player:hasBlessing(6) then
@@ -115,7 +115,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 4 then
 		if msgcontains(msg, "yes") then
 			player:addItem(18559, 1)
-			player:setStorageValue(Storage.Adventurers.FreeStone, 1)
+			player:setStorageValue(Storage.AdventurersGuild.FreeStone.Quentin, 1)
 			npcHandler:say("Here you are. Take care.", cid)
 		end
 		npcHandler.topic[cid] = 0
