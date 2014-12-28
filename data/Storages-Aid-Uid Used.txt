@@ -1,7 +1,7 @@
 ---//////////////////////////////////////////----
-Last Used Storage = 50213
-Last Used Aid = 50241
-Last Used Uid = 50134
+Last Used Storage = 50214
+Last Used Aid = 50244
+Last Used Uid = 50147
 ---//////////////////////////////////////////----
 ---//////////////////Storages////////////////////////----
 allowMovement Storage	=		100000 --Reserved to cancel player movement
@@ -300,3 +300,24 @@ Amber's Logbook Quest (Rookgaard): 64130 (uid)
 
 Honey Flower Quest: 5640 (aid, also in events) (Storage 64131)
 Banana Palm Quest: 5641 (aid) (Storage 64132)
+
+The Ancient Of Tombs Quest
+	Chest Storage Uids = 12100-12109
+	Tomb Teleports Uid = 3951-3956
+
+	Thalas switches Aid = 50242
+	Thalas switches done teleport Uid = 50135
+	Thalas poison tile Uid = 50136
+
+	Diprath Switches Aid = 50243
+	Diprath Switches Done Teleport Uid = 50137
+
+	Ashmunrah Switches Aid = 50244
+	Ashmunrah Switches Done Teleport Uid = 50138
+
+	Morguthis Flames Uid = 50139-50145
+	Morguthis Done All Flames Uid = 50146
+	Morguthis Flames Storage Value = 50214-50220
+
+Dream Challenge Quest
+	Riddle Teleport Uid = 50147

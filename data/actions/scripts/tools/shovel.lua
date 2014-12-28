@@ -18,10 +18,6 @@ local function removeRemains(toPosition)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if isInArray(holes, target.itemid) then
 		target:transform(target.itemid + 1)
 		target:decay()

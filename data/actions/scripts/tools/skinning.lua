@@ -56,10 +56,6 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	local skin = config[item.itemid][target.itemid]
 
 	-- Wrath of the emperor quest

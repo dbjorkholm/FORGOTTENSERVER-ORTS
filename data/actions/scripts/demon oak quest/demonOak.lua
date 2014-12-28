@@ -59,7 +59,7 @@ local function getRandomSummonPosition()
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or not isInArray(config.demonOakIds, target.itemid) then
+	if not isInArray(config.demonOakIds, target.itemid) then
 		return true
 	end
 

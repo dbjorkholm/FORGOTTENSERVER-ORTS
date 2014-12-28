@@ -20,6 +20,8 @@ local tutorialIds = {
 	[50086] = 11
 }
 
+local hotaQuest = {12102, 12103, 12104, 12105, 12106, 12107}
+
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local storage = specialQuests[item.actionid]
 	if not storage then
@@ -86,7 +88,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:addItemEx(reward) ~= RETURNVALUE_NOERROR then
 		local weight = reward:getWeight()
 		if player:getFreeCapacity() < weight then
-			player:sendCancelMessage('You have found ' .. result .. ' weighing ' .. string.format('%.2f', (weight / 100)) .. ' oz. You have no capacity.')
+			player:sendCancelMessage(string.format('You have found %s weighing %.2f oz. You have no capacity.', result, (weight / 100)))
 		else
 			player:sendCancelMessage('You have found ' .. result .. ', but you have no room to take it.')
 		end
@@ -101,6 +103,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:sendTutorial(tutorialIds[storage])
 		if item.uid == 50080 then
 			player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 3)
+		end
+	end
+
+	if isInArray(hotaQuest, item.uid) then
+		if player:getStorageValue(Storage.TheAncientTombs.DefaultStart) ~= 1 then
+			player:setStorageValue(Storage.TheAncientTombs.DefaultStart, 1)
 		end
 	end
 

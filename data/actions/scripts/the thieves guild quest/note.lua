@@ -8,7 +8,7 @@ local function removeNote(position)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.actionid ~= 12509 then
+	if target.actionid ~= 12509 then
 		return false
 	end
 

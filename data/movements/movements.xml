@@ -63,6 +63,9 @@
 	<movevent event="StepIn" uniqueid="50022" script="the queen of the banshees quest/theLastFlame.lua" />
 
 	<!--- Others -->
+	<!-- Adventurer's Guild -->
+	<movevent event="StepIn" actionid="4255" script="others/adventurersguild.lua" />
+
 	<!-- Edron Troll Cave - Rope Quest -->
 	<movevent event="StepIn" actionid="4254" script="others/edronropequest.lua"/>
 
@@ -127,9 +130,14 @@
 
 	<!--- The Ancient Tombs Quest -->
 	<movevent event="StepIn" actionid="12101" script="the ancient tombs quest/peninsulaTombmaze.lua"/>
-	<movevent event="StepIn" fromaid="3950" toaid="3956" script="the ancient tombs quest/tombTeleports.lua"/>
+	<movevent event="StepIn" fromuid="3950" touid="3956" script="the ancient tombs quest/tombTeleports.lua"/>
 	<movevent event="StepIn" actionid="12108" script="the ancient tombs quest/tombTeleports.lua"/>
 	<movevent event="AddItem" tileitem="1" actionid="60626" script="the ancient tombs quest/craftHelmet.lua"/>
+	<movevent event="StepIn" uniqueid="50135" script="the ancient tombs quest/enterThalasTeleportSwitchesDone.lua"/>
+	<movevent event="StepIn" uniqueid="50136" script="the ancient tombs quest/enterThalasPoisonTile.lua"/>
+	<movevent event="StepIn" uniqueid="50137" script="the ancient tombs quest/enterDiprathTeleportSwitchesDone.lua"/>
+	<movevent event="StepIn" uniqueid="50138" script="the ancient tombs quest/enterAshmunrahTeleportSwitchesDone.lua"/>
+	<movevent event="StepIn" fromuid="50139" touid="50146" script="the ancient tombs quest/stepMorguthisBlueFlames.lua"/>
 
 	<!--- Shrines Portals -->
 	<movevent event="StepIn" fromuid="9069" touid="9116" script="others/shrinesportal.lua"/>
@@ -190,6 +198,7 @@
 	<movevent event="AddItem" tileitem="1" uniqueid="2244" script="dreamer challenge quest/deathRing.lua"/>
 	<movevent event="StepIn" actionid="9049" script="dreamer challenge quest/clockTile.lua"/>
 	<movevent event="StepIn" uniqueid="9234" script="dreamer challenge quest/deathRingTeleport.lua"/>
+	<movevent event="StepIn" uniqueid="50147" script="dreamer challenge quest/riddleTeleport.lua"/>
 
 	<!-- Explorer Society Quest -->
 	<movevent event="StepIn" actionid="2070" script="explorer society quest/calassa.lua"/>

@@ -8,10 +8,6 @@ local function transformBack(position, itemId, transformId)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if target.itemid == 7261 then
@@ -41,7 +37,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 	end
-	
+
 	-- What a foolish Quest (Mission 1)
 	if target.actionid == 4200 then
 		if toPosition.x == 32349 and toPosition.y == 32361 and toPosition.z == 7 then

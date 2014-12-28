@@ -1,5 +1,5 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or not isInArray({4663, 4664, 4665, 4666, 4667}, target.actionid) then
+	if not isInArray({4663, 4664, 4665, 4666, 4667}, target.actionid) then
 		return false
 	end
 

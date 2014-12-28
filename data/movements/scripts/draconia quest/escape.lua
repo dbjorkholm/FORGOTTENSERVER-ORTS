@@ -15,7 +15,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	sacrificeItem:remove()
-	
+
 	if player:getStorageValue(Storage.Dragonfetish) == 1 then
 		player:setStorageValue(Storage.Dragonfetish, 0)
 	end

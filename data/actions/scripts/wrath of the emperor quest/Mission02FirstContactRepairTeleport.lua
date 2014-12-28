@@ -16,10 +16,6 @@ end
 
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	-- clay with the sacred earth
 	if (item.itemid == 12285 and target.itemid == 12297) or (item.itemid == 12297 and target.itemid == 12285) then
 		player:say("You carefully mix the clay with the sacred earth.", TALKTYPE_MONSTER_SAY)

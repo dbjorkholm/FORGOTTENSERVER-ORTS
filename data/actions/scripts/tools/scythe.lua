@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.itemid == 2739 then
 		target:transform(2737)
 		target:decay()

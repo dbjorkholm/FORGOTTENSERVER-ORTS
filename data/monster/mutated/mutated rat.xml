@@ -59,7 +59,7 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="130" chance="78000"/>	<!-- gold coin -->
-		<item id="2320" chance="20180"/>				<!-- skull -->
+		<item id="2229" chance="20180"/>				<!-- skull -->
 		<item id="2799" chance="4920"/>					<!-- stone herb -->
 		<item id="10585" chance="3750"/>				<!-- mutated rat tail -->
 		<item id="2510" chance="3750"/>					<!-- plate shield -->

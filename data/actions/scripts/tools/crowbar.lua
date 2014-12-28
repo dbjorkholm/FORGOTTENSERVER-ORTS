@@ -7,10 +7,6 @@ local function revertCask(position)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	-- In Service Of Yalahar Quest
 	if target.uid == 3071 then
 		if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then

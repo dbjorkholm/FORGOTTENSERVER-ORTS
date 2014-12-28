@@ -1,12 +1,10 @@
 local config = {
-	[3953]  = {storage = Storage.TheAncientTombs.Omruc, destination = Position(33145, 32665, 15)}, -- from Omruc Boss
-	[3951]  = {storage = Storage.TheAncientTombs.Thalas, destination = Position(33174, 32934, 15)}, -- from Thalas Boss
-	[3955]  = {storage = Storage.TheAncientTombs.Diphtrah, destination = Position(33349, 32827, 14)}, -- from  Dipthrah Boss
-	[3952]  = {storage = Storage.TheAncientTombs.Mahrdis, destination = Position(33126, 32591, 15)}, -- from Mahrdis Boss
-	[3956]  = {storage = Storage.TheAncientTombs.Vashresamun, destination = Position(33186, 33012, 14)}, -- from Vashresamun Boss
-	[3950]  = {storage = Storage.TheAncientTombs.Morguthis, destination = Position(33182, 32714, 14)}, -- from Morguthis Boss
-	[3954]  = {storage = Storage.TheAncientTombs.Rahemos, destination = Position(33041, 32774, 14)}, -- from Rahemos Boss
-	[12108] = {storage = Storage.TheAncientTombs.Ashmunrah, destination = Position(33198, 32880, 11)} -- from Ashmunrah Boss
+	[3951]  = {removeId = 2351, destination = Position(33174, 32934, 15), exitDestination = Position(33282, 32744, 8)}, -- from Thalas Boss
+	[3952]  = {removeId = 2353, destination = Position(33126, 32591, 15), exitDestination = Position(33250, 32832, 8)}, -- from Mahrdis Boss
+	[3953]  = {removeId = 2352, destination = Position(33145, 32665, 15), exitDestination = Position(33025, 32868, 8)}, -- from Omruc Boss
+	[3954]  = {removeId = 2348, destination = Position(33041, 32774, 14), exitDestination = Position(33133, 32642, 8)}, -- from Rahemos Boss
+	[3955]  = {removeId = 2354, destination = Position(33349, 32827, 14), exitDestination = Position(33131, 32566, 8)}, -- from  Dipthrah Boss
+	[3956]  = {removeId = 2349, destination = Position(33186, 33012, 14), exitDestination = Position(33206, 32592, 8)} -- from Vashresamun Boss
 }
 
 function onStepIn(creature, item, position, fromPosition)
@@ -15,15 +13,10 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local teleport = config[item.actionid]
-	if not teleport then
-		return true
-	end
-
-	if Game.getStorageValue(teleport.storage) ~= 1 then
-		player:teleportTo(fromPosition)
-		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
-		player:say('You don\'t have killed the Pharaoh to enter this portal', TALKTYPE_MONSTER_SAY)
+	local teleport = config[item.uid]
+	if not player:removeItem(teleport.removeId, 1) then
+		player:teleportTo(teleport.exitDestination)
+		teleport.exitDestination:sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
 

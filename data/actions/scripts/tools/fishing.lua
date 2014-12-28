@@ -6,7 +6,7 @@ local lootVeryRare = {7632, 7633, 10220}
 local useWorms = true
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or not isInArray(waterIds, target.itemid) then
+	if not isInArray(waterIds, target.itemid) then
 		return false
 	end
 

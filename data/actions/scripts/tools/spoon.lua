@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	--The Ice Islands Quest
 	if player:getStorageValue(Storage.TheIceIslands.Questline) >= 21 then
 		if target.itemid == 388 then
@@ -28,7 +24,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				or player:getStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur) == 1 then
 			return true
 		end
-		
+
 		player:setStorageValue(Storage.WhatAFoolishQuest.InflammableSulphur, 1)
 		player:addItem(8204, 1)
 		toPosition:sendMagicEffect(CONST_ME_YELLOW_RINGS)

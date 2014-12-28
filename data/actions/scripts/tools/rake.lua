@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	-- Wrath of the Emperor Mission02
 	if target.itemid == 12322 then
 		player:addItem(12285, 1)

@@ -6,7 +6,7 @@ local function revertCrystal(position, itemId, transformId)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.itemid ~= 18321 then
+	if target.itemid ~= 18321 then
 		return false
 	end
 

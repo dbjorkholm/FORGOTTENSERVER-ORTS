@@ -16,10 +16,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	if not target:isItem() then
-		return false
-	end
-
 	if target.itemid ~= spores then
 		player:setStorageValue(Storage.BigfootBurden.SporeCount, 0)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have gathered the wrong spores. You ruined your collection.')

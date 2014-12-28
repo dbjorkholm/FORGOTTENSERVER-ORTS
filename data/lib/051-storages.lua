@@ -299,15 +299,14 @@ Storage = {
 	},
 	TheAncientTombs = {
 		DefaultStart = 12100,
-		Omruc = 12101,
-		Thalas = 12102,
-		Diphtrah = 12103,
-		Mahrdis = 12104,
-		Vashresamun = 12105,
-		Morguthis = 12106,
-		Rahemos = 12107,
-		Ashmunrah = 12108,
-		VashresamunInstruments = 12109
+		VashresamunInstruments = 12109,
+		MorguthisBlueFlameStorage1 = 50214,
+		MorguthisBlueFlameStorage2 = 50215,
+		MorguthisBlueFlameStorage3 = 50216,
+		MorguthisBlueFlameStorage4 = 50217,
+		MorguthisBlueFlameStorage5 = 50218,
+		MorguthisBlueFlameStorage6 = 50219,
+		MorguthisBlueFlameStorage7 = 50220
 	},
 	TheApeCity = {
 		Started = 12120,
@@ -730,8 +729,8 @@ Storage = {
 		OldParchment = 50034
 	},
 	PitsOfInferno = {
-		ShortcutHub = 8818,
-		ShortcutLevers = 8819,
+		ShortcutHub = 8819,
+		ShortcutLevers = 8818,
 		Pumin = 50096
 	},
 	HorestisTomb = {
@@ -861,6 +860,27 @@ Storage = {
 	RookgaardHints = 50700,
 	RookgaardDestiny = 50701,
 
+	AdventurersGuild = {
+		Stone = 50702,
+		MagicDoor = 50703,
+
+		FreeStone = {
+			Alia = 50704,
+			Amanda = 50705,
+			Brewster = 50706,
+			Isimov = 50707,
+			Kasmir = 50708,
+			Kjesse = 50709,
+			Lorietta = 50710,
+			Maealil = 50711,
+			Quentin = 50712,
+			RockWithASoftSpot = 50713,
+			Tyrias = 50714,
+			Yberius = 50715
+		}
+
+	},
+
 	blockMovementStorage = 100000
 }
 
@@ -908,6 +928,11 @@ GlobalStorage = {
 		Machine2 = 10006,
 		Machine3 = 10007,
 		Machine4 = 10008
+	},
+	TheAncientTombs = {
+		ThalasSwitchesGlobalStorage = 200,
+		DiprathSwitchesGlobalStorage = 201,
+		AshmunrahSwitchesGlobalStorage = 202
 	},
 	NaginataStone = 50058,
 	SwordOfFury = 5635

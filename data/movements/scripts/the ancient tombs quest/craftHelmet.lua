@@ -1,6 +1,19 @@
 local helmetIds = {2335, 2336, 2337, 2338, 2339, 2340, 2341}
 
 function onAddItem(moveitem, tileitem, position)
+	if moveitem.itemid == 2147 then
+		local tile = Tile(position):getItemById(2342)
+		if not tile then
+			return true
+		end
+
+		tile:transform(2343)
+		tile:decay()
+		position:sendMagicEffect(CONST_ME_FIREAREA)
+		Item(moveitem.uid):remove(1)
+		return true
+	end
+
 	if not isInArray(helmetIds, moveitem.itemid) then
 		return true
 	end
@@ -12,7 +25,8 @@ function onAddItem(moveitem, tileitem, position)
 		if not helmetItem then
 			return true
 		end
-		table.insert(helmetItems, helmetItem)
+
+		helmetItems[#helmetItems + 1] = helmetItem
 	end
 
 	for i = 1, #helmetItems do

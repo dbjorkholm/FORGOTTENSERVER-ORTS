@@ -27,10 +27,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	if not target:isItem() then
-		return false
-	end
-
 	if target.itemid == newBed[1][1] or target.itemid == newBed[2][1] then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, "You already have this bed modification.")
 		return true

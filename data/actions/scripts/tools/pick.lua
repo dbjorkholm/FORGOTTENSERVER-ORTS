@@ -60,10 +60,6 @@ local function revertIce(toPosition)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if (target.uid <= 65535 or target.actionid > 0) then
 		if (target.itemid == 354 or target.itemid == 355) then
 			target:transform(392)

@@ -21,7 +21,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	
+
 	local destination
 	if not correct then
 		destination = Position(32803, 31587, 1)

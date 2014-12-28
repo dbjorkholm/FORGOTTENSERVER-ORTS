@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if target.actionid == 100 and target.itemid == 471 then
 		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 36 then
 			player:removeItem(9737, 1)

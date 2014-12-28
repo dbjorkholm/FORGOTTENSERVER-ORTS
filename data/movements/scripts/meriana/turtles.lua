@@ -26,7 +26,7 @@ function onStepIn(creature, item, position, fromPosition)
 		Position(32340, 32540, 7):sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
-	
+
 	player:teleportTo(targetPosition)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)

@@ -1,5 +1,5 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() or target.actionid ~= 4639 then
+	if target.actionid ~= 4639 then
 		return false
 	end
 

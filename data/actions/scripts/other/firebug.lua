@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	--Dreamer Challenge Quest
 	if target.uid == 2243 then
 		target:transform(1387)

@@ -1,8 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if not target:isItem() then
-		return false
-	end
-
 	if isInArray({7915, 7916}, target.itemid) and target.actionid == 100 then
 		if isInArray({9743, 9744}, item.itemid) and player:getStorageValue(Storage.InServiceofYalahar.MatrixState) < 1 then
 			player:setStorageValue(Storage.InServiceofYalahar.MatrixState, 1)

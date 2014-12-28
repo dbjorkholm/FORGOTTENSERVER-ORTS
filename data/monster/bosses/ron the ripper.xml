@@ -36,7 +36,7 @@
 	<loot>
 		<item id="6101" chance="100000"/>					<!-- ron the ripper's sabre -->
 		<item id="2148" countmax="128" chance="100000"/>	<!-- gold coin -->
-		<item id="2320" countmax="2" chance="81000"/>		<!-- skull -->
+		<item id="2229" countmax="2" chance="81000"/>		<!-- skull -->
 		<item id="2463" chance="63000"/>					<!-- plate armor -->
 		<item id="2379" chance="45000"/>					<!-- dagger -->
 		<item id="7591" chance="18000"/>					<!-- great health potion -->

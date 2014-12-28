@@ -15,6 +15,10 @@
 	<action actionid="5640" script="rookgaard/honeyflower_quest.lua"/>
 	<action actionid="5641" script="rookgaard/banana_quest.lua"/>
 
+	<!-- Adventurer's Guild -->
+	<action itemid="18559" script="adventurers guild/adventurers_stone.lua"/>
+	<action fromid="19598" toid="19599" script="adventurers guild/magicdoor.lua"/>
+
 	<!-- What a foolish Quest -->
 	<action itemid="7478" script="what a foolish quest/flask.lua" />
 	<action itemid="7482" script="what a foolish quest/crate.lua" />
@@ -103,9 +107,9 @@
 	<action itemid="4846" 	 script="the ape city/Mission9TheDeepestCatacombsSnakedestroyer.lua"/>
 
 	<!--- The Ancient Tombs Quest -->
-	<action fromuid="12101" touid="12107" script="the ancient tombs quest/TombReward.lua" />
 	<action actionid="12107" script="the ancient tombs quest/OasisTombLeverDoor.lua" />
 	<action actionid="12105" script="the ancient tombs quest/AncientRuinsTombInstruments.lua" />
+	<action fromaid="50242" toaid="50244" script="the ancient tombs quest/activeTeleportSwitches.lua" />
 	<action fromaid="50006" toaid="50010" script="other/horestisjars.lua"/>
 
 	<!-- Kazordoon -->
