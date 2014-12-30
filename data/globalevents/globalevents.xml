@@ -10,7 +10,7 @@
 	<globalevent name="RentedMounts" interval="15000" script="others/checkMount.lua"/>
 
 	<!-- Blooming Griffinclaw -->
-	<globalevent name="GriffinclawFlower" type="start" script="others/griffinclawFlower.lua"/>
+	<globalevent name="GriffinclawFlower" type="startup" script="others/griffinclawFlower.lua"/>
 
 	<!-- World Changes -->
 	<globalevent name="FuryGates" type="startup" script="worldchanges/furygates.lua"/>
