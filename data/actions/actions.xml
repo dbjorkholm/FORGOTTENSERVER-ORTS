@@ -84,7 +84,6 @@
 	<action itemid="12318" script="wrath of the emperor quest/Mission10AMessageofFreedomSceptre.lua"/>
 	<action uniqueid="3198" script="wrath of the emperor quest/Mission11PaybackTimeLever.lua"/>
 	<action uniqueid="3200" script="wrath of the emperor quest/Mission12JustRewards.lua"/>
-	<action actionid="12374" script="quests/system.lua"/>
 
 	<!-- Unnatural Selection -->
 	<action uniqueid="12335" script="unnatural selection/Mission5RayofLight.lua"/>
@@ -335,7 +334,6 @@
 	<action fromaid="12501" toaid="12502" script="the thieves guild quest/climbingVine.lua"/>
 	<action itemid="8762" script="the thieves guild quest/fishnappingKey.lua"/>
 	<action actionid="12505" script="the thieves guild quest/fishnappingDoor.lua"/>
-	<action actionid="12513" script="quests/system.lua"/>
 
 	<!-- Secret Service Quest -->
 	<action itemid="7700" script="secret service/amazonDisguiseKit.lua"/>
@@ -370,6 +368,8 @@
 	<action actionid="2016" script="quests/system.lua"/>
 	<action actionid="2215" script="quests/system.lua"/>
 	<action actionid="10544" script="quests/system.lua"/>
+	<action actionid="12374" script="quests/system.lua"/>
+	<action actionid="12513" script="quests/system.lua"/>
 	<action actionid="26300" script="quests/system.lua"/>
 	<action actionid="27300" script="quests/system.lua"/>
 	<action actionid="28300" script="quests/system.lua"/>
