@@ -4,7 +4,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	if player:getStorageValue(Storage.TheApeCity.Questline) == 8
+	if player:getStorageValue(Storage.TheApeCity.Questline) == 7
 			and player:getStorageValue(Storage.TheApeCity.ParchmentDecyphering) ~= 1 then
 		player:setStorageValue(Storage.TheApeCity.ParchmentDecyphering, 1)
 	end
