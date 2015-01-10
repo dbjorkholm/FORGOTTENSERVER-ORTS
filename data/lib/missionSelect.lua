@@ -56,7 +56,7 @@ BlueOrGreen = false		-- blue djinn or green djinn quest, true = only one. -- NOT
 
 BlueDjinn = {
 				NeedMission = true,
-				MissionEnd = 113,
+				MissionEnd = 114,
 				WithoutMissionPrice = 0.5
 			}
 

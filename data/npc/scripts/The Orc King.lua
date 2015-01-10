@@ -29,36 +29,44 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	local efreetMission3, maridMission3 = player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03), player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
-		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 1
-				or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 1 then
+		if player:getStorageValue(Storage.DjinnWar.RecievedLamp) ~= 1
+				and (efreetMission3 == 1 or maridMission3 == 1) then
 			npcHandler:say({
 				'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...',
 				'Who do you want to trap in this cursed lamp?'
 			}, cid)
 			npcHandler.topic[cid] = 1
 		end
-	-- Mission 3 - Orc Fortress
-	elseif msgcontains(msg, 'malor') and npcHandler.topic[cid] == 1 then
-		if player:getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) == 1 then
-			player:setStorageValue(Storage.DjinnWar.EfreetFaction.Mission03, 2)
-			player:setStorageValue(Storage.DjinnWar.EfreetFaction.DoorToLamp, 1)
-		elseif player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission03) == 1 then
-			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 2)
-			player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToLamp, 1)
-		end
-		player:addItem(2344, 1)
-		npcHandler:say('I was waiting for this day! Take the lamp and let Malor feel my wrath!', cid)
-		npcHandler.topic[cid] = 0
+
 	elseif msgcontains(msg, 'cookie') then
-		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
-				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.OrcKing) ~= 1 then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31 and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.OrcKing) ~= 1 then
 			npcHandler:say('You bring me a stinking cookie???', cid)
 			npcHandler.topic[cid] = 2
 		end
-	elseif msgcontains(msg, 'yes') then
-		if npcHandler.topic[cid] == 2 then
+
+	-- Mission 3 - Orc Fortress
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, 'malor') then
+			if efreetMission3 == 1 then
+				player:setStorageValue(Storage.DjinnWar.EfreetFaction.DoorToLamp, 1)
+
+			elseif maridMission3 == 1 then
+				player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToLamp, 1)
+			end
+
+			player:setStorageValue(Storage.DjinnWar.RecievedLamp, 1)
+			player:addItem(2344, 1)
+			npcHandler:say('I was waiting for this day! Take the lamp and let Malor feel my wrath!', cid)
+		else
+			npcHandler:say('I don\'t know your enemy, paleskin! Begone!', cid)
+		end
+		npcHandler.topic[cid] = 0
+
+	elseif npcHandler.topic[cid] == 2 then
+		if msgcontains(msg, 'yes') then
 			if not player:removeItem(8111, 1) then
 				npcHandler:say('You have no cookie that I\'d like.', cid)
 				npcHandler.topic[cid] = 0
@@ -74,9 +82,8 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Well, I hope it stinks a lot. I like stinking cookies best ... BY MY THOUSAND SONS! YOU ARE SO DEAD HUMAN! DEAD!', cid)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
-		end
-	elseif msgcontains(msg, 'no') then
-		if npcHandler.topic[cid] == 2 then
+
+		elseif msgcontains(msg, 'no') then
 			npcHandler:say('I see.', cid)
 			npcHandler.topic[cid] = 0
 		end

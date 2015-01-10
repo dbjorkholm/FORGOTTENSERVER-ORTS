@@ -38,7 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif npcHandler.topic[cid] == 4 then
 			player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 6)
 			player:addItem(2504, 1)
-			npcHandler:say("Look at these dwarven legs. They were forged years ago by a dwarf who was rather tall for our kind. I want you to have them. Thank you for rescuing my son " .. player:getName(), cid)
+			npcHandler:say("Look at these dwarven legs. They were forged years ago by a dwarf who was rather tall for our kind. I want you to have them. Thank you for rescuing my son |PLAYERNAME|", cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 1 then

@@ -7,19 +7,31 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function greetCallback(cid)
+local function greetCallback(cid, message)
 	local player = Player(cid)
-	if player:getStorageValue(Storage.DjinnWar.Factions) <= 0 or player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 and BlueOrGreen then
+	if not msgcontains(message, 'djanni\'hah') and player:getStorageValue(Storage.DjinnWar.Faction.Marid) ~= 1 then
+		npcHandler:say('Whoa! A human! This is no place for you, |PLAYERNAME|. Go and play somewhere else.', cid)
 		return false
 	end
 
-	npcHandler:say({
-		"Whoa? You know the word! Amazing, |PLAYERNAME|! ...",
-		"I should go and tell Fa'hradin. ...",
-		"Well. Why are you here anyway, |PLAYERNAME|?"
-	}, cid)
-	npcHandler:addFocus(cid)
-	return false
+	if player:getStorageValue(Storage.DjinnWar.Faction.Greeting) == -1 then
+		npcHandler:say({
+			'Hahahaha! ...',
+			'|PLAYERNAME|, that almost sounded like the word of greeting. Humans - cute they are!'
+		}, cid)
+		return false
+	end
+
+	if player:getStorageValue(Storage.DjinnWar.Faction.Marid) ~= 1 then
+		npcHandler:setMessage(MESSAGE_GREET, {
+			'Whoa? You know the word! Amazing, |PLAYERNAME|! ...',
+			'I should go and tell Fa\'hradin. ...',
+			'Well. Why are you here anyway, |PLAYERNAME|?'
+		})
+	else
+		npcHandler:setMessage(MESSAGE_GREET, '|PLAYERNAME|! How\'s it going these days? What brings you {here}?')
+	end
+	return true
 end
 
 local function creatureSayCallback(cid, type, msg)
@@ -28,37 +40,57 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if msgcontains(msg, "passage") then
-		if player:getStorageValue(Storage.DjinnWar.MaridFaction.Mission01) < 1 then
+	if msgcontains(msg, 'passage') then
+		if player:getStorageValue(Storage.DjinnWar.Faction.Marid) ~= 1 then
 			npcHandler:say({
-				"If you want to enter our fortress you have to become one of us and fight the Efreet. ...",
-				"So, are you willing to do so?"
+				'If you want to enter our fortress you have to become one of us and fight the Efreet. ...',
+				'So, are you willing to do so?'
 			}, cid)
 			npcHandler.topic[cid] = 1
+		else
+			npcHandler:say('You already have the permission to enter Ashta\'daramai.', cid)
 		end
-	elseif msgcontains(msg, "yes") then
-		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("Are you sure? You pledge loyalty to king Gabel, who is... you know. And you are willing to never ever set foot on Efreets' territory, unless you want to kill them? Yes?", cid)
-			npcHandler.topic[cid] = 2
-		elseif npcHandler.topic[cid] == 2 then
+
+	elseif npcHandler.topic[cid] == 1 then
+		if msgcontains(msg, 'yes') then
+			if player:getStorageValue(Storage.DjinnWar.Faction.Efreet) ~= 1 then
+				npcHandler:say('Are you sure? You pledge loyalty to king Gabel, who is... you know. And you are willing to never ever set foot on Efreets\' territory, unless you want to kill them? Yes?', cid)
+				npcHandler.topic[cid] = 2
+			else
+				npcHandler:say('I don\'t believe you! You better go now.', cid)
+				npcHandler.topic[cid] = 0
+			end
+
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('This isn\'t your war anyway, human.', cid)
+			npcHandler.topic[cid] = 0
+		end
+
+	elseif npcHandler.topic[cid] == 2 then
+		if msgcontains(msg, 'yes') then
 			npcHandler:say({
-				"Oh. Ok. Welcome then. You may pass. ...",
-				"And don't forget to kill some Efreets, now and then."
+				'Oh. Ok. Welcome then. You may pass. ...',
+				'And don\'t forget to kill some Efreets, now and then.'
 			}, cid)
-			npcHandler.topic[cid] = 3
-			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission01, 1)
+			player:setStorageValue(Storage.DjinnWar.Faction.Marid, 1)
+			player:setStorageValue(Storage.DjinnWar.Faction.Greeting, 0)
+
+		elseif msgcontains(msg, 'no') then
+			npcHandler:say('This isn\'t your war anyway, human.', cid)
 		end
+		npcHandler.topic[cid] = 0
 	end
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_FAREWELL, "<salutes>Aaaa -tention!")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "<salutes>Aaaa -tention!")
+npcHandler:setMessage(MESSAGE_FAREWELL, '<salutes>Aaaa -tention!')
+npcHandler:setMessage(MESSAGE_WALKAWAY, '<salutes>Aaaa -tention!')
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 
 local focusModule = FocusModule:new()
+focusModule:addGreetMessage('hi')
+focusModule:addGreetMessage('hello')
 focusModule:addGreetMessage('djanni\'hah')
 npcHandler:addModule(focusModule)
-

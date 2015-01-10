@@ -81,7 +81,7 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 local function onTradeRequest(cid)
-	TradeRequest(cid, Npc(), getTable(), BlueDjinn, 4)
+	TradeRequest(cid, Npc(), getTable(), BlueDjinn, 3)
 end
 
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)

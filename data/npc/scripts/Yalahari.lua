@@ -177,7 +177,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission09, 1) -- StorageValue for Questlog "Mission 09: Decision"
 			npcHandler.topic[cid] = 0
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 49 or player:getStorageValue(Storage.InServiceofYalahar.Questline) == 48 then
-			npcHandler:say("So do you want to side with me " .. player:getName() .. "? ", cid)
+			npcHandler:say("So do you want to side with me |PLAYERNAME|? ", cid)
 			npcHandler.topic[cid] = 2
 		elseif player:getStorageValue(Storage.InServiceofYalahar.Questline) == 50 and player:getStorageValue(Storage.InServiceofYalahar.SideDecision) == 2 then
 			npcHandler:say({

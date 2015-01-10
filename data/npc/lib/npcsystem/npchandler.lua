@@ -638,7 +638,7 @@ if NpcHandler == nil then
 
 			local player = Player(focusId)
 			if player then
-				npc:say(message, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
+				npc:say(message:gsub('|PLAYERNAME|', player:getName()), TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 			end
 		end, self.talkDelayTime * 1000, Npc().uid, message, focus)
 	end

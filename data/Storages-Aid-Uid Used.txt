@@ -324,3 +324,6 @@ Dream Challenge Quest
 
 Pick only one item Quests (system.lua)
 	uid: 4011-4042
+
+Marid Entrance Door
+	aid: 50718

@@ -44,7 +44,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 6
 		elseif player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 4 then
 			npcHandler:say({
-				"I'm glad that you are still with me, " .. player:getName() .. ". Especially because my next task might require even more patience from your side than the ones before. ...",
+				"I'm glad that you are still with me, |PLAYERNAME|. Especially because my next task might require even more patience from your side than the ones before. ...",
 				"Demons... these unholy creatures should have never been able to walk the earth. They are a brood fueled only by hatred and malice. ...",
 				"Even if slain, their evil spirit is not fully killed. It needs a blessed stake to release their last bit of fiendishness and turn them into dust. ...",
 				"It does not work all the time, but if you succeed, their vicious spirit is finally defeated. ...",
@@ -55,7 +55,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 8
 		elseif player:getStorageValue(Storage.OutfitQuest.DruidHatAddon) == 6 then
 			npcHandler:say({
-				"I have one final task for you, " .. player:getName() .. ". Many months ago, I was trying to free the war wolves which are imprisoned inside the orc fortress.",
+				"I have one final task for you, |PLAYERNAME|. Many months ago, I was trying to free the war wolves which are imprisoned inside the orc fortress.",
 				"Unfortunately, my intrusion was discovered and I had to run for my life. During my escape, I lost my favourite wolf tooth chain.",
 				"It should still be somewhere in the fortress, if the orcs did not try to eat it. I really wish you could retrieve it for me.",
 				"It has the letter 'C' carved into one of the teeth. Please look for it.",
@@ -112,7 +112,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 7 then
 			if player:removeItem(5939, 1) then
-				npcHandler:say("Good work, " .. player:getName() .. "! This water looks indeed extremely clear. I will examine it right away. If you are ready to help me again, just ask me for a {task}.", cid)
+				npcHandler:say("Good work, |PLAYERNAME|! This water looks indeed extremely clear. I will examine it right away. If you are ready to help me again, just ask me for a {task}.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 4)
 				npcHandler.topic[cid] = 0
 			end
@@ -122,7 +122,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 9 then
 			if player:removeItem(6550, 100) then
-				npcHandler:say("I'm very impressed, " .. player:getName() .. ". With this task you have proven that you are on the right side and are powerful as well. If you are ready to help me again, just ask me for a {task}.", cid)
+				npcHandler:say("I'm very impressed, |PLAYERNAME|. With this task you have proven that you are on the right side and are powerful as well. If you are ready to help me again, just ask me for a {task}.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 6)
 				npcHandler.topic[cid] = 0
 			end
@@ -133,7 +133,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 11 then
 			if player:removeItem(5940, 1) then
-				npcHandler:say("Crunor be praised! You found my beloved chain! " .. player:getName() .. ", you really earned my respect and I consider you as a friend from now on. Remind me to tell you about {Faolan} sometime.", cid)
+				npcHandler:say("Crunor be praised! You found my beloved chain! |PLAYERNAME|, you really earned my respect and I consider you as a friend from now on. Remind me to tell you about {Faolan} sometime.", cid)
 				player:setStorageValue(Storage.OutfitQuest.DruidHatAddon, 8)
 				npcHandler.topic[cid] = 0
 			end

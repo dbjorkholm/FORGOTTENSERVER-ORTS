@@ -18,7 +18,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say({
 				"The Nightmare Knights are almost extinct now, and as far as I know I am the only teacher that is left. But you might beright and its time to accept new disciples ...",
 				"After all you have passed the Dream Challenge to reach this place, which used to be the process of initiation in the past...",
-				"So I ask you: do you wish to become a member of the ancient order of the Nightmare Knights, " .. player:getName() .. "?"
+				"So I ask you: do you wish to become a member of the ancient order of the Nightmare Knights, |PLAYERNAME|?"
 			}, cid)
 			npcHandler.topic[cid] = 1
 		end

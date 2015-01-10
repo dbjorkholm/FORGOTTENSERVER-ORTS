@@ -28,15 +28,23 @@ Storage = {
 		packageDoor = 108
 	},
 	DjinnWar = {
-		Factions = 110,
+		Faction = {
+			Greeting = 50717,
+			Marid = 50718,
+			Efreet = 50719
+		},
+
+		RecievedLamp = 50720,
 
 		-- blue djinn
 		MaridFaction = {
+			Start = 110,
 			Mission01 = 111,
 			Mission02 = 112,
-			Mission03 = 113,
-			DoorToLamp = 114,
-			DoorToEfreetTerritory = 115
+			RataMari = 113,
+			Mission03 = 114,
+			DoorToLamp = 115,
+			DoorToEfreetTerritory = 116
 		},
 		-- green djinn
 		EfreetFaction = {
@@ -880,6 +888,9 @@ Storage = {
 		}
 
 	},
+
+	Factions = 50716,
+	MaryzaCookbook = 50721,
 
 	blockMovementStorage = 100000
 }

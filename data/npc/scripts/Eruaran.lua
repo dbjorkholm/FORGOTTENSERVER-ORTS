@@ -107,7 +107,7 @@ local function greetCallback(cid)
 	if player:getStorageValue(Config.Greet_Storage) > 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Ashari Lillithy, so we meet {again}! What brings you here this time, general {information}, {transform}, {improve}, {create}, {outfit}, or {talk}?")
 	else
-		npcHandler:setMessage(MESSAGE_GREET, 'Welcome ' .. player:getName() .. '.')
+		npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|.')
 		player:setStorageValue(Config.Greet_Storage, 1)
 	end
 	return true

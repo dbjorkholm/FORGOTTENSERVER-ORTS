@@ -30,7 +30,7 @@ local function greetCallback(cid)
 			player:setStorageValue(Storage.Diapason.Lyre, 8)
 			player:addItem(13536, 1)
 		end
-		npcHandler:setMessage(MESSAGE_GREET, greetMessage:gsub('|PLAYERNAME|', player:getName()))
+		npcHandler:setMessage(MESSAGE_GREET, greetMessage)
 	else
 		npcHandler:setMessage(MESSAGE_GREET, 'Ashari, |PLAYERNAME|.')
 	end
