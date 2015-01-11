@@ -44,7 +44,7 @@ local bosses = {
 	[3244] = {bossName = 'fazzrah', storage = 35014, playerPosition = Position(32990, 31171, 7), bossPosition = Position(33005, 31174, 7), fromPosition = Position(32987, 31167, 7), toPosition = Position(33019, 31185, 7), flamePosition = Position(33007, 31171, 7)},
 	[3245] = {bossName = 'tromphonyte', storage = 35015, playerPosition = Position(33111, 31184, 8), bossPosition = Position(33120, 31195, 8), fromPosition = Position(33096, 31164, 8), toPosition = Position(33127, 31208, 8), flamePosition = Position(33109, 31168, 8)},
 	[3246] = {bossName = 'sulphur scuttler', storage = 35016, playerPosition = Position(33269, 31046, 9), bossPosition = Position(33274, 31037, 9), fromPosition = Position(33264, 31032, 9), toPosition = Position(33286, 31044, 9), flamePosition = Position(0, 0, 0)},
--- missing map?	[3247] = {bossName = 'bruise payne', storage = 35017, playerPosition = Position(0, 0, 0), bossPosition = Position(0, 0, 0), fromPosition = Position(0, 0, 0), toPosition = Position(0, 0, 0 ), flamePosition = Position(0, 0, 0)},
+	[3247] = {bossName = 'bruise payne', storage = 35017, playerPosition = Position(33237, 31006, 2), bossPosition = Position(33266, 31016, 2), fromPosition = Position(33229, 31005, 2), toPosition = Position(33273, 31027, 2), flamePosition = Position(33260, 31003, 2)},
 	[3248] = {bossName = 'the many', storage = 35018, playerPosition = Position(32921, 32893, 8), bossPosition = Position(32926, 32903, 8), fromPosition = Position(32915, 32891, 8), toPosition = Position(32927, 32904, 8), flamePosition = Position(32921, 32890, 8)},
 	[3249] = {bossName = 'the noxious spawn', storage = 35019, playerPosition = Position(32842, 32667, 11), bossPosition = Position(32843, 32675, 11), fromPosition = Position(32837, 32666, 11), toPosition = Position(32848, 32676, 11), flamePosition = Position(0, 0, 0)},
 	[3250] = {bossName = 'gorgo', storage = 35020, playerPosition = Position(32759, 32447, 11), bossPosition = Position(32763, 32435, 11), fromPosition = Position(32747, 32428, 11), toPosition = Position(32769, 32451, 11), flamePosition = Position(32768, 32440, 11)},
@@ -68,6 +68,10 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	local boss = bosses[item.uid]
+	if not boss then
+		return true
+	end
+
 	if player:getStorageValue(boss.storage) ~= 1 or not checkArea(boss.fromPosition, boss.toPosition) then
 		player:teleportTo(fromPosition)
 		return true
@@ -78,6 +82,10 @@ function onStepIn(creature, item, position, fromPosition)
 	boss.playerPosition:sendMagicEffect(CONST_ME_TELEPORT)
 
 	local monster = Game.createMonster(boss.bossName, boss.bossPosition)
+	if not monster then
+		return true
+	end
+
 	addEvent(clearBossRoom, 60 * 10 * 1000, player.uid, monster.uid, boss.fromPosition, boss.toPosition, fromPosition)
 	player:say('You have ten minutes to kill and loot this boss. Otherwise you will lose that chance and will be kicked out.', TALKTYPE_MONSTER_SAY)
 	return true
