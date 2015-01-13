@@ -15246,7 +15246,10 @@
 	<item fromid="8625" toid="8626" article="a" name="dwarven statue" />
 	<item fromid="8627" toid="8630" article="a" name="bone" />
 	<item id="8631" article="a" name="burning wall" />
-	<item id="8632" article="a" name="water vortex" />
+	<item id="8632" article="a" name="water vortex">
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="watersplash" />
+	</item>
 	<item fromid="8633" toid="8636" article="a" name="large crystal" />
 	<item fromid="8637" toid="8640" article="a" name="crystal" />
 	<item fromid="8641" toid="8642" article="a" name="crucible" />
@@ -28531,6 +28534,13 @@
 		<attribute key="weight" value="1500" />
 	</item>
 	<item id="20668" article="a" name="shadowy statue" />
+	<item fromid="20671" toid="20691" article="a" name="basalt crystal wall" />
+	<item fromid="20686" toid="20687" article="a" name="basalt crystal wall" />
+	<item id="20692" name="the spike of a crystal drill" />
+	<item fromid="20693" toid="20700" article="a" name="large crystal" />
+	<item fromid="20701" toid="20715" article="a" name="basalt crystal wall" />
+	<item fromid="20723" toid="20727" article="a" name="basalt crystal wall" />
+	<item fromid="20732" toid="20743" article="a" name="basalt crystal wall" />
 	<item fromid="20753" toid="20758" article="a" name="hedge" />
 	<item id="20759" article="a" name="lurking tree" />
 	<item id="20760" article="a" name="small birch" />
@@ -29218,6 +29228,9 @@
 		<attribute key="description" value="This coal is smoking and emmits quite a stench." />
 		<attribute key="weight" value="1000" />
 	</item>
+	<item id="21644" article="a" name="large berg crystal" />
+	<item fromid="21645" toid="21646" name="large berg crystals" />
+	<item id="21647" article="a" name="berg crystal" />
 	<item id="21690" article="a" name="triple bolt crossbow">
 		<attribute key="weight" value="6200" />
 		<attribute key="slotType" value="two-handed" />
@@ -29293,6 +29306,10 @@
 	</item>
 	<item id="21708" name="vampire silk slippers">
 		<attribute key="weight" value="1150" />
+	</item>
+	<item id="21721" article="a" name="large crystal teleporter">
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
 	</item>
 	<item id="21725" article="a" name="furious frock">
 		<attribute key="weight" value="3400" />
