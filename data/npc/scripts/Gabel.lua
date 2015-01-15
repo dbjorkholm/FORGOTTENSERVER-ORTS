@@ -52,9 +52,7 @@ local function creatureSayCallback(cid, type, msg)
 				'Once you have acquired the lamp you must enter Mal\'ouquah again. Sneak into Malor\'s personal chambersand exchange his sleeping lamp with Fa\'hradin\'s lamp! ...',
 				'If you succeed, the war could be over one night later! I and all djinn will be in your debt forever! May Daraman watch over you!'
 			}, cid)
-			if missionProgress < 1 then
-				player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 1)
-			end
+			player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission03, 1)
 
 		elseif msgcontains(msg, 'no') then
 			npcHandler:say('As you wish.', cid)

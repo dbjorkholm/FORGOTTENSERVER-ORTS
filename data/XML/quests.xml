@@ -665,6 +665,23 @@
 			<missionstate id="8" description="You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."/>
 		</mission>
 	</quest>
+	<quest name="The Djinn War - Efreet Faction" startstorageid="120" startstoragevalue="1">
+		<mission name="Efreet Mission 1: The Supply Thief" storageid="121" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Travel to Thais and keep your eyes open for something that might give you a clue on the supply thief."/>
+			<missionstate id="2" description="You have found the potential supply thief - Partos in Thais seemed very suspicious. Baa'leal might be interested in this matter."/>
+			<missionstate id="3" description="You have reported the case to Baa'leal. He seemed very satisfied and told you that Alesar might have another mission for you."/>
+		</mission>
+		<mission name="Efreet Mission 2: The Tear of Daraman" storageid="122" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Sneak into Ashta'daramai and steal a &quot;Tear of Daraman&quot;. For more information about these gems visit the Efreet library."/>
+			<missionstate id="2" description="You have successfully managed to steal a Tear of Daraman from Ashta'daramai. Bring it to Alesar."/>
+			<missionstate id="3" description="You have delivered Daraman's Tear. Alesar seemed very satisfied and told you that Malor himself might have another mission for you."/>
+		</mission>
+		<mission name="Efreet Mission 3: The Sleeping Lamp" storageid="123" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Malor asked you to find Fa'hradin's sleeping lamp in the orc fortress at Ulderek's Rock. Then, sneak into Ashta'daramai and exchange Gabel's sleeping lamp with Fa'hradin's lamp."/>
+			<missionstate id="2" description="You successfully exchanged the lamps. Malor will be happy to hear about this."/>
+			<missionstate id="3" description="The Efreet are very satisfied with your help. King Malor allowed you to trade with Yaman and Alesar."/>
+		</mission>
+	</quest>
 	<quest name="The Djinn War - Marid Faction" startstorageid="110" startstoragevalue="1">
 		<mission name="Marid Mission 1: The Dwarven Kitchen" storageid="111" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Bring a cookbook of the dwarven kitchen to Bo'ques."/>

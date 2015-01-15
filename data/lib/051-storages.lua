@@ -48,6 +48,7 @@ Storage = {
 		},
 		-- green djinn
 		EfreetFaction = {
+			Start = 120,
 			Mission01 = 121,
 			Mission02 = 122,
 			Mission03 = 123,
