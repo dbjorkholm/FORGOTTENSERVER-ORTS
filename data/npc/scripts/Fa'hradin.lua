@@ -47,8 +47,8 @@ local function creatureSayCallback(cid, type, msg)
 				}, cid)
 			else
 				npcHandler:say({
-					'You really have made it? You have the report? How come you did not get slaughtered? I must say I\'m impressed. Your race will never cease to surprise me. ...'
-					'Well, let\'s see. ...'
+					'You really have made it? You have the report? How come you did not get slaughtered? I must say I\'m impressed. Your race will never cease to surprise me. ...',
+					'Well, let\'s see. ...',
 					'I think I need to talk to Gabel about this. I am sure he will know what to do. Perhaps you should have a word with him, too.'
 				}, cid)
 				player:setStorageValue(Storage.DjinnWar.MaridFaction.Mission02, 2)
