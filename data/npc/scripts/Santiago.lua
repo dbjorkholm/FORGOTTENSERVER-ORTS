@@ -21,17 +21,17 @@ local function greetCallback(cid)
 	if player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) < 1 then
 		player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage, 1)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.SantiagoQuestLog, 1)
-		npcHandler:setMessage(MESSAGE_GREET, "Hello ".. player:getName() ..", nice to see you on Rookgaard! I saw you walking by and wondered if you could help me. Could you? Please, say {yes}!")
+		npcHandler:setMessage(MESSAGE_GREET, "Hello |PLAYERNAME|, nice to see you on Rookgaard! I saw you walking by and wondered if you could help me. Could you? Please, say {yes}!")
 		storeTalkCid[cid] = 0
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) == 1 then
-		npcHandler:setMessage(MESSAGE_GREET, "Oh, ".. player:getName() ..", it's you again! It's probably impolite to disturb a busy adventurer like you, but I really need help. Please, say {yes}!")
+		npcHandler:setMessage(MESSAGE_GREET, "Oh, |PLAYERNAME|, it's you again! It's probably impolite to disturb a busy adventurer like you, but I really need help. Please, say {yes}!")
 		storeTalkCid[cid] = 0
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) == 2 then
 		npcHandler:say("Oh, what's wrong? As I said, simply go to my house south of here and go upstairs. Then come back and we'll continue our chat.", cid)
 		Position(32033, 32277, 6):sendMagicEffect(CONST_ME_TUTORIALARROW)
 		return false
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) == 3 then
-		npcHandler:setMessage(MESSAGE_GREET, "Welcome back, ".. player:getName() .."! Ahh, you found my chest. Let me take a look at you. You put on that coat, {yes}?")
+		npcHandler:setMessage(MESSAGE_GREET, "Welcome back, |PLAYERNAME|! Ahh, you found my chest. Let me take a look at you. You put on that coat, {yes}?")
 		storeTalkCid[cid] = 2
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) == 4 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hey, I want to give you a weapon for free! You should not refuse that, in fact you should say '{yes}'!")
@@ -70,7 +70,7 @@ local function greetCallback(cid)
 		npcHandler:setMessage(MESSAGE_GREET, "Welcome back! Where were we... ? Ah, right, I asked you if you saw Zirella! Did you?")
 		storeTalkCid[cid] = 9
 	elseif player:getStorageValue(Storage.RookgaardTutorialIsland.SantiagoNpcGreetStorage) == 13 then
-		npcHandler:setMessage(MESSAGE_GREET, "Hello again, ".. player:getName() .."! It's great to see you. If you like, we can chat a little. Just use the highlighted {keywords} again to choose a {topic}.")
+		npcHandler:setMessage(MESSAGE_GREET, "Hello again, |PLAYERNAME|! It's great to see you. If you like, we can chat a little. Just use the highlighted {keywords} again to choose a {topic}.")
 	end
 	return true
 end

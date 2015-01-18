@@ -81,13 +81,13 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 5 then
 			if player:removeItem(5809, 1) then
-				npcHandler:say("You have found a rarity there, " .. player:getName() .. ". This will become the tip of your blessed wand. Please bring me 20 ankhs now to complete the ritual.", cid)
+				npcHandler:say("You have found a rarity there, |PLAYERNAME|. This will become the tip of your blessed wand. Please bring me 20 ankhs now to complete the ritual.", cid)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 5)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 6 then
 			if player:removeItem(2193, 20) then
-				npcHandler:say("The ingredients for the ritual are complete! I will start to prepare your blessed wand,... I'm glad to tell you that I have finished the ritual, " .. player:getName() .. ". Here is your new wand. I hope you carry it proudly for everyone to see.", cid)
+				npcHandler:say("The ingredients for the ritual are complete! I will start to prepare your blessed wand,... I'm glad to tell you that I have finished the ritual, |PLAYERNAME|. Here is your new wand. I hope you carry it proudly for everyone to see.", cid)
 				player:setStorageValue(Storage.OutfitQuest.MageSummonerWandAddon, 6)
 				player:addOutfitAddon(141, 1)
 				player:addOutfitAddon(130, 1)

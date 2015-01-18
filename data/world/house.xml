@@ -1015,4 +1015,5 @@
 	<house name="Tunnel Gardens 1" houseid="2452" entryx="32606" entryy="31908" entryz="11" rent="2000" townid="3" size="20" />
 	<house name="Tunnel Gardens 2" houseid="2455" entryx="32606" entryy="31909" entryz="11" rent="2000" townid="3" size="20" />
 	<house name="The Yeah Beach Project" houseid="2456" entryx="32294" entryy="32555" entryz="6" rent="6525" townid="7" size="108" />
+	<house name="Hare's Den" houseid="2460" entryx="32687" entryy="32193" entryz="10" rent="7500" townid="3" size="165" />
 </houses>

@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif(msgcontains(msg, "fist")) then
 		if player:getStorageValue(Storage.OutfitQuest.BarbarianAddon) == 3 then
-			npcHandler:say("Oh! He really said that? I am so proud of you, " .. player:getName() .. ". These are really good news. Everything would be great... if only there wasn't this {person} near my house.", cid)
+			npcHandler:say("Oh! He really said that? I am so proud of you, |PLAYERNAME|. These are really good news. Everything would be great... if only there wasn't this {person} near my house.", cid)
 			npcHandler.topic[cid] = 3
 		end
 	elseif(msgcontains(msg, "person")) then
@@ -122,7 +122,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif(npcHandler.topic[cid] == 10) then
 			if player:removeItem(5885, 1) then
-				npcHandler:say("Good work, " .. player:getName() .. "! Now I can finally finish this present for Ajax. Because you were such a great help, I have also a present for you. Will you accept it?", cid)
+				npcHandler:say("Good work, |PLAYERNAME|! Now I can finally finish this present for Ajax. Because you were such a great help, I have also a present for you. Will you accept it?", cid)
 				player:setStorageValue(Storage.OutfitQuest.BarbarianAddon, 10)
 				npcHandler.topic[cid] = 0
 			end

@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 			}, cid)
 			npcHandler.topic[cid] = 3
 		elseif npcHandler.topic[cid] == 3 then
-			npcHandler:say("That's the spirit! I hope you will find my crossbow, " .. player:getName() .. "!", cid)
+			npcHandler:say("That's the spirit! I hope you will find my crossbow, |PLAYERNAME|!", cid)
 			player:setStorageValue(Storage.OutfitQuest.HunterHatAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
@@ -74,7 +74,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 5 then
 			if player:getItemCount(5876) >= 100 and player:getItemCount(5948) >= 100  then
-				npcHandler:say("Good work, " .. player:getName() .. "! That is enough leather for a lot of sturdy quivers. Now, please bring me 5 enchanted chicken wings.", cid)
+				npcHandler:say("Good work, |PLAYERNAME|! That is enough leather for a lot of sturdy quivers. Now, please bring me 5 enchanted chicken wings.", cid)
 				player:removeItem(5876, 100)
 				player:removeItem(5948, 100)
 				player:setStorageValue(Storage.OutfitQuest.HunterHatAddon, 3)
@@ -92,7 +92,7 @@ local function creatureSayCallback(cid, type, msg)
 			end
 		elseif npcHandler.topic[cid] == 7 then
 			if player:getItemCount(5887) >= 1 and player:getItemCount(5888) >= 1 and player:getItemCount(5889) >= 1  then
-				npcHandler:say("Wow, I'm impressed, " .. player:getName() .. ". Your really are a valuable member of our paladin guild. I shall grant you your reward now. Wear it proudly!", cid)
+				npcHandler:say("Wow, I'm impressed, |PLAYERNAME|. Your really are a valuable member of our paladin guild. I shall grant you your reward now. Wear it proudly!", cid)
 				player:removeItem(5887, 1)
 				player:removeItem(5888, 1)
 				player:removeItem(5889, 1)

@@ -47,9 +47,9 @@ end
 local function greetCallback(cid)
 	local player = Player(cid)
 	if player:getStorageValue(Storage.HotCuisineQuest.QuestStart) < 1 then
-		npcHandler:setMessage(MESSAGE_GREET, "Greetings, "..player:getName()..". What are you doing out here?")
+		npcHandler:setMessage(MESSAGE_GREET, "Greetings, |PLAYERNAME|. What are you doing out here?")
 	else
-		npcHandler:setMessage(MESSAGE_GREET, "Hello there again, "..player:getName().."! I guess you're back for some cooking - let's get going then!")
+		npcHandler:setMessage(MESSAGE_GREET, "Hello there again, |PLAYERNAME|! I guess you're back for some cooking - let's get going then!")
 	end
 	return true
 end
@@ -173,7 +173,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, "apprentice") then
 		if npcHandler.topic[cid] == 2 then
-			npcHandler:say("Hmm. You look quite promising. Can't hurt to give it a try, I guess. Would you like to become my apprentice, "..player:getName().."?", cid)
+			npcHandler:say("Hmm. You look quite promising. Can't hurt to give it a try, I guess. Would you like to become my apprentice, |PLAYERNAME|?", cid)
 			npcHandler.topic[cid] = 3
 		end
 	elseif msgcontains(msg, "yes") then

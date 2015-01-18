@@ -42,7 +42,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif msgcontains(msg, player:getName()) then
 		if npcHandler.topic[cid] == 1 then
-			npcHandler:say("Alright " .. player:getName() ..". Vocation?", cid)
+			npcHandler:say("Alright |PLAYERNAME|. Vocation?", cid)
 			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, vocation:getName()) then

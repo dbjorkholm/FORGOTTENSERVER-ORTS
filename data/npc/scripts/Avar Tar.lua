@@ -64,7 +64,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfit(542)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.AnnihilatorDone, 2)
-				npcHandler:say('Receive the base outfit, ' .. player:getName() .. '.', cid)
+				npcHandler:say('Receive the base outfit, |PLAYERNAME|.', cid)
 			end
 		elseif msgcontains(msg, 'shield') then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(Storage.QuestChests.DemonHelmetQuestDemonHelmet) == 1 then
@@ -72,7 +72,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(542, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.QuestChests.DemonHelmetQuestDemonHelmet, 2)
-				npcHandler:say('Receive the shield, ' .. player:getName() .. '.', cid)
+				npcHandler:say('Receive the shield, |PLAYERNAME|.', cid)
 			end
 		elseif msgcontains(msg, 'helmet') then
 			if player:getStorageValue(Storage.AnnihilatorDone) == 2 and player:getStorageValue(Storage.DemonOak.Done) == 3 then
@@ -80,7 +80,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(542, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.DemonOak.Done, 4)
-				npcHandler:say('Receive the helmet, ' .. player:getName() .. '.', cid)
+				npcHandler:say('Receive the helmet, |PLAYERNAME|.', cid)
 			end
 		end
 		npcHandler.topic[cid] = 0

@@ -6,7 +6,7 @@ function onStartup()
 		Game.setStorageValue(startupGlobalStorages[i], 0)
 	end
 
-	db.asyncQuery('TRUNCATE TABLE `players_online`')
+	db.query('TRUNCATE TABLE `players_online`')
 	db.asyncQuery('DELETE FROM `guild_wars` WHERE `status` = 0')
 	db.asyncQuery('DELETE FROM `players` WHERE `deletion` != 0 AND `deletion` < ' .. os.time())
 	db.asyncQuery('DELETE FROM `ip_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. os.time())

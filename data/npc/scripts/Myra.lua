@@ -70,7 +70,7 @@ local function creatureSayCallback(cid, type, msg)
 		elseif player:getStorageValue(storage) >= 1 and player:getStorageValue(storage) < 10 then
 			npcHandler:say("Before I can nominate you for an award, please complete your task.", cid)
 		elseif player:getStorageValue(storage) == 10 then
-			npcHandler:say("Go to the academy in Edron and tell Zoltan that I sent you, " .. player:getName() .. ".", cid)
+			npcHandler:say("Go to the academy in Edron and tell Zoltan that I sent you, |PLAYERNAME|.", cid)
 		end
 	elseif config[msg:lower()] then
 		if player:getStorageValue(storage) == config[msg:lower()]["value"] then

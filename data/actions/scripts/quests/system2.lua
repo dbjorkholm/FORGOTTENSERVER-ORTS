@@ -104,10 +104,10 @@ local config = {
 			{itemId = 2356}
 		},
 		storage = Storage.DjinnWar.MaridFaction.Mission03,
-		formerValue = 2,
-		newValue = 3,
+		formerValue = 1,
+		newValue = 2,
 		needItem = {itemId = 2344},
-		effect = CONST_ME_MAGIC_BLUE
+		effect = CONST_ME_MAGIC_RED
 	},
 	[3027] = {
 		items = {

@@ -19,7 +19,7 @@ local function creatureSayCallback(cid, type, msg)
 				"The Brotherhood of Bones has suffered greatly in the past, but we did survive as we always will ...",
 				"You have proven resourceful by beating the silly riddles the Nightmare Knights set up to test their candidates ...",
 				"It's an amusing thought that after passing their test you might choose to join the ranks of their sworn enemies ...",
-				"For the irony of this I ask you, " .. player:getName() .. ": Do you want to join the Brotherhood of Bones?"
+				"For the irony of this I ask you, |PLAYERNAME|: Do you want to join the Brotherhood of Bones?"
 			}, cid)
 			npcHandler.topic[cid] = 1
 		end

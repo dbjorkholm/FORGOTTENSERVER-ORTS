@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'mission') then
 		if player:getStorageValue(Storage.TibiaTales.TheExterminator) == -1 then
 			npcHandler:say({
-				'Oh ' .. player:getName() .. ', thank god you came to me. Last night, I had a vision about an upcoming plague here in Carlin. ...',
+				'Oh |PLAYERNAME|, thank god you came to me. Last night, I had a vision about an upcoming plague here in Carlin. ...',
 				'It will originate from slimes that will swarm out of the sewers and infect every citizen with a deadly disease. Are you willing to help me save Carlin?'
 			}, cid)
 			npcHandler.topic[cid] = 2

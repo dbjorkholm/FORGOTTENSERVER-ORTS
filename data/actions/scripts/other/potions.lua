@@ -38,7 +38,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if not target:isCreature() or not target:isPlayer() then
+	if target.itemid ~= 1 or target.type ~= THING_TYPE_PLAYER then
 		return true
 	end
 

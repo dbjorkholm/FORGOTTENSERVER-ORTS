@@ -321,3 +321,9 @@ The Ancient Of Tombs Quest
 
 Dream Challenge Quest
 	Riddle Teleport Uid = 50147
+
+Pick only one item Quests (system.lua)
+	uid: 4011-4042
+
+Marid Entrance Door
+	aid: 50718

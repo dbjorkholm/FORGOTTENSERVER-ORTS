@@ -67,7 +67,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(152, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
-			npcHandler:say(targetMessage.text[2]:gsub('|PLAYERNAME|', player:getName()), cid)
+			npcHandler:say(targetMessage.text[2], cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 0 then

@@ -31,33 +31,40 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	local questProgress = player:getStorageValue(Storage.TheApeCity.Questline)
 	if msgcontains(msg, 'mission') then
-		if player:getStorageValue(Storage.TheApeCity.Started) ~= 1 then
+		if questProgress < 1 then
 			npcHandler:say('These are dire times for our people. Problems plenty are in this times. But me people not grant trust easy. Are you willing to prove you friend of ape people?', cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 1 then
+
+		elseif questProgress == 1 then
 			if player:getStorageValue(Storage.QuestChests.WhisperMoss) == 1 then
 				npcHandler:say('Oh, you brought me whisper moss? Good hairless ape you are! Can me take it?', cid)
 				npcHandler.topic[cid] = 3
 			else
 				npcHandler:say('Please hurry. Bring me whisper moss from dworc lair. Make sure it is from dworc lair! Take it yourself only! If you need to hear background of all again, ask Hairycles for {background}.', cid)
 			end
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 2 then
+
+		elseif questProgress == 2 then
 			npcHandler:say({
 				'Whisper moss strong is, but me need liquid that humans have to make it work ...',
 				'Our raiders brought it from human settlement, it\'s called cough syrup. Go ask healer there for it.'
 			}, cid)
 			player:setStorageValue(Storage.TheApeCity.Questline, 3)
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 3 then
+
+		elseif questProgress == 3 then
 			npcHandler:say('You brought me that cough syrup from human healer me asked for?', cid)
 			npcHandler.topic[cid] = 4
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 4 then
+
+		elseif questProgress == 4 then
 			npcHandler:say('Little ape should be healthy soon. Me so happy is. Thank you again! But me suspect we in more trouble than we thought. Will you help us again?', cid)
 			npcHandler.topic[cid] = 5
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 5 then
+
+		elseif questProgress == 5 then
 			npcHandler:say('You got scroll from lizard village in south east?', cid)
 			npcHandler.topic[cid] = 7
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 6 then
+
+		elseif questProgress == 6 then
 			npcHandler:say({
 				'Ah yes that scroll. Sadly me not could read it yet. But the holy banana me insight gave! In dreams Hairycles saw where to find solution. ...',
 				'Me saw a stone with lizard signs and other signs at once. If you read signs and tell Hairycles, me will know how to read signs. ...',
@@ -66,47 +73,55 @@ local function creatureSayCallback(cid, type, msg)
 				'Read it and return to me. Are you up to that challenge?'
 			}, cid)
 			npcHandler.topic[cid] = 8
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 7 then
+
+		elseif questProgress == 7 then
 			if player:getStorageValue(Storage.TheApeCity.ParchmentDecyphering) == 1 then
 				npcHandler:say('Ah yes, you read the signs in tomb? Good! May me look into your mind to see what you saw?', cid)
 				npcHandler.topic[cid] = 9
 			else
 				npcHandler:say('You still don\'t know signs on stone, go and look for it in tomb east in desert.', cid)
 			end
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 8 then
+
+		elseif questProgress == 8 then
 			npcHandler:say({
 				'So much there is to do for Hairycles to prepare charm that will protect all ape people. ...',
 				'You can help more. To create charm of life me need mighty token of life! Best is egg of a regenerating beast as a hydra is. ...',
 				'Bring me egg of hydra please. You may find it in lair of Hydra at little lake south east of our lovely city Banuta! You think you can do?'
 			}, cid)
 			npcHandler.topic[cid] = 10
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 9 then
+
+		elseif questProgress == 9 then
 			npcHandler:say('You bring Hairycles egg of hydra?', cid)
 			npcHandler.topic[cid] = 11
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 10 then
+
+		elseif questProgress == 10 then
 			npcHandler:say({
 				'Last ingredient for charm of life is thing to lure magic. Only thing me know like that is mushroom called witches\' cap. Me was told it be found in isle called Fibula, where humans live. ...',
 				'Hidden under Fibula is a secret dungeon. There you will find witches\' cap. Are you willing to go there for good ape people?'
 			}, cid)
 			npcHandler.topic[cid] = 12
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 11 then
+
+		elseif questProgress == 11 then
 			npcHandler:say('You brought Hairycles witches\' cap from Fibula?', cid)
 			npcHandler.topic[cid] = 13
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 12 then
+
+		elseif questProgress == 12 then
 			npcHandler:say({
 				'Mighty life charm is protecting us now! But my people are still in danger. Danger from within. ...',
 				'Some of my people try to mimic lizards to become strong. Like lizards did before, this cult drinks strange fluid that lizards left when fled. ...',
 				'Under the city still the underground temple of lizards is. There you find casks with red fluid. Take crowbar and destroy three of them to stop this madness. Are you willing to do that?'
 			}, cid)
 			npcHandler.topic[cid] = 14
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 13 then
+
+		elseif questProgress == 13 then
 			if player:getStorageValue(Storage.TheApeCity.Casks) == 3 then
 				npcHandler:say('You do please Hairycles again, friend. Me hope madness will not spread further now. Perhaps you are ready for other mission.', cid)
 				player:setStorageValue(Storage.TheApeCity.Questline, 14)
 			else
 				npcHandler:say('Please destroy three casks in the complex beneath Banuta, so my people will come to senses again.', cid)
 			end
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 14 then
+
+		elseif questProgress == 14 then
 			npcHandler:say({
 				'Now that the false cult was stopped, we need to strengthen the spirit of my people. We need a symbol of our faith that ape people can see and touch. ...',
 				'Since you have proven a friend of the ape people I will grant you permission to enter the forbidden land. ...',
@@ -117,14 +132,16 @@ local function creatureSayCallback(cid, type, msg)
 				'Return a hair of the holy ape to me. Will you do this for Hairycles?'
 			}, cid)
 			npcHandler.topic[cid] = 15
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 15 then
+
+		elseif questProgress == 15 then
 			if player:getStorageValue(Storage.TheApeCity.HolyApeHair) == 1 then
 				npcHandler:say('You brought hair of holy ape?', cid)
 				npcHandler.topic[cid] = 16
 			else
 				npcHandler:say('Get a hair of holy ape from forbidden land in east. Speak with blind prophet in cave.', cid)
 			end
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 16 then
+
+		elseif questProgress == 16 then
 			npcHandler:say({
 				'You have proven yourself a friend, me will grant you permission to enter the deepest catacombs under Banuta which we have sealed in the past. ...',
 				'Me still can sense the evil presence there. We did not dare to go deeper and fight creatures of evil there. ...',
@@ -132,7 +149,8 @@ local function creatureSayCallback(cid, type, msg)
 				'Only then my people will be safe. Please tell Hairycles, will you go there?'
 			}, cid)
 			npcHandler.topic[cid] = 17
-		elseif player:getStorageValue(Storage.TheApeCity.Questline) == 17 then
+
+		elseif questProgress == 17 then
 			if player:getStorageValue(Storage.TheApeCity.SnakeDestroyer) == 1 then
 				npcHandler:say({
 					'Finally my people are safe! You have done incredible good for ape people and one day even me brethren will recognise that. ...',
@@ -144,12 +162,13 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say('Me know its much me asked for but go into the deepest catacombs under Banuta and destroy the monument of the serpent god.', cid)
 			end
+
 		else
 			npcHandler:say('No more missions await you right now, friend. Perhaps you want to check me offers for special friends... or shamanic powers.', cid)
 		end
 
 	elseif msgcontains(msg, 'background') then
-		if player:getStorageValue(Storage.TheApeCity.Questline) == 1
+		if questProgress == 1
 				and player:getStorageValue(Storage.QuestChests.WhisperMoss) ~= 1 then
 			npcHandler:say({
 				'So listen, little ape was struck by plague. Hairycles not does know what plague it is. That is strange. Hairycles should know. But Hairycles learnt lots and lots ...',
@@ -161,7 +180,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 
 	elseif msgcontains(msg, 'outfit') or msgcontains(msg, 'shamanic') then
-		if player:getStorageValue(Storage.TheApeCity.Questline) == 18 then
+		if questProgress == 18 then
 			if player:getStorageValue(Storage.TheApeCity.ShamanOutfit) ~= 1 then
 				npcHandler:say('Me truly proud of you, friend. You learn many about plants, charms and ape people. Me want grant you shamanic power now. You ready?', cid)
 				npcHandler.topic[cid] = 18
@@ -173,7 +192,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 
 	elseif msgcontains(msg, 'heal') then
-		if player:getStorageValue(Storage.TheApeCity.Questline) > 11 then
+		if questProgress > 11 then
 			if player:getHealth() < 50 then
 				player:addHealth(50 - player:getHealth())
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -198,6 +217,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Hairycles sad is now. But perhaps you will change mind one day.', cid)
 			npcHandler.topic[cid] = 0
 		end
+
 	elseif npcHandler.topic[cid] == 2 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say({
@@ -215,6 +235,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 3 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(4838, 1) then
@@ -229,6 +250,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Strange being you are! Our people need help!', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 4 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(4839, 1) then
@@ -242,6 +264,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Please hurry, urgent it is!', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 5 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say({
@@ -255,6 +278,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 			npcHandler.topic[cid] = 0
 		end
+
 	elseif npcHandler.topic[cid] == 6 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Good thing that is! Report about your mission when have scroll.', cid)
@@ -265,6 +289,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 7 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(5956, 1) then
@@ -282,6 +307,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('That\'s bad news. If you lost it, only way to get other is to kill holy serpents. But you can\'t go there so you must ask adventurers who can.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 8 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Good thing that is! Report about mission when you have read those signs.', cid)
@@ -291,6 +317,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 9 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Oh, so clear is all now! Easy it will be to read the signs now! Soon we will know what to do! Thank you again! Ask for mission if you feel ready.', cid)
@@ -300,6 +327,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Me need to see it in your mind, other there is no way to proceed.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 10 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('You brave hairless ape! Get me hydra egg. If you lose egg, you probably have to fight many, many hydras to get another.', cid)
@@ -309,6 +337,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 11 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(4850, 1) then
@@ -322,6 +351,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Please hurry. Hairycles not knows when evil lizards strike again.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 12 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Long journey it will take, good luck to you.', cid)
@@ -332,6 +362,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 13 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(4840, 1) then
@@ -347,6 +378,7 @@ local function creatureSayCallback(cid, type, msg)
 			addEvent(releasePlayer, 1000, cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 14 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Hairycles sure you will make it. Good luck, friend.', cid)
@@ -356,6 +388,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Me sad. Please reconsider.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 15 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Hairycles proud of you. Go and find holy hair. Good luck, friend.', cid)
@@ -364,6 +397,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Me sad. Please reconsider.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 16 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(4843, 1) then
@@ -378,6 +412,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You no have hair. You lost it? Go and look again.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 17 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Hairycles sure you will make it. Just use hammer on all that looks like snake or lizard. Tell Hairycles if you succeed with mission.', cid)
@@ -387,6 +422,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Me sad. Please reconsider.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 18 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('Friend of the ape people! Take my gift and become me apprentice! Here is shaman clothing for you!', cid)
@@ -398,6 +434,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Come back if change mind.', cid)
 		end
 		npcHandler.topic[cid] = 0
+
 	elseif npcHandler.topic[cid] == 19 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeItem(8111, 1) then

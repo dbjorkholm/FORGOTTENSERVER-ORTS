@@ -73,7 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("It will be a hard task which requires many sacrifices. Do you still want to proceed?", cid)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
-			npcHandler:say("Good decision, " .. player:getName() .. ". Your first sacrifice will be a medusa shield. Bring it to me and do give it happily.", cid)
+			npcHandler:say("Good decision, |PLAYERNAME|. Your first sacrifice will be a medusa shield. Bring it to me and do give it happily.", cid)
 			player:setStorageValue(Storage.OutfitQuest.WizardAddon, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0

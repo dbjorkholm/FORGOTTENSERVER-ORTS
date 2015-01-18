@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ah, you want to replace your adventurer's stone for 30 gold?", cid)
 			npcHandler.topic[cid] = 3
 		end
-	
+
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, "yes") then
 			if player:hasBlessing(6) then
