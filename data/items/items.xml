@@ -15485,7 +15485,7 @@
 	<item id="8843" article="an" name="onion">
 		<attribute key="weight" value="140" />
 	</item>
-	<item id="8844" name="jalapeño pepper" article="a">
+	<item id="8844" article="a" name="jalapeño pepper">
 		<attribute key="weight" value="30" />
 	</item>
 	<item id="8845" article="a" name="beetroot">
@@ -28922,7 +28922,7 @@
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="undead" />
 	</item>
-	<item id="21367" article="a" name="dead enraged soul">
+	<item id="21368" article="a" name="dead enraged soul">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="21372" />
 		<attribute key="duration" value="10" />
@@ -29228,6 +29228,7 @@
 		<attribute key="description" value="This coal is smoking and emmits quite a stench." />
 		<attribute key="weight" value="1000" />
 	</item>
+	<item fromid="21605" toid="21636" name="grey sand" />
 	<item id="21644" article="a" name="large berg crystal" />
 	<item fromid="21645" toid="21646" name="large berg crystals" />
 	<item id="21647" article="a" name="berg crystal" />
@@ -29322,6 +29323,7 @@
 		<attribute key="description" value="It is said to freeze time itself to capture your fondest memories. Awarded by TibiaEvents.com" />
 		<attribute key="weight" value="2000" />
 	</item>
+	<item fromid="21892" toid="21923" name="wasteland" />
 	<item fromid="22133" toid="22134" name="instable vortex">
 		<attribute key="description" value="This vortex seems suck you right in.." />
 	</item>
@@ -29334,6 +29336,16 @@
 	<item id="21925" article="a" name="ruined stair">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item id="22009" article="a" name="dark cypress" />
+	<item fromid="22010" toid="22011" article="a" name="tall dark cypress" />
+	<item id="22024" article="a" name="dusky cypress" />
+	<item id="22026" article="a" name="tall dusky cypress" />
+	<item id="22063" article="a" name="gloomy cy press" />
+	<item id="22106" article="an" name="ichor thistle" />
+	<item fromid="22107" toid="22109" article="a" name="small ichor thistle" />
+	<item fromid="22110" toid="22111" article="a" name="small rock needle" />
+	<item fromid="22112" toid="22113" article="a" name="rock needle" />
+	<item fromid="22114" toid="22117" article="a" name="small rock needle" />
 	<item id="22363" name="broken dream">
 		<attribute key="description" value="The fragment of a dream. Strange pictures seem to flit through the shards." />
 		<attribute key="weight" value="10" />
@@ -30052,6 +30064,7 @@
 	<item id="22649" article="a" name="snowflake tapestry">
 		<attribute key="weight" value="1000" />
 	</item>
+	<item id="22657" article="an" name="flying carpet" />
 	<item fromid="22662" toid="22666" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>

@@ -327,3 +327,10 @@ Pick only one item Quests (system.lua)
 
 Marid Entrance Door
 	aid: 50718
+
+Efreet Entrance Door
+	aid: 50719
+
+Roshamuul Carpet
+	aid: 4256
+
