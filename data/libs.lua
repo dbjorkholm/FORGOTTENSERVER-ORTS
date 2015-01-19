@@ -9,7 +9,6 @@ dofile('data/lib/055-teleport_item_destinations.lua')
 
 dofile('data/lib/demonOakQuest.lua')
 dofile('data/lib/killingInTheNameOfQuest.lua')
-dofile('data/lib/missionSelect.lua')
 dofile('data/lib/svargrondArenaQuest.lua')
 dofile('data/lib/achievements_lib.lua')
 

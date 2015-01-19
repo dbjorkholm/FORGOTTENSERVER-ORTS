@@ -32,7 +32,7 @@
 	</elements>
 	<voices interval="5000" chance="10">
 		<voice sentence="Kroaaah!!"/>
-		<voice sentence="Butak <crooooarck> bana zamar!"/>
+		<voice sentence="Butak &lt;crooooarck&gt; bana zamar!"/>
 		<voice sentence="Krrrooow truaaak kiiiii!"/>
 	</voices>
 	<loot>

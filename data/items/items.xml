@@ -29868,6 +29868,11 @@
 	<item id="22541" article="a" name="pool of chitinous glue">
 		<attribute key="weight" value="270" />
 	</item>
+	<item id="22543" article="an" name="unstable ring of ending">
+		<attribute key="weight" value="60" />
+		<attribute key="description" value="Something is happening to this ring." />
+		<attribute key="slotType" value="ring" />
+	</item>
 	<item id="22546" article="a" name="dead demon outcast">
 		<attribute key="containerSize" value="20" />
 		<attribute key="decayTo" value="22547" />
