@@ -297,7 +297,6 @@
 	<action uniqueid="3070" script="koshei amulet quest/switch.lua"/>
 
 	<!-- Pits Of Inferno Quest -->
-	<action actionid="2023" script="pits of inferno quest/graveStone.lua"/>
 	<action actionid="8815" script="pits of inferno quest/fountain.lua"/>
 	<action actionid="2022" script="pits of inferno quest/goshnar.lua"/>
 	<action fromuid="2050" touid="2065" script="pits of inferno quest/levers.lua"/>
