@@ -7,14 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function greetCallback(cid, message)
-	if not msgcontains(message, 'djanni\'hah') and Player(cid):getStorageValue(Storage.DjinnWar.EfreetFaction.Mission03) < 3 then
-		return false
-	end
-
-	return true
-end
-
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -102,7 +94,6 @@ npcHandler:setMessage(MESSAGE_FAREWELL, "Farewell, human.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Farewell, human.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, 'At your service, just browse through my wares.')
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_ONTRADEREQUEST, onTradeRequest)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 

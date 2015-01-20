@@ -56,7 +56,7 @@ local function onTradeRequest(cid)
 	return true
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "<Sighs> Another {customer\! I've only just sat down! What is it, |PLAYERNAME|?")
+npcHandler:setMessage(MESSAGE_GREET, "<Sighs> Another {customer}! I've only just sat down! What is it, |PLAYERNAME|?")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Bye now, Neutrala |PLAYERNAME|. Visit old Bob again one day!")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Bye then.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, 'At your service, just browse through my wares.')

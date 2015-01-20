@@ -14,7 +14,7 @@
 			ring of healing, 2216, 2000;
 			silver amulet, 2170, 100;
 			strange talisman, 2161, 100;
-			time ring, 2169, 2000;" />
+			time ring, 2169, 2000" />
 		<parameter key="shop_sellable" value="
 			dragon necklace, 2201, 100;
 			dwarven ring, 2213, 100;
@@ -37,6 +37,6 @@
 			snakebite rod, 2182, 100;
 			springsprout rod, 8912, 3600;
 			terra rod, 2181, 2000;
-			underworld rod, 8910, 4400;" />
+			underworld rod, 8910, 4400" />
 	</parameters>
 </npc>

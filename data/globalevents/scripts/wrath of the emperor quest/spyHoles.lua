@@ -13,13 +13,11 @@ function onThink(interval, lastExecution)
 		return true
 	end
 
-	local tile
+	local item
 	for i = 1, #positions do
-		tile = Tile(positions[i]):getItemById(12214)
-		if tile then
-			tile:transform(12213)
-		else
-			tile:transform(12214)
+		item = Tile(positions[i]):getThing(1)
+		if item and isInArray({12213, 12214}, item.itemid) then
+			item:transform(item.itemid == 12213 and 12214 or 12213)
 		end
 	end
 
