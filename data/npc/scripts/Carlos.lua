@@ -16,6 +16,14 @@ local voices = {
 }
 npcHandler:addModule(VoiceModule:new(voices))
 
+local function setNewTradeTable(table)
+	local items = {}
+	for _, v in ipairs(table) do
+		items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
+	end
+	return items
+end
+
 local function getTable()
 	local itemsList = {
 		{name="meat", id=2666, sell=2},

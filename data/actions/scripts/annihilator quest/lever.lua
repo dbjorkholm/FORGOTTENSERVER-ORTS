@@ -27,39 +27,45 @@ local config = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1946 then
-		local players = {}
-		local continue = true
-		for _, positions in ipairs(config.playerPositions) do
-			local playerTile = Tile(positions):getTopCreature()
-			if not playerTile or not playerTile:isPlayer() or playerTile:getLevel() < config.requiredLevel then
-				return false
+		local storePlayers, playerTile = {}
+
+		for i = 1, #config.playerPositions do
+			playerTile = Tile(config.playerPositions[i]):getTopCreature()
+			if not playerTile or not playerTile:isPlayer() then
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, "You need 4 players.")
+				return true
 			end
-			players[#players+1] = playerTile
+
+			if playerTile:getLevel() < config.requiredLevel then
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, "All the players need to be level ".. config.requiredLevel .." or higher.")
+				return true
+			end
+
+			storePlayers[#storePlayers + 1] = playerTile
 		end
 
-		local specs = Game.getSpectators(config.centerDemonRoomPosition, false, false, 3, 3, 2, 2)
+		local specs, spec = Game.getSpectators(config.centerDemonRoomPosition, false, false, 3, 3, 2, 2)
 		for i = 1, #specs do
-			if specs[i]:isPlayer() then
+			spec = specs[i]
+			if spec:isPlayer() then
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, "A team is already inside the quest room.")
-				continue = false
-				break
+				return true
 			end
-			specs[i]:remove()
-		end
 
-		if not continue then
-			return true
+			spec:remove()
 		end
 
 		for i = 1, #config.demonPositions do
 			Game.createMonster("Demon", config.demonPositions[i])
 		end
 
-		for i, tablePlayer in ipairs(players) do
+		local players
+		for i = 1, #storePlayers do
+			players = storePlayers[i]
 			config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
-			tablePlayer:teleportTo(config.newPositions[i])
-			tablePlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
-			tablePlayer:setDirection(EAST)
+			players:teleportTo(config.newPositions[i])
+			config.newPositions[i]:sendMagicEffect(CONST_ME_ENERGYAREA)
+			players:setDirection(EAST)
 		end
 	elseif item.itemid == 1945 then
 		if config.daily then

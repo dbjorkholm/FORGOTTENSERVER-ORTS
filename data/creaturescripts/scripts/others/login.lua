@@ -16,7 +16,6 @@ local events = {
 	'InquisitionUngreez',
 	'KillingInTheNameOfKills',
 	'MastersVoiceServants',
-	'PharaoKillPortal',
 	'SecretServiceBlackKnight',
 	'ThievesGuildNomad',
 	'WotELizardMagistratus',

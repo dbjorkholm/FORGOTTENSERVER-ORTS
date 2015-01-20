@@ -92,7 +92,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				toPosition.y = toPosition.y + 1
 				local creatures, destination = Tile(toPosition):getCreatures(), Position(32791, 32332, 10)
 				if #creatures == 0 then
-					graveStoneTeleport(player.uid, toPosition, destination)
+					graveStoneTeleport(player.uid, fromPosition, destination)
 				else
 					local creature
 					for i = 1, #creatures do

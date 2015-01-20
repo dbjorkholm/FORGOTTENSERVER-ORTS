@@ -34,6 +34,10 @@
 		<voice sentence="Let's kill 'em"/>
 		<voice sentence="Arrrgh!"/>
 		<voice sentence="You'll never take me alive!"/>
+<<<<<<< HEAD
+=======
+		<voice sentence="§%§&amp;§! #*$§$!!"/>
+>>>>>>> eb5dd8dad0a8db9b2f2ba4574056709afedd817b
 		<voice sentence="You won't get me alive!"/>
 	</voices>
 	<loot>
