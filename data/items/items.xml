@@ -29868,6 +29868,9 @@
 	<item id="22541" article="a" name="pool of chitinous glue">
 		<attribute key="weight" value="270" />
 	</item>
+	<item id="22542" article="a" name="pool of chitinous glue">
+		<attribute key="weight" value="0.01" />
+		<attribute key="description" value="This extraordinary smooth string feels quite cool to the touch." />
 	<item id="22543" article="an" name="unstable ring of ending">
 		<attribute key="weight" value="60" />
 		<attribute key="description" value="Something is happening to this ring." />
