@@ -35,9 +35,6 @@
 	<!-- The Masters Voice Quest -->
 	<event type="kill" name="MastersVoiceServants" script="their master's voice quest/ServantsKill.lua"/>
 
-	<!-- Pharaos: Portal to reward room -->
-	<event type="kill" name="PharaoKillPortal" script="others/pharaoPortal.lua"/>
-
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
 
