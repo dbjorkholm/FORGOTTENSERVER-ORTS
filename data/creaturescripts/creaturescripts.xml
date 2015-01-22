@@ -48,6 +48,9 @@
 	<event type="kill" name="WotEBosses" script="wrath of the emperor quest/bosses.lua"/>
 	<event type="kill" name="WotEZalamon" script="wrath of the emperor quest/zalamon.lua"/>
 
+	<!-- Pythius The Rotten (Firewalker Boots Quest) -->
+	<event type="kill" name="PythiusTheRotten" script="others/PythiusTheRotten.lua"/>
+
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
