@@ -71,6 +71,16 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
+function iterateArea(func, from, to)
+	for z = from.z, to.z do
+		for y = from.y, to.y do
+			for x = from.x, to.x do
+				func(Position(x, y, z))
+			end
+		end
+	end
+end
+
 -- Game --
 function Game.getPlayersByIPAddress(ip, mask)
 	if not mask then mask = 0xFFFFFFFF end

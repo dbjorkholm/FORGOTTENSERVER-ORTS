@@ -245,7 +245,7 @@
 	<movevent event="StepIn" actionid="50116" script="the hidden city of beregar/tunnel.lua"/>
 	<movevent event="StepIn" uniqueid="50107" script="the hidden city of beregar/bellow.lua"/>
 	<movevent event="StepIn" uniqueid="50127" script="the hidden city of beregar/pythiusTeleport.lua"/>
-	<movevent event="StepIn" actionid="50126" script="the hidden city of beregar/pythiusBossTeleport.lua"/>
+	<movevent event="StepIn" fromaid="50125" toaid="50126" script="the hidden city of beregar/pythiusBossTeleport.lua"/>
 
 	<!-- Secret Service Quest -->
 	<movevent event="StepIn" actionid="12571" script="secret service/pirates.lua"/>

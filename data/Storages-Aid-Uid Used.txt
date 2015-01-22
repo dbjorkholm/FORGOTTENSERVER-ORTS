@@ -334,3 +334,6 @@ Efreet Entrance Door
 Roshamuul Carpet
 	aid: 4256
 
+Pythius The Rotten
+	aid: 50125-50127
+	storage: 9130, 12609

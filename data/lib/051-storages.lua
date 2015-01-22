@@ -709,6 +709,8 @@ Storage = {
 
 		DCQGhoul = 9155,
 
+		FirewalkerBoots = 9130,
+
 		DeeperFibulaKey = 9136,
 
 		SixRubiesQuest = 50057,

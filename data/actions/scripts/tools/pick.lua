@@ -66,11 +66,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			target:decay()
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
+
 	elseif target.itemid == 7200 then
 		target:transform(7236)
 		target:decay()
 		toPosition:sendMagicEffect(CONST_ME_HITAREA)
 	end
+
 	--The Ice Islands Quest, Nibelor 1: Breaking the Ice
 	if target.itemid == 3621 and target.actionid == 12026 then
 		local tile1 = toPosition:getTile()
@@ -88,6 +90,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:setStorageValue(Storage.TheIceIslands.Mission02, 4) -- Questlog The Ice Islands Quest, Nibelor 1: Breaking the Ice
 			end
 		end
+
 	elseif target.itemid == 1304 then
 		--The Pits of Inferno Quest
 		if target.uid == 1022 then
@@ -96,6 +99,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 			target:transform(2256)
 			toPosition:sendMagicEffect(CONST_ME_SMOKE)
+
 		-- naginata quest
 		elseif target.actionid == 50058 then
 			local cStorage = GlobalStorage.NaginataStone
@@ -110,60 +114,67 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 			doTargetCombatHealth(0, player, COMBAT_PHYSICALDAMAGE, -31, -39, CONST_ME_NONE)
 		end
+
 	 --The Banshee Quest
 	elseif target.itemid == 9025 and target.actionid == 101 then
 		target:transform(392)
 		target:decay()
 		toPosition:sendMagicEffect(CONST_ME_POFF)
+
 	 -- The Hidden City of Beregar Quest
 	elseif target.actionid == 50090 then
 		if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) == 1 then
 			player:teleportTo(Position(32566, 31338, 10))
 		end
+
 	elseif target.actionid == 50114 then
 		if Tile(Position(32617, 31513, 9)):getItemById(1027) and Tile(Position(32617, 31514, 9)):getItemById(1205) then
 			Tile(Position(32619, 31514, 9)):getItemById(5709):remove()
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You can't remove this pile since it's currently holding up the tunnel.")
 		end
+
 	elseif target.actionid == 50127 then
-		local positions = {
-			Position(32551, 31379, 15),
-			Position(32551, 31378, 15),
-			Position(32551, 31377, 15),
-			Position(32551, 31376, 15),
-			Position(32551, 31375, 15),
-			Position(32551, 31374, 15),
-			Position(32551, 31373, 15),
+		if player:getStorageValue(Storage.QuestChests.FirewalkerBoots) == 1 then
+			return false
+		end
+
+		target:remove()
+
+		local stoneItem = Tile(toPosition):getItemById(1304)
+		if stoneItem then
+			stoneItem:remove()
+		end
+
+		local groundItem
+		iterateArea(
+			function(position)
+				groundItem = Tile(position):getGround()
+				if groundItem and groundItem.itemid == 598 then
+					groundItem:transform(5815)
+				end
+			end,
 			Position(32550, 31373, 15),
-			Position(32550, 31374, 15),
-			Position(32550, 31375, 15),
-			Position(32550, 31376, 15),
-			Position(32550, 31377, 15),
-			Position(32550, 31378, 15),
-			Position(32550, 31379, 15)
-		}
-		local tile = Tile(Position(32551, 31379, 15))
-		if tile:getItemById(9341) then
-			tile:getItemById(9341):remove()
-		end
-		if tile:getItemById(1304) then
-			tile:getItemById(1304):remove()
-		end
-		for i = 1, #positions do
-			local ground = Tile(positions[i]):getGround()
-			if ground and ground.itemid == 598 then
-				ground:transform(5815)
-			end
-		end
+			Position(32551, 31379, 15)
+		)
+		iterateArea(
+			function(position)
+				position:sendMagicEffect(CONST_ME_POFF)
+			end,
+			Position(32551, 31374, 15),
+			Position(32551, 31379, 15)
+		)
+
 		local portal = Game.createItem(1387, 1, Position(32551, 31376, 15))
 		if portal then
 			portal:setActionId(50126)
 		end
+
 	-- Wrath of the emperor quest
 	elseif target.itemid == 12296 then
 		player:addItem(12295, 1)
 		player:say("The cracked part of the table lets you cut out a large chunk of wood with your pick.", TALKTYPE_MONSTER_SAY)
+
 	elseif target.itemid == 22671 then
 		target:transform(392)
 		target:decay()
