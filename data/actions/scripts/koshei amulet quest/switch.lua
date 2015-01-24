@@ -6,7 +6,7 @@ local config = {
 	{position = Position(33284, 32450, 8), itemId = 3697}
 }
 
-local coffinPosition = Position(33273, 32452, 8)
+local coffinPosition = Position(33273, 32458, 8)
 
 local function revertCoffin()
 	local coffinItem = Tile(coffinPosition):getItemById(7525)
