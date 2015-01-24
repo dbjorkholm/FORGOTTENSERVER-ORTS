@@ -248,7 +248,7 @@
 	<action fromid="7844" toid="7846" script="dreamer challenge quest/documents.lua"/>
 	<action uniqueid="2004" script="dreamer challenge quest/stoneTeleport.lua"/>
 	<action uniqueid="2272" script="dreamer challenge quest/ticTac.lua"/>
-	<action uniqueid="2003" script="dreamer challenge quest/ticTacTeleport.lua"/>
+	<action actionid="8033" script="dreamer challenge quest/ticTacTeleport.lua"/>
 	<action fromuid="2246" touid="2249" script="dreamer challenge quest/walls.lua"/>
 
 	<!-- Druid Outfit Quest -->

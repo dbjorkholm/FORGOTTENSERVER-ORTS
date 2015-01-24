@@ -714,6 +714,9 @@
 			<missionstate id="5" description="You informed emperor Rehal about your recent discoveries and he acquitted Nokmir of being a thief."/>
 			<missionstate id="6" description="You told Nokmir about his acquittal and he granted you access to the northern mine."/>
 		</mission>
+		<mission name="Pythius the Rotten" storageid="9130" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You won the battle against the malicious undead dragon Pythius the Rotten. He granted you firewalker boots as a reward."/>
+		</mission>
 		<mission name="Sweet as Chocolate Cake" storageid="12606" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Bake a Chocolate Cake and bring it to Bolfona at the bar."/>
 			<missionstate id="2" description="Report back to Frafnar by telling him about the mission."/>

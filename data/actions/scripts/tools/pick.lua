@@ -146,10 +146,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			stoneItem:remove()
 		end
 
-		local groundItem
 		iterateArea(
 			function(position)
-				groundItem = Tile(position):getGround()
+				local groundItem groundItem = Tile(position):getGround()
 				if groundItem and groundItem.itemid == 598 then
 					groundItem:transform(5815)
 				end

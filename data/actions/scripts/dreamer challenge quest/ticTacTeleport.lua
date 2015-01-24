@@ -13,9 +13,18 @@ local config = {
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	item:transform(item.itemid == 1945 and 1946 or 1945)
 
-	if item.itemid ~= 1945 then
-		return true
-	end
+	iterateArea(
+		function(position)
+			local pillar = Tile(position):getItemById(1515)
+			if pillar then
+				pillar:remove()
+			else
+				Game.createItem(1515, 1, position)
+			end
+		end,
+		Position(32835, 32285, 14),
+		Position(32838, 32285, 14)
+	)
 
 	local tokens, ticTacToeItem = true
 	for i = 1, #config do
@@ -30,21 +39,26 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	for i = 1, #config do
-		ticTacToeItem = Tile(config[i].position):getItemById(config[i].itemId)
-		if ticTacToeItem then
-			ticTacToeItem:remove()
+	local position = Position(32836, 32288, 14)
+	if item.itemid == 1945 then
+		local crack = Tile(position):getItemById(6299)
+		if crack then
+			crack:remove()
+
+			local teleport = Game.createItem(1387, 1, position)
+			if teleport then
+				teleport:setActionId(9032)
+			end
+		end
+
+	else
+
+		local teleport = Tile(position):getItemById(1387)
+		if teleport then
+			teleport:remove()
+			Game.createItem(6299, 1, position)
 		end
 	end
 
-	local crackPosition = Position(32836, 32288, 14)
-	local crack = Tile(crackPosition):getItemById(6299)
-	if crack then
-		crack:remove()
-		local teleport = Game.createItem(1387, 1, crackPosition)
-		if teleport then
-			teleport:setActionId(9032)
-		end
-	end
 	return true
 end

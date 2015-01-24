@@ -13,6 +13,10 @@ local questsExperience = {
 	[2217] = 1 -- dummy values
 }
 
+local questLog = {
+	[9130] = Storage.hiddenCityOfBeregar.DefaultStart
+}
+
 local tutorialIds = {
 	[50080] = 5,
 	[50082] = 6,
@@ -97,6 +101,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if questsExperience[storage] then
 		player:addExperience(questsExperience[storage], true)
+	end
+
+	if questLog[storage] then
+		player:setStorageValue(questLog[storage], 1)
 	end
 
 	if tutorialIds[storage] then

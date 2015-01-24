@@ -190,8 +190,8 @@
 	<movevent event="StepIn" uniqueid="2243" script="dreamer challenge quest/fireBugTeleport.lua"/>
 	<movevent event="StepIn" fromaid="2245" toaid="2246" script="dreamer challenge quest/riddle.lua"/>
 	<movevent event="StepOut" fromaid="2245" toaid="2246" script="dreamer challenge quest/riddle.lua"/>
-	<movevent event="StepIn" actionid="8033" script="dreamer challenge quest/riddleTeleport.lua"/>
 	<movevent event="StepIn" actionid="9031" script="dreamer challenge quest/stoneTeleport.lua"/>
+	<movevent event="AddItem" tileitem="1" actionid="8034" script="dreamer challenge quest/stoneTeleport.lua"/>
 	<movevent event="StepIn" fromuid="2250" touid="2255" script="dreamer challenge quest/teleports.lua"/>
 	<movevent event="StepIn" actionid="9032" script="dreamer challenge quest/ticTeleport.lua"/>
 	<movevent event="StepIn" fromuid="3048" touid="3056" script="dreamer challenge quest/tower.lua"/>

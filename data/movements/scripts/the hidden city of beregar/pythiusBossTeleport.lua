@@ -22,10 +22,10 @@ function onStepIn(creature, item, position, fromPosition)
 
 		item:remove()
 
-		local steamPosition, groundItem = Position(32551, 31379, 15)
+		local steamPosition = Position(32551, 31379, 15)
 		iterateArea(
 			function(position)
-				groundItem = Tile(position):getGround()
+				local groundItem = Tile(position):getGround()
 				if groundItem and groundItem.itemid == 5815 then
 					groundItem:transform(598)
 				end
