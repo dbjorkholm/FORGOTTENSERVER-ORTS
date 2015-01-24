@@ -1,6 +1,6 @@
 local config = {
 	sacrifices = {
-		{position = Position(32878, 32270, 14), itemId = 2025},
+		{position = Position(32878, 32270, 14), itemId = 2016},
 		{position = Position(32881, 32267, 14), itemId = 2168},
 		{position = Position(32881, 32273, 14), itemId = 6300},
 		{position = Position(32884, 32270, 14), itemId = 1487}
