@@ -25,7 +25,7 @@ Note: 	This lib was created following the data found in tibia.wikia.com.
 		Achievements with no points (or points equal to 0) are achievements with no available info about points in tibia.wikia.com. These achievements should be updated
 ]]
 
-ACHIEVEMENTS_BASE = 30000 -- base storage
+ACHIEVEMENTS_BASE = 300000 -- base storage
 ACHIEVEMENTS_ACTION_BASE = 20000 	--this storage will be used to save the process to obtain the certain achievement
 									--(Ex: this storage + the id of achievement 'Allowance Collector' to save...
 									-- ...how many piggy banks has been broken
