@@ -19,6 +19,9 @@
 	<action itemid="18559" script="adventurers guild/adventurers_stone.lua"/>
 	<action fromid="19598" toid="19599" script="adventurers guild/magicdoor.lua"/>
 
+	<!-- Mount Ursagrodon -->
+	<action itemid="22721" script="chyllfroest/tinderBox.lua"/>
+
 	<!-- What a foolish Quest -->
 	<action itemid="7478" script="what a foolish quest/flask.lua" />
 	<action itemid="7482" script="what a foolish quest/crate.lua" />
