@@ -159,7 +159,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 5
 		end
 	elseif msgcontains(msg, 'mission') then
-		if player:getStorageValue(Storage.secretService.Quest) == 1 and player:getStorageValue(Storage.secretService.AVINMission01) == 0 and player:getStorageValue(Storage.secretService.CGBMission01) == 0 then
+		if player:getStorageValue(Storage.secretService.Quest) == 1 and player:getStorageValue(Storage.secretService.AVINMission01) <= 0 and player:getStorageValue(Storage.secretService.CGBMission01) <= 0 then
 			player:setStorageValue(Storage.secretService.Quest, 2)
 			player:setStorageValue(Storage.secretService.TBIMission01, 1)
 			npcHandler:say({
