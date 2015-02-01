@@ -65,7 +65,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
 			players:teleportTo(config.newPositions[i])
 			config.newPositions[i]:sendMagicEffect(CONST_ME_ENERGYAREA)
-			players:setDirection(EAST)
+			players:setDirection(DIRECTION_EAST)
 		end
 	elseif item.itemid == 1945 then
 		if config.daily then

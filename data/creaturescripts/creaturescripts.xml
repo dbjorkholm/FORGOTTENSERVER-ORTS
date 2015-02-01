@@ -56,6 +56,7 @@
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
 
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
+	<event type="death" name="DropLoot" script="others/droploot.lua"/>
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua"/>
 	<event type="death" name="WhiteDeerDeath" script="others/whitedeer.lua"/>
 	<event type="death" name="WhiteDeerScoutsDeath" script="others/whitedeer_scouts.lua"/>

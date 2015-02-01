@@ -11,7 +11,7 @@ function onStepIn(creature, item, position, fromPosition)
 		player:say('You have to be a honorary barbarian to access the roof. Talk to the Jarl about it.', TALKTYPE_MONSTER_SAY)
 	end
 
-	player:setDirection(EAST)
+	player:setDirection(DIRECTION_EAST)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	return true
 end

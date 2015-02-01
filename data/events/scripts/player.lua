@@ -146,7 +146,17 @@ function Player:onTradeAccept(target, item, targetItem)
 	return true
 end
 
+local soulCondition = Condition(CONDITION_SOUL, CONDITIONID_DEFAULT)
+soulCondition:setTicks(4 * 60 * 1000)
+soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
+
 function Player:onGainExperience(source, exp, rawExp)
+	local vocation = self:getVocation()
+	if self:getSoul() < vocation:getMaxSoul() and exp >= self:getLevel() then
+		soulCondition:setParameter(CONDITION_PARAM_SOULTICKS, vocation:getSoulGainTicks() * 1000)
+		self:addCondition(soulCondition)
+	end
+
 	return exp
 end
 

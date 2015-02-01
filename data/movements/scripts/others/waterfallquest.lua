@@ -22,12 +22,12 @@ function onStepIn(creature, item, position, fromPosition)
 	-- Teleport when entering the waterfall / cave
 	elseif position.x == 32968 and position.y == 32629 and position.z == 7 then
 		player:teleportTo(config.caveEntrancePosition)
-		player:setDirection(SOUTH)
+		player:setDirection(DIRECTION_SOUTH)
 
 	-- Leaving the cave through teleport
 	elseif position.x == 32967 and position.y == 32630 and position.z == 8 then
 		player:teleportTo(config.caveExitPosition)
-		player:setDirection(EAST)
+		player:setDirection(DIRECTION_EAST)
 	end
 	return true
 end

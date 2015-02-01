@@ -15,7 +15,7 @@ function onStepIn(creature, item, position, fromPosition)
 		elseif chance == 2 then
 			position.y = position.y + 1
 			player:teleportTo(position, true)
-			player:setDirection(SOUTH)
+			player:setDirection(DIRECTION_SOUTH)
 		elseif chance == 3 then
 			player:addCondition(condition)
 		end

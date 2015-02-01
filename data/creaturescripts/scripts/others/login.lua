@@ -26,7 +26,8 @@ local events = {
 	'PlayerDeath',
 	'AdvanceSave',
 	'AdvanceRookgaard',
-	'PythiusTheRotten'
+	'PythiusTheRotten',
+	'DropLoot'
 }
 
 local function onMovementRemoveProtection(cid, oldPosition, time)
