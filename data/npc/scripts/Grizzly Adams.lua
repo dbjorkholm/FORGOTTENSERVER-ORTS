@@ -208,7 +208,7 @@ local function creatureSayCallback(cid, type, msg)
 					end
 
 					player:setStorageValue(QUESTSTORAGE_BASE + id, (tasks[id].norepeatable and 2 or 0))
-					player:setStorageValue(KILLSSTORAGE_BASE + id, 0)
+					player:setStorageValue(KILLSSTORAGE_BASE + id, -1)
 					player:setStorageValue(REPEATSTORAGE_BASE + id, math.max(player:getStorageValue(REPEATSTORAGE_BASE + id), 0))
 					player:setStorageValue(REPEATSTORAGE_BASE + id, player:getStorageValue(REPEATSTORAGE_BASE + id) + 1)
 					finishedAtLeastOne = true
