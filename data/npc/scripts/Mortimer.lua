@@ -300,7 +300,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:setStorageValue(Storage.ExplorerSociety.QuestLine, 1)
 		elseif npcHandler.topic[cid] == 3 then
-			if player:removeItem(11421, 1) then
+			if player:removeItem(4848, 1) then
 				player:setStorageValue(Storage.ExplorerSociety.QuestLine, 4)
 				npcHandler:say({
 					"Excellent, you brought just the tool we need! Of course it was only a simple task. However ...",
@@ -317,7 +317,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			player:addItem(4856, 1)
 		elseif npcHandler.topic[cid] == 5 then
-			if player:removeItem(4848, 1) then
+			if player:removeItem(11421, 1) then
 				player:setStorageValue(Storage.ExplorerSociety.QuestLine, 7)
 				npcHandler:say("Just in time. Sadly not much ice is left over but it will do. Thank you again.", cid)
 				npcHandler.topic[cid] = 0

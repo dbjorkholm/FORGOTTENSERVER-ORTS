@@ -54,6 +54,9 @@
 	<!-- Others -->
 	<event type="login" name="PlayerLogin" script="others/login.lua"/>
 	<event type="login" name="FirstItems" script="others/firstitems.lua"/>
+	<event type="login" name="RegenerateStamina" script="regeneratestamina.lua"/>
+
+	<event type="logout" name="PlayerLogout" script="others/logout.lua"/>
 
 	<event type="death" name="PlayerDeath" script="others/playerdeath.lua"/>
 	<event type="death" name="DropLoot" script="others/droploot.lua"/>

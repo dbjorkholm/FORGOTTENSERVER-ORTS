@@ -1,5 +1,7 @@
 dofile('data/libs.lua')
 
+nextUseStaminaTime = {}
+
 TRUE = true
 FALSE = false
 
