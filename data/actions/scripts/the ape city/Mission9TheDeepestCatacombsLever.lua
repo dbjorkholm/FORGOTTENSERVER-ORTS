@@ -41,15 +41,15 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if isInArray(config.leverPositions, position) then
+	if isInArray(config.leverPositions, toPosition) then
 		item:transform(1946)
-		addEvent(revertLever, config.leverTime * 1000, position)
+		addEvent(revertLever, config.leverTime * 1000, toPosition)
 		return true
 	end
 
 	local gateLever
 	for i = 1, #config.gateLevers do
-		if position == config.gateLevers[i].position then
+		if toPosition == config.gateLevers[i].position then
 			gateLever = config.gateLevers[i]
 			break
 		end
@@ -73,7 +73,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	for i = 1, #config.walls do
 		local wallItem = Tile(config.walls[i].position):getItemById(config.walls[i].itemId)
 		if not wallItem then
-			player:say('The lever won\'t budge', TALKTYPE_MONSTER_SAY, false, nil, position)
+			player:say('The lever won\'t budge', TALKTYPE_MONSTER_SAY, false, nil, toPosition)
 			return true
 		end
 
@@ -81,7 +81,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		config.walls[i].position:sendMagicEffect(CONST_ME_MAGIC_RED)
 	end
 
-	addEvent(revertWalls, gateLever.duration * 1000, position)
+	addEvent(revertWalls, gateLever.duration * 1000, toPosition)
 	item:transform(1946)
 	return true
 end
