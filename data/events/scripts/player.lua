@@ -158,7 +158,8 @@ local function useStamina(player)
 
 	local playerId = player.uid
 	local currentTime = os.time()
-	local timePassed = currentTime - nextUseStaminaTime[playerId]
+	local staminaTable = Game.getStorageValue("stamina")
+	local timePassed = currentTime - staminaTable[playerId]
 	if timePassed <= 0 then
 		return
 	end
@@ -169,10 +170,10 @@ local function useStamina(player)
 		else
 			staminaMinutes = 0
 		end
-		nextUseStaminaTime[playerId] = currentTime + 120
+		staminaTable[playerId] = currentTime + 120
 	else
 		staminaMinutes = staminaMinutes - 1
-		nextUseStaminaTime[playerId] = currentTime + 60
+		staminaTable[playerId] = currentTime + 60
 	end
 	player:setStamina(staminaMinutes)
 end

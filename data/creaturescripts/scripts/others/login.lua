@@ -59,7 +59,8 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
-	nextUseStaminaTime[player.uid] = 0
+	local staminaTable = Game.getStorageValue("stamina")
+	staminaTable[player.uid] = 0
 
 	for i = 1, #events do
 		player:registerEvent(events[i])

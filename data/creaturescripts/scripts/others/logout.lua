@@ -1,7 +1,7 @@
 function onLogout(player)
-	local playerId = player.uid
-	if nextUseStaminaTime[playerId] then
-		nextUseStaminaTime[playerId] = nil
+	local playerId, staminaTable = player.uid, Game.getStorageValue("stamina")
+	if staminaTable[playerId] then
+		staminaTable[playerId] = nil
 	end
 	return true
 end

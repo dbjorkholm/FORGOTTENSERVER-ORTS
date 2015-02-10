@@ -1,9 +1,5 @@
 dofile('data/libs.lua')
 
-if not nextUseStaminaTime then
-	nextUseStaminaTime = {}
-end
-
 TRUE = true
 FALSE = false
 
@@ -344,3 +340,5 @@ function Game.broadcastMessage(message, messageType)
 		player:sendTextMessage(messageType, message)
 	end
 end
+
+Game.setStorageValue("stamina", {})
