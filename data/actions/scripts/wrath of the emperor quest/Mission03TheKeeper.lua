@@ -4,8 +4,8 @@ end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 12320 and target.actionid == 8026 then
-		if (Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or -1) < 5 then
-			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, math.max(0, Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) or 0) + 1)
+		if Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) < 5 then
+			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, math.max(0, Game.getStorageValue(Storage.WrathoftheEmperor.Mission03)) + 1)
 			player:say("The plant twines and twiggles even more than before, it almost looks as it would scream great pain.", TALKTYPE_MONSTER_SAY)
 		elseif Game.getStorageValue(Storage.WrathoftheEmperor.Mission03) == 5 then
 			Game.setStorageValue(Storage.WrathoftheEmperor.Mission03, 6)

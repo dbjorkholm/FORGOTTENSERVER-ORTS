@@ -102,7 +102,7 @@ end
 
 local function areMachinesCharged()
 	for i = 1, #config.machineStorages do
-		if (Game.getStorageValue(config.machineStorages[i]) or -1) <= 0 then
+		if Game.getStorageValue(config.machineStorages[i]) <= 0 then
 			return false
 		end
 	end

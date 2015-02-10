@@ -71,7 +71,7 @@ function onKill(creature, target)
 		return true
 	end
 
-	local wave, killedAmount = (Game.getStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave) or -1), (Game.getStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled) or -1)
+	local wave, killedAmount = Game.getStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave), Game.getStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled)
 	if killedAmount == #positions and wave < 25 then
 		Game.setStorageValue(GlobalStorage.TheirMastersVoice.ServantsKilled, 0)
 		Game.setStorageValue(GlobalStorage.TheirMastersVoice.CurrentServantWave, wave + 1)

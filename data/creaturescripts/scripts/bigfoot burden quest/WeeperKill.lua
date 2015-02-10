@@ -36,10 +36,9 @@ function onKill(creature, target)
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'parasite' or (Game.getStorageValue(GlobalStorage.Weeper) or -1) >= 1 then
+	if targetMonster:getName():lower() ~= 'parasite' or Game.getStorageValue(GlobalStorage.Weeper) >= 1 then
 		return true
 	end
-
 
 	local targetPosition = targetMonster:getPosition()
 	local barrier = false

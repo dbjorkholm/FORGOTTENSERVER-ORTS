@@ -28,7 +28,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local storage = Game.getStorageValue(GlobalStorage.SwordOfFury) or -1
+	local storage = Game.getStorageValue(GlobalStorage.SwordOfFury)
 	if storage ~= setting then
 		return true
 	end

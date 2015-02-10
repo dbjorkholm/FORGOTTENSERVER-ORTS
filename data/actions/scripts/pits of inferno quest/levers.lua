@@ -29,12 +29,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	local leverCount = Game.getStorageValue(GlobalStorage.PitsOfInfernoLevers)
-	if not leverCount then
-		Game.setStorageValue(GlobalStorage.PitsOfInfernoLevers, 0)
-		return true
-	end
-
+	local leverCount = math.max(0, Game.getStorageValue(GlobalStorage.PitsOfInfernoLevers))
 	if item.uid > 2049 and item.uid < 2065 then
 		local number = item.uid - 2049
 		if leverCount + 1 ~= number then

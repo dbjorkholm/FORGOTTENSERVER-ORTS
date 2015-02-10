@@ -39,7 +39,7 @@ local function executeVersperothBattle(mid)
 	local monster = Game.createMonster('Versperoth', versperothPosition, false, true)
 	if monster then
 		versperothPosition:sendMagicEffect(CONST_ME_GROUNDSHAKER)
-		monster:addHealth(-(Game.getStorageValue(GlobalStorage.Versperoth.Health) or -1))
+		monster:addHealth(-Game.getStorageValue(GlobalStorage.Versperoth.Health))
 
 		addEvent(executeVersperothBattle, 20 * 1000, monster.uid)
 	end
@@ -52,7 +52,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	if false and (Game.getStorageValue(GlobalStorage.Versperoth.Battle) or -1) >= 1 then
+	if false and Game.getStorageValue(GlobalStorage.Versperoth.Battle) >= 1 then
 		return true
 	end
 

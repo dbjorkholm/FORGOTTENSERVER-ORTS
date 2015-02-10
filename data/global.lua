@@ -126,7 +126,7 @@ if not globalStorageTable then
 end
 
 function Game.getStorageValue(key)
-	return globalStorageTable[key]
+	return globalStorageTable[key] or -1
 end
 
 function Game.setStorageValue(key, value)
