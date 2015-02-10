@@ -1,6 +1,8 @@
 dofile('data/libs.lua')
 
-nextUseStaminaTime = {}
+if not nextUseStaminaTime then
+	nextUseStaminaTime = {}
+end
 
 TRUE = true
 FALSE = false
@@ -180,24 +182,24 @@ end
 
 function Position.getNextPosition(self, direction, steps)
 	steps = steps or 1
-	if direction == WEST then
+	if direction == DIRECTION_WEST then
 		self.x = self.x - steps
-	elseif direction == EAST then
+	elseif direction == DIRECTION_EAST then
 		self.x = self.x + steps
-	elseif direction == NORTH then
+	elseif direction == DIRECTION_NORTH then
 		self.y = self.y - steps
-	elseif direction == SOUTH then
+	elseif direction == DIRECTION_SOUTH then
 		self.y = self.y + steps
-	elseif direction == NORTHWEST then
+	elseif direction == DIRECTION_NORTHWEST then
 		self.x = self.x - steps
 		self.y = self.y - steps
-	elseif direction == NORTHEAST then
+	elseif direction == DIRECTION_NORTHEAST then
 		self.x = self.x + steps
 		self.y = self.y - steps
-	elseif direction == SOUTHWEST then
+	elseif direction == DIRECTION_SOUTHWEST then
 		self.x = self.x - steps
 		self.y = self.y + steps
-	elseif direction == SOUTHEAST then
+	elseif direction == DIRECTION_SOUTHEAST then
 		self.x = self.x + steps
 		self.y = self.y + steps
 	end
