@@ -5,7 +5,7 @@
 <voices>
 <voice text="Hey, need some furniture for your house? Come to my shop!" interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="module_shop" value="1" />
 <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="furniture;" />

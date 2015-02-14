@@ -5,7 +5,7 @@
 <voices>
 <voice text="Food! Food! Best food in world from best cook in world!" interval2="120" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Welcome to my tavern!" />
 		<parameter key="message_decline" value="Okay." />
 		<parameter key="message_farewell" value="Goodbye, and come again!" />

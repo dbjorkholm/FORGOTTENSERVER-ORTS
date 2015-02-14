@@ -5,7 +5,7 @@
 <voices>
 <voice text="Wonderful and stylish clothes! Come and buy!" interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Welcome, |PLAYERNAME|. You look as if you need new clothes." />
 		<parameter key="message_farewell" value="Bye, bye." />
 		<parameter key="message_walkaway" value="Bye, bye." />

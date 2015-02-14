@@ -5,7 +5,7 @@
 	<voices>
 <voice text="Gems and precious jewellery for sale!" interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Salutations, |PLAYERNAME|! I trade with various rare gems." />
 		<parameter key="message_needmoremoney" value="You don't have enough cash to afford it!" />
 		<parameter key="message_decline" value="Then not." />

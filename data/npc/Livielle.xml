@@ -5,7 +5,7 @@
 <voices>
 <voice text="Ah, salut! Come 'ere and 'ave some of my delicious fruits!" interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Ah, 'ello, |PLAYERNAME|! I can see you're longing for my delicious {fruits}, ch?ri." />
 		<parameter key="message_farewell" value="Bon app?tit, and come back soon for your daily dose of vitamins!" />
 		<parameter key="module_keywords" value="1" />

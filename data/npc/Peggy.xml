@@ -5,7 +5,7 @@
 <voices>
 <voice text="Heya. Furniture on sale! Don't miss the opportunity." interval2="120" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Hi there, |PLAYERNAME|."/>
 		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
 		<parameter key="message_walkaway" value="Rude as a Venorean." />

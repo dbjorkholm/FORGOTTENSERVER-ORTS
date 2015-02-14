@@ -2,7 +2,7 @@
 <npc name="Romir" script="default.lua" walkinterval="2000">
 	<health now="100" max="100" />
 	<look type="153" head="19" body="48" legs="67" feet="126" addons="3" />
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Hello |PLAYERNAME|. Im selling a lot of potions but also buy a vial ask me for a {trade}." />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="avalanche rune,2274,45;

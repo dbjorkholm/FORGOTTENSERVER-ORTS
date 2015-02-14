@@ -2,7 +2,7 @@
 <npc name="Robert" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="133" head="59" body="0" legs="19" feet="95" addons="0" />
-	</parameters>
+	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 	arrow,2544,3;

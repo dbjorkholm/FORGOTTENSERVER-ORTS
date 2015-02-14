@@ -2,7 +2,7 @@
 <npc name="Frans" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look typeex="2229" head="113" body="113" legs="113" feet="115" addons="0" />
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="Beeee Greeeeted |PLAYERNAME|. What is your neeeed?" />
 		<parameter key="message_farewell" value="Bye." />
 		<parameter key="module_keywords" value="1" />

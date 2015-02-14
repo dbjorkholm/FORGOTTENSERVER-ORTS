@@ -5,7 +5,7 @@
 <voices>
 <voice text="Hello, hello! Put your feet up and relax in the Hard Rock Tavern." interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="message_greet" value="The Hard Rock Tavern greets you, |PLAYERNAME|. Sit down, have some {food} and a {drink}!"/>
 		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. Tell your friends about us and visit us again."/>
 		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|. Tell your friends about us and visit us again." />

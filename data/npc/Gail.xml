@@ -5,7 +5,7 @@
 	<voices>
 <voice text="I have gems and beautiful jewellery for you!" interval2="100" margin="1" yell="no"/>
 </voices>
-	</parameters>
+	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
 		black pearl,2144,280;
