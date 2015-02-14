@@ -51,7 +51,6 @@
 		<immunity lifedrain="1"/>
 		<immunity earth="1"/>
 		<immunity death="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<voices interval="2000" chance="7">
 		<voice sentence="Revenge ... is so ... sweet!"/>

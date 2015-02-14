@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-30"/>
+		<attack name="melee" interval="2000" min="0" max="-30"/>
 		<attack name="fire" interval="2000" chance="15" range="7" min="-60" max="-90">
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="fire"/>
@@ -43,8 +43,6 @@
 		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="2000" chance="7">

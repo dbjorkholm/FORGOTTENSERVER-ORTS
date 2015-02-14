@@ -34,8 +34,6 @@
 	</elements>
 	<immunities>
 		<immunity fire="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="3">

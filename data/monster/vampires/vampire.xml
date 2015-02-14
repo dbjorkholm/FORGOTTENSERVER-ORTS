@@ -46,7 +46,6 @@
 		<immunity earth="1"/>
 		<immunity death="1"/>
 		<immunity drown="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<voices interval="2000" chance="7">
 		<voice sentence="BLOOD!" yell="1"/>

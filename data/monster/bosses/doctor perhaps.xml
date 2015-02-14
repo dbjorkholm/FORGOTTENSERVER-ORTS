@@ -42,7 +42,6 @@
 	<immunities>
 		<immunity invisible="1"/>
 		<immunity drown="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<summons maxSummons="2">
 		<summon name="Zombie" interval="2000" chance="10"/>

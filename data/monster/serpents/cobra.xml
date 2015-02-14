@@ -27,7 +27,6 @@
 		<element firePercent="-10"/>
 	</elements>
 	<immunities>
-		<immunity drunk="1"/>
 		<immunity earth="1"/>
 	</immunities>
 	<voices interval="2000" chance="7">

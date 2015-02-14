@@ -41,7 +41,6 @@
 	<immunities>
 		<immunity fire="1"/>
 		<immunity earth="1"/>
-		<immunity outfit="1"/>
 		<immunity drown="1"/>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>

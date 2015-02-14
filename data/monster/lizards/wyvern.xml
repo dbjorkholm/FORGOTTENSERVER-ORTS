@@ -38,7 +38,6 @@
 		<element icePercent="10"/>
 	</elements>
 	<immunities>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 		<immunity earth="1"/>
 	</immunities>

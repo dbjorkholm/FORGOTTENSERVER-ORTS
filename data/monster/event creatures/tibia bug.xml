@@ -30,7 +30,6 @@
 	<immunities>
 		<immunity energy="1"/>
 		<immunity fire="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<summons maxSummons="10">
 		<summon name="tibia bug" interval="1000" chance="15" max="10"/>

@@ -42,7 +42,6 @@
 	<immunities>
 		<immunity fire="1"/>
 		<immunity energy="1"/>
-		<immunity drunk="1"/>
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>

@@ -19,7 +19,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="100" attack="50"/>
-		<attack name="ice" interval="2000" chance="15" range="7" target="1" min="-0" max="-90">
+		<attack name="ice" interval="2000" chance="15" range="7" target="1" min="0" max="-90">
 			<attribute key="shootEffect" value="ice"/>
 			<attribute key="areaEffect" value="iceattack"/>
 		</attack>
@@ -39,7 +39,6 @@
 		<immunity ice="1"/>
 		<immunity invisible="1"/>
 		<immunity paralyze="1"/>
-		<immunity drunk="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">
 		<voice sentence="Chrr."/>
