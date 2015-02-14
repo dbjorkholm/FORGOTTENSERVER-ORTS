@@ -60,6 +60,8 @@ if NpcHandler == nil then
 	TAG_TOTALCOST = "|TOTALCOST|"
 	TAG_ITEMNAME = "|ITEMNAME|"
 	TAG_TIME = "|TIME|"
+	TAG_BLESSCOST = "|BLESSCOST|"
+	TAG_PVPBLESSCOST = "|PVPBLESSCOST|"
 
 	NpcHandler = {
 		keywordHandler = nil,
@@ -638,7 +640,8 @@ if NpcHandler == nil then
 
 			local player = Player(focusId)
 			if player then
-				npc:say(message:gsub('|PLAYERNAME|', player:getName()), TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
+				local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
+				npc:say(self:parseMessage(message, parseInfo), TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 			end
 		end, self.talkDelayTime * 1000, Npc().uid, message, focus)
 	end

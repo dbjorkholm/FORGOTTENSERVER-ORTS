@@ -107,44 +107,44 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime()}
+		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
 		if type(parameters.text) == 'table' then
+			local text
 			for i = 1, #parameters.text do
-				local textObj = parameters.text[i]
-				local text = textObj[#textObj]
-				local cancel = false
-				for j = 1, #textObj - 1 do
-					local condition = textObj[j]
-					if condition == STDMODULE_CANCEL then
-						cancel = true
-					elseif not StdModule.conditions[condition](player, parameters) then
-						text = nil
+				text = parameters.text[i]
+				break
+			end
+
+			if type(text) == 'table' then
+				for i = 1, #parameters.text do
+					local textObj = parameters.text[i]
+					text = textObj[#textObj]
+					local cancel = false
+					for j = 1, #textObj - 1 do
+						local condition = textObj[j]
+						if condition == STDMODULE_CANCEL then
+							cancel = true
+						elseif not StdModule.conditions[condition](player, parameters) then
+							text = nil
+							break
+						end
+					end
+
+					if text then
+						npcHandler:say(npcHandler:parseMessage(text, parseInfo), cid, parameters.publicize and true)
+						if cancel then
+							return false
+						end
 						break
 					end
 				end
-				if text then
-					npcHandler:say(npcHandler:parseMessage(text, parseInfo), cid, parameters.publicize and true)
-					if cancel then
-						return false
-					end
-					break
-				end
+			else
+				npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 			end
+
 		elseif parameters.text then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
-
-		if parameters.ungreet then
-			npcHandler:resetNpc(cid)
-			npcHandler:releaseFocus(cid)
-		elseif parameters.reset then
-			npcHandler:resetNpc(cid)
-		elseif parameters.moveup ~= nil then
-			npcHandler.keywordHandler:moveUp(parameters.moveup)
-		end
-
-		return true
-	end
 
 	--Usage:
 		-- local node1 = keywordHandler:addKeyword({"promot"}, StdModule.say, {npcHandler = npcHandler, text = "I can promote you for 20000 gold coins. Do you want me to promote you?"})
@@ -221,14 +221,18 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
+		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
 		if parameters.premium and player:isPremium() then
 			if player:hasBlessing(parameters.bless) then
-				npcHandler:say("Gods have already blessed you with this blessing!", cid)
-			elseif not player:removeMoney(parameters.cost) then
-				npcHandler:say("You don't have enough money for blessing.", cid)
+				npcHandler:say("You already possess this blessing.", cid)
+			elseif parameters.bless == 6 and player:getBlessings() == 0 and not player:getItemById(2173, true) then
+				npcHandler:say("You don't have any of the other blessings nor an amulet of loss, so it wouldn't make sense to bestow this protection on you now. Remember that it can only protect you from the loss of those!", cid)
+			elseif not player:removeMoney(type(parameters.cost) == "string" and npcHandler:parseMessage(parameters.cost, parseInfo) or parameters.cost) then
+				npcHandler:say("Oh. You do not have enough money.", cid)
 			else
-				npcHandler:say("You have been blessed by one of the five gods!", cid)
+				npcHandler:say(parameters.text or "You have been blessed by one of the five gods!", cid)
 				player:addBlessing(parameters.bless)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		else
 			npcHandler:say("You need a premium account in order to be blessed.", cid)

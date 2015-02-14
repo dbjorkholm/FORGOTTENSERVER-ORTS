@@ -65,7 +65,7 @@ local func = function(pars)
 
 	local player = Player(pars.pcid)
 	if player then
-		npc:say(pars.text:gsub('|PLAYERNAME|', player:getName()), pars.type, false, player, npc:getPosition())
+		npc:say(pars.text, pars.type, false, player, npc:getPosition())
 		pars.e.done = true
 	end
 end
