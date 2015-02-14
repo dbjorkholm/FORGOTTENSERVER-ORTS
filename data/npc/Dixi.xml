@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Dixi" script="Dixi.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
+	<health now="100" max="100" />
 	<look type="136" head="96" body="99" legs="76" feet="115" addons="0"/>
 	<parameters>
 		<parameter key="module_shop" value="1"/>

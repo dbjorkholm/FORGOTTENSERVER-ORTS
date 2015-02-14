@@ -232,6 +232,7 @@
 	<monster name="Menace" file="bosses/menace.xml"/>
 	<monster name="Mephiles" file="bosses/mephiles.xml"/>
 	<monster name="Minishabaal" file="bosses/minishabaal.xml"/>
+	<monster name="Minotaur Wallbreaker" file="bosses/minotaur wallbreaker.xml"/>
 	<monster name="Monstor" file="bosses/monstor.xml"/>
 	<monster name="Mooh'Tah Master" file="bosses/mooh'tah master.xml"/>
 	<monster name="Morik The Gladiator" file="bosses/morik the gladiator.xml"/>
@@ -638,11 +639,17 @@
 	<!-- Minotaurs -->
 	<monster name="Depowered Minotaur" file="minotaurs/depowered minotaur.xml"/>
 	<monster name="Execowtioner" file="minotaurs/execowtioner.xml"/>
+	<monster name="Glooth Powered Minotaur" file="minotaurs/glooth powered minotaur.xml"/>
 	<monster name="Minotaur Amazon" file="minotaurs/minotaur amazon.xml"/>
 	<monster name="Minotaur Archer" file="minotaurs/minotaur archer.xml"/>
+	<monster name="Minotaur Bruiser" file="minotaurs/minotaur bruiser.xml"/>
 	<monster name="Minotaur Guard" file="minotaurs/minotaur guard.xml"/>
 	<monster name="Minotaur Hunter" file="minotaurs/minotaur hunter.xml"/>
+	<monster name="Minotaur Invader" file="minotaurs/minotaur invader.xml"/>
 	<monster name="Minotaur Mage" file="minotaurs/minotaur mage.xml"/>
+	<monster name="Minotaur Occultist" file="minotaurs/minotaur occultist.xml"/>
+	<monster name="Minotaur Poacher" file="minotaurs/minotaur poacher.xml"/>
+	<monster name="Minotaur Totem" file="minotaurs/minotaur totem.xml"/>
 	<monster name="Minotaur" file="minotaurs/minotaur.xml"/>
 	<monster name="Mooh'Tah Warrior" file="minotaurs/mooh'tah warrior.xml"/>
 	<monster name="Moohtant" file="minotaurs/moohtant.xml"/>

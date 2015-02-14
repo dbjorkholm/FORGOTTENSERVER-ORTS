@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Brengus" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="132" head="79" body="76" legs="76" feet="114" addons="0" />
+	<health now="100" max="100" />
+	<look type="132" head="79" body="76" legs="76" feet="114" addons="0" />
 <voices>
 <voice text="Best weapons and armors in town!" interval2="100" margin="1" yell="no"/>
 </voices>
-  <parameters>
-        <parameter key="message_greet" value="Be greeted, |PLAYERNAME|. If you want to buy or sell weapons and armors, ask me for a {trade}."/>
-        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="
+	</parameters>
+		<parameter key="message_greet" value="Be greeted, |PLAYERNAME|. If you want to buy or sell weapons and armors, ask me for a {trade}."/>
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 	arrow,2544,3;
 	axe,2386,20;
 	battle axe,2378,235;
@@ -81,7 +81,7 @@
 	vortex bolt,15649,6;
 	war hammer,2391,10000;
 	wooden shield,2512,15" />
-    <parameter key="shop_sellable" value="
+		<parameter key="shop_sellable" value="
 	axe,2386,7;
 	banana sash,12467,55;
 	banana staff,3966,1000;
@@ -165,5 +165,5 @@
 	viking shield,2531,85;
 	war hammer,2391,470;
 	wooden shield,2512,5" />
-  </parameters>
+	</parameters>
 </npc>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Morpel" script="default.lua" walkinterval="2000">
-	<health now="150" max="150" />
+	<health now="100" max="100" />
 	<look type="160" head="58" body="119" legs="57" feet="96" addons="0" />
 	<parameters>
 		<parameter key="message_greet" value="Welcome! I'm in charge of selling weapons and armor. Are you here for a trade?" />

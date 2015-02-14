@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Frederik" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="128" head="76" body="85" legs="96" feet="91" addons="2" />
+	<health now="100" max="100" />
+	<look type="128" head="76" body="85" legs="96" feet="91" addons="2" />
 <voices>
 <voice text="Potions, runes, wands and rods, all here in the great Malunga's house." interval2="90" margin="1" yell="no"/>
 </voices>
-  <parameters>
-        <parameter key="keywords" value="magic;" />
-        <parameter key="keyword_reply1" value="I'm selling spirit, health and mana potions, runes, wands, rods and spellbooks. If you'd like to see my offers, ask me for a {trade}." />
-        <parameter key="message_greet" value="Hi there and welcome to my little {magic} shop."/>
-        <parameter key="message_farewell" value="Yeah, bye."/>
+	</parameters>
+		<parameter key="keywords" value="magic;" />
+		<parameter key="keyword_reply1" value="I'm selling spirit, health and mana potions, runes, wands, rods and spellbooks. If you'd like to see my offers, ask me for a {trade}." />
+		<parameter key="message_greet" value="Hi there and welcome to my little {magic} shop."/>
+		<parameter key="message_farewell" value="Yeah, bye."/>
 		<parameter key="message_walkaway" value="However." />
 		<parameter key="message_sendtrade" value="Of course, just browse through my wares. Or do you want to look only at {potions}, {wands} or {runes}?" />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="avalanche rune,2274,45;
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="avalanche rune,2274,45;
 Stone Shower Rune,2288,37;
 Thunderstorm Rune,2315,37;
 blank rune,2260,10;
@@ -60,8 +60,8 @@ Hailstorm Rod,2183,15000;
 Magic Wall Rune,2293,116;
 Paralyze Rune,2278,700;
 Wand of Inferno,2187,15000" />
-    <parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
-  </parameters>
+		<parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
+	</parameters>
 </npc>
 
 

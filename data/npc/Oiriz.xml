@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Oiriz" script="default.lua" walkinterval="2000">
-  <health now="100" max="100" />
-  <look type="66" head="60" body="100" legs="82" feet="114" addons="1" />
+	<health now="100" max="100" />
+	<look type="66" head="60" body="100" legs="82" feet="114" addons="1" />
 	<voices>
 <voice text="Gems and precious jewellery for sale!" interval2="100" margin="1" yell="no"/>
 </voices>
-  <parameters>
-    <parameter key="message_greet" value="Salutations, |PLAYERNAME|! I trade with various rare gems." />
-    <parameter key="message_needmoremoney" value="You don't have enough cash to afford it!" />
-    <parameter key="message_decline" value="Then not." />
-    <parameter key="module_shop" value="1" />
-        <parameter key="shop_sellable" value="
+	</parameters>
+		<parameter key="message_greet" value="Salutations, |PLAYERNAME|! I trade with various rare gems." />
+		<parameter key="message_needmoremoney" value="You don't have enough cash to afford it!" />
+		<parameter key="message_decline" value="Then not." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="
 		black pearl,2144,280;
 		blue crystal shard,18413,1500;
 		blue crystal splinter,18418,400;
@@ -32,7 +32,7 @@
 		violet crystal shard,18414,1500;
 		wedding ring,2121,100;
 		white pearl,2143,160;" />
-        <parameter key="shop_buyable" value="
+		<parameter key="shop_buyable" value="
 		black pearl,2144,560;
 		bronze goblet,5807,2000;
 		golden amulet,2130,6600;
@@ -46,6 +46,6 @@
 		small sapphire,2146,500;
 		wedding ring,2121,990;
 		white pearl,2143,320;" />
-  </parameters>
+	</parameters>
 </npc>
 

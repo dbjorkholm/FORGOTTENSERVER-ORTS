@@ -1,10 +1,10 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <npc name="Siflind" script="Silfind.lua" walkinterval="2000">
-  <health now="200" max="200" />
-  <look type="158" head="76" body="81" legs="95" feet="114" addons="1" />
-  <parameters>
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="
+	<health now="100" max="100" />
+	<look type="158" head="76" body="81" legs="95" feet="114" addons="1" />
+	</parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 	great spirit potion,8472,190;
 	great mana potion,7590,120;
 	great health potion,7591,190;
@@ -31,10 +31,10 @@
 	wand of inferno,2187,15000;
 	blank rune,2260,10;
 	spellbook,6120,150" />
-    <parameter key="shop_sellable" value="
+		<parameter key="shop_sellable" value="
 	empty potion flask,7634,5;
 	empty potion flask,7635,5;
 	empty potion flask,7636,5;
 	vial,2006,5;" />
-  </parameters>
+	</parameters>
 </npc>

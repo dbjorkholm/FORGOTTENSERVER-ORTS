@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Odemara" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="138" head="22" body="99" legs="5" feet="76" addons="0" />
+	<health now="100" max="100" />
+	<look type="138" head="22" body="99" legs="5" feet="76" addons="0" />
 <voices>
 <voice text="This is a good day for buying gems! Come and see how they sparkle!" interval2="100" margin="1" yell="no"/>
 </voices>
-  <parameters>
-    <parameter key="message_greet" value="Be greeted, dear |PLAYERNAME|. Have a look at our gems." />
-    <parameter key="message_farewell" value="Farewell, |PLAYERNAME|." />
-    <parameter key="module_keywords" value="1" />
-    <parameter key="keywords" value="job;" />
-    <parameter key="keyword_reply1" value="I am responsible for buying and selling gems, pearls, and the like." />
-    <parameter key="module_shop" value="1" />
-        <parameter key="shop_sellable" value="
+	</parameters>
+		<parameter key="message_greet" value="Be greeted, dear |PLAYERNAME|. Have a look at our gems." />
+		<parameter key="message_farewell" value="Farewell, |PLAYERNAME|." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="job;" />
+		<parameter key="keyword_reply1" value="I am responsible for buying and selling gems, pearls, and the like." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="
 		black pearl,2144,280;
 		blue crystal shard,18413,1500;
 		blue crystal splinter,18418,400;
@@ -35,7 +35,7 @@
 		violet crystal shard,18414,1500;
 		wedding ring,2121,100;
 		white pearl,2143,160;" />
-        <parameter key="shop_buyable" value="
+		<parameter key="shop_buyable" value="
 		black pearl,2144,560;
 		bronze goblet,5807,2000;
 		golden amulet,2130,6600;
@@ -49,5 +49,5 @@
 		small sapphire,2146,500;
 		wedding ring,2121,990;
 		white pearl,2143,320;" />
-  </parameters>
+	</parameters>
 </npc>
