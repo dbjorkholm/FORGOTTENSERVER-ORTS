@@ -15,7 +15,7 @@ local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, 
 		'However, this prayer needs the combined energy of ten priests. Each of them has to say one line of the prayer. ...',
 		'I could start with the prayer, but since the next priest has to be in a different location, you probably will have to travel a lot. ...',
 		'Is this stake really important enough to you so that you are willing to take this burden?',
-	}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == -1 end)
+	}}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == -1 end)
 
 	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Alright, I guess you need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to me.', reset = true}, nil,
 		function(player) player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 1) end

@@ -67,7 +67,7 @@ keywordHandler:addKeyword({'embrace'}, StdModule.say, {npcHandler = npcHandler, 
 keywordHandler:addKeyword({'suns'}, StdModule.say, {npcHandler = npcHandler, text = 'You can ask for the blessing of the two suns in the suntower near Ab\'Dendriel.'})
 keywordHandler:addKeyword({'solitude'}, StdModule.say, {npcHandler = npcHandler, text = 'Talk to the hermit Eremo on the isle of Cormaya about this blessing.'})
 
-npcHandler:setMessage(MESSAGE_GREET, 'Welcome, this is the {Gray Beach temple}, |PLAYERNAME|. Whether you are wounded, poisoned - or wait, don't tell me - yes, this is probably a case of being more emotionally hurt, I will do my best to {heal} you.')
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome, this is the {Gray Beach temple}, |PLAYERNAME|. Whether you are wounded, poisoned - or wait, don\'t tell me - yes, this is probably a case of being more emotionally hurt, I will do my best to {heal} you.')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Only the best for you.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Goodbye then, |PLAYERNAME|!')
 

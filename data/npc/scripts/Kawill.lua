@@ -7,32 +7,12 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
+-- Kawill Blessing
+local blessKeyword = keywordHandler:addKeyword({'spark of the phoenix'}, StdModule.say, {npcHandler = npcHandler, text = 'The Spark of the Phoenix is given by me and by the great pyromancer in the nearby fire temple. Do you wish to receive my part of the Spark of the Phoenix?'}, function(player) return player:getStorageValue(Storage.KawillBlessing) ~= 1 end)
+	blessKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'So receive the blessing of the life-giving earth, pilgrim.', reset = true}, nil, function(player) player:setStorageValue(Storage.KawillBlessing, 1) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end)
+	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Ok. If you don\'t want it...', reset = true})
 
-	if msgcontains(msg, 'spark of the phoenix') then
-		if Player(cid):getStorageValue(Storage.KawillBlessing) == 1 then
-			npcHandler:say('You already possess my blessing.', cid)
-			return true
-		end
-
-		npcHandler:say('The Spark of the Phoenix is given by me and by the great pyromancer in the nearby fire temple. Do you wish to receive my part of the Spark of the Phoenix?', cid)
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		local player = Player(cid)
-		player:setStorageValue(Storage.KawillBlessing, 1)
-		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-		npcHandler:say('So receive the blessing of the life-giving earth, pilgrim.', cid)
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
-		npcHandler:say('Ok. If you don\'t want it...', cid)
-		npcHandler.topic[cid] = 0
-	end
-	return true
-end
-
+-- Basic
 keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, text = 'The gods are treacherous and vain. They want to use us like they did in the past. Only the elements can be trusted, because all they want is for nature to run its set course.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I am the great geomancer of dwarvenkind.'})
 keywordHandler:addKeyword({'geomancer'}, StdModule.say, {npcHandler = npcHandler, text = 'We investigate the will of the earth. It is our duty to make sure things to work in their natural way.'})
@@ -64,5 +44,4 @@ npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|! May earth protect yo
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Earth under your feet, |PLAYERNAME|!')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Earth under your feet, pilgrim. What brings you here?')
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

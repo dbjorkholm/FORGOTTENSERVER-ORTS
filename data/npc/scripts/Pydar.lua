@@ -7,40 +7,12 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
+-- Spark of the Phoenix
+local blessKeyword = keywordHandler:addKeyword({'spark of the phoenix'}, StdModule.say, {npcHandler = npcHandler, text = 'The Spark of the Phoenix is given by me and by the great geomancer of the local earth temple. Do you wish to receive my part of the Spark of the Phoenix for |BLESSCOST| gold?'})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the spark of the phoenix, pilgrim.', premium = true, cost = '|BLESSCOST|', bless = 4})
+	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe another time.', reset = true})
 
-	if msgcontains(msg, 'spark of the phoenix') then
-		npcHandler:say('The Spark of the Phoenix is given by me and by the great geomancer of the local earth temple. Do you wish to receive my part of the Spark of the Phoenix for ' .. getBlessingsCost(Player(cid):getLevel()) .. ' gold?', cid)
-		npcHandler.topic[cid] = 1
-	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
-		local player = Player(cid)
-		if not player:hasBlessing(4) then
-			if player:getStorageValue(Storage.KawillBlessing) == 1 then
-				if player:removeMoney(getBlessingsCost(player:getLevel())) then
-					player:addBlessing(4)
-					player:setStorageValue(Storage.KawillBlessing, 0)
-					player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-					npcHandler:say('So receive the fire of the suns, pilgrim.', cid)
-				else
-					npcHandler:say('Oh. You do not have enough money.', cid)
-				end
-			else
-				npcHandler:say('You need the blessing of the great geomancer first.', cid)
-			end
-		else
-			npcHandler:say('You already possess this blessing.', cid)
-		end
-		npcHandler.topic[cid] = 0
-	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] == 1 then
-		npcHandler:say('Maybe another time.', cid)
-		npcHandler.topic[cid] = 0
-	end
-	return true
-end
-
+-- Basic
 keywordHandler:addKeyword({'gods'}, StdModule.say, {npcHandler = npcHandler, text = 'The ways of the gods are imprehensible to mortals. On the other hand, the elements are raw forces and can be understood and tamed.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I am the head pyromancer of Kazordoon.'})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'My name is Pydar Firefist, Son of Fire, from the Savage Axes.'})
@@ -69,5 +41,4 @@ npcHandler:setMessage(MESSAGE_GREET, 'Be greeted |PLAYERNAME|! I can smell the s
 npcHandler:setMessage(MESSAGE_FAREWELL, 'May the fire in your heart never die, |PLAYERNAME|!')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'May the fire in your heart never die.')
 
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

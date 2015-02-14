@@ -37,52 +37,37 @@ local function greetCallback(cid)
 	return true
 end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
+-- Fire of the Suns
+local blessKeyword = keywordHandler:addKeyword({'suns'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like to receive that protection for a sacrifice of |BLESSCOST| gold, child?'})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the fire of the suns, pilgrim.', premium = true, cost = '|BLESSCOST|', bless = 3})
+	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
 
-	local player = Player(cid)
-	if msgcontains(msg, 'heal') then
-		if player:getHealth() >= 50 then
-			npcHandler:say('You aren\'t looking that bad. Sorry, I can\'t help you.', cid)
-			return true
+-- Healing
+local function addHealKeyword(text, condition, effect)
+	keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, text = text},
+		function(player) return player:getCondition(condition) ~= nil end,
+		function(player)
+			player:removeCondition(condition)
+			player:getPosition():sendMagicEffect(effect)
 		end
-
-		player:addHealth(50 - player:getHealth())
-		local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_BLEEDING, CONDITION_PARALYZE, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED}
-		for i = 1, #conditions do
-			if player:getCondition(conditions[i]) then
-				player:removeCondition(conditions[i])
-			end
-		end
-		npcHandler:say('You are hurt, my child. I will heal your wounds.', cid)
-	elseif msgcontains(msg, 'suns') then
-		npcHandler:say('Would you like to receive that protection for a sacrifice of ' .. getBlessingsCost(player:getLevel()) .. ' gold, child?', cid)
-		npcHandler.topic[cid] = 1
-	elseif npcHandler.topic[cid] == 1 then
-		if msgcontains(msg, 'yes') then
-			if player:hasBlessing(3) then
-				npcHandler:say('You already possess this blessing.', cid)
-				return true
-			end
-
-			if not player:removeMoney(getBlessingsCost(player:getLevel())) then
-				npcHandler:say('Oh. You do not have enough money.', cid)
-				return true
-			end
-
-			player:addBlessing(3)
-			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			npcHandler:say('So receive the fire of the suns, pilgrim.', cid)
-		elseif msgcontains(msg, 'no') then
-			npcHandler:say('Fine. You are free to decline my offer.', cid)
-		end
-		npcHandler.topic[cid] = 0
-	end
-	return true
+	)
 end
 
+addHealKeyword('You are burning. Let me quench those flames.', CONDITION_FIRE, CONST_ME_MAGIC_GREEN)
+addHealKeyword('You are poisoned. Let me soothe your pain.', CONDITION_POISON, CONST_ME_MAGIC_RED)
+addHealKeyword('You are electrified, my child. Let me help you to stop trembling.', CONDITION_ENERGY, CONST_ME_MAGIC_GREEN)
+
+keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, text = 'You are hurt, my child. I will heal your wounds.'},
+	function(player) return player:getHealth() < 40 end,
+	function(player)
+		local health = player:getHealth()
+		if health < 40 then player:addHealth(40 - health) end
+		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+	end
+)
+keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, text = 'You aren\'t looking that bad. Sorry, I can\'t help you. But if you are looking for additional protection you should go on the {pilgrimage} of ashes or get the protection of the {twist of fate} here.'})
+
+-- Basic
 keywordHandler:addKeyword({'blessings'}, StdModule.say, {npcHandler = npcHandler, text = 'There are five blessings available in five sacred places: the {spiritual} shielding, the spark of the {phoenix}, the {embrace} of Tibia, the fire of the {suns} and the wisdom of {solitude}. Additionally, you can receive the {twist of fate} here.'})
 keywordHandler:addKeyword({'spiritual'}, StdModule.say, {npcHandler = npcHandler, text = 'You can ask for the blessing of spiritual shielding in the whiteflower temple south of Thais.'})
 keywordHandler:addKeyword({'phoenix'}, StdModule.say, {npcHandler = npcHandler, text = 'The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.'})
@@ -93,7 +78,6 @@ npcHandler:setMessage(MESSAGE_WALKAWAY, 'Asha Thrazi, |PLAYERNAME|!')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Asha Thrazi, |PLAYERNAME|!')
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 
 local focusModule = FocusModule:new()
 focusModule:addGreetMessage({'hi', 'hello', 'ashari'})
