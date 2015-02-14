@@ -62,7 +62,7 @@
 	<summons maxSummons="1">
 		<summon name="Demon" interval="1000" chance="12"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="It's a kind of magic."/>
 		<voice sentence="Abrah Kadabrah!"/>
 		<voice sentence="Nothing hidden in my wrappings."/>

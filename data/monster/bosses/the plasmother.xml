@@ -47,7 +47,7 @@
 	<summons maxSummons="2">
 		<summon name="Defiler" interval="4000" chance="20"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Blubb"/>
 		<voice sentence="Blubb Blubb"/>
 		<voice sentence="Blubberdiblubb"/>

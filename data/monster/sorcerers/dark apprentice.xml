@@ -46,7 +46,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Outch!"/>
 		<voice sentence="Oops, I did it again."/>
 		<voice sentence="From the spirits that I called Sir, deliver me!"/>

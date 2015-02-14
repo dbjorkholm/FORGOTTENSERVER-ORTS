@@ -59,7 +59,7 @@
 	<summons maxSummons="1">
 		<summon name="vampire" interval="2000" chance="40" max="1"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You won't stop my masterplan to flood the world market with fake Bonelord language dictionaries!"/>
 		<voice sentence="My calculations tell me you'll die!"/>
 		<voice sentence="You can't stop me!"/>

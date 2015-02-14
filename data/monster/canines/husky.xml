@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<defenses armor="5" defense="5"/>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Yoooohuuuu!"/>
 		<voice sentence="Grrrrrrr"/>
 		<voice sentence="Ruff, ruff!"/>

@@ -58,7 +58,7 @@
 	<summons maxSummons="4">
 		<summon name="Fury" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="MUHAHA!"/>
 		<voice sentence="Back in black!"/>
 		<voice sentence="Die!"/>

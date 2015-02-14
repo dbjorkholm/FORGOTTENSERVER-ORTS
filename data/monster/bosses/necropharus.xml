@@ -56,7 +56,7 @@
 		<summon name="Ghost" interval="1000" chance="17"/>
 		<summon name="Mummy" interval="1000" chance="15"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You will rise as my servant!"/>
 		<voice sentence="Praise to my master Urgith!"/>
 	</voices>

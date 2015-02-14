@@ -38,7 +38,7 @@
 		<immunity fire="1"/>
 		<immunity ice="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Don't run, you'll just lose precious fat."/>
 		<voice sentence="Hex hex!"/>
 	</voices>

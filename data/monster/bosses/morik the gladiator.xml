@@ -37,7 +37,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="To be the one you'll have to beat the one!"/>
 		<voice sentence="Where did I put my ultimate health potion again?"/>
 		<voice sentence="I am the best!"/>

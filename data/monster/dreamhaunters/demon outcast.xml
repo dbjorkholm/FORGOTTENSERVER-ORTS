@@ -53,7 +53,7 @@
 	<summons maxSummons="2">
 		<summon name="energy elemental" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Back in the evil business!"/>
 		<voice sentence="This prison break will have casualties!"/>
 		<voice sentence="At last someone to hurt"/>

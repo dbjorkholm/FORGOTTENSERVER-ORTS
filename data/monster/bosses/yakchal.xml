@@ -45,7 +45,7 @@
 	<summons maxSummons="4">
 		<summon name="Ice Golem" interval="1000" chance="13"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="YOU BETTER DIE TO MY MINIONS BECAUSE YOU'LL WISH YOU DID IF I COME FOR YOU!"/>
 		<voice sentence="DESTROY THE INFIDELS"/>
 		<voice sentence="You are mine!"/>

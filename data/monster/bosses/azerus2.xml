@@ -48,8 +48,6 @@
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 		<immunity lifedrain="1"/>
-		<immunity manadrain="1"/>
-		<immunity drunk="1"/>
 		<immunity drown="1"/>
 	</immunities>
 	<summons maxSummons="10">

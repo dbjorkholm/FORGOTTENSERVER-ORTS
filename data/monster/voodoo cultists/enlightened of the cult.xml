@@ -53,7 +53,7 @@
 		<summon name="Crypt Shambler" interval="2000" chance="10"/>
 		<summon name="Ghost" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Praise to my master Urgith!"/>
 		<voice sentence="You will rise as my servant!"/>
 		<voice sentence="Praise to my masters! Long live the triangle!"/>

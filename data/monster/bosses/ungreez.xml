@@ -47,11 +47,9 @@
 		<immunity fire="1"/>
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I'll teach you that even heros can die" yell="1"/>
 		<voice sentence="You wil die Begging like the others did" yell="1"/>
 	</voices>

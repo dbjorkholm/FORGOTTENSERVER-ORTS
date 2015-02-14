@@ -61,7 +61,7 @@
 		<summon name="Warlock" interval="2000" chance="10" max="2"/>
 		<summon name="Green Djinn" interval="2000" chance="10" max="3"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Killing is such a splendid diversion from my studies."/>
 		<voice sentence="Time to test my newest spells!"/>
 	</voices>

@@ -40,7 +40,7 @@
 	<summons maxSummons="1">
 		<summon name="Chicken" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Fear us!"/>
 		<voice sentence="You will not tell anyone what you have seen!"/>
 		<voice sentence="Your curiosity will be punished!"/>

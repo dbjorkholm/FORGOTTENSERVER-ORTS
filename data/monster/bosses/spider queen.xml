@@ -27,8 +27,6 @@
 		<immunity drown="1"/>
 		<immunity death="1"/>
 		<immunity holy="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 		<immunity earth="1"/>
 	</immunities>

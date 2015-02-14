@@ -47,7 +47,7 @@
 		<immunity lifedrain="1"/>
 		<immunity drown="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You will make ssuch a fine ssstatue!"/>
 		<voice sentence="There isss no chhhanccce of esscape"/>
 		<voice sentence="Jusssst look at me!"/>

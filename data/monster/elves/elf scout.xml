@@ -18,7 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="20" attack="20"/>
-		<attack name="physical" interval="2000" chance="15" range="7" min="-0" max="-80">
+		<attack name="physical" interval="2000" chance="15" range="7" min="0" max="-80">
 			<attribute key="shootEffect" value="arrow"/>
 		</attack>
 	</attacks>
@@ -30,7 +30,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Tha'shi Ab'Dendriel!"/>
 		<voice sentence="Feel the sting of my arrows!"/>
 		<voice sentence="Thy blood will quench the soil's thirst!"/>

@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-250" poison="160"/>
+		<attack name="melee" interval="2000" min="0" max="-250" poison="160"/>
 		<attack name="speed" interval="2000" chance="15" range="7" radius="6" target="0" speedchange="-800" duration="15000">
 			<attribute key="areaEffect" value="poff"/>
 		</attack>
@@ -42,11 +42,9 @@
 		<immunity fire="1"/>
 		<immunity ice="1"/>
 		<immunity paralyze="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Screeech!"/>
 	</voices>
 	<loot>

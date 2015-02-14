@@ -39,7 +39,7 @@
 		<immunity lifedrain="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="NO ARMY ME STOPPING! GRARR!"/>
 		<voice sentence="ME DESTROY CITY! GROAR!"/>
 		<voice sentence="WHARR! MUST ... KIDNAP WOMEN!"/>

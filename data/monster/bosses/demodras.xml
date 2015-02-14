@@ -43,7 +43,7 @@
 	<summons maxSummons="2">
 		<summon name="Dragon" interval="1000" chance="17" max="2"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I WILL SET THE WORLD IN FIRE!" yell="1"/>
 		<voice sentence="I WILL PROTECT MY BROOD!" yell="1"/>
 	</voices>

@@ -23,7 +23,7 @@
 		</attack>
 	</attacks>
 	<defenses armor="15" defense="15"/>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You will not live to tell anyone!"/>
 		<voice sentence="You are my game today!"/>
 		<voice sentence="Look what has stepped into my trap!"/>

@@ -33,7 +33,7 @@
 	<immunities>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I smell gold!"/>
 		<voice sentence="You'll make a fine fake-mummy to be sold!"/>
 		<voice sentence="Untold riches are awaiting me!"/>

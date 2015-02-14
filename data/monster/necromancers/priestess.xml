@@ -45,7 +45,7 @@
 	<summons maxSummons="2">
 		<summon name="Ghoul" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Your energy is mine."/>
 		<voice sentence="Now your life is come to the end, hahahaha!"/>
 		<voice sentence="Throw the soul on the altar!"/>

@@ -636,6 +636,7 @@
 	<monster name="Weeper" file="magma-elementals/weeper.xml"/>
 
 	<!-- Minotaurs -->
+	<monster name="Depowered Minotaur" file="minotaurs/depowered minotaur.xml"/>
 	<monster name="Execowtioner" file="minotaurs/execowtioner.xml"/>
 	<monster name="Minotaur Amazon" file="minotaurs/minotaur amazon.xml"/>
 	<monster name="Minotaur Archer" file="minotaurs/minotaur archer.xml"/>

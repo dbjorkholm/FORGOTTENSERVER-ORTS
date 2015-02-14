@@ -44,7 +44,7 @@
 	<summons maxSummons="3">
 		<summon name="Diabolic Imp" interval="2000" chance="40" max="3"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I had Princess Lumelia as breakfast!"/>
 		<voice sentence="Naaa-Nana-Naaa-Naaa!"/>
 		<voice sentence="My brother will come and get you for this!"/>

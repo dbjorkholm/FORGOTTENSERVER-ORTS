@@ -52,7 +52,7 @@
 	<summons maxSummons="4">
 		<summon name="Bonebeast" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Your mortality is disgusting!"/>
 	</voices>
 	<loot>

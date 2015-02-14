@@ -19,7 +19,7 @@
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-40"/>
 	</attacks>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Gnorrr!"/>
 		<voice sentence="Gnarrr!"/>
 		<voice sentence="&lt;snort&gt;"/>

@@ -34,7 +34,7 @@
 		<attack name="lifedrain" interval="2000" chance="10" range="7" min="-75" max="-85">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="manadrain" interval="2000" chance="10" range="7" min="-0" max="-155">
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="0" max="-155">
 		</attack>
 	</attacks>
 	<defenses armor="20" defense="20">
@@ -60,7 +60,7 @@
 	<summons maxSummons="2">
 		<summon name="Vampire" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You have disturbed my thoughts!"/>
 		<voice sentence="Let me turn you into something more useful!"/>
 		<voice sentence="Let me taste your brain!"/>

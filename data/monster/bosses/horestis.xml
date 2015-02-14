@@ -53,7 +53,7 @@
 	<summons maxSummons="2">
 		<summon name="Sandstone Scorpion" interval="1000" chance="12"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Feel my eternal wrath!"/>
 		<voice sentence="I might be dead but I'm not gone!"/>
 		<voice sentence="Receive a lesson of the past!"/>

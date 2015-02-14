@@ -24,8 +24,6 @@
 		<immunity ice="1"/>
 		<immunity energy="1"/>
 		<immunity earth="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="2000" chance="5">

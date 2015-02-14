@@ -47,7 +47,7 @@
 	<summons maxSummons="2">
 		<summon name="Banshee" interval="2000" chance="20"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="If music is the food of death, drop dead."/>
 		<voice sentence="Are you enjoying my music?"/>
 		<voice sentence="Come my maidens, we have visitors!"/>

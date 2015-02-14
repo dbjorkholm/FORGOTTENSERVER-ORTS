@@ -52,14 +52,12 @@
 		<immunity poison="1"/>
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 	<summons maxSummons="2">
 		<summon name="diabolic imp" interval="5500" chance="30"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Muahaha!"/>
 		<voice sentence="He he he!"/>
 	</voices>

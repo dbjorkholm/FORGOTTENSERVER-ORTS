@@ -47,7 +47,7 @@
 		<summon name="Crypt Shambler" interval="2000" chance="10"/>
 		<summon name="Ghost" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I will bring peace to your misguided soul!"/>
 		<voice sentence="Your intrusion can't be tolerated!"/>
 	</voices>

@@ -43,7 +43,7 @@
 		<immunity death="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Weeeheeheee!"/>
 		<voice sentence="Pffffrrrrrrrrrrrr."/>
 		<voice sentence="Peak a boo, I killed you!"/>

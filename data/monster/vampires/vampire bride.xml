@@ -50,7 +50,7 @@
 		<immunity death="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Kneel before your Mistress!"/>
 		<voice sentence="Dead is the new alive."/>
 		<voice sentence="Come, let me kiss you, darling. Oh wait, I meant kill."/>

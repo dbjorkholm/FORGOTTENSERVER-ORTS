@@ -31,8 +31,6 @@
 		<element physicalPercent="40"/>
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 		<immunity earth="1"/>
 	</immunities>

@@ -52,7 +52,7 @@
 	<summons maxSummons="3">
 		<summon name="Hero" interval="2000" chance="30"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Vengeance!"/>
 		<voice sentence="You will make a fine trophy."/>
 		<voice sentence="Come and fight me, cowards!"/>

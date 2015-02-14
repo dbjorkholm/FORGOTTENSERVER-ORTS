@@ -52,7 +52,7 @@
 	<summons maxSummons="2">
 		<summon name="War Wolf" interval="2000" chance="100"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="GRRR"/>
 		<voice sentence="GRROARR"/>
 	</voices>

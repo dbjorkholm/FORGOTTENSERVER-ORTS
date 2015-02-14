@@ -34,7 +34,7 @@
 	<summons maxSummons="3">
 		<summon name="Wild Warrior" interval="2000" chance="20"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I will make your death look like an accident!"/>
 		<voice sentence="You should not have interferred with my bussiness!"/>
 		<voice sentence="Bribes are expensive, murder is cheap!"/>

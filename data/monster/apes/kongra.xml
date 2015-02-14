@@ -17,7 +17,7 @@
 		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-60"/>
+		<attack name="melee" interval="2000" min="0" max="-60"/>
 	</attacks>
 	<defenses armor="20" defense="20">
 		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="3000">
@@ -31,7 +31,7 @@
 		<element icePercent="-15"/>
 		<element deathPercent="-5"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Hugah!"/>
 		<voice sentence="Ungh! Ungh!"/>
 		<voice sentence="Huaauaauaauaa!"/>

@@ -17,7 +17,7 @@
 		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-0" max="-50"/>
+		<attack name="melee" interval="2000" min="0" max="-50"/>
 		<attack name="physical" interval="1000" chance="15" range="7" min="-28" max="-42">
 			<attribute key="shootEffect" value="spear"/>
 		</attack>
@@ -30,7 +30,7 @@
 		<element deathPercent="-7"/>
 		<element physicalPercent="-6"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Stand still!"/>
 		<voice sentence="One more head for me!"/>
 		<voice sentence="Head off!"/>

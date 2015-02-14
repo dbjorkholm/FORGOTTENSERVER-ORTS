@@ -17,7 +17,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="80" attack="70"/>
-		<attack name="physical" interval="2000" chance="15" target="1" range="7" radius="3" min="-0" max="-500">
+		<attack name="physical" interval="2000" chance="15" target="1" range="7" radius="3" min="0" max="-500">
 			<attribute key="shootEffect" value="explosion"/>
 			<attribute key="areaEffect" value="explosion"/>
 		</attack>
@@ -33,7 +33,7 @@
 		<immunity earth="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Zopp!"/>
 		<voice sentence="Flzlzlzlzlzlz!"/>
 	</voices>

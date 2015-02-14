@@ -46,7 +46,7 @@
 	<summons maxSummons="1">
 		<summon name="Skeleton" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Praise the voodoo!"/>
 		<voice sentence="Power to the cult!"/>
 		<voice sentence="Feel the power of the cult!"/>

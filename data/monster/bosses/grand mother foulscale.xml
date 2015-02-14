@@ -44,7 +44,7 @@
 	<summons maxSummons="4">
 		<summon name="dragon hatchlings" interval="4000" chance="40" max="4"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="GROOAAARRR" yell="1"/>
 		<voice sentence="FCHHHHH" yell="1"/>
 	</voices>

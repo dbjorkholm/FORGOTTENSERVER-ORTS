@@ -45,7 +45,7 @@
 	<summons maxSummons="4">
 		<summon name="Nightfiend" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Feel the hungry kiss of death!"/>
 		<voice sentence="The monsters in the mirror will come eat your dreams."/>
 		<voice sentence="Your pitiful life has come to an end!"/>

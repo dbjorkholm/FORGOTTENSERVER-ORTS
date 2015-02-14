@@ -44,7 +44,7 @@
 		<summon name="Skeleton" interval="2000" chance="10"/>
 		<summon name="Ghost" interval="2000" chance="5"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="When I'm finished with you, you'll be a shadow of your former self."/>
 	</voices>
 	<loot>

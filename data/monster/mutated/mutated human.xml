@@ -46,7 +46,7 @@
 		<immunity drown="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Take that creature off my back!! I can fell it!"/>
 		<voice sentence="HEEEEEEEELP!"/>
 		<voice sentence="You will be the next infected one... GRAAAAAAAAARRR!"/>

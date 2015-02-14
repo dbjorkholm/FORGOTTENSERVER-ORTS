@@ -20,7 +20,7 @@
 		<attack name="melee" interval="2000" skill="0" attack="0"/>
 	</attacks>
 	<defenses armor="1" defense="2"/>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Wuff wuff"/>
 	</voices>
 </monster>

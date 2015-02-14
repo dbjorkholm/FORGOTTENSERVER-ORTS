@@ -29,7 +29,7 @@
 			<attribute key="shootEffect" value="poison"/>
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
-		<attack name="earth" interval="2000" chance="15" target="1" range="7" min="-0" max="-180">
+		<attack name="earth" interval="2000" chance="15" target="1" range="7" min="0" max="-180">
 			<attribute key="shootEffect" value="poison"/>
 			<attribute key="areaEffect" value="poison"/>
 		</attack>
@@ -62,7 +62,7 @@
 		<immunity invisible="1"/>
 		<immunity drown="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="FEEEED MY ETERNAL HUNGER!" yell="1"/>
 		<voice sentence="I SENSE LIFE" yell="1"/>
 	</voices>

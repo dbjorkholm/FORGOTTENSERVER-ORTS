@@ -53,7 +53,7 @@
 		<immunity lifedrain="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="YOU'LL NEVER GET MY TREASURE!" yell="1"/>
 		<voice sentence="MINIONS, MEET YOUR NEW BROTHER!" yell="1"/>
 		<voice sentence="YOU WILL REGRET THAT YOU ARE BORN!" yell="1"/>

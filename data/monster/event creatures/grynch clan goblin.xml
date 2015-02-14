@@ -27,7 +27,7 @@
 		<immunity fire="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="T'was not me hand in your pocket!"/>
 		<voice sentence="Look! Cool stuff in house. Let's get it!"/>
 		<voice sentence="Uhh! Nobody home!"/>

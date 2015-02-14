@@ -49,7 +49,7 @@
 		<summon name="Ghost" interval="2000" chance="5"/>
 		<summon name="Mummy" interval="2000" chance="5"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Your corpse will be mine!"/>
 		<voice sentence="Taste the sweetness of death!"/>
 	</voices>

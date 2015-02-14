@@ -18,7 +18,7 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="20" attack="10"/>
-		<attack name="fire" interval="2000" chance="15" radius="1" target="1" min="-0" max="-21">
+		<attack name="fire" interval="2000" chance="15" radius="1" target="1" min="0" max="-21">
 			<attribute key="shootEffect" value="burstarrow"/>
 			<attribute key="areaEffect" value="explosion"/>
 		</attack>
@@ -35,7 +35,7 @@
 		<element deathPercent="-20"/>
 		<element icePercent="-20"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="FIRE!" yell="1"/>
 		<voice sentence="BURN!" yell="1"/>
 		<voice sentence="DEATH to the FALSE GOD!!" yell="1"/>

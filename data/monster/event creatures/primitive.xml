@@ -33,10 +33,9 @@
 	<immunities>
 		<immunity energy="1"/>
 		<immunity fire="1"/>
-		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="We don't need a future!"/>
 		<voice sentence="I'll rook you all!"/>
 		<voice sentence="They thought they'd beaten us!"/>

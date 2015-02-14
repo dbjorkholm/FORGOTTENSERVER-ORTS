@@ -61,7 +61,7 @@
 	<summons maxSummons="1">
 		<summon name="fire elemental" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Your soul will be mine!"/>
 		<voice sentence="MUHAHAHAHA!"/>
 		<voice sentence="CHAMEK ATH UTHUL ARAK!"/>

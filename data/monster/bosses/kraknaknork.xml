@@ -37,7 +37,7 @@
 		<attack name="outfit" interval="2000" chance="10" range="7" monster="Sheep" duration="3000"/>
 	</attacks>
 	<defenses armor="5" defense="5"/>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="KRAK ORC DEMON"/>
 		<voice sentence="???!!!"/>
 		<voice sentence="Grak brrretz gulu."/>

@@ -21,10 +21,10 @@
 		<attack name="bleedcondition" interval="2000" chance="10" radius="3" target="0" min="-300" max="-400">
 			<attribute key="areaEffect" value="redspark"/>
 		</attack>
-		<attack name="physical" interval="2000" chance="10" length="5" spread="0" target="1" min="-0" max="-700">
+		<attack name="physical" interval="2000" chance="10" length="5" spread="0" target="1" min="0" max="-700">
 			<attribute key="areaEffect" value="explosionarea"/>
 		</attack>
-		<attack name="physical" interval="2000" chance="15" radius="2" target="1" min="-0" max="-400">
+		<attack name="physical" interval="2000" chance="15" radius="2" target="1" min="0" max="-400">
 			<attribute key="shootEffect" value="largerock"/>
 			<attribute key="areaEffect" value="stones"/>
 		</attack>
@@ -53,7 +53,7 @@
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Mwaaaahnducate youuuuuu *gurgle*"/>
 		<voice sentence="mwaaah!"/>
 	</voices>

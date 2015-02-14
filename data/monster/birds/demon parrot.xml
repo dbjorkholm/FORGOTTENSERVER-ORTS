@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="1200" min="-0" max="-100"/>
+		<attack name="melee" interval="1200" min="0" max="-100"/>
 		<attack name="drunk" interval="1000" chance="30" length="5" spread="0">
 			<attribute key="areaEffect" value="rednote"/>
 		</attack>
@@ -31,9 +31,8 @@
 		<immunity lifedrain="1"/>
 		<immunity invisible="1"/>
 		<immunity drown="1"/>
-		<immunity drunk="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="ISHH THAT THE BESHHT YOU HAVE TO OFFERRR, TIBIANSHH?"/>
 		<voice sentence="YOU ARRRRRE DOOMED!"/>
 		<voice sentence="I SHHMELL FEEAARRR!"/>

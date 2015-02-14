@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="1200" min="-0" max="-100"/>
+		<attack name="melee" interval="1200" min="0" max="-100"/>
 		<attack name="Blood Rage" interval="2000" chance="30" target="1"/>
 	</attacks>
 	<defenses armor="30" defense="35">
@@ -31,7 +31,7 @@
 	<summons maxSummons="2">
 		<summon name="killer rabbit" interval="2000" chance="30" max="2"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Who is lunch NOW?"/>
 	</voices>
 	<loot>
