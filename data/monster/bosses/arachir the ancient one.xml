@@ -45,7 +45,7 @@
 		<immunity death="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I was the shadow that haunted the cradle of humanity!"/>
 		<voice sentence="I exist since eons and you want to defy me?"/>
 		<voice sentence="Can you feel the passage of time, mortal?"/>

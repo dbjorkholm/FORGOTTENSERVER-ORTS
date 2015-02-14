@@ -48,7 +48,7 @@
 		<immunity lifedrain="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Since you didn't eat your spinach Bogey comes to get you!" yell="1"/>
 		<voice sentence="Too bad you did not eat your lunch, now I have to punish you!" yell="1"/>
 		<voice sentence="Even if you beat me, I'll hide in your closet until you one day drop your guard!" yell="1"/>

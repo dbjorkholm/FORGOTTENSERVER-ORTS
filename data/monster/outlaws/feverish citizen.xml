@@ -31,7 +31,7 @@
 		<element holyPercent="80"/>
 		<element firePercent="-20"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Aaaaargh!"/>
 		<voice sentence="I am the king of the world!"/>
 		<voice sentence="Die Ferumbras!"/>

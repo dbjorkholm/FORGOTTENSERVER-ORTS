@@ -47,7 +47,7 @@
 	<summons maxSummons="3">
 		<summon name="War Wolf" interval="1000" chance="13"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You desecrated this place!"/>
 		<voice sentence="I will cleanse this isle!"/>
 		<voice sentence="Grrrrrrr"/>

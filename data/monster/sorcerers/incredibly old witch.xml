@@ -58,7 +58,7 @@
 		<immunity drown="1"/>
 		<immunity lifedrain="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Stupid people!"/>
 		<voice sentence="Everyone is so stupid!"/>
 		<voice sentence="Feel the wrath of the witch!"/>

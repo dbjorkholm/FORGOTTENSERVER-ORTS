@@ -50,7 +50,7 @@
 	<elements>
 		<element energyPercent="-10"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Qua hah tsh!"/>
 		<voice sentence="Teech tsha tshul!"/>
 		<voice sentence="Quara tsha Fach!"/>

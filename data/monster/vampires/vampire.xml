@@ -48,7 +48,7 @@
 		<immunity drown="1"/>
 		<immunity drunk="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="BLOOD!" yell="1"/>
 		<voice sentence="Let me kiss your neck"/>
 		<voice sentence="I smell warm blood!"/>

@@ -36,7 +36,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You are no match for the scourge of the seas!"/>
 		<voice sentence="You move like a seasick whale!"/>
 		<voice sentence="Yarr, death to all landlubbers!"/>

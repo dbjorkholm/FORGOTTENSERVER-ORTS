@@ -20,7 +20,7 @@
 		<attack name="melee" interval="2000" min="0" max="-35"/>
 	</attacks>
 	<defenses armor="15" defense="15"/>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Alarm!"/>
 		<voice sentence="Don't let him escape!"/>
 		<voice sentence="Intruder! Get him!"/>

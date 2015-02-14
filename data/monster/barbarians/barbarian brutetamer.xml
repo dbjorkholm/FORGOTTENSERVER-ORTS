@@ -46,7 +46,7 @@
 	<summons maxSummons="2">
 		<summon name="War Wolf" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="To me, creatures of the wild!"/>
 		<voice sentence="My instincts tell me about your cowardice."/>
 	</voices>

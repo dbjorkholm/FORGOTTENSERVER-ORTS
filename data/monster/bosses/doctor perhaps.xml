@@ -47,7 +47,7 @@
 	<summons maxSummons="2">
 		<summon name="Zombie" interval="2000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I might use some parts of you in my next creation!"/>
 		<voice sentence="You're only a testsubject to me!"/>
 		<voice sentence="My creations will kill you!"/>

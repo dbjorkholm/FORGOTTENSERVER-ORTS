@@ -22,7 +22,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You won't pass me."/>
 		<voice sentence="I have travelled far to fight here."/>
 	</voices>

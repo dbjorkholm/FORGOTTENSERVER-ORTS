@@ -49,7 +49,7 @@
 	<summons maxSummons="1">
 		<summon name="Golden Servant" interval="1000" chance="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Did it not come to your mind that I placed them here for a reason?"/>
 		<voice sentence="Now I have to create new servants! Do you want to spread this pest beyond these safe walls?"/>
 		<voice sentence="What have you done!"/>

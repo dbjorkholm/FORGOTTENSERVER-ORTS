@@ -50,7 +50,7 @@
 	<summons maxSummons="1">
 		<summon name="Bonebeast" interval="1000" chance="16"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Your pain will be beyond imagination!"/>
 		<voice sentence="You can't defeat me! I will resurrect and take your soul!"/>
 		<voice sentence="Death is my ally!"/>

@@ -55,7 +55,7 @@
 		<summon name="Ancient Scarab" interval="1000" chance="2000" max="2"/>
 		<summon name="Green Djinn" interval="1000" chance="1000" max="4"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="No mortal or undead will steal my secrets!"/>
 		<voice sentence="Ahhhh all those long years."/>
 		<voice sentence="My traitorous son has thee."/>

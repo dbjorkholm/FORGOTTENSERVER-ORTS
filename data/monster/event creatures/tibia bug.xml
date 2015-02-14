@@ -35,7 +35,7 @@
 	<summons maxSummons="10">
 		<summon name="tibia bug" interval="1000" chance="15" max="10"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="My father was a year 2k bug."/>
 		<voice sentence="Psst, I'll make you rich."/>
 		<voice sentence="You are bugged ... by me!"/>

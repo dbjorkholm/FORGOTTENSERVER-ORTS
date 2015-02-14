@@ -24,7 +24,7 @@
 		<element icePercent="10"/>
 		<element firePercent="-10"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Ribbit! Ribbit!"/>
 		<voice sentence="Ribbit!"/>
 	</voices>

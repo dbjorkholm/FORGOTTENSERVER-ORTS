@@ -51,7 +51,7 @@
 	<summons maxSummons="8">
 		<summon name="Slime" interval="2000" chance="30"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="You will become a feast for my maggots."/>
 	</voices>
 	<loot>

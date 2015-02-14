@@ -29,7 +29,7 @@
 		<element icePercent="-10"/>
 		<element deathPercent="-1"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Ruan Wihmpy!"/>
 		<voice sentence="Kaplar!"/>
 	</voices>

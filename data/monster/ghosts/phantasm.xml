@@ -55,7 +55,7 @@
 		<immunity lifedrain="1"/>
 		<immunity physical="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Oh my, you forgot to put your pants on!"/>
 		<voice sentence="Weeheeheeheehee!"/>
 		<voice sentence="Its nothing but a dream!"/>

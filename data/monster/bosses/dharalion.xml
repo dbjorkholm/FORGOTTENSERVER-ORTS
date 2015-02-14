@@ -50,7 +50,7 @@
 	<summons maxSummons="2">
 		<summon name="demon skeleton" interval="1000" chance="6" max="2"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Feel my wrath!"/>
 		<voice sentence="Noone will stop my ascension!"/>
 		<voice sentence="My powers are divine!"/>

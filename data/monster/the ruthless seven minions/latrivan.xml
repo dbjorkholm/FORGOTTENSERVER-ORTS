@@ -43,7 +43,7 @@
 		<immunity death="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I might reward you for killing my brother ~ with a swift death!" yell="1"/>
 		<voice sentence="Colateral damage is so fun!"/>
 		<voice sentence="Golgordan you fool!"/>

@@ -35,7 +35,7 @@
 		<immunity invisible="1"/>
 		<immunity death="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Fear the night without an end!"/>
 		<voice sentence="An age of darkness is at hand!"/>
 	</voices>

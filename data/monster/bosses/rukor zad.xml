@@ -42,7 +42,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="I can kill a man in a thousand ways. And that`s only with a spoon!"/>
 		<voice sentence="You shouldn't have come here!"/>
 		<voice sentence="Haiiii!"/>

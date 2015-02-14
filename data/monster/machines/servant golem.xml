@@ -30,7 +30,7 @@
 		<immunity invisible="1"/>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Do you think I might become a real boy one day?"/>
 		<voice sentence="How may I serve you, Sir or Ma'am?"/>
 		<voice sentence="Washing procedure initiated!"/>

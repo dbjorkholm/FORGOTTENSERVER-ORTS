@@ -30,7 +30,7 @@
 		<element deathPercent="-5"/>
 		<element physicalPercent="-5"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Another head for me!"/>
 		<voice sentence="Head off!"/>
 		<voice sentence="Your head will be mine!"/>

@@ -37,7 +37,7 @@
 		<summon name="Minotaur Archer" interval="1000" chance="15" max="2"/>
 		<summon name="Minotaur Guard" interval="1000" chance="12" max="2"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Feel the power of the Mooh'Tah!"/>
 		<voice sentence="You will get what you deserve!"/>
 		<voice sentence="For the king!"/>

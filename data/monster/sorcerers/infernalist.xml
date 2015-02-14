@@ -65,7 +65,7 @@
 	<summons maxSummons="1">
 		<summon name="Fire Elemental" interval="2000" chance="20"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Nothing will remain but your scorched bones!"/>
 		<voice sentence="Some like it hot!"/>
 		<voice sentence="It's cooking time!"/>

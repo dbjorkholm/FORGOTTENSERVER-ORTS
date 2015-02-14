@@ -63,7 +63,7 @@
 		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="BOW TO THE POWER OF THE RUTHLESS SEVEN!" yell="1"/>
 		<voice sentence="DESTRUCTION!" yell="1"/>
 		<voice sentence="CHAOS!" yell="1"/>

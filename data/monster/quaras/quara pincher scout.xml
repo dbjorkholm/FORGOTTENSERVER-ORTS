@@ -34,7 +34,7 @@
 		<element energyPercent="-10"/>
 		<element physicalPercent="10"/>
 	</elements>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Clank! Clank!"/>
 		<voice sentence="Clap!"/>
 		<voice sentence="Crrrk! Crrrk!"/>

@@ -59,7 +59,7 @@
 	<summons maxSummons="2">
 		<summon name="diabolic imp" interval="5500" chance="30"/>
 	</summons>
-	<voices interval="5000" chance="10">
+	<voices interval="2000" chance="7">
 		<voice sentence="Muahaha!"/>
 		<voice sentence="He he he!"/>
 	</voices>
