@@ -146,6 +146,18 @@ if Modules == nil then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
 
+		if parameters.ungreet then
+			npcHandler:resetNpc(cid)
+			npcHandler:releaseFocus(cid)
+		elseif parameters.reset then
+			npcHandler:resetNpc(cid)
+		elseif parameters.moveup ~= nil then
+			npcHandler.keywordHandler:moveUp(parameters.moveup)
+		end
+
+		return true
+	end
+
 	--Usage:
 		-- local node1 = keywordHandler:addKeyword({"promot"}, StdModule.say, {npcHandler = npcHandler, text = "I can promote you for 20000 gold coins. Do you want me to promote you?"})
 		-- 		node1:addChildKeyword({"yes"}, StdModule.promotePlayer, {npcHandler = npcHandler, cost = 20000, level = 20}, text = "Congratulations! You are now promoted.")
