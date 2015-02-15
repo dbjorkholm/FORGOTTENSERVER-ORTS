@@ -113,23 +113,25 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 -- Wooden Stake
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Ten prayers for a blessed stake? Don\'t tell me they made you travel whole Tibia for it! Listen, child, if you bring me a wooden stake, I\'ll bless it for you. <chuckles>'},
+keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Ten prayers for a blessed stake? Don\'t tell me they made you travel whole Tibia for it! Listen, child, if you bring me a wooden stake, I\'ll bless it for you. <chuckles>'},
 	function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 11 end,
 	function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 12) player:addAchievement('Blessed!') player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end
 )
 
-local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like to receive a spiritual prayer to bless your stake?'},
-		function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) < os.time() end
+local stakeKeyword = keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like to receive a spiritual prayer to bless your stake?'},
+		function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 end
 	)
+
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t have a wooden stake.', reset = true}, function(player) return player:getItemCount(5941) == 0 end)
+
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry, but I\'m still exhausted from the last ritual. Please come back later.', reset = true},
+		function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) >= os.time() end)
+
 	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = '<mumblemumble> Sha Kesh Mar!', reset = true},
 		function(player) return player:getItemCount(5941) > 0 end,
-		function(player) player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, (7 * 86400) + os.time()) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) player:removeItem(5941, 1) player:addItem(5942, 1) end
+		function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, os.time() + 7 * 86400) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) player:removeItem(5941, 1) player:addItem(5942, 1) end
 	)
-
-	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t have a wooden stake.', reset = true})
 	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe another time.', reset = true})
-
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry I\'m still exhausted from the last ritual. come back later and try again.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) > os.time() end)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

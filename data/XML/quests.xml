@@ -127,16 +127,16 @@
 		</mission>
 		<mission name="The Blessed Stake" storageid="12403" startvalue="1" endvalue="12">
 			<missionstate id="1" description="Quentin told you about an old prayer which can bind holy energy to an object. Each of its ten lines has to be recited by a different priest though. Bring Quentin a wooden stake from Gamon to start."/>
-			<missionstate id="2" description="You received Quentin's prayer &quot;'Light shall be near - and darkness afar&quot;. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer."/>
-			<missionstate id="3" description="You received Tibra's prayer &quot;Hope may fill your heart - doubt shall be banned&quot;. Now, bring your stake to Maealil in the elven settlement for the next line of the prayer."/>
-			<missionstate id="4" description="You received Maealil's prayer &quot;Peace may fill your soul - evil shall be cleansed&quot;. Now, bring your stake to Yberius in the Venore temple for the next line of the prayer."/>
-			<missionstate id="5" description="You received Yberius's prayer &quot;Protection will be granted - from dangers at hand&quot;. Now, bring your stake to Isimov in the dwarven settlement for the next line of the prayer."/>
-			<missionstate id="6" description="You received Isimov's prayer &quot;Unclean spirits shall be repelled&quot;. Now, bring your stake to Amanda in Edron for the next line of the prayer."/>
-			<missionstate id="7" description="You received Amanda's prayer &quot;Wicked curses shall be broken&quot;. Now, bring your stake to Kasmir in Darashia for the next line of the prayer."/>
-			<missionstate id="8" description="You received Kasmir's prayer &quot;Let there be honour and humility&quot;. Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer."/>
-			<missionstate id="9" description="You received Rahkem's prayer &quot;Let there be power and compassion&quot;. Now, bring your stake to Brewster in Port Hope for the next line of the prayer."/>
-			<missionstate id="10" description="You received Brewster's prayer &quot;Your hand shall be guided - your feet shall walk in harmony&quot;. Now, bring your stake to Tyrias in Liberty Bay for the next line of the prayer."/>
-			<missionstate id="11" description="You received Tyrias' prayer &quot;Your mind shall be a vessel for joy, light and wisdom&quot;. He wasn't exactly happy though and said that if you need some mumbo jumbo again, you should rather go to Chondur."/>
+			<missionstate id="2" description="You received Quentin's prayer: &quot;Light shall be near - and darkness afar&quot;. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer."/>
+			<missionstate id="3" description="You received Tibra's prayer: &quot;Hope may fill your heart - doubt shall be banned&quot;. Now, bring your stake to Maealil in the Elven settlement for the next line of the prayer."/>
+			<missionstate id="4" description="You received Maealil's prayer: &quot;Peace may fill your soul - evil shall be cleansed&quot;. Now, bring your stake to Yberius in the Venore temple for the next line of the prayer."/>
+			<missionstate id="5" description="You received Yberius' prayer: &quot;Protection will be granted - from dangers at hand&quot;. Now, bring your stake to Isimov in the dwarven settlement for the next line of the prayer."/>
+			<missionstate id="6" description="You received Isimov's prayer: &quot;Unclean spirits shall be repelled&quot;. Now, bring your stake to Amanda in Edron for the next line of the prayer."/>
+			<missionstate id="7" description="You received Amanda's prayer: &quot;Wicked curses shall be broken&quot;. Now, bring your stake to Kasmir in Darashia for the next line of the prayer."/>
+			<missionstate id="8" description="You received Kasmir's prayer: &quot;Let there be honour and humility&quot;. Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer."/>
+			<missionstate id="9" description="You received Rahkem's prayer: &quot;Let there be power and compassion&quot;. Now, bring your stake to Brewster in Port Hope for the next line of the prayer."/>
+			<missionstate id="10" description="You received Brewster's prayer: &quot;Your hand shall be guided - your feet shall walk in harmony&quot;. Now, bring your stake to Tyrias in Liberty Bay for the next line of the prayer."/>
+			<missionstate id="11" description="You received Tyrias' prayer: &quot;Your mind shall be vessel for joy, light and wisdom&quot;. He wasn't happy though and said that if you need some mumbo jumbo again, you should rather go to Chondur."/>
 			<missionstate id="12" description="Chondur was surprised to hear that you had to travel through all of Tibia to have your wooden stake blessed. He offered you help with the blessing if you should need one again in the future."/>
 		</mission>
 	</quest>

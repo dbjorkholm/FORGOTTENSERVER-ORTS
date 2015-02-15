@@ -34,18 +34,18 @@ local stoneKeyword = keywordHandler:addKeyword({'adventurer stone'}, StdModule.s
 	stoneKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'No problem.', reset = true})
 
 -- Wooden Stake
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t even have that strange stake with you.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 and player:getItemCount(5941) == 0 end)
+keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t even have that strange stake with you.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 and player:getItemCount(5941) == 0 end)
 
-local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Yes, I was informed what to do. Are you prepared to receive my line of the prayer?'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 end)
+local stakeKeyword = keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Brewster sent me a strange message about some strange hocus-pocus. I think it\'s nonsense, but since you have come that far, I\'ll play along. Are you ready?'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 10 end)
 	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'So receive my prayer: \'Your mind shall be a vessel for joy, light and wisdom\' - uh, wow, something happened. Well, I guess that\'s it, but next time if you need some mumbo jumbo rather go to Chondur.', reset = true},
 		function(player) return player:getItemCount(5941) > 0 end,
-		function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 11) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) player:removeItem(5941, 1) player:addItem(5942, 1) end
+		function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 11) player:removeItem(5941, 1) player:addItem(5942, 1) end
 	)
 	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t even have that strange stake with you.', reset = true})
 	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'No problem, I have other things to do.', reset = true})
 
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'A blessed stake? That is a strange request. Maybe Quentin knows more, he is one of the oldest monks after all.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) < 10 end)
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'I won\'t do that rubbish again. Go pester Chondur with your hocus-pocus.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 11 end)
+keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'A blessed stake? I don\'t believe in things like that. If anyone does, it\'s probably old Quentin.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) < 10 end)
+keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'I won\'t do that rubbish again. Go pester Chondur with your hocus-pocus.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 11 end)
 
 -- Healing
 local function addHealKeyword(text, condition, effect)
