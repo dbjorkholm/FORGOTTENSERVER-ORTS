@@ -136,7 +136,7 @@
 			<missionstate id="8" description="You received Kasmir's prayer: &quot;Let there be honour and humility&quot;. Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer."/>
 			<missionstate id="9" description="You received Rahkem's prayer: &quot;Let there be power and compassion&quot;. Now, bring your stake to Brewster in Port Hope for the next line of the prayer."/>
 			<missionstate id="10" description="You received Brewster's prayer: &quot;Your hand shall be guided - your feet shall walk in harmony&quot;. Now, bring your stake to Tyrias in Liberty Bay for the next line of the prayer."/>
-			<missionstate id="11" description="You received Tyrias' prayer: &quot;Your mind shall be vessel for joy, light and wisdom&quot;. He wasn't happy though and said that if you need some mumbo jumbo again, you should rather go to Chondur."/>
+			<missionstate id="11" description="You received Tyrias' prayer: &quot;Your mind shall be vessel for joy, light and wisdom&quot;. He wasn't exactly happy though and said that if you need some mumbo jumbo again, you should rather go to Chondur."/>
 			<missionstate id="12" description="Chondur was surprised to hear that you had to travel through all of Tibia to have your wooden stake blessed. He offered you help with the blessing if you should need one again in the future."/>
 		</mission>
 	</quest>
