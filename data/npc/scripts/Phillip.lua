@@ -13,7 +13,7 @@ keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text
 keywordHandler:addKeyword({'teacher'}, StdModule.say, {npcHandler = npcHandler, text = "I run this school, there are other travelling teachers who we call Loremasters."})
 keywordHandler:addKeyword({'loremaster'}, StdModule.say, {npcHandler = npcHandler, text = "If you are lucky you'll meet one in your journeys."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "My name is Phillip."})
-keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "It is " .. getTibianTime() .. "."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "It is |TIME|."})
 keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "I will provide you with all knowledge I have."})
 keywordHandler:addKeyword({'monster'}, StdModule.say, {npcHandler = npcHandler, text = "Monsters come in different shape and power. It's said there is a zoo in the dwarfs' town."})
 keywordHandler:addKeyword({'dungeon'}, StdModule.say, {npcHandler = npcHandler, text = "Dungeons are places of danger and puzzles. In some of them a bright mind will serve you more then a blade."})

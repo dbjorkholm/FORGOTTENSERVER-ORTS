@@ -15,7 +15,7 @@ local blessKeyword = keywordHandler:addKeyword({'twist of fate'}, StdModule.say,
 		'The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...',
 		'Would you like to receive that protection for a sacrifice of |PVPBLESSCOST| gold, child?'
 	}})
-	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the protection of the twist of fate, pilgrim.', premium = true, cost = '|PVPBLESSCOST|', bless = 6})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the protection of the twist of fate, pilgrim.', cost = '|PVPBLESSCOST|', bless = 6})
 	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
 
 -- Adventurer Stone

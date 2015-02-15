@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 -- Spark of the Phoenix
 local blessKeyword = keywordHandler:addKeyword({'spark of the phoenix'}, StdModule.say, {npcHandler = npcHandler, text = 'The Spark of the Phoenix is given by me and by the great geomancer of the local earth temple. Do you wish to receive my part of the Spark of the Phoenix for |BLESSCOST| gold?'})
-	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the spark of the phoenix, pilgrim.', premium = true, cost = '|BLESSCOST|', bless = 4})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the spark of the phoenix, pilgrim.', cost = '|BLESSCOST|', bless = 4})
 	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe another time.', reset = true})
 
 -- Basic

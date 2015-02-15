@@ -39,7 +39,7 @@ end
 
 -- Fire of the Suns
 local blessKeyword = keywordHandler:addKeyword({'suns'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like to receive that protection for a sacrifice of |BLESSCOST| gold, child?'})
-	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the fire of the suns, pilgrim.', premium = true, cost = '|BLESSCOST|', bless = 3})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the fire of the suns, pilgrim.', cost = '|BLESSCOST|', bless = 3})
 	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
 
 -- Healing

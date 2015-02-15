@@ -60,15 +60,6 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Sorry you don't have the necessary items.", cid)
 			end
 			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 3 then
-			if player:removeItem(5941, 1) then
-				player:setStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, os.time())
-				npcHandler:say("<mumblemumble> Sha Kesh Mar!", cid)
-				player:addItem(5942, 1)
-			else
-				npcHandler:say("You don't have the required items.", cid)
-			end
-			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 4 then
 			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 1)
 			npcHandler:say("Good! Come back once you found a mandrake and collected 5 dworcish voodoo dolls.", cid)
@@ -114,29 +105,31 @@ local function creatureSayCallback(cid, type, msg)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "wooden stake") then
-		if npcHandler.topic[cid] < 1 then
-			if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getItemCount(5941) >= 1 then
-				if player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) + 7 * 24 * 60 * 60 < os.time() then
-					npcHandler:say("Ten prayers for a blessed stake? Don't tell me they made you travel whole Tibia for it! Listen, child, if you bring me a {wooden stake}, I'll bless it for you. <chuckles>", cid)
-					npcHandler.topic[cid] = 2
-				else
-					npcHandler:say("Sorry I'm still exhausted from the last ritual. come back later and try again.", cid)
-					npcHandler.topic[cid] = 0
-				end
-			end
-		elseif npcHandler.topic[cid] == 2 then
-			if player:getItemCount(5941) > 0 then
-				npcHandler:say("Would you like to receive a spiritual prayer to bless your stake?", cid)
-				npcHandler.topic[cid] = 3
-			end
-		end
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 2 then
 		npcHandler:say("Maybe next time.", cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
+
+-- Wooden Stake
+keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Ten prayers for a blessed stake? Don\'t tell me they made you travel whole Tibia for it! Listen, child, if you bring me a wooden stake, I\'ll bless it for you. <chuckles>'},
+	function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 11 end,
+	function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 12) player:addAchievement('Blessed!') player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end
+)
+
+local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like to receive a spiritual prayer to bless your stake?'},
+		function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) < os.time() end
+	)
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = '<mumblemumble> Sha Kesh Mar!', reset = true},
+		function(player) return player:getItemCount(5941) > 0 end,
+		function(player) player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime, (7 * 86400) + os.time()) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) player:removeItem(5941, 1) player:addItem(5942, 1) end
+	)
+
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t have a wooden stake.', reset = true})
+	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe another time.', reset = true})
+
+keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry I\'m still exhausted from the last ritual. come back later and try again.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 12 and player:getStorageValue(Storage.FriendsandTraders.TheBlessedStakeWaitTime) > os.time() end)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

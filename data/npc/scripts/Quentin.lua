@@ -8,29 +8,27 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 -- Wooden Stake Quest
--- Start
 local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler,
-	text = {
-		'A blessed stake to defeat evil spirits? I do know an old prayer which is said to grant sacred power and to be able to bind this power to someone, or something. ...',
-		'However, this prayer needs the combined energy of ten priests. Each of them has to say one line of the prayer. ...',
-		'I could start with the prayer, but since the next priest has to be in a different location, you probably will have to travel a lot. ...',
-		'Is this stake really important enough to you so that you are willing to take this burden?',
-	}}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == -1 end)
-
-	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Alright, I guess you need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to me.', reset = true}, nil,
-		function(player) player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 1) end
+		text = {
+			'A blessed stake to defeat evil spirits? I do know an old prayer which is said to grant sacred power and to be able to bind this power to someone, or something. ...',
+			'However, this prayer needs the combined energy of ten priests. Each of them has to say one line of the prayer. ...',
+			'I could start with the prayer, but since the next priest has to be in a different location, you probably will have to travel a lot. ...',
+			'Is this stake really important enough to you so that you are willing to take this burden?',
+		}}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == -1 end
 	)
-	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Alright, I guess you need a stake first. Maybe Gamon can help you, the leg of a chair or something could just do. Try asking him for a stake, and if you have one, bring it back to me.', reset = true}, nil, function(player) player:setStorageValue(Storage.FriendsandTraders.DefaultStart, 1) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 1) end)
 
-local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Yes, I was informed what to do. Are you prepared to receive my line of the prayer?'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 2 end)
-	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'So receive my prayer: \'Light shall be near - and darkness afar\'. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer. I will inform her what to do.', reset = true},
-		function(player) return player:getItemCount(5941) > 0 end,
-		function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 3) end
+-- First prayer
+keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'I guess you couldn\'t convince Gamon to give you a stake, eh?'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 1 and player:getItemCount(5941) == 0 end)
+
+local stakeKeyword = keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Yes, I was informed what to do. Are you prepared to receive my line of the prayer?'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 1 end)
+	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'So receive my prayer: \'Light shall be near - and darkness afar\'. Now, bring your stake to Tibra in the Carlin church for the next line of the prayer. I will inform her what to do.', reset = true}, nil,
+		function(player) player:setStorageValue(Storage.FriendsandTraders.TheBlessedStake, 2) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end
 	)
-	stakeKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry, you don\'t have any wooden stake.', reset = true})
-	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
+	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'I will wait for you.', reset = true})
 
-keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'A blessed stake? I don\'t believe in things like that. If anyone does, it\'s probably old Quentin.', reset = true})
+keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'You should visit Tibra in the Carlin church now.'}, function(player) return player:getStorageValue(Storage.FriendsandTraders.TheBlessedStake) == 2 end)
+keywordHandler:addKeyword({'wooden stake'}, StdModule.say, {npcHandler = npcHandler, text = 'You already received my line of the prayer.'})	
 
 -- Twist of Fate
 local blessKeyword = keywordHandler:addKeyword({'twist of fate'}, StdModule.say, {npcHandler = npcHandler,
@@ -40,7 +38,7 @@ local blessKeyword = keywordHandler:addKeyword({'twist of fate'}, StdModule.say,
 		'The {twist of fate} will not reduce the death penalty like the other blessings, but instead prevent you from losing your other blessings as well as the amulet of loss, should you wear one. It costs the same as the other blessings. ...',
 		'Would you like to receive that protection for a sacrifice of |PVPBLESSCOST| gold, child?'
 	}})
-	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the protection of the twist of fate, pilgrim.', premium = true, cost = '|PVPBLESSCOST|', bless = 6})
+	blessKeyword:addChildKeyword({'yes'}, StdModule.bless, {npcHandler = npcHandler, text = 'So receive the protection of the twist of fate, pilgrim.', cost = '|PVPBLESSCOST|', bless = 6})
 	blessKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Fine. You are free to decline my offer.', reset = true})
 
 -- Adventurer Stone

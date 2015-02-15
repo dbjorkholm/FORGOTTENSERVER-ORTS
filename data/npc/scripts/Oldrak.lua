@@ -33,7 +33,7 @@ keywordHandler:addKeyword({'trade'}, StdModule.say, {npcHandler = npcHandler, te
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, text = "I can offer you the holy tible for a small fee."})
 keywordHandler:addKeyword({'buy'}, StdModule.say, {npcHandler = npcHandler, text = "I can offer you the holy tible for a small fee."})
 keywordHandler:addKeyword({'have'}, StdModule.say, {npcHandler = npcHandler, text = "I can offer you the holy tible for a small fee."})
-keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "Now, it is " .. getTibianTime() .. "."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "Now, it is |TIME|."})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
