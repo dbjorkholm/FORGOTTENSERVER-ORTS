@@ -172,7 +172,7 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		if parameters.premium and player:isPremium() then
+		if player:isPremium() then
 			if player:isPromoted() then
 				npcHandler:say("You are already promoted!", cid)
 			elseif player:getLevel() < parameters.level then

@@ -268,12 +268,10 @@ end
 
 function Player.isPromoted(self)
 	local vocation = self:getVocation()
-	if vocation:getId() == 0
-			or vocation:getPromotion():getId() == 0 then
-		return true
-	end
+	local promotedVocation = vocation:getPromotion()
+	promotedVocation = promotedVocation and promotedVocation:getId() or 0
 
-	return false
+	return promotedVocation == 0 and vocation:getId() ~= promotedVocation
 end
 
 function Player.hasRookgaardShield(self)
