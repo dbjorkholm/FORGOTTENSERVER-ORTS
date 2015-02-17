@@ -5,11 +5,6 @@
 ]]
 
 SvargrondArena = {
-	-- action ids have to be equal to action id of reward doors
-	actionGreenhorn = 26100,
-	actionScrapper = 27100,
-	actionWarlord = 28100,
-
 	-- kick time in seconds (10 minutes)
 	kickTime = 600,
 	kickPosition = Position(32251, 31098, 6),
@@ -124,7 +119,7 @@ ARENA = {
 	[1] = {
 		name = 'Greenhorn',
 		price = 1000,
-		questLog = 50140,
+		questLog = Storage.SvargrondArena.QuestLogGreenhorn,
 		achievement = 'Greenhorn',
 		creatures = {
 			[1] = 'frostfur',
@@ -139,9 +134,8 @@ ARENA = {
 			[10] = 'orcus the cruel'
 		},
 		reward = {
-			storage = 1102,
 			trophy = 5807,
-			trophyStorage = 1103,
+			trophyStorage = Storage.SvargrondArena.TrophyGreenhorn,
 			desc = 'A brave warrior that finished the Greenhorn mode. Awarded to %s.',
 			[26300] = {
 				container = true,
@@ -176,7 +170,7 @@ ARENA = {
 	[2] = {
 		name = 'Scrapper',
 		price = 5000,
-		questLog = 50141,
+		questLog = Storage.SvargrondArena.QuestLogScrapper,
 		achievement = 'Scrapper',
 		creatures = {
 			[1] = 'avalanche',
@@ -191,9 +185,8 @@ ARENA = {
 			[10] = 'spirit of fire'
 		},
 		reward = {
-			storage = 1104,
 			trophy = 5806,
-			trophyStorage = 1105,
+			trophyStorage = Storage.SvargrondArena.TrophyScrapper,
 			desc = 'A brave warrior that finished the Scrapper mode. Awarded to %s.',
 			[27300] = {
 				container = true,
@@ -229,7 +222,7 @@ ARENA = {
 	[3] = {
 		name = 'Warlord',
 		price = 10000,
-		questLog = 50142,
+		questLog = Storage.SvargrondArena.QuestLogWarlord,
 		achievement = 'Warlord of Svargrond',
 		creatures = {
 			[1] = 'webster',
@@ -244,9 +237,8 @@ ARENA = {
 			[10] = 'the obliverator'
 		},
 		reward = {
-			storage = 1006,
 			trophy = 5805,
-			trophyStorage = 1007,
+			trophyStorage = Storage.SvargrondArena.TrophyWarlord,
 			desc = 'A brave warrior that finished the Warlord mode. Awarded to %s.',
 			[28300] = {
 				container = true,
@@ -281,18 +273,6 @@ ARENA = {
 		}
 	}
 }
-
-function SvargrondArena.getActionIdByArena(arenaId)
-	if arenaId == 1 then
-		return SvargrondArena.actionGreenhorn
-	elseif arenaId == 2 then
-		return SvargrondArena.actionScrapper
-	elseif arenaId == 3 then
-		return SvargrondArena.actionWarlord
-	else
-		print('SvargronArena::getActionIdByArena invalid arenaId')
-	end
-end
 
 function SvargrondArena.getPitCreatures(pitId)
 	if not PITS[pitId] then

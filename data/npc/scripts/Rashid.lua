@@ -122,9 +122,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif(npcHandler.topic[cid] == 9) then
 			if player:removeItem(8112, 1) then
-				--if (player:getStorageValue(ExplorerSocietySTORAGE) == 1) then
-					--player:AddArchie(Just in Time)
-				--end
 				npcHandler:say("Mmmhh, the lovely odeur of scarab cheese! I really can't understand why most people can't stand it. Thanks, well done! ", cid)
 				player:setStorageValue(Storage.TravellingTrader.Mission03, 3)
 				npcHandler.topic[cid] = 0

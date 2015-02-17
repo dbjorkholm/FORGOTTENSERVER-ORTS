@@ -1,12 +1,12 @@
 local specialQuests = {
-	[2215] = Storage.AnnihilatorDone, -- Annihilator
-	[2016] = 9050, -- Dreamer's Challenge Quest Boxes
-	[10544] = 10544,
+	[2215] = Storage.AnnihilatorDone,
+	[2016] = Storage.DreamersChallenge.Reward,
+	[10544] = Storage.PitsOfInferno.WeaponReward,
 	[12513] = Storage.thievesGuild.Reward,
 	[12374] = Storage.WrathoftheEmperor.mainReward,
-	[26300] = 26300,
-	[27300] = 27300,
-	[28300] = 28300
+	[26300] = Storage.SvargrondArena.RewardGreenhorn,
+	[27300] = Storage.SvargrondArena.RewardScrapper,
+	[28300] = Storage.SvargrondArena.RewardWarlord
 }
 
 local questsExperience = {

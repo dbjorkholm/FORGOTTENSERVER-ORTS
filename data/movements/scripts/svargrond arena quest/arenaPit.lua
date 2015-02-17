@@ -22,13 +22,25 @@ function onStepIn(creature, item, position, fromPosition)
 	local pitId = player:getStorageValue(Storage.SvargrondArena.Pit)
 	local arenaId = player:getStorageValue(Storage.SvargrondArena.Arena)
 	if pitId > 10 then
-		SvargrondArena.rewardPosition:sendMagicEffect(arenaId == 1 and CONST_ME_FIREWORK_BLUE or arenaId == 2 and CONST_ME_FIREWORK_YELLOW or CONST_ME_FIREWORK_RED)
 		player:teleportTo(SvargrondArena.rewardPosition)
 		player:setStorageValue(Storage.SvargrondArena.Pit, 0)
-		player:setStorageValue(SvargrondArena.getActionIdByArena(arenaId), 1)
+
+		if arenaId == 1 then
+			SvargrondArena.rewardPosition:sendMagicEffect(CONST_ME_FIREWORK_BLUE)
+			player:setStorageValue(Storage.SvargrondArena.Greenhorn, 1)
+			player:say('Welcome back, little hero!', TALKTYPE_MONSTER_SAY)
+		elseif arenaId == 2 then
+			SvargrondArena.rewardPosition:sendMagicEffect(CONST_ME_FIREWORK_YELLOW)
+			player:setStorageValue(Storage.SvargrondArena.Scrapper, 1)
+			player:say('Congratulations, brave warrior!', TALKTYPE_MONSTER_SAY)
+		elseif arenaId == 3 then
+			SvargrondArena.rewardPosition:sendMagicEffect(CONST_ME_FIREWORK_RED)
+			player:setStorageValue(Storage.SvargrondArena.Warlord, 1)
+			player:say('Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
+		end
+
 		player:setStorageValue(Storage.SvargrondArena.Arena, player:getStorageValue(Storage.SvargrondArena.Arena) + 1)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, 'Congratulations! You completed ' .. ARENA[arenaId].name .. ' arena, you should take your reward now.')
-		player:say(arenaId == 1 and 'Welcome back, little hero!' or arenaId == 2 and 'Congratulations, brave warrior!' or 'Respect and honour to you, champion!', TALKTYPE_MONSTER_SAY)
 		player:setStorageValue(ARENA[arenaId].questLog, 2)
 		player:addAchievement(ARENA[arenaId].achievement)
 		SvargrondArena.cancelEvents(playerId)

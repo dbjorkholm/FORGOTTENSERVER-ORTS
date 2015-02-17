@@ -126,6 +126,7 @@ Storage = {
 	},
 	ElementalSphere = {
 		QuestLine = 10000,
+		BossStorage = 10001,
 		MachineGemCount = 10002
 	},
 	GravediggerOfDrefia = {
@@ -212,7 +213,6 @@ Storage = {
 		Mission72 = 9948,
 		Mission73 = 9949,
 		Mission74 = 9876
-
 	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- until all outfit quests are completed
@@ -527,7 +527,12 @@ Storage = {
 		Mission09 = 12458,
 		Mission10 = 12459,
 		Rank = 12460,
-		Door = 12461
+		Door = 12461,
+
+		TravelCarlin = 251,
+		TravelEdron = 252,
+		TravelVenore = 253,
+		TravelCormaya = 254
 	},
 	thievesGuild = {
 		Quest = 12501,
@@ -681,7 +686,24 @@ Storage = {
 	},
 	SvargrondArena = {
 		Arena = 1100,
-		Pit = 1101
+		Pit = 1101,
+
+		QuestLogGreenhorn = 50140,
+		QuestLogScrapper = 50141,
+		QuestLogWarlord = 50142,
+
+		RewardGreenhorn = 26300,
+		RewardScrapper = 27300,
+		RewardWarlord = 28300,
+
+		TrophyGreenhorn = 1103,
+		TrophyScrapper = 1105,
+		TrophyWarlord = 1107,
+
+		-- Reward Doors
+		Greenhorn = 26100,
+		Scrapper = 27100,
+		Warlord = 28100
 	},
 	QuestChests = {
 		-- Todo: Move to a seperate range
@@ -744,7 +766,17 @@ Storage = {
 	PitsOfInferno = {
 		ShortcutHub = 8819,
 		ShortcutLevers = 8818,
-		Pumin = 50096
+		Pumin = 50096,
+
+		WeaponReward = 10544,
+
+		ThroneInfernatil = 2080,
+		ThroneTafariel = 2081,
+		ThroneVerminor = 2082,
+		ThroneApocalypse = 2083,
+		ThroneBazir = 2084,
+		ThroneAshfalor = 2085,
+		ThronePumin = 2086
 	},
 	HorestisTomb = {
 		JarFloor1 = 50006,
@@ -894,6 +926,11 @@ Storage = {
 
 	},
 
+	DreamersChallenge = {
+		Reward = 9050
+	},
+
+	EruaranGreeting = 3250,
 	Factions = 50716,
 	MaryzaCookbook = 50721,
 	combatProtectionStorage = 50722,

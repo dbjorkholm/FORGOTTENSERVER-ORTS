@@ -12,21 +12,17 @@ local weapon = {}
 local weapon_sub = {}
 
 local Config = {
-	Greet_Storage = 3250,
-	Create =
-	{
+	Create = {
 		Clusters = 20,
 		DreamMatter = 1,
 		Chance = 40 --40%
 	},
-	Improve =
-	{
+	Improve = {
 		Clusters = 75,
 		Chance = 30, --30%
 		BreakChance = 50 --50% of chance that when failing the improvement, the weapons is destroyed but you keep the clusters. Else, you keep the weapon and lose the clusters
 	},
-	Transform =
-	{
+	Transform = {
 		Clusters = 150,
 		Chance = 10, --10%
 		BreakChance = 50 --50% of chance that when failing the transforming, the weapon is destroyed but you keep all the clusters. Else, the weapon is downgraded to crude piece and you lose half of clusters.
@@ -104,11 +100,11 @@ local ACTION = {
 
 local function greetCallback(cid)
 	local player = Player(cid)
-	if player:getStorageValue(Config.Greet_Storage) > 0 then
+	if player:getStorageValue(Storage.EruaranGreeting) > 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Ashari Lillithy, so we meet {again}! What brings you here this time, general {information}, {transform}, {improve}, {create}, {outfit}, or {talk}?")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|.')
-		player:setStorageValue(Config.Greet_Storage, 1)
+		player:setStorageValue(Storage.EruaranGreeting, 1)
 	end
 	return true
 end

@@ -1,20 +1,20 @@
 local travel = {
-	[7840] = {storage = 251, message = 'You visited Carlin. Now head to Edron.'},
-	[7842] = {storage = 252, message = 'You visited Edron. Now head to Venore.'},
-	[7843] = {storage = 253, message = 'You visited Venore. Now head to Cormaya.'},
-	[7844] = {storage = 254, message = 'You visited Cormaya. Now head to the Kevin\'s Post Office.'},
+	[7840] = {storage = Storage.postman.TravelCarlin, message = 'You visited Carlin. Now head to Edron.'},
+	[7842] = {storage = Storage.postman.TravelEdron, message = 'You visited Edron. Now head to Venore.'},
+	[7843] = {storage = Storage.postman.TravelVenore, message = 'You visited Venore. Now head to Cormaya.'},
+	[7844] = {storage = Storage.postman.TravelCormaya, message = 'You visited Cormaya. Now head to the Kevin\'s Post Office.'},
 }
 
 function onStepIn(creature, item, position, fromPosition)
-	local player = creature:getPlayer()
-	if not player then
+	if not creature:isPlayer() then
 		return true
 	end
 
 	local config = travel[item.actionid]
-	if player:getStorageValue(config.storage) < 1 then
-		player:setStorageValue(config.storage, 1)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, config.message)
+	local cStorage = config.storage
+	if creature:getStorageValue(cStorage) ~= 1 then
+		creature:setStorageValue(cStorage, 1)
+		creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, config.message)
 	end
 	return true
 end
