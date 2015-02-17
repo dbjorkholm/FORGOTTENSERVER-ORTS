@@ -5,24 +5,15 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Come chat with ol\' Bozo!',
-	'Do you know the one with the dragon? Where - and then ... hahahaha! Oh no, I guess I ruined it.',
-	'The fools\' guild? Are you serious? No, of course not! Hahaha!',
-	'Welcome, welcome, step closer!'
+	{text = 'Come chat with ol\' Bozo!'},
+	{text = 'Do you know the one with the dragon? Where - and then ... hahahaha! Oh no, I guess I ruined it.'},
+	{text = 'The fools\' guild? Are you serious? No, of course not! Hahaha!'},
+	{text = 'Welcome, welcome, step closer!'}
 }
-
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices, 10, 20))
 
 local config = {
 	[1] = {
@@ -33,7 +24,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7476},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission1, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 2}
 		}
@@ -61,7 +52,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7477},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission2, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 4}
 		}
@@ -93,7 +84,7 @@ local config = {
 		yes = true,
 		removeItem = {itemId = 7484},
 		pie = true,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission3, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 6}
 		}
@@ -122,7 +113,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 2006, count = 18, subType = 15},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission4, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 8}
 		},
@@ -136,7 +127,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7483},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission4, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 9}
 		}
@@ -169,7 +160,7 @@ local config = {
 		},
 		yes = true,
 		checkItemCount = 8187,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission5, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 11}
 		}
@@ -186,7 +177,7 @@ local config = {
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.EmperorBeardShave,
 		removeItem = {itemId = 7479},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission5, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 12}
 		}
@@ -213,7 +204,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 5878, count = 4},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission6, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 15}
 		}
@@ -226,7 +217,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 5879},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission6, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 16}
 		},
@@ -254,7 +245,7 @@ local config = {
 		},
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.WhoopeeCushion,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission6, value = 5},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 18}
 		}
@@ -281,7 +272,7 @@ local config = {
 		},
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.ScaredCarina,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission7, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 20}
 		}
@@ -306,7 +297,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 8204},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission8, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 22}
 		}
@@ -319,7 +310,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 8109},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission8, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 23}
 		}
@@ -332,7 +323,7 @@ local config = {
 			}
 		},
 		addItem = {itemId = 7499},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission8, value = 4},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 24}
 		}
@@ -345,7 +336,7 @@ local config = {
 		},
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.Cigar,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission8, value = 5},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 25}
 		},
@@ -359,7 +350,7 @@ local config = {
 				'Firstly, take this vial and use it on a dead stalker immediately after his death to collect his warm blood. Report about your mission when you are done.'
 			}
 		},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission9, value = 1},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 26}
 		},
@@ -376,7 +367,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7488},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission9, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 27}
 		},
@@ -390,7 +381,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7489},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission9, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 28}
 		}
@@ -404,7 +395,7 @@ local config = {
 				'Use the vanishing ink to sign the contract and then hand the paper back to him. This will keep this humourless doter busy for a while. Talk to me about your mission when you are done.'
 			}
 		},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission9, value = 4},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 29}
 		},
@@ -418,7 +409,7 @@ local config = {
 		},
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.Contract,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission9, value = 5},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 30}
 		}
@@ -438,7 +429,7 @@ local config = {
 			}
 		},
 		yes = true,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission10, value = 1},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 31}
 		},
@@ -451,7 +442,7 @@ local config = {
 		},
 		yes = true,
 		cookiesDelivery = true,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission10, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 32}
 		}
@@ -463,7 +454,7 @@ local config = {
 				'Well, that is after you got the needed material. First of all, bring me 5 pieces of white cloth. Then we talk more about your mission.'
 			}
 		},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission11, value = 1},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 33}
 		}
@@ -480,7 +471,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 5909, count = 5},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission11, value = 2},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 34}
 		},
@@ -498,7 +489,7 @@ local config = {
 		},
 		yes = true,
 		removeItem = {itemId = 7501},
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission11, value = 3},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 35}
 		},
@@ -512,7 +503,7 @@ local config = {
 		},
 		yes = true,
 		checkStorage = Storage.WhatAFoolishQuest.ScaredKazzan,
-		updateStorages = { 
+		updateStorages = {
 			{key = Storage.WhatAFoolishQuest.Mission11, value = 4},
 			{key = Storage.WhatAFoolishQuest.Questline, value = 36}
 		},
@@ -624,7 +615,7 @@ local function creatureSayCallback(cid, type, msg)
 			if not targetValue then
 				return true
 			end
-			
+
 			npcHandler:say(targetValue.text[1], cid)
 			npcHandler.topic[cid] = 4
 			value[cid] = targetValue
@@ -676,7 +667,7 @@ local function creatureSayCallback(cid, type, msg)
 					return true
 				end
 			end
-			
+
 			if targetValue.cookiesDeliveryy then
 				if player:getCookiesDelivered() ~= 10 then
 					npcHandler:say('No, you aren\'t! Why do only fools apply for the fools guild?', cid)
@@ -700,11 +691,11 @@ local function creatureSayCallback(cid, type, msg)
 					player:setStorageValue(storage.key, storage.value)
 				end
 			end
-			
+
 			if targetValue.addItem then
 				player:addItem(targetValue.addItem.itemId, targetValue.addItem.count or 1)
 			end
-			
+
 			if targetValue.addon then
 				player:addOutfitAddon(270, targetValue.addon)
 				player:addOutfitAddon(273, targetValue.addon)
@@ -714,7 +705,7 @@ local function creatureSayCallback(cid, type, msg)
 			if targetValue.effect then
 				Npc():getPosition():sendMagicEffect(targetValue.effect)
 			end
-			
+
 			if targetValue.last then
 				player:addAchievement('Perfect Fool')
 				player:addAchievement('Fool at Heart')
@@ -771,10 +762,15 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-keywordHandler:addKeyword({'sorcerer'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_SORCERER, 'I wanted to become a sorcerer, too, but I was overqualified!'}, {'The good thing about them is that they can\'t be at two places at the same time.'}}})
-keywordHandler:addKeyword({'druid'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_DRUID, 'I wanted to become a druid, too, but I was overqualified!'}, {'I wonder if they love my water squirt flowers as much as all other plants.'}}})
-keywordHandler:addKeyword({'paladin'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_PALADIN, 'I wanted to become a paladin, too, but I was overqualified!'}, {'They are the king\'s favourites, because they know how to \'bow\'.'}}})
-keywordHandler:addKeyword({'knight'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_KNIGHT, 'I wanted to become a knight, too, but I was overqualified!'}, {'Did you notice that old knights have their scars just on their backs?'}}})
+keywordHandler:addKeyword({'sorcerer'}, StdModule.say, {npcHandler = npcHandler, text = 'I wanted to become a sorcerer, too, but I was overqualified!'}, function(player) return player:isSorcerer() end)
+keywordHandler:addKeyword({'druid'}, StdModule.say, {npcHandler = npcHandler, text = 'I wanted to become a druid, too, but I was overqualified!'}, function(player) return player:isDruid() end)
+keywordHandler:addKeyword({'paladin'}, StdModule.say, {npcHandler = npcHandler, text = 'I wanted to become a paladin, too, but I was overqualified!'}, function(player) return player:isPaladin() end)
+keywordHandler:addKeyword({'knight'}, StdModule.say, {npcHandler = npcHandler, text = 'I wanted to become a knight, too, but I was overqualified!'}, function(player) return player:isKnight() end)
+keywordHandler:addKeyword({'sorcerer'}, StdModule.say, {npcHandler = npcHandler, text = 'The good thing about them is that they can\'t be at two places at the same time.'})
+keywordHandler:addKeyword({'druid'}, StdModule.say, {npcHandler = npcHandler, text = 'I wonder if they love my water squirt flowers as much as all other plants.'})
+keywordHandler:addKeyword({'paladin'}, StdModule.say, {npcHandler = npcHandler, text = 'They are the king\'s favourites, because they know how to \'bow\'.'})
+keywordHandler:addKeyword({'knight'}, StdModule.say, {npcHandler = npcHandler, text = 'Did you notice that old knights have their scars just on their backs?'})
+
 keywordHandler:addKeyword({'here'}, StdModule.say, {npcHandler = npcHandler, text = 'A fitting place for a {jester}. I guess there are worse {jobs} around.'})
 keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, text = 'Bozo: Nah, no jests about His Royal Highness.'})
 keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, text = 'I rarely leave the castle. It\'s really stressful to be as popular as me.'})
@@ -825,26 +821,30 @@ keywordHandler:addKeyword({'demon', 'carving'}, StdModule.say, {npcHandler = npc
 keywordHandler:addKeyword({'flaming', 'pit'}, StdModule.say, {npcHandler = npcHandler, text = 'Ah, don\'t ask me! Usually mages and mystics know more about such stuff.'})
 
 local jobKeyword = keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m the royal jes ... uhm ... the royal tax-collector! Do you want to pay your taxes?'})
-	jobKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, price = 50, text = {{STDMODULE_REMOVE_MONEY, 'Thank you very much. I will have a drink or two on your health!'}, {'Come back, when you have enough money.'}}, reset = true})
+	jobKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Come back, when you have enough money.', reset = true}, function(player) return player:getMoney() < 50 end)
+	jobKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Thank you very much. I will have a drink or two on your health!', reset = true}, nil, function(player) player:removeMoney(50) end)
 	jobKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Well, perhaps later.', reset = true})
 
 local magicKeyword = keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = 'I actually know some spells! Do you want to learn how to \'lessen your load\' for 200 gold?'})
-	magicKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, price = 200, text = {{STDMODULE_REMOVE_MONEY, 'Here you are, I already lessened your load.'}, {'Come back, when you have enough money.'}}, reset = true})
+	magicKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Come back, when you have enough money.', reset = true}, function(player) return player:getMoney() < 200 end)
+	magicKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Here you are, I already lessened your load.', reset = true}, nil, function(player) player:removeMoney(200) end)
 	magicKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t know what offer you are missing!', reset = true})
-
-local spellKeyword = keywordHandler:addKeyword({'spell'}, StdModule.say, {npcHandler = npcHandler, text = 'I actually know some spells! Do you want to learn how to \'lessen your load\' for 200 gold?'})
-	spellKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, price = 200, text = {{STDMODULE_REMOVE_MONEY, 'Here you are, I already lessened your load.'}, {'Come back, when you have enough money.'}}, reset = true})
-	spellKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'You don\'t know what offer you are missing!', reset = true})
+keywordHandler:addAliasKeyword({'spell'})
 
 local weaponKeyword = keywordHandler:addKeyword({'weapon'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want to buy a \'mace of the fury\' for 250 gold?'})
-	weaponKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, price = 250, itemid = 2570, amount = 1, text = {{STDMODULE_REMOVE_MONEY, STDMODULE_ADD_ITEM, 'And here it is, it suits you well!'}, {'Come back, when you have enough money.'}}, reset = true})
+	weaponKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Come back, when you have enough money.', reset = true}, function(player) return player:getMoney() < 250 end)
+	weaponKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'And here it is, it suits you well!', reset = true}, nil, function(player) player:removeMoney(250) player:addItem(2570, 1) end)
 	weaponKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'You dont know what offer you have passed!', reset = true})
 
-local kissKeyword = keywordHandler:addKeyword({'kiss'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_MALE, STDMODULE_RELEASE_FOCUS, 'Uh, go away!'}, {'Do you want to kiss me?'}}})
-	kissKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, effect = 13, text = {{STDMODULE_EFFECT, 'Uh, oh! ... I am seeing stars!'}}, reset = true})
+keywordHandler:addKeyword({'kiss'}, StdModule.say, {npcHandler = npcHandler, text = 'Uh, go away!', ungreet = true}, function(player) return player:getSex() == PLAYERSEX_MALE end)
+
+local kissKeyword = keywordHandler:addKeyword({'kiss'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want to kiss me?'})
+	kissKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Uh, oh! ... I am seeing stars!', reset = true}, nil, function(player) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end)
 	kissKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Pah, I didn\'t want to kiss you anyway!', reset = true})
 
-local ladyKeyword = keywordHandler:addKeyword({'lady'}, StdModule.say, {npcHandler = npcHandler, text = {{STDMODULE_IS_MALE, STDMODULE_CANCEL, 'Well, women don\'t behave necessarily in a ladylike way just because they dress like one!'}, {'Has any man said to you that you\'re not only beautiful but also intelligent?'}}})
+keywordHandler:addKeyword({'lady'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, women don\'t behave necessarily in a ladylike way just because they dress like one!'}, function(player) return player:getSex() == PLAYERSEX_MALE end)
+
+local ladyKeyword = keywordHandler:addKeyword({'lady'}, StdModule.say, {npcHandler = npcHandler, text = 'Has any man said to you that you\'re not only beautiful but also intelligent?'})
 	ladyKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'This is a world of fantasy and full of surprises!', reset = true})
 	ladyKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Well, think about it!', reset = true})
 

@@ -34,55 +34,6 @@ if Modules == nil then
 
 	StdModule = {}
 
-	STDMODULE_IS_MALE = 1
-	STDMODULE_IS_FEMALE = 2
-	STDMODULE_IS_SORCERER = 3
-	STDMODULE_IS_DRUID = 4
-	STDMODULE_IS_PALADIN = 5
-	STDMODULE_IS_KNIGHT = 6
-	STDMODULE_REMOVE_MONEY = 7
-	STDMODULE_ADD_ITEM = 8
-	STDMODULE_RELEASE_FOCUS = 9
-	STDMODULE_EFFECT = 10
-	STDMODULE_CANCEL = 11
-
-	StdModule.conditions = {
-		[STDMODULE_IS_MALE] = function(player)
-			return player:getSex() == PLAYERSEX_MALE
-		end,
-		[STDMODULE_IS_FEMALE] = function(player)
-			return player:getSex() == PLAYERSEX_FEMALE
-		end,
-		[STDMODULE_IS_SORCERER] = function(player)
-			return player:isSorcerer()
-		end,
-		[STDMODULE_IS_DRUID] = function(player)
-			return player:isDruid()
-		end,
-		[STDMODULE_IS_PALADIN] = function(player)
-			return player:isPaladin()
-		end,
-		[STDMODULE_IS_KNIGHT] = function(player)
-			return player:isKnight()
-		end,
-		[STDMODULE_REMOVE_MONEY] = function(player, parameters)
-			return player:removeMoney(parameters.price)
-		end,
-		[STDMODULE_ADD_ITEM] = function(player, parameters)
-			player:addItem(parameters.itemid, parameters.amount or 1)
-			return true
-		end,
-		[STDMODULE_RELEASE_FOCUS] = function(player, parameters)
-			parameters.npcHandler:releaseFocus(player.uid)
-			return true
-		end,
-		[STDMODULE_EFFECT] = function(player, parameters)
-			player:getPosition():sendMagicEffect(parameters.effect)
-			return true
-		end
-	}
-
-
 	-- These callback function must be called with parameters.npcHandler = npcHandler in the parameters table or they will not work correctly.
 	-- Notice: The members of StdModule have not yet been tested. If you find any bugs, please report them to me.
 	-- Usage:
@@ -108,41 +59,7 @@ if Modules == nil then
 
 		local player = Player(cid)
 		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
-		if type(parameters.text) == 'table' then
-			local text
-			for i = 1, #parameters.text do
-				text = parameters.text[i]
-				break
-			end
-
-			if type(text) == 'table' then
-				for i = 1, #parameters.text do
-					local textObj = parameters.text[i]
-					text = textObj[#textObj]
-					local cancel = false
-					for j = 1, #textObj - 1 do
-						local condition = textObj[j]
-						if condition == STDMODULE_CANCEL then
-							cancel = true
-						elseif not StdModule.conditions[condition](player, parameters) then
-							text = nil
-							break
-						end
-					end
-
-					if text then
-						npcHandler:say(npcHandler:parseMessage(text, parseInfo), cid, parameters.publicize and true)
-						if cancel then
-							return false
-						end
-						break
-					end
-				end
-			else
-				npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
-			end
-
-		elseif parameters.text then
+		if parameters.text then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
 
