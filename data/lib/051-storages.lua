@@ -268,10 +268,12 @@ Storage = {
 			RamsaysHelmetDoor = 12160
 		},
 
-		-- Mage and Summoner-outfit Quest
-		MageSummonerWandAddon = 12062,
-		MageSummonerTiaraCloakAddon = 12063,
-		MageSummonerFluidBeltAddon = 12064,
+		MageSummoner = {
+			AddonWand = 12061,
+			AddonBelt = 12062,
+			MissionHatCloak = 12063,
+			AddonHatCloak = 12064
+		},
 
 		-- Nobleman Outfit
 		NoblemanFirstAddon = 12069,

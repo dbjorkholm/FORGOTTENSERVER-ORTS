@@ -28,10 +28,10 @@ local function creatureSayCallback(cid, type, msg)
 	end
 	local player = Player(cid)
 	if isInArray({"vial", "ticket", "bonus", "deposit"}, msg) then
-		if player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) < 1 then
+		if player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonBelt) < 1 then
 			npcHandler:say("We have a special offer right now for depositing vials. Are you interested in hearing it?", cid)
 			npcHandler.topic[cid] = 1
-		elseif player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) >= 1 then
+		elseif player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonBelt) >= 1 then
 			npcHandler:say("Would you like to get a lottery ticket instead of the deposit for your vials?", cid)
 			npcHandler.topic[cid] = 3
 		end
@@ -50,7 +50,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 2
 		elseif npcHandler.topic[cid] == 2 then
 			npcHandler:say("Great! I've signed you up for our bonus system. From now on, you will have the chance to win the potion belt addon!", cid)
-			player:setStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon, 1)
+			player:setStorageValue(Storage.OutfitQuest.MageSummoner.AddonBelt, 1)
 			player:setStorageValue(Storage.OutfitQuest.DefaultStart, 1) --this for default start of Outfit and Addon Quests
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
@@ -63,9 +63,9 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
-			if player:getStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon) == 1 and player:removeItem(5958, 1) then
+			if player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonBelt) == 1 and player:removeItem(5958, 1) then
 				npcHandler:say("Congratulations! Here, from now on you can wear our lovely potion belt as accessory.", cid)
-				player:setStorageValue(Storage.OutfitQuest.MageSummonerFluidBeltAddon, 2)
+				player:setStorageValue(Storage.OutfitQuest.MageSummoner.AddonBelt, 2)
 				player:addOutfitAddon(138, 1)
 				player:addOutfitAddon(133, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)

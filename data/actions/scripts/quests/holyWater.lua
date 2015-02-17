@@ -13,7 +13,7 @@ local function revertItem(position, itemId, transformId)
 end
 
 local function nexusMessage(player, message)
-	local spectators = Game.getSpectators(shadowNexusPosition, 3, 3, false, true)
+	local spectators = Game.getSpectators(shadowNexusPosition, false, true, 3, 3)
 	for i = 1, #spectators do
 		player:say(message, TALKTYPE_MONSTER_YELL, false, spectators[i], shadowNexusPosition)
 	end

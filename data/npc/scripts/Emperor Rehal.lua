@@ -11,7 +11,7 @@ function onThink()				npcHandler:onThink()					end
 local promoteKeyword = keywordHandler:addKeyword({'promot'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want to be promoted in your vocation for 20000 gold?'})
 	promoteKeyword:addChildKeyword({'yes'}, StdModule.promotePlayer, {npcHandler = npcHandler, cost = 20000})
 	promoteKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Ok, whatever.', reset = true})
-	
+
 -- Justice For All
 local missionKeyword = keywordHandler:addKeyword({'nokmir'}, StdModule.say, {npcHandler = npcHandler, text = 'Oh well, I liked Nokmir. He used to be a good dwarf until that day on which he stole the ring from Rerun.'}, function(player) return player:getStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll) == 1 end)
 	missionKeyword:addChildKeyword({'grombur'}, StdModule.say, {npcHandler = npcHandler, text = 'He\'s very ambitious and always volunteers for the long shifts.'}, nil, function(player) player:setStorageValue(Storage.hiddenCityOfBeregar.JusticeForAll, 2) end)
@@ -36,7 +36,7 @@ local missionKeyword = keywordHandler:addKeyword({'mission'}, StdModule.say, {np
 			"Find my son and if he's alive bring him back. You will find a reactivated ore wagon tunnel at the entrance of the great citadel which leades to the deeper mines. If you encounter problems within the tunnel go ask Xorlosh, he can help you."
 		}}, nil, function(player) player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 1) end
 	)
-	
+
 local missionKeyword = keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = 'My son was captured by trolls? Doesn\'t sound like him, but if you say so. Now you want a reward, huh? ...'}, function(player) return player:getStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue) == 5 end)
 	missionKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Look at these dwarven legs. They were forged years ago by a dwarf who was rather tall for our kind. I want you to have them. Thank you for rescuing my son |PLAYERNAME|'},
 		nil, function(player) player:setStorageValue(Storage.hiddenCityOfBeregar.RoyalRescue, 6) player:addItem(2504, 1) end
