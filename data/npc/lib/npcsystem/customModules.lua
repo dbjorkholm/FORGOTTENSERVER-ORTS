@@ -50,7 +50,7 @@ function TravelLib.say(cid, message, keywords, parameters, node)
 	if parameters.reset then
 		npcHandler:resetNpc(cid)
 	elseif parameters.moveup ~= nil then
-		npcHandler.keywordHandler:moveUp(parameters.moveup)
+		npcHandler.keywordHandler:moveUp(cid, parameters.moveup)
 	end
 
 	return true
