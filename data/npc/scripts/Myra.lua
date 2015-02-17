@@ -28,9 +28,17 @@ local tiaraKeyword = keywordHandler:addKeyword({'tiara'}, StdModule.say, {npcHan
 tiaraKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'That\'s a pity.', reset = true})
 keywordHandler:addAliasKeyword({'award'})
 
+-- When asking for your award before completing your tasks
+keywordHandler:addKeyword({'tiara'}, StdModule.say, {npcHandler = npcHandler, text = 'Before I can nominate you for an award, please complete your task'}, function(player) return player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonHatCloak) > 0 and player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonHatCloak) < 10 end)
+keywordHandler:addAliasKeyword({'award'})
+
 -- What happens when you say task
 local function addTaskKeyword(value, text)
 	keywordHandler:addKeyword({'task'}, StdModule.say, {npcHandler = npcHandler, text = text}, function(player) return player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonHatCloak) == value end)
+	if value == 10 then
+		keywordHandler:addAliasKeyword({'tiara'})
+		keywordHandler:addAliasKeyword({'award'})
+	end
 end
 
 addTaskKeyword(1, 'Your current task is to bring me 70 bat wings, |PLAYERNAME|.')
