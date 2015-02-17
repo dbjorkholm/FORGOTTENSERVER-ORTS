@@ -1,5 +1,5 @@
 local function roomIsOccupied(centerPosition, rangeX, rangeY)
-	local spectators = Game.getSpectators(centerPosition, false, true, rangeX, rangeY)
+	local spectators = Game.getSpectators(centerPosition, false, true, rangeX, rangeX, rangeY, rangeY)
 	if #spectators ~= 0 then
 		return true
 	end
@@ -8,7 +8,7 @@ local function roomIsOccupied(centerPosition, rangeX, rangeY)
 end
 
 function clearBossRoom(playerId, bossId, centerPosition, rangeX, rangeY, exitPosition)
-	local spectators, spectator = Game.getSpectators(centerPosition, false, false, rangeX, rangeY)
+	local spectators, spectator = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
 	for i = 1, #spectators do
 		spectator = spectators[i]
 		if spectator:isPlayer() and spectator.uid == playerId then
