@@ -13,104 +13,148 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if msgcontains(msg, "stampor") or msgcontains(msg, "mount") then
+	if msgcontains(msg, 'stampor') or msgcontains(msg, 'mount') then
 		if not player:hasMount(11) then
-				npcHandler:say("You did bring all the items I requqested, cuild. Good. Shall I travel to the spirit realm and try finding a stampor compasion for you?", cid)
+				npcHandler:say('You did bring all the items I requqested, cuild. Good. Shall I travel to the spirit realm and try finding a stampor compasion for you?', cid)
 				npcHandler.topic[cid] = 1
 		else
-			npcHandler:say("You already have stampor mount.", cid)
+			npcHandler:say('You already have stampor mount.', cid)
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "addon") then
-		if player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 158 or 154) then
-			if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) < 1 then
-				npcHandler:say({
-					"Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...",
-					"This monster, if slain, carries a rare root called Mandrake. If you find it, bring it to me. Also, gather 5 of the voodoo dolls used by the mysterious dworc voodoomasters. ...",
-					"If you manage to fulfil this task, I will grant you your own staff. Have you understood everything and are ready for this test?"
-				}, cid)
-				npcHandler.topic[cid] = 4
-			elseif player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 1 then
-				npcHandler:say("Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?", cid)
-				npcHandler.topic[cid] = 5
-			elseif player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 2 then
-				npcHandler:say("You have successfully passed the first task. If you can fulfil my second task, I will grant you a mask like the one I wear. Will you listen to the requirements?", cid)
-				npcHandler.topic[cid] = 6
-			end
-		else
-			npcHandler:say("Come back when you can wear shamanic clothing.", cid)
-		end
-	elseif msgcontains(msg, "tribal mask") then
-		if player:getStorageValue(Storage.OutfitQuest.ShamanAddons) == 3 then
-			npcHandler:say("Have you gathered the 5 tribal masks and the 5 banana staves?", cid)
-			npcHandler.topic[cid] = 8
-		end
-	elseif msgcontains(msg, "yes") then
+	elseif msgcontains(msg, 'yes') then
 		if npcHandler.topic[cid] == 1 then
 			if player:removeItem(13299, 50) and player:removeItem(13301, 30) and player:removeItem(13300, 100) then
 				npcHandler:say({
-					"Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...",
-					"Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...",
-					"Brrt! I think it worked! It's a male stampor. I linked this spirit to yours. You can probably already summon him to you ...",
-					"So, since me are done here... I need to prepare another ritual, so please let me work, cuild."
+					'Ohhhhh Mmmmmmmmmmmm Ammmmmgggggggaaaaaaa ...',
+					'Aaaaaaaaaahhmmmm Mmmaaaaaaaaaa Kaaaaaamaaaa ...',
+					'Brrt! I think it worked! It\'s a male stampor. I linked this spirit to yours. You can probably already summon him to you ...',
+					'So, since me are done here... I need to prepare another ritual, so please let me work, cuild.'
 				}, cid)
 				player:addMount(11)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 			else
-				npcHandler:say("Sorry you don't have the necessary items.", cid)
-			end
-			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 4 then
-			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 1)
-			npcHandler:say("Good! Come back once you found a mandrake and collected 5 dworcish voodoo dolls.", cid)
-			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 5 then
-			if player:getItemCount(5015) > 0 and player:getItemCount(3955) >= 5 then
-				player:removeItem(5015, 1)
-				player:removeItem(3955, 5)
-				player:addOutfitAddon(158, 1)
-				player:addOutfitAddon(154, 1)
-				player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 2)
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-				npcHandler:say("I am proud of you, my child, excellent work. This staff shall be yours from now on!", cid)
-			else
-				npcHandler:say("You don't have the required items.", cid)
-			end
-			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 6 then
-			npcHandler:say({
-				"The dworcs of Tiquanda like to wear certain tribal masks which I would like to take a look at. Please bring me 5 of these masks. ...",
-				"Secondly, the high ape magicians of Banuta use banana staves. I would love to learn more about theses staves, so pleasebring me 5 of them also. ...",
-				"If you manage to fulfil this task, I will grant you your own mask. Have you understood everything and are ready for this test?"
-			}, cid)
-			npcHandler.topic[cid] = 7
-		elseif npcHandler.topic[cid] == 7 then
-			player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 3)
-			npcHandler:say({
-				"Good! Come back once you have collected 5 tribal masks and 5 banana staves. ...",
-				"I shall grant you a sign of your progress as shaman if you can fulfil my task."
-			}, cid)
-			npcHandler.topic[cid] = 0
-		elseif npcHandler.topic[cid] == 8 then
-			if player:getItemCount(3966) >= 5 and player:getItemCount(3967) >= 5 then
-				player:removeItem(3966, 5)
-				player:removeItem(3967, 5)
-				player:addOutfitAddon(158, 2)
-				player:addOutfitAddon(154, 2)
-				player:setStorageValue(Storage.OutfitQuest.ShamanAddons, 4)
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
-				npcHandler:say("Well done, my child! I hereby grant you the right to wear a shamanic mask. Do it proudly.", cid)
-			else
-				npcHandler:say("You don't have the required items.", cid)
+				npcHandler:say('Sorry you don\'t have the necessary items.', cid)
 			end
 			npcHandler.topic[cid] = 0
 		end
-	elseif msgcontains(msg, "no") and npcHandler.topic[cid] > 2 then
-		npcHandler:say("Maybe next time.", cid)
+	elseif msgcontains(msg, 'no') and npcHandler.topic[cid] > 2 then
+		npcHandler:say('Maybe next time.', cid)
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
+
+-- Shaman Addons
+-- If the player can't wear shaman outfit
+local function notReadyKeyword(keyword, text)
+	keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text}, function(player) return not player:hasOutfit(player:getSex() == PLAYERSEX_FEMALE and 158 or 154) end)
+end
+
+notReadyKeyword('outfit', {'Hum? Sorry, but I don\'t sense enough spiritual wisdom in you to even allow you to touch the mask and staff I\'m wearing... yet. ...', 'I know of a really wise ape healer, though, who might be able to bless you with shamanic energy. You should become his apprentice first if you desire to become mine.'})
+notReadyKeyword('addon', {'Hum? Sorry, but I don\'t sense enough spiritual wisdom in you to even allow you to touch the mask and staff I\'m wearing... yet. ...', 'I know of a really wise ape healer, though, who might be able to bless you with shamanic energy. You should become his apprentice first if you desire to become mine.'})
+notReadyKeyword('task', 'The time hasn\'t come yet, my child. Believe and learn.')
+
+-- Start task
+local function addTaskKeyword(text, value, missionStorage)
+	local taskKeyword = keywordHandler:addKeyword({'task'}, StdModule.say, {npcHandler = npcHandler, text = text[1]}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
+		local yesKeyword = taskKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[2]})
+
+			yesKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[3], reset = true}, nil,
+				function(player)
+					player:setStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask, math.max(0, player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask)) + 1)
+					player:setStorageValue(missionStorage, 1)
+					player:setStorageValue(Storage.OutfitQuest.Ref, math.max(0, player:getStorageValue(Storage.OutfitQuest.Ref)) + 1) end
+				)
+			yesKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Would you like me to repeat the task requirements then?', moveup = 2})
+
+		taskKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, it seems you aren\'t ready yet.', reset = true})
+	keywordHandler:addAliasKeyword({'addon'})
+	keywordHandler:addAliasKeyword({'outfit'})
+end
+
+-- Staff
+addTaskKeyword({
+		'If you fulfil a task for me, I\'ll grant you a staff like the one I\'m wearing. Do you want to hear the requirements?',
+		{
+			'Deep in the Tiquandian jungle a monster lurks which is seldom seen. It is the revenge of the jungle against humankind. ...',
+			'This monster, if slain, carries a rare root called Mandrake. If you find it, bring it to me. Also, gather 5 of the voodoo dolls used by the mysterious dworc voodoomasters. ...',
+			'If you manage to fulfil this task, I will grant you your own staff. Have you understood everything and are ready for this test?'
+		},
+		'Good! Come back once you\'ve found a mandrake and collected 5 dworcish voodoo dolls.'
+	}, -1, Storage.OutfitQuest.Shaman.MissionStaff
+)
+
+-- Mask
+addTaskKeyword({
+		'You have successfully passed the first task. If you can fulfil my second task, I\'ll grant you a mask like the one I\'m wearing. Do you want to hear the requirements?',
+		{
+			'The dworcs of Tiquanda like to wear certain tribal masks which I\'d like to take a look at. Please bring me 5 of these masks. ...',
+			'Secondly, the high ape magicians of Banuta use banana staffs. I\'d love to learn more about theses staffs, so please bring me 5 of them, too. ...',
+			'If you manage to fulfil this task, I\'ll grant you your own mask. Have you understood everything and are you ready for this test?'
+		},
+		'Good! Come back once you have collected 5 tribal masks and 5 banana staffs.'
+	}, 2, Storage.OutfitQuest.Shaman.MissionMask
+)
+
+-- Hand in task items
+local function addItemKeyword(keyword, aliasKeyword, text, value, item, addonId, missionStorage)
+	local itemKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?'}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
+		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m afraid you forgot something, my child.', reset = true}, function(player) return player:getItemCount(item[1].itemId) < item[1].count or player:getItemCount(item[2].itemId) < item[2].count end)
+
+		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m proud of you my child, excellent work. This staff shall be yours from now on!', reset = true},
+			function(player) return player:getItemCount(item[1].itemId) >= item[1].count and player:getItemCount(item[2].itemId) >= item[2].count end,
+			function(player)
+				player:removeItem(item[1].itemId, item[1].count)
+				player:removeItem(item[2].itemId, item[2].count)
+				player:addOutfitAddon(158, addonId)
+				player:addOutfitAddon(154, addonId)
+				player:setStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask, player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) + 1)
+				player:setStorageValue(missionStorage, 0)
+				player:setStorageValue(Storage.OutfitQuest.Ref, math.min(0, player:getStorageValue(Storage.OutfitQuest.Ref) - 1))
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+			end
+		)
+		itemKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, it seems you aren\'t ready yet.', reset = true})
+	keywordHandler:addAliasKeyword({aliasKeyword})
+	keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = aliasKeyword and text[4] or text[3]})
+end
+
+addItemKeyword('mandrake', 'voodoo doll',
+	{
+		'Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?',
+		'I\'m proud of you my child, excellent work. This staff shall be yours from now on!',
+		'A rare root with mysterious powers.',
+		{
+			'Together with the spirits of the ancestors, I seek for wisdom. Together we can change the flow of magic to do things that are beyond the limits of ordinary magic. ...',
+			'In conversations with the spirits, I gain insight into secrets that would have been lost otherwise.'
+		}
+	}, 1, {{itemId = 5015, count = 1}, {itemId = 3955, count = 5}}, 2, Storage.OutfitQuest.Shaman.MissionStaff
+)
+addItemKeyword('tribal mask', 'banana staff',
+	{
+		'Have you gathered the 5 tribal masks and the 5 banana staffs?',
+		'Well done, my child! I hereby grant you the right to wear a shamanic mask. Do it proudly.',
+		'Sometimes dworcs are seen with these masks.',
+		'A banana staff is the sign of a high ape magician.'
+	}, 3, {{itemId = 3966, count = 5}, {itemId = 3967, count = 5}}, 1, Storage.OutfitQuest.Shaman.MissionMask
+)
+
+-- Task status
+local function addTaskStatusKeyword(keyword, text, value)
+	keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
+	if keyword == 'addon' then
+		keywordHandler:addAliasKeyword({'outfit'})
+	end
+end
+
+addTaskStatusKeyword('task', 'Your task is to retrieve a mandrake from the Tiquandan jungle and 5 dworcish voodoo dolls.', 1)
+addTaskStatusKeyword('task', 'Your task is to retrieve 5 tribal masks from the dworcs and 5 banana staffs from the apes.', 3)
+addTaskStatusKeyword('task', 'You have successfully passed all of my tasks. There are no further things I can teach you right now.', 4)
+
+addTaskStatusKeyword('addon', 'The time has come, my child. I sense great spiritual wisdom in you and I shall grant you a sign of your progress if you can fulfil my task.', 1)
+addTaskStatusKeyword('addon', 'I shall grant you a sign of your progress as a shaman if you can fulfil my task.', 3)
+addTaskStatusKeyword('addon', 'You have successfully passed all of my tasks. There are no further things I can teach you right now.', 4)
+-- End Shaman Addons
 
 -- Wooden Stake
 keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Ten prayers for a blessed stake? Don\'t tell me they made you travel whole Tibia for it! Listen, child, if you bring me a wooden stake, I\'ll bless it for you. <chuckles>'},

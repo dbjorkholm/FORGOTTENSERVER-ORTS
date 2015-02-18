@@ -482,6 +482,12 @@
 			<missionstate id="4" description="Your current task is to bring 100 pieces of blue cloth to Razan if you are male, or to Miraia if you are female."/>
 			<missionstate id="5" description="You have received the second oriental addon."/>
 		</mission>
+		<mission name="Shaman Addon: Staff" storageid="15001" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Try to find a monster which sometimes lurks in the Tiquandian jungle as the revenge of the jungle against mankind. Bring the rare root it carries to Chondur as well as 5 voodoo dolls."/>
+		</mission>
+		<mission name="Shaman Addon: Mask" storageid="15002" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Your current task is to collect 5 tribal masks from the dworcs and 5 banana staves from the apes. Bring them to Chondur to earn your shamanic mask."/>
+		</mission>
 	</quest>
 	<quest name="Sam's Old Backpack" startstorageid="330" startstoragevalue="1">
 		<mission name="Dwarven Armor Quest" storageid="330" startvalue="1" endvalue="3">

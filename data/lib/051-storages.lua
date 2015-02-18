@@ -304,7 +304,12 @@ Storage = {
 		BrotherhoodOutfit = 50084,
 		BrotherhoodDoor = 3044,
 
-		ShamanAddons = 50085,
+		Shaman = {
+			AddonStaffMask = 15000,
+			MissionStaff = 15001,
+			MissionMask = 15002
+		},
+
 		firstOrientalAddon = 50137,
 		secondOrientalAddon = 50138
 	},
