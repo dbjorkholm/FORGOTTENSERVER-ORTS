@@ -98,7 +98,8 @@ if Modules == nil then
 				npcHandler:say("You do not have enough money!", cid)
 			else
 				player:setVocation(Vocation(player:getVocation():getPromotion():getId()))
-				npcHandler:say(parameters.text, cid)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				npcHandler:say(parameters.text or "Congratulations! You are now promoted.", cid)
 			end
 		else
 			npcHandler:say("You need a premium account in order to get promoted.", cid)
