@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Frans" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look typeex="2229" head="113" body="113" legs="113" feet="115" addons="0" />
-  <parameters>
-    <parameter key="message_greet" value="Beeee Greeeeted |PLAYERNAME|. What is your neeeed?" />
-    <parameter key="message_farewell" value="Bye." />
-    <parameter key="module_keywords" value="1" />
-    <parameter key="keywords" value="job;" />
-    <parameter key="keyword_reply1" value="I am selliiiing ruuuunes, wands, roooods and spellbooooooks." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="avalanche rune,2274,45;
+	<health now="100" max="100" />
+	<look typeex="2229" head="113" body="113" legs="113" feet="115" addons="0" />
+	<parameters>
+		<parameter key="message_greet" value="Beeee Greeeeted |PLAYERNAME|. What is your neeeed?" />
+		<parameter key="message_farewell" value="Bye." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="job;" />
+		<parameter key="keyword_reply1" value="I am selliiiing ruuuunes, wands, roooods and spellbooooooks." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="avalanche rune,2274,45;
 Stone Shower Rune,2288,37;
 Thunderstorm Rune,2315,37;
 blank rune,2260,10;
@@ -56,5 +56,5 @@ Hailstorm Rod,2183,15000;
 Magic Wall Rune,2293,116;
 Paralyze Rune,2278,700;
 Wand of Inferno,2187,15000" />
-  </parameters>
+	</parameters>
 </npc>

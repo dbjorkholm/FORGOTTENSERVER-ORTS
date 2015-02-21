@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Romella" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="139" head="79" body="39" legs="77" feet="115" addons="1" />
+	<health now="100" max="100" />
+	<look type="139" head="79" body="39" legs="77" feet="115" addons="1" />
 <voices>
 <voice text="Check out my good and sturdy weapons!" interval2="100" margin="1" yell="no"/>
 </voices>
 <parameters>
-    <parameter key="message_greet" value="I welcome thee, |PLAYERNAME|. I suppose you are looking for a {trade} in fine weapons!" />
-    <parameter key="message_farewell" value="Goodbye and please bring more gold next time. I mean, it would be nice to see you again" />
-    <parameter key="module_keywords" value="1" />
-    <parameter key="keywords" value="job;" />
-    <parameter key="keyword_reply1" value="I am Romella and I will be serving you today." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="
+		<parameter key="message_greet" value="I welcome thee, |PLAYERNAME|. I suppose you are looking for a {trade} in fine weapons!" />
+		<parameter key="message_farewell" value="Goodbye and please bring more gold next time. I mean, it would be nice to see you again" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="job;" />
+		<parameter key="keyword_reply1" value="I am Romella and I will be serving you today." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
 	axe,2386,20;
 	battle axe,2378,235;
 	battle hammer,2417,350;
@@ -35,7 +35,7 @@
 	throwing knife,2410,25;
 	two handed sword,2377,950;
 	war hammer,2391,10000;" />
-    <parameter key="shop_sellable" value="
+		<parameter key="shop_sellable" value="
 	axe,2386,7;
 	battle axe,2378,80;
 	battle hammer,2417,120;
@@ -69,5 +69,5 @@
 	throwing knife,2410,2;
 	two handed sword,2377,450;
 	war hammer,2391,470;" />
-  </parameters>
+	</parameters>
 </npc>

@@ -17,7 +17,7 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="20" min="0" max="-400"/>
+		<attack name="melee" interval="2000" min="0" max="-400"/>
 		<attack name="energy beam" interval="2000" chance="10" range="1" min="0" max="-500"/>
 		<attack name="berserk" interval="2000" chance="10" range="1" min="0" max="-100"/>
 	</attacks>

@@ -13,30 +13,31 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="80"/>
+		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="70"/>
-		<attack name="lifedrain" interval="2000" chance="15" length="5" spread="3" min="-250" max="-700">
+		<attack name="melee" interval="2000" min="0" max="-200"/>
+		<attack name="soulfire" interval="2000" chance="100" radius="3" target="0">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="fire" interval="2000" chance="30" target="0" radius="3" min="-80" max="-250">
-			<attribute key="areaEffect" value="fire"/>
+		<attack name="fire" interval="2000" chance="15" length="8" spread="0" min="-400" max="-1000">
+			<attribute key="areaEffect" value="fireattack"/>
 		</attack>
-		<attack name="speed" interval="2000" chance="10" target="0" length="5" spread="3" speedchange="-800" duration="30000">
+		<attack name="physical" interval="3000" chance="30" target="1" radius="4" min="-250" max="-350">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="10" target="0" length="5" spread="3" speedchange="-300" duration="10000">
 			<attribute key="areaEffect" value="yellowspark"/>
 		</attack>
 	</attacks>
 	<defenses armor="45" defense="45">
-		<defense name="invisible" interval="2000" chance="10" duration="4000">
-			<attribute key="areaEffect" value="blueshimmer"/>
-		</defense>
+		<defense name="invisible" interval="2000" chance="10" duration="4000"/>
 	</defenses>
 	<elements>
-		<element physicalPercent="-5"/>
-		<element deathPercent="5"/>
+		<element physicalPercent="-1"/>
 		<element icePercent="-5"/>
+		<element deathPercent="1"/>
 	</elements>
 	<immunities>
 		<immunity fire="1"/>
@@ -47,12 +48,12 @@
 	<voices interval="2000" chance="7">
 		<voice sentence="Moooaaan!"/>
 	</voices>
-	<summons maxSummons="6">
+	<summons maxSummons="3">
 		<summon name="Parasite" interval="2000" chance="10"/>
 	</summons>
 	<loot>
-		<item id="2148" countmax="198" chance="100000"/><!-- gold coin -->
-		<item id="2152" countmax="7" chance="100000"/><!-- platinum coin -->
-		<item id="8748" chance="1460"/><!-- coal -->
+		<item id="2148" countmax="198" chance="100000"/>	<!-- gold coin -->
+		<item id="2152" countmax="7" chance="100000"/>		<!-- platinum coin -->
+		<item id="8748" chance="1450"/>						<!-- coal -->
 	</loot>
 </monster>

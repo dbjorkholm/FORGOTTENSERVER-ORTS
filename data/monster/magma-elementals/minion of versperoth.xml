@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Minion Of Versperoth" nameDescription="a minion of Versperoth" race="blood" experience="2900" speed="290" manacost="0">
+<monster name="Minion Of Versperoth" nameDescription="a minion of Versperoth" race="fire" experience="2900" speed="290" manacost="0">
 	<health now="3800" max="3800"/>
 	<look type="491" corpse="0"/>
 	<targetchange interval="5000" chance="8"/>
@@ -17,24 +17,38 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="90" attack="90"/>
-		<attack name="manadrain" interval="2800" chance="100" range="7" min="-340" max="-540">
-	</attack>
+		<attack name="melee" interval="2000" min="0" max="-390"/>
+		<attack name="fire" interval="2000" chance="15" length="8" spread="0" min="-350" max="-700">
+			<attribute key="areaEffect" value="fireattack"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" length="8" spread="0" min="-600" max="-1300">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="lava golem soulfire" interval="2000" chance="15"/>
+		<attack name="fire" interval="2000" chance="15" radius="4" target="1" min="-220" max="-350">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="10" target="0" length="5" spread="3" speedchange="-300" duration="10000">
+			<attribute key="areaEffect" value="yellowspark"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="30" target="0" radius="3" min="-280" max="-350">
+			<attribute key="areaEffect" value="fire"/>
+		</attack>
 	</attacks>
-	<defenses armor="55" defense="55"/>
+	<defenses armor="60" defense="60"/>
 	<elements>
-		<element energyPercent="-10"/>
-		<element icePercent="-10"/>
-		<element firePercent="+30"/>
+		<element icePercent="-5"/>
+		<element physicalPercent="1"/>
+		<element energyPercent="1"/>
+		<element deathPercent="1"/>
 	</elements>
 	<immunities>
-		<immunity earth="100"/>
-		<immunity lifedrain="0"/>
-		<immunity paralyze="100"/>
-		<immunity invisible="100"/>
+		<immunity fire="1"/>
+		<immunity earth="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2500" chance="10">
-		<voice sentence="Creak!"/>
-		<voice sentence="Crunch!"/>
+	<voices interval="2000" chance="7">
+		<voice sentence="Grrrrunt"/>
 	</voices>
 </monster>

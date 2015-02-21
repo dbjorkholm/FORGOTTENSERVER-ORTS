@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Sigurd" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="69" head="20" body="30" legs="40" feet="50" corpse="6007" />
+	<health now="100" max="100" />
+	<look type="69" />
 <voices>
 <voice text="Hiho adventurers, get your runes, potions, wands and rods here!" interval2="100" margin="1" yell="no"/>
 </voices>
 <parameters>
-        <parameter key="message_greet" value="Welcome to the magic store, |PLAYERNAME|! Ask me for a {trade} if you need something."/>
-        <parameter key="message_farewell" value="Good bye. Come back soon."/>
+		<parameter key="message_greet" value="Welcome to the magic store, |PLAYERNAME|! Ask me for a {trade} if you need something."/>
+		<parameter key="message_farewell" value="Good bye. Come back soon."/>
 		<parameter key="message_walkaway" value="Good bye. Come back soon." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="avalanche rune,2274,45;
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="avalanche rune,2274,45;
 Stone Shower Rune,2288,37;
 Thunderstorm Rune,2315,37;
 blank rune,2260,10;
@@ -57,6 +57,6 @@ Hailstorm Rod,2183,15000;
 Magic Wall Rune,2293,116;
 Paralyze Rune,2278,700;
 Wand of Inferno,2187,15000" />
-    <parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
-  </parameters>
+		<parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
+	</parameters>
 </npc>

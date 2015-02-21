@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <npc name="Romir" script="default.lua" walkinterval="2000">
-  <health now="200" max="200" />
-  <look type="153" head="19" body="48" legs="67" feet="126" addons="3" />
-  <parameters>
-    <parameter key="message_greet" value="Hello |PLAYERNAME|. Im selling a lot of potions but also buy a vial ask me for a {trade}." />
-    <parameter key="module_shop" value="1" />
-    <parameter key="shop_buyable" value="avalanche rune,2274,45;
+	<health now="100" max="100" />
+	<look type="153" head="19" body="48" legs="67" feet="126" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. Im selling a lot of potions but also buy a vial ask me for a {trade}." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="avalanche rune,2274,45;
 Stone Shower Rune,2288,37;
 Thunderstorm Rune,2315,37;
 blank rune,2260,10;
@@ -52,6 +52,6 @@ Hailstorm Rod,2183,15000;
 Magic Wall Rune,2293,116;
 Paralyze Rune,2278,700;
 Wand of Inferno,2187,15000" />
-    <parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
-  </parameters>
+		<parameter key="shop_sellable" value="empty potion flask,7634,5;empty potion flask,7635,5;empty potion flask,7636,5;vial,2006,5;" />
+	</parameters>
 </npc>

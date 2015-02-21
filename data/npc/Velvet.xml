@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Velvet" script="default.lua" walkinterval="2000" floorchange="0">
-  <health now="100" max="100" />
-  <look type="136" head="59" body="96" legs="115" feet="95" addons="0" />
+	<health now="100" max="100" />
+	<look type="136" head="59" body="96" legs="115" feet="95" addons="0" />
 <voices>
 <voice text="Silky smooth pillows and tapestries! No home is perfect without them!" interval2="100" margin="1" yell="no"/>
 </voices>
 <parameters>
-    <parameter key="message_greet" value="Welcome to our pillow and tapestry shop, |PLAYERNAME|!" />
-    <parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
-    <parameter key="message_walkaway" value="Good bye." />
-    <parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Welcome to our pillow and tapestry shop, |PLAYERNAME|!" />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
+		<parameter key="message_walkaway" value="Good bye." />
+		<parameter key="module_shop" value="1" />
 	<parameter key="shop_buyable" value="
 			blue pillow,1686,25;
 			blue tapestry,1872,25;
