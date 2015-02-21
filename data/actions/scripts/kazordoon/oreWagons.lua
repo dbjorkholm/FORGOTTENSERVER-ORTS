@@ -33,8 +33,18 @@ local config = {
 	[50230] = Position(32600, 31875, 7), -- Kazordoon Surface North
 	[50231] = Position(32577, 31929, 0), -- Colossus Top
 	[50232] = Position(32619, 31944, 7), -- Kazordoon Surface South
-	[50233] = Position(32553, 31930, 7)  -- Kazordoon Surface West
-
+	[50233] = Position(32553, 31930, 7), -- Kazordoon Surface West
+-- Lost Cavern
+	[50245] = Position(32526, 31840, 9), -- To: Entrance Area
+	[50246] = Position(32559, 31852, 7), -- To: Entrance Door
+	[50247] = Position(32499, 31827, 9), -- To: Crystal Storage
+	[50248] = Position(32517, 31806, 9), -- To: Crystal Mining
+	[50249] = Position(32515, 31827, 9), -- To: Entrance Area
+	[50250] = Position(32489, 31812, 9), -- To: Crystal Cultivation
+	[50251] = Position(32495, 31833, 9), -- To: Crystal Storage
+	[50252] = Position(32511, 31806, 9), -- To: Crystal Mining
+	[50253] = Position(32498, 31807, 9), -- To: Crystal Cultivation
+	[50254] = Position(32516, 31829, 9) -- To: Entrance Area
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -43,7 +53,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if player:getStorageValue(Storage.wagonTicket) < os.time() then
+	if item.actionid < 50245 and player:getStorageValue(Storage.wagonTicket) < os.time() then
 		player:say("Purchase a weekly ticket from Gewen, Lokur in the post office, The Lukosch brothers or from Brodrosch on the steamboat.", TALKTYPE_MONSTER_SAY)
 		return true
 	end

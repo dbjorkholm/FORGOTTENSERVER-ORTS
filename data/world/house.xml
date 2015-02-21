@@ -1016,4 +1016,6 @@
 	<house name="Tunnel Gardens 2" houseid="2455" entryx="32606" entryy="31909" entryz="11" rent="2000" townid="3" size="20" />
 	<house name="The Yeah Beach Project" houseid="2456" entryx="32294" entryy="32555" entryz="6" rent="6525" townid="7" size="108" />
 	<house name="Hare's Den" houseid="2460" entryx="32687" entryy="32193" entryz="10" rent="7500" townid="3" size="165" />
+	<house name="Lost Cavern" houseid="2461" entryx="32559" entryy="31856" entryz="7" rent="14730" townid="3" size="502" />
+	<house name="Caveman Shelter" houseid="2462" entryx="33007" entryy="31426" entryz="6" rent="3780" townid="14" size="78" />
 </houses>

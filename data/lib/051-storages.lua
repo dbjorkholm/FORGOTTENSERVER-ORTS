@@ -926,7 +926,8 @@ Storage = {
 			Quentin = 50712,
 			RockWithASoftSpot = 50713,
 			Tyrias = 50714,
-			Yberius = 50715
+			Yberius = 50715,
+			Rahkem = 50716
 		}
 
 	},
