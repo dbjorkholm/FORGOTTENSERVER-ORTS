@@ -42,11 +42,11 @@
 	<event type="kill" name="SecretServiceBlackKnight" script="others/blackKnight.lua"/>
 
 	<!-- Wrath of the Emperor Quest -->
-	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor/lizardmagistratus.lua"/>
-	<event type="kill" name="WotELizardNoble" script="wrath of the emperor/lizardnoble.lua"/>
-	<event type="kill" name="WotEKeeper" script="wrath of the emperor/keeper.lua"/>
-	<event type="kill" name="WotEBosses" script="wrath of the emperor/bosses.lua"/>
-	<event type="kill" name="WotEZalamon" script="wrath of the emperor/zalamon.lua"/>
+	<event type="kill" name="WotELizardMagistratus" script="quests/wrath of the emperor/lizardmagistratus.lua"/>
+	<event type="kill" name="WotELizardNoble" script="quests/wrath of the emperor/lizardnoble.lua"/>
+	<event type="kill" name="WotEKeeper" script="quests/wrath of the emperor/keeper.lua"/>
+	<event type="kill" name="WotEBosses" script="quests/wrath of the emperor/bosses.lua"/>
+	<event type="kill" name="WotEZalamon" script="quests/wrath of the emperor/zalamon.lua"/>
 
 	<!-- Pythius The Rotten (Firewalker Boots Quest) -->
 	<event type="kill" name="PythiusTheRotten" script="others/PythiusTheRotten.lua"/>
