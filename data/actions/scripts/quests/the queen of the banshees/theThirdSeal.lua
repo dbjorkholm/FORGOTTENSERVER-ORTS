@@ -67,13 +67,15 @@ local config = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local switchNum = Game.getStorageValue("switchNum")
-	local table = config[switchNum]
-	if not switchNum then
+	if switchNum == -1 then
 		Game.setStorageValue("switchNum", 0)
 	end
-	if table == nil then
+
+	local table = config[switchNum]
+	if not table then
 		return true
 	end
+
 	if player:getStorageValue(Storage.QueenOfBansheesQuest.ThirdSeal) < 1 then
 		if item.uid == table then
 			item:transform(1945)

@@ -5,35 +5,35 @@
 	<event type="advance" name="AdvanceRookgaard" script="rookgaard/advance.lua"/>
 
 	<!-- Elemental Spheres Quest -->
-	<event type="kill" name="ElementalSpheresOverlords" script="elemental spheres quest/OverlordsKill.lua"/>
+	<event type="kill" name="ElementalSpheresOverlords" script="quests/elemental spheres/OverlordsKill.lua"/>
 
 	<!-- Bigfoot Burden Quest -->
-	<event type="kill" name="BigfootBurdenVersperoth" script="bigfoot burden quest/VersperothKill.lua"/>
-	<event type="kill" name="BigfootBurdenWarzone" script="bigfoot burden quest/WarzoneKill.lua"/>
-	<event type="kill" name="BigfootBurdenWeeper" script="bigfoot burden quest/WeeperKill.lua"/>
-	<event type="kill" name="BigfootBurdenWiggler" script="bigfoot burden quest/WigglerKill.lua"/>
+	<event type="kill" name="BigfootBurdenVersperoth" script="quests/bigfoot burden/VersperothKill.lua"/>
+	<event type="kill" name="BigfootBurdenWarzone" script="quests/bigfoot burden/WarzoneKill.lua"/>
+	<event type="kill" name="BigfootBurdenWeeper" script="quests/bigfoot burden/WeeperKill.lua"/>
+	<event type="kill" name="BigfootBurdenWiggler" script="quests/bigfoot burden/WigglerKill.lua"/>
 
 	<!-- Svargrond Arena: Killing a boss -->
-	<event type="kill" name="SvargrondArenaKill" script="svargrond arena quest/arena_kill.lua"/>
+	<event type="kill" name="SvargrondArenaKill" script="quests/svargrond arena/arena_kill.lua"/>
 
 	<!-- The New Frontier Quest -->
-	<event type="kill" name="NewFrontierShardOfCorruption" script="the new frontier quest/ShardOfCorruption.lua"/>
-	<event type="kill" name="NewFrontierTirecz" script="the new frontier quest/TireczKill.lua"/>
+	<event type="kill" name="NewFrontierShardOfCorruption" script="quests/the new frontier/ShardOfCorruption.lua"/>
+	<event type="kill" name="NewFrontierTirecz" script="quests/the new frontier/TireczKill.lua"/>
 
 	<!-- In Service Of Yalahar Quest -->
-	<event type="kill" name="ServiceOfYalaharAzerus" script="in service of yalahar quest/AzerusKill.lua"/>
-	<event type="kill" name="ServiceOfYalaharDiseasedTrio" script="in service of yalahar quest/DiseasedTrioKill.lua"/>
-	<event type="kill" name="ServiceOfYalaharQuaraLeaders" script="in service of yalahar quest/QuaraLeadersKill.lua"/>
+	<event type="kill" name="ServiceOfYalaharAzerus" script="quests/in service of yalahar/AzerusKill.lua"/>
+	<event type="kill" name="ServiceOfYalaharDiseasedTrio" script="quests/in service of yalahar/DiseasedTrioKill.lua"/>
+	<event type="kill" name="ServiceOfYalaharQuaraLeaders" script="quests/in service of yalahar/QuaraLeadersKill.lua"/>
 
 	<!-- Inquisition Quest -->
-	<event type="kill" name="InquisitionBosses" script="inquisition quest/inquisitionQuestBosses.lua"/>
-	<event type="kill" name="InquisitionUngreez" script="inquisition quest/inquisitionQuestUngreez.lua"/>
+	<event type="kill" name="InquisitionBosses" script="quests/inquisition/inquisitionQuestBosses.lua"/>
+	<event type="kill" name="InquisitionUngreez" script="quests/inquisition/inquisitionQuestUngreez.lua"/>
 
 	<!-- Killing In The Name Of Quest -->
-	<event type="kill" name="KillingInTheNameOfKills" script="killing in the name of quest/kills.lua"/>
+	<event type="kill" name="KillingInTheNameOfKills" script="quests/killing in the name of/kills.lua"/>
 
 	<!-- The Masters Voice Quest -->
-	<event type="kill" name="MastersVoiceServants" script="their master's voice quest/ServantsKill.lua"/>
+	<event type="kill" name="MastersVoiceServants" script="quests/their master's voice/ServantsKill.lua"/>
 
 	<!-- Thieves Guild Quest -->
 	<event type="kill" name="ThievesGuildNomad" script="others/nomad.lua"/>
@@ -42,11 +42,11 @@
 	<event type="kill" name="SecretServiceBlackKnight" script="others/blackKnight.lua"/>
 
 	<!-- Wrath of the Emperor Quest -->
-	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor quest/lizardmagistratus.lua"/>
-	<event type="kill" name="WotELizardNoble" script="wrath of the emperor quest/lizardnoble.lua"/>
-	<event type="kill" name="WotEKeeper" script="wrath of the emperor quest/keeper.lua"/>
-	<event type="kill" name="WotEBosses" script="wrath of the emperor quest/bosses.lua"/>
-	<event type="kill" name="WotEZalamon" script="wrath of the emperor quest/zalamon.lua"/>
+	<event type="kill" name="WotELizardMagistratus" script="wrath of the emperor/lizardmagistratus.lua"/>
+	<event type="kill" name="WotELizardNoble" script="wrath of the emperor/lizardnoble.lua"/>
+	<event type="kill" name="WotEKeeper" script="wrath of the emperor/keeper.lua"/>
+	<event type="kill" name="WotEBosses" script="wrath of the emperor/bosses.lua"/>
+	<event type="kill" name="WotEZalamon" script="wrath of the emperor/zalamon.lua"/>
 
 	<!-- Pythius The Rotten (Firewalker Boots Quest) -->
 	<event type="kill" name="PythiusTheRotten" script="others/PythiusTheRotten.lua"/>
