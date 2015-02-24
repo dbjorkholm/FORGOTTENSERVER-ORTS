@@ -11,15 +11,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	doSetMonsterOutfit(player, monsterNames[math.random(#monsterNames)], 5 * 60 * 60 * 1000)
-
-	local cStorage = player:getStorageValue(Storage.Achievements.Masquerader)
-	if cStorage < 100 then
-		player:setStorageValue(Storage.Achievements.Masquerader, math.max(1, cStorage) + 1)
-	elseif cStorage == 100 then
-		player:addAchievement('Doctor! Doctor!')
-		player:setStorageValue(Storage.Achievements.Masquerader, 101)
-	end
-
+	player:addAchievementProgress('Doctor! Doctor!', 100)
 	item:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	item:remove()
 	return true

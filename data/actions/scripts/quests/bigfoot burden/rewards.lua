@@ -25,8 +25,7 @@ local rewards = {
 			{itemId = 18423, count = 2}
 		},
 		miniatureHouse = true,
-		achievement = {'Gnomebane\'s Bane', 'Fall of the Fallen'},
-		achievementStorage = Storage.Achievements.FallOfTheFallen
+		achievement = {'Gnomebane\'s Bane', 'Fall of the Fallen'}
 	},
 	[3150] = {
 		storage = Storage.BigfootBurden.Warzone3Reward,
@@ -39,8 +38,7 @@ local rewards = {
 			{itemId = 18414, count = 12},
 			{itemId = 18423, count = 2}
 		},
-		achievement = {'Death from Below', 'Diplomatic Immunity'},
-		achievementStorage = Storage.Achievements.DiplomaticImmunity
+		achievement = {'Death from Below', 'Diplomatic Immunity'}
 	}
 }
 
@@ -90,14 +88,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		player:setStorageValue(reward.storage, 0)
 		player:addAchievement(reward.achievement[1])
-
-		local cStorage = player:getStorageValue(reward.achievementStorage)
-		if cStorage < 50 then
-			player:setStorageValue(reward.achievementStorage, math.max(0, cStorage) + 1)
-		elseif cStorage == 50 then
-			player:addAchievement(reward.achievement[2])
-			player:setStorageValue(reward.achievementStorage, 51)
-		end
+		player:addAchievementProgress(reward.achievement[2], 50)
 	end
 	return true
 end

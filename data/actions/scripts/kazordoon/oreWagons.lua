@@ -58,6 +58,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
+	player:addAchievementProgress('Rollercoaster', 100)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	player:teleportTo(targetPosition)
 	targetPosition:sendMagicEffect(CONST_ME_TELEPORT)

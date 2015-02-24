@@ -541,3 +541,21 @@ function Player.getAchievementPoints(self)
 	end
 	return points
 end
+
+function Player.addAchievementProgress(self, ach, value)
+	local achievement = isNumber(ach) and getAchievementInfoById(ach) or getAchievementInfoByName(ach)
+	if not achievement then
+		print('[!] -> Invalid achievement "' .. ach .. '".')
+		return true
+	end
+
+	local storage = ACHIEVEMENTS_ACTION_BASE + achievement.id
+	local progress = self:getStorageValue(storage)
+	if progress < value then
+		self:setStorageValue(storage, math.max(1, progress) + 1)
+	elseif progress == value then
+		self:setStorageValue(storage, value + 1)
+		self:addAchievement(achievement.id)
+	end
+	return true
+end

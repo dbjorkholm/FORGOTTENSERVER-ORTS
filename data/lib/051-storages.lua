@@ -259,6 +259,11 @@ Storage = {
 		HunterBodyAddon = 12054,
 		HunterHatAddon = 12055,
 
+		Hunter = {
+			AddonGlove = 12054,
+			AddonHat = 12055
+		},
+
 		Knight = {
 			AddonSword = 12153,
 
@@ -872,21 +877,6 @@ Storage = {
 		EdalaTimer = 503
 	},
 
-	-- Achievement storages
-	Achievements = {
-		PotionAddict = 50562,
-		AllowanceCollector = 50563,
-		Bluebarian = 50564,
-		WildWarrior = 50565,
-		DoctorDoctor = 50566,
-		Masquerader = 50567,
-		InteriorDecorator = 50568,
-		DeathOnStrike = 50569,
-		FallOfTheFallen = 50570,
-		DiplomaticImmunity = 50571,
-		FountainOfLife = 50572
-	},
-
 	-- Promotion Storage cannot be changed, it is set in source code
 	Promotion = 30018,
 
@@ -905,6 +895,7 @@ Storage = {
 	madMageQuest = 50136,
 	KawillBlessing = 50139,
 	RentedHorseTimer = 50561,
+	FountainOfLife = 50572,
 	KnightwatchTowerDoor = 9054,
 
 	RookgaardHints = 50700,

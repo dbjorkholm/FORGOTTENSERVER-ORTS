@@ -26,14 +26,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	else
 		item:transform(kit)
 		fromPosition:sendMagicEffect(CONST_ME_POFF)
-
-		local cStorage = player:getStorageValue(Storage.Achievements.InteriorDecorator)
-		if cStorage < 1000 then
-			player:setStorageValue(Storage.Achievements.InteriorDecorator, math.max(1, cStorage) + 1)
-		elseif cStorage == 1000 then
-			player:addAchievement('Interior Decorator')
-			player:setStorageValue(Storage.Achievements.InteriorDecorator, 1001)
-		end
+		player:addAchievementProgress('Interior Decorator', 1000)
 	end
 
 	return true

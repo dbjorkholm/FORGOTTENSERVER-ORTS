@@ -97,7 +97,7 @@ addTaskKeyword({
 )
 
 -- Hand in task items
-local function addItemKeyword(keyword, aliasKeyword, text, value, item, addonId, missionStorage)
+local function addItemKeyword(keyword, aliasKeyword, text, value, item, addonId, missionStorage, achievement)
 	local itemKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?'}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
 		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m afraid you forgot something, my child.', reset = true}, function(player) return player:getItemCount(item[1].itemId) < item[1].count or player:getItemCount(item[2].itemId) < item[2].count end)
 
@@ -109,8 +109,11 @@ local function addItemKeyword(keyword, aliasKeyword, text, value, item, addonId,
 				player:addOutfitAddon(158, addonId)
 				player:addOutfitAddon(154, addonId)
 				player:setStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask, player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) + 1)
-				player:setStorageValue(missionStorage, 0)
 				player:setStorageValue(Storage.OutfitQuest.Ref, math.min(0, player:getStorageValue(Storage.OutfitQuest.Ref) - 1))
+				player:setStorageValue(missionStorage, 0)
+				if achievement then
+					player:addAchievement('Way of the Shaman')
+				end
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 			end
 		)
@@ -136,7 +139,7 @@ addItemKeyword('tribal mask', 'banana staff',
 		'Well done, my child! I hereby grant you the right to wear a shamanic mask. Do it proudly.',
 		'Sometimes dworcs are seen with these masks.',
 		'A banana staff is the sign of a high ape magician.'
-	}, 3, {{itemId = 3966, count = 5}, {itemId = 3967, count = 5}}, 1, Storage.OutfitQuest.Shaman.MissionMask
+	}, 3, {{itemId = 3966, count = 5}, {itemId = 3967, count = 5}}, 1, Storage.OutfitQuest.Shaman.MissionMask, true
 )
 
 -- Task status

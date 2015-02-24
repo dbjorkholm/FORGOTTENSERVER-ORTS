@@ -66,13 +66,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
-	local achievementProgress = player:getStorageValue(Storage.Achievements.PotionAddict)
-	if achievementProgress < 100000 then
-		player:setStorageValue(Storage.Achievements.PotionAddict, math.max(0, achievementProgress) + 1)
-	elseif achievementProgress == 100000 then
-		player:addAchievement('Potion Addict')
-		player:setStorageValue(Storage.Achievements.PotionAddict, 100001)
-	end
+	player:addAchievementProgress('Potion Addict', 100000)
 
 	player:addCondition(exhaust)
 	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2)

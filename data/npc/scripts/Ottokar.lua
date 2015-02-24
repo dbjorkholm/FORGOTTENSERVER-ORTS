@@ -23,13 +23,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'yes') and npcHandler.topic[cid] == 1 then
 		if player:removeItem(13506, 1) then
 			player:addItem(13670, 1)
-			local cStorage = player:getStorageValue(Storage.Achievements.DoctorDoctor)
-			if cStorage < 100 then
-				player:setStorageValue(Storage.Achievements.DoctorDoctor, math.max(0, cStorage) + 1)
-			elseif cStorage == 100 then
-				player:addAchievement('Doctor! Doctor!')
-				player:setStorageValue(Storage.Achievements.DoctorDoctor, 101)
-			end
+			player:addAchievementProgress('Doctor! Doctor!', 100)
 			npcHandler:say('Here you are', cid)
 		else
 			npcHandler:say('You do not have the required items.', cid)

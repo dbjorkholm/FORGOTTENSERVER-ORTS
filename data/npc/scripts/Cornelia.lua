@@ -38,13 +38,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(134, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				player:setStorageValue(Storage.OutfitQuest.WarriorShoulderAddon, 7)
-				local cStorage = Storage.Achievements.WildWarrior
-				if player:getStorageValue(cStorage) < 1 then
-					player:setStorageValue(cStorage, 1)
-				elseif player:getStorageValue(cStorage) == 1 then
-					player:addAchievement('Wild Warrior')
-					player:setStorageValue(cStorage, 2)
-				end
+				player:addAchievementProgress('Wild Warrior', 2)
 				npcHandler:say('Finished! Since you are a man, I thought you probably wanted two. Men always want that little extra status symbol. <giggles>', cid)
 			else
 				npcHandler:say('I\'m selling leather armor, chain armor, and brass armor. Ask me for a {trade} if you like to take a look.', cid)

@@ -42,11 +42,6 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Ah, have you brought one piece of royal steel, draconian steel and hell steel each?", cid)
 			npcHandler.topic[cid] = 7
 		end
-	elseif msgcontains(msg, "sniper gloves") then
-		if player:getStorageValue(Storage.OutfitQuest.HunterBodyAddon) < 1 then
-			npcHandler:say("You found sniper gloves?! Incredible! Listen, if you give them to me, I will grant you the right to wear the sniper gloves accessory. How about it?", cid)
-			npcHandler.topic[cid] = 8
-		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 2 then
 			npcHandler:say({
@@ -104,17 +99,6 @@ local function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("You don't have it...", cid)
 			end
-		elseif npcHandler.topic[cid] == 8 then
-			if player:removeItem(5875, 1) then
-				npcHandler:say("Great! I hereby grant you the right to wear the sniper gloves as accessory. Congratulations!", cid)
-				player:setStorageValue(Storage.OutfitQuest.HunterBodyAddon, 1)
-				player:addOutfitAddon(129, 2)
-				player:addOutfitAddon(137, 1)
-				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				npcHandler.topic[cid] = 0
-			else
-				npcHandler:say("You don't have it...", cid)
-			end
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] > 1 then
@@ -125,6 +109,41 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
+-- Sniper Gloves
+keywordHandler:addKeyword({'sniper gloves'}, StdModule.say, {npcHandler = npcHandler, text = 'We are always looking for sniper gloves. They are supposed to raise accuracy. If you find a pair, bring them here. Maybe I can offer you a nice trade.'}, function(player) return player:getItemCount(5875) == 0 end)
+
+local function addGloveKeyword(text, condition, action)
+	local gloveKeyword = keywordHandler:addKeyword({'sniper gloves'}, StdModule.say, {npcHandler = npcHandler, text = text[1]}, condition)
+		gloveKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[2], reset = true}, function(player) return player:getItemCount(5875) == 0 end)
+		gloveKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[3], reset = true}, nil, action)
+		gloveKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = text[2], reset = true})
+end
+
+-- Free Account
+addGloveKeyword({
+		'You found sniper gloves?! Incredible! I would love to grant you the sniper gloves accessory, but I can only do that for premium warriors. However, I would pay you 2000 gold pieces for them. How about it?',
+		'Maybe another time.',
+		'Alright! Here is your money, thank you very much.'
+	}, function(player) return not player:isPremium() end, function(player) player:removeItem(5875, 1) player:addMoney(2000) end
+)
+
+-- Premium account with addon
+addGloveKeyword({
+		'Did you find sniper gloves AGAIN?! Incredible! I cannot grant you other accessories, but would you like to sell them to me for 2000 gold pieces?',
+		'Maybe another time.',
+		'Alright! Here is your money, thank you very much.'
+	}, function(player) return player:getStorageValue(Storage.OutfitQuest.Hunter.AddonGlove) == 1 end, function(player) player:removeItem(5875, 1) player:addMoney(2000) end
+)
+
+-- If you don't have the addon
+addGloveKeyword({
+		'You found sniper gloves?! Incredible! Listen, if you give them to me, I will grant you the right to wear the sniper gloves accessory. How about it?',
+		'No problem, maybe another time.',
+		'Great! I hereby grant you the right to wear the sniper gloves as an accessory. Congratulations!'
+	}, function(player) return player:getStorageValue(Storage.OutfitQuest.Hunter.AddonGlove) == -1 end, function(player) player:removeItem(5875, 1) player:setStorageValue(Storage.OutfitQuest.Hunter.AddonGlove, 1) player:addOutfitAddon(129, 2) player:addOutfitAddon(137, 1) player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE) end
+)
+
+-- Basic
 keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "I am the leader of the Paladins. I help our members."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am the leader of the Paladins. I help our members."})
 keywordHandler:addKeyword({'paladins'}, StdModule.say, {npcHandler = npcHandler, text = "Paladins are great warriors and magicians. Besides that we are excellent missile fighters. Many people in Tibia want to join us."})

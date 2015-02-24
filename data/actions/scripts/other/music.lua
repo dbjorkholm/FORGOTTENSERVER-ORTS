@@ -48,6 +48,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 	end
 
+	player:addAchievementProgress('Rockstar', 10000)
 	item:getPosition():sendMagicEffect(MusicEffect[item.itemid])
 	return true
 end
