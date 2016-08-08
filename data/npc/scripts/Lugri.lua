@@ -105,8 +105,8 @@ local function creatureSayCallback(cid, type, msg)
 			if player:removeItem(2123, 1) then
 				npcHandler:say("Good. I accept your sacrifice. You have proven that you are a true follower of Zathroth and do not hesitate to sacrifice worldly goods. Thus, I will reward you with this headgear. ", cid)
 				player:setStorageValue(Storage.OutfitQuest.WizardAddon, 5)
-				player:addOutfitAddon(145, 2)
-				player:addOutfitAddon(149, 2)
+				player:addOutfitAddon(145, 1)
+				player:addOutfitAddon(149, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler.topic[cid] = 0
 			else
